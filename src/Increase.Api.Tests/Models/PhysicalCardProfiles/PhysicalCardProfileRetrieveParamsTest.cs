@@ -1,0 +1,51 @@
+using System;
+using Increase.Api.Models.PhysicalCardProfiles;
+
+namespace Increase.Api.Tests.Models.PhysicalCardProfiles;
+
+public class PhysicalCardProfileRetrieveParamsTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var parameters = new PhysicalCardProfileRetrieveParams
+        {
+            PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
+        };
+
+        string expectedPhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec";
+
+        Assert.Equal(expectedPhysicalCardProfileID, parameters.PhysicalCardProfileID);
+    }
+
+    [Fact]
+    public void Url_Works()
+    {
+        PhysicalCardProfileRetrieveParams parameters = new()
+        {
+            PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
+        };
+
+        var url = parameters.Url(new() { ApiKey = "My API Key" });
+
+        Assert.Equal(
+            new Uri(
+                "https://api.increase.com/physical_card_profiles/physical_card_profile_m534d5rn9qyy9ufqxoec"
+            ),
+            url
+        );
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var parameters = new PhysicalCardProfileRetrieveParams
+        {
+            PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
+        };
+
+        PhysicalCardProfileRetrieveParams copied = new(parameters);
+
+        Assert.Equal(parameters, copied);
+    }
+}
