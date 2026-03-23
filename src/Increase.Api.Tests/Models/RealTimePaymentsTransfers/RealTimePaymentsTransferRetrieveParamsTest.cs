@@ -1,0 +1,52 @@
+using System;
+using Increase.Api.Models.RealTimePaymentsTransfers;
+
+namespace Increase.Api.Tests.Models.RealTimePaymentsTransfers;
+
+public class RealTimePaymentsTransferRetrieveParamsTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var parameters = new RealTimePaymentsTransferRetrieveParams
+        {
+            RealTimePaymentsTransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
+        };
+
+        string expectedRealTimePaymentsTransferID =
+            "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq";
+
+        Assert.Equal(expectedRealTimePaymentsTransferID, parameters.RealTimePaymentsTransferID);
+    }
+
+    [Fact]
+    public void Url_Works()
+    {
+        RealTimePaymentsTransferRetrieveParams parameters = new()
+        {
+            RealTimePaymentsTransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
+        };
+
+        var url = parameters.Url(new() { ApiKey = "My API Key" });
+
+        Assert.Equal(
+            new Uri(
+                "https://api.increase.com/real_time_payments_transfers/real_time_payments_transfer_iyuhl5kdn7ssmup83mvq"
+            ),
+            url
+        );
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var parameters = new RealTimePaymentsTransferRetrieveParams
+        {
+            RealTimePaymentsTransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
+        };
+
+        RealTimePaymentsTransferRetrieveParams copied = new(parameters);
+
+        Assert.Equal(parameters, copied);
+    }
+}
