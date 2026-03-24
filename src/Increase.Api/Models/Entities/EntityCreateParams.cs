@@ -3143,7 +3143,7 @@ public sealed record class JointIndividualIdentificationPassport : JsonModel
 {
     /// <summary>
     /// The two-character ISO 3166-1 code representing the country that issued the
-    /// passport (e.g., `US`).
+    /// document (e.g., `US`).
     /// </summary>
     public required string Country
     {
@@ -4002,7 +4002,7 @@ public sealed record class NaturalPersonIdentificationPassport : JsonModel
 {
     /// <summary>
     /// The two-character ISO 3166-1 code representing the country that issued the
-    /// passport (e.g., `US`).
+    /// document (e.g., `US`).
     /// </summary>
     public required string Country
     {
@@ -5827,7 +5827,7 @@ public sealed record class TrusteeIndividualIdentificationPassport : JsonModel
 {
     /// <summary>
     /// The two-character ISO 3166-1 code representing the country that issued the
-    /// passport (e.g., `US`).
+    /// document (e.g., `US`).
     /// </summary>
     public required string Country
     {
@@ -6667,7 +6667,7 @@ public sealed record class GrantorIdentificationPassport : JsonModel
 {
     /// <summary>
     /// The two-character ISO 3166-1 code representing the country that issued the
-    /// passport (e.g., `US`).
+    /// document (e.g., `US`).
     /// </summary>
     public required string Country
     {
