@@ -29,6 +29,12 @@ public class CardPushTransferCreateParamsTest : TestBase
             SenderAddressState = "NY",
             SenderName = "Ian Crease",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
+            MerchantLegalBusinessName = "x",
+            MerchantStreetAddress = "x",
+            RecipientAddressCity = "x",
+            RecipientAddressLine1 = "x",
+            RecipientAddressPostalCode = "x",
+            RecipientAddressState = "x",
             RequireApproval = true,
         };
 
@@ -53,6 +59,12 @@ public class CardPushTransferCreateParamsTest : TestBase
         string expectedSenderAddressState = "NY";
         string expectedSenderName = "Ian Crease";
         string expectedSourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
+        string expectedMerchantLegalBusinessName = "x";
+        string expectedMerchantStreetAddress = "x";
+        string expectedRecipientAddressCity = "x";
+        string expectedRecipientAddressLine1 = "x";
+        string expectedRecipientAddressPostalCode = "x";
+        string expectedRecipientAddressState = "x";
         bool expectedRequireApproval = true;
 
         Assert.Equal(
@@ -74,6 +86,12 @@ public class CardPushTransferCreateParamsTest : TestBase
         Assert.Equal(expectedSenderAddressState, parameters.SenderAddressState);
         Assert.Equal(expectedSenderName, parameters.SenderName);
         Assert.Equal(expectedSourceAccountNumberID, parameters.SourceAccountNumberID);
+        Assert.Equal(expectedMerchantLegalBusinessName, parameters.MerchantLegalBusinessName);
+        Assert.Equal(expectedMerchantStreetAddress, parameters.MerchantStreetAddress);
+        Assert.Equal(expectedRecipientAddressCity, parameters.RecipientAddressCity);
+        Assert.Equal(expectedRecipientAddressLine1, parameters.RecipientAddressLine1);
+        Assert.Equal(expectedRecipientAddressPostalCode, parameters.RecipientAddressPostalCode);
+        Assert.Equal(expectedRecipientAddressState, parameters.RecipientAddressState);
         Assert.Equal(expectedRequireApproval, parameters.RequireApproval);
     }
 
@@ -100,6 +118,18 @@ public class CardPushTransferCreateParamsTest : TestBase
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
         };
 
+        Assert.Null(parameters.MerchantLegalBusinessName);
+        Assert.False(parameters.RawBodyData.ContainsKey("merchant_legal_business_name"));
+        Assert.Null(parameters.MerchantStreetAddress);
+        Assert.False(parameters.RawBodyData.ContainsKey("merchant_street_address"));
+        Assert.Null(parameters.RecipientAddressCity);
+        Assert.False(parameters.RawBodyData.ContainsKey("recipient_address_city"));
+        Assert.Null(parameters.RecipientAddressLine1);
+        Assert.False(parameters.RawBodyData.ContainsKey("recipient_address_line1"));
+        Assert.Null(parameters.RecipientAddressPostalCode);
+        Assert.False(parameters.RawBodyData.ContainsKey("recipient_address_postal_code"));
+        Assert.Null(parameters.RecipientAddressState);
+        Assert.False(parameters.RawBodyData.ContainsKey("recipient_address_state"));
         Assert.Null(parameters.RequireApproval);
         Assert.False(parameters.RawBodyData.ContainsKey("require_approval"));
     }
@@ -127,9 +157,27 @@ public class CardPushTransferCreateParamsTest : TestBase
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
 
             // Null should be interpreted as omitted for these properties
+            MerchantLegalBusinessName = null,
+            MerchantStreetAddress = null,
+            RecipientAddressCity = null,
+            RecipientAddressLine1 = null,
+            RecipientAddressPostalCode = null,
+            RecipientAddressState = null,
             RequireApproval = null,
         };
 
+        Assert.Null(parameters.MerchantLegalBusinessName);
+        Assert.False(parameters.RawBodyData.ContainsKey("merchant_legal_business_name"));
+        Assert.Null(parameters.MerchantStreetAddress);
+        Assert.False(parameters.RawBodyData.ContainsKey("merchant_street_address"));
+        Assert.Null(parameters.RecipientAddressCity);
+        Assert.False(parameters.RawBodyData.ContainsKey("recipient_address_city"));
+        Assert.Null(parameters.RecipientAddressLine1);
+        Assert.False(parameters.RawBodyData.ContainsKey("recipient_address_line1"));
+        Assert.Null(parameters.RecipientAddressPostalCode);
+        Assert.False(parameters.RawBodyData.ContainsKey("recipient_address_postal_code"));
+        Assert.Null(parameters.RecipientAddressState);
+        Assert.False(parameters.RawBodyData.ContainsKey("recipient_address_state"));
         Assert.Null(parameters.RequireApproval);
         Assert.False(parameters.RawBodyData.ContainsKey("require_approval"));
     }
@@ -183,6 +231,12 @@ public class CardPushTransferCreateParamsTest : TestBase
             SenderAddressState = "NY",
             SenderName = "Ian Crease",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
+            MerchantLegalBusinessName = "x",
+            MerchantStreetAddress = "x",
+            RecipientAddressCity = "x",
+            RecipientAddressLine1 = "x",
+            RecipientAddressPostalCode = "x",
+            RecipientAddressState = "x",
             RequireApproval = true,
         };
 
