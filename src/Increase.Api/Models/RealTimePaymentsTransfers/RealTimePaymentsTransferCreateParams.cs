@@ -119,42 +119,6 @@ public record class RealTimePaymentsTransferCreateParams : ParamsBase
         }
     }
 
-    public string? DestinationAccountNumber
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<string>("destination_account_number");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawBodyData.Set("destination_account_number", value);
-        }
-    }
-
-    public string? DestinationRoutingNumber
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<string>("destination_routing_number");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawBodyData.Set("destination_routing_number", value);
-        }
-    }
-
     /// <summary>
     /// The ID of an External Account to initiate a transfer to. If this parameter
     /// is provided, `account_number` and `routing_number` must be absent.
