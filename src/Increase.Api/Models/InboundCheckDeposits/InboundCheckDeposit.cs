@@ -479,22 +479,6 @@ public enum AdjustmentReason
     /// has reimbursed the funds with a Wrong Payee Credit.
     /// </summary>
     WrongPayeeCredit,
-
-    /// <summary>
-    /// The check was deposited with a different amount than what was written on the check.
-    /// </summary>
-    AdjustedAmount,
-
-    /// <summary>
-    /// The recipient was not able to process the check. This usually happens for
-    /// e.g., low quality images.
-    /// </summary>
-    NonConformingItem,
-
-    /// <summary>
-    /// The check has already been deposited elsewhere and so this is a duplicate.
-    /// </summary>
-    Paid,
 }
 
 sealed class AdjustmentReasonConverter : JsonConverter<AdjustmentReason>
@@ -509,9 +493,6 @@ sealed class AdjustmentReasonConverter : JsonConverter<AdjustmentReason>
         {
             "late_return" => AdjustmentReason.LateReturn,
             "wrong_payee_credit" => AdjustmentReason.WrongPayeeCredit,
-            "adjusted_amount" => AdjustmentReason.AdjustedAmount,
-            "non_conforming_item" => AdjustmentReason.NonConformingItem,
-            "paid" => AdjustmentReason.Paid,
             _ => (AdjustmentReason)(-1),
         };
     }
@@ -528,9 +509,6 @@ sealed class AdjustmentReasonConverter : JsonConverter<AdjustmentReason>
             {
                 AdjustmentReason.LateReturn => "late_return",
                 AdjustmentReason.WrongPayeeCredit => "wrong_payee_credit",
-                AdjustmentReason.AdjustedAmount => "adjusted_amount",
-                AdjustmentReason.NonConformingItem => "non_conforming_item",
-                AdjustmentReason.Paid => "paid",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

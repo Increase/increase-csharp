@@ -647,18 +647,6 @@ class DepositAdjustmentFromRaw : IFromRawJson<DepositAdjustment>
 public enum Reason
 {
     /// <summary>
-    /// The return was initiated too late and the receiving institution has responded
-    /// with a Late Return Claim.
-    /// </summary>
-    LateReturn,
-
-    /// <summary>
-    /// The check was deposited to the wrong payee and the depositing institution
-    /// has reimbursed the funds with a Wrong Payee Credit.
-    /// </summary>
-    WrongPayeeCredit,
-
-    /// <summary>
     /// The check was deposited with a different amount than what was written on the check.
     /// </summary>
     AdjustedAmount,
@@ -685,8 +673,6 @@ sealed class ReasonConverter : JsonConverter<Reason>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "late_return" => Reason.LateReturn,
-            "wrong_payee_credit" => Reason.WrongPayeeCredit,
             "adjusted_amount" => Reason.AdjustedAmount,
             "non_conforming_item" => Reason.NonConformingItem,
             "paid" => Reason.Paid,
@@ -700,8 +686,6 @@ sealed class ReasonConverter : JsonConverter<Reason>
             writer,
             value switch
             {
-                Reason.LateReturn => "late_return",
-                Reason.WrongPayeeCredit => "wrong_payee_credit",
                 Reason.AdjustedAmount => "adjusted_amount",
                 Reason.NonConformingItem => "non_conforming_item",
                 Reason.Paid => "paid",

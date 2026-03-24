@@ -35,7 +35,7 @@ public class CheckDepositTest : TestBase
                 {
                     AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Amount = 1750,
-                    Reason = CheckDeposits::Reason.LateReturn,
+                    Reason = CheckDeposits::Reason.AdjustedAmount,
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 },
             ],
@@ -106,7 +106,7 @@ public class CheckDepositTest : TestBase
             {
                 AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Amount = 1750,
-                Reason = CheckDeposits::Reason.LateReturn,
+                Reason = CheckDeposits::Reason.AdjustedAmount,
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             },
         ];
@@ -204,7 +204,7 @@ public class CheckDepositTest : TestBase
                 {
                     AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Amount = 1750,
-                    Reason = CheckDeposits::Reason.LateReturn,
+                    Reason = CheckDeposits::Reason.AdjustedAmount,
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 },
             ],
@@ -289,7 +289,7 @@ public class CheckDepositTest : TestBase
                 {
                     AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Amount = 1750,
-                    Reason = CheckDeposits::Reason.LateReturn,
+                    Reason = CheckDeposits::Reason.AdjustedAmount,
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 },
             ],
@@ -367,7 +367,7 @@ public class CheckDepositTest : TestBase
             {
                 AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Amount = 1750,
-                Reason = CheckDeposits::Reason.LateReturn,
+                Reason = CheckDeposits::Reason.AdjustedAmount,
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             },
         ];
@@ -465,7 +465,7 @@ public class CheckDepositTest : TestBase
                 {
                     AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Amount = 1750,
-                    Reason = CheckDeposits::Reason.LateReturn,
+                    Reason = CheckDeposits::Reason.AdjustedAmount,
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 },
             ],
@@ -544,7 +544,7 @@ public class CheckDepositTest : TestBase
                 {
                     AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Amount = 1750,
-                    Reason = CheckDeposits::Reason.LateReturn,
+                    Reason = CheckDeposits::Reason.AdjustedAmount,
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 },
             ],
@@ -794,13 +794,14 @@ public class DepositAdjustmentTest : TestBase
         {
             AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Amount = 1750,
-            Reason = CheckDeposits::Reason.LateReturn,
+            Reason = CheckDeposits::Reason.AdjustedAmount,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
         };
 
         DateTimeOffset expectedAdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         long expectedAmount = 1750;
-        ApiEnum<string, CheckDeposits::Reason> expectedReason = CheckDeposits::Reason.LateReturn;
+        ApiEnum<string, CheckDeposits::Reason> expectedReason =
+            CheckDeposits::Reason.AdjustedAmount;
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
 
         Assert.Equal(expectedAdjustedAt, model.AdjustedAt);
@@ -816,7 +817,7 @@ public class DepositAdjustmentTest : TestBase
         {
             AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Amount = 1750,
-            Reason = CheckDeposits::Reason.LateReturn,
+            Reason = CheckDeposits::Reason.AdjustedAmount,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
         };
 
@@ -836,7 +837,7 @@ public class DepositAdjustmentTest : TestBase
         {
             AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Amount = 1750,
-            Reason = CheckDeposits::Reason.LateReturn,
+            Reason = CheckDeposits::Reason.AdjustedAmount,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
         };
 
@@ -849,7 +850,8 @@ public class DepositAdjustmentTest : TestBase
 
         DateTimeOffset expectedAdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         long expectedAmount = 1750;
-        ApiEnum<string, CheckDeposits::Reason> expectedReason = CheckDeposits::Reason.LateReturn;
+        ApiEnum<string, CheckDeposits::Reason> expectedReason =
+            CheckDeposits::Reason.AdjustedAmount;
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
 
         Assert.Equal(expectedAdjustedAt, deserialized.AdjustedAt);
@@ -865,7 +867,7 @@ public class DepositAdjustmentTest : TestBase
         {
             AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Amount = 1750,
-            Reason = CheckDeposits::Reason.LateReturn,
+            Reason = CheckDeposits::Reason.AdjustedAmount,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
         };
 
@@ -879,7 +881,7 @@ public class DepositAdjustmentTest : TestBase
         {
             AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Amount = 1750,
-            Reason = CheckDeposits::Reason.LateReturn,
+            Reason = CheckDeposits::Reason.AdjustedAmount,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
         };
 
@@ -892,8 +894,6 @@ public class DepositAdjustmentTest : TestBase
 public class ReasonTest : TestBase
 {
     [Theory]
-    [InlineData(CheckDeposits::Reason.LateReturn)]
-    [InlineData(CheckDeposits::Reason.WrongPayeeCredit)]
     [InlineData(CheckDeposits::Reason.AdjustedAmount)]
     [InlineData(CheckDeposits::Reason.NonConformingItem)]
     [InlineData(CheckDeposits::Reason.Paid)]
@@ -917,8 +917,6 @@ public class ReasonTest : TestBase
     }
 
     [Theory]
-    [InlineData(CheckDeposits::Reason.LateReturn)]
-    [InlineData(CheckDeposits::Reason.WrongPayeeCredit)]
     [InlineData(CheckDeposits::Reason.AdjustedAmount)]
     [InlineData(CheckDeposits::Reason.NonConformingItem)]
     [InlineData(CheckDeposits::Reason.Paid)]
