@@ -16,8 +16,6 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
             UnstructuredRemittanceInformation = "Invoice 29582",
             AccountNumber = "987654321",
             DebtorName = "x",
-            DestinationAccountNumber = "x",
-            DestinationRoutingNumber = "xxxxxxxxx",
             ExternalAccountID = "external_account_id",
             RequireApproval = true,
             RoutingNumber = "101050001",
@@ -31,8 +29,6 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
         string expectedUnstructuredRemittanceInformation = "Invoice 29582";
         string expectedAccountNumber = "987654321";
         string expectedDebtorName = "x";
-        string expectedDestinationAccountNumber = "x";
-        string expectedDestinationRoutingNumber = "xxxxxxxxx";
         string expectedExternalAccountID = "external_account_id";
         bool expectedRequireApproval = true;
         string expectedRoutingNumber = "101050001";
@@ -48,8 +44,6 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
         );
         Assert.Equal(expectedAccountNumber, parameters.AccountNumber);
         Assert.Equal(expectedDebtorName, parameters.DebtorName);
-        Assert.Equal(expectedDestinationAccountNumber, parameters.DestinationAccountNumber);
-        Assert.Equal(expectedDestinationRoutingNumber, parameters.DestinationRoutingNumber);
         Assert.Equal(expectedExternalAccountID, parameters.ExternalAccountID);
         Assert.Equal(expectedRequireApproval, parameters.RequireApproval);
         Assert.Equal(expectedRoutingNumber, parameters.RoutingNumber);
@@ -72,10 +66,6 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("account_number"));
         Assert.Null(parameters.DebtorName);
         Assert.False(parameters.RawBodyData.ContainsKey("debtor_name"));
-        Assert.Null(parameters.DestinationAccountNumber);
-        Assert.False(parameters.RawBodyData.ContainsKey("destination_account_number"));
-        Assert.Null(parameters.DestinationRoutingNumber);
-        Assert.False(parameters.RawBodyData.ContainsKey("destination_routing_number"));
         Assert.Null(parameters.ExternalAccountID);
         Assert.False(parameters.RawBodyData.ContainsKey("external_account_id"));
         Assert.Null(parameters.RequireApproval);
@@ -101,8 +91,6 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
             // Null should be interpreted as omitted for these properties
             AccountNumber = null,
             DebtorName = null,
-            DestinationAccountNumber = null,
-            DestinationRoutingNumber = null,
             ExternalAccountID = null,
             RequireApproval = null,
             RoutingNumber = null,
@@ -114,10 +102,6 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("account_number"));
         Assert.Null(parameters.DebtorName);
         Assert.False(parameters.RawBodyData.ContainsKey("debtor_name"));
-        Assert.Null(parameters.DestinationAccountNumber);
-        Assert.False(parameters.RawBodyData.ContainsKey("destination_account_number"));
-        Assert.Null(parameters.DestinationRoutingNumber);
-        Assert.False(parameters.RawBodyData.ContainsKey("destination_routing_number"));
         Assert.Null(parameters.ExternalAccountID);
         Assert.False(parameters.RawBodyData.ContainsKey("external_account_id"));
         Assert.Null(parameters.RequireApproval);
@@ -157,8 +141,6 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
             UnstructuredRemittanceInformation = "Invoice 29582",
             AccountNumber = "987654321",
             DebtorName = "x",
-            DestinationAccountNumber = "x",
-            DestinationRoutingNumber = "xxxxxxxxx",
             ExternalAccountID = "external_account_id",
             RequireApproval = true,
             RoutingNumber = "101050001",
