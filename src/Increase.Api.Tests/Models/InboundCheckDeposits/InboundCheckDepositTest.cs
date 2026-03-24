@@ -482,9 +482,6 @@ public class AdjustmentReasonTest : TestBase
     [Theory]
     [InlineData(InboundCheckDeposits::AdjustmentReason.LateReturn)]
     [InlineData(InboundCheckDeposits::AdjustmentReason.WrongPayeeCredit)]
-    [InlineData(InboundCheckDeposits::AdjustmentReason.AdjustedAmount)]
-    [InlineData(InboundCheckDeposits::AdjustmentReason.NonConformingItem)]
-    [InlineData(InboundCheckDeposits::AdjustmentReason.Paid)]
     public void Validation_Works(InboundCheckDeposits::AdjustmentReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -506,9 +503,6 @@ public class AdjustmentReasonTest : TestBase
     [Theory]
     [InlineData(InboundCheckDeposits::AdjustmentReason.LateReturn)]
     [InlineData(InboundCheckDeposits::AdjustmentReason.WrongPayeeCredit)]
-    [InlineData(InboundCheckDeposits::AdjustmentReason.AdjustedAmount)]
-    [InlineData(InboundCheckDeposits::AdjustmentReason.NonConformingItem)]
-    [InlineData(InboundCheckDeposits::AdjustmentReason.Paid)]
     public void SerializationRoundtrip_Works(InboundCheckDeposits::AdjustmentReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

@@ -38,7 +38,7 @@ public class CheckDepositListPageResponseTest : TestBase
                         {
                             AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             Amount = 1750,
-                            Reason = CheckDeposits::Reason.LateReturn,
+                            Reason = CheckDeposits::Reason.AdjustedAmount,
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         },
                     ],
@@ -116,7 +116,7 @@ public class CheckDepositListPageResponseTest : TestBase
                     {
                         AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         Amount = 1750,
-                        Reason = CheckDeposits::Reason.LateReturn,
+                        Reason = CheckDeposits::Reason.AdjustedAmount,
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
                 ],
@@ -206,7 +206,7 @@ public class CheckDepositListPageResponseTest : TestBase
                         {
                             AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             Amount = 1750,
-                            Reason = CheckDeposits::Reason.LateReturn,
+                            Reason = CheckDeposits::Reason.AdjustedAmount,
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         },
                     ],
@@ -298,7 +298,7 @@ public class CheckDepositListPageResponseTest : TestBase
                         {
                             AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             Amount = 1750,
-                            Reason = CheckDeposits::Reason.LateReturn,
+                            Reason = CheckDeposits::Reason.AdjustedAmount,
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         },
                     ],
@@ -383,7 +383,7 @@ public class CheckDepositListPageResponseTest : TestBase
                     {
                         AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         Amount = 1750,
-                        Reason = CheckDeposits::Reason.LateReturn,
+                        Reason = CheckDeposits::Reason.AdjustedAmount,
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
                 ],
@@ -473,7 +473,7 @@ public class CheckDepositListPageResponseTest : TestBase
                         {
                             AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             Amount = 1750,
-                            Reason = CheckDeposits::Reason.LateReturn,
+                            Reason = CheckDeposits::Reason.AdjustedAmount,
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         },
                     ],
@@ -559,7 +559,7 @@ public class CheckDepositListPageResponseTest : TestBase
                         {
                             AdjustedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             Amount = 1750,
-                            Reason = CheckDeposits::Reason.LateReturn,
+                            Reason = CheckDeposits::Reason.AdjustedAmount,
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         },
                     ],
