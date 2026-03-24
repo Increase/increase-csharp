@@ -248,6 +248,135 @@ public record class CardPushTransferCreateParams : ParamsBase
     }
 
     /// <summary>
+    /// The legal business name of the merchant (generally your business) sending
+    /// the transfer. Required if the card is issued in Canada.
+    /// </summary>
+    public string? MerchantLegalBusinessName
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("merchant_legal_business_name");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("merchant_legal_business_name", value);
+        }
+    }
+
+    /// <summary>
+    /// The street address of the merchant (generally your business) sending the transfer.
+    /// Required if the card is issued in Canada.
+    /// </summary>
+    public string? MerchantStreetAddress
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("merchant_street_address");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("merchant_street_address", value);
+        }
+    }
+
+    /// <summary>
+    /// The city of the recipient. Required if the card is issued in Canada.
+    /// </summary>
+    public string? RecipientAddressCity
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("recipient_address_city");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("recipient_address_city", value);
+        }
+    }
+
+    /// <summary>
+    /// The first line of the recipient's address. Required if the card is issued
+    /// in Canada.
+    /// </summary>
+    public string? RecipientAddressLine1
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("recipient_address_line1");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("recipient_address_line1", value);
+        }
+    }
+
+    /// <summary>
+    /// The postal code of the recipient. Required if the card is issued in Canada.
+    /// </summary>
+    public string? RecipientAddressPostalCode
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("recipient_address_postal_code");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("recipient_address_postal_code", value);
+        }
+    }
+
+    /// <summary>
+    /// The state or province of the recipient. Required if the card is issued in Canada.
+    /// </summary>
+    public string? RecipientAddressState
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("recipient_address_state");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("recipient_address_state", value);
+        }
+    }
+
+    /// <summary>
     /// Whether the transfer requires explicit approval via the dashboard or API.
     /// </summary>
     public bool? RequireApproval
