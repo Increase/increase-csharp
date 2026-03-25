@@ -74,8 +74,12 @@ public class EntityCreateParamsTest : TestBase
                         CompanyTitle = "CEO",
                     },
                 ],
+                LegalIdentifier = new()
+                {
+                    Value = "602214076",
+                    Category = Category.UsEmployerIdentificationNumber,
+                },
                 Name = "National Phonograph Company",
-                TaxIdentifier = "602214076",
                 BeneficialOwnershipExemptionReason =
                     BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
                 Email = "dev@stainless.com",
@@ -95,7 +99,7 @@ public class EntityCreateParamsTest : TestBase
                     Line2 = "x",
                 },
                 AuthorizedPersons = [new("x")],
-                Category = Category.Municipality,
+                Category = GovernmentAuthorityCategory.Municipality,
                 Name = "x",
                 TaxIdentifier = "x",
                 Website = "website",
@@ -365,8 +369,12 @@ public class EntityCreateParamsTest : TestBase
                     CompanyTitle = "CEO",
                 },
             ],
+            LegalIdentifier = new()
+            {
+                Value = "602214076",
+                Category = Category.UsEmployerIdentificationNumber,
+            },
             Name = "National Phonograph Company",
-            TaxIdentifier = "602214076",
             BeneficialOwnershipExemptionReason =
                 BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "dev@stainless.com",
@@ -386,7 +394,7 @@ public class EntityCreateParamsTest : TestBase
                 Line2 = "x",
             },
             AuthorizedPersons = [new("x")],
-            Category = Category.Municipality,
+            Category = GovernmentAuthorityCategory.Municipality,
             Name = "x",
             TaxIdentifier = "x",
             Website = "website",
@@ -769,8 +777,12 @@ public class EntityCreateParamsTest : TestBase
                         CompanyTitle = "CEO",
                     },
                 ],
+                LegalIdentifier = new()
+                {
+                    Value = "602214076",
+                    Category = Category.UsEmployerIdentificationNumber,
+                },
                 Name = "National Phonograph Company",
-                TaxIdentifier = "602214076",
                 BeneficialOwnershipExemptionReason =
                     BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
                 Email = "dev@stainless.com",
@@ -790,7 +802,7 @@ public class EntityCreateParamsTest : TestBase
                     Line2 = "x",
                 },
                 AuthorizedPersons = [new("x")],
-                Category = Category.Municipality,
+                Category = GovernmentAuthorityCategory.Municipality,
                 Name = "x",
                 TaxIdentifier = "x",
                 Website = "website",
@@ -1134,8 +1146,12 @@ public class CorporationTest : TestBase
                     CompanyTitle = "x",
                 },
             ],
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category = Category.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
             BeneficialOwnershipExemptionReason =
                 BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "dev@stainless.com",
@@ -1201,8 +1217,12 @@ public class CorporationTest : TestBase
                 CompanyTitle = "x",
             },
         ];
+        LegalIdentifier expectedLegalIdentifier = new()
+        {
+            Value = "x",
+            Category = Category.UsEmployerIdentificationNumber,
+        };
         string expectedName = "x";
-        string expectedTaxIdentifier = "x";
         ApiEnum<
             string,
             BeneficialOwnershipExemptionReason
@@ -1219,8 +1239,8 @@ public class CorporationTest : TestBase
         {
             Assert.Equal(expectedBeneficialOwners[i], model.BeneficialOwners[i]);
         }
+        Assert.Equal(expectedLegalIdentifier, model.LegalIdentifier);
         Assert.Equal(expectedName, model.Name);
-        Assert.Equal(expectedTaxIdentifier, model.TaxIdentifier);
         Assert.Equal(
             expectedBeneficialOwnershipExemptionReason,
             model.BeneficialOwnershipExemptionReason
@@ -1293,8 +1313,12 @@ public class CorporationTest : TestBase
                     CompanyTitle = "x",
                 },
             ],
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category = Category.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
             BeneficialOwnershipExemptionReason =
                 BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "dev@stainless.com",
@@ -1374,8 +1398,12 @@ public class CorporationTest : TestBase
                     CompanyTitle = "x",
                 },
             ],
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category = Category.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
             BeneficialOwnershipExemptionReason =
                 BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "dev@stainless.com",
@@ -1448,8 +1476,12 @@ public class CorporationTest : TestBase
                 CompanyTitle = "x",
             },
         ];
+        LegalIdentifier expectedLegalIdentifier = new()
+        {
+            Value = "x",
+            Category = Category.UsEmployerIdentificationNumber,
+        };
         string expectedName = "x";
-        string expectedTaxIdentifier = "x";
         ApiEnum<
             string,
             BeneficialOwnershipExemptionReason
@@ -1466,8 +1498,8 @@ public class CorporationTest : TestBase
         {
             Assert.Equal(expectedBeneficialOwners[i], deserialized.BeneficialOwners[i]);
         }
+        Assert.Equal(expectedLegalIdentifier, deserialized.LegalIdentifier);
         Assert.Equal(expectedName, deserialized.Name);
-        Assert.Equal(expectedTaxIdentifier, deserialized.TaxIdentifier);
         Assert.Equal(
             expectedBeneficialOwnershipExemptionReason,
             deserialized.BeneficialOwnershipExemptionReason
@@ -1540,8 +1572,12 @@ public class CorporationTest : TestBase
                     CompanyTitle = "x",
                 },
             ],
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category = Category.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
             BeneficialOwnershipExemptionReason =
                 BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "dev@stainless.com",
@@ -1615,8 +1651,12 @@ public class CorporationTest : TestBase
                     CompanyTitle = "x",
                 },
             ],
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category = Category.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
         };
 
         Assert.Null(model.BeneficialOwnershipExemptionReason);
@@ -1693,8 +1733,12 @@ public class CorporationTest : TestBase
                     CompanyTitle = "x",
                 },
             ],
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category = Category.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
         };
 
         model.Validate();
@@ -1762,8 +1806,12 @@ public class CorporationTest : TestBase
                     CompanyTitle = "x",
                 },
             ],
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category = Category.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
 
             // Null should be interpreted as omitted for these properties
             BeneficialOwnershipExemptionReason = null,
@@ -1847,8 +1895,12 @@ public class CorporationTest : TestBase
                     CompanyTitle = "x",
                 },
             ],
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category = Category.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
 
             // Null should be interpreted as omitted for these properties
             BeneficialOwnershipExemptionReason = null,
@@ -1923,8 +1975,12 @@ public class CorporationTest : TestBase
                     CompanyTitle = "x",
                 },
             ],
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category = Category.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
             BeneficialOwnershipExemptionReason =
                 BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "dev@stainless.com",
@@ -4296,6 +4352,196 @@ public class ProngTest : TestBase
     }
 }
 
+public class LegalIdentifierTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new LegalIdentifier
+        {
+            Value = "x",
+            Category = Category.UsEmployerIdentificationNumber,
+        };
+
+        string expectedValue = "x";
+        ApiEnum<string, Category> expectedCategory = Category.UsEmployerIdentificationNumber;
+
+        Assert.Equal(expectedValue, model.Value);
+        Assert.Equal(expectedCategory, model.Category);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new LegalIdentifier
+        {
+            Value = "x",
+            Category = Category.UsEmployerIdentificationNumber,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<LegalIdentifier>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new LegalIdentifier
+        {
+            Value = "x",
+            Category = Category.UsEmployerIdentificationNumber,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<LegalIdentifier>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedValue = "x";
+        ApiEnum<string, Category> expectedCategory = Category.UsEmployerIdentificationNumber;
+
+        Assert.Equal(expectedValue, deserialized.Value);
+        Assert.Equal(expectedCategory, deserialized.Category);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new LegalIdentifier
+        {
+            Value = "x",
+            Category = Category.UsEmployerIdentificationNumber,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new LegalIdentifier { Value = "x" };
+
+        Assert.Null(model.Category);
+        Assert.False(model.RawData.ContainsKey("category"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new LegalIdentifier { Value = "x" };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new LegalIdentifier
+        {
+            Value = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Category = null,
+        };
+
+        Assert.Null(model.Category);
+        Assert.False(model.RawData.ContainsKey("category"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new LegalIdentifier
+        {
+            Value = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Category = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LegalIdentifier
+        {
+            Value = "x",
+            Category = Category.UsEmployerIdentificationNumber,
+        };
+
+        LegalIdentifier copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CategoryTest : TestBase
+{
+    [Theory]
+    [InlineData(Category.UsEmployerIdentificationNumber)]
+    [InlineData(Category.Other)]
+    public void Validation_Works(Category rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Category> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Category>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Category.UsEmployerIdentificationNumber)]
+    [InlineData(Category.Other)]
+    public void SerializationRoundtrip_Works(Category rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Category> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Category>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Category>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Category>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class BeneficialOwnershipExemptionReasonTest : TestBase
 {
     [Theory]
@@ -4372,7 +4618,7 @@ public class GovernmentAuthorityTest : TestBase
                 Line2 = "x",
             },
             AuthorizedPersons = [new("x")],
-            Category = Category.Municipality,
+            Category = GovernmentAuthorityCategory.Municipality,
             Name = "x",
             TaxIdentifier = "x",
             Website = "website",
@@ -4387,7 +4633,8 @@ public class GovernmentAuthorityTest : TestBase
             Line2 = "x",
         };
         List<AuthorizedPerson> expectedAuthorizedPersons = [new("x")];
-        ApiEnum<string, Category> expectedCategory = Category.Municipality;
+        ApiEnum<string, GovernmentAuthorityCategory> expectedCategory =
+            GovernmentAuthorityCategory.Municipality;
         string expectedName = "x";
         string expectedTaxIdentifier = "x";
         string expectedWebsite = "website";
@@ -4418,7 +4665,7 @@ public class GovernmentAuthorityTest : TestBase
                 Line2 = "x",
             },
             AuthorizedPersons = [new("x")],
-            Category = Category.Municipality,
+            Category = GovernmentAuthorityCategory.Municipality,
             Name = "x",
             TaxIdentifier = "x",
             Website = "website",
@@ -4447,7 +4694,7 @@ public class GovernmentAuthorityTest : TestBase
                 Line2 = "x",
             },
             AuthorizedPersons = [new("x")],
-            Category = Category.Municipality,
+            Category = GovernmentAuthorityCategory.Municipality,
             Name = "x",
             TaxIdentifier = "x",
             Website = "website",
@@ -4469,7 +4716,8 @@ public class GovernmentAuthorityTest : TestBase
             Line2 = "x",
         };
         List<AuthorizedPerson> expectedAuthorizedPersons = [new("x")];
-        ApiEnum<string, Category> expectedCategory = Category.Municipality;
+        ApiEnum<string, GovernmentAuthorityCategory> expectedCategory =
+            GovernmentAuthorityCategory.Municipality;
         string expectedName = "x";
         string expectedTaxIdentifier = "x";
         string expectedWebsite = "website";
@@ -4500,7 +4748,7 @@ public class GovernmentAuthorityTest : TestBase
                 Line2 = "x",
             },
             AuthorizedPersons = [new("x")],
-            Category = Category.Municipality,
+            Category = GovernmentAuthorityCategory.Municipality,
             Name = "x",
             TaxIdentifier = "x",
             Website = "website",
@@ -4523,7 +4771,7 @@ public class GovernmentAuthorityTest : TestBase
                 Line2 = "x",
             },
             AuthorizedPersons = [new("x")],
-            Category = Category.Municipality,
+            Category = GovernmentAuthorityCategory.Municipality,
             Name = "x",
             TaxIdentifier = "x",
         };
@@ -4546,7 +4794,7 @@ public class GovernmentAuthorityTest : TestBase
                 Line2 = "x",
             },
             AuthorizedPersons = [new("x")],
-            Category = Category.Municipality,
+            Category = GovernmentAuthorityCategory.Municipality,
             Name = "x",
             TaxIdentifier = "x",
         };
@@ -4568,7 +4816,7 @@ public class GovernmentAuthorityTest : TestBase
                 Line2 = "x",
             },
             AuthorizedPersons = [new("x")],
-            Category = Category.Municipality,
+            Category = GovernmentAuthorityCategory.Municipality,
             Name = "x",
             TaxIdentifier = "x",
 
@@ -4594,7 +4842,7 @@ public class GovernmentAuthorityTest : TestBase
                 Line2 = "x",
             },
             AuthorizedPersons = [new("x")],
-            Category = Category.Municipality,
+            Category = GovernmentAuthorityCategory.Municipality,
             Name = "x",
             TaxIdentifier = "x",
 
@@ -4619,7 +4867,7 @@ public class GovernmentAuthorityTest : TestBase
                 Line2 = "x",
             },
             AuthorizedPersons = [new("x")],
-            Category = Category.Municipality,
+            Category = GovernmentAuthorityCategory.Municipality,
             Name = "x",
             TaxIdentifier = "x",
             Website = "website",
@@ -4870,24 +5118,24 @@ public class AuthorizedPersonTest : TestBase
     }
 }
 
-public class CategoryTest : TestBase
+public class GovernmentAuthorityCategoryTest : TestBase
 {
     [Theory]
-    [InlineData(Category.Municipality)]
-    [InlineData(Category.StateAgency)]
-    [InlineData(Category.StateGovernment)]
-    [InlineData(Category.FederalAgency)]
-    public void Validation_Works(Category rawValue)
+    [InlineData(GovernmentAuthorityCategory.Municipality)]
+    [InlineData(GovernmentAuthorityCategory.StateAgency)]
+    [InlineData(GovernmentAuthorityCategory.StateGovernment)]
+    [InlineData(GovernmentAuthorityCategory.FederalAgency)]
+    public void Validation_Works(GovernmentAuthorityCategory rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Category> value = rawValue;
+        ApiEnum<string, GovernmentAuthorityCategory> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Category>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, GovernmentAuthorityCategory>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
@@ -4897,17 +5145,17 @@ public class CategoryTest : TestBase
     }
 
     [Theory]
-    [InlineData(Category.Municipality)]
-    [InlineData(Category.StateAgency)]
-    [InlineData(Category.StateGovernment)]
-    [InlineData(Category.FederalAgency)]
-    public void SerializationRoundtrip_Works(Category rawValue)
+    [InlineData(GovernmentAuthorityCategory.Municipality)]
+    [InlineData(GovernmentAuthorityCategory.StateAgency)]
+    [InlineData(GovernmentAuthorityCategory.StateGovernment)]
+    [InlineData(GovernmentAuthorityCategory.FederalAgency)]
+    public void SerializationRoundtrip_Works(GovernmentAuthorityCategory rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Category> value = rawValue;
+        ApiEnum<string, GovernmentAuthorityCategory> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Category>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, GovernmentAuthorityCategory>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -4918,12 +5166,12 @@ public class CategoryTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Category>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, GovernmentAuthorityCategory>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Category>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, GovernmentAuthorityCategory>>(
             json,
             ModelBase.SerializerOptions
         );
