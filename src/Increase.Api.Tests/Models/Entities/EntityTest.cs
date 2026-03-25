@@ -21,6 +21,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -79,6 +80,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -103,6 +105,7 @@ public class EntityTest : TestBase
                         Address = new()
                         {
                             City = "New York",
+                            Country = "US",
                             Line1 = "33 Liberty Street",
                             Line2 = null,
                             State = "NY",
@@ -125,6 +128,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -175,6 +179,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -188,6 +193,7 @@ public class EntityTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -213,6 +219,7 @@ public class EntityTest : TestBase
                             Address = new()
                             {
                                 City = "New York",
+                                Country = "US",
                                 Line1 = "33 Liberty Street",
                                 Line2 = null,
                                 State = "NY",
@@ -259,6 +266,7 @@ public class EntityTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -315,6 +323,7 @@ public class EntityTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -338,6 +347,7 @@ public class EntityTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -360,6 +370,7 @@ public class EntityTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -411,6 +422,7 @@ public class EntityTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -424,6 +436,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -448,6 +461,7 @@ public class EntityTest : TestBase
                         Address = new()
                         {
                             City = "New York",
+                            Country = "US",
                             Line1 = "33 Liberty Street",
                             Line2 = null,
                             State = "NY",
@@ -526,6 +540,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -584,6 +599,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -608,6 +624,7 @@ public class EntityTest : TestBase
                         Address = new()
                         {
                             City = "New York",
+                            Country = "US",
                             Line1 = "33 Liberty Street",
                             Line2 = null,
                             State = "NY",
@@ -630,6 +647,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -680,6 +698,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -693,6 +712,7 @@ public class EntityTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -718,6 +738,7 @@ public class EntityTest : TestBase
                             Address = new()
                             {
                                 City = "New York",
+                                Country = "US",
                                 Line1 = "33 Liberty Street",
                                 Line2 = null,
                                 State = "NY",
@@ -778,6 +799,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -836,6 +858,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -860,6 +883,7 @@ public class EntityTest : TestBase
                         Address = new()
                         {
                             City = "New York",
+                            Country = "US",
                             Line1 = "33 Liberty Street",
                             Line2 = null,
                             State = "NY",
@@ -882,6 +906,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -932,6 +957,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -945,6 +971,7 @@ public class EntityTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -970,6 +997,7 @@ public class EntityTest : TestBase
                             Address = new()
                             {
                                 City = "New York",
+                                Country = "US",
                                 Line1 = "33 Liberty Street",
                                 Line2 = null,
                                 State = "NY",
@@ -1023,6 +1051,7 @@ public class EntityTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -1079,6 +1108,7 @@ public class EntityTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -1102,6 +1132,7 @@ public class EntityTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -1124,6 +1155,7 @@ public class EntityTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -1175,6 +1207,7 @@ public class EntityTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -1188,6 +1221,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -1212,6 +1246,7 @@ public class EntityTest : TestBase
                         Address = new()
                         {
                             City = "New York",
+                            Country = "US",
                             Line1 = "33 Liberty Street",
                             Line2 = null,
                             State = "NY",
@@ -1290,6 +1325,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -1348,6 +1384,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -1372,6 +1409,7 @@ public class EntityTest : TestBase
                         Address = new()
                         {
                             City = "New York",
+                            Country = "US",
                             Line1 = "33 Liberty Street",
                             Line2 = null,
                             State = "NY",
@@ -1394,6 +1432,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -1444,6 +1483,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -1457,6 +1497,7 @@ public class EntityTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -1482,6 +1523,7 @@ public class EntityTest : TestBase
                             Address = new()
                             {
                                 City = "New York",
+                                Country = "US",
                                 Line1 = "33 Liberty Street",
                                 Line2 = null,
                                 State = "NY",
@@ -1536,6 +1578,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -1594,6 +1637,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -1618,6 +1662,7 @@ public class EntityTest : TestBase
                         Address = new()
                         {
                             City = "New York",
+                            Country = "US",
                             Line1 = "33 Liberty Street",
                             Line2 = null,
                             State = "NY",
@@ -1640,6 +1685,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -1690,6 +1736,7 @@ public class EntityTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -1703,6 +1750,7 @@ public class EntityTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -1728,6 +1776,7 @@ public class EntityTest : TestBase
                             Address = new()
                             {
                                 City = "New York",
+                                Country = "US",
                                 Line1 = "33 Liberty Street",
                                 Line2 = null,
                                 State = "NY",
@@ -1784,6 +1833,7 @@ public class EntityCorporationTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -1838,6 +1888,7 @@ public class EntityCorporationTest : TestBase
         Entities::EntityCorporationAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -1910,6 +1961,7 @@ public class EntityCorporationTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -1978,6 +2030,7 @@ public class EntityCorporationTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -2039,6 +2092,7 @@ public class EntityCorporationTest : TestBase
         Entities::EntityCorporationAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -2111,6 +2165,7 @@ public class EntityCorporationTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -2173,6 +2228,7 @@ public class EntityCorporationTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -2238,6 +2294,7 @@ public class EntityCorporationAddressTest : TestBase
         var model = new Entities::EntityCorporationAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -2245,11 +2302,13 @@ public class EntityCorporationAddressTest : TestBase
         };
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine1, model.Line1);
         Assert.Null(model.Line2);
         Assert.Equal(expectedState, model.State);
@@ -2262,6 +2321,7 @@ public class EntityCorporationAddressTest : TestBase
         var model = new Entities::EntityCorporationAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -2283,6 +2343,7 @@ public class EntityCorporationAddressTest : TestBase
         var model = new Entities::EntityCorporationAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -2297,11 +2358,13 @@ public class EntityCorporationAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Null(deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
@@ -2314,6 +2377,7 @@ public class EntityCorporationAddressTest : TestBase
         var model = new Entities::EntityCorporationAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -2329,6 +2393,7 @@ public class EntityCorporationAddressTest : TestBase
         var model = new Entities::EntityCorporationAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -3345,6 +3410,7 @@ public class EntityGovernmentAuthorityTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -3363,6 +3429,7 @@ public class EntityGovernmentAuthorityTest : TestBase
         Entities::EntityGovernmentAuthorityAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -3398,6 +3465,7 @@ public class EntityGovernmentAuthorityTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -3430,6 +3498,7 @@ public class EntityGovernmentAuthorityTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -3455,6 +3524,7 @@ public class EntityGovernmentAuthorityTest : TestBase
         Entities::EntityGovernmentAuthorityAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -3490,6 +3560,7 @@ public class EntityGovernmentAuthorityTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -3516,6 +3587,7 @@ public class EntityGovernmentAuthorityTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -3545,6 +3617,7 @@ public class EntityGovernmentAuthorityAddressTest : TestBase
         var model = new Entities::EntityGovernmentAuthorityAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -3552,11 +3625,13 @@ public class EntityGovernmentAuthorityAddressTest : TestBase
         };
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine1, model.Line1);
         Assert.Null(model.Line2);
         Assert.Equal(expectedState, model.State);
@@ -3569,6 +3644,7 @@ public class EntityGovernmentAuthorityAddressTest : TestBase
         var model = new Entities::EntityGovernmentAuthorityAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -3590,6 +3666,7 @@ public class EntityGovernmentAuthorityAddressTest : TestBase
         var model = new Entities::EntityGovernmentAuthorityAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -3604,11 +3681,13 @@ public class EntityGovernmentAuthorityAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Null(deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
@@ -3621,6 +3700,7 @@ public class EntityGovernmentAuthorityAddressTest : TestBase
         var model = new Entities::EntityGovernmentAuthorityAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -3636,6 +3716,7 @@ public class EntityGovernmentAuthorityAddressTest : TestBase
         var model = new Entities::EntityGovernmentAuthorityAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -3808,6 +3889,7 @@ public class EntityJointTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -3833,6 +3915,7 @@ public class EntityJointTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -3870,6 +3953,7 @@ public class EntityJointTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -3909,6 +3993,7 @@ public class EntityJointTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -3941,6 +4026,7 @@ public class EntityJointTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -3978,6 +4064,7 @@ public class EntityJointTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -4011,6 +4098,7 @@ public class EntityJointTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -4045,6 +4133,7 @@ public class EntityJointIndividualTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -4062,6 +4151,7 @@ public class EntityJointIndividualTest : TestBase
         Entities::EntityJointIndividualAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -4089,6 +4179,7 @@ public class EntityJointIndividualTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -4120,6 +4211,7 @@ public class EntityJointIndividualTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -4144,6 +4236,7 @@ public class EntityJointIndividualTest : TestBase
         Entities::EntityJointIndividualAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -4171,6 +4264,7 @@ public class EntityJointIndividualTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -4196,6 +4290,7 @@ public class EntityJointIndividualTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -4224,6 +4319,7 @@ public class EntityJointIndividualAddressTest : TestBase
         var model = new Entities::EntityJointIndividualAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -4231,11 +4327,13 @@ public class EntityJointIndividualAddressTest : TestBase
         };
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine1, model.Line1);
         Assert.Null(model.Line2);
         Assert.Equal(expectedState, model.State);
@@ -4248,6 +4346,7 @@ public class EntityJointIndividualAddressTest : TestBase
         var model = new Entities::EntityJointIndividualAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -4269,6 +4368,7 @@ public class EntityJointIndividualAddressTest : TestBase
         var model = new Entities::EntityJointIndividualAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -4283,11 +4383,13 @@ public class EntityJointIndividualAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Null(deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
@@ -4300,6 +4402,7 @@ public class EntityJointIndividualAddressTest : TestBase
         var model = new Entities::EntityJointIndividualAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -4315,6 +4418,7 @@ public class EntityJointIndividualAddressTest : TestBase
         var model = new Entities::EntityJointIndividualAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -4493,6 +4597,7 @@ public class EntityNaturalPersonTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -4510,6 +4615,7 @@ public class EntityNaturalPersonTest : TestBase
         Entities::EntityNaturalPersonAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -4537,6 +4643,7 @@ public class EntityNaturalPersonTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -4568,6 +4675,7 @@ public class EntityNaturalPersonTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -4592,6 +4700,7 @@ public class EntityNaturalPersonTest : TestBase
         Entities::EntityNaturalPersonAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -4619,6 +4728,7 @@ public class EntityNaturalPersonTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -4644,6 +4754,7 @@ public class EntityNaturalPersonTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -4672,6 +4783,7 @@ public class EntityNaturalPersonAddressTest : TestBase
         var model = new Entities::EntityNaturalPersonAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -4679,11 +4791,13 @@ public class EntityNaturalPersonAddressTest : TestBase
         };
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine1, model.Line1);
         Assert.Null(model.Line2);
         Assert.Equal(expectedState, model.State);
@@ -4696,6 +4810,7 @@ public class EntityNaturalPersonAddressTest : TestBase
         var model = new Entities::EntityNaturalPersonAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -4717,6 +4832,7 @@ public class EntityNaturalPersonAddressTest : TestBase
         var model = new Entities::EntityNaturalPersonAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -4731,11 +4847,13 @@ public class EntityNaturalPersonAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Null(deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
@@ -4748,6 +4866,7 @@ public class EntityNaturalPersonAddressTest : TestBase
         var model = new Entities::EntityNaturalPersonAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -4763,6 +4882,7 @@ public class EntityNaturalPersonAddressTest : TestBase
         var model = new Entities::EntityNaturalPersonAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -5452,6 +5572,7 @@ public class EntityTrustTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -5465,6 +5586,7 @@ public class EntityTrustTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -5489,6 +5611,7 @@ public class EntityTrustTest : TestBase
                         Address = new()
                         {
                             City = "New York",
+                            Country = "US",
                             Line1 = "33 Liberty Street",
                             Line2 = null,
                             State = "NY",
@@ -5511,6 +5634,7 @@ public class EntityTrustTest : TestBase
         Entities::EntityTrustAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -5525,6 +5649,7 @@ public class EntityTrustTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -5549,6 +5674,7 @@ public class EntityTrustTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -5589,6 +5715,7 @@ public class EntityTrustTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -5602,6 +5729,7 @@ public class EntityTrustTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -5626,6 +5754,7 @@ public class EntityTrustTest : TestBase
                         Address = new()
                         {
                             City = "New York",
+                            Country = "US",
                             Line1 = "33 Liberty Street",
                             Line2 = null,
                             State = "NY",
@@ -5662,6 +5791,7 @@ public class EntityTrustTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -5675,6 +5805,7 @@ public class EntityTrustTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -5699,6 +5830,7 @@ public class EntityTrustTest : TestBase
                         Address = new()
                         {
                             City = "New York",
+                            Country = "US",
                             Line1 = "33 Liberty Street",
                             Line2 = null,
                             State = "NY",
@@ -5728,6 +5860,7 @@ public class EntityTrustTest : TestBase
         Entities::EntityTrustAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -5742,6 +5875,7 @@ public class EntityTrustTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -5766,6 +5900,7 @@ public class EntityTrustTest : TestBase
                     Address = new()
                     {
                         City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
                         Line2 = null,
                         State = "NY",
@@ -5806,6 +5941,7 @@ public class EntityTrustTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -5819,6 +5955,7 @@ public class EntityTrustTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -5843,6 +5980,7 @@ public class EntityTrustTest : TestBase
                         Address = new()
                         {
                             City = "New York",
+                            Country = "US",
                             Line1 = "33 Liberty Street",
                             Line2 = null,
                             State = "NY",
@@ -5873,6 +6011,7 @@ public class EntityTrustTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -5886,6 +6025,7 @@ public class EntityTrustTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -5910,6 +6050,7 @@ public class EntityTrustTest : TestBase
                         Address = new()
                         {
                             City = "New York",
+                            Country = "US",
                             Line1 = "33 Liberty Street",
                             Line2 = null,
                             State = "NY",
@@ -5943,6 +6084,7 @@ public class EntityTrustAddressTest : TestBase
         var model = new Entities::EntityTrustAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -5950,11 +6092,13 @@ public class EntityTrustAddressTest : TestBase
         };
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine1, model.Line1);
         Assert.Null(model.Line2);
         Assert.Equal(expectedState, model.State);
@@ -5967,6 +6111,7 @@ public class EntityTrustAddressTest : TestBase
         var model = new Entities::EntityTrustAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -5988,6 +6133,7 @@ public class EntityTrustAddressTest : TestBase
         var model = new Entities::EntityTrustAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -6002,11 +6148,13 @@ public class EntityTrustAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Null(deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
@@ -6019,6 +6167,7 @@ public class EntityTrustAddressTest : TestBase
         var model = new Entities::EntityTrustAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -6034,6 +6183,7 @@ public class EntityTrustAddressTest : TestBase
         var model = new Entities::EntityTrustAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -6112,6 +6262,7 @@ public class EntityTrustGrantorTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -6129,6 +6280,7 @@ public class EntityTrustGrantorTest : TestBase
         Entities::EntityTrustGrantorAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -6156,6 +6308,7 @@ public class EntityTrustGrantorTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -6187,6 +6340,7 @@ public class EntityTrustGrantorTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -6211,6 +6365,7 @@ public class EntityTrustGrantorTest : TestBase
         Entities::EntityTrustGrantorAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -6238,6 +6393,7 @@ public class EntityTrustGrantorTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -6263,6 +6419,7 @@ public class EntityTrustGrantorTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -6291,6 +6448,7 @@ public class EntityTrustGrantorAddressTest : TestBase
         var model = new Entities::EntityTrustGrantorAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -6298,11 +6456,13 @@ public class EntityTrustGrantorAddressTest : TestBase
         };
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine1, model.Line1);
         Assert.Null(model.Line2);
         Assert.Equal(expectedState, model.State);
@@ -6315,6 +6475,7 @@ public class EntityTrustGrantorAddressTest : TestBase
         var model = new Entities::EntityTrustGrantorAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -6336,6 +6497,7 @@ public class EntityTrustGrantorAddressTest : TestBase
         var model = new Entities::EntityTrustGrantorAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -6350,11 +6512,13 @@ public class EntityTrustGrantorAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Null(deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
@@ -6367,6 +6531,7 @@ public class EntityTrustGrantorAddressTest : TestBase
         var model = new Entities::EntityTrustGrantorAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -6382,6 +6547,7 @@ public class EntityTrustGrantorAddressTest : TestBase
         var model = new Entities::EntityTrustGrantorAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -6560,6 +6726,7 @@ public class EntityTrustTrusteeTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -6582,6 +6749,7 @@ public class EntityTrustTrusteeTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -6613,6 +6781,7 @@ public class EntityTrustTrusteeTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -6649,6 +6818,7 @@ public class EntityTrustTrusteeTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -6678,6 +6848,7 @@ public class EntityTrustTrusteeTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -6709,6 +6880,7 @@ public class EntityTrustTrusteeTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -6739,6 +6911,7 @@ public class EntityTrustTrusteeTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
                     Line2 = null,
                     State = "NY",
@@ -6772,6 +6945,7 @@ public class EntityTrustTrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -6790,6 +6964,7 @@ public class EntityTrustTrusteeIndividualTest : TestBase
         Entities::EntityTrustTrusteeIndividualAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -6818,6 +6993,7 @@ public class EntityTrustTrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -6850,6 +7026,7 @@ public class EntityTrustTrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -6875,6 +7052,7 @@ public class EntityTrustTrusteeIndividualTest : TestBase
         Entities::EntityTrustTrusteeIndividualAddress expectedAddress = new()
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -6903,6 +7081,7 @@ public class EntityTrustTrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -6929,6 +7108,7 @@ public class EntityTrustTrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
                 Line2 = null,
                 State = "NY",
@@ -6958,6 +7138,7 @@ public class EntityTrustTrusteeIndividualAddressTest : TestBase
         var model = new Entities::EntityTrustTrusteeIndividualAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -6965,11 +7146,13 @@ public class EntityTrustTrusteeIndividualAddressTest : TestBase
         };
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine1, model.Line1);
         Assert.Null(model.Line2);
         Assert.Equal(expectedState, model.State);
@@ -6982,6 +7165,7 @@ public class EntityTrustTrusteeIndividualAddressTest : TestBase
         var model = new Entities::EntityTrustTrusteeIndividualAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -7004,6 +7188,7 @@ public class EntityTrustTrusteeIndividualAddressTest : TestBase
         var model = new Entities::EntityTrustTrusteeIndividualAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -7019,11 +7204,13 @@ public class EntityTrustTrusteeIndividualAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "New York";
+        string expectedCountry = "US";
         string expectedLine1 = "33 Liberty Street";
         string expectedState = "NY";
         string expectedZip = "10045";
 
         Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Null(deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
@@ -7036,6 +7223,7 @@ public class EntityTrustTrusteeIndividualAddressTest : TestBase
         var model = new Entities::EntityTrustTrusteeIndividualAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",
@@ -7051,6 +7239,7 @@ public class EntityTrustTrusteeIndividualAddressTest : TestBase
         var model = new Entities::EntityTrustTrusteeIndividualAddress
         {
             City = "New York",
+            Country = "US",
             Line1 = "33 Liberty Street",
             Line2 = null,
             State = "NY",

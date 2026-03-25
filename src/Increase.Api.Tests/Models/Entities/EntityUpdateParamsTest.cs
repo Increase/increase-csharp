@@ -19,10 +19,11 @@ public class EntityUpdateParamsTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
+                    Line2 = "Unit 2",
                     State = "NY",
                     Zip = "10045",
-                    Line2 = "Unit 2",
                 },
                 Email = "dev@stainless.com",
                 IncorporationState = "x",
@@ -48,10 +49,11 @@ public class EntityUpdateParamsTest : TestBase
                 Address = new()
                 {
                     City = "x",
+                    Country = "x",
                     Line1 = "x",
+                    Line2 = "x",
                     State = "x",
                     Zip = "x",
-                    Line2 = "x",
                 },
                 Name = "x",
             },
@@ -85,10 +87,11 @@ public class EntityUpdateParamsTest : TestBase
             Address = new()
             {
                 City = "New York",
+                Country = "US",
                 Line1 = "33 Liberty Street",
+                Line2 = "Unit 2",
                 State = "NY",
                 Zip = "10045",
-                Line2 = "Unit 2",
             },
             Email = "dev@stainless.com",
             IncorporationState = "x",
@@ -116,10 +119,11 @@ public class EntityUpdateParamsTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
+                Line2 = "x",
                 State = "x",
                 Zip = "x",
-                Line2 = "x",
             },
             Name = "x",
         };
@@ -231,10 +235,11 @@ public class EntityUpdateParamsTest : TestBase
                 Address = new()
                 {
                     City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
+                    Line2 = "Unit 2",
                     State = "NY",
                     Zip = "10045",
-                    Line2 = "Unit 2",
                 },
                 Email = "dev@stainless.com",
                 IncorporationState = "x",
@@ -260,10 +265,11 @@ public class EntityUpdateParamsTest : TestBase
                 Address = new()
                 {
                     City = "x",
+                    Country = "x",
                     Line1 = "x",
+                    Line2 = "x",
                     State = "x",
                     Zip = "x",
-                    Line2 = "x",
                 },
                 Name = "x",
             },
@@ -307,10 +313,11 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
+                Line2 = "x",
                 State = "x",
                 Zip = "x",
-                Line2 = "x",
             },
             Email = "dev@stainless.com",
             IncorporationState = "x",
@@ -322,10 +329,11 @@ public class EntityUpdateParamsCorporationTest : TestBase
         EntityUpdateParamsCorporationAddress expectedAddress = new()
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
         string expectedEmail = "dev@stainless.com";
         string expectedIncorporationState = "x";
@@ -349,10 +357,11 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
+                Line2 = "x",
                 State = "x",
                 Zip = "x",
-                Line2 = "x",
             },
             Email = "dev@stainless.com",
             IncorporationState = "x",
@@ -378,10 +387,11 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
+                Line2 = "x",
                 State = "x",
                 Zip = "x",
-                Line2 = "x",
             },
             Email = "dev@stainless.com",
             IncorporationState = "x",
@@ -400,10 +410,11 @@ public class EntityUpdateParamsCorporationTest : TestBase
         EntityUpdateParamsCorporationAddress expectedAddress = new()
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
         string expectedEmail = "dev@stainless.com";
         string expectedIncorporationState = "x";
@@ -427,10 +438,11 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
+                Line2 = "x",
                 State = "x",
                 Zip = "x",
-                Line2 = "x",
             },
             Email = "dev@stainless.com",
             IncorporationState = "x",
@@ -522,10 +534,11 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
+                Line2 = "x",
                 State = "x",
                 Zip = "x",
-                Line2 = "x",
             },
             Email = "dev@stainless.com",
             IncorporationState = "x",
@@ -548,23 +561,26 @@ public class EntityUpdateParamsCorporationAddressTest : TestBase
         var model = new EntityUpdateParamsCorporationAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
 
         string expectedCity = "x";
+        string expectedCountry = "x";
         string expectedLine1 = "x";
+        string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
-        string expectedLine2 = "x";
 
         Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine1, model.Line1);
+        Assert.Equal(expectedLine2, model.Line2);
         Assert.Equal(expectedState, model.State);
         Assert.Equal(expectedZip, model.Zip);
-        Assert.Equal(expectedLine2, model.Line2);
     }
 
     [Fact]
@@ -573,10 +589,11 @@ public class EntityUpdateParamsCorporationAddressTest : TestBase
         var model = new EntityUpdateParamsCorporationAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -594,10 +611,11 @@ public class EntityUpdateParamsCorporationAddressTest : TestBase
         var model = new EntityUpdateParamsCorporationAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -608,16 +626,18 @@ public class EntityUpdateParamsCorporationAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "x";
+        string expectedCountry = "x";
         string expectedLine1 = "x";
+        string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
-        string expectedLine2 = "x";
 
         Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Equal(expectedLine2, deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
         Assert.Equal(expectedZip, deserialized.Zip);
-        Assert.Equal(expectedLine2, deserialized.Line2);
     }
 
     [Fact]
@@ -626,10 +646,11 @@ public class EntityUpdateParamsCorporationAddressTest : TestBase
         var model = new EntityUpdateParamsCorporationAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
 
         model.Validate();
@@ -641,13 +662,16 @@ public class EntityUpdateParamsCorporationAddressTest : TestBase
         var model = new EntityUpdateParamsCorporationAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "x",
-            Zip = "x",
         };
 
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
     }
 
     [Fact]
@@ -656,9 +680,8 @@ public class EntityUpdateParamsCorporationAddressTest : TestBase
         var model = new EntityUpdateParamsCorporationAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "x",
-            Zip = "x",
         };
 
         model.Validate();
@@ -670,16 +693,21 @@ public class EntityUpdateParamsCorporationAddressTest : TestBase
         var model = new EntityUpdateParamsCorporationAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "x",
-            Zip = "x",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
+            State = null,
+            Zip = null,
         };
 
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
     }
 
     [Fact]
@@ -688,12 +716,13 @@ public class EntityUpdateParamsCorporationAddressTest : TestBase
         var model = new EntityUpdateParamsCorporationAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "x",
-            Zip = "x",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
+            State = null,
+            Zip = null,
         };
 
         model.Validate();
@@ -705,10 +734,11 @@ public class EntityUpdateParamsCorporationAddressTest : TestBase
         var model = new EntityUpdateParamsCorporationAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
 
         EntityUpdateParamsCorporationAddress copied = new(model);
@@ -1087,10 +1117,11 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
+                Line2 = "x",
                 State = "x",
                 Zip = "x",
-                Line2 = "x",
             },
             Name = "x",
         };
@@ -1098,10 +1129,11 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
         EntityUpdateParamsNaturalPersonAddress expectedAddress = new()
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
         string expectedName = "x";
 
@@ -1117,10 +1149,11 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
+                Line2 = "x",
                 State = "x",
                 Zip = "x",
-                Line2 = "x",
             },
             Name = "x",
         };
@@ -1142,10 +1175,11 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
+                Line2 = "x",
                 State = "x",
                 Zip = "x",
-                Line2 = "x",
             },
             Name = "x",
         };
@@ -1160,10 +1194,11 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
         EntityUpdateParamsNaturalPersonAddress expectedAddress = new()
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
         string expectedName = "x";
 
@@ -1179,10 +1214,11 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
+                Line2 = "x",
                 State = "x",
                 Zip = "x",
-                Line2 = "x",
             },
             Name = "x",
         };
@@ -1246,10 +1282,11 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
+                Line2 = "x",
                 State = "x",
                 Zip = "x",
-                Line2 = "x",
             },
             Name = "x",
         };
@@ -1268,23 +1305,26 @@ public class EntityUpdateParamsNaturalPersonAddressTest : TestBase
         var model = new EntityUpdateParamsNaturalPersonAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
 
         string expectedCity = "x";
+        string expectedCountry = "x";
         string expectedLine1 = "x";
+        string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
-        string expectedLine2 = "x";
 
         Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine1, model.Line1);
+        Assert.Equal(expectedLine2, model.Line2);
         Assert.Equal(expectedState, model.State);
         Assert.Equal(expectedZip, model.Zip);
-        Assert.Equal(expectedLine2, model.Line2);
     }
 
     [Fact]
@@ -1293,10 +1333,11 @@ public class EntityUpdateParamsNaturalPersonAddressTest : TestBase
         var model = new EntityUpdateParamsNaturalPersonAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1314,10 +1355,11 @@ public class EntityUpdateParamsNaturalPersonAddressTest : TestBase
         var model = new EntityUpdateParamsNaturalPersonAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1328,16 +1370,18 @@ public class EntityUpdateParamsNaturalPersonAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "x";
+        string expectedCountry = "x";
         string expectedLine1 = "x";
+        string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
-        string expectedLine2 = "x";
 
         Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Equal(expectedLine2, deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
         Assert.Equal(expectedZip, deserialized.Zip);
-        Assert.Equal(expectedLine2, deserialized.Line2);
     }
 
     [Fact]
@@ -1346,10 +1390,11 @@ public class EntityUpdateParamsNaturalPersonAddressTest : TestBase
         var model = new EntityUpdateParamsNaturalPersonAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
 
         model.Validate();
@@ -1361,13 +1406,16 @@ public class EntityUpdateParamsNaturalPersonAddressTest : TestBase
         var model = new EntityUpdateParamsNaturalPersonAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "x",
-            Zip = "x",
         };
 
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
     }
 
     [Fact]
@@ -1376,9 +1424,8 @@ public class EntityUpdateParamsNaturalPersonAddressTest : TestBase
         var model = new EntityUpdateParamsNaturalPersonAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "x",
-            Zip = "x",
         };
 
         model.Validate();
@@ -1390,16 +1437,21 @@ public class EntityUpdateParamsNaturalPersonAddressTest : TestBase
         var model = new EntityUpdateParamsNaturalPersonAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "x",
-            Zip = "x",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
+            State = null,
+            Zip = null,
         };
 
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
     }
 
     [Fact]
@@ -1408,12 +1460,13 @@ public class EntityUpdateParamsNaturalPersonAddressTest : TestBase
         var model = new EntityUpdateParamsNaturalPersonAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "x",
-            Zip = "x",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
+            State = null,
+            Zip = null,
         };
 
         model.Validate();
@@ -1425,10 +1478,11 @@ public class EntityUpdateParamsNaturalPersonAddressTest : TestBase
         var model = new EntityUpdateParamsNaturalPersonAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
+            Line2 = "x",
             State = "x",
             Zip = "x",
-            Line2 = "x",
         };
 
         EntityUpdateParamsNaturalPersonAddress copied = new(model);
