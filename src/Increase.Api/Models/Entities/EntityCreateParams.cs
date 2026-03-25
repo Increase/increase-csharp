@@ -500,6 +500,20 @@ public sealed record class Corporation : JsonModel
     }
 
     /// <summary>
+    /// The legal identifier of the corporation. This is usually the Employer Identification
+    /// Number (EIN).
+    /// </summary>
+    public required LegalIdentifier LegalIdentifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<LegalIdentifier>("legal_identifier");
+        }
+        init { this._rawData.Set("legal_identifier", value); }
+    }
+
+    /// <summary>
     /// The legal name of the corporation.
     /// </summary>
     public required string Name
@@ -510,19 +524,6 @@ public sealed record class Corporation : JsonModel
             return this._rawData.GetNotNullClass<string>("name");
         }
         init { this._rawData.Set("name", value); }
-    }
-
-    /// <summary>
-    /// The Employer Identification Number (EIN) for the corporation.
-    /// </summary>
-    public required string TaxIdentifier
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("tax_identifier");
-        }
-        init { this._rawData.Set("tax_identifier", value); }
     }
 
     /// <summary>
@@ -646,8 +647,8 @@ public sealed record class Corporation : JsonModel
         {
             item.Validate();
         }
+        this.LegalIdentifier.Validate();
         _ = this.Name;
-        _ = this.TaxIdentifier;
         this.BeneficialOwnershipExemptionReason?.Validate();
         _ = this.Email;
         _ = this.IncorporationState;
@@ -1806,6 +1807,148 @@ sealed class ProngConverter : JsonConverter<Prong>
 }
 
 /// <summary>
+/// The legal identifier of the corporation. This is usually the Employer Identification
+/// Number (EIN).
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<LegalIdentifier, LegalIdentifierFromRaw>))]
+public sealed record class LegalIdentifier : JsonModel
+{
+    /// <summary>
+    /// The legal identifier.
+    /// </summary>
+    public required string Value
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("value");
+        }
+        init { this._rawData.Set("value", value); }
+    }
+
+    /// <summary>
+    /// The category of the legal identifier. If not provided, the default is `us_employer_identification_number`.
+    /// </summary>
+    public ApiEnum<string, Category>? Category
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, Category>>("category");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("category", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Value;
+        this.Category?.Validate();
+    }
+
+    public LegalIdentifier() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public LegalIdentifier(LegalIdentifier legalIdentifier)
+        : base(legalIdentifier) { }
+#pragma warning restore CS8618
+
+    public LegalIdentifier(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    LegalIdentifier(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="LegalIdentifierFromRaw.FromRawUnchecked"/>
+    public static LegalIdentifier FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public LegalIdentifier(string value)
+        : this()
+    {
+        this.Value = value;
+    }
+}
+
+class LegalIdentifierFromRaw : IFromRawJson<LegalIdentifier>
+{
+    /// <inheritdoc/>
+    public LegalIdentifier FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        LegalIdentifier.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The category of the legal identifier. If not provided, the default is `us_employer_identification_number`.
+/// </summary>
+[JsonConverter(typeof(CategoryConverter))]
+public enum Category
+{
+    /// <summary>
+    /// The Employer Identification Number (EIN) for the company. The EIN is a 9-digit
+    /// number assigned by the IRS.
+    /// </summary>
+    UsEmployerIdentificationNumber,
+
+    /// <summary>
+    /// A legal identifier issued by a foreign government, like a tax identification
+    /// number or registration number.
+    /// </summary>
+    Other,
+}
+
+sealed class CategoryConverter : JsonConverter<Category>
+{
+    public override Category Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "us_employer_identification_number" => Category.UsEmployerIdentificationNumber,
+            "other" => Category.Other,
+            _ => (Category)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Category value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Category.UsEmployerIdentificationNumber => "us_employer_identification_number",
+                Category.Other => "other",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
 /// If the entity is exempt from the requirement to submit beneficial owners, provide
 /// the justification. If a reason is provided, you do not need to submit a list
 /// of beneficial owners.
@@ -1926,12 +2069,14 @@ public sealed record class GovernmentAuthority : JsonModel
     /// <summary>
     /// The category of the government authority.
     /// </summary>
-    public required ApiEnum<string, Category> Category
+    public required ApiEnum<string, GovernmentAuthorityCategory> Category
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<ApiEnum<string, Category>>("category");
+            return this._rawData.GetNotNullClass<ApiEnum<string, GovernmentAuthorityCategory>>(
+                "category"
+            );
         }
         init { this._rawData.Set("category", value); }
     }
@@ -2234,8 +2379,8 @@ class AuthorizedPersonFromRaw : IFromRawJson<AuthorizedPerson>
 /// <summary>
 /// The category of the government authority.
 /// </summary>
-[JsonConverter(typeof(CategoryConverter))]
-public enum Category
+[JsonConverter(typeof(GovernmentAuthorityCategoryConverter))]
+public enum GovernmentAuthorityCategory
 {
     /// <summary>
     /// A municipality.
@@ -2258,9 +2403,9 @@ public enum Category
     FederalAgency,
 }
 
-sealed class CategoryConverter : JsonConverter<Category>
+sealed class GovernmentAuthorityCategoryConverter : JsonConverter<GovernmentAuthorityCategory>
 {
-    public override Category Read(
+    public override GovernmentAuthorityCategory Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -2268,24 +2413,28 @@ sealed class CategoryConverter : JsonConverter<Category>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "municipality" => Category.Municipality,
-            "state_agency" => Category.StateAgency,
-            "state_government" => Category.StateGovernment,
-            "federal_agency" => Category.FederalAgency,
-            _ => (Category)(-1),
+            "municipality" => GovernmentAuthorityCategory.Municipality,
+            "state_agency" => GovernmentAuthorityCategory.StateAgency,
+            "state_government" => GovernmentAuthorityCategory.StateGovernment,
+            "federal_agency" => GovernmentAuthorityCategory.FederalAgency,
+            _ => (GovernmentAuthorityCategory)(-1),
         };
     }
 
-    public override void Write(Utf8JsonWriter writer, Category value, JsonSerializerOptions options)
+    public override void Write(
+        Utf8JsonWriter writer,
+        GovernmentAuthorityCategory value,
+        JsonSerializerOptions options
+    )
     {
         JsonSerializer.Serialize(
             writer,
             value switch
             {
-                Category.Municipality => "municipality",
-                Category.StateAgency => "state_agency",
-                Category.StateGovernment => "state_government",
-                Category.FederalAgency => "federal_agency",
+                GovernmentAuthorityCategory.Municipality => "municipality",
+                GovernmentAuthorityCategory.StateAgency => "state_agency",
+                GovernmentAuthorityCategory.StateGovernment => "state_government",
+                GovernmentAuthorityCategory.FederalAgency => "federal_agency",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

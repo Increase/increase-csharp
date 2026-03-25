@@ -62,8 +62,13 @@ public class EntityTest : TestBase
                 Email = null,
                 IncorporationState = "NY",
                 IndustryCode = null,
+                LegalIdentifier = new()
+                {
+                    Category =
+                        Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                    Value = "602214076",
+                },
                 Name = "National Phonograph Company",
-                TaxIdentifier = "602214076",
                 Website = "https://example.com",
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -295,8 +300,13 @@ public class EntityTest : TestBase
             Email = null,
             IncorporationState = "NY",
             IndustryCode = null,
+            LegalIdentifier = new()
+            {
+                Category =
+                    Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                Value = "602214076",
+            },
             Name = "National Phonograph Company",
-            TaxIdentifier = "602214076",
             Website = "https://example.com",
         };
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
@@ -557,8 +567,13 @@ public class EntityTest : TestBase
                 Email = null,
                 IncorporationState = "NY",
                 IndustryCode = null,
+                LegalIdentifier = new()
+                {
+                    Category =
+                        Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                    Value = "602214076",
+                },
                 Name = "National Phonograph Company",
-                TaxIdentifier = "602214076",
                 Website = "https://example.com",
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -804,8 +819,13 @@ public class EntityTest : TestBase
                 Email = null,
                 IncorporationState = "NY",
                 IndustryCode = null,
+                LegalIdentifier = new()
+                {
+                    Category =
+                        Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                    Value = "602214076",
+                },
                 Name = "National Phonograph Company",
-                TaxIdentifier = "602214076",
                 Website = "https://example.com",
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -1044,8 +1064,13 @@ public class EntityTest : TestBase
             Email = null,
             IncorporationState = "NY",
             IndustryCode = null,
+            LegalIdentifier = new()
+            {
+                Category =
+                    Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                Value = "602214076",
+            },
             Name = "National Phonograph Company",
-            TaxIdentifier = "602214076",
             Website = "https://example.com",
         };
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
@@ -1306,8 +1331,13 @@ public class EntityTest : TestBase
                 Email = null,
                 IncorporationState = "NY",
                 IndustryCode = null,
+                LegalIdentifier = new()
+                {
+                    Category =
+                        Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                    Value = "602214076",
+                },
                 Name = "National Phonograph Company",
-                TaxIdentifier = "602214076",
                 Website = "https://example.com",
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -1547,8 +1577,13 @@ public class EntityTest : TestBase
                 Email = null,
                 IncorporationState = "NY",
                 IndustryCode = null,
+                LegalIdentifier = new()
+                {
+                    Category =
+                        Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                    Value = "602214076",
+                },
                 Name = "National Phonograph Company",
-                TaxIdentifier = "602214076",
                 Website = "https://example.com",
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -1790,8 +1825,13 @@ public class EntityCorporationTest : TestBase
             Email = "email",
             IncorporationState = "incorporation_state",
             IndustryCode = "industry_code",
+            LegalIdentifier = new()
+            {
+                Category =
+                    Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                Value = "value",
+            },
             Name = "name",
-            TaxIdentifier = "tax_identifier",
             Website = "website",
         };
 
@@ -1839,8 +1879,13 @@ public class EntityCorporationTest : TestBase
         string expectedEmail = "email";
         string expectedIncorporationState = "incorporation_state";
         string expectedIndustryCode = "industry_code";
+        Entities::EntityCorporationLegalIdentifier expectedLegalIdentifier = new()
+        {
+            Category =
+                Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            Value = "value",
+        };
         string expectedName = "name";
-        string expectedTaxIdentifier = "tax_identifier";
         string expectedWebsite = "website";
 
         Assert.Equal(expectedAddress, model.Address);
@@ -1852,8 +1897,8 @@ public class EntityCorporationTest : TestBase
         Assert.Equal(expectedEmail, model.Email);
         Assert.Equal(expectedIncorporationState, model.IncorporationState);
         Assert.Equal(expectedIndustryCode, model.IndustryCode);
+        Assert.Equal(expectedLegalIdentifier, model.LegalIdentifier);
         Assert.Equal(expectedName, model.Name);
-        Assert.Equal(expectedTaxIdentifier, model.TaxIdentifier);
         Assert.Equal(expectedWebsite, model.Website);
     }
 
@@ -1906,8 +1951,13 @@ public class EntityCorporationTest : TestBase
             Email = "email",
             IncorporationState = "incorporation_state",
             IndustryCode = "industry_code",
+            LegalIdentifier = new()
+            {
+                Category =
+                    Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                Value = "value",
+            },
             Name = "name",
-            TaxIdentifier = "tax_identifier",
             Website = "website",
         };
 
@@ -1969,8 +2019,13 @@ public class EntityCorporationTest : TestBase
             Email = "email",
             IncorporationState = "incorporation_state",
             IndustryCode = "industry_code",
+            LegalIdentifier = new()
+            {
+                Category =
+                    Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                Value = "value",
+            },
             Name = "name",
-            TaxIdentifier = "tax_identifier",
             Website = "website",
         };
 
@@ -2025,8 +2080,13 @@ public class EntityCorporationTest : TestBase
         string expectedEmail = "email";
         string expectedIncorporationState = "incorporation_state";
         string expectedIndustryCode = "industry_code";
+        Entities::EntityCorporationLegalIdentifier expectedLegalIdentifier = new()
+        {
+            Category =
+                Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            Value = "value",
+        };
         string expectedName = "name";
-        string expectedTaxIdentifier = "tax_identifier";
         string expectedWebsite = "website";
 
         Assert.Equal(expectedAddress, deserialized.Address);
@@ -2038,8 +2098,8 @@ public class EntityCorporationTest : TestBase
         Assert.Equal(expectedEmail, deserialized.Email);
         Assert.Equal(expectedIncorporationState, deserialized.IncorporationState);
         Assert.Equal(expectedIndustryCode, deserialized.IndustryCode);
+        Assert.Equal(expectedLegalIdentifier, deserialized.LegalIdentifier);
         Assert.Equal(expectedName, deserialized.Name);
-        Assert.Equal(expectedTaxIdentifier, deserialized.TaxIdentifier);
         Assert.Equal(expectedWebsite, deserialized.Website);
     }
 
@@ -2092,8 +2152,13 @@ public class EntityCorporationTest : TestBase
             Email = "email",
             IncorporationState = "incorporation_state",
             IndustryCode = "industry_code",
+            LegalIdentifier = new()
+            {
+                Category =
+                    Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                Value = "value",
+            },
             Name = "name",
-            TaxIdentifier = "tax_identifier",
             Website = "website",
         };
 
@@ -2149,8 +2214,13 @@ public class EntityCorporationTest : TestBase
             Email = "email",
             IncorporationState = "incorporation_state",
             IndustryCode = "industry_code",
+            LegalIdentifier = new()
+            {
+                Category =
+                    Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                Value = "value",
+            },
             Name = "name",
-            TaxIdentifier = "tax_identifier",
             Website = "website",
         };
 
@@ -3110,6 +3180,155 @@ public class EntityCorporationBeneficialOwnerProngTest : TestBase
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, Entities::EntityCorporationBeneficialOwnerProng>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class EntityCorporationLegalIdentifierTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Entities::EntityCorporationLegalIdentifier
+        {
+            Category =
+                Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            Value = "value",
+        };
+
+        ApiEnum<string, Entities::EntityCorporationLegalIdentifierCategory> expectedCategory =
+            Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber;
+        string expectedValue = "value";
+
+        Assert.Equal(expectedCategory, model.Category);
+        Assert.Equal(expectedValue, model.Value);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Entities::EntityCorporationLegalIdentifier
+        {
+            Category =
+                Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            Value = "value",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::EntityCorporationLegalIdentifier>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Entities::EntityCorporationLegalIdentifier
+        {
+            Category =
+                Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            Value = "value",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::EntityCorporationLegalIdentifier>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<string, Entities::EntityCorporationLegalIdentifierCategory> expectedCategory =
+            Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber;
+        string expectedValue = "value";
+
+        Assert.Equal(expectedCategory, deserialized.Category);
+        Assert.Equal(expectedValue, deserialized.Value);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Entities::EntityCorporationLegalIdentifier
+        {
+            Category =
+                Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            Value = "value",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Entities::EntityCorporationLegalIdentifier
+        {
+            Category =
+                Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            Value = "value",
+        };
+
+        Entities::EntityCorporationLegalIdentifier copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityCorporationLegalIdentifierCategoryTest : TestBase
+{
+    [Theory]
+    [InlineData(Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber)]
+    [InlineData(Entities::EntityCorporationLegalIdentifierCategory.Other)]
+    public void Validation_Works(Entities::EntityCorporationLegalIdentifierCategory rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Entities::EntityCorporationLegalIdentifierCategory> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Entities::EntityCorporationLegalIdentifierCategory>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber)]
+    [InlineData(Entities::EntityCorporationLegalIdentifierCategory.Other)]
+    public void SerializationRoundtrip_Works(
+        Entities::EntityCorporationLegalIdentifierCategory rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Entities::EntityCorporationLegalIdentifierCategory> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Entities::EntityCorporationLegalIdentifierCategory>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Entities::EntityCorporationLegalIdentifierCategory>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Entities::EntityCorporationLegalIdentifierCategory>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
