@@ -1243,6 +1243,7 @@ public abstract record class ModelBase
                 Entities::EntityCorporationBeneficialOwnerIndividualIdentificationMethod
             >(),
             new ApiEnumConverter<string, Entities::EntityCorporationBeneficialOwnerProng>(),
+            new ApiEnumConverter<string, Entities::EntityCorporationLegalIdentifierCategory>(),
             new ApiEnumConverter<string, Entities::EntityGovernmentAuthorityCategory>(),
             new ApiEnumConverter<string, Entities::EntityJointIndividualIdentificationMethod>(),
             new ApiEnumConverter<string, Entities::EntityNaturalPersonIdentificationMethod>(),
@@ -1265,8 +1266,9 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Entities::Structure>(),
             new ApiEnumConverter<string, Entities::Method>(),
             new ApiEnumConverter<string, Entities::Prong>(),
-            new ApiEnumConverter<string, Entities::BeneficialOwnershipExemptionReason>(),
             new ApiEnumConverter<string, Entities::Category>(),
+            new ApiEnumConverter<string, Entities::BeneficialOwnershipExemptionReason>(),
+            new ApiEnumConverter<string, Entities::GovernmentAuthorityCategory>(),
             new ApiEnumConverter<string, Entities::JointIndividualIdentificationMethod>(),
             new ApiEnumConverter<string, Entities::NaturalPersonIdentificationMethod>(),
             new ApiEnumConverter<string, Entities::Rating>(),

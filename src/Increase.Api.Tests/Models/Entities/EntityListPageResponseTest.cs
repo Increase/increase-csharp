@@ -65,8 +65,13 @@ public class EntityListPageResponseTest : TestBase
                         Email = null,
                         IncorporationState = "NY",
                         IndustryCode = null,
+                        LegalIdentifier = new()
+                        {
+                            Category =
+                                Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                            Value = "602214076",
+                        },
                         Name = "National Phonograph Company",
-                        TaxIdentifier = "602214076",
                         Website = "https://example.com",
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -306,8 +311,13 @@ public class EntityListPageResponseTest : TestBase
                     Email = null,
                     IncorporationState = "NY",
                     IndustryCode = null,
+                    LegalIdentifier = new()
+                    {
+                        Category =
+                            Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                        Value = "602214076",
+                    },
                     Name = "National Phonograph Company",
-                    TaxIdentifier = "602214076",
                     Website = "https://example.com",
                 },
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -559,8 +569,13 @@ public class EntityListPageResponseTest : TestBase
                         Email = null,
                         IncorporationState = "NY",
                         IndustryCode = null,
+                        LegalIdentifier = new()
+                        {
+                            Category =
+                                Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                            Value = "602214076",
+                        },
                         Name = "National Phonograph Company",
-                        TaxIdentifier = "602214076",
                         Website = "https://example.com",
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -814,8 +829,13 @@ public class EntityListPageResponseTest : TestBase
                         Email = null,
                         IncorporationState = "NY",
                         IndustryCode = null,
+                        LegalIdentifier = new()
+                        {
+                            Category =
+                                Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                            Value = "602214076",
+                        },
                         Name = "National Phonograph Company",
-                        TaxIdentifier = "602214076",
                         Website = "https://example.com",
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -1062,8 +1082,13 @@ public class EntityListPageResponseTest : TestBase
                     Email = null,
                     IncorporationState = "NY",
                     IndustryCode = null,
+                    LegalIdentifier = new()
+                    {
+                        Category =
+                            Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                        Value = "602214076",
+                    },
                     Name = "National Phonograph Company",
-                    TaxIdentifier = "602214076",
                     Website = "https://example.com",
                 },
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -1315,8 +1340,13 @@ public class EntityListPageResponseTest : TestBase
                         Email = null,
                         IncorporationState = "NY",
                         IndustryCode = null,
+                        LegalIdentifier = new()
+                        {
+                            Category =
+                                Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                            Value = "602214076",
+                        },
                         Name = "National Phonograph Company",
-                        TaxIdentifier = "602214076",
                         Website = "https://example.com",
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -1564,8 +1594,13 @@ public class EntityListPageResponseTest : TestBase
                         Email = null,
                         IncorporationState = "NY",
                         IndustryCode = null,
+                        LegalIdentifier = new()
+                        {
+                            Category =
+                                Entities::EntityCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                            Value = "602214076",
+                        },
                         Name = "National Phonograph Company",
-                        TaxIdentifier = "602214076",
                         Website = "https://example.com",
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
