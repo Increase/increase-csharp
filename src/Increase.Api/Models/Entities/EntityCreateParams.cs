@@ -699,7 +699,7 @@ class CorporationFromRaw : IFromRawJson<Corporation>
 public sealed record class Address : JsonModel
 {
     /// <summary>
-    /// The city of the address.
+    /// The city, district, town, or village of the address.
     /// </summary>
     public required string City
     {
@@ -709,6 +709,19 @@ public sealed record class Address : JsonModel
             return this._rawData.GetNotNullClass<string>("city");
         }
         init { this._rawData.Set("city", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
     }
 
     /// <summary>
@@ -722,33 +735,6 @@ public sealed record class Address : JsonModel
             return this._rawData.GetNotNullClass<string>("line1");
         }
         init { this._rawData.Set("line1", value); }
-    }
-
-    /// <summary>
-    /// The two-letter United States Postal Service (USPS) abbreviation for the state
-    /// of the address.
-    /// </summary>
-    public required string State
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("state");
-        }
-        init { this._rawData.Set("state", value); }
-    }
-
-    /// <summary>
-    /// The ZIP code of the address.
-    /// </summary>
-    public required string Zip
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("zip");
-        }
-        init { this._rawData.Set("zip", value); }
     }
 
     /// <summary>
@@ -772,14 +758,58 @@ public sealed record class Address : JsonModel
         }
     }
 
+    /// <summary>
+    /// The two-letter United States Postal Service (USPS) abbreviation for the US
+    /// state, province, or region of the address. Required in certain countries.
+    /// </summary>
+    public string? State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("state");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("state", value);
+        }
+    }
+
+    /// <summary>
+    /// The ZIP or postal code of the address. Required in certain countries.
+    /// </summary>
+    public string? Zip
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("zip");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("zip", value);
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         _ = this.City;
+        _ = this.Country;
         _ = this.Line1;
+        _ = this.Line2;
         _ = this.State;
         _ = this.Zip;
-        _ = this.Line2;
     }
 
     public Address() { }
@@ -2652,7 +2682,7 @@ class JointIndividualFromRaw : IFromRawJson<JointIndividual>
 public sealed record class JointIndividualAddress : JsonModel
 {
     /// <summary>
-    /// The city of the address.
+    /// The city, district, town, or village of the address.
     /// </summary>
     public required string City
     {
@@ -2662,6 +2692,19 @@ public sealed record class JointIndividualAddress : JsonModel
             return this._rawData.GetNotNullClass<string>("city");
         }
         init { this._rawData.Set("city", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
     }
 
     /// <summary>
@@ -2675,33 +2718,6 @@ public sealed record class JointIndividualAddress : JsonModel
             return this._rawData.GetNotNullClass<string>("line1");
         }
         init { this._rawData.Set("line1", value); }
-    }
-
-    /// <summary>
-    /// The two-letter United States Postal Service (USPS) abbreviation for the state
-    /// of the address.
-    /// </summary>
-    public required string State
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("state");
-        }
-        init { this._rawData.Set("state", value); }
-    }
-
-    /// <summary>
-    /// The ZIP code of the address.
-    /// </summary>
-    public required string Zip
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("zip");
-        }
-        init { this._rawData.Set("zip", value); }
     }
 
     /// <summary>
@@ -2725,14 +2741,58 @@ public sealed record class JointIndividualAddress : JsonModel
         }
     }
 
+    /// <summary>
+    /// The two-letter United States Postal Service (USPS) abbreviation for the US
+    /// state, province, or region of the address. Required in certain countries.
+    /// </summary>
+    public string? State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("state");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("state", value);
+        }
+    }
+
+    /// <summary>
+    /// The ZIP or postal code of the address. Required in certain countries.
+    /// </summary>
+    public string? Zip
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("zip");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("zip", value);
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         _ = this.City;
+        _ = this.Country;
         _ = this.Line1;
+        _ = this.Line2;
         _ = this.State;
         _ = this.Zip;
-        _ = this.Line2;
     }
 
     public JointIndividualAddress() { }
@@ -3516,7 +3576,7 @@ class NaturalPersonFromRaw : IFromRawJson<NaturalPerson>
 public sealed record class NaturalPersonAddress : JsonModel
 {
     /// <summary>
-    /// The city of the address.
+    /// The city, district, town, or village of the address.
     /// </summary>
     public required string City
     {
@@ -3526,6 +3586,19 @@ public sealed record class NaturalPersonAddress : JsonModel
             return this._rawData.GetNotNullClass<string>("city");
         }
         init { this._rawData.Set("city", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
     }
 
     /// <summary>
@@ -3539,33 +3612,6 @@ public sealed record class NaturalPersonAddress : JsonModel
             return this._rawData.GetNotNullClass<string>("line1");
         }
         init { this._rawData.Set("line1", value); }
-    }
-
-    /// <summary>
-    /// The two-letter United States Postal Service (USPS) abbreviation for the state
-    /// of the address.
-    /// </summary>
-    public required string State
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("state");
-        }
-        init { this._rawData.Set("state", value); }
-    }
-
-    /// <summary>
-    /// The ZIP code of the address.
-    /// </summary>
-    public required string Zip
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("zip");
-        }
-        init { this._rawData.Set("zip", value); }
     }
 
     /// <summary>
@@ -3589,14 +3635,58 @@ public sealed record class NaturalPersonAddress : JsonModel
         }
     }
 
+    /// <summary>
+    /// The two-letter United States Postal Service (USPS) abbreviation for the US
+    /// state, province, or region of the address. Required in certain countries.
+    /// </summary>
+    public string? State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("state");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("state", value);
+        }
+    }
+
+    /// <summary>
+    /// The ZIP or postal code of the address. Required in certain countries.
+    /// </summary>
+    public string? Zip
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("zip");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("zip", value);
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         _ = this.City;
+        _ = this.Country;
         _ = this.Line1;
+        _ = this.Line2;
         _ = this.State;
         _ = this.Zip;
-        _ = this.Line2;
     }
 
     public NaturalPersonAddress() { }
@@ -5332,7 +5422,7 @@ class TrusteeIndividualFromRaw : IFromRawJson<TrusteeIndividual>
 public sealed record class TrusteeIndividualAddress : JsonModel
 {
     /// <summary>
-    /// The city of the address.
+    /// The city, district, town, or village of the address.
     /// </summary>
     public required string City
     {
@@ -5342,6 +5432,19 @@ public sealed record class TrusteeIndividualAddress : JsonModel
             return this._rawData.GetNotNullClass<string>("city");
         }
         init { this._rawData.Set("city", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
     }
 
     /// <summary>
@@ -5355,33 +5458,6 @@ public sealed record class TrusteeIndividualAddress : JsonModel
             return this._rawData.GetNotNullClass<string>("line1");
         }
         init { this._rawData.Set("line1", value); }
-    }
-
-    /// <summary>
-    /// The two-letter United States Postal Service (USPS) abbreviation for the state
-    /// of the address.
-    /// </summary>
-    public required string State
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("state");
-        }
-        init { this._rawData.Set("state", value); }
-    }
-
-    /// <summary>
-    /// The ZIP code of the address.
-    /// </summary>
-    public required string Zip
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("zip");
-        }
-        init { this._rawData.Set("zip", value); }
     }
 
     /// <summary>
@@ -5405,14 +5481,58 @@ public sealed record class TrusteeIndividualAddress : JsonModel
         }
     }
 
+    /// <summary>
+    /// The two-letter United States Postal Service (USPS) abbreviation for the US
+    /// state, province, or region of the address. Required in certain countries.
+    /// </summary>
+    public string? State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("state");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("state", value);
+        }
+    }
+
+    /// <summary>
+    /// The ZIP or postal code of the address. Required in certain countries.
+    /// </summary>
+    public string? Zip
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("zip");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("zip", value);
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         _ = this.City;
+        _ = this.Country;
         _ = this.Line1;
+        _ = this.Line2;
         _ = this.State;
         _ = this.Zip;
-        _ = this.Line2;
     }
 
     public TrusteeIndividualAddress() { }
@@ -6198,7 +6318,7 @@ class GrantorFromRaw : IFromRawJson<Grantor>
 public sealed record class GrantorAddress : JsonModel
 {
     /// <summary>
-    /// The city of the address.
+    /// The city, district, town, or village of the address.
     /// </summary>
     public required string City
     {
@@ -6208,6 +6328,19 @@ public sealed record class GrantorAddress : JsonModel
             return this._rawData.GetNotNullClass<string>("city");
         }
         init { this._rawData.Set("city", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
     }
 
     /// <summary>
@@ -6221,33 +6354,6 @@ public sealed record class GrantorAddress : JsonModel
             return this._rawData.GetNotNullClass<string>("line1");
         }
         init { this._rawData.Set("line1", value); }
-    }
-
-    /// <summary>
-    /// The two-letter United States Postal Service (USPS) abbreviation for the state
-    /// of the address.
-    /// </summary>
-    public required string State
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("state");
-        }
-        init { this._rawData.Set("state", value); }
-    }
-
-    /// <summary>
-    /// The ZIP code of the address.
-    /// </summary>
-    public required string Zip
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("zip");
-        }
-        init { this._rawData.Set("zip", value); }
     }
 
     /// <summary>
@@ -6271,14 +6377,58 @@ public sealed record class GrantorAddress : JsonModel
         }
     }
 
+    /// <summary>
+    /// The two-letter United States Postal Service (USPS) abbreviation for the US
+    /// state, province, or region of the address. Required in certain countries.
+    /// </summary>
+    public string? State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("state");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("state", value);
+        }
+    }
+
+    /// <summary>
+    /// The ZIP or postal code of the address. Required in certain countries.
+    /// </summary>
+    public string? Zip
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("zip");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("zip", value);
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         _ = this.City;
+        _ = this.Country;
         _ = this.Line1;
+        _ = this.Line2;
         _ = this.State;
         _ = this.Zip;
-        _ = this.Line2;
     }
 
     public GrantorAddress() { }
