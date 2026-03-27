@@ -411,6 +411,30 @@ public sealed record class EntityUpdateParamsCorporation : JsonModel
     }
 
     /// <summary>
+    /// The legal identifier of the corporation. This is usually the Employer Identification
+    /// Number (EIN).
+    /// </summary>
+    public EntityUpdateParamsCorporationLegalIdentifier? LegalIdentifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsCorporationLegalIdentifier>(
+                "legal_identifier"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("legal_identifier", value);
+        }
+    }
+
+    /// <summary>
     /// The legal name of the corporation.
     /// </summary>
     public string? Name
@@ -431,27 +455,6 @@ public sealed record class EntityUpdateParamsCorporation : JsonModel
         }
     }
 
-    /// <summary>
-    /// The Employer Identification Number (EIN) for the corporation.
-    /// </summary>
-    public string? TaxIdentifier
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("tax_identifier");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set("tax_identifier", value);
-        }
-    }
-
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -459,8 +462,8 @@ public sealed record class EntityUpdateParamsCorporation : JsonModel
         _ = this.Email;
         _ = this.IncorporationState;
         _ = this.IndustryCode;
+        this.LegalIdentifier?.Validate();
         _ = this.Name;
-        _ = this.TaxIdentifier;
     }
 
     public EntityUpdateParamsCorporation() { }
@@ -668,6 +671,170 @@ class EntityUpdateParamsCorporationAddressFromRaw
     public EntityUpdateParamsCorporationAddress FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => EntityUpdateParamsCorporationAddress.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The legal identifier of the corporation. This is usually the Employer Identification
+/// Number (EIN).
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsCorporationLegalIdentifier,
+        EntityUpdateParamsCorporationLegalIdentifierFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsCorporationLegalIdentifier : JsonModel
+{
+    /// <summary>
+    /// The identifier of the legal identifier.
+    /// </summary>
+    public required string Value
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("value");
+        }
+        init { this._rawData.Set("value", value); }
+    }
+
+    /// <summary>
+    /// The category of the legal identifier.
+    /// </summary>
+    public ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory>? Category
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<
+                ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory>
+            >("category");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("category", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Value;
+        this.Category?.Validate();
+    }
+
+    public EntityUpdateParamsCorporationLegalIdentifier() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsCorporationLegalIdentifier(
+        EntityUpdateParamsCorporationLegalIdentifier entityUpdateParamsCorporationLegalIdentifier
+    )
+        : base(entityUpdateParamsCorporationLegalIdentifier) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsCorporationLegalIdentifier(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsCorporationLegalIdentifier(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsCorporationLegalIdentifierFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsCorporationLegalIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public EntityUpdateParamsCorporationLegalIdentifier(string value)
+        : this()
+    {
+        this.Value = value;
+    }
+}
+
+class EntityUpdateParamsCorporationLegalIdentifierFromRaw
+    : IFromRawJson<EntityUpdateParamsCorporationLegalIdentifier>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsCorporationLegalIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsCorporationLegalIdentifier.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The category of the legal identifier.
+/// </summary>
+[JsonConverter(typeof(EntityUpdateParamsCorporationLegalIdentifierCategoryConverter))]
+public enum EntityUpdateParamsCorporationLegalIdentifierCategory
+{
+    /// <summary>
+    /// The Employer Identification Number (EIN) for the company. The EIN is a 9-digit
+    /// number assigned by the IRS.
+    /// </summary>
+    UsEmployerIdentificationNumber,
+
+    /// <summary>
+    /// A legal identifier issued by a foreign government, like a tax identification
+    /// number or registration number.
+    /// </summary>
+    Other,
+}
+
+sealed class EntityUpdateParamsCorporationLegalIdentifierCategoryConverter
+    : JsonConverter<EntityUpdateParamsCorporationLegalIdentifierCategory>
+{
+    public override EntityUpdateParamsCorporationLegalIdentifierCategory Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "us_employer_identification_number" =>
+                EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            "other" => EntityUpdateParamsCorporationLegalIdentifierCategory.Other,
+            _ => (EntityUpdateParamsCorporationLegalIdentifierCategory)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        EntityUpdateParamsCorporationLegalIdentifierCategory value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber =>
+                    "us_employer_identification_number",
+                EntityUpdateParamsCorporationLegalIdentifierCategory.Other => "other",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>
