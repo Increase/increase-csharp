@@ -28,8 +28,13 @@ public class EntityUpdateParamsTest : TestBase
                 Email = "dev@stainless.com",
                 IncorporationState = "x",
                 IndustryCode = "x",
+                LegalIdentifier = new()
+                {
+                    Value = "x",
+                    Category =
+                        EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                },
                 Name = "x",
-                TaxIdentifier = "x",
             },
             DetailsConfirmedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             GovernmentAuthority = new()
@@ -96,8 +101,13 @@ public class EntityUpdateParamsTest : TestBase
             Email = "dev@stainless.com",
             IncorporationState = "x",
             IndustryCode = "x",
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category =
+                    EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
         };
         DateTimeOffset expectedDetailsConfirmedAt = DateTimeOffset.Parse(
             "2019-12-27T18:11:19.117Z"
@@ -244,8 +254,13 @@ public class EntityUpdateParamsTest : TestBase
                 Email = "dev@stainless.com",
                 IncorporationState = "x",
                 IndustryCode = "x",
+                LegalIdentifier = new()
+                {
+                    Value = "x",
+                    Category =
+                        EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                },
                 Name = "x",
-                TaxIdentifier = "x",
             },
             DetailsConfirmedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             GovernmentAuthority = new()
@@ -322,8 +337,13 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Email = "dev@stainless.com",
             IncorporationState = "x",
             IndustryCode = "x",
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category =
+                    EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
         };
 
         EntityUpdateParamsCorporationAddress expectedAddress = new()
@@ -338,15 +358,20 @@ public class EntityUpdateParamsCorporationTest : TestBase
         string expectedEmail = "dev@stainless.com";
         string expectedIncorporationState = "x";
         string expectedIndustryCode = "x";
+        EntityUpdateParamsCorporationLegalIdentifier expectedLegalIdentifier = new()
+        {
+            Value = "x",
+            Category =
+                EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+        };
         string expectedName = "x";
-        string expectedTaxIdentifier = "x";
 
         Assert.Equal(expectedAddress, model.Address);
         Assert.Equal(expectedEmail, model.Email);
         Assert.Equal(expectedIncorporationState, model.IncorporationState);
         Assert.Equal(expectedIndustryCode, model.IndustryCode);
+        Assert.Equal(expectedLegalIdentifier, model.LegalIdentifier);
         Assert.Equal(expectedName, model.Name);
-        Assert.Equal(expectedTaxIdentifier, model.TaxIdentifier);
     }
 
     [Fact]
@@ -366,8 +391,13 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Email = "dev@stainless.com",
             IncorporationState = "x",
             IndustryCode = "x",
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category =
+                    EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -396,8 +426,13 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Email = "dev@stainless.com",
             IncorporationState = "x",
             IndustryCode = "x",
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category =
+                    EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -419,15 +454,20 @@ public class EntityUpdateParamsCorporationTest : TestBase
         string expectedEmail = "dev@stainless.com";
         string expectedIncorporationState = "x";
         string expectedIndustryCode = "x";
+        EntityUpdateParamsCorporationLegalIdentifier expectedLegalIdentifier = new()
+        {
+            Value = "x",
+            Category =
+                EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+        };
         string expectedName = "x";
-        string expectedTaxIdentifier = "x";
 
         Assert.Equal(expectedAddress, deserialized.Address);
         Assert.Equal(expectedEmail, deserialized.Email);
         Assert.Equal(expectedIncorporationState, deserialized.IncorporationState);
         Assert.Equal(expectedIndustryCode, deserialized.IndustryCode);
+        Assert.Equal(expectedLegalIdentifier, deserialized.LegalIdentifier);
         Assert.Equal(expectedName, deserialized.Name);
-        Assert.Equal(expectedTaxIdentifier, deserialized.TaxIdentifier);
     }
 
     [Fact]
@@ -447,8 +487,13 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Email = "dev@stainless.com",
             IncorporationState = "x",
             IndustryCode = "x",
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category =
+                    EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
         };
 
         model.Validate();
@@ -467,10 +512,10 @@ public class EntityUpdateParamsCorporationTest : TestBase
         Assert.False(model.RawData.ContainsKey("incorporation_state"));
         Assert.Null(model.IndustryCode);
         Assert.False(model.RawData.ContainsKey("industry_code"));
+        Assert.Null(model.LegalIdentifier);
+        Assert.False(model.RawData.ContainsKey("legal_identifier"));
         Assert.Null(model.Name);
         Assert.False(model.RawData.ContainsKey("name"));
-        Assert.Null(model.TaxIdentifier);
-        Assert.False(model.RawData.ContainsKey("tax_identifier"));
     }
 
     [Fact]
@@ -491,8 +536,8 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Email = null,
             IncorporationState = null,
             IndustryCode = null,
+            LegalIdentifier = null,
             Name = null,
-            TaxIdentifier = null,
         };
 
         Assert.Null(model.Address);
@@ -503,10 +548,10 @@ public class EntityUpdateParamsCorporationTest : TestBase
         Assert.False(model.RawData.ContainsKey("incorporation_state"));
         Assert.Null(model.IndustryCode);
         Assert.False(model.RawData.ContainsKey("industry_code"));
+        Assert.Null(model.LegalIdentifier);
+        Assert.False(model.RawData.ContainsKey("legal_identifier"));
         Assert.Null(model.Name);
         Assert.False(model.RawData.ContainsKey("name"));
-        Assert.Null(model.TaxIdentifier);
-        Assert.False(model.RawData.ContainsKey("tax_identifier"));
     }
 
     [Fact]
@@ -519,8 +564,8 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Email = null,
             IncorporationState = null,
             IndustryCode = null,
+            LegalIdentifier = null,
             Name = null,
-            TaxIdentifier = null,
         };
 
         model.Validate();
@@ -543,8 +588,13 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Email = "dev@stainless.com",
             IncorporationState = "x",
             IndustryCode = "x",
+            LegalIdentifier = new()
+            {
+                Value = "x",
+                Category =
+                    EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            },
             Name = "x",
-            TaxIdentifier = "x",
         };
 
         EntityUpdateParamsCorporation copied = new(model);
@@ -744,6 +794,205 @@ public class EntityUpdateParamsCorporationAddressTest : TestBase
         EntityUpdateParamsCorporationAddress copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsCorporationLegalIdentifierTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsCorporationLegalIdentifier
+        {
+            Value = "x",
+            Category =
+                EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+        };
+
+        string expectedValue = "x";
+        ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory> expectedCategory =
+            EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber;
+
+        Assert.Equal(expectedValue, model.Value);
+        Assert.Equal(expectedCategory, model.Category);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsCorporationLegalIdentifier
+        {
+            Value = "x",
+            Category =
+                EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsCorporationLegalIdentifier>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsCorporationLegalIdentifier
+        {
+            Value = "x",
+            Category =
+                EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsCorporationLegalIdentifier>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedValue = "x";
+        ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory> expectedCategory =
+            EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber;
+
+        Assert.Equal(expectedValue, deserialized.Value);
+        Assert.Equal(expectedCategory, deserialized.Category);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsCorporationLegalIdentifier
+        {
+            Value = "x",
+            Category =
+                EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsCorporationLegalIdentifier { Value = "x" };
+
+        Assert.Null(model.Category);
+        Assert.False(model.RawData.ContainsKey("category"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsCorporationLegalIdentifier { Value = "x" };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsCorporationLegalIdentifier
+        {
+            Value = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Category = null,
+        };
+
+        Assert.Null(model.Category);
+        Assert.False(model.RawData.ContainsKey("category"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsCorporationLegalIdentifier
+        {
+            Value = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Category = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsCorporationLegalIdentifier
+        {
+            Value = "x",
+            Category =
+                EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+        };
+
+        EntityUpdateParamsCorporationLegalIdentifier copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsCorporationLegalIdentifierCategoryTest : TestBase
+{
+    [Theory]
+    [InlineData(
+        EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber
+    )]
+    [InlineData(EntityUpdateParamsCorporationLegalIdentifierCategory.Other)]
+    public void Validation_Works(EntityUpdateParamsCorporationLegalIdentifierCategory rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber
+    )]
+    [InlineData(EntityUpdateParamsCorporationLegalIdentifierCategory.Other)]
+    public void SerializationRoundtrip_Works(
+        EntityUpdateParamsCorporationLegalIdentifierCategory rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
     }
 }
 
