@@ -1277,6 +1277,10 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Entities::TrusteeStructure>(),
             new ApiEnumConverter<string, Entities::TrusteeIndividualIdentificationMethod>(),
             new ApiEnumConverter<string, Entities::GrantorIdentificationMethod>(),
+            new ApiEnumConverter<
+                string,
+                Entities::EntityUpdateParamsCorporationLegalIdentifierCategory
+            >(),
             new ApiEnumConverter<string, Entities::EntityUpdateParamsRiskRatingRating>(),
             new ApiEnumConverter<
                 string,

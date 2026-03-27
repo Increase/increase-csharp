@@ -5042,7 +5042,7 @@ public enum IssueCategory
 {
     /// <summary>
     /// The entity's tax identifier could not be validated. Update the tax ID with
-    /// the [update an entity API](/documentation/api/entities#update-an-entity.corporation.tax_identifier).
+    /// the [update an entity API](/documentation/api/entities#update-an-entity.corporation.legal_identifier).
     /// </summary>
     EntityTaxIdentifier,
 
