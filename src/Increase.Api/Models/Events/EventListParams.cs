@@ -647,6 +647,16 @@ public enum In
     LegacyCardDisputeUpdated,
 
     /// <summary>
+    /// Occurs whenever a Lockbox Address is created.
+    /// </summary>
+    LockboxAddressCreated,
+
+    /// <summary>
+    /// Occurs whenever a Lockbox Address is updated.
+    /// </summary>
+    LockboxAddressUpdated,
+
+    /// <summary>
     /// Occurs whenever a Lockbox is created.
     /// </summary>
     LockboxCreated,
@@ -918,6 +928,8 @@ sealed class InConverter : JsonConverter<In>
             "intrafi_exclusion.updated" => In.IntrafiExclusionUpdated,
             "legacy_card_dispute.created" => In.LegacyCardDisputeCreated,
             "legacy_card_dispute.updated" => In.LegacyCardDisputeUpdated,
+            "lockbox_address.created" => In.LockboxAddressCreated,
+            "lockbox_address.updated" => In.LockboxAddressUpdated,
             "lockbox.created" => In.LockboxCreated,
             "lockbox.updated" => In.LockboxUpdated,
             "oauth_connection.created" => In.OAuthConnectionCreated,
@@ -1047,6 +1059,8 @@ sealed class InConverter : JsonConverter<In>
                 In.IntrafiExclusionUpdated => "intrafi_exclusion.updated",
                 In.LegacyCardDisputeCreated => "legacy_card_dispute.created",
                 In.LegacyCardDisputeUpdated => "legacy_card_dispute.updated",
+                In.LockboxAddressCreated => "lockbox_address.created",
+                In.LockboxAddressUpdated => "lockbox_address.updated",
                 In.LockboxCreated => "lockbox.created",
                 In.LockboxUpdated => "lockbox.updated",
                 In.OAuthConnectionCreated => "oauth_connection.created",
