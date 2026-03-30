@@ -643,6 +643,16 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     LegacyCardDisputeUpdated,
 
     /// <summary>
+    /// Occurs whenever a Lockbox Address is created.
+    /// </summary>
+    LockboxAddressCreated,
+
+    /// <summary>
+    /// Occurs whenever a Lockbox Address is updated.
+    /// </summary>
+    LockboxAddressUpdated,
+
+    /// <summary>
     /// Occurs whenever a Lockbox is created.
     /// </summary>
     LockboxCreated,
@@ -974,6 +984,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.LegacyCardDisputeCreated,
             "legacy_card_dispute.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.LegacyCardDisputeUpdated,
+            "lockbox_address.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LockboxAddressCreated,
+            "lockbox_address.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LockboxAddressUpdated,
             "lockbox.created" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated,
             "lockbox.updated" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated,
             "oauth_connection.created" =>
@@ -1198,6 +1212,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "legacy_card_dispute.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LegacyCardDisputeUpdated =>
                     "legacy_card_dispute.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.LockboxAddressCreated =>
+                    "lockbox_address.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.LockboxAddressUpdated =>
+                    "lockbox_address.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated =>
                     "lockbox.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated =>
