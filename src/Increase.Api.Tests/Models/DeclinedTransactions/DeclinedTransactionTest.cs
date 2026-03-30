@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text.Json;
 using Increase.Api.Core;
 using Increase.Api.Exceptions;
@@ -100,6 +101,18 @@ public class DeclinedTransactionTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -260,6 +273,18 @@ public class DeclinedTransactionTest : TestBase
                 RealTimeDecisionID = null,
                 RealTimeDecisionReason = null,
                 Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Verification = new()
                 {
@@ -434,6 +459,18 @@ public class DeclinedTransactionTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -606,6 +643,18 @@ public class DeclinedTransactionTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -773,6 +822,18 @@ public class DeclinedTransactionTest : TestBase
                 RealTimeDecisionID = null,
                 RealTimeDecisionReason = null,
                 Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Verification = new()
                 {
@@ -947,6 +1008,18 @@ public class DeclinedTransactionTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -1113,6 +1186,18 @@ public class DeclinedTransactionTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -1386,6 +1471,18 @@ public class SourceTest : TestBase
                 RealTimeDecisionID = null,
                 RealTimeDecisionReason = null,
                 Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Verification = new()
                 {
@@ -1531,6 +1628,18 @@ public class SourceTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -1696,6 +1805,18 @@ public class SourceTest : TestBase
                 RealTimeDecisionID = null,
                 RealTimeDecisionReason = null,
                 Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Verification = new()
                 {
@@ -1855,6 +1976,18 @@ public class SourceTest : TestBase
                 RealTimeDecisionID = null,
                 RealTimeDecisionReason = null,
                 Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Verification = new()
                 {
@@ -2007,6 +2140,18 @@ public class SourceTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -2175,6 +2320,18 @@ public class SourceTest : TestBase
                 RealTimeDecisionID = null,
                 RealTimeDecisionReason = null,
                 Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Verification = new()
                 {
@@ -2420,6 +2577,18 @@ public class SourceTest : TestBase
                 RealTimeDecisionID = null,
                 RealTimeDecisionReason = null,
                 Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Verification = new()
                 {
@@ -2951,6 +3120,18 @@ public class CardDeclineTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -3030,6 +3211,18 @@ public class CardDeclineTest : TestBase
             DeclinedTransactions::ProcessingCategory.Purchase;
         ApiEnum<string, DeclinedTransactions::CardDeclineReason> expectedReason =
             DeclinedTransactions::CardDeclineReason.InsufficientFunds;
+        List<DeclinedTransactions::SchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         DeclinedTransactions::Verification expectedVerification = new()
         {
@@ -3078,6 +3271,11 @@ public class CardDeclineTest : TestBase
         Assert.Null(model.RealTimeDecisionID);
         Assert.Null(model.RealTimeDecisionReason);
         Assert.Equal(expectedReason, model.Reason);
+        Assert.Equal(expectedSchemeFees.Count, model.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], model.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, model.TerminalID);
         Assert.Equal(expectedVerification, model.Verification);
     }
@@ -3145,6 +3343,18 @@ public class CardDeclineTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -3239,6 +3449,18 @@ public class CardDeclineTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -3325,6 +3547,18 @@ public class CardDeclineTest : TestBase
             DeclinedTransactions::ProcessingCategory.Purchase;
         ApiEnum<string, DeclinedTransactions::CardDeclineReason> expectedReason =
             DeclinedTransactions::CardDeclineReason.InsufficientFunds;
+        List<DeclinedTransactions::SchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         DeclinedTransactions::Verification expectedVerification = new()
         {
@@ -3373,6 +3607,11 @@ public class CardDeclineTest : TestBase
         Assert.Null(deserialized.RealTimeDecisionID);
         Assert.Null(deserialized.RealTimeDecisionReason);
         Assert.Equal(expectedReason, deserialized.Reason);
+        Assert.Equal(expectedSchemeFees.Count, deserialized.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], deserialized.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, deserialized.TerminalID);
         Assert.Equal(expectedVerification, deserialized.Verification);
     }
@@ -3440,6 +3679,18 @@ public class CardDeclineTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -3528,6 +3779,18 @@ public class CardDeclineTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -5577,6 +5840,292 @@ public class CardDeclineReasonTest : TestBase
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, DeclinedTransactions::CardDeclineReason>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class SchemeFeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new DeclinedTransactions::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+            FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, DeclinedTransactions::SchemeFeeCurrency> expectedCurrency =
+            DeclinedTransactions::SchemeFeeCurrency.Usd;
+        ApiEnum<string, DeclinedTransactions::FeeType> expectedFeeType =
+            DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedFeeType, model.FeeType);
+        Assert.Null(model.FixedComponent);
+        Assert.Equal(expectedVariableRate, model.VariableRate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new DeclinedTransactions::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+            FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<DeclinedTransactions::SchemeFee>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new DeclinedTransactions::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+            FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<DeclinedTransactions::SchemeFee>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, DeclinedTransactions::SchemeFeeCurrency> expectedCurrency =
+            DeclinedTransactions::SchemeFeeCurrency.Usd;
+        ApiEnum<string, DeclinedTransactions::FeeType> expectedFeeType =
+            DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedFeeType, deserialized.FeeType);
+        Assert.Null(deserialized.FixedComponent);
+        Assert.Equal(expectedVariableRate, deserialized.VariableRate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new DeclinedTransactions::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+            FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DeclinedTransactions::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+            FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        DeclinedTransactions::SchemeFee copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SchemeFeeCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(DeclinedTransactions::SchemeFeeCurrency.Usd)]
+    public void Validation_Works(DeclinedTransactions::SchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, DeclinedTransactions::SchemeFeeCurrency> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, DeclinedTransactions::SchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(DeclinedTransactions::SchemeFeeCurrency.Usd)]
+    public void SerializationRoundtrip_Works(DeclinedTransactions::SchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, DeclinedTransactions::SchemeFeeCurrency> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, DeclinedTransactions::SchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, DeclinedTransactions::SchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, DeclinedTransactions::SchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class FeeTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(DeclinedTransactions::FeeType.VisaInternationalServiceAssessmentSingleCurrency)]
+    [InlineData(DeclinedTransactions::FeeType.VisaInternationalServiceAssessmentCrossCurrency)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAuthorizationInternationalPointOfSale)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAuthorizationReversalInternationalPointOfSale)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAuthorizationAddressVerificationService)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAdvancedAuthorization)]
+    [InlineData(DeclinedTransactions::FeeType.VisaMessageTransmission)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAccountVerificationDomestic)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAccountVerificationInternational)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAccountVerificationCanada)]
+    [InlineData(DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(DeclinedTransactions::FeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(DeclinedTransactions::FeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(DeclinedTransactions::FeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(DeclinedTransactions::FeeType.VisaPurchaseDomestic)]
+    [InlineData(DeclinedTransactions::FeeType.VisaPurchaseInternational)]
+    [InlineData(DeclinedTransactions::FeeType.VisaCreditPurchaseToken)]
+    [InlineData(DeclinedTransactions::FeeType.VisaDebitPurchaseToken)]
+    [InlineData(DeclinedTransactions::FeeType.VisaClearingTransmission)]
+    [InlineData(DeclinedTransactions::FeeType.VisaDirectAuthorization)]
+    [InlineData(DeclinedTransactions::FeeType.VisaDirectTransactionDomestic)]
+    [InlineData(DeclinedTransactions::FeeType.VisaServiceCommercialCredit)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(DeclinedTransactions::FeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(DeclinedTransactions::FeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(DeclinedTransactions::FeeType.PulseSwitchFee)]
+    public void Validation_Works(DeclinedTransactions::FeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, DeclinedTransactions::FeeType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, DeclinedTransactions::FeeType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(DeclinedTransactions::FeeType.VisaInternationalServiceAssessmentSingleCurrency)]
+    [InlineData(DeclinedTransactions::FeeType.VisaInternationalServiceAssessmentCrossCurrency)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAuthorizationInternationalPointOfSale)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAuthorizationReversalInternationalPointOfSale)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAuthorizationAddressVerificationService)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAdvancedAuthorization)]
+    [InlineData(DeclinedTransactions::FeeType.VisaMessageTransmission)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAccountVerificationDomestic)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAccountVerificationInternational)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAccountVerificationCanada)]
+    [InlineData(DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(DeclinedTransactions::FeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(DeclinedTransactions::FeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(DeclinedTransactions::FeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(DeclinedTransactions::FeeType.VisaPurchaseDomestic)]
+    [InlineData(DeclinedTransactions::FeeType.VisaPurchaseInternational)]
+    [InlineData(DeclinedTransactions::FeeType.VisaCreditPurchaseToken)]
+    [InlineData(DeclinedTransactions::FeeType.VisaDebitPurchaseToken)]
+    [InlineData(DeclinedTransactions::FeeType.VisaClearingTransmission)]
+    [InlineData(DeclinedTransactions::FeeType.VisaDirectAuthorization)]
+    [InlineData(DeclinedTransactions::FeeType.VisaDirectTransactionDomestic)]
+    [InlineData(DeclinedTransactions::FeeType.VisaServiceCommercialCredit)]
+    [InlineData(DeclinedTransactions::FeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(DeclinedTransactions::FeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(DeclinedTransactions::FeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(DeclinedTransactions::FeeType.PulseSwitchFee)]
+    public void SerializationRoundtrip_Works(DeclinedTransactions::FeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, DeclinedTransactions::FeeType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, DeclinedTransactions::FeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, DeclinedTransactions::FeeType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, DeclinedTransactions::FeeType>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);

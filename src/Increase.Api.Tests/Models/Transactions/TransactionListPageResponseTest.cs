@@ -146,6 +146,18 @@ public class TransactionListPageResponseTest : TestBase
                             PresentmentCurrency = "USD",
                             ProcessingCategory = Transactions::ProcessingCategory.Purchase,
                             RealTimeDecisionID = null,
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::SchemeFeeCurrency.Usd,
+                                    FeeType = Transactions::FeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TerminalID = "RCN5VNXS",
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::Type.CardFinancial,
@@ -305,6 +317,19 @@ public class TransactionListPageResponseTest : TestBase
                                     ],
                                 },
                             },
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::CardRefundSchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        Transactions::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::CardRefundType.CardRefund,
                         },
@@ -456,6 +481,19 @@ public class TransactionListPageResponseTest : TestBase
                                     ],
                                 },
                             },
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::CardSettlementSchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        Transactions::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::CardSettlementType.CardSettlement,
@@ -768,6 +806,18 @@ public class TransactionListPageResponseTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = Transactions::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = Transactions::SchemeFeeCurrency.Usd,
+                                FeeType = Transactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = Transactions::Type.CardFinancial,
@@ -923,6 +973,19 @@ public class TransactionListPageResponseTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = Transactions::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    Transactions::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = Transactions::CardRefundType.CardRefund,
                     },
@@ -1071,6 +1134,19 @@ public class TransactionListPageResponseTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = Transactions::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    Transactions::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = Transactions::CardSettlementType.CardSettlement,
@@ -1393,6 +1469,18 @@ public class TransactionListPageResponseTest : TestBase
                             PresentmentCurrency = "USD",
                             ProcessingCategory = Transactions::ProcessingCategory.Purchase,
                             RealTimeDecisionID = null,
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::SchemeFeeCurrency.Usd,
+                                    FeeType = Transactions::FeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TerminalID = "RCN5VNXS",
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::Type.CardFinancial,
@@ -1552,6 +1640,19 @@ public class TransactionListPageResponseTest : TestBase
                                     ],
                                 },
                             },
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::CardRefundSchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        Transactions::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::CardRefundType.CardRefund,
                         },
@@ -1703,6 +1804,19 @@ public class TransactionListPageResponseTest : TestBase
                                     ],
                                 },
                             },
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::CardSettlementSchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        Transactions::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::CardSettlementType.CardSettlement,
@@ -2029,6 +2143,18 @@ public class TransactionListPageResponseTest : TestBase
                             PresentmentCurrency = "USD",
                             ProcessingCategory = Transactions::ProcessingCategory.Purchase,
                             RealTimeDecisionID = null,
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::SchemeFeeCurrency.Usd,
+                                    FeeType = Transactions::FeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TerminalID = "RCN5VNXS",
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::Type.CardFinancial,
@@ -2188,6 +2314,19 @@ public class TransactionListPageResponseTest : TestBase
                                     ],
                                 },
                             },
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::CardRefundSchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        Transactions::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::CardRefundType.CardRefund,
                         },
@@ -2339,6 +2478,19 @@ public class TransactionListPageResponseTest : TestBase
                                     ],
                                 },
                             },
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::CardSettlementSchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        Transactions::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::CardSettlementType.CardSettlement,
@@ -2658,6 +2810,18 @@ public class TransactionListPageResponseTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = Transactions::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = Transactions::SchemeFeeCurrency.Usd,
+                                FeeType = Transactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = Transactions::Type.CardFinancial,
@@ -2813,6 +2977,19 @@ public class TransactionListPageResponseTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = Transactions::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    Transactions::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = Transactions::CardRefundType.CardRefund,
                     },
@@ -2961,6 +3138,19 @@ public class TransactionListPageResponseTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = Transactions::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    Transactions::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = Transactions::CardSettlementType.CardSettlement,
@@ -3283,6 +3473,18 @@ public class TransactionListPageResponseTest : TestBase
                             PresentmentCurrency = "USD",
                             ProcessingCategory = Transactions::ProcessingCategory.Purchase,
                             RealTimeDecisionID = null,
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::SchemeFeeCurrency.Usd,
+                                    FeeType = Transactions::FeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TerminalID = "RCN5VNXS",
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::Type.CardFinancial,
@@ -3442,6 +3644,19 @@ public class TransactionListPageResponseTest : TestBase
                                     ],
                                 },
                             },
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::CardRefundSchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        Transactions::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::CardRefundType.CardRefund,
                         },
@@ -3593,6 +3808,19 @@ public class TransactionListPageResponseTest : TestBase
                                     ],
                                 },
                             },
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::CardSettlementSchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        Transactions::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::CardSettlementType.CardSettlement,
@@ -3913,6 +4141,18 @@ public class TransactionListPageResponseTest : TestBase
                             PresentmentCurrency = "USD",
                             ProcessingCategory = Transactions::ProcessingCategory.Purchase,
                             RealTimeDecisionID = null,
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::SchemeFeeCurrency.Usd,
+                                    FeeType = Transactions::FeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TerminalID = "RCN5VNXS",
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::Type.CardFinancial,
@@ -4072,6 +4312,19 @@ public class TransactionListPageResponseTest : TestBase
                                     ],
                                 },
                             },
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::CardRefundSchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        Transactions::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::CardRefundType.CardRefund,
                         },
@@ -4223,6 +4476,19 @@ public class TransactionListPageResponseTest : TestBase
                                     ],
                                 },
                             },
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = Transactions::CardSettlementSchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        Transactions::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                             Type = Transactions::CardSettlementType.CardSettlement,
