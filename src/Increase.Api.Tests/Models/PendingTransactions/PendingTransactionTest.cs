@@ -108,6 +108,18 @@ public class PendingTransactionTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = PendingTransactions::Type.CardAuthorization,
                     Verification = new()
@@ -282,6 +294,18 @@ public class PendingTransactionTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = PendingTransactions::Type.CardAuthorization,
                 Verification = new()
@@ -476,6 +500,18 @@ public class PendingTransactionTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = PendingTransactions::Type.CardAuthorization,
                     Verification = new()
@@ -663,6 +699,18 @@ public class PendingTransactionTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = PendingTransactions::Type.CardAuthorization,
                     Verification = new()
@@ -844,6 +892,18 @@ public class PendingTransactionTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = PendingTransactions::Type.CardAuthorization,
                 Verification = new()
@@ -1038,6 +1098,18 @@ public class PendingTransactionTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = PendingTransactions::Type.CardAuthorization,
                     Verification = new()
@@ -1219,6 +1291,18 @@ public class PendingTransactionTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = PendingTransactions::Type.CardAuthorization,
                     Verification = new()
@@ -1505,6 +1589,18 @@ public class SourceTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = PendingTransactions::Type.CardAuthorization,
                 Verification = new()
@@ -1665,6 +1761,18 @@ public class SourceTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = PendingTransactions::Type.CardAuthorization,
             Verification = new()
@@ -1865,6 +1973,18 @@ public class SourceTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = PendingTransactions::Type.CardAuthorization,
                 Verification = new()
@@ -2037,6 +2157,18 @@ public class SourceTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = PendingTransactions::Type.CardAuthorization,
                 Verification = new()
@@ -2204,6 +2336,18 @@ public class SourceTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = PendingTransactions::Type.CardAuthorization,
             Verification = new()
@@ -2404,6 +2548,18 @@ public class SourceTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = PendingTransactions::Type.CardAuthorization,
                 Verification = new()
@@ -2710,6 +2866,18 @@ public class SourceTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                        FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = PendingTransactions::Type.CardAuthorization,
                 Verification = new()
@@ -3364,6 +3532,18 @@ public class CardAuthorizationTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = PendingTransactions::Type.CardAuthorization,
             Verification = new()
@@ -3443,6 +3623,18 @@ public class CardAuthorizationTest : TestBase
         string expectedPresentmentCurrency = "USD";
         ApiEnum<string, PendingTransactions::ProcessingCategory> expectedProcessingCategory =
             PendingTransactions::ProcessingCategory.Purchase;
+        List<PendingTransactions::SchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         ApiEnum<string, PendingTransactions::Type> expectedType =
             PendingTransactions::Type.CardAuthorization;
@@ -3490,6 +3682,11 @@ public class CardAuthorizationTest : TestBase
         Assert.Equal(expectedPresentmentCurrency, model.PresentmentCurrency);
         Assert.Equal(expectedProcessingCategory, model.ProcessingCategory);
         Assert.Null(model.RealTimeDecisionID);
+        Assert.Equal(expectedSchemeFees.Count, model.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], model.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, model.TerminalID);
         Assert.Equal(expectedType, model.Type);
         Assert.Equal(expectedVerification, model.Verification);
@@ -3556,6 +3753,18 @@ public class CardAuthorizationTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = PendingTransactions::Type.CardAuthorization,
             Verification = new()
@@ -3649,6 +3858,18 @@ public class CardAuthorizationTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = PendingTransactions::Type.CardAuthorization,
             Verification = new()
@@ -3735,6 +3956,18 @@ public class CardAuthorizationTest : TestBase
         string expectedPresentmentCurrency = "USD";
         ApiEnum<string, PendingTransactions::ProcessingCategory> expectedProcessingCategory =
             PendingTransactions::ProcessingCategory.Purchase;
+        List<PendingTransactions::SchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         ApiEnum<string, PendingTransactions::Type> expectedType =
             PendingTransactions::Type.CardAuthorization;
@@ -3782,6 +4015,11 @@ public class CardAuthorizationTest : TestBase
         Assert.Equal(expectedPresentmentCurrency, deserialized.PresentmentCurrency);
         Assert.Equal(expectedProcessingCategory, deserialized.ProcessingCategory);
         Assert.Null(deserialized.RealTimeDecisionID);
+        Assert.Equal(expectedSchemeFees.Count, deserialized.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], deserialized.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, deserialized.TerminalID);
         Assert.Equal(expectedType, deserialized.Type);
         Assert.Equal(expectedVerification, deserialized.Verification);
@@ -3848,6 +4086,18 @@ public class CardAuthorizationTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = PendingTransactions::Type.CardAuthorization,
             Verification = new()
@@ -3935,6 +4185,18 @@ public class CardAuthorizationTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                    FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = PendingTransactions::Type.CardAuthorization,
             Verification = new()
@@ -5833,6 +6095,292 @@ public class ProcessingCategoryTest : TestBase
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, PendingTransactions::ProcessingCategory>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class SchemeFeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new PendingTransactions::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+            FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, PendingTransactions::SchemeFeeCurrency> expectedCurrency =
+            PendingTransactions::SchemeFeeCurrency.Usd;
+        ApiEnum<string, PendingTransactions::FeeType> expectedFeeType =
+            PendingTransactions::FeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedFeeType, model.FeeType);
+        Assert.Null(model.FixedComponent);
+        Assert.Equal(expectedVariableRate, model.VariableRate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new PendingTransactions::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+            FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<PendingTransactions::SchemeFee>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new PendingTransactions::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+            FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<PendingTransactions::SchemeFee>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, PendingTransactions::SchemeFeeCurrency> expectedCurrency =
+            PendingTransactions::SchemeFeeCurrency.Usd;
+        ApiEnum<string, PendingTransactions::FeeType> expectedFeeType =
+            PendingTransactions::FeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedFeeType, deserialized.FeeType);
+        Assert.Null(deserialized.FixedComponent);
+        Assert.Equal(expectedVariableRate, deserialized.VariableRate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new PendingTransactions::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+            FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PendingTransactions::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+            FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        PendingTransactions::SchemeFee copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SchemeFeeCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(PendingTransactions::SchemeFeeCurrency.Usd)]
+    public void Validation_Works(PendingTransactions::SchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::SchemeFeeCurrency> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::SchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PendingTransactions::SchemeFeeCurrency.Usd)]
+    public void SerializationRoundtrip_Works(PendingTransactions::SchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::SchemeFeeCurrency> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::SchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::SchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::SchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class FeeTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(PendingTransactions::FeeType.VisaInternationalServiceAssessmentSingleCurrency)]
+    [InlineData(PendingTransactions::FeeType.VisaInternationalServiceAssessmentCrossCurrency)]
+    [InlineData(PendingTransactions::FeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(PendingTransactions::FeeType.VisaAuthorizationInternationalPointOfSale)]
+    [InlineData(PendingTransactions::FeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(PendingTransactions::FeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(PendingTransactions::FeeType.VisaAuthorizationReversalInternationalPointOfSale)]
+    [InlineData(PendingTransactions::FeeType.VisaAuthorizationAddressVerificationService)]
+    [InlineData(PendingTransactions::FeeType.VisaAdvancedAuthorization)]
+    [InlineData(PendingTransactions::FeeType.VisaMessageTransmission)]
+    [InlineData(PendingTransactions::FeeType.VisaAccountVerificationDomestic)]
+    [InlineData(PendingTransactions::FeeType.VisaAccountVerificationInternational)]
+    [InlineData(PendingTransactions::FeeType.VisaAccountVerificationCanada)]
+    [InlineData(PendingTransactions::FeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(PendingTransactions::FeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(PendingTransactions::FeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(PendingTransactions::FeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(PendingTransactions::FeeType.VisaPurchaseDomestic)]
+    [InlineData(PendingTransactions::FeeType.VisaPurchaseInternational)]
+    [InlineData(PendingTransactions::FeeType.VisaCreditPurchaseToken)]
+    [InlineData(PendingTransactions::FeeType.VisaDebitPurchaseToken)]
+    [InlineData(PendingTransactions::FeeType.VisaClearingTransmission)]
+    [InlineData(PendingTransactions::FeeType.VisaDirectAuthorization)]
+    [InlineData(PendingTransactions::FeeType.VisaDirectTransactionDomestic)]
+    [InlineData(PendingTransactions::FeeType.VisaServiceCommercialCredit)]
+    [InlineData(PendingTransactions::FeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(PendingTransactions::FeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(PendingTransactions::FeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(PendingTransactions::FeeType.PulseSwitchFee)]
+    public void Validation_Works(PendingTransactions::FeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::FeeType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::FeeType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PendingTransactions::FeeType.VisaInternationalServiceAssessmentSingleCurrency)]
+    [InlineData(PendingTransactions::FeeType.VisaInternationalServiceAssessmentCrossCurrency)]
+    [InlineData(PendingTransactions::FeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(PendingTransactions::FeeType.VisaAuthorizationInternationalPointOfSale)]
+    [InlineData(PendingTransactions::FeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(PendingTransactions::FeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(PendingTransactions::FeeType.VisaAuthorizationReversalInternationalPointOfSale)]
+    [InlineData(PendingTransactions::FeeType.VisaAuthorizationAddressVerificationService)]
+    [InlineData(PendingTransactions::FeeType.VisaAdvancedAuthorization)]
+    [InlineData(PendingTransactions::FeeType.VisaMessageTransmission)]
+    [InlineData(PendingTransactions::FeeType.VisaAccountVerificationDomestic)]
+    [InlineData(PendingTransactions::FeeType.VisaAccountVerificationInternational)]
+    [InlineData(PendingTransactions::FeeType.VisaAccountVerificationCanada)]
+    [InlineData(PendingTransactions::FeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(PendingTransactions::FeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(PendingTransactions::FeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(PendingTransactions::FeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(PendingTransactions::FeeType.VisaPurchaseDomestic)]
+    [InlineData(PendingTransactions::FeeType.VisaPurchaseInternational)]
+    [InlineData(PendingTransactions::FeeType.VisaCreditPurchaseToken)]
+    [InlineData(PendingTransactions::FeeType.VisaDebitPurchaseToken)]
+    [InlineData(PendingTransactions::FeeType.VisaClearingTransmission)]
+    [InlineData(PendingTransactions::FeeType.VisaDirectAuthorization)]
+    [InlineData(PendingTransactions::FeeType.VisaDirectTransactionDomestic)]
+    [InlineData(PendingTransactions::FeeType.VisaServiceCommercialCredit)]
+    [InlineData(PendingTransactions::FeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(PendingTransactions::FeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(PendingTransactions::FeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(PendingTransactions::FeeType.PulseSwitchFee)]
+    public void SerializationRoundtrip_Works(PendingTransactions::FeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::FeeType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::FeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::FeeType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::FeeType>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
