@@ -170,6 +170,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -254,6 +266,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -339,6 +364,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -419,6 +457,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -458,6 +509,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -494,6 +558,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -624,6 +701,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -652,6 +742,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -794,6 +897,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -850,6 +966,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -1025,6 +1154,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -1109,6 +1250,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -1194,6 +1348,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -1274,6 +1441,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -1313,6 +1493,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -1349,6 +1542,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -1479,6 +1685,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -1507,6 +1726,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -1649,6 +1881,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -1705,6 +1950,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -1880,6 +2138,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -1964,6 +2234,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -2049,6 +2332,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -2129,6 +2425,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -2168,6 +2477,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -2204,6 +2526,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -2334,6 +2669,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -2362,6 +2710,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -2504,6 +2865,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -2560,6 +2934,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -2735,6 +3122,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -2819,6 +3218,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -2904,6 +3316,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -2984,6 +3409,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -3023,6 +3461,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -3059,6 +3510,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -3189,6 +3653,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -3217,6 +3694,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -3359,6 +3849,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -3415,6 +3918,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -3443,18 +3959,6 @@ public class CardPaymentTest : TestBase
                 },
             ],
             PhysicalCardID = null,
-            SchemeFees =
-            [
-                new()
-                {
-                    Amount = "0.137465",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    Currency = CardPayments::SchemeFeeCurrency.Usd,
-                    FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
-                    FixedComponent = null,
-                    VariableRate = "0.0002",
-                },
-            ],
             State = new()
             {
                 AuthorizedAmount = 100,
@@ -3620,6 +4124,18 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::SchemeFeeCurrency.Usd,
+                            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardAuthorizationType.CardAuthorization,
                     Verification = new()
@@ -3704,6 +4220,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                     Verification = new()
@@ -3789,6 +4318,19 @@ public class CardPaymentTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = CardPayments::Reason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -3869,6 +4411,19 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardFinancialType.CardFinancial,
@@ -3908,6 +4463,19 @@ public class CardPaymentTest : TestBase
                         TransactionID = "627199945183184",
                     },
                     PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -3944,6 +4512,19 @@ public class CardPaymentTest : TestBase
                     PresentmentAmount = 20,
                     PresentmentCurrency = "USD",
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardIncrementType.CardIncrement,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -4072,6 +4653,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardRefundType.CardRefund,
                 },
@@ -4100,6 +4694,19 @@ public class CardPaymentTest : TestBase
                     ReversalAmount = 20,
                     ReversalPresentmentAmount = 20,
                     ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardReversalType.CardReversal,
                     UpdatedAuthorizationAmount = 80,
@@ -4240,6 +4847,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardSettlementType.CardSettlement,
@@ -4296,6 +4916,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardValidationType.InboundCardValidation,
                     Verification = new()
@@ -4468,6 +5101,18 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::SchemeFeeCurrency.Usd,
+                            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardAuthorizationType.CardAuthorization,
                     Verification = new()
@@ -4552,6 +5197,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                     Verification = new()
@@ -4637,6 +5295,19 @@ public class CardPaymentTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = CardPayments::Reason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -4717,6 +5388,19 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardFinancialType.CardFinancial,
@@ -4756,6 +5440,19 @@ public class CardPaymentTest : TestBase
                         TransactionID = "627199945183184",
                     },
                     PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -4792,6 +5489,19 @@ public class CardPaymentTest : TestBase
                     PresentmentAmount = 20,
                     PresentmentCurrency = "USD",
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardIncrementType.CardIncrement,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -4920,6 +5630,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardRefundType.CardRefund,
                 },
@@ -4948,6 +5671,19 @@ public class CardPaymentTest : TestBase
                     ReversalAmount = 20,
                     ReversalPresentmentAmount = 20,
                     ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardReversalType.CardReversal,
                     UpdatedAuthorizationAmount = 80,
@@ -5088,6 +5824,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardSettlementType.CardSettlement,
@@ -5144,6 +5893,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardValidationType.InboundCardValidation,
                     Verification = new()
@@ -5316,6 +6078,18 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::SchemeFeeCurrency.Usd,
+                            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardAuthorizationType.CardAuthorization,
                     Verification = new()
@@ -5400,6 +6174,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                     Verification = new()
@@ -5485,6 +6272,19 @@ public class CardPaymentTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = CardPayments::Reason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -5565,6 +6365,19 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardFinancialType.CardFinancial,
@@ -5604,6 +6417,19 @@ public class CardPaymentTest : TestBase
                         TransactionID = "627199945183184",
                     },
                     PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -5640,6 +6466,19 @@ public class CardPaymentTest : TestBase
                     PresentmentAmount = 20,
                     PresentmentCurrency = "USD",
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardIncrementType.CardIncrement,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -5768,6 +6607,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardRefundType.CardRefund,
                 },
@@ -5796,6 +6648,19 @@ public class CardPaymentTest : TestBase
                     ReversalAmount = 20,
                     ReversalPresentmentAmount = 20,
                     ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardReversalType.CardReversal,
                     UpdatedAuthorizationAmount = 80,
@@ -5936,6 +6801,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardSettlementType.CardSettlement,
@@ -5992,6 +6870,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardValidationType.InboundCardValidation,
                     Verification = new()
@@ -6164,6 +7055,18 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::SchemeFeeCurrency.Usd,
+                            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardAuthorizationType.CardAuthorization,
                     Verification = new()
@@ -6248,6 +7151,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                     Verification = new()
@@ -6333,6 +7249,19 @@ public class CardPaymentTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = CardPayments::Reason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -6413,6 +7342,19 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardFinancialType.CardFinancial,
@@ -6452,6 +7394,19 @@ public class CardPaymentTest : TestBase
                         TransactionID = "627199945183184",
                     },
                     PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -6488,6 +7443,19 @@ public class CardPaymentTest : TestBase
                     PresentmentAmount = 20,
                     PresentmentCurrency = "USD",
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardIncrementType.CardIncrement,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -6616,6 +7584,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardRefundType.CardRefund,
                 },
@@ -6644,6 +7625,19 @@ public class CardPaymentTest : TestBase
                     ReversalAmount = 20,
                     ReversalPresentmentAmount = 20,
                     ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardReversalType.CardReversal,
                     UpdatedAuthorizationAmount = 80,
@@ -6784,6 +7778,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardSettlementType.CardSettlement,
@@ -6840,6 +7847,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardValidationType.InboundCardValidation,
                     Verification = new()
@@ -6867,18 +7887,6 @@ public class CardPaymentTest : TestBase
                 Other = new(),
             },
         ];
-        List<CardPayments::SchemeFee> expectedSchemeFees =
-        [
-            new()
-            {
-                Amount = "0.137465",
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                Currency = CardPayments::SchemeFeeCurrency.Usd,
-                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
-                FixedComponent = null,
-                VariableRate = "0.0002",
-            },
-        ];
         CardPayments::State expectedState = new()
         {
             AuthorizedAmount = 100,
@@ -6903,11 +7911,6 @@ public class CardPaymentTest : TestBase
             Assert.Equal(expectedElements[i], model.Elements[i]);
         }
         Assert.Null(model.PhysicalCardID);
-        Assert.Equal(expectedSchemeFees.Count, model.SchemeFees.Count);
-        for (int i = 0; i < expectedSchemeFees.Count; i++)
-        {
-            Assert.Equal(expectedSchemeFees[i], model.SchemeFees[i]);
-        }
         Assert.Equal(expectedState, model.State);
         Assert.Equal(expectedType, model.Type);
     }
@@ -7073,6 +8076,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -7157,6 +8172,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -7242,6 +8270,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -7322,6 +8363,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -7361,6 +8415,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -7397,6 +8464,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -7527,6 +8607,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -7555,6 +8648,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -7697,6 +8803,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -7753,6 +8872,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -7928,6 +9060,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -8012,6 +9156,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -8097,6 +9254,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -8177,6 +9347,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -8216,6 +9399,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -8252,6 +9448,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -8382,6 +9591,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -8410,6 +9632,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -8552,6 +9787,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -8608,6 +9856,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -8783,6 +10044,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -8867,6 +10140,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -8952,6 +10238,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -9032,6 +10331,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -9071,6 +10383,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -9107,6 +10432,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -9237,6 +10575,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -9265,6 +10616,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -9407,6 +10771,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -9463,6 +10840,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -9638,6 +11028,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -9722,6 +11124,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -9807,6 +11222,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -9887,6 +11315,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -9926,6 +11367,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -9962,6 +11416,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -10092,6 +11559,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -10120,6 +11600,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -10262,6 +11755,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -10318,6 +11824,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -10346,18 +11865,6 @@ public class CardPaymentTest : TestBase
                 },
             ],
             PhysicalCardID = null,
-            SchemeFees =
-            [
-                new()
-                {
-                    Amount = "0.137465",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    Currency = CardPayments::SchemeFeeCurrency.Usd,
-                    FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
-                    FixedComponent = null,
-                    VariableRate = "0.0002",
-                },
-            ],
             State = new()
             {
                 AuthorizedAmount = 100,
@@ -10541,6 +12048,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -10625,6 +12144,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -10710,6 +12242,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -10790,6 +12335,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -10829,6 +12387,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -10865,6 +12436,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -10995,6 +12579,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -11023,6 +12620,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -11165,6 +12775,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -11221,6 +12844,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -11396,6 +13032,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -11480,6 +13128,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -11565,6 +13226,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -11645,6 +13319,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -11684,6 +13371,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -11720,6 +13420,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -11850,6 +13563,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -11878,6 +13604,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -12020,6 +13759,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -12076,6 +13828,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -12251,6 +14016,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -12335,6 +14112,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -12420,6 +14210,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -12500,6 +14303,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -12539,6 +14355,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -12575,6 +14404,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -12705,6 +14547,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -12733,6 +14588,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -12875,6 +14743,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -12931,6 +14812,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -13106,6 +15000,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -13190,6 +15096,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -13275,6 +15194,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -13355,6 +15287,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -13394,6 +15339,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -13430,6 +15388,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -13560,6 +15531,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -13588,6 +15572,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -13730,6 +15727,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -13786,6 +15796,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -13814,18 +15837,6 @@ public class CardPaymentTest : TestBase
                 },
             ],
             PhysicalCardID = null,
-            SchemeFees =
-            [
-                new()
-                {
-                    Amount = "0.137465",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    Currency = CardPayments::SchemeFeeCurrency.Usd,
-                    FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
-                    FixedComponent = null,
-                    VariableRate = "0.0002",
-                },
-            ],
             State = new()
             {
                 AuthorizedAmount = 100,
@@ -13998,6 +16009,18 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::SchemeFeeCurrency.Usd,
+                            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardAuthorizationType.CardAuthorization,
                     Verification = new()
@@ -14082,6 +16105,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                     Verification = new()
@@ -14167,6 +16203,19 @@ public class CardPaymentTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = CardPayments::Reason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -14247,6 +16296,19 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardFinancialType.CardFinancial,
@@ -14286,6 +16348,19 @@ public class CardPaymentTest : TestBase
                         TransactionID = "627199945183184",
                     },
                     PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -14322,6 +16397,19 @@ public class CardPaymentTest : TestBase
                     PresentmentAmount = 20,
                     PresentmentCurrency = "USD",
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardIncrementType.CardIncrement,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -14450,6 +16538,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardRefundType.CardRefund,
                 },
@@ -14478,6 +16579,19 @@ public class CardPaymentTest : TestBase
                     ReversalAmount = 20,
                     ReversalPresentmentAmount = 20,
                     ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardReversalType.CardReversal,
                     UpdatedAuthorizationAmount = 80,
@@ -14618,6 +16732,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardSettlementType.CardSettlement,
@@ -14674,6 +16801,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardValidationType.InboundCardValidation,
                     Verification = new()
@@ -14846,6 +16986,18 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::SchemeFeeCurrency.Usd,
+                            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardAuthorizationType.CardAuthorization,
                     Verification = new()
@@ -14930,6 +17082,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                     Verification = new()
@@ -15015,6 +17180,19 @@ public class CardPaymentTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = CardPayments::Reason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -15095,6 +17273,19 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardFinancialType.CardFinancial,
@@ -15134,6 +17325,19 @@ public class CardPaymentTest : TestBase
                         TransactionID = "627199945183184",
                     },
                     PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -15170,6 +17374,19 @@ public class CardPaymentTest : TestBase
                     PresentmentAmount = 20,
                     PresentmentCurrency = "USD",
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardIncrementType.CardIncrement,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -15298,6 +17515,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardRefundType.CardRefund,
                 },
@@ -15326,6 +17556,19 @@ public class CardPaymentTest : TestBase
                     ReversalAmount = 20,
                     ReversalPresentmentAmount = 20,
                     ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardReversalType.CardReversal,
                     UpdatedAuthorizationAmount = 80,
@@ -15466,6 +17709,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardSettlementType.CardSettlement,
@@ -15522,6 +17778,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardValidationType.InboundCardValidation,
                     Verification = new()
@@ -15694,6 +17963,18 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::SchemeFeeCurrency.Usd,
+                            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardAuthorizationType.CardAuthorization,
                     Verification = new()
@@ -15778,6 +18059,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                     Verification = new()
@@ -15863,6 +18157,19 @@ public class CardPaymentTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = CardPayments::Reason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -15943,6 +18250,19 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardFinancialType.CardFinancial,
@@ -15982,6 +18302,19 @@ public class CardPaymentTest : TestBase
                         TransactionID = "627199945183184",
                     },
                     PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -16018,6 +18351,19 @@ public class CardPaymentTest : TestBase
                     PresentmentAmount = 20,
                     PresentmentCurrency = "USD",
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardIncrementType.CardIncrement,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -16146,6 +18492,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardRefundType.CardRefund,
                 },
@@ -16174,6 +18533,19 @@ public class CardPaymentTest : TestBase
                     ReversalAmount = 20,
                     ReversalPresentmentAmount = 20,
                     ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardReversalType.CardReversal,
                     UpdatedAuthorizationAmount = 80,
@@ -16314,6 +18686,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardSettlementType.CardSettlement,
@@ -16370,6 +18755,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardValidationType.InboundCardValidation,
                     Verification = new()
@@ -16542,6 +18940,18 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::SchemeFeeCurrency.Usd,
+                            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardAuthorizationType.CardAuthorization,
                     Verification = new()
@@ -16626,6 +19036,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                     Verification = new()
@@ -16711,6 +19134,19 @@ public class CardPaymentTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = CardPayments::Reason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -16791,6 +19227,19 @@ public class CardPaymentTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardFinancialType.CardFinancial,
@@ -16830,6 +19279,19 @@ public class CardPaymentTest : TestBase
                         TransactionID = "627199945183184",
                     },
                     PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -16866,6 +19328,19 @@ public class CardPaymentTest : TestBase
                     PresentmentAmount = 20,
                     PresentmentCurrency = "USD",
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Type = CardPayments::CardIncrementType.CardIncrement,
                     UpdatedAuthorizationAmount = 120,
                 },
@@ -16994,6 +19469,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardRefundType.CardRefund,
                 },
@@ -17022,6 +19510,19 @@ public class CardPaymentTest : TestBase
                     ReversalAmount = 20,
                     ReversalPresentmentAmount = 20,
                     ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardReversalType.CardReversal,
                     UpdatedAuthorizationAmount = 80,
@@ -17162,6 +19663,19 @@ public class CardPaymentTest : TestBase
                             ],
                         },
                     },
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = CardPayments::CardSettlementType.CardSettlement,
@@ -17218,6 +19732,19 @@ public class CardPaymentTest : TestBase
                     NetworkRiskScore = 10,
                     PhysicalCardID = null,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                            FeeType =
+                                CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = CardPayments::CardValidationType.InboundCardValidation,
                     Verification = new()
@@ -17245,18 +19772,6 @@ public class CardPaymentTest : TestBase
                 Other = new(),
             },
         ];
-        List<CardPayments::SchemeFee> expectedSchemeFees =
-        [
-            new()
-            {
-                Amount = "0.137465",
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                Currency = CardPayments::SchemeFeeCurrency.Usd,
-                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
-                FixedComponent = null,
-                VariableRate = "0.0002",
-            },
-        ];
         CardPayments::State expectedState = new()
         {
             AuthorizedAmount = 100,
@@ -17281,11 +19796,6 @@ public class CardPaymentTest : TestBase
             Assert.Equal(expectedElements[i], deserialized.Elements[i]);
         }
         Assert.Null(deserialized.PhysicalCardID);
-        Assert.Equal(expectedSchemeFees.Count, deserialized.SchemeFees.Count);
-        for (int i = 0; i < expectedSchemeFees.Count; i++)
-        {
-            Assert.Equal(expectedSchemeFees[i], deserialized.SchemeFees[i]);
-        }
         Assert.Equal(expectedState, deserialized.State);
         Assert.Equal(expectedType, deserialized.Type);
     }
@@ -17451,6 +19961,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -17535,6 +20057,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -17620,6 +20155,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -17700,6 +20248,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -17739,6 +20300,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -17775,6 +20349,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -17905,6 +20492,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -17933,6 +20533,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -18075,6 +20688,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -18131,6 +20757,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -18306,6 +20945,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -18390,6 +21041,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -18475,6 +21139,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -18555,6 +21232,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -18594,6 +21284,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -18630,6 +21333,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -18760,6 +21476,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -18788,6 +21517,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -18930,6 +21672,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -18986,6 +21741,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -19161,6 +21929,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -19245,6 +22025,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -19330,6 +22123,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -19410,6 +22216,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -19449,6 +22268,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -19485,6 +22317,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -19615,6 +22460,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -19643,6 +22501,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -19785,6 +22656,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -19841,6 +22725,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -20016,6 +22913,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -20100,6 +23009,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -20185,6 +23107,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -20265,6 +23200,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -20304,6 +23252,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -20340,6 +23301,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -20470,6 +23444,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -20498,6 +23485,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -20640,6 +23640,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -20696,6 +23709,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -20724,18 +23750,6 @@ public class CardPaymentTest : TestBase
                 },
             ],
             PhysicalCardID = null,
-            SchemeFees =
-            [
-                new()
-                {
-                    Amount = "0.137465",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    Currency = CardPayments::SchemeFeeCurrency.Usd,
-                    FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
-                    FixedComponent = null,
-                    VariableRate = "0.0002",
-                },
-            ],
             State = new()
             {
                 AuthorizedAmount = 100,
@@ -20913,6 +23927,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -20997,6 +24023,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -21082,6 +24121,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -21162,6 +24214,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -21201,6 +24266,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -21237,6 +24315,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -21367,6 +24458,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -21395,6 +24499,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -21537,6 +24654,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -21593,6 +24723,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -21768,6 +24911,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -21852,6 +25007,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -21937,6 +25105,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -22017,6 +25198,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -22056,6 +25250,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -22092,6 +25299,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -22222,6 +25442,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -22250,6 +25483,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -22392,6 +25638,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -22448,6 +25707,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -22623,6 +25895,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -22707,6 +25991,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -22792,6 +26089,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -22872,6 +26182,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -22911,6 +26234,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -22947,6 +26283,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -23077,6 +26426,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -23105,6 +26467,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -23247,6 +26622,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -23303,6 +26691,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -23478,6 +26879,18 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardAuthorizationType.CardAuthorization,
                         Verification = new()
@@ -23562,6 +26975,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                         Verification = new()
@@ -23647,6 +27073,19 @@ public class CardPaymentTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = CardPayments::Reason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -23727,6 +27166,19 @@ public class CardPaymentTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardFinancialType.CardFinancial,
@@ -23766,6 +27218,19 @@ public class CardPaymentTest : TestBase
                             TransactionID = "627199945183184",
                         },
                         PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -23802,6 +27267,19 @@ public class CardPaymentTest : TestBase
                         PresentmentAmount = 20,
                         PresentmentCurrency = "USD",
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Type = CardPayments::CardIncrementType.CardIncrement,
                         UpdatedAuthorizationAmount = 120,
                     },
@@ -23932,6 +27410,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardRefundType.CardRefund,
                     },
@@ -23960,6 +27451,19 @@ public class CardPaymentTest : TestBase
                         ReversalAmount = 20,
                         ReversalPresentmentAmount = 20,
                         ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardReversalType.CardReversal,
                         UpdatedAuthorizationAmount = 80,
@@ -24102,6 +27606,19 @@ public class CardPaymentTest : TestBase
                                 ],
                             },
                         },
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         Type = CardPayments::CardSettlementType.CardSettlement,
@@ -24158,6 +27675,19 @@ public class CardPaymentTest : TestBase
                         NetworkRiskScore = 10,
                         PhysicalCardID = null,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                                FeeType =
+                                    CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = CardPayments::CardValidationType.InboundCardValidation,
                         Verification = new()
@@ -24186,18 +27716,6 @@ public class CardPaymentTest : TestBase
                 },
             ],
             PhysicalCardID = null,
-            SchemeFees =
-            [
-                new()
-                {
-                    Amount = "0.137465",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    Currency = CardPayments::SchemeFeeCurrency.Usd,
-                    FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
-                    FixedComponent = null,
-                    VariableRate = "0.0002",
-                },
-            ],
             State = new()
             {
                 AuthorizedAmount = 100,
@@ -24366,6 +27884,18 @@ public class ElementTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::SchemeFeeCurrency.Usd,
+                        FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardAuthorizationType.CardAuthorization,
                 Verification = new()
@@ -24449,6 +27979,19 @@ public class ElementTest : TestBase
                 NetworkRiskScore = 10,
                 PhysicalCardID = null,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                 Verification = new()
@@ -24534,6 +28077,19 @@ public class ElementTest : TestBase
                 RealTimeDecisionID = null,
                 RealTimeDecisionReason = null,
                 Reason = CardPayments::Reason.InsufficientFunds,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Verification = new()
                 {
@@ -24614,6 +28170,19 @@ public class ElementTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardFinancialType.CardFinancial,
@@ -24653,6 +28222,19 @@ public class ElementTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                 UpdatedAuthorizationAmount = 120,
             },
@@ -24689,6 +28271,19 @@ public class ElementTest : TestBase
                 PresentmentAmount = 20,
                 PresentmentCurrency = "USD",
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Type = CardPayments::CardIncrementType.CardIncrement,
                 UpdatedAuthorizationAmount = 120,
             },
@@ -24814,6 +28409,19 @@ public class ElementTest : TestBase
                         ],
                     },
                 },
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardRefundType.CardRefund,
             },
@@ -24842,6 +28450,19 @@ public class ElementTest : TestBase
                 ReversalAmount = 20,
                 ReversalPresentmentAmount = 20,
                 ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardReversalType.CardReversal,
                 UpdatedAuthorizationAmount = 80,
@@ -24982,6 +28603,19 @@ public class ElementTest : TestBase
                         ],
                     },
                 },
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardSettlementType.CardSettlement,
@@ -25038,6 +28672,19 @@ public class ElementTest : TestBase
                 NetworkRiskScore = 10,
                 PhysicalCardID = null,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardValidationType.InboundCardValidation,
                 Verification = new()
@@ -25206,6 +28853,18 @@ public class ElementTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::SchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardAuthorizationType.CardAuthorization,
             Verification = new()
@@ -25288,6 +28947,19 @@ public class ElementTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
             Verification = new()
@@ -25373,6 +29045,18 @@ public class ElementTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = CardPayments::Reason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -25453,6 +29137,19 @@ public class ElementTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardFinancialType.CardFinancial,
@@ -25492,6 +29189,19 @@ public class ElementTest : TestBase
                 TransactionID = "627199945183184",
             },
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
             UpdatedAuthorizationAmount = 120,
         };
@@ -25528,6 +29238,19 @@ public class ElementTest : TestBase
             PresentmentAmount = 20,
             PresentmentCurrency = "USD",
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardIncrementType.CardIncrement,
             UpdatedAuthorizationAmount = 120,
         };
@@ -25649,6 +29372,18 @@ public class ElementTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardRefundType.CardRefund,
         };
@@ -25677,6 +29412,18 @@ public class ElementTest : TestBase
             ReversalAmount = 20,
             ReversalPresentmentAmount = 20,
             ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardReversalType.CardReversal,
             UpdatedAuthorizationAmount = 80,
@@ -25817,6 +29564,19 @@ public class ElementTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardSettlementType.CardSettlement,
@@ -25873,6 +29633,19 @@ public class ElementTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardValidationType.InboundCardValidation,
             Verification = new()
@@ -26063,6 +29836,18 @@ public class ElementTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::SchemeFeeCurrency.Usd,
+                        FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardAuthorizationType.CardAuthorization,
                 Verification = new()
@@ -26146,6 +29931,19 @@ public class ElementTest : TestBase
                 NetworkRiskScore = 10,
                 PhysicalCardID = null,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                 Verification = new()
@@ -26231,6 +30029,19 @@ public class ElementTest : TestBase
                 RealTimeDecisionID = null,
                 RealTimeDecisionReason = null,
                 Reason = CardPayments::Reason.InsufficientFunds,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Verification = new()
                 {
@@ -26311,6 +30122,19 @@ public class ElementTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardFinancialType.CardFinancial,
@@ -26350,6 +30174,19 @@ public class ElementTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                 UpdatedAuthorizationAmount = 120,
             },
@@ -26386,6 +30223,19 @@ public class ElementTest : TestBase
                 PresentmentAmount = 20,
                 PresentmentCurrency = "USD",
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Type = CardPayments::CardIncrementType.CardIncrement,
                 UpdatedAuthorizationAmount = 120,
             },
@@ -26511,6 +30361,19 @@ public class ElementTest : TestBase
                         ],
                     },
                 },
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardRefundType.CardRefund,
             },
@@ -26539,6 +30402,19 @@ public class ElementTest : TestBase
                 ReversalAmount = 20,
                 ReversalPresentmentAmount = 20,
                 ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardReversalType.CardReversal,
                 UpdatedAuthorizationAmount = 80,
@@ -26679,6 +30555,19 @@ public class ElementTest : TestBase
                         ],
                     },
                 },
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardSettlementType.CardSettlement,
@@ -26735,6 +30624,19 @@ public class ElementTest : TestBase
                 NetworkRiskScore = 10,
                 PhysicalCardID = null,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardValidationType.InboundCardValidation,
                 Verification = new()
@@ -26918,6 +30820,18 @@ public class ElementTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::SchemeFeeCurrency.Usd,
+                        FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardAuthorizationType.CardAuthorization,
                 Verification = new()
@@ -27001,6 +30915,19 @@ public class ElementTest : TestBase
                 NetworkRiskScore = 10,
                 PhysicalCardID = null,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                 Verification = new()
@@ -27086,6 +31013,19 @@ public class ElementTest : TestBase
                 RealTimeDecisionID = null,
                 RealTimeDecisionReason = null,
                 Reason = CardPayments::Reason.InsufficientFunds,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Verification = new()
                 {
@@ -27166,6 +31106,19 @@ public class ElementTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardFinancialType.CardFinancial,
@@ -27205,6 +31158,19 @@ public class ElementTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                 UpdatedAuthorizationAmount = 120,
             },
@@ -27241,6 +31207,19 @@ public class ElementTest : TestBase
                 PresentmentAmount = 20,
                 PresentmentCurrency = "USD",
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Type = CardPayments::CardIncrementType.CardIncrement,
                 UpdatedAuthorizationAmount = 120,
             },
@@ -27366,6 +31345,19 @@ public class ElementTest : TestBase
                         ],
                     },
                 },
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardRefundType.CardRefund,
             },
@@ -27394,6 +31386,19 @@ public class ElementTest : TestBase
                 ReversalAmount = 20,
                 ReversalPresentmentAmount = 20,
                 ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardReversalType.CardReversal,
                 UpdatedAuthorizationAmount = 80,
@@ -27534,6 +31539,19 @@ public class ElementTest : TestBase
                         ],
                     },
                 },
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardSettlementType.CardSettlement,
@@ -27590,6 +31608,19 @@ public class ElementTest : TestBase
                 NetworkRiskScore = 10,
                 PhysicalCardID = null,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardValidationType.InboundCardValidation,
                 Verification = new()
@@ -27765,6 +31796,18 @@ public class ElementTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::SchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardAuthorizationType.CardAuthorization,
             Verification = new()
@@ -27847,6 +31890,19 @@ public class ElementTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
             Verification = new()
@@ -27932,6 +31988,18 @@ public class ElementTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = CardPayments::Reason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -28012,6 +32080,19 @@ public class ElementTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardFinancialType.CardFinancial,
@@ -28051,6 +32132,19 @@ public class ElementTest : TestBase
                 TransactionID = "627199945183184",
             },
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
             UpdatedAuthorizationAmount = 120,
         };
@@ -28087,6 +32181,19 @@ public class ElementTest : TestBase
             PresentmentAmount = 20,
             PresentmentCurrency = "USD",
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardIncrementType.CardIncrement,
             UpdatedAuthorizationAmount = 120,
         };
@@ -28208,6 +32315,18 @@ public class ElementTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardRefundType.CardRefund,
         };
@@ -28236,6 +32355,18 @@ public class ElementTest : TestBase
             ReversalAmount = 20,
             ReversalPresentmentAmount = 20,
             ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardReversalType.CardReversal,
             UpdatedAuthorizationAmount = 80,
@@ -28376,6 +32507,19 @@ public class ElementTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardSettlementType.CardSettlement,
@@ -28432,6 +32576,19 @@ public class ElementTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardValidationType.InboundCardValidation,
             Verification = new()
@@ -28622,6 +32779,18 @@ public class ElementTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::SchemeFeeCurrency.Usd,
+                        FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardAuthorizationType.CardAuthorization,
                 Verification = new()
@@ -28705,6 +32874,19 @@ public class ElementTest : TestBase
                 NetworkRiskScore = 10,
                 PhysicalCardID = null,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                 Verification = new()
@@ -28790,6 +32972,19 @@ public class ElementTest : TestBase
                 RealTimeDecisionID = null,
                 RealTimeDecisionReason = null,
                 Reason = CardPayments::Reason.InsufficientFunds,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Verification = new()
                 {
@@ -28870,6 +33065,19 @@ public class ElementTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardFinancialType.CardFinancial,
@@ -28909,6 +33117,19 @@ public class ElementTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                 UpdatedAuthorizationAmount = 120,
             },
@@ -28945,6 +33166,19 @@ public class ElementTest : TestBase
                 PresentmentAmount = 20,
                 PresentmentCurrency = "USD",
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Type = CardPayments::CardIncrementType.CardIncrement,
                 UpdatedAuthorizationAmount = 120,
             },
@@ -29070,6 +33304,19 @@ public class ElementTest : TestBase
                         ],
                     },
                 },
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardRefundType.CardRefund,
             },
@@ -29098,6 +33345,19 @@ public class ElementTest : TestBase
                 ReversalAmount = 20,
                 ReversalPresentmentAmount = 20,
                 ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardReversalType.CardReversal,
                 UpdatedAuthorizationAmount = 80,
@@ -29238,6 +33498,19 @@ public class ElementTest : TestBase
                         ],
                     },
                 },
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardSettlementType.CardSettlement,
@@ -29294,6 +33567,19 @@ public class ElementTest : TestBase
                 NetworkRiskScore = 10,
                 PhysicalCardID = null,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardValidationType.InboundCardValidation,
                 Verification = new()
@@ -29597,6 +33883,18 @@ public class ElementTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::SchemeFeeCurrency.Usd,
+                        FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardAuthorizationType.CardAuthorization,
                 Verification = new()
@@ -29680,6 +33978,19 @@ public class ElementTest : TestBase
                 NetworkRiskScore = 10,
                 PhysicalCardID = null,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
                 Verification = new()
@@ -29765,6 +34076,19 @@ public class ElementTest : TestBase
                 RealTimeDecisionID = null,
                 RealTimeDecisionReason = null,
                 Reason = CardPayments::Reason.InsufficientFunds,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Verification = new()
                 {
@@ -29845,6 +34169,19 @@ public class ElementTest : TestBase
                 PresentmentCurrency = "USD",
                 ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardFinancialType.CardFinancial,
@@ -29884,6 +34221,19 @@ public class ElementTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
                 UpdatedAuthorizationAmount = 120,
             },
@@ -29920,6 +34270,19 @@ public class ElementTest : TestBase
                 PresentmentAmount = 20,
                 PresentmentCurrency = "USD",
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Type = CardPayments::CardIncrementType.CardIncrement,
                 UpdatedAuthorizationAmount = 120,
             },
@@ -30045,6 +34408,19 @@ public class ElementTest : TestBase
                         ],
                     },
                 },
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardRefundType.CardRefund,
             },
@@ -30073,6 +34449,19 @@ public class ElementTest : TestBase
                 ReversalAmount = 20,
                 ReversalPresentmentAmount = 20,
                 ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardReversalType.CardReversal,
                 UpdatedAuthorizationAmount = 80,
@@ -30213,6 +34602,19 @@ public class ElementTest : TestBase
                         ],
                     },
                 },
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = CardPayments::CardSettlementType.CardSettlement,
@@ -30269,6 +34671,19 @@ public class ElementTest : TestBase
                 NetworkRiskScore = 10,
                 PhysicalCardID = null,
                 RealTimeDecisionID = null,
+                SchemeFees =
+                [
+                    new()
+                    {
+                        Amount = "0.137465",
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                        FeeType =
+                            CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                        FixedComponent = null,
+                        VariableRate = "0.0002",
+                    },
+                ],
                 TerminalID = "RCN5VNXS",
                 Type = CardPayments::CardValidationType.InboundCardValidation,
                 Verification = new()
@@ -32864,6 +37279,18 @@ public class CardAuthorizationTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::SchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardAuthorizationType.CardAuthorization,
             Verification = new()
@@ -32939,6 +37366,18 @@ public class CardAuthorizationTest : TestBase
         string expectedPresentmentCurrency = "USD";
         ApiEnum<string, CardPayments::ProcessingCategory> expectedProcessingCategory =
             CardPayments::ProcessingCategory.Purchase;
+        List<CardPayments::SchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         ApiEnum<string, CardPayments::CardAuthorizationType> expectedType =
             CardPayments::CardAuthorizationType.CardAuthorization;
@@ -32986,6 +37425,11 @@ public class CardAuthorizationTest : TestBase
         Assert.Equal(expectedPresentmentCurrency, model.PresentmentCurrency);
         Assert.Equal(expectedProcessingCategory, model.ProcessingCategory);
         Assert.Null(model.RealTimeDecisionID);
+        Assert.Equal(expectedSchemeFees.Count, model.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], model.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, model.TerminalID);
         Assert.Equal(expectedType, model.Type);
         Assert.Equal(expectedVerification, model.Verification);
@@ -33051,6 +37495,18 @@ public class CardAuthorizationTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::SchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardAuthorizationType.CardAuthorization,
             Verification = new()
@@ -33142,6 +37598,18 @@ public class CardAuthorizationTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::SchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardAuthorizationType.CardAuthorization,
             Verification = new()
@@ -33224,6 +37692,18 @@ public class CardAuthorizationTest : TestBase
         string expectedPresentmentCurrency = "USD";
         ApiEnum<string, CardPayments::ProcessingCategory> expectedProcessingCategory =
             CardPayments::ProcessingCategory.Purchase;
+        List<CardPayments::SchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::SchemeFeeCurrency.Usd,
+                FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         ApiEnum<string, CardPayments::CardAuthorizationType> expectedType =
             CardPayments::CardAuthorizationType.CardAuthorization;
@@ -33271,6 +37751,11 @@ public class CardAuthorizationTest : TestBase
         Assert.Equal(expectedPresentmentCurrency, deserialized.PresentmentCurrency);
         Assert.Equal(expectedProcessingCategory, deserialized.ProcessingCategory);
         Assert.Null(deserialized.RealTimeDecisionID);
+        Assert.Equal(expectedSchemeFees.Count, deserialized.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], deserialized.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, deserialized.TerminalID);
         Assert.Equal(expectedType, deserialized.Type);
         Assert.Equal(expectedVerification, deserialized.Verification);
@@ -33336,6 +37821,18 @@ public class CardAuthorizationTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::SchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardAuthorizationType.CardAuthorization,
             Verification = new()
@@ -33421,6 +37918,18 @@ public class CardAuthorizationTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::ProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::SchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardAuthorizationType.CardAuthorization,
             Verification = new()
@@ -35289,6 +39798,296 @@ public class ProcessingCategoryTest : TestBase
     }
 }
 
+public class SchemeFeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardPayments::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::SchemeFeeCurrency.Usd,
+            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::SchemeFeeCurrency> expectedCurrency =
+            CardPayments::SchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::FeeType> expectedFeeType =
+            CardPayments::FeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedFeeType, model.FeeType);
+        Assert.Null(model.FixedComponent);
+        Assert.Equal(expectedVariableRate, model.VariableRate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardPayments::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::SchemeFeeCurrency.Usd,
+            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::SchemeFee>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardPayments::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::SchemeFeeCurrency.Usd,
+            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::SchemeFee>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::SchemeFeeCurrency> expectedCurrency =
+            CardPayments::SchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::FeeType> expectedFeeType =
+            CardPayments::FeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedFeeType, deserialized.FeeType);
+        Assert.Null(deserialized.FixedComponent);
+        Assert.Equal(expectedVariableRate, deserialized.VariableRate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardPayments::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::SchemeFeeCurrency.Usd,
+            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardPayments::SchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::SchemeFeeCurrency.Usd,
+            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        CardPayments::SchemeFee copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SchemeFeeCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(CardPayments::SchemeFeeCurrency.Usd)]
+    public void Validation_Works(CardPayments::SchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::SchemeFeeCurrency> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, CardPayments::SchemeFeeCurrency>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(CardPayments::SchemeFeeCurrency.Usd)]
+    public void SerializationRoundtrip_Works(CardPayments::SchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::SchemeFeeCurrency> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::SchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, CardPayments::SchemeFeeCurrency>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::SchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class FeeTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(CardPayments::FeeType.VisaInternationalServiceAssessmentSingleCurrency)]
+    [InlineData(CardPayments::FeeType.VisaInternationalServiceAssessmentCrossCurrency)]
+    [InlineData(CardPayments::FeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(CardPayments::FeeType.VisaAuthorizationInternationalPointOfSale)]
+    [InlineData(CardPayments::FeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::FeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(CardPayments::FeeType.VisaAuthorizationReversalInternationalPointOfSale)]
+    [InlineData(CardPayments::FeeType.VisaAuthorizationAddressVerificationService)]
+    [InlineData(CardPayments::FeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::FeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::FeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::FeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::FeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::FeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::FeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::FeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::FeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::FeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::FeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::FeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::FeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::FeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::FeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::FeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::FeeType.VisaServiceCommercialCredit)]
+    [InlineData(CardPayments::FeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(CardPayments::FeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(CardPayments::FeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(CardPayments::FeeType.PulseSwitchFee)]
+    public void Validation_Works(CardPayments::FeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::FeeType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, CardPayments::FeeType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(CardPayments::FeeType.VisaInternationalServiceAssessmentSingleCurrency)]
+    [InlineData(CardPayments::FeeType.VisaInternationalServiceAssessmentCrossCurrency)]
+    [InlineData(CardPayments::FeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(CardPayments::FeeType.VisaAuthorizationInternationalPointOfSale)]
+    [InlineData(CardPayments::FeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::FeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(CardPayments::FeeType.VisaAuthorizationReversalInternationalPointOfSale)]
+    [InlineData(CardPayments::FeeType.VisaAuthorizationAddressVerificationService)]
+    [InlineData(CardPayments::FeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::FeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::FeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::FeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::FeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::FeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::FeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::FeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::FeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::FeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::FeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::FeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::FeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::FeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::FeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::FeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::FeeType.VisaServiceCommercialCredit)]
+    [InlineData(CardPayments::FeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(CardPayments::FeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(CardPayments::FeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(CardPayments::FeeType.PulseSwitchFee)]
+    public void SerializationRoundtrip_Works(CardPayments::FeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::FeeType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, CardPayments::FeeType>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, CardPayments::FeeType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, CardPayments::FeeType>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class CardAuthorizationTypeTest : TestBase
 {
     [Theory]
@@ -36280,6 +41079,19 @@ public class CardBalanceInquiryTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
             Verification = new()
@@ -36353,6 +41165,19 @@ public class CardBalanceInquiryTest : TestBase
             TransactionID = "627199945183184",
         };
         long expectedNetworkRiskScore = 10;
+        List<CardPayments::CardBalanceInquirySchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                FeeType =
+                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         ApiEnum<string, CardPayments::CardBalanceInquiryType> expectedType =
             CardPayments::CardBalanceInquiryType.CardBalanceInquiry;
@@ -36396,6 +41221,11 @@ public class CardBalanceInquiryTest : TestBase
         Assert.Equal(expectedNetworkRiskScore, model.NetworkRiskScore);
         Assert.Null(model.PhysicalCardID);
         Assert.Null(model.RealTimeDecisionID);
+        Assert.Equal(expectedSchemeFees.Count, model.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], model.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, model.TerminalID);
         Assert.Equal(expectedType, model.Type);
         Assert.Equal(expectedVerification, model.Verification);
@@ -36456,6 +41286,19 @@ public class CardBalanceInquiryTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
             Verification = new()
@@ -36545,6 +41388,19 @@ public class CardBalanceInquiryTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
             Verification = new()
@@ -36625,6 +41481,19 @@ public class CardBalanceInquiryTest : TestBase
             TransactionID = "627199945183184",
         };
         long expectedNetworkRiskScore = 10;
+        List<CardPayments::CardBalanceInquirySchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                FeeType =
+                    CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         ApiEnum<string, CardPayments::CardBalanceInquiryType> expectedType =
             CardPayments::CardBalanceInquiryType.CardBalanceInquiry;
@@ -36668,6 +41537,11 @@ public class CardBalanceInquiryTest : TestBase
         Assert.Equal(expectedNetworkRiskScore, deserialized.NetworkRiskScore);
         Assert.Null(deserialized.PhysicalCardID);
         Assert.Null(deserialized.RealTimeDecisionID);
+        Assert.Equal(expectedSchemeFees.Count, deserialized.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], deserialized.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, deserialized.TerminalID);
         Assert.Equal(expectedType, deserialized.Type);
         Assert.Equal(expectedVerification, deserialized.Verification);
@@ -36728,6 +41602,19 @@ public class CardBalanceInquiryTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
             Verification = new()
@@ -36811,6 +41698,19 @@ public class CardBalanceInquiryTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardBalanceInquiryType.CardBalanceInquiry,
             Verification = new()
@@ -39017,6 +43917,342 @@ public class CardBalanceInquiryNetworkIdentifiersTest : TestBase
     }
 }
 
+public class CardBalanceInquirySchemeFeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardPayments::CardBalanceInquirySchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedFeeType, model.FeeType);
+        Assert.Null(model.FixedComponent);
+        Assert.Equal(expectedVariableRate, model.VariableRate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardPayments::CardBalanceInquirySchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardBalanceInquirySchemeFee>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardPayments::CardBalanceInquirySchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardBalanceInquirySchemeFee>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedFeeType, deserialized.FeeType);
+        Assert.Null(deserialized.FixedComponent);
+        Assert.Equal(expectedVariableRate, deserialized.VariableRate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardPayments::CardBalanceInquirySchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardPayments::CardBalanceInquirySchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        CardPayments::CardBalanceInquirySchemeFee copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardBalanceInquirySchemeFeeCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd)]
+    public void Validation_Works(CardPayments::CardBalanceInquirySchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeCurrency> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeCurrency.Usd)]
+    public void SerializationRoundtrip_Works(
+        CardPayments::CardBalanceInquirySchemeFeeCurrency rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeCurrency> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardBalanceInquirySchemeFeeFeeTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAuthorizationReversalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAccountVerificationInternational
+    )]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
+    )]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.PulseSwitchFee)]
+    public void Validation_Works(CardPayments::CardBalanceInquirySchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeFeeType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAuthorizationReversalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAccountVerificationInternational
+    )]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram
+    )]
+    [InlineData(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
+    )]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.PulseSwitchFee)]
+    public void SerializationRoundtrip_Works(
+        CardPayments::CardBalanceInquirySchemeFeeFeeType rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeFeeType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardBalanceInquirySchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class CardBalanceInquiryTypeTest : TestBase
 {
     [Theory]
@@ -39793,6 +45029,18 @@ public class CardDeclineTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = CardPayments::Reason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -39875,6 +45123,18 @@ public class CardDeclineTest : TestBase
             CardPayments::CardDeclineProcessingCategory.Purchase;
         ApiEnum<string, CardPayments::Reason> expectedReason =
             CardPayments::Reason.InsufficientFunds;
+        List<CardPayments::CardDeclineSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         CardPayments::CardDeclineVerification expectedVerification = new()
         {
@@ -39925,6 +45185,11 @@ public class CardDeclineTest : TestBase
         Assert.Null(model.RealTimeDecisionID);
         Assert.Null(model.RealTimeDecisionReason);
         Assert.Equal(expectedReason, model.Reason);
+        Assert.Equal(expectedSchemeFees.Count, model.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], model.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, model.TerminalID);
         Assert.Equal(expectedVerification, model.Verification);
     }
@@ -39993,6 +45258,18 @@ public class CardDeclineTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = CardPayments::Reason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -40090,6 +45367,18 @@ public class CardDeclineTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = CardPayments::Reason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -40179,6 +45468,18 @@ public class CardDeclineTest : TestBase
             CardPayments::CardDeclineProcessingCategory.Purchase;
         ApiEnum<string, CardPayments::Reason> expectedReason =
             CardPayments::Reason.InsufficientFunds;
+        List<CardPayments::CardDeclineSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         CardPayments::CardDeclineVerification expectedVerification = new()
         {
@@ -40229,6 +45530,11 @@ public class CardDeclineTest : TestBase
         Assert.Null(deserialized.RealTimeDecisionID);
         Assert.Null(deserialized.RealTimeDecisionReason);
         Assert.Equal(expectedReason, deserialized.Reason);
+        Assert.Equal(expectedSchemeFees.Count, deserialized.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], deserialized.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, deserialized.TerminalID);
         Assert.Equal(expectedVerification, deserialized.Verification);
     }
@@ -40297,6 +45603,18 @@ public class CardDeclineTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = CardPayments::Reason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -40388,6 +45706,18 @@ public class CardDeclineTest : TestBase
             RealTimeDecisionID = null,
             RealTimeDecisionReason = null,
             Reason = CardPayments::Reason.InsufficientFunds,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Verification = new()
             {
@@ -42839,6 +48169,310 @@ public class ReasonTest : TestBase
     }
 }
 
+public class CardDeclineSchemeFeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardPayments::CardDeclineSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardDeclineSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardDeclineSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardDeclineSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedFeeType, model.FeeType);
+        Assert.Null(model.FixedComponent);
+        Assert.Equal(expectedVariableRate, model.VariableRate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardPayments::CardDeclineSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardDeclineSchemeFee>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardPayments::CardDeclineSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardDeclineSchemeFee>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardDeclineSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardDeclineSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardDeclineSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedFeeType, deserialized.FeeType);
+        Assert.Null(deserialized.FixedComponent);
+        Assert.Equal(expectedVariableRate, deserialized.VariableRate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardPayments::CardDeclineSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardPayments::CardDeclineSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardDeclineSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        CardPayments::CardDeclineSchemeFee copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardDeclineSchemeFeeCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(CardPayments::CardDeclineSchemeFeeCurrency.Usd)]
+    public void Validation_Works(CardPayments::CardDeclineSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardDeclineSchemeFeeCurrency> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardDeclineSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(CardPayments::CardDeclineSchemeFeeCurrency.Usd)]
+    public void SerializationRoundtrip_Works(CardPayments::CardDeclineSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardDeclineSchemeFeeCurrency> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardDeclineSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardDeclineSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardDeclineSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardDeclineSchemeFeeFeeTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(
+        CardPayments::CardDeclineSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardDeclineSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(
+        CardPayments::CardDeclineSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardDeclineSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardDeclineSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.PulseSwitchFee)]
+    public void Validation_Works(CardPayments::CardDeclineSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardDeclineSchemeFeeFeeType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardDeclineSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        CardPayments::CardDeclineSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardDeclineSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(
+        CardPayments::CardDeclineSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardDeclineSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardDeclineSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.PulseSwitchFee)]
+    public void SerializationRoundtrip_Works(CardPayments::CardDeclineSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardDeclineSchemeFeeFeeType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardDeclineSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardDeclineSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardDeclineSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class CardDeclineVerificationTest : TestBase
 {
     [Fact]
@@ -43539,6 +49173,19 @@ public class CardFinancialTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardFinancialType.CardFinancial,
@@ -43621,6 +49268,18 @@ public class CardFinancialTest : TestBase
         string expectedPresentmentCurrency = "USD";
         ApiEnum<string, CardPayments::CardFinancialProcessingCategory> expectedProcessingCategory =
             CardPayments::CardFinancialProcessingCategory.Purchase;
+        List<CardPayments::CardFinancialSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, CardPayments::CardFinancialType> expectedType =
@@ -43670,6 +49329,11 @@ public class CardFinancialTest : TestBase
         Assert.Equal(expectedPresentmentCurrency, model.PresentmentCurrency);
         Assert.Equal(expectedProcessingCategory, model.ProcessingCategory);
         Assert.Null(model.RealTimeDecisionID);
+        Assert.Equal(expectedSchemeFees.Count, model.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], model.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, model.TerminalID);
         Assert.Equal(expectedTransactionID, model.TransactionID);
         Assert.Equal(expectedType, model.Type);
@@ -43736,6 +49400,19 @@ public class CardFinancialTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardFinancialType.CardFinancial,
@@ -43831,6 +49508,19 @@ public class CardFinancialTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardFinancialType.CardFinancial,
@@ -43920,6 +49610,18 @@ public class CardFinancialTest : TestBase
         string expectedPresentmentCurrency = "USD";
         ApiEnum<string, CardPayments::CardFinancialProcessingCategory> expectedProcessingCategory =
             CardPayments::CardFinancialProcessingCategory.Purchase;
+        List<CardPayments::CardFinancialSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, CardPayments::CardFinancialType> expectedType =
@@ -43969,6 +49671,11 @@ public class CardFinancialTest : TestBase
         Assert.Equal(expectedPresentmentCurrency, deserialized.PresentmentCurrency);
         Assert.Equal(expectedProcessingCategory, deserialized.ProcessingCategory);
         Assert.Null(deserialized.RealTimeDecisionID);
+        Assert.Equal(expectedSchemeFees.Count, deserialized.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], deserialized.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, deserialized.TerminalID);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
         Assert.Equal(expectedType, deserialized.Type);
@@ -44035,6 +49742,19 @@ public class CardFinancialTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardFinancialType.CardFinancial,
@@ -44124,6 +49844,19 @@ public class CardFinancialTest : TestBase
             PresentmentCurrency = "USD",
             ProcessingCategory = CardPayments::CardFinancialProcessingCategory.Purchase,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardFinancialType.CardFinancial,
@@ -46463,6 +52196,314 @@ public class CardFinancialProcessingCategoryTest : TestBase
     }
 }
 
+public class CardFinancialSchemeFeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardPayments::CardFinancialSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardFinancialSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardFinancialSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardFinancialSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedFeeType, model.FeeType);
+        Assert.Null(model.FixedComponent);
+        Assert.Equal(expectedVariableRate, model.VariableRate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardPayments::CardFinancialSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardFinancialSchemeFee>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardPayments::CardFinancialSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardFinancialSchemeFee>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardFinancialSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardFinancialSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardFinancialSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedFeeType, deserialized.FeeType);
+        Assert.Null(deserialized.FixedComponent);
+        Assert.Equal(expectedVariableRate, deserialized.VariableRate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardPayments::CardFinancialSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardPayments::CardFinancialSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardFinancialSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        CardPayments::CardFinancialSchemeFee copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardFinancialSchemeFeeCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(CardPayments::CardFinancialSchemeFeeCurrency.Usd)]
+    public void Validation_Works(CardPayments::CardFinancialSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardFinancialSchemeFeeCurrency> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFinancialSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(CardPayments::CardFinancialSchemeFeeCurrency.Usd)]
+    public void SerializationRoundtrip_Works(CardPayments::CardFinancialSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardFinancialSchemeFeeCurrency> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFinancialSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFinancialSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFinancialSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardFinancialSchemeFeeFeeTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(
+        CardPayments::CardFinancialSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardFinancialSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(
+        CardPayments::CardFinancialSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardFinancialSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardFinancialSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(
+        CardPayments::CardFinancialSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
+    )]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.PulseSwitchFee)]
+    public void Validation_Works(CardPayments::CardFinancialSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardFinancialSchemeFeeFeeType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFinancialSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        CardPayments::CardFinancialSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardFinancialSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(
+        CardPayments::CardFinancialSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardFinancialSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardFinancialSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(
+        CardPayments::CardFinancialSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
+    )]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.PulseSwitchFee)]
+    public void SerializationRoundtrip_Works(CardPayments::CardFinancialSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardFinancialSchemeFeeFeeType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFinancialSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFinancialSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFinancialSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class CardFinancialTypeTest : TestBase
 {
     [Theory]
@@ -47176,6 +53217,19 @@ public class CardFuelConfirmationTest : TestBase
                 TransactionID = "627199945183184",
             },
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
             UpdatedAuthorizationAmount = 120,
         };
@@ -47194,6 +53248,19 @@ public class CardFuelConfirmationTest : TestBase
             TransactionID = "627199945183184",
         };
         string expectedPendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4";
+        List<CardPayments::CardFuelConfirmationSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                FeeType =
+                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         ApiEnum<string, CardPayments::CardFuelConfirmationType> expectedType =
             CardPayments::CardFuelConfirmationType.CardFuelConfirmation;
         long expectedUpdatedAuthorizationAmount = 120;
@@ -47204,6 +53271,11 @@ public class CardFuelConfirmationTest : TestBase
         Assert.Equal(expectedNetwork, model.Network);
         Assert.Equal(expectedNetworkIdentifiers, model.NetworkIdentifiers);
         Assert.Equal(expectedPendingTransactionID, model.PendingTransactionID);
+        Assert.Equal(expectedSchemeFees.Count, model.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], model.SchemeFees[i]);
+        }
         Assert.Equal(expectedType, model.Type);
         Assert.Equal(expectedUpdatedAuthorizationAmount, model.UpdatedAuthorizationAmount);
     }
@@ -47225,6 +53297,19 @@ public class CardFuelConfirmationTest : TestBase
                 TransactionID = "627199945183184",
             },
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
             UpdatedAuthorizationAmount = 120,
         };
@@ -47255,6 +53340,19 @@ public class CardFuelConfirmationTest : TestBase
                 TransactionID = "627199945183184",
             },
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
             UpdatedAuthorizationAmount = 120,
         };
@@ -47280,6 +53378,19 @@ public class CardFuelConfirmationTest : TestBase
             TransactionID = "627199945183184",
         };
         string expectedPendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4";
+        List<CardPayments::CardFuelConfirmationSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                FeeType =
+                    CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         ApiEnum<string, CardPayments::CardFuelConfirmationType> expectedType =
             CardPayments::CardFuelConfirmationType.CardFuelConfirmation;
         long expectedUpdatedAuthorizationAmount = 120;
@@ -47290,6 +53401,11 @@ public class CardFuelConfirmationTest : TestBase
         Assert.Equal(expectedNetwork, deserialized.Network);
         Assert.Equal(expectedNetworkIdentifiers, deserialized.NetworkIdentifiers);
         Assert.Equal(expectedPendingTransactionID, deserialized.PendingTransactionID);
+        Assert.Equal(expectedSchemeFees.Count, deserialized.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], deserialized.SchemeFees[i]);
+        }
         Assert.Equal(expectedType, deserialized.Type);
         Assert.Equal(expectedUpdatedAuthorizationAmount, deserialized.UpdatedAuthorizationAmount);
     }
@@ -47311,6 +53427,19 @@ public class CardFuelConfirmationTest : TestBase
                 TransactionID = "627199945183184",
             },
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
             UpdatedAuthorizationAmount = 120,
         };
@@ -47335,6 +53464,19 @@ public class CardFuelConfirmationTest : TestBase
                 TransactionID = "627199945183184",
             },
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardFuelConfirmationType.CardFuelConfirmation,
             UpdatedAuthorizationAmount = 120,
         };
@@ -47555,6 +53697,342 @@ public class CardFuelConfirmationNetworkIdentifiersTest : TestBase
     }
 }
 
+public class CardFuelConfirmationSchemeFeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardPayments::CardFuelConfirmationSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedFeeType, model.FeeType);
+        Assert.Null(model.FixedComponent);
+        Assert.Equal(expectedVariableRate, model.VariableRate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardPayments::CardFuelConfirmationSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardFuelConfirmationSchemeFee>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardPayments::CardFuelConfirmationSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardFuelConfirmationSchemeFee>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedFeeType, deserialized.FeeType);
+        Assert.Null(deserialized.FixedComponent);
+        Assert.Equal(expectedVariableRate, deserialized.VariableRate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardPayments::CardFuelConfirmationSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardPayments::CardFuelConfirmationSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        CardPayments::CardFuelConfirmationSchemeFee copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardFuelConfirmationSchemeFeeCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd)]
+    public void Validation_Works(CardPayments::CardFuelConfirmationSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeCurrency> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeCurrency.Usd)]
+    public void SerializationRoundtrip_Works(
+        CardPayments::CardFuelConfirmationSchemeFeeCurrency rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeCurrency> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardFuelConfirmationSchemeFeeFeeTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAccountVerificationInternational
+    )]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
+    )]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFee)]
+    public void Validation_Works(CardPayments::CardFuelConfirmationSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeFeeType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAccountVerificationInternational
+    )]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram
+    )]
+    [InlineData(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
+    )]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFee)]
+    public void SerializationRoundtrip_Works(
+        CardPayments::CardFuelConfirmationSchemeFeeFeeType rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeFeeType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardFuelConfirmationSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class CardFuelConfirmationTypeTest : TestBase
 {
     [Theory]
@@ -47645,6 +54123,19 @@ public class CardIncrementTest : TestBase
             PresentmentAmount = 20,
             PresentmentCurrency = "USD",
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardIncrementType.CardIncrement,
             UpdatedAuthorizationAmount = 120,
         };
@@ -47682,6 +54173,18 @@ public class CardIncrementTest : TestBase
         string expectedPendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4";
         long expectedPresentmentAmount = 20;
         string expectedPresentmentCurrency = "USD";
+        List<CardPayments::CardIncrementSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         ApiEnum<string, CardPayments::CardIncrementType> expectedType =
             CardPayments::CardIncrementType.CardIncrement;
         long expectedUpdatedAuthorizationAmount = 120;
@@ -47699,6 +54202,11 @@ public class CardIncrementTest : TestBase
         Assert.Equal(expectedPresentmentAmount, model.PresentmentAmount);
         Assert.Equal(expectedPresentmentCurrency, model.PresentmentCurrency);
         Assert.Null(model.RealTimeDecisionID);
+        Assert.Equal(expectedSchemeFees.Count, model.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], model.SchemeFees[i]);
+        }
         Assert.Equal(expectedType, model.Type);
         Assert.Equal(expectedUpdatedAuthorizationAmount, model.UpdatedAuthorizationAmount);
     }
@@ -47739,6 +54247,19 @@ public class CardIncrementTest : TestBase
             PresentmentAmount = 20,
             PresentmentCurrency = "USD",
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardIncrementType.CardIncrement,
             UpdatedAuthorizationAmount = 120,
         };
@@ -47788,6 +54309,19 @@ public class CardIncrementTest : TestBase
             PresentmentAmount = 20,
             PresentmentCurrency = "USD",
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardIncrementType.CardIncrement,
             UpdatedAuthorizationAmount = 120,
         };
@@ -47832,6 +54366,18 @@ public class CardIncrementTest : TestBase
         string expectedPendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4";
         long expectedPresentmentAmount = 20;
         string expectedPresentmentCurrency = "USD";
+        List<CardPayments::CardIncrementSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         ApiEnum<string, CardPayments::CardIncrementType> expectedType =
             CardPayments::CardIncrementType.CardIncrement;
         long expectedUpdatedAuthorizationAmount = 120;
@@ -47849,6 +54395,11 @@ public class CardIncrementTest : TestBase
         Assert.Equal(expectedPresentmentAmount, deserialized.PresentmentAmount);
         Assert.Equal(expectedPresentmentCurrency, deserialized.PresentmentCurrency);
         Assert.Null(deserialized.RealTimeDecisionID);
+        Assert.Equal(expectedSchemeFees.Count, deserialized.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], deserialized.SchemeFees[i]);
+        }
         Assert.Equal(expectedType, deserialized.Type);
         Assert.Equal(expectedUpdatedAuthorizationAmount, deserialized.UpdatedAuthorizationAmount);
     }
@@ -47889,6 +54440,19 @@ public class CardIncrementTest : TestBase
             PresentmentAmount = 20,
             PresentmentCurrency = "USD",
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardIncrementType.CardIncrement,
             UpdatedAuthorizationAmount = 120,
         };
@@ -47932,6 +54496,19 @@ public class CardIncrementTest : TestBase
             PresentmentAmount = 20,
             PresentmentCurrency = "USD",
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Type = CardPayments::CardIncrementType.CardIncrement,
             UpdatedAuthorizationAmount = 120,
         };
@@ -49328,6 +55905,314 @@ public class CardIncrementNetworkIdentifiersTest : TestBase
     }
 }
 
+public class CardIncrementSchemeFeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardPayments::CardIncrementSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardIncrementSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardIncrementSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardIncrementSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedFeeType, model.FeeType);
+        Assert.Null(model.FixedComponent);
+        Assert.Equal(expectedVariableRate, model.VariableRate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardPayments::CardIncrementSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardIncrementSchemeFee>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardPayments::CardIncrementSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardIncrementSchemeFee>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardIncrementSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardIncrementSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardIncrementSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedFeeType, deserialized.FeeType);
+        Assert.Null(deserialized.FixedComponent);
+        Assert.Equal(expectedVariableRate, deserialized.VariableRate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardPayments::CardIncrementSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardPayments::CardIncrementSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardIncrementSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        CardPayments::CardIncrementSchemeFee copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardIncrementSchemeFeeCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(CardPayments::CardIncrementSchemeFeeCurrency.Usd)]
+    public void Validation_Works(CardPayments::CardIncrementSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardIncrementSchemeFeeCurrency> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardIncrementSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(CardPayments::CardIncrementSchemeFeeCurrency.Usd)]
+    public void SerializationRoundtrip_Works(CardPayments::CardIncrementSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardIncrementSchemeFeeCurrency> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardIncrementSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardIncrementSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardIncrementSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardIncrementSchemeFeeFeeTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(
+        CardPayments::CardIncrementSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardIncrementSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(
+        CardPayments::CardIncrementSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardIncrementSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardIncrementSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(
+        CardPayments::CardIncrementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
+    )]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.PulseSwitchFee)]
+    public void Validation_Works(CardPayments::CardIncrementSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardIncrementSchemeFeeFeeType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardIncrementSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        CardPayments::CardIncrementSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardIncrementSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(
+        CardPayments::CardIncrementSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardIncrementSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardIncrementSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(
+        CardPayments::CardIncrementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
+    )]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.PulseSwitchFee)]
+    public void SerializationRoundtrip_Works(CardPayments::CardIncrementSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardIncrementSchemeFeeFeeType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardIncrementSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardIncrementSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardIncrementSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class CardIncrementTypeTest : TestBase
 {
     [Theory]
@@ -49505,6 +56390,18 @@ public class CardRefundTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardRefundType.CardRefund,
         };
@@ -49629,6 +56526,18 @@ public class CardRefundTest : TestBase
                 ],
             },
         };
+        List<CardPayments::CardRefundSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, CardPayments::CardRefundType> expectedType =
             CardPayments::CardRefundType.CardRefund;
@@ -49650,6 +56559,11 @@ public class CardRefundTest : TestBase
         Assert.Equal(expectedPresentmentAmount, model.PresentmentAmount);
         Assert.Equal(expectedPresentmentCurrency, model.PresentmentCurrency);
         Assert.Equal(expectedPurchaseDetails, model.PurchaseDetails);
+        Assert.Equal(expectedSchemeFees.Count, model.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], model.SchemeFees[i]);
+        }
         Assert.Equal(expectedTransactionID, model.TransactionID);
         Assert.Equal(expectedType, model.Type);
     }
@@ -49775,6 +56689,18 @@ public class CardRefundTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardRefundType.CardRefund,
         };
@@ -49909,6 +56835,18 @@ public class CardRefundTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardRefundType.CardRefund,
         };
@@ -50040,6 +56978,18 @@ public class CardRefundTest : TestBase
                 ],
             },
         };
+        List<CardPayments::CardRefundSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, CardPayments::CardRefundType> expectedType =
             CardPayments::CardRefundType.CardRefund;
@@ -50061,6 +57011,11 @@ public class CardRefundTest : TestBase
         Assert.Equal(expectedPresentmentAmount, deserialized.PresentmentAmount);
         Assert.Equal(expectedPresentmentCurrency, deserialized.PresentmentCurrency);
         Assert.Equal(expectedPurchaseDetails, deserialized.PurchaseDetails);
+        Assert.Equal(expectedSchemeFees.Count, deserialized.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], deserialized.SchemeFees[i]);
+        }
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
         Assert.Equal(expectedType, deserialized.Type);
     }
@@ -50186,6 +57141,18 @@ public class CardRefundTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardRefundType.CardRefund,
         };
@@ -50314,6 +57281,18 @@ public class CardRefundTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardRefundType.CardRefund,
         };
@@ -53356,6 +60335,306 @@ public class StopOverCodeTest : TestBase
     }
 }
 
+public class CardRefundSchemeFeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardPayments::CardRefundSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardRefundSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardRefundSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardRefundSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedFeeType, model.FeeType);
+        Assert.Null(model.FixedComponent);
+        Assert.Equal(expectedVariableRate, model.VariableRate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardPayments::CardRefundSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardRefundSchemeFee>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardPayments::CardRefundSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardRefundSchemeFee>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardRefundSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardRefundSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardRefundSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedFeeType, deserialized.FeeType);
+        Assert.Null(deserialized.FixedComponent);
+        Assert.Equal(expectedVariableRate, deserialized.VariableRate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardPayments::CardRefundSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardPayments::CardRefundSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardRefundSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        CardPayments::CardRefundSchemeFee copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardRefundSchemeFeeCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(CardPayments::CardRefundSchemeFeeCurrency.Usd)]
+    public void Validation_Works(CardPayments::CardRefundSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardRefundSchemeFeeCurrency> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardRefundSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(CardPayments::CardRefundSchemeFeeCurrency.Usd)]
+    public void SerializationRoundtrip_Works(CardPayments::CardRefundSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardRefundSchemeFeeCurrency> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardRefundSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardRefundSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardRefundSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardRefundSchemeFeeFeeTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(
+        CardPayments::CardRefundSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardRefundSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardRefundSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardRefundSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.PulseSwitchFee)]
+    public void Validation_Works(CardPayments::CardRefundSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardRefundSchemeFeeFeeType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardRefundSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        CardPayments::CardRefundSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardRefundSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardRefundSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardRefundSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.PulseSwitchFee)]
+    public void SerializationRoundtrip_Works(CardPayments::CardRefundSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardRefundSchemeFeeFeeType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardRefundSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardRefundSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardRefundSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class CardRefundTypeTest : TestBase
 {
     [Theory]
@@ -53440,6 +60719,18 @@ public class CardReversalTest : TestBase
             ReversalAmount = 20,
             ReversalPresentmentAmount = 20,
             ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardReversalType.CardReversal,
             UpdatedAuthorizationAmount = 80,
@@ -53472,6 +60763,18 @@ public class CardReversalTest : TestBase
         long expectedReversalPresentmentAmount = 20;
         ApiEnum<string, CardPayments::ReversalReason> expectedReversalReason =
             CardPayments::ReversalReason.ReversedByCustomer;
+        List<CardPayments::CardReversalSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         ApiEnum<string, CardPayments::CardReversalType> expectedType =
             CardPayments::CardReversalType.CardReversal;
@@ -53495,6 +60798,11 @@ public class CardReversalTest : TestBase
         Assert.Equal(expectedReversalAmount, model.ReversalAmount);
         Assert.Equal(expectedReversalPresentmentAmount, model.ReversalPresentmentAmount);
         Assert.Equal(expectedReversalReason, model.ReversalReason);
+        Assert.Equal(expectedSchemeFees.Count, model.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], model.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, model.TerminalID);
         Assert.Equal(expectedType, model.Type);
         Assert.Equal(expectedUpdatedAuthorizationAmount, model.UpdatedAuthorizationAmount);
@@ -53532,6 +60840,18 @@ public class CardReversalTest : TestBase
             ReversalAmount = 20,
             ReversalPresentmentAmount = 20,
             ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardReversalType.CardReversal,
             UpdatedAuthorizationAmount = 80,
@@ -53575,6 +60895,18 @@ public class CardReversalTest : TestBase
             ReversalAmount = 20,
             ReversalPresentmentAmount = 20,
             ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardReversalType.CardReversal,
             UpdatedAuthorizationAmount = 80,
@@ -53614,6 +60946,18 @@ public class CardReversalTest : TestBase
         long expectedReversalPresentmentAmount = 20;
         ApiEnum<string, CardPayments::ReversalReason> expectedReversalReason =
             CardPayments::ReversalReason.ReversedByCustomer;
+        List<CardPayments::CardReversalSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         ApiEnum<string, CardPayments::CardReversalType> expectedType =
             CardPayments::CardReversalType.CardReversal;
@@ -53637,6 +60981,11 @@ public class CardReversalTest : TestBase
         Assert.Equal(expectedReversalAmount, deserialized.ReversalAmount);
         Assert.Equal(expectedReversalPresentmentAmount, deserialized.ReversalPresentmentAmount);
         Assert.Equal(expectedReversalReason, deserialized.ReversalReason);
+        Assert.Equal(expectedSchemeFees.Count, deserialized.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], deserialized.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, deserialized.TerminalID);
         Assert.Equal(expectedType, deserialized.Type);
         Assert.Equal(expectedUpdatedAuthorizationAmount, deserialized.UpdatedAuthorizationAmount);
@@ -53674,6 +61023,18 @@ public class CardReversalTest : TestBase
             ReversalAmount = 20,
             ReversalPresentmentAmount = 20,
             ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardReversalType.CardReversal,
             UpdatedAuthorizationAmount = 80,
@@ -53711,6 +61072,18 @@ public class CardReversalTest : TestBase
             ReversalAmount = 20,
             ReversalPresentmentAmount = 20,
             ReversalReason = CardPayments::ReversalReason.ReversedByCustomer,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+                    FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardReversalType.CardReversal,
             UpdatedAuthorizationAmount = 80,
@@ -53995,6 +61368,310 @@ public class ReversalReasonTest : TestBase
     }
 }
 
+public class CardReversalSchemeFeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardPayments::CardReversalSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardReversalSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardReversalSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardReversalSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedFeeType, model.FeeType);
+        Assert.Null(model.FixedComponent);
+        Assert.Equal(expectedVariableRate, model.VariableRate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardPayments::CardReversalSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardReversalSchemeFee>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardPayments::CardReversalSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardReversalSchemeFee>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardReversalSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardReversalSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardReversalSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedFeeType, deserialized.FeeType);
+        Assert.Null(deserialized.FixedComponent);
+        Assert.Equal(expectedVariableRate, deserialized.VariableRate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardPayments::CardReversalSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardPayments::CardReversalSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardReversalSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        CardPayments::CardReversalSchemeFee copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardReversalSchemeFeeCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(CardPayments::CardReversalSchemeFeeCurrency.Usd)]
+    public void Validation_Works(CardPayments::CardReversalSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardReversalSchemeFeeCurrency> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardReversalSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(CardPayments::CardReversalSchemeFeeCurrency.Usd)]
+    public void SerializationRoundtrip_Works(CardPayments::CardReversalSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardReversalSchemeFeeCurrency> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardReversalSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardReversalSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardReversalSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardReversalSchemeFeeFeeTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(
+        CardPayments::CardReversalSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardReversalSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(
+        CardPayments::CardReversalSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardReversalSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardReversalSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.PulseSwitchFee)]
+    public void Validation_Works(CardPayments::CardReversalSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardReversalSchemeFeeFeeType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardReversalSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        CardPayments::CardReversalSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardReversalSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(
+        CardPayments::CardReversalSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardReversalSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardReversalSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.PulseSwitchFee)]
+    public void SerializationRoundtrip_Works(CardPayments::CardReversalSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardReversalSchemeFeeFeeType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardReversalSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardReversalSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardReversalSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class CardReversalTypeTest : TestBase
 {
     [Theory]
@@ -54189,6 +61866,19 @@ public class CardSettlementTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardSettlementType.CardSettlement,
@@ -54327,6 +62017,18 @@ public class CardSettlementTest : TestBase
                 ],
             },
         };
+        List<CardPayments::CardSettlementSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         CardPayments::CardSettlementSurcharge expectedSurcharge = new()
         {
             Amount = 0,
@@ -54356,6 +62058,11 @@ public class CardSettlementTest : TestBase
         Assert.Equal(expectedPresentmentAmount, model.PresentmentAmount);
         Assert.Equal(expectedPresentmentCurrency, model.PresentmentCurrency);
         Assert.Equal(expectedPurchaseDetails, model.PurchaseDetails);
+        Assert.Equal(expectedSchemeFees.Count, model.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], model.SchemeFees[i]);
+        }
         Assert.Equal(expectedSurcharge, model.Surcharge);
         Assert.Equal(expectedTransactionID, model.TransactionID);
         Assert.Equal(expectedType, model.Type);
@@ -54499,6 +62206,19 @@ public class CardSettlementTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardSettlementType.CardSettlement,
@@ -54651,6 +62371,19 @@ public class CardSettlementTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardSettlementType.CardSettlement,
@@ -54796,6 +62529,18 @@ public class CardSettlementTest : TestBase
                 ],
             },
         };
+        List<CardPayments::CardSettlementSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         CardPayments::CardSettlementSurcharge expectedSurcharge = new()
         {
             Amount = 0,
@@ -54825,6 +62570,11 @@ public class CardSettlementTest : TestBase
         Assert.Equal(expectedPresentmentAmount, deserialized.PresentmentAmount);
         Assert.Equal(expectedPresentmentCurrency, deserialized.PresentmentCurrency);
         Assert.Equal(expectedPurchaseDetails, deserialized.PurchaseDetails);
+        Assert.Equal(expectedSchemeFees.Count, deserialized.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], deserialized.SchemeFees[i]);
+        }
         Assert.Equal(expectedSurcharge, deserialized.Surcharge);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
         Assert.Equal(expectedType, deserialized.Type);
@@ -54968,6 +62718,19 @@ public class CardSettlementTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardSettlementType.CardSettlement,
@@ -55114,6 +62877,19 @@ public class CardSettlementTest : TestBase
                     ],
                 },
             },
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             Surcharge = new() { Amount = 0, PresentmentAmount = 0 },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CardPayments::CardSettlementType.CardSettlement,
@@ -58656,6 +66432,322 @@ public class CardSettlementPurchaseDetailsTravelTripLegStopOverCodeTest : TestBa
     }
 }
 
+public class CardSettlementSchemeFeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardPayments::CardSettlementSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardSettlementSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardSettlementSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardSettlementSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedFeeType, model.FeeType);
+        Assert.Null(model.FixedComponent);
+        Assert.Equal(expectedVariableRate, model.VariableRate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardPayments::CardSettlementSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardSettlementSchemeFee>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardPayments::CardSettlementSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardSettlementSchemeFee>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardSettlementSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardSettlementSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardSettlementSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedFeeType, deserialized.FeeType);
+        Assert.Null(deserialized.FixedComponent);
+        Assert.Equal(expectedVariableRate, deserialized.VariableRate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardPayments::CardSettlementSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardPayments::CardSettlementSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardSettlementSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        CardPayments::CardSettlementSchemeFee copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardSettlementSchemeFeeCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(CardPayments::CardSettlementSchemeFeeCurrency.Usd)]
+    public void Validation_Works(CardPayments::CardSettlementSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardSettlementSchemeFeeCurrency> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardSettlementSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(CardPayments::CardSettlementSchemeFeeCurrency.Usd)]
+    public void SerializationRoundtrip_Works(CardPayments::CardSettlementSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardSettlementSchemeFeeCurrency> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardSettlementSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardSettlementSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardSettlementSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardSettlementSchemeFeeFeeTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit
+    )]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram
+    )]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
+    )]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.PulseSwitchFee)]
+    public void Validation_Works(CardPayments::CardSettlementSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardSettlementSchemeFeeFeeType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardSettlementSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit
+    )]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram
+    )]
+    [InlineData(
+        CardPayments::CardSettlementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
+    )]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.PulseSwitchFee)]
+    public void SerializationRoundtrip_Works(CardPayments::CardSettlementSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardSettlementSchemeFeeFeeType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardSettlementSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardSettlementSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardSettlementSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class CardSettlementSurchargeTest : TestBase
 {
     [Fact]
@@ -58833,6 +66925,19 @@ public class CardValidationTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardValidationType.InboundCardValidation,
             Verification = new()
@@ -58907,6 +67012,18 @@ public class CardValidationTest : TestBase
             TransactionID = "627199945183184",
         };
         long expectedNetworkRiskScore = 10;
+        List<CardPayments::CardValidationSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         ApiEnum<string, CardPayments::CardValidationType> expectedType =
             CardPayments::CardValidationType.InboundCardValidation;
@@ -58950,6 +67067,11 @@ public class CardValidationTest : TestBase
         Assert.Equal(expectedNetworkRiskScore, model.NetworkRiskScore);
         Assert.Null(model.PhysicalCardID);
         Assert.Null(model.RealTimeDecisionID);
+        Assert.Equal(expectedSchemeFees.Count, model.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], model.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, model.TerminalID);
         Assert.Equal(expectedType, model.Type);
         Assert.Equal(expectedVerification, model.Verification);
@@ -59010,6 +67132,19 @@ public class CardValidationTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardValidationType.InboundCardValidation,
             Verification = new()
@@ -59099,6 +67234,19 @@ public class CardValidationTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardValidationType.InboundCardValidation,
             Verification = new()
@@ -59180,6 +67328,18 @@ public class CardValidationTest : TestBase
             TransactionID = "627199945183184",
         };
         long expectedNetworkRiskScore = 10;
+        List<CardPayments::CardValidationSchemeFee> expectedSchemeFees =
+        [
+            new()
+            {
+                Amount = "0.137465",
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                FeeType = CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                FixedComponent = null,
+                VariableRate = "0.0002",
+            },
+        ];
         string expectedTerminalID = "RCN5VNXS";
         ApiEnum<string, CardPayments::CardValidationType> expectedType =
             CardPayments::CardValidationType.InboundCardValidation;
@@ -59223,6 +67383,11 @@ public class CardValidationTest : TestBase
         Assert.Equal(expectedNetworkRiskScore, deserialized.NetworkRiskScore);
         Assert.Null(deserialized.PhysicalCardID);
         Assert.Null(deserialized.RealTimeDecisionID);
+        Assert.Equal(expectedSchemeFees.Count, deserialized.SchemeFees.Count);
+        for (int i = 0; i < expectedSchemeFees.Count; i++)
+        {
+            Assert.Equal(expectedSchemeFees[i], deserialized.SchemeFees[i]);
+        }
         Assert.Equal(expectedTerminalID, deserialized.TerminalID);
         Assert.Equal(expectedType, deserialized.Type);
         Assert.Equal(expectedVerification, deserialized.Verification);
@@ -59283,6 +67448,19 @@ public class CardValidationTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardValidationType.InboundCardValidation,
             Verification = new()
@@ -59366,6 +67544,19 @@ public class CardValidationTest : TestBase
             NetworkRiskScore = 10,
             PhysicalCardID = null,
             RealTimeDecisionID = null,
+            SchemeFees =
+            [
+                new()
+                {
+                    Amount = "0.137465",
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+                    FeeType =
+                        CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+                    FixedComponent = null,
+                    VariableRate = "0.0002",
+                },
+            ],
             TerminalID = "RCN5VNXS",
             Type = CardPayments::CardValidationType.InboundCardValidation,
             Verification = new()
@@ -61586,6 +69777,322 @@ public class CardValidationNetworkIdentifiersTest : TestBase
     }
 }
 
+public class CardValidationSchemeFeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardPayments::CardValidationSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardValidationSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardValidationSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardValidationSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedFeeType, model.FeeType);
+        Assert.Null(model.FixedComponent);
+        Assert.Equal(expectedVariableRate, model.VariableRate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardPayments::CardValidationSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardValidationSchemeFee>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardPayments::CardValidationSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::CardValidationSchemeFee>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAmount = "0.137465";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<string, CardPayments::CardValidationSchemeFeeCurrency> expectedCurrency =
+            CardPayments::CardValidationSchemeFeeCurrency.Usd;
+        ApiEnum<string, CardPayments::CardValidationSchemeFeeFeeType> expectedFeeType =
+            CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee;
+        string expectedVariableRate = "0.0002";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedFeeType, deserialized.FeeType);
+        Assert.Null(deserialized.FixedComponent);
+        Assert.Equal(expectedVariableRate, deserialized.VariableRate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardPayments::CardValidationSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardPayments::CardValidationSchemeFee
+        {
+            Amount = "0.137465",
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Currency = CardPayments::CardValidationSchemeFeeCurrency.Usd,
+            FeeType = CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee,
+            FixedComponent = null,
+            VariableRate = "0.0002",
+        };
+
+        CardPayments::CardValidationSchemeFee copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardValidationSchemeFeeCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(CardPayments::CardValidationSchemeFeeCurrency.Usd)]
+    public void Validation_Works(CardPayments::CardValidationSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardValidationSchemeFeeCurrency> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardValidationSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(CardPayments::CardValidationSchemeFeeCurrency.Usd)]
+    public void SerializationRoundtrip_Works(CardPayments::CardValidationSchemeFeeCurrency rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardValidationSchemeFeeCurrency> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardValidationSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardValidationSchemeFeeCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardValidationSchemeFeeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardValidationSchemeFeeFeeTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit
+    )]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram
+    )]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
+    )]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.PulseSwitchFee)]
+    public void Validation_Works(CardPayments::CardValidationSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardValidationSchemeFeeFeeType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardValidationSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaInternationalServiceAssessmentSingleCurrency
+    )]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaInternationalServiceAssessmentCrossCurrency
+    )]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAuthorizationDomesticPointOfSale)]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaAuthorizationInternationalPointOfSale
+    )]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAuthorizationCanadaPointOfSale)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAuthorizationReversalPointOfSale)]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaAuthorizationReversalInternationalPointOfSale
+    )]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaAuthorizationAddressVerificationService
+    )]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAdvancedAuthorization)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaMessageTransmission)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAccountVerificationDomestic)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAccountVerificationInternational)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAccountVerificationCanada)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaCorporateAcceptanceFee)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaConsumerDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaBusinessDebitAcceptanceFee)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaPurchasingAcceptanceFee)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaPurchaseDomestic)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaPurchaseInternational)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaCreditPurchaseToken)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaDebitPurchaseToken)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaClearingTransmission)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaDirectAuthorization)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaDirectTransactionDomestic)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaServiceCommercialCredit)]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit
+    )]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram
+    )]
+    [InlineData(
+        CardPayments::CardValidationSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
+    )]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.PulseSwitchFee)]
+    public void SerializationRoundtrip_Works(CardPayments::CardValidationSchemeFeeFeeType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardPayments::CardValidationSchemeFeeFeeType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardValidationSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardValidationSchemeFeeFeeType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardPayments::CardValidationSchemeFeeFeeType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class CardValidationTypeTest : TestBase
 {
     [Theory]
@@ -62331,296 +70838,6 @@ public class OtherTest : TestBase
         CardPayments::Other copied = new(model);
 
         Assert.Equal(model, copied);
-    }
-}
-
-public class SchemeFeeTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new CardPayments::SchemeFee
-        {
-            Amount = "0.137465",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            Currency = CardPayments::SchemeFeeCurrency.Usd,
-            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
-            FixedComponent = null,
-            VariableRate = "0.0002",
-        };
-
-        string expectedAmount = "0.137465";
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        ApiEnum<string, CardPayments::SchemeFeeCurrency> expectedCurrency =
-            CardPayments::SchemeFeeCurrency.Usd;
-        ApiEnum<string, CardPayments::FeeType> expectedFeeType =
-            CardPayments::FeeType.VisaCorporateAcceptanceFee;
-        string expectedVariableRate = "0.0002";
-
-        Assert.Equal(expectedAmount, model.Amount);
-        Assert.Equal(expectedCreatedAt, model.CreatedAt);
-        Assert.Equal(expectedCurrency, model.Currency);
-        Assert.Equal(expectedFeeType, model.FeeType);
-        Assert.Null(model.FixedComponent);
-        Assert.Equal(expectedVariableRate, model.VariableRate);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new CardPayments::SchemeFee
-        {
-            Amount = "0.137465",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            Currency = CardPayments::SchemeFeeCurrency.Usd,
-            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
-            FixedComponent = null,
-            VariableRate = "0.0002",
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<CardPayments::SchemeFee>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new CardPayments::SchemeFee
-        {
-            Amount = "0.137465",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            Currency = CardPayments::SchemeFeeCurrency.Usd,
-            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
-            FixedComponent = null,
-            VariableRate = "0.0002",
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<CardPayments::SchemeFee>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        string expectedAmount = "0.137465";
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        ApiEnum<string, CardPayments::SchemeFeeCurrency> expectedCurrency =
-            CardPayments::SchemeFeeCurrency.Usd;
-        ApiEnum<string, CardPayments::FeeType> expectedFeeType =
-            CardPayments::FeeType.VisaCorporateAcceptanceFee;
-        string expectedVariableRate = "0.0002";
-
-        Assert.Equal(expectedAmount, deserialized.Amount);
-        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
-        Assert.Equal(expectedCurrency, deserialized.Currency);
-        Assert.Equal(expectedFeeType, deserialized.FeeType);
-        Assert.Null(deserialized.FixedComponent);
-        Assert.Equal(expectedVariableRate, deserialized.VariableRate);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new CardPayments::SchemeFee
-        {
-            Amount = "0.137465",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            Currency = CardPayments::SchemeFeeCurrency.Usd,
-            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
-            FixedComponent = null,
-            VariableRate = "0.0002",
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new CardPayments::SchemeFee
-        {
-            Amount = "0.137465",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            Currency = CardPayments::SchemeFeeCurrency.Usd,
-            FeeType = CardPayments::FeeType.VisaCorporateAcceptanceFee,
-            FixedComponent = null,
-            VariableRate = "0.0002",
-        };
-
-        CardPayments::SchemeFee copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class SchemeFeeCurrencyTest : TestBase
-{
-    [Theory]
-    [InlineData(CardPayments::SchemeFeeCurrency.Usd)]
-    public void Validation_Works(CardPayments::SchemeFeeCurrency rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, CardPayments::SchemeFeeCurrency> value = rawValue;
-        value.Validate();
-    }
-
-    [Fact]
-    public void InvalidEnumValidationThrows_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, CardPayments::SchemeFeeCurrency>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-
-        Assert.NotNull(value);
-        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
-    }
-
-    [Theory]
-    [InlineData(CardPayments::SchemeFeeCurrency.Usd)]
-    public void SerializationRoundtrip_Works(CardPayments::SchemeFeeCurrency rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, CardPayments::SchemeFeeCurrency> value = rawValue;
-
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, CardPayments::SchemeFeeCurrency>
-        >(json, ModelBase.SerializerOptions);
-
-        Assert.Equal(value, deserialized);
-    }
-
-    [Fact]
-    public void InvalidEnumSerializationRoundtrip_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, CardPayments::SchemeFeeCurrency>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, CardPayments::SchemeFeeCurrency>
-        >(json, ModelBase.SerializerOptions);
-
-        Assert.Equal(value, deserialized);
-    }
-}
-
-public class FeeTypeTest : TestBase
-{
-    [Theory]
-    [InlineData(CardPayments::FeeType.VisaInternationalServiceAssessmentSingleCurrency)]
-    [InlineData(CardPayments::FeeType.VisaInternationalServiceAssessmentCrossCurrency)]
-    [InlineData(CardPayments::FeeType.VisaAuthorizationDomesticPointOfSale)]
-    [InlineData(CardPayments::FeeType.VisaAuthorizationInternationalPointOfSale)]
-    [InlineData(CardPayments::FeeType.VisaAuthorizationCanadaPointOfSale)]
-    [InlineData(CardPayments::FeeType.VisaAuthorizationReversalPointOfSale)]
-    [InlineData(CardPayments::FeeType.VisaAuthorizationReversalInternationalPointOfSale)]
-    [InlineData(CardPayments::FeeType.VisaAuthorizationAddressVerificationService)]
-    [InlineData(CardPayments::FeeType.VisaAdvancedAuthorization)]
-    [InlineData(CardPayments::FeeType.VisaMessageTransmission)]
-    [InlineData(CardPayments::FeeType.VisaAccountVerificationDomestic)]
-    [InlineData(CardPayments::FeeType.VisaAccountVerificationInternational)]
-    [InlineData(CardPayments::FeeType.VisaAccountVerificationCanada)]
-    [InlineData(CardPayments::FeeType.VisaCorporateAcceptanceFee)]
-    [InlineData(CardPayments::FeeType.VisaConsumerDebitAcceptanceFee)]
-    [InlineData(CardPayments::FeeType.VisaBusinessDebitAcceptanceFee)]
-    [InlineData(CardPayments::FeeType.VisaPurchasingAcceptanceFee)]
-    [InlineData(CardPayments::FeeType.VisaPurchaseDomestic)]
-    [InlineData(CardPayments::FeeType.VisaPurchaseInternational)]
-    [InlineData(CardPayments::FeeType.VisaCreditPurchaseToken)]
-    [InlineData(CardPayments::FeeType.VisaDebitPurchaseToken)]
-    [InlineData(CardPayments::FeeType.VisaClearingTransmission)]
-    [InlineData(CardPayments::FeeType.VisaDirectAuthorization)]
-    [InlineData(CardPayments::FeeType.VisaDirectTransactionDomestic)]
-    [InlineData(CardPayments::FeeType.VisaServiceCommercialCredit)]
-    [InlineData(CardPayments::FeeType.VisaAdvertisingServiceCommercialCredit)]
-    [InlineData(CardPayments::FeeType.VisaCommunityGrowthAccelerationProgram)]
-    [InlineData(CardPayments::FeeType.VisaProcessingGuaranteeCommercialCredit)]
-    [InlineData(CardPayments::FeeType.PulseSwitchFee)]
-    public void Validation_Works(CardPayments::FeeType rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, CardPayments::FeeType> value = rawValue;
-        value.Validate();
-    }
-
-    [Fact]
-    public void InvalidEnumValidationThrows_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, CardPayments::FeeType>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-
-        Assert.NotNull(value);
-        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
-    }
-
-    [Theory]
-    [InlineData(CardPayments::FeeType.VisaInternationalServiceAssessmentSingleCurrency)]
-    [InlineData(CardPayments::FeeType.VisaInternationalServiceAssessmentCrossCurrency)]
-    [InlineData(CardPayments::FeeType.VisaAuthorizationDomesticPointOfSale)]
-    [InlineData(CardPayments::FeeType.VisaAuthorizationInternationalPointOfSale)]
-    [InlineData(CardPayments::FeeType.VisaAuthorizationCanadaPointOfSale)]
-    [InlineData(CardPayments::FeeType.VisaAuthorizationReversalPointOfSale)]
-    [InlineData(CardPayments::FeeType.VisaAuthorizationReversalInternationalPointOfSale)]
-    [InlineData(CardPayments::FeeType.VisaAuthorizationAddressVerificationService)]
-    [InlineData(CardPayments::FeeType.VisaAdvancedAuthorization)]
-    [InlineData(CardPayments::FeeType.VisaMessageTransmission)]
-    [InlineData(CardPayments::FeeType.VisaAccountVerificationDomestic)]
-    [InlineData(CardPayments::FeeType.VisaAccountVerificationInternational)]
-    [InlineData(CardPayments::FeeType.VisaAccountVerificationCanada)]
-    [InlineData(CardPayments::FeeType.VisaCorporateAcceptanceFee)]
-    [InlineData(CardPayments::FeeType.VisaConsumerDebitAcceptanceFee)]
-    [InlineData(CardPayments::FeeType.VisaBusinessDebitAcceptanceFee)]
-    [InlineData(CardPayments::FeeType.VisaPurchasingAcceptanceFee)]
-    [InlineData(CardPayments::FeeType.VisaPurchaseDomestic)]
-    [InlineData(CardPayments::FeeType.VisaPurchaseInternational)]
-    [InlineData(CardPayments::FeeType.VisaCreditPurchaseToken)]
-    [InlineData(CardPayments::FeeType.VisaDebitPurchaseToken)]
-    [InlineData(CardPayments::FeeType.VisaClearingTransmission)]
-    [InlineData(CardPayments::FeeType.VisaDirectAuthorization)]
-    [InlineData(CardPayments::FeeType.VisaDirectTransactionDomestic)]
-    [InlineData(CardPayments::FeeType.VisaServiceCommercialCredit)]
-    [InlineData(CardPayments::FeeType.VisaAdvertisingServiceCommercialCredit)]
-    [InlineData(CardPayments::FeeType.VisaCommunityGrowthAccelerationProgram)]
-    [InlineData(CardPayments::FeeType.VisaProcessingGuaranteeCommercialCredit)]
-    [InlineData(CardPayments::FeeType.PulseSwitchFee)]
-    public void SerializationRoundtrip_Works(CardPayments::FeeType rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, CardPayments::FeeType> value = rawValue;
-
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, CardPayments::FeeType>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-
-    [Fact]
-    public void InvalidEnumSerializationRoundtrip_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, CardPayments::FeeType>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, CardPayments::FeeType>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
     }
 }
 

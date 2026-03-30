@@ -1,5 +1,6 @@
 using System.Collections.Frozen;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -1632,6 +1633,25 @@ public sealed record class CardAuthorization : JsonModel
     }
 
     /// <summary>
+    /// The scheme fees associated with this card authorization.
+    /// </summary>
+    public required IReadOnlyList<SchemeFee> SchemeFees
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<SchemeFee>>("scheme_fees");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<SchemeFee>>(
+                "scheme_fees",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// The terminal identifier (commonly abbreviated as TID) of the terminal the
     /// card is transacting with.
     /// </summary>
@@ -1702,6 +1722,10 @@ public sealed record class CardAuthorization : JsonModel
         _ = this.PresentmentCurrency;
         this.ProcessingCategory.Validate();
         _ = this.RealTimeDecisionID;
+        foreach (var item in this.SchemeFees)
+        {
+            item.Validate();
+        }
         _ = this.TerminalID;
         this.Type.Validate();
         this.Verification.Validate();
@@ -3833,6 +3857,482 @@ sealed class ProcessingCategoryConverter : JsonConverter<ProcessingCategory>
                 ProcessingCategory.CashDisbursement => "cash_disbursement",
                 ProcessingCategory.BalanceInquiry => "balance_inquiry",
                 ProcessingCategory.Unknown => "unknown",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+[JsonConverter(typeof(JsonModelConverter<SchemeFee, SchemeFeeFromRaw>))]
+public sealed record class SchemeFee : JsonModel
+{
+    /// <summary>
+    /// The fee amount given as a string containing a decimal number.
+    /// </summary>
+    public required string Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time at which the fee
+    /// was created.
+    /// </summary>
+    public required System::DateTimeOffset CreatedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("created_at");
+        }
+        init { this._rawData.Set("created_at", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the fee reimbursement.
+    /// </summary>
+    public required ApiEnum<string, SchemeFeeCurrency> Currency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, SchemeFeeCurrency>>("currency");
+        }
+        init { this._rawData.Set("currency", value); }
+    }
+
+    /// <summary>
+    /// The type of fee being assessed.
+    /// </summary>
+    public required ApiEnum<string, FeeType> FeeType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, FeeType>>("fee_type");
+        }
+        init { this._rawData.Set("fee_type", value); }
+    }
+
+    /// <summary>
+    /// The fixed component of the fee, if applicable, given in major units of the
+    /// fee amount.
+    /// </summary>
+    public required string? FixedComponent
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("fixed_component");
+        }
+        init { this._rawData.Set("fixed_component", value); }
+    }
+
+    /// <summary>
+    /// The variable rate component of the fee, if applicable, given as a decimal
+    /// (e.g., 0.015 for 1.5%).
+    /// </summary>
+    public required string? VariableRate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("variable_rate");
+        }
+        init { this._rawData.Set("variable_rate", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Amount;
+        _ = this.CreatedAt;
+        this.Currency.Validate();
+        this.FeeType.Validate();
+        _ = this.FixedComponent;
+        _ = this.VariableRate;
+    }
+
+    public SchemeFee() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public SchemeFee(SchemeFee schemeFee)
+        : base(schemeFee) { }
+#pragma warning restore CS8618
+
+    public SchemeFee(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    SchemeFee(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="SchemeFeeFromRaw.FromRawUnchecked"/>
+    public static SchemeFee FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class SchemeFeeFromRaw : IFromRawJson<SchemeFee>
+{
+    /// <inheritdoc/>
+    public SchemeFee FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        SchemeFee.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the fee reimbursement.
+/// </summary>
+[JsonConverter(typeof(SchemeFeeCurrencyConverter))]
+public enum SchemeFeeCurrency
+{
+    /// <summary>
+    /// US Dollar (USD)
+    /// </summary>
+    Usd,
+}
+
+sealed class SchemeFeeCurrencyConverter : JsonConverter<SchemeFeeCurrency>
+{
+    public override SchemeFeeCurrency Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "USD" => SchemeFeeCurrency.Usd,
+            _ => (SchemeFeeCurrency)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        SchemeFeeCurrency value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                SchemeFeeCurrency.Usd => "USD",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The type of fee being assessed.
+/// </summary>
+[JsonConverter(typeof(FeeTypeConverter))]
+public enum FeeType
+{
+    /// <summary>
+    /// International Service Assessment (ISA) single-currency is a fee assessed by
+    /// the card network for cross-border transactions presented and settled in the
+    /// same currency.
+    /// </summary>
+    VisaInternationalServiceAssessmentSingleCurrency,
+
+    /// <summary>
+    /// International Service Assessment (ISA) cross-currency is a fee assessed by
+    /// the card network for cross-border transactions presented and settled in different currencies.
+    /// </summary>
+    VisaInternationalServiceAssessmentCrossCurrency,
+
+    /// <summary>
+    /// Activity and charges for Visa Settlement System processing for POS (Point-Of-Sale)
+    /// authorization transactions. Authorization is the process of approving or
+    /// declining the transaction amount specified. The fee is assessed to the Issuer.
+    /// </summary>
+    VisaAuthorizationDomesticPointOfSale,
+
+    /// <summary>
+    /// Activity and charges for Visa Settlement System processing for POS (Point-Of-Sale)
+    /// International authorization transactions. Authorization is the process of
+    /// approving or declining the transaction amount specified. The fee is assessed
+    /// to the Issuer.
+    /// </summary>
+    VisaAuthorizationInternationalPointOfSale,
+
+    /// <summary>
+    /// Activity and charges for Visa Settlement System processing for Canada Region
+    /// POS (Point-of-Sale) authorization transactions. Authorization is the process
+    /// of approving or declining the transaction amount specified.
+    /// </summary>
+    VisaAuthorizationCanadaPointOfSale,
+
+    /// <summary>
+    /// Activity only for Visa Settlement System authorization processing of POS
+    /// (Point-Of-Sale) reversal transactions. Authorization reversal represents
+    /// a VSS message that undoes the complete or partial actions of a previous authorization request.
+    /// </summary>
+    VisaAuthorizationReversalPointOfSale,
+
+    /// <summary>
+    /// Activity only for Visa Settlement System authorization processing of POS
+    /// (Point-Of-Sale) International reversal transactions. Authorization reversal
+    /// represents a VSS message that undoes the complete or partial actions of a
+    /// previous authorization request.
+    /// </summary>
+    VisaAuthorizationReversalInternationalPointOfSale,
+
+    /// <summary>
+    /// A per Address Verification Service (AVS) result fee. Applies to all usable
+    /// AVS result codes.
+    /// </summary>
+    VisaAuthorizationAddressVerificationService,
+
+    /// <summary>
+    /// Advanced Authorization is a fraud detection tool that monitors and risk evaluates
+    /// 100 percent of US VisaNet authorizations in real-time. Activity related to
+    /// Purchase (includes Signature Authenticated Visa and PIN Authenticated Visa
+    /// Debit (PAVD) transactions).
+    /// </summary>
+    VisaAdvancedAuthorization,
+
+    /// <summary>
+    /// Issuer Transactions Visa represents a charge based on total actual monthly
+    /// processing (Visa transactions only) through a VisaNet Access Point (VAP).
+    /// Charges are assessed to the processor for each VisaNet Access Point.
+    /// </summary>
+    VisaMessageTransmission,
+
+    /// <summary>
+    /// Activity, per inquiry, related to the domestic Issuer for Account Number Verification.
+    /// </summary>
+    VisaAccountVerificationDomestic,
+
+    /// <summary>
+    /// Activity, per inquiry, related to the international Issuer for Account Number Verification.
+    /// </summary>
+    VisaAccountVerificationInternational,
+
+    /// <summary>
+    /// Activity, per inquiry, related to the US-Canada Issuer for Account Number Verification.
+    /// </summary>
+    VisaAccountVerificationCanada,
+
+    /// <summary>
+    /// The Corporate Acceptance Fee is charged to issuers and is based on the monthly
+    /// sales volume on Commercial and Government Debit, Prepaid, Credit, Charge,
+    /// or Deferred Debit card transactions.
+    /// </summary>
+    VisaCorporateAcceptanceFee,
+
+    /// <summary>
+    /// The Consumer Debit Acceptance Fee is charged to issuers and is based on the
+    /// monthly sales volume of Consumer Debit or Prepaid card transactions. The cashback
+    /// portion of a Debit and Prepaid card transaction is excluded from the sales
+    /// volume calculation.
+    /// </summary>
+    VisaConsumerDebitAcceptanceFee,
+
+    /// <summary>
+    /// The Business Acceptance Fee is charged to issuers and is based on the monthly
+    /// sales volume on Business Debit, Prepaid, Credit, Charge, or Deferred Debit
+    /// card transactions. The cashback portion is included in the sales volume calculation
+    /// with the exception of a Debit and Prepaid card transactions.
+    /// </summary>
+    VisaBusinessDebitAcceptanceFee,
+
+    /// <summary>
+    /// The Purchasing Card Acceptance Fee is charged to issuers and is based on the
+    /// monthly sales volume on Commercial and Government Debit, Prepaid, Credit,
+    /// Charge, or Deferred Debit card transactions.
+    /// </summary>
+    VisaPurchasingAcceptanceFee,
+
+    /// <summary>
+    /// Activity and fees for the processing of a sales draft original for a purchase transaction.
+    /// </summary>
+    VisaPurchaseDomestic,
+
+    /// <summary>
+    /// Activity and fees for the processing of an international sales draft original
+    /// for a purchase transaction.
+    /// </summary>
+    VisaPurchaseInternational,
+
+    /// <summary>
+    /// Apple Pay Credit Product Token Purchase Original Transactions. This fee is
+    /// billed by Visa on behalf of Apple Inc. for Apple Pay transactions.
+    /// </summary>
+    VisaCreditPurchaseToken,
+
+    /// <summary>
+    /// Apple Pay Debit Product Token Purchase Original Transactions. This fee is
+    /// billed by Visa on behalf of Apple Inc. for Apple Pay transactions.
+    /// </summary>
+    VisaDebitPurchaseToken,
+
+    /// <summary>
+    /// A per transaction fee assessed for Base II financial draft - Issuer.
+    /// </summary>
+    VisaClearingTransmission,
+
+    /// <summary>
+    /// Issuer charge for Non-Financial OCT/AFT Authorization 0100 and Declined Financial
+    /// OCT/AFT 0200 transactions.
+    /// </summary>
+    VisaDirectAuthorization,
+
+    /// <summary>
+    /// Data processing charge for Visa Direct OCTs for all business application identifiers
+    /// (BAIs) other than money transfer-bank initiated (BI). BASE II transactions.
+    /// </summary>
+    VisaDirectTransactionDomestic,
+
+    /// <summary>
+    /// Issuer card service fee for Commercial Credit cards.
+    /// </summary>
+    VisaServiceCommercialCredit,
+
+    /// <summary>
+    /// Issuer Advertising Service Fee for Commercial Credit cards.
+    /// </summary>
+    VisaAdvertisingServiceCommercialCredit,
+
+    /// <summary>
+    /// Issuer Community Growth Acceleration Program Fee.
+    /// </summary>
+    VisaCommunityGrowthAccelerationProgram,
+
+    /// <summary>
+    /// Issuer Processing Guarantee for Commercial Credit cards.
+    /// </summary>
+    VisaProcessingGuaranteeCommercialCredit,
+
+    /// <summary>
+    /// Pulse Switch Fee is a fee charged by the Pulse network for processing transactions
+    /// on its network.
+    /// </summary>
+    PulseSwitchFee,
+}
+
+sealed class FeeTypeConverter : JsonConverter<FeeType>
+{
+    public override FeeType Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "visa_international_service_assessment_single_currency" =>
+                FeeType.VisaInternationalServiceAssessmentSingleCurrency,
+            "visa_international_service_assessment_cross_currency" =>
+                FeeType.VisaInternationalServiceAssessmentCrossCurrency,
+            "visa_authorization_domestic_point_of_sale" =>
+                FeeType.VisaAuthorizationDomesticPointOfSale,
+            "visa_authorization_international_point_of_sale" =>
+                FeeType.VisaAuthorizationInternationalPointOfSale,
+            "visa_authorization_canada_point_of_sale" => FeeType.VisaAuthorizationCanadaPointOfSale,
+            "visa_authorization_reversal_point_of_sale" =>
+                FeeType.VisaAuthorizationReversalPointOfSale,
+            "visa_authorization_reversal_international_point_of_sale" =>
+                FeeType.VisaAuthorizationReversalInternationalPointOfSale,
+            "visa_authorization_address_verification_service" =>
+                FeeType.VisaAuthorizationAddressVerificationService,
+            "visa_advanced_authorization" => FeeType.VisaAdvancedAuthorization,
+            "visa_message_transmission" => FeeType.VisaMessageTransmission,
+            "visa_account_verification_domestic" => FeeType.VisaAccountVerificationDomestic,
+            "visa_account_verification_international" =>
+                FeeType.VisaAccountVerificationInternational,
+            "visa_account_verification_canada" => FeeType.VisaAccountVerificationCanada,
+            "visa_corporate_acceptance_fee" => FeeType.VisaCorporateAcceptanceFee,
+            "visa_consumer_debit_acceptance_fee" => FeeType.VisaConsumerDebitAcceptanceFee,
+            "visa_business_debit_acceptance_fee" => FeeType.VisaBusinessDebitAcceptanceFee,
+            "visa_purchasing_acceptance_fee" => FeeType.VisaPurchasingAcceptanceFee,
+            "visa_purchase_domestic" => FeeType.VisaPurchaseDomestic,
+            "visa_purchase_international" => FeeType.VisaPurchaseInternational,
+            "visa_credit_purchase_token" => FeeType.VisaCreditPurchaseToken,
+            "visa_debit_purchase_token" => FeeType.VisaDebitPurchaseToken,
+            "visa_clearing_transmission" => FeeType.VisaClearingTransmission,
+            "visa_direct_authorization" => FeeType.VisaDirectAuthorization,
+            "visa_direct_transaction_domestic" => FeeType.VisaDirectTransactionDomestic,
+            "visa_service_commercial_credit" => FeeType.VisaServiceCommercialCredit,
+            "visa_advertising_service_commercial_credit" =>
+                FeeType.VisaAdvertisingServiceCommercialCredit,
+            "visa_community_growth_acceleration_program" =>
+                FeeType.VisaCommunityGrowthAccelerationProgram,
+            "visa_processing_guarantee_commercial_credit" =>
+                FeeType.VisaProcessingGuaranteeCommercialCredit,
+            "pulse_switch_fee" => FeeType.PulseSwitchFee,
+            _ => (FeeType)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, FeeType value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                FeeType.VisaInternationalServiceAssessmentSingleCurrency =>
+                    "visa_international_service_assessment_single_currency",
+                FeeType.VisaInternationalServiceAssessmentCrossCurrency =>
+                    "visa_international_service_assessment_cross_currency",
+                FeeType.VisaAuthorizationDomesticPointOfSale =>
+                    "visa_authorization_domestic_point_of_sale",
+                FeeType.VisaAuthorizationInternationalPointOfSale =>
+                    "visa_authorization_international_point_of_sale",
+                FeeType.VisaAuthorizationCanadaPointOfSale =>
+                    "visa_authorization_canada_point_of_sale",
+                FeeType.VisaAuthorizationReversalPointOfSale =>
+                    "visa_authorization_reversal_point_of_sale",
+                FeeType.VisaAuthorizationReversalInternationalPointOfSale =>
+                    "visa_authorization_reversal_international_point_of_sale",
+                FeeType.VisaAuthorizationAddressVerificationService =>
+                    "visa_authorization_address_verification_service",
+                FeeType.VisaAdvancedAuthorization => "visa_advanced_authorization",
+                FeeType.VisaMessageTransmission => "visa_message_transmission",
+                FeeType.VisaAccountVerificationDomestic => "visa_account_verification_domestic",
+                FeeType.VisaAccountVerificationInternational =>
+                    "visa_account_verification_international",
+                FeeType.VisaAccountVerificationCanada => "visa_account_verification_canada",
+                FeeType.VisaCorporateAcceptanceFee => "visa_corporate_acceptance_fee",
+                FeeType.VisaConsumerDebitAcceptanceFee => "visa_consumer_debit_acceptance_fee",
+                FeeType.VisaBusinessDebitAcceptanceFee => "visa_business_debit_acceptance_fee",
+                FeeType.VisaPurchasingAcceptanceFee => "visa_purchasing_acceptance_fee",
+                FeeType.VisaPurchaseDomestic => "visa_purchase_domestic",
+                FeeType.VisaPurchaseInternational => "visa_purchase_international",
+                FeeType.VisaCreditPurchaseToken => "visa_credit_purchase_token",
+                FeeType.VisaDebitPurchaseToken => "visa_debit_purchase_token",
+                FeeType.VisaClearingTransmission => "visa_clearing_transmission",
+                FeeType.VisaDirectAuthorization => "visa_direct_authorization",
+                FeeType.VisaDirectTransactionDomestic => "visa_direct_transaction_domestic",
+                FeeType.VisaServiceCommercialCredit => "visa_service_commercial_credit",
+                FeeType.VisaAdvertisingServiceCommercialCredit =>
+                    "visa_advertising_service_commercial_credit",
+                FeeType.VisaCommunityGrowthAccelerationProgram =>
+                    "visa_community_growth_acceleration_program",
+                FeeType.VisaProcessingGuaranteeCommercialCredit =>
+                    "visa_processing_guarantee_commercial_credit",
+                FeeType.PulseSwitchFee => "pulse_switch_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

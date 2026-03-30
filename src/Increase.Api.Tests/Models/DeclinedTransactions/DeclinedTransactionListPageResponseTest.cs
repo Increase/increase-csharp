@@ -104,6 +104,19 @@ public class DeclinedTransactionListPageResponseTest : TestBase
                             RealTimeDecisionID = null,
                             RealTimeDecisionReason = null,
                             Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TerminalID = "RCN5VNXS",
                             Verification = new()
                             {
@@ -270,6 +283,18 @@ public class DeclinedTransactionListPageResponseTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                                FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -447,6 +472,19 @@ public class DeclinedTransactionListPageResponseTest : TestBase
                             RealTimeDecisionID = null,
                             RealTimeDecisionReason = null,
                             Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TerminalID = "RCN5VNXS",
                             Verification = new()
                             {
@@ -628,6 +666,19 @@ public class DeclinedTransactionListPageResponseTest : TestBase
                             RealTimeDecisionID = null,
                             RealTimeDecisionReason = null,
                             Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TerminalID = "RCN5VNXS",
                             Verification = new()
                             {
@@ -802,6 +853,18 @@ public class DeclinedTransactionListPageResponseTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                                FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -979,6 +1042,19 @@ public class DeclinedTransactionListPageResponseTest : TestBase
                             RealTimeDecisionID = null,
                             RealTimeDecisionReason = null,
                             Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TerminalID = "RCN5VNXS",
                             Verification = new()
                             {
@@ -1153,6 +1229,19 @@ public class DeclinedTransactionListPageResponseTest : TestBase
                             RealTimeDecisionID = null,
                             RealTimeDecisionReason = null,
                             Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                            SchemeFees =
+                            [
+                                new()
+                                {
+                                    Amount = "0.137465",
+                                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                    Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                                    FeeType =
+                                        DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                    FixedComponent = null,
+                                    VariableRate = "0.0002",
+                                },
+                            ],
                             TerminalID = "RCN5VNXS",
                             Verification = new()
                             {

@@ -105,6 +105,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                                FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -271,6 +283,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                                FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = PendingTransactions::Type.CardAuthorization,
                         Verification = new()
@@ -441,6 +465,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -607,6 +643,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = PendingTransactions::Type.CardAuthorization,
                     Verification = new()
@@ -787,6 +835,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                                FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -953,6 +1013,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                                FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = PendingTransactions::Type.CardAuthorization,
                         Verification = new()
@@ -1138,6 +1210,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                                FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -1304,6 +1388,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                                FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = PendingTransactions::Type.CardAuthorization,
                         Verification = new()
@@ -1482,6 +1578,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                     RealTimeDecisionID = null,
                     RealTimeDecisionReason = null,
                     Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Verification = new()
                     {
@@ -1648,6 +1756,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                     PresentmentCurrency = "USD",
                     ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                     RealTimeDecisionID = null,
+                    SchemeFees =
+                    [
+                        new()
+                        {
+                            Amount = "0.137465",
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                            FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                            FixedComponent = null,
+                            VariableRate = "0.0002",
+                        },
+                    ],
                     TerminalID = "RCN5VNXS",
                     Type = PendingTransactions::Type.CardAuthorization,
                     Verification = new()
@@ -1828,6 +1948,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                                FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -1994,6 +2126,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                                FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = PendingTransactions::Type.CardAuthorization,
                         Verification = new()
@@ -2172,6 +2316,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         RealTimeDecisionID = null,
                         RealTimeDecisionReason = null,
                         Reason = DeclinedTransactions::CardDeclineReason.InsufficientFunds,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = DeclinedTransactions::SchemeFeeCurrency.Usd,
+                                FeeType = DeclinedTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Verification = new()
                         {
@@ -2338,6 +2494,18 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         PresentmentCurrency = "USD",
                         ProcessingCategory = PendingTransactions::ProcessingCategory.Purchase,
                         RealTimeDecisionID = null,
+                        SchemeFees =
+                        [
+                            new()
+                            {
+                                Amount = "0.137465",
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Currency = PendingTransactions::SchemeFeeCurrency.Usd,
+                                FeeType = PendingTransactions::FeeType.VisaCorporateAcceptanceFee,
+                                FixedComponent = null,
+                                VariableRate = "0.0002",
+                            },
+                        ],
                         TerminalID = "RCN5VNXS",
                         Type = PendingTransactions::Type.CardAuthorization,
                         Verification = new()
