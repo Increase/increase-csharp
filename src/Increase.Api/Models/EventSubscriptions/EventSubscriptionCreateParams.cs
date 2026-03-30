@@ -682,6 +682,16 @@ public enum EventCategory
     LegacyCardDisputeUpdated,
 
     /// <summary>
+    /// Occurs whenever a Lockbox Address is created.
+    /// </summary>
+    LockboxAddressCreated,
+
+    /// <summary>
+    /// Occurs whenever a Lockbox Address is updated.
+    /// </summary>
+    LockboxAddressUpdated,
+
+    /// <summary>
     /// Occurs whenever a Lockbox is created.
     /// </summary>
     LockboxCreated,
@@ -954,6 +964,8 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
             "intrafi_exclusion.updated" => EventCategory.IntrafiExclusionUpdated,
             "legacy_card_dispute.created" => EventCategory.LegacyCardDisputeCreated,
             "legacy_card_dispute.updated" => EventCategory.LegacyCardDisputeUpdated,
+            "lockbox_address.created" => EventCategory.LockboxAddressCreated,
+            "lockbox_address.updated" => EventCategory.LockboxAddressUpdated,
             "lockbox.created" => EventCategory.LockboxCreated,
             "lockbox.updated" => EventCategory.LockboxUpdated,
             "oauth_connection.created" => EventCategory.OAuthConnectionCreated,
@@ -1098,6 +1110,8 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.IntrafiExclusionUpdated => "intrafi_exclusion.updated",
                 EventCategory.LegacyCardDisputeCreated => "legacy_card_dispute.created",
                 EventCategory.LegacyCardDisputeUpdated => "legacy_card_dispute.updated",
+                EventCategory.LockboxAddressCreated => "lockbox_address.created",
+                EventCategory.LockboxAddressUpdated => "lockbox_address.updated",
                 EventCategory.LockboxCreated => "lockbox.created",
                 EventCategory.LockboxUpdated => "lockbox.updated",
                 EventCategory.OAuthConnectionCreated => "oauth_connection.created",
