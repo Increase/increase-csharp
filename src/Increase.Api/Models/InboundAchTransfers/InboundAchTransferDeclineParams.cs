@@ -194,12 +194,6 @@ public enum Reason
     InsufficientFunds,
 
     /// <summary>
-    /// The originating financial institution asked for this transfer to be returned.
-    /// The receiving bank is complying with the request. The Nacha return code is R06.
-    /// </summary>
-    ReturnedPerOdfiRequest,
-
-    /// <summary>
     /// The customer no longer authorizes this transaction. The Nacha return code
     /// is R07.
     /// </summary>
@@ -257,7 +251,6 @@ sealed class ReasonConverter : JsonConverter<Reason>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "insufficient_funds" => Reason.InsufficientFunds,
-            "returned_per_odfi_request" => Reason.ReturnedPerOdfiRequest,
             "authorization_revoked_by_customer" => Reason.AuthorizationRevokedByCustomer,
             "payment_stopped" => Reason.PaymentStopped,
             "customer_advised_unauthorized_improper_ineligible_or_incomplete" =>
@@ -280,7 +273,6 @@ sealed class ReasonConverter : JsonConverter<Reason>
             value switch
             {
                 Reason.InsufficientFunds => "insufficient_funds",
-                Reason.ReturnedPerOdfiRequest => "returned_per_odfi_request",
                 Reason.AuthorizationRevokedByCustomer => "authorization_revoked_by_customer",
                 Reason.PaymentStopped => "payment_stopped",
                 Reason.CustomerAdvisedUnauthorizedImproperIneligibleOrIncomplete =>
