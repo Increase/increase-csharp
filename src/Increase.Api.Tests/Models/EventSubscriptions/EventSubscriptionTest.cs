@@ -510,12 +510,6 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LegacyCardDisputeUpdated
     )]
     [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LockboxAddressCreated
-    )]
-    [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LockboxAddressUpdated
-    )]
-    [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated
     )]
     [InlineData(
@@ -865,12 +859,6 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LegacyCardDisputeUpdated
-    )]
-    [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LockboxAddressCreated
-    )]
-    [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LockboxAddressUpdated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated
