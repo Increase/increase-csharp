@@ -863,6 +863,12 @@ public enum Reason
     TransactionNotAllowed,
 
     /// <summary>
+    /// The originating financial institution asked for this transfer to be returned.
+    /// The receiving bank is complying with the request.
+    /// </summary>
+    ReturnedPerOdfiRequest,
+
+    /// <summary>
     /// Your integration declined this transfer via the API.
     /// </summary>
     UserInitiated,
@@ -871,12 +877,6 @@ public enum Reason
     /// Your account contains insufficient funds.
     /// </summary>
     InsufficientFunds,
-
-    /// <summary>
-    /// The originating financial institution asked for this transfer to be returned.
-    /// The receiving bank is complying with the request.
-    /// </summary>
-    ReturnedPerOdfiRequest,
 
     /// <summary>
     /// The customer no longer authorizes this transaction.
@@ -935,9 +935,9 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "entity_not_active" => Reason.EntityNotActive,
             "group_locked" => Reason.GroupLocked,
             "transaction_not_allowed" => Reason.TransactionNotAllowed,
+            "returned_per_odfi_request" => Reason.ReturnedPerOdfiRequest,
             "user_initiated" => Reason.UserInitiated,
             "insufficient_funds" => Reason.InsufficientFunds,
-            "returned_per_odfi_request" => Reason.ReturnedPerOdfiRequest,
             "authorization_revoked_by_customer" => Reason.AuthorizationRevokedByCustomer,
             "payment_stopped" => Reason.PaymentStopped,
             "customer_advised_unauthorized_improper_ineligible_or_incomplete" =>
@@ -965,9 +965,9 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.EntityNotActive => "entity_not_active",
                 Reason.GroupLocked => "group_locked",
                 Reason.TransactionNotAllowed => "transaction_not_allowed",
+                Reason.ReturnedPerOdfiRequest => "returned_per_odfi_request",
                 Reason.UserInitiated => "user_initiated",
                 Reason.InsufficientFunds => "insufficient_funds",
-                Reason.ReturnedPerOdfiRequest => "returned_per_odfi_request",
                 Reason.AuthorizationRevokedByCustomer => "authorization_revoked_by_customer",
                 Reason.PaymentStopped => "payment_stopped",
                 Reason.CustomerAdvisedUnauthorizedImproperIneligibleOrIncomplete =>
