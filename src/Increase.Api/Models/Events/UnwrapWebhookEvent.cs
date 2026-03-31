@@ -516,16 +516,6 @@ public enum UnwrapWebhookEventCategory
     LegacyCardDisputeUpdated,
 
     /// <summary>
-    /// Occurs whenever a Lockbox Address is created.
-    /// </summary>
-    LockboxAddressCreated,
-
-    /// <summary>
-    /// Occurs whenever a Lockbox Address is updated.
-    /// </summary>
-    LockboxAddressUpdated,
-
-    /// <summary>
     /// Occurs whenever a Lockbox is created.
     /// </summary>
     LockboxCreated,
@@ -813,8 +803,6 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
             "intrafi_exclusion.updated" => UnwrapWebhookEventCategory.IntrafiExclusionUpdated,
             "legacy_card_dispute.created" => UnwrapWebhookEventCategory.LegacyCardDisputeCreated,
             "legacy_card_dispute.updated" => UnwrapWebhookEventCategory.LegacyCardDisputeUpdated,
-            "lockbox_address.created" => UnwrapWebhookEventCategory.LockboxAddressCreated,
-            "lockbox_address.updated" => UnwrapWebhookEventCategory.LockboxAddressUpdated,
             "lockbox.created" => UnwrapWebhookEventCategory.LockboxCreated,
             "lockbox.updated" => UnwrapWebhookEventCategory.LockboxUpdated,
             "oauth_connection.created" => UnwrapWebhookEventCategory.OAuthConnectionCreated,
@@ -985,8 +973,6 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                     "legacy_card_dispute.created",
                 UnwrapWebhookEventCategory.LegacyCardDisputeUpdated =>
                     "legacy_card_dispute.updated",
-                UnwrapWebhookEventCategory.LockboxAddressCreated => "lockbox_address.created",
-                UnwrapWebhookEventCategory.LockboxAddressUpdated => "lockbox_address.updated",
                 UnwrapWebhookEventCategory.LockboxCreated => "lockbox.created",
                 UnwrapWebhookEventCategory.LockboxUpdated => "lockbox.updated",
                 UnwrapWebhookEventCategory.OAuthConnectionCreated => "oauth_connection.created",
