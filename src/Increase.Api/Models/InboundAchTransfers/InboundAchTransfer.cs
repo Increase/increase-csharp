@@ -910,6 +910,12 @@ public enum DeclineReason
     TransactionNotAllowed,
 
     /// <summary>
+    /// The originating financial institution asked for this transfer to be returned.
+    /// The receiving bank is complying with the request.
+    /// </summary>
+    ReturnedPerOdfiRequest,
+
+    /// <summary>
     /// Your integration declined this transfer via the API.
     /// </summary>
     UserInitiated,
@@ -918,12 +924,6 @@ public enum DeclineReason
     /// Your account contains insufficient funds.
     /// </summary>
     InsufficientFunds,
-
-    /// <summary>
-    /// The originating financial institution asked for this transfer to be returned.
-    /// The receiving bank is complying with the request.
-    /// </summary>
-    ReturnedPerOdfiRequest,
 
     /// <summary>
     /// The customer no longer authorizes this transaction.
@@ -982,9 +982,9 @@ sealed class DeclineReasonConverter : JsonConverter<DeclineReason>
             "entity_not_active" => DeclineReason.EntityNotActive,
             "group_locked" => DeclineReason.GroupLocked,
             "transaction_not_allowed" => DeclineReason.TransactionNotAllowed,
+            "returned_per_odfi_request" => DeclineReason.ReturnedPerOdfiRequest,
             "user_initiated" => DeclineReason.UserInitiated,
             "insufficient_funds" => DeclineReason.InsufficientFunds,
-            "returned_per_odfi_request" => DeclineReason.ReturnedPerOdfiRequest,
             "authorization_revoked_by_customer" => DeclineReason.AuthorizationRevokedByCustomer,
             "payment_stopped" => DeclineReason.PaymentStopped,
             "customer_advised_unauthorized_improper_ineligible_or_incomplete" =>
@@ -1017,9 +1017,9 @@ sealed class DeclineReasonConverter : JsonConverter<DeclineReason>
                 DeclineReason.EntityNotActive => "entity_not_active",
                 DeclineReason.GroupLocked => "group_locked",
                 DeclineReason.TransactionNotAllowed => "transaction_not_allowed",
+                DeclineReason.ReturnedPerOdfiRequest => "returned_per_odfi_request",
                 DeclineReason.UserInitiated => "user_initiated",
                 DeclineReason.InsufficientFunds => "insufficient_funds",
-                DeclineReason.ReturnedPerOdfiRequest => "returned_per_odfi_request",
                 DeclineReason.AuthorizationRevokedByCustomer => "authorization_revoked_by_customer",
                 DeclineReason.PaymentStopped => "payment_stopped",
                 DeclineReason.CustomerAdvisedUnauthorizedImproperIneligibleOrIncomplete =>

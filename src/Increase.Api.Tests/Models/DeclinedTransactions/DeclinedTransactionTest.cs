@@ -2914,9 +2914,9 @@ public class ReasonTest : TestBase
     [InlineData(DeclinedTransactions::Reason.EntityNotActive)]
     [InlineData(DeclinedTransactions::Reason.GroupLocked)]
     [InlineData(DeclinedTransactions::Reason.TransactionNotAllowed)]
+    [InlineData(DeclinedTransactions::Reason.ReturnedPerOdfiRequest)]
     [InlineData(DeclinedTransactions::Reason.UserInitiated)]
     [InlineData(DeclinedTransactions::Reason.InsufficientFunds)]
-    [InlineData(DeclinedTransactions::Reason.ReturnedPerOdfiRequest)]
     [InlineData(DeclinedTransactions::Reason.AuthorizationRevokedByCustomer)]
     [InlineData(DeclinedTransactions::Reason.PaymentStopped)]
     [InlineData(
@@ -2955,9 +2955,9 @@ public class ReasonTest : TestBase
     [InlineData(DeclinedTransactions::Reason.EntityNotActive)]
     [InlineData(DeclinedTransactions::Reason.GroupLocked)]
     [InlineData(DeclinedTransactions::Reason.TransactionNotAllowed)]
+    [InlineData(DeclinedTransactions::Reason.ReturnedPerOdfiRequest)]
     [InlineData(DeclinedTransactions::Reason.UserInitiated)]
     [InlineData(DeclinedTransactions::Reason.InsufficientFunds)]
-    [InlineData(DeclinedTransactions::Reason.ReturnedPerOdfiRequest)]
     [InlineData(DeclinedTransactions::Reason.AuthorizationRevokedByCustomer)]
     [InlineData(DeclinedTransactions::Reason.PaymentStopped)]
     [InlineData(

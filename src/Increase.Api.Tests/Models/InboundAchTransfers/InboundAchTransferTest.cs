@@ -1308,9 +1308,9 @@ public class DeclineReasonTest : TestBase
     [InlineData(InboundAchTransfers::DeclineReason.EntityNotActive)]
     [InlineData(InboundAchTransfers::DeclineReason.GroupLocked)]
     [InlineData(InboundAchTransfers::DeclineReason.TransactionNotAllowed)]
+    [InlineData(InboundAchTransfers::DeclineReason.ReturnedPerOdfiRequest)]
     [InlineData(InboundAchTransfers::DeclineReason.UserInitiated)]
     [InlineData(InboundAchTransfers::DeclineReason.InsufficientFunds)]
-    [InlineData(InboundAchTransfers::DeclineReason.ReturnedPerOdfiRequest)]
     [InlineData(InboundAchTransfers::DeclineReason.AuthorizationRevokedByCustomer)]
     [InlineData(InboundAchTransfers::DeclineReason.PaymentStopped)]
     [InlineData(
@@ -1349,9 +1349,9 @@ public class DeclineReasonTest : TestBase
     [InlineData(InboundAchTransfers::DeclineReason.EntityNotActive)]
     [InlineData(InboundAchTransfers::DeclineReason.GroupLocked)]
     [InlineData(InboundAchTransfers::DeclineReason.TransactionNotAllowed)]
+    [InlineData(InboundAchTransfers::DeclineReason.ReturnedPerOdfiRequest)]
     [InlineData(InboundAchTransfers::DeclineReason.UserInitiated)]
     [InlineData(InboundAchTransfers::DeclineReason.InsufficientFunds)]
-    [InlineData(InboundAchTransfers::DeclineReason.ReturnedPerOdfiRequest)]
     [InlineData(InboundAchTransfers::DeclineReason.AuthorizationRevokedByCustomer)]
     [InlineData(InboundAchTransfers::DeclineReason.PaymentStopped)]
     [InlineData(

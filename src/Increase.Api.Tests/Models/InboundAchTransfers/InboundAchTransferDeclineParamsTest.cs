@@ -88,7 +88,6 @@ public class ReasonTest : TestBase
 {
     [Theory]
     [InlineData(Reason.InsufficientFunds)]
-    [InlineData(Reason.ReturnedPerOdfiRequest)]
     [InlineData(Reason.AuthorizationRevokedByCustomer)]
     [InlineData(Reason.PaymentStopped)]
     [InlineData(Reason.CustomerAdvisedUnauthorizedImproperIneligibleOrIncomplete)]
@@ -118,7 +117,6 @@ public class ReasonTest : TestBase
 
     [Theory]
     [InlineData(Reason.InsufficientFunds)]
-    [InlineData(Reason.ReturnedPerOdfiRequest)]
     [InlineData(Reason.AuthorizationRevokedByCustomer)]
     [InlineData(Reason.PaymentStopped)]
     [InlineData(Reason.CustomerAdvisedUnauthorizedImproperIneligibleOrIncomplete)]
