@@ -61,8 +61,8 @@ public class CardDisputeTest : TestBase
                                     "The user did not provide the required documentation.",
                                 ProcessedAt = "2020-01-31",
                             },
-                            DelayedChargeTransaction = new(null),
-                            EvidenceOfImprint = new(null),
+                            DelayedChargeTransaction = new((string?)null),
+                            EvidenceOfImprint = new((string?)null),
                             InvalidDispute = new()
                             {
                                 Explanation =
@@ -78,7 +78,7 @@ public class CardDisputeTest : TestBase
                                 PriorApprovedTransactions =
                                     "0x1234567890123456789012345678901234567890",
                             },
-                            PriorUndisputedNonFraudTransactions = new(null),
+                            PriorUndisputedNonFraudTransactions = new((string?)null),
                             Reason =
                                 CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                         },
@@ -112,7 +112,7 @@ public class CardDisputeTest : TestBase
                                 PriorApprovedTransactions =
                                     "0x1234567890123456789012345678901234567890",
                             },
-                            ProofOfCashDisbursement = new(null),
+                            ProofOfCashDisbursement = new((string?)null),
                             Reason = CardDisputes::RepresentedReason.InvalidDispute,
                             ReversalIssued = new(
                                 "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -537,8 +537,8 @@ public class CardDisputeTest : TestBase
                             Explanation = "The user did not provide the required documentation.",
                             ProcessedAt = "2020-01-31",
                         },
-                        DelayedChargeTransaction = new(null),
-                        EvidenceOfImprint = new(null),
+                        DelayedChargeTransaction = new((string?)null),
+                        EvidenceOfImprint = new((string?)null),
                         InvalidDispute = new()
                         {
                             Explanation = "The user did not provide the required documentation.",
@@ -552,7 +552,7 @@ public class CardDisputeTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        PriorUndisputedNonFraudTransactions = new(null),
+                        PriorUndisputedNonFraudTransactions = new((string?)null),
                         Reason =
                             CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                     },
@@ -583,7 +583,7 @@ public class CardDisputeTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        ProofOfCashDisbursement = new(null),
+                        ProofOfCashDisbursement = new((string?)null),
                         Reason = CardDisputes::RepresentedReason.InvalidDispute,
                         ReversalIssued = new(
                             "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -1031,8 +1031,8 @@ public class CardDisputeTest : TestBase
                                     "The user did not provide the required documentation.",
                                 ProcessedAt = "2020-01-31",
                             },
-                            DelayedChargeTransaction = new(null),
-                            EvidenceOfImprint = new(null),
+                            DelayedChargeTransaction = new((string?)null),
+                            EvidenceOfImprint = new((string?)null),
                             InvalidDispute = new()
                             {
                                 Explanation =
@@ -1048,7 +1048,7 @@ public class CardDisputeTest : TestBase
                                 PriorApprovedTransactions =
                                     "0x1234567890123456789012345678901234567890",
                             },
-                            PriorUndisputedNonFraudTransactions = new(null),
+                            PriorUndisputedNonFraudTransactions = new((string?)null),
                             Reason =
                                 CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                         },
@@ -1082,7 +1082,7 @@ public class CardDisputeTest : TestBase
                                 PriorApprovedTransactions =
                                     "0x1234567890123456789012345678901234567890",
                             },
-                            ProofOfCashDisbursement = new(null),
+                            ProofOfCashDisbursement = new((string?)null),
                             Reason = CardDisputes::RepresentedReason.InvalidDispute,
                             ReversalIssued = new(
                                 "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -1522,8 +1522,8 @@ public class CardDisputeTest : TestBase
                                     "The user did not provide the required documentation.",
                                 ProcessedAt = "2020-01-31",
                             },
-                            DelayedChargeTransaction = new(null),
-                            EvidenceOfImprint = new(null),
+                            DelayedChargeTransaction = new((string?)null),
+                            EvidenceOfImprint = new((string?)null),
                             InvalidDispute = new()
                             {
                                 Explanation =
@@ -1539,7 +1539,7 @@ public class CardDisputeTest : TestBase
                                 PriorApprovedTransactions =
                                     "0x1234567890123456789012345678901234567890",
                             },
-                            PriorUndisputedNonFraudTransactions = new(null),
+                            PriorUndisputedNonFraudTransactions = new((string?)null),
                             Reason =
                                 CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                         },
@@ -1573,7 +1573,7 @@ public class CardDisputeTest : TestBase
                                 PriorApprovedTransactions =
                                     "0x1234567890123456789012345678901234567890",
                             },
-                            ProofOfCashDisbursement = new(null),
+                            ProofOfCashDisbursement = new((string?)null),
                             Reason = CardDisputes::RepresentedReason.InvalidDispute,
                             ReversalIssued = new(
                                 "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -2005,8 +2005,8 @@ public class CardDisputeTest : TestBase
                             Explanation = "The user did not provide the required documentation.",
                             ProcessedAt = "2020-01-31",
                         },
-                        DelayedChargeTransaction = new(null),
-                        EvidenceOfImprint = new(null),
+                        DelayedChargeTransaction = new((string?)null),
+                        EvidenceOfImprint = new((string?)null),
                         InvalidDispute = new()
                         {
                             Explanation = "The user did not provide the required documentation.",
@@ -2020,7 +2020,7 @@ public class CardDisputeTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        PriorUndisputedNonFraudTransactions = new(null),
+                        PriorUndisputedNonFraudTransactions = new((string?)null),
                         Reason =
                             CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                     },
@@ -2051,7 +2051,7 @@ public class CardDisputeTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        ProofOfCashDisbursement = new(null),
+                        ProofOfCashDisbursement = new((string?)null),
                         Reason = CardDisputes::RepresentedReason.InvalidDispute,
                         ReversalIssued = new(
                             "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -2499,8 +2499,8 @@ public class CardDisputeTest : TestBase
                                     "The user did not provide the required documentation.",
                                 ProcessedAt = "2020-01-31",
                             },
-                            DelayedChargeTransaction = new(null),
-                            EvidenceOfImprint = new(null),
+                            DelayedChargeTransaction = new((string?)null),
+                            EvidenceOfImprint = new((string?)null),
                             InvalidDispute = new()
                             {
                                 Explanation =
@@ -2516,7 +2516,7 @@ public class CardDisputeTest : TestBase
                                 PriorApprovedTransactions =
                                     "0x1234567890123456789012345678901234567890",
                             },
-                            PriorUndisputedNonFraudTransactions = new(null),
+                            PriorUndisputedNonFraudTransactions = new((string?)null),
                             Reason =
                                 CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                         },
@@ -2550,7 +2550,7 @@ public class CardDisputeTest : TestBase
                                 PriorApprovedTransactions =
                                     "0x1234567890123456789012345678901234567890",
                             },
-                            ProofOfCashDisbursement = new(null),
+                            ProofOfCashDisbursement = new((string?)null),
                             Reason = CardDisputes::RepresentedReason.InvalidDispute,
                             ReversalIssued = new(
                                 "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -2984,8 +2984,8 @@ public class CardDisputeTest : TestBase
                                     "The user did not provide the required documentation.",
                                 ProcessedAt = "2020-01-31",
                             },
-                            DelayedChargeTransaction = new(null),
-                            EvidenceOfImprint = new(null),
+                            DelayedChargeTransaction = new((string?)null),
+                            EvidenceOfImprint = new((string?)null),
                             InvalidDispute = new()
                             {
                                 Explanation =
@@ -3001,7 +3001,7 @@ public class CardDisputeTest : TestBase
                                 PriorApprovedTransactions =
                                     "0x1234567890123456789012345678901234567890",
                             },
-                            PriorUndisputedNonFraudTransactions = new(null),
+                            PriorUndisputedNonFraudTransactions = new((string?)null),
                             Reason =
                                 CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                         },
@@ -3035,7 +3035,7 @@ public class CardDisputeTest : TestBase
                                 PriorApprovedTransactions =
                                     "0x1234567890123456789012345678901234567890",
                             },
-                            ProofOfCashDisbursement = new(null),
+                            ProofOfCashDisbursement = new((string?)null),
                             Reason = CardDisputes::RepresentedReason.InvalidDispute,
                             ReversalIssued = new(
                                 "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -3780,8 +3780,8 @@ public class CardDisputeVisaTest : TestBase
                             Explanation = "The user did not provide the required documentation.",
                             ProcessedAt = "2020-01-31",
                         },
-                        DelayedChargeTransaction = new(null),
-                        EvidenceOfImprint = new(null),
+                        DelayedChargeTransaction = new((string?)null),
+                        EvidenceOfImprint = new((string?)null),
                         InvalidDispute = new()
                         {
                             Explanation = "The user did not provide the required documentation.",
@@ -3795,7 +3795,7 @@ public class CardDisputeVisaTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        PriorUndisputedNonFraudTransactions = new(null),
+                        PriorUndisputedNonFraudTransactions = new((string?)null),
                         Reason =
                             CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                     },
@@ -3826,7 +3826,7 @@ public class CardDisputeVisaTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        ProofOfCashDisbursement = new(null),
+                        ProofOfCashDisbursement = new((string?)null),
                         Reason = CardDisputes::RepresentedReason.InvalidDispute,
                         ReversalIssued = new(
                             "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -4234,8 +4234,8 @@ public class CardDisputeVisaTest : TestBase
                         Explanation = "The user did not provide the required documentation.",
                         ProcessedAt = "2020-01-31",
                     },
-                    DelayedChargeTransaction = new(null),
-                    EvidenceOfImprint = new(null),
+                    DelayedChargeTransaction = new((string?)null),
+                    EvidenceOfImprint = new((string?)null),
                     InvalidDispute = new()
                     {
                         Explanation = "The user did not provide the required documentation.",
@@ -4247,7 +4247,7 @@ public class CardDisputeVisaTest : TestBase
                         DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                         PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                     },
-                    PriorUndisputedNonFraudTransactions = new(null),
+                    PriorUndisputedNonFraudTransactions = new((string?)null),
                     Reason =
                         CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                 },
@@ -4276,7 +4276,7 @@ public class CardDisputeVisaTest : TestBase
                         DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                         PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                     },
-                    ProofOfCashDisbursement = new(null),
+                    ProofOfCashDisbursement = new((string?)null),
                     Reason = CardDisputes::RepresentedReason.InvalidDispute,
                     ReversalIssued = new(
                         "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -4702,8 +4702,8 @@ public class CardDisputeVisaTest : TestBase
                             Explanation = "The user did not provide the required documentation.",
                             ProcessedAt = "2020-01-31",
                         },
-                        DelayedChargeTransaction = new(null),
-                        EvidenceOfImprint = new(null),
+                        DelayedChargeTransaction = new((string?)null),
+                        EvidenceOfImprint = new((string?)null),
                         InvalidDispute = new()
                         {
                             Explanation = "The user did not provide the required documentation.",
@@ -4717,7 +4717,7 @@ public class CardDisputeVisaTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        PriorUndisputedNonFraudTransactions = new(null),
+                        PriorUndisputedNonFraudTransactions = new((string?)null),
                         Reason =
                             CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                     },
@@ -4748,7 +4748,7 @@ public class CardDisputeVisaTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        ProofOfCashDisbursement = new(null),
+                        ProofOfCashDisbursement = new((string?)null),
                         Reason = CardDisputes::RepresentedReason.InvalidDispute,
                         ReversalIssued = new(
                             "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -5170,8 +5170,8 @@ public class CardDisputeVisaTest : TestBase
                             Explanation = "The user did not provide the required documentation.",
                             ProcessedAt = "2020-01-31",
                         },
-                        DelayedChargeTransaction = new(null),
-                        EvidenceOfImprint = new(null),
+                        DelayedChargeTransaction = new((string?)null),
+                        EvidenceOfImprint = new((string?)null),
                         InvalidDispute = new()
                         {
                             Explanation = "The user did not provide the required documentation.",
@@ -5185,7 +5185,7 @@ public class CardDisputeVisaTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        PriorUndisputedNonFraudTransactions = new(null),
+                        PriorUndisputedNonFraudTransactions = new((string?)null),
                         Reason =
                             CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                     },
@@ -5216,7 +5216,7 @@ public class CardDisputeVisaTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        ProofOfCashDisbursement = new(null),
+                        ProofOfCashDisbursement = new((string?)null),
                         Reason = CardDisputes::RepresentedReason.InvalidDispute,
                         ReversalIssued = new(
                             "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -5631,8 +5631,8 @@ public class CardDisputeVisaTest : TestBase
                         Explanation = "The user did not provide the required documentation.",
                         ProcessedAt = "2020-01-31",
                     },
-                    DelayedChargeTransaction = new(null),
-                    EvidenceOfImprint = new(null),
+                    DelayedChargeTransaction = new((string?)null),
+                    EvidenceOfImprint = new((string?)null),
                     InvalidDispute = new()
                     {
                         Explanation = "The user did not provide the required documentation.",
@@ -5644,7 +5644,7 @@ public class CardDisputeVisaTest : TestBase
                         DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                         PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                     },
-                    PriorUndisputedNonFraudTransactions = new(null),
+                    PriorUndisputedNonFraudTransactions = new((string?)null),
                     Reason =
                         CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                 },
@@ -5673,7 +5673,7 @@ public class CardDisputeVisaTest : TestBase
                         DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                         PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                     },
-                    ProofOfCashDisbursement = new(null),
+                    ProofOfCashDisbursement = new((string?)null),
                     Reason = CardDisputes::RepresentedReason.InvalidDispute,
                     ReversalIssued = new(
                         "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -6102,8 +6102,8 @@ public class CardDisputeVisaTest : TestBase
                             Explanation = "The user did not provide the required documentation.",
                             ProcessedAt = "2020-01-31",
                         },
-                        DelayedChargeTransaction = new(null),
-                        EvidenceOfImprint = new(null),
+                        DelayedChargeTransaction = new((string?)null),
+                        EvidenceOfImprint = new((string?)null),
                         InvalidDispute = new()
                         {
                             Explanation = "The user did not provide the required documentation.",
@@ -6117,7 +6117,7 @@ public class CardDisputeVisaTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        PriorUndisputedNonFraudTransactions = new(null),
+                        PriorUndisputedNonFraudTransactions = new((string?)null),
                         Reason =
                             CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                     },
@@ -6148,7 +6148,7 @@ public class CardDisputeVisaTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        ProofOfCashDisbursement = new(null),
+                        ProofOfCashDisbursement = new((string?)null),
                         Reason = CardDisputes::RepresentedReason.InvalidDispute,
                         ReversalIssued = new(
                             "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -6564,8 +6564,8 @@ public class CardDisputeVisaTest : TestBase
                             Explanation = "The user did not provide the required documentation.",
                             ProcessedAt = "2020-01-31",
                         },
-                        DelayedChargeTransaction = new(null),
-                        EvidenceOfImprint = new(null),
+                        DelayedChargeTransaction = new((string?)null),
+                        EvidenceOfImprint = new((string?)null),
                         InvalidDispute = new()
                         {
                             Explanation = "The user did not provide the required documentation.",
@@ -6579,7 +6579,7 @@ public class CardDisputeVisaTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        PriorUndisputedNonFraudTransactions = new(null),
+                        PriorUndisputedNonFraudTransactions = new((string?)null),
                         Reason =
                             CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                     },
@@ -6610,7 +6610,7 @@ public class CardDisputeVisaTest : TestBase
                             PriorApprovedTransactions =
                                 "0x1234567890123456789012345678901234567890",
                         },
-                        ProofOfCashDisbursement = new(null),
+                        ProofOfCashDisbursement = new((string?)null),
                         Reason = CardDisputes::RepresentedReason.InvalidDispute,
                         ReversalIssued = new(
                             "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -7027,8 +7027,8 @@ public class NetworkEventTest : TestBase
                     Explanation = "The user did not provide the required documentation.",
                     ProcessedAt = "2020-01-31",
                 },
-                DelayedChargeTransaction = new(null),
-                EvidenceOfImprint = new(null),
+                DelayedChargeTransaction = new((string?)null),
+                EvidenceOfImprint = new((string?)null),
                 InvalidDispute = new()
                 {
                     Explanation = "The user did not provide the required documentation.",
@@ -7040,7 +7040,7 @@ public class NetworkEventTest : TestBase
                     DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                     PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                 },
-                PriorUndisputedNonFraudTransactions = new(null),
+                PriorUndisputedNonFraudTransactions = new((string?)null),
                 Reason =
                     CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
             },
@@ -7069,7 +7069,7 @@ public class NetworkEventTest : TestBase
                     DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                     PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                 },
-                ProofOfCashDisbursement = new(null),
+                ProofOfCashDisbursement = new((string?)null),
                 Reason = CardDisputes::RepresentedReason.InvalidDispute,
                 ReversalIssued = new(
                     "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -7110,8 +7110,8 @@ public class NetworkEventTest : TestBase
                 Explanation = "The user did not provide the required documentation.",
                 ProcessedAt = "2020-01-31",
             },
-            DelayedChargeTransaction = new(null),
-            EvidenceOfImprint = new(null),
+            DelayedChargeTransaction = new((string?)null),
+            EvidenceOfImprint = new((string?)null),
             InvalidDispute = new()
             {
                 Explanation = "The user did not provide the required documentation.",
@@ -7123,7 +7123,7 @@ public class NetworkEventTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            PriorUndisputedNonFraudTransactions = new(null),
+            PriorUndisputedNonFraudTransactions = new((string?)null),
             Reason = CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
         };
         CardDisputes::MerchantPrearbitrationTimedOut expectedMerchantPrearbitrationTimedOut = new();
@@ -7151,7 +7151,7 @@ public class NetworkEventTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            ProofOfCashDisbursement = new(null),
+            ProofOfCashDisbursement = new((string?)null),
             Reason = CardDisputes::RepresentedReason.InvalidDispute,
             ReversalIssued = new(
                 "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -7220,8 +7220,8 @@ public class NetworkEventTest : TestBase
                     Explanation = "The user did not provide the required documentation.",
                     ProcessedAt = "2020-01-31",
                 },
-                DelayedChargeTransaction = new(null),
-                EvidenceOfImprint = new(null),
+                DelayedChargeTransaction = new((string?)null),
+                EvidenceOfImprint = new((string?)null),
                 InvalidDispute = new()
                 {
                     Explanation = "The user did not provide the required documentation.",
@@ -7233,7 +7233,7 @@ public class NetworkEventTest : TestBase
                     DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                     PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                 },
-                PriorUndisputedNonFraudTransactions = new(null),
+                PriorUndisputedNonFraudTransactions = new((string?)null),
                 Reason =
                     CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
             },
@@ -7262,7 +7262,7 @@ public class NetworkEventTest : TestBase
                     DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                     PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                 },
-                ProofOfCashDisbursement = new(null),
+                ProofOfCashDisbursement = new((string?)null),
                 Reason = CardDisputes::RepresentedReason.InvalidDispute,
                 ReversalIssued = new(
                     "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -7315,8 +7315,8 @@ public class NetworkEventTest : TestBase
                     Explanation = "The user did not provide the required documentation.",
                     ProcessedAt = "2020-01-31",
                 },
-                DelayedChargeTransaction = new(null),
-                EvidenceOfImprint = new(null),
+                DelayedChargeTransaction = new((string?)null),
+                EvidenceOfImprint = new((string?)null),
                 InvalidDispute = new()
                 {
                     Explanation = "The user did not provide the required documentation.",
@@ -7328,7 +7328,7 @@ public class NetworkEventTest : TestBase
                     DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                     PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                 },
-                PriorUndisputedNonFraudTransactions = new(null),
+                PriorUndisputedNonFraudTransactions = new((string?)null),
                 Reason =
                     CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
             },
@@ -7357,7 +7357,7 @@ public class NetworkEventTest : TestBase
                     DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                     PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                 },
-                ProofOfCashDisbursement = new(null),
+                ProofOfCashDisbursement = new((string?)null),
                 Reason = CardDisputes::RepresentedReason.InvalidDispute,
                 ReversalIssued = new(
                     "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -7405,8 +7405,8 @@ public class NetworkEventTest : TestBase
                 Explanation = "The user did not provide the required documentation.",
                 ProcessedAt = "2020-01-31",
             },
-            DelayedChargeTransaction = new(null),
-            EvidenceOfImprint = new(null),
+            DelayedChargeTransaction = new((string?)null),
+            EvidenceOfImprint = new((string?)null),
             InvalidDispute = new()
             {
                 Explanation = "The user did not provide the required documentation.",
@@ -7418,7 +7418,7 @@ public class NetworkEventTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            PriorUndisputedNonFraudTransactions = new(null),
+            PriorUndisputedNonFraudTransactions = new((string?)null),
             Reason = CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
         };
         CardDisputes::MerchantPrearbitrationTimedOut expectedMerchantPrearbitrationTimedOut = new();
@@ -7446,7 +7446,7 @@ public class NetworkEventTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            ProofOfCashDisbursement = new(null),
+            ProofOfCashDisbursement = new((string?)null),
             Reason = CardDisputes::RepresentedReason.InvalidDispute,
             ReversalIssued = new(
                 "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -7524,8 +7524,8 @@ public class NetworkEventTest : TestBase
                     Explanation = "The user did not provide the required documentation.",
                     ProcessedAt = "2020-01-31",
                 },
-                DelayedChargeTransaction = new(null),
-                EvidenceOfImprint = new(null),
+                DelayedChargeTransaction = new((string?)null),
+                EvidenceOfImprint = new((string?)null),
                 InvalidDispute = new()
                 {
                     Explanation = "The user did not provide the required documentation.",
@@ -7537,7 +7537,7 @@ public class NetworkEventTest : TestBase
                     DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                     PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                 },
-                PriorUndisputedNonFraudTransactions = new(null),
+                PriorUndisputedNonFraudTransactions = new((string?)null),
                 Reason =
                     CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
             },
@@ -7566,7 +7566,7 @@ public class NetworkEventTest : TestBase
                     DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                     PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                 },
-                ProofOfCashDisbursement = new(null),
+                ProofOfCashDisbursement = new((string?)null),
                 Reason = CardDisputes::RepresentedReason.InvalidDispute,
                 ReversalIssued = new(
                     "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -7747,8 +7747,8 @@ public class NetworkEventTest : TestBase
                     Explanation = "The user did not provide the required documentation.",
                     ProcessedAt = "2020-01-31",
                 },
-                DelayedChargeTransaction = new(null),
-                EvidenceOfImprint = new(null),
+                DelayedChargeTransaction = new((string?)null),
+                EvidenceOfImprint = new((string?)null),
                 InvalidDispute = new()
                 {
                     Explanation = "The user did not provide the required documentation.",
@@ -7760,7 +7760,7 @@ public class NetworkEventTest : TestBase
                     DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                     PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                 },
-                PriorUndisputedNonFraudTransactions = new(null),
+                PriorUndisputedNonFraudTransactions = new((string?)null),
                 Reason =
                     CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
             },
@@ -7789,7 +7789,7 @@ public class NetworkEventTest : TestBase
                     DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                     PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
                 },
-                ProofOfCashDisbursement = new(null),
+                ProofOfCashDisbursement = new((string?)null),
                 Reason = CardDisputes::RepresentedReason.InvalidDispute,
                 ReversalIssued = new(
                     "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -8189,8 +8189,8 @@ public class MerchantPrearbitrationReceivedTest : TestBase
                 Explanation = "The user did not provide the required documentation.",
                 ProcessedAt = "2020-01-31",
             },
-            DelayedChargeTransaction = new(null),
-            EvidenceOfImprint = new(null),
+            DelayedChargeTransaction = new((string?)null),
+            EvidenceOfImprint = new((string?)null),
             InvalidDispute = new()
             {
                 Explanation = "The user did not provide the required documentation.",
@@ -8202,7 +8202,7 @@ public class MerchantPrearbitrationReceivedTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            PriorUndisputedNonFraudTransactions = new(null),
+            PriorUndisputedNonFraudTransactions = new((string?)null),
             Reason = CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
         };
 
@@ -8221,8 +8221,10 @@ public class MerchantPrearbitrationReceivedTest : TestBase
             Explanation = "The user did not provide the required documentation.",
             ProcessedAt = "2020-01-31",
         };
-        CardDisputes::DelayedChargeTransaction expectedDelayedChargeTransaction = new(null);
-        CardDisputes::EvidenceOfImprint expectedEvidenceOfImprint = new(null);
+        CardDisputes::DelayedChargeTransaction expectedDelayedChargeTransaction = new(
+            (string?)null
+        );
+        CardDisputes::EvidenceOfImprint expectedEvidenceOfImprint = new((string?)null);
         CardDisputes::InvalidDispute expectedInvalidDispute = new()
         {
             Explanation = "The user did not provide the required documentation.",
@@ -8236,7 +8238,7 @@ public class MerchantPrearbitrationReceivedTest : TestBase
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             };
         CardDisputes::PriorUndisputedNonFraudTransactions expectedPriorUndisputedNonFraudTransactions =
-            new(null);
+            new((string?)null);
         ApiEnum<string, CardDisputes::MerchantPrearbitrationReceivedReason> expectedReason =
             CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes;
 
@@ -8277,8 +8279,8 @@ public class MerchantPrearbitrationReceivedTest : TestBase
                 Explanation = "The user did not provide the required documentation.",
                 ProcessedAt = "2020-01-31",
             },
-            DelayedChargeTransaction = new(null),
-            EvidenceOfImprint = new(null),
+            DelayedChargeTransaction = new((string?)null),
+            EvidenceOfImprint = new((string?)null),
             InvalidDispute = new()
             {
                 Explanation = "The user did not provide the required documentation.",
@@ -8290,7 +8292,7 @@ public class MerchantPrearbitrationReceivedTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            PriorUndisputedNonFraudTransactions = new(null),
+            PriorUndisputedNonFraudTransactions = new((string?)null),
             Reason = CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
         };
 
@@ -8323,8 +8325,8 @@ public class MerchantPrearbitrationReceivedTest : TestBase
                 Explanation = "The user did not provide the required documentation.",
                 ProcessedAt = "2020-01-31",
             },
-            DelayedChargeTransaction = new(null),
-            EvidenceOfImprint = new(null),
+            DelayedChargeTransaction = new((string?)null),
+            EvidenceOfImprint = new((string?)null),
             InvalidDispute = new()
             {
                 Explanation = "The user did not provide the required documentation.",
@@ -8336,7 +8338,7 @@ public class MerchantPrearbitrationReceivedTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            PriorUndisputedNonFraudTransactions = new(null),
+            PriorUndisputedNonFraudTransactions = new((string?)null),
             Reason = CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
         };
 
@@ -8362,8 +8364,10 @@ public class MerchantPrearbitrationReceivedTest : TestBase
             Explanation = "The user did not provide the required documentation.",
             ProcessedAt = "2020-01-31",
         };
-        CardDisputes::DelayedChargeTransaction expectedDelayedChargeTransaction = new(null);
-        CardDisputes::EvidenceOfImprint expectedEvidenceOfImprint = new(null);
+        CardDisputes::DelayedChargeTransaction expectedDelayedChargeTransaction = new(
+            (string?)null
+        );
+        CardDisputes::EvidenceOfImprint expectedEvidenceOfImprint = new((string?)null);
         CardDisputes::InvalidDispute expectedInvalidDispute = new()
         {
             Explanation = "The user did not provide the required documentation.",
@@ -8377,7 +8381,7 @@ public class MerchantPrearbitrationReceivedTest : TestBase
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             };
         CardDisputes::PriorUndisputedNonFraudTransactions expectedPriorUndisputedNonFraudTransactions =
-            new(null);
+            new((string?)null);
         ApiEnum<string, CardDisputes::MerchantPrearbitrationReceivedReason> expectedReason =
             CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes;
 
@@ -8418,8 +8422,8 @@ public class MerchantPrearbitrationReceivedTest : TestBase
                 Explanation = "The user did not provide the required documentation.",
                 ProcessedAt = "2020-01-31",
             },
-            DelayedChargeTransaction = new(null),
-            EvidenceOfImprint = new(null),
+            DelayedChargeTransaction = new((string?)null),
+            EvidenceOfImprint = new((string?)null),
             InvalidDispute = new()
             {
                 Explanation = "The user did not provide the required documentation.",
@@ -8431,7 +8435,7 @@ public class MerchantPrearbitrationReceivedTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            PriorUndisputedNonFraudTransactions = new(null),
+            PriorUndisputedNonFraudTransactions = new((string?)null),
             Reason = CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
         };
 
@@ -8458,8 +8462,8 @@ public class MerchantPrearbitrationReceivedTest : TestBase
                 Explanation = "The user did not provide the required documentation.",
                 ProcessedAt = "2020-01-31",
             },
-            DelayedChargeTransaction = new(null),
-            EvidenceOfImprint = new(null),
+            DelayedChargeTransaction = new((string?)null),
+            EvidenceOfImprint = new((string?)null),
             InvalidDispute = new()
             {
                 Explanation = "The user did not provide the required documentation.",
@@ -8471,7 +8475,7 @@ public class MerchantPrearbitrationReceivedTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            PriorUndisputedNonFraudTransactions = new(null),
+            PriorUndisputedNonFraudTransactions = new((string?)null),
             Reason = CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
         };
 
@@ -9419,7 +9423,7 @@ public class RepresentedTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            ProofOfCashDisbursement = new(null),
+            ProofOfCashDisbursement = new((string?)null),
             Reason = CardDisputes::RepresentedReason.InvalidDispute,
             ReversalIssued = new(
                 "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -9451,7 +9455,7 @@ public class RepresentedTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             };
-        CardDisputes::ProofOfCashDisbursement expectedProofOfCashDisbursement = new(null);
+        CardDisputes::ProofOfCashDisbursement expectedProofOfCashDisbursement = new((string?)null);
         ApiEnum<string, CardDisputes::RepresentedReason> expectedReason =
             CardDisputes::RepresentedReason.InvalidDispute;
         CardDisputes::ReversalIssued expectedReversalIssued = new(
@@ -9501,7 +9505,7 @@ public class RepresentedTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            ProofOfCashDisbursement = new(null),
+            ProofOfCashDisbursement = new((string?)null),
             Reason = CardDisputes::RepresentedReason.InvalidDispute,
             ReversalIssued = new(
                 "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -9544,7 +9548,7 @@ public class RepresentedTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            ProofOfCashDisbursement = new(null),
+            ProofOfCashDisbursement = new((string?)null),
             Reason = CardDisputes::RepresentedReason.InvalidDispute,
             ReversalIssued = new(
                 "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -9583,7 +9587,7 @@ public class RepresentedTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             };
-        CardDisputes::ProofOfCashDisbursement expectedProofOfCashDisbursement = new(null);
+        CardDisputes::ProofOfCashDisbursement expectedProofOfCashDisbursement = new((string?)null);
         ApiEnum<string, CardDisputes::RepresentedReason> expectedReason =
             CardDisputes::RepresentedReason.InvalidDispute;
         CardDisputes::ReversalIssued expectedReversalIssued = new(
@@ -9633,7 +9637,7 @@ public class RepresentedTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            ProofOfCashDisbursement = new(null),
+            ProofOfCashDisbursement = new((string?)null),
             Reason = CardDisputes::RepresentedReason.InvalidDispute,
             ReversalIssued = new(
                 "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -9670,7 +9674,7 @@ public class RepresentedTest : TestBase
                 DestinationWalletAddress = "0x1234567890123456789012345678901234567890",
                 PriorApprovedTransactions = "0x1234567890123456789012345678901234567890",
             },
-            ProofOfCashDisbursement = new(null),
+            ProofOfCashDisbursement = new((string?)null),
             Reason = CardDisputes::RepresentedReason.InvalidDispute,
             ReversalIssued = new(
                 "The merchant has issued a reversal for the transaction prior to the dispute being filed."

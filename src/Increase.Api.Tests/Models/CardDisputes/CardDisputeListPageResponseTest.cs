@@ -65,8 +65,8 @@ public class CardDisputeListPageResponseTest : TestBase
                                             "The user did not provide the required documentation.",
                                         ProcessedAt = "2020-01-31",
                                     },
-                                    DelayedChargeTransaction = new(null),
-                                    EvidenceOfImprint = new(null),
+                                    DelayedChargeTransaction = new((string?)null),
+                                    EvidenceOfImprint = new((string?)null),
                                     InvalidDispute = new()
                                     {
                                         Explanation =
@@ -82,7 +82,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                         PriorApprovedTransactions =
                                             "0x1234567890123456789012345678901234567890",
                                     },
-                                    PriorUndisputedNonFraudTransactions = new(null),
+                                    PriorUndisputedNonFraudTransactions = new((string?)null),
                                     Reason =
                                         CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                                 },
@@ -117,7 +117,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                         PriorApprovedTransactions =
                                             "0x1234567890123456789012345678901234567890",
                                     },
-                                    ProofOfCashDisbursement = new(null),
+                                    ProofOfCashDisbursement = new((string?)null),
                                     Reason = CardDisputes::RepresentedReason.InvalidDispute,
                                     ReversalIssued = new(
                                         "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -561,8 +561,8 @@ public class CardDisputeListPageResponseTest : TestBase
                                         "The user did not provide the required documentation.",
                                     ProcessedAt = "2020-01-31",
                                 },
-                                DelayedChargeTransaction = new(null),
-                                EvidenceOfImprint = new(null),
+                                DelayedChargeTransaction = new((string?)null),
+                                EvidenceOfImprint = new((string?)null),
                                 InvalidDispute = new()
                                 {
                                     Explanation =
@@ -578,7 +578,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                     PriorApprovedTransactions =
                                         "0x1234567890123456789012345678901234567890",
                                 },
-                                PriorUndisputedNonFraudTransactions = new(null),
+                                PriorUndisputedNonFraudTransactions = new((string?)null),
                                 Reason =
                                     CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                             },
@@ -612,7 +612,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                     PriorApprovedTransactions =
                                         "0x1234567890123456789012345678901234567890",
                                 },
-                                ProofOfCashDisbursement = new(null),
+                                ProofOfCashDisbursement = new((string?)null),
                                 Reason = CardDisputes::RepresentedReason.InvalidDispute,
                                 ReversalIssued = new(
                                     "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -1061,8 +1061,8 @@ public class CardDisputeListPageResponseTest : TestBase
                                             "The user did not provide the required documentation.",
                                         ProcessedAt = "2020-01-31",
                                     },
-                                    DelayedChargeTransaction = new(null),
-                                    EvidenceOfImprint = new(null),
+                                    DelayedChargeTransaction = new((string?)null),
+                                    EvidenceOfImprint = new((string?)null),
                                     InvalidDispute = new()
                                     {
                                         Explanation =
@@ -1078,7 +1078,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                         PriorApprovedTransactions =
                                             "0x1234567890123456789012345678901234567890",
                                     },
-                                    PriorUndisputedNonFraudTransactions = new(null),
+                                    PriorUndisputedNonFraudTransactions = new((string?)null),
                                     Reason =
                                         CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                                 },
@@ -1113,7 +1113,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                         PriorApprovedTransactions =
                                             "0x1234567890123456789012345678901234567890",
                                     },
-                                    ProofOfCashDisbursement = new(null),
+                                    ProofOfCashDisbursement = new((string?)null),
                                     Reason = CardDisputes::RepresentedReason.InvalidDispute,
                                     ReversalIssued = new(
                                         "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -1571,8 +1571,8 @@ public class CardDisputeListPageResponseTest : TestBase
                                             "The user did not provide the required documentation.",
                                         ProcessedAt = "2020-01-31",
                                     },
-                                    DelayedChargeTransaction = new(null),
-                                    EvidenceOfImprint = new(null),
+                                    DelayedChargeTransaction = new((string?)null),
+                                    EvidenceOfImprint = new((string?)null),
                                     InvalidDispute = new()
                                     {
                                         Explanation =
@@ -1588,7 +1588,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                         PriorApprovedTransactions =
                                             "0x1234567890123456789012345678901234567890",
                                     },
-                                    PriorUndisputedNonFraudTransactions = new(null),
+                                    PriorUndisputedNonFraudTransactions = new((string?)null),
                                     Reason =
                                         CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                                 },
@@ -1623,7 +1623,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                         PriorApprovedTransactions =
                                             "0x1234567890123456789012345678901234567890",
                                     },
-                                    ProofOfCashDisbursement = new(null),
+                                    ProofOfCashDisbursement = new((string?)null),
                                     Reason = CardDisputes::RepresentedReason.InvalidDispute,
                                     ReversalIssued = new(
                                         "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -2074,8 +2074,8 @@ public class CardDisputeListPageResponseTest : TestBase
                                         "The user did not provide the required documentation.",
                                     ProcessedAt = "2020-01-31",
                                 },
-                                DelayedChargeTransaction = new(null),
-                                EvidenceOfImprint = new(null),
+                                DelayedChargeTransaction = new((string?)null),
+                                EvidenceOfImprint = new((string?)null),
                                 InvalidDispute = new()
                                 {
                                     Explanation =
@@ -2091,7 +2091,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                     PriorApprovedTransactions =
                                         "0x1234567890123456789012345678901234567890",
                                 },
-                                PriorUndisputedNonFraudTransactions = new(null),
+                                PriorUndisputedNonFraudTransactions = new((string?)null),
                                 Reason =
                                     CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                             },
@@ -2125,7 +2125,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                     PriorApprovedTransactions =
                                         "0x1234567890123456789012345678901234567890",
                                 },
-                                ProofOfCashDisbursement = new(null),
+                                ProofOfCashDisbursement = new((string?)null),
                                 Reason = CardDisputes::RepresentedReason.InvalidDispute,
                                 ReversalIssued = new(
                                     "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -2574,8 +2574,8 @@ public class CardDisputeListPageResponseTest : TestBase
                                             "The user did not provide the required documentation.",
                                         ProcessedAt = "2020-01-31",
                                     },
-                                    DelayedChargeTransaction = new(null),
-                                    EvidenceOfImprint = new(null),
+                                    DelayedChargeTransaction = new((string?)null),
+                                    EvidenceOfImprint = new((string?)null),
                                     InvalidDispute = new()
                                     {
                                         Explanation =
@@ -2591,7 +2591,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                         PriorApprovedTransactions =
                                             "0x1234567890123456789012345678901234567890",
                                     },
-                                    PriorUndisputedNonFraudTransactions = new(null),
+                                    PriorUndisputedNonFraudTransactions = new((string?)null),
                                     Reason =
                                         CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                                 },
@@ -2626,7 +2626,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                         PriorApprovedTransactions =
                                             "0x1234567890123456789012345678901234567890",
                                     },
-                                    ProofOfCashDisbursement = new(null),
+                                    ProofOfCashDisbursement = new((string?)null),
                                     Reason = CardDisputes::RepresentedReason.InvalidDispute,
                                     ReversalIssued = new(
                                         "The merchant has issued a reversal for the transaction prior to the dispute being filed."
@@ -3078,8 +3078,8 @@ public class CardDisputeListPageResponseTest : TestBase
                                             "The user did not provide the required documentation.",
                                         ProcessedAt = "2020-01-31",
                                     },
-                                    DelayedChargeTransaction = new(null),
-                                    EvidenceOfImprint = new(null),
+                                    DelayedChargeTransaction = new((string?)null),
+                                    EvidenceOfImprint = new((string?)null),
                                     InvalidDispute = new()
                                     {
                                         Explanation =
@@ -3095,7 +3095,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                         PriorApprovedTransactions =
                                             "0x1234567890123456789012345678901234567890",
                                     },
-                                    PriorUndisputedNonFraudTransactions = new(null),
+                                    PriorUndisputedNonFraudTransactions = new((string?)null),
                                     Reason =
                                         CardDisputes::MerchantPrearbitrationReceivedReason.CardholderNoLongerDisputes,
                                 },
@@ -3130,7 +3130,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                         PriorApprovedTransactions =
                                             "0x1234567890123456789012345678901234567890",
                                     },
-                                    ProofOfCashDisbursement = new(null),
+                                    ProofOfCashDisbursement = new((string?)null),
                                     Reason = CardDisputes::RepresentedReason.InvalidDispute,
                                     ReversalIssued = new(
                                         "The merchant has issued a reversal for the transaction prior to the dispute being filed."
