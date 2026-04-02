@@ -32,36 +32,6 @@ public sealed record class Group : JsonModel
     }
 
     /// <summary>
-    /// If the Group is allowed to create ACH debits.
-    /// </summary>
-    public required ApiEnum<string, AchDebitStatus> AchDebitStatus
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<ApiEnum<string, AchDebitStatus>>(
-                "ach_debit_status"
-            );
-        }
-        init { this._rawData.Set("ach_debit_status", value); }
-    }
-
-    /// <summary>
-    /// If the Group is activated or not.
-    /// </summary>
-    public required ApiEnum<string, ActivationStatus> ActivationStatus
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<ApiEnum<string, ActivationStatus>>(
-                "activation_status"
-            );
-        }
-        init { this._rawData.Set("activation_status", value); }
-    }
-
-    /// <summary>
     /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time at which the Group
     /// was created.
     /// </summary>
@@ -95,8 +65,6 @@ public sealed record class Group : JsonModel
     public override void Validate()
     {
         _ = this.ID;
-        this.AchDebitStatus.Validate();
-        this.ActivationStatus.Validate();
         _ = this.CreatedAt;
         this.Type.Validate();
     }
@@ -134,114 +102,6 @@ class GroupFromRaw : IFromRawJson<Group>
     /// <inheritdoc/>
     public Group FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         Group.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// If the Group is allowed to create ACH debits.
-/// </summary>
-[JsonConverter(typeof(AchDebitStatusConverter))]
-public enum AchDebitStatus
-{
-    /// <summary>
-    /// The Group cannot make ACH debits.
-    /// </summary>
-    Disabled,
-
-    /// <summary>
-    /// The Group can make ACH debits.
-    /// </summary>
-    Enabled,
-}
-
-sealed class AchDebitStatusConverter : JsonConverter<AchDebitStatus>
-{
-    public override AchDebitStatus Read(
-        ref Utf8JsonReader reader,
-        System::Type typeToConvert,
-        JsonSerializerOptions options
-    )
-    {
-        return JsonSerializer.Deserialize<string>(ref reader, options) switch
-        {
-            "disabled" => AchDebitStatus.Disabled,
-            "enabled" => AchDebitStatus.Enabled,
-            _ => (AchDebitStatus)(-1),
-        };
-    }
-
-    public override void Write(
-        Utf8JsonWriter writer,
-        AchDebitStatus value,
-        JsonSerializerOptions options
-    )
-    {
-        JsonSerializer.Serialize(
-            writer,
-            value switch
-            {
-                AchDebitStatus.Disabled => "disabled",
-                AchDebitStatus.Enabled => "enabled",
-                _ => throw new IncreaseInvalidDataException(
-                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
-                ),
-            },
-            options
-        );
-    }
-}
-
-/// <summary>
-/// If the Group is activated or not.
-/// </summary>
-[JsonConverter(typeof(ActivationStatusConverter))]
-public enum ActivationStatus
-{
-    /// <summary>
-    /// The Group is not activated.
-    /// </summary>
-    Unactivated,
-
-    /// <summary>
-    /// The Group is activated.
-    /// </summary>
-    Activated,
-}
-
-sealed class ActivationStatusConverter : JsonConverter<ActivationStatus>
-{
-    public override ActivationStatus Read(
-        ref Utf8JsonReader reader,
-        System::Type typeToConvert,
-        JsonSerializerOptions options
-    )
-    {
-        return JsonSerializer.Deserialize<string>(ref reader, options) switch
-        {
-            "unactivated" => ActivationStatus.Unactivated,
-            "activated" => ActivationStatus.Activated,
-            _ => (ActivationStatus)(-1),
-        };
-    }
-
-    public override void Write(
-        Utf8JsonWriter writer,
-        ActivationStatus value,
-        JsonSerializerOptions options
-    )
-    {
-        JsonSerializer.Serialize(
-            writer,
-            value switch
-            {
-                ActivationStatus.Unactivated => "unactivated",
-                ActivationStatus.Activated => "activated",
-                _ => throw new IncreaseInvalidDataException(
-                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
-                ),
-            },
-            options
-        );
-    }
 }
 
 /// <summary>
