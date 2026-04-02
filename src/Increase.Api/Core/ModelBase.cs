@@ -1457,8 +1457,6 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, BookkeepingAccounts::ComplianceCategory>(),
             new ApiEnumConverter<string, BookkeepingEntrySets::Type>(),
             new ApiEnumConverter<string, BookkeepingEntries::Type>(),
-            new ApiEnumConverter<string, Groups::AchDebitStatus>(),
-            new ApiEnumConverter<string, Groups::ActivationStatus>(),
             new ApiEnumConverter<string, Groups::Type>(),
             new ApiEnumConverter<string, OAuthApplications::OAuthApplicationStatus>(),
             new ApiEnumConverter<string, OAuthApplications::Type>(),
