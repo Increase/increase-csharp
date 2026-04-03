@@ -155,34 +155,6 @@ public sealed record class Account : JsonModel
     }
 
     /// <summary>
-    /// The interest accrued but not yet paid, expressed as a string containing a
-    /// floating-point value.
-    /// </summary>
-    public required string InterestAccrued
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("interest_accrued");
-        }
-        init { this._rawData.Set("interest_accrued", value); }
-    }
-
-    /// <summary>
-    /// The latest [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date on which
-    /// interest was accrued.
-    /// </summary>
-    public required string? InterestAccruedAt
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("interest_accrued_at");
-        }
-        init { this._rawData.Set("interest_accrued_at", value); }
-    }
-
-    /// <summary>
     /// The interest rate currently being earned on the account, as a string containing
     /// a decimal number. For example, a 1% interest rate would be represented as "0.01".
     /// </summary>
@@ -278,8 +250,6 @@ public sealed record class Account : JsonModel
         this.Funding.Validate();
         _ = this.IdempotencyKey;
         _ = this.InformationalEntityID;
-        _ = this.InterestAccrued;
-        _ = this.InterestAccruedAt;
         _ = this.InterestRate;
         this.Loan?.Validate();
         _ = this.Name;
