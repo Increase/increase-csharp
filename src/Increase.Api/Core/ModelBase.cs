@@ -122,10 +122,16 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, AccountTransfers::Currency>(),
             new ApiEnumConverter<string, AccountTransfers::Status>(),
             new ApiEnumConverter<string, AccountTransfers::Type>(),
+            new ApiEnumConverter<string, Cards::CardAuthorizationControlsSpendingLimitInterval>(),
             new ApiEnumConverter<string, Cards::CardStatus>(),
             new ApiEnumConverter<string, Cards::Type>(),
             new ApiEnumConverter<string, Cards::CardDetailsType>(),
             new ApiEnumConverter<string, Cards::CardIframeUrlType>(),
+            new ApiEnumConverter<string, Cards::Interval>(),
+            new ApiEnumConverter<
+                string,
+                Cards::CardUpdateParamsAuthorizationControlsSpendingLimitInterval
+            >(),
             new ApiEnumConverter<string, Cards::Status>(),
             new ApiEnumConverter<string, Cards::In>(),
             new ApiEnumConverter<string, CardPayments::Category>(),

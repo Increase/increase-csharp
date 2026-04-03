@@ -1,5 +1,6 @@
 using System.Collections.Frozen;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -42,6 +43,21 @@ public sealed record class Card : JsonModel
             return this._rawData.GetNotNullClass<string>("account_id");
         }
         init { this._rawData.Set("account_id", value); }
+    }
+
+    /// <summary>
+    /// Controls that restrict how this card can be used.
+    /// </summary>
+    public required CardAuthorizationControls? AuthorizationControls
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<CardAuthorizationControls>(
+                "authorization_controls"
+            );
+        }
+        init { this._rawData.Set("authorization_controls", value); }
     }
 
     /// <summary>
@@ -199,6 +215,7 @@ public sealed record class Card : JsonModel
     {
         _ = this.ID;
         _ = this.AccountID;
+        this.AuthorizationControls?.Validate();
         this.BillingAddress.Validate();
         _ = this.CreatedAt;
         _ = this.Description;
@@ -245,6 +262,1300 @@ class CardFromRaw : IFromRawJson<Card>
     /// <inheritdoc/>
     public Card FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         Card.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Controls that restrict how this card can be used.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<CardAuthorizationControls, CardAuthorizationControlsFromRaw>)
+)]
+public sealed record class CardAuthorizationControls : JsonModel
+{
+    /// <summary>
+    /// Limits the number of authorizations that can be approved on this card.
+    /// </summary>
+    public required CardAuthorizationControlsMaximumAuthorizationCount? MaximumAuthorizationCount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<CardAuthorizationControlsMaximumAuthorizationCount>(
+                "maximum_authorization_count"
+            );
+        }
+        init { this._rawData.Set("maximum_authorization_count", value); }
+    }
+
+    /// <summary>
+    /// Restricts which Merchant Acceptor IDs are allowed or blocked for authorizations
+    /// on this card.
+    /// </summary>
+    public required CardAuthorizationControlsMerchantAcceptorIdentifier? MerchantAcceptorIdentifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<CardAuthorizationControlsMerchantAcceptorIdentifier>(
+                "merchant_acceptor_identifier"
+            );
+        }
+        init { this._rawData.Set("merchant_acceptor_identifier", value); }
+    }
+
+    /// <summary>
+    /// Restricts which Merchant Category Codes are allowed or blocked for authorizations
+    /// on this card.
+    /// </summary>
+    public required CardAuthorizationControlsMerchantCategoryCode? MerchantCategoryCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<CardAuthorizationControlsMerchantCategoryCode>(
+                "merchant_category_code"
+            );
+        }
+        init { this._rawData.Set("merchant_category_code", value); }
+    }
+
+    /// <summary>
+    /// Restricts which merchant countries are allowed or blocked for authorizations
+    /// on this card.
+    /// </summary>
+    public required CardAuthorizationControlsMerchantCountry? MerchantCountry
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<CardAuthorizationControlsMerchantCountry>(
+                "merchant_country"
+            );
+        }
+        init { this._rawData.Set("merchant_country", value); }
+    }
+
+    /// <summary>
+    /// Spending limits for this card. The most restrictive limit is applied if multiple
+    /// limits match.
+    /// </summary>
+    public required IReadOnlyList<CardAuthorizationControlsSpendingLimit>? SpendingLimits
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<CardAuthorizationControlsSpendingLimit>
+            >("spending_limits");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<CardAuthorizationControlsSpendingLimit>?>(
+                "spending_limits",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.MaximumAuthorizationCount?.Validate();
+        this.MerchantAcceptorIdentifier?.Validate();
+        this.MerchantCategoryCode?.Validate();
+        this.MerchantCountry?.Validate();
+        foreach (var item in this.SpendingLimits ?? [])
+        {
+            item.Validate();
+        }
+    }
+
+    public CardAuthorizationControls() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardAuthorizationControls(CardAuthorizationControls cardAuthorizationControls)
+        : base(cardAuthorizationControls) { }
+#pragma warning restore CS8618
+
+    public CardAuthorizationControls(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardAuthorizationControls(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardAuthorizationControlsFromRaw.FromRawUnchecked"/>
+    public static CardAuthorizationControls FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class CardAuthorizationControlsFromRaw : IFromRawJson<CardAuthorizationControls>
+{
+    /// <inheritdoc/>
+    public CardAuthorizationControls FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardAuthorizationControls.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Limits the number of authorizations that can be approved on this card.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardAuthorizationControlsMaximumAuthorizationCount,
+        CardAuthorizationControlsMaximumAuthorizationCountFromRaw
+    >)
+)]
+public sealed record class CardAuthorizationControlsMaximumAuthorizationCount : JsonModel
+{
+    /// <summary>
+    /// The maximum number of authorizations that can be approved on this card over
+    /// its lifetime.
+    /// </summary>
+    public required long? AllTime
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("all_time");
+        }
+        init { this._rawData.Set("all_time", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.AllTime;
+    }
+
+    public CardAuthorizationControlsMaximumAuthorizationCount() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMaximumAuthorizationCount(
+        CardAuthorizationControlsMaximumAuthorizationCount cardAuthorizationControlsMaximumAuthorizationCount
+    )
+        : base(cardAuthorizationControlsMaximumAuthorizationCount) { }
+#pragma warning restore CS8618
+
+    public CardAuthorizationControlsMaximumAuthorizationCount(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardAuthorizationControlsMaximumAuthorizationCount(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardAuthorizationControlsMaximumAuthorizationCountFromRaw.FromRawUnchecked"/>
+    public static CardAuthorizationControlsMaximumAuthorizationCount FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMaximumAuthorizationCount(long? allTime)
+        : this()
+    {
+        this.AllTime = allTime;
+    }
+}
+
+class CardAuthorizationControlsMaximumAuthorizationCountFromRaw
+    : IFromRawJson<CardAuthorizationControlsMaximumAuthorizationCount>
+{
+    /// <inheritdoc/>
+    public CardAuthorizationControlsMaximumAuthorizationCount FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardAuthorizationControlsMaximumAuthorizationCount.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Restricts which Merchant Acceptor IDs are allowed or blocked for authorizations
+/// on this card.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardAuthorizationControlsMerchantAcceptorIdentifier,
+        CardAuthorizationControlsMerchantAcceptorIdentifierFromRaw
+    >)
+)]
+public sealed record class CardAuthorizationControlsMerchantAcceptorIdentifier : JsonModel
+{
+    /// <summary>
+    /// The Merchant Acceptor IDs that are allowed for authorizations on this card.
+    /// </summary>
+    public required IReadOnlyList<CardAuthorizationControlsMerchantAcceptorIdentifierAllowed>? Allowed
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<CardAuthorizationControlsMerchantAcceptorIdentifierAllowed>
+            >("allowed");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<CardAuthorizationControlsMerchantAcceptorIdentifierAllowed>?>(
+                "allowed",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
+    /// The Merchant Acceptor IDs that are blocked for authorizations on this card.
+    /// </summary>
+    public required IReadOnlyList<CardAuthorizationControlsMerchantAcceptorIdentifierBlocked>? Blocked
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<CardAuthorizationControlsMerchantAcceptorIdentifierBlocked>
+            >("blocked");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<CardAuthorizationControlsMerchantAcceptorIdentifierBlocked>?>(
+                "blocked",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        foreach (var item in this.Allowed ?? [])
+        {
+            item.Validate();
+        }
+        foreach (var item in this.Blocked ?? [])
+        {
+            item.Validate();
+        }
+    }
+
+    public CardAuthorizationControlsMerchantAcceptorIdentifier() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantAcceptorIdentifier(
+        CardAuthorizationControlsMerchantAcceptorIdentifier cardAuthorizationControlsMerchantAcceptorIdentifier
+    )
+        : base(cardAuthorizationControlsMerchantAcceptorIdentifier) { }
+#pragma warning restore CS8618
+
+    public CardAuthorizationControlsMerchantAcceptorIdentifier(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardAuthorizationControlsMerchantAcceptorIdentifier(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardAuthorizationControlsMerchantAcceptorIdentifierFromRaw.FromRawUnchecked"/>
+    public static CardAuthorizationControlsMerchantAcceptorIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class CardAuthorizationControlsMerchantAcceptorIdentifierFromRaw
+    : IFromRawJson<CardAuthorizationControlsMerchantAcceptorIdentifier>
+{
+    /// <inheritdoc/>
+    public CardAuthorizationControlsMerchantAcceptorIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardAuthorizationControlsMerchantAcceptorIdentifier.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardAuthorizationControlsMerchantAcceptorIdentifierAllowed,
+        CardAuthorizationControlsMerchantAcceptorIdentifierAllowedFromRaw
+    >)
+)]
+public sealed record class CardAuthorizationControlsMerchantAcceptorIdentifierAllowed : JsonModel
+{
+    /// <summary>
+    /// The Merchant Acceptor ID.
+    /// </summary>
+    public required string Identifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("identifier");
+        }
+        init { this._rawData.Set("identifier", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Identifier;
+    }
+
+    public CardAuthorizationControlsMerchantAcceptorIdentifierAllowed() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantAcceptorIdentifierAllowed(
+        CardAuthorizationControlsMerchantAcceptorIdentifierAllowed cardAuthorizationControlsMerchantAcceptorIdentifierAllowed
+    )
+        : base(cardAuthorizationControlsMerchantAcceptorIdentifierAllowed) { }
+#pragma warning restore CS8618
+
+    public CardAuthorizationControlsMerchantAcceptorIdentifierAllowed(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardAuthorizationControlsMerchantAcceptorIdentifierAllowed(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardAuthorizationControlsMerchantAcceptorIdentifierAllowedFromRaw.FromRawUnchecked"/>
+    public static CardAuthorizationControlsMerchantAcceptorIdentifierAllowed FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantAcceptorIdentifierAllowed(string identifier)
+        : this()
+    {
+        this.Identifier = identifier;
+    }
+}
+
+class CardAuthorizationControlsMerchantAcceptorIdentifierAllowedFromRaw
+    : IFromRawJson<CardAuthorizationControlsMerchantAcceptorIdentifierAllowed>
+{
+    /// <inheritdoc/>
+    public CardAuthorizationControlsMerchantAcceptorIdentifierAllowed FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardAuthorizationControlsMerchantAcceptorIdentifierAllowed.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardAuthorizationControlsMerchantAcceptorIdentifierBlocked,
+        CardAuthorizationControlsMerchantAcceptorIdentifierBlockedFromRaw
+    >)
+)]
+public sealed record class CardAuthorizationControlsMerchantAcceptorIdentifierBlocked : JsonModel
+{
+    /// <summary>
+    /// The Merchant Acceptor ID.
+    /// </summary>
+    public required string Identifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("identifier");
+        }
+        init { this._rawData.Set("identifier", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Identifier;
+    }
+
+    public CardAuthorizationControlsMerchantAcceptorIdentifierBlocked() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantAcceptorIdentifierBlocked(
+        CardAuthorizationControlsMerchantAcceptorIdentifierBlocked cardAuthorizationControlsMerchantAcceptorIdentifierBlocked
+    )
+        : base(cardAuthorizationControlsMerchantAcceptorIdentifierBlocked) { }
+#pragma warning restore CS8618
+
+    public CardAuthorizationControlsMerchantAcceptorIdentifierBlocked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardAuthorizationControlsMerchantAcceptorIdentifierBlocked(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardAuthorizationControlsMerchantAcceptorIdentifierBlockedFromRaw.FromRawUnchecked"/>
+    public static CardAuthorizationControlsMerchantAcceptorIdentifierBlocked FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantAcceptorIdentifierBlocked(string identifier)
+        : this()
+    {
+        this.Identifier = identifier;
+    }
+}
+
+class CardAuthorizationControlsMerchantAcceptorIdentifierBlockedFromRaw
+    : IFromRawJson<CardAuthorizationControlsMerchantAcceptorIdentifierBlocked>
+{
+    /// <inheritdoc/>
+    public CardAuthorizationControlsMerchantAcceptorIdentifierBlocked FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardAuthorizationControlsMerchantAcceptorIdentifierBlocked.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Restricts which Merchant Category Codes are allowed or blocked for authorizations
+/// on this card.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardAuthorizationControlsMerchantCategoryCode,
+        CardAuthorizationControlsMerchantCategoryCodeFromRaw
+    >)
+)]
+public sealed record class CardAuthorizationControlsMerchantCategoryCode : JsonModel
+{
+    /// <summary>
+    /// The Merchant Category Codes that are allowed for authorizations on this card.
+    /// </summary>
+    public required IReadOnlyList<CardAuthorizationControlsMerchantCategoryCodeAllowed>? Allowed
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<CardAuthorizationControlsMerchantCategoryCodeAllowed>
+            >("allowed");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<CardAuthorizationControlsMerchantCategoryCodeAllowed>?>(
+                "allowed",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
+    /// The Merchant Category Codes that are blocked for authorizations on this card.
+    /// </summary>
+    public required IReadOnlyList<CardAuthorizationControlsMerchantCategoryCodeBlocked>? Blocked
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<CardAuthorizationControlsMerchantCategoryCodeBlocked>
+            >("blocked");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<CardAuthorizationControlsMerchantCategoryCodeBlocked>?>(
+                "blocked",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        foreach (var item in this.Allowed ?? [])
+        {
+            item.Validate();
+        }
+        foreach (var item in this.Blocked ?? [])
+        {
+            item.Validate();
+        }
+    }
+
+    public CardAuthorizationControlsMerchantCategoryCode() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantCategoryCode(
+        CardAuthorizationControlsMerchantCategoryCode cardAuthorizationControlsMerchantCategoryCode
+    )
+        : base(cardAuthorizationControlsMerchantCategoryCode) { }
+#pragma warning restore CS8618
+
+    public CardAuthorizationControlsMerchantCategoryCode(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardAuthorizationControlsMerchantCategoryCode(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardAuthorizationControlsMerchantCategoryCodeFromRaw.FromRawUnchecked"/>
+    public static CardAuthorizationControlsMerchantCategoryCode FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class CardAuthorizationControlsMerchantCategoryCodeFromRaw
+    : IFromRawJson<CardAuthorizationControlsMerchantCategoryCode>
+{
+    /// <inheritdoc/>
+    public CardAuthorizationControlsMerchantCategoryCode FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardAuthorizationControlsMerchantCategoryCode.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardAuthorizationControlsMerchantCategoryCodeAllowed,
+        CardAuthorizationControlsMerchantCategoryCodeAllowedFromRaw
+    >)
+)]
+public sealed record class CardAuthorizationControlsMerchantCategoryCodeAllowed : JsonModel
+{
+    /// <summary>
+    /// The Merchant Category Code (MCC).
+    /// </summary>
+    public required string Code
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("code");
+        }
+        init { this._rawData.Set("code", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Code;
+    }
+
+    public CardAuthorizationControlsMerchantCategoryCodeAllowed() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantCategoryCodeAllowed(
+        CardAuthorizationControlsMerchantCategoryCodeAllowed cardAuthorizationControlsMerchantCategoryCodeAllowed
+    )
+        : base(cardAuthorizationControlsMerchantCategoryCodeAllowed) { }
+#pragma warning restore CS8618
+
+    public CardAuthorizationControlsMerchantCategoryCodeAllowed(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardAuthorizationControlsMerchantCategoryCodeAllowed(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardAuthorizationControlsMerchantCategoryCodeAllowedFromRaw.FromRawUnchecked"/>
+    public static CardAuthorizationControlsMerchantCategoryCodeAllowed FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantCategoryCodeAllowed(string code)
+        : this()
+    {
+        this.Code = code;
+    }
+}
+
+class CardAuthorizationControlsMerchantCategoryCodeAllowedFromRaw
+    : IFromRawJson<CardAuthorizationControlsMerchantCategoryCodeAllowed>
+{
+    /// <inheritdoc/>
+    public CardAuthorizationControlsMerchantCategoryCodeAllowed FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardAuthorizationControlsMerchantCategoryCodeAllowed.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardAuthorizationControlsMerchantCategoryCodeBlocked,
+        CardAuthorizationControlsMerchantCategoryCodeBlockedFromRaw
+    >)
+)]
+public sealed record class CardAuthorizationControlsMerchantCategoryCodeBlocked : JsonModel
+{
+    /// <summary>
+    /// The Merchant Category Code (MCC).
+    /// </summary>
+    public required string Code
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("code");
+        }
+        init { this._rawData.Set("code", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Code;
+    }
+
+    public CardAuthorizationControlsMerchantCategoryCodeBlocked() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantCategoryCodeBlocked(
+        CardAuthorizationControlsMerchantCategoryCodeBlocked cardAuthorizationControlsMerchantCategoryCodeBlocked
+    )
+        : base(cardAuthorizationControlsMerchantCategoryCodeBlocked) { }
+#pragma warning restore CS8618
+
+    public CardAuthorizationControlsMerchantCategoryCodeBlocked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardAuthorizationControlsMerchantCategoryCodeBlocked(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardAuthorizationControlsMerchantCategoryCodeBlockedFromRaw.FromRawUnchecked"/>
+    public static CardAuthorizationControlsMerchantCategoryCodeBlocked FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantCategoryCodeBlocked(string code)
+        : this()
+    {
+        this.Code = code;
+    }
+}
+
+class CardAuthorizationControlsMerchantCategoryCodeBlockedFromRaw
+    : IFromRawJson<CardAuthorizationControlsMerchantCategoryCodeBlocked>
+{
+    /// <inheritdoc/>
+    public CardAuthorizationControlsMerchantCategoryCodeBlocked FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardAuthorizationControlsMerchantCategoryCodeBlocked.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Restricts which merchant countries are allowed or blocked for authorizations
+/// on this card.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardAuthorizationControlsMerchantCountry,
+        CardAuthorizationControlsMerchantCountryFromRaw
+    >)
+)]
+public sealed record class CardAuthorizationControlsMerchantCountry : JsonModel
+{
+    /// <summary>
+    /// The merchant countries that are allowed for authorizations on this card.
+    /// </summary>
+    public required IReadOnlyList<CardAuthorizationControlsMerchantCountryAllowed>? Allowed
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<CardAuthorizationControlsMerchantCountryAllowed>
+            >("allowed");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<CardAuthorizationControlsMerchantCountryAllowed>?>(
+                "allowed",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
+    /// The merchant countries that are blocked for authorizations on this card.
+    /// </summary>
+    public required IReadOnlyList<CardAuthorizationControlsMerchantCountryBlocked>? Blocked
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<CardAuthorizationControlsMerchantCountryBlocked>
+            >("blocked");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<CardAuthorizationControlsMerchantCountryBlocked>?>(
+                "blocked",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        foreach (var item in this.Allowed ?? [])
+        {
+            item.Validate();
+        }
+        foreach (var item in this.Blocked ?? [])
+        {
+            item.Validate();
+        }
+    }
+
+    public CardAuthorizationControlsMerchantCountry() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantCountry(
+        CardAuthorizationControlsMerchantCountry cardAuthorizationControlsMerchantCountry
+    )
+        : base(cardAuthorizationControlsMerchantCountry) { }
+#pragma warning restore CS8618
+
+    public CardAuthorizationControlsMerchantCountry(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardAuthorizationControlsMerchantCountry(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardAuthorizationControlsMerchantCountryFromRaw.FromRawUnchecked"/>
+    public static CardAuthorizationControlsMerchantCountry FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class CardAuthorizationControlsMerchantCountryFromRaw
+    : IFromRawJson<CardAuthorizationControlsMerchantCountry>
+{
+    /// <inheritdoc/>
+    public CardAuthorizationControlsMerchantCountry FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardAuthorizationControlsMerchantCountry.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardAuthorizationControlsMerchantCountryAllowed,
+        CardAuthorizationControlsMerchantCountryAllowedFromRaw
+    >)
+)]
+public sealed record class CardAuthorizationControlsMerchantCountryAllowed : JsonModel
+{
+    /// <summary>
+    /// The ISO 3166-1 alpha-2 country code.
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Country;
+    }
+
+    public CardAuthorizationControlsMerchantCountryAllowed() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantCountryAllowed(
+        CardAuthorizationControlsMerchantCountryAllowed cardAuthorizationControlsMerchantCountryAllowed
+    )
+        : base(cardAuthorizationControlsMerchantCountryAllowed) { }
+#pragma warning restore CS8618
+
+    public CardAuthorizationControlsMerchantCountryAllowed(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardAuthorizationControlsMerchantCountryAllowed(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardAuthorizationControlsMerchantCountryAllowedFromRaw.FromRawUnchecked"/>
+    public static CardAuthorizationControlsMerchantCountryAllowed FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantCountryAllowed(string country)
+        : this()
+    {
+        this.Country = country;
+    }
+}
+
+class CardAuthorizationControlsMerchantCountryAllowedFromRaw
+    : IFromRawJson<CardAuthorizationControlsMerchantCountryAllowed>
+{
+    /// <inheritdoc/>
+    public CardAuthorizationControlsMerchantCountryAllowed FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardAuthorizationControlsMerchantCountryAllowed.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardAuthorizationControlsMerchantCountryBlocked,
+        CardAuthorizationControlsMerchantCountryBlockedFromRaw
+    >)
+)]
+public sealed record class CardAuthorizationControlsMerchantCountryBlocked : JsonModel
+{
+    /// <summary>
+    /// The ISO 3166-1 alpha-2 country code.
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Country;
+    }
+
+    public CardAuthorizationControlsMerchantCountryBlocked() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantCountryBlocked(
+        CardAuthorizationControlsMerchantCountryBlocked cardAuthorizationControlsMerchantCountryBlocked
+    )
+        : base(cardAuthorizationControlsMerchantCountryBlocked) { }
+#pragma warning restore CS8618
+
+    public CardAuthorizationControlsMerchantCountryBlocked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardAuthorizationControlsMerchantCountryBlocked(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardAuthorizationControlsMerchantCountryBlockedFromRaw.FromRawUnchecked"/>
+    public static CardAuthorizationControlsMerchantCountryBlocked FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsMerchantCountryBlocked(string country)
+        : this()
+    {
+        this.Country = country;
+    }
+}
+
+class CardAuthorizationControlsMerchantCountryBlockedFromRaw
+    : IFromRawJson<CardAuthorizationControlsMerchantCountryBlocked>
+{
+    /// <inheritdoc/>
+    public CardAuthorizationControlsMerchantCountryBlocked FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardAuthorizationControlsMerchantCountryBlocked.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardAuthorizationControlsSpendingLimit,
+        CardAuthorizationControlsSpendingLimitFromRaw
+    >)
+)]
+public sealed record class CardAuthorizationControlsSpendingLimit : JsonModel
+{
+    /// <summary>
+    /// The interval at which the spending limit is enforced.
+    /// </summary>
+    public required ApiEnum<string, CardAuthorizationControlsSpendingLimitInterval> Interval
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, CardAuthorizationControlsSpendingLimitInterval>
+            >("interval");
+        }
+        init { this._rawData.Set("interval", value); }
+    }
+
+    /// <summary>
+    /// The Merchant Category Codes (MCCs) this spending limit applies to. If not
+    /// set, the limit applies to all transactions.
+    /// </summary>
+    public required IReadOnlyList<CardAuthorizationControlsSpendingLimitMerchantCategoryCode>? MerchantCategoryCodes
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<CardAuthorizationControlsSpendingLimitMerchantCategoryCode>
+            >("merchant_category_codes");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<CardAuthorizationControlsSpendingLimitMerchantCategoryCode>?>(
+                "merchant_category_codes",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
+    /// The maximum settlement amount permitted in the given interval.
+    /// </summary>
+    public required long SettlementAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("settlement_amount");
+        }
+        init { this._rawData.Set("settlement_amount", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Interval.Validate();
+        foreach (var item in this.MerchantCategoryCodes ?? [])
+        {
+            item.Validate();
+        }
+        _ = this.SettlementAmount;
+    }
+
+    public CardAuthorizationControlsSpendingLimit() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsSpendingLimit(
+        CardAuthorizationControlsSpendingLimit cardAuthorizationControlsSpendingLimit
+    )
+        : base(cardAuthorizationControlsSpendingLimit) { }
+#pragma warning restore CS8618
+
+    public CardAuthorizationControlsSpendingLimit(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardAuthorizationControlsSpendingLimit(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardAuthorizationControlsSpendingLimitFromRaw.FromRawUnchecked"/>
+    public static CardAuthorizationControlsSpendingLimit FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class CardAuthorizationControlsSpendingLimitFromRaw
+    : IFromRawJson<CardAuthorizationControlsSpendingLimit>
+{
+    /// <inheritdoc/>
+    public CardAuthorizationControlsSpendingLimit FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardAuthorizationControlsSpendingLimit.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The interval at which the spending limit is enforced.
+/// </summary>
+[JsonConverter(typeof(CardAuthorizationControlsSpendingLimitIntervalConverter))]
+public enum CardAuthorizationControlsSpendingLimitInterval
+{
+    /// <summary>
+    /// The spending limit applies over the lifetime of the card.
+    /// </summary>
+    AllTime,
+
+    /// <summary>
+    /// The spending limit applies per transaction.
+    /// </summary>
+    PerTransaction,
+
+    /// <summary>
+    /// The spending limit applies per day. Resets nightly at midnight UTC.
+    /// </summary>
+    PerDay,
+
+    /// <summary>
+    /// The spending limit applies per week. Resets weekly on Mondays at midnight UTC.
+    /// </summary>
+    PerWeek,
+
+    /// <summary>
+    /// The spending limit applies per month. Resets on the first of the month, midnight UTC.
+    /// </summary>
+    PerMonth,
+}
+
+sealed class CardAuthorizationControlsSpendingLimitIntervalConverter
+    : JsonConverter<CardAuthorizationControlsSpendingLimitInterval>
+{
+    public override CardAuthorizationControlsSpendingLimitInterval Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "all_time" => CardAuthorizationControlsSpendingLimitInterval.AllTime,
+            "per_transaction" => CardAuthorizationControlsSpendingLimitInterval.PerTransaction,
+            "per_day" => CardAuthorizationControlsSpendingLimitInterval.PerDay,
+            "per_week" => CardAuthorizationControlsSpendingLimitInterval.PerWeek,
+            "per_month" => CardAuthorizationControlsSpendingLimitInterval.PerMonth,
+            _ => (CardAuthorizationControlsSpendingLimitInterval)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        CardAuthorizationControlsSpendingLimitInterval value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                CardAuthorizationControlsSpendingLimitInterval.AllTime => "all_time",
+                CardAuthorizationControlsSpendingLimitInterval.PerTransaction => "per_transaction",
+                CardAuthorizationControlsSpendingLimitInterval.PerDay => "per_day",
+                CardAuthorizationControlsSpendingLimitInterval.PerWeek => "per_week",
+                CardAuthorizationControlsSpendingLimitInterval.PerMonth => "per_month",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardAuthorizationControlsSpendingLimitMerchantCategoryCode,
+        CardAuthorizationControlsSpendingLimitMerchantCategoryCodeFromRaw
+    >)
+)]
+public sealed record class CardAuthorizationControlsSpendingLimitMerchantCategoryCode : JsonModel
+{
+    /// <summary>
+    /// The Merchant Category Code (MCC).
+    /// </summary>
+    public required string Code
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("code");
+        }
+        init { this._rawData.Set("code", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Code;
+    }
+
+    public CardAuthorizationControlsSpendingLimitMerchantCategoryCode() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsSpendingLimitMerchantCategoryCode(
+        CardAuthorizationControlsSpendingLimitMerchantCategoryCode cardAuthorizationControlsSpendingLimitMerchantCategoryCode
+    )
+        : base(cardAuthorizationControlsSpendingLimitMerchantCategoryCode) { }
+#pragma warning restore CS8618
+
+    public CardAuthorizationControlsSpendingLimitMerchantCategoryCode(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardAuthorizationControlsSpendingLimitMerchantCategoryCode(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardAuthorizationControlsSpendingLimitMerchantCategoryCodeFromRaw.FromRawUnchecked"/>
+    public static CardAuthorizationControlsSpendingLimitMerchantCategoryCode FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public CardAuthorizationControlsSpendingLimitMerchantCategoryCode(string code)
+        : this()
+    {
+        this.Code = code;
+    }
+}
+
+class CardAuthorizationControlsSpendingLimitMerchantCategoryCodeFromRaw
+    : IFromRawJson<CardAuthorizationControlsSpendingLimitMerchantCategoryCode>
+{
+    /// <inheritdoc/>
+    public CardAuthorizationControlsSpendingLimitMerchantCategoryCode FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardAuthorizationControlsSpendingLimitMerchantCategoryCode.FromRawUnchecked(rawData);
 }
 
 /// <summary>
