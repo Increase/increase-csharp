@@ -23,8 +23,6 @@ public class AccountTest : TestBase
             Funding = Accounts::AccountFunding.Deposits,
             IdempotencyKey = null,
             InformationalEntityID = null,
-            InterestAccrued = "0.01",
-            InterestAccruedAt = "2020-01-31",
             InterestRate = "0.055",
             Loan = new()
             {
@@ -47,8 +45,6 @@ public class AccountTest : TestBase
         string expectedEntityID = "entity_n8y8tnk2p9339ti393yi";
         ApiEnum<string, Accounts::AccountFunding> expectedFunding =
             Accounts::AccountFunding.Deposits;
-        string expectedInterestAccrued = "0.01";
-        string expectedInterestAccruedAt = "2020-01-31";
         string expectedInterestRate = "0.055";
         Accounts::AccountLoan expectedLoan = new()
         {
@@ -73,8 +69,6 @@ public class AccountTest : TestBase
         Assert.Equal(expectedFunding, model.Funding);
         Assert.Null(model.IdempotencyKey);
         Assert.Null(model.InformationalEntityID);
-        Assert.Equal(expectedInterestAccrued, model.InterestAccrued);
-        Assert.Equal(expectedInterestAccruedAt, model.InterestAccruedAt);
         Assert.Equal(expectedInterestRate, model.InterestRate);
         Assert.Equal(expectedLoan, model.Loan);
         Assert.Equal(expectedName, model.Name);
@@ -98,8 +92,6 @@ public class AccountTest : TestBase
             Funding = Accounts::AccountFunding.Deposits,
             IdempotencyKey = null,
             InformationalEntityID = null,
-            InterestAccrued = "0.01",
-            InterestAccruedAt = "2020-01-31",
             InterestRate = "0.055",
             Loan = new()
             {
@@ -139,8 +131,6 @@ public class AccountTest : TestBase
             Funding = Accounts::AccountFunding.Deposits,
             IdempotencyKey = null,
             InformationalEntityID = null,
-            InterestAccrued = "0.01",
-            InterestAccruedAt = "2020-01-31",
             InterestRate = "0.055",
             Loan = new()
             {
@@ -170,8 +160,6 @@ public class AccountTest : TestBase
         string expectedEntityID = "entity_n8y8tnk2p9339ti393yi";
         ApiEnum<string, Accounts::AccountFunding> expectedFunding =
             Accounts::AccountFunding.Deposits;
-        string expectedInterestAccrued = "0.01";
-        string expectedInterestAccruedAt = "2020-01-31";
         string expectedInterestRate = "0.055";
         Accounts::AccountLoan expectedLoan = new()
         {
@@ -196,8 +184,6 @@ public class AccountTest : TestBase
         Assert.Equal(expectedFunding, deserialized.Funding);
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Null(deserialized.InformationalEntityID);
-        Assert.Equal(expectedInterestAccrued, deserialized.InterestAccrued);
-        Assert.Equal(expectedInterestAccruedAt, deserialized.InterestAccruedAt);
         Assert.Equal(expectedInterestRate, deserialized.InterestRate);
         Assert.Equal(expectedLoan, deserialized.Loan);
         Assert.Equal(expectedName, deserialized.Name);
@@ -221,8 +207,6 @@ public class AccountTest : TestBase
             Funding = Accounts::AccountFunding.Deposits,
             IdempotencyKey = null,
             InformationalEntityID = null,
-            InterestAccrued = "0.01",
-            InterestAccruedAt = "2020-01-31",
             InterestRate = "0.055",
             Loan = new()
             {
@@ -256,8 +240,6 @@ public class AccountTest : TestBase
             Funding = Accounts::AccountFunding.Deposits,
             IdempotencyKey = null,
             InformationalEntityID = null,
-            InterestAccrued = "0.01",
-            InterestAccruedAt = "2020-01-31",
             InterestRate = "0.055",
             Loan = new()
             {

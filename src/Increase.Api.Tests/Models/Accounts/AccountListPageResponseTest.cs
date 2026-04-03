@@ -27,8 +27,6 @@ public class AccountListPageResponseTest : TestBase
                     Funding = Accounts::AccountFunding.Deposits,
                     IdempotencyKey = null,
                     InformationalEntityID = null,
-                    InterestAccrued = "0.01",
-                    InterestAccruedAt = "2020-01-31",
                     InterestRate = "0.055",
                     Loan = new()
                     {
@@ -61,8 +59,6 @@ public class AccountListPageResponseTest : TestBase
                 Funding = Accounts::AccountFunding.Deposits,
                 IdempotencyKey = null,
                 InformationalEntityID = null,
-                InterestAccrued = "0.01",
-                InterestAccruedAt = "2020-01-31",
                 InterestRate = "0.055",
                 Loan = new()
                 {
@@ -107,8 +103,6 @@ public class AccountListPageResponseTest : TestBase
                     Funding = Accounts::AccountFunding.Deposits,
                     IdempotencyKey = null,
                     InformationalEntityID = null,
-                    InterestAccrued = "0.01",
-                    InterestAccruedAt = "2020-01-31",
                     InterestRate = "0.055",
                     Loan = new()
                     {
@@ -155,8 +149,6 @@ public class AccountListPageResponseTest : TestBase
                     Funding = Accounts::AccountFunding.Deposits,
                     IdempotencyKey = null,
                     InformationalEntityID = null,
-                    InterestAccrued = "0.01",
-                    InterestAccruedAt = "2020-01-31",
                     InterestRate = "0.055",
                     Loan = new()
                     {
@@ -196,8 +188,6 @@ public class AccountListPageResponseTest : TestBase
                 Funding = Accounts::AccountFunding.Deposits,
                 IdempotencyKey = null,
                 InformationalEntityID = null,
-                InterestAccrued = "0.01",
-                InterestAccruedAt = "2020-01-31",
                 InterestRate = "0.055",
                 Loan = new()
                 {
@@ -242,8 +232,6 @@ public class AccountListPageResponseTest : TestBase
                     Funding = Accounts::AccountFunding.Deposits,
                     IdempotencyKey = null,
                     InformationalEntityID = null,
-                    InterestAccrued = "0.01",
-                    InterestAccruedAt = "2020-01-31",
                     InterestRate = "0.055",
                     Loan = new()
                     {
@@ -284,8 +272,6 @@ public class AccountListPageResponseTest : TestBase
                     Funding = Accounts::AccountFunding.Deposits,
                     IdempotencyKey = null,
                     InformationalEntityID = null,
-                    InterestAccrued = "0.01",
-                    InterestAccruedAt = "2020-01-31",
                     InterestRate = "0.055",
                     Loan = new()
                     {
