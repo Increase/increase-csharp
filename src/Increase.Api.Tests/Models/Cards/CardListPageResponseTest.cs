@@ -19,6 +19,35 @@ public class CardListPageResponseTest : TestBase
                 {
                     ID = "card_oubs0hwk5rn6knuecxg2",
                     AccountID = "account_in71c4amph0vgo2qllky",
+                    AuthorizationControls = new()
+                    {
+                        MaximumAuthorizationCount = new(0),
+                        MerchantAcceptorIdentifier = new()
+                        {
+                            Allowed = [new("identifier")],
+                            Blocked = [new("identifier")],
+                        },
+                        MerchantCategoryCode = new()
+                        {
+                            Allowed = [new("code")],
+                            Blocked = [new("code")],
+                        },
+                        MerchantCountry = new()
+                        {
+                            Allowed = [new("country")],
+                            Blocked = [new("country")],
+                        },
+                        SpendingLimits =
+                        [
+                            new()
+                            {
+                                Interval =
+                                    Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
+                                MerchantCategoryCodes = [new("code")],
+                                SettlementAmount = 0,
+                            },
+                        ],
+                    },
                     BillingAddress = new()
                     {
                         City = "New York",
@@ -53,6 +82,35 @@ public class CardListPageResponseTest : TestBase
             {
                 ID = "card_oubs0hwk5rn6knuecxg2",
                 AccountID = "account_in71c4amph0vgo2qllky",
+                AuthorizationControls = new()
+                {
+                    MaximumAuthorizationCount = new(0),
+                    MerchantAcceptorIdentifier = new()
+                    {
+                        Allowed = [new("identifier")],
+                        Blocked = [new("identifier")],
+                    },
+                    MerchantCategoryCode = new()
+                    {
+                        Allowed = [new("code")],
+                        Blocked = [new("code")],
+                    },
+                    MerchantCountry = new()
+                    {
+                        Allowed = [new("country")],
+                        Blocked = [new("country")],
+                    },
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval =
+                                Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
+                            MerchantCategoryCodes = [new("code")],
+                            SettlementAmount = 0,
+                        },
+                    ],
+                },
                 BillingAddress = new()
                 {
                     City = "New York",
@@ -99,6 +157,35 @@ public class CardListPageResponseTest : TestBase
                 {
                     ID = "card_oubs0hwk5rn6knuecxg2",
                     AccountID = "account_in71c4amph0vgo2qllky",
+                    AuthorizationControls = new()
+                    {
+                        MaximumAuthorizationCount = new(0),
+                        MerchantAcceptorIdentifier = new()
+                        {
+                            Allowed = [new("identifier")],
+                            Blocked = [new("identifier")],
+                        },
+                        MerchantCategoryCode = new()
+                        {
+                            Allowed = [new("code")],
+                            Blocked = [new("code")],
+                        },
+                        MerchantCountry = new()
+                        {
+                            Allowed = [new("country")],
+                            Blocked = [new("country")],
+                        },
+                        SpendingLimits =
+                        [
+                            new()
+                            {
+                                Interval =
+                                    Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
+                                MerchantCategoryCodes = [new("code")],
+                                SettlementAmount = 0,
+                            },
+                        ],
+                    },
                     BillingAddress = new()
                     {
                         City = "New York",
@@ -147,6 +234,35 @@ public class CardListPageResponseTest : TestBase
                 {
                     ID = "card_oubs0hwk5rn6knuecxg2",
                     AccountID = "account_in71c4amph0vgo2qllky",
+                    AuthorizationControls = new()
+                    {
+                        MaximumAuthorizationCount = new(0),
+                        MerchantAcceptorIdentifier = new()
+                        {
+                            Allowed = [new("identifier")],
+                            Blocked = [new("identifier")],
+                        },
+                        MerchantCategoryCode = new()
+                        {
+                            Allowed = [new("code")],
+                            Blocked = [new("code")],
+                        },
+                        MerchantCountry = new()
+                        {
+                            Allowed = [new("country")],
+                            Blocked = [new("country")],
+                        },
+                        SpendingLimits =
+                        [
+                            new()
+                            {
+                                Interval =
+                                    Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
+                                MerchantCategoryCodes = [new("code")],
+                                SettlementAmount = 0,
+                            },
+                        ],
+                    },
                     BillingAddress = new()
                     {
                         City = "New York",
@@ -188,6 +304,35 @@ public class CardListPageResponseTest : TestBase
             {
                 ID = "card_oubs0hwk5rn6knuecxg2",
                 AccountID = "account_in71c4amph0vgo2qllky",
+                AuthorizationControls = new()
+                {
+                    MaximumAuthorizationCount = new(0),
+                    MerchantAcceptorIdentifier = new()
+                    {
+                        Allowed = [new("identifier")],
+                        Blocked = [new("identifier")],
+                    },
+                    MerchantCategoryCode = new()
+                    {
+                        Allowed = [new("code")],
+                        Blocked = [new("code")],
+                    },
+                    MerchantCountry = new()
+                    {
+                        Allowed = [new("country")],
+                        Blocked = [new("country")],
+                    },
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval =
+                                Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
+                            MerchantCategoryCodes = [new("code")],
+                            SettlementAmount = 0,
+                        },
+                    ],
+                },
                 BillingAddress = new()
                 {
                     City = "New York",
@@ -234,6 +379,35 @@ public class CardListPageResponseTest : TestBase
                 {
                     ID = "card_oubs0hwk5rn6knuecxg2",
                     AccountID = "account_in71c4amph0vgo2qllky",
+                    AuthorizationControls = new()
+                    {
+                        MaximumAuthorizationCount = new(0),
+                        MerchantAcceptorIdentifier = new()
+                        {
+                            Allowed = [new("identifier")],
+                            Blocked = [new("identifier")],
+                        },
+                        MerchantCategoryCode = new()
+                        {
+                            Allowed = [new("code")],
+                            Blocked = [new("code")],
+                        },
+                        MerchantCountry = new()
+                        {
+                            Allowed = [new("country")],
+                            Blocked = [new("country")],
+                        },
+                        SpendingLimits =
+                        [
+                            new()
+                            {
+                                Interval =
+                                    Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
+                                MerchantCategoryCodes = [new("code")],
+                                SettlementAmount = 0,
+                            },
+                        ],
+                    },
                     BillingAddress = new()
                     {
                         City = "New York",
@@ -276,6 +450,35 @@ public class CardListPageResponseTest : TestBase
                 {
                     ID = "card_oubs0hwk5rn6knuecxg2",
                     AccountID = "account_in71c4amph0vgo2qllky",
+                    AuthorizationControls = new()
+                    {
+                        MaximumAuthorizationCount = new(0),
+                        MerchantAcceptorIdentifier = new()
+                        {
+                            Allowed = [new("identifier")],
+                            Blocked = [new("identifier")],
+                        },
+                        MerchantCategoryCode = new()
+                        {
+                            Allowed = [new("code")],
+                            Blocked = [new("code")],
+                        },
+                        MerchantCountry = new()
+                        {
+                            Allowed = [new("country")],
+                            Blocked = [new("country")],
+                        },
+                        SpendingLimits =
+                        [
+                            new()
+                            {
+                                Interval =
+                                    Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
+                                MerchantCategoryCodes = [new("code")],
+                                SettlementAmount = 0,
+                            },
+                        ],
+                    },
                     BillingAddress = new()
                     {
                         City = "New York",
