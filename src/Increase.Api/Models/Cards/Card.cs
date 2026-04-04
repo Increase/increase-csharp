@@ -336,7 +336,7 @@ public sealed record class CardAuthorizationControls : JsonModel
     }
 
     /// <summary>
-    /// Spending limits for this card. The most restrictive limit is applied if multiple
+    /// Spending limits for this card. The most restrictive limit applies if multiple
     /// limits match.
     /// </summary>
     public required IReadOnlyList<CardAuthorizationControlsSpendingLimit>? SpendingLimits
