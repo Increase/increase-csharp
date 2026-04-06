@@ -21,7 +21,6 @@ public class CardListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AuthorizationControls = new()
                     {
-                        MaximumAuthorizationCount = new(0),
                         MerchantAcceptorIdentifier = new()
                         {
                             Allowed = [new("identifier")],
@@ -37,16 +36,29 @@ public class CardListPageResponseTest : TestBase
                             Allowed = [new("country")],
                             Blocked = [new("country")],
                         },
-                        SpendingLimits =
-                        [
-                            new()
-                            {
-                                Interval =
-                                    Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                                MerchantCategoryCodes = [new("code")],
-                                SettlementAmount = 0,
-                            },
-                        ],
+                        Usage = new()
+                        {
+                            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                            MultiUse = new(
+                                [
+                                    new()
+                                    {
+                                        Interval =
+                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                        MerchantCategoryCodes = [new("code")],
+                                        SettlementAmount = 0,
+                                    },
+                                ]
+                            ),
+                            SingleUse = new(
+                                new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                                {
+                                    Comparison =
+                                        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                                    Value = 0,
+                                }
+                            ),
+                        },
                     },
                     BillingAddress = new()
                     {
@@ -84,7 +96,6 @@ public class CardListPageResponseTest : TestBase
                 AccountID = "account_in71c4amph0vgo2qllky",
                 AuthorizationControls = new()
                 {
-                    MaximumAuthorizationCount = new(0),
                     MerchantAcceptorIdentifier = new()
                     {
                         Allowed = [new("identifier")],
@@ -100,16 +111,29 @@ public class CardListPageResponseTest : TestBase
                         Allowed = [new("country")],
                         Blocked = [new("country")],
                     },
-                    SpendingLimits =
-                    [
-                        new()
-                        {
-                            Interval =
-                                Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                            MerchantCategoryCodes = [new("code")],
-                            SettlementAmount = 0,
-                        },
-                    ],
+                    Usage = new()
+                    {
+                        Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                        MultiUse = new(
+                            [
+                                new()
+                                {
+                                    Interval =
+                                        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                    MerchantCategoryCodes = [new("code")],
+                                    SettlementAmount = 0,
+                                },
+                            ]
+                        ),
+                        SingleUse = new(
+                            new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                            {
+                                Comparison =
+                                    Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                                Value = 0,
+                            }
+                        ),
+                    },
                 },
                 BillingAddress = new()
                 {
@@ -159,7 +183,6 @@ public class CardListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AuthorizationControls = new()
                     {
-                        MaximumAuthorizationCount = new(0),
                         MerchantAcceptorIdentifier = new()
                         {
                             Allowed = [new("identifier")],
@@ -175,16 +198,29 @@ public class CardListPageResponseTest : TestBase
                             Allowed = [new("country")],
                             Blocked = [new("country")],
                         },
-                        SpendingLimits =
-                        [
-                            new()
-                            {
-                                Interval =
-                                    Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                                MerchantCategoryCodes = [new("code")],
-                                SettlementAmount = 0,
-                            },
-                        ],
+                        Usage = new()
+                        {
+                            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                            MultiUse = new(
+                                [
+                                    new()
+                                    {
+                                        Interval =
+                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                        MerchantCategoryCodes = [new("code")],
+                                        SettlementAmount = 0,
+                                    },
+                                ]
+                            ),
+                            SingleUse = new(
+                                new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                                {
+                                    Comparison =
+                                        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                                    Value = 0,
+                                }
+                            ),
+                        },
                     },
                     BillingAddress = new()
                     {
@@ -236,7 +272,6 @@ public class CardListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AuthorizationControls = new()
                     {
-                        MaximumAuthorizationCount = new(0),
                         MerchantAcceptorIdentifier = new()
                         {
                             Allowed = [new("identifier")],
@@ -252,16 +287,29 @@ public class CardListPageResponseTest : TestBase
                             Allowed = [new("country")],
                             Blocked = [new("country")],
                         },
-                        SpendingLimits =
-                        [
-                            new()
-                            {
-                                Interval =
-                                    Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                                MerchantCategoryCodes = [new("code")],
-                                SettlementAmount = 0,
-                            },
-                        ],
+                        Usage = new()
+                        {
+                            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                            MultiUse = new(
+                                [
+                                    new()
+                                    {
+                                        Interval =
+                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                        MerchantCategoryCodes = [new("code")],
+                                        SettlementAmount = 0,
+                                    },
+                                ]
+                            ),
+                            SingleUse = new(
+                                new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                                {
+                                    Comparison =
+                                        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                                    Value = 0,
+                                }
+                            ),
+                        },
                     },
                     BillingAddress = new()
                     {
@@ -306,7 +354,6 @@ public class CardListPageResponseTest : TestBase
                 AccountID = "account_in71c4amph0vgo2qllky",
                 AuthorizationControls = new()
                 {
-                    MaximumAuthorizationCount = new(0),
                     MerchantAcceptorIdentifier = new()
                     {
                         Allowed = [new("identifier")],
@@ -322,16 +369,29 @@ public class CardListPageResponseTest : TestBase
                         Allowed = [new("country")],
                         Blocked = [new("country")],
                     },
-                    SpendingLimits =
-                    [
-                        new()
-                        {
-                            Interval =
-                                Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                            MerchantCategoryCodes = [new("code")],
-                            SettlementAmount = 0,
-                        },
-                    ],
+                    Usage = new()
+                    {
+                        Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                        MultiUse = new(
+                            [
+                                new()
+                                {
+                                    Interval =
+                                        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                    MerchantCategoryCodes = [new("code")],
+                                    SettlementAmount = 0,
+                                },
+                            ]
+                        ),
+                        SingleUse = new(
+                            new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                            {
+                                Comparison =
+                                    Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                                Value = 0,
+                            }
+                        ),
+                    },
                 },
                 BillingAddress = new()
                 {
@@ -381,7 +441,6 @@ public class CardListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AuthorizationControls = new()
                     {
-                        MaximumAuthorizationCount = new(0),
                         MerchantAcceptorIdentifier = new()
                         {
                             Allowed = [new("identifier")],
@@ -397,16 +456,29 @@ public class CardListPageResponseTest : TestBase
                             Allowed = [new("country")],
                             Blocked = [new("country")],
                         },
-                        SpendingLimits =
-                        [
-                            new()
-                            {
-                                Interval =
-                                    Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                                MerchantCategoryCodes = [new("code")],
-                                SettlementAmount = 0,
-                            },
-                        ],
+                        Usage = new()
+                        {
+                            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                            MultiUse = new(
+                                [
+                                    new()
+                                    {
+                                        Interval =
+                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                        MerchantCategoryCodes = [new("code")],
+                                        SettlementAmount = 0,
+                                    },
+                                ]
+                            ),
+                            SingleUse = new(
+                                new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                                {
+                                    Comparison =
+                                        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                                    Value = 0,
+                                }
+                            ),
+                        },
                     },
                     BillingAddress = new()
                     {
@@ -452,7 +524,6 @@ public class CardListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AuthorizationControls = new()
                     {
-                        MaximumAuthorizationCount = new(0),
                         MerchantAcceptorIdentifier = new()
                         {
                             Allowed = [new("identifier")],
@@ -468,16 +539,29 @@ public class CardListPageResponseTest : TestBase
                             Allowed = [new("country")],
                             Blocked = [new("country")],
                         },
-                        SpendingLimits =
-                        [
-                            new()
-                            {
-                                Interval =
-                                    Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                                MerchantCategoryCodes = [new("code")],
-                                SettlementAmount = 0,
-                            },
-                        ],
+                        Usage = new()
+                        {
+                            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                            MultiUse = new(
+                                [
+                                    new()
+                                    {
+                                        Interval =
+                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                        MerchantCategoryCodes = [new("code")],
+                                        SettlementAmount = 0,
+                                    },
+                                ]
+                            ),
+                            SingleUse = new(
+                                new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                                {
+                                    Comparison =
+                                        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                                    Value = 0,
+                                }
+                            ),
+                        },
                     },
                     BillingAddress = new()
                     {

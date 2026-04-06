@@ -122,15 +122,33 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, AccountTransfers::Currency>(),
             new ApiEnumConverter<string, AccountTransfers::Status>(),
             new ApiEnumConverter<string, AccountTransfers::Type>(),
-            new ApiEnumConverter<string, Cards::CardAuthorizationControlsSpendingLimitInterval>(),
+            new ApiEnumConverter<string, Cards::CardAuthorizationControlsUsageCategory>(),
+            new ApiEnumConverter<
+                string,
+                Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval
+            >(),
+            new ApiEnumConverter<
+                string,
+                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison
+            >(),
             new ApiEnumConverter<string, Cards::CardStatus>(),
             new ApiEnumConverter<string, Cards::Type>(),
             new ApiEnumConverter<string, Cards::CardDetailsType>(),
             new ApiEnumConverter<string, Cards::CardIframeUrlType>(),
+            new ApiEnumConverter<string, Cards::Category>(),
             new ApiEnumConverter<string, Cards::Interval>(),
+            new ApiEnumConverter<string, Cards::Comparison>(),
             new ApiEnumConverter<
                 string,
-                Cards::CardUpdateParamsAuthorizationControlsSpendingLimitInterval
+                Cards::CardUpdateParamsAuthorizationControlsUsageCategory
+            >(),
+            new ApiEnumConverter<
+                string,
+                Cards::CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval
+            >(),
+            new ApiEnumConverter<
+                string,
+                Cards::CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison
             >(),
             new ApiEnumConverter<string, Cards::Status>(),
             new ApiEnumConverter<string, Cards::In>(),

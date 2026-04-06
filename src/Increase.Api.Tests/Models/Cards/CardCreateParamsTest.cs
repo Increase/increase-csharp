@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text.Json;
 using Increase.Api.Core;
 using Increase.Api.Exceptions;
-using Increase.Api.Models.Cards;
+using Cards = Increase.Api.Models.Cards;
 
 namespace Increase.Api.Tests.Models.Cards;
 
@@ -12,24 +12,37 @@ public class CardCreateParamsTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var parameters = new CardCreateParams
+        var parameters = new Cards::CardCreateParams
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             AuthorizationControls = new()
             {
-                MaximumAuthorizationCount = new(0),
                 MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
                 MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
                 MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
-                SpendingLimits =
-                [
-                    new()
+                Usage = new()
+                {
+                    Category = Cards::Category.SingleUse,
+                    MultiUse = new()
                     {
-                        Interval = Interval.AllTime,
-                        SettlementAmount = 0,
-                        MerchantCategoryCodes = [new("x")],
+                        SpendingLimits =
+                        [
+                            new()
+                            {
+                                Interval = Cards::Interval.AllTime,
+                                SettlementAmount = 0,
+                                MerchantCategoryCodes = [new("x")],
+                            },
+                        ],
                     },
-                ],
+                    SingleUse = new(
+                        new Cards::SettlementAmount()
+                        {
+                            Comparison = Cards::Comparison.Equals,
+                            Value = 0,
+                        }
+                    ),
+                },
             },
             BillingAddress = new()
             {
@@ -50,23 +63,36 @@ public class CardCreateParamsTest : TestBase
         };
 
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
-        AuthorizationControls expectedAuthorizationControls = new()
+        Cards::AuthorizationControls expectedAuthorizationControls = new()
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
             MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
-            SpendingLimits =
-            [
-                new()
+            Usage = new()
+            {
+                Category = Cards::Category.SingleUse,
+                MultiUse = new()
                 {
-                    Interval = Interval.AllTime,
-                    SettlementAmount = 0,
-                    MerchantCategoryCodes = [new("x")],
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval = Cards::Interval.AllTime,
+                            SettlementAmount = 0,
+                            MerchantCategoryCodes = [new("x")],
+                        },
+                    ],
                 },
-            ],
+                SingleUse = new(
+                    new Cards::SettlementAmount()
+                    {
+                        Comparison = Cards::Comparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
-        BillingAddress expectedBillingAddress = new()
+        Cards::BillingAddress expectedBillingAddress = new()
         {
             City = "x",
             Line1 = "x",
@@ -75,7 +101,7 @@ public class CardCreateParamsTest : TestBase
             Line2 = "x",
         };
         string expectedDescription = "Card for Ian Crease";
-        DigitalWallet expectedDigitalWallet = new()
+        Cards::DigitalWallet expectedDigitalWallet = new()
         {
             DigitalCardProfileID = "digital_card_profile_id",
             Email = "dev@stainless.com",
@@ -94,7 +120,7 @@ public class CardCreateParamsTest : TestBase
     [Fact]
     public void OptionalNonNullableParamsUnsetAreNotSet_Works()
     {
-        var parameters = new CardCreateParams { AccountID = "account_in71c4amph0vgo2qllky" };
+        var parameters = new Cards::CardCreateParams { AccountID = "account_in71c4amph0vgo2qllky" };
 
         Assert.Null(parameters.AuthorizationControls);
         Assert.False(parameters.RawBodyData.ContainsKey("authorization_controls"));
@@ -111,7 +137,7 @@ public class CardCreateParamsTest : TestBase
     [Fact]
     public void OptionalNonNullableParamsSetToNullAreNotSet_Works()
     {
-        var parameters = new CardCreateParams
+        var parameters = new Cards::CardCreateParams
         {
             AccountID = "account_in71c4amph0vgo2qllky",
 
@@ -138,7 +164,7 @@ public class CardCreateParamsTest : TestBase
     [Fact]
     public void Url_Works()
     {
-        CardCreateParams parameters = new() { AccountID = "account_in71c4amph0vgo2qllky" };
+        Cards::CardCreateParams parameters = new() { AccountID = "account_in71c4amph0vgo2qllky" };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
@@ -148,24 +174,37 @@ public class CardCreateParamsTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var parameters = new CardCreateParams
+        var parameters = new Cards::CardCreateParams
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             AuthorizationControls = new()
             {
-                MaximumAuthorizationCount = new(0),
                 MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
                 MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
                 MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
-                SpendingLimits =
-                [
-                    new()
+                Usage = new()
+                {
+                    Category = Cards::Category.SingleUse,
+                    MultiUse = new()
                     {
-                        Interval = Interval.AllTime,
-                        SettlementAmount = 0,
-                        MerchantCategoryCodes = [new("x")],
+                        SpendingLimits =
+                        [
+                            new()
+                            {
+                                Interval = Cards::Interval.AllTime,
+                                SettlementAmount = 0,
+                                MerchantCategoryCodes = [new("x")],
+                            },
+                        ],
                     },
-                ],
+                    SingleUse = new(
+                        new Cards::SettlementAmount()
+                        {
+                            Comparison = Cards::Comparison.Equals,
+                            Value = 0,
+                        }
+                    ),
+                },
             },
             BillingAddress = new()
             {
@@ -185,7 +224,7 @@ public class CardCreateParamsTest : TestBase
             EntityID = "entity_id",
         };
 
-        CardCreateParams copied = new(parameters);
+        Cards::CardCreateParams copied = new(parameters);
 
         Assert.Equal(parameters, copied);
     }
@@ -196,53 +235,1473 @@ public class AuthorizationControlsTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new AuthorizationControls
+        var model = new Cards::AuthorizationControls
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
             MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
+            Usage = new()
+            {
+                Category = Cards::Category.SingleUse,
+                MultiUse = new()
+                {
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval = Cards::Interval.AllTime,
+                            SettlementAmount = 0,
+                            MerchantCategoryCodes = [new("x")],
+                        },
+                    ],
+                },
+                SingleUse = new(
+                    new Cards::SettlementAmount()
+                    {
+                        Comparison = Cards::Comparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
+        };
+
+        Cards::MerchantAcceptorIdentifier expectedMerchantAcceptorIdentifier = new()
+        {
+            Allowed = [new("x")],
+            Blocked = [new("x")],
+        };
+        Cards::MerchantCategoryCode expectedMerchantCategoryCode = new()
+        {
+            Allowed = [new("xxxx")],
+            Blocked = [new("xxxx")],
+        };
+        Cards::MerchantCountry expectedMerchantCountry = new()
+        {
+            Allowed = [new("xx")],
+            Blocked = [new("xx")],
+        };
+        Cards::Usage expectedUsage = new()
+        {
+            Category = Cards::Category.SingleUse,
+            MultiUse = new()
+            {
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval = Cards::Interval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
+            },
+            SingleUse = new(
+                new Cards::SettlementAmount() { Comparison = Cards::Comparison.Equals, Value = 0 }
+            ),
+        };
+
+        Assert.Equal(expectedMerchantAcceptorIdentifier, model.MerchantAcceptorIdentifier);
+        Assert.Equal(expectedMerchantCategoryCode, model.MerchantCategoryCode);
+        Assert.Equal(expectedMerchantCountry, model.MerchantCountry);
+        Assert.Equal(expectedUsage, model.Usage);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::AuthorizationControls
+        {
+            MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
+            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
+            Usage = new()
+            {
+                Category = Cards::Category.SingleUse,
+                MultiUse = new()
+                {
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval = Cards::Interval.AllTime,
+                            SettlementAmount = 0,
+                            MerchantCategoryCodes = [new("x")],
+                        },
+                    ],
+                },
+                SingleUse = new(
+                    new Cards::SettlementAmount()
+                    {
+                        Comparison = Cards::Comparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::AuthorizationControls>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::AuthorizationControls
+        {
+            MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
+            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
+            Usage = new()
+            {
+                Category = Cards::Category.SingleUse,
+                MultiUse = new()
+                {
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval = Cards::Interval.AllTime,
+                            SettlementAmount = 0,
+                            MerchantCategoryCodes = [new("x")],
+                        },
+                    ],
+                },
+                SingleUse = new(
+                    new Cards::SettlementAmount()
+                    {
+                        Comparison = Cards::Comparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::AuthorizationControls>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        Cards::MerchantAcceptorIdentifier expectedMerchantAcceptorIdentifier = new()
+        {
+            Allowed = [new("x")],
+            Blocked = [new("x")],
+        };
+        Cards::MerchantCategoryCode expectedMerchantCategoryCode = new()
+        {
+            Allowed = [new("xxxx")],
+            Blocked = [new("xxxx")],
+        };
+        Cards::MerchantCountry expectedMerchantCountry = new()
+        {
+            Allowed = [new("xx")],
+            Blocked = [new("xx")],
+        };
+        Cards::Usage expectedUsage = new()
+        {
+            Category = Cards::Category.SingleUse,
+            MultiUse = new()
+            {
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval = Cards::Interval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
+            },
+            SingleUse = new(
+                new Cards::SettlementAmount() { Comparison = Cards::Comparison.Equals, Value = 0 }
+            ),
+        };
+
+        Assert.Equal(expectedMerchantAcceptorIdentifier, deserialized.MerchantAcceptorIdentifier);
+        Assert.Equal(expectedMerchantCategoryCode, deserialized.MerchantCategoryCode);
+        Assert.Equal(expectedMerchantCountry, deserialized.MerchantCountry);
+        Assert.Equal(expectedUsage, deserialized.Usage);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::AuthorizationControls
+        {
+            MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
+            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
+            Usage = new()
+            {
+                Category = Cards::Category.SingleUse,
+                MultiUse = new()
+                {
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval = Cards::Interval.AllTime,
+                            SettlementAmount = 0,
+                            MerchantCategoryCodes = [new("x")],
+                        },
+                    ],
+                },
+                SingleUse = new(
+                    new Cards::SettlementAmount()
+                    {
+                        Comparison = Cards::Comparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new Cards::AuthorizationControls { };
+
+        Assert.Null(model.MerchantAcceptorIdentifier);
+        Assert.False(model.RawData.ContainsKey("merchant_acceptor_identifier"));
+        Assert.Null(model.MerchantCategoryCode);
+        Assert.False(model.RawData.ContainsKey("merchant_category_code"));
+        Assert.Null(model.MerchantCountry);
+        Assert.False(model.RawData.ContainsKey("merchant_country"));
+        Assert.Null(model.Usage);
+        Assert.False(model.RawData.ContainsKey("usage"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new Cards::AuthorizationControls { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new Cards::AuthorizationControls
+        {
+            // Null should be interpreted as omitted for these properties
+            MerchantAcceptorIdentifier = null,
+            MerchantCategoryCode = null,
+            MerchantCountry = null,
+            Usage = null,
+        };
+
+        Assert.Null(model.MerchantAcceptorIdentifier);
+        Assert.False(model.RawData.ContainsKey("merchant_acceptor_identifier"));
+        Assert.Null(model.MerchantCategoryCode);
+        Assert.False(model.RawData.ContainsKey("merchant_category_code"));
+        Assert.Null(model.MerchantCountry);
+        Assert.False(model.RawData.ContainsKey("merchant_country"));
+        Assert.Null(model.Usage);
+        Assert.False(model.RawData.ContainsKey("usage"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new Cards::AuthorizationControls
+        {
+            // Null should be interpreted as omitted for these properties
+            MerchantAcceptorIdentifier = null,
+            MerchantCategoryCode = null,
+            MerchantCountry = null,
+            Usage = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::AuthorizationControls
+        {
+            MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
+            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
+            Usage = new()
+            {
+                Category = Cards::Category.SingleUse,
+                MultiUse = new()
+                {
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval = Cards::Interval.AllTime,
+                            SettlementAmount = 0,
+                            MerchantCategoryCodes = [new("x")],
+                        },
+                    ],
+                },
+                SingleUse = new(
+                    new Cards::SettlementAmount()
+                    {
+                        Comparison = Cards::Comparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
+        };
+
+        Cards::AuthorizationControls copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class MerchantAcceptorIdentifierTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::MerchantAcceptorIdentifier
+        {
+            Allowed = [new("x")],
+            Blocked = [new("x")],
+        };
+
+        List<Cards::Allowed> expectedAllowed = [new("x")];
+        List<Cards::Blocked> expectedBlocked = [new("x")];
+
+        Assert.NotNull(model.Allowed);
+        Assert.Equal(expectedAllowed.Count, model.Allowed.Count);
+        for (int i = 0; i < expectedAllowed.Count; i++)
+        {
+            Assert.Equal(expectedAllowed[i], model.Allowed[i]);
+        }
+        Assert.NotNull(model.Blocked);
+        Assert.Equal(expectedBlocked.Count, model.Blocked.Count);
+        for (int i = 0; i < expectedBlocked.Count; i++)
+        {
+            Assert.Equal(expectedBlocked[i], model.Blocked[i]);
+        }
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::MerchantAcceptorIdentifier
+        {
+            Allowed = [new("x")],
+            Blocked = [new("x")],
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantAcceptorIdentifier>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::MerchantAcceptorIdentifier
+        {
+            Allowed = [new("x")],
+            Blocked = [new("x")],
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantAcceptorIdentifier>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        List<Cards::Allowed> expectedAllowed = [new("x")];
+        List<Cards::Blocked> expectedBlocked = [new("x")];
+
+        Assert.NotNull(deserialized.Allowed);
+        Assert.Equal(expectedAllowed.Count, deserialized.Allowed.Count);
+        for (int i = 0; i < expectedAllowed.Count; i++)
+        {
+            Assert.Equal(expectedAllowed[i], deserialized.Allowed[i]);
+        }
+        Assert.NotNull(deserialized.Blocked);
+        Assert.Equal(expectedBlocked.Count, deserialized.Blocked.Count);
+        for (int i = 0; i < expectedBlocked.Count; i++)
+        {
+            Assert.Equal(expectedBlocked[i], deserialized.Blocked[i]);
+        }
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::MerchantAcceptorIdentifier
+        {
+            Allowed = [new("x")],
+            Blocked = [new("x")],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new Cards::MerchantAcceptorIdentifier { };
+
+        Assert.Null(model.Allowed);
+        Assert.False(model.RawData.ContainsKey("allowed"));
+        Assert.Null(model.Blocked);
+        Assert.False(model.RawData.ContainsKey("blocked"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new Cards::MerchantAcceptorIdentifier { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new Cards::MerchantAcceptorIdentifier
+        {
+            // Null should be interpreted as omitted for these properties
+            Allowed = null,
+            Blocked = null,
+        };
+
+        Assert.Null(model.Allowed);
+        Assert.False(model.RawData.ContainsKey("allowed"));
+        Assert.Null(model.Blocked);
+        Assert.False(model.RawData.ContainsKey("blocked"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new Cards::MerchantAcceptorIdentifier
+        {
+            // Null should be interpreted as omitted for these properties
+            Allowed = null,
+            Blocked = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::MerchantAcceptorIdentifier
+        {
+            Allowed = [new("x")],
+            Blocked = [new("x")],
+        };
+
+        Cards::MerchantAcceptorIdentifier copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class AllowedTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::Allowed { Identifier = "x" };
+
+        string expectedIdentifier = "x";
+
+        Assert.Equal(expectedIdentifier, model.Identifier);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::Allowed { Identifier = "x" };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::Allowed>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::Allowed { Identifier = "x" };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::Allowed>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedIdentifier = "x";
+
+        Assert.Equal(expectedIdentifier, deserialized.Identifier);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::Allowed { Identifier = "x" };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::Allowed { Identifier = "x" };
+
+        Cards::Allowed copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class BlockedTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::Blocked { Identifier = "x" };
+
+        string expectedIdentifier = "x";
+
+        Assert.Equal(expectedIdentifier, model.Identifier);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::Blocked { Identifier = "x" };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::Blocked>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::Blocked { Identifier = "x" };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::Blocked>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedIdentifier = "x";
+
+        Assert.Equal(expectedIdentifier, deserialized.Identifier);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::Blocked { Identifier = "x" };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::Blocked { Identifier = "x" };
+
+        Cards::Blocked copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class MerchantCategoryCodeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::MerchantCategoryCode
+        {
+            Allowed = [new("xxxx")],
+            Blocked = [new("xxxx")],
+        };
+
+        List<Cards::MerchantCategoryCodeAllowed> expectedAllowed = [new("xxxx")];
+        List<Cards::MerchantCategoryCodeBlocked> expectedBlocked = [new("xxxx")];
+
+        Assert.NotNull(model.Allowed);
+        Assert.Equal(expectedAllowed.Count, model.Allowed.Count);
+        for (int i = 0; i < expectedAllowed.Count; i++)
+        {
+            Assert.Equal(expectedAllowed[i], model.Allowed[i]);
+        }
+        Assert.NotNull(model.Blocked);
+        Assert.Equal(expectedBlocked.Count, model.Blocked.Count);
+        for (int i = 0; i < expectedBlocked.Count; i++)
+        {
+            Assert.Equal(expectedBlocked[i], model.Blocked[i]);
+        }
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::MerchantCategoryCode
+        {
+            Allowed = [new("xxxx")],
+            Blocked = [new("xxxx")],
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantCategoryCode>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::MerchantCategoryCode
+        {
+            Allowed = [new("xxxx")],
+            Blocked = [new("xxxx")],
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantCategoryCode>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        List<Cards::MerchantCategoryCodeAllowed> expectedAllowed = [new("xxxx")];
+        List<Cards::MerchantCategoryCodeBlocked> expectedBlocked = [new("xxxx")];
+
+        Assert.NotNull(deserialized.Allowed);
+        Assert.Equal(expectedAllowed.Count, deserialized.Allowed.Count);
+        for (int i = 0; i < expectedAllowed.Count; i++)
+        {
+            Assert.Equal(expectedAllowed[i], deserialized.Allowed[i]);
+        }
+        Assert.NotNull(deserialized.Blocked);
+        Assert.Equal(expectedBlocked.Count, deserialized.Blocked.Count);
+        for (int i = 0; i < expectedBlocked.Count; i++)
+        {
+            Assert.Equal(expectedBlocked[i], deserialized.Blocked[i]);
+        }
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::MerchantCategoryCode
+        {
+            Allowed = [new("xxxx")],
+            Blocked = [new("xxxx")],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new Cards::MerchantCategoryCode { };
+
+        Assert.Null(model.Allowed);
+        Assert.False(model.RawData.ContainsKey("allowed"));
+        Assert.Null(model.Blocked);
+        Assert.False(model.RawData.ContainsKey("blocked"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new Cards::MerchantCategoryCode { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new Cards::MerchantCategoryCode
+        {
+            // Null should be interpreted as omitted for these properties
+            Allowed = null,
+            Blocked = null,
+        };
+
+        Assert.Null(model.Allowed);
+        Assert.False(model.RawData.ContainsKey("allowed"));
+        Assert.Null(model.Blocked);
+        Assert.False(model.RawData.ContainsKey("blocked"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new Cards::MerchantCategoryCode
+        {
+            // Null should be interpreted as omitted for these properties
+            Allowed = null,
+            Blocked = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::MerchantCategoryCode
+        {
+            Allowed = [new("xxxx")],
+            Blocked = [new("xxxx")],
+        };
+
+        Cards::MerchantCategoryCode copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class MerchantCategoryCodeAllowedTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::MerchantCategoryCodeAllowed { Code = "xxxx" };
+
+        string expectedCode = "xxxx";
+
+        Assert.Equal(expectedCode, model.Code);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::MerchantCategoryCodeAllowed { Code = "xxxx" };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantCategoryCodeAllowed>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::MerchantCategoryCodeAllowed { Code = "xxxx" };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantCategoryCodeAllowed>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCode = "xxxx";
+
+        Assert.Equal(expectedCode, deserialized.Code);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::MerchantCategoryCodeAllowed { Code = "xxxx" };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::MerchantCategoryCodeAllowed { Code = "xxxx" };
+
+        Cards::MerchantCategoryCodeAllowed copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class MerchantCategoryCodeBlockedTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::MerchantCategoryCodeBlocked { Code = "xxxx" };
+
+        string expectedCode = "xxxx";
+
+        Assert.Equal(expectedCode, model.Code);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::MerchantCategoryCodeBlocked { Code = "xxxx" };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantCategoryCodeBlocked>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::MerchantCategoryCodeBlocked { Code = "xxxx" };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantCategoryCodeBlocked>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCode = "xxxx";
+
+        Assert.Equal(expectedCode, deserialized.Code);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::MerchantCategoryCodeBlocked { Code = "xxxx" };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::MerchantCategoryCodeBlocked { Code = "xxxx" };
+
+        Cards::MerchantCategoryCodeBlocked copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class MerchantCountryTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::MerchantCountry { Allowed = [new("xx")], Blocked = [new("xx")] };
+
+        List<Cards::MerchantCountryAllowed> expectedAllowed = [new("xx")];
+        List<Cards::MerchantCountryBlocked> expectedBlocked = [new("xx")];
+
+        Assert.NotNull(model.Allowed);
+        Assert.Equal(expectedAllowed.Count, model.Allowed.Count);
+        for (int i = 0; i < expectedAllowed.Count; i++)
+        {
+            Assert.Equal(expectedAllowed[i], model.Allowed[i]);
+        }
+        Assert.NotNull(model.Blocked);
+        Assert.Equal(expectedBlocked.Count, model.Blocked.Count);
+        for (int i = 0; i < expectedBlocked.Count; i++)
+        {
+            Assert.Equal(expectedBlocked[i], model.Blocked[i]);
+        }
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::MerchantCountry { Allowed = [new("xx")], Blocked = [new("xx")] };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantCountry>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::MerchantCountry { Allowed = [new("xx")], Blocked = [new("xx")] };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantCountry>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        List<Cards::MerchantCountryAllowed> expectedAllowed = [new("xx")];
+        List<Cards::MerchantCountryBlocked> expectedBlocked = [new("xx")];
+
+        Assert.NotNull(deserialized.Allowed);
+        Assert.Equal(expectedAllowed.Count, deserialized.Allowed.Count);
+        for (int i = 0; i < expectedAllowed.Count; i++)
+        {
+            Assert.Equal(expectedAllowed[i], deserialized.Allowed[i]);
+        }
+        Assert.NotNull(deserialized.Blocked);
+        Assert.Equal(expectedBlocked.Count, deserialized.Blocked.Count);
+        for (int i = 0; i < expectedBlocked.Count; i++)
+        {
+            Assert.Equal(expectedBlocked[i], deserialized.Blocked[i]);
+        }
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::MerchantCountry { Allowed = [new("xx")], Blocked = [new("xx")] };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new Cards::MerchantCountry { };
+
+        Assert.Null(model.Allowed);
+        Assert.False(model.RawData.ContainsKey("allowed"));
+        Assert.Null(model.Blocked);
+        Assert.False(model.RawData.ContainsKey("blocked"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new Cards::MerchantCountry { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new Cards::MerchantCountry
+        {
+            // Null should be interpreted as omitted for these properties
+            Allowed = null,
+            Blocked = null,
+        };
+
+        Assert.Null(model.Allowed);
+        Assert.False(model.RawData.ContainsKey("allowed"));
+        Assert.Null(model.Blocked);
+        Assert.False(model.RawData.ContainsKey("blocked"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new Cards::MerchantCountry
+        {
+            // Null should be interpreted as omitted for these properties
+            Allowed = null,
+            Blocked = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::MerchantCountry { Allowed = [new("xx")], Blocked = [new("xx")] };
+
+        Cards::MerchantCountry copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class MerchantCountryAllowedTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::MerchantCountryAllowed { Country = "xx" };
+
+        string expectedCountry = "xx";
+
+        Assert.Equal(expectedCountry, model.Country);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::MerchantCountryAllowed { Country = "xx" };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantCountryAllowed>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::MerchantCountryAllowed { Country = "xx" };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantCountryAllowed>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCountry = "xx";
+
+        Assert.Equal(expectedCountry, deserialized.Country);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::MerchantCountryAllowed { Country = "xx" };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::MerchantCountryAllowed { Country = "xx" };
+
+        Cards::MerchantCountryAllowed copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class MerchantCountryBlockedTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::MerchantCountryBlocked { Country = "xx" };
+
+        string expectedCountry = "xx";
+
+        Assert.Equal(expectedCountry, model.Country);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::MerchantCountryBlocked { Country = "xx" };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantCountryBlocked>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::MerchantCountryBlocked { Country = "xx" };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::MerchantCountryBlocked>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCountry = "xx";
+
+        Assert.Equal(expectedCountry, deserialized.Country);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::MerchantCountryBlocked { Country = "xx" };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::MerchantCountryBlocked { Country = "xx" };
+
+        Cards::MerchantCountryBlocked copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class UsageTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::Usage
+        {
+            Category = Cards::Category.SingleUse,
+            MultiUse = new()
+            {
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval = Cards::Interval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
+            },
+            SingleUse = new(
+                new Cards::SettlementAmount() { Comparison = Cards::Comparison.Equals, Value = 0 }
+            ),
+        };
+
+        ApiEnum<string, Cards::Category> expectedCategory = Cards::Category.SingleUse;
+        Cards::MultiUse expectedMultiUse = new()
+        {
             SpendingLimits =
             [
                 new()
                 {
-                    Interval = Interval.AllTime,
+                    Interval = Cards::Interval.AllTime,
+                    SettlementAmount = 0,
+                    MerchantCategoryCodes = [new("x")],
+                },
+            ],
+        };
+        Cards::SingleUse expectedSingleUse = new(
+            new Cards::SettlementAmount() { Comparison = Cards::Comparison.Equals, Value = 0 }
+        );
+
+        Assert.Equal(expectedCategory, model.Category);
+        Assert.Equal(expectedMultiUse, model.MultiUse);
+        Assert.Equal(expectedSingleUse, model.SingleUse);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::Usage
+        {
+            Category = Cards::Category.SingleUse,
+            MultiUse = new()
+            {
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval = Cards::Interval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
+            },
+            SingleUse = new(
+                new Cards::SettlementAmount() { Comparison = Cards::Comparison.Equals, Value = 0 }
+            ),
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::Usage>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::Usage
+        {
+            Category = Cards::Category.SingleUse,
+            MultiUse = new()
+            {
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval = Cards::Interval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
+            },
+            SingleUse = new(
+                new Cards::SettlementAmount() { Comparison = Cards::Comparison.Equals, Value = 0 }
+            ),
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::Usage>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<string, Cards::Category> expectedCategory = Cards::Category.SingleUse;
+        Cards::MultiUse expectedMultiUse = new()
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval = Cards::Interval.AllTime,
+                    SettlementAmount = 0,
+                    MerchantCategoryCodes = [new("x")],
+                },
+            ],
+        };
+        Cards::SingleUse expectedSingleUse = new(
+            new Cards::SettlementAmount() { Comparison = Cards::Comparison.Equals, Value = 0 }
+        );
+
+        Assert.Equal(expectedCategory, deserialized.Category);
+        Assert.Equal(expectedMultiUse, deserialized.MultiUse);
+        Assert.Equal(expectedSingleUse, deserialized.SingleUse);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::Usage
+        {
+            Category = Cards::Category.SingleUse,
+            MultiUse = new()
+            {
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval = Cards::Interval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
+            },
+            SingleUse = new(
+                new Cards::SettlementAmount() { Comparison = Cards::Comparison.Equals, Value = 0 }
+            ),
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new Cards::Usage { Category = Cards::Category.SingleUse };
+
+        Assert.Null(model.MultiUse);
+        Assert.False(model.RawData.ContainsKey("multi_use"));
+        Assert.Null(model.SingleUse);
+        Assert.False(model.RawData.ContainsKey("single_use"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new Cards::Usage { Category = Cards::Category.SingleUse };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new Cards::Usage
+        {
+            Category = Cards::Category.SingleUse,
+
+            // Null should be interpreted as omitted for these properties
+            MultiUse = null,
+            SingleUse = null,
+        };
+
+        Assert.Null(model.MultiUse);
+        Assert.False(model.RawData.ContainsKey("multi_use"));
+        Assert.Null(model.SingleUse);
+        Assert.False(model.RawData.ContainsKey("single_use"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new Cards::Usage
+        {
+            Category = Cards::Category.SingleUse,
+
+            // Null should be interpreted as omitted for these properties
+            MultiUse = null,
+            SingleUse = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::Usage
+        {
+            Category = Cards::Category.SingleUse,
+            MultiUse = new()
+            {
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval = Cards::Interval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
+            },
+            SingleUse = new(
+                new Cards::SettlementAmount() { Comparison = Cards::Comparison.Equals, Value = 0 }
+            ),
+        };
+
+        Cards::Usage copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CategoryTest : TestBase
+{
+    [Theory]
+    [InlineData(Cards::Category.SingleUse)]
+    [InlineData(Cards::Category.MultiUse)]
+    public void Validation_Works(Cards::Category rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Cards::Category> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Cards::Category>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Cards::Category.SingleUse)]
+    [InlineData(Cards::Category.MultiUse)]
+    public void SerializationRoundtrip_Works(Cards::Category rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Cards::Category> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Cards::Category>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Cards::Category>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Cards::Category>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class MultiUseTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::MultiUse
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval = Cards::Interval.AllTime,
                     SettlementAmount = 0,
                     MerchantCategoryCodes = [new("x")],
                 },
             ],
         };
 
-        MaximumAuthorizationCount expectedMaximumAuthorizationCount = new(0);
-        MerchantAcceptorIdentifier expectedMerchantAcceptorIdentifier = new()
-        {
-            Allowed = [new("x")],
-            Blocked = [new("x")],
-        };
-        MerchantCategoryCode expectedMerchantCategoryCode = new()
-        {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
-        };
-        MerchantCountry expectedMerchantCountry = new()
-        {
-            Allowed = [new("xx")],
-            Blocked = [new("xx")],
-        };
-        List<SpendingLimit> expectedSpendingLimits =
+        List<Cards::SpendingLimit> expectedSpendingLimits =
         [
             new()
             {
-                Interval = Interval.AllTime,
+                Interval = Cards::Interval.AllTime,
                 SettlementAmount = 0,
                 MerchantCategoryCodes = [new("x")],
             },
         ];
 
-        Assert.Equal(expectedMaximumAuthorizationCount, model.MaximumAuthorizationCount);
-        Assert.Equal(expectedMerchantAcceptorIdentifier, model.MerchantAcceptorIdentifier);
-        Assert.Equal(expectedMerchantCategoryCode, model.MerchantCategoryCode);
-        Assert.Equal(expectedMerchantCountry, model.MerchantCountry);
         Assert.NotNull(model.SpendingLimits);
         Assert.Equal(expectedSpendingLimits.Count, model.SpendingLimits.Count);
         for (int i = 0; i < expectedSpendingLimits.Count; i++)
@@ -254,17 +1713,13 @@ public class AuthorizationControlsTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new AuthorizationControls
+        var model = new Cards::MultiUse
         {
-            MaximumAuthorizationCount = new(0),
-            MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
-            MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             SpendingLimits =
             [
                 new()
                 {
-                    Interval = Interval.AllTime,
+                    Interval = Cards::Interval.AllTime,
                     SettlementAmount = 0,
                     MerchantCategoryCodes = [new("x")],
                 },
@@ -272,7 +1727,7 @@ public class AuthorizationControlsTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<AuthorizationControls>(
+        var deserialized = JsonSerializer.Deserialize<Cards::MultiUse>(
             json,
             ModelBase.SerializerOptions
         );
@@ -283,17 +1738,13 @@ public class AuthorizationControlsTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new AuthorizationControls
+        var model = new Cards::MultiUse
         {
-            MaximumAuthorizationCount = new(0),
-            MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
-            MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             SpendingLimits =
             [
                 new()
                 {
-                    Interval = Interval.AllTime,
+                    Interval = Cards::Interval.AllTime,
                     SettlementAmount = 0,
                     MerchantCategoryCodes = [new("x")],
                 },
@@ -301,42 +1752,22 @@ public class AuthorizationControlsTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<AuthorizationControls>(
+        var deserialized = JsonSerializer.Deserialize<Cards::MultiUse>(
             element,
             ModelBase.SerializerOptions
         );
         Assert.NotNull(deserialized);
 
-        MaximumAuthorizationCount expectedMaximumAuthorizationCount = new(0);
-        MerchantAcceptorIdentifier expectedMerchantAcceptorIdentifier = new()
-        {
-            Allowed = [new("x")],
-            Blocked = [new("x")],
-        };
-        MerchantCategoryCode expectedMerchantCategoryCode = new()
-        {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
-        };
-        MerchantCountry expectedMerchantCountry = new()
-        {
-            Allowed = [new("xx")],
-            Blocked = [new("xx")],
-        };
-        List<SpendingLimit> expectedSpendingLimits =
+        List<Cards::SpendingLimit> expectedSpendingLimits =
         [
             new()
             {
-                Interval = Interval.AllTime,
+                Interval = Cards::Interval.AllTime,
                 SettlementAmount = 0,
                 MerchantCategoryCodes = [new("x")],
             },
         ];
 
-        Assert.Equal(expectedMaximumAuthorizationCount, deserialized.MaximumAuthorizationCount);
-        Assert.Equal(expectedMerchantAcceptorIdentifier, deserialized.MerchantAcceptorIdentifier);
-        Assert.Equal(expectedMerchantCategoryCode, deserialized.MerchantCategoryCode);
-        Assert.Equal(expectedMerchantCountry, deserialized.MerchantCountry);
         Assert.NotNull(deserialized.SpendingLimits);
         Assert.Equal(expectedSpendingLimits.Count, deserialized.SpendingLimits.Count);
         for (int i = 0; i < expectedSpendingLimits.Count; i++)
@@ -348,17 +1779,13 @@ public class AuthorizationControlsTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new AuthorizationControls
+        var model = new Cards::MultiUse
         {
-            MaximumAuthorizationCount = new(0),
-            MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
-            MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             SpendingLimits =
             [
                 new()
                 {
-                    Interval = Interval.AllTime,
+                    Interval = Cards::Interval.AllTime,
                     SettlementAmount = 0,
                     MerchantCategoryCodes = [new("x")],
                 },
@@ -371,16 +1798,8 @@ public class AuthorizationControlsTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new AuthorizationControls { };
+        var model = new Cards::MultiUse { };
 
-        Assert.Null(model.MaximumAuthorizationCount);
-        Assert.False(model.RawData.ContainsKey("maximum_authorization_count"));
-        Assert.Null(model.MerchantAcceptorIdentifier);
-        Assert.False(model.RawData.ContainsKey("merchant_acceptor_identifier"));
-        Assert.Null(model.MerchantCategoryCode);
-        Assert.False(model.RawData.ContainsKey("merchant_category_code"));
-        Assert.Null(model.MerchantCountry);
-        Assert.False(model.RawData.ContainsKey("merchant_country"));
         Assert.Null(model.SpendingLimits);
         Assert.False(model.RawData.ContainsKey("spending_limits"));
     }
@@ -388,7 +1807,7 @@ public class AuthorizationControlsTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new AuthorizationControls { };
+        var model = new Cards::MultiUse { };
 
         model.Validate();
     }
@@ -396,24 +1815,12 @@ public class AuthorizationControlsTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
     {
-        var model = new AuthorizationControls
+        var model = new Cards::MultiUse
         {
             // Null should be interpreted as omitted for these properties
-            MaximumAuthorizationCount = null,
-            MerchantAcceptorIdentifier = null,
-            MerchantCategoryCode = null,
-            MerchantCountry = null,
             SpendingLimits = null,
         };
 
-        Assert.Null(model.MaximumAuthorizationCount);
-        Assert.False(model.RawData.ContainsKey("maximum_authorization_count"));
-        Assert.Null(model.MerchantAcceptorIdentifier);
-        Assert.False(model.RawData.ContainsKey("merchant_acceptor_identifier"));
-        Assert.Null(model.MerchantCategoryCode);
-        Assert.False(model.RawData.ContainsKey("merchant_category_code"));
-        Assert.Null(model.MerchantCountry);
-        Assert.False(model.RawData.ContainsKey("merchant_country"));
         Assert.Null(model.SpendingLimits);
         Assert.False(model.RawData.ContainsKey("spending_limits"));
     }
@@ -421,13 +1828,9 @@ public class AuthorizationControlsTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new AuthorizationControls
+        var model = new Cards::MultiUse
         {
             // Null should be interpreted as omitted for these properties
-            MaximumAuthorizationCount = null,
-            MerchantAcceptorIdentifier = null,
-            MerchantCategoryCode = null,
-            MerchantCountry = null,
             SpendingLimits = null,
         };
 
@@ -437,854 +1840,20 @@ public class AuthorizationControlsTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new AuthorizationControls
+        var model = new Cards::MultiUse
         {
-            MaximumAuthorizationCount = new(0),
-            MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
-            MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             SpendingLimits =
             [
                 new()
                 {
-                    Interval = Interval.AllTime,
+                    Interval = Cards::Interval.AllTime,
                     SettlementAmount = 0,
                     MerchantCategoryCodes = [new("x")],
                 },
             ],
         };
 
-        AuthorizationControls copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class MaximumAuthorizationCountTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new MaximumAuthorizationCount { AllTime = 0 };
-
-        long expectedAllTime = 0;
-
-        Assert.Equal(expectedAllTime, model.AllTime);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new MaximumAuthorizationCount { AllTime = 0 };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MaximumAuthorizationCount>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new MaximumAuthorizationCount { AllTime = 0 };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MaximumAuthorizationCount>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        long expectedAllTime = 0;
-
-        Assert.Equal(expectedAllTime, deserialized.AllTime);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new MaximumAuthorizationCount { AllTime = 0 };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new MaximumAuthorizationCount { AllTime = 0 };
-
-        MaximumAuthorizationCount copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class MerchantAcceptorIdentifierTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new MerchantAcceptorIdentifier { Allowed = [new("x")], Blocked = [new("x")] };
-
-        List<Allowed> expectedAllowed = [new("x")];
-        List<Blocked> expectedBlocked = [new("x")];
-
-        Assert.NotNull(model.Allowed);
-        Assert.Equal(expectedAllowed.Count, model.Allowed.Count);
-        for (int i = 0; i < expectedAllowed.Count; i++)
-        {
-            Assert.Equal(expectedAllowed[i], model.Allowed[i]);
-        }
-        Assert.NotNull(model.Blocked);
-        Assert.Equal(expectedBlocked.Count, model.Blocked.Count);
-        for (int i = 0; i < expectedBlocked.Count; i++)
-        {
-            Assert.Equal(expectedBlocked[i], model.Blocked[i]);
-        }
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new MerchantAcceptorIdentifier { Allowed = [new("x")], Blocked = [new("x")] };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantAcceptorIdentifier>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new MerchantAcceptorIdentifier { Allowed = [new("x")], Blocked = [new("x")] };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantAcceptorIdentifier>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        List<Allowed> expectedAllowed = [new("x")];
-        List<Blocked> expectedBlocked = [new("x")];
-
-        Assert.NotNull(deserialized.Allowed);
-        Assert.Equal(expectedAllowed.Count, deserialized.Allowed.Count);
-        for (int i = 0; i < expectedAllowed.Count; i++)
-        {
-            Assert.Equal(expectedAllowed[i], deserialized.Allowed[i]);
-        }
-        Assert.NotNull(deserialized.Blocked);
-        Assert.Equal(expectedBlocked.Count, deserialized.Blocked.Count);
-        for (int i = 0; i < expectedBlocked.Count; i++)
-        {
-            Assert.Equal(expectedBlocked[i], deserialized.Blocked[i]);
-        }
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new MerchantAcceptorIdentifier { Allowed = [new("x")], Blocked = [new("x")] };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new MerchantAcceptorIdentifier { };
-
-        Assert.Null(model.Allowed);
-        Assert.False(model.RawData.ContainsKey("allowed"));
-        Assert.Null(model.Blocked);
-        Assert.False(model.RawData.ContainsKey("blocked"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new MerchantAcceptorIdentifier { };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
-    {
-        var model = new MerchantAcceptorIdentifier
-        {
-            // Null should be interpreted as omitted for these properties
-            Allowed = null,
-            Blocked = null,
-        };
-
-        Assert.Null(model.Allowed);
-        Assert.False(model.RawData.ContainsKey("allowed"));
-        Assert.Null(model.Blocked);
-        Assert.False(model.RawData.ContainsKey("blocked"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new MerchantAcceptorIdentifier
-        {
-            // Null should be interpreted as omitted for these properties
-            Allowed = null,
-            Blocked = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new MerchantAcceptorIdentifier { Allowed = [new("x")], Blocked = [new("x")] };
-
-        MerchantAcceptorIdentifier copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class AllowedTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new Allowed { Identifier = "x" };
-
-        string expectedIdentifier = "x";
-
-        Assert.Equal(expectedIdentifier, model.Identifier);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new Allowed { Identifier = "x" };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Allowed>(json, ModelBase.SerializerOptions);
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new Allowed { Identifier = "x" };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Allowed>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        string expectedIdentifier = "x";
-
-        Assert.Equal(expectedIdentifier, deserialized.Identifier);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new Allowed { Identifier = "x" };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new Allowed { Identifier = "x" };
-
-        Allowed copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class BlockedTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new Blocked { Identifier = "x" };
-
-        string expectedIdentifier = "x";
-
-        Assert.Equal(expectedIdentifier, model.Identifier);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new Blocked { Identifier = "x" };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Blocked>(json, ModelBase.SerializerOptions);
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new Blocked { Identifier = "x" };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Blocked>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        string expectedIdentifier = "x";
-
-        Assert.Equal(expectedIdentifier, deserialized.Identifier);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new Blocked { Identifier = "x" };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new Blocked { Identifier = "x" };
-
-        Blocked copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class MerchantCategoryCodeTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new MerchantCategoryCode { Allowed = [new("xxxx")], Blocked = [new("xxxx")] };
-
-        List<MerchantCategoryCodeAllowed> expectedAllowed = [new("xxxx")];
-        List<MerchantCategoryCodeBlocked> expectedBlocked = [new("xxxx")];
-
-        Assert.NotNull(model.Allowed);
-        Assert.Equal(expectedAllowed.Count, model.Allowed.Count);
-        for (int i = 0; i < expectedAllowed.Count; i++)
-        {
-            Assert.Equal(expectedAllowed[i], model.Allowed[i]);
-        }
-        Assert.NotNull(model.Blocked);
-        Assert.Equal(expectedBlocked.Count, model.Blocked.Count);
-        for (int i = 0; i < expectedBlocked.Count; i++)
-        {
-            Assert.Equal(expectedBlocked[i], model.Blocked[i]);
-        }
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new MerchantCategoryCode { Allowed = [new("xxxx")], Blocked = [new("xxxx")] };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantCategoryCode>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new MerchantCategoryCode { Allowed = [new("xxxx")], Blocked = [new("xxxx")] };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantCategoryCode>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        List<MerchantCategoryCodeAllowed> expectedAllowed = [new("xxxx")];
-        List<MerchantCategoryCodeBlocked> expectedBlocked = [new("xxxx")];
-
-        Assert.NotNull(deserialized.Allowed);
-        Assert.Equal(expectedAllowed.Count, deserialized.Allowed.Count);
-        for (int i = 0; i < expectedAllowed.Count; i++)
-        {
-            Assert.Equal(expectedAllowed[i], deserialized.Allowed[i]);
-        }
-        Assert.NotNull(deserialized.Blocked);
-        Assert.Equal(expectedBlocked.Count, deserialized.Blocked.Count);
-        for (int i = 0; i < expectedBlocked.Count; i++)
-        {
-            Assert.Equal(expectedBlocked[i], deserialized.Blocked[i]);
-        }
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new MerchantCategoryCode { Allowed = [new("xxxx")], Blocked = [new("xxxx")] };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new MerchantCategoryCode { };
-
-        Assert.Null(model.Allowed);
-        Assert.False(model.RawData.ContainsKey("allowed"));
-        Assert.Null(model.Blocked);
-        Assert.False(model.RawData.ContainsKey("blocked"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new MerchantCategoryCode { };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
-    {
-        var model = new MerchantCategoryCode
-        {
-            // Null should be interpreted as omitted for these properties
-            Allowed = null,
-            Blocked = null,
-        };
-
-        Assert.Null(model.Allowed);
-        Assert.False(model.RawData.ContainsKey("allowed"));
-        Assert.Null(model.Blocked);
-        Assert.False(model.RawData.ContainsKey("blocked"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new MerchantCategoryCode
-        {
-            // Null should be interpreted as omitted for these properties
-            Allowed = null,
-            Blocked = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new MerchantCategoryCode { Allowed = [new("xxxx")], Blocked = [new("xxxx")] };
-
-        MerchantCategoryCode copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class MerchantCategoryCodeAllowedTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new MerchantCategoryCodeAllowed { Code = "xxxx" };
-
-        string expectedCode = "xxxx";
-
-        Assert.Equal(expectedCode, model.Code);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new MerchantCategoryCodeAllowed { Code = "xxxx" };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantCategoryCodeAllowed>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new MerchantCategoryCodeAllowed { Code = "xxxx" };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantCategoryCodeAllowed>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        string expectedCode = "xxxx";
-
-        Assert.Equal(expectedCode, deserialized.Code);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new MerchantCategoryCodeAllowed { Code = "xxxx" };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new MerchantCategoryCodeAllowed { Code = "xxxx" };
-
-        MerchantCategoryCodeAllowed copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class MerchantCategoryCodeBlockedTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new MerchantCategoryCodeBlocked { Code = "xxxx" };
-
-        string expectedCode = "xxxx";
-
-        Assert.Equal(expectedCode, model.Code);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new MerchantCategoryCodeBlocked { Code = "xxxx" };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantCategoryCodeBlocked>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new MerchantCategoryCodeBlocked { Code = "xxxx" };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantCategoryCodeBlocked>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        string expectedCode = "xxxx";
-
-        Assert.Equal(expectedCode, deserialized.Code);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new MerchantCategoryCodeBlocked { Code = "xxxx" };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new MerchantCategoryCodeBlocked { Code = "xxxx" };
-
-        MerchantCategoryCodeBlocked copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class MerchantCountryTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new MerchantCountry { Allowed = [new("xx")], Blocked = [new("xx")] };
-
-        List<MerchantCountryAllowed> expectedAllowed = [new("xx")];
-        List<MerchantCountryBlocked> expectedBlocked = [new("xx")];
-
-        Assert.NotNull(model.Allowed);
-        Assert.Equal(expectedAllowed.Count, model.Allowed.Count);
-        for (int i = 0; i < expectedAllowed.Count; i++)
-        {
-            Assert.Equal(expectedAllowed[i], model.Allowed[i]);
-        }
-        Assert.NotNull(model.Blocked);
-        Assert.Equal(expectedBlocked.Count, model.Blocked.Count);
-        for (int i = 0; i < expectedBlocked.Count; i++)
-        {
-            Assert.Equal(expectedBlocked[i], model.Blocked[i]);
-        }
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new MerchantCountry { Allowed = [new("xx")], Blocked = [new("xx")] };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantCountry>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new MerchantCountry { Allowed = [new("xx")], Blocked = [new("xx")] };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantCountry>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        List<MerchantCountryAllowed> expectedAllowed = [new("xx")];
-        List<MerchantCountryBlocked> expectedBlocked = [new("xx")];
-
-        Assert.NotNull(deserialized.Allowed);
-        Assert.Equal(expectedAllowed.Count, deserialized.Allowed.Count);
-        for (int i = 0; i < expectedAllowed.Count; i++)
-        {
-            Assert.Equal(expectedAllowed[i], deserialized.Allowed[i]);
-        }
-        Assert.NotNull(deserialized.Blocked);
-        Assert.Equal(expectedBlocked.Count, deserialized.Blocked.Count);
-        for (int i = 0; i < expectedBlocked.Count; i++)
-        {
-            Assert.Equal(expectedBlocked[i], deserialized.Blocked[i]);
-        }
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new MerchantCountry { Allowed = [new("xx")], Blocked = [new("xx")] };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new MerchantCountry { };
-
-        Assert.Null(model.Allowed);
-        Assert.False(model.RawData.ContainsKey("allowed"));
-        Assert.Null(model.Blocked);
-        Assert.False(model.RawData.ContainsKey("blocked"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new MerchantCountry { };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
-    {
-        var model = new MerchantCountry
-        {
-            // Null should be interpreted as omitted for these properties
-            Allowed = null,
-            Blocked = null,
-        };
-
-        Assert.Null(model.Allowed);
-        Assert.False(model.RawData.ContainsKey("allowed"));
-        Assert.Null(model.Blocked);
-        Assert.False(model.RawData.ContainsKey("blocked"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new MerchantCountry
-        {
-            // Null should be interpreted as omitted for these properties
-            Allowed = null,
-            Blocked = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new MerchantCountry { Allowed = [new("xx")], Blocked = [new("xx")] };
-
-        MerchantCountry copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class MerchantCountryAllowedTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new MerchantCountryAllowed { Country = "xx" };
-
-        string expectedCountry = "xx";
-
-        Assert.Equal(expectedCountry, model.Country);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new MerchantCountryAllowed { Country = "xx" };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantCountryAllowed>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new MerchantCountryAllowed { Country = "xx" };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantCountryAllowed>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        string expectedCountry = "xx";
-
-        Assert.Equal(expectedCountry, deserialized.Country);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new MerchantCountryAllowed { Country = "xx" };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new MerchantCountryAllowed { Country = "xx" };
-
-        MerchantCountryAllowed copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class MerchantCountryBlockedTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new MerchantCountryBlocked { Country = "xx" };
-
-        string expectedCountry = "xx";
-
-        Assert.Equal(expectedCountry, model.Country);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new MerchantCountryBlocked { Country = "xx" };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantCountryBlocked>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new MerchantCountryBlocked { Country = "xx" };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<MerchantCountryBlocked>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        string expectedCountry = "xx";
-
-        Assert.Equal(expectedCountry, deserialized.Country);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new MerchantCountryBlocked { Country = "xx" };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new MerchantCountryBlocked { Country = "xx" };
-
-        MerchantCountryBlocked copied = new(model);
+        Cards::MultiUse copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -1295,16 +1864,16 @@ public class SpendingLimitTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new SpendingLimit
+        var model = new Cards::SpendingLimit
         {
-            Interval = Interval.AllTime,
+            Interval = Cards::Interval.AllTime,
             SettlementAmount = 0,
             MerchantCategoryCodes = [new("x")],
         };
 
-        ApiEnum<string, Interval> expectedInterval = Interval.AllTime;
+        ApiEnum<string, Cards::Interval> expectedInterval = Cards::Interval.AllTime;
         long expectedSettlementAmount = 0;
-        List<SpendingLimitMerchantCategoryCode> expectedMerchantCategoryCodes = [new("x")];
+        List<Cards::SpendingLimitMerchantCategoryCode> expectedMerchantCategoryCodes = [new("x")];
 
         Assert.Equal(expectedInterval, model.Interval);
         Assert.Equal(expectedSettlementAmount, model.SettlementAmount);
@@ -1319,15 +1888,15 @@ public class SpendingLimitTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new SpendingLimit
+        var model = new Cards::SpendingLimit
         {
-            Interval = Interval.AllTime,
+            Interval = Cards::Interval.AllTime,
             SettlementAmount = 0,
             MerchantCategoryCodes = [new("x")],
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<SpendingLimit>(
+        var deserialized = JsonSerializer.Deserialize<Cards::SpendingLimit>(
             json,
             ModelBase.SerializerOptions
         );
@@ -1338,23 +1907,23 @@ public class SpendingLimitTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new SpendingLimit
+        var model = new Cards::SpendingLimit
         {
-            Interval = Interval.AllTime,
+            Interval = Cards::Interval.AllTime,
             SettlementAmount = 0,
             MerchantCategoryCodes = [new("x")],
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<SpendingLimit>(
+        var deserialized = JsonSerializer.Deserialize<Cards::SpendingLimit>(
             element,
             ModelBase.SerializerOptions
         );
         Assert.NotNull(deserialized);
 
-        ApiEnum<string, Interval> expectedInterval = Interval.AllTime;
+        ApiEnum<string, Cards::Interval> expectedInterval = Cards::Interval.AllTime;
         long expectedSettlementAmount = 0;
-        List<SpendingLimitMerchantCategoryCode> expectedMerchantCategoryCodes = [new("x")];
+        List<Cards::SpendingLimitMerchantCategoryCode> expectedMerchantCategoryCodes = [new("x")];
 
         Assert.Equal(expectedInterval, deserialized.Interval);
         Assert.Equal(expectedSettlementAmount, deserialized.SettlementAmount);
@@ -1369,9 +1938,9 @@ public class SpendingLimitTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new SpendingLimit
+        var model = new Cards::SpendingLimit
         {
-            Interval = Interval.AllTime,
+            Interval = Cards::Interval.AllTime,
             SettlementAmount = 0,
             MerchantCategoryCodes = [new("x")],
         };
@@ -1382,7 +1951,11 @@ public class SpendingLimitTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new SpendingLimit { Interval = Interval.AllTime, SettlementAmount = 0 };
+        var model = new Cards::SpendingLimit
+        {
+            Interval = Cards::Interval.AllTime,
+            SettlementAmount = 0,
+        };
 
         Assert.Null(model.MerchantCategoryCodes);
         Assert.False(model.RawData.ContainsKey("merchant_category_codes"));
@@ -1391,7 +1964,11 @@ public class SpendingLimitTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new SpendingLimit { Interval = Interval.AllTime, SettlementAmount = 0 };
+        var model = new Cards::SpendingLimit
+        {
+            Interval = Cards::Interval.AllTime,
+            SettlementAmount = 0,
+        };
 
         model.Validate();
     }
@@ -1399,9 +1976,9 @@ public class SpendingLimitTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
     {
-        var model = new SpendingLimit
+        var model = new Cards::SpendingLimit
         {
-            Interval = Interval.AllTime,
+            Interval = Cards::Interval.AllTime,
             SettlementAmount = 0,
 
             // Null should be interpreted as omitted for these properties
@@ -1415,9 +1992,9 @@ public class SpendingLimitTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new SpendingLimit
+        var model = new Cards::SpendingLimit
         {
-            Interval = Interval.AllTime,
+            Interval = Cards::Interval.AllTime,
             SettlementAmount = 0,
 
             // Null should be interpreted as omitted for these properties
@@ -1430,14 +2007,14 @@ public class SpendingLimitTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new SpendingLimit
+        var model = new Cards::SpendingLimit
         {
-            Interval = Interval.AllTime,
+            Interval = Cards::Interval.AllTime,
             SettlementAmount = 0,
             MerchantCategoryCodes = [new("x")],
         };
 
-        SpendingLimit copied = new(model);
+        Cards::SpendingLimit copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -1446,22 +2023,22 @@ public class SpendingLimitTest : TestBase
 public class IntervalTest : TestBase
 {
     [Theory]
-    [InlineData(Interval.AllTime)]
-    [InlineData(Interval.PerTransaction)]
-    [InlineData(Interval.PerDay)]
-    [InlineData(Interval.PerWeek)]
-    [InlineData(Interval.PerMonth)]
-    public void Validation_Works(Interval rawValue)
+    [InlineData(Cards::Interval.AllTime)]
+    [InlineData(Cards::Interval.PerTransaction)]
+    [InlineData(Cards::Interval.PerDay)]
+    [InlineData(Cards::Interval.PerWeek)]
+    [InlineData(Cards::Interval.PerMonth)]
+    public void Validation_Works(Cards::Interval rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Interval> value = rawValue;
+        ApiEnum<string, Cards::Interval> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Interval>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Cards::Interval>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
@@ -1471,18 +2048,18 @@ public class IntervalTest : TestBase
     }
 
     [Theory]
-    [InlineData(Interval.AllTime)]
-    [InlineData(Interval.PerTransaction)]
-    [InlineData(Interval.PerDay)]
-    [InlineData(Interval.PerWeek)]
-    [InlineData(Interval.PerMonth)]
-    public void SerializationRoundtrip_Works(Interval rawValue)
+    [InlineData(Cards::Interval.AllTime)]
+    [InlineData(Cards::Interval.PerTransaction)]
+    [InlineData(Cards::Interval.PerDay)]
+    [InlineData(Cards::Interval.PerWeek)]
+    [InlineData(Cards::Interval.PerMonth)]
+    public void SerializationRoundtrip_Works(Cards::Interval rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Interval> value = rawValue;
+        ApiEnum<string, Cards::Interval> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Interval>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Cards::Interval>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -1493,12 +2070,12 @@ public class IntervalTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Interval>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Cards::Interval>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Interval>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Cards::Interval>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -1512,7 +2089,7 @@ public class SpendingLimitMerchantCategoryCodeTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new SpendingLimitMerchantCategoryCode { Code = "x" };
+        var model = new Cards::SpendingLimitMerchantCategoryCode { Code = "x" };
 
         string expectedCode = "x";
 
@@ -1522,10 +2099,10 @@ public class SpendingLimitMerchantCategoryCodeTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new SpendingLimitMerchantCategoryCode { Code = "x" };
+        var model = new Cards::SpendingLimitMerchantCategoryCode { Code = "x" };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<SpendingLimitMerchantCategoryCode>(
+        var deserialized = JsonSerializer.Deserialize<Cards::SpendingLimitMerchantCategoryCode>(
             json,
             ModelBase.SerializerOptions
         );
@@ -1536,10 +2113,10 @@ public class SpendingLimitMerchantCategoryCodeTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new SpendingLimitMerchantCategoryCode { Code = "x" };
+        var model = new Cards::SpendingLimitMerchantCategoryCode { Code = "x" };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<SpendingLimitMerchantCategoryCode>(
+        var deserialized = JsonSerializer.Deserialize<Cards::SpendingLimitMerchantCategoryCode>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1553,7 +2130,7 @@ public class SpendingLimitMerchantCategoryCodeTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new SpendingLimitMerchantCategoryCode { Code = "x" };
+        var model = new Cards::SpendingLimitMerchantCategoryCode { Code = "x" };
 
         model.Validate();
     }
@@ -1561,11 +2138,240 @@ public class SpendingLimitMerchantCategoryCodeTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new SpendingLimitMerchantCategoryCode { Code = "x" };
+        var model = new Cards::SpendingLimitMerchantCategoryCode { Code = "x" };
 
-        SpendingLimitMerchantCategoryCode copied = new(model);
+        Cards::SpendingLimitMerchantCategoryCode copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class SingleUseTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::SingleUse
+        {
+            SettlementAmount = new() { Comparison = Cards::Comparison.Equals, Value = 0 },
+        };
+
+        Cards::SettlementAmount expectedSettlementAmount = new()
+        {
+            Comparison = Cards::Comparison.Equals,
+            Value = 0,
+        };
+
+        Assert.Equal(expectedSettlementAmount, model.SettlementAmount);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::SingleUse
+        {
+            SettlementAmount = new() { Comparison = Cards::Comparison.Equals, Value = 0 },
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::SingleUse>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::SingleUse
+        {
+            SettlementAmount = new() { Comparison = Cards::Comparison.Equals, Value = 0 },
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::SingleUse>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        Cards::SettlementAmount expectedSettlementAmount = new()
+        {
+            Comparison = Cards::Comparison.Equals,
+            Value = 0,
+        };
+
+        Assert.Equal(expectedSettlementAmount, deserialized.SettlementAmount);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::SingleUse
+        {
+            SettlementAmount = new() { Comparison = Cards::Comparison.Equals, Value = 0 },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::SingleUse
+        {
+            SettlementAmount = new() { Comparison = Cards::Comparison.Equals, Value = 0 },
+        };
+
+        Cards::SingleUse copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SettlementAmountTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::SettlementAmount
+        {
+            Comparison = Cards::Comparison.Equals,
+            Value = 0,
+        };
+
+        ApiEnum<string, Cards::Comparison> expectedComparison = Cards::Comparison.Equals;
+        long expectedValue = 0;
+
+        Assert.Equal(expectedComparison, model.Comparison);
+        Assert.Equal(expectedValue, model.Value);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::SettlementAmount
+        {
+            Comparison = Cards::Comparison.Equals,
+            Value = 0,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::SettlementAmount>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::SettlementAmount
+        {
+            Comparison = Cards::Comparison.Equals,
+            Value = 0,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::SettlementAmount>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<string, Cards::Comparison> expectedComparison = Cards::Comparison.Equals;
+        long expectedValue = 0;
+
+        Assert.Equal(expectedComparison, deserialized.Comparison);
+        Assert.Equal(expectedValue, deserialized.Value);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::SettlementAmount
+        {
+            Comparison = Cards::Comparison.Equals,
+            Value = 0,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::SettlementAmount
+        {
+            Comparison = Cards::Comparison.Equals,
+            Value = 0,
+        };
+
+        Cards::SettlementAmount copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class ComparisonTest : TestBase
+{
+    [Theory]
+    [InlineData(Cards::Comparison.Equals)]
+    [InlineData(Cards::Comparison.LessThanOrEquals)]
+    public void Validation_Works(Cards::Comparison rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Cards::Comparison> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Cards::Comparison>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Cards::Comparison.Equals)]
+    [InlineData(Cards::Comparison.LessThanOrEquals)]
+    public void SerializationRoundtrip_Works(Cards::Comparison rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Cards::Comparison> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Cards::Comparison>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Cards::Comparison>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Cards::Comparison>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }
 
@@ -1574,7 +2380,7 @@ public class BillingAddressTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new BillingAddress
+        var model = new Cards::BillingAddress
         {
             City = "x",
             Line1 = "x",
@@ -1599,7 +2405,7 @@ public class BillingAddressTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new BillingAddress
+        var model = new Cards::BillingAddress
         {
             City = "x",
             Line1 = "x",
@@ -1609,7 +2415,7 @@ public class BillingAddressTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<BillingAddress>(
+        var deserialized = JsonSerializer.Deserialize<Cards::BillingAddress>(
             json,
             ModelBase.SerializerOptions
         );
@@ -1620,7 +2426,7 @@ public class BillingAddressTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new BillingAddress
+        var model = new Cards::BillingAddress
         {
             City = "x",
             Line1 = "x",
@@ -1630,7 +2436,7 @@ public class BillingAddressTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<BillingAddress>(
+        var deserialized = JsonSerializer.Deserialize<Cards::BillingAddress>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1652,7 +2458,7 @@ public class BillingAddressTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new BillingAddress
+        var model = new Cards::BillingAddress
         {
             City = "x",
             Line1 = "x",
@@ -1667,7 +2473,7 @@ public class BillingAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new BillingAddress
+        var model = new Cards::BillingAddress
         {
             City = "x",
             Line1 = "x",
@@ -1682,7 +2488,7 @@ public class BillingAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new BillingAddress
+        var model = new Cards::BillingAddress
         {
             City = "x",
             Line1 = "x",
@@ -1696,7 +2502,7 @@ public class BillingAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
     {
-        var model = new BillingAddress
+        var model = new Cards::BillingAddress
         {
             City = "x",
             Line1 = "x",
@@ -1714,7 +2520,7 @@ public class BillingAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new BillingAddress
+        var model = new Cards::BillingAddress
         {
             City = "x",
             Line1 = "x",
@@ -1731,7 +2537,7 @@ public class BillingAddressTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new BillingAddress
+        var model = new Cards::BillingAddress
         {
             City = "x",
             Line1 = "x",
@@ -1740,7 +2546,7 @@ public class BillingAddressTest : TestBase
             Line2 = "x",
         };
 
-        BillingAddress copied = new(model);
+        Cards::BillingAddress copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -1751,7 +2557,7 @@ public class DigitalWalletTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new DigitalWallet
+        var model = new Cards::DigitalWallet
         {
             DigitalCardProfileID = "digital_card_profile_id",
             Email = "dev@stainless.com",
@@ -1770,7 +2576,7 @@ public class DigitalWalletTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new DigitalWallet
+        var model = new Cards::DigitalWallet
         {
             DigitalCardProfileID = "digital_card_profile_id",
             Email = "dev@stainless.com",
@@ -1778,7 +2584,7 @@ public class DigitalWalletTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<DigitalWallet>(
+        var deserialized = JsonSerializer.Deserialize<Cards::DigitalWallet>(
             json,
             ModelBase.SerializerOptions
         );
@@ -1789,7 +2595,7 @@ public class DigitalWalletTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new DigitalWallet
+        var model = new Cards::DigitalWallet
         {
             DigitalCardProfileID = "digital_card_profile_id",
             Email = "dev@stainless.com",
@@ -1797,7 +2603,7 @@ public class DigitalWalletTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<DigitalWallet>(
+        var deserialized = JsonSerializer.Deserialize<Cards::DigitalWallet>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1815,7 +2621,7 @@ public class DigitalWalletTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new DigitalWallet
+        var model = new Cards::DigitalWallet
         {
             DigitalCardProfileID = "digital_card_profile_id",
             Email = "dev@stainless.com",
@@ -1828,7 +2634,7 @@ public class DigitalWalletTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new DigitalWallet { };
+        var model = new Cards::DigitalWallet { };
 
         Assert.Null(model.DigitalCardProfileID);
         Assert.False(model.RawData.ContainsKey("digital_card_profile_id"));
@@ -1841,7 +2647,7 @@ public class DigitalWalletTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new DigitalWallet { };
+        var model = new Cards::DigitalWallet { };
 
         model.Validate();
     }
@@ -1849,7 +2655,7 @@ public class DigitalWalletTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
     {
-        var model = new DigitalWallet
+        var model = new Cards::DigitalWallet
         {
             // Null should be interpreted as omitted for these properties
             DigitalCardProfileID = null,
@@ -1868,7 +2674,7 @@ public class DigitalWalletTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new DigitalWallet
+        var model = new Cards::DigitalWallet
         {
             // Null should be interpreted as omitted for these properties
             DigitalCardProfileID = null,
@@ -1882,14 +2688,14 @@ public class DigitalWalletTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new DigitalWallet
+        var model = new Cards::DigitalWallet
         {
             DigitalCardProfileID = "digital_card_profile_id",
             Email = "dev@stainless.com",
             Phone = "x",
         };
 
-        DigitalWallet copied = new(model);
+        Cards::DigitalWallet copied = new(model);
 
         Assert.Equal(model, copied);
     }
