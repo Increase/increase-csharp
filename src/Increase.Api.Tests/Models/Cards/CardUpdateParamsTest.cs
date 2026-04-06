@@ -17,20 +17,34 @@ public class CardUpdateParamsTest : TestBase
             CardID = "card_oubs0hwk5rn6knuecxg2",
             AuthorizationControls = new()
             {
-                MaximumAuthorizationCount = new(0),
                 MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
                 MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
                 MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
-                SpendingLimits =
-                [
-                    new()
+                Usage = new()
+                {
+                    Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+                    MultiUse = new()
                     {
-                        Interval =
-                            CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
-                        SettlementAmount = 0,
-                        MerchantCategoryCodes = [new("x")],
+                        SpendingLimits =
+                        [
+                            new()
+                            {
+                                Interval =
+                                    CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                SettlementAmount = 0,
+                                MerchantCategoryCodes = [new("x")],
+                            },
+                        ],
                     },
-                ],
+                    SingleUse = new(
+                        new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                        {
+                            Comparison =
+                                CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                            Value = 0,
+                        }
+                    ),
+                },
             },
             BillingAddress = new()
             {
@@ -54,19 +68,34 @@ public class CardUpdateParamsTest : TestBase
         string expectedCardID = "card_oubs0hwk5rn6knuecxg2";
         CardUpdateParamsAuthorizationControls expectedAuthorizationControls = new()
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
             MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
-            SpendingLimits =
-            [
-                new()
+            Usage = new()
+            {
+                Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+                MultiUse = new()
                 {
-                    Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
-                    SettlementAmount = 0,
-                    MerchantCategoryCodes = [new("x")],
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval =
+                                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                            SettlementAmount = 0,
+                            MerchantCategoryCodes = [new("x")],
+                        },
+                    ],
                 },
-            ],
+                SingleUse = new(
+                    new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                    {
+                        Comparison =
+                            CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
         CardUpdateParamsBillingAddress expectedBillingAddress = new()
         {
@@ -162,20 +191,34 @@ public class CardUpdateParamsTest : TestBase
             CardID = "card_oubs0hwk5rn6knuecxg2",
             AuthorizationControls = new()
             {
-                MaximumAuthorizationCount = new(0),
                 MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
                 MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
                 MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
-                SpendingLimits =
-                [
-                    new()
+                Usage = new()
+                {
+                    Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+                    MultiUse = new()
                     {
-                        Interval =
-                            CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
-                        SettlementAmount = 0,
-                        MerchantCategoryCodes = [new("x")],
+                        SpendingLimits =
+                        [
+                            new()
+                            {
+                                Interval =
+                                    CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                SettlementAmount = 0,
+                                MerchantCategoryCodes = [new("x")],
+                            },
+                        ],
                     },
-                ],
+                    SingleUse = new(
+                        new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                        {
+                            Comparison =
+                                CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                            Value = 0,
+                        }
+                    ),
+                },
             },
             BillingAddress = new()
             {
@@ -209,23 +252,36 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
     {
         var model = new CardUpdateParamsAuthorizationControls
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
             MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
-            SpendingLimits =
-            [
-                new()
+            Usage = new()
+            {
+                Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+                MultiUse = new()
                 {
-                    Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
-                    SettlementAmount = 0,
-                    MerchantCategoryCodes = [new("x")],
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval =
+                                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                            SettlementAmount = 0,
+                            MerchantCategoryCodes = [new("x")],
+                        },
+                    ],
                 },
-            ],
+                SingleUse = new(
+                    new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                    {
+                        Comparison =
+                            CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
 
-        CardUpdateParamsAuthorizationControlsMaximumAuthorizationCount expectedMaximumAuthorizationCount =
-            new(0);
         CardUpdateParamsAuthorizationControlsMerchantAcceptorIdentifier expectedMerchantAcceptorIdentifier =
             new() { Allowed = [new("x")], Blocked = [new("x")] };
         CardUpdateParamsAuthorizationControlsMerchantCategoryCode expectedMerchantCategoryCode =
@@ -235,26 +291,36 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
             Allowed = [new("xx")],
             Blocked = [new("xx")],
         };
-        List<CardUpdateParamsAuthorizationControlsSpendingLimit> expectedSpendingLimits =
-        [
-            new()
+        CardUpdateParamsAuthorizationControlsUsage expectedUsage = new()
+        {
+            Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new()
             {
-                Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
-                SettlementAmount = 0,
-                MerchantCategoryCodes = [new("x")],
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval =
+                            CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
             },
-        ];
+            SingleUse = new(
+                new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
 
-        Assert.Equal(expectedMaximumAuthorizationCount, model.MaximumAuthorizationCount);
         Assert.Equal(expectedMerchantAcceptorIdentifier, model.MerchantAcceptorIdentifier);
         Assert.Equal(expectedMerchantCategoryCode, model.MerchantCategoryCode);
         Assert.Equal(expectedMerchantCountry, model.MerchantCountry);
-        Assert.NotNull(model.SpendingLimits);
-        Assert.Equal(expectedSpendingLimits.Count, model.SpendingLimits.Count);
-        for (int i = 0; i < expectedSpendingLimits.Count; i++)
-        {
-            Assert.Equal(expectedSpendingLimits[i], model.SpendingLimits[i]);
-        }
+        Assert.Equal(expectedUsage, model.Usage);
     }
 
     [Fact]
@@ -262,19 +328,34 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
     {
         var model = new CardUpdateParamsAuthorizationControls
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
             MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
-            SpendingLimits =
-            [
-                new()
+            Usage = new()
+            {
+                Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+                MultiUse = new()
                 {
-                    Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
-                    SettlementAmount = 0,
-                    MerchantCategoryCodes = [new("x")],
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval =
+                                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                            SettlementAmount = 0,
+                            MerchantCategoryCodes = [new("x")],
+                        },
+                    ],
                 },
-            ],
+                SingleUse = new(
+                    new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                    {
+                        Comparison =
+                            CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -291,19 +372,34 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
     {
         var model = new CardUpdateParamsAuthorizationControls
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
             MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
-            SpendingLimits =
-            [
-                new()
+            Usage = new()
+            {
+                Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+                MultiUse = new()
                 {
-                    Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
-                    SettlementAmount = 0,
-                    MerchantCategoryCodes = [new("x")],
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval =
+                                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                            SettlementAmount = 0,
+                            MerchantCategoryCodes = [new("x")],
+                        },
+                    ],
                 },
-            ],
+                SingleUse = new(
+                    new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                    {
+                        Comparison =
+                            CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -313,8 +409,6 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        CardUpdateParamsAuthorizationControlsMaximumAuthorizationCount expectedMaximumAuthorizationCount =
-            new(0);
         CardUpdateParamsAuthorizationControlsMerchantAcceptorIdentifier expectedMerchantAcceptorIdentifier =
             new() { Allowed = [new("x")], Blocked = [new("x")] };
         CardUpdateParamsAuthorizationControlsMerchantCategoryCode expectedMerchantCategoryCode =
@@ -324,26 +418,36 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
             Allowed = [new("xx")],
             Blocked = [new("xx")],
         };
-        List<CardUpdateParamsAuthorizationControlsSpendingLimit> expectedSpendingLimits =
-        [
-            new()
+        CardUpdateParamsAuthorizationControlsUsage expectedUsage = new()
+        {
+            Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new()
             {
-                Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
-                SettlementAmount = 0,
-                MerchantCategoryCodes = [new("x")],
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval =
+                            CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
             },
-        ];
+            SingleUse = new(
+                new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
 
-        Assert.Equal(expectedMaximumAuthorizationCount, deserialized.MaximumAuthorizationCount);
         Assert.Equal(expectedMerchantAcceptorIdentifier, deserialized.MerchantAcceptorIdentifier);
         Assert.Equal(expectedMerchantCategoryCode, deserialized.MerchantCategoryCode);
         Assert.Equal(expectedMerchantCountry, deserialized.MerchantCountry);
-        Assert.NotNull(deserialized.SpendingLimits);
-        Assert.Equal(expectedSpendingLimits.Count, deserialized.SpendingLimits.Count);
-        for (int i = 0; i < expectedSpendingLimits.Count; i++)
-        {
-            Assert.Equal(expectedSpendingLimits[i], deserialized.SpendingLimits[i]);
-        }
+        Assert.Equal(expectedUsage, deserialized.Usage);
     }
 
     [Fact]
@@ -351,19 +455,34 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
     {
         var model = new CardUpdateParamsAuthorizationControls
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
             MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
-            SpendingLimits =
-            [
-                new()
+            Usage = new()
+            {
+                Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+                MultiUse = new()
                 {
-                    Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
-                    SettlementAmount = 0,
-                    MerchantCategoryCodes = [new("x")],
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval =
+                                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                            SettlementAmount = 0,
+                            MerchantCategoryCodes = [new("x")],
+                        },
+                    ],
                 },
-            ],
+                SingleUse = new(
+                    new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                    {
+                        Comparison =
+                            CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
 
         model.Validate();
@@ -374,16 +493,14 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
     {
         var model = new CardUpdateParamsAuthorizationControls { };
 
-        Assert.Null(model.MaximumAuthorizationCount);
-        Assert.False(model.RawData.ContainsKey("maximum_authorization_count"));
         Assert.Null(model.MerchantAcceptorIdentifier);
         Assert.False(model.RawData.ContainsKey("merchant_acceptor_identifier"));
         Assert.Null(model.MerchantCategoryCode);
         Assert.False(model.RawData.ContainsKey("merchant_category_code"));
         Assert.Null(model.MerchantCountry);
         Assert.False(model.RawData.ContainsKey("merchant_country"));
-        Assert.Null(model.SpendingLimits);
-        Assert.False(model.RawData.ContainsKey("spending_limits"));
+        Assert.Null(model.Usage);
+        Assert.False(model.RawData.ContainsKey("usage"));
     }
 
     [Fact]
@@ -400,23 +517,20 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
         var model = new CardUpdateParamsAuthorizationControls
         {
             // Null should be interpreted as omitted for these properties
-            MaximumAuthorizationCount = null,
             MerchantAcceptorIdentifier = null,
             MerchantCategoryCode = null,
             MerchantCountry = null,
-            SpendingLimits = null,
+            Usage = null,
         };
 
-        Assert.Null(model.MaximumAuthorizationCount);
-        Assert.False(model.RawData.ContainsKey("maximum_authorization_count"));
         Assert.Null(model.MerchantAcceptorIdentifier);
         Assert.False(model.RawData.ContainsKey("merchant_acceptor_identifier"));
         Assert.Null(model.MerchantCategoryCode);
         Assert.False(model.RawData.ContainsKey("merchant_category_code"));
         Assert.Null(model.MerchantCountry);
         Assert.False(model.RawData.ContainsKey("merchant_country"));
-        Assert.Null(model.SpendingLimits);
-        Assert.False(model.RawData.ContainsKey("spending_limits"));
+        Assert.Null(model.Usage);
+        Assert.False(model.RawData.ContainsKey("usage"));
     }
 
     [Fact]
@@ -425,11 +539,10 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
         var model = new CardUpdateParamsAuthorizationControls
         {
             // Null should be interpreted as omitted for these properties
-            MaximumAuthorizationCount = null,
             MerchantAcceptorIdentifier = null,
             MerchantCategoryCode = null,
             MerchantCountry = null,
-            SpendingLimits = null,
+            Usage = null,
         };
 
         model.Validate();
@@ -440,101 +553,37 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
     {
         var model = new CardUpdateParamsAuthorizationControls
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
             MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
-            SpendingLimits =
-            [
-                new()
+            Usage = new()
+            {
+                Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+                MultiUse = new()
                 {
-                    Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
-                    SettlementAmount = 0,
-                    MerchantCategoryCodes = [new("x")],
+                    SpendingLimits =
+                    [
+                        new()
+                        {
+                            Interval =
+                                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                            SettlementAmount = 0,
+                            MerchantCategoryCodes = [new("x")],
+                        },
+                    ],
                 },
-            ],
+                SingleUse = new(
+                    new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                    {
+                        Comparison =
+                            CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
 
         CardUpdateParamsAuthorizationControls copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class CardUpdateParamsAuthorizationControlsMaximumAuthorizationCountTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new CardUpdateParamsAuthorizationControlsMaximumAuthorizationCount
-        {
-            AllTime = 0,
-        };
-
-        long expectedAllTime = 0;
-
-        Assert.Equal(expectedAllTime, model.AllTime);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new CardUpdateParamsAuthorizationControlsMaximumAuthorizationCount
-        {
-            AllTime = 0,
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsMaximumAuthorizationCount>(
-                json,
-                ModelBase.SerializerOptions
-            );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new CardUpdateParamsAuthorizationControlsMaximumAuthorizationCount
-        {
-            AllTime = 0,
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsMaximumAuthorizationCount>(
-                element,
-                ModelBase.SerializerOptions
-            );
-        Assert.NotNull(deserialized);
-
-        long expectedAllTime = 0;
-
-        Assert.Equal(expectedAllTime, deserialized.AllTime);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new CardUpdateParamsAuthorizationControlsMaximumAuthorizationCount
-        {
-            AllTime = 0,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new CardUpdateParamsAuthorizationControlsMaximumAuthorizationCount
-        {
-            AllTime = 0,
-        };
-
-        CardUpdateParamsAuthorizationControlsMaximumAuthorizationCount copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -1518,24 +1567,564 @@ public class CardUpdateParamsAuthorizationControlsMerchantCountryBlockedTest : T
     }
 }
 
-public class CardUpdateParamsAuthorizationControlsSpendingLimitTest : TestBase
+public class CardUpdateParamsAuthorizationControlsUsageTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimit
+        var model = new CardUpdateParamsAuthorizationControlsUsage
         {
-            Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
+            Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new()
+            {
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval =
+                            CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
+            },
+            SingleUse = new(
+                new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
+
+        ApiEnum<string, CardUpdateParamsAuthorizationControlsUsageCategory> expectedCategory =
+            CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse;
+        CardUpdateParamsAuthorizationControlsUsageMultiUse expectedMultiUse = new()
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval =
+                        CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    SettlementAmount = 0,
+                    MerchantCategoryCodes = [new("x")],
+                },
+            ],
+        };
+        CardUpdateParamsAuthorizationControlsUsageSingleUse expectedSingleUse = new(
+            new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+            {
+                Comparison =
+                    CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            }
+        );
+
+        Assert.Equal(expectedCategory, model.Category);
+        Assert.Equal(expectedMultiUse, model.MultiUse);
+        Assert.Equal(expectedSingleUse, model.SingleUse);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsage
+        {
+            Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new()
+            {
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval =
+                            CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
+            },
+            SingleUse = new(
+                new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsUsage>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsage
+        {
+            Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new()
+            {
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval =
+                            CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
+            },
+            SingleUse = new(
+                new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsUsage>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<string, CardUpdateParamsAuthorizationControlsUsageCategory> expectedCategory =
+            CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse;
+        CardUpdateParamsAuthorizationControlsUsageMultiUse expectedMultiUse = new()
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval =
+                        CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    SettlementAmount = 0,
+                    MerchantCategoryCodes = [new("x")],
+                },
+            ],
+        };
+        CardUpdateParamsAuthorizationControlsUsageSingleUse expectedSingleUse = new(
+            new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+            {
+                Comparison =
+                    CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            }
+        );
+
+        Assert.Equal(expectedCategory, deserialized.Category);
+        Assert.Equal(expectedMultiUse, deserialized.MultiUse);
+        Assert.Equal(expectedSingleUse, deserialized.SingleUse);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsage
+        {
+            Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new()
+            {
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval =
+                            CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
+            },
+            SingleUse = new(
+                new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsage
+        {
+            Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+        };
+
+        Assert.Null(model.MultiUse);
+        Assert.False(model.RawData.ContainsKey("multi_use"));
+        Assert.Null(model.SingleUse);
+        Assert.False(model.RawData.ContainsKey("single_use"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsage
+        {
+            Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsage
+        {
+            Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+
+            // Null should be interpreted as omitted for these properties
+            MultiUse = null,
+            SingleUse = null,
+        };
+
+        Assert.Null(model.MultiUse);
+        Assert.False(model.RawData.ContainsKey("multi_use"));
+        Assert.Null(model.SingleUse);
+        Assert.False(model.RawData.ContainsKey("single_use"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsage
+        {
+            Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+
+            // Null should be interpreted as omitted for these properties
+            MultiUse = null,
+            SingleUse = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsage
+        {
+            Category = CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new()
+            {
+                SpendingLimits =
+                [
+                    new()
+                    {
+                        Interval =
+                            CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        SettlementAmount = 0,
+                        MerchantCategoryCodes = [new("x")],
+                    },
+                ],
+            },
+            SingleUse = new(
+                new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
+
+        CardUpdateParamsAuthorizationControlsUsage copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardUpdateParamsAuthorizationControlsUsageCategoryTest : TestBase
+{
+    [Theory]
+    [InlineData(CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse)]
+    [InlineData(CardUpdateParamsAuthorizationControlsUsageCategory.MultiUse)]
+    public void Validation_Works(CardUpdateParamsAuthorizationControlsUsageCategory rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardUpdateParamsAuthorizationControlsUsageCategory> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardUpdateParamsAuthorizationControlsUsageCategory>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(CardUpdateParamsAuthorizationControlsUsageCategory.SingleUse)]
+    [InlineData(CardUpdateParamsAuthorizationControlsUsageCategory.MultiUse)]
+    public void SerializationRoundtrip_Works(
+        CardUpdateParamsAuthorizationControlsUsageCategory rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, CardUpdateParamsAuthorizationControlsUsageCategory> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardUpdateParamsAuthorizationControlsUsageCategory>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, CardUpdateParamsAuthorizationControlsUsageCategory>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, CardUpdateParamsAuthorizationControlsUsageCategory>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardUpdateParamsAuthorizationControlsUsageMultiUseTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUse
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval =
+                        CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    SettlementAmount = 0,
+                    MerchantCategoryCodes = [new("x")],
+                },
+            ],
+        };
+
+        List<CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit> expectedSpendingLimits =
+        [
+            new()
+            {
+                Interval =
+                    CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                SettlementAmount = 0,
+                MerchantCategoryCodes = [new("x")],
+            },
+        ];
+
+        Assert.NotNull(model.SpendingLimits);
+        Assert.Equal(expectedSpendingLimits.Count, model.SpendingLimits.Count);
+        for (int i = 0; i < expectedSpendingLimits.Count; i++)
+        {
+            Assert.Equal(expectedSpendingLimits[i], model.SpendingLimits[i]);
+        }
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUse
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval =
+                        CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    SettlementAmount = 0,
+                    MerchantCategoryCodes = [new("x")],
+                },
+            ],
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsUsageMultiUse>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUse
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval =
+                        CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    SettlementAmount = 0,
+                    MerchantCategoryCodes = [new("x")],
+                },
+            ],
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsUsageMultiUse>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        List<CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit> expectedSpendingLimits =
+        [
+            new()
+            {
+                Interval =
+                    CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                SettlementAmount = 0,
+                MerchantCategoryCodes = [new("x")],
+            },
+        ];
+
+        Assert.NotNull(deserialized.SpendingLimits);
+        Assert.Equal(expectedSpendingLimits.Count, deserialized.SpendingLimits.Count);
+        for (int i = 0; i < expectedSpendingLimits.Count; i++)
+        {
+            Assert.Equal(expectedSpendingLimits[i], deserialized.SpendingLimits[i]);
+        }
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUse
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval =
+                        CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    SettlementAmount = 0,
+                    MerchantCategoryCodes = [new("x")],
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUse { };
+
+        Assert.Null(model.SpendingLimits);
+        Assert.False(model.RawData.ContainsKey("spending_limits"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUse { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUse
+        {
+            // Null should be interpreted as omitted for these properties
+            SpendingLimits = null,
+        };
+
+        Assert.Null(model.SpendingLimits);
+        Assert.False(model.RawData.ContainsKey("spending_limits"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUse
+        {
+            // Null should be interpreted as omitted for these properties
+            SpendingLimits = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUse
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval =
+                        CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    SettlementAmount = 0,
+                    MerchantCategoryCodes = [new("x")],
+                },
+            ],
+        };
+
+        CardUpdateParamsAuthorizationControlsUsageMultiUse copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit
+        {
+            Interval =
+                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             SettlementAmount = 0,
             MerchantCategoryCodes = [new("x")],
         };
 
         ApiEnum<
             string,
-            CardUpdateParamsAuthorizationControlsSpendingLimitInterval
-        > expectedInterval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime;
+            CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval
+        > expectedInterval =
+            CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime;
         long expectedSettlementAmount = 0;
-        List<CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryCode> expectedMerchantCategoryCodes =
+        List<CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode> expectedMerchantCategoryCodes =
         [
             new("x"),
         ];
@@ -1553,16 +2142,17 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimit
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit
         {
-            Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
+            Interval =
+                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             SettlementAmount = 0,
             MerchantCategoryCodes = [new("x")],
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsSpendingLimit>(
+            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit>(
                 json,
                 ModelBase.SerializerOptions
             );
@@ -1573,16 +2163,17 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimit
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit
         {
-            Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
+            Interval =
+                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             SettlementAmount = 0,
             MerchantCategoryCodes = [new("x")],
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsSpendingLimit>(
+            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit>(
                 element,
                 ModelBase.SerializerOptions
             );
@@ -1590,10 +2181,11 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitTest : TestBase
 
         ApiEnum<
             string,
-            CardUpdateParamsAuthorizationControlsSpendingLimitInterval
-        > expectedInterval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime;
+            CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval
+        > expectedInterval =
+            CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime;
         long expectedSettlementAmount = 0;
-        List<CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryCode> expectedMerchantCategoryCodes =
+        List<CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode> expectedMerchantCategoryCodes =
         [
             new("x"),
         ];
@@ -1611,9 +2203,10 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimit
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit
         {
-            Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
+            Interval =
+                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             SettlementAmount = 0,
             MerchantCategoryCodes = [new("x")],
         };
@@ -1624,9 +2217,10 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimit
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit
         {
-            Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
+            Interval =
+                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             SettlementAmount = 0,
         };
 
@@ -1637,9 +2231,10 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimit
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit
         {
-            Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
+            Interval =
+                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             SettlementAmount = 0,
         };
 
@@ -1649,9 +2244,10 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimit
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit
         {
-            Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
+            Interval =
+                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             SettlementAmount = 0,
 
             // Null should be interpreted as omitted for these properties
@@ -1665,9 +2261,10 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimit
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit
         {
-            Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
+            Interval =
+                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             SettlementAmount = 0,
 
             // Null should be interpreted as omitted for these properties
@@ -1680,34 +2277,39 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimit
+        var model = new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit
         {
-            Interval = CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime,
+            Interval =
+                CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             SettlementAmount = 0,
             MerchantCategoryCodes = [new("x")],
         };
 
-        CardUpdateParamsAuthorizationControlsSpendingLimit copied = new(model);
+        CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimit copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class CardUpdateParamsAuthorizationControlsSpendingLimitIntervalTest : TestBase
+public class CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitIntervalTest : TestBase
 {
     [Theory]
-    [InlineData(CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime)]
-    [InlineData(CardUpdateParamsAuthorizationControlsSpendingLimitInterval.PerTransaction)]
-    [InlineData(CardUpdateParamsAuthorizationControlsSpendingLimitInterval.PerDay)]
-    [InlineData(CardUpdateParamsAuthorizationControlsSpendingLimitInterval.PerWeek)]
-    [InlineData(CardUpdateParamsAuthorizationControlsSpendingLimitInterval.PerMonth)]
+    [InlineData(CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime)]
+    [InlineData(
+        CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerTransaction
+    )]
+    [InlineData(CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerDay)]
+    [InlineData(CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerWeek)]
+    [InlineData(CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth)]
     public void Validation_Works(
-        CardUpdateParamsAuthorizationControlsSpendingLimitInterval rawValue
+        CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval rawValue
     )
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, CardUpdateParamsAuthorizationControlsSpendingLimitInterval> value =
-            rawValue;
+        ApiEnum<
+            string,
+            CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval
+        > value = rawValue;
         value.Validate();
     }
 
@@ -1715,7 +2317,7 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitIntervalTest : Te
     public void InvalidEnumValidationThrows_Works()
     {
         var value = JsonSerializer.Deserialize<
-            ApiEnum<string, CardUpdateParamsAuthorizationControlsSpendingLimitInterval>
+            ApiEnum<string, CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval>
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
 
         Assert.NotNull(value);
@@ -1723,22 +2325,26 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitIntervalTest : Te
     }
 
     [Theory]
-    [InlineData(CardUpdateParamsAuthorizationControlsSpendingLimitInterval.AllTime)]
-    [InlineData(CardUpdateParamsAuthorizationControlsSpendingLimitInterval.PerTransaction)]
-    [InlineData(CardUpdateParamsAuthorizationControlsSpendingLimitInterval.PerDay)]
-    [InlineData(CardUpdateParamsAuthorizationControlsSpendingLimitInterval.PerWeek)]
-    [InlineData(CardUpdateParamsAuthorizationControlsSpendingLimitInterval.PerMonth)]
+    [InlineData(CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime)]
+    [InlineData(
+        CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerTransaction
+    )]
+    [InlineData(CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerDay)]
+    [InlineData(CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerWeek)]
+    [InlineData(CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth)]
     public void SerializationRoundtrip_Works(
-        CardUpdateParamsAuthorizationControlsSpendingLimitInterval rawValue
+        CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval rawValue
     )
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, CardUpdateParamsAuthorizationControlsSpendingLimitInterval> value =
-            rawValue;
+        ApiEnum<
+            string,
+            CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval
+        > value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, CardUpdateParamsAuthorizationControlsSpendingLimitInterval>
+            ApiEnum<string, CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
@@ -1748,26 +2354,28 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitIntervalTest : Te
     public void InvalidEnumSerializationRoundtrip_Works()
     {
         var value = JsonSerializer.Deserialize<
-            ApiEnum<string, CardUpdateParamsAuthorizationControlsSpendingLimitInterval>
+            ApiEnum<string, CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval>
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, CardUpdateParamsAuthorizationControlsSpendingLimitInterval>
+            ApiEnum<string, CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitInterval>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
     }
 }
 
-public class CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryCodeTest : TestBase
+public class CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCodeTest
+    : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryCode
-        {
-            Code = "x",
-        };
+        var model =
+            new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode
+            {
+                Code = "x",
+            };
 
         string expectedCode = "x";
 
@@ -1777,14 +2385,15 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryC
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryCode
-        {
-            Code = "x",
-        };
+        var model =
+            new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode
+            {
+                Code = "x",
+            };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryCode>(
+            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode>(
                 json,
                 ModelBase.SerializerOptions
             );
@@ -1795,14 +2404,15 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryC
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryCode
-        {
-            Code = "x",
-        };
+        var model =
+            new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode
+            {
+                Code = "x",
+            };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryCode>(
+            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode>(
                 element,
                 ModelBase.SerializerOptions
             );
@@ -1816,9 +2426,123 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryC
     [Fact]
     public void Validation_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryCode
+        var model =
+            new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode
+            {
+                Code = "x",
+            };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model =
+            new CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode
+            {
+                Code = "x",
+            };
+
+        CardUpdateParamsAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode copied =
+            new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardUpdateParamsAuthorizationControlsUsageSingleUseTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageSingleUse
         {
-            Code = "x",
+            SettlementAmount = new()
+            {
+                Comparison =
+                    CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            },
+        };
+
+        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount expectedSettlementAmount =
+            new()
+            {
+                Comparison =
+                    CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            };
+
+        Assert.Equal(expectedSettlementAmount, model.SettlementAmount);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageSingleUse
+        {
+            SettlementAmount = new()
+            {
+                Comparison =
+                    CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            },
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsUsageSingleUse>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageSingleUse
+        {
+            SettlementAmount = new()
+            {
+                Comparison =
+                    CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            },
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsUsageSingleUse>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount expectedSettlementAmount =
+            new()
+            {
+                Comparison =
+                    CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            };
+
+        Assert.Equal(expectedSettlementAmount, deserialized.SettlementAmount);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageSingleUse
+        {
+            SettlementAmount = new()
+            {
+                Comparison =
+                    CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            },
         };
 
         model.Validate();
@@ -1827,14 +2551,205 @@ public class CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryC
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryCode
+        var model = new CardUpdateParamsAuthorizationControlsUsageSingleUse
         {
-            Code = "x",
+            SettlementAmount = new()
+            {
+                Comparison =
+                    CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            },
         };
 
-        CardUpdateParamsAuthorizationControlsSpendingLimitMerchantCategoryCode copied = new(model);
+        CardUpdateParamsAuthorizationControlsUsageSingleUse copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount
+        {
+            Comparison =
+                CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+            Value = 0,
+        };
+
+        ApiEnum<
+            string,
+            CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison
+        > expectedComparison =
+            CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals;
+        long expectedValue = 0;
+
+        Assert.Equal(expectedComparison, model.Comparison);
+        Assert.Equal(expectedValue, model.Value);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount
+        {
+            Comparison =
+                CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+            Value = 0,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount
+        {
+            Comparison =
+                CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+            Value = 0,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<
+            string,
+            CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison
+        > expectedComparison =
+            CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals;
+        long expectedValue = 0;
+
+        Assert.Equal(expectedComparison, deserialized.Comparison);
+        Assert.Equal(expectedValue, deserialized.Value);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount
+        {
+            Comparison =
+                CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+            Value = 0,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount
+        {
+            Comparison =
+                CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+            Value = 0,
+        };
+
+        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparisonTest
+    : TestBase
+{
+    [Theory]
+    [InlineData(
+        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals
+    )]
+    [InlineData(
+        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.LessThanOrEquals
+    )]
+    public void Validation_Works(
+        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<
+            string,
+            CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison
+        > value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<
+                string,
+                CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison
+            >
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals
+    )]
+    [InlineData(
+        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison.LessThanOrEquals
+    )]
+    public void SerializationRoundtrip_Works(
+        CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<
+            string,
+            CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison
+        > value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<
+                string,
+                CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison
+            >
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<
+                string,
+                CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison
+            >
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<
+                string,
+                CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmountComparison
+            >
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
     }
 }
 
