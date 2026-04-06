@@ -268,29 +268,6 @@ public record class CardCreateParams : ParamsBase
 public sealed record class AuthorizationControls : JsonModel
 {
     /// <summary>
-    /// Limits the number of authorizations that can be approved on this card.
-    /// </summary>
-    public MaximumAuthorizationCount? MaximumAuthorizationCount
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<MaximumAuthorizationCount>(
-                "maximum_authorization_count"
-            );
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set("maximum_authorization_count", value);
-        }
-    }
-
-    /// <summary>
     /// Restricts which Merchant Acceptor IDs are allowed or blocked for authorizations
     /// on this card.
     /// </summary>
@@ -359,17 +336,14 @@ public sealed record class AuthorizationControls : JsonModel
     }
 
     /// <summary>
-    /// Spending limits for this card. The most restrictive limit applies if multiple
-    /// limits match.
+    /// Controls how many times this card can be used.
     /// </summary>
-    public IReadOnlyList<SpendingLimit>? SpendingLimits
+    public Usage? Usage
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<ImmutableArray<SpendingLimit>>(
-                "spending_limits"
-            );
+            return this._rawData.GetNullableClass<Usage>("usage");
         }
         init
         {
@@ -378,24 +352,17 @@ public sealed record class AuthorizationControls : JsonModel
                 return;
             }
 
-            this._rawData.Set<ImmutableArray<SpendingLimit>?>(
-                "spending_limits",
-                value == null ? null : ImmutableArray.ToImmutableArray(value)
-            );
+            this._rawData.Set("usage", value);
         }
     }
 
     /// <inheritdoc/>
     public override void Validate()
     {
-        this.MaximumAuthorizationCount?.Validate();
         this.MerchantAcceptorIdentifier?.Validate();
         this.MerchantCategoryCode?.Validate();
         this.MerchantCountry?.Validate();
-        foreach (var item in this.SpendingLimits ?? [])
-        {
-            item.Validate();
-        }
+        this.Usage?.Validate();
     }
 
     public AuthorizationControls() { }
@@ -434,79 +401,6 @@ class AuthorizationControlsFromRaw : IFromRawJson<AuthorizationControls>
     public AuthorizationControls FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => AuthorizationControls.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// Limits the number of authorizations that can be approved on this card.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<MaximumAuthorizationCount, MaximumAuthorizationCountFromRaw>)
-)]
-public sealed record class MaximumAuthorizationCount : JsonModel
-{
-    /// <summary>
-    /// The maximum number of authorizations that can be approved on this card over
-    /// its lifetime.
-    /// </summary>
-    public required long AllTime
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<long>("all_time");
-        }
-        init { this._rawData.Set("all_time", value); }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        _ = this.AllTime;
-    }
-
-    public MaximumAuthorizationCount() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public MaximumAuthorizationCount(MaximumAuthorizationCount maximumAuthorizationCount)
-        : base(maximumAuthorizationCount) { }
-#pragma warning restore CS8618
-
-    public MaximumAuthorizationCount(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    MaximumAuthorizationCount(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="MaximumAuthorizationCountFromRaw.FromRawUnchecked"/>
-    public static MaximumAuthorizationCount FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-
-    [SetsRequiredMembers]
-    public MaximumAuthorizationCount(long allTime)
-        : this()
-    {
-        this.AllTime = allTime;
-    }
-}
-
-class MaximumAuthorizationCountFromRaw : IFromRawJson<MaximumAuthorizationCount>
-{
-    /// <inheritdoc/>
-    public MaximumAuthorizationCount FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => MaximumAuthorizationCount.FromRawUnchecked(rawData);
 }
 
 /// <summary>
@@ -1240,6 +1134,244 @@ class MerchantCountryBlockedFromRaw : IFromRawJson<MerchantCountryBlocked>
     ) => MerchantCountryBlocked.FromRawUnchecked(rawData);
 }
 
+/// <summary>
+/// Controls how many times this card can be used.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Usage, UsageFromRaw>))]
+public sealed record class Usage : JsonModel
+{
+    /// <summary>
+    /// Whether the card is for a single use or multiple uses.
+    /// </summary>
+    public required ApiEnum<string, Category> Category
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, Category>>("category");
+        }
+        init { this._rawData.Set("category", value); }
+    }
+
+    /// <summary>
+    /// Controls for multi-use cards. Required if and only if `category` is `multi_use`.
+    /// </summary>
+    public MultiUse? MultiUse
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<MultiUse>("multi_use");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("multi_use", value);
+        }
+    }
+
+    /// <summary>
+    /// Controls for single-use cards. Required if and only if `category` is `single_use`.
+    /// </summary>
+    public SingleUse? SingleUse
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<SingleUse>("single_use");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("single_use", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Category.Validate();
+        this.MultiUse?.Validate();
+        this.SingleUse?.Validate();
+    }
+
+    public Usage() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Usage(Usage usage)
+        : base(usage) { }
+#pragma warning restore CS8618
+
+    public Usage(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Usage(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="UsageFromRaw.FromRawUnchecked"/>
+    public static Usage FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public Usage(ApiEnum<string, Category> category)
+        : this()
+    {
+        this.Category = category;
+    }
+}
+
+class UsageFromRaw : IFromRawJson<Usage>
+{
+    /// <inheritdoc/>
+    public Usage FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Usage.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Whether the card is for a single use or multiple uses.
+/// </summary>
+[JsonConverter(typeof(CategoryConverter))]
+public enum Category
+{
+    /// <summary>
+    /// The card can only be used for a single authorization.
+    /// </summary>
+    SingleUse,
+
+    /// <summary>
+    /// The card can be used for multiple authorizations.
+    /// </summary>
+    MultiUse,
+}
+
+sealed class CategoryConverter : JsonConverter<Category>
+{
+    public override Category Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "single_use" => Category.SingleUse,
+            "multi_use" => Category.MultiUse,
+            _ => (Category)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Category value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Category.SingleUse => "single_use",
+                Category.MultiUse => "multi_use",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Controls for multi-use cards. Required if and only if `category` is `multi_use`.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<MultiUse, MultiUseFromRaw>))]
+public sealed record class MultiUse : JsonModel
+{
+    /// <summary>
+    /// Spending limits for this card. The most restrictive limit applies if multiple
+    /// limits match.
+    /// </summary>
+    public IReadOnlyList<SpendingLimit>? SpendingLimits
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<SpendingLimit>>(
+                "spending_limits"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set<ImmutableArray<SpendingLimit>?>(
+                "spending_limits",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        foreach (var item in this.SpendingLimits ?? [])
+        {
+            item.Validate();
+        }
+    }
+
+    public MultiUse() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public MultiUse(MultiUse multiUse)
+        : base(multiUse) { }
+#pragma warning restore CS8618
+
+    public MultiUse(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    MultiUse(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="MultiUseFromRaw.FromRawUnchecked"/>
+    public static MultiUse FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class MultiUseFromRaw : IFromRawJson<MultiUse>
+{
+    /// <inheritdoc/>
+    public MultiUse FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        MultiUse.FromRawUnchecked(rawData);
+}
+
 [JsonConverter(typeof(JsonModelConverter<SpendingLimit, SpendingLimitFromRaw>))]
 public sealed record class SpendingLimit : JsonModel
 {
@@ -1485,6 +1617,203 @@ class SpendingLimitMerchantCategoryCodeFromRaw : IFromRawJson<SpendingLimitMerch
     public SpendingLimitMerchantCategoryCode FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => SpendingLimitMerchantCategoryCode.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Controls for single-use cards. Required if and only if `category` is `single_use`.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<SingleUse, SingleUseFromRaw>))]
+public sealed record class SingleUse : JsonModel
+{
+    /// <summary>
+    /// The settlement amount constraint for this single-use card.
+    /// </summary>
+    public required SettlementAmount SettlementAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<SettlementAmount>("settlement_amount");
+        }
+        init { this._rawData.Set("settlement_amount", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.SettlementAmount.Validate();
+    }
+
+    public SingleUse() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public SingleUse(SingleUse singleUse)
+        : base(singleUse) { }
+#pragma warning restore CS8618
+
+    public SingleUse(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    SingleUse(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="SingleUseFromRaw.FromRawUnchecked"/>
+    public static SingleUse FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public SingleUse(SettlementAmount settlementAmount)
+        : this()
+    {
+        this.SettlementAmount = settlementAmount;
+    }
+}
+
+class SingleUseFromRaw : IFromRawJson<SingleUse>
+{
+    /// <inheritdoc/>
+    public SingleUse FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        SingleUse.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The settlement amount constraint for this single-use card.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<SettlementAmount, SettlementAmountFromRaw>))]
+public sealed record class SettlementAmount : JsonModel
+{
+    /// <summary>
+    /// The operator used to compare the settlement amount.
+    /// </summary>
+    public required ApiEnum<string, Comparison> Comparison
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, Comparison>>("comparison");
+        }
+        init { this._rawData.Set("comparison", value); }
+    }
+
+    /// <summary>
+    /// The settlement amount value.
+    /// </summary>
+    public required long Value
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("value");
+        }
+        init { this._rawData.Set("value", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Comparison.Validate();
+        _ = this.Value;
+    }
+
+    public SettlementAmount() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public SettlementAmount(SettlementAmount settlementAmount)
+        : base(settlementAmount) { }
+#pragma warning restore CS8618
+
+    public SettlementAmount(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    SettlementAmount(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="SettlementAmountFromRaw.FromRawUnchecked"/>
+    public static SettlementAmount FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class SettlementAmountFromRaw : IFromRawJson<SettlementAmount>
+{
+    /// <inheritdoc/>
+    public SettlementAmount FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        SettlementAmount.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The operator used to compare the settlement amount.
+/// </summary>
+[JsonConverter(typeof(ComparisonConverter))]
+public enum Comparison
+{
+    /// <summary>
+    /// The settlement amount must be exactly the specified value.
+    /// </summary>
+    Equals,
+
+    /// <summary>
+    /// The settlement amount must be less than or equal to the specified value.
+    /// </summary>
+    LessThanOrEquals,
+}
+
+sealed class ComparisonConverter : JsonConverter<Comparison>
+{
+    public override Comparison Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "equals" => Comparison.Equals,
+            "less_than_or_equals" => Comparison.LessThanOrEquals,
+            _ => (Comparison)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        Comparison value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Comparison.Equals => "equals",
+                Comparison.LessThanOrEquals => "less_than_or_equals",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>

@@ -18,7 +18,6 @@ public class CardTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             AuthorizationControls = new()
             {
-                MaximumAuthorizationCount = new(0),
                 MerchantAcceptorIdentifier = new()
                 {
                     Allowed = [new("identifier")],
@@ -26,15 +25,29 @@ public class CardTest : TestBase
                 },
                 MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
                 MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
-                SpendingLimits =
-                [
-                    new()
-                    {
-                        Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                        MerchantCategoryCodes = [new("code")],
-                        SettlementAmount = 0,
-                    },
-                ],
+                Usage = new()
+                {
+                    Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                    MultiUse = new(
+                        [
+                            new()
+                            {
+                                Interval =
+                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                MerchantCategoryCodes = [new("code")],
+                                SettlementAmount = 0,
+                            },
+                        ]
+                    ),
+                    SingleUse = new(
+                        new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                        {
+                            Comparison =
+                                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                            Value = 0,
+                        }
+                    ),
+                },
             },
             BillingAddress = new()
             {
@@ -65,7 +78,6 @@ public class CardTest : TestBase
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         Cards::CardAuthorizationControls expectedAuthorizationControls = new()
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new()
             {
                 Allowed = [new("identifier")],
@@ -73,15 +85,29 @@ public class CardTest : TestBase
             },
             MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
             MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
-            SpendingLimits =
-            [
-                new()
-                {
-                    Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                    MerchantCategoryCodes = [new("code")],
-                    SettlementAmount = 0,
-                },
-            ],
+            Usage = new()
+            {
+                Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                MultiUse = new(
+                    [
+                        new()
+                        {
+                            Interval =
+                                Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                            MerchantCategoryCodes = [new("code")],
+                            SettlementAmount = 0,
+                        },
+                    ]
+                ),
+                SingleUse = new(
+                    new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                    {
+                        Comparison =
+                            Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
         Cards::CardBillingAddress expectedBillingAddress = new()
         {
@@ -130,7 +156,6 @@ public class CardTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             AuthorizationControls = new()
             {
-                MaximumAuthorizationCount = new(0),
                 MerchantAcceptorIdentifier = new()
                 {
                     Allowed = [new("identifier")],
@@ -138,15 +163,29 @@ public class CardTest : TestBase
                 },
                 MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
                 MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
-                SpendingLimits =
-                [
-                    new()
-                    {
-                        Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                        MerchantCategoryCodes = [new("code")],
-                        SettlementAmount = 0,
-                    },
-                ],
+                Usage = new()
+                {
+                    Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                    MultiUse = new(
+                        [
+                            new()
+                            {
+                                Interval =
+                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                MerchantCategoryCodes = [new("code")],
+                                SettlementAmount = 0,
+                            },
+                        ]
+                    ),
+                    SingleUse = new(
+                        new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                        {
+                            Comparison =
+                                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                            Value = 0,
+                        }
+                    ),
+                },
             },
             BillingAddress = new()
             {
@@ -191,7 +230,6 @@ public class CardTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             AuthorizationControls = new()
             {
-                MaximumAuthorizationCount = new(0),
                 MerchantAcceptorIdentifier = new()
                 {
                     Allowed = [new("identifier")],
@@ -199,15 +237,29 @@ public class CardTest : TestBase
                 },
                 MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
                 MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
-                SpendingLimits =
-                [
-                    new()
-                    {
-                        Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                        MerchantCategoryCodes = [new("code")],
-                        SettlementAmount = 0,
-                    },
-                ],
+                Usage = new()
+                {
+                    Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                    MultiUse = new(
+                        [
+                            new()
+                            {
+                                Interval =
+                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                MerchantCategoryCodes = [new("code")],
+                                SettlementAmount = 0,
+                            },
+                        ]
+                    ),
+                    SingleUse = new(
+                        new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                        {
+                            Comparison =
+                                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                            Value = 0,
+                        }
+                    ),
+                },
             },
             BillingAddress = new()
             {
@@ -245,7 +297,6 @@ public class CardTest : TestBase
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         Cards::CardAuthorizationControls expectedAuthorizationControls = new()
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new()
             {
                 Allowed = [new("identifier")],
@@ -253,15 +304,29 @@ public class CardTest : TestBase
             },
             MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
             MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
-            SpendingLimits =
-            [
-                new()
-                {
-                    Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                    MerchantCategoryCodes = [new("code")],
-                    SettlementAmount = 0,
-                },
-            ],
+            Usage = new()
+            {
+                Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                MultiUse = new(
+                    [
+                        new()
+                        {
+                            Interval =
+                                Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                            MerchantCategoryCodes = [new("code")],
+                            SettlementAmount = 0,
+                        },
+                    ]
+                ),
+                SingleUse = new(
+                    new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                    {
+                        Comparison =
+                            Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
         Cards::CardBillingAddress expectedBillingAddress = new()
         {
@@ -310,7 +375,6 @@ public class CardTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             AuthorizationControls = new()
             {
-                MaximumAuthorizationCount = new(0),
                 MerchantAcceptorIdentifier = new()
                 {
                     Allowed = [new("identifier")],
@@ -318,15 +382,29 @@ public class CardTest : TestBase
                 },
                 MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
                 MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
-                SpendingLimits =
-                [
-                    new()
-                    {
-                        Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                        MerchantCategoryCodes = [new("code")],
-                        SettlementAmount = 0,
-                    },
-                ],
+                Usage = new()
+                {
+                    Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                    MultiUse = new(
+                        [
+                            new()
+                            {
+                                Interval =
+                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                MerchantCategoryCodes = [new("code")],
+                                SettlementAmount = 0,
+                            },
+                        ]
+                    ),
+                    SingleUse = new(
+                        new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                        {
+                            Comparison =
+                                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                            Value = 0,
+                        }
+                    ),
+                },
             },
             BillingAddress = new()
             {
@@ -365,7 +443,6 @@ public class CardTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             AuthorizationControls = new()
             {
-                MaximumAuthorizationCount = new(0),
                 MerchantAcceptorIdentifier = new()
                 {
                     Allowed = [new("identifier")],
@@ -373,15 +450,29 @@ public class CardTest : TestBase
                 },
                 MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
                 MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
-                SpendingLimits =
-                [
-                    new()
-                    {
-                        Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                        MerchantCategoryCodes = [new("code")],
-                        SettlementAmount = 0,
-                    },
-                ],
+                Usage = new()
+                {
+                    Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                    MultiUse = new(
+                        [
+                            new()
+                            {
+                                Interval =
+                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                MerchantCategoryCodes = [new("code")],
+                                SettlementAmount = 0,
+                            },
+                        ]
+                    ),
+                    SingleUse = new(
+                        new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                        {
+                            Comparison =
+                                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                            Value = 0,
+                        }
+                    ),
+                },
             },
             BillingAddress = new()
             {
@@ -421,7 +512,6 @@ public class CardAuthorizationControlsTest : TestBase
     {
         var model = new Cards::CardAuthorizationControls
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new()
             {
                 Allowed = [new("identifier")],
@@ -429,19 +519,31 @@ public class CardAuthorizationControlsTest : TestBase
             },
             MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
             MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
-            SpendingLimits =
-            [
-                new()
-                {
-                    Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                    MerchantCategoryCodes = [new("code")],
-                    SettlementAmount = 0,
-                },
-            ],
+            Usage = new()
+            {
+                Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                MultiUse = new(
+                    [
+                        new()
+                        {
+                            Interval =
+                                Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                            MerchantCategoryCodes = [new("code")],
+                            SettlementAmount = 0,
+                        },
+                    ]
+                ),
+                SingleUse = new(
+                    new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                    {
+                        Comparison =
+                            Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
 
-        Cards::CardAuthorizationControlsMaximumAuthorizationCount expectedMaximumAuthorizationCount =
-            new(0);
         Cards::CardAuthorizationControlsMerchantAcceptorIdentifier expectedMerchantAcceptorIdentifier =
             new() { Allowed = [new("identifier")], Blocked = [new("identifier")] };
         Cards::CardAuthorizationControlsMerchantCategoryCode expectedMerchantCategoryCode = new()
@@ -454,26 +556,34 @@ public class CardAuthorizationControlsTest : TestBase
             Allowed = [new("country")],
             Blocked = [new("country")],
         };
-        List<Cards::CardAuthorizationControlsSpendingLimit> expectedSpendingLimits =
-        [
-            new()
-            {
-                Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                MerchantCategoryCodes = [new("code")],
-                SettlementAmount = 0,
-            },
-        ];
+        Cards::CardAuthorizationControlsUsage expectedUsage = new()
+        {
+            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new(
+                [
+                    new()
+                    {
+                        Interval =
+                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        MerchantCategoryCodes = [new("code")],
+                        SettlementAmount = 0,
+                    },
+                ]
+            ),
+            SingleUse = new(
+                new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
 
-        Assert.Equal(expectedMaximumAuthorizationCount, model.MaximumAuthorizationCount);
         Assert.Equal(expectedMerchantAcceptorIdentifier, model.MerchantAcceptorIdentifier);
         Assert.Equal(expectedMerchantCategoryCode, model.MerchantCategoryCode);
         Assert.Equal(expectedMerchantCountry, model.MerchantCountry);
-        Assert.NotNull(model.SpendingLimits);
-        Assert.Equal(expectedSpendingLimits.Count, model.SpendingLimits.Count);
-        for (int i = 0; i < expectedSpendingLimits.Count; i++)
-        {
-            Assert.Equal(expectedSpendingLimits[i], model.SpendingLimits[i]);
-        }
+        Assert.Equal(expectedUsage, model.Usage);
     }
 
     [Fact]
@@ -481,7 +591,6 @@ public class CardAuthorizationControlsTest : TestBase
     {
         var model = new Cards::CardAuthorizationControls
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new()
             {
                 Allowed = [new("identifier")],
@@ -489,15 +598,29 @@ public class CardAuthorizationControlsTest : TestBase
             },
             MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
             MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
-            SpendingLimits =
-            [
-                new()
-                {
-                    Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                    MerchantCategoryCodes = [new("code")],
-                    SettlementAmount = 0,
-                },
-            ],
+            Usage = new()
+            {
+                Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                MultiUse = new(
+                    [
+                        new()
+                        {
+                            Interval =
+                                Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                            MerchantCategoryCodes = [new("code")],
+                            SettlementAmount = 0,
+                        },
+                    ]
+                ),
+                SingleUse = new(
+                    new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                    {
+                        Comparison =
+                            Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -514,7 +637,6 @@ public class CardAuthorizationControlsTest : TestBase
     {
         var model = new Cards::CardAuthorizationControls
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new()
             {
                 Allowed = [new("identifier")],
@@ -522,15 +644,29 @@ public class CardAuthorizationControlsTest : TestBase
             },
             MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
             MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
-            SpendingLimits =
-            [
-                new()
-                {
-                    Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                    MerchantCategoryCodes = [new("code")],
-                    SettlementAmount = 0,
-                },
-            ],
+            Usage = new()
+            {
+                Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                MultiUse = new(
+                    [
+                        new()
+                        {
+                            Interval =
+                                Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                            MerchantCategoryCodes = [new("code")],
+                            SettlementAmount = 0,
+                        },
+                    ]
+                ),
+                SingleUse = new(
+                    new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                    {
+                        Comparison =
+                            Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -540,8 +676,6 @@ public class CardAuthorizationControlsTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        Cards::CardAuthorizationControlsMaximumAuthorizationCount expectedMaximumAuthorizationCount =
-            new(0);
         Cards::CardAuthorizationControlsMerchantAcceptorIdentifier expectedMerchantAcceptorIdentifier =
             new() { Allowed = [new("identifier")], Blocked = [new("identifier")] };
         Cards::CardAuthorizationControlsMerchantCategoryCode expectedMerchantCategoryCode = new()
@@ -554,26 +688,34 @@ public class CardAuthorizationControlsTest : TestBase
             Allowed = [new("country")],
             Blocked = [new("country")],
         };
-        List<Cards::CardAuthorizationControlsSpendingLimit> expectedSpendingLimits =
-        [
-            new()
-            {
-                Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                MerchantCategoryCodes = [new("code")],
-                SettlementAmount = 0,
-            },
-        ];
+        Cards::CardAuthorizationControlsUsage expectedUsage = new()
+        {
+            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new(
+                [
+                    new()
+                    {
+                        Interval =
+                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        MerchantCategoryCodes = [new("code")],
+                        SettlementAmount = 0,
+                    },
+                ]
+            ),
+            SingleUse = new(
+                new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
 
-        Assert.Equal(expectedMaximumAuthorizationCount, deserialized.MaximumAuthorizationCount);
         Assert.Equal(expectedMerchantAcceptorIdentifier, deserialized.MerchantAcceptorIdentifier);
         Assert.Equal(expectedMerchantCategoryCode, deserialized.MerchantCategoryCode);
         Assert.Equal(expectedMerchantCountry, deserialized.MerchantCountry);
-        Assert.NotNull(deserialized.SpendingLimits);
-        Assert.Equal(expectedSpendingLimits.Count, deserialized.SpendingLimits.Count);
-        for (int i = 0; i < expectedSpendingLimits.Count; i++)
-        {
-            Assert.Equal(expectedSpendingLimits[i], deserialized.SpendingLimits[i]);
-        }
+        Assert.Equal(expectedUsage, deserialized.Usage);
     }
 
     [Fact]
@@ -581,7 +723,6 @@ public class CardAuthorizationControlsTest : TestBase
     {
         var model = new Cards::CardAuthorizationControls
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new()
             {
                 Allowed = [new("identifier")],
@@ -589,15 +730,29 @@ public class CardAuthorizationControlsTest : TestBase
             },
             MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
             MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
-            SpendingLimits =
-            [
-                new()
-                {
-                    Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                    MerchantCategoryCodes = [new("code")],
-                    SettlementAmount = 0,
-                },
-            ],
+            Usage = new()
+            {
+                Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                MultiUse = new(
+                    [
+                        new()
+                        {
+                            Interval =
+                                Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                            MerchantCategoryCodes = [new("code")],
+                            SettlementAmount = 0,
+                        },
+                    ]
+                ),
+                SingleUse = new(
+                    new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                    {
+                        Comparison =
+                            Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
 
         model.Validate();
@@ -608,7 +763,6 @@ public class CardAuthorizationControlsTest : TestBase
     {
         var model = new Cards::CardAuthorizationControls
         {
-            MaximumAuthorizationCount = new(0),
             MerchantAcceptorIdentifier = new()
             {
                 Allowed = [new("identifier")],
@@ -616,82 +770,32 @@ public class CardAuthorizationControlsTest : TestBase
             },
             MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
             MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
-            SpendingLimits =
-            [
-                new()
-                {
-                    Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
-                    MerchantCategoryCodes = [new("code")],
-                    SettlementAmount = 0,
-                },
-            ],
+            Usage = new()
+            {
+                Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                MultiUse = new(
+                    [
+                        new()
+                        {
+                            Interval =
+                                Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                            MerchantCategoryCodes = [new("code")],
+                            SettlementAmount = 0,
+                        },
+                    ]
+                ),
+                SingleUse = new(
+                    new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                    {
+                        Comparison =
+                            Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                        Value = 0,
+                    }
+                ),
+            },
         };
 
         Cards::CardAuthorizationControls copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class CardAuthorizationControlsMaximumAuthorizationCountTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new Cards::CardAuthorizationControlsMaximumAuthorizationCount { AllTime = 0 };
-
-        long expectedAllTime = 0;
-
-        Assert.Equal(expectedAllTime, model.AllTime);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new Cards::CardAuthorizationControlsMaximumAuthorizationCount { AllTime = 0 };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsMaximumAuthorizationCount>(
-                json,
-                ModelBase.SerializerOptions
-            );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new Cards::CardAuthorizationControlsMaximumAuthorizationCount { AllTime = 0 };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsMaximumAuthorizationCount>(
-                element,
-                ModelBase.SerializerOptions
-            );
-        Assert.NotNull(deserialized);
-
-        long expectedAllTime = 0;
-
-        Assert.Equal(expectedAllTime, deserialized.AllTime);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new Cards::CardAuthorizationControlsMaximumAuthorizationCount { AllTime = 0 };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new Cards::CardAuthorizationControlsMaximumAuthorizationCount { AllTime = 0 };
-
-        Cards::CardAuthorizationControlsMaximumAuthorizationCount copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -1531,21 +1635,446 @@ public class CardAuthorizationControlsMerchantCountryBlockedTest : TestBase
     }
 }
 
-public class CardAuthorizationControlsSpendingLimitTest : TestBase
+public class CardAuthorizationControlsUsageTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Cards::CardAuthorizationControlsSpendingLimit
+        var model = new Cards::CardAuthorizationControlsUsage
         {
-            Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
+            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new(
+                [
+                    new()
+                    {
+                        Interval =
+                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        MerchantCategoryCodes = [new("code")],
+                        SettlementAmount = 0,
+                    },
+                ]
+            ),
+            SingleUse = new(
+                new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
+
+        ApiEnum<string, Cards::CardAuthorizationControlsUsageCategory> expectedCategory =
+            Cards::CardAuthorizationControlsUsageCategory.SingleUse;
+        Cards::CardAuthorizationControlsUsageMultiUse expectedMultiUse = new(
+            [
+                new()
+                {
+                    Interval =
+                        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    MerchantCategoryCodes = [new("code")],
+                    SettlementAmount = 0,
+                },
+            ]
+        );
+        Cards::CardAuthorizationControlsUsageSingleUse expectedSingleUse = new(
+            new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+            {
+                Comparison =
+                    Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            }
+        );
+
+        Assert.Equal(expectedCategory, model.Category);
+        Assert.Equal(expectedMultiUse, model.MultiUse);
+        Assert.Equal(expectedSingleUse, model.SingleUse);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsage
+        {
+            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new(
+                [
+                    new()
+                    {
+                        Interval =
+                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        MerchantCategoryCodes = [new("code")],
+                        SettlementAmount = 0,
+                    },
+                ]
+            ),
+            SingleUse = new(
+                new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::CardAuthorizationControlsUsage>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsage
+        {
+            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new(
+                [
+                    new()
+                    {
+                        Interval =
+                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        MerchantCategoryCodes = [new("code")],
+                        SettlementAmount = 0,
+                    },
+                ]
+            ),
+            SingleUse = new(
+                new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::CardAuthorizationControlsUsage>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<string, Cards::CardAuthorizationControlsUsageCategory> expectedCategory =
+            Cards::CardAuthorizationControlsUsageCategory.SingleUse;
+        Cards::CardAuthorizationControlsUsageMultiUse expectedMultiUse = new(
+            [
+                new()
+                {
+                    Interval =
+                        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    MerchantCategoryCodes = [new("code")],
+                    SettlementAmount = 0,
+                },
+            ]
+        );
+        Cards::CardAuthorizationControlsUsageSingleUse expectedSingleUse = new(
+            new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+            {
+                Comparison =
+                    Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            }
+        );
+
+        Assert.Equal(expectedCategory, deserialized.Category);
+        Assert.Equal(expectedMultiUse, deserialized.MultiUse);
+        Assert.Equal(expectedSingleUse, deserialized.SingleUse);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsage
+        {
+            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new(
+                [
+                    new()
+                    {
+                        Interval =
+                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        MerchantCategoryCodes = [new("code")],
+                        SettlementAmount = 0,
+                    },
+                ]
+            ),
+            SingleUse = new(
+                new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsage
+        {
+            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+            MultiUse = new(
+                [
+                    new()
+                    {
+                        Interval =
+                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                        MerchantCategoryCodes = [new("code")],
+                        SettlementAmount = 0,
+                    },
+                ]
+            ),
+            SingleUse = new(
+                new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount()
+                {
+                    Comparison =
+                        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                    Value = 0,
+                }
+            ),
+        };
+
+        Cards::CardAuthorizationControlsUsage copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardAuthorizationControlsUsageCategoryTest : TestBase
+{
+    [Theory]
+    [InlineData(Cards::CardAuthorizationControlsUsageCategory.SingleUse)]
+    [InlineData(Cards::CardAuthorizationControlsUsageCategory.MultiUse)]
+    public void Validation_Works(Cards::CardAuthorizationControlsUsageCategory rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Cards::CardAuthorizationControlsUsageCategory> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Cards::CardAuthorizationControlsUsageCategory>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Cards::CardAuthorizationControlsUsageCategory.SingleUse)]
+    [InlineData(Cards::CardAuthorizationControlsUsageCategory.MultiUse)]
+    public void SerializationRoundtrip_Works(Cards::CardAuthorizationControlsUsageCategory rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Cards::CardAuthorizationControlsUsageCategory> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Cards::CardAuthorizationControlsUsageCategory>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Cards::CardAuthorizationControlsUsageCategory>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Cards::CardAuthorizationControlsUsageCategory>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardAuthorizationControlsUsageMultiUseTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageMultiUse
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval =
+                        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    MerchantCategoryCodes = [new("code")],
+                    SettlementAmount = 0,
+                },
+            ],
+        };
+
+        List<Cards::CardAuthorizationControlsUsageMultiUseSpendingLimit> expectedSpendingLimits =
+        [
+            new()
+            {
+                Interval =
+                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                MerchantCategoryCodes = [new("code")],
+                SettlementAmount = 0,
+            },
+        ];
+
+        Assert.NotNull(model.SpendingLimits);
+        Assert.Equal(expectedSpendingLimits.Count, model.SpendingLimits.Count);
+        for (int i = 0; i < expectedSpendingLimits.Count; i++)
+        {
+            Assert.Equal(expectedSpendingLimits[i], model.SpendingLimits[i]);
+        }
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageMultiUse
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval =
+                        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    MerchantCategoryCodes = [new("code")],
+                    SettlementAmount = 0,
+                },
+            ],
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsUsageMultiUse>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageMultiUse
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval =
+                        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    MerchantCategoryCodes = [new("code")],
+                    SettlementAmount = 0,
+                },
+            ],
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsUsageMultiUse>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        List<Cards::CardAuthorizationControlsUsageMultiUseSpendingLimit> expectedSpendingLimits =
+        [
+            new()
+            {
+                Interval =
+                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                MerchantCategoryCodes = [new("code")],
+                SettlementAmount = 0,
+            },
+        ];
+
+        Assert.NotNull(deserialized.SpendingLimits);
+        Assert.Equal(expectedSpendingLimits.Count, deserialized.SpendingLimits.Count);
+        for (int i = 0; i < expectedSpendingLimits.Count; i++)
+        {
+            Assert.Equal(expectedSpendingLimits[i], deserialized.SpendingLimits[i]);
+        }
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageMultiUse
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval =
+                        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    MerchantCategoryCodes = [new("code")],
+                    SettlementAmount = 0,
+                },
+            ],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageMultiUse
+        {
+            SpendingLimits =
+            [
+                new()
+                {
+                    Interval =
+                        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                    MerchantCategoryCodes = [new("code")],
+                    SettlementAmount = 0,
+                },
+            ],
+        };
+
+        Cards::CardAuthorizationControlsUsageMultiUse copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardAuthorizationControlsUsageMultiUseSpendingLimitTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageMultiUseSpendingLimit
+        {
+            Interval = Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             MerchantCategoryCodes = [new("code")],
             SettlementAmount = 0,
         };
 
-        ApiEnum<string, Cards::CardAuthorizationControlsSpendingLimitInterval> expectedInterval =
-            Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime;
-        List<Cards::CardAuthorizationControlsSpendingLimitMerchantCategoryCode> expectedMerchantCategoryCodes =
+        ApiEnum<
+            string,
+            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval
+        > expectedInterval =
+            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime;
+        List<Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode> expectedMerchantCategoryCodes =
         [
             new("code"),
         ];
@@ -1564,16 +2093,16 @@ public class CardAuthorizationControlsSpendingLimitTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Cards::CardAuthorizationControlsSpendingLimit
+        var model = new Cards::CardAuthorizationControlsUsageMultiUseSpendingLimit
         {
-            Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
+            Interval = Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             MerchantCategoryCodes = [new("code")],
             SettlementAmount = 0,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsSpendingLimit>(
+            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsUsageMultiUseSpendingLimit>(
                 json,
                 ModelBase.SerializerOptions
             );
@@ -1584,24 +2113,27 @@ public class CardAuthorizationControlsSpendingLimitTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Cards::CardAuthorizationControlsSpendingLimit
+        var model = new Cards::CardAuthorizationControlsUsageMultiUseSpendingLimit
         {
-            Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
+            Interval = Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             MerchantCategoryCodes = [new("code")],
             SettlementAmount = 0,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsSpendingLimit>(
+            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsUsageMultiUseSpendingLimit>(
                 element,
                 ModelBase.SerializerOptions
             );
         Assert.NotNull(deserialized);
 
-        ApiEnum<string, Cards::CardAuthorizationControlsSpendingLimitInterval> expectedInterval =
-            Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime;
-        List<Cards::CardAuthorizationControlsSpendingLimitMerchantCategoryCode> expectedMerchantCategoryCodes =
+        ApiEnum<
+            string,
+            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval
+        > expectedInterval =
+            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime;
+        List<Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode> expectedMerchantCategoryCodes =
         [
             new("code"),
         ];
@@ -1620,9 +2152,9 @@ public class CardAuthorizationControlsSpendingLimitTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Cards::CardAuthorizationControlsSpendingLimit
+        var model = new Cards::CardAuthorizationControlsUsageMultiUseSpendingLimit
         {
-            Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
+            Interval = Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             MerchantCategoryCodes = [new("code")],
             SettlementAmount = 0,
         };
@@ -1633,31 +2165,34 @@ public class CardAuthorizationControlsSpendingLimitTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Cards::CardAuthorizationControlsSpendingLimit
+        var model = new Cards::CardAuthorizationControlsUsageMultiUseSpendingLimit
         {
-            Interval = Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime,
+            Interval = Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
             MerchantCategoryCodes = [new("code")],
             SettlementAmount = 0,
         };
 
-        Cards::CardAuthorizationControlsSpendingLimit copied = new(model);
+        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimit copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class CardAuthorizationControlsSpendingLimitIntervalTest : TestBase
+public class CardAuthorizationControlsUsageMultiUseSpendingLimitIntervalTest : TestBase
 {
     [Theory]
-    [InlineData(Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime)]
-    [InlineData(Cards::CardAuthorizationControlsSpendingLimitInterval.PerTransaction)]
-    [InlineData(Cards::CardAuthorizationControlsSpendingLimitInterval.PerDay)]
-    [InlineData(Cards::CardAuthorizationControlsSpendingLimitInterval.PerWeek)]
-    [InlineData(Cards::CardAuthorizationControlsSpendingLimitInterval.PerMonth)]
-    public void Validation_Works(Cards::CardAuthorizationControlsSpendingLimitInterval rawValue)
+    [InlineData(Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime)]
+    [InlineData(Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerTransaction)]
+    [InlineData(Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerDay)]
+    [InlineData(Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerWeek)]
+    [InlineData(Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth)]
+    public void Validation_Works(
+        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval rawValue
+    )
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Cards::CardAuthorizationControlsSpendingLimitInterval> value = rawValue;
+        ApiEnum<string, Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval> value =
+            rawValue;
         value.Validate();
     }
 
@@ -1665,7 +2200,7 @@ public class CardAuthorizationControlsSpendingLimitIntervalTest : TestBase
     public void InvalidEnumValidationThrows_Works()
     {
         var value = JsonSerializer.Deserialize<
-            ApiEnum<string, Cards::CardAuthorizationControlsSpendingLimitInterval>
+            ApiEnum<string, Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval>
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
 
         Assert.NotNull(value);
@@ -1673,21 +2208,22 @@ public class CardAuthorizationControlsSpendingLimitIntervalTest : TestBase
     }
 
     [Theory]
-    [InlineData(Cards::CardAuthorizationControlsSpendingLimitInterval.AllTime)]
-    [InlineData(Cards::CardAuthorizationControlsSpendingLimitInterval.PerTransaction)]
-    [InlineData(Cards::CardAuthorizationControlsSpendingLimitInterval.PerDay)]
-    [InlineData(Cards::CardAuthorizationControlsSpendingLimitInterval.PerWeek)]
-    [InlineData(Cards::CardAuthorizationControlsSpendingLimitInterval.PerMonth)]
+    [InlineData(Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime)]
+    [InlineData(Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerTransaction)]
+    [InlineData(Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerDay)]
+    [InlineData(Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerWeek)]
+    [InlineData(Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth)]
     public void SerializationRoundtrip_Works(
-        Cards::CardAuthorizationControlsSpendingLimitInterval rawValue
+        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval rawValue
     )
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Cards::CardAuthorizationControlsSpendingLimitInterval> value = rawValue;
+        ApiEnum<string, Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval> value =
+            rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, Cards::CardAuthorizationControlsSpendingLimitInterval>
+            ApiEnum<string, Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
@@ -1697,26 +2233,27 @@ public class CardAuthorizationControlsSpendingLimitIntervalTest : TestBase
     public void InvalidEnumSerializationRoundtrip_Works()
     {
         var value = JsonSerializer.Deserialize<
-            ApiEnum<string, Cards::CardAuthorizationControlsSpendingLimitInterval>
+            ApiEnum<string, Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval>
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, Cards::CardAuthorizationControlsSpendingLimitInterval>
+            ApiEnum<string, Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
     }
 }
 
-public class CardAuthorizationControlsSpendingLimitMerchantCategoryCodeTest : TestBase
+public class CardAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCodeTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Cards::CardAuthorizationControlsSpendingLimitMerchantCategoryCode
-        {
-            Code = "code",
-        };
+        var model =
+            new Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode
+            {
+                Code = "code",
+            };
 
         string expectedCode = "code";
 
@@ -1726,14 +2263,15 @@ public class CardAuthorizationControlsSpendingLimitMerchantCategoryCodeTest : Te
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Cards::CardAuthorizationControlsSpendingLimitMerchantCategoryCode
-        {
-            Code = "code",
-        };
+        var model =
+            new Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode
+            {
+                Code = "code",
+            };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsSpendingLimitMerchantCategoryCode>(
+            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode>(
                 json,
                 ModelBase.SerializerOptions
             );
@@ -1744,14 +2282,15 @@ public class CardAuthorizationControlsSpendingLimitMerchantCategoryCodeTest : Te
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Cards::CardAuthorizationControlsSpendingLimitMerchantCategoryCode
-        {
-            Code = "code",
-        };
+        var model =
+            new Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode
+            {
+                Code = "code",
+            };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsSpendingLimitMerchantCategoryCode>(
+            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode>(
                 element,
                 ModelBase.SerializerOptions
             );
@@ -1765,9 +2304,124 @@ public class CardAuthorizationControlsSpendingLimitMerchantCategoryCodeTest : Te
     [Fact]
     public void Validation_Works()
     {
-        var model = new Cards::CardAuthorizationControlsSpendingLimitMerchantCategoryCode
+        var model =
+            new Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode
+            {
+                Code = "code",
+            };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model =
+            new Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode
+            {
+                Code = "code",
+            };
+
+        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitMerchantCategoryCode copied = new(
+            model
+        );
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardAuthorizationControlsUsageSingleUseTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageSingleUse
         {
-            Code = "code",
+            SettlementAmount = new()
+            {
+                Comparison =
+                    Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            },
+        };
+
+        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount expectedSettlementAmount =
+            new()
+            {
+                Comparison =
+                    Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            };
+
+        Assert.Equal(expectedSettlementAmount, model.SettlementAmount);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageSingleUse
+        {
+            SettlementAmount = new()
+            {
+                Comparison =
+                    Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            },
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsUsageSingleUse>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageSingleUse
+        {
+            SettlementAmount = new()
+            {
+                Comparison =
+                    Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            },
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsUsageSingleUse>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount expectedSettlementAmount =
+            new()
+            {
+                Comparison =
+                    Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            };
+
+        Assert.Equal(expectedSettlementAmount, deserialized.SettlementAmount);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageSingleUse
+        {
+            SettlementAmount = new()
+            {
+                Comparison =
+                    Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            },
         };
 
         model.Validate();
@@ -1776,14 +2430,200 @@ public class CardAuthorizationControlsSpendingLimitMerchantCategoryCodeTest : Te
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Cards::CardAuthorizationControlsSpendingLimitMerchantCategoryCode
+        var model = new Cards::CardAuthorizationControlsUsageSingleUse
         {
-            Code = "code",
+            SettlementAmount = new()
+            {
+                Comparison =
+                    Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+                Value = 0,
+            },
         };
 
-        Cards::CardAuthorizationControlsSpendingLimitMerchantCategoryCode copied = new(model);
+        Cards::CardAuthorizationControlsUsageSingleUse copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class CardAuthorizationControlsUsageSingleUseSettlementAmountTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount
+        {
+            Comparison =
+                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+            Value = 0,
+        };
+
+        ApiEnum<
+            string,
+            Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison
+        > expectedComparison =
+            Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals;
+        long expectedValue = 0;
+
+        Assert.Equal(expectedComparison, model.Comparison);
+        Assert.Equal(expectedValue, model.Value);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount
+        {
+            Comparison =
+                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+            Value = 0,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount
+        {
+            Comparison =
+                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+            Value = 0,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<
+            string,
+            Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison
+        > expectedComparison =
+            Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals;
+        long expectedValue = 0;
+
+        Assert.Equal(expectedComparison, deserialized.Comparison);
+        Assert.Equal(expectedValue, deserialized.Value);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount
+        {
+            Comparison =
+                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+            Value = 0,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount
+        {
+            Comparison =
+                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals,
+            Value = 0,
+        };
+
+        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmount copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardAuthorizationControlsUsageSingleUseSettlementAmountComparisonTest : TestBase
+{
+    [Theory]
+    [InlineData(Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals)]
+    [InlineData(
+        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.LessThanOrEquals
+    )]
+    public void Validation_Works(
+        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<
+            string,
+            Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison
+        > value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<
+                string,
+                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison
+            >
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.Equals)]
+    [InlineData(
+        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison.LessThanOrEquals
+    )]
+    public void SerializationRoundtrip_Works(
+        Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<
+            string,
+            Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison
+        > value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<
+                string,
+                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison
+            >
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<
+                string,
+                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison
+            >
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<
+                string,
+                Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison
+            >
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
     }
 }
 
