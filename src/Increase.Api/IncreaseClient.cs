@@ -295,6 +295,12 @@ public sealed class IncreaseClient : IIncreaseClient
         get { return _supplementalDocuments.Value; }
     }
 
+    readonly Lazy<IEntityOnboardingSessionService> _entityOnboardingSessions;
+    public IEntityOnboardingSessionService EntityOnboardingSessions
+    {
+        get { return _entityOnboardingSessions.Value; }
+    }
+
     readonly Lazy<IProgramService> _programs;
     public IProgramService Programs
     {
@@ -472,6 +478,7 @@ public sealed class IncreaseClient : IIncreaseClient
         _entities = new(() => new EntityService(this));
         _beneficialOwners = new(() => new BeneficialOwnerService(this));
         _supplementalDocuments = new(() => new SupplementalDocumentService(this));
+        _entityOnboardingSessions = new(() => new EntityOnboardingSessionService(this));
         _programs = new(() => new ProgramService(this));
         _accountStatements = new(() => new AccountStatementService(this));
         _files = new(() => new FileService(this));
@@ -790,6 +797,12 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
     public ISupplementalDocumentServiceWithRawResponse SupplementalDocuments
     {
         get { return _supplementalDocuments.Value; }
+    }
+
+    readonly Lazy<IEntityOnboardingSessionServiceWithRawResponse> _entityOnboardingSessions;
+    public IEntityOnboardingSessionServiceWithRawResponse EntityOnboardingSessions
+    {
+        get { return _entityOnboardingSessions.Value; }
     }
 
     readonly Lazy<IProgramServiceWithRawResponse> _programs;
@@ -1177,6 +1190,9 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
         _entities = new(() => new EntityServiceWithRawResponse(this));
         _beneficialOwners = new(() => new BeneficialOwnerServiceWithRawResponse(this));
         _supplementalDocuments = new(() => new SupplementalDocumentServiceWithRawResponse(this));
+        _entityOnboardingSessions = new(() =>
+            new EntityOnboardingSessionServiceWithRawResponse(this)
+        );
         _programs = new(() => new ProgramServiceWithRawResponse(this));
         _accountStatements = new(() => new AccountStatementServiceWithRawResponse(this));
         _files = new(() => new FileServiceWithRawResponse(this));
