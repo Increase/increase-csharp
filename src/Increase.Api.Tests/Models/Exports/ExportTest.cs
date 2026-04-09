@@ -55,6 +55,12 @@ public class ExportTest : TestBase
             },
             Category = Exports::ExportCategory.TransactionCsv,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            DailyAccountBalanceCsv = new()
+            {
+                AccountID = "account_id",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
+            },
             DashboardTableCsv = new(),
             EntityCsv = new(),
             FeeCsv = new(
@@ -137,6 +143,12 @@ public class ExportTest : TestBase
         ApiEnum<string, Exports::ExportCategory> expectedCategory =
             Exports::ExportCategory.TransactionCsv;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        Exports::ExportDailyAccountBalanceCsv expectedDailyAccountBalanceCsv = new()
+        {
+            AccountID = "account_id",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
+        };
         Exports::DashboardTableCsv expectedDashboardTableCsv = new();
         Exports::ExportEntityCsv expectedEntityCsv = new();
         Exports::FeeCsv expectedFeeCsv = new(
@@ -187,6 +199,7 @@ public class ExportTest : TestBase
         Assert.Equal(expectedBookkeepingAccountBalanceCsv, model.BookkeepingAccountBalanceCsv);
         Assert.Equal(expectedCategory, model.Category);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedDailyAccountBalanceCsv, model.DailyAccountBalanceCsv);
         Assert.Equal(expectedDashboardTableCsv, model.DashboardTableCsv);
         Assert.Equal(expectedEntityCsv, model.EntityCsv);
         Assert.Equal(expectedFeeCsv, model.FeeCsv);
@@ -248,6 +261,12 @@ public class ExportTest : TestBase
             },
             Category = Exports::ExportCategory.TransactionCsv,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            DailyAccountBalanceCsv = new()
+            {
+                AccountID = "account_id",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
+            },
             DashboardTableCsv = new(),
             EntityCsv = new(),
             FeeCsv = new(
@@ -343,6 +362,12 @@ public class ExportTest : TestBase
             },
             Category = Exports::ExportCategory.TransactionCsv,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            DailyAccountBalanceCsv = new()
+            {
+                AccountID = "account_id",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
+            },
             DashboardTableCsv = new(),
             EntityCsv = new(),
             FeeCsv = new(
@@ -432,6 +457,12 @@ public class ExportTest : TestBase
         ApiEnum<string, Exports::ExportCategory> expectedCategory =
             Exports::ExportCategory.TransactionCsv;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        Exports::ExportDailyAccountBalanceCsv expectedDailyAccountBalanceCsv = new()
+        {
+            AccountID = "account_id",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
+        };
         Exports::DashboardTableCsv expectedDashboardTableCsv = new();
         Exports::ExportEntityCsv expectedEntityCsv = new();
         Exports::FeeCsv expectedFeeCsv = new(
@@ -485,6 +516,7 @@ public class ExportTest : TestBase
         );
         Assert.Equal(expectedCategory, deserialized.Category);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedDailyAccountBalanceCsv, deserialized.DailyAccountBalanceCsv);
         Assert.Equal(expectedDashboardTableCsv, deserialized.DashboardTableCsv);
         Assert.Equal(expectedEntityCsv, deserialized.EntityCsv);
         Assert.Equal(expectedFeeCsv, deserialized.FeeCsv);
@@ -546,6 +578,12 @@ public class ExportTest : TestBase
             },
             Category = Exports::ExportCategory.TransactionCsv,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            DailyAccountBalanceCsv = new()
+            {
+                AccountID = "account_id",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
+            },
             DashboardTableCsv = new(),
             EntityCsv = new(),
             FeeCsv = new(
@@ -635,6 +673,12 @@ public class ExportTest : TestBase
             },
             Category = Exports::ExportCategory.TransactionCsv,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            DailyAccountBalanceCsv = new()
+            {
+                AccountID = "account_id",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
+            },
             DashboardTableCsv = new(),
             EntityCsv = new(),
             FeeCsv = new(
@@ -1481,6 +1525,7 @@ public class ExportCategoryTest : TestBase
     [InlineData(Exports::ExportCategory.Form1099Misc)]
     [InlineData(Exports::ExportCategory.FeeCsv)]
     [InlineData(Exports::ExportCategory.VoidedCheck)]
+    [InlineData(Exports::ExportCategory.DailyAccountBalanceCsv)]
     public void Validation_Works(Exports::ExportCategory rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1515,6 +1560,7 @@ public class ExportCategoryTest : TestBase
     [InlineData(Exports::ExportCategory.Form1099Misc)]
     [InlineData(Exports::ExportCategory.FeeCsv)]
     [InlineData(Exports::ExportCategory.VoidedCheck)]
+    [InlineData(Exports::ExportCategory.DailyAccountBalanceCsv)]
     public void SerializationRoundtrip_Works(Exports::ExportCategory rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1543,6 +1589,101 @@ public class ExportCategoryTest : TestBase
         );
 
         Assert.Equal(value, deserialized);
+    }
+}
+
+public class ExportDailyAccountBalanceCsvTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Exports::ExportDailyAccountBalanceCsv
+        {
+            AccountID = "account_id",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
+        };
+
+        string expectedAccountID = "account_id";
+        string expectedOnOrAfterDate = "2019-12-27";
+        string expectedOnOrBeforeDate = "2019-12-27";
+
+        Assert.Equal(expectedAccountID, model.AccountID);
+        Assert.Equal(expectedOnOrAfterDate, model.OnOrAfterDate);
+        Assert.Equal(expectedOnOrBeforeDate, model.OnOrBeforeDate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Exports::ExportDailyAccountBalanceCsv
+        {
+            AccountID = "account_id",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Exports::ExportDailyAccountBalanceCsv>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Exports::ExportDailyAccountBalanceCsv
+        {
+            AccountID = "account_id",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Exports::ExportDailyAccountBalanceCsv>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAccountID = "account_id";
+        string expectedOnOrAfterDate = "2019-12-27";
+        string expectedOnOrBeforeDate = "2019-12-27";
+
+        Assert.Equal(expectedAccountID, deserialized.AccountID);
+        Assert.Equal(expectedOnOrAfterDate, deserialized.OnOrAfterDate);
+        Assert.Equal(expectedOnOrBeforeDate, deserialized.OnOrBeforeDate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Exports::ExportDailyAccountBalanceCsv
+        {
+            AccountID = "account_id",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Exports::ExportDailyAccountBalanceCsv
+        {
+            AccountID = "account_id",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
+        };
+
+        Exports::ExportDailyAccountBalanceCsv copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

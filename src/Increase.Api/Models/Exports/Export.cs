@@ -138,6 +138,22 @@ public sealed record class Export : JsonModel
     }
 
     /// <summary>
+    /// Details of the daily account balance CSV export. This field will be present
+    /// when the `category` is equal to `daily_account_balance_csv`.
+    /// </summary>
+    public required ExportDailyAccountBalanceCsv? DailyAccountBalanceCsv
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ExportDailyAccountBalanceCsv>(
+                "daily_account_balance_csv"
+            );
+        }
+        init { this._rawData.Set("daily_account_balance_csv", value); }
+    }
+
+    /// <summary>
     /// Details of the dashboard table CSV export. This field will be present when
     /// the `category` is equal to `dashboard_table_csv`.
     /// </summary>
@@ -334,6 +350,7 @@ public sealed record class Export : JsonModel
         this.BookkeepingAccountBalanceCsv?.Validate();
         this.Category.Validate();
         _ = this.CreatedAt;
+        this.DailyAccountBalanceCsv?.Validate();
         this.DashboardTableCsv?.Validate();
         this.EntityCsv?.Validate();
         this.FeeCsv?.Validate();
@@ -1136,6 +1153,12 @@ public enum ExportCategory
     /// A PDF of a voided check.
     /// </summary>
     VoidedCheck,
+
+    /// <summary>
+    /// Export a CSV of daily account balances with starting and ending balances
+    /// for a given date range.
+    /// </summary>
+    DailyAccountBalanceCsv,
 }
 
 sealed class ExportCategoryConverter : JsonConverter<ExportCategory>
@@ -1162,6 +1185,7 @@ sealed class ExportCategoryConverter : JsonConverter<ExportCategory>
             "form_1099_misc" => ExportCategory.Form1099Misc,
             "fee_csv" => ExportCategory.FeeCsv,
             "voided_check" => ExportCategory.VoidedCheck,
+            "daily_account_balance_csv" => ExportCategory.DailyAccountBalanceCsv,
             _ => (ExportCategory)(-1),
         };
     }
@@ -1190,6 +1214,7 @@ sealed class ExportCategoryConverter : JsonConverter<ExportCategory>
                 ExportCategory.Form1099Misc => "form_1099_misc",
                 ExportCategory.FeeCsv => "fee_csv",
                 ExportCategory.VoidedCheck => "voided_check",
+                ExportCategory.DailyAccountBalanceCsv => "daily_account_balance_csv",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1197,6 +1222,100 @@ sealed class ExportCategoryConverter : JsonConverter<ExportCategory>
             options
         );
     }
+}
+
+/// <summary>
+/// Details of the daily account balance CSV export. This field will be present when
+/// the `category` is equal to `daily_account_balance_csv`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<ExportDailyAccountBalanceCsv, ExportDailyAccountBalanceCsvFromRaw>)
+)]
+public sealed record class ExportDailyAccountBalanceCsv : JsonModel
+{
+    /// <summary>
+    /// Filter results by Account.
+    /// </summary>
+    public required string? AccountID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("account_id");
+        }
+        init { this._rawData.Set("account_id", value); }
+    }
+
+    /// <summary>
+    /// Filter balances on or after this date.
+    /// </summary>
+    public required string? OnOrAfterDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("on_or_after_date");
+        }
+        init { this._rawData.Set("on_or_after_date", value); }
+    }
+
+    /// <summary>
+    /// Filter balances on or before this date.
+    /// </summary>
+    public required string? OnOrBeforeDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("on_or_before_date");
+        }
+        init { this._rawData.Set("on_or_before_date", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.AccountID;
+        _ = this.OnOrAfterDate;
+        _ = this.OnOrBeforeDate;
+    }
+
+    public ExportDailyAccountBalanceCsv() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public ExportDailyAccountBalanceCsv(ExportDailyAccountBalanceCsv exportDailyAccountBalanceCsv)
+        : base(exportDailyAccountBalanceCsv) { }
+#pragma warning restore CS8618
+
+    public ExportDailyAccountBalanceCsv(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    ExportDailyAccountBalanceCsv(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="ExportDailyAccountBalanceCsvFromRaw.FromRawUnchecked"/>
+    public static ExportDailyAccountBalanceCsv FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class ExportDailyAccountBalanceCsvFromRaw : IFromRawJson<ExportDailyAccountBalanceCsv>
+{
+    /// <inheritdoc/>
+    public ExportDailyAccountBalanceCsv FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => ExportDailyAccountBalanceCsv.FromRawUnchecked(rawData);
 }
 
 /// <summary>

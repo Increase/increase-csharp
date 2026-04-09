@@ -152,6 +152,29 @@ public record class ExportCreateParams : ParamsBase
     }
 
     /// <summary>
+    /// Options for the created export. Required if `category` is equal to `daily_account_balance_csv`.
+    /// </summary>
+    public DailyAccountBalanceCsv? DailyAccountBalanceCsv
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<DailyAccountBalanceCsv>(
+                "daily_account_balance_csv"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("daily_account_balance_csv", value);
+        }
+    }
+
+    /// <summary>
     /// Options for the created export. Required if `category` is equal to `entity_csv`.
     /// </summary>
     public EntityCsv? EntityCsv
@@ -422,6 +445,12 @@ public enum Category
     /// A PDF of a voided check.
     /// </summary>
     VoidedCheck,
+
+    /// <summary>
+    /// Export a CSV of daily account balances with starting and ending balances
+    /// for a given date range.
+    /// </summary>
+    DailyAccountBalanceCsv,
 }
 
 sealed class CategoryConverter : JsonConverter<Category>
@@ -444,6 +473,7 @@ sealed class CategoryConverter : JsonConverter<Category>
             "account_verification_letter" => Category.AccountVerificationLetter,
             "funding_instructions" => Category.FundingInstructions,
             "voided_check" => Category.VoidedCheck,
+            "daily_account_balance_csv" => Category.DailyAccountBalanceCsv,
             _ => (Category)(-1),
         };
     }
@@ -464,6 +494,7 @@ sealed class CategoryConverter : JsonConverter<Category>
                 Category.AccountVerificationLetter => "account_verification_letter",
                 Category.FundingInstructions => "funding_instructions",
                 Category.VoidedCheck => "voided_check",
+                Category.DailyAccountBalanceCsv => "daily_account_balance_csv",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1378,6 +1409,121 @@ class BookkeepingAccountBalanceCsvCreatedAtFromRaw
     public BookkeepingAccountBalanceCsvCreatedAt FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => BookkeepingAccountBalanceCsvCreatedAt.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Options for the created export. Required if `category` is equal to `daily_account_balance_csv`.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<DailyAccountBalanceCsv, DailyAccountBalanceCsvFromRaw>))]
+public sealed record class DailyAccountBalanceCsv : JsonModel
+{
+    /// <summary>
+    /// Filter exported Balances to the specified Account.
+    /// </summary>
+    public string? AccountID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("account_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("account_id", value);
+        }
+    }
+
+    /// <summary>
+    /// Filter exported Balances to those on or after this date.
+    /// </summary>
+    public string? OnOrAfterDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("on_or_after_date");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("on_or_after_date", value);
+        }
+    }
+
+    /// <summary>
+    /// Filter exported Balances to those on or before this date.
+    /// </summary>
+    public string? OnOrBeforeDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("on_or_before_date");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("on_or_before_date", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.AccountID;
+        _ = this.OnOrAfterDate;
+        _ = this.OnOrBeforeDate;
+    }
+
+    public DailyAccountBalanceCsv() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public DailyAccountBalanceCsv(DailyAccountBalanceCsv dailyAccountBalanceCsv)
+        : base(dailyAccountBalanceCsv) { }
+#pragma warning restore CS8618
+
+    public DailyAccountBalanceCsv(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    DailyAccountBalanceCsv(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="DailyAccountBalanceCsvFromRaw.FromRawUnchecked"/>
+    public static DailyAccountBalanceCsv FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class DailyAccountBalanceCsvFromRaw : IFromRawJson<DailyAccountBalanceCsv>
+{
+    /// <inheritdoc/>
+    public DailyAccountBalanceCsv FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => DailyAccountBalanceCsv.FromRawUnchecked(rawData);
 }
 
 /// <summary>

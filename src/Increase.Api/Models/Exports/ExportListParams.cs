@@ -349,6 +349,12 @@ public enum ExportListParamsCategory
     /// A PDF of a voided check.
     /// </summary>
     VoidedCheck,
+
+    /// <summary>
+    /// Export a CSV of daily account balances with starting and ending balances
+    /// for a given date range.
+    /// </summary>
+    DailyAccountBalanceCsv,
 }
 
 sealed class ExportListParamsCategoryConverter : JsonConverter<ExportListParamsCategory>
@@ -376,6 +382,7 @@ sealed class ExportListParamsCategoryConverter : JsonConverter<ExportListParamsC
             "form_1099_misc" => ExportListParamsCategory.Form1099Misc,
             "fee_csv" => ExportListParamsCategory.FeeCsv,
             "voided_check" => ExportListParamsCategory.VoidedCheck,
+            "daily_account_balance_csv" => ExportListParamsCategory.DailyAccountBalanceCsv,
             _ => (ExportListParamsCategory)(-1),
         };
     }
@@ -405,6 +412,7 @@ sealed class ExportListParamsCategoryConverter : JsonConverter<ExportListParamsC
                 ExportListParamsCategory.Form1099Misc => "form_1099_misc",
                 ExportListParamsCategory.FeeCsv => "fee_csv",
                 ExportListParamsCategory.VoidedCheck => "voided_check",
+                ExportListParamsCategory.DailyAccountBalanceCsv => "daily_account_balance_csv",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
