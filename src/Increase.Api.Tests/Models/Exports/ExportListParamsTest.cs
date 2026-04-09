@@ -188,6 +188,7 @@ public class ExportListParamsCategoryTest : TestBase
     [InlineData(ExportListParamsCategory.Form1099Misc)]
     [InlineData(ExportListParamsCategory.FeeCsv)]
     [InlineData(ExportListParamsCategory.VoidedCheck)]
+    [InlineData(ExportListParamsCategory.DailyAccountBalanceCsv)]
     public void Validation_Works(ExportListParamsCategory rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -222,6 +223,7 @@ public class ExportListParamsCategoryTest : TestBase
     [InlineData(ExportListParamsCategory.Form1099Misc)]
     [InlineData(ExportListParamsCategory.FeeCsv)]
     [InlineData(ExportListParamsCategory.VoidedCheck)]
+    [InlineData(ExportListParamsCategory.DailyAccountBalanceCsv)]
     public void SerializationRoundtrip_Works(ExportListParamsCategory rawValue)
     {
         // force implicit conversion because Theory can't do that for us

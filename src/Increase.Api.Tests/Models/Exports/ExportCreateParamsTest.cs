@@ -59,6 +59,12 @@ public class ExportCreateParamsTest : TestBase
                     OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             },
+            DailyAccountBalanceCsv = new()
+            {
+                AccountID = "account_id",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
+            },
             EntityCsv = new(),
             FundingInstructions = new("account_number_id"),
             TransactionCsv = new()
@@ -121,6 +127,12 @@ public class ExportCreateParamsTest : TestBase
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
+        DailyAccountBalanceCsv expectedDailyAccountBalanceCsv = new()
+        {
+            AccountID = "account_id",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
+        };
         EntityCsv expectedEntityCsv = new();
         FundingInstructions expectedFundingInstructions = new("account_number_id");
         TransactionCsv expectedTransactionCsv = new()
@@ -147,6 +159,7 @@ public class ExportCreateParamsTest : TestBase
         Assert.Equal(expectedAccountVerificationLetter, parameters.AccountVerificationLetter);
         Assert.Equal(expectedBalanceCsv, parameters.BalanceCsv);
         Assert.Equal(expectedBookkeepingAccountBalanceCsv, parameters.BookkeepingAccountBalanceCsv);
+        Assert.Equal(expectedDailyAccountBalanceCsv, parameters.DailyAccountBalanceCsv);
         Assert.Equal(expectedEntityCsv, parameters.EntityCsv);
         Assert.Equal(expectedFundingInstructions, parameters.FundingInstructions);
         Assert.Equal(expectedTransactionCsv, parameters.TransactionCsv);
@@ -169,6 +182,8 @@ public class ExportCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("balance_csv"));
         Assert.Null(parameters.BookkeepingAccountBalanceCsv);
         Assert.False(parameters.RawBodyData.ContainsKey("bookkeeping_account_balance_csv"));
+        Assert.Null(parameters.DailyAccountBalanceCsv);
+        Assert.False(parameters.RawBodyData.ContainsKey("daily_account_balance_csv"));
         Assert.Null(parameters.EntityCsv);
         Assert.False(parameters.RawBodyData.ContainsKey("entity_csv"));
         Assert.Null(parameters.FundingInstructions);
@@ -194,6 +209,7 @@ public class ExportCreateParamsTest : TestBase
             AccountVerificationLetter = null,
             BalanceCsv = null,
             BookkeepingAccountBalanceCsv = null,
+            DailyAccountBalanceCsv = null,
             EntityCsv = null,
             FundingInstructions = null,
             TransactionCsv = null,
@@ -211,6 +227,8 @@ public class ExportCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("balance_csv"));
         Assert.Null(parameters.BookkeepingAccountBalanceCsv);
         Assert.False(parameters.RawBodyData.ContainsKey("bookkeeping_account_balance_csv"));
+        Assert.Null(parameters.DailyAccountBalanceCsv);
+        Assert.False(parameters.RawBodyData.ContainsKey("daily_account_balance_csv"));
         Assert.Null(parameters.EntityCsv);
         Assert.False(parameters.RawBodyData.ContainsKey("entity_csv"));
         Assert.Null(parameters.FundingInstructions);
@@ -283,6 +301,12 @@ public class ExportCreateParamsTest : TestBase
                     OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             },
+            DailyAccountBalanceCsv = new()
+            {
+                AccountID = "account_id",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
+            },
             EntityCsv = new(),
             FundingInstructions = new("account_number_id"),
             TransactionCsv = new()
@@ -319,6 +343,7 @@ public class CategoryTest : TestBase
     [InlineData(Category.AccountVerificationLetter)]
     [InlineData(Category.FundingInstructions)]
     [InlineData(Category.VoidedCheck)]
+    [InlineData(Category.DailyAccountBalanceCsv)]
     public void Validation_Works(Category rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -349,6 +374,7 @@ public class CategoryTest : TestBase
     [InlineData(Category.AccountVerificationLetter)]
     [InlineData(Category.FundingInstructions)]
     [InlineData(Category.VoidedCheck)]
+    [InlineData(Category.DailyAccountBalanceCsv)]
     public void SerializationRoundtrip_Works(Category rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1671,6 +1697,155 @@ public class BookkeepingAccountBalanceCsvCreatedAtTest : TestBase
         };
 
         BookkeepingAccountBalanceCsvCreatedAt copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class DailyAccountBalanceCsvTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new DailyAccountBalanceCsv
+        {
+            AccountID = "account_id",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
+        };
+
+        string expectedAccountID = "account_id";
+        string expectedOnOrAfterDate = "2019-12-27";
+        string expectedOnOrBeforeDate = "2019-12-27";
+
+        Assert.Equal(expectedAccountID, model.AccountID);
+        Assert.Equal(expectedOnOrAfterDate, model.OnOrAfterDate);
+        Assert.Equal(expectedOnOrBeforeDate, model.OnOrBeforeDate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new DailyAccountBalanceCsv
+        {
+            AccountID = "account_id",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<DailyAccountBalanceCsv>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new DailyAccountBalanceCsv
+        {
+            AccountID = "account_id",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<DailyAccountBalanceCsv>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAccountID = "account_id";
+        string expectedOnOrAfterDate = "2019-12-27";
+        string expectedOnOrBeforeDate = "2019-12-27";
+
+        Assert.Equal(expectedAccountID, deserialized.AccountID);
+        Assert.Equal(expectedOnOrAfterDate, deserialized.OnOrAfterDate);
+        Assert.Equal(expectedOnOrBeforeDate, deserialized.OnOrBeforeDate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new DailyAccountBalanceCsv
+        {
+            AccountID = "account_id",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new DailyAccountBalanceCsv { };
+
+        Assert.Null(model.AccountID);
+        Assert.False(model.RawData.ContainsKey("account_id"));
+        Assert.Null(model.OnOrAfterDate);
+        Assert.False(model.RawData.ContainsKey("on_or_after_date"));
+        Assert.Null(model.OnOrBeforeDate);
+        Assert.False(model.RawData.ContainsKey("on_or_before_date"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new DailyAccountBalanceCsv { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new DailyAccountBalanceCsv
+        {
+            // Null should be interpreted as omitted for these properties
+            AccountID = null,
+            OnOrAfterDate = null,
+            OnOrBeforeDate = null,
+        };
+
+        Assert.Null(model.AccountID);
+        Assert.False(model.RawData.ContainsKey("account_id"));
+        Assert.Null(model.OnOrAfterDate);
+        Assert.False(model.RawData.ContainsKey("on_or_after_date"));
+        Assert.Null(model.OnOrBeforeDate);
+        Assert.False(model.RawData.ContainsKey("on_or_before_date"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new DailyAccountBalanceCsv
+        {
+            // Null should be interpreted as omitted for these properties
+            AccountID = null,
+            OnOrAfterDate = null,
+            OnOrBeforeDate = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DailyAccountBalanceCsv
+        {
+            AccountID = "account_id",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
+        };
+
+        DailyAccountBalanceCsv copied = new(model);
 
         Assert.Equal(model, copied);
     }
