@@ -125,6 +125,8 @@ public interface IIncreaseClient : IDisposable
 
     ISupplementalDocumentService SupplementalDocuments { get; }
 
+    IEntityOnboardingSessionService EntityOnboardingSessions { get; }
+
     IProgramService Programs { get; }
 
     IAccountStatementService AccountStatements { get; }
@@ -272,6 +274,8 @@ public interface IIncreaseClientWithRawResponse : IDisposable
     IBeneficialOwnerServiceWithRawResponse BeneficialOwners { get; }
 
     ISupplementalDocumentServiceWithRawResponse SupplementalDocuments { get; }
+
+    IEntityOnboardingSessionServiceWithRawResponse EntityOnboardingSessions { get; }
 
     IProgramServiceWithRawResponse Programs { get; }
 

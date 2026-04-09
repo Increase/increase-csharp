@@ -80,6 +80,8 @@ public interface ISimulationService
 
     Simulations::IInboundMailItemService InboundMailItems { get; }
 
+    Simulations::IEntityOnboardingSessionService EntityOnboardingSessions { get; }
+
     Simulations::IProgramService Programs { get; }
 
     Simulations::IAccountStatementService AccountStatements { get; }
@@ -157,6 +159,8 @@ public interface ISimulationServiceWithRawResponse
     Simulations::ICheckDepositServiceWithRawResponse CheckDeposits { get; }
 
     Simulations::IInboundMailItemServiceWithRawResponse InboundMailItems { get; }
+
+    Simulations::IEntityOnboardingSessionServiceWithRawResponse EntityOnboardingSessions { get; }
 
     Simulations::IProgramServiceWithRawResponse Programs { get; }
 

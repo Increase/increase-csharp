@@ -30,6 +30,7 @@ using DigitalCardProfiles = Increase.Api.Models.DigitalCardProfiles;
 using DigitalWalletTokenRequests = Increase.Api.Models.Simulations.DigitalWalletTokenRequests;
 using DigitalWalletTokens = Increase.Api.Models.DigitalWalletTokens;
 using Entities = Increase.Api.Models.Entities;
+using EntityOnboardingSessions = Increase.Api.Models.EntityOnboardingSessions;
 using Events = Increase.Api.Models.Events;
 using EventSubscriptions = Increase.Api.Models.EventSubscriptions;
 using Exports = Increase.Api.Models.Exports;
@@ -1352,6 +1353,9 @@ public abstract record class ModelBase
                 BeneficialOwners::BeneficialOwnerUpdateParamsIdentificationMethod
             >(),
             new ApiEnumConverter<string, SupplementalDocuments::Type>(),
+            new ApiEnumConverter<string, EntityOnboardingSessions::EntityOnboardingSessionStatus>(),
+            new ApiEnumConverter<string, EntityOnboardingSessions::Type>(),
+            new ApiEnumConverter<string, EntityOnboardingSessions::In>(),
             new ApiEnumConverter<string, Programs::Bank>(),
             new ApiEnumConverter<string, Programs::Type>(),
             new ApiEnumConverter<string, AccountStatements::Type>(),
