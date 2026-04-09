@@ -58,6 +58,12 @@ public class ExportListPageResponseTest : TestBase
                     },
                     Category = Exports::ExportCategory.TransactionCsv,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    DailyAccountBalanceCsv = new()
+                    {
+                        AccountID = "account_id",
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
+                    },
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
                     FeeCsv = new(
@@ -150,6 +156,12 @@ public class ExportListPageResponseTest : TestBase
                 },
                 Category = Exports::ExportCategory.TransactionCsv,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                DailyAccountBalanceCsv = new()
+                {
+                    AccountID = "account_id",
+                    OnOrAfterDate = "2019-12-27",
+                    OnOrBeforeDate = "2019-12-27",
+                },
                 DashboardTableCsv = new(),
                 EntityCsv = new(),
                 FeeCsv = new(
@@ -254,6 +266,12 @@ public class ExportListPageResponseTest : TestBase
                     },
                     Category = Exports::ExportCategory.TransactionCsv,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    DailyAccountBalanceCsv = new()
+                    {
+                        AccountID = "account_id",
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
+                    },
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
                     FeeCsv = new(
@@ -360,6 +378,12 @@ public class ExportListPageResponseTest : TestBase
                     },
                     Category = Exports::ExportCategory.TransactionCsv,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    DailyAccountBalanceCsv = new()
+                    {
+                        AccountID = "account_id",
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
+                    },
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
                     FeeCsv = new(
@@ -459,6 +483,12 @@ public class ExportListPageResponseTest : TestBase
                 },
                 Category = Exports::ExportCategory.TransactionCsv,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                DailyAccountBalanceCsv = new()
+                {
+                    AccountID = "account_id",
+                    OnOrAfterDate = "2019-12-27",
+                    OnOrBeforeDate = "2019-12-27",
+                },
                 DashboardTableCsv = new(),
                 EntityCsv = new(),
                 FeeCsv = new(
@@ -563,6 +593,12 @@ public class ExportListPageResponseTest : TestBase
                     },
                     Category = Exports::ExportCategory.TransactionCsv,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    DailyAccountBalanceCsv = new()
+                    {
+                        AccountID = "account_id",
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
+                    },
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
                     FeeCsv = new(
@@ -663,6 +699,12 @@ public class ExportListPageResponseTest : TestBase
                     },
                     Category = Exports::ExportCategory.TransactionCsv,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    DailyAccountBalanceCsv = new()
+                    {
+                        AccountID = "account_id",
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
+                    },
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
                     FeeCsv = new(
