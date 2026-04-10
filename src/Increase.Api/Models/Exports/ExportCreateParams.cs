@@ -1155,16 +1155,14 @@ public sealed record class BookkeepingAccountBalanceCsv : JsonModel
     }
 
     /// <summary>
-    /// Filter results by time range on the `created_at` attribute.
+    /// Filter exported Balances to those on or after this date.
     /// </summary>
-    public BookkeepingAccountBalanceCsvCreatedAt? CreatedAt
+    public string? OnOrAfterDate
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<BookkeepingAccountBalanceCsvCreatedAt>(
-                "created_at"
-            );
+            return this._rawData.GetNullableClass<string>("on_or_after_date");
         }
         init
         {
@@ -1173,7 +1171,28 @@ public sealed record class BookkeepingAccountBalanceCsv : JsonModel
                 return;
             }
 
-            this._rawData.Set("created_at", value);
+            this._rawData.Set("on_or_after_date", value);
+        }
+    }
+
+    /// <summary>
+    /// Filter exported Balances to those on or before this date.
+    /// </summary>
+    public string? OnOrBeforeDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("on_or_before_date");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("on_or_before_date", value);
         }
     }
 
@@ -1181,7 +1200,8 @@ public sealed record class BookkeepingAccountBalanceCsv : JsonModel
     public override void Validate()
     {
         _ = this.BookkeepingAccountID;
-        this.CreatedAt?.Validate();
+        _ = this.OnOrAfterDate;
+        _ = this.OnOrBeforeDate;
     }
 
     public BookkeepingAccountBalanceCsv() { }
@@ -1220,151 +1240,6 @@ class BookkeepingAccountBalanceCsvFromRaw : IFromRawJson<BookkeepingAccountBalan
     public BookkeepingAccountBalanceCsv FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => BookkeepingAccountBalanceCsv.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// Filter results by time range on the `created_at` attribute.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<
-        BookkeepingAccountBalanceCsvCreatedAt,
-        BookkeepingAccountBalanceCsvCreatedAtFromRaw
-    >)
-)]
-public sealed record class BookkeepingAccountBalanceCsvCreatedAt : JsonModel
-{
-    /// <summary>
-    /// Return results after this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp.
-    /// </summary>
-    public System::DateTimeOffset? After
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<System::DateTimeOffset>("after");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set("after", value);
-        }
-    }
-
-    /// <summary>
-    /// Return results before this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp.
-    /// </summary>
-    public System::DateTimeOffset? Before
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<System::DateTimeOffset>("before");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set("before", value);
-        }
-    }
-
-    /// <summary>
-    /// Return results on or after this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp.
-    /// </summary>
-    public System::DateTimeOffset? OnOrAfter
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<System::DateTimeOffset>("on_or_after");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set("on_or_after", value);
-        }
-    }
-
-    /// <summary>
-    /// Return results on or before this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp.
-    /// </summary>
-    public System::DateTimeOffset? OnOrBefore
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<System::DateTimeOffset>("on_or_before");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set("on_or_before", value);
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        _ = this.After;
-        _ = this.Before;
-        _ = this.OnOrAfter;
-        _ = this.OnOrBefore;
-    }
-
-    public BookkeepingAccountBalanceCsvCreatedAt() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public BookkeepingAccountBalanceCsvCreatedAt(
-        BookkeepingAccountBalanceCsvCreatedAt bookkeepingAccountBalanceCsvCreatedAt
-    )
-        : base(bookkeepingAccountBalanceCsvCreatedAt) { }
-#pragma warning restore CS8618
-
-    public BookkeepingAccountBalanceCsvCreatedAt(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    BookkeepingAccountBalanceCsvCreatedAt(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="BookkeepingAccountBalanceCsvCreatedAtFromRaw.FromRawUnchecked"/>
-    public static BookkeepingAccountBalanceCsvCreatedAt FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class BookkeepingAccountBalanceCsvCreatedAtFromRaw
-    : IFromRawJson<BookkeepingAccountBalanceCsvCreatedAt>
-{
-    /// <inheritdoc/>
-    public BookkeepingAccountBalanceCsvCreatedAt FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => BookkeepingAccountBalanceCsvCreatedAt.FromRawUnchecked(rawData);
 }
 
 /// <summary>

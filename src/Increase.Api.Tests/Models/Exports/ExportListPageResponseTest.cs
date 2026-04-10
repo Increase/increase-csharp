@@ -50,11 +50,8 @@ public class ExportListPageResponseTest : TestBase
                     BookkeepingAccountBalanceCsv = new()
                     {
                         BookkeepingAccountID = "bookkeeping_account_id",
-                        CreatedAt = new()
-                        {
-                            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        },
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
                     },
                     Category = Exports::ExportCategory.TransactionCsv,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -148,11 +145,8 @@ public class ExportListPageResponseTest : TestBase
                 BookkeepingAccountBalanceCsv = new()
                 {
                     BookkeepingAccountID = "bookkeeping_account_id",
-                    CreatedAt = new()
-                    {
-                        After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    },
+                    OnOrAfterDate = "2019-12-27",
+                    OnOrBeforeDate = "2019-12-27",
                 },
                 Category = Exports::ExportCategory.TransactionCsv,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -258,11 +252,8 @@ public class ExportListPageResponseTest : TestBase
                     BookkeepingAccountBalanceCsv = new()
                     {
                         BookkeepingAccountID = "bookkeeping_account_id",
-                        CreatedAt = new()
-                        {
-                            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        },
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
                     },
                     Category = Exports::ExportCategory.TransactionCsv,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -370,11 +361,8 @@ public class ExportListPageResponseTest : TestBase
                     BookkeepingAccountBalanceCsv = new()
                     {
                         BookkeepingAccountID = "bookkeeping_account_id",
-                        CreatedAt = new()
-                        {
-                            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        },
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
                     },
                     Category = Exports::ExportCategory.TransactionCsv,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -475,11 +463,8 @@ public class ExportListPageResponseTest : TestBase
                 BookkeepingAccountBalanceCsv = new()
                 {
                     BookkeepingAccountID = "bookkeeping_account_id",
-                    CreatedAt = new()
-                    {
-                        After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    },
+                    OnOrAfterDate = "2019-12-27",
+                    OnOrBeforeDate = "2019-12-27",
                 },
                 Category = Exports::ExportCategory.TransactionCsv,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -585,11 +570,8 @@ public class ExportListPageResponseTest : TestBase
                     BookkeepingAccountBalanceCsv = new()
                     {
                         BookkeepingAccountID = "bookkeeping_account_id",
-                        CreatedAt = new()
-                        {
-                            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        },
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
                     },
                     Category = Exports::ExportCategory.TransactionCsv,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -691,11 +673,8 @@ public class ExportListPageResponseTest : TestBase
                     BookkeepingAccountBalanceCsv = new()
                     {
                         BookkeepingAccountID = "bookkeeping_account_id",
-                        CreatedAt = new()
-                        {
-                            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        },
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
                     },
                     Category = Exports::ExportCategory.TransactionCsv,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
