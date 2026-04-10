@@ -587,19 +587,6 @@ class ExportAccountStatementOfxFromRaw : IFromRawJson<ExportAccountStatementOfx>
 public sealed record class ExportAccountStatementOfxCreatedAt : JsonModel
 {
     /// <summary>
-    /// Filter results to transactions created after this time.
-    /// </summary>
-    public required System::DateTimeOffset? After
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<System::DateTimeOffset>("after");
-        }
-        init { this._rawData.Set("after", value); }
-    }
-
-    /// <summary>
     /// Filter results to transactions created before this time.
     /// </summary>
     public required System::DateTimeOffset? Before
@@ -612,11 +599,24 @@ public sealed record class ExportAccountStatementOfxCreatedAt : JsonModel
         init { this._rawData.Set("before", value); }
     }
 
+    /// <summary>
+    /// Filter results to transactions created on or after this time.
+    /// </summary>
+    public required System::DateTimeOffset? OnOrAfter
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<System::DateTimeOffset>("on_or_after");
+        }
+        init { this._rawData.Set("on_or_after", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
-        _ = this.After;
         _ = this.Before;
+        _ = this.OnOrAfter;
     }
 
     public ExportAccountStatementOfxCreatedAt() { }

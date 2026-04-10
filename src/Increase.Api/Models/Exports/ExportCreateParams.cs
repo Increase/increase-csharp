@@ -644,7 +644,7 @@ public sealed record class AccountStatementOfx : JsonModel
     }
 
     /// <summary>
-    /// Filter results by time range on the `created_at` attribute.
+    /// Filter transactions by their created date.
     /// </summary>
     public CreatedAt? CreatedAt
     {
@@ -716,34 +716,13 @@ class AccountStatementOfxFromRaw : IFromRawJson<AccountStatementOfx>
 }
 
 /// <summary>
-/// Filter results by time range on the `created_at` attribute.
+/// Filter transactions by their created date.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<CreatedAt, CreatedAtFromRaw>))]
 public sealed record class CreatedAt : JsonModel
 {
     /// <summary>
-    /// Return results after this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp.
-    /// </summary>
-    public System::DateTimeOffset? After
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<System::DateTimeOffset>("after");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set("after", value);
-        }
-    }
-
-    /// <summary>
-    /// Return results before this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp.
+    /// Filter results to transactions created before this time.
     /// </summary>
     public System::DateTimeOffset? Before
     {
@@ -764,7 +743,7 @@ public sealed record class CreatedAt : JsonModel
     }
 
     /// <summary>
-    /// Return results on or after this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp.
+    /// Filter results to transactions created on or after this time.
     /// </summary>
     public System::DateTimeOffset? OnOrAfter
     {
@@ -784,34 +763,11 @@ public sealed record class CreatedAt : JsonModel
         }
     }
 
-    /// <summary>
-    /// Return results on or before this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp.
-    /// </summary>
-    public System::DateTimeOffset? OnOrBefore
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<System::DateTimeOffset>("on_or_before");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set("on_or_before", value);
-        }
-    }
-
     /// <inheritdoc/>
     public override void Validate()
     {
-        _ = this.After;
         _ = this.Before;
         _ = this.OnOrAfter;
-        _ = this.OnOrBefore;
     }
 
     public CreatedAt() { }
