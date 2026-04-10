@@ -47,11 +47,8 @@ public class ExportTest : TestBase
             BookkeepingAccountBalanceCsv = new()
             {
                 BookkeepingAccountID = "bookkeeping_account_id",
-                CreatedAt = new()
-                {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                },
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
             },
             Category = Exports::ExportCategory.TransactionCsv,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -134,11 +131,8 @@ public class ExportTest : TestBase
         Exports::ExportBookkeepingAccountBalanceCsv expectedBookkeepingAccountBalanceCsv = new()
         {
             BookkeepingAccountID = "bookkeeping_account_id",
-            CreatedAt = new()
-            {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            },
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
         };
         ApiEnum<string, Exports::ExportCategory> expectedCategory =
             Exports::ExportCategory.TransactionCsv;
@@ -253,11 +247,8 @@ public class ExportTest : TestBase
             BookkeepingAccountBalanceCsv = new()
             {
                 BookkeepingAccountID = "bookkeeping_account_id",
-                CreatedAt = new()
-                {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                },
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
             },
             Category = Exports::ExportCategory.TransactionCsv,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -354,11 +345,8 @@ public class ExportTest : TestBase
             BookkeepingAccountBalanceCsv = new()
             {
                 BookkeepingAccountID = "bookkeeping_account_id",
-                CreatedAt = new()
-                {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                },
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
             },
             Category = Exports::ExportCategory.TransactionCsv,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -448,11 +436,8 @@ public class ExportTest : TestBase
         Exports::ExportBookkeepingAccountBalanceCsv expectedBookkeepingAccountBalanceCsv = new()
         {
             BookkeepingAccountID = "bookkeeping_account_id",
-            CreatedAt = new()
-            {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            },
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
         };
         ApiEnum<string, Exports::ExportCategory> expectedCategory =
             Exports::ExportCategory.TransactionCsv;
@@ -570,11 +555,8 @@ public class ExportTest : TestBase
             BookkeepingAccountBalanceCsv = new()
             {
                 BookkeepingAccountID = "bookkeeping_account_id",
-                CreatedAt = new()
-                {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                },
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
             },
             Category = Exports::ExportCategory.TransactionCsv,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -665,11 +647,8 @@ public class ExportTest : TestBase
             BookkeepingAccountBalanceCsv = new()
             {
                 BookkeepingAccountID = "bookkeeping_account_id",
-                CreatedAt = new()
-                {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                },
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
             },
             Category = Exports::ExportCategory.TransactionCsv,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -1314,22 +1293,17 @@ public class ExportBookkeepingAccountBalanceCsvTest : TestBase
         var model = new Exports::ExportBookkeepingAccountBalanceCsv
         {
             BookkeepingAccountID = "bookkeeping_account_id",
-            CreatedAt = new()
-            {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            },
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
         };
 
         string expectedBookkeepingAccountID = "bookkeeping_account_id";
-        Exports::ExportBookkeepingAccountBalanceCsvCreatedAt expectedCreatedAt = new()
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
+        string expectedOnOrAfterDate = "2019-12-27";
+        string expectedOnOrBeforeDate = "2019-12-27";
 
         Assert.Equal(expectedBookkeepingAccountID, model.BookkeepingAccountID);
-        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedOnOrAfterDate, model.OnOrAfterDate);
+        Assert.Equal(expectedOnOrBeforeDate, model.OnOrBeforeDate);
     }
 
     [Fact]
@@ -1338,11 +1312,8 @@ public class ExportBookkeepingAccountBalanceCsvTest : TestBase
         var model = new Exports::ExportBookkeepingAccountBalanceCsv
         {
             BookkeepingAccountID = "bookkeeping_account_id",
-            CreatedAt = new()
-            {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            },
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1360,11 +1331,8 @@ public class ExportBookkeepingAccountBalanceCsvTest : TestBase
         var model = new Exports::ExportBookkeepingAccountBalanceCsv
         {
             BookkeepingAccountID = "bookkeeping_account_id",
-            CreatedAt = new()
-            {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            },
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1375,14 +1343,12 @@ public class ExportBookkeepingAccountBalanceCsvTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedBookkeepingAccountID = "bookkeeping_account_id";
-        Exports::ExportBookkeepingAccountBalanceCsvCreatedAt expectedCreatedAt = new()
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
+        string expectedOnOrAfterDate = "2019-12-27";
+        string expectedOnOrBeforeDate = "2019-12-27";
 
         Assert.Equal(expectedBookkeepingAccountID, deserialized.BookkeepingAccountID);
-        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedOnOrAfterDate, deserialized.OnOrAfterDate);
+        Assert.Equal(expectedOnOrBeforeDate, deserialized.OnOrBeforeDate);
     }
 
     [Fact]
@@ -1391,11 +1357,8 @@ public class ExportBookkeepingAccountBalanceCsvTest : TestBase
         var model = new Exports::ExportBookkeepingAccountBalanceCsv
         {
             BookkeepingAccountID = "bookkeeping_account_id",
-            CreatedAt = new()
-            {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            },
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
         };
 
         model.Validate();
@@ -1407,102 +1370,11 @@ public class ExportBookkeepingAccountBalanceCsvTest : TestBase
         var model = new Exports::ExportBookkeepingAccountBalanceCsv
         {
             BookkeepingAccountID = "bookkeeping_account_id",
-            CreatedAt = new()
-            {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            },
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
         };
 
         Exports::ExportBookkeepingAccountBalanceCsv copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class ExportBookkeepingAccountBalanceCsvCreatedAtTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new Exports::ExportBookkeepingAccountBalanceCsvCreatedAt
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
-
-        DateTimeOffset expectedAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        DateTimeOffset expectedBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-
-        Assert.Equal(expectedAfter, model.After);
-        Assert.Equal(expectedBefore, model.Before);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new Exports::ExportBookkeepingAccountBalanceCsvCreatedAt
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Exports::ExportBookkeepingAccountBalanceCsvCreatedAt>(
-                json,
-                ModelBase.SerializerOptions
-            );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new Exports::ExportBookkeepingAccountBalanceCsvCreatedAt
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized =
-            JsonSerializer.Deserialize<Exports::ExportBookkeepingAccountBalanceCsvCreatedAt>(
-                element,
-                ModelBase.SerializerOptions
-            );
-        Assert.NotNull(deserialized);
-
-        DateTimeOffset expectedAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        DateTimeOffset expectedBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-
-        Assert.Equal(expectedAfter, deserialized.After);
-        Assert.Equal(expectedBefore, deserialized.Before);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new Exports::ExportBookkeepingAccountBalanceCsvCreatedAt
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new Exports::ExportBookkeepingAccountBalanceCsvCreatedAt
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
-
-        Exports::ExportBookkeepingAccountBalanceCsvCreatedAt copied = new(model);
 
         Assert.Equal(model, copied);
     }

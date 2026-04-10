@@ -926,25 +926,37 @@ public sealed record class ExportBookkeepingAccountBalanceCsv : JsonModel
     }
 
     /// <summary>
-    /// Filter balances by their created date.
+    /// Filter balances to those on or after this date.
     /// </summary>
-    public required ExportBookkeepingAccountBalanceCsvCreatedAt? CreatedAt
+    public required string? OnOrAfterDate
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<ExportBookkeepingAccountBalanceCsvCreatedAt>(
-                "created_at"
-            );
+            return this._rawData.GetNullableClass<string>("on_or_after_date");
         }
-        init { this._rawData.Set("created_at", value); }
+        init { this._rawData.Set("on_or_after_date", value); }
+    }
+
+    /// <summary>
+    /// Filter balances to those on or before this date.
+    /// </summary>
+    public required string? OnOrBeforeDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("on_or_before_date");
+        }
+        init { this._rawData.Set("on_or_before_date", value); }
     }
 
     /// <inheritdoc/>
     public override void Validate()
     {
         _ = this.BookkeepingAccountID;
-        this.CreatedAt?.Validate();
+        _ = this.OnOrAfterDate;
+        _ = this.OnOrBeforeDate;
     }
 
     public ExportBookkeepingAccountBalanceCsv() { }
@@ -985,93 +997,6 @@ class ExportBookkeepingAccountBalanceCsvFromRaw : IFromRawJson<ExportBookkeeping
     public ExportBookkeepingAccountBalanceCsv FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => ExportBookkeepingAccountBalanceCsv.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// Filter balances by their created date.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<
-        ExportBookkeepingAccountBalanceCsvCreatedAt,
-        ExportBookkeepingAccountBalanceCsvCreatedAtFromRaw
-    >)
-)]
-public sealed record class ExportBookkeepingAccountBalanceCsvCreatedAt : JsonModel
-{
-    /// <summary>
-    /// Filter balances created after this time.
-    /// </summary>
-    public required System::DateTimeOffset? After
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<System::DateTimeOffset>("after");
-        }
-        init { this._rawData.Set("after", value); }
-    }
-
-    /// <summary>
-    /// Filter balances created before this time.
-    /// </summary>
-    public required System::DateTimeOffset? Before
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<System::DateTimeOffset>("before");
-        }
-        init { this._rawData.Set("before", value); }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        _ = this.After;
-        _ = this.Before;
-    }
-
-    public ExportBookkeepingAccountBalanceCsvCreatedAt() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public ExportBookkeepingAccountBalanceCsvCreatedAt(
-        ExportBookkeepingAccountBalanceCsvCreatedAt exportBookkeepingAccountBalanceCsvCreatedAt
-    )
-        : base(exportBookkeepingAccountBalanceCsvCreatedAt) { }
-#pragma warning restore CS8618
-
-    public ExportBookkeepingAccountBalanceCsvCreatedAt(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    ExportBookkeepingAccountBalanceCsvCreatedAt(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="ExportBookkeepingAccountBalanceCsvCreatedAtFromRaw.FromRawUnchecked"/>
-    public static ExportBookkeepingAccountBalanceCsvCreatedAt FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class ExportBookkeepingAccountBalanceCsvCreatedAtFromRaw
-    : IFromRawJson<ExportBookkeepingAccountBalanceCsvCreatedAt>
-{
-    /// <inheritdoc/>
-    public ExportBookkeepingAccountBalanceCsvCreatedAt FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => ExportBookkeepingAccountBalanceCsvCreatedAt.FromRawUnchecked(rawData);
 }
 
 /// <summary>
