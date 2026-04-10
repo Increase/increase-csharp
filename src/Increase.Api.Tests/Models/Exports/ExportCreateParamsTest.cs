@@ -26,10 +26,8 @@ public class ExportCreateParamsTest : TestBase
                 AccountID = "account_id",
                 CreatedAt = new()
                 {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             },
             AccountVerificationLetter = new()
@@ -94,10 +92,8 @@ public class ExportCreateParamsTest : TestBase
             AccountID = "account_id",
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
         AccountVerificationLetter expectedAccountVerificationLetter = new()
@@ -268,10 +264,8 @@ public class ExportCreateParamsTest : TestBase
                 AccountID = "account_id",
                 CreatedAt = new()
                 {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             },
             AccountVerificationLetter = new()
@@ -565,20 +559,16 @@ public class AccountStatementOfxTest : TestBase
             AccountID = "account_id",
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
         string expectedAccountID = "account_id";
         CreatedAt expectedCreatedAt = new()
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         Assert.Equal(expectedAccountID, model.AccountID);
@@ -593,10 +583,8 @@ public class AccountStatementOfxTest : TestBase
             AccountID = "account_id",
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
@@ -617,10 +605,8 @@ public class AccountStatementOfxTest : TestBase
             AccountID = "account_id",
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
@@ -634,10 +620,8 @@ public class AccountStatementOfxTest : TestBase
         string expectedAccountID = "account_id";
         CreatedAt expectedCreatedAt = new()
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         Assert.Equal(expectedAccountID, deserialized.AccountID);
@@ -652,10 +636,8 @@ public class AccountStatementOfxTest : TestBase
             AccountID = "account_id",
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
@@ -716,10 +698,8 @@ public class AccountStatementOfxTest : TestBase
             AccountID = "account_id",
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
@@ -736,21 +716,15 @@ public class CreatedAtTest : TestBase
     {
         var model = new CreatedAt
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
-        DateTimeOffset expectedAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         DateTimeOffset expectedBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         DateTimeOffset expectedOnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        DateTimeOffset expectedOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
-        Assert.Equal(expectedAfter, model.After);
         Assert.Equal(expectedBefore, model.Before);
         Assert.Equal(expectedOnOrAfter, model.OnOrAfter);
-        Assert.Equal(expectedOnOrBefore, model.OnOrBefore);
     }
 
     [Fact]
@@ -758,10 +732,8 @@ public class CreatedAtTest : TestBase
     {
         var model = new CreatedAt
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -775,10 +747,8 @@ public class CreatedAtTest : TestBase
     {
         var model = new CreatedAt
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -788,15 +758,11 @@ public class CreatedAtTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        DateTimeOffset expectedAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         DateTimeOffset expectedBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         DateTimeOffset expectedOnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        DateTimeOffset expectedOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
-        Assert.Equal(expectedAfter, deserialized.After);
         Assert.Equal(expectedBefore, deserialized.Before);
         Assert.Equal(expectedOnOrAfter, deserialized.OnOrAfter);
-        Assert.Equal(expectedOnOrBefore, deserialized.OnOrBefore);
     }
 
     [Fact]
@@ -804,10 +770,8 @@ public class CreatedAtTest : TestBase
     {
         var model = new CreatedAt
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         model.Validate();
@@ -818,14 +782,10 @@ public class CreatedAtTest : TestBase
     {
         var model = new CreatedAt { };
 
-        Assert.Null(model.After);
-        Assert.False(model.RawData.ContainsKey("after"));
         Assert.Null(model.Before);
         Assert.False(model.RawData.ContainsKey("before"));
         Assert.Null(model.OnOrAfter);
         Assert.False(model.RawData.ContainsKey("on_or_after"));
-        Assert.Null(model.OnOrBefore);
-        Assert.False(model.RawData.ContainsKey("on_or_before"));
     }
 
     [Fact]
@@ -842,20 +802,14 @@ public class CreatedAtTest : TestBase
         var model = new CreatedAt
         {
             // Null should be interpreted as omitted for these properties
-            After = null,
             Before = null,
             OnOrAfter = null,
-            OnOrBefore = null,
         };
 
-        Assert.Null(model.After);
-        Assert.False(model.RawData.ContainsKey("after"));
         Assert.Null(model.Before);
         Assert.False(model.RawData.ContainsKey("before"));
         Assert.Null(model.OnOrAfter);
         Assert.False(model.RawData.ContainsKey("on_or_after"));
-        Assert.Null(model.OnOrBefore);
-        Assert.False(model.RawData.ContainsKey("on_or_before"));
     }
 
     [Fact]
@@ -864,10 +818,8 @@ public class CreatedAtTest : TestBase
         var model = new CreatedAt
         {
             // Null should be interpreted as omitted for these properties
-            After = null,
             Before = null,
             OnOrAfter = null,
-            OnOrBefore = null,
         };
 
         model.Validate();
@@ -878,10 +830,8 @@ public class CreatedAtTest : TestBase
     {
         var model = new CreatedAt
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         CreatedAt copied = new(model);

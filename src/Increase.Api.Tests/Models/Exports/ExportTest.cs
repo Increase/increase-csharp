@@ -26,8 +26,8 @@ public class ExportTest : TestBase
                 AccountID = "account_id",
                 CreatedAt = new()
                 {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             },
             AccountVerificationLetter = new()
@@ -113,8 +113,8 @@ public class ExportTest : TestBase
             AccountID = "account_id",
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
         Exports::ExportAccountVerificationLetter expectedAccountVerificationLetter = new()
@@ -232,8 +232,8 @@ public class ExportTest : TestBase
                 AccountID = "account_id",
                 CreatedAt = new()
                 {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             },
             AccountVerificationLetter = new()
@@ -333,8 +333,8 @@ public class ExportTest : TestBase
                 AccountID = "account_id",
                 CreatedAt = new()
                 {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             },
             AccountVerificationLetter = new()
@@ -427,8 +427,8 @@ public class ExportTest : TestBase
             AccountID = "account_id",
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
         Exports::ExportAccountVerificationLetter expectedAccountVerificationLetter = new()
@@ -549,8 +549,8 @@ public class ExportTest : TestBase
                 AccountID = "account_id",
                 CreatedAt = new()
                 {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             },
             AccountVerificationLetter = new()
@@ -644,8 +644,8 @@ public class ExportTest : TestBase
                 AccountID = "account_id",
                 CreatedAt = new()
                 {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
             },
             AccountVerificationLetter = new()
@@ -830,16 +830,16 @@ public class ExportAccountStatementOfxTest : TestBase
             AccountID = "account_id",
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
         string expectedAccountID = "account_id";
         Exports::ExportAccountStatementOfxCreatedAt expectedCreatedAt = new()
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         Assert.Equal(expectedAccountID, model.AccountID);
@@ -854,8 +854,8 @@ public class ExportAccountStatementOfxTest : TestBase
             AccountID = "account_id",
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
@@ -876,8 +876,8 @@ public class ExportAccountStatementOfxTest : TestBase
             AccountID = "account_id",
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
@@ -891,8 +891,8 @@ public class ExportAccountStatementOfxTest : TestBase
         string expectedAccountID = "account_id";
         Exports::ExportAccountStatementOfxCreatedAt expectedCreatedAt = new()
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         Assert.Equal(expectedAccountID, deserialized.AccountID);
@@ -907,8 +907,8 @@ public class ExportAccountStatementOfxTest : TestBase
             AccountID = "account_id",
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
@@ -923,8 +923,8 @@ public class ExportAccountStatementOfxTest : TestBase
             AccountID = "account_id",
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
@@ -941,15 +941,15 @@ public class ExportAccountStatementOfxCreatedAtTest : TestBase
     {
         var model = new Exports::ExportAccountStatementOfxCreatedAt
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
-        DateTimeOffset expectedAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         DateTimeOffset expectedBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedOnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
-        Assert.Equal(expectedAfter, model.After);
         Assert.Equal(expectedBefore, model.Before);
+        Assert.Equal(expectedOnOrAfter, model.OnOrAfter);
     }
 
     [Fact]
@@ -957,8 +957,8 @@ public class ExportAccountStatementOfxCreatedAtTest : TestBase
     {
         var model = new Exports::ExportAccountStatementOfxCreatedAt
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -975,8 +975,8 @@ public class ExportAccountStatementOfxCreatedAtTest : TestBase
     {
         var model = new Exports::ExportAccountStatementOfxCreatedAt
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -986,11 +986,11 @@ public class ExportAccountStatementOfxCreatedAtTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        DateTimeOffset expectedAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         DateTimeOffset expectedBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedOnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
-        Assert.Equal(expectedAfter, deserialized.After);
         Assert.Equal(expectedBefore, deserialized.Before);
+        Assert.Equal(expectedOnOrAfter, deserialized.OnOrAfter);
     }
 
     [Fact]
@@ -998,8 +998,8 @@ public class ExportAccountStatementOfxCreatedAtTest : TestBase
     {
         var model = new Exports::ExportAccountStatementOfxCreatedAt
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         model.Validate();
@@ -1010,8 +1010,8 @@ public class ExportAccountStatementOfxCreatedAtTest : TestBase
     {
         var model = new Exports::ExportAccountStatementOfxCreatedAt
         {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         Exports::ExportAccountStatementOfxCreatedAt copied = new(model);
