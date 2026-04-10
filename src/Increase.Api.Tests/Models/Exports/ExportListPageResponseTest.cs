@@ -29,8 +29,8 @@ public class ExportListPageResponseTest : TestBase
                         AccountID = "account_id",
                         CreatedAt = new()
                         {
-                            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         },
                     },
                     AccountVerificationLetter = new()
@@ -127,8 +127,8 @@ public class ExportListPageResponseTest : TestBase
                     AccountID = "account_id",
                     CreatedAt = new()
                     {
-                        After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     },
                 },
                 AccountVerificationLetter = new()
@@ -237,8 +237,8 @@ public class ExportListPageResponseTest : TestBase
                         AccountID = "account_id",
                         CreatedAt = new()
                         {
-                            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         },
                     },
                     AccountVerificationLetter = new()
@@ -349,8 +349,8 @@ public class ExportListPageResponseTest : TestBase
                         AccountID = "account_id",
                         CreatedAt = new()
                         {
-                            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         },
                     },
                     AccountVerificationLetter = new()
@@ -454,8 +454,8 @@ public class ExportListPageResponseTest : TestBase
                     AccountID = "account_id",
                     CreatedAt = new()
                     {
-                        After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     },
                 },
                 AccountVerificationLetter = new()
@@ -564,8 +564,8 @@ public class ExportListPageResponseTest : TestBase
                         AccountID = "account_id",
                         CreatedAt = new()
                         {
-                            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         },
                     },
                     AccountVerificationLetter = new()
@@ -670,8 +670,8 @@ public class ExportListPageResponseTest : TestBase
                         AccountID = "account_id",
                         CreatedAt = new()
                         {
-                            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         },
                     },
                     AccountVerificationLetter = new()
