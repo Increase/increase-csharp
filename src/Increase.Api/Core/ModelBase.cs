@@ -1334,6 +1334,10 @@ public abstract record class ModelBase
                 string,
                 Entities::EntityUpdateParamsCorporationLegalIdentifierCategory
             >(),
+            new ApiEnumConverter<
+                string,
+                Entities::EntityUpdateParamsNaturalPersonIdentificationMethod
+            >(),
             new ApiEnumConverter<string, Entities::EntityUpdateParamsRiskRatingRating>(),
             new ApiEnumConverter<
                 string,
