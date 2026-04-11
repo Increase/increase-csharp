@@ -84,12 +84,12 @@ public sealed record class Export : JsonModel
     /// Details of the balance CSV export. This field will be present when the `category`
     /// is equal to `balance_csv`.
     /// </summary>
-    public required ExportBalanceCsv? BalanceCsv
+    public required BalanceCsv? BalanceCsv
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<ExportBalanceCsv>("balance_csv");
+            return this._rawData.GetNullableClass<BalanceCsv>("balance_csv");
         }
         init { this._rawData.Set("balance_csv", value); }
     }
@@ -748,8 +748,8 @@ class ExportAccountVerificationLetterFromRaw : IFromRawJson<ExportAccountVerific
 /// Details of the balance CSV export. This field will be present when the `category`
 /// is equal to `balance_csv`.
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<ExportBalanceCsv, ExportBalanceCsvFromRaw>))]
-public sealed record class ExportBalanceCsv : JsonModel
+[JsonConverter(typeof(JsonModelConverter<BalanceCsv, BalanceCsvFromRaw>))]
+public sealed record class BalanceCsv : JsonModel
 {
     /// <summary>
     /// Filter results by Account.
@@ -767,12 +767,12 @@ public sealed record class ExportBalanceCsv : JsonModel
     /// <summary>
     /// Filter balances by their created date.
     /// </summary>
-    public required ExportBalanceCsvCreatedAt? CreatedAt
+    public required BalanceCsvCreatedAt? CreatedAt
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<ExportBalanceCsvCreatedAt>("created_at");
+            return this._rawData.GetNullableClass<BalanceCsvCreatedAt>("created_at");
         }
         init { this._rawData.Set("created_at", value); }
     }
@@ -784,50 +784,46 @@ public sealed record class ExportBalanceCsv : JsonModel
         this.CreatedAt?.Validate();
     }
 
-    public ExportBalanceCsv() { }
+    public BalanceCsv() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public ExportBalanceCsv(ExportBalanceCsv exportBalanceCsv)
-        : base(exportBalanceCsv) { }
+    public BalanceCsv(BalanceCsv balanceCsv)
+        : base(balanceCsv) { }
 #pragma warning restore CS8618
 
-    public ExportBalanceCsv(IReadOnlyDictionary<string, JsonElement> rawData)
+    public BalanceCsv(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    ExportBalanceCsv(FrozenDictionary<string, JsonElement> rawData)
+    BalanceCsv(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="ExportBalanceCsvFromRaw.FromRawUnchecked"/>
-    public static ExportBalanceCsv FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
+    /// <inheritdoc cref="BalanceCsvFromRaw.FromRawUnchecked"/>
+    public static BalanceCsv FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
     }
 }
 
-class ExportBalanceCsvFromRaw : IFromRawJson<ExportBalanceCsv>
+class BalanceCsvFromRaw : IFromRawJson<BalanceCsv>
 {
     /// <inheritdoc/>
-    public ExportBalanceCsv FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        ExportBalanceCsv.FromRawUnchecked(rawData);
+    public BalanceCsv FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        BalanceCsv.FromRawUnchecked(rawData);
 }
 
 /// <summary>
 /// Filter balances by their created date.
 /// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<ExportBalanceCsvCreatedAt, ExportBalanceCsvCreatedAtFromRaw>)
-)]
-public sealed record class ExportBalanceCsvCreatedAt : JsonModel
+[JsonConverter(typeof(JsonModelConverter<BalanceCsvCreatedAt, BalanceCsvCreatedAtFromRaw>))]
+public sealed record class BalanceCsvCreatedAt : JsonModel
 {
     /// <summary>
     /// Filter balances created after this time.
@@ -862,29 +858,29 @@ public sealed record class ExportBalanceCsvCreatedAt : JsonModel
         _ = this.Before;
     }
 
-    public ExportBalanceCsvCreatedAt() { }
+    public BalanceCsvCreatedAt() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public ExportBalanceCsvCreatedAt(ExportBalanceCsvCreatedAt exportBalanceCsvCreatedAt)
-        : base(exportBalanceCsvCreatedAt) { }
+    public BalanceCsvCreatedAt(BalanceCsvCreatedAt balanceCsvCreatedAt)
+        : base(balanceCsvCreatedAt) { }
 #pragma warning restore CS8618
 
-    public ExportBalanceCsvCreatedAt(IReadOnlyDictionary<string, JsonElement> rawData)
+    public BalanceCsvCreatedAt(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    ExportBalanceCsvCreatedAt(FrozenDictionary<string, JsonElement> rawData)
+    BalanceCsvCreatedAt(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="ExportBalanceCsvCreatedAtFromRaw.FromRawUnchecked"/>
-    public static ExportBalanceCsvCreatedAt FromRawUnchecked(
+    /// <inheritdoc cref="BalanceCsvCreatedAtFromRaw.FromRawUnchecked"/>
+    public static BalanceCsvCreatedAt FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -892,12 +888,11 @@ public sealed record class ExportBalanceCsvCreatedAt : JsonModel
     }
 }
 
-class ExportBalanceCsvCreatedAtFromRaw : IFromRawJson<ExportBalanceCsvCreatedAt>
+class BalanceCsvCreatedAtFromRaw : IFromRawJson<BalanceCsvCreatedAt>
 {
     /// <inheritdoc/>
-    public ExportBalanceCsvCreatedAt FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => ExportBalanceCsvCreatedAt.FromRawUnchecked(rawData);
+    public BalanceCsvCreatedAt FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        BalanceCsvCreatedAt.FromRawUnchecked(rawData);
 }
 
 /// <summary>
