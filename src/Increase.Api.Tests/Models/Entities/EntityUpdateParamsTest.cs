@@ -60,6 +60,34 @@ public class EntityUpdateParamsTest : TestBase
                     State = "x",
                     Zip = "x",
                 },
+                ConfirmedNoUsTaxID = true,
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "x",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
                 Name = "x",
             },
             RiskRating = new()
@@ -134,6 +162,33 @@ public class EntityUpdateParamsTest : TestBase
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
+            },
+            ConfirmedNoUsTaxID = true,
+            Identification = new()
+            {
+                Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "x",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
             },
             Name = "x",
         };
@@ -285,6 +340,34 @@ public class EntityUpdateParamsTest : TestBase
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
+                },
+                ConfirmedNoUsTaxID = true,
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "x",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
                 },
                 Name = "x",
             },
@@ -1372,6 +1455,33 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
                 State = "x",
                 Zip = "x",
             },
+            ConfirmedNoUsTaxID = true,
+            Identification = new()
+            {
+                Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "x",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
             Name = "x",
         };
 
@@ -1384,9 +1494,38 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
             State = "x",
             Zip = "x",
         };
+        bool expectedConfirmedNoUsTaxID = true;
+        EntityUpdateParamsNaturalPersonIdentification expectedIdentification = new()
+        {
+            Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "x",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
         string expectedName = "x";
 
         Assert.Equal(expectedAddress, model.Address);
+        Assert.Equal(expectedConfirmedNoUsTaxID, model.ConfirmedNoUsTaxID);
+        Assert.Equal(expectedIdentification, model.Identification);
         Assert.Equal(expectedName, model.Name);
     }
 
@@ -1403,6 +1542,33 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
+            },
+            ConfirmedNoUsTaxID = true,
+            Identification = new()
+            {
+                Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "x",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
             },
             Name = "x",
         };
@@ -1430,6 +1596,33 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
                 State = "x",
                 Zip = "x",
             },
+            ConfirmedNoUsTaxID = true,
+            Identification = new()
+            {
+                Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "x",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
             Name = "x",
         };
 
@@ -1449,9 +1642,38 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
             State = "x",
             Zip = "x",
         };
+        bool expectedConfirmedNoUsTaxID = true;
+        EntityUpdateParamsNaturalPersonIdentification expectedIdentification = new()
+        {
+            Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "x",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
         string expectedName = "x";
 
         Assert.Equal(expectedAddress, deserialized.Address);
+        Assert.Equal(expectedConfirmedNoUsTaxID, deserialized.ConfirmedNoUsTaxID);
+        Assert.Equal(expectedIdentification, deserialized.Identification);
         Assert.Equal(expectedName, deserialized.Name);
     }
 
@@ -1469,6 +1691,33 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
                 State = "x",
                 Zip = "x",
             },
+            ConfirmedNoUsTaxID = true,
+            Identification = new()
+            {
+                Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "x",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
             Name = "x",
         };
 
@@ -1482,6 +1731,10 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
 
         Assert.Null(model.Address);
         Assert.False(model.RawData.ContainsKey("address"));
+        Assert.Null(model.ConfirmedNoUsTaxID);
+        Assert.False(model.RawData.ContainsKey("confirmed_no_us_tax_id"));
+        Assert.Null(model.Identification);
+        Assert.False(model.RawData.ContainsKey("identification"));
         Assert.Null(model.Name);
         Assert.False(model.RawData.ContainsKey("name"));
     }
@@ -1501,11 +1754,17 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
         {
             // Null should be interpreted as omitted for these properties
             Address = null,
+            ConfirmedNoUsTaxID = null,
+            Identification = null,
             Name = null,
         };
 
         Assert.Null(model.Address);
         Assert.False(model.RawData.ContainsKey("address"));
+        Assert.Null(model.ConfirmedNoUsTaxID);
+        Assert.False(model.RawData.ContainsKey("confirmed_no_us_tax_id"));
+        Assert.Null(model.Identification);
+        Assert.False(model.RawData.ContainsKey("identification"));
         Assert.Null(model.Name);
         Assert.False(model.RawData.ContainsKey("name"));
     }
@@ -1517,6 +1776,8 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
         {
             // Null should be interpreted as omitted for these properties
             Address = null,
+            ConfirmedNoUsTaxID = null,
+            Identification = null,
             Name = null,
         };
 
@@ -1536,6 +1797,33 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
+            },
+            ConfirmedNoUsTaxID = true,
+            Identification = new()
+            {
+                Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "x",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
             },
             Name = "x",
         };
@@ -1735,6 +2023,827 @@ public class EntityUpdateParamsNaturalPersonAddressTest : TestBase
         };
 
         EntityUpdateParamsNaturalPersonAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsNaturalPersonIdentificationTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentification
+        {
+            Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "x",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        ApiEnum<string, EntityUpdateParamsNaturalPersonIdentificationMethod> expectedMethod =
+            EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber;
+        string expectedNumber = "xxxx";
+        EntityUpdateParamsNaturalPersonIdentificationDriversLicense expectedDriversLicense = new()
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "x",
+            BackFileID = "back_file_id",
+        };
+        EntityUpdateParamsNaturalPersonIdentificationOther expectedOther = new()
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+        EntityUpdateParamsNaturalPersonIdentificationPassport expectedPassport = new()
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        Assert.Equal(expectedMethod, model.Method);
+        Assert.Equal(expectedNumber, model.Number);
+        Assert.Equal(expectedDriversLicense, model.DriversLicense);
+        Assert.Equal(expectedOther, model.Other);
+        Assert.Equal(expectedPassport, model.Passport);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentification
+        {
+            Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "x",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsNaturalPersonIdentification>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentification
+        {
+            Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "x",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsNaturalPersonIdentification>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<string, EntityUpdateParamsNaturalPersonIdentificationMethod> expectedMethod =
+            EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber;
+        string expectedNumber = "xxxx";
+        EntityUpdateParamsNaturalPersonIdentificationDriversLicense expectedDriversLicense = new()
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "x",
+            BackFileID = "back_file_id",
+        };
+        EntityUpdateParamsNaturalPersonIdentificationOther expectedOther = new()
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+        EntityUpdateParamsNaturalPersonIdentificationPassport expectedPassport = new()
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        Assert.Equal(expectedMethod, deserialized.Method);
+        Assert.Equal(expectedNumber, deserialized.Number);
+        Assert.Equal(expectedDriversLicense, deserialized.DriversLicense);
+        Assert.Equal(expectedOther, deserialized.Other);
+        Assert.Equal(expectedPassport, deserialized.Passport);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentification
+        {
+            Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "x",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentification
+        {
+            Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+
+        Assert.Null(model.DriversLicense);
+        Assert.False(model.RawData.ContainsKey("drivers_license"));
+        Assert.Null(model.Other);
+        Assert.False(model.RawData.ContainsKey("other"));
+        Assert.Null(model.Passport);
+        Assert.False(model.RawData.ContainsKey("passport"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentification
+        {
+            Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentification
+        {
+            Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+
+            // Null should be interpreted as omitted for these properties
+            DriversLicense = null,
+            Other = null,
+            Passport = null,
+        };
+
+        Assert.Null(model.DriversLicense);
+        Assert.False(model.RawData.ContainsKey("drivers_license"));
+        Assert.Null(model.Other);
+        Assert.False(model.RawData.ContainsKey("other"));
+        Assert.Null(model.Passport);
+        Assert.False(model.RawData.ContainsKey("passport"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentification
+        {
+            Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+
+            // Null should be interpreted as omitted for these properties
+            DriversLicense = null,
+            Other = null,
+            Passport = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentification
+        {
+            Method = EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "x",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        EntityUpdateParamsNaturalPersonIdentification copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsNaturalPersonIdentificationMethodTest : TestBase
+{
+    [Theory]
+    [InlineData(EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(
+        EntityUpdateParamsNaturalPersonIdentificationMethod.IndividualTaxpayerIdentificationNumber
+    )]
+    [InlineData(EntityUpdateParamsNaturalPersonIdentificationMethod.Passport)]
+    [InlineData(EntityUpdateParamsNaturalPersonIdentificationMethod.DriversLicense)]
+    [InlineData(EntityUpdateParamsNaturalPersonIdentificationMethod.Other)]
+    public void Validation_Works(EntityUpdateParamsNaturalPersonIdentificationMethod rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, EntityUpdateParamsNaturalPersonIdentificationMethod> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsNaturalPersonIdentificationMethod>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(
+        EntityUpdateParamsNaturalPersonIdentificationMethod.IndividualTaxpayerIdentificationNumber
+    )]
+    [InlineData(EntityUpdateParamsNaturalPersonIdentificationMethod.Passport)]
+    [InlineData(EntityUpdateParamsNaturalPersonIdentificationMethod.DriversLicense)]
+    [InlineData(EntityUpdateParamsNaturalPersonIdentificationMethod.Other)]
+    public void SerializationRoundtrip_Works(
+        EntityUpdateParamsNaturalPersonIdentificationMethod rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, EntityUpdateParamsNaturalPersonIdentificationMethod> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsNaturalPersonIdentificationMethod>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsNaturalPersonIdentificationMethod>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsNaturalPersonIdentificationMethod>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class EntityUpdateParamsNaturalPersonIdentificationDriversLicenseTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "x",
+            BackFileID = "back_file_id",
+        };
+
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+        string expectedState = "x";
+        string expectedBackFileID = "back_file_id";
+
+        Assert.Equal(expectedExpirationDate, model.ExpirationDate);
+        Assert.Equal(expectedFileID, model.FileID);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedBackFileID, model.BackFileID);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "x",
+            BackFileID = "back_file_id",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsNaturalPersonIdentificationDriversLicense>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "x",
+            BackFileID = "back_file_id",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsNaturalPersonIdentificationDriversLicense>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+        string expectedState = "x";
+        string expectedBackFileID = "back_file_id";
+
+        Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
+        Assert.Equal(expectedFileID, deserialized.FileID);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedBackFileID, deserialized.BackFileID);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "x",
+            BackFileID = "back_file_id",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "x",
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "x",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "x",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "x",
+            BackFileID = "back_file_id",
+        };
+
+        EntityUpdateParamsNaturalPersonIdentificationDriversLicense copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsNaturalPersonIdentificationOtherTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        string expectedCountry = "x";
+        string expectedDescription = "x";
+        string expectedFileID = "file_id";
+        string expectedBackFileID = "back_file_id";
+        string expectedExpirationDate = "2019-12-27";
+
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedDescription, model.Description);
+        Assert.Equal(expectedFileID, model.FileID);
+        Assert.Equal(expectedBackFileID, model.BackFileID);
+        Assert.Equal(expectedExpirationDate, model.ExpirationDate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsNaturalPersonIdentificationOther>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsNaturalPersonIdentificationOther>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedCountry = "x";
+        string expectedDescription = "x";
+        string expectedFileID = "file_id";
+        string expectedBackFileID = "back_file_id";
+        string expectedExpirationDate = "2019-12-27";
+
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedDescription, deserialized.Description);
+        Assert.Equal(expectedFileID, deserialized.FileID);
+        Assert.Equal(expectedBackFileID, deserialized.BackFileID);
+        Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+        Assert.Null(model.ExpirationDate);
+        Assert.False(model.RawData.ContainsKey("expiration_date"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+            ExpirationDate = null,
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+        Assert.Null(model.ExpirationDate);
+        Assert.False(model.RawData.ContainsKey("expiration_date"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+            ExpirationDate = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        EntityUpdateParamsNaturalPersonIdentificationOther copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsNaturalPersonIdentificationPassportTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        string expectedCountry = "x";
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedExpirationDate, model.ExpirationDate);
+        Assert.Equal(expectedFileID, model.FileID);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsNaturalPersonIdentificationPassport>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsNaturalPersonIdentificationPassport>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedCountry = "x";
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
+        Assert.Equal(expectedFileID, deserialized.FileID);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsNaturalPersonIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        EntityUpdateParamsNaturalPersonIdentificationPassport copied = new(model);
 
         Assert.Equal(model, copied);
     }

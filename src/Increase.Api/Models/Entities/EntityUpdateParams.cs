@@ -1118,6 +1118,52 @@ public sealed record class EntityUpdateParamsNaturalPerson : JsonModel
     }
 
     /// <summary>
+    /// The identification method for an individual can only be a passport, driver's
+    /// license, or other document if you've confirmed the individual does not have
+    /// a US tax id (either a Social Security Number or Individual Taxpayer Identification Number).
+    /// </summary>
+    public bool? ConfirmedNoUsTaxID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("confirmed_no_us_tax_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("confirmed_no_us_tax_id", value);
+        }
+    }
+
+    /// <summary>
+    /// A means of verifying the person's identity.
+    /// </summary>
+    public EntityUpdateParamsNaturalPersonIdentification? Identification
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsNaturalPersonIdentification>(
+                "identification"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("identification", value);
+        }
+    }
+
+    /// <summary>
     /// The legal name of the natural person.
     /// </summary>
     public string? Name
@@ -1142,6 +1188,8 @@ public sealed record class EntityUpdateParamsNaturalPerson : JsonModel
     public override void Validate()
     {
         this.Address?.Validate();
+        _ = this.ConfirmedNoUsTaxID;
+        this.Identification?.Validate();
         _ = this.Name;
     }
 
@@ -1350,6 +1398,633 @@ class EntityUpdateParamsNaturalPersonAddressFromRaw
     public EntityUpdateParamsNaturalPersonAddress FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => EntityUpdateParamsNaturalPersonAddress.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// A means of verifying the person's identity.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsNaturalPersonIdentification,
+        EntityUpdateParamsNaturalPersonIdentificationFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsNaturalPersonIdentification : JsonModel
+{
+    /// <summary>
+    /// A method that can be used to verify the individual's identity.
+    /// </summary>
+    public required ApiEnum<string, EntityUpdateParamsNaturalPersonIdentificationMethod> Method
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, EntityUpdateParamsNaturalPersonIdentificationMethod>
+            >("method");
+        }
+        init { this._rawData.Set("method", value); }
+    }
+
+    /// <summary>
+    /// An identification number that can be used to verify the individual's identity,
+    /// such as a social security number.
+    /// </summary>
+    public required string Number
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("number");
+        }
+        init { this._rawData.Set("number", value); }
+    }
+
+    /// <summary>
+    /// Information about the United States driver's license used for identification.
+    /// Required if `method` is equal to `drivers_license`.
+    /// </summary>
+    public EntityUpdateParamsNaturalPersonIdentificationDriversLicense? DriversLicense
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsNaturalPersonIdentificationDriversLicense>(
+                "drivers_license"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("drivers_license", value);
+        }
+    }
+
+    /// <summary>
+    /// Information about the identification document provided. Required if `method`
+    /// is equal to `other`.
+    /// </summary>
+    public EntityUpdateParamsNaturalPersonIdentificationOther? Other
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsNaturalPersonIdentificationOther>(
+                "other"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("other", value);
+        }
+    }
+
+    /// <summary>
+    /// Information about the passport used for identification. Required if `method`
+    /// is equal to `passport`.
+    /// </summary>
+    public EntityUpdateParamsNaturalPersonIdentificationPassport? Passport
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsNaturalPersonIdentificationPassport>(
+                "passport"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("passport", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Method.Validate();
+        _ = this.Number;
+        this.DriversLicense?.Validate();
+        this.Other?.Validate();
+        this.Passport?.Validate();
+    }
+
+    public EntityUpdateParamsNaturalPersonIdentification() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsNaturalPersonIdentification(
+        EntityUpdateParamsNaturalPersonIdentification entityUpdateParamsNaturalPersonIdentification
+    )
+        : base(entityUpdateParamsNaturalPersonIdentification) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsNaturalPersonIdentification(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsNaturalPersonIdentification(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsNaturalPersonIdentificationFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsNaturalPersonIdentification FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsNaturalPersonIdentificationFromRaw
+    : IFromRawJson<EntityUpdateParamsNaturalPersonIdentification>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsNaturalPersonIdentification FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsNaturalPersonIdentification.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// A method that can be used to verify the individual's identity.
+/// </summary>
+[JsonConverter(typeof(EntityUpdateParamsNaturalPersonIdentificationMethodConverter))]
+public enum EntityUpdateParamsNaturalPersonIdentificationMethod
+{
+    /// <summary>
+    /// A social security number.
+    /// </summary>
+    SocialSecurityNumber,
+
+    /// <summary>
+    /// An individual taxpayer identification number (ITIN).
+    /// </summary>
+    IndividualTaxpayerIdentificationNumber,
+
+    /// <summary>
+    /// A passport number.
+    /// </summary>
+    Passport,
+
+    /// <summary>
+    /// A driver's license number.
+    /// </summary>
+    DriversLicense,
+
+    /// <summary>
+    /// Another identifying document.
+    /// </summary>
+    Other,
+}
+
+sealed class EntityUpdateParamsNaturalPersonIdentificationMethodConverter
+    : JsonConverter<EntityUpdateParamsNaturalPersonIdentificationMethod>
+{
+    public override EntityUpdateParamsNaturalPersonIdentificationMethod Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "social_security_number" =>
+                EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber,
+            "individual_taxpayer_identification_number" =>
+                EntityUpdateParamsNaturalPersonIdentificationMethod.IndividualTaxpayerIdentificationNumber,
+            "passport" => EntityUpdateParamsNaturalPersonIdentificationMethod.Passport,
+            "drivers_license" => EntityUpdateParamsNaturalPersonIdentificationMethod.DriversLicense,
+            "other" => EntityUpdateParamsNaturalPersonIdentificationMethod.Other,
+            _ => (EntityUpdateParamsNaturalPersonIdentificationMethod)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        EntityUpdateParamsNaturalPersonIdentificationMethod value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                EntityUpdateParamsNaturalPersonIdentificationMethod.SocialSecurityNumber =>
+                    "social_security_number",
+                EntityUpdateParamsNaturalPersonIdentificationMethod.IndividualTaxpayerIdentificationNumber =>
+                    "individual_taxpayer_identification_number",
+                EntityUpdateParamsNaturalPersonIdentificationMethod.Passport => "passport",
+                EntityUpdateParamsNaturalPersonIdentificationMethod.DriversLicense =>
+                    "drivers_license",
+                EntityUpdateParamsNaturalPersonIdentificationMethod.Other => "other",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Information about the United States driver's license used for identification.
+/// Required if `method` is equal to `drivers_license`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsNaturalPersonIdentificationDriversLicense,
+        EntityUpdateParamsNaturalPersonIdentificationDriversLicenseFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsNaturalPersonIdentificationDriversLicense : JsonModel
+{
+    /// <summary>
+    /// The driver's license's expiration date in YYYY-MM-DD format.
+    /// </summary>
+    public required string ExpirationDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("expiration_date");
+        }
+        init { this._rawData.Set("expiration_date", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the front of the driver's license.
+    /// </summary>
+    public required string FileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("file_id");
+        }
+        init { this._rawData.Set("file_id", value); }
+    }
+
+    /// <summary>
+    /// The state that issued the provided driver's license.
+    /// </summary>
+    public required string State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("state");
+        }
+        init { this._rawData.Set("state", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the back of the driver's license.
+    /// </summary>
+    public string? BackFileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("back_file_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("back_file_id", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.ExpirationDate;
+        _ = this.FileID;
+        _ = this.State;
+        _ = this.BackFileID;
+    }
+
+    public EntityUpdateParamsNaturalPersonIdentificationDriversLicense() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsNaturalPersonIdentificationDriversLicense(
+        EntityUpdateParamsNaturalPersonIdentificationDriversLicense entityUpdateParamsNaturalPersonIdentificationDriversLicense
+    )
+        : base(entityUpdateParamsNaturalPersonIdentificationDriversLicense) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsNaturalPersonIdentificationDriversLicense(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsNaturalPersonIdentificationDriversLicense(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsNaturalPersonIdentificationDriversLicenseFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsNaturalPersonIdentificationDriversLicense FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsNaturalPersonIdentificationDriversLicenseFromRaw
+    : IFromRawJson<EntityUpdateParamsNaturalPersonIdentificationDriversLicense>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsNaturalPersonIdentificationDriversLicense FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsNaturalPersonIdentificationDriversLicense.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Information about the identification document provided. Required if `method` is
+/// equal to `other`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsNaturalPersonIdentificationOther,
+        EntityUpdateParamsNaturalPersonIdentificationOtherFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsNaturalPersonIdentificationOther : JsonModel
+{
+    /// <summary>
+    /// The two-character ISO 3166-1 code representing the country that issued the
+    /// document (e.g., `US`).
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <summary>
+    /// A description of the document submitted.
+    /// </summary>
+    public required string Description
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("description");
+        }
+        init { this._rawData.Set("description", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the front of the document.
+    /// </summary>
+    public required string FileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("file_id");
+        }
+        init { this._rawData.Set("file_id", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the back of the document. Not every
+    /// document has a reverse side.
+    /// </summary>
+    public string? BackFileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("back_file_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("back_file_id", value);
+        }
+    }
+
+    /// <summary>
+    /// The document's expiration date in YYYY-MM-DD format.
+    /// </summary>
+    public string? ExpirationDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("expiration_date");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("expiration_date", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Country;
+        _ = this.Description;
+        _ = this.FileID;
+        _ = this.BackFileID;
+        _ = this.ExpirationDate;
+    }
+
+    public EntityUpdateParamsNaturalPersonIdentificationOther() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsNaturalPersonIdentificationOther(
+        EntityUpdateParamsNaturalPersonIdentificationOther entityUpdateParamsNaturalPersonIdentificationOther
+    )
+        : base(entityUpdateParamsNaturalPersonIdentificationOther) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsNaturalPersonIdentificationOther(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsNaturalPersonIdentificationOther(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsNaturalPersonIdentificationOtherFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsNaturalPersonIdentificationOther FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsNaturalPersonIdentificationOtherFromRaw
+    : IFromRawJson<EntityUpdateParamsNaturalPersonIdentificationOther>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsNaturalPersonIdentificationOther FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsNaturalPersonIdentificationOther.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Information about the passport used for identification. Required if `method`
+/// is equal to `passport`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsNaturalPersonIdentificationPassport,
+        EntityUpdateParamsNaturalPersonIdentificationPassportFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsNaturalPersonIdentificationPassport : JsonModel
+{
+    /// <summary>
+    /// The two-character ISO 3166-1 code representing the country that issued the
+    /// document (e.g., `US`).
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <summary>
+    /// The passport's expiration date in YYYY-MM-DD format.
+    /// </summary>
+    public required string ExpirationDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("expiration_date");
+        }
+        init { this._rawData.Set("expiration_date", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the passport.
+    /// </summary>
+    public required string FileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("file_id");
+        }
+        init { this._rawData.Set("file_id", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Country;
+        _ = this.ExpirationDate;
+        _ = this.FileID;
+    }
+
+    public EntityUpdateParamsNaturalPersonIdentificationPassport() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsNaturalPersonIdentificationPassport(
+        EntityUpdateParamsNaturalPersonIdentificationPassport entityUpdateParamsNaturalPersonIdentificationPassport
+    )
+        : base(entityUpdateParamsNaturalPersonIdentificationPassport) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsNaturalPersonIdentificationPassport(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsNaturalPersonIdentificationPassport(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsNaturalPersonIdentificationPassportFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsNaturalPersonIdentificationPassport FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsNaturalPersonIdentificationPassportFromRaw
+    : IFromRawJson<EntityUpdateParamsNaturalPersonIdentificationPassport>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsNaturalPersonIdentificationPassport FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsNaturalPersonIdentificationPassport.FromRawUnchecked(rawData);
 }
 
 /// <summary>
