@@ -119,7 +119,7 @@ public class ExportTest : TestBase
             AccountNumberID = "account_number_id",
             BalanceDate = "2019-12-27",
         };
-        Exports::ExportBalanceCsv expectedBalanceCsv = new()
+        Exports::BalanceCsv expectedBalanceCsv = new()
         {
             AccountID = "account_id",
             CreatedAt = new()
@@ -424,7 +424,7 @@ public class ExportTest : TestBase
             AccountNumberID = "account_number_id",
             BalanceDate = "2019-12-27",
         };
-        Exports::ExportBalanceCsv expectedBalanceCsv = new()
+        Exports::BalanceCsv expectedBalanceCsv = new()
         {
             AccountID = "account_id",
             CreatedAt = new()
@@ -1085,12 +1085,12 @@ public class ExportAccountVerificationLetterTest : TestBase
     }
 }
 
-public class ExportBalanceCsvTest : TestBase
+public class BalanceCsvTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Exports::ExportBalanceCsv
+        var model = new Exports::BalanceCsv
         {
             AccountID = "account_id",
             CreatedAt = new()
@@ -1101,7 +1101,7 @@ public class ExportBalanceCsvTest : TestBase
         };
 
         string expectedAccountID = "account_id";
-        Exports::ExportBalanceCsvCreatedAt expectedCreatedAt = new()
+        Exports::BalanceCsvCreatedAt expectedCreatedAt = new()
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -1114,7 +1114,7 @@ public class ExportBalanceCsvTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Exports::ExportBalanceCsv
+        var model = new Exports::BalanceCsv
         {
             AccountID = "account_id",
             CreatedAt = new()
@@ -1125,7 +1125,7 @@ public class ExportBalanceCsvTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Exports::ExportBalanceCsv>(
+        var deserialized = JsonSerializer.Deserialize<Exports::BalanceCsv>(
             json,
             ModelBase.SerializerOptions
         );
@@ -1136,7 +1136,7 @@ public class ExportBalanceCsvTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Exports::ExportBalanceCsv
+        var model = new Exports::BalanceCsv
         {
             AccountID = "account_id",
             CreatedAt = new()
@@ -1147,14 +1147,14 @@ public class ExportBalanceCsvTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Exports::ExportBalanceCsv>(
+        var deserialized = JsonSerializer.Deserialize<Exports::BalanceCsv>(
             element,
             ModelBase.SerializerOptions
         );
         Assert.NotNull(deserialized);
 
         string expectedAccountID = "account_id";
-        Exports::ExportBalanceCsvCreatedAt expectedCreatedAt = new()
+        Exports::BalanceCsvCreatedAt expectedCreatedAt = new()
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -1167,7 +1167,7 @@ public class ExportBalanceCsvTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Exports::ExportBalanceCsv
+        var model = new Exports::BalanceCsv
         {
             AccountID = "account_id",
             CreatedAt = new()
@@ -1183,7 +1183,7 @@ public class ExportBalanceCsvTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Exports::ExportBalanceCsv
+        var model = new Exports::BalanceCsv
         {
             AccountID = "account_id",
             CreatedAt = new()
@@ -1193,18 +1193,18 @@ public class ExportBalanceCsvTest : TestBase
             },
         };
 
-        Exports::ExportBalanceCsv copied = new(model);
+        Exports::BalanceCsv copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class ExportBalanceCsvCreatedAtTest : TestBase
+public class BalanceCsvCreatedAtTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Exports::ExportBalanceCsvCreatedAt
+        var model = new Exports::BalanceCsvCreatedAt
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -1220,14 +1220,14 @@ public class ExportBalanceCsvCreatedAtTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Exports::ExportBalanceCsvCreatedAt
+        var model = new Exports::BalanceCsvCreatedAt
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Exports::ExportBalanceCsvCreatedAt>(
+        var deserialized = JsonSerializer.Deserialize<Exports::BalanceCsvCreatedAt>(
             json,
             ModelBase.SerializerOptions
         );
@@ -1238,14 +1238,14 @@ public class ExportBalanceCsvCreatedAtTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Exports::ExportBalanceCsvCreatedAt
+        var model = new Exports::BalanceCsvCreatedAt
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Exports::ExportBalanceCsvCreatedAt>(
+        var deserialized = JsonSerializer.Deserialize<Exports::BalanceCsvCreatedAt>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1261,7 +1261,7 @@ public class ExportBalanceCsvCreatedAtTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Exports::ExportBalanceCsvCreatedAt
+        var model = new Exports::BalanceCsvCreatedAt
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -1273,13 +1273,13 @@ public class ExportBalanceCsvCreatedAtTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Exports::ExportBalanceCsvCreatedAt
+        var model = new Exports::BalanceCsvCreatedAt
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
-        Exports::ExportBalanceCsvCreatedAt copied = new(model);
+        Exports::BalanceCsvCreatedAt copied = new(model);
 
         Assert.Equal(model, copied);
     }
