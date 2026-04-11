@@ -35,17 +35,6 @@ public class ExportCreateParamsTest : TestBase
                 AccountNumberID = "account_number_id",
                 BalanceDate = "2019-12-27",
             },
-            BalanceCsv = new()
-            {
-                AccountID = "account_id",
-                CreatedAt = new()
-                {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                },
-            },
             BookkeepingAccountBalanceCsv = new()
             {
                 BookkeepingAccountID = "bookkeeping_account_id",
@@ -96,17 +85,6 @@ public class ExportCreateParamsTest : TestBase
             AccountNumberID = "account_number_id",
             BalanceDate = "2019-12-27",
         };
-        BalanceCsv expectedBalanceCsv = new()
-        {
-            AccountID = "account_id",
-            CreatedAt = new()
-            {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            },
-        };
         BookkeepingAccountBalanceCsv expectedBookkeepingAccountBalanceCsv = new()
         {
             BookkeepingAccountID = "bookkeeping_account_id",
@@ -143,7 +121,6 @@ public class ExportCreateParamsTest : TestBase
         Assert.Equal(expectedAccountStatementBai2, parameters.AccountStatementBai2);
         Assert.Equal(expectedAccountStatementOfx, parameters.AccountStatementOfx);
         Assert.Equal(expectedAccountVerificationLetter, parameters.AccountVerificationLetter);
-        Assert.Equal(expectedBalanceCsv, parameters.BalanceCsv);
         Assert.Equal(expectedBookkeepingAccountBalanceCsv, parameters.BookkeepingAccountBalanceCsv);
         Assert.Equal(expectedDailyAccountBalanceCsv, parameters.DailyAccountBalanceCsv);
         Assert.Equal(expectedEntityCsv, parameters.EntityCsv);
@@ -164,8 +141,6 @@ public class ExportCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("account_statement_ofx"));
         Assert.Null(parameters.AccountVerificationLetter);
         Assert.False(parameters.RawBodyData.ContainsKey("account_verification_letter"));
-        Assert.Null(parameters.BalanceCsv);
-        Assert.False(parameters.RawBodyData.ContainsKey("balance_csv"));
         Assert.Null(parameters.BookkeepingAccountBalanceCsv);
         Assert.False(parameters.RawBodyData.ContainsKey("bookkeeping_account_balance_csv"));
         Assert.Null(parameters.DailyAccountBalanceCsv);
@@ -193,7 +168,6 @@ public class ExportCreateParamsTest : TestBase
             AccountStatementBai2 = null,
             AccountStatementOfx = null,
             AccountVerificationLetter = null,
-            BalanceCsv = null,
             BookkeepingAccountBalanceCsv = null,
             DailyAccountBalanceCsv = null,
             EntityCsv = null,
@@ -209,8 +183,6 @@ public class ExportCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("account_statement_ofx"));
         Assert.Null(parameters.AccountVerificationLetter);
         Assert.False(parameters.RawBodyData.ContainsKey("account_verification_letter"));
-        Assert.Null(parameters.BalanceCsv);
-        Assert.False(parameters.RawBodyData.ContainsKey("balance_csv"));
         Assert.Null(parameters.BookkeepingAccountBalanceCsv);
         Assert.False(parameters.RawBodyData.ContainsKey("bookkeeping_account_balance_csv"));
         Assert.Null(parameters.DailyAccountBalanceCsv);
@@ -262,17 +234,6 @@ public class ExportCreateParamsTest : TestBase
             {
                 AccountNumberID = "account_number_id",
                 BalanceDate = "2019-12-27",
-            },
-            BalanceCsv = new()
-            {
-                AccountID = "account_id",
-                CreatedAt = new()
-                {
-                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                },
             },
             BookkeepingAccountBalanceCsv = new()
             {
@@ -952,346 +913,6 @@ public class AccountVerificationLetterTest : TestBase
         };
 
         AccountVerificationLetter copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class BalanceCsvTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new BalanceCsv
-        {
-            AccountID = "account_id",
-            CreatedAt = new()
-            {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            },
-        };
-
-        string expectedAccountID = "account_id";
-        BalanceCsvCreatedAt expectedCreatedAt = new()
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
-
-        Assert.Equal(expectedAccountID, model.AccountID);
-        Assert.Equal(expectedCreatedAt, model.CreatedAt);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new BalanceCsv
-        {
-            AccountID = "account_id",
-            CreatedAt = new()
-            {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            },
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<BalanceCsv>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new BalanceCsv
-        {
-            AccountID = "account_id",
-            CreatedAt = new()
-            {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            },
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<BalanceCsv>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        string expectedAccountID = "account_id";
-        BalanceCsvCreatedAt expectedCreatedAt = new()
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
-
-        Assert.Equal(expectedAccountID, deserialized.AccountID);
-        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new BalanceCsv
-        {
-            AccountID = "account_id",
-            CreatedAt = new()
-            {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            },
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new BalanceCsv { };
-
-        Assert.Null(model.AccountID);
-        Assert.False(model.RawData.ContainsKey("account_id"));
-        Assert.Null(model.CreatedAt);
-        Assert.False(model.RawData.ContainsKey("created_at"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new BalanceCsv { };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
-    {
-        var model = new BalanceCsv
-        {
-            // Null should be interpreted as omitted for these properties
-            AccountID = null,
-            CreatedAt = null,
-        };
-
-        Assert.Null(model.AccountID);
-        Assert.False(model.RawData.ContainsKey("account_id"));
-        Assert.Null(model.CreatedAt);
-        Assert.False(model.RawData.ContainsKey("created_at"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new BalanceCsv
-        {
-            // Null should be interpreted as omitted for these properties
-            AccountID = null,
-            CreatedAt = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new BalanceCsv
-        {
-            AccountID = "account_id",
-            CreatedAt = new()
-            {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            },
-        };
-
-        BalanceCsv copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class BalanceCsvCreatedAtTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new BalanceCsvCreatedAt
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
-
-        DateTimeOffset expectedAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        DateTimeOffset expectedBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        DateTimeOffset expectedOnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        DateTimeOffset expectedOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-
-        Assert.Equal(expectedAfter, model.After);
-        Assert.Equal(expectedBefore, model.Before);
-        Assert.Equal(expectedOnOrAfter, model.OnOrAfter);
-        Assert.Equal(expectedOnOrBefore, model.OnOrBefore);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new BalanceCsvCreatedAt
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<BalanceCsvCreatedAt>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new BalanceCsvCreatedAt
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<BalanceCsvCreatedAt>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        DateTimeOffset expectedAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        DateTimeOffset expectedBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        DateTimeOffset expectedOnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        DateTimeOffset expectedOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-
-        Assert.Equal(expectedAfter, deserialized.After);
-        Assert.Equal(expectedBefore, deserialized.Before);
-        Assert.Equal(expectedOnOrAfter, deserialized.OnOrAfter);
-        Assert.Equal(expectedOnOrBefore, deserialized.OnOrBefore);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new BalanceCsvCreatedAt
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new BalanceCsvCreatedAt { };
-
-        Assert.Null(model.After);
-        Assert.False(model.RawData.ContainsKey("after"));
-        Assert.Null(model.Before);
-        Assert.False(model.RawData.ContainsKey("before"));
-        Assert.Null(model.OnOrAfter);
-        Assert.False(model.RawData.ContainsKey("on_or_after"));
-        Assert.Null(model.OnOrBefore);
-        Assert.False(model.RawData.ContainsKey("on_or_before"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new BalanceCsvCreatedAt { };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
-    {
-        var model = new BalanceCsvCreatedAt
-        {
-            // Null should be interpreted as omitted for these properties
-            After = null,
-            Before = null,
-            OnOrAfter = null,
-            OnOrBefore = null,
-        };
-
-        Assert.Null(model.After);
-        Assert.False(model.RawData.ContainsKey("after"));
-        Assert.Null(model.Before);
-        Assert.False(model.RawData.ContainsKey("before"));
-        Assert.Null(model.OnOrAfter);
-        Assert.False(model.RawData.ContainsKey("on_or_after"));
-        Assert.Null(model.OnOrBefore);
-        Assert.False(model.RawData.ContainsKey("on_or_before"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new BalanceCsvCreatedAt
-        {
-            // Null should be interpreted as omitted for these properties
-            After = null,
-            Before = null,
-            OnOrAfter = null,
-            OnOrBefore = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new BalanceCsvCreatedAt
-        {
-            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-        };
-
-        BalanceCsvCreatedAt copied = new(model);
 
         Assert.Equal(model, copied);
     }
