@@ -273,6 +273,11 @@ public enum EventCategory
     CardPaymentUpdated,
 
     /// <summary>
+    /// Occurs whenever a Card Purchase Supplement is created.
+    /// </summary>
+    CardPurchaseSupplementCreated,
+
+    /// <summary>
     /// Occurs whenever a Card Profile is created.
     /// </summary>
     CardProfileCreated,
@@ -735,6 +740,7 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
             "card.updated" => EventCategory.CardUpdated,
             "card_payment.created" => EventCategory.CardPaymentCreated,
             "card_payment.updated" => EventCategory.CardPaymentUpdated,
+            "card_purchase_supplement.created" => EventCategory.CardPurchaseSupplementCreated,
             "card_profile.created" => EventCategory.CardProfileCreated,
             "card_profile.updated" => EventCategory.CardProfileUpdated,
             "card_dispute.created" => EventCategory.CardDisputeCreated,
@@ -875,6 +881,7 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.CardUpdated => "card.updated",
                 EventCategory.CardPaymentCreated => "card_payment.created",
                 EventCategory.CardPaymentUpdated => "card_payment.updated",
+                EventCategory.CardPurchaseSupplementCreated => "card_purchase_supplement.created",
                 EventCategory.CardProfileCreated => "card_profile.created",
                 EventCategory.CardProfileUpdated => "card_profile.updated",
                 EventCategory.CardDisputeCreated => "card_dispute.created",
