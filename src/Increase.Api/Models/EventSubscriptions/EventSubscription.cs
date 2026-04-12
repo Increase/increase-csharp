@@ -402,6 +402,11 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     CardPaymentUpdated,
 
     /// <summary>
+    /// Occurs whenever a Card Purchase Supplement is created.
+    /// </summary>
+    CardPurchaseSupplementCreated,
+
+    /// <summary>
     /// Occurs whenever a Card Profile is created.
     /// </summary>
     CardProfileCreated,
@@ -885,6 +890,8 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.CardPaymentCreated,
             "card_payment.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.CardPaymentUpdated,
+            "card_purchase_supplement.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.CardPurchaseSupplementCreated,
             "card_profile.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.CardProfileCreated,
             "card_profile.updated" =>
@@ -1104,6 +1111,8 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "card_payment.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.CardPaymentUpdated =>
                     "card_payment.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.CardPurchaseSupplementCreated =>
+                    "card_purchase_supplement.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.CardProfileCreated =>
                     "card_profile.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.CardProfileUpdated =>
