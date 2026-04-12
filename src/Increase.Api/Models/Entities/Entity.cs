@@ -826,12 +826,12 @@ public sealed record class EntityCorporationBeneficialOwnerIndividual : JsonMode
     /// <summary>
     /// A means of verifying the person's identity.
     /// </summary>
-    public required EntityCorporationBeneficialOwnerIndividualIdentification Identification
+    public required EntityCorporationBeneficialOwnerIndividualIdentification? Identification
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<EntityCorporationBeneficialOwnerIndividualIdentification>(
+            return this._rawData.GetNullableClass<EntityCorporationBeneficialOwnerIndividualIdentification>(
                 "identification"
             );
         }
@@ -856,7 +856,7 @@ public sealed record class EntityCorporationBeneficialOwnerIndividual : JsonMode
     {
         this.Address.Validate();
         _ = this.DateOfBirth;
-        this.Identification.Validate();
+        this.Identification?.Validate();
         _ = this.Name;
     }
 
@@ -1982,12 +1982,12 @@ public sealed record class EntityJointIndividual : JsonModel
     /// <summary>
     /// A means of verifying the person's identity.
     /// </summary>
-    public required EntityJointIndividualIdentification Identification
+    public required EntityJointIndividualIdentification? Identification
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<EntityJointIndividualIdentification>(
+            return this._rawData.GetNullableClass<EntityJointIndividualIdentification>(
                 "identification"
             );
         }
@@ -2012,7 +2012,7 @@ public sealed record class EntityJointIndividual : JsonModel
     {
         this.Address.Validate();
         _ = this.DateOfBirth;
-        this.Identification.Validate();
+        this.Identification?.Validate();
         _ = this.Name;
     }
 
@@ -2393,12 +2393,12 @@ public sealed record class EntityNaturalPerson : JsonModel
     /// <summary>
     /// A means of verifying the person's identity.
     /// </summary>
-    public required EntityNaturalPersonIdentification Identification
+    public required EntityNaturalPersonIdentification? Identification
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<EntityNaturalPersonIdentification>(
+            return this._rawData.GetNullableClass<EntityNaturalPersonIdentification>(
                 "identification"
             );
         }
@@ -2423,7 +2423,7 @@ public sealed record class EntityNaturalPerson : JsonModel
     {
         this.Address.Validate();
         _ = this.DateOfBirth;
-        this.Identification.Validate();
+        this.Identification?.Validate();
         _ = this.Name;
     }
 
@@ -3679,12 +3679,12 @@ public sealed record class EntityTrustGrantor : JsonModel
     /// <summary>
     /// A means of verifying the person's identity.
     /// </summary>
-    public required EntityTrustGrantorIdentification Identification
+    public required EntityTrustGrantorIdentification? Identification
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<EntityTrustGrantorIdentification>(
+            return this._rawData.GetNullableClass<EntityTrustGrantorIdentification>(
                 "identification"
             );
         }
@@ -3709,7 +3709,7 @@ public sealed record class EntityTrustGrantor : JsonModel
     {
         this.Address.Validate();
         _ = this.DateOfBirth;
-        this.Identification.Validate();
+        this.Identification?.Validate();
         _ = this.Name;
     }
 
@@ -4166,12 +4166,12 @@ public sealed record class EntityTrustTrusteeIndividual : JsonModel
     /// <summary>
     /// A means of verifying the person's identity.
     /// </summary>
-    public required EntityTrustTrusteeIndividualIdentification Identification
+    public required EntityTrustTrusteeIndividualIdentification? Identification
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<EntityTrustTrusteeIndividualIdentification>(
+            return this._rawData.GetNullableClass<EntityTrustTrusteeIndividualIdentification>(
                 "identification"
             );
         }
@@ -4196,7 +4196,7 @@ public sealed record class EntityTrustTrusteeIndividual : JsonModel
     {
         this.Address.Validate();
         _ = this.DateOfBirth;
-        this.Identification.Validate();
+        this.Identification?.Validate();
         _ = this.Name;
     }
 

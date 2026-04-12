@@ -232,12 +232,12 @@ public sealed record class EntityBeneficialOwnerIndividual : JsonModel
     /// <summary>
     /// A means of verifying the person's identity.
     /// </summary>
-    public required EntityBeneficialOwnerIndividualIdentification Identification
+    public required EntityBeneficialOwnerIndividualIdentification? Identification
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<EntityBeneficialOwnerIndividualIdentification>(
+            return this._rawData.GetNullableClass<EntityBeneficialOwnerIndividualIdentification>(
                 "identification"
             );
         }
@@ -262,7 +262,7 @@ public sealed record class EntityBeneficialOwnerIndividual : JsonModel
     {
         this.Address.Validate();
         _ = this.DateOfBirth;
-        this.Identification.Validate();
+        this.Identification?.Validate();
         _ = this.Name;
     }
 
