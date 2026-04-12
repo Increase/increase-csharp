@@ -406,6 +406,11 @@ public enum In
     CardPaymentUpdated,
 
     /// <summary>
+    /// Occurs whenever a Card Purchase Supplement is created.
+    /// </summary>
+    CardPurchaseSupplementCreated,
+
+    /// <summary>
     /// Occurs whenever a Card Profile is created.
     /// </summary>
     CardProfileCreated,
@@ -868,6 +873,7 @@ sealed class InConverter : JsonConverter<In>
             "card.updated" => In.CardUpdated,
             "card_payment.created" => In.CardPaymentCreated,
             "card_payment.updated" => In.CardPaymentUpdated,
+            "card_purchase_supplement.created" => In.CardPurchaseSupplementCreated,
             "card_profile.created" => In.CardProfileCreated,
             "card_profile.updated" => In.CardProfileUpdated,
             "card_dispute.created" => In.CardDisputeCreated,
@@ -997,6 +1003,7 @@ sealed class InConverter : JsonConverter<In>
                 In.CardUpdated => "card.updated",
                 In.CardPaymentCreated => "card_payment.created",
                 In.CardPaymentUpdated => "card_payment.updated",
+                In.CardPurchaseSupplementCreated => "card_purchase_supplement.created",
                 In.CardProfileCreated => "card_profile.created",
                 In.CardProfileUpdated => "card_profile.updated",
                 In.CardDisputeCreated => "card_dispute.created",

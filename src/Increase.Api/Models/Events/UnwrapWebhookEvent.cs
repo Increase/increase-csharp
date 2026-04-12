@@ -275,6 +275,11 @@ public enum UnwrapWebhookEventCategory
     CardPaymentUpdated,
 
     /// <summary>
+    /// Occurs whenever a Card Purchase Supplement is created.
+    /// </summary>
+    CardPurchaseSupplementCreated,
+
+    /// <summary>
     /// Occurs whenever a Card Profile is created.
     /// </summary>
     CardProfileCreated,
@@ -742,6 +747,8 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
             "card.updated" => UnwrapWebhookEventCategory.CardUpdated,
             "card_payment.created" => UnwrapWebhookEventCategory.CardPaymentCreated,
             "card_payment.updated" => UnwrapWebhookEventCategory.CardPaymentUpdated,
+            "card_purchase_supplement.created" =>
+                UnwrapWebhookEventCategory.CardPurchaseSupplementCreated,
             "card_profile.created" => UnwrapWebhookEventCategory.CardProfileCreated,
             "card_profile.updated" => UnwrapWebhookEventCategory.CardProfileUpdated,
             "card_dispute.created" => UnwrapWebhookEventCategory.CardDisputeCreated,
@@ -903,6 +910,8 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                 UnwrapWebhookEventCategory.CardUpdated => "card.updated",
                 UnwrapWebhookEventCategory.CardPaymentCreated => "card_payment.created",
                 UnwrapWebhookEventCategory.CardPaymentUpdated => "card_payment.updated",
+                UnwrapWebhookEventCategory.CardPurchaseSupplementCreated =>
+                    "card_purchase_supplement.created",
                 UnwrapWebhookEventCategory.CardProfileCreated => "card_profile.created",
                 UnwrapWebhookEventCategory.CardProfileUpdated => "card_profile.updated",
                 UnwrapWebhookEventCategory.CardDisputeCreated => "card_dispute.created",
