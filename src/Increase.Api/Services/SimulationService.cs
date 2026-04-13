@@ -40,6 +40,9 @@ public sealed class SimulationService : ISimulationService
         _cardFuelConfirmations = new(() => new Simulations::CardFuelConfirmationService(client));
         _cardRefunds = new(() => new Simulations::CardRefundService(client));
         _cardAuthentications = new(() => new Simulations::CardAuthenticationService(client));
+        _cardPurchaseSupplements = new(() =>
+            new Simulations::CardPurchaseSupplementService(client)
+        );
         _cardDisputes = new(() => new Simulations::CardDisputeService(client));
         _physicalCards = new(() => new Simulations::PhysicalCardService(client));
         _digitalWalletTokenRequests = new(() =>
@@ -132,6 +135,12 @@ public sealed class SimulationService : ISimulationService
     public Simulations::ICardAuthenticationService CardAuthentications
     {
         get { return _cardAuthentications.Value; }
+    }
+
+    readonly Lazy<Simulations::ICardPurchaseSupplementService> _cardPurchaseSupplements;
+    public Simulations::ICardPurchaseSupplementService CardPurchaseSupplements
+    {
+        get { return _cardPurchaseSupplements.Value; }
     }
 
     readonly Lazy<Simulations::ICardDisputeService> _cardDisputes;
@@ -306,6 +315,9 @@ public sealed class SimulationServiceWithRawResponse : ISimulationServiceWithRaw
         _cardAuthentications = new(() =>
             new Simulations::CardAuthenticationServiceWithRawResponse(client)
         );
+        _cardPurchaseSupplements = new(() =>
+            new Simulations::CardPurchaseSupplementServiceWithRawResponse(client)
+        );
         _cardDisputes = new(() => new Simulations::CardDisputeServiceWithRawResponse(client));
         _physicalCards = new(() => new Simulations::PhysicalCardServiceWithRawResponse(client));
         _digitalWalletTokenRequests = new(() =>
@@ -414,6 +426,12 @@ public sealed class SimulationServiceWithRawResponse : ISimulationServiceWithRaw
     public Simulations::ICardAuthenticationServiceWithRawResponse CardAuthentications
     {
         get { return _cardAuthentications.Value; }
+    }
+
+    readonly Lazy<Simulations::ICardPurchaseSupplementServiceWithRawResponse> _cardPurchaseSupplements;
+    public Simulations::ICardPurchaseSupplementServiceWithRawResponse CardPurchaseSupplements
+    {
+        get { return _cardPurchaseSupplements.Value; }
     }
 
     readonly Lazy<Simulations::ICardDisputeServiceWithRawResponse> _cardDisputes;
