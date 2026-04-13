@@ -73,6 +73,7 @@ public class EntityTest : TestBase
                 Website = "https://example.com",
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatingEntityOnboardingSessionID = null,
             Description = null,
             DetailsConfirmedAt = null,
             GovernmentAuthority = new()
@@ -504,6 +505,7 @@ public class EntityTest : TestBase
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedCorporation, model.Corporation);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Null(model.CreatingEntityOnboardingSessionID);
         Assert.Null(model.Description);
         Assert.Null(model.DetailsConfirmedAt);
         Assert.Equal(expectedGovernmentAuthority, model.GovernmentAuthority);
@@ -592,6 +594,7 @@ public class EntityTest : TestBase
                 Website = "https://example.com",
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatingEntityOnboardingSessionID = null,
             Description = null,
             DetailsConfirmedAt = null,
             GovernmentAuthority = new()
@@ -851,6 +854,7 @@ public class EntityTest : TestBase
                 Website = "https://example.com",
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatingEntityOnboardingSessionID = null,
             Description = null,
             DetailsConfirmedAt = null,
             GovernmentAuthority = new()
@@ -1289,6 +1293,7 @@ public class EntityTest : TestBase
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedCorporation, deserialized.Corporation);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Null(deserialized.CreatingEntityOnboardingSessionID);
         Assert.Null(deserialized.Description);
         Assert.Null(deserialized.DetailsConfirmedAt);
         Assert.Equal(expectedGovernmentAuthority, deserialized.GovernmentAuthority);
@@ -1377,6 +1382,7 @@ public class EntityTest : TestBase
                 Website = "https://example.com",
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatingEntityOnboardingSessionID = null,
             Description = null,
             DetailsConfirmedAt = null,
             GovernmentAuthority = new()
@@ -1630,6 +1636,7 @@ public class EntityTest : TestBase
                 Website = "https://example.com",
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatingEntityOnboardingSessionID = null,
             Description = null,
             DetailsConfirmedAt = null,
             GovernmentAuthority = new()
