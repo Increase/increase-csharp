@@ -76,6 +76,7 @@ public class EntityListPageResponseTest : TestBase
                         Website = "https://example.com",
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatingEntityOnboardingSessionID = null,
                     Description = null,
                     DetailsConfirmedAt = null,
                     GovernmentAuthority = new()
@@ -329,6 +330,7 @@ public class EntityListPageResponseTest : TestBase
                     Website = "https://example.com",
                 },
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatingEntityOnboardingSessionID = null,
                 Description = null,
                 DetailsConfirmedAt = null,
                 GovernmentAuthority = new()
@@ -594,6 +596,7 @@ public class EntityListPageResponseTest : TestBase
                         Website = "https://example.com",
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatingEntityOnboardingSessionID = null,
                     Description = null,
                     DetailsConfirmedAt = null,
                     GovernmentAuthority = new()
@@ -861,6 +864,7 @@ public class EntityListPageResponseTest : TestBase
                         Website = "https://example.com",
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatingEntityOnboardingSessionID = null,
                     Description = null,
                     DetailsConfirmedAt = null,
                     GovernmentAuthority = new()
@@ -1121,6 +1125,7 @@ public class EntityListPageResponseTest : TestBase
                     Website = "https://example.com",
                 },
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatingEntityOnboardingSessionID = null,
                 Description = null,
                 DetailsConfirmedAt = null,
                 GovernmentAuthority = new()
@@ -1386,6 +1391,7 @@ public class EntityListPageResponseTest : TestBase
                         Website = "https://example.com",
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatingEntityOnboardingSessionID = null,
                     Description = null,
                     DetailsConfirmedAt = null,
                     GovernmentAuthority = new()
@@ -1647,6 +1653,7 @@ public class EntityListPageResponseTest : TestBase
                         Website = "https://example.com",
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatingEntityOnboardingSessionID = null,
                     Description = null,
                     DetailsConfirmedAt = null,
                     GovernmentAuthority = new()
