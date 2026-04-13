@@ -60,6 +60,20 @@ public sealed record class Entity : JsonModel
     }
 
     /// <summary>
+    /// The identifier of the Entity Onboarding Session that was used to create this
+    /// Entity, if any.
+    /// </summary>
+    public required string? CreatingEntityOnboardingSessionID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("creating_entity_onboarding_session_id");
+        }
+        init { this._rawData.Set("creating_entity_onboarding_session_id", value); }
+    }
+
+    /// <summary>
     /// The entity's description for display purposes.
     /// </summary>
     public required string? Description
@@ -294,6 +308,7 @@ public sealed record class Entity : JsonModel
         _ = this.ID;
         this.Corporation?.Validate();
         _ = this.CreatedAt;
+        _ = this.CreatingEntityOnboardingSessionID;
         _ = this.Description;
         _ = this.DetailsConfirmedAt;
         this.GovernmentAuthority?.Validate();
