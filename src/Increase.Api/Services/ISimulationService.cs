@@ -26,8 +26,6 @@ public interface ISimulationService
 
     Simulations::IInterestPaymentService InterestPayments { get; }
 
-    Simulations::IAccountTransferService AccountTransfers { get; }
-
     Simulations::ICardAuthorizationService CardAuthorizations { get; }
 
     Simulations::ICardBalanceInquiryService CardBalanceInquiries { get; }
@@ -105,8 +103,6 @@ public interface ISimulationServiceWithRawResponse
     ISimulationServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     Simulations::IInterestPaymentServiceWithRawResponse InterestPayments { get; }
-
-    Simulations::IAccountTransferServiceWithRawResponse AccountTransfers { get; }
 
     Simulations::ICardAuthorizationServiceWithRawResponse CardAuthorizations { get; }
 

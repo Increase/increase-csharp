@@ -29,7 +29,6 @@ public sealed class SimulationService : ISimulationService
 
         _withRawResponse = new(() => new SimulationServiceWithRawResponse(client.WithRawResponse));
         _interestPayments = new(() => new Simulations::InterestPaymentService(client));
-        _accountTransfers = new(() => new Simulations::AccountTransferService(client));
         _cardAuthorizations = new(() => new Simulations::CardAuthorizationService(client));
         _cardBalanceInquiries = new(() => new Simulations::CardBalanceInquiryService(client));
         _cardAuthorizationExpirations = new(() =>
@@ -79,12 +78,6 @@ public sealed class SimulationService : ISimulationService
     public Simulations::IInterestPaymentService InterestPayments
     {
         get { return _interestPayments.Value; }
-    }
-
-    readonly Lazy<Simulations::IAccountTransferService> _accountTransfers;
-    public Simulations::IAccountTransferService AccountTransfers
-    {
-        get { return _accountTransfers.Value; }
     }
 
     readonly Lazy<Simulations::ICardAuthorizationService> _cardAuthorizations;
@@ -294,9 +287,6 @@ public sealed class SimulationServiceWithRawResponse : ISimulationServiceWithRaw
         _interestPayments = new(() =>
             new Simulations::InterestPaymentServiceWithRawResponse(client)
         );
-        _accountTransfers = new(() =>
-            new Simulations::AccountTransferServiceWithRawResponse(client)
-        );
         _cardAuthorizations = new(() =>
             new Simulations::CardAuthorizationServiceWithRawResponse(client)
         );
@@ -370,12 +360,6 @@ public sealed class SimulationServiceWithRawResponse : ISimulationServiceWithRaw
     public Simulations::IInterestPaymentServiceWithRawResponse InterestPayments
     {
         get { return _interestPayments.Value; }
-    }
-
-    readonly Lazy<Simulations::IAccountTransferServiceWithRawResponse> _accountTransfers;
-    public Simulations::IAccountTransferServiceWithRawResponse AccountTransfers
-    {
-        get { return _accountTransfers.Value; }
     }
 
     readonly Lazy<Simulations::ICardAuthorizationServiceWithRawResponse> _cardAuthorizations;
