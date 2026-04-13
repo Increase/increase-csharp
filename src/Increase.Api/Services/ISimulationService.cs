@@ -44,6 +44,8 @@ public interface ISimulationService
 
     Simulations::ICardAuthenticationService CardAuthentications { get; }
 
+    Simulations::ICardPurchaseSupplementService CardPurchaseSupplements { get; }
+
     Simulations::ICardDisputeService CardDisputes { get; }
 
     Simulations::IPhysicalCardService PhysicalCards { get; }
@@ -121,6 +123,8 @@ public interface ISimulationServiceWithRawResponse
     Simulations::ICardRefundServiceWithRawResponse CardRefunds { get; }
 
     Simulations::ICardAuthenticationServiceWithRawResponse CardAuthentications { get; }
+
+    Simulations::ICardPurchaseSupplementServiceWithRawResponse CardPurchaseSupplements { get; }
 
     Simulations::ICardDisputeServiceWithRawResponse CardDisputes { get; }
 
