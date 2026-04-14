@@ -34,7 +34,8 @@ public sealed record class AccountListPageResponse : JsonModel
     }
 
     /// <summary>
-    /// A pointer to a place in the list.
+    /// A pointer to a place in the list. Pass this as the `cursor` parameter to retrieve
+    /// the next page of results. If there are no more results, the value will be `null`.
     /// </summary>
     public required string? NextCursor
     {
