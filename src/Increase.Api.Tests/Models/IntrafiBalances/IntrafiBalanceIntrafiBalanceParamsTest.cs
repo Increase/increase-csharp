@@ -28,11 +28,13 @@ public class IntrafiBalanceIntrafiBalanceParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/accounts/account_in71c4amph0vgo2qllky/intrafi_balance"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/accounts/account_in71c4amph0vgo2qllky/intrafi_balance"
+                ),
+                url
+            )
         );
     }
 

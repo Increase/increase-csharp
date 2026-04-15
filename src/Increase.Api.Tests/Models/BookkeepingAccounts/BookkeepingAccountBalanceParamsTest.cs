@@ -54,16 +54,18 @@ public class BookkeepingAccountBalanceParamsTest : TestBase
         BookkeepingAccountBalanceParams parameters = new()
         {
             BookkeepingAccountID = "bookkeeping_account_e37p1f1iuocw5intf35v",
-            AtTime = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            AtTime = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/bookkeeping_accounts/bookkeeping_account_e37p1f1iuocw5intf35v/balance?at_time=2019-12-27T18%3a11%3a19.117%2b00%3a00"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/bookkeeping_accounts/bookkeeping_account_e37p1f1iuocw5intf35v/balance?at_time=2019-12-27T18%3a11%3a19.117%2b00%3a00"
+                ),
+                url
+            )
         );
     }
 

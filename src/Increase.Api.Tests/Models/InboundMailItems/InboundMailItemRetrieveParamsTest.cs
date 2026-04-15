@@ -28,11 +28,13 @@ public class InboundMailItemRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/inbound_mail_items/inbound_mail_item_q6rrg7mmqpplx80zceev"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/inbound_mail_items/inbound_mail_item_q6rrg7mmqpplx80zceev"
+                ),
+                url
+            )
         );
     }
 

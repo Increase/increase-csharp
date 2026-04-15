@@ -69,11 +69,13 @@ public class InboundCheckDepositAdjustmentParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/simulations/inbound_check_deposits/inbound_check_deposit_zoshvqybq0cjjm31mra/adjustment"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/simulations/inbound_check_deposits/inbound_check_deposit_zoshvqybq0cjjm31mra/adjustment"
+                ),
+                url
+            )
         );
     }
 

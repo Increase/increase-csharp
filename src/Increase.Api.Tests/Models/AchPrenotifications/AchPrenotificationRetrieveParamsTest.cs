@@ -28,11 +28,13 @@ public class AchPrenotificationRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/ach_prenotifications/ach_prenotification_ubjf9qqsxl3obbcn1u34"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/ach_prenotifications/ach_prenotification_ubjf9qqsxl3obbcn1u34"
+                ),
+                url
+            )
         );
     }
 

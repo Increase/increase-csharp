@@ -93,7 +93,9 @@ public class BookkeepingEntrySetCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/bookkeeping_entry_sets"), url);
+        Assert.True(
+            TestBase.UrisEqual(new Uri("https://api.increase.com/bookkeeping_entry_sets"), url)
+        );
     }
 
     [Fact]

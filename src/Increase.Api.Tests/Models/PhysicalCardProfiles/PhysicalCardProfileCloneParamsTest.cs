@@ -104,11 +104,13 @@ public class PhysicalCardProfileCloneParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/physical_card_profiles/physical_card_profile_m534d5rn9qyy9ufqxoec/clone"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/physical_card_profiles/physical_card_profile_m534d5rn9qyy9ufqxoec/clone"
+                ),
+                url
+            )
         );
     }
 

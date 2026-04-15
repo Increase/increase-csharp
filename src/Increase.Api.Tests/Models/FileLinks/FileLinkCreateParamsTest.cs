@@ -52,7 +52,7 @@ public class FileLinkCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/file_links"), url);
+        Assert.True(TestBase.UrisEqual(new Uri("https://api.increase.com/file_links"), url));
     }
 
     [Fact]

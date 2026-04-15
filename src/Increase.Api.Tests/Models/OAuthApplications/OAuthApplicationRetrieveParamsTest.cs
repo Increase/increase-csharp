@@ -28,9 +28,13 @@ public class OAuthApplicationRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri("https://api.increase.com/oauth_applications/application_gj9ufmpgh5i56k4vyriy"),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/oauth_applications/application_gj9ufmpgh5i56k4vyriy"
+                ),
+                url
+            )
         );
     }
 

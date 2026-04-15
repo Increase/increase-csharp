@@ -28,11 +28,13 @@ public class AchTransferApproveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/ach_transfers/ach_transfer_uoxatyh3lt5evrsdvo7q/approve"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/ach_transfers/ach_transfer_uoxatyh3lt5evrsdvo7q/approve"
+                ),
+                url
+            )
         );
     }
 

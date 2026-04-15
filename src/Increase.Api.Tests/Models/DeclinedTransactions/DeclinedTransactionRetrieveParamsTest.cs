@@ -28,11 +28,13 @@ public class DeclinedTransactionRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/declined_transactions/declined_transaction_17jbn0yyhvkt4v4ooym8"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/declined_transactions/declined_transaction_17jbn0yyhvkt4v4ooym8"
+                ),
+                url
+            )
         );
     }
 

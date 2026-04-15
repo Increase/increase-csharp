@@ -84,7 +84,9 @@ public class PhysicalCardProfileCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/physical_card_profiles"), url);
+        Assert.True(
+            TestBase.UrisEqual(new Uri("https://api.increase.com/physical_card_profiles"), url)
+        );
     }
 
     [Fact]

@@ -28,11 +28,13 @@ public class RealTimeDecisionRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/real_time_decisions/real_time_decision_j76n2e810ezcg3zh5qtn"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/real_time_decisions/real_time_decision_j76n2e810ezcg3zh5qtn"
+                ),
+                url
+            )
         );
     }
 

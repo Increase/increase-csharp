@@ -62,11 +62,13 @@ public class RealTimePaymentsTransferCompleteParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/simulations/real_time_payments_transfers/real_time_payments_transfer_iyuhl5kdn7ssmup83mvq/complete"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/simulations/real_time_payments_transfers/real_time_payments_transfer_iyuhl5kdn7ssmup83mvq/complete"
+                ),
+                url
+            )
         );
     }
 

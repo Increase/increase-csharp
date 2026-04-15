@@ -22,9 +22,11 @@ public class ProgramRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri("https://api.increase.com/programs/program_i2v2os4mwza1oetokh9i"),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/programs/program_i2v2os4mwza1oetokh9i"),
+                url
+            )
         );
     }
 

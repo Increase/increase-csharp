@@ -22,9 +22,11 @@ public class EntityArchiveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri("https://api.increase.com/entities/entity_n8y8tnk2p9339ti393yi/archive"),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/entities/entity_n8y8tnk2p9339ti393yi/archive"),
+                url
+            )
         );
     }
 

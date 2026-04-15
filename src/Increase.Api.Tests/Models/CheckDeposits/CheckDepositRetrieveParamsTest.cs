@@ -28,9 +28,13 @@ public class CheckDepositRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri("https://api.increase.com/check_deposits/check_deposit_f06n9gpg7sxn8t19lfc1"),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/check_deposits/check_deposit_f06n9gpg7sxn8t19lfc1"
+                ),
+                url
+            )
         );
     }
 

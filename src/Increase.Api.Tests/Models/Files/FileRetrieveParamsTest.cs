@@ -22,7 +22,12 @@ public class FileRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/files/file_makxrc67oh9l6sg7w9yc"), url);
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/files/file_makxrc67oh9l6sg7w9yc"),
+                url
+            )
+        );
     }
 
     [Fact]

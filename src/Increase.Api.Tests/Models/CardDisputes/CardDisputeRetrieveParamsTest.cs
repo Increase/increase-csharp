@@ -28,9 +28,11 @@ public class CardDisputeRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri("https://api.increase.com/card_disputes/card_dispute_h9sc95nbl1cgltpp7men"),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/card_disputes/card_dispute_h9sc95nbl1cgltpp7men"),
+                url
+            )
         );
     }
 

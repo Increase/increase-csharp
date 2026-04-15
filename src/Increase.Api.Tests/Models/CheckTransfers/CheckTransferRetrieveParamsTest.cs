@@ -28,9 +28,13 @@ public class CheckTransferRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri("https://api.increase.com/check_transfers/check_transfer_30b43acfu9vw8fyc4f5"),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/check_transfers/check_transfer_30b43acfu9vw8fyc4f5"
+                ),
+                url
+            )
         );
     }
 

@@ -28,11 +28,13 @@ public class EntityOnboardingSessionExpireParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/entity_onboarding_sessions/entity_onboarding_session_wid2ug11fsmvh3k9hymd/expire"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/entity_onboarding_sessions/entity_onboarding_session_wid2ug11fsmvh3k9hymd/expire"
+                ),
+                url
+            )
         );
     }
 

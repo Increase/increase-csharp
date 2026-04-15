@@ -28,11 +28,13 @@ public class CardPushTransferCancelParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/card_push_transfers/outbound_card_push_transfer_e0z9rdpamraczh4tvwye/cancel"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/card_push_transfers/outbound_card_push_transfer_e0z9rdpamraczh4tvwye/cancel"
+                ),
+                url
+            )
         );
     }
 

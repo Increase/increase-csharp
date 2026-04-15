@@ -81,11 +81,13 @@ public class EntityOnboardingSessionListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/entity_onboarding_sessions?cursor=cursor&idempotency_key=x&limit=1&status.in=active"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/entity_onboarding_sessions?cursor=cursor&idempotency_key=x&limit=1&status.in=active"
+                ),
+                url
+            )
         );
     }
 

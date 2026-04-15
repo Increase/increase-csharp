@@ -91,7 +91,12 @@ public class InboundFednowTransferCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/simulations/inbound_fednow_transfers"), url);
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/simulations/inbound_fednow_transfers"),
+                url
+            )
+        );
     }
 
     [Fact]

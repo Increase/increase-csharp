@@ -28,11 +28,13 @@ public class InboundCheckDepositDeclineParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/inbound_check_deposits/inbound_check_deposit_zoshvqybq0cjjm31mra/decline"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/inbound_check_deposits/inbound_check_deposit_zoshvqybq0cjjm31mra/decline"
+                ),
+                url
+            )
         );
     }
 
