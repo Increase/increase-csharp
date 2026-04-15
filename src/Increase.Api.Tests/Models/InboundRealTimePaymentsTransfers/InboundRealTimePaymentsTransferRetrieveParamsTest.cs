@@ -34,11 +34,13 @@ public class InboundRealTimePaymentsTransferRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/inbound_real_time_payments_transfers/inbound_real_time_payments_transfer_63hlz498vcxg644hcrzr"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/inbound_real_time_payments_transfers/inbound_real_time_payments_transfer_63hlz498vcxg644hcrzr"
+                ),
+                url
+            )
         );
     }
 

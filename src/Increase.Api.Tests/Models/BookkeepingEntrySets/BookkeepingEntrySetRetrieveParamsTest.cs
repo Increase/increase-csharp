@@ -28,11 +28,13 @@ public class BookkeepingEntrySetRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/bookkeeping_entry_sets/bookkeeping_entry_set_n80c6wr2p8gtc6p4ingf"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/bookkeeping_entry_sets/bookkeeping_entry_set_n80c6wr2p8gtc6p4ingf"
+                ),
+                url
+            )
         );
     }
 

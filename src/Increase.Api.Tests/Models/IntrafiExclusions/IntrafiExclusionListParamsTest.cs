@@ -77,11 +77,13 @@ public class IntrafiExclusionListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/intrafi_exclusions?cursor=cursor&entity_id=entity_id&idempotency_key=x&limit=1"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/intrafi_exclusions?cursor=cursor&entity_id=entity_id&idempotency_key=x&limit=1"
+                ),
+                url
+            )
         );
     }
 

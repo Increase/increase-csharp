@@ -28,11 +28,13 @@ public class AccountStatementRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/account_statements/account_statement_lkc03a4skm2k7f38vj15"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/account_statements/account_statement_lkc03a4skm2k7f38vj15"
+                ),
+                url
+            )
         );
     }
 

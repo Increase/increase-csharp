@@ -66,11 +66,13 @@ public class InboundAchTransferCreateNotificationOfChangeParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/inbound_ach_transfers/inbound_ach_transfer_tdrwqr3fq9gnnq49odev/create_notification_of_change"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/inbound_ach_transfers/inbound_ach_transfer_tdrwqr3fq9gnnq49odev/create_notification_of_change"
+                ),
+                url
+            )
         );
     }
 

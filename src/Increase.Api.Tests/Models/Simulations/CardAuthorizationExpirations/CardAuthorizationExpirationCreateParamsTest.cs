@@ -28,9 +28,11 @@ public class CardAuthorizationExpirationCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri("https://api.increase.com/simulations/card_authorization_expirations"),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/simulations/card_authorization_expirations"),
+                url
+            )
         );
     }
 

@@ -166,7 +166,12 @@ public class CardBalanceInquiryCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/simulations/card_balance_inquiries"), url);
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/simulations/card_balance_inquiries"),
+                url
+            )
+        );
     }
 
     [Fact]

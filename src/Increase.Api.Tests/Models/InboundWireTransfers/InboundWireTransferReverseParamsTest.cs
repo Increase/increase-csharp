@@ -35,11 +35,13 @@ public class InboundWireTransferReverseParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/inbound_wire_transfers/inbound_wire_transfer_f228m6bmhtcxjco9pwp0/reverse"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/inbound_wire_transfers/inbound_wire_transfer_f228m6bmhtcxjco9pwp0/reverse"
+                ),
+                url
+            )
         );
     }
 

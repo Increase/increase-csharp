@@ -76,7 +76,7 @@ public class CheckDepositCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/check_deposits"), url);
+        Assert.True(TestBase.UrisEqual(new Uri("https://api.increase.com/check_deposits"), url));
     }
 
     [Fact]

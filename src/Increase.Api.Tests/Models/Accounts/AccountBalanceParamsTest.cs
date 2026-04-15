@@ -51,16 +51,18 @@ public class AccountBalanceParamsTest : TestBase
         AccountBalanceParams parameters = new()
         {
             AccountID = "account_in71c4amph0vgo2qllky",
-            AtTime = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            AtTime = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/accounts/account_in71c4amph0vgo2qllky/balance?at_time=2019-12-27T18%3a11%3a19.117%2b00%3a00"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/accounts/account_in71c4amph0vgo2qllky/balance?at_time=2019-12-27T18%3a11%3a19.117%2b00%3a00"
+                ),
+                url
+            )
         );
     }
 

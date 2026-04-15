@@ -28,9 +28,11 @@ public class TransactionRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri("https://api.increase.com/transactions/transaction_uyrp7fld2ium70oa7oi"),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/transactions/transaction_uyrp7fld2ium70oa7oi"),
+                url
+            )
         );
     }
 

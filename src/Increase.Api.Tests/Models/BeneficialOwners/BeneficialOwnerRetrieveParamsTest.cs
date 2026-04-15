@@ -28,11 +28,13 @@ public class BeneficialOwnerRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/entity_beneficial_owners/entity_beneficial_owner_vozma8szzu1sxezp5zq6"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/entity_beneficial_owners/entity_beneficial_owner_vozma8szzu1sxezp5zq6"
+                ),
+                url
+            )
         );
     }
 

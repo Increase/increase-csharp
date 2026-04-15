@@ -28,11 +28,13 @@ public class FednowTransferApproveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/fednow_transfers/fednow_transfer_4i0mptrdu1mueg1196bg/approve"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/fednow_transfers/fednow_transfer_4i0mptrdu1mueg1196bg/approve"
+                ),
+                url
+            )
         );
     }
 

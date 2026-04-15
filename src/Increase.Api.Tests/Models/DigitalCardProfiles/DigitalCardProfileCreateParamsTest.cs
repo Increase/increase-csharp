@@ -118,7 +118,9 @@ public class DigitalCardProfileCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/digital_card_profiles"), url);
+        Assert.True(
+            TestBase.UrisEqual(new Uri("https://api.increase.com/digital_card_profiles"), url)
+        );
     }
 
     [Fact]

@@ -35,11 +35,13 @@ public class PhysicalCardAdvanceShipmentParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/simulations/physical_cards/physical_card_ode8duyq5v2ynhjoharl/advance_shipment"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/simulations/physical_cards/physical_card_ode8duyq5v2ynhjoharl/advance_shipment"
+                ),
+                url
+            )
         );
     }
 

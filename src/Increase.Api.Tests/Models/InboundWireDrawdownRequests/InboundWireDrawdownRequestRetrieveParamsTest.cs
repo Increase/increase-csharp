@@ -29,11 +29,13 @@ public class InboundWireDrawdownRequestRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/inbound_wire_drawdown_requests/inbound_wire_drawdown_request_u5a92ikqhz1ytphn799e"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/inbound_wire_drawdown_requests/inbound_wire_drawdown_request_u5a92ikqhz1ytphn799e"
+                ),
+                url
+            )
         );
     }
 

@@ -90,11 +90,13 @@ public class ExternalAccountListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/external_accounts?cursor=cursor&idempotency_key=x&limit=1&routing_number=xxxxxxxxx&status.in=active"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/external_accounts?cursor=cursor&idempotency_key=x&limit=1&routing_number=xxxxxxxxx&status.in=active"
+                ),
+                url
+            )
         );
     }
 

@@ -68,11 +68,13 @@ public class BookkeepingAccountListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/bookkeeping_accounts?cursor=cursor&idempotency_key=x&limit=1"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/bookkeeping_accounts?cursor=cursor&idempotency_key=x&limit=1"
+                ),
+                url
+            )
         );
     }
 

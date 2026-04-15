@@ -80,7 +80,12 @@ public class InterestPaymentCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/simulations/interest_payments"), url);
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/simulations/interest_payments"),
+                url
+            )
+        );
     }
 
     [Fact]

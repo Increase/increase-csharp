@@ -145,7 +145,12 @@ public class InboundAchTransferCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/simulations/inbound_ach_transfers"), url);
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/simulations/inbound_ach_transfers"),
+                url
+            )
+        );
     }
 
     [Fact]

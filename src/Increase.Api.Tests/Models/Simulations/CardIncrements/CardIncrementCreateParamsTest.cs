@@ -64,7 +64,9 @@ public class CardIncrementCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/simulations/card_increments"), url);
+        Assert.True(
+            TestBase.UrisEqual(new Uri("https://api.increase.com/simulations/card_increments"), url)
+        );
     }
 
     [Fact]

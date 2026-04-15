@@ -81,11 +81,13 @@ public class WireDrawdownRequestListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/wire_drawdown_requests?cursor=cursor&idempotency_key=x&limit=1&status.in=pending_submission"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/wire_drawdown_requests?cursor=cursor&idempotency_key=x&limit=1&status.in=pending_submission"
+                ),
+                url
+            )
         );
     }
 

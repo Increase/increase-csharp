@@ -90,11 +90,13 @@ public class IntrafiAccountEnrollmentListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/intrafi_account_enrollments?account_id=account_id&cursor=cursor&idempotency_key=x&limit=1&status.in=pending_enrolling"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/intrafi_account_enrollments?account_id=account_id&cursor=cursor&idempotency_key=x&limit=1&status.in=pending_enrolling"
+                ),
+                url
+            )
         );
     }
 

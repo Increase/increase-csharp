@@ -81,11 +81,13 @@ public class PhysicalCardProfileListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/physical_card_profiles?cursor=cursor&idempotency_key=x&limit=1&status.in=pending_creating"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/physical_card_profiles?cursor=cursor&idempotency_key=x&limit=1&status.in=pending_creating"
+                ),
+                url
+            )
         );
     }
 

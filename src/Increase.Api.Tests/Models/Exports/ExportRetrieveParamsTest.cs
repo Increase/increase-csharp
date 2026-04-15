@@ -22,7 +22,12 @@ public class ExportRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/exports/export_8s4m48qz3bclzje0zwh9"), url);
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/exports/export_8s4m48qz3bclzje0zwh9"),
+                url
+            )
+        );
     }
 
     [Fact]

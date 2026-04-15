@@ -60,7 +60,7 @@ public class LockboxCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/lockboxes"), url);
+        Assert.True(TestBase.UrisEqual(new Uri("https://api.increase.com/lockboxes"), url));
     }
 
     [Fact]

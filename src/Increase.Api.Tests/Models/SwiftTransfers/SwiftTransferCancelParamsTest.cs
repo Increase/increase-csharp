@@ -28,11 +28,13 @@ public class SwiftTransferCancelParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/swift_transfers/swift_transfer_29h21xkng03788zwd3fh/cancel"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/swift_transfers/swift_transfer_29h21xkng03788zwd3fh/cancel"
+                ),
+                url
+            )
         );
     }
 

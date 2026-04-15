@@ -81,11 +81,13 @@ public class DigitalCardProfileListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/digital_card_profiles?cursor=cursor&idempotency_key=x&limit=1&status.in=pending"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/digital_card_profiles?cursor=cursor&idempotency_key=x&limit=1&status.in=pending"
+                ),
+                url
+            )
         );
     }
 

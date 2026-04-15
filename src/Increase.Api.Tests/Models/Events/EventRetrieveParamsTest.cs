@@ -22,9 +22,11 @@ public class EventRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri("https://api.increase.com/events/event_001dzz0r20rzr4zrhrr1364hy80"),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/events/event_001dzz0r20rzr4zrhrr1364hy80"),
+                url
+            )
         );
     }
 

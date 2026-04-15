@@ -74,11 +74,13 @@ public class SupplementalDocumentListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/entity_supplemental_documents?entity_id=entity_id&cursor=cursor&idempotency_key=x&limit=1"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/entity_supplemental_documents?entity_id=entity_id&cursor=cursor&idempotency_key=x&limit=1"
+                ),
+                url
+            )
         );
     }
 

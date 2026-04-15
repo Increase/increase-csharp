@@ -134,11 +134,13 @@ public class DigitalCardProfileCloneParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/digital_card_profiles/digital_card_profile_s3puplu90f04xhcwkiga/clone"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/digital_card_profiles/digital_card_profile_s3puplu90f04xhcwkiga/clone"
+                ),
+                url
+            )
         );
     }
 
