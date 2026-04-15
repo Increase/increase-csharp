@@ -23,7 +23,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 Line1 = "Sonnemannstrasse 20",
                 Line2 = "line2",
                 PostalCode = "60314",
-                State = "x",
+                State = "state",
             },
             CreditorName = "Ian Crease",
             DebtorAddress = new()
@@ -54,7 +54,7 @@ public class SwiftTransferCreateParamsTest : TestBase
             Line1 = "Sonnemannstrasse 20",
             Line2 = "line2",
             PostalCode = "60314",
-            State = "x",
+            State = "state",
         };
         string expectedCreditorName = "Ian Crease";
         DebtorAddress expectedDebtorAddress = new()
@@ -107,7 +107,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 Line1 = "Sonnemannstrasse 20",
                 Line2 = "line2",
                 PostalCode = "60314",
-                State = "x",
+                State = "state",
             },
             CreditorName = "Ian Crease",
             DebtorAddress = new()
@@ -147,7 +147,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 Line1 = "Sonnemannstrasse 20",
                 Line2 = "line2",
                 PostalCode = "60314",
-                State = "x",
+                State = "state",
             },
             CreditorName = "Ian Crease",
             DebtorAddress = new()
@@ -191,7 +191,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 Line1 = "Sonnemannstrasse 20",
                 Line2 = "line2",
                 PostalCode = "60314",
-                State = "x",
+                State = "state",
             },
             CreditorName = "Ian Crease",
             DebtorAddress = new()
@@ -230,7 +230,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 Line1 = "Sonnemannstrasse 20",
                 Line2 = "line2",
                 PostalCode = "60314",
-                State = "x",
+                State = "state",
             },
             CreditorName = "Ian Crease",
             DebtorAddress = new()
@@ -264,20 +264,20 @@ public class CreditorAddressTest : TestBase
     {
         var model = new CreditorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
             Line2 = "line2",
-            PostalCode = "x",
-            State = "x",
+            PostalCode = ")(",
+            State = "state",
         };
 
-        string expectedCity = "x";
+        string expectedCity = "city";
         string expectedCountry = "x";
         string expectedLine1 = "line1";
         string expectedLine2 = "line2";
-        string expectedPostalCode = "x";
-        string expectedState = "x";
+        string expectedPostalCode = ")(";
+        string expectedState = "state";
 
         Assert.Equal(expectedCity, model.City);
         Assert.Equal(expectedCountry, model.Country);
@@ -292,12 +292,12 @@ public class CreditorAddressTest : TestBase
     {
         var model = new CreditorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
             Line2 = "line2",
-            PostalCode = "x",
-            State = "x",
+            PostalCode = ")(",
+            State = "state",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -314,12 +314,12 @@ public class CreditorAddressTest : TestBase
     {
         var model = new CreditorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
             Line2 = "line2",
-            PostalCode = "x",
-            State = "x",
+            PostalCode = ")(",
+            State = "state",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -329,12 +329,12 @@ public class CreditorAddressTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        string expectedCity = "x";
+        string expectedCity = "city";
         string expectedCountry = "x";
         string expectedLine1 = "line1";
         string expectedLine2 = "line2";
-        string expectedPostalCode = "x";
-        string expectedState = "x";
+        string expectedPostalCode = ")(";
+        string expectedState = "state";
 
         Assert.Equal(expectedCity, deserialized.City);
         Assert.Equal(expectedCountry, deserialized.Country);
@@ -349,12 +349,12 @@ public class CreditorAddressTest : TestBase
     {
         var model = new CreditorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
             Line2 = "line2",
-            PostalCode = "x",
-            State = "x",
+            PostalCode = ")(",
+            State = "state",
         };
 
         model.Validate();
@@ -365,7 +365,7 @@ public class CreditorAddressTest : TestBase
     {
         var model = new CreditorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
         };
@@ -383,7 +383,7 @@ public class CreditorAddressTest : TestBase
     {
         var model = new CreditorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
         };
@@ -396,7 +396,7 @@ public class CreditorAddressTest : TestBase
     {
         var model = new CreditorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
 
@@ -419,7 +419,7 @@ public class CreditorAddressTest : TestBase
     {
         var model = new CreditorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
 
@@ -437,12 +437,12 @@ public class CreditorAddressTest : TestBase
     {
         var model = new CreditorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
             Line2 = "line2",
-            PostalCode = "x",
-            State = "x",
+            PostalCode = ")(",
+            State = "state",
         };
 
         CreditorAddress copied = new(model);
@@ -458,20 +458,20 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
             Line2 = "line2",
-            PostalCode = "x",
-            State = "x",
+            PostalCode = ")(",
+            State = "state",
         };
 
-        string expectedCity = "x";
+        string expectedCity = "city";
         string expectedCountry = "x";
         string expectedLine1 = "line1";
         string expectedLine2 = "line2";
-        string expectedPostalCode = "x";
-        string expectedState = "x";
+        string expectedPostalCode = ")(";
+        string expectedState = "state";
 
         Assert.Equal(expectedCity, model.City);
         Assert.Equal(expectedCountry, model.Country);
@@ -486,12 +486,12 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
             Line2 = "line2",
-            PostalCode = "x",
-            State = "x",
+            PostalCode = ")(",
+            State = "state",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -508,12 +508,12 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
             Line2 = "line2",
-            PostalCode = "x",
-            State = "x",
+            PostalCode = ")(",
+            State = "state",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -523,12 +523,12 @@ public class DebtorAddressTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        string expectedCity = "x";
+        string expectedCity = "city";
         string expectedCountry = "x";
         string expectedLine1 = "line1";
         string expectedLine2 = "line2";
-        string expectedPostalCode = "x";
-        string expectedState = "x";
+        string expectedPostalCode = ")(";
+        string expectedState = "state";
 
         Assert.Equal(expectedCity, deserialized.City);
         Assert.Equal(expectedCountry, deserialized.Country);
@@ -543,12 +543,12 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
             Line2 = "line2",
-            PostalCode = "x",
-            State = "x",
+            PostalCode = ")(",
+            State = "state",
         };
 
         model.Validate();
@@ -559,7 +559,7 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
         };
@@ -577,7 +577,7 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
         };
@@ -590,7 +590,7 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
 
@@ -613,7 +613,7 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
 
@@ -631,12 +631,12 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            City = "x",
+            City = "city",
             Country = "x",
             Line1 = "line1",
             Line2 = "line2",
-            PostalCode = "x",
-            State = "x",
+            PostalCode = ")(",
+            State = "state",
         };
 
         DebtorAddress copied = new(model);
