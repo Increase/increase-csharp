@@ -29,12 +29,12 @@ public class CardPushTransferCreateParamsTest : TestBase
             SenderAddressState = "NY",
             SenderName = "Ian Crease",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
-            MerchantLegalBusinessName = "x",
-            MerchantStreetAddress = "x",
-            RecipientAddressCity = "x",
-            RecipientAddressLine1 = "x",
-            RecipientAddressPostalCode = "x",
-            RecipientAddressState = "x",
+            MerchantLegalBusinessName = "x6",
+            MerchantStreetAddress = "merchant_street_address",
+            RecipientAddressCity = "recipient_address_city",
+            RecipientAddressLine1 = "recipient_address_line1",
+            RecipientAddressPostalCode = "x6",
+            RecipientAddressState = "x6",
             RequireApproval = true,
         };
 
@@ -59,12 +59,12 @@ public class CardPushTransferCreateParamsTest : TestBase
         string expectedSenderAddressState = "NY";
         string expectedSenderName = "Ian Crease";
         string expectedSourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
-        string expectedMerchantLegalBusinessName = "x";
-        string expectedMerchantStreetAddress = "x";
-        string expectedRecipientAddressCity = "x";
-        string expectedRecipientAddressLine1 = "x";
-        string expectedRecipientAddressPostalCode = "x";
-        string expectedRecipientAddressState = "x";
+        string expectedMerchantLegalBusinessName = "x6";
+        string expectedMerchantStreetAddress = "merchant_street_address";
+        string expectedRecipientAddressCity = "recipient_address_city";
+        string expectedRecipientAddressLine1 = "recipient_address_line1";
+        string expectedRecipientAddressPostalCode = "x6";
+        string expectedRecipientAddressState = "x6";
         bool expectedRequireApproval = true;
 
         Assert.Equal(
@@ -233,12 +233,12 @@ public class CardPushTransferCreateParamsTest : TestBase
             SenderAddressState = "NY",
             SenderName = "Ian Crease",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
-            MerchantLegalBusinessName = "x",
-            MerchantStreetAddress = "x",
-            RecipientAddressCity = "x",
-            RecipientAddressLine1 = "x",
-            RecipientAddressPostalCode = "x",
-            RecipientAddressState = "x",
+            MerchantLegalBusinessName = "x6",
+            MerchantStreetAddress = "merchant_street_address",
+            RecipientAddressCity = "recipient_address_city",
+            RecipientAddressLine1 = "recipient_address_line1",
+            RecipientAddressPostalCode = "x6",
+            RecipientAddressState = "x6",
             RequireApproval = true,
         };
 

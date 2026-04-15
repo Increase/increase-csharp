@@ -18,7 +18,7 @@ public class CardCreateParamsTest : TestBase
             AuthorizationControls = new()
             {
                 MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-                MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+                MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
                 MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
                 Usage = new()
                 {
@@ -66,7 +66,7 @@ public class CardCreateParamsTest : TestBase
         Cards::AuthorizationControls expectedAuthorizationControls = new()
         {
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             Usage = new()
             {
@@ -180,7 +180,7 @@ public class CardCreateParamsTest : TestBase
             AuthorizationControls = new()
             {
                 MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-                MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+                MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
                 MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
                 Usage = new()
                 {
@@ -238,7 +238,7 @@ public class AuthorizationControlsTest : TestBase
         var model = new Cards::AuthorizationControls
         {
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             Usage = new()
             {
@@ -272,8 +272,8 @@ public class AuthorizationControlsTest : TestBase
         };
         Cards::MerchantCategoryCode expectedMerchantCategoryCode = new()
         {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
+            Allowed = [new("0253")],
+            Blocked = [new("0253")],
         };
         Cards::MerchantCountry expectedMerchantCountry = new()
         {
@@ -312,7 +312,7 @@ public class AuthorizationControlsTest : TestBase
         var model = new Cards::AuthorizationControls
         {
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             Usage = new()
             {
@@ -354,7 +354,7 @@ public class AuthorizationControlsTest : TestBase
         var model = new Cards::AuthorizationControls
         {
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             Usage = new()
             {
@@ -395,8 +395,8 @@ public class AuthorizationControlsTest : TestBase
         };
         Cards::MerchantCategoryCode expectedMerchantCategoryCode = new()
         {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
+            Allowed = [new("0253")],
+            Blocked = [new("0253")],
         };
         Cards::MerchantCountry expectedMerchantCountry = new()
         {
@@ -435,7 +435,7 @@ public class AuthorizationControlsTest : TestBase
         var model = new Cards::AuthorizationControls
         {
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             Usage = new()
             {
@@ -531,7 +531,7 @@ public class AuthorizationControlsTest : TestBase
         var model = new Cards::AuthorizationControls
         {
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             Usage = new()
             {
@@ -849,12 +849,12 @@ public class MerchantCategoryCodeTest : TestBase
     {
         var model = new Cards::MerchantCategoryCode
         {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
+            Allowed = [new("0253")],
+            Blocked = [new("0253")],
         };
 
-        List<Cards::MerchantCategoryCodeAllowed> expectedAllowed = [new("xxxx")];
-        List<Cards::MerchantCategoryCodeBlocked> expectedBlocked = [new("xxxx")];
+        List<Cards::MerchantCategoryCodeAllowed> expectedAllowed = [new("0253")];
+        List<Cards::MerchantCategoryCodeBlocked> expectedBlocked = [new("0253")];
 
         Assert.NotNull(model.Allowed);
         Assert.Equal(expectedAllowed.Count, model.Allowed.Count);
@@ -875,8 +875,8 @@ public class MerchantCategoryCodeTest : TestBase
     {
         var model = new Cards::MerchantCategoryCode
         {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
+            Allowed = [new("0253")],
+            Blocked = [new("0253")],
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -893,8 +893,8 @@ public class MerchantCategoryCodeTest : TestBase
     {
         var model = new Cards::MerchantCategoryCode
         {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
+            Allowed = [new("0253")],
+            Blocked = [new("0253")],
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -904,8 +904,8 @@ public class MerchantCategoryCodeTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        List<Cards::MerchantCategoryCodeAllowed> expectedAllowed = [new("xxxx")];
-        List<Cards::MerchantCategoryCodeBlocked> expectedBlocked = [new("xxxx")];
+        List<Cards::MerchantCategoryCodeAllowed> expectedAllowed = [new("0253")];
+        List<Cards::MerchantCategoryCodeBlocked> expectedBlocked = [new("0253")];
 
         Assert.NotNull(deserialized.Allowed);
         Assert.Equal(expectedAllowed.Count, deserialized.Allowed.Count);
@@ -926,8 +926,8 @@ public class MerchantCategoryCodeTest : TestBase
     {
         var model = new Cards::MerchantCategoryCode
         {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
+            Allowed = [new("0253")],
+            Blocked = [new("0253")],
         };
 
         model.Validate();
@@ -986,8 +986,8 @@ public class MerchantCategoryCodeTest : TestBase
     {
         var model = new Cards::MerchantCategoryCode
         {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
+            Allowed = [new("0253")],
+            Blocked = [new("0253")],
         };
 
         Cards::MerchantCategoryCode copied = new(model);
@@ -1001,9 +1001,9 @@ public class MerchantCategoryCodeAllowedTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Cards::MerchantCategoryCodeAllowed { Code = "xxxx" };
+        var model = new Cards::MerchantCategoryCodeAllowed { Code = "0253" };
 
-        string expectedCode = "xxxx";
+        string expectedCode = "0253";
 
         Assert.Equal(expectedCode, model.Code);
     }
@@ -1011,7 +1011,7 @@ public class MerchantCategoryCodeAllowedTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Cards::MerchantCategoryCodeAllowed { Code = "xxxx" };
+        var model = new Cards::MerchantCategoryCodeAllowed { Code = "0253" };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Cards::MerchantCategoryCodeAllowed>(
@@ -1025,7 +1025,7 @@ public class MerchantCategoryCodeAllowedTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Cards::MerchantCategoryCodeAllowed { Code = "xxxx" };
+        var model = new Cards::MerchantCategoryCodeAllowed { Code = "0253" };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Cards::MerchantCategoryCodeAllowed>(
@@ -1034,7 +1034,7 @@ public class MerchantCategoryCodeAllowedTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        string expectedCode = "xxxx";
+        string expectedCode = "0253";
 
         Assert.Equal(expectedCode, deserialized.Code);
     }
@@ -1042,7 +1042,7 @@ public class MerchantCategoryCodeAllowedTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Cards::MerchantCategoryCodeAllowed { Code = "xxxx" };
+        var model = new Cards::MerchantCategoryCodeAllowed { Code = "0253" };
 
         model.Validate();
     }
@@ -1050,7 +1050,7 @@ public class MerchantCategoryCodeAllowedTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Cards::MerchantCategoryCodeAllowed { Code = "xxxx" };
+        var model = new Cards::MerchantCategoryCodeAllowed { Code = "0253" };
 
         Cards::MerchantCategoryCodeAllowed copied = new(model);
 
@@ -1063,9 +1063,9 @@ public class MerchantCategoryCodeBlockedTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Cards::MerchantCategoryCodeBlocked { Code = "xxxx" };
+        var model = new Cards::MerchantCategoryCodeBlocked { Code = "0253" };
 
-        string expectedCode = "xxxx";
+        string expectedCode = "0253";
 
         Assert.Equal(expectedCode, model.Code);
     }
@@ -1073,7 +1073,7 @@ public class MerchantCategoryCodeBlockedTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Cards::MerchantCategoryCodeBlocked { Code = "xxxx" };
+        var model = new Cards::MerchantCategoryCodeBlocked { Code = "0253" };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Cards::MerchantCategoryCodeBlocked>(
@@ -1087,7 +1087,7 @@ public class MerchantCategoryCodeBlockedTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Cards::MerchantCategoryCodeBlocked { Code = "xxxx" };
+        var model = new Cards::MerchantCategoryCodeBlocked { Code = "0253" };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Cards::MerchantCategoryCodeBlocked>(
@@ -1096,7 +1096,7 @@ public class MerchantCategoryCodeBlockedTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        string expectedCode = "xxxx";
+        string expectedCode = "0253";
 
         Assert.Equal(expectedCode, deserialized.Code);
     }
@@ -1104,7 +1104,7 @@ public class MerchantCategoryCodeBlockedTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Cards::MerchantCategoryCodeBlocked { Code = "xxxx" };
+        var model = new Cards::MerchantCategoryCodeBlocked { Code = "0253" };
 
         model.Validate();
     }
@@ -1112,7 +1112,7 @@ public class MerchantCategoryCodeBlockedTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Cards::MerchantCategoryCodeBlocked { Code = "xxxx" };
+        var model = new Cards::MerchantCategoryCodeBlocked { Code = "0253" };
 
         Cards::MerchantCategoryCodeBlocked copied = new(model);
 

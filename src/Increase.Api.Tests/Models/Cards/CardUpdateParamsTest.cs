@@ -18,7 +18,7 @@ public class CardUpdateParamsTest : TestBase
             AuthorizationControls = new()
             {
                 MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-                MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+                MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
                 MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
                 Usage = new()
                 {
@@ -69,7 +69,7 @@ public class CardUpdateParamsTest : TestBase
         CardUpdateParamsAuthorizationControls expectedAuthorizationControls = new()
         {
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             Usage = new()
             {
@@ -197,7 +197,7 @@ public class CardUpdateParamsTest : TestBase
             AuthorizationControls = new()
             {
                 MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-                MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+                MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
                 MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
                 Usage = new()
                 {
@@ -258,7 +258,7 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
         var model = new CardUpdateParamsAuthorizationControls
         {
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             Usage = new()
             {
@@ -290,7 +290,7 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
         CardUpdateParamsAuthorizationControlsMerchantAcceptorIdentifier expectedMerchantAcceptorIdentifier =
             new() { Allowed = [new("x")], Blocked = [new("x")] };
         CardUpdateParamsAuthorizationControlsMerchantCategoryCode expectedMerchantCategoryCode =
-            new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] };
+            new() { Allowed = [new("0253")], Blocked = [new("0253")] };
         CardUpdateParamsAuthorizationControlsMerchantCountry expectedMerchantCountry = new()
         {
             Allowed = [new("xx")],
@@ -334,7 +334,7 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
         var model = new CardUpdateParamsAuthorizationControls
         {
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             Usage = new()
             {
@@ -378,7 +378,7 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
         var model = new CardUpdateParamsAuthorizationControls
         {
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             Usage = new()
             {
@@ -417,7 +417,7 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
         CardUpdateParamsAuthorizationControlsMerchantAcceptorIdentifier expectedMerchantAcceptorIdentifier =
             new() { Allowed = [new("x")], Blocked = [new("x")] };
         CardUpdateParamsAuthorizationControlsMerchantCategoryCode expectedMerchantCategoryCode =
-            new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] };
+            new() { Allowed = [new("0253")], Blocked = [new("0253")] };
         CardUpdateParamsAuthorizationControlsMerchantCountry expectedMerchantCountry = new()
         {
             Allowed = [new("xx")],
@@ -461,7 +461,7 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
         var model = new CardUpdateParamsAuthorizationControls
         {
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             Usage = new()
             {
@@ -559,7 +559,7 @@ public class CardUpdateParamsAuthorizationControlsTest : TestBase
         var model = new CardUpdateParamsAuthorizationControls
         {
             MerchantAcceptorIdentifier = new() { Allowed = [new("x")], Blocked = [new("x")] },
-            MerchantCategoryCode = new() { Allowed = [new("xxxx")], Blocked = [new("xxxx")] },
+            MerchantCategoryCode = new() { Allowed = [new("0253")], Blocked = [new("0253")] },
             MerchantCountry = new() { Allowed = [new("xx")], Blocked = [new("xx")] },
             Usage = new()
             {
@@ -927,17 +927,17 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeTest : Tes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCode
         {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
+            Allowed = [new("0253")],
+            Blocked = [new("0253")],
         };
 
         List<CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowed> expectedAllowed =
         [
-            new("xxxx"),
+            new("0253"),
         ];
         List<CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlocked> expectedBlocked =
         [
-            new("xxxx"),
+            new("0253"),
         ];
 
         Assert.NotNull(model.Allowed);
@@ -959,8 +959,8 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeTest : Tes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCode
         {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
+            Allowed = [new("0253")],
+            Blocked = [new("0253")],
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -978,8 +978,8 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeTest : Tes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCode
         {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
+            Allowed = [new("0253")],
+            Blocked = [new("0253")],
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -992,11 +992,11 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeTest : Tes
 
         List<CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowed> expectedAllowed =
         [
-            new("xxxx"),
+            new("0253"),
         ];
         List<CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlocked> expectedBlocked =
         [
-            new("xxxx"),
+            new("0253"),
         ];
 
         Assert.NotNull(deserialized.Allowed);
@@ -1018,8 +1018,8 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeTest : Tes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCode
         {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
+            Allowed = [new("0253")],
+            Blocked = [new("0253")],
         };
 
         model.Validate();
@@ -1078,8 +1078,8 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeTest : Tes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCode
         {
-            Allowed = [new("xxxx")],
-            Blocked = [new("xxxx")],
+            Allowed = [new("0253")],
+            Blocked = [new("0253")],
         };
 
         CardUpdateParamsAuthorizationControlsMerchantCategoryCode copied = new(model);
@@ -1095,10 +1095,10 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowedTes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowed
         {
-            Code = "xxxx",
+            Code = "0253",
         };
 
-        string expectedCode = "xxxx";
+        string expectedCode = "0253";
 
         Assert.Equal(expectedCode, model.Code);
     }
@@ -1108,7 +1108,7 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowedTes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowed
         {
-            Code = "xxxx",
+            Code = "0253",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1126,7 +1126,7 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowedTes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowed
         {
-            Code = "xxxx",
+            Code = "0253",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1137,7 +1137,7 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowedTes
             );
         Assert.NotNull(deserialized);
 
-        string expectedCode = "xxxx";
+        string expectedCode = "0253";
 
         Assert.Equal(expectedCode, deserialized.Code);
     }
@@ -1147,7 +1147,7 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowedTes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowed
         {
-            Code = "xxxx",
+            Code = "0253",
         };
 
         model.Validate();
@@ -1158,7 +1158,7 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowedTes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowed
         {
-            Code = "xxxx",
+            Code = "0253",
         };
 
         CardUpdateParamsAuthorizationControlsMerchantCategoryCodeAllowed copied = new(model);
@@ -1174,10 +1174,10 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlockedTes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlocked
         {
-            Code = "xxxx",
+            Code = "0253",
         };
 
-        string expectedCode = "xxxx";
+        string expectedCode = "0253";
 
         Assert.Equal(expectedCode, model.Code);
     }
@@ -1187,7 +1187,7 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlockedTes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlocked
         {
-            Code = "xxxx",
+            Code = "0253",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1205,7 +1205,7 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlockedTes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlocked
         {
-            Code = "xxxx",
+            Code = "0253",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1216,7 +1216,7 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlockedTes
             );
         Assert.NotNull(deserialized);
 
-        string expectedCode = "xxxx";
+        string expectedCode = "0253";
 
         Assert.Equal(expectedCode, deserialized.Code);
     }
@@ -1226,7 +1226,7 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlockedTes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlocked
         {
-            Code = "xxxx",
+            Code = "0253",
         };
 
         model.Validate();
@@ -1237,7 +1237,7 @@ public class CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlockedTes
     {
         var model = new CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlocked
         {
-            Code = "xxxx",
+            Code = "0253",
         };
 
         CardUpdateParamsAuthorizationControlsMerchantCategoryCodeBlocked copied = new(model);
