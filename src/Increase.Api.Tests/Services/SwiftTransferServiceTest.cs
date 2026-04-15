@@ -21,7 +21,7 @@ public class SwiftTransferServiceTest : TestBase
                     Line1 = "Sonnemannstrasse 20",
                     Line2 = "line2",
                     PostalCode = "60314",
-                    State = "x",
+                    State = "state",
                 },
                 CreditorName = "Ian Crease",
                 DebtorAddress = new()
