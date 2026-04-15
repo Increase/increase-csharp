@@ -10,12 +10,12 @@ public class RoutingNumberListParamsTest : TestBase
     {
         var parameters = new RoutingNumberListParams
         {
-            RoutingNumber = "xxxxxxxxx",
+            RoutingNumber = "483310694",
             Cursor = "cursor",
             Limit = 1,
         };
 
-        string expectedRoutingNumber = "xxxxxxxxx";
+        string expectedRoutingNumber = "483310694";
         string expectedCursor = "cursor";
         long expectedLimit = 1;
 
@@ -27,7 +27,7 @@ public class RoutingNumberListParamsTest : TestBase
     [Fact]
     public void OptionalNonNullableParamsUnsetAreNotSet_Works()
     {
-        var parameters = new RoutingNumberListParams { RoutingNumber = "xxxxxxxxx" };
+        var parameters = new RoutingNumberListParams { RoutingNumber = "483310694" };
 
         Assert.Null(parameters.Cursor);
         Assert.False(parameters.RawQueryData.ContainsKey("cursor"));
@@ -40,7 +40,7 @@ public class RoutingNumberListParamsTest : TestBase
     {
         var parameters = new RoutingNumberListParams
         {
-            RoutingNumber = "xxxxxxxxx",
+            RoutingNumber = "483310694",
 
             // Null should be interpreted as omitted for these properties
             Cursor = null,
@@ -58,7 +58,7 @@ public class RoutingNumberListParamsTest : TestBase
     {
         RoutingNumberListParams parameters = new()
         {
-            RoutingNumber = "xxxxxxxxx",
+            RoutingNumber = "483310694",
             Cursor = "cursor",
             Limit = 1,
         };
@@ -68,7 +68,7 @@ public class RoutingNumberListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.increase.com/routing_numbers?routing_number=xxxxxxxxx&cursor=cursor&limit=1"
+                    "https://api.increase.com/routing_numbers?routing_number=483310694&cursor=cursor&limit=1"
                 ),
                 url
             )
@@ -80,7 +80,7 @@ public class RoutingNumberListParamsTest : TestBase
     {
         var parameters = new RoutingNumberListParams
         {
-            RoutingNumber = "xxxxxxxxx",
+            RoutingNumber = "483310694",
             Cursor = "cursor",
             Limit = 1,
         };

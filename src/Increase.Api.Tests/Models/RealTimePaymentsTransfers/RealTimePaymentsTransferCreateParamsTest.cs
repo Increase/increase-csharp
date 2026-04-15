@@ -15,12 +15,12 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             UnstructuredRemittanceInformation = "Invoice 29582",
             AccountNumber = "987654321",
-            DebtorName = "x",
+            DebtorName = "debtor_name",
             ExternalAccountID = "external_account_id",
             RequireApproval = true,
             RoutingNumber = "101050001",
-            UltimateCreditorName = "x",
-            UltimateDebtorName = "x",
+            UltimateCreditorName = "ultimate_creditor_name",
+            UltimateDebtorName = "ultimate_debtor_name",
         };
 
         long expectedAmount = 100;
@@ -28,12 +28,12 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
         string expectedSourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         string expectedUnstructuredRemittanceInformation = "Invoice 29582";
         string expectedAccountNumber = "987654321";
-        string expectedDebtorName = "x";
+        string expectedDebtorName = "debtor_name";
         string expectedExternalAccountID = "external_account_id";
         bool expectedRequireApproval = true;
         string expectedRoutingNumber = "101050001";
-        string expectedUltimateCreditorName = "x";
-        string expectedUltimateDebtorName = "x";
+        string expectedUltimateCreditorName = "ultimate_creditor_name";
+        string expectedUltimateDebtorName = "ultimate_debtor_name";
 
         Assert.Equal(expectedAmount, parameters.Amount);
         Assert.Equal(expectedCreditorName, parameters.CreditorName);
@@ -145,12 +145,12 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             UnstructuredRemittanceInformation = "Invoice 29582",
             AccountNumber = "987654321",
-            DebtorName = "x",
+            DebtorName = "debtor_name",
             ExternalAccountID = "external_account_id",
             RequireApproval = true,
             RoutingNumber = "101050001",
-            UltimateCreditorName = "x",
-            UltimateDebtorName = "x",
+            UltimateCreditorName = "ultimate_creditor_name",
+            UltimateDebtorName = "ultimate_debtor_name",
         };
 
         RealTimePaymentsTransferCreateParams copied = new(parameters);

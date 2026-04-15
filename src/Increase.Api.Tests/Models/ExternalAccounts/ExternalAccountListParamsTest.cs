@@ -17,14 +17,14 @@ public class ExternalAccountListParamsTest : TestBase
             Cursor = "cursor",
             IdempotencyKey = "x",
             Limit = 1,
-            RoutingNumber = "xxxxxxxxx",
+            RoutingNumber = "483310694",
             Status = new() { In = [In.Active] },
         };
 
         string expectedCursor = "cursor";
         string expectedIdempotencyKey = "x";
         long expectedLimit = 1;
-        string expectedRoutingNumber = "xxxxxxxxx";
+        string expectedRoutingNumber = "483310694";
         ExternalAccountListParamsStatus expectedStatus = new() { In = [In.Active] };
 
         Assert.Equal(expectedCursor, parameters.Cursor);
@@ -84,7 +84,7 @@ public class ExternalAccountListParamsTest : TestBase
             Cursor = "cursor",
             IdempotencyKey = "x",
             Limit = 1,
-            RoutingNumber = "xxxxxxxxx",
+            RoutingNumber = "483310694",
             Status = new() { In = [In.Active] },
         };
 
@@ -93,7 +93,7 @@ public class ExternalAccountListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.increase.com/external_accounts?cursor=cursor&idempotency_key=x&limit=1&routing_number=xxxxxxxxx&status.in=active"
+                    "https://api.increase.com/external_accounts?cursor=cursor&idempotency_key=x&limit=1&routing_number=483310694&status.in=active"
                 ),
                 url
             )
@@ -108,7 +108,7 @@ public class ExternalAccountListParamsTest : TestBase
             Cursor = "cursor",
             IdempotencyKey = "x",
             Limit = 1,
-            RoutingNumber = "xxxxxxxxx",
+            RoutingNumber = "483310694",
             Status = new() { In = [In.Active] },
         };
 

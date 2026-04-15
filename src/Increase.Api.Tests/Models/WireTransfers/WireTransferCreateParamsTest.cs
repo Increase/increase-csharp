@@ -33,21 +33,21 @@ public class WireTransferCreateParamsTest : TestBase
                 Tax = new()
                 {
                     Date = "2019-12-27",
-                    IdentificationNumber = "xxxxxxxxx",
-                    TypeCode = "xxxxx",
+                    IdentificationNumber = "483310694",
+                    TypeCode = "1I5r3",
                 },
                 Unstructured = new("New account transfer"),
             },
             AccountNumber = "987654321",
             Debtor = new()
             {
-                Name = "x",
+                Name = "name",
                 Address = new(
                     new DebtorAddressUnstructured()
                     {
-                        Line1 = "x",
-                        Line2 = "x",
-                        Line3 = "x",
+                        Line1 = "line1",
+                        Line2 = "line2",
+                        Line3 = "line3",
                     }
                 ),
             },
@@ -78,21 +78,21 @@ public class WireTransferCreateParamsTest : TestBase
             Tax = new()
             {
                 Date = "2019-12-27",
-                IdentificationNumber = "xxxxxxxxx",
-                TypeCode = "xxxxx",
+                IdentificationNumber = "483310694",
+                TypeCode = "1I5r3",
             },
             Unstructured = new("New account transfer"),
         };
         string expectedAccountNumber = "987654321";
         Debtor expectedDebtor = new()
         {
-            Name = "x",
+            Name = "name",
             Address = new(
                 new DebtorAddressUnstructured()
                 {
-                    Line1 = "x",
-                    Line2 = "x",
-                    Line3 = "x",
+                    Line1 = "line1",
+                    Line2 = "line2",
+                    Line3 = "line3",
                 }
             ),
         };
@@ -140,8 +140,8 @@ public class WireTransferCreateParamsTest : TestBase
                 Tax = new()
                 {
                     Date = "2019-12-27",
-                    IdentificationNumber = "xxxxxxxxx",
-                    TypeCode = "xxxxx",
+                    IdentificationNumber = "483310694",
+                    TypeCode = "1I5r3",
                 },
                 Unstructured = new("New account transfer"),
             },
@@ -188,8 +188,8 @@ public class WireTransferCreateParamsTest : TestBase
                 Tax = new()
                 {
                     Date = "2019-12-27",
-                    IdentificationNumber = "xxxxxxxxx",
-                    TypeCode = "xxxxx",
+                    IdentificationNumber = "483310694",
+                    TypeCode = "1I5r3",
                 },
                 Unstructured = new("New account transfer"),
             },
@@ -245,8 +245,8 @@ public class WireTransferCreateParamsTest : TestBase
                 Tax = new()
                 {
                     Date = "2019-12-27",
-                    IdentificationNumber = "xxxxxxxxx",
-                    TypeCode = "xxxxx",
+                    IdentificationNumber = "483310694",
+                    TypeCode = "1I5r3",
                 },
                 Unstructured = new("New account transfer"),
             },
@@ -282,21 +282,21 @@ public class WireTransferCreateParamsTest : TestBase
                 Tax = new()
                 {
                     Date = "2019-12-27",
-                    IdentificationNumber = "xxxxxxxxx",
-                    TypeCode = "xxxxx",
+                    IdentificationNumber = "483310694",
+                    TypeCode = "1I5r3",
                 },
                 Unstructured = new("New account transfer"),
             },
             AccountNumber = "987654321",
             Debtor = new()
             {
-                Name = "x",
+                Name = "name",
                 Address = new(
                     new DebtorAddressUnstructured()
                     {
-                        Line1 = "x",
-                        Line2 = "x",
-                        Line3 = "x",
+                        Line1 = "line1",
+                        Line2 = "line2",
+                        Line3 = "line3",
                     }
                 ),
             },
@@ -320,24 +320,24 @@ public class CreditorTest : TestBase
     {
         var model = new Creditor
         {
-            Name = "x",
+            Name = "name",
             Address = new(
                 new Unstructured()
                 {
-                    Line1 = "x",
-                    Line2 = "x",
-                    Line3 = "x",
+                    Line1 = "line1",
+                    Line2 = "line2",
+                    Line3 = "line3",
                 }
             ),
         };
 
-        string expectedName = "x";
+        string expectedName = "name";
         Address expectedAddress = new(
             new Unstructured()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             }
         );
 
@@ -350,13 +350,13 @@ public class CreditorTest : TestBase
     {
         var model = new Creditor
         {
-            Name = "x",
+            Name = "name",
             Address = new(
                 new Unstructured()
                 {
-                    Line1 = "x",
-                    Line2 = "x",
-                    Line3 = "x",
+                    Line1 = "line1",
+                    Line2 = "line2",
+                    Line3 = "line3",
                 }
             ),
         };
@@ -372,13 +372,13 @@ public class CreditorTest : TestBase
     {
         var model = new Creditor
         {
-            Name = "x",
+            Name = "name",
             Address = new(
                 new Unstructured()
                 {
-                    Line1 = "x",
-                    Line2 = "x",
-                    Line3 = "x",
+                    Line1 = "line1",
+                    Line2 = "line2",
+                    Line3 = "line3",
                 }
             ),
         };
@@ -390,13 +390,13 @@ public class CreditorTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        string expectedName = "x";
+        string expectedName = "name";
         Address expectedAddress = new(
             new Unstructured()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             }
         );
 
@@ -409,13 +409,13 @@ public class CreditorTest : TestBase
     {
         var model = new Creditor
         {
-            Name = "x",
+            Name = "name",
             Address = new(
                 new Unstructured()
                 {
-                    Line1 = "x",
-                    Line2 = "x",
-                    Line3 = "x",
+                    Line1 = "line1",
+                    Line2 = "line2",
+                    Line3 = "line3",
                 }
             ),
         };
@@ -426,7 +426,7 @@ public class CreditorTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Creditor { Name = "x" };
+        var model = new Creditor { Name = "name" };
 
         Assert.Null(model.Address);
         Assert.False(model.RawData.ContainsKey("address"));
@@ -435,7 +435,7 @@ public class CreditorTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Creditor { Name = "x" };
+        var model = new Creditor { Name = "name" };
 
         model.Validate();
     }
@@ -445,7 +445,7 @@ public class CreditorTest : TestBase
     {
         var model = new Creditor
         {
-            Name = "x",
+            Name = "name",
 
             // Null should be interpreted as omitted for these properties
             Address = null,
@@ -460,7 +460,7 @@ public class CreditorTest : TestBase
     {
         var model = new Creditor
         {
-            Name = "x",
+            Name = "name",
 
             // Null should be interpreted as omitted for these properties
             Address = null,
@@ -474,13 +474,13 @@ public class CreditorTest : TestBase
     {
         var model = new Creditor
         {
-            Name = "x",
+            Name = "name",
             Address = new(
                 new Unstructured()
                 {
-                    Line1 = "x",
-                    Line2 = "x",
-                    Line3 = "x",
+                    Line1 = "line1",
+                    Line2 = "line2",
+                    Line3 = "line3",
                 }
             ),
         };
@@ -500,17 +500,17 @@ public class AddressTest : TestBase
         {
             Unstructured = new()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             },
         };
 
         Unstructured expectedUnstructured = new()
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
         Assert.Equal(expectedUnstructured, model.Unstructured);
@@ -523,9 +523,9 @@ public class AddressTest : TestBase
         {
             Unstructured = new()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             },
         };
 
@@ -542,9 +542,9 @@ public class AddressTest : TestBase
         {
             Unstructured = new()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             },
         };
 
@@ -557,9 +557,9 @@ public class AddressTest : TestBase
 
         Unstructured expectedUnstructured = new()
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
         Assert.Equal(expectedUnstructured, deserialized.Unstructured);
@@ -572,9 +572,9 @@ public class AddressTest : TestBase
         {
             Unstructured = new()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             },
         };
 
@@ -588,9 +588,9 @@ public class AddressTest : TestBase
         {
             Unstructured = new()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             },
         };
 
@@ -607,14 +607,14 @@ public class UnstructuredTest : TestBase
     {
         var model = new Unstructured
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
-        string expectedLine1 = "x";
-        string expectedLine2 = "x";
-        string expectedLine3 = "x";
+        string expectedLine1 = "line1";
+        string expectedLine2 = "line2";
+        string expectedLine3 = "line3";
 
         Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedLine2, model.Line2);
@@ -626,9 +626,9 @@ public class UnstructuredTest : TestBase
     {
         var model = new Unstructured
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -645,9 +645,9 @@ public class UnstructuredTest : TestBase
     {
         var model = new Unstructured
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -657,9 +657,9 @@ public class UnstructuredTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        string expectedLine1 = "x";
-        string expectedLine2 = "x";
-        string expectedLine3 = "x";
+        string expectedLine1 = "line1";
+        string expectedLine2 = "line2";
+        string expectedLine3 = "line3";
 
         Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedLine2, deserialized.Line2);
@@ -671,9 +671,9 @@ public class UnstructuredTest : TestBase
     {
         var model = new Unstructured
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
         model.Validate();
@@ -682,7 +682,7 @@ public class UnstructuredTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Unstructured { Line1 = "x" };
+        var model = new Unstructured { Line1 = "line1" };
 
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
@@ -693,7 +693,7 @@ public class UnstructuredTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Unstructured { Line1 = "x" };
+        var model = new Unstructured { Line1 = "line1" };
 
         model.Validate();
     }
@@ -703,7 +703,7 @@ public class UnstructuredTest : TestBase
     {
         var model = new Unstructured
         {
-            Line1 = "x",
+            Line1 = "line1",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
@@ -721,7 +721,7 @@ public class UnstructuredTest : TestBase
     {
         var model = new Unstructured
         {
-            Line1 = "x",
+            Line1 = "line1",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
@@ -736,9 +736,9 @@ public class UnstructuredTest : TestBase
     {
         var model = new Unstructured
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
         Unstructured copied = new(model);
@@ -758,20 +758,20 @@ public class RemittanceTest : TestBase
             Tax = new()
             {
                 Date = "2019-12-27",
-                IdentificationNumber = "xxxxxxxxx",
-                TypeCode = "xxxxx",
+                IdentificationNumber = "483310694",
+                TypeCode = "1I5r3",
             },
-            Unstructured = new("x"),
+            Unstructured = new("message"),
         };
 
         ApiEnum<string, Category> expectedCategory = Category.Unstructured;
         Tax expectedTax = new()
         {
             Date = "2019-12-27",
-            IdentificationNumber = "xxxxxxxxx",
-            TypeCode = "xxxxx",
+            IdentificationNumber = "483310694",
+            TypeCode = "1I5r3",
         };
-        RemittanceUnstructured expectedUnstructured = new("x");
+        RemittanceUnstructured expectedUnstructured = new("message");
 
         Assert.Equal(expectedCategory, model.Category);
         Assert.Equal(expectedTax, model.Tax);
@@ -787,10 +787,10 @@ public class RemittanceTest : TestBase
             Tax = new()
             {
                 Date = "2019-12-27",
-                IdentificationNumber = "xxxxxxxxx",
-                TypeCode = "xxxxx",
+                IdentificationNumber = "483310694",
+                TypeCode = "1I5r3",
             },
-            Unstructured = new("x"),
+            Unstructured = new("message"),
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -811,10 +811,10 @@ public class RemittanceTest : TestBase
             Tax = new()
             {
                 Date = "2019-12-27",
-                IdentificationNumber = "xxxxxxxxx",
-                TypeCode = "xxxxx",
+                IdentificationNumber = "483310694",
+                TypeCode = "1I5r3",
             },
-            Unstructured = new("x"),
+            Unstructured = new("message"),
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -828,10 +828,10 @@ public class RemittanceTest : TestBase
         Tax expectedTax = new()
         {
             Date = "2019-12-27",
-            IdentificationNumber = "xxxxxxxxx",
-            TypeCode = "xxxxx",
+            IdentificationNumber = "483310694",
+            TypeCode = "1I5r3",
         };
-        RemittanceUnstructured expectedUnstructured = new("x");
+        RemittanceUnstructured expectedUnstructured = new("message");
 
         Assert.Equal(expectedCategory, deserialized.Category);
         Assert.Equal(expectedTax, deserialized.Tax);
@@ -847,10 +847,10 @@ public class RemittanceTest : TestBase
             Tax = new()
             {
                 Date = "2019-12-27",
-                IdentificationNumber = "xxxxxxxxx",
-                TypeCode = "xxxxx",
+                IdentificationNumber = "483310694",
+                TypeCode = "1I5r3",
             },
-            Unstructured = new("x"),
+            Unstructured = new("message"),
         };
 
         model.Validate();
@@ -917,10 +917,10 @@ public class RemittanceTest : TestBase
             Tax = new()
             {
                 Date = "2019-12-27",
-                IdentificationNumber = "xxxxxxxxx",
-                TypeCode = "xxxxx",
+                IdentificationNumber = "483310694",
+                TypeCode = "1I5r3",
             },
-            Unstructured = new("x"),
+            Unstructured = new("message"),
         };
 
         Remittance copied = new(model);
@@ -995,13 +995,13 @@ public class TaxTest : TestBase
         var model = new Tax
         {
             Date = "2019-12-27",
-            IdentificationNumber = "xxxxxxxxx",
-            TypeCode = "xxxxx",
+            IdentificationNumber = "483310694",
+            TypeCode = "1I5r3",
         };
 
         string expectedDate = "2019-12-27";
-        string expectedIdentificationNumber = "xxxxxxxxx";
-        string expectedTypeCode = "xxxxx";
+        string expectedIdentificationNumber = "483310694";
+        string expectedTypeCode = "1I5r3";
 
         Assert.Equal(expectedDate, model.Date);
         Assert.Equal(expectedIdentificationNumber, model.IdentificationNumber);
@@ -1014,8 +1014,8 @@ public class TaxTest : TestBase
         var model = new Tax
         {
             Date = "2019-12-27",
-            IdentificationNumber = "xxxxxxxxx",
-            TypeCode = "xxxxx",
+            IdentificationNumber = "483310694",
+            TypeCode = "1I5r3",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1030,8 +1030,8 @@ public class TaxTest : TestBase
         var model = new Tax
         {
             Date = "2019-12-27",
-            IdentificationNumber = "xxxxxxxxx",
-            TypeCode = "xxxxx",
+            IdentificationNumber = "483310694",
+            TypeCode = "1I5r3",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1039,8 +1039,8 @@ public class TaxTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedDate = "2019-12-27";
-        string expectedIdentificationNumber = "xxxxxxxxx";
-        string expectedTypeCode = "xxxxx";
+        string expectedIdentificationNumber = "483310694";
+        string expectedTypeCode = "1I5r3";
 
         Assert.Equal(expectedDate, deserialized.Date);
         Assert.Equal(expectedIdentificationNumber, deserialized.IdentificationNumber);
@@ -1053,8 +1053,8 @@ public class TaxTest : TestBase
         var model = new Tax
         {
             Date = "2019-12-27",
-            IdentificationNumber = "xxxxxxxxx",
-            TypeCode = "xxxxx",
+            IdentificationNumber = "483310694",
+            TypeCode = "1I5r3",
         };
 
         model.Validate();
@@ -1066,8 +1066,8 @@ public class TaxTest : TestBase
         var model = new Tax
         {
             Date = "2019-12-27",
-            IdentificationNumber = "xxxxxxxxx",
-            TypeCode = "xxxxx",
+            IdentificationNumber = "483310694",
+            TypeCode = "1I5r3",
         };
 
         Tax copied = new(model);
@@ -1081,9 +1081,9 @@ public class RemittanceUnstructuredTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new RemittanceUnstructured { Message = "x" };
+        var model = new RemittanceUnstructured { Message = "message" };
 
-        string expectedMessage = "x";
+        string expectedMessage = "message";
 
         Assert.Equal(expectedMessage, model.Message);
     }
@@ -1091,7 +1091,7 @@ public class RemittanceUnstructuredTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new RemittanceUnstructured { Message = "x" };
+        var model = new RemittanceUnstructured { Message = "message" };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<RemittanceUnstructured>(
@@ -1105,7 +1105,7 @@ public class RemittanceUnstructuredTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new RemittanceUnstructured { Message = "x" };
+        var model = new RemittanceUnstructured { Message = "message" };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<RemittanceUnstructured>(
@@ -1114,7 +1114,7 @@ public class RemittanceUnstructuredTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        string expectedMessage = "x";
+        string expectedMessage = "message";
 
         Assert.Equal(expectedMessage, deserialized.Message);
     }
@@ -1122,7 +1122,7 @@ public class RemittanceUnstructuredTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new RemittanceUnstructured { Message = "x" };
+        var model = new RemittanceUnstructured { Message = "message" };
 
         model.Validate();
     }
@@ -1130,7 +1130,7 @@ public class RemittanceUnstructuredTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new RemittanceUnstructured { Message = "x" };
+        var model = new RemittanceUnstructured { Message = "message" };
 
         RemittanceUnstructured copied = new(model);
 
@@ -1145,24 +1145,24 @@ public class DebtorTest : TestBase
     {
         var model = new Debtor
         {
-            Name = "x",
+            Name = "name",
             Address = new(
                 new DebtorAddressUnstructured()
                 {
-                    Line1 = "x",
-                    Line2 = "x",
-                    Line3 = "x",
+                    Line1 = "line1",
+                    Line2 = "line2",
+                    Line3 = "line3",
                 }
             ),
         };
 
-        string expectedName = "x";
+        string expectedName = "name";
         DebtorAddress expectedAddress = new(
             new DebtorAddressUnstructured()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             }
         );
 
@@ -1175,13 +1175,13 @@ public class DebtorTest : TestBase
     {
         var model = new Debtor
         {
-            Name = "x",
+            Name = "name",
             Address = new(
                 new DebtorAddressUnstructured()
                 {
-                    Line1 = "x",
-                    Line2 = "x",
-                    Line3 = "x",
+                    Line1 = "line1",
+                    Line2 = "line2",
+                    Line3 = "line3",
                 }
             ),
         };
@@ -1197,13 +1197,13 @@ public class DebtorTest : TestBase
     {
         var model = new Debtor
         {
-            Name = "x",
+            Name = "name",
             Address = new(
                 new DebtorAddressUnstructured()
                 {
-                    Line1 = "x",
-                    Line2 = "x",
-                    Line3 = "x",
+                    Line1 = "line1",
+                    Line2 = "line2",
+                    Line3 = "line3",
                 }
             ),
         };
@@ -1212,13 +1212,13 @@ public class DebtorTest : TestBase
         var deserialized = JsonSerializer.Deserialize<Debtor>(element, ModelBase.SerializerOptions);
         Assert.NotNull(deserialized);
 
-        string expectedName = "x";
+        string expectedName = "name";
         DebtorAddress expectedAddress = new(
             new DebtorAddressUnstructured()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             }
         );
 
@@ -1231,13 +1231,13 @@ public class DebtorTest : TestBase
     {
         var model = new Debtor
         {
-            Name = "x",
+            Name = "name",
             Address = new(
                 new DebtorAddressUnstructured()
                 {
-                    Line1 = "x",
-                    Line2 = "x",
-                    Line3 = "x",
+                    Line1 = "line1",
+                    Line2 = "line2",
+                    Line3 = "line3",
                 }
             ),
         };
@@ -1248,7 +1248,7 @@ public class DebtorTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Debtor { Name = "x" };
+        var model = new Debtor { Name = "name" };
 
         Assert.Null(model.Address);
         Assert.False(model.RawData.ContainsKey("address"));
@@ -1257,7 +1257,7 @@ public class DebtorTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Debtor { Name = "x" };
+        var model = new Debtor { Name = "name" };
 
         model.Validate();
     }
@@ -1267,7 +1267,7 @@ public class DebtorTest : TestBase
     {
         var model = new Debtor
         {
-            Name = "x",
+            Name = "name",
 
             // Null should be interpreted as omitted for these properties
             Address = null,
@@ -1282,7 +1282,7 @@ public class DebtorTest : TestBase
     {
         var model = new Debtor
         {
-            Name = "x",
+            Name = "name",
 
             // Null should be interpreted as omitted for these properties
             Address = null,
@@ -1296,13 +1296,13 @@ public class DebtorTest : TestBase
     {
         var model = new Debtor
         {
-            Name = "x",
+            Name = "name",
             Address = new(
                 new DebtorAddressUnstructured()
                 {
-                    Line1 = "x",
-                    Line2 = "x",
-                    Line3 = "x",
+                    Line1 = "line1",
+                    Line2 = "line2",
+                    Line3 = "line3",
                 }
             ),
         };
@@ -1322,17 +1322,17 @@ public class DebtorAddressTest : TestBase
         {
             Unstructured = new()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             },
         };
 
         DebtorAddressUnstructured expectedUnstructured = new()
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
         Assert.Equal(expectedUnstructured, model.Unstructured);
@@ -1345,9 +1345,9 @@ public class DebtorAddressTest : TestBase
         {
             Unstructured = new()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             },
         };
 
@@ -1367,9 +1367,9 @@ public class DebtorAddressTest : TestBase
         {
             Unstructured = new()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             },
         };
 
@@ -1382,9 +1382,9 @@ public class DebtorAddressTest : TestBase
 
         DebtorAddressUnstructured expectedUnstructured = new()
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
         Assert.Equal(expectedUnstructured, deserialized.Unstructured);
@@ -1397,9 +1397,9 @@ public class DebtorAddressTest : TestBase
         {
             Unstructured = new()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             },
         };
 
@@ -1413,9 +1413,9 @@ public class DebtorAddressTest : TestBase
         {
             Unstructured = new()
             {
-                Line1 = "x",
-                Line2 = "x",
-                Line3 = "x",
+                Line1 = "line1",
+                Line2 = "line2",
+                Line3 = "line3",
             },
         };
 
@@ -1432,14 +1432,14 @@ public class DebtorAddressUnstructuredTest : TestBase
     {
         var model = new DebtorAddressUnstructured
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
-        string expectedLine1 = "x";
-        string expectedLine2 = "x";
-        string expectedLine3 = "x";
+        string expectedLine1 = "line1";
+        string expectedLine2 = "line2";
+        string expectedLine3 = "line3";
 
         Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedLine2, model.Line2);
@@ -1451,9 +1451,9 @@ public class DebtorAddressUnstructuredTest : TestBase
     {
         var model = new DebtorAddressUnstructured
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1470,9 +1470,9 @@ public class DebtorAddressUnstructuredTest : TestBase
     {
         var model = new DebtorAddressUnstructured
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1482,9 +1482,9 @@ public class DebtorAddressUnstructuredTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        string expectedLine1 = "x";
-        string expectedLine2 = "x";
-        string expectedLine3 = "x";
+        string expectedLine1 = "line1";
+        string expectedLine2 = "line2";
+        string expectedLine3 = "line3";
 
         Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedLine2, deserialized.Line2);
@@ -1496,9 +1496,9 @@ public class DebtorAddressUnstructuredTest : TestBase
     {
         var model = new DebtorAddressUnstructured
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
         model.Validate();
@@ -1507,7 +1507,7 @@ public class DebtorAddressUnstructuredTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new DebtorAddressUnstructured { Line1 = "x" };
+        var model = new DebtorAddressUnstructured { Line1 = "line1" };
 
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
@@ -1518,7 +1518,7 @@ public class DebtorAddressUnstructuredTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new DebtorAddressUnstructured { Line1 = "x" };
+        var model = new DebtorAddressUnstructured { Line1 = "line1" };
 
         model.Validate();
     }
@@ -1528,7 +1528,7 @@ public class DebtorAddressUnstructuredTest : TestBase
     {
         var model = new DebtorAddressUnstructured
         {
-            Line1 = "x",
+            Line1 = "line1",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
@@ -1546,7 +1546,7 @@ public class DebtorAddressUnstructuredTest : TestBase
     {
         var model = new DebtorAddressUnstructured
         {
-            Line1 = "x",
+            Line1 = "line1",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
@@ -1561,9 +1561,9 @@ public class DebtorAddressUnstructuredTest : TestBase
     {
         var model = new DebtorAddressUnstructured
         {
-            Line1 = "x",
-            Line2 = "x",
-            Line3 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
+            Line3 = "line3",
         };
 
         DebtorAddressUnstructured copied = new(model);

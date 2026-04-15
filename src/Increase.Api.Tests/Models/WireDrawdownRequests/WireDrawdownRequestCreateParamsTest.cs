@@ -40,7 +40,7 @@ public class WireDrawdownRequestCreateParamsTest : TestBase
             DebtorAccountNumber = "987654321",
             DebtorExternalAccountID = "debtor_external_account_id",
             DebtorRoutingNumber = "101050001",
-            EndToEndIdentification = "x",
+            EndToEndIdentification = "end_to_end_identification",
         };
 
         string expectedAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
@@ -70,7 +70,7 @@ public class WireDrawdownRequestCreateParamsTest : TestBase
         string expectedDebtorAccountNumber = "987654321";
         string expectedDebtorExternalAccountID = "debtor_external_account_id";
         string expectedDebtorRoutingNumber = "101050001";
-        string expectedEndToEndIdentification = "x";
+        string expectedEndToEndIdentification = "end_to_end_identification";
 
         Assert.Equal(expectedAccountNumberID, parameters.AccountNumberID);
         Assert.Equal(expectedAmount, parameters.Amount);
@@ -249,7 +249,7 @@ public class WireDrawdownRequestCreateParamsTest : TestBase
             DebtorAccountNumber = "987654321",
             DebtorExternalAccountID = "debtor_external_account_id",
             DebtorRoutingNumber = "101050001",
-            EndToEndIdentification = "x",
+            EndToEndIdentification = "end_to_end_identification",
         };
 
         WireDrawdownRequestCreateParams copied = new(parameters);
