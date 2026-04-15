@@ -31,8 +31,8 @@ public class WireTransferServiceTest : TestBase
                     Tax = new()
                     {
                         Date = "2019-12-27",
-                        IdentificationNumber = "xxxxxxxxx",
-                        TypeCode = "xxxxx",
+                        IdentificationNumber = "483310694",
+                        TypeCode = "1I5r3",
                     },
                     Unstructured = new("New account transfer"),
                 },

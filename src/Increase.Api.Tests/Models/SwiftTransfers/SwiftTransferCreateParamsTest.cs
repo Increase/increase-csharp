@@ -21,7 +21,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 City = "Frankfurt",
                 Country = "DE",
                 Line1 = "Sonnemannstrasse 20",
-                Line2 = "x",
+                Line2 = "line2",
                 PostalCode = "60314",
                 State = "x",
             },
@@ -31,7 +31,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 City = "New York",
                 Country = "US",
                 Line1 = "33 Liberty Street",
-                Line2 = "x",
+                Line2 = "line2",
                 PostalCode = "10045",
                 State = "NY",
             },
@@ -41,7 +41,7 @@ public class SwiftTransferCreateParamsTest : TestBase
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             UnstructuredRemittanceInformation = "New Swift transfer",
             RequireApproval = true,
-            RoutingNumber = "x",
+            RoutingNumber = "sq",
         };
 
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
@@ -52,7 +52,7 @@ public class SwiftTransferCreateParamsTest : TestBase
             City = "Frankfurt",
             Country = "DE",
             Line1 = "Sonnemannstrasse 20",
-            Line2 = "x",
+            Line2 = "line2",
             PostalCode = "60314",
             State = "x",
         };
@@ -62,7 +62,7 @@ public class SwiftTransferCreateParamsTest : TestBase
             City = "New York",
             Country = "US",
             Line1 = "33 Liberty Street",
-            Line2 = "x",
+            Line2 = "line2",
             PostalCode = "10045",
             State = "NY",
         };
@@ -72,7 +72,7 @@ public class SwiftTransferCreateParamsTest : TestBase
         string expectedSourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         string expectedUnstructuredRemittanceInformation = "New Swift transfer";
         bool expectedRequireApproval = true;
-        string expectedRoutingNumber = "x";
+        string expectedRoutingNumber = "sq";
 
         Assert.Equal(expectedAccountID, parameters.AccountID);
         Assert.Equal(expectedAccountNumber, parameters.AccountNumber);
@@ -105,7 +105,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 City = "Frankfurt",
                 Country = "DE",
                 Line1 = "Sonnemannstrasse 20",
-                Line2 = "x",
+                Line2 = "line2",
                 PostalCode = "60314",
                 State = "x",
             },
@@ -115,7 +115,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 City = "New York",
                 Country = "US",
                 Line1 = "33 Liberty Street",
-                Line2 = "x",
+                Line2 = "line2",
                 PostalCode = "10045",
                 State = "NY",
             },
@@ -145,7 +145,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 City = "Frankfurt",
                 Country = "DE",
                 Line1 = "Sonnemannstrasse 20",
-                Line2 = "x",
+                Line2 = "line2",
                 PostalCode = "60314",
                 State = "x",
             },
@@ -155,7 +155,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 City = "New York",
                 Country = "US",
                 Line1 = "33 Liberty Street",
-                Line2 = "x",
+                Line2 = "line2",
                 PostalCode = "10045",
                 State = "NY",
             },
@@ -189,7 +189,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 City = "Frankfurt",
                 Country = "DE",
                 Line1 = "Sonnemannstrasse 20",
-                Line2 = "x",
+                Line2 = "line2",
                 PostalCode = "60314",
                 State = "x",
             },
@@ -199,7 +199,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 City = "New York",
                 Country = "US",
                 Line1 = "33 Liberty Street",
-                Line2 = "x",
+                Line2 = "line2",
                 PostalCode = "10045",
                 State = "NY",
             },
@@ -228,7 +228,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 City = "Frankfurt",
                 Country = "DE",
                 Line1 = "Sonnemannstrasse 20",
-                Line2 = "x",
+                Line2 = "line2",
                 PostalCode = "60314",
                 State = "x",
             },
@@ -238,7 +238,7 @@ public class SwiftTransferCreateParamsTest : TestBase
                 City = "New York",
                 Country = "US",
                 Line1 = "33 Liberty Street",
-                Line2 = "x",
+                Line2 = "line2",
                 PostalCode = "10045",
                 State = "NY",
             },
@@ -248,7 +248,7 @@ public class SwiftTransferCreateParamsTest : TestBase
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             UnstructuredRemittanceInformation = "New Swift transfer",
             RequireApproval = true,
-            RoutingNumber = "x",
+            RoutingNumber = "sq",
         };
 
         SwiftTransferCreateParams copied = new(parameters);
@@ -266,16 +266,16 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
-            Line2 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
             PostalCode = "x",
             State = "x",
         };
 
         string expectedCity = "x";
         string expectedCountry = "x";
-        string expectedLine1 = "x";
-        string expectedLine2 = "x";
+        string expectedLine1 = "line1";
+        string expectedLine2 = "line2";
         string expectedPostalCode = "x";
         string expectedState = "x";
 
@@ -294,8 +294,8 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
-            Line2 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
             PostalCode = "x",
             State = "x",
         };
@@ -316,8 +316,8 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
-            Line2 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
             PostalCode = "x",
             State = "x",
         };
@@ -331,8 +331,8 @@ public class CreditorAddressTest : TestBase
 
         string expectedCity = "x";
         string expectedCountry = "x";
-        string expectedLine1 = "x";
-        string expectedLine2 = "x";
+        string expectedLine1 = "line1";
+        string expectedLine2 = "line2";
         string expectedPostalCode = "x";
         string expectedState = "x";
 
@@ -351,8 +351,8 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
-            Line2 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
             PostalCode = "x",
             State = "x",
         };
@@ -367,7 +367,7 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
+            Line1 = "line1",
         };
 
         Assert.Null(model.Line2);
@@ -385,7 +385,7 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
+            Line1 = "line1",
         };
 
         model.Validate();
@@ -398,7 +398,7 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
+            Line1 = "line1",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
@@ -421,7 +421,7 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
+            Line1 = "line1",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
@@ -439,8 +439,8 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
-            Line2 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
             PostalCode = "x",
             State = "x",
         };
@@ -460,16 +460,16 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
-            Line2 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
             PostalCode = "x",
             State = "x",
         };
 
         string expectedCity = "x";
         string expectedCountry = "x";
-        string expectedLine1 = "x";
-        string expectedLine2 = "x";
+        string expectedLine1 = "line1";
+        string expectedLine2 = "line2";
         string expectedPostalCode = "x";
         string expectedState = "x";
 
@@ -488,8 +488,8 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
-            Line2 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
             PostalCode = "x",
             State = "x",
         };
@@ -510,8 +510,8 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
-            Line2 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
             PostalCode = "x",
             State = "x",
         };
@@ -525,8 +525,8 @@ public class DebtorAddressTest : TestBase
 
         string expectedCity = "x";
         string expectedCountry = "x";
-        string expectedLine1 = "x";
-        string expectedLine2 = "x";
+        string expectedLine1 = "line1";
+        string expectedLine2 = "line2";
         string expectedPostalCode = "x";
         string expectedState = "x";
 
@@ -545,8 +545,8 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
-            Line2 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
             PostalCode = "x",
             State = "x",
         };
@@ -561,7 +561,7 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
+            Line1 = "line1",
         };
 
         Assert.Null(model.Line2);
@@ -579,7 +579,7 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
+            Line1 = "line1",
         };
 
         model.Validate();
@@ -592,7 +592,7 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
+            Line1 = "line1",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
@@ -615,7 +615,7 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
+            Line1 = "line1",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
@@ -633,8 +633,8 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             Country = "x",
-            Line1 = "x",
-            Line2 = "x",
+            Line1 = "line1",
+            Line2 = "line2",
             PostalCode = "x",
             State = "x",
         };

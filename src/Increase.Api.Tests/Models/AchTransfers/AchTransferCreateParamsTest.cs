@@ -21,18 +21,20 @@ public class AchTransferCreateParamsTest : TestBase
             Addenda = new()
             {
                 Category = Category.Freeform,
-                Freeform = new([new("x")]),
-                PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "x", PaidAmount = 0 }]),
+                Freeform = new([new("payment_related_information")]),
+                PaymentOrderRemittanceAdvice = new(
+                    [new() { InvoiceNumber = "sq", PaidAmount = 0 }]
+                ),
             },
-            CompanyDescriptiveDate = "x",
-            CompanyDiscretionaryData = "x",
-            CompanyEntryDescription = "x",
-            CompanyName = "x",
+            CompanyDescriptiveDate = "J!",
+            CompanyDiscretionaryData = "J!",
+            CompanyEntryDescription = "J!",
+            CompanyName = "company_name",
             DestinationAccountHolder = DestinationAccountHolder.Business,
             ExternalAccountID = "external_account_id",
             Funding = Funding.Checking,
-            IndividualID = "x",
-            IndividualName = "x",
+            IndividualID = "individual_id",
+            IndividualName = "individual_name",
             PreferredEffectiveDate = new()
             {
                 Date = "2019-12-27",
@@ -51,19 +53,19 @@ public class AchTransferCreateParamsTest : TestBase
         Addenda expectedAddenda = new()
         {
             Category = Category.Freeform,
-            Freeform = new([new("x")]),
-            PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "x", PaidAmount = 0 }]),
+            Freeform = new([new("payment_related_information")]),
+            PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "sq", PaidAmount = 0 }]),
         };
-        string expectedCompanyDescriptiveDate = "x";
-        string expectedCompanyDiscretionaryData = "x";
-        string expectedCompanyEntryDescription = "x";
-        string expectedCompanyName = "x";
+        string expectedCompanyDescriptiveDate = "J!";
+        string expectedCompanyDiscretionaryData = "J!";
+        string expectedCompanyEntryDescription = "J!";
+        string expectedCompanyName = "company_name";
         ApiEnum<string, DestinationAccountHolder> expectedDestinationAccountHolder =
             DestinationAccountHolder.Business;
         string expectedExternalAccountID = "external_account_id";
         ApiEnum<string, Funding> expectedFunding = Funding.Checking;
-        string expectedIndividualID = "x";
-        string expectedIndividualName = "x";
+        string expectedIndividualID = "individual_id";
+        string expectedIndividualName = "individual_name";
         PreferredEffectiveDate expectedPreferredEffectiveDate = new()
         {
             Date = "2019-12-27",
@@ -230,18 +232,20 @@ public class AchTransferCreateParamsTest : TestBase
             Addenda = new()
             {
                 Category = Category.Freeform,
-                Freeform = new([new("x")]),
-                PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "x", PaidAmount = 0 }]),
+                Freeform = new([new("payment_related_information")]),
+                PaymentOrderRemittanceAdvice = new(
+                    [new() { InvoiceNumber = "sq", PaidAmount = 0 }]
+                ),
             },
-            CompanyDescriptiveDate = "x",
-            CompanyDiscretionaryData = "x",
-            CompanyEntryDescription = "x",
-            CompanyName = "x",
+            CompanyDescriptiveDate = "J!",
+            CompanyDiscretionaryData = "J!",
+            CompanyEntryDescription = "J!",
+            CompanyName = "company_name",
             DestinationAccountHolder = DestinationAccountHolder.Business,
             ExternalAccountID = "external_account_id",
             Funding = Funding.Checking,
-            IndividualID = "x",
-            IndividualName = "x",
+            IndividualID = "individual_id",
+            IndividualName = "individual_name",
             PreferredEffectiveDate = new()
             {
                 Date = "2019-12-27",
@@ -267,14 +271,14 @@ public class AddendaTest : TestBase
         var model = new Addenda
         {
             Category = Category.Freeform,
-            Freeform = new([new("x")]),
-            PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "x", PaidAmount = 0 }]),
+            Freeform = new([new("payment_related_information")]),
+            PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "sq", PaidAmount = 0 }]),
         };
 
         ApiEnum<string, Category> expectedCategory = Category.Freeform;
-        Freeform expectedFreeform = new([new("x")]);
+        Freeform expectedFreeform = new([new("payment_related_information")]);
         PaymentOrderRemittanceAdvice expectedPaymentOrderRemittanceAdvice = new(
-            [new() { InvoiceNumber = "x", PaidAmount = 0 }]
+            [new() { InvoiceNumber = "sq", PaidAmount = 0 }]
         );
 
         Assert.Equal(expectedCategory, model.Category);
@@ -288,8 +292,8 @@ public class AddendaTest : TestBase
         var model = new Addenda
         {
             Category = Category.Freeform,
-            Freeform = new([new("x")]),
-            PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "x", PaidAmount = 0 }]),
+            Freeform = new([new("payment_related_information")]),
+            PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "sq", PaidAmount = 0 }]),
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -304,8 +308,8 @@ public class AddendaTest : TestBase
         var model = new Addenda
         {
             Category = Category.Freeform,
-            Freeform = new([new("x")]),
-            PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "x", PaidAmount = 0 }]),
+            Freeform = new([new("payment_related_information")]),
+            PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "sq", PaidAmount = 0 }]),
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -316,9 +320,9 @@ public class AddendaTest : TestBase
         Assert.NotNull(deserialized);
 
         ApiEnum<string, Category> expectedCategory = Category.Freeform;
-        Freeform expectedFreeform = new([new("x")]);
+        Freeform expectedFreeform = new([new("payment_related_information")]);
         PaymentOrderRemittanceAdvice expectedPaymentOrderRemittanceAdvice = new(
-            [new() { InvoiceNumber = "x", PaidAmount = 0 }]
+            [new() { InvoiceNumber = "sq", PaidAmount = 0 }]
         );
 
         Assert.Equal(expectedCategory, deserialized.Category);
@@ -335,8 +339,8 @@ public class AddendaTest : TestBase
         var model = new Addenda
         {
             Category = Category.Freeform,
-            Freeform = new([new("x")]),
-            PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "x", PaidAmount = 0 }]),
+            Freeform = new([new("payment_related_information")]),
+            PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "sq", PaidAmount = 0 }]),
         };
 
         model.Validate();
@@ -400,8 +404,8 @@ public class AddendaTest : TestBase
         var model = new Addenda
         {
             Category = Category.Freeform,
-            Freeform = new([new("x")]),
-            PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "x", PaidAmount = 0 }]),
+            Freeform = new([new("payment_related_information")]),
+            PaymentOrderRemittanceAdvice = new([new() { InvoiceNumber = "sq", PaidAmount = 0 }]),
         };
 
         Addenda copied = new(model);
@@ -473,9 +477,9 @@ public class FreeformTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Freeform { Entries = [new("x")] };
+        var model = new Freeform { Entries = [new("payment_related_information")] };
 
-        List<Entry> expectedEntries = [new("x")];
+        List<Entry> expectedEntries = [new("payment_related_information")];
 
         Assert.Equal(expectedEntries.Count, model.Entries.Count);
         for (int i = 0; i < expectedEntries.Count; i++)
@@ -487,7 +491,7 @@ public class FreeformTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Freeform { Entries = [new("x")] };
+        var model = new Freeform { Entries = [new("payment_related_information")] };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Freeform>(json, ModelBase.SerializerOptions);
@@ -498,7 +502,7 @@ public class FreeformTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Freeform { Entries = [new("x")] };
+        var model = new Freeform { Entries = [new("payment_related_information")] };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Freeform>(
@@ -507,7 +511,7 @@ public class FreeformTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        List<Entry> expectedEntries = [new("x")];
+        List<Entry> expectedEntries = [new("payment_related_information")];
 
         Assert.Equal(expectedEntries.Count, deserialized.Entries.Count);
         for (int i = 0; i < expectedEntries.Count; i++)
@@ -519,7 +523,7 @@ public class FreeformTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Freeform { Entries = [new("x")] };
+        var model = new Freeform { Entries = [new("payment_related_information")] };
 
         model.Validate();
     }
@@ -527,7 +531,7 @@ public class FreeformTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Freeform { Entries = [new("x")] };
+        var model = new Freeform { Entries = [new("payment_related_information")] };
 
         Freeform copied = new(model);
 
@@ -540,9 +544,9 @@ public class EntryTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Entry { PaymentRelatedInformation = "x" };
+        var model = new Entry { PaymentRelatedInformation = "payment_related_information" };
 
-        string expectedPaymentRelatedInformation = "x";
+        string expectedPaymentRelatedInformation = "payment_related_information";
 
         Assert.Equal(expectedPaymentRelatedInformation, model.PaymentRelatedInformation);
     }
@@ -550,7 +554,7 @@ public class EntryTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Entry { PaymentRelatedInformation = "x" };
+        var model = new Entry { PaymentRelatedInformation = "payment_related_information" };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Entry>(json, ModelBase.SerializerOptions);
@@ -561,13 +565,13 @@ public class EntryTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Entry { PaymentRelatedInformation = "x" };
+        var model = new Entry { PaymentRelatedInformation = "payment_related_information" };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Entry>(element, ModelBase.SerializerOptions);
         Assert.NotNull(deserialized);
 
-        string expectedPaymentRelatedInformation = "x";
+        string expectedPaymentRelatedInformation = "payment_related_information";
 
         Assert.Equal(expectedPaymentRelatedInformation, deserialized.PaymentRelatedInformation);
     }
@@ -575,7 +579,7 @@ public class EntryTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Entry { PaymentRelatedInformation = "x" };
+        var model = new Entry { PaymentRelatedInformation = "payment_related_information" };
 
         model.Validate();
     }
@@ -583,7 +587,7 @@ public class EntryTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Entry { PaymentRelatedInformation = "x" };
+        var model = new Entry { PaymentRelatedInformation = "payment_related_information" };
 
         Entry copied = new(model);
 
@@ -598,10 +602,10 @@ public class PaymentOrderRemittanceAdviceTest : TestBase
     {
         var model = new PaymentOrderRemittanceAdvice
         {
-            Invoices = [new() { InvoiceNumber = "x", PaidAmount = 0 }],
+            Invoices = [new() { InvoiceNumber = "sq", PaidAmount = 0 }],
         };
 
-        List<Invoice> expectedInvoices = [new() { InvoiceNumber = "x", PaidAmount = 0 }];
+        List<Invoice> expectedInvoices = [new() { InvoiceNumber = "sq", PaidAmount = 0 }];
 
         Assert.Equal(expectedInvoices.Count, model.Invoices.Count);
         for (int i = 0; i < expectedInvoices.Count; i++)
@@ -615,7 +619,7 @@ public class PaymentOrderRemittanceAdviceTest : TestBase
     {
         var model = new PaymentOrderRemittanceAdvice
         {
-            Invoices = [new() { InvoiceNumber = "x", PaidAmount = 0 }],
+            Invoices = [new() { InvoiceNumber = "sq", PaidAmount = 0 }],
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -632,7 +636,7 @@ public class PaymentOrderRemittanceAdviceTest : TestBase
     {
         var model = new PaymentOrderRemittanceAdvice
         {
-            Invoices = [new() { InvoiceNumber = "x", PaidAmount = 0 }],
+            Invoices = [new() { InvoiceNumber = "sq", PaidAmount = 0 }],
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -642,7 +646,7 @@ public class PaymentOrderRemittanceAdviceTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        List<Invoice> expectedInvoices = [new() { InvoiceNumber = "x", PaidAmount = 0 }];
+        List<Invoice> expectedInvoices = [new() { InvoiceNumber = "sq", PaidAmount = 0 }];
 
         Assert.Equal(expectedInvoices.Count, deserialized.Invoices.Count);
         for (int i = 0; i < expectedInvoices.Count; i++)
@@ -656,7 +660,7 @@ public class PaymentOrderRemittanceAdviceTest : TestBase
     {
         var model = new PaymentOrderRemittanceAdvice
         {
-            Invoices = [new() { InvoiceNumber = "x", PaidAmount = 0 }],
+            Invoices = [new() { InvoiceNumber = "sq", PaidAmount = 0 }],
         };
 
         model.Validate();
@@ -667,7 +671,7 @@ public class PaymentOrderRemittanceAdviceTest : TestBase
     {
         var model = new PaymentOrderRemittanceAdvice
         {
-            Invoices = [new() { InvoiceNumber = "x", PaidAmount = 0 }],
+            Invoices = [new() { InvoiceNumber = "sq", PaidAmount = 0 }],
         };
 
         PaymentOrderRemittanceAdvice copied = new(model);
@@ -681,9 +685,9 @@ public class InvoiceTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Invoice { InvoiceNumber = "x", PaidAmount = 0 };
+        var model = new Invoice { InvoiceNumber = "sq", PaidAmount = 0 };
 
-        string expectedInvoiceNumber = "x";
+        string expectedInvoiceNumber = "sq";
         long expectedPaidAmount = 0;
 
         Assert.Equal(expectedInvoiceNumber, model.InvoiceNumber);
@@ -693,7 +697,7 @@ public class InvoiceTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Invoice { InvoiceNumber = "x", PaidAmount = 0 };
+        var model = new Invoice { InvoiceNumber = "sq", PaidAmount = 0 };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Invoice>(json, ModelBase.SerializerOptions);
@@ -704,7 +708,7 @@ public class InvoiceTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Invoice { InvoiceNumber = "x", PaidAmount = 0 };
+        var model = new Invoice { InvoiceNumber = "sq", PaidAmount = 0 };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Invoice>(
@@ -713,7 +717,7 @@ public class InvoiceTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        string expectedInvoiceNumber = "x";
+        string expectedInvoiceNumber = "sq";
         long expectedPaidAmount = 0;
 
         Assert.Equal(expectedInvoiceNumber, deserialized.InvoiceNumber);
@@ -723,7 +727,7 @@ public class InvoiceTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Invoice { InvoiceNumber = "x", PaidAmount = 0 };
+        var model = new Invoice { InvoiceNumber = "sq", PaidAmount = 0 };
 
         model.Validate();
     }
@@ -731,7 +735,7 @@ public class InvoiceTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Invoice { InvoiceNumber = "x", PaidAmount = 0 };
+        var model = new Invoice { InvoiceNumber = "sq", PaidAmount = 0 };
 
         Invoice copied = new(model);
 

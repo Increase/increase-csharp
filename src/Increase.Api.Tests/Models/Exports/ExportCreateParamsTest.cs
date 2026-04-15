@@ -61,7 +61,7 @@ public class ExportCreateParamsTest : TestBase
                 },
             },
             VendorCsv = new(),
-            VoidedCheck = new() { AccountNumberID = "account_number_id", Payer = [new("x")] },
+            VoidedCheck = new() { AccountNumberID = "account_number_id", Payer = [new("line")] },
         };
 
         ApiEnum<string, Category> expectedCategory = Category.TransactionCsv;
@@ -114,7 +114,7 @@ public class ExportCreateParamsTest : TestBase
         VoidedCheck expectedVoidedCheck = new()
         {
             AccountNumberID = "account_number_id",
-            Payer = [new("x")],
+            Payer = [new("line")],
         };
 
         Assert.Equal(expectedCategory, parameters.Category);
@@ -261,7 +261,7 @@ public class ExportCreateParamsTest : TestBase
                 },
             },
             VendorCsv = new(),
-            VoidedCheck = new() { AccountNumberID = "account_number_id", Payer = [new("x")] },
+            VoidedCheck = new() { AccountNumberID = "account_number_id", Payer = [new("line")] },
         };
 
         ExportCreateParams copied = new(parameters);
@@ -1725,10 +1725,14 @@ public class VoidedCheckTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new VoidedCheck { AccountNumberID = "account_number_id", Payer = [new("x")] };
+        var model = new VoidedCheck
+        {
+            AccountNumberID = "account_number_id",
+            Payer = [new("line")],
+        };
 
         string expectedAccountNumberID = "account_number_id";
-        List<Payer> expectedPayer = [new("x")];
+        List<Payer> expectedPayer = [new("line")];
 
         Assert.Equal(expectedAccountNumberID, model.AccountNumberID);
         Assert.NotNull(model.Payer);
@@ -1742,7 +1746,11 @@ public class VoidedCheckTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new VoidedCheck { AccountNumberID = "account_number_id", Payer = [new("x")] };
+        var model = new VoidedCheck
+        {
+            AccountNumberID = "account_number_id",
+            Payer = [new("line")],
+        };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<VoidedCheck>(
@@ -1756,7 +1764,11 @@ public class VoidedCheckTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new VoidedCheck { AccountNumberID = "account_number_id", Payer = [new("x")] };
+        var model = new VoidedCheck
+        {
+            AccountNumberID = "account_number_id",
+            Payer = [new("line")],
+        };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<VoidedCheck>(
@@ -1766,7 +1778,7 @@ public class VoidedCheckTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedAccountNumberID = "account_number_id";
-        List<Payer> expectedPayer = [new("x")];
+        List<Payer> expectedPayer = [new("line")];
 
         Assert.Equal(expectedAccountNumberID, deserialized.AccountNumberID);
         Assert.NotNull(deserialized.Payer);
@@ -1780,7 +1792,11 @@ public class VoidedCheckTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new VoidedCheck { AccountNumberID = "account_number_id", Payer = [new("x")] };
+        var model = new VoidedCheck
+        {
+            AccountNumberID = "account_number_id",
+            Payer = [new("line")],
+        };
 
         model.Validate();
     }
@@ -1834,7 +1850,11 @@ public class VoidedCheckTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new VoidedCheck { AccountNumberID = "account_number_id", Payer = [new("x")] };
+        var model = new VoidedCheck
+        {
+            AccountNumberID = "account_number_id",
+            Payer = [new("line")],
+        };
 
         VoidedCheck copied = new(model);
 
@@ -1847,9 +1867,9 @@ public class PayerTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Payer { Line = "x" };
+        var model = new Payer { Line = "line" };
 
-        string expectedLine = "x";
+        string expectedLine = "line";
 
         Assert.Equal(expectedLine, model.Line);
     }
@@ -1857,7 +1877,7 @@ public class PayerTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Payer { Line = "x" };
+        var model = new Payer { Line = "line" };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Payer>(json, ModelBase.SerializerOptions);
@@ -1868,13 +1888,13 @@ public class PayerTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Payer { Line = "x" };
+        var model = new Payer { Line = "line" };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Payer>(element, ModelBase.SerializerOptions);
         Assert.NotNull(deserialized);
 
-        string expectedLine = "x";
+        string expectedLine = "line";
 
         Assert.Equal(expectedLine, deserialized.Line);
     }
@@ -1882,7 +1902,7 @@ public class PayerTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Payer { Line = "x" };
+        var model = new Payer { Line = "line" };
 
         model.Validate();
     }
@@ -1890,7 +1910,7 @@ public class PayerTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Payer { Line = "x" };
+        var model = new Payer { Line = "line" };
 
         Payer copied = new(model);
 

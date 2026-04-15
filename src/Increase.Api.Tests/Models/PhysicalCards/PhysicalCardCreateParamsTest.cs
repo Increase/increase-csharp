@@ -194,10 +194,10 @@ public class CardholderTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Cardholder { FirstName = "x", LastName = "x" };
+        var model = new Cardholder { FirstName = "first_name", LastName = "last_name" };
 
-        string expectedFirstName = "x";
-        string expectedLastName = "x";
+        string expectedFirstName = "first_name";
+        string expectedLastName = "last_name";
 
         Assert.Equal(expectedFirstName, model.FirstName);
         Assert.Equal(expectedLastName, model.LastName);
@@ -206,7 +206,7 @@ public class CardholderTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Cardholder { FirstName = "x", LastName = "x" };
+        var model = new Cardholder { FirstName = "first_name", LastName = "last_name" };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Cardholder>(
@@ -220,7 +220,7 @@ public class CardholderTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Cardholder { FirstName = "x", LastName = "x" };
+        var model = new Cardholder { FirstName = "first_name", LastName = "last_name" };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Cardholder>(
@@ -229,8 +229,8 @@ public class CardholderTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        string expectedFirstName = "x";
-        string expectedLastName = "x";
+        string expectedFirstName = "first_name";
+        string expectedLastName = "last_name";
 
         Assert.Equal(expectedFirstName, deserialized.FirstName);
         Assert.Equal(expectedLastName, deserialized.LastName);
@@ -239,7 +239,7 @@ public class CardholderTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Cardholder { FirstName = "x", LastName = "x" };
+        var model = new Cardholder { FirstName = "first_name", LastName = "last_name" };
 
         model.Validate();
     }
@@ -247,7 +247,7 @@ public class CardholderTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Cardholder { FirstName = "x", LastName = "x" };
+        var model = new Cardholder { FirstName = "first_name", LastName = "last_name" };
 
         Cardholder copied = new(model);
 
@@ -266,7 +266,7 @@ public class ShipmentTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                Name = "x",
+                Name = "name",
                 PostalCode = "x",
                 State = "x",
                 Country = "x",
@@ -282,7 +282,7 @@ public class ShipmentTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            Name = "x",
+            Name = "name",
             PostalCode = "x",
             State = "x",
             Country = "x",
@@ -307,7 +307,7 @@ public class ShipmentTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                Name = "x",
+                Name = "name",
                 PostalCode = "x",
                 State = "x",
                 Country = "x",
@@ -334,7 +334,7 @@ public class ShipmentTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                Name = "x",
+                Name = "name",
                 PostalCode = "x",
                 State = "x",
                 Country = "x",
@@ -357,7 +357,7 @@ public class ShipmentTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            Name = "x",
+            Name = "name",
             PostalCode = "x",
             State = "x",
             Country = "x",
@@ -382,7 +382,7 @@ public class ShipmentTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                Name = "x",
+                Name = "name",
                 PostalCode = "x",
                 State = "x",
                 Country = "x",
@@ -406,7 +406,7 @@ public class ShipmentTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                Name = "x",
+                Name = "name",
                 PostalCode = "x",
                 State = "x",
                 Country = "x",
@@ -430,7 +430,7 @@ public class ShipmentTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                Name = "x",
+                Name = "name",
                 PostalCode = "x",
                 State = "x",
                 Country = "x",
@@ -453,7 +453,7 @@ public class ShipmentTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                Name = "x",
+                Name = "name",
                 PostalCode = "x",
                 State = "x",
                 Country = "x",
@@ -480,7 +480,7 @@ public class ShipmentTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                Name = "x",
+                Name = "name",
                 PostalCode = "x",
                 State = "x",
                 Country = "x",
@@ -506,7 +506,7 @@ public class ShipmentTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                Name = "x",
+                Name = "name",
                 PostalCode = "x",
                 State = "x",
                 Country = "x",
@@ -533,7 +533,7 @@ public class AddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            Name = "x",
+            Name = "name",
             PostalCode = "x",
             State = "x",
             Country = "x",
@@ -544,7 +544,7 @@ public class AddressTest : TestBase
 
         string expectedCity = "x";
         string expectedLine1 = "x";
-        string expectedName = "x";
+        string expectedName = "name";
         string expectedPostalCode = "x";
         string expectedState = "x";
         string expectedCountry = "x";
@@ -570,7 +570,7 @@ public class AddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            Name = "x",
+            Name = "name",
             PostalCode = "x",
             State = "x",
             Country = "x",
@@ -592,7 +592,7 @@ public class AddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            Name = "x",
+            Name = "name",
             PostalCode = "x",
             State = "x",
             Country = "x",
@@ -610,7 +610,7 @@ public class AddressTest : TestBase
 
         string expectedCity = "x";
         string expectedLine1 = "x";
-        string expectedName = "x";
+        string expectedName = "name";
         string expectedPostalCode = "x";
         string expectedState = "x";
         string expectedCountry = "x";
@@ -636,7 +636,7 @@ public class AddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            Name = "x",
+            Name = "name",
             PostalCode = "x",
             State = "x",
             Country = "x",
@@ -655,7 +655,7 @@ public class AddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            Name = "x",
+            Name = "name",
             PostalCode = "x",
             State = "x",
         };
@@ -677,7 +677,7 @@ public class AddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            Name = "x",
+            Name = "name",
             PostalCode = "x",
             State = "x",
         };
@@ -692,7 +692,7 @@ public class AddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            Name = "x",
+            Name = "name",
             PostalCode = "x",
             State = "x",
 
@@ -720,7 +720,7 @@ public class AddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            Name = "x",
+            Name = "name",
             PostalCode = "x",
             State = "x",
 
@@ -741,7 +741,7 @@ public class AddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            Name = "x",
+            Name = "name",
             PostalCode = "x",
             State = "x",
             Country = "x",
