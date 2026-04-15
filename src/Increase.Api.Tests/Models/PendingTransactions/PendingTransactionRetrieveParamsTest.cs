@@ -28,11 +28,13 @@ public class PendingTransactionRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/pending_transactions/pending_transaction_k1sfetcau2qbvjbzgju4"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/pending_transactions/pending_transaction_k1sfetcau2qbvjbzgju4"
+                ),
+                url
+            )
         );
     }
 

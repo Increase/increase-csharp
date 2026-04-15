@@ -28,11 +28,13 @@ public class CardPurchaseSupplementRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/card_purchase_supplements/card_purchase_supplement_ijuc45iym4jchnh2sfk3"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/card_purchase_supplements/card_purchase_supplement_ijuc45iym4jchnh2sfk3"
+                ),
+                url
+            )
         );
     }
 

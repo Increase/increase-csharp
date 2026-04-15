@@ -28,11 +28,13 @@ public class PendingTransactionReleaseInboundFundsHoldParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/simulations/pending_transactions/pending_transaction_k1sfetcau2qbvjbzgju4/release_inbound_funds_hold"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/simulations/pending_transactions/pending_transaction_k1sfetcau2qbvjbzgju4/release_inbound_funds_hold"
+                ),
+                url
+            )
         );
     }
 

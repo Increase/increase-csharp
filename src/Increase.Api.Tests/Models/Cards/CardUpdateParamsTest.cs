@@ -180,7 +180,12 @@ public class CardUpdateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/cards/card_oubs0hwk5rn6knuecxg2"), url);
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/cards/card_oubs0hwk5rn6knuecxg2"),
+                url
+            )
+        );
     }
 
     [Fact]

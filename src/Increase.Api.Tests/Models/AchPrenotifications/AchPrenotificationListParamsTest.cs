@@ -85,10 +85,10 @@ public class AchPrenotificationListParamsTest : TestBase
         {
             CreatedAt = new()
             {
-                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
+                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             },
             Cursor = "cursor",
             IdempotencyKey = "x",
@@ -97,11 +97,13 @@ public class AchPrenotificationListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/ach_prenotifications?created_at.after=2019-12-27T18%3a11%3a19.117Z&created_at.before=2019-12-27T18%3a11%3a19.117Z&created_at.on_or_after=2019-12-27T18%3a11%3a19.117Z&created_at.on_or_before=2019-12-27T18%3a11%3a19.117Z&cursor=cursor&idempotency_key=x&limit=1"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/ach_prenotifications?created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&idempotency_key=x&limit=1"
+                ),
+                url
+            )
         );
     }
 

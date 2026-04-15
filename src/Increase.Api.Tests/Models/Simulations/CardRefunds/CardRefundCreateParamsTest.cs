@@ -63,7 +63,9 @@ public class CardRefundCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://api.increase.com/simulations/card_refunds"), url);
+        Assert.True(
+            TestBase.UrisEqual(new Uri("https://api.increase.com/simulations/card_refunds"), url)
+        );
     }
 
     [Fact]

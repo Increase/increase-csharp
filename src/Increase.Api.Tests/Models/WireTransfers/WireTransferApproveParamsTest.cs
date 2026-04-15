@@ -28,11 +28,13 @@ public class WireTransferApproveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/wire_transfers/wire_transfer_5akynk7dqsq25qwk9q2u/approve"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/wire_transfers/wire_transfer_5akynk7dqsq25qwk9q2u/approve"
+                ),
+                url
+            )
         );
     }
 

@@ -28,11 +28,13 @@ public class InboundFednowTransferRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/inbound_fednow_transfers/inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/inbound_fednow_transfers/inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20"
+                ),
+                url
+            )
         );
     }
 

@@ -28,11 +28,13 @@ public class AccountTransferCancelParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/account_transfers/account_transfer_7k9qe1ysdgqztnt63l7n/cancel"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/account_transfers/account_transfer_7k9qe1ysdgqztnt63l7n/cancel"
+                ),
+                url
+            )
         );
     }
 

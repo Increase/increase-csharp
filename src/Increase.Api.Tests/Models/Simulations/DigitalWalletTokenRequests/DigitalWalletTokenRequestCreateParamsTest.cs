@@ -28,9 +28,11 @@ public class DigitalWalletTokenRequestCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri("https://api.increase.com/simulations/digital_wallet_token_requests"),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/simulations/digital_wallet_token_requests"),
+                url
+            )
         );
     }
 

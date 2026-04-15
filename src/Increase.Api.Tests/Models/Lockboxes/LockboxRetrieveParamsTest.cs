@@ -22,9 +22,11 @@ public class LockboxRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri("https://api.increase.com/lockboxes/lockbox_3xt21ok13q19advds4t5"),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://api.increase.com/lockboxes/lockbox_3xt21ok13q19advds4t5"),
+                url
+            )
         );
     }
 

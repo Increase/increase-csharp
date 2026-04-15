@@ -32,11 +32,13 @@ public class BookkeepingAccountUpdateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/bookkeeping_accounts/bookkeeping_account_e37p1f1iuocw5intf35v"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/bookkeeping_accounts/bookkeeping_account_e37p1f1iuocw5intf35v"
+                ),
+                url
+            )
         );
     }
 

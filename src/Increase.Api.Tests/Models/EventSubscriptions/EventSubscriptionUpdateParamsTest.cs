@@ -62,11 +62,13 @@ public class EventSubscriptionUpdateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://api.increase.com/event_subscriptions/event_subscription_001dzz0r20rcdxgb013zqb8m04g"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://api.increase.com/event_subscriptions/event_subscription_001dzz0r20rcdxgb013zqb8m04g"
+                ),
+                url
+            )
         );
     }
 
