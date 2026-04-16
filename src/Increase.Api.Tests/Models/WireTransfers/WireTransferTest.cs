@@ -103,6 +103,7 @@ public class WireTransferTest : TestBase
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
+            UniqueEndToEndTransactionReference = null,
         };
 
         string expectedID = "wire_transfer_5akynk7dqsq25qwk9q2u";
@@ -217,6 +218,7 @@ public class WireTransferTest : TestBase
         Assert.Equal(expectedSubmission, model.Submission);
         Assert.Equal(expectedTransactionID, model.TransactionID);
         Assert.Equal(expectedType, model.Type);
+        Assert.Null(model.UniqueEndToEndTransactionReference);
     }
 
     [Fact]
@@ -314,6 +316,7 @@ public class WireTransferTest : TestBase
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
+            UniqueEndToEndTransactionReference = null,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -420,6 +423,7 @@ public class WireTransferTest : TestBase
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
+            UniqueEndToEndTransactionReference = null,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -541,6 +545,7 @@ public class WireTransferTest : TestBase
         Assert.Equal(expectedSubmission, deserialized.Submission);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
         Assert.Equal(expectedType, deserialized.Type);
+        Assert.Null(deserialized.UniqueEndToEndTransactionReference);
     }
 
     [Fact]
@@ -638,6 +643,7 @@ public class WireTransferTest : TestBase
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
+            UniqueEndToEndTransactionReference = null,
         };
 
         model.Validate();
@@ -738,6 +744,7 @@ public class WireTransferTest : TestBase
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
+            UniqueEndToEndTransactionReference = null,
         };
 
         WireTransfers::WireTransfer copied = new(model);
