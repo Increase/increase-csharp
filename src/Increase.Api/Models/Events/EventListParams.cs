@@ -120,6 +120,24 @@ public record class EventListParams : ParamsBase
         }
     }
 
+    public OrderBy? OrderBy
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<OrderBy>("order_by");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("order_by", value);
+        }
+    }
+
     public EventListParams() { }
 
 #pragma warning disable CS8618
@@ -1237,4 +1255,188 @@ class CreatedAtFromRaw : IFromRawJson<CreatedAt>
     /// <inheritdoc/>
     public CreatedAt FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         CreatedAt.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(typeof(JsonModelConverter<OrderBy, OrderByFromRaw>))]
+public sealed record class OrderBy : JsonModel
+{
+    /// <summary>
+    /// The direction to order in.
+    /// </summary>
+    public ApiEnum<string, Direction>? Direction
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, Direction>>("direction");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("direction", value);
+        }
+    }
+
+    /// <summary>
+    /// The field to order by.
+    /// </summary>
+    public ApiEnum<string, Field>? Field
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, Field>>("field");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("field", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Direction?.Validate();
+        this.Field?.Validate();
+    }
+
+    public OrderBy() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public OrderBy(OrderBy orderBy)
+        : base(orderBy) { }
+#pragma warning restore CS8618
+
+    public OrderBy(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    OrderBy(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="OrderByFromRaw.FromRawUnchecked"/>
+    public static OrderBy FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class OrderByFromRaw : IFromRawJson<OrderBy>
+{
+    /// <inheritdoc/>
+    public OrderBy FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        OrderBy.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The direction to order in.
+/// </summary>
+[JsonConverter(typeof(DirectionConverter))]
+public enum Direction
+{
+    /// <summary>
+    /// Ascending in value.
+    /// </summary>
+    Ascending,
+
+    /// <summary>
+    /// Descending in value.
+    /// </summary>
+    Descending,
+}
+
+sealed class DirectionConverter : JsonConverter<Direction>
+{
+    public override Direction Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "ascending" => Direction.Ascending,
+            "descending" => Direction.Descending,
+            _ => (Direction)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        Direction value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Direction.Ascending => "ascending",
+                Direction.Descending => "descending",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The field to order by.
+/// </summary>
+[JsonConverter(typeof(FieldConverter))]
+public enum Field
+{
+    /// <summary>
+    /// The time the Event was created.
+    /// </summary>
+    CreatedAt,
+}
+
+sealed class FieldConverter : JsonConverter<Field>
+{
+    public override Field Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "created_at" => Field.CreatedAt,
+            _ => (Field)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Field value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Field.CreatedAt => "created_at",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
