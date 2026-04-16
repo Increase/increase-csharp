@@ -25,6 +25,7 @@ public class EventListParamsTest : TestBase
             },
             Cursor = "cursor",
             Limit = 1,
+            OrderBy = new() { Direction = Direction.Ascending, Field = Field.CreatedAt },
         };
 
         string expectedAssociatedObjectID = "associated_object_id";
@@ -38,12 +39,18 @@ public class EventListParamsTest : TestBase
         };
         string expectedCursor = "cursor";
         long expectedLimit = 1;
+        OrderBy expectedOrderBy = new()
+        {
+            Direction = Direction.Ascending,
+            Field = Field.CreatedAt,
+        };
 
         Assert.Equal(expectedAssociatedObjectID, parameters.AssociatedObjectID);
         Assert.Equal(expectedCategory, parameters.Category);
         Assert.Equal(expectedCreatedAt, parameters.CreatedAt);
         Assert.Equal(expectedCursor, parameters.Cursor);
         Assert.Equal(expectedLimit, parameters.Limit);
+        Assert.Equal(expectedOrderBy, parameters.OrderBy);
     }
 
     [Fact]
@@ -61,6 +68,8 @@ public class EventListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("cursor"));
         Assert.Null(parameters.Limit);
         Assert.False(parameters.RawQueryData.ContainsKey("limit"));
+        Assert.Null(parameters.OrderBy);
+        Assert.False(parameters.RawQueryData.ContainsKey("order_by"));
     }
 
     [Fact]
@@ -74,6 +83,7 @@ public class EventListParamsTest : TestBase
             CreatedAt = null,
             Cursor = null,
             Limit = null,
+            OrderBy = null,
         };
 
         Assert.Null(parameters.AssociatedObjectID);
@@ -86,6 +96,8 @@ public class EventListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("cursor"));
         Assert.Null(parameters.Limit);
         Assert.False(parameters.RawQueryData.ContainsKey("limit"));
+        Assert.Null(parameters.OrderBy);
+        Assert.False(parameters.RawQueryData.ContainsKey("order_by"));
     }
 
     [Fact]
@@ -104,6 +116,7 @@ public class EventListParamsTest : TestBase
             },
             Cursor = "cursor",
             Limit = 1,
+            OrderBy = new() { Direction = Direction.Ascending, Field = Field.CreatedAt },
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -111,7 +124,7 @@ public class EventListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.increase.com/events?associated_object_id=associated_object_id&category.in=account.created&created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&limit=1"
+                    "https://api.increase.com/events?associated_object_id=associated_object_id&category.in=account.created&created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&limit=1&order_by.direction=ascending&order_by.field=created_at"
                 ),
                 url
             )
@@ -134,6 +147,7 @@ public class EventListParamsTest : TestBase
             },
             Cursor = "cursor",
             Limit = 1,
+            OrderBy = new() { Direction = Direction.Ascending, Field = Field.CreatedAt },
         };
 
         EventListParams copied = new(parameters);
@@ -685,5 +699,230 @@ public class CreatedAtTest : TestBase
         CreatedAt copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class OrderByTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new OrderBy { Direction = Direction.Ascending, Field = Field.CreatedAt };
+
+        ApiEnum<string, Direction> expectedDirection = Direction.Ascending;
+        ApiEnum<string, Field> expectedField = Field.CreatedAt;
+
+        Assert.Equal(expectedDirection, model.Direction);
+        Assert.Equal(expectedField, model.Field);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new OrderBy { Direction = Direction.Ascending, Field = Field.CreatedAt };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<OrderBy>(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new OrderBy { Direction = Direction.Ascending, Field = Field.CreatedAt };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<OrderBy>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<string, Direction> expectedDirection = Direction.Ascending;
+        ApiEnum<string, Field> expectedField = Field.CreatedAt;
+
+        Assert.Equal(expectedDirection, deserialized.Direction);
+        Assert.Equal(expectedField, deserialized.Field);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new OrderBy { Direction = Direction.Ascending, Field = Field.CreatedAt };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new OrderBy { };
+
+        Assert.Null(model.Direction);
+        Assert.False(model.RawData.ContainsKey("direction"));
+        Assert.Null(model.Field);
+        Assert.False(model.RawData.ContainsKey("field"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new OrderBy { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new OrderBy
+        {
+            // Null should be interpreted as omitted for these properties
+            Direction = null,
+            Field = null,
+        };
+
+        Assert.Null(model.Direction);
+        Assert.False(model.RawData.ContainsKey("direction"));
+        Assert.Null(model.Field);
+        Assert.False(model.RawData.ContainsKey("field"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new OrderBy
+        {
+            // Null should be interpreted as omitted for these properties
+            Direction = null,
+            Field = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new OrderBy { Direction = Direction.Ascending, Field = Field.CreatedAt };
+
+        OrderBy copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class DirectionTest : TestBase
+{
+    [Theory]
+    [InlineData(Direction.Ascending)]
+    [InlineData(Direction.Descending)]
+    public void Validation_Works(Direction rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Direction> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Direction>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Direction.Ascending)]
+    [InlineData(Direction.Descending)]
+    public void SerializationRoundtrip_Works(Direction rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Direction> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Direction>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Direction>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Direction>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class FieldTest : TestBase
+{
+    [Theory]
+    [InlineData(Field.CreatedAt)]
+    public void Validation_Works(Field rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Field> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Field>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Field.CreatedAt)]
+    public void SerializationRoundtrip_Works(Field rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Field> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Field>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Field>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Field>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }
