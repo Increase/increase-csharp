@@ -107,6 +107,7 @@ public class WireTransferListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
+                    UniqueEndToEndTransactionReference = null,
                 },
             ],
             NextCursor = "v57w5d",
@@ -206,6 +207,7 @@ public class WireTransferListPageResponseTest : TestBase
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = WireTransfers::Type.WireTransfer,
+                UniqueEndToEndTransactionReference = null,
             },
         ];
         string expectedNextCursor = "v57w5d";
@@ -317,6 +319,7 @@ public class WireTransferListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
+                    UniqueEndToEndTransactionReference = null,
                 },
             ],
             NextCursor = "v57w5d",
@@ -430,6 +433,7 @@ public class WireTransferListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
+                    UniqueEndToEndTransactionReference = null,
                 },
             ],
             NextCursor = "v57w5d",
@@ -536,6 +540,7 @@ public class WireTransferListPageResponseTest : TestBase
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = WireTransfers::Type.WireTransfer,
+                UniqueEndToEndTransactionReference = null,
             },
         ];
         string expectedNextCursor = "v57w5d";
@@ -647,6 +652,7 @@ public class WireTransferListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
+                    UniqueEndToEndTransactionReference = null,
                 },
             ],
             NextCursor = "v57w5d",
@@ -754,6 +760,7 @@ public class WireTransferListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
+                    UniqueEndToEndTransactionReference = null,
                 },
             ],
             NextCursor = "v57w5d",
