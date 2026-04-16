@@ -1380,6 +1380,8 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Events::UnwrapWebhookEventCategory>(),
             new ApiEnumConverter<string, Events::UnwrapWebhookEventType>(),
             new ApiEnumConverter<string, Events::In>(),
+            new ApiEnumConverter<string, Events::Direction>(),
+            new ApiEnumConverter<string, Events::Field>(),
             new ApiEnumConverter<
                 string,
                 EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory
