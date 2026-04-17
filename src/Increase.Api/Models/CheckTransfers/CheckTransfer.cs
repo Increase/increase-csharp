@@ -1953,6 +1953,19 @@ public sealed record class TrackingUpdate : JsonModel
     }
 
     /// <summary>
+    /// The ISO 3166-1 alpha-2 country code for the country where the event took place.
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <summary>
     /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
     /// the tracking event took place.
     /// </summary>
@@ -1983,6 +1996,7 @@ public sealed record class TrackingUpdate : JsonModel
     public override void Validate()
     {
         this.Category.Validate();
+        _ = this.Country;
         _ = this.CreatedAt;
         _ = this.PostalCode;
     }

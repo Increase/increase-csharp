@@ -88,6 +88,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             new()
                             {
                                 Category = CheckTransfers::TrackingUpdateCategory.InTransit,
+                                Country = "country",
                                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                                 PostalCode = "postal_code",
                             },
@@ -200,6 +201,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         new()
                         {
                             Category = CheckTransfers::TrackingUpdateCategory.InTransit,
+                            Country = "country",
                             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             PostalCode = "postal_code",
                         },
@@ -325,6 +327,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             new()
                             {
                                 Category = CheckTransfers::TrackingUpdateCategory.InTransit,
+                                Country = "country",
                                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                                 PostalCode = "postal_code",
                             },
@@ -453,6 +456,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             new()
                             {
                                 Category = CheckTransfers::TrackingUpdateCategory.InTransit,
+                                Country = "country",
                                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                                 PostalCode = "postal_code",
                             },
@@ -573,6 +577,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         new()
                         {
                             Category = CheckTransfers::TrackingUpdateCategory.InTransit,
+                            Country = "country",
                             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             PostalCode = "postal_code",
                         },
@@ -698,6 +703,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             new()
                             {
                                 Category = CheckTransfers::TrackingUpdateCategory.InTransit,
+                                Country = "country",
                                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                                 PostalCode = "postal_code",
                             },
@@ -819,6 +825,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             new()
                             {
                                 Category = CheckTransfers::TrackingUpdateCategory.InTransit,
+                                Country = "country",
                                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                                 PostalCode = "postal_code",
                             },
