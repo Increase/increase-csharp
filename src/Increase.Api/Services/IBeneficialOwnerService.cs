@@ -27,7 +27,7 @@ public interface IBeneficialOwnerService
     IBeneficialOwnerService WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Create a beneficial owner
+    /// Create a Beneficial Owner
     /// </summary>
     Task<EntityBeneficialOwner> Create(
         BeneficialOwnerCreateParams parameters,
