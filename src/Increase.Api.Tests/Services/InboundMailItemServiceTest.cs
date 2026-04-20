@@ -36,7 +36,7 @@ public class InboundMailItemServiceTest : TestBase
                 Checks =
                 [
                     new() { Action = Action.Deposit, AccountID = "account_in71c4amph0vgo2qllky" },
-                    new() { Action = Action.Ignore, AccountID = "account_id" },
+                    new() { Action = Action.Ignore, AccountID = "account_in71c4amph0vgo2qllky" },
                 ],
             },
             TestContext.Current.CancellationToken
