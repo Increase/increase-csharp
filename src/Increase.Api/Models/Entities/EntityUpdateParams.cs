@@ -1,5 +1,6 @@
 using System.Collections.Frozen;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using System.Text;
@@ -142,6 +143,33 @@ public record class EntityUpdateParams : ParamsBase
             }
 
             this._rawBodyData.Set("risk_rating", value);
+        }
+    }
+
+    /// <summary>
+    /// New terms that the Entity agreed to. Not all programs are required to submit
+    /// this data. This will not archive previously submitted terms.
+    /// </summary>
+    public IReadOnlyList<EntityUpdateParamsTermsAgreement>? TermsAgreements
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableStruct<
+                ImmutableArray<EntityUpdateParamsTermsAgreement>
+            >("terms_agreements");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set<ImmutableArray<EntityUpdateParamsTermsAgreement>?>(
+                "terms_agreements",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
         }
     }
 
@@ -2170,6 +2198,101 @@ sealed class EntityUpdateParamsRiskRatingRatingConverter
             options
         );
     }
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsTermsAgreement,
+        EntityUpdateParamsTermsAgreementFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsTermsAgreement : JsonModel
+{
+    /// <summary>
+    /// The timestamp of when the Entity agreed to the terms.
+    /// </summary>
+    public required System::DateTimeOffset AgreedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("agreed_at");
+        }
+        init { this._rawData.Set("agreed_at", value); }
+    }
+
+    /// <summary>
+    /// The IP address the Entity accessed reviewed the terms from.
+    /// </summary>
+    public required string IPAddress
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("ip_address");
+        }
+        init { this._rawData.Set("ip_address", value); }
+    }
+
+    /// <summary>
+    /// The URL of the terms agreement. This link will be provided by your bank partner.
+    /// </summary>
+    public required string TermsUrl
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("terms_url");
+        }
+        init { this._rawData.Set("terms_url", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.AgreedAt;
+        _ = this.IPAddress;
+        _ = this.TermsUrl;
+    }
+
+    public EntityUpdateParamsTermsAgreement() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsTermsAgreement(
+        EntityUpdateParamsTermsAgreement entityUpdateParamsTermsAgreement
+    )
+        : base(entityUpdateParamsTermsAgreement) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsTermsAgreement(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsTermsAgreement(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsTermsAgreementFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsTermsAgreement FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsTermsAgreementFromRaw : IFromRawJson<EntityUpdateParamsTermsAgreement>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsTermsAgreement FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsTermsAgreement.FromRawUnchecked(rawData);
 }
 
 /// <summary>
