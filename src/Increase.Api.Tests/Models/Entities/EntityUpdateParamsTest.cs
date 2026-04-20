@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text.Json;
 using Increase.Api.Core;
 using Increase.Api.Exceptions;
@@ -95,6 +96,15 @@ public class EntityUpdateParamsTest : TestBase
                 RatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Rating = EntityUpdateParamsRiskRatingRating.Low,
             },
+            TermsAgreements =
+            [
+                new()
+                {
+                    AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    IPAddress = "x",
+                    TermsUrl = "x",
+                },
+            ],
             ThirdPartyVerification = new()
             {
                 Reference = "x",
@@ -197,6 +207,15 @@ public class EntityUpdateParamsTest : TestBase
             RatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Rating = EntityUpdateParamsRiskRatingRating.Low,
         };
+        List<EntityUpdateParamsTermsAgreement> expectedTermsAgreements =
+        [
+            new()
+            {
+                AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                IPAddress = "x",
+                TermsUrl = "x",
+            },
+        ];
         EntityUpdateParamsThirdPartyVerification expectedThirdPartyVerification = new()
         {
             Reference = "x",
@@ -221,6 +240,12 @@ public class EntityUpdateParamsTest : TestBase
         Assert.Equal(expectedGovernmentAuthority, parameters.GovernmentAuthority);
         Assert.Equal(expectedNaturalPerson, parameters.NaturalPerson);
         Assert.Equal(expectedRiskRating, parameters.RiskRating);
+        Assert.NotNull(parameters.TermsAgreements);
+        Assert.Equal(expectedTermsAgreements.Count, parameters.TermsAgreements.Count);
+        for (int i = 0; i < expectedTermsAgreements.Count; i++)
+        {
+            Assert.Equal(expectedTermsAgreements[i], parameters.TermsAgreements[i]);
+        }
         Assert.Equal(expectedThirdPartyVerification, parameters.ThirdPartyVerification);
         Assert.Equal(expectedTrust, parameters.Trust);
     }
@@ -240,6 +265,8 @@ public class EntityUpdateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("natural_person"));
         Assert.Null(parameters.RiskRating);
         Assert.False(parameters.RawBodyData.ContainsKey("risk_rating"));
+        Assert.Null(parameters.TermsAgreements);
+        Assert.False(parameters.RawBodyData.ContainsKey("terms_agreements"));
         Assert.Null(parameters.ThirdPartyVerification);
         Assert.False(parameters.RawBodyData.ContainsKey("third_party_verification"));
         Assert.Null(parameters.Trust);
@@ -259,6 +286,7 @@ public class EntityUpdateParamsTest : TestBase
             GovernmentAuthority = null,
             NaturalPerson = null,
             RiskRating = null,
+            TermsAgreements = null,
             ThirdPartyVerification = null,
             Trust = null,
         };
@@ -273,6 +301,8 @@ public class EntityUpdateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("natural_person"));
         Assert.Null(parameters.RiskRating);
         Assert.False(parameters.RawBodyData.ContainsKey("risk_rating"));
+        Assert.Null(parameters.TermsAgreements);
+        Assert.False(parameters.RawBodyData.ContainsKey("terms_agreements"));
         Assert.Null(parameters.ThirdPartyVerification);
         Assert.False(parameters.RawBodyData.ContainsKey("third_party_verification"));
         Assert.Null(parameters.Trust);
@@ -381,6 +411,15 @@ public class EntityUpdateParamsTest : TestBase
                 RatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Rating = EntityUpdateParamsRiskRatingRating.Low,
             },
+            TermsAgreements =
+            [
+                new()
+                {
+                    AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    IPAddress = "x",
+                    TermsUrl = "x",
+                },
+            ],
             ThirdPartyVerification = new()
             {
                 Reference = "x",
@@ -2997,6 +3036,101 @@ public class EntityUpdateParamsRiskRatingRatingTest : TestBase
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
+    }
+}
+
+public class EntityUpdateParamsTermsAgreementTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTermsAgreement
+        {
+            AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            IPAddress = "x",
+            TermsUrl = "x",
+        };
+
+        DateTimeOffset expectedAgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedIPAddress = "x";
+        string expectedTermsUrl = "x";
+
+        Assert.Equal(expectedAgreedAt, model.AgreedAt);
+        Assert.Equal(expectedIPAddress, model.IPAddress);
+        Assert.Equal(expectedTermsUrl, model.TermsUrl);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTermsAgreement
+        {
+            AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            IPAddress = "x",
+            TermsUrl = "x",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsTermsAgreement>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTermsAgreement
+        {
+            AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            IPAddress = "x",
+            TermsUrl = "x",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsTermsAgreement>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        DateTimeOffset expectedAgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedIPAddress = "x";
+        string expectedTermsUrl = "x";
+
+        Assert.Equal(expectedAgreedAt, deserialized.AgreedAt);
+        Assert.Equal(expectedIPAddress, deserialized.IPAddress);
+        Assert.Equal(expectedTermsUrl, deserialized.TermsUrl);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTermsAgreement
+        {
+            AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            IPAddress = "x",
+            TermsUrl = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTermsAgreement
+        {
+            AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            IPAddress = "x",
+            TermsUrl = "x",
+        };
+
+        EntityUpdateParamsTermsAgreement copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
