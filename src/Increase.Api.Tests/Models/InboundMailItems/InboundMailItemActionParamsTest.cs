@@ -22,7 +22,11 @@ public class InboundMailItemActionParamsTest : TestBase
                     Action = InboundMailItems::Action.Deposit,
                     AccountID = "account_in71c4amph0vgo2qllky",
                 },
-                new() { Action = InboundMailItems::Action.Ignore, AccountID = "account_id" },
+                new()
+                {
+                    Action = InboundMailItems::Action.Ignore,
+                    AccountID = "account_in71c4amph0vgo2qllky",
+                },
             ],
         };
 
@@ -34,7 +38,11 @@ public class InboundMailItemActionParamsTest : TestBase
                 Action = InboundMailItems::Action.Deposit,
                 AccountID = "account_in71c4amph0vgo2qllky",
             },
-            new() { Action = InboundMailItems::Action.Ignore, AccountID = "account_id" },
+            new()
+            {
+                Action = InboundMailItems::Action.Ignore,
+                AccountID = "account_in71c4amph0vgo2qllky",
+            },
         ];
 
         Assert.Equal(expectedInboundMailItemID, parameters.InboundMailItemID);
@@ -58,7 +66,11 @@ public class InboundMailItemActionParamsTest : TestBase
                     Action = InboundMailItems::Action.Deposit,
                     AccountID = "account_in71c4amph0vgo2qllky",
                 },
-                new() { Action = InboundMailItems::Action.Ignore, AccountID = "account_id" },
+                new()
+                {
+                    Action = InboundMailItems::Action.Ignore,
+                    AccountID = "account_in71c4amph0vgo2qllky",
+                },
             ],
         };
 
@@ -87,7 +99,11 @@ public class InboundMailItemActionParamsTest : TestBase
                     Action = InboundMailItems::Action.Deposit,
                     AccountID = "account_in71c4amph0vgo2qllky",
                 },
-                new() { Action = InboundMailItems::Action.Ignore, AccountID = "account_id" },
+                new()
+                {
+                    Action = InboundMailItems::Action.Ignore,
+                    AccountID = "account_in71c4amph0vgo2qllky",
+                },
             ],
         };
 
@@ -105,11 +121,11 @@ public class CheckTest : TestBase
         var model = new InboundMailItems::Check
         {
             Action = InboundMailItems::Action.Deposit,
-            AccountID = "account_id",
+            AccountID = "account_in71c4amph0vgo2qllky",
         };
 
         ApiEnum<string, InboundMailItems::Action> expectedAction = InboundMailItems::Action.Deposit;
-        string expectedAccountID = "account_id";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
 
         Assert.Equal(expectedAction, model.Action);
         Assert.Equal(expectedAccountID, model.AccountID);
@@ -121,7 +137,7 @@ public class CheckTest : TestBase
         var model = new InboundMailItems::Check
         {
             Action = InboundMailItems::Action.Deposit,
-            AccountID = "account_id",
+            AccountID = "account_in71c4amph0vgo2qllky",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -139,7 +155,7 @@ public class CheckTest : TestBase
         var model = new InboundMailItems::Check
         {
             Action = InboundMailItems::Action.Deposit,
-            AccountID = "account_id",
+            AccountID = "account_in71c4amph0vgo2qllky",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -150,7 +166,7 @@ public class CheckTest : TestBase
         Assert.NotNull(deserialized);
 
         ApiEnum<string, InboundMailItems::Action> expectedAction = InboundMailItems::Action.Deposit;
-        string expectedAccountID = "account_id";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
 
         Assert.Equal(expectedAction, deserialized.Action);
         Assert.Equal(expectedAccountID, deserialized.AccountID);
@@ -162,7 +178,7 @@ public class CheckTest : TestBase
         var model = new InboundMailItems::Check
         {
             Action = InboundMailItems::Action.Deposit,
-            AccountID = "account_id",
+            AccountID = "account_in71c4amph0vgo2qllky",
         };
 
         model.Validate();
@@ -220,7 +236,7 @@ public class CheckTest : TestBase
         var model = new InboundMailItems::Check
         {
             Action = InboundMailItems::Action.Deposit,
-            AccountID = "account_id",
+            AccountID = "account_in71c4amph0vgo2qllky",
         };
 
         InboundMailItems::Check copied = new(model);

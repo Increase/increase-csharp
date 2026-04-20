@@ -191,8 +191,7 @@ public sealed record class Check : JsonModel
     }
 
     /// <summary>
-    /// The identifier of the Account to deposit the check into. If not provided,
-    /// the check will be deposited into the Account associated with the Lockbox.
+    /// The identifier of the Account to deposit the check into.
     /// </summary>
     public string? AccountID
     {
