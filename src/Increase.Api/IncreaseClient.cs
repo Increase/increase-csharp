@@ -349,24 +349,6 @@ public sealed class IncreaseClient : IIncreaseClient
         get { return _realTimeDecisions.Value; }
     }
 
-    readonly Lazy<IBookkeepingAccountService> _bookkeepingAccounts;
-    public IBookkeepingAccountService BookkeepingAccounts
-    {
-        get { return _bookkeepingAccounts.Value; }
-    }
-
-    readonly Lazy<IBookkeepingEntrySetService> _bookkeepingEntrySets;
-    public IBookkeepingEntrySetService BookkeepingEntrySets
-    {
-        get { return _bookkeepingEntrySets.Value; }
-    }
-
-    readonly Lazy<IBookkeepingEntryService> _bookkeepingEntries;
-    public IBookkeepingEntryService BookkeepingEntries
-    {
-        get { return _bookkeepingEntries.Value; }
-    }
-
     readonly Lazy<IGroupService> _groups;
     public IGroupService Groups
     {
@@ -487,9 +469,6 @@ public sealed class IncreaseClient : IIncreaseClient
         _events = new(() => new EventService(this));
         _eventSubscriptions = new(() => new EventSubscriptionService(this));
         _realTimeDecisions = new(() => new RealTimeDecisionService(this));
-        _bookkeepingAccounts = new(() => new BookkeepingAccountService(this));
-        _bookkeepingEntrySets = new(() => new BookkeepingEntrySetService(this));
-        _bookkeepingEntries = new(() => new BookkeepingEntryService(this));
         _groups = new(() => new GroupService(this));
         _oauthApplications = new(() => new OAuthApplicationService(this));
         _oauthConnections = new(() => new OAuthConnectionService(this));
@@ -853,24 +832,6 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
         get { return _realTimeDecisions.Value; }
     }
 
-    readonly Lazy<IBookkeepingAccountServiceWithRawResponse> _bookkeepingAccounts;
-    public IBookkeepingAccountServiceWithRawResponse BookkeepingAccounts
-    {
-        get { return _bookkeepingAccounts.Value; }
-    }
-
-    readonly Lazy<IBookkeepingEntrySetServiceWithRawResponse> _bookkeepingEntrySets;
-    public IBookkeepingEntrySetServiceWithRawResponse BookkeepingEntrySets
-    {
-        get { return _bookkeepingEntrySets.Value; }
-    }
-
-    readonly Lazy<IBookkeepingEntryServiceWithRawResponse> _bookkeepingEntries;
-    public IBookkeepingEntryServiceWithRawResponse BookkeepingEntries
-    {
-        get { return _bookkeepingEntries.Value; }
-    }
-
     readonly Lazy<IGroupServiceWithRawResponse> _groups;
     public IGroupServiceWithRawResponse Groups
     {
@@ -1201,9 +1162,6 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
         _events = new(() => new EventServiceWithRawResponse(this));
         _eventSubscriptions = new(() => new EventSubscriptionServiceWithRawResponse(this));
         _realTimeDecisions = new(() => new RealTimeDecisionServiceWithRawResponse(this));
-        _bookkeepingAccounts = new(() => new BookkeepingAccountServiceWithRawResponse(this));
-        _bookkeepingEntrySets = new(() => new BookkeepingEntrySetServiceWithRawResponse(this));
-        _bookkeepingEntries = new(() => new BookkeepingEntryServiceWithRawResponse(this));
         _groups = new(() => new GroupServiceWithRawResponse(this));
         _oauthApplications = new(() => new OAuthApplicationServiceWithRawResponse(this));
         _oauthConnections = new(() => new OAuthConnectionServiceWithRawResponse(this));
