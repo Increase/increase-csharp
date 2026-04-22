@@ -143,12 +143,6 @@ public interface IIncreaseClient : IDisposable
 
     IRealTimeDecisionService RealTimeDecisions { get; }
 
-    IBookkeepingAccountService BookkeepingAccounts { get; }
-
-    IBookkeepingEntrySetService BookkeepingEntrySets { get; }
-
-    IBookkeepingEntryService BookkeepingEntries { get; }
-
     IGroupService Groups { get; }
 
     IOAuthApplicationService OAuthApplications { get; }
@@ -292,12 +286,6 @@ public interface IIncreaseClientWithRawResponse : IDisposable
     IEventSubscriptionServiceWithRawResponse EventSubscriptions { get; }
 
     IRealTimeDecisionServiceWithRawResponse RealTimeDecisions { get; }
-
-    IBookkeepingAccountServiceWithRawResponse BookkeepingAccounts { get; }
-
-    IBookkeepingEntrySetServiceWithRawResponse BookkeepingEntrySets { get; }
-
-    IBookkeepingEntryServiceWithRawResponse BookkeepingEntries { get; }
 
     IGroupServiceWithRawResponse Groups { get; }
 
