@@ -12,9 +12,6 @@ using AccountTransfers = Increase.Api.Models.AccountTransfers;
 using AchPrenotifications = Increase.Api.Models.AchPrenotifications;
 using AchTransfers = Increase.Api.Models.AchTransfers;
 using BeneficialOwners = Increase.Api.Models.BeneficialOwners;
-using BookkeepingAccounts = Increase.Api.Models.BookkeepingAccounts;
-using BookkeepingEntries = Increase.Api.Models.BookkeepingEntries;
-using BookkeepingEntrySets = Increase.Api.Models.BookkeepingEntrySets;
 using CardAuthorizations = Increase.Api.Models.Simulations.CardAuthorizations;
 using CardDisputes = Increase.Api.Models.CardDisputes;
 using CardPayments = Increase.Api.Models.CardPayments;
@@ -1482,15 +1479,6 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, RealTimeDecisions::Reason>(),
             new ApiEnumConverter<string, RealTimeDecisions::CardBalanceInquiryDecision>(),
             new ApiEnumConverter<string, RealTimeDecisions::DigitalWalletAuthenticationResult>(),
-            new ApiEnumConverter<
-                string,
-                BookkeepingAccounts::BookkeepingAccountComplianceCategory
-            >(),
-            new ApiEnumConverter<string, BookkeepingAccounts::Type>(),
-            new ApiEnumConverter<string, BookkeepingAccounts::BookkeepingBalanceLookupType>(),
-            new ApiEnumConverter<string, BookkeepingAccounts::ComplianceCategory>(),
-            new ApiEnumConverter<string, BookkeepingEntrySets::Type>(),
-            new ApiEnumConverter<string, BookkeepingEntries::Type>(),
             new ApiEnumConverter<string, Groups::Type>(),
             new ApiEnumConverter<string, OAuthApplications::OAuthApplicationStatus>(),
             new ApiEnumConverter<string, OAuthApplications::Type>(),
