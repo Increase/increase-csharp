@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.14.0 (2026-04-27)
+
+Full Changelog: [v0.13.0...v0.14.0](https://github.com/Increase/increase-csharp/compare/v0.13.0...v0.14.0)
+
+### Features
+
+* support setting headers via env ([d4af023](https://github.com/Increase/increase-csharp/commit/d4af023890a4b4b962123fed7124adf704f6d6fc))
+
 ## 0.13.0 (2026-04-27)
 
 Full Changelog: [v0.12.0...v0.13.0](https://github.com/Increase/increase-csharp/compare/v0.12.0...v0.13.0)
