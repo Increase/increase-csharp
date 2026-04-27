@@ -376,6 +376,7 @@ public class RouteTest : TestBase
     [Theory]
     [InlineData(Route.Visa)]
     [InlineData(Route.Mastercard)]
+    [InlineData(Route.Pulse)]
     public void Validation_Works(Route rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -398,6 +399,7 @@ public class RouteTest : TestBase
     [Theory]
     [InlineData(Route.Visa)]
     [InlineData(Route.Mastercard)]
+    [InlineData(Route.Pulse)]
     public void SerializationRoundtrip_Works(Route rawValue)
     {
         // force implicit conversion because Theory can't do that for us

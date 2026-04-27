@@ -327,6 +327,11 @@ public enum RouteRoute
     /// Mastercard and Maestro
     /// </summary>
     Mastercard,
+
+    /// <summary>
+    /// Pulse
+    /// </summary>
+    Pulse,
 }
 
 sealed class RouteRouteConverter : JsonConverter<RouteRoute>
@@ -341,6 +346,7 @@ sealed class RouteRouteConverter : JsonConverter<RouteRoute>
         {
             "visa" => RouteRoute.Visa,
             "mastercard" => RouteRoute.Mastercard,
+            "pulse" => RouteRoute.Pulse,
             _ => (RouteRoute)(-1),
         };
     }
@@ -357,6 +363,7 @@ sealed class RouteRouteConverter : JsonConverter<RouteRoute>
             {
                 RouteRoute.Visa => "visa",
                 RouteRoute.Mastercard => "mastercard",
+                RouteRoute.Pulse => "pulse",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
