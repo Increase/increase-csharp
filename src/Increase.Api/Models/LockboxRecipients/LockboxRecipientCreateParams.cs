@@ -7,16 +7,16 @@ using System.Text;
 using System.Text.Json;
 using Increase.Api.Core;
 
-namespace Increase.Api.Models.Lockboxes;
+namespace Increase.Api.Models.LockboxRecipients;
 
 /// <summary>
-/// Create a Lockbox
+/// Create a Lockbox Recipient
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
 /// </summary>
-public record class LockboxCreateParams : ParamsBase
+public record class LockboxRecipientCreateParams : ParamsBase
 {
     readonly JsonDictionary _rawBodyData = new();
     public IReadOnlyDictionary<string, JsonElement> RawBodyData
@@ -25,7 +25,7 @@ public record class LockboxCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The Account checks sent to this Lockbox should be deposited into.
+    /// The Account that checks sent to this Lockbox Recipient should be deposited into.
     /// </summary>
     public required string AccountID
     {
@@ -38,7 +38,20 @@ public record class LockboxCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The description you choose for the Lockbox, for display purposes.
+    /// The Lockbox Address where this Lockbox Recipient may receive mail.
+    /// </summary>
+    public required string LockboxAddressID
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNotNullClass<string>("lockbox_address_id");
+        }
+        init { this._rawBodyData.Set("lockbox_address_id", value); }
+    }
+
+    /// <summary>
+    /// The description you choose for the Lockbox Recipient.
     /// </summary>
     public string? Description
     {
@@ -59,7 +72,7 @@ public record class LockboxCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The name of the recipient that will receive mail at this location.
+    /// The name of the Lockbox Recipient
     /// </summary>
     public string? RecipientName
     {
@@ -79,18 +92,18 @@ public record class LockboxCreateParams : ParamsBase
         }
     }
 
-    public LockboxCreateParams() { }
+    public LockboxRecipientCreateParams() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public LockboxCreateParams(LockboxCreateParams lockboxCreateParams)
-        : base(lockboxCreateParams)
+    public LockboxRecipientCreateParams(LockboxRecipientCreateParams lockboxRecipientCreateParams)
+        : base(lockboxRecipientCreateParams)
     {
-        this._rawBodyData = new(lockboxCreateParams._rawBodyData);
+        this._rawBodyData = new(lockboxRecipientCreateParams._rawBodyData);
     }
 #pragma warning restore CS8618
 
-    public LockboxCreateParams(
+    public LockboxRecipientCreateParams(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
         IReadOnlyDictionary<string, JsonElement> rawBodyData
@@ -103,7 +116,7 @@ public record class LockboxCreateParams : ParamsBase
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    LockboxCreateParams(
+    LockboxRecipientCreateParams(
         FrozenDictionary<string, JsonElement> rawHeaderData,
         FrozenDictionary<string, JsonElement> rawQueryData,
         FrozenDictionary<string, JsonElement> rawBodyData
@@ -116,7 +129,7 @@ public record class LockboxCreateParams : ParamsBase
 #pragma warning restore CS8618
 
     /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
-    public static LockboxCreateParams FromRawUnchecked(
+    public static LockboxRecipientCreateParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
         IReadOnlyDictionary<string, JsonElement> rawBodyData
@@ -146,7 +159,7 @@ public record class LockboxCreateParams : ParamsBase
             ModelBase.ToStringSerializerOptions
         );
 
-    public virtual bool Equals(LockboxCreateParams? other)
+    public virtual bool Equals(LockboxRecipientCreateParams? other)
     {
         if (other == null)
         {
@@ -159,7 +172,7 @@ public record class LockboxCreateParams : ParamsBase
 
     public override Uri Url(ClientOptions options)
     {
-        return new UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/lockboxes")
+        return new UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/lockbox_recipients")
         {
             Query = this.QueryString(options),
         }.Uri;

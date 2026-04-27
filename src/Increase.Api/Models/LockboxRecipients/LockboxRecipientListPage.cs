@@ -8,19 +8,19 @@ using Increase.Api.Core;
 using Increase.Api.Exceptions;
 using Increase.Api.Services;
 
-namespace Increase.Api.Models.Lockboxes;
+namespace Increase.Api.Models.LockboxRecipients;
 
 /// <summary>
-/// A single page from the paginated endpoint that <see cref="ILockboxService.List(LockboxListParams, CancellationToken)"/> queries.
+/// A single page from the paginated endpoint that <see cref="ILockboxRecipientService.List(LockboxRecipientListParams, CancellationToken)"/> queries.
 /// </summary>
-public sealed class LockboxListPage(
-    ILockboxServiceWithRawResponse service,
-    LockboxListParams parameters,
-    LockboxListPageResponse response
-) : IPage<Lockbox>
+public sealed class LockboxRecipientListPage(
+    ILockboxRecipientServiceWithRawResponse service,
+    LockboxRecipientListParams parameters,
+    LockboxRecipientListPageResponse response
+) : IPage<LockboxRecipient>
 {
     /// <inheritdoc/>
-    public IReadOnlyList<Lockbox> Items
+    public IReadOnlyList<LockboxRecipient> Items
     {
         get { return response.Data; }
     }
@@ -41,11 +41,12 @@ public sealed class LockboxListPage(
     }
 
     /// <inheritdoc/>
-    async Task<IPage<Lockbox>> IPage<Lockbox>.Next(CancellationToken cancellationToken) =>
-        await this.Next(cancellationToken).ConfigureAwait(false);
+    async Task<IPage<LockboxRecipient>> IPage<LockboxRecipient>.Next(
+        CancellationToken cancellationToken
+    ) => await this.Next(cancellationToken).ConfigureAwait(false);
 
     /// <inheritdoc cref="IPage{T}.Next"/>
-    public async Task<LockboxListPage> Next(CancellationToken cancellationToken = default)
+    public async Task<LockboxRecipientListPage> Next(CancellationToken cancellationToken = default)
     {
         var nextCursor =
             response.NextCursor ?? throw new InvalidOperationException("Cannot request next page");
@@ -69,7 +70,7 @@ public sealed class LockboxListPage(
 
     public override bool Equals(object? obj)
     {
-        if (obj is not LockboxListPage other)
+        if (obj is not LockboxRecipientListPage other)
         {
             return false;
         }

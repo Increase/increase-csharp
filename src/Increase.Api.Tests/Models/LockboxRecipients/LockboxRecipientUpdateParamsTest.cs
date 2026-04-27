@@ -2,79 +2,84 @@ using System;
 using System.Text.Json;
 using Increase.Api.Core;
 using Increase.Api.Exceptions;
-using Increase.Api.Models.Lockboxes;
+using Increase.Api.Models.LockboxRecipients;
 
-namespace Increase.Api.Tests.Models.Lockboxes;
+namespace Increase.Api.Tests.Models.LockboxRecipients;
 
-public class LockboxUpdateParamsTest : TestBase
+public class LockboxRecipientUpdateParamsTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var parameters = new LockboxUpdateParams
+        var parameters = new LockboxRecipientUpdateParams
         {
-            LockboxID = "lockbox_3xt21ok13q19advds4t5",
-            CheckDepositBehavior = CheckDepositBehavior.Disabled,
+            LockboxRecipientID = "lockbox_3xt21ok13q19advds4t5",
             Description = "x",
             RecipientName = "x",
+            Status = Status.Active,
         };
 
-        string expectedLockboxID = "lockbox_3xt21ok13q19advds4t5";
-        ApiEnum<string, CheckDepositBehavior> expectedCheckDepositBehavior =
-            CheckDepositBehavior.Disabled;
+        string expectedLockboxRecipientID = "lockbox_3xt21ok13q19advds4t5";
         string expectedDescription = "x";
         string expectedRecipientName = "x";
+        ApiEnum<string, Status> expectedStatus = Status.Active;
 
-        Assert.Equal(expectedLockboxID, parameters.LockboxID);
-        Assert.Equal(expectedCheckDepositBehavior, parameters.CheckDepositBehavior);
+        Assert.Equal(expectedLockboxRecipientID, parameters.LockboxRecipientID);
         Assert.Equal(expectedDescription, parameters.Description);
         Assert.Equal(expectedRecipientName, parameters.RecipientName);
+        Assert.Equal(expectedStatus, parameters.Status);
     }
 
     [Fact]
     public void OptionalNonNullableParamsUnsetAreNotSet_Works()
     {
-        var parameters = new LockboxUpdateParams { LockboxID = "lockbox_3xt21ok13q19advds4t5" };
+        var parameters = new LockboxRecipientUpdateParams
+        {
+            LockboxRecipientID = "lockbox_3xt21ok13q19advds4t5",
+        };
 
-        Assert.Null(parameters.CheckDepositBehavior);
-        Assert.False(parameters.RawBodyData.ContainsKey("check_deposit_behavior"));
         Assert.Null(parameters.Description);
         Assert.False(parameters.RawBodyData.ContainsKey("description"));
         Assert.Null(parameters.RecipientName);
         Assert.False(parameters.RawBodyData.ContainsKey("recipient_name"));
+        Assert.Null(parameters.Status);
+        Assert.False(parameters.RawBodyData.ContainsKey("status"));
     }
 
     [Fact]
     public void OptionalNonNullableParamsSetToNullAreNotSet_Works()
     {
-        var parameters = new LockboxUpdateParams
+        var parameters = new LockboxRecipientUpdateParams
         {
-            LockboxID = "lockbox_3xt21ok13q19advds4t5",
+            LockboxRecipientID = "lockbox_3xt21ok13q19advds4t5",
 
             // Null should be interpreted as omitted for these properties
-            CheckDepositBehavior = null,
             Description = null,
             RecipientName = null,
+            Status = null,
         };
 
-        Assert.Null(parameters.CheckDepositBehavior);
-        Assert.False(parameters.RawBodyData.ContainsKey("check_deposit_behavior"));
         Assert.Null(parameters.Description);
         Assert.False(parameters.RawBodyData.ContainsKey("description"));
         Assert.Null(parameters.RecipientName);
         Assert.False(parameters.RawBodyData.ContainsKey("recipient_name"));
+        Assert.Null(parameters.Status);
+        Assert.False(parameters.RawBodyData.ContainsKey("status"));
     }
 
     [Fact]
     public void Url_Works()
     {
-        LockboxUpdateParams parameters = new() { LockboxID = "lockbox_3xt21ok13q19advds4t5" };
+        LockboxRecipientUpdateParams parameters = new()
+        {
+            LockboxRecipientID = "lockbox_3xt21ok13q19advds4t5",
+        };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
         Assert.True(
             TestBase.UrisEqual(
-                new Uri("https://api.increase.com/lockboxes/lockbox_3xt21ok13q19advds4t5"),
+                new Uri("https://api.increase.com/lockbox_recipients/lockbox_3xt21ok13q19advds4t5"),
                 url
             )
         );
@@ -83,37 +88,37 @@ public class LockboxUpdateParamsTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var parameters = new LockboxUpdateParams
+        var parameters = new LockboxRecipientUpdateParams
         {
-            LockboxID = "lockbox_3xt21ok13q19advds4t5",
-            CheckDepositBehavior = CheckDepositBehavior.Disabled,
+            LockboxRecipientID = "lockbox_3xt21ok13q19advds4t5",
             Description = "x",
             RecipientName = "x",
+            Status = Status.Active,
         };
 
-        LockboxUpdateParams copied = new(parameters);
+        LockboxRecipientUpdateParams copied = new(parameters);
 
         Assert.Equal(parameters, copied);
     }
 }
 
-public class CheckDepositBehaviorTest : TestBase
+public class StatusTest : TestBase
 {
     [Theory]
-    [InlineData(CheckDepositBehavior.Enabled)]
-    [InlineData(CheckDepositBehavior.Disabled)]
-    [InlineData(CheckDepositBehavior.PendForProcessing)]
-    public void Validation_Works(CheckDepositBehavior rawValue)
+    [InlineData(Status.Active)]
+    [InlineData(Status.Disabled)]
+    [InlineData(Status.Canceled)]
+    public void Validation_Works(Status rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, CheckDepositBehavior> value = rawValue;
+        ApiEnum<string, Status> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, CheckDepositBehavior>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Status>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
@@ -123,16 +128,16 @@ public class CheckDepositBehaviorTest : TestBase
     }
 
     [Theory]
-    [InlineData(CheckDepositBehavior.Enabled)]
-    [InlineData(CheckDepositBehavior.Disabled)]
-    [InlineData(CheckDepositBehavior.PendForProcessing)]
-    public void SerializationRoundtrip_Works(CheckDepositBehavior rawValue)
+    [InlineData(Status.Active)]
+    [InlineData(Status.Disabled)]
+    [InlineData(Status.Canceled)]
+    public void SerializationRoundtrip_Works(Status rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, CheckDepositBehavior> value = rawValue;
+        ApiEnum<string, Status> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, CheckDepositBehavior>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Status>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -143,12 +148,12 @@ public class CheckDepositBehaviorTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, CheckDepositBehavior>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Status>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, CheckDepositBehavior>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Status>>(
             json,
             ModelBase.SerializerOptions
         );

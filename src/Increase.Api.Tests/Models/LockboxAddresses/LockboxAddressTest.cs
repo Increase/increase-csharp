@@ -2,91 +2,81 @@ using System;
 using System.Text.Json;
 using Increase.Api.Core;
 using Increase.Api.Exceptions;
-using Lockboxes = Increase.Api.Models.Lockboxes;
+using LockboxAddresses = Increase.Api.Models.LockboxAddresses;
 
-namespace Increase.Api.Tests.Models.Lockboxes;
+namespace Increase.Api.Tests.Models.LockboxAddresses;
 
-public class LockboxTest : TestBase
+public class LockboxAddressTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Lockboxes::Lockbox
+        var model = new LockboxAddresses::LockboxAddress
         {
-            ID = "lockbox_3xt21ok13q19advds4t5",
-            AccountID = "account_in71c4amph0vgo2qllky",
+            ID = "lockbox_address_lw6sbzl9ol5dfd8hdml6",
             Address = new()
             {
                 City = "San Francisco",
                 Line1 = "1234 Market St",
                 Line2 = "Ste 567",
                 PostalCode = "94114",
-                Recipient = "Company Inc. ATTN: VRE6P",
                 State = "CA",
             },
-            CheckDepositBehavior = Lockboxes::LockboxCheckDepositBehavior.Enabled,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            Description = "Lockbox 1",
+            Description = "Lockbox Address 1",
             IdempotencyKey = null,
-            RecipientName = "Company Inc.",
-            Type = Lockboxes::Type.Lockbox,
+            Status = LockboxAddresses::LockboxAddressStatus.Active,
+            Type = LockboxAddresses::Type.LockboxAddress,
         };
 
-        string expectedID = "lockbox_3xt21ok13q19advds4t5";
-        string expectedAccountID = "account_in71c4amph0vgo2qllky";
-        Lockboxes::Address expectedAddress = new()
+        string expectedID = "lockbox_address_lw6sbzl9ol5dfd8hdml6";
+        LockboxAddresses::Address expectedAddress = new()
         {
             City = "San Francisco",
             Line1 = "1234 Market St",
             Line2 = "Ste 567",
             PostalCode = "94114",
-            Recipient = "Company Inc. ATTN: VRE6P",
             State = "CA",
         };
-        ApiEnum<string, Lockboxes::LockboxCheckDepositBehavior> expectedCheckDepositBehavior =
-            Lockboxes::LockboxCheckDepositBehavior.Enabled;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        string expectedDescription = "Lockbox 1";
-        string expectedRecipientName = "Company Inc.";
-        ApiEnum<string, Lockboxes::Type> expectedType = Lockboxes::Type.Lockbox;
+        string expectedDescription = "Lockbox Address 1";
+        ApiEnum<string, LockboxAddresses::LockboxAddressStatus> expectedStatus =
+            LockboxAddresses::LockboxAddressStatus.Active;
+        ApiEnum<string, LockboxAddresses::Type> expectedType =
+            LockboxAddresses::Type.LockboxAddress;
 
         Assert.Equal(expectedID, model.ID);
-        Assert.Equal(expectedAccountID, model.AccountID);
         Assert.Equal(expectedAddress, model.Address);
-        Assert.Equal(expectedCheckDepositBehavior, model.CheckDepositBehavior);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
         Assert.Equal(expectedDescription, model.Description);
         Assert.Null(model.IdempotencyKey);
-        Assert.Equal(expectedRecipientName, model.RecipientName);
+        Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedType, model.Type);
     }
 
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Lockboxes::Lockbox
+        var model = new LockboxAddresses::LockboxAddress
         {
-            ID = "lockbox_3xt21ok13q19advds4t5",
-            AccountID = "account_in71c4amph0vgo2qllky",
+            ID = "lockbox_address_lw6sbzl9ol5dfd8hdml6",
             Address = new()
             {
                 City = "San Francisco",
                 Line1 = "1234 Market St",
                 Line2 = "Ste 567",
                 PostalCode = "94114",
-                Recipient = "Company Inc. ATTN: VRE6P",
                 State = "CA",
             },
-            CheckDepositBehavior = Lockboxes::LockboxCheckDepositBehavior.Enabled,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            Description = "Lockbox 1",
+            Description = "Lockbox Address 1",
             IdempotencyKey = null,
-            RecipientName = "Company Inc.",
-            Type = Lockboxes::Type.Lockbox,
+            Status = LockboxAddresses::LockboxAddressStatus.Active,
+            Type = LockboxAddresses::Type.LockboxAddress,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Lockboxes::Lockbox>(
+        var deserialized = JsonSerializer.Deserialize<LockboxAddresses::LockboxAddress>(
             json,
             ModelBase.SerializerOptions
         );
@@ -97,85 +87,75 @@ public class LockboxTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Lockboxes::Lockbox
+        var model = new LockboxAddresses::LockboxAddress
         {
-            ID = "lockbox_3xt21ok13q19advds4t5",
-            AccountID = "account_in71c4amph0vgo2qllky",
+            ID = "lockbox_address_lw6sbzl9ol5dfd8hdml6",
             Address = new()
             {
                 City = "San Francisco",
                 Line1 = "1234 Market St",
                 Line2 = "Ste 567",
                 PostalCode = "94114",
-                Recipient = "Company Inc. ATTN: VRE6P",
                 State = "CA",
             },
-            CheckDepositBehavior = Lockboxes::LockboxCheckDepositBehavior.Enabled,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            Description = "Lockbox 1",
+            Description = "Lockbox Address 1",
             IdempotencyKey = null,
-            RecipientName = "Company Inc.",
-            Type = Lockboxes::Type.Lockbox,
+            Status = LockboxAddresses::LockboxAddressStatus.Active,
+            Type = LockboxAddresses::Type.LockboxAddress,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Lockboxes::Lockbox>(
+        var deserialized = JsonSerializer.Deserialize<LockboxAddresses::LockboxAddress>(
             element,
             ModelBase.SerializerOptions
         );
         Assert.NotNull(deserialized);
 
-        string expectedID = "lockbox_3xt21ok13q19advds4t5";
-        string expectedAccountID = "account_in71c4amph0vgo2qllky";
-        Lockboxes::Address expectedAddress = new()
+        string expectedID = "lockbox_address_lw6sbzl9ol5dfd8hdml6";
+        LockboxAddresses::Address expectedAddress = new()
         {
             City = "San Francisco",
             Line1 = "1234 Market St",
             Line2 = "Ste 567",
             PostalCode = "94114",
-            Recipient = "Company Inc. ATTN: VRE6P",
             State = "CA",
         };
-        ApiEnum<string, Lockboxes::LockboxCheckDepositBehavior> expectedCheckDepositBehavior =
-            Lockboxes::LockboxCheckDepositBehavior.Enabled;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        string expectedDescription = "Lockbox 1";
-        string expectedRecipientName = "Company Inc.";
-        ApiEnum<string, Lockboxes::Type> expectedType = Lockboxes::Type.Lockbox;
+        string expectedDescription = "Lockbox Address 1";
+        ApiEnum<string, LockboxAddresses::LockboxAddressStatus> expectedStatus =
+            LockboxAddresses::LockboxAddressStatus.Active;
+        ApiEnum<string, LockboxAddresses::Type> expectedType =
+            LockboxAddresses::Type.LockboxAddress;
 
         Assert.Equal(expectedID, deserialized.ID);
-        Assert.Equal(expectedAccountID, deserialized.AccountID);
         Assert.Equal(expectedAddress, deserialized.Address);
-        Assert.Equal(expectedCheckDepositBehavior, deserialized.CheckDepositBehavior);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
         Assert.Equal(expectedDescription, deserialized.Description);
         Assert.Null(deserialized.IdempotencyKey);
-        Assert.Equal(expectedRecipientName, deserialized.RecipientName);
+        Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedType, deserialized.Type);
     }
 
     [Fact]
     public void Validation_Works()
     {
-        var model = new Lockboxes::Lockbox
+        var model = new LockboxAddresses::LockboxAddress
         {
-            ID = "lockbox_3xt21ok13q19advds4t5",
-            AccountID = "account_in71c4amph0vgo2qllky",
+            ID = "lockbox_address_lw6sbzl9ol5dfd8hdml6",
             Address = new()
             {
                 City = "San Francisco",
                 Line1 = "1234 Market St",
                 Line2 = "Ste 567",
                 PostalCode = "94114",
-                Recipient = "Company Inc. ATTN: VRE6P",
                 State = "CA",
             },
-            CheckDepositBehavior = Lockboxes::LockboxCheckDepositBehavior.Enabled,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            Description = "Lockbox 1",
+            Description = "Lockbox Address 1",
             IdempotencyKey = null,
-            RecipientName = "Company Inc.",
-            Type = Lockboxes::Type.Lockbox,
+            Status = LockboxAddresses::LockboxAddressStatus.Active,
+            Type = LockboxAddresses::Type.LockboxAddress,
         };
 
         model.Validate();
@@ -184,28 +164,25 @@ public class LockboxTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Lockboxes::Lockbox
+        var model = new LockboxAddresses::LockboxAddress
         {
-            ID = "lockbox_3xt21ok13q19advds4t5",
-            AccountID = "account_in71c4amph0vgo2qllky",
+            ID = "lockbox_address_lw6sbzl9ol5dfd8hdml6",
             Address = new()
             {
                 City = "San Francisco",
                 Line1 = "1234 Market St",
                 Line2 = "Ste 567",
                 PostalCode = "94114",
-                Recipient = "Company Inc. ATTN: VRE6P",
                 State = "CA",
             },
-            CheckDepositBehavior = Lockboxes::LockboxCheckDepositBehavior.Enabled,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            Description = "Lockbox 1",
+            Description = "Lockbox Address 1",
             IdempotencyKey = null,
-            RecipientName = "Company Inc.",
-            Type = Lockboxes::Type.Lockbox,
+            Status = LockboxAddresses::LockboxAddressStatus.Active,
+            Type = LockboxAddresses::Type.LockboxAddress,
         };
 
-        Lockboxes::Lockbox copied = new(model);
+        LockboxAddresses::LockboxAddress copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -216,13 +193,12 @@ public class AddressTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Lockboxes::Address
+        var model = new LockboxAddresses::Address
         {
             City = "city",
             Line1 = "line1",
             Line2 = "line2",
             PostalCode = "postal_code",
-            Recipient = "recipient",
             State = "state",
         };
 
@@ -230,32 +206,29 @@ public class AddressTest : TestBase
         string expectedLine1 = "line1";
         string expectedLine2 = "line2";
         string expectedPostalCode = "postal_code";
-        string expectedRecipient = "recipient";
         string expectedState = "state";
 
         Assert.Equal(expectedCity, model.City);
         Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedLine2, model.Line2);
         Assert.Equal(expectedPostalCode, model.PostalCode);
-        Assert.Equal(expectedRecipient, model.Recipient);
         Assert.Equal(expectedState, model.State);
     }
 
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Lockboxes::Address
+        var model = new LockboxAddresses::Address
         {
             City = "city",
             Line1 = "line1",
             Line2 = "line2",
             PostalCode = "postal_code",
-            Recipient = "recipient",
             State = "state",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Lockboxes::Address>(
+        var deserialized = JsonSerializer.Deserialize<LockboxAddresses::Address>(
             json,
             ModelBase.SerializerOptions
         );
@@ -266,18 +239,17 @@ public class AddressTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Lockboxes::Address
+        var model = new LockboxAddresses::Address
         {
             City = "city",
             Line1 = "line1",
             Line2 = "line2",
             PostalCode = "postal_code",
-            Recipient = "recipient",
             State = "state",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Lockboxes::Address>(
+        var deserialized = JsonSerializer.Deserialize<LockboxAddresses::Address>(
             element,
             ModelBase.SerializerOptions
         );
@@ -287,27 +259,24 @@ public class AddressTest : TestBase
         string expectedLine1 = "line1";
         string expectedLine2 = "line2";
         string expectedPostalCode = "postal_code";
-        string expectedRecipient = "recipient";
         string expectedState = "state";
 
         Assert.Equal(expectedCity, deserialized.City);
         Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedLine2, deserialized.Line2);
         Assert.Equal(expectedPostalCode, deserialized.PostalCode);
-        Assert.Equal(expectedRecipient, deserialized.Recipient);
         Assert.Equal(expectedState, deserialized.State);
     }
 
     [Fact]
     public void Validation_Works()
     {
-        var model = new Lockboxes::Address
+        var model = new LockboxAddresses::Address
         {
             City = "city",
             Line1 = "line1",
             Line2 = "line2",
             PostalCode = "postal_code",
-            Recipient = "recipient",
             State = "state",
         };
 
@@ -317,32 +286,32 @@ public class AddressTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Lockboxes::Address
+        var model = new LockboxAddresses::Address
         {
             City = "city",
             Line1 = "line1",
             Line2 = "line2",
             PostalCode = "postal_code",
-            Recipient = "recipient",
             State = "state",
         };
 
-        Lockboxes::Address copied = new(model);
+        LockboxAddresses::Address copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class LockboxCheckDepositBehaviorTest : TestBase
+public class LockboxAddressStatusTest : TestBase
 {
     [Theory]
-    [InlineData(Lockboxes::LockboxCheckDepositBehavior.Enabled)]
-    [InlineData(Lockboxes::LockboxCheckDepositBehavior.Disabled)]
-    [InlineData(Lockboxes::LockboxCheckDepositBehavior.PendForProcessing)]
-    public void Validation_Works(Lockboxes::LockboxCheckDepositBehavior rawValue)
+    [InlineData(LockboxAddresses::LockboxAddressStatus.Pending)]
+    [InlineData(LockboxAddresses::LockboxAddressStatus.Active)]
+    [InlineData(LockboxAddresses::LockboxAddressStatus.Disabled)]
+    [InlineData(LockboxAddresses::LockboxAddressStatus.Canceled)]
+    public void Validation_Works(LockboxAddresses::LockboxAddressStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Lockboxes::LockboxCheckDepositBehavior> value = rawValue;
+        ApiEnum<string, LockboxAddresses::LockboxAddressStatus> value = rawValue;
         value.Validate();
     }
 
@@ -350,7 +319,7 @@ public class LockboxCheckDepositBehaviorTest : TestBase
     public void InvalidEnumValidationThrows_Works()
     {
         var value = JsonSerializer.Deserialize<
-            ApiEnum<string, Lockboxes::LockboxCheckDepositBehavior>
+            ApiEnum<string, LockboxAddresses::LockboxAddressStatus>
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
 
         Assert.NotNull(value);
@@ -358,17 +327,18 @@ public class LockboxCheckDepositBehaviorTest : TestBase
     }
 
     [Theory]
-    [InlineData(Lockboxes::LockboxCheckDepositBehavior.Enabled)]
-    [InlineData(Lockboxes::LockboxCheckDepositBehavior.Disabled)]
-    [InlineData(Lockboxes::LockboxCheckDepositBehavior.PendForProcessing)]
-    public void SerializationRoundtrip_Works(Lockboxes::LockboxCheckDepositBehavior rawValue)
+    [InlineData(LockboxAddresses::LockboxAddressStatus.Pending)]
+    [InlineData(LockboxAddresses::LockboxAddressStatus.Active)]
+    [InlineData(LockboxAddresses::LockboxAddressStatus.Disabled)]
+    [InlineData(LockboxAddresses::LockboxAddressStatus.Canceled)]
+    public void SerializationRoundtrip_Works(LockboxAddresses::LockboxAddressStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Lockboxes::LockboxCheckDepositBehavior> value = rawValue;
+        ApiEnum<string, LockboxAddresses::LockboxAddressStatus> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, Lockboxes::LockboxCheckDepositBehavior>
+            ApiEnum<string, LockboxAddresses::LockboxAddressStatus>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
@@ -378,11 +348,11 @@ public class LockboxCheckDepositBehaviorTest : TestBase
     public void InvalidEnumSerializationRoundtrip_Works()
     {
         var value = JsonSerializer.Deserialize<
-            ApiEnum<string, Lockboxes::LockboxCheckDepositBehavior>
+            ApiEnum<string, LockboxAddresses::LockboxAddressStatus>
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, Lockboxes::LockboxCheckDepositBehavior>
+            ApiEnum<string, LockboxAddresses::LockboxAddressStatus>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
@@ -392,18 +362,18 @@ public class LockboxCheckDepositBehaviorTest : TestBase
 public class TypeTest : TestBase
 {
     [Theory]
-    [InlineData(Lockboxes::Type.Lockbox)]
-    public void Validation_Works(Lockboxes::Type rawValue)
+    [InlineData(LockboxAddresses::Type.LockboxAddress)]
+    public void Validation_Works(LockboxAddresses::Type rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Lockboxes::Type> value = rawValue;
+        ApiEnum<string, LockboxAddresses::Type> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Lockboxes::Type>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, LockboxAddresses::Type>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
@@ -413,14 +383,14 @@ public class TypeTest : TestBase
     }
 
     [Theory]
-    [InlineData(Lockboxes::Type.Lockbox)]
-    public void SerializationRoundtrip_Works(Lockboxes::Type rawValue)
+    [InlineData(LockboxAddresses::Type.LockboxAddress)]
+    public void SerializationRoundtrip_Works(LockboxAddresses::Type rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Lockboxes::Type> value = rawValue;
+        ApiEnum<string, LockboxAddresses::Type> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Lockboxes::Type>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, LockboxAddresses::Type>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -431,12 +401,12 @@ public class TypeTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Lockboxes::Type>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, LockboxAddresses::Type>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Lockboxes::Type>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, LockboxAddresses::Type>>(
             json,
             ModelBase.SerializerOptions
         );

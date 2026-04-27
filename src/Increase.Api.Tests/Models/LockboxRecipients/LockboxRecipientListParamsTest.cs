@@ -1,17 +1,18 @@
 using System;
 using System.Text.Json;
 using Increase.Api.Core;
-using Increase.Api.Models.InboundMailItems;
+using Increase.Api.Models.LockboxRecipients;
 
-namespace Increase.Api.Tests.Models.InboundMailItems;
+namespace Increase.Api.Tests.Models.LockboxRecipients;
 
-public class InboundMailItemListParamsTest : TestBase
+public class LockboxRecipientListParamsTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var parameters = new InboundMailItemListParams
+        var parameters = new LockboxRecipientListParams
         {
+            AccountID = "account_id",
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -20,11 +21,12 @@ public class InboundMailItemListParamsTest : TestBase
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Cursor = "cursor",
+            IdempotencyKey = "x",
             Limit = 1,
             LockboxAddressID = "lockbox_address_id",
-            LockboxRecipientID = "lockbox_recipient_id",
         };
 
+        string expectedAccountID = "account_id";
         CreatedAt expectedCreatedAt = new()
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -33,64 +35,71 @@ public class InboundMailItemListParamsTest : TestBase
             OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
         string expectedCursor = "cursor";
+        string expectedIdempotencyKey = "x";
         long expectedLimit = 1;
         string expectedLockboxAddressID = "lockbox_address_id";
-        string expectedLockboxRecipientID = "lockbox_recipient_id";
 
+        Assert.Equal(expectedAccountID, parameters.AccountID);
         Assert.Equal(expectedCreatedAt, parameters.CreatedAt);
         Assert.Equal(expectedCursor, parameters.Cursor);
+        Assert.Equal(expectedIdempotencyKey, parameters.IdempotencyKey);
         Assert.Equal(expectedLimit, parameters.Limit);
         Assert.Equal(expectedLockboxAddressID, parameters.LockboxAddressID);
-        Assert.Equal(expectedLockboxRecipientID, parameters.LockboxRecipientID);
     }
 
     [Fact]
     public void OptionalNonNullableParamsUnsetAreNotSet_Works()
     {
-        var parameters = new InboundMailItemListParams { };
+        var parameters = new LockboxRecipientListParams { };
 
+        Assert.Null(parameters.AccountID);
+        Assert.False(parameters.RawQueryData.ContainsKey("account_id"));
         Assert.Null(parameters.CreatedAt);
         Assert.False(parameters.RawQueryData.ContainsKey("created_at"));
         Assert.Null(parameters.Cursor);
         Assert.False(parameters.RawQueryData.ContainsKey("cursor"));
+        Assert.Null(parameters.IdempotencyKey);
+        Assert.False(parameters.RawQueryData.ContainsKey("idempotency_key"));
         Assert.Null(parameters.Limit);
         Assert.False(parameters.RawQueryData.ContainsKey("limit"));
         Assert.Null(parameters.LockboxAddressID);
         Assert.False(parameters.RawQueryData.ContainsKey("lockbox_address_id"));
-        Assert.Null(parameters.LockboxRecipientID);
-        Assert.False(parameters.RawQueryData.ContainsKey("lockbox_recipient_id"));
     }
 
     [Fact]
     public void OptionalNonNullableParamsSetToNullAreNotSet_Works()
     {
-        var parameters = new InboundMailItemListParams
+        var parameters = new LockboxRecipientListParams
         {
             // Null should be interpreted as omitted for these properties
+            AccountID = null,
             CreatedAt = null,
             Cursor = null,
+            IdempotencyKey = null,
             Limit = null,
             LockboxAddressID = null,
-            LockboxRecipientID = null,
         };
 
+        Assert.Null(parameters.AccountID);
+        Assert.False(parameters.RawQueryData.ContainsKey("account_id"));
         Assert.Null(parameters.CreatedAt);
         Assert.False(parameters.RawQueryData.ContainsKey("created_at"));
         Assert.Null(parameters.Cursor);
         Assert.False(parameters.RawQueryData.ContainsKey("cursor"));
+        Assert.Null(parameters.IdempotencyKey);
+        Assert.False(parameters.RawQueryData.ContainsKey("idempotency_key"));
         Assert.Null(parameters.Limit);
         Assert.False(parameters.RawQueryData.ContainsKey("limit"));
         Assert.Null(parameters.LockboxAddressID);
         Assert.False(parameters.RawQueryData.ContainsKey("lockbox_address_id"));
-        Assert.Null(parameters.LockboxRecipientID);
-        Assert.False(parameters.RawQueryData.ContainsKey("lockbox_recipient_id"));
     }
 
     [Fact]
     public void Url_Works()
     {
-        InboundMailItemListParams parameters = new()
+        LockboxRecipientListParams parameters = new()
         {
+            AccountID = "account_id",
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
@@ -99,9 +108,9 @@ public class InboundMailItemListParamsTest : TestBase
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             },
             Cursor = "cursor",
+            IdempotencyKey = "x",
             Limit = 1,
             LockboxAddressID = "lockbox_address_id",
-            LockboxRecipientID = "lockbox_recipient_id",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -109,7 +118,7 @@ public class InboundMailItemListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.increase.com/inbound_mail_items?created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&limit=1&lockbox_address_id=lockbox_address_id&lockbox_recipient_id=lockbox_recipient_id"
+                    "https://api.increase.com/lockbox_recipients?account_id=account_id&created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&idempotency_key=x&limit=1&lockbox_address_id=lockbox_address_id"
                 ),
                 url
             )
@@ -119,8 +128,9 @@ public class InboundMailItemListParamsTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var parameters = new InboundMailItemListParams
+        var parameters = new LockboxRecipientListParams
         {
+            AccountID = "account_id",
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -129,12 +139,12 @@ public class InboundMailItemListParamsTest : TestBase
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Cursor = "cursor",
+            IdempotencyKey = "x",
             Limit = 1,
             LockboxAddressID = "lockbox_address_id",
-            LockboxRecipientID = "lockbox_recipient_id",
         };
 
-        InboundMailItemListParams copied = new(parameters);
+        LockboxRecipientListParams copied = new(parameters);
 
         Assert.Equal(parameters, copied);
     }

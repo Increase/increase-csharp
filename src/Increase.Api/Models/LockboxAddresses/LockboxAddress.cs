@@ -7,17 +7,16 @@ using Increase.Api.Core;
 using Increase.Api.Exceptions;
 using System = System;
 
-namespace Increase.Api.Models.Lockboxes;
+namespace Increase.Api.Models.LockboxAddresses;
 
 /// <summary>
-/// Lockboxes are physical locations that can receive mail containing paper checks.
-/// Increase will automatically create a Check Deposit for checks received this way.
+/// Lockbox Addresses are physical locations that can receive mail containing paper checks.
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<Lockbox, LockboxFromRaw>))]
-public sealed record class Lockbox : JsonModel
+[JsonConverter(typeof(JsonModelConverter<LockboxAddress, LockboxAddressFromRaw>))]
+public sealed record class LockboxAddress : JsonModel
 {
     /// <summary>
-    /// The Lockbox identifier.
+    /// The Lockbox Address identifier.
     /// </summary>
     public required string ID
     {
@@ -30,49 +29,22 @@ public sealed record class Lockbox : JsonModel
     }
 
     /// <summary>
-    /// The identifier for the Account checks sent to this lockbox will be deposited into.
+    /// The mailing address for the Lockbox Address. It will be present after Increase
+    /// generates it.
     /// </summary>
-    public required string AccountID
+    public required Address? Address
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("account_id");
-        }
-        init { this._rawData.Set("account_id", value); }
-    }
-
-    /// <summary>
-    /// The mailing address for the Lockbox.
-    /// </summary>
-    public required Address Address
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<Address>("address");
+            return this._rawData.GetNullableClass<Address>("address");
         }
         init { this._rawData.Set("address", value); }
     }
 
     /// <summary>
-    /// Indicates if checks mailed to this lockbox will be deposited.
-    /// </summary>
-    public required ApiEnum<string, LockboxCheckDepositBehavior> CheckDepositBehavior
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<ApiEnum<string, LockboxCheckDepositBehavior>>(
-                "check_deposit_behavior"
-            );
-        }
-        init { this._rawData.Set("check_deposit_behavior", value); }
-    }
-
-    /// <summary>
     /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time at which the Lockbox
-    /// was created.
+    /// Address was created.
     /// </summary>
     public required System::DateTimeOffset CreatedAt
     {
@@ -85,7 +57,7 @@ public sealed record class Lockbox : JsonModel
     }
 
     /// <summary>
-    /// The description you choose for the Lockbox.
+    /// The description you choose for the Lockbox Address.
     /// </summary>
     public required string? Description
     {
@@ -113,29 +85,29 @@ public sealed record class Lockbox : JsonModel
     }
 
     /// <summary>
-    /// The recipient name you choose for the Lockbox.
+    /// The status of the Lockbox Address.
     /// </summary>
-    public required string? RecipientName
+    public required ApiEnum<string, LockboxAddressStatus> Status
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("recipient_name");
+            return this._rawData.GetNotNullClass<ApiEnum<string, LockboxAddressStatus>>("status");
         }
-        init { this._rawData.Set("recipient_name", value); }
+        init { this._rawData.Set("status", value); }
     }
 
     /// <summary>
     /// A constant representing the object's type. For this resource it will always
-    /// be `lockbox`.
+    /// be `lockbox_address`.
     /// </summary>
-    public required ApiEnum<string, global::Increase.Api.Models.Lockboxes.Type> Type
+    public required ApiEnum<string, global::Increase.Api.Models.LockboxAddresses.Type> Type
     {
         get
         {
             this._rawData.Freeze();
             return this._rawData.GetNotNullClass<
-                ApiEnum<string, global::Increase.Api.Models.Lockboxes.Type>
+                ApiEnum<string, global::Increase.Api.Models.LockboxAddresses.Type>
             >("type");
         }
         init { this._rawData.Set("type", value); }
@@ -145,53 +117,52 @@ public sealed record class Lockbox : JsonModel
     public override void Validate()
     {
         _ = this.ID;
-        _ = this.AccountID;
-        this.Address.Validate();
-        this.CheckDepositBehavior.Validate();
+        this.Address?.Validate();
         _ = this.CreatedAt;
         _ = this.Description;
         _ = this.IdempotencyKey;
-        _ = this.RecipientName;
+        this.Status.Validate();
         this.Type.Validate();
     }
 
-    public Lockbox() { }
+    public LockboxAddress() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public Lockbox(Lockbox lockbox)
-        : base(lockbox) { }
+    public LockboxAddress(LockboxAddress lockboxAddress)
+        : base(lockboxAddress) { }
 #pragma warning restore CS8618
 
-    public Lockbox(IReadOnlyDictionary<string, JsonElement> rawData)
+    public LockboxAddress(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    Lockbox(FrozenDictionary<string, JsonElement> rawData)
+    LockboxAddress(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="LockboxFromRaw.FromRawUnchecked"/>
-    public static Lockbox FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    /// <inheritdoc cref="LockboxAddressFromRaw.FromRawUnchecked"/>
+    public static LockboxAddress FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
     }
 }
 
-class LockboxFromRaw : IFromRawJson<Lockbox>
+class LockboxAddressFromRaw : IFromRawJson<LockboxAddress>
 {
     /// <inheritdoc/>
-    public Lockbox FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        Lockbox.FromRawUnchecked(rawData);
+    public LockboxAddress FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        LockboxAddress.FromRawUnchecked(rawData);
 }
 
 /// <summary>
-/// The mailing address for the Lockbox.
+/// The mailing address for the Lockbox Address. It will be present after Increase
+/// generates it.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<Address, AddressFromRaw>))]
 public sealed record class Address : JsonModel
@@ -249,22 +220,6 @@ public sealed record class Address : JsonModel
     }
 
     /// <summary>
-    /// The recipient line of the address. This will include the recipient name you
-    /// provide when creating the address, as well as an ATTN suffix to help route
-    /// the mail to your lockbox. Mail senders must include this ATTN line to receive
-    /// mail at this Lockbox.
-    /// </summary>
-    public required string? Recipient
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("recipient");
-        }
-        init { this._rawData.Set("recipient", value); }
-    }
-
-    /// <summary>
     /// The two-letter United States Postal Service (USPS) abbreviation for the state
     /// of the address.
     /// </summary>
@@ -285,7 +240,6 @@ public sealed record class Address : JsonModel
         _ = this.Line1;
         _ = this.Line2;
         _ = this.PostalCode;
-        _ = this.Recipient;
         _ = this.State;
     }
 
@@ -325,30 +279,35 @@ class AddressFromRaw : IFromRawJson<Address>
 }
 
 /// <summary>
-/// Indicates if checks mailed to this lockbox will be deposited.
+/// The status of the Lockbox Address.
 /// </summary>
-[JsonConverter(typeof(LockboxCheckDepositBehaviorConverter))]
-public enum LockboxCheckDepositBehavior
+[JsonConverter(typeof(LockboxAddressStatusConverter))]
+public enum LockboxAddressStatus
 {
     /// <summary>
-    /// Checks mailed to this Lockbox will be deposited.
+    /// Increase is generating this Lockbox Address.
     /// </summary>
-    Enabled,
+    Pending,
 
     /// <summary>
-    /// Checks mailed to this Lockbox will not be deposited.
+    /// This Lockbox Address is active.
+    /// </summary>
+    Active,
+
+    /// <summary>
+    /// This Lockbox Address is disabled.
     /// </summary>
     Disabled,
 
     /// <summary>
-    /// Checks mailed to this Lockbox will be pending until actioned.
+    /// This Lockbox Address is permanently disabled.
     /// </summary>
-    PendForProcessing,
+    Canceled,
 }
 
-sealed class LockboxCheckDepositBehaviorConverter : JsonConverter<LockboxCheckDepositBehavior>
+sealed class LockboxAddressStatusConverter : JsonConverter<LockboxAddressStatus>
 {
-    public override LockboxCheckDepositBehavior Read(
+    public override LockboxAddressStatus Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -356,16 +315,17 @@ sealed class LockboxCheckDepositBehaviorConverter : JsonConverter<LockboxCheckDe
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "enabled" => LockboxCheckDepositBehavior.Enabled,
-            "disabled" => LockboxCheckDepositBehavior.Disabled,
-            "pend_for_processing" => LockboxCheckDepositBehavior.PendForProcessing,
-            _ => (LockboxCheckDepositBehavior)(-1),
+            "pending" => LockboxAddressStatus.Pending,
+            "active" => LockboxAddressStatus.Active,
+            "disabled" => LockboxAddressStatus.Disabled,
+            "canceled" => LockboxAddressStatus.Canceled,
+            _ => (LockboxAddressStatus)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        LockboxCheckDepositBehavior value,
+        LockboxAddressStatus value,
         JsonSerializerOptions options
     )
     {
@@ -373,9 +333,10 @@ sealed class LockboxCheckDepositBehaviorConverter : JsonConverter<LockboxCheckDe
             writer,
             value switch
             {
-                LockboxCheckDepositBehavior.Enabled => "enabled",
-                LockboxCheckDepositBehavior.Disabled => "disabled",
-                LockboxCheckDepositBehavior.PendForProcessing => "pend_for_processing",
+                LockboxAddressStatus.Pending => "pending",
+                LockboxAddressStatus.Active => "active",
+                LockboxAddressStatus.Disabled => "disabled",
+                LockboxAddressStatus.Canceled => "canceled",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -386,17 +347,17 @@ sealed class LockboxCheckDepositBehaviorConverter : JsonConverter<LockboxCheckDe
 }
 
 /// <summary>
-/// A constant representing the object's type. For this resource it will always be `lockbox`.
+/// A constant representing the object's type. For this resource it will always be `lockbox_address`.
 /// </summary>
 [JsonConverter(typeof(TypeConverter))]
 public enum Type
 {
-    Lockbox,
+    LockboxAddress,
 }
 
-sealed class TypeConverter : JsonConverter<global::Increase.Api.Models.Lockboxes.Type>
+sealed class TypeConverter : JsonConverter<global::Increase.Api.Models.LockboxAddresses.Type>
 {
-    public override global::Increase.Api.Models.Lockboxes.Type Read(
+    public override global::Increase.Api.Models.LockboxAddresses.Type Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -404,14 +365,14 @@ sealed class TypeConverter : JsonConverter<global::Increase.Api.Models.Lockboxes
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "lockbox" => global::Increase.Api.Models.Lockboxes.Type.Lockbox,
-            _ => (global::Increase.Api.Models.Lockboxes.Type)(-1),
+            "lockbox_address" => global::Increase.Api.Models.LockboxAddresses.Type.LockboxAddress,
+            _ => (global::Increase.Api.Models.LockboxAddresses.Type)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        global::Increase.Api.Models.Lockboxes.Type value,
+        global::Increase.Api.Models.LockboxAddresses.Type value,
         JsonSerializerOptions options
     )
     {
@@ -419,7 +380,8 @@ sealed class TypeConverter : JsonConverter<global::Increase.Api.Models.Lockboxes
             writer,
             value switch
             {
-                global::Increase.Api.Models.Lockboxes.Type.Lockbox => "lockbox",
+                global::Increase.Api.Models.LockboxAddresses.Type.LockboxAddress =>
+                    "lockbox_address",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

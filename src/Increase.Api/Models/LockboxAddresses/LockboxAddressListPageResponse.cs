@@ -6,27 +6,32 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Increase.Api.Core;
 
-namespace Increase.Api.Models.Lockboxes;
+namespace Increase.Api.Models.LockboxAddresses;
 
 /// <summary>
-/// A list of Lockbox objects.
+/// A list of Lockbox Address objects.
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<LockboxListPageResponse, LockboxListPageResponseFromRaw>))]
-public sealed record class LockboxListPageResponse : JsonModel
+[JsonConverter(
+    typeof(JsonModelConverter<
+        LockboxAddressListPageResponse,
+        LockboxAddressListPageResponseFromRaw
+    >)
+)]
+public sealed record class LockboxAddressListPageResponse : JsonModel
 {
     /// <summary>
     /// The contents of the list.
     /// </summary>
-    public required IReadOnlyList<Lockbox> Data
+    public required IReadOnlyList<LockboxAddress> Data
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<ImmutableArray<Lockbox>>("data");
+            return this._rawData.GetNotNullStruct<ImmutableArray<LockboxAddress>>("data");
         }
         init
         {
-            this._rawData.Set<ImmutableArray<Lockbox>>(
+            this._rawData.Set<ImmutableArray<LockboxAddress>>(
                 "data",
                 ImmutableArray.ToImmutableArray(value)
             );
@@ -57,29 +62,31 @@ public sealed record class LockboxListPageResponse : JsonModel
         _ = this.NextCursor;
     }
 
-    public LockboxListPageResponse() { }
+    public LockboxAddressListPageResponse() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public LockboxListPageResponse(LockboxListPageResponse lockboxListPageResponse)
-        : base(lockboxListPageResponse) { }
+    public LockboxAddressListPageResponse(
+        LockboxAddressListPageResponse lockboxAddressListPageResponse
+    )
+        : base(lockboxAddressListPageResponse) { }
 #pragma warning restore CS8618
 
-    public LockboxListPageResponse(IReadOnlyDictionary<string, JsonElement> rawData)
+    public LockboxAddressListPageResponse(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    LockboxListPageResponse(FrozenDictionary<string, JsonElement> rawData)
+    LockboxAddressListPageResponse(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="LockboxListPageResponseFromRaw.FromRawUnchecked"/>
-    public static LockboxListPageResponse FromRawUnchecked(
+    /// <inheritdoc cref="LockboxAddressListPageResponseFromRaw.FromRawUnchecked"/>
+    public static LockboxAddressListPageResponse FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -87,10 +94,10 @@ public sealed record class LockboxListPageResponse : JsonModel
     }
 }
 
-class LockboxListPageResponseFromRaw : IFromRawJson<LockboxListPageResponse>
+class LockboxAddressListPageResponseFromRaw : IFromRawJson<LockboxAddressListPageResponse>
 {
     /// <inheritdoc/>
-    public LockboxListPageResponse FromRawUnchecked(
+    public LockboxAddressListPageResponse FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
-    ) => LockboxListPageResponse.FromRawUnchecked(rawData);
+    ) => LockboxAddressListPageResponse.FromRawUnchecked(rawData);
 }

@@ -36,7 +36,8 @@ public class InboundMailItemTest : TestBase
             ],
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             FileID = "file_makxrc67oh9l6sg7w9yc",
-            LockboxID = "lockbox_3xt21ok13q19advds4t5",
+            LockboxAddressID = "lockbox_address_lw6sbzl9ol5dfd8hdml6",
+            LockboxRecipientID = "lockbox_3xt21ok13q19advds4t5",
             RecipientName = "Ian Crease",
             RejectionReason = null,
             Status = InboundMailItems::InboundMailItemStatus.Processed,
@@ -65,7 +66,8 @@ public class InboundMailItemTest : TestBase
         ];
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedFileID = "file_makxrc67oh9l6sg7w9yc";
-        string expectedLockboxID = "lockbox_3xt21ok13q19advds4t5";
+        string expectedLockboxAddressID = "lockbox_address_lw6sbzl9ol5dfd8hdml6";
+        string expectedLockboxRecipientID = "lockbox_3xt21ok13q19advds4t5";
         string expectedRecipientName = "Ian Crease";
         ApiEnum<string, InboundMailItems::InboundMailItemStatus> expectedStatus =
             InboundMailItems::InboundMailItemStatus.Processed;
@@ -80,7 +82,8 @@ public class InboundMailItemTest : TestBase
         }
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
         Assert.Equal(expectedFileID, model.FileID);
-        Assert.Equal(expectedLockboxID, model.LockboxID);
+        Assert.Equal(expectedLockboxAddressID, model.LockboxAddressID);
+        Assert.Equal(expectedLockboxRecipientID, model.LockboxRecipientID);
         Assert.Equal(expectedRecipientName, model.RecipientName);
         Assert.Null(model.RejectionReason);
         Assert.Equal(expectedStatus, model.Status);
@@ -114,7 +117,8 @@ public class InboundMailItemTest : TestBase
             ],
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             FileID = "file_makxrc67oh9l6sg7w9yc",
-            LockboxID = "lockbox_3xt21ok13q19advds4t5",
+            LockboxAddressID = "lockbox_address_lw6sbzl9ol5dfd8hdml6",
+            LockboxRecipientID = "lockbox_3xt21ok13q19advds4t5",
             RecipientName = "Ian Crease",
             RejectionReason = null,
             Status = InboundMailItems::InboundMailItemStatus.Processed,
@@ -157,7 +161,8 @@ public class InboundMailItemTest : TestBase
             ],
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             FileID = "file_makxrc67oh9l6sg7w9yc",
-            LockboxID = "lockbox_3xt21ok13q19advds4t5",
+            LockboxAddressID = "lockbox_address_lw6sbzl9ol5dfd8hdml6",
+            LockboxRecipientID = "lockbox_3xt21ok13q19advds4t5",
             RecipientName = "Ian Crease",
             RejectionReason = null,
             Status = InboundMailItems::InboundMailItemStatus.Processed,
@@ -193,7 +198,8 @@ public class InboundMailItemTest : TestBase
         ];
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedFileID = "file_makxrc67oh9l6sg7w9yc";
-        string expectedLockboxID = "lockbox_3xt21ok13q19advds4t5";
+        string expectedLockboxAddressID = "lockbox_address_lw6sbzl9ol5dfd8hdml6";
+        string expectedLockboxRecipientID = "lockbox_3xt21ok13q19advds4t5";
         string expectedRecipientName = "Ian Crease";
         ApiEnum<string, InboundMailItems::InboundMailItemStatus> expectedStatus =
             InboundMailItems::InboundMailItemStatus.Processed;
@@ -208,7 +214,8 @@ public class InboundMailItemTest : TestBase
         }
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
         Assert.Equal(expectedFileID, deserialized.FileID);
-        Assert.Equal(expectedLockboxID, deserialized.LockboxID);
+        Assert.Equal(expectedLockboxAddressID, deserialized.LockboxAddressID);
+        Assert.Equal(expectedLockboxRecipientID, deserialized.LockboxRecipientID);
         Assert.Equal(expectedRecipientName, deserialized.RecipientName);
         Assert.Null(deserialized.RejectionReason);
         Assert.Equal(expectedStatus, deserialized.Status);
@@ -242,7 +249,8 @@ public class InboundMailItemTest : TestBase
             ],
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             FileID = "file_makxrc67oh9l6sg7w9yc",
-            LockboxID = "lockbox_3xt21ok13q19advds4t5",
+            LockboxAddressID = "lockbox_address_lw6sbzl9ol5dfd8hdml6",
+            LockboxRecipientID = "lockbox_3xt21ok13q19advds4t5",
             RecipientName = "Ian Crease",
             RejectionReason = null,
             Status = InboundMailItems::InboundMailItemStatus.Processed,
@@ -279,7 +287,8 @@ public class InboundMailItemTest : TestBase
             ],
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             FileID = "file_makxrc67oh9l6sg7w9yc",
-            LockboxID = "lockbox_3xt21ok13q19advds4t5",
+            LockboxAddressID = "lockbox_address_lw6sbzl9ol5dfd8hdml6",
+            LockboxRecipientID = "lockbox_3xt21ok13q19advds4t5",
             RecipientName = "Ian Crease",
             RejectionReason = null,
             Status = InboundMailItems::InboundMailItemStatus.Processed,
@@ -473,6 +482,8 @@ public class RejectionReasonTest : TestBase
     [InlineData(InboundMailItems::RejectionReason.NoMatchingLockbox)]
     [InlineData(InboundMailItems::RejectionReason.NoCheck)]
     [InlineData(InboundMailItems::RejectionReason.LockboxNotActive)]
+    [InlineData(InboundMailItems::RejectionReason.LockboxAddressNotActive)]
+    [InlineData(InboundMailItems::RejectionReason.LockboxRecipientNotActive)]
     public void Validation_Works(InboundMailItems::RejectionReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -496,6 +507,8 @@ public class RejectionReasonTest : TestBase
     [InlineData(InboundMailItems::RejectionReason.NoMatchingLockbox)]
     [InlineData(InboundMailItems::RejectionReason.NoCheck)]
     [InlineData(InboundMailItems::RejectionReason.LockboxNotActive)]
+    [InlineData(InboundMailItems::RejectionReason.LockboxAddressNotActive)]
+    [InlineData(InboundMailItems::RejectionReason.LockboxRecipientNotActive)]
     public void SerializationRoundtrip_Works(InboundMailItems::RejectionReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

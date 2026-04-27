@@ -229,17 +229,18 @@ public sealed record class CheckDeposit : JsonModel
     }
 
     /// <summary>
-    /// If the Check Deposit was the result of an Inbound Mail Item, this will contain
-    /// the identifier of the Lockbox that received it.
+    /// If the Check Deposit was the result of an Inbound Mail Item routed to a Lockbox
+    /// Recipient, this will contain the identifier of the Lockbox Recipient that
+    /// received it.
     /// </summary>
-    public required string? LockboxID
+    public required string? LockboxRecipientID
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("lockbox_id");
+            return this._rawData.GetNullableClass<string>("lockbox_recipient_id");
         }
-        init { this._rawData.Set("lockbox_id", value); }
+        init { this._rawData.Set("lockbox_recipient_id", value); }
     }
 
     /// <summary>
@@ -303,7 +304,7 @@ public sealed record class CheckDeposit : JsonModel
         _ = this.IdempotencyKey;
         this.InboundFundsHold?.Validate();
         _ = this.InboundMailItemID;
-        _ = this.LockboxID;
+        _ = this.LockboxRecipientID;
         this.Status.Validate();
         _ = this.TransactionID;
         this.Type.Validate();

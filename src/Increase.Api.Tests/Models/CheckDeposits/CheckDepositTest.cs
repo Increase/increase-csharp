@@ -79,7 +79,7 @@ public class CheckDepositTest : TestBase
                 Type = CheckDeposits::Type.InboundFundsHold,
             },
             InboundMailItemID = null,
-            LockboxID = null,
+            LockboxRecipientID = null,
             Status = CheckDeposits::CheckDepositStatus.Submitted,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CheckDeposits::CheckDepositType.CheckDeposit,
@@ -172,7 +172,7 @@ public class CheckDepositTest : TestBase
         Assert.Null(model.IdempotencyKey);
         Assert.Equal(expectedInboundFundsHold, model.InboundFundsHold);
         Assert.Null(model.InboundMailItemID);
-        Assert.Null(model.LockboxID);
+        Assert.Null(model.LockboxRecipientID);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedTransactionID, model.TransactionID);
         Assert.Equal(expectedType, model.Type);
@@ -248,7 +248,7 @@ public class CheckDepositTest : TestBase
                 Type = CheckDeposits::Type.InboundFundsHold,
             },
             InboundMailItemID = null,
-            LockboxID = null,
+            LockboxRecipientID = null,
             Status = CheckDeposits::CheckDepositStatus.Submitted,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CheckDeposits::CheckDepositType.CheckDeposit,
@@ -333,7 +333,7 @@ public class CheckDepositTest : TestBase
                 Type = CheckDeposits::Type.InboundFundsHold,
             },
             InboundMailItemID = null,
-            LockboxID = null,
+            LockboxRecipientID = null,
             Status = CheckDeposits::CheckDepositStatus.Submitted,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CheckDeposits::CheckDepositType.CheckDeposit,
@@ -433,7 +433,7 @@ public class CheckDepositTest : TestBase
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Equal(expectedInboundFundsHold, deserialized.InboundFundsHold);
         Assert.Null(deserialized.InboundMailItemID);
-        Assert.Null(deserialized.LockboxID);
+        Assert.Null(deserialized.LockboxRecipientID);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
         Assert.Equal(expectedType, deserialized.Type);
@@ -509,7 +509,7 @@ public class CheckDepositTest : TestBase
                 Type = CheckDeposits::Type.InboundFundsHold,
             },
             InboundMailItemID = null,
-            LockboxID = null,
+            LockboxRecipientID = null,
             Status = CheckDeposits::CheckDepositStatus.Submitted,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CheckDeposits::CheckDepositType.CheckDeposit,
@@ -588,7 +588,7 @@ public class CheckDepositTest : TestBase
                 Type = CheckDeposits::Type.InboundFundsHold,
             },
             InboundMailItemID = null,
-            LockboxID = null,
+            LockboxRecipientID = null,
             Status = CheckDeposits::CheckDepositStatus.Submitted,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = CheckDeposits::CheckDepositType.CheckDeposit,
