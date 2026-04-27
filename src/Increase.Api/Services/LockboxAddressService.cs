@@ -4,17 +4,17 @@ using System.Threading;
 using System.Threading.Tasks;
 using Increase.Api.Core;
 using Increase.Api.Exceptions;
-using Increase.Api.Models.Lockboxes;
+using Increase.Api.Models.LockboxAddresses;
 
 namespace Increase.Api.Services;
 
 /// <inheritdoc/>
-public sealed class LockboxService : ILockboxService
+public sealed class LockboxAddressService : ILockboxAddressService
 {
-    readonly Lazy<ILockboxServiceWithRawResponse> _withRawResponse;
+    readonly Lazy<ILockboxAddressServiceWithRawResponse> _withRawResponse;
 
     /// <inheritdoc/>
-    public ILockboxServiceWithRawResponse WithRawResponse
+    public ILockboxAddressServiceWithRawResponse WithRawResponse
     {
         get { return _withRawResponse.Value; }
     }
@@ -22,21 +22,23 @@ public sealed class LockboxService : ILockboxService
     readonly IIncreaseClient _client;
 
     /// <inheritdoc/>
-    public ILockboxService WithOptions(Func<ClientOptions, ClientOptions> modifier)
+    public ILockboxAddressService WithOptions(Func<ClientOptions, ClientOptions> modifier)
     {
-        return new LockboxService(this._client.WithOptions(modifier));
+        return new LockboxAddressService(this._client.WithOptions(modifier));
     }
 
-    public LockboxService(IIncreaseClient client)
+    public LockboxAddressService(IIncreaseClient client)
     {
         _client = client;
 
-        _withRawResponse = new(() => new LockboxServiceWithRawResponse(client.WithRawResponse));
+        _withRawResponse = new(() =>
+            new LockboxAddressServiceWithRawResponse(client.WithRawResponse)
+        );
     }
 
     /// <inheritdoc/>
-    public async Task<Lockbox> Create(
-        LockboxCreateParams parameters,
+    public async Task<LockboxAddress> Create(
+        LockboxAddressCreateParams? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -47,8 +49,8 @@ public sealed class LockboxService : ILockboxService
     }
 
     /// <inheritdoc/>
-    public async Task<Lockbox> Retrieve(
-        LockboxRetrieveParams parameters,
+    public async Task<LockboxAddress> Retrieve(
+        LockboxAddressRetrieveParams parameters,
         CancellationToken cancellationToken = default
     )
     {
@@ -59,20 +61,26 @@ public sealed class LockboxService : ILockboxService
     }
 
     /// <inheritdoc/>
-    public Task<Lockbox> Retrieve(
-        string lockboxID,
-        LockboxRetrieveParams? parameters = null,
+    public Task<LockboxAddress> Retrieve(
+        string lockboxAddressID,
+        LockboxAddressRetrieveParams? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
         parameters ??= new();
 
-        return this.Retrieve(parameters with { LockboxID = lockboxID }, cancellationToken);
+        return this.Retrieve(
+            parameters with
+            {
+                LockboxAddressID = lockboxAddressID,
+            },
+            cancellationToken
+        );
     }
 
     /// <inheritdoc/>
-    public async Task<Lockbox> Update(
-        LockboxUpdateParams parameters,
+    public async Task<LockboxAddress> Update(
+        LockboxAddressUpdateParams parameters,
         CancellationToken cancellationToken = default
     )
     {
@@ -83,20 +91,26 @@ public sealed class LockboxService : ILockboxService
     }
 
     /// <inheritdoc/>
-    public Task<Lockbox> Update(
-        string lockboxID,
-        LockboxUpdateParams? parameters = null,
+    public Task<LockboxAddress> Update(
+        string lockboxAddressID,
+        LockboxAddressUpdateParams? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
         parameters ??= new();
 
-        return this.Update(parameters with { LockboxID = lockboxID }, cancellationToken);
+        return this.Update(
+            parameters with
+            {
+                LockboxAddressID = lockboxAddressID,
+            },
+            cancellationToken
+        );
     }
 
     /// <inheritdoc/>
-    public async Task<LockboxListPage> List(
-        LockboxListParams? parameters = null,
+    public async Task<LockboxAddressListPage> List(
+        LockboxAddressListParams? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -108,28 +122,32 @@ public sealed class LockboxService : ILockboxService
 }
 
 /// <inheritdoc/>
-public sealed class LockboxServiceWithRawResponse : ILockboxServiceWithRawResponse
+public sealed class LockboxAddressServiceWithRawResponse : ILockboxAddressServiceWithRawResponse
 {
     readonly IIncreaseClientWithRawResponse _client;
 
     /// <inheritdoc/>
-    public ILockboxServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier)
+    public ILockboxAddressServiceWithRawResponse WithOptions(
+        Func<ClientOptions, ClientOptions> modifier
+    )
     {
-        return new LockboxServiceWithRawResponse(this._client.WithOptions(modifier));
+        return new LockboxAddressServiceWithRawResponse(this._client.WithOptions(modifier));
     }
 
-    public LockboxServiceWithRawResponse(IIncreaseClientWithRawResponse client)
+    public LockboxAddressServiceWithRawResponse(IIncreaseClientWithRawResponse client)
     {
         _client = client;
     }
 
     /// <inheritdoc/>
-    public async Task<HttpResponse<Lockbox>> Create(
-        LockboxCreateParams parameters,
+    public async Task<HttpResponse<LockboxAddress>> Create(
+        LockboxAddressCreateParams? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
-        HttpRequest<LockboxCreateParams> request = new()
+        parameters ??= new();
+
+        HttpRequest<LockboxAddressCreateParams> request = new()
         {
             Method = HttpMethod.Post,
             Params = parameters,
@@ -139,28 +157,30 @@ public sealed class LockboxServiceWithRawResponse : ILockboxServiceWithRawRespon
             response,
             async (token) =>
             {
-                var lockbox = await response.Deserialize<Lockbox>(token).ConfigureAwait(false);
+                var lockboxAddress = await response
+                    .Deserialize<LockboxAddress>(token)
+                    .ConfigureAwait(false);
                 if (this._client.ResponseValidation)
                 {
-                    lockbox.Validate();
+                    lockboxAddress.Validate();
                 }
-                return lockbox;
+                return lockboxAddress;
             }
         );
     }
 
     /// <inheritdoc/>
-    public async Task<HttpResponse<Lockbox>> Retrieve(
-        LockboxRetrieveParams parameters,
+    public async Task<HttpResponse<LockboxAddress>> Retrieve(
+        LockboxAddressRetrieveParams parameters,
         CancellationToken cancellationToken = default
     )
     {
-        if (parameters.LockboxID == null)
+        if (parameters.LockboxAddressID == null)
         {
-            throw new IncreaseInvalidDataException("'parameters.LockboxID' cannot be null");
+            throw new IncreaseInvalidDataException("'parameters.LockboxAddressID' cannot be null");
         }
 
-        HttpRequest<LockboxRetrieveParams> request = new()
+        HttpRequest<LockboxAddressRetrieveParams> request = new()
         {
             Method = HttpMethod.Get,
             Params = parameters,
@@ -170,40 +190,48 @@ public sealed class LockboxServiceWithRawResponse : ILockboxServiceWithRawRespon
             response,
             async (token) =>
             {
-                var lockbox = await response.Deserialize<Lockbox>(token).ConfigureAwait(false);
+                var lockboxAddress = await response
+                    .Deserialize<LockboxAddress>(token)
+                    .ConfigureAwait(false);
                 if (this._client.ResponseValidation)
                 {
-                    lockbox.Validate();
+                    lockboxAddress.Validate();
                 }
-                return lockbox;
+                return lockboxAddress;
             }
         );
     }
 
     /// <inheritdoc/>
-    public Task<HttpResponse<Lockbox>> Retrieve(
-        string lockboxID,
-        LockboxRetrieveParams? parameters = null,
+    public Task<HttpResponse<LockboxAddress>> Retrieve(
+        string lockboxAddressID,
+        LockboxAddressRetrieveParams? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
         parameters ??= new();
 
-        return this.Retrieve(parameters with { LockboxID = lockboxID }, cancellationToken);
+        return this.Retrieve(
+            parameters with
+            {
+                LockboxAddressID = lockboxAddressID,
+            },
+            cancellationToken
+        );
     }
 
     /// <inheritdoc/>
-    public async Task<HttpResponse<Lockbox>> Update(
-        LockboxUpdateParams parameters,
+    public async Task<HttpResponse<LockboxAddress>> Update(
+        LockboxAddressUpdateParams parameters,
         CancellationToken cancellationToken = default
     )
     {
-        if (parameters.LockboxID == null)
+        if (parameters.LockboxAddressID == null)
         {
-            throw new IncreaseInvalidDataException("'parameters.LockboxID' cannot be null");
+            throw new IncreaseInvalidDataException("'parameters.LockboxAddressID' cannot be null");
         }
 
-        HttpRequest<LockboxUpdateParams> request = new()
+        HttpRequest<LockboxAddressUpdateParams> request = new()
         {
             Method = IncreaseClientWithRawResponse.PatchMethod,
             Params = parameters,
@@ -213,37 +241,45 @@ public sealed class LockboxServiceWithRawResponse : ILockboxServiceWithRawRespon
             response,
             async (token) =>
             {
-                var lockbox = await response.Deserialize<Lockbox>(token).ConfigureAwait(false);
+                var lockboxAddress = await response
+                    .Deserialize<LockboxAddress>(token)
+                    .ConfigureAwait(false);
                 if (this._client.ResponseValidation)
                 {
-                    lockbox.Validate();
+                    lockboxAddress.Validate();
                 }
-                return lockbox;
+                return lockboxAddress;
             }
         );
     }
 
     /// <inheritdoc/>
-    public Task<HttpResponse<Lockbox>> Update(
-        string lockboxID,
-        LockboxUpdateParams? parameters = null,
+    public Task<HttpResponse<LockboxAddress>> Update(
+        string lockboxAddressID,
+        LockboxAddressUpdateParams? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
         parameters ??= new();
 
-        return this.Update(parameters with { LockboxID = lockboxID }, cancellationToken);
+        return this.Update(
+            parameters with
+            {
+                LockboxAddressID = lockboxAddressID,
+            },
+            cancellationToken
+        );
     }
 
     /// <inheritdoc/>
-    public async Task<HttpResponse<LockboxListPage>> List(
-        LockboxListParams? parameters = null,
+    public async Task<HttpResponse<LockboxAddressListPage>> List(
+        LockboxAddressListParams? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
         parameters ??= new();
 
-        HttpRequest<LockboxListParams> request = new()
+        HttpRequest<LockboxAddressListParams> request = new()
         {
             Method = HttpMethod.Get,
             Params = parameters,
@@ -254,13 +290,13 @@ public sealed class LockboxServiceWithRawResponse : ILockboxServiceWithRawRespon
             async (token) =>
             {
                 var page = await response
-                    .Deserialize<LockboxListPageResponse>(token)
+                    .Deserialize<LockboxAddressListPageResponse>(token)
                     .ConfigureAwait(false);
                 if (this._client.ResponseValidation)
                 {
                     page.Validate();
                 }
-                return new LockboxListPage(this, parameters, page);
+                return new LockboxAddressListPage(this, parameters, page);
             }
         );
     }

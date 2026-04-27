@@ -111,7 +111,9 @@ public interface IIncreaseClient : IDisposable
 
     ICheckDepositService CheckDeposits { get; }
 
-    ILockboxService Lockboxes { get; }
+    ILockboxAddressService LockboxAddresses { get; }
+
+    ILockboxRecipientService LockboxRecipients { get; }
 
     IInboundMailItemService InboundMailItems { get; }
 
@@ -255,7 +257,9 @@ public interface IIncreaseClientWithRawResponse : IDisposable
 
     ICheckDepositServiceWithRawResponse CheckDeposits { get; }
 
-    ILockboxServiceWithRawResponse Lockboxes { get; }
+    ILockboxAddressServiceWithRawResponse LockboxAddresses { get; }
+
+    ILockboxRecipientServiceWithRawResponse LockboxRecipients { get; }
 
     IInboundMailItemServiceWithRawResponse InboundMailItems { get; }
 

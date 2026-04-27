@@ -46,7 +46,8 @@ using InboundWireTransfers = Increase.Api.Models.InboundWireTransfers;
 using IntrafiAccountEnrollments = Increase.Api.Models.IntrafiAccountEnrollments;
 using IntrafiBalances = Increase.Api.Models.IntrafiBalances;
 using IntrafiExclusions = Increase.Api.Models.IntrafiExclusions;
-using Lockboxes = Increase.Api.Models.Lockboxes;
+using LockboxAddresses = Increase.Api.Models.LockboxAddresses;
+using LockboxRecipients = Increase.Api.Models.LockboxRecipients;
 using OAuthApplications = Increase.Api.Models.OAuthApplications;
 using OAuthConnections = Increase.Api.Models.OAuthConnections;
 using OAuthTokens = Increase.Api.Models.OAuthTokens;
@@ -1256,9 +1257,12 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, CheckDeposits::Type>(),
             new ApiEnumConverter<string, CheckDeposits::CheckDepositStatus>(),
             new ApiEnumConverter<string, CheckDeposits::CheckDepositType>(),
-            new ApiEnumConverter<string, Lockboxes::LockboxCheckDepositBehavior>(),
-            new ApiEnumConverter<string, Lockboxes::Type>(),
-            new ApiEnumConverter<string, Lockboxes::CheckDepositBehavior>(),
+            new ApiEnumConverter<string, LockboxAddresses::LockboxAddressStatus>(),
+            new ApiEnumConverter<string, LockboxAddresses::Type>(),
+            new ApiEnumConverter<string, LockboxAddresses::Status>(),
+            new ApiEnumConverter<string, LockboxRecipients::LockboxRecipientStatus>(),
+            new ApiEnumConverter<string, LockboxRecipients::Type>(),
+            new ApiEnumConverter<string, LockboxRecipients::Status>(),
             new ApiEnumConverter<string, InboundMailItems::Status>(),
             new ApiEnumConverter<string, InboundMailItems::RejectionReason>(),
             new ApiEnumConverter<string, InboundMailItems::InboundMailItemStatus>(),

@@ -11,30 +11,33 @@ public class InboundMailItemCreateParamsTest : TestBase
         var parameters = new InboundMailItemCreateParams
         {
             Amount = 1000,
-            LockboxID = "lockbox_3xt21ok13q19advds4t5",
             ContentsFileID = "contents_file_id",
+            LockboxAddressID = "lockbox_address_id",
+            LockboxRecipientID = "lockbox_3xt21ok13q19advds4t5",
         };
 
         long expectedAmount = 1000;
-        string expectedLockboxID = "lockbox_3xt21ok13q19advds4t5";
         string expectedContentsFileID = "contents_file_id";
+        string expectedLockboxAddressID = "lockbox_address_id";
+        string expectedLockboxRecipientID = "lockbox_3xt21ok13q19advds4t5";
 
         Assert.Equal(expectedAmount, parameters.Amount);
-        Assert.Equal(expectedLockboxID, parameters.LockboxID);
         Assert.Equal(expectedContentsFileID, parameters.ContentsFileID);
+        Assert.Equal(expectedLockboxAddressID, parameters.LockboxAddressID);
+        Assert.Equal(expectedLockboxRecipientID, parameters.LockboxRecipientID);
     }
 
     [Fact]
     public void OptionalNonNullableParamsUnsetAreNotSet_Works()
     {
-        var parameters = new InboundMailItemCreateParams
-        {
-            Amount = 1000,
-            LockboxID = "lockbox_3xt21ok13q19advds4t5",
-        };
+        var parameters = new InboundMailItemCreateParams { Amount = 1000 };
 
         Assert.Null(parameters.ContentsFileID);
         Assert.False(parameters.RawBodyData.ContainsKey("contents_file_id"));
+        Assert.Null(parameters.LockboxAddressID);
+        Assert.False(parameters.RawBodyData.ContainsKey("lockbox_address_id"));
+        Assert.Null(parameters.LockboxRecipientID);
+        Assert.False(parameters.RawBodyData.ContainsKey("lockbox_recipient_id"));
     }
 
     [Fact]
@@ -43,24 +46,25 @@ public class InboundMailItemCreateParamsTest : TestBase
         var parameters = new InboundMailItemCreateParams
         {
             Amount = 1000,
-            LockboxID = "lockbox_3xt21ok13q19advds4t5",
 
             // Null should be interpreted as omitted for these properties
             ContentsFileID = null,
+            LockboxAddressID = null,
+            LockboxRecipientID = null,
         };
 
         Assert.Null(parameters.ContentsFileID);
         Assert.False(parameters.RawBodyData.ContainsKey("contents_file_id"));
+        Assert.Null(parameters.LockboxAddressID);
+        Assert.False(parameters.RawBodyData.ContainsKey("lockbox_address_id"));
+        Assert.Null(parameters.LockboxRecipientID);
+        Assert.False(parameters.RawBodyData.ContainsKey("lockbox_recipient_id"));
     }
 
     [Fact]
     public void Url_Works()
     {
-        InboundMailItemCreateParams parameters = new()
-        {
-            Amount = 1000,
-            LockboxID = "lockbox_3xt21ok13q19advds4t5",
-        };
+        InboundMailItemCreateParams parameters = new() { Amount = 1000 };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
@@ -78,8 +82,9 @@ public class InboundMailItemCreateParamsTest : TestBase
         var parameters = new InboundMailItemCreateParams
         {
             Amount = 1000,
-            LockboxID = "lockbox_3xt21ok13q19advds4t5",
             ContentsFileID = "contents_file_id",
+            LockboxAddressID = "lockbox_address_id",
+            LockboxRecipientID = "lockbox_3xt21ok13q19advds4t5",
         };
 
         InboundMailItemCreateParams copied = new(parameters);

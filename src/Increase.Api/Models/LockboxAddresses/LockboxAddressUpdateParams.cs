@@ -1,23 +1,24 @@
-using System;
 using System.Collections.Frozen;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Increase.Api.Core;
+using Increase.Api.Exceptions;
+using System = System;
 
-namespace Increase.Api.Models.Simulations.InboundMailItems;
+namespace Increase.Api.Models.LockboxAddresses;
 
 /// <summary>
-/// Simulates an inbound mail item to your account, as if someone had mailed a physical
-/// check to one of your account's Lockboxes.
+/// Update a Lockbox Address
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
 /// </summary>
-public record class InboundMailItemCreateParams : ParamsBase
+public record class LockboxAddressUpdateParams : ParamsBase
 {
     readonly JsonDictionary _rawBodyData = new();
     public IReadOnlyDictionary<string, JsonElement> RawBodyData
@@ -25,29 +26,17 @@ public record class InboundMailItemCreateParams : ParamsBase
         get { return this._rawBodyData.Freeze(); }
     }
 
-    /// <summary>
-    /// The amount of the check to be simulated, in cents.
-    /// </summary>
-    public required long Amount
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNotNullStruct<long>("amount");
-        }
-        init { this._rawBodyData.Set("amount", value); }
-    }
+    public string? LockboxAddressID { get; init; }
 
     /// <summary>
-    /// The file containing the PDF contents. If not present, a default check image
-    /// file will be used.
+    /// The description you choose for the Lockbox Address.
     /// </summary>
-    public string? ContentsFileID
+    public string? Description
     {
         get
         {
             this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<string>("contents_file_id");
+            return this._rawBodyData.GetNullableClass<string>("description");
         }
         init
         {
@@ -56,19 +45,19 @@ public record class InboundMailItemCreateParams : ParamsBase
                 return;
             }
 
-            this._rawBodyData.Set("contents_file_id", value);
+            this._rawBodyData.Set("description", value);
         }
     }
 
     /// <summary>
-    /// The identifier of the Lockbox Address to simulate inbound mail to.
+    /// The status of the Lockbox Address.
     /// </summary>
-    public string? LockboxAddressID
+    public ApiEnum<string, Status>? Status
     {
         get
         {
             this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<string>("lockbox_address_id");
+            return this._rawBodyData.GetNullableClass<ApiEnum<string, Status>>("status");
         }
         init
         {
@@ -77,43 +66,24 @@ public record class InboundMailItemCreateParams : ParamsBase
                 return;
             }
 
-            this._rawBodyData.Set("lockbox_address_id", value);
+            this._rawBodyData.Set("status", value);
         }
     }
 
-    /// <summary>
-    /// The identifier of the Lockbox Recipient to simulate inbound mail to.
-    /// </summary>
-    public string? LockboxRecipientID
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<string>("lockbox_recipient_id");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawBodyData.Set("lockbox_recipient_id", value);
-        }
-    }
-
-    public InboundMailItemCreateParams() { }
+    public LockboxAddressUpdateParams() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public InboundMailItemCreateParams(InboundMailItemCreateParams inboundMailItemCreateParams)
-        : base(inboundMailItemCreateParams)
+    public LockboxAddressUpdateParams(LockboxAddressUpdateParams lockboxAddressUpdateParams)
+        : base(lockboxAddressUpdateParams)
     {
-        this._rawBodyData = new(inboundMailItemCreateParams._rawBodyData);
+        this.LockboxAddressID = lockboxAddressUpdateParams.LockboxAddressID;
+
+        this._rawBodyData = new(lockboxAddressUpdateParams._rawBodyData);
     }
 #pragma warning restore CS8618
 
-    public InboundMailItemCreateParams(
+    public LockboxAddressUpdateParams(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
         IReadOnlyDictionary<string, JsonElement> rawBodyData
@@ -126,29 +96,33 @@ public record class InboundMailItemCreateParams : ParamsBase
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    InboundMailItemCreateParams(
+    LockboxAddressUpdateParams(
         FrozenDictionary<string, JsonElement> rawHeaderData,
         FrozenDictionary<string, JsonElement> rawQueryData,
-        FrozenDictionary<string, JsonElement> rawBodyData
+        FrozenDictionary<string, JsonElement> rawBodyData,
+        string lockboxAddressID
     )
     {
         this._rawHeaderData = new(rawHeaderData);
         this._rawQueryData = new(rawQueryData);
         this._rawBodyData = new(rawBodyData);
+        this.LockboxAddressID = lockboxAddressID;
     }
 #pragma warning restore CS8618
 
     /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
-    public static InboundMailItemCreateParams FromRawUnchecked(
+    public static LockboxAddressUpdateParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
-        IReadOnlyDictionary<string, JsonElement> rawBodyData
+        IReadOnlyDictionary<string, JsonElement> rawBodyData,
+        string lockboxAddressID
     )
     {
         return new(
             FrozenDictionary.ToFrozenDictionary(rawHeaderData),
             FrozenDictionary.ToFrozenDictionary(rawQueryData),
-            FrozenDictionary.ToFrozenDictionary(rawBodyData)
+            FrozenDictionary.ToFrozenDictionary(rawBodyData),
+            lockboxAddressID
         );
     }
 
@@ -157,6 +131,7 @@ public record class InboundMailItemCreateParams : ParamsBase
             FriendlyJsonPrinter.PrintValue(
                 new Dictionary<string, JsonElement>()
                 {
+                    ["LockboxAddressID"] = JsonSerializer.SerializeToElement(this.LockboxAddressID),
                     ["HeaderData"] = FriendlyJsonPrinter.PrintValue(
                         JsonSerializer.SerializeToElement(this._rawHeaderData.Freeze())
                     ),
@@ -169,21 +144,26 @@ public record class InboundMailItemCreateParams : ParamsBase
             ModelBase.ToStringSerializerOptions
         );
 
-    public virtual bool Equals(InboundMailItemCreateParams? other)
+    public virtual bool Equals(LockboxAddressUpdateParams? other)
     {
         if (other == null)
         {
             return false;
         }
-        return this._rawHeaderData.Equals(other._rawHeaderData)
+        return (
+                this.LockboxAddressID?.Equals(other.LockboxAddressID)
+                ?? other.LockboxAddressID == null
+            )
+            && this._rawHeaderData.Equals(other._rawHeaderData)
             && this._rawQueryData.Equals(other._rawQueryData)
             && this._rawBodyData.Equals(other._rawBodyData);
     }
 
-    public override Uri Url(ClientOptions options)
+    public override System::Uri Url(ClientOptions options)
     {
-        return new UriBuilder(
-            options.BaseUrl.ToString().TrimEnd('/') + "/simulations/inbound_mail_items"
+        return new System::UriBuilder(
+            options.BaseUrl.ToString().TrimEnd('/')
+                + string.Format("/lockbox_addresses/{0}", this.LockboxAddressID)
         )
         {
             Query = this.QueryString(options),
@@ -211,5 +191,62 @@ public record class InboundMailItemCreateParams : ParamsBase
     public override int GetHashCode()
     {
         return 0;
+    }
+}
+
+/// <summary>
+/// The status of the Lockbox Address.
+/// </summary>
+[JsonConverter(typeof(StatusConverter))]
+public enum Status
+{
+    /// <summary>
+    /// This Lockbox Address is active.
+    /// </summary>
+    Active,
+
+    /// <summary>
+    /// This Lockbox Address is disabled.
+    /// </summary>
+    Disabled,
+
+    /// <summary>
+    /// This Lockbox Address is permanently disabled.
+    /// </summary>
+    Canceled,
+}
+
+sealed class StatusConverter : JsonConverter<Status>
+{
+    public override Status Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "active" => Status.Active,
+            "disabled" => Status.Disabled,
+            "canceled" => Status.Canceled,
+            _ => (Status)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Status value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Status.Active => "active",
+                Status.Disabled => "disabled",
+                Status.Canceled => "canceled",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
     }
 }

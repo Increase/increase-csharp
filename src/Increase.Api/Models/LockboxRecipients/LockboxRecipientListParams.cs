@@ -7,17 +7,38 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Increase.Api.Core;
 
-namespace Increase.Api.Models.InboundMailItems;
+namespace Increase.Api.Models.LockboxRecipients;
 
 /// <summary>
-/// List Inbound Mail Items
+/// List Lockbox Recipients
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
 /// </summary>
-public record class InboundMailItemListParams : ParamsBase
+public record class LockboxRecipientListParams : ParamsBase
 {
+    /// <summary>
+    /// Filter Lockbox Recipients to those associated with the provided Account.
+    /// </summary>
+    public string? AccountID
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<string>("account_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("account_id", value);
+        }
+    }
+
     public CreatedAt? CreatedAt
     {
         get
@@ -58,6 +79,29 @@ public record class InboundMailItemListParams : ParamsBase
     }
 
     /// <summary>
+    /// Filter records to the one with the specified `idempotency_key` you chose for
+    /// that object. This value is unique across Increase and is used to ensure that
+    /// a request is only processed once. Learn more about [idempotency](https://increase.com/documentation/idempotency-keys).
+    /// </summary>
+    public string? IdempotencyKey
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<string>("idempotency_key");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("idempotency_key", value);
+        }
+    }
+
+    /// <summary>
     /// Limit the size of the list that is returned. The default (and maximum) is
     /// 100 objects.
     /// </summary>
@@ -80,7 +124,7 @@ public record class InboundMailItemListParams : ParamsBase
     }
 
     /// <summary>
-    /// Filter Inbound Mail Items to ones sent to the provided Lockbox Address.
+    /// Filter Lockbox Recipients to those associated with the provided Lockbox Address.
     /// </summary>
     public string? LockboxAddressID
     {
@@ -100,36 +144,15 @@ public record class InboundMailItemListParams : ParamsBase
         }
     }
 
-    /// <summary>
-    /// Filter Inbound Mail Items to ones sent to the provided Lockbox Recipient.
-    /// </summary>
-    public string? LockboxRecipientID
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableClass<string>("lockbox_recipient_id");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawQueryData.Set("lockbox_recipient_id", value);
-        }
-    }
-
-    public InboundMailItemListParams() { }
+    public LockboxRecipientListParams() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public InboundMailItemListParams(InboundMailItemListParams inboundMailItemListParams)
-        : base(inboundMailItemListParams) { }
+    public LockboxRecipientListParams(LockboxRecipientListParams lockboxRecipientListParams)
+        : base(lockboxRecipientListParams) { }
 #pragma warning restore CS8618
 
-    public InboundMailItemListParams(
+    public LockboxRecipientListParams(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData
     )
@@ -140,7 +163,7 @@ public record class InboundMailItemListParams : ParamsBase
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    InboundMailItemListParams(
+    LockboxRecipientListParams(
         FrozenDictionary<string, JsonElement> rawHeaderData,
         FrozenDictionary<string, JsonElement> rawQueryData
     )
@@ -151,7 +174,7 @@ public record class InboundMailItemListParams : ParamsBase
 #pragma warning restore CS8618
 
     /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
-    public static InboundMailItemListParams FromRawUnchecked(
+    public static LockboxRecipientListParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData
     )
@@ -178,7 +201,7 @@ public record class InboundMailItemListParams : ParamsBase
             ModelBase.ToStringSerializerOptions
         );
 
-    public virtual bool Equals(InboundMailItemListParams? other)
+    public virtual bool Equals(LockboxRecipientListParams? other)
     {
         if (other == null)
         {
@@ -190,7 +213,7 @@ public record class InboundMailItemListParams : ParamsBase
 
     public override Uri Url(ClientOptions options)
     {
-        return new UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/inbound_mail_items")
+        return new UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/lockbox_recipients")
         {
             Query = this.QueryString(options),
         }.Uri;

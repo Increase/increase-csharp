@@ -9,16 +9,16 @@ using Increase.Api.Core;
 using Increase.Api.Exceptions;
 using System = System;
 
-namespace Increase.Api.Models.Lockboxes;
+namespace Increase.Api.Models.LockboxRecipients;
 
 /// <summary>
-/// Update a Lockbox
+/// Update a Lockbox Recipient
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
 /// </summary>
-public record class LockboxUpdateParams : ParamsBase
+public record class LockboxRecipientUpdateParams : ParamsBase
 {
     readonly JsonDictionary _rawBodyData = new();
     public IReadOnlyDictionary<string, JsonElement> RawBodyData
@@ -26,33 +26,10 @@ public record class LockboxUpdateParams : ParamsBase
         get { return this._rawBodyData.Freeze(); }
     }
 
-    public string? LockboxID { get; init; }
+    public string? LockboxRecipientID { get; init; }
 
     /// <summary>
-    /// This indicates if checks mailed to this lockbox will be deposited.
-    /// </summary>
-    public ApiEnum<string, CheckDepositBehavior>? CheckDepositBehavior
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<ApiEnum<string, CheckDepositBehavior>>(
-                "check_deposit_behavior"
-            );
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawBodyData.Set("check_deposit_behavior", value);
-        }
-    }
-
-    /// <summary>
-    /// The description you choose for the Lockbox.
+    /// The description you choose for the Lockbox Recipient.
     /// </summary>
     public string? Description
     {
@@ -73,7 +50,7 @@ public record class LockboxUpdateParams : ParamsBase
     }
 
     /// <summary>
-    /// The recipient name you choose for the Lockbox.
+    /// The name of the Lockbox Recipient.
     /// </summary>
     public string? RecipientName
     {
@@ -93,20 +70,41 @@ public record class LockboxUpdateParams : ParamsBase
         }
     }
 
-    public LockboxUpdateParams() { }
+    /// <summary>
+    /// The status of the Lockbox Recipient.
+    /// </summary>
+    public ApiEnum<string, Status>? Status
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<ApiEnum<string, Status>>("status");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("status", value);
+        }
+    }
+
+    public LockboxRecipientUpdateParams() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public LockboxUpdateParams(LockboxUpdateParams lockboxUpdateParams)
-        : base(lockboxUpdateParams)
+    public LockboxRecipientUpdateParams(LockboxRecipientUpdateParams lockboxRecipientUpdateParams)
+        : base(lockboxRecipientUpdateParams)
     {
-        this.LockboxID = lockboxUpdateParams.LockboxID;
+        this.LockboxRecipientID = lockboxRecipientUpdateParams.LockboxRecipientID;
 
-        this._rawBodyData = new(lockboxUpdateParams._rawBodyData);
+        this._rawBodyData = new(lockboxRecipientUpdateParams._rawBodyData);
     }
 #pragma warning restore CS8618
 
-    public LockboxUpdateParams(
+    public LockboxRecipientUpdateParams(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
         IReadOnlyDictionary<string, JsonElement> rawBodyData
@@ -119,33 +117,33 @@ public record class LockboxUpdateParams : ParamsBase
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    LockboxUpdateParams(
+    LockboxRecipientUpdateParams(
         FrozenDictionary<string, JsonElement> rawHeaderData,
         FrozenDictionary<string, JsonElement> rawQueryData,
         FrozenDictionary<string, JsonElement> rawBodyData,
-        string lockboxID
+        string lockboxRecipientID
     )
     {
         this._rawHeaderData = new(rawHeaderData);
         this._rawQueryData = new(rawQueryData);
         this._rawBodyData = new(rawBodyData);
-        this.LockboxID = lockboxID;
+        this.LockboxRecipientID = lockboxRecipientID;
     }
 #pragma warning restore CS8618
 
     /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
-    public static LockboxUpdateParams FromRawUnchecked(
+    public static LockboxRecipientUpdateParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
         IReadOnlyDictionary<string, JsonElement> rawBodyData,
-        string lockboxID
+        string lockboxRecipientID
     )
     {
         return new(
             FrozenDictionary.ToFrozenDictionary(rawHeaderData),
             FrozenDictionary.ToFrozenDictionary(rawQueryData),
             FrozenDictionary.ToFrozenDictionary(rawBodyData),
-            lockboxID
+            lockboxRecipientID
         );
     }
 
@@ -154,7 +152,9 @@ public record class LockboxUpdateParams : ParamsBase
             FriendlyJsonPrinter.PrintValue(
                 new Dictionary<string, JsonElement>()
                 {
-                    ["LockboxID"] = JsonSerializer.SerializeToElement(this.LockboxID),
+                    ["LockboxRecipientID"] = JsonSerializer.SerializeToElement(
+                        this.LockboxRecipientID
+                    ),
                     ["HeaderData"] = FriendlyJsonPrinter.PrintValue(
                         JsonSerializer.SerializeToElement(this._rawHeaderData.Freeze())
                     ),
@@ -167,13 +167,16 @@ public record class LockboxUpdateParams : ParamsBase
             ModelBase.ToStringSerializerOptions
         );
 
-    public virtual bool Equals(LockboxUpdateParams? other)
+    public virtual bool Equals(LockboxRecipientUpdateParams? other)
     {
         if (other == null)
         {
             return false;
         }
-        return (this.LockboxID?.Equals(other.LockboxID) ?? other.LockboxID == null)
+        return (
+                this.LockboxRecipientID?.Equals(other.LockboxRecipientID)
+                ?? other.LockboxRecipientID == null
+            )
             && this._rawHeaderData.Equals(other._rawHeaderData)
             && this._rawQueryData.Equals(other._rawQueryData)
             && this._rawBodyData.Equals(other._rawBodyData);
@@ -183,7 +186,7 @@ public record class LockboxUpdateParams : ParamsBase
     {
         return new System::UriBuilder(
             options.BaseUrl.ToString().TrimEnd('/')
-                + string.Format("/lockboxes/{0}", this.LockboxID)
+                + string.Format("/lockbox_recipients/{0}", this.LockboxRecipientID)
         )
         {
             Query = this.QueryString(options),
@@ -215,30 +218,32 @@ public record class LockboxUpdateParams : ParamsBase
 }
 
 /// <summary>
-/// This indicates if checks mailed to this lockbox will be deposited.
+/// The status of the Lockbox Recipient.
 /// </summary>
-[JsonConverter(typeof(CheckDepositBehaviorConverter))]
-public enum CheckDepositBehavior
+[JsonConverter(typeof(StatusConverter))]
+public enum Status
 {
     /// <summary>
-    /// Checks mailed to this Lockbox will be deposited.
+    /// This Lockbox Recipient is active.
     /// </summary>
-    Enabled,
+    Active,
 
     /// <summary>
-    /// Checks mailed to this Lockbox will not be deposited.
+    /// This Lockbox Recipient is disabled. Checks mailed to this Lockbox Recipient
+    /// will be rejected.
     /// </summary>
     Disabled,
 
     /// <summary>
-    /// Checks mailed to this Lockbox will be pending until actioned.
+    /// This Lockbox Recipient is canceled and cannot be modified. Checks mailed to
+    /// this Lockbox Recipient will be rejected.
     /// </summary>
-    PendForProcessing,
+    Canceled,
 }
 
-sealed class CheckDepositBehaviorConverter : JsonConverter<CheckDepositBehavior>
+sealed class StatusConverter : JsonConverter<Status>
 {
-    public override CheckDepositBehavior Read(
+    public override Status Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -246,26 +251,22 @@ sealed class CheckDepositBehaviorConverter : JsonConverter<CheckDepositBehavior>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "enabled" => CheckDepositBehavior.Enabled,
-            "disabled" => CheckDepositBehavior.Disabled,
-            "pend_for_processing" => CheckDepositBehavior.PendForProcessing,
-            _ => (CheckDepositBehavior)(-1),
+            "active" => Status.Active,
+            "disabled" => Status.Disabled,
+            "canceled" => Status.Canceled,
+            _ => (Status)(-1),
         };
     }
 
-    public override void Write(
-        Utf8JsonWriter writer,
-        CheckDepositBehavior value,
-        JsonSerializerOptions options
-    )
+    public override void Write(Utf8JsonWriter writer, Status value, JsonSerializerOptions options)
     {
         JsonSerializer.Serialize(
             writer,
             value switch
             {
-                CheckDepositBehavior.Enabled => "enabled",
-                CheckDepositBehavior.Disabled => "disabled",
-                CheckDepositBehavior.PendForProcessing => "pend_for_processing",
+                Status.Active => "active",
+                Status.Disabled => "disabled",
+                Status.Canceled => "canceled",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
