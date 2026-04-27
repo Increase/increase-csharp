@@ -2220,6 +2220,7 @@ public class RouteTest : TestBase
     [Theory]
     [InlineData(CardPushTransfers::Route.Visa)]
     [InlineData(CardPushTransfers::Route.Mastercard)]
+    [InlineData(CardPushTransfers::Route.Pulse)]
     public void Validation_Works(CardPushTransfers::Route rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2242,6 +2243,7 @@ public class RouteTest : TestBase
     [Theory]
     [InlineData(CardPushTransfers::Route.Visa)]
     [InlineData(CardPushTransfers::Route.Mastercard)]
+    [InlineData(CardPushTransfers::Route.Pulse)]
     public void SerializationRoundtrip_Works(CardPushTransfers::Route rawValue)
     {
         // force implicit conversion because Theory can't do that for us
