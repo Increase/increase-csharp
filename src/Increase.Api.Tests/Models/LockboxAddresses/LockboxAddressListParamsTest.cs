@@ -1,18 +1,17 @@
 using System;
 using System.Text.Json;
 using Increase.Api.Core;
-using Increase.Api.Models.Lockboxes;
+using Increase.Api.Models.LockboxAddresses;
 
-namespace Increase.Api.Tests.Models.Lockboxes;
+namespace Increase.Api.Tests.Models.LockboxAddresses;
 
-public class LockboxListParamsTest : TestBase
+public class LockboxAddressListParamsTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var parameters = new LockboxListParams
+        var parameters = new LockboxAddressListParams
         {
-            AccountID = "account_id",
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -25,7 +24,6 @@ public class LockboxListParamsTest : TestBase
             Limit = 1,
         };
 
-        string expectedAccountID = "account_id";
         CreatedAt expectedCreatedAt = new()
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -37,7 +35,6 @@ public class LockboxListParamsTest : TestBase
         string expectedIdempotencyKey = "x";
         long expectedLimit = 1;
 
-        Assert.Equal(expectedAccountID, parameters.AccountID);
         Assert.Equal(expectedCreatedAt, parameters.CreatedAt);
         Assert.Equal(expectedCursor, parameters.Cursor);
         Assert.Equal(expectedIdempotencyKey, parameters.IdempotencyKey);
@@ -47,10 +44,8 @@ public class LockboxListParamsTest : TestBase
     [Fact]
     public void OptionalNonNullableParamsUnsetAreNotSet_Works()
     {
-        var parameters = new LockboxListParams { };
+        var parameters = new LockboxAddressListParams { };
 
-        Assert.Null(parameters.AccountID);
-        Assert.False(parameters.RawQueryData.ContainsKey("account_id"));
         Assert.Null(parameters.CreatedAt);
         Assert.False(parameters.RawQueryData.ContainsKey("created_at"));
         Assert.Null(parameters.Cursor);
@@ -64,18 +59,15 @@ public class LockboxListParamsTest : TestBase
     [Fact]
     public void OptionalNonNullableParamsSetToNullAreNotSet_Works()
     {
-        var parameters = new LockboxListParams
+        var parameters = new LockboxAddressListParams
         {
             // Null should be interpreted as omitted for these properties
-            AccountID = null,
             CreatedAt = null,
             Cursor = null,
             IdempotencyKey = null,
             Limit = null,
         };
 
-        Assert.Null(parameters.AccountID);
-        Assert.False(parameters.RawQueryData.ContainsKey("account_id"));
         Assert.Null(parameters.CreatedAt);
         Assert.False(parameters.RawQueryData.ContainsKey("created_at"));
         Assert.Null(parameters.Cursor);
@@ -89,9 +81,8 @@ public class LockboxListParamsTest : TestBase
     [Fact]
     public void Url_Works()
     {
-        LockboxListParams parameters = new()
+        LockboxAddressListParams parameters = new()
         {
-            AccountID = "account_id",
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
@@ -109,7 +100,7 @@ public class LockboxListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.increase.com/lockboxes?account_id=account_id&created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&idempotency_key=x&limit=1"
+                    "https://api.increase.com/lockbox_addresses?created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&idempotency_key=x&limit=1"
                 ),
                 url
             )
@@ -119,9 +110,8 @@ public class LockboxListParamsTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var parameters = new LockboxListParams
+        var parameters = new LockboxAddressListParams
         {
-            AccountID = "account_id",
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -134,7 +124,7 @@ public class LockboxListParamsTest : TestBase
             Limit = 1,
         };
 
-        LockboxListParams copied = new(parameters);
+        LockboxAddressListParams copied = new(parameters);
 
         Assert.Equal(parameters, copied);
     }

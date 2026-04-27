@@ -253,10 +253,16 @@ public sealed class IncreaseClient : IIncreaseClient
         get { return _checkDeposits.Value; }
     }
 
-    readonly Lazy<ILockboxService> _lockboxes;
-    public ILockboxService Lockboxes
+    readonly Lazy<ILockboxAddressService> _lockboxAddresses;
+    public ILockboxAddressService LockboxAddresses
     {
-        get { return _lockboxes.Value; }
+        get { return _lockboxAddresses.Value; }
+    }
+
+    readonly Lazy<ILockboxRecipientService> _lockboxRecipients;
+    public ILockboxRecipientService LockboxRecipients
+    {
+        get { return _lockboxRecipients.Value; }
     }
 
     readonly Lazy<IInboundMailItemService> _inboundMailItems;
@@ -453,7 +459,8 @@ public sealed class IncreaseClient : IIncreaseClient
         _inboundFednowTransfers = new(() => new InboundFednowTransferService(this));
         _swiftTransfers = new(() => new SwiftTransferService(this));
         _checkDeposits = new(() => new CheckDepositService(this));
-        _lockboxes = new(() => new LockboxService(this));
+        _lockboxAddresses = new(() => new LockboxAddressService(this));
+        _lockboxRecipients = new(() => new LockboxRecipientService(this));
         _inboundMailItems = new(() => new InboundMailItemService(this));
         _routingNumbers = new(() => new RoutingNumberService(this));
         _externalAccounts = new(() => new ExternalAccountService(this));
@@ -736,10 +743,16 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
         get { return _checkDeposits.Value; }
     }
 
-    readonly Lazy<ILockboxServiceWithRawResponse> _lockboxes;
-    public ILockboxServiceWithRawResponse Lockboxes
+    readonly Lazy<ILockboxAddressServiceWithRawResponse> _lockboxAddresses;
+    public ILockboxAddressServiceWithRawResponse LockboxAddresses
     {
-        get { return _lockboxes.Value; }
+        get { return _lockboxAddresses.Value; }
+    }
+
+    readonly Lazy<ILockboxRecipientServiceWithRawResponse> _lockboxRecipients;
+    public ILockboxRecipientServiceWithRawResponse LockboxRecipients
+    {
+        get { return _lockboxRecipients.Value; }
     }
 
     readonly Lazy<IInboundMailItemServiceWithRawResponse> _inboundMailItems;
@@ -1144,7 +1157,8 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
         _inboundFednowTransfers = new(() => new InboundFednowTransferServiceWithRawResponse(this));
         _swiftTransfers = new(() => new SwiftTransferServiceWithRawResponse(this));
         _checkDeposits = new(() => new CheckDepositServiceWithRawResponse(this));
-        _lockboxes = new(() => new LockboxServiceWithRawResponse(this));
+        _lockboxAddresses = new(() => new LockboxAddressServiceWithRawResponse(this));
+        _lockboxRecipients = new(() => new LockboxRecipientServiceWithRawResponse(this));
         _inboundMailItems = new(() => new InboundMailItemServiceWithRawResponse(this));
         _routingNumbers = new(() => new RoutingNumberServiceWithRawResponse(this));
         _externalAccounts = new(() => new ExternalAccountServiceWithRawResponse(this));

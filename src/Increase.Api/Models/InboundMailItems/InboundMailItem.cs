@@ -11,7 +11,7 @@ using System = System;
 namespace Increase.Api.Models.InboundMailItems;
 
 /// <summary>
-/// Inbound Mail Items represent pieces of physical mail delivered to a Lockbox.
+/// Inbound Mail Items represent pieces of physical mail delivered to a Lockbox Address.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<InboundMailItem, InboundMailItemFromRaw>))]
 public sealed record class InboundMailItem : JsonModel
@@ -76,17 +76,30 @@ public sealed record class InboundMailItem : JsonModel
     }
 
     /// <summary>
-    /// The identifier for the Lockbox that received this mail item. For mail items
-    /// that could not be processed due to an invalid address, this will be null.
+    /// The identifier for the Lockbox Address that received this mail item.
     /// </summary>
-    public required string? LockboxID
+    public required string? LockboxAddressID
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("lockbox_id");
+            return this._rawData.GetNullableClass<string>("lockbox_address_id");
         }
-        init { this._rawData.Set("lockbox_id", value); }
+        init { this._rawData.Set("lockbox_address_id", value); }
+    }
+
+    /// <summary>
+    /// The identifier for the Lockbox Recipient that received this mail item. For
+    /// mail items that could not be routed to a Lockbox Recipient, this will be null.
+    /// </summary>
+    public required string? LockboxRecipientID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("lockbox_recipient_id");
+        }
+        init { this._rawData.Set("lockbox_recipient_id", value); }
     }
 
     /// <summary>
@@ -156,7 +169,8 @@ public sealed record class InboundMailItem : JsonModel
         }
         _ = this.CreatedAt;
         _ = this.FileID;
-        _ = this.LockboxID;
+        _ = this.LockboxAddressID;
+        _ = this.LockboxRecipientID;
         _ = this.RecipientName;
         this.RejectionReason?.Validate();
         this.Status.Validate();
@@ -394,6 +408,16 @@ public enum RejectionReason
     /// The Lockbox or its associated Account is not active.
     /// </summary>
     LockboxNotActive,
+
+    /// <summary>
+    /// The Lockbox Address is not active.
+    /// </summary>
+    LockboxAddressNotActive,
+
+    /// <summary>
+    /// The Lockbox Recipient or its associated Account is not active.
+    /// </summary>
+    LockboxRecipientNotActive,
 }
 
 sealed class RejectionReasonConverter : JsonConverter<RejectionReason>
@@ -409,6 +433,8 @@ sealed class RejectionReasonConverter : JsonConverter<RejectionReason>
             "no_matching_lockbox" => RejectionReason.NoMatchingLockbox,
             "no_check" => RejectionReason.NoCheck,
             "lockbox_not_active" => RejectionReason.LockboxNotActive,
+            "lockbox_address_not_active" => RejectionReason.LockboxAddressNotActive,
+            "lockbox_recipient_not_active" => RejectionReason.LockboxRecipientNotActive,
             _ => (RejectionReason)(-1),
         };
     }
@@ -426,6 +452,8 @@ sealed class RejectionReasonConverter : JsonConverter<RejectionReason>
                 RejectionReason.NoMatchingLockbox => "no_matching_lockbox",
                 RejectionReason.NoCheck => "no_check",
                 RejectionReason.LockboxNotActive => "lockbox_not_active",
+                RejectionReason.LockboxAddressNotActive => "lockbox_address_not_active",
+                RejectionReason.LockboxRecipientNotActive => "lockbox_recipient_not_active",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

@@ -7,38 +7,17 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Increase.Api.Core;
 
-namespace Increase.Api.Models.Lockboxes;
+namespace Increase.Api.Models.LockboxAddresses;
 
 /// <summary>
-/// List Lockboxes
+/// List Lockbox Addresses
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
 /// </summary>
-public record class LockboxListParams : ParamsBase
+public record class LockboxAddressListParams : ParamsBase
 {
-    /// <summary>
-    /// Filter Lockboxes to those associated with the provided Account.
-    /// </summary>
-    public string? AccountID
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableClass<string>("account_id");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawQueryData.Set("account_id", value);
-        }
-    }
-
     public CreatedAt? CreatedAt
     {
         get
@@ -123,15 +102,15 @@ public record class LockboxListParams : ParamsBase
         }
     }
 
-    public LockboxListParams() { }
+    public LockboxAddressListParams() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public LockboxListParams(LockboxListParams lockboxListParams)
-        : base(lockboxListParams) { }
+    public LockboxAddressListParams(LockboxAddressListParams lockboxAddressListParams)
+        : base(lockboxAddressListParams) { }
 #pragma warning restore CS8618
 
-    public LockboxListParams(
+    public LockboxAddressListParams(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData
     )
@@ -142,7 +121,7 @@ public record class LockboxListParams : ParamsBase
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    LockboxListParams(
+    LockboxAddressListParams(
         FrozenDictionary<string, JsonElement> rawHeaderData,
         FrozenDictionary<string, JsonElement> rawQueryData
     )
@@ -153,7 +132,7 @@ public record class LockboxListParams : ParamsBase
 #pragma warning restore CS8618
 
     /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
-    public static LockboxListParams FromRawUnchecked(
+    public static LockboxAddressListParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData
     )
@@ -180,7 +159,7 @@ public record class LockboxListParams : ParamsBase
             ModelBase.ToStringSerializerOptions
         );
 
-    public virtual bool Equals(LockboxListParams? other)
+    public virtual bool Equals(LockboxAddressListParams? other)
     {
         if (other == null)
         {
@@ -192,7 +171,7 @@ public record class LockboxListParams : ParamsBase
 
     public override Uri Url(ClientOptions options)
     {
-        return new UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/lockboxes")
+        return new UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/lockbox_addresses")
         {
             Query = this.QueryString(options),
         }.Uri;
