@@ -507,12 +507,6 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.IntrafiExclusionUpdated
     )]
     [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LegacyCardDisputeCreated
-    )]
-    [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LegacyCardDisputeUpdated
-    )]
-    [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated
     )]
     [InlineData(
@@ -859,12 +853,6 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.IntrafiExclusionUpdated
-    )]
-    [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LegacyCardDisputeCreated
-    )]
-    [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LegacyCardDisputeUpdated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated
