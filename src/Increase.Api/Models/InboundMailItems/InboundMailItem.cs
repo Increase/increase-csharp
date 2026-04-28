@@ -78,12 +78,12 @@ public sealed record class InboundMailItem : JsonModel
     /// <summary>
     /// The identifier for the Lockbox Address that received this mail item.
     /// </summary>
-    public required string? LockboxAddressID
+    public required string LockboxAddressID
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("lockbox_address_id");
+            return this._rawData.GetNotNullClass<string>("lockbox_address_id");
         }
         init { this._rawData.Set("lockbox_address_id", value); }
     }
