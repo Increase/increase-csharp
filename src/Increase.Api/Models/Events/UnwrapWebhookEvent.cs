@@ -511,16 +511,6 @@ public enum UnwrapWebhookEventCategory
     IntrafiExclusionUpdated,
 
     /// <summary>
-    /// Occurs whenever a Legacy Card Dispute is created.
-    /// </summary>
-    LegacyCardDisputeCreated,
-
-    /// <summary>
-    /// Occurs whenever a Legacy Card Dispute is updated.
-    /// </summary>
-    LegacyCardDisputeUpdated,
-
-    /// <summary>
     /// Occurs whenever a Lockbox is created.
     /// </summary>
     LockboxCreated,
@@ -808,8 +798,6 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                 UnwrapWebhookEventCategory.IntrafiAccountEnrollmentUpdated,
             "intrafi_exclusion.created" => UnwrapWebhookEventCategory.IntrafiExclusionCreated,
             "intrafi_exclusion.updated" => UnwrapWebhookEventCategory.IntrafiExclusionUpdated,
-            "legacy_card_dispute.created" => UnwrapWebhookEventCategory.LegacyCardDisputeCreated,
-            "legacy_card_dispute.updated" => UnwrapWebhookEventCategory.LegacyCardDisputeUpdated,
             "lockbox.created" => UnwrapWebhookEventCategory.LockboxCreated,
             "lockbox.updated" => UnwrapWebhookEventCategory.LockboxUpdated,
             "oauth_connection.created" => UnwrapWebhookEventCategory.OAuthConnectionCreated,
@@ -978,10 +966,6 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                     "intrafi_account_enrollment.updated",
                 UnwrapWebhookEventCategory.IntrafiExclusionCreated => "intrafi_exclusion.created",
                 UnwrapWebhookEventCategory.IntrafiExclusionUpdated => "intrafi_exclusion.updated",
-                UnwrapWebhookEventCategory.LegacyCardDisputeCreated =>
-                    "legacy_card_dispute.created",
-                UnwrapWebhookEventCategory.LegacyCardDisputeUpdated =>
-                    "legacy_card_dispute.updated",
                 UnwrapWebhookEventCategory.LockboxCreated => "lockbox.created",
                 UnwrapWebhookEventCategory.LockboxUpdated => "lockbox.updated",
                 UnwrapWebhookEventCategory.OAuthConnectionCreated => "oauth_connection.created",
