@@ -638,16 +638,6 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     IntrafiExclusionUpdated,
 
     /// <summary>
-    /// Occurs whenever a Legacy Card Dispute is created.
-    /// </summary>
-    LegacyCardDisputeCreated,
-
-    /// <summary>
-    /// Occurs whenever a Legacy Card Dispute is updated.
-    /// </summary>
-    LegacyCardDisputeUpdated,
-
-    /// <summary>
     /// Occurs whenever a Lockbox is created.
     /// </summary>
     LockboxCreated,
@@ -977,10 +967,6 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.IntrafiExclusionCreated,
             "intrafi_exclusion.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.IntrafiExclusionUpdated,
-            "legacy_card_dispute.created" =>
-                EventSubscriptionSelectedEventCategoryEventCategory.LegacyCardDisputeCreated,
-            "legacy_card_dispute.updated" =>
-                EventSubscriptionSelectedEventCategoryEventCategory.LegacyCardDisputeUpdated,
             "lockbox.created" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated,
             "lockbox.updated" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated,
             "oauth_connection.created" =>
@@ -1203,10 +1189,6 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "intrafi_exclusion.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.IntrafiExclusionUpdated =>
                     "intrafi_exclusion.updated",
-                EventSubscriptionSelectedEventCategoryEventCategory.LegacyCardDisputeCreated =>
-                    "legacy_card_dispute.created",
-                EventSubscriptionSelectedEventCategoryEventCategory.LegacyCardDisputeUpdated =>
-                    "legacy_card_dispute.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated =>
                     "lockbox.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated =>

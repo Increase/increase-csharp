@@ -660,16 +660,6 @@ public enum In
     IntrafiExclusionUpdated,
 
     /// <summary>
-    /// Occurs whenever a Legacy Card Dispute is created.
-    /// </summary>
-    LegacyCardDisputeCreated,
-
-    /// <summary>
-    /// Occurs whenever a Legacy Card Dispute is updated.
-    /// </summary>
-    LegacyCardDisputeUpdated,
-
-    /// <summary>
     /// Occurs whenever a Lockbox is created.
     /// </summary>
     LockboxCreated,
@@ -940,8 +930,6 @@ sealed class InConverter : JsonConverter<In>
             "intrafi_account_enrollment.updated" => In.IntrafiAccountEnrollmentUpdated,
             "intrafi_exclusion.created" => In.IntrafiExclusionCreated,
             "intrafi_exclusion.updated" => In.IntrafiExclusionUpdated,
-            "legacy_card_dispute.created" => In.LegacyCardDisputeCreated,
-            "legacy_card_dispute.updated" => In.LegacyCardDisputeUpdated,
             "lockbox.created" => In.LockboxCreated,
             "lockbox.updated" => In.LockboxUpdated,
             "oauth_connection.created" => In.OAuthConnectionCreated,
@@ -1070,8 +1058,6 @@ sealed class InConverter : JsonConverter<In>
                 In.IntrafiAccountEnrollmentUpdated => "intrafi_account_enrollment.updated",
                 In.IntrafiExclusionCreated => "intrafi_exclusion.created",
                 In.IntrafiExclusionUpdated => "intrafi_exclusion.updated",
-                In.LegacyCardDisputeCreated => "legacy_card_dispute.created",
-                In.LegacyCardDisputeUpdated => "legacy_card_dispute.updated",
                 In.LockboxCreated => "lockbox.created",
                 In.LockboxUpdated => "lockbox.updated",
                 In.OAuthConnectionCreated => "oauth_connection.created",
