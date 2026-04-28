@@ -29,6 +29,7 @@ public sealed class SimulationService : ISimulationService
 
         _withRawResponse = new(() => new SimulationServiceWithRawResponse(client.WithRawResponse));
         _interestPayments = new(() => new Simulations::InterestPaymentService(client));
+        _accountRevenuePayments = new(() => new Simulations::AccountRevenuePaymentService(client));
         _cardAuthorizations = new(() => new Simulations::CardAuthorizationService(client));
         _cardBalanceInquiries = new(() => new Simulations::CardBalanceInquiryService(client));
         _cardAuthorizationExpirations = new(() =>
@@ -81,6 +82,12 @@ public sealed class SimulationService : ISimulationService
     public Simulations::IInterestPaymentService InterestPayments
     {
         get { return _interestPayments.Value; }
+    }
+
+    readonly Lazy<Simulations::IAccountRevenuePaymentService> _accountRevenuePayments;
+    public Simulations::IAccountRevenuePaymentService AccountRevenuePayments
+    {
+        get { return _accountRevenuePayments.Value; }
     }
 
     readonly Lazy<Simulations::ICardAuthorizationService> _cardAuthorizations;
@@ -296,6 +303,9 @@ public sealed class SimulationServiceWithRawResponse : ISimulationServiceWithRaw
         _interestPayments = new(() =>
             new Simulations::InterestPaymentServiceWithRawResponse(client)
         );
+        _accountRevenuePayments = new(() =>
+            new Simulations::AccountRevenuePaymentServiceWithRawResponse(client)
+        );
         _cardAuthorizations = new(() =>
             new Simulations::CardAuthorizationServiceWithRawResponse(client)
         );
@@ -372,6 +382,12 @@ public sealed class SimulationServiceWithRawResponse : ISimulationServiceWithRaw
     public Simulations::IInterestPaymentServiceWithRawResponse InterestPayments
     {
         get { return _interestPayments.Value; }
+    }
+
+    readonly Lazy<Simulations::IAccountRevenuePaymentServiceWithRawResponse> _accountRevenuePayments;
+    public Simulations::IAccountRevenuePaymentServiceWithRawResponse AccountRevenuePayments
+    {
+        get { return _accountRevenuePayments.Value; }
     }
 
     readonly Lazy<Simulations::ICardAuthorizationServiceWithRawResponse> _cardAuthorizations;
