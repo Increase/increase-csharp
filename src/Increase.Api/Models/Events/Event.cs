@@ -343,11 +343,6 @@ public enum EventCategory
     DigitalWalletTokenUpdated,
 
     /// <summary>
-    /// Occurs whenever a Document is created.
-    /// </summary>
-    DocumentCreated,
-
-    /// <summary>
     /// Occurs whenever an Entity is created.
     /// </summary>
     EntityCreated,
@@ -744,7 +739,6 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
             "digital_card_profile.updated" => EventCategory.DigitalCardProfileUpdated,
             "digital_wallet_token.created" => EventCategory.DigitalWalletTokenCreated,
             "digital_wallet_token.updated" => EventCategory.DigitalWalletTokenUpdated,
-            "document.created" => EventCategory.DocumentCreated,
             "entity.created" => EventCategory.EntityCreated,
             "entity.updated" => EventCategory.EntityUpdated,
             "event_subscription.created" => EventCategory.EventSubscriptionCreated,
@@ -883,7 +877,6 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.DigitalCardProfileUpdated => "digital_card_profile.updated",
                 EventCategory.DigitalWalletTokenCreated => "digital_wallet_token.created",
                 EventCategory.DigitalWalletTokenUpdated => "digital_wallet_token.updated",
-                EventCategory.DocumentCreated => "document.created",
                 EventCategory.EntityCreated => "entity.created",
                 EventCategory.EntityUpdated => "entity.updated",
                 EventCategory.EventSubscriptionCreated => "event_subscription.created",

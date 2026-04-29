@@ -408,9 +408,6 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.DigitalWalletTokenUpdated
     )]
     [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.DocumentCreated
-    )]
-    [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.EntityCreated
     )]
     [InlineData(
@@ -754,9 +751,6 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.DigitalWalletTokenUpdated
-    )]
-    [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.DocumentCreated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.EntityCreated

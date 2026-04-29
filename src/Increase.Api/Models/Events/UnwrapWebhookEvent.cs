@@ -345,11 +345,6 @@ public enum UnwrapWebhookEventCategory
     DigitalWalletTokenUpdated,
 
     /// <summary>
-    /// Occurs whenever a Document is created.
-    /// </summary>
-    DocumentCreated,
-
-    /// <summary>
     /// Occurs whenever an Entity is created.
     /// </summary>
     EntityCreated,
@@ -752,7 +747,6 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
             "digital_card_profile.updated" => UnwrapWebhookEventCategory.DigitalCardProfileUpdated,
             "digital_wallet_token.created" => UnwrapWebhookEventCategory.DigitalWalletTokenCreated,
             "digital_wallet_token.updated" => UnwrapWebhookEventCategory.DigitalWalletTokenUpdated,
-            "document.created" => UnwrapWebhookEventCategory.DocumentCreated,
             "entity.created" => UnwrapWebhookEventCategory.EntityCreated,
             "entity.updated" => UnwrapWebhookEventCategory.EntityUpdated,
             "event_subscription.created" => UnwrapWebhookEventCategory.EventSubscriptionCreated,
@@ -918,7 +912,6 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                     "digital_wallet_token.created",
                 UnwrapWebhookEventCategory.DigitalWalletTokenUpdated =>
                     "digital_wallet_token.updated",
-                UnwrapWebhookEventCategory.DocumentCreated => "document.created",
                 UnwrapWebhookEventCategory.EntityCreated => "entity.created",
                 UnwrapWebhookEventCategory.EntityUpdated => "entity.updated",
                 UnwrapWebhookEventCategory.EventSubscriptionCreated => "event_subscription.created",
