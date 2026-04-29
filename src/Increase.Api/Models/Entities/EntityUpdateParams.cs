@@ -714,7 +714,8 @@ class EntityUpdateParamsCorporationAddressFromRaw
 public sealed record class EntityUpdateParamsCorporationLegalIdentifier : JsonModel
 {
     /// <summary>
-    /// The identifier of the legal identifier.
+    /// The identifier of the legal identifier. For US Employer Identification Numbers,
+    /// submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Value
     {
@@ -814,7 +815,7 @@ public enum EntityUpdateParamsCorporationLegalIdentifierCategory
 {
     /// <summary>
     /// The Employer Identification Number (EIN) for the company. The EIN is a 9-digit
-    /// number assigned by the IRS.
+    /// number assigned by the IRS; submit it as nine digits with no dashes or other separators.
     /// </summary>
     UsEmployerIdentificationNumber,
 
@@ -1456,7 +1457,8 @@ public sealed record class EntityUpdateParamsNaturalPersonIdentification : JsonM
 
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
-    /// such as a social security number.
+    /// such as a social security number. For Social Security Numbers and Individual
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {
