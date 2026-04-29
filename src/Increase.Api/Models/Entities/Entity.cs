@@ -1386,7 +1386,7 @@ public enum EntityCorporationLegalIdentifierCategory
 {
     /// <summary>
     /// The Employer Identification Number (EIN) for the company. The EIN is a 9-digit
-    /// number assigned by the IRS.
+    /// number assigned by the IRS; submit it as nine digits with no dashes or other separators.
     /// </summary>
     UsEmployerIdentificationNumber,
 

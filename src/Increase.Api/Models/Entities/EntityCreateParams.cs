@@ -1257,7 +1257,8 @@ public sealed record class Identification : JsonModel
 
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
-    /// such as a social security number.
+    /// such as a social security number. For Social Security Numbers and Individual
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {
@@ -1844,7 +1845,8 @@ sealed class ProngConverter : JsonConverter<Prong>
 public sealed record class LegalIdentifier : JsonModel
 {
     /// <summary>
-    /// The legal identifier.
+    /// The legal identifier. For US Employer Identification Numbers, submit nine
+    /// digits with no dashes or other separators.
     /// </summary>
     public required string Value
     {
@@ -1934,7 +1936,7 @@ public enum Category
 {
     /// <summary>
     /// The Employer Identification Number (EIN) for the company. The EIN is a 9-digit
-    /// number assigned by the IRS.
+    /// number assigned by the IRS; submit it as nine digits with no dashes or other separators.
     /// </summary>
     UsEmployerIdentificationNumber,
 
@@ -2125,7 +2127,8 @@ public sealed record class GovernmentAuthority : JsonModel
     }
 
     /// <summary>
-    /// The Employer Identification Number (EIN) for the government authority.
+    /// The Employer Identification Number (EIN) for the government authority. Submit
+    /// nine digits with no dashes or other separators.
     /// </summary>
     public required string TaxIdentifier
     {
@@ -2858,7 +2861,8 @@ public sealed record class JointIndividualIdentification : JsonModel
 
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
-    /// such as a social security number.
+    /// such as a social security number. For Social Security Numbers and Individual
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {
@@ -3752,7 +3756,8 @@ public sealed record class NaturalPersonIdentification : JsonModel
 
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
-    /// such as a social security number.
+    /// such as a social security number. For Social Security Numbers and Individual
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {
@@ -4894,8 +4899,8 @@ public sealed record class Trust : JsonModel
     }
 
     /// <summary>
-    /// The Employer Identification Number (EIN) for the trust. Required if `category`
-    /// is equal to `irrevocable`.
+    /// The Employer Identification Number (EIN) for the trust. Submit nine digits
+    /// with no dashes or other separators. Required if `category` is equal to `irrevocable`.
     /// </summary>
     public string? TaxIdentifier
     {
@@ -5601,7 +5606,8 @@ public sealed record class TrusteeIndividualIdentification : JsonModel
 
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
-    /// such as a social security number.
+    /// such as a social security number. For Social Security Numbers and Individual
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {
@@ -6489,7 +6495,8 @@ public sealed record class GrantorIdentification : JsonModel
 
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
-    /// such as a social security number.
+    /// such as a social security number. For Social Security Numbers and Individual
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {
