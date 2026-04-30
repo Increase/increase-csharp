@@ -83,9 +83,9 @@ public interface IIncreaseClient : IDisposable
 
     IAchTransferService AchTransfers { get; }
 
-    IAchPrenotificationService AchPrenotifications { get; }
-
     IInboundAchTransferService InboundAchTransfers { get; }
+
+    IAchPrenotificationService AchPrenotifications { get; }
 
     IWireTransferService WireTransfers { get; }
 
@@ -229,9 +229,9 @@ public interface IIncreaseClientWithRawResponse : IDisposable
 
     IAchTransferServiceWithRawResponse AchTransfers { get; }
 
-    IAchPrenotificationServiceWithRawResponse AchPrenotifications { get; }
-
     IInboundAchTransferServiceWithRawResponse InboundAchTransfers { get; }
+
+    IAchPrenotificationServiceWithRawResponse AchPrenotifications { get; }
 
     IWireTransferServiceWithRawResponse WireTransfers { get; }
 

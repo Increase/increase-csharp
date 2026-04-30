@@ -1135,20 +1135,6 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, AchTransfers::StandardEntryClassCode>(),
             new ApiEnumConverter<string, AchTransfers::TransactionTiming>(),
             new ApiEnumConverter<string, AchTransfers::In>(),
-            new ApiEnumConverter<
-                string,
-                AchPrenotifications::AchPrenotificationCreditDebitIndicator
-            >(),
-            new ApiEnumConverter<string, AchPrenotifications::ChangeCode>(),
-            new ApiEnumConverter<string, AchPrenotifications::ReturnReasonCode>(),
-            new ApiEnumConverter<
-                string,
-                AchPrenotifications::AchPrenotificationStandardEntryClassCode
-            >(),
-            new ApiEnumConverter<string, AchPrenotifications::Status>(),
-            new ApiEnumConverter<string, AchPrenotifications::Type>(),
-            new ApiEnumConverter<string, AchPrenotifications::CreditDebitIndicator>(),
-            new ApiEnumConverter<string, AchPrenotifications::StandardEntryClassCode>(),
             new ApiEnumConverter<string, InboundAchTransfers::Category>(),
             new ApiEnumConverter<string, InboundAchTransfers::DeclineReason>(),
             new ApiEnumConverter<string, InboundAchTransfers::Direction>(),
@@ -1174,6 +1160,20 @@ public abstract record class ModelBase
                 string,
                 InboundAchTransfers::InboundAchTransferTransferReturnParamsReason
             >(),
+            new ApiEnumConverter<
+                string,
+                AchPrenotifications::AchPrenotificationCreditDebitIndicator
+            >(),
+            new ApiEnumConverter<string, AchPrenotifications::ChangeCode>(),
+            new ApiEnumConverter<string, AchPrenotifications::ReturnReasonCode>(),
+            new ApiEnumConverter<
+                string,
+                AchPrenotifications::AchPrenotificationStandardEntryClassCode
+            >(),
+            new ApiEnumConverter<string, AchPrenotifications::Status>(),
+            new ApiEnumConverter<string, AchPrenotifications::Type>(),
+            new ApiEnumConverter<string, AchPrenotifications::CreditDebitIndicator>(),
+            new ApiEnumConverter<string, AchPrenotifications::StandardEntryClassCode>(),
             new ApiEnumConverter<string, WireTransfers::CreatedByCategory>(),
             new ApiEnumConverter<string, WireTransfers::Currency>(),
             new ApiEnumConverter<string, WireTransfers::Network>(),
