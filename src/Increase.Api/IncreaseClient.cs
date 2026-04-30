@@ -169,16 +169,16 @@ public sealed class IncreaseClient : IIncreaseClient
         get { return _achTransfers.Value; }
     }
 
-    readonly Lazy<IAchPrenotificationService> _achPrenotifications;
-    public IAchPrenotificationService AchPrenotifications
-    {
-        get { return _achPrenotifications.Value; }
-    }
-
     readonly Lazy<IInboundAchTransferService> _inboundAchTransfers;
     public IInboundAchTransferService InboundAchTransfers
     {
         get { return _inboundAchTransfers.Value; }
+    }
+
+    readonly Lazy<IAchPrenotificationService> _achPrenotifications;
+    public IAchPrenotificationService AchPrenotifications
+    {
+        get { return _achPrenotifications.Value; }
     }
 
     readonly Lazy<IWireTransferService> _wireTransfers;
@@ -443,8 +443,8 @@ public sealed class IncreaseClient : IIncreaseClient
         _pendingTransactions = new(() => new PendingTransactionService(this));
         _declinedTransactions = new(() => new DeclinedTransactionService(this));
         _achTransfers = new(() => new AchTransferService(this));
-        _achPrenotifications = new(() => new AchPrenotificationService(this));
         _inboundAchTransfers = new(() => new InboundAchTransferService(this));
+        _achPrenotifications = new(() => new AchPrenotificationService(this));
         _wireTransfers = new(() => new WireTransferService(this));
         _inboundWireTransfers = new(() => new InboundWireTransferService(this));
         _wireDrawdownRequests = new(() => new WireDrawdownRequestService(this));
@@ -659,16 +659,16 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
         get { return _achTransfers.Value; }
     }
 
-    readonly Lazy<IAchPrenotificationServiceWithRawResponse> _achPrenotifications;
-    public IAchPrenotificationServiceWithRawResponse AchPrenotifications
-    {
-        get { return _achPrenotifications.Value; }
-    }
-
     readonly Lazy<IInboundAchTransferServiceWithRawResponse> _inboundAchTransfers;
     public IInboundAchTransferServiceWithRawResponse InboundAchTransfers
     {
         get { return _inboundAchTransfers.Value; }
+    }
+
+    readonly Lazy<IAchPrenotificationServiceWithRawResponse> _achPrenotifications;
+    public IAchPrenotificationServiceWithRawResponse AchPrenotifications
+    {
+        get { return _achPrenotifications.Value; }
     }
 
     readonly Lazy<IWireTransferServiceWithRawResponse> _wireTransfers;
@@ -1137,8 +1137,8 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
         _pendingTransactions = new(() => new PendingTransactionServiceWithRawResponse(this));
         _declinedTransactions = new(() => new DeclinedTransactionServiceWithRawResponse(this));
         _achTransfers = new(() => new AchTransferServiceWithRawResponse(this));
-        _achPrenotifications = new(() => new AchPrenotificationServiceWithRawResponse(this));
         _inboundAchTransfers = new(() => new InboundAchTransferServiceWithRawResponse(this));
+        _achPrenotifications = new(() => new AchPrenotificationServiceWithRawResponse(this));
         _wireTransfers = new(() => new WireTransferServiceWithRawResponse(this));
         _inboundWireTransfers = new(() => new InboundWireTransferServiceWithRawResponse(this));
         _wireDrawdownRequests = new(() => new WireDrawdownRequestServiceWithRawResponse(this));
