@@ -69,6 +69,7 @@ public sealed class SimulationService : ISimulationService
         _inboundFednowTransfers = new(() => new Simulations::InboundFednowTransferService(client));
         _checkDeposits = new(() => new Simulations::CheckDepositService(client));
         _inboundMailItems = new(() => new Simulations::InboundMailItemService(client));
+        _entities = new(() => new Simulations::EntityService(client));
         _entityOnboardingSessions = new(() =>
             new Simulations::EntityOnboardingSessionService(client)
         );
@@ -252,6 +253,12 @@ public sealed class SimulationService : ISimulationService
         get { return _inboundMailItems.Value; }
     }
 
+    readonly Lazy<Simulations::IEntityService> _entities;
+    public Simulations::IEntityService Entities
+    {
+        get { return _entities.Value; }
+    }
+
     readonly Lazy<Simulations::IEntityOnboardingSessionService> _entityOnboardingSessions;
     public Simulations::IEntityOnboardingSessionService EntityOnboardingSessions
     {
@@ -367,6 +374,7 @@ public sealed class SimulationServiceWithRawResponse : ISimulationServiceWithRaw
         _inboundMailItems = new(() =>
             new Simulations::InboundMailItemServiceWithRawResponse(client)
         );
+        _entities = new(() => new Simulations::EntityServiceWithRawResponse(client));
         _entityOnboardingSessions = new(() =>
             new Simulations::EntityOnboardingSessionServiceWithRawResponse(client)
         );
@@ -550,6 +558,12 @@ public sealed class SimulationServiceWithRawResponse : ISimulationServiceWithRaw
     public Simulations::IInboundMailItemServiceWithRawResponse InboundMailItems
     {
         get { return _inboundMailItems.Value; }
+    }
+
+    readonly Lazy<Simulations::IEntityServiceWithRawResponse> _entities;
+    public Simulations::IEntityServiceWithRawResponse Entities
+    {
+        get { return _entities.Value; }
     }
 
     readonly Lazy<Simulations::IEntityOnboardingSessionServiceWithRawResponse> _entityOnboardingSessions;
