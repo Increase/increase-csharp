@@ -28,8 +28,8 @@ public interface IInboundMailItemService
     IInboundMailItemService WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Simulates an inbound mail item to your account, as if someone had mailed a
-    /// physical check to one of your account's Lockboxes.
+    /// Simulates an Inbound Mail Item to one of your Lockbox Addresses or Lockbox
+    /// Recipients, as if someone had mailed a physical check.
     /// </summary>
     Task<InboundMailItem> Create(
         InboundMailItemCreateParams parameters,

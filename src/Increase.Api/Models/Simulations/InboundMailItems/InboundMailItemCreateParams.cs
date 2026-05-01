@@ -10,8 +10,8 @@ using Increase.Api.Core;
 namespace Increase.Api.Models.Simulations.InboundMailItems;
 
 /// <summary>
-/// Simulates an inbound mail item to your account, as if someone had mailed a physical
-/// check to one of your account's Lockboxes.
+/// Simulates an Inbound Mail Item to one of your Lockbox Addresses or Lockbox Recipients,
+/// as if someone had mailed a physical check.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
