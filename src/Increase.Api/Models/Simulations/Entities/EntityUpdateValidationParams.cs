@@ -13,15 +13,16 @@ using Increase.Api.Exceptions;
 namespace Increase.Api.Models.Simulations.Entities;
 
 /// <summary>
-/// Set the status for an [Entity's validation](/documentation/api/entities#entity-object.validation).
-/// In production, Know Your Customer validations [run automatically](/documentation/entity-validation#entity-validation).
-/// While developing, it can be helpful to override the behavior in Sandbox.
+/// Simulate updates to an [Entity's validation](/documentation/api/entities#entity-object.validation).
+/// In production, Know Your Customer validations [run automatically](/documentation/entity-validation#entity-validation)
+/// for eligible programs. While developing, use this API to simulate issues with
+/// information submissions.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
 /// cause existing derived classes to break.</para>
 /// </summary>
-public record class EntityValidationParams : ParamsBase
+public record class EntityUpdateValidationParams : ParamsBase
 {
     readonly JsonDictionary _rawBodyData = new();
     public IReadOnlyDictionary<string, JsonElement> RawBodyData
@@ -32,7 +33,8 @@ public record class EntityValidationParams : ParamsBase
     public string? EntityID { get; init; }
 
     /// <summary>
-    /// The validation issues to attach. Only allowed when `status` is `invalid`.
+    /// The validation issues to attach. If no issues are provided, the validation
+    /// status will be set to `valid`.
     /// </summary>
     public required IReadOnlyList<Issue> Issues
     {
@@ -50,33 +52,20 @@ public record class EntityValidationParams : ParamsBase
         }
     }
 
-    /// <summary>
-    /// The validation status to set on the Entity.
-    /// </summary>
-    public required ApiEnum<string, Status> Status
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNotNullClass<ApiEnum<string, Status>>("status");
-        }
-        init { this._rawBodyData.Set("status", value); }
-    }
-
-    public EntityValidationParams() { }
+    public EntityUpdateValidationParams() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public EntityValidationParams(EntityValidationParams entityValidationParams)
-        : base(entityValidationParams)
+    public EntityUpdateValidationParams(EntityUpdateValidationParams entityUpdateValidationParams)
+        : base(entityUpdateValidationParams)
     {
-        this.EntityID = entityValidationParams.EntityID;
+        this.EntityID = entityUpdateValidationParams.EntityID;
 
-        this._rawBodyData = new(entityValidationParams._rawBodyData);
+        this._rawBodyData = new(entityUpdateValidationParams._rawBodyData);
     }
 #pragma warning restore CS8618
 
-    public EntityValidationParams(
+    public EntityUpdateValidationParams(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
         IReadOnlyDictionary<string, JsonElement> rawBodyData
@@ -89,7 +78,7 @@ public record class EntityValidationParams : ParamsBase
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    EntityValidationParams(
+    EntityUpdateValidationParams(
         FrozenDictionary<string, JsonElement> rawHeaderData,
         FrozenDictionary<string, JsonElement> rawQueryData,
         FrozenDictionary<string, JsonElement> rawBodyData,
@@ -104,7 +93,7 @@ public record class EntityValidationParams : ParamsBase
 #pragma warning restore CS8618
 
     /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
-    public static EntityValidationParams FromRawUnchecked(
+    public static EntityUpdateValidationParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
         IReadOnlyDictionary<string, JsonElement> rawBodyData,
@@ -137,7 +126,7 @@ public record class EntityValidationParams : ParamsBase
             ModelBase.ToStringSerializerOptions
         );
 
-    public virtual bool Equals(EntityValidationParams? other)
+    public virtual bool Equals(EntityUpdateValidationParams? other)
     {
         if (other == null)
         {
@@ -153,7 +142,7 @@ public record class EntityValidationParams : ParamsBase
     {
         return new UriBuilder(
             options.BaseUrl.ToString().TrimEnd('/')
-                + string.Format("/simulations/entities/{0}/validation", this.EntityID)
+                + string.Format("/simulations/entities/{0}/update_validation", this.EntityID)
         )
         {
             Query = this.QueryString(options),
@@ -307,63 +296,6 @@ sealed class CategoryConverter : JsonConverter<Category>
                 Category.EntityAddress => "entity_address",
                 Category.BeneficialOwnerIdentity => "beneficial_owner_identity",
                 Category.BeneficialOwnerAddress => "beneficial_owner_address",
-                _ => throw new IncreaseInvalidDataException(
-                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
-                ),
-            },
-            options
-        );
-    }
-}
-
-/// <summary>
-/// The validation status to set on the Entity.
-/// </summary>
-[JsonConverter(typeof(StatusConverter))]
-public enum Status
-{
-    /// <summary>
-    /// The submitted data is valid.
-    /// </summary>
-    Valid,
-
-    /// <summary>
-    /// Additional information is required to validate the data.
-    /// </summary>
-    Invalid,
-
-    /// <summary>
-    /// The submitted data is being validated.
-    /// </summary>
-    Pending,
-}
-
-sealed class StatusConverter : JsonConverter<Status>
-{
-    public override Status Read(
-        ref Utf8JsonReader reader,
-        Type typeToConvert,
-        JsonSerializerOptions options
-    )
-    {
-        return JsonSerializer.Deserialize<string>(ref reader, options) switch
-        {
-            "valid" => Status.Valid,
-            "invalid" => Status.Invalid,
-            "pending" => Status.Pending,
-            _ => (Status)(-1),
-        };
-    }
-
-    public override void Write(Utf8JsonWriter writer, Status value, JsonSerializerOptions options)
-    {
-        JsonSerializer.Serialize(
-            writer,
-            value switch
-            {
-                Status.Valid => "valid",
-                Status.Invalid => "invalid",
-                Status.Pending => "pending",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

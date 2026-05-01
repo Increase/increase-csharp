@@ -28,21 +28,22 @@ public interface IEntityService
     IEntityService WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Set the status for an [Entity's
+    /// Simulate updates to an [Entity's
     /// validation](/documentation/api/entities#entity-object.validation). In
     /// production, Know Your Customer validations [run
-    /// automatically](/documentation/entity-validation#entity-validation). While
-    /// developing, it can be helpful to override the behavior in Sandbox.
+    /// automatically](/documentation/entity-validation#entity-validation) for eligible
+    /// programs. While developing, use this API to simulate issues with information
+    /// submissions.
     /// </summary>
-    Task<Entity> Validation(
-        EntityValidationParams parameters,
+    Task<Entity> UpdateValidation(
+        EntityUpdateValidationParams parameters,
         CancellationToken cancellationToken = default
     );
 
-    /// <inheritdoc cref="Validation(EntityValidationParams, CancellationToken)"/>
-    Task<Entity> Validation(
+    /// <inheritdoc cref="UpdateValidation(EntityUpdateValidationParams, CancellationToken)"/>
+    Task<Entity> UpdateValidation(
         string entityID,
-        EntityValidationParams parameters,
+        EntityUpdateValidationParams parameters,
         CancellationToken cancellationToken = default
     );
 }
@@ -61,18 +62,18 @@ public interface IEntityServiceWithRawResponse
     IEntityServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for <c>post /simulations/entities/{entity_id}/validation</c>, but is otherwise the
-    /// same as <see cref="IEntityService.Validation(EntityValidationParams, CancellationToken)"/>.
+    /// Returns a raw HTTP response for <c>post /simulations/entities/{entity_id}/update_validation</c>, but is otherwise the
+    /// same as <see cref="IEntityService.UpdateValidation(EntityUpdateValidationParams, CancellationToken)"/>.
     /// </summary>
-    Task<HttpResponse<Entity>> Validation(
-        EntityValidationParams parameters,
+    Task<HttpResponse<Entity>> UpdateValidation(
+        EntityUpdateValidationParams parameters,
         CancellationToken cancellationToken = default
     );
 
-    /// <inheritdoc cref="Validation(EntityValidationParams, CancellationToken)"/>
-    Task<HttpResponse<Entity>> Validation(
+    /// <inheritdoc cref="UpdateValidation(EntityUpdateValidationParams, CancellationToken)"/>
+    Task<HttpResponse<Entity>> UpdateValidation(
         string entityID,
-        EntityValidationParams parameters,
+        EntityUpdateValidationParams parameters,
         CancellationToken cancellationToken = default
     );
 }
