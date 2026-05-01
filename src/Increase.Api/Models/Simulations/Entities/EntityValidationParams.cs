@@ -13,9 +13,9 @@ using Increase.Api.Exceptions;
 namespace Increase.Api.Models.Simulations.Entities;
 
 /// <summary>
-/// Simulates setting an [Entity](#entities)'s validation under the managed compliance
-/// regime. Any existing managed compliance validation on the Entity will be marked
-/// as no longer current.
+/// Set the status for an [Entity's validation](/documentation/api/entities#entity-object.validation).
+/// In production, Know Your Customer validations [run automatically](/documentation/entity-validation#entity-validation).
+/// While developing, it can be helpful to override the behavior in Sandbox.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
