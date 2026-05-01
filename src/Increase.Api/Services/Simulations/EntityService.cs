@@ -36,25 +36,25 @@ public sealed class EntityService : IEntityService
     }
 
     /// <inheritdoc/>
-    public async Task<Entity> Validation(
-        EntityValidationParams parameters,
+    public async Task<Entity> UpdateValidation(
+        EntityUpdateValidationParams parameters,
         CancellationToken cancellationToken = default
     )
     {
         using var response = await this
-            .WithRawResponse.Validation(parameters, cancellationToken)
+            .WithRawResponse.UpdateValidation(parameters, cancellationToken)
             .ConfigureAwait(false);
         return await response.Deserialize(cancellationToken).ConfigureAwait(false);
     }
 
     /// <inheritdoc/>
-    public Task<Entity> Validation(
+    public Task<Entity> UpdateValidation(
         string entityID,
-        EntityValidationParams parameters,
+        EntityUpdateValidationParams parameters,
         CancellationToken cancellationToken = default
     )
     {
-        return this.Validation(parameters with { EntityID = entityID }, cancellationToken);
+        return this.UpdateValidation(parameters with { EntityID = entityID }, cancellationToken);
     }
 }
 
@@ -75,8 +75,8 @@ public sealed class EntityServiceWithRawResponse : IEntityServiceWithRawResponse
     }
 
     /// <inheritdoc/>
-    public async Task<HttpResponse<Entity>> Validation(
-        EntityValidationParams parameters,
+    public async Task<HttpResponse<Entity>> UpdateValidation(
+        EntityUpdateValidationParams parameters,
         CancellationToken cancellationToken = default
     )
     {
@@ -85,7 +85,7 @@ public sealed class EntityServiceWithRawResponse : IEntityServiceWithRawResponse
             throw new IncreaseInvalidDataException("'parameters.EntityID' cannot be null");
         }
 
-        HttpRequest<EntityValidationParams> request = new()
+        HttpRequest<EntityUpdateValidationParams> request = new()
         {
             Method = HttpMethod.Post,
             Params = parameters,
@@ -106,12 +106,12 @@ public sealed class EntityServiceWithRawResponse : IEntityServiceWithRawResponse
     }
 
     /// <inheritdoc/>
-    public Task<HttpResponse<Entity>> Validation(
+    public Task<HttpResponse<Entity>> UpdateValidation(
         string entityID,
-        EntityValidationParams parameters,
+        EntityUpdateValidationParams parameters,
         CancellationToken cancellationToken = default
     )
     {
-        return this.Validation(parameters with { EntityID = entityID }, cancellationToken);
+        return this.UpdateValidation(parameters with { EntityID = entityID }, cancellationToken);
     }
 }
