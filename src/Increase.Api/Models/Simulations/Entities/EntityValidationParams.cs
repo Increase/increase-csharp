@@ -32,7 +32,7 @@ public record class EntityValidationParams : ParamsBase
     public string? EntityID { get; init; }
 
     /// <summary>
-    /// The issues to attach to the new managed compliance validation.
+    /// The validation issues to attach. Only allowed when `status` is `invalid`.
     /// </summary>
     public required IReadOnlyList<Issue> Issues
     {
@@ -51,7 +51,7 @@ public record class EntityValidationParams : ParamsBase
     }
 
     /// <summary>
-    /// The status to set on the new managed compliance validation.
+    /// The validation status to set on the Entity.
     /// </summary>
     public required ApiEnum<string, Status> Status
     {
@@ -188,7 +188,7 @@ public record class EntityValidationParams : ParamsBase
 public sealed record class Issue : JsonModel
 {
     /// <summary>
-    /// The category of the issue.
+    /// The type of issue.
     /// </summary>
     public required ApiEnum<string, Category> Category
     {
@@ -249,7 +249,7 @@ class IssueFromRaw : IFromRawJson<Issue>
 }
 
 /// <summary>
-/// The category of the issue.
+/// The type of issue.
 /// </summary>
 [JsonConverter(typeof(CategoryConverter))]
 public enum Category
@@ -317,7 +317,7 @@ sealed class CategoryConverter : JsonConverter<Category>
 }
 
 /// <summary>
-/// The status to set on the new managed compliance validation.
+/// The validation status to set on the Entity.
 /// </summary>
 [JsonConverter(typeof(StatusConverter))]
 public enum Status
