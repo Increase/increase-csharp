@@ -715,10 +715,9 @@ sealed class CategoryConverter : JsonConverter<Category>
 public sealed record class Freeform : JsonModel
 {
     /// <summary>
-    /// Each entry represents an addendum sent with the transfer. In general, you
-    /// should send at most one addendum–most ACH recipients cannot access beyond
-    /// the first 80 characters sent. Please reach out to [support@increase.com](mailto:support@increase.com)
-    /// to send 2 or more addenda to a recipient expecting a specific addendum format.
+    /// Each entry represents an addendum sent with the transfer. Sending more than
+    /// one addendum is only supported for transfers with `standard_entry_class_code`
+    /// of `corporate_trade_exchange` (CTX).
     /// </summary>
     public required IReadOnlyList<Entry> Entries
     {
