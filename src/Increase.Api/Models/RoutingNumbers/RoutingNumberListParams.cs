@@ -11,8 +11,9 @@ namespace Increase.Api.Models.RoutingNumbers;
 /// <summary>
 /// You can use this API to confirm if a routing number is valid, such as when a user
 /// is providing you with bank account details. Since routing numbers uniquely identify
-/// a bank, this will always return 0 or 1 entry. In Sandbox, the only valid routing
-/// number for this method is 110000000.
+/// a bank, this will always return 0 or 1 entry. In Sandbox, only a few [routing
+/// numbers are valid](/documentation/sandbox-routing-numbers#sandbox-routing-numbers).
+/// `110000000` is an example of a Sandbox routing number.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
