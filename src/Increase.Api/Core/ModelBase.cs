@@ -60,6 +60,7 @@ using RealTimePaymentsTransfers = Increase.Api.Models.RealTimePaymentsTransfers;
 using RoutingNumbers = Increase.Api.Models.RoutingNumbers;
 using SimulationsCardTokens = Increase.Api.Models.Simulations.CardTokens;
 using SimulationsCheckDeposits = Increase.Api.Models.Simulations.CheckDeposits;
+using SimulationsEntities = Increase.Api.Models.Simulations.Entities;
 using SimulationsExports = Increase.Api.Models.Simulations.Exports;
 using SimulationsInboundAchTransfers = Increase.Api.Models.Simulations.InboundAchTransfers;
 using SimulationsInboundCheckDeposits = Increase.Api.Models.Simulations.InboundCheckDeposits;
@@ -1561,6 +1562,8 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, SimulationsInboundCheckDeposits::Reason>(),
             new ApiEnumConverter<string, RejectReasonCode>(),
             new ApiEnumConverter<string, SimulationsCheckDeposits::Reason>(),
+            new ApiEnumConverter<string, SimulationsEntities::Category>(),
+            new ApiEnumConverter<string, SimulationsEntities::Status>(),
             new ApiEnumConverter<string, SimulationsPrograms::Bank>(),
             new ApiEnumConverter<string, SimulationsExports::Category>(),
             new ApiEnumConverter<string, SimulationsCardTokens::CrossBorderPushTransfers>(),
