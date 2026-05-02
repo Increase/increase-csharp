@@ -483,6 +483,27 @@ public sealed record class EntityUpdateParamsCorporation : JsonModel
         }
     }
 
+    /// <summary>
+    /// A website for the business. Not every program requires a website for submitted Entities.
+    /// </summary>
+    public string? Website
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("website");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("website", value);
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -492,6 +513,7 @@ public sealed record class EntityUpdateParamsCorporation : JsonModel
         _ = this.IndustryCode;
         this.LegalIdentifier?.Validate();
         _ = this.Name;
+        _ = this.Website;
     }
 
     public EntityUpdateParamsCorporation() { }
