@@ -3,7 +3,7 @@
     <!-- Metadata -->
     <AssemblyTitle>Increase C#</AssemblyTitle>
     <AssemblyName>Increase.Api</AssemblyName>
-    <VersionPrefix>0.27.0</VersionPrefix>
+    <VersionPrefix>0.28.0</VersionPrefix>
     <Description>The official .NET library for the Increase API.</Description>
     <OutputType>Library</OutputType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
