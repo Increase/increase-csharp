@@ -36,6 +36,7 @@ public class EntityUpdateParamsTest : TestBase
                         EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
                 },
                 Name = "x",
+                Website = "website",
             },
             DetailsConfirmedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             GovernmentAuthority = new()
@@ -146,6 +147,7 @@ public class EntityUpdateParamsTest : TestBase
                     EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
             },
             Name = "x",
+            Website = "website",
         };
         DateTimeOffset expectedDetailsConfirmedAt = DateTimeOffset.Parse(
             "2019-12-27T18:11:19.117Z"
@@ -351,6 +353,7 @@ public class EntityUpdateParamsTest : TestBase
                         EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
                 },
                 Name = "x",
+                Website = "website",
             },
             DetailsConfirmedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             GovernmentAuthority = new()
@@ -471,6 +474,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
                     EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
             },
             Name = "x",
+            Website = "website",
         };
 
         EntityUpdateParamsCorporationAddress expectedAddress = new()
@@ -492,6 +496,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
                 EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
         };
         string expectedName = "x";
+        string expectedWebsite = "website";
 
         Assert.Equal(expectedAddress, model.Address);
         Assert.Equal(expectedEmail, model.Email);
@@ -499,6 +504,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
         Assert.Equal(expectedIndustryCode, model.IndustryCode);
         Assert.Equal(expectedLegalIdentifier, model.LegalIdentifier);
         Assert.Equal(expectedName, model.Name);
+        Assert.Equal(expectedWebsite, model.Website);
     }
 
     [Fact]
@@ -525,6 +531,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
                     EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
             },
             Name = "x",
+            Website = "website",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -560,6 +567,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
                     EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
             },
             Name = "x",
+            Website = "website",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -588,6 +596,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
                 EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
         };
         string expectedName = "x";
+        string expectedWebsite = "website";
 
         Assert.Equal(expectedAddress, deserialized.Address);
         Assert.Equal(expectedEmail, deserialized.Email);
@@ -595,6 +604,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
         Assert.Equal(expectedIndustryCode, deserialized.IndustryCode);
         Assert.Equal(expectedLegalIdentifier, deserialized.LegalIdentifier);
         Assert.Equal(expectedName, deserialized.Name);
+        Assert.Equal(expectedWebsite, deserialized.Website);
     }
 
     [Fact]
@@ -621,6 +631,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
                     EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
             },
             Name = "x",
+            Website = "website",
         };
 
         model.Validate();
@@ -643,6 +654,8 @@ public class EntityUpdateParamsCorporationTest : TestBase
         Assert.False(model.RawData.ContainsKey("legal_identifier"));
         Assert.Null(model.Name);
         Assert.False(model.RawData.ContainsKey("name"));
+        Assert.Null(model.Website);
+        Assert.False(model.RawData.ContainsKey("website"));
     }
 
     [Fact]
@@ -665,6 +678,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
             IndustryCode = null,
             LegalIdentifier = null,
             Name = null,
+            Website = null,
         };
 
         Assert.Null(model.Address);
@@ -679,6 +693,8 @@ public class EntityUpdateParamsCorporationTest : TestBase
         Assert.False(model.RawData.ContainsKey("legal_identifier"));
         Assert.Null(model.Name);
         Assert.False(model.RawData.ContainsKey("name"));
+        Assert.Null(model.Website);
+        Assert.False(model.RawData.ContainsKey("website"));
     }
 
     [Fact]
@@ -693,6 +709,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
             IndustryCode = null,
             LegalIdentifier = null,
             Name = null,
+            Website = null,
         };
 
         model.Validate();
@@ -722,6 +739,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
                     EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
             },
             Name = "x",
+            Website = "website",
         };
 
         EntityUpdateParamsCorporation copied = new(model);

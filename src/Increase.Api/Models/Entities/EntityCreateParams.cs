@@ -619,7 +619,7 @@ public sealed record class Corporation : JsonModel
     }
 
     /// <summary>
-    /// The website of the corporation.
+    /// A website for the business. Not every program requires a website for submitted Entities.
     /// </summary>
     public string? Website
     {
@@ -2141,7 +2141,8 @@ public sealed record class GovernmentAuthority : JsonModel
     }
 
     /// <summary>
-    /// The website of the government authority.
+    /// A website for the government authority. Not every program requires a website
+    /// for submitted Entities.
     /// </summary>
     public string? Website
     {
