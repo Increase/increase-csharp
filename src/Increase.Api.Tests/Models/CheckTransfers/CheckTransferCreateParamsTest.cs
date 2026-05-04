@@ -365,7 +365,7 @@ public class PhysicalCheckTest : TestBase
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-9469",
-                State = "x",
+                State = "xx",
                 Line2 = "line2",
                 Name = "name",
                 Phone = "x",
@@ -395,7 +395,7 @@ public class PhysicalCheckTest : TestBase
             City = "city",
             Line1 = "line1",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line2 = "line2",
             Name = "name",
             Phone = "x",
@@ -446,7 +446,7 @@ public class PhysicalCheckTest : TestBase
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-9469",
-                State = "x",
+                State = "xx",
                 Line2 = "line2",
                 Name = "name",
                 Phone = "x",
@@ -490,7 +490,7 @@ public class PhysicalCheckTest : TestBase
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-9469",
-                State = "x",
+                State = "xx",
                 Line2 = "line2",
                 Name = "name",
                 Phone = "x",
@@ -527,7 +527,7 @@ public class PhysicalCheckTest : TestBase
             City = "city",
             Line1 = "line1",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line2 = "line2",
             Name = "name",
             Phone = "x",
@@ -578,7 +578,7 @@ public class PhysicalCheckTest : TestBase
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-9469",
-                State = "x",
+                State = "xx",
                 Line2 = "line2",
                 Name = "name",
                 Phone = "x",
@@ -616,7 +616,7 @@ public class PhysicalCheckTest : TestBase
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-9469",
-                State = "x",
+                State = "xx",
                 Line2 = "line2",
                 Name = "name",
                 Phone = "x",
@@ -651,7 +651,7 @@ public class PhysicalCheckTest : TestBase
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-9469",
-                State = "x",
+                State = "xx",
                 Line2 = "line2",
                 Name = "name",
                 Phone = "x",
@@ -673,7 +673,7 @@ public class PhysicalCheckTest : TestBase
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-9469",
-                State = "x",
+                State = "xx",
                 Line2 = "line2",
                 Name = "name",
                 Phone = "x",
@@ -717,7 +717,7 @@ public class PhysicalCheckTest : TestBase
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-9469",
-                State = "x",
+                State = "xx",
                 Line2 = "line2",
                 Name = "name",
                 Phone = "x",
@@ -748,7 +748,7 @@ public class PhysicalCheckTest : TestBase
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-9469",
-                State = "x",
+                State = "xx",
                 Line2 = "line2",
                 Name = "name",
                 Phone = "x",
@@ -789,7 +789,7 @@ public class MailingAddressTest : TestBase
             City = "city",
             Line1 = "line1",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line2 = "line2",
             Name = "name",
             Phone = "x",
@@ -798,7 +798,7 @@ public class MailingAddressTest : TestBase
         string expectedCity = "city";
         string expectedLine1 = "line1";
         string expectedPostalCode = "21029-9469";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedLine2 = "line2";
         string expectedName = "name";
         string expectedPhone = "x";
@@ -820,7 +820,7 @@ public class MailingAddressTest : TestBase
             City = "city",
             Line1 = "line1",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line2 = "line2",
             Name = "name",
             Phone = "x",
@@ -843,7 +843,7 @@ public class MailingAddressTest : TestBase
             City = "city",
             Line1 = "line1",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line2 = "line2",
             Name = "name",
             Phone = "x",
@@ -859,7 +859,7 @@ public class MailingAddressTest : TestBase
         string expectedCity = "city";
         string expectedLine1 = "line1";
         string expectedPostalCode = "21029-9469";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedLine2 = "line2";
         string expectedName = "name";
         string expectedPhone = "x";
@@ -881,7 +881,7 @@ public class MailingAddressTest : TestBase
             City = "city",
             Line1 = "line1",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line2 = "line2",
             Name = "name",
             Phone = "x",
@@ -898,7 +898,7 @@ public class MailingAddressTest : TestBase
             City = "city",
             Line1 = "line1",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
         };
 
         Assert.Null(model.Line2);
@@ -917,7 +917,7 @@ public class MailingAddressTest : TestBase
             City = "city",
             Line1 = "line1",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
         };
 
         model.Validate();
@@ -931,7 +931,7 @@ public class MailingAddressTest : TestBase
             City = "city",
             Line1 = "line1",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
@@ -955,7 +955,7 @@ public class MailingAddressTest : TestBase
             City = "city",
             Line1 = "line1",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
@@ -974,7 +974,7 @@ public class MailingAddressTest : TestBase
             City = "city",
             Line1 = "line1",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line2 = "line2",
             Name = "name",
             Phone = "x",

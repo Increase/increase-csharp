@@ -50,7 +50,7 @@ public class EntityCreateParamsTest : TestBase
                                 {
                                     ExpirationDate = "2019-12-27",
                                     FileID = "file_id",
-                                    State = "x",
+                                    State = "xx",
                                     BackFileID = "back_file_id",
                                 },
                                 Other = new()
@@ -95,7 +95,7 @@ public class EntityCreateParamsTest : TestBase
                 {
                     City = "x",
                     Line1 = "x",
-                    State = "x",
+                    State = "xx",
                     Zip = "x",
                     Line2 = "x",
                 },
@@ -127,7 +127,7 @@ public class EntityCreateParamsTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -170,7 +170,7 @@ public class EntityCreateParamsTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -213,7 +213,7 @@ public class EntityCreateParamsTest : TestBase
                 {
                     City = "x",
                     Line1 = "x",
-                    State = "x",
+                    State = "xx",
                     Zip = "x",
                     Line2 = "x",
                 },
@@ -244,7 +244,7 @@ public class EntityCreateParamsTest : TestBase
                                 {
                                     ExpirationDate = "2019-12-27",
                                     FileID = "file_id",
-                                    State = "x",
+                                    State = "xx",
                                     BackFileID = "back_file_id",
                                 },
                                 Other = new()
@@ -289,7 +289,7 @@ public class EntityCreateParamsTest : TestBase
                         {
                             ExpirationDate = "2019-12-27",
                             FileID = "file_id",
-                            State = "x",
+                            State = "xx",
                             BackFileID = "back_file_id",
                         },
                         Other = new()
@@ -350,7 +350,7 @@ public class EntityCreateParamsTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -395,7 +395,7 @@ public class EntityCreateParamsTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -427,7 +427,7 @@ public class EntityCreateParamsTest : TestBase
                         {
                             ExpirationDate = "2019-12-27",
                             FileID = "file_id",
-                            State = "x",
+                            State = "xx",
                             BackFileID = "back_file_id",
                         },
                         Other = new()
@@ -470,7 +470,7 @@ public class EntityCreateParamsTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -520,7 +520,7 @@ public class EntityCreateParamsTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -551,7 +551,7 @@ public class EntityCreateParamsTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -596,7 +596,7 @@ public class EntityCreateParamsTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -763,7 +763,7 @@ public class EntityCreateParamsTest : TestBase
                                 {
                                     ExpirationDate = "2019-12-27",
                                     FileID = "file_id",
-                                    State = "x",
+                                    State = "xx",
                                     BackFileID = "back_file_id",
                                 },
                                 Other = new()
@@ -808,7 +808,7 @@ public class EntityCreateParamsTest : TestBase
                 {
                     City = "x",
                     Line1 = "x",
-                    State = "x",
+                    State = "xx",
                     Zip = "x",
                     Line2 = "x",
                 },
@@ -840,7 +840,7 @@ public class EntityCreateParamsTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -883,7 +883,7 @@ public class EntityCreateParamsTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -926,7 +926,7 @@ public class EntityCreateParamsTest : TestBase
                 {
                     City = "x",
                     Line1 = "x",
-                    State = "x",
+                    State = "xx",
                     Zip = "x",
                     Line2 = "x",
                 },
@@ -957,7 +957,7 @@ public class EntityCreateParamsTest : TestBase
                                 {
                                     ExpirationDate = "2019-12-27",
                                     FileID = "file_id",
-                                    State = "x",
+                                    State = "xx",
                                     BackFileID = "back_file_id",
                                 },
                                 Other = new()
@@ -1002,7 +1002,7 @@ public class EntityCreateParamsTest : TestBase
                         {
                             ExpirationDate = "2019-12-27",
                             FileID = "file_id",
-                            State = "x",
+                            State = "xx",
                             BackFileID = "back_file_id",
                         },
                         Other = new()
@@ -1137,7 +1137,7 @@ public class CorporationTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -1171,7 +1171,7 @@ public class CorporationTest : TestBase
             BeneficialOwnershipExemptionReason =
                 BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "dev@stainless.com",
-            IncorporationState = "x",
+            IncorporationState = "xx",
             IndustryCode = "x",
             Website = "website",
         };
@@ -1209,7 +1209,7 @@ public class CorporationTest : TestBase
                         {
                             ExpirationDate = "2019-12-27",
                             FileID = "file_id",
-                            State = "x",
+                            State = "xx",
                             BackFileID = "back_file_id",
                         },
                         Other = new()
@@ -1246,7 +1246,7 @@ public class CorporationTest : TestBase
         > expectedBeneficialOwnershipExemptionReason =
             BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution;
         string expectedEmail = "dev@stainless.com";
-        string expectedIncorporationState = "x";
+        string expectedIncorporationState = "xx";
         string expectedIndustryCode = "x";
         string expectedWebsite = "website";
 
@@ -1306,7 +1306,7 @@ public class CorporationTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -1340,7 +1340,7 @@ public class CorporationTest : TestBase
             BeneficialOwnershipExemptionReason =
                 BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "dev@stainless.com",
-            IncorporationState = "x",
+            IncorporationState = "xx",
             IndustryCode = "x",
             Website = "website",
         };
@@ -1392,7 +1392,7 @@ public class CorporationTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -1426,7 +1426,7 @@ public class CorporationTest : TestBase
             BeneficialOwnershipExemptionReason =
                 BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "dev@stainless.com",
-            IncorporationState = "x",
+            IncorporationState = "xx",
             IndustryCode = "x",
             Website = "website",
         };
@@ -1471,7 +1471,7 @@ public class CorporationTest : TestBase
                         {
                             ExpirationDate = "2019-12-27",
                             FileID = "file_id",
-                            State = "x",
+                            State = "xx",
                             BackFileID = "back_file_id",
                         },
                         Other = new()
@@ -1508,7 +1508,7 @@ public class CorporationTest : TestBase
         > expectedBeneficialOwnershipExemptionReason =
             BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution;
         string expectedEmail = "dev@stainless.com";
-        string expectedIncorporationState = "x";
+        string expectedIncorporationState = "xx";
         string expectedIndustryCode = "x";
         string expectedWebsite = "website";
 
@@ -1568,7 +1568,7 @@ public class CorporationTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -1602,7 +1602,7 @@ public class CorporationTest : TestBase
             BeneficialOwnershipExemptionReason =
                 BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "dev@stainless.com",
-            IncorporationState = "x",
+            IncorporationState = "xx",
             IndustryCode = "x",
             Website = "website",
         };
@@ -1648,7 +1648,7 @@ public class CorporationTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -1731,7 +1731,7 @@ public class CorporationTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -1805,7 +1805,7 @@ public class CorporationTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -1895,7 +1895,7 @@ public class CorporationTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -1976,7 +1976,7 @@ public class CorporationTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -2010,7 +2010,7 @@ public class CorporationTest : TestBase
             BeneficialOwnershipExemptionReason =
                 BeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "dev@stainless.com",
-            IncorporationState = "x",
+            IncorporationState = "xx",
             IndustryCode = "x",
             Website = "website",
         };
@@ -2239,7 +2239,7 @@ public class BeneficialOwnerTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -2284,7 +2284,7 @@ public class BeneficialOwnerTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -2342,7 +2342,7 @@ public class BeneficialOwnerTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -2401,7 +2401,7 @@ public class BeneficialOwnerTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -2453,7 +2453,7 @@ public class BeneficialOwnerTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -2511,7 +2511,7 @@ public class BeneficialOwnerTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -2564,7 +2564,7 @@ public class BeneficialOwnerTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -2617,7 +2617,7 @@ public class BeneficialOwnerTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -2669,7 +2669,7 @@ public class BeneficialOwnerTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -2725,7 +2725,7 @@ public class BeneficialOwnerTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -2780,7 +2780,7 @@ public class BeneficialOwnerTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -2836,7 +2836,7 @@ public class IndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -2876,7 +2876,7 @@ public class IndividualTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -2927,7 +2927,7 @@ public class IndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -2981,7 +2981,7 @@ public class IndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -3028,7 +3028,7 @@ public class IndividualTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -3079,7 +3079,7 @@ public class IndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -3127,7 +3127,7 @@ public class IndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -3175,7 +3175,7 @@ public class IndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -3222,7 +3222,7 @@ public class IndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -3273,7 +3273,7 @@ public class IndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -3323,7 +3323,7 @@ public class IndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -3558,7 +3558,7 @@ public class IdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -3583,7 +3583,7 @@ public class IdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         Other expectedOther = new()
@@ -3619,7 +3619,7 @@ public class IdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -3658,7 +3658,7 @@ public class IdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -3690,7 +3690,7 @@ public class IdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         Other expectedOther = new()
@@ -3726,7 +3726,7 @@ public class IdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -3819,7 +3819,7 @@ public class IdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -3917,13 +3917,13 @@ public class DriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, model.ExpirationDate);
@@ -3939,7 +3939,7 @@ public class DriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -3959,7 +3959,7 @@ public class DriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -3972,7 +3972,7 @@ public class DriversLicenseTest : TestBase
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
@@ -3988,7 +3988,7 @@ public class DriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -4002,7 +4002,7 @@ public class DriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         Assert.Null(model.BackFileID);
@@ -4016,7 +4016,7 @@ public class DriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         model.Validate();
@@ -4029,7 +4029,7 @@ public class DriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -4046,7 +4046,7 @@ public class DriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -4062,7 +4062,7 @@ public class DriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -4656,7 +4656,7 @@ public class GovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -4671,7 +4671,7 @@ public class GovernmentAuthorityTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -4703,7 +4703,7 @@ public class GovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -4732,7 +4732,7 @@ public class GovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -4754,7 +4754,7 @@ public class GovernmentAuthorityTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -4786,7 +4786,7 @@ public class GovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -4809,7 +4809,7 @@ public class GovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -4832,7 +4832,7 @@ public class GovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -4854,7 +4854,7 @@ public class GovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -4880,7 +4880,7 @@ public class GovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -4905,7 +4905,7 @@ public class GovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -4931,14 +4931,14 @@ public class GovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
 
         string expectedCity = "x";
         string expectedLine1 = "x";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedZip = "x";
         string expectedLine2 = "x";
 
@@ -4956,7 +4956,7 @@ public class GovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -4977,7 +4977,7 @@ public class GovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -4991,7 +4991,7 @@ public class GovernmentAuthorityAddressTest : TestBase
 
         string expectedCity = "x";
         string expectedLine1 = "x";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedZip = "x";
         string expectedLine2 = "x";
 
@@ -5009,7 +5009,7 @@ public class GovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -5024,7 +5024,7 @@ public class GovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
         };
 
@@ -5039,7 +5039,7 @@ public class GovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
         };
 
@@ -5053,7 +5053,7 @@ public class GovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
 
             // Null should be interpreted as omitted for these properties
@@ -5071,7 +5071,7 @@ public class GovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
 
             // Null should be interpreted as omitted for these properties
@@ -5088,7 +5088,7 @@ public class GovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -5252,7 +5252,7 @@ public class JointTest : TestBase
                         {
                             ExpirationDate = "2019-12-27",
                             FileID = "file_id",
-                            State = "x",
+                            State = "xx",
                             BackFileID = "back_file_id",
                         },
                         Other = new()
@@ -5298,7 +5298,7 @@ public class JointTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -5355,7 +5355,7 @@ public class JointTest : TestBase
                         {
                             ExpirationDate = "2019-12-27",
                             FileID = "file_id",
-                            State = "x",
+                            State = "xx",
                             BackFileID = "back_file_id",
                         },
                         Other = new()
@@ -5412,7 +5412,7 @@ public class JointTest : TestBase
                         {
                             ExpirationDate = "2019-12-27",
                             FileID = "file_id",
-                            State = "x",
+                            State = "xx",
                             BackFileID = "back_file_id",
                         },
                         Other = new()
@@ -5462,7 +5462,7 @@ public class JointTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -5519,7 +5519,7 @@ public class JointTest : TestBase
                         {
                             ExpirationDate = "2019-12-27",
                             FileID = "file_id",
-                            State = "x",
+                            State = "xx",
                             BackFileID = "back_file_id",
                         },
                         Other = new()
@@ -5573,7 +5573,7 @@ public class JointTest : TestBase
                         {
                             ExpirationDate = "2019-12-27",
                             FileID = "file_id",
-                            State = "x",
+                            State = "xx",
                             BackFileID = "back_file_id",
                         },
                         Other = new()
@@ -5628,7 +5628,7 @@ public class JointIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -5668,7 +5668,7 @@ public class JointIndividualTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -5719,7 +5719,7 @@ public class JointIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -5773,7 +5773,7 @@ public class JointIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -5820,7 +5820,7 @@ public class JointIndividualTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -5871,7 +5871,7 @@ public class JointIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -5919,7 +5919,7 @@ public class JointIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -5967,7 +5967,7 @@ public class JointIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -6014,7 +6014,7 @@ public class JointIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -6065,7 +6065,7 @@ public class JointIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -6115,7 +6115,7 @@ public class JointIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -6350,7 +6350,7 @@ public class JointIndividualIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -6376,7 +6376,7 @@ public class JointIndividualIdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         JointIndividualIdentificationOther expectedOther = new()
@@ -6412,7 +6412,7 @@ public class JointIndividualIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -6451,7 +6451,7 @@ public class JointIndividualIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -6484,7 +6484,7 @@ public class JointIndividualIdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         JointIndividualIdentificationOther expectedOther = new()
@@ -6520,7 +6520,7 @@ public class JointIndividualIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -6621,7 +6621,7 @@ public class JointIndividualIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -6715,13 +6715,13 @@ public class JointIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, model.ExpirationDate);
@@ -6737,7 +6737,7 @@ public class JointIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -6757,7 +6757,7 @@ public class JointIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -6770,7 +6770,7 @@ public class JointIndividualIdentificationDriversLicenseTest : TestBase
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
@@ -6786,7 +6786,7 @@ public class JointIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -6800,7 +6800,7 @@ public class JointIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         Assert.Null(model.BackFileID);
@@ -6814,7 +6814,7 @@ public class JointIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         model.Validate();
@@ -6827,7 +6827,7 @@ public class JointIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -6844,7 +6844,7 @@ public class JointIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -6860,7 +6860,7 @@ public class JointIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -7169,7 +7169,7 @@ public class NaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -7209,7 +7209,7 @@ public class NaturalPersonTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -7260,7 +7260,7 @@ public class NaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -7314,7 +7314,7 @@ public class NaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -7361,7 +7361,7 @@ public class NaturalPersonTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -7412,7 +7412,7 @@ public class NaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -7460,7 +7460,7 @@ public class NaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -7508,7 +7508,7 @@ public class NaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -7555,7 +7555,7 @@ public class NaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -7606,7 +7606,7 @@ public class NaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -7656,7 +7656,7 @@ public class NaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -7891,7 +7891,7 @@ public class NaturalPersonIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -7917,7 +7917,7 @@ public class NaturalPersonIdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         NaturalPersonIdentificationOther expectedOther = new()
@@ -7953,7 +7953,7 @@ public class NaturalPersonIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -7992,7 +7992,7 @@ public class NaturalPersonIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -8025,7 +8025,7 @@ public class NaturalPersonIdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         NaturalPersonIdentificationOther expectedOther = new()
@@ -8061,7 +8061,7 @@ public class NaturalPersonIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -8162,7 +8162,7 @@ public class NaturalPersonIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -8258,13 +8258,13 @@ public class NaturalPersonIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, model.ExpirationDate);
@@ -8280,7 +8280,7 @@ public class NaturalPersonIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -8300,7 +8300,7 @@ public class NaturalPersonIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -8313,7 +8313,7 @@ public class NaturalPersonIdentificationDriversLicenseTest : TestBase
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
@@ -8329,7 +8329,7 @@ public class NaturalPersonIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -8343,7 +8343,7 @@ public class NaturalPersonIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         Assert.Null(model.BackFileID);
@@ -8357,7 +8357,7 @@ public class NaturalPersonIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         model.Validate();
@@ -8370,7 +8370,7 @@ public class NaturalPersonIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -8387,7 +8387,7 @@ public class NaturalPersonIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -8403,7 +8403,7 @@ public class NaturalPersonIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -9131,7 +9131,7 @@ public class TrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -9162,7 +9162,7 @@ public class TrustTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -9207,7 +9207,7 @@ public class TrustTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -9235,7 +9235,7 @@ public class TrustTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -9266,7 +9266,7 @@ public class TrustTest : TestBase
                         {
                             ExpirationDate = "2019-12-27",
                             FileID = "file_id",
-                            State = "x",
+                            State = "xx",
                             BackFileID = "back_file_id",
                         },
                         Other = new()
@@ -9311,7 +9311,7 @@ public class TrustTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -9357,7 +9357,7 @@ public class TrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -9388,7 +9388,7 @@ public class TrustTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -9433,7 +9433,7 @@ public class TrustTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -9472,7 +9472,7 @@ public class TrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -9503,7 +9503,7 @@ public class TrustTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -9548,7 +9548,7 @@ public class TrustTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -9580,7 +9580,7 @@ public class TrustTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -9611,7 +9611,7 @@ public class TrustTest : TestBase
                         {
                             ExpirationDate = "2019-12-27",
                             FileID = "file_id",
-                            State = "x",
+                            State = "xx",
                             BackFileID = "back_file_id",
                         },
                         Other = new()
@@ -9656,7 +9656,7 @@ public class TrustTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -9702,7 +9702,7 @@ public class TrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -9733,7 +9733,7 @@ public class TrustTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -9778,7 +9778,7 @@ public class TrustTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -9814,7 +9814,7 @@ public class TrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -9845,7 +9845,7 @@ public class TrustTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -9889,7 +9889,7 @@ public class TrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -9920,7 +9920,7 @@ public class TrustTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -9957,7 +9957,7 @@ public class TrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -9988,7 +9988,7 @@ public class TrustTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -10038,7 +10038,7 @@ public class TrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -10069,7 +10069,7 @@ public class TrustTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -10112,7 +10112,7 @@ public class TrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -10143,7 +10143,7 @@ public class TrustTest : TestBase
                             {
                                 ExpirationDate = "2019-12-27",
                                 FileID = "file_id",
-                                State = "x",
+                                State = "xx",
                                 BackFileID = "back_file_id",
                             },
                             Other = new()
@@ -10188,7 +10188,7 @@ public class TrustTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -10227,14 +10227,14 @@ public class TrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
 
         string expectedCity = "x";
         string expectedLine1 = "x";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedZip = "x";
         string expectedLine2 = "x";
 
@@ -10252,7 +10252,7 @@ public class TrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -10273,7 +10273,7 @@ public class TrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -10287,7 +10287,7 @@ public class TrustAddressTest : TestBase
 
         string expectedCity = "x";
         string expectedLine1 = "x";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedZip = "x";
         string expectedLine2 = "x";
 
@@ -10305,7 +10305,7 @@ public class TrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -10320,7 +10320,7 @@ public class TrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
         };
 
@@ -10335,7 +10335,7 @@ public class TrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
         };
 
@@ -10349,7 +10349,7 @@ public class TrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
 
             // Null should be interpreted as omitted for these properties
@@ -10367,7 +10367,7 @@ public class TrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
 
             // Null should be interpreted as omitted for these properties
@@ -10384,7 +10384,7 @@ public class TrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -10481,7 +10481,7 @@ public class TrusteeTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -10525,7 +10525,7 @@ public class TrusteeTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -10577,7 +10577,7 @@ public class TrusteeTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -10632,7 +10632,7 @@ public class TrusteeTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -10683,7 +10683,7 @@ public class TrusteeTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -10735,7 +10735,7 @@ public class TrusteeTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -10833,7 +10833,7 @@ public class TrusteeTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -10943,7 +10943,7 @@ public class TrusteeIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -10983,7 +10983,7 @@ public class TrusteeIndividualTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -11034,7 +11034,7 @@ public class TrusteeIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -11088,7 +11088,7 @@ public class TrusteeIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -11135,7 +11135,7 @@ public class TrusteeIndividualTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -11186,7 +11186,7 @@ public class TrusteeIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -11234,7 +11234,7 @@ public class TrusteeIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -11282,7 +11282,7 @@ public class TrusteeIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -11329,7 +11329,7 @@ public class TrusteeIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -11380,7 +11380,7 @@ public class TrusteeIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -11430,7 +11430,7 @@ public class TrusteeIndividualTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -11665,7 +11665,7 @@ public class TrusteeIndividualIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -11691,7 +11691,7 @@ public class TrusteeIndividualIdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         TrusteeIndividualIdentificationOther expectedOther = new()
@@ -11727,7 +11727,7 @@ public class TrusteeIndividualIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -11766,7 +11766,7 @@ public class TrusteeIndividualIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -11799,7 +11799,7 @@ public class TrusteeIndividualIdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         TrusteeIndividualIdentificationOther expectedOther = new()
@@ -11835,7 +11835,7 @@ public class TrusteeIndividualIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -11936,7 +11936,7 @@ public class TrusteeIndividualIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -12030,13 +12030,13 @@ public class TrusteeIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, model.ExpirationDate);
@@ -12052,7 +12052,7 @@ public class TrusteeIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -12073,7 +12073,7 @@ public class TrusteeIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -12087,7 +12087,7 @@ public class TrusteeIndividualIdentificationDriversLicenseTest : TestBase
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
@@ -12103,7 +12103,7 @@ public class TrusteeIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -12117,7 +12117,7 @@ public class TrusteeIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         Assert.Null(model.BackFileID);
@@ -12131,7 +12131,7 @@ public class TrusteeIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         model.Validate();
@@ -12144,7 +12144,7 @@ public class TrusteeIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -12161,7 +12161,7 @@ public class TrusteeIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -12177,7 +12177,7 @@ public class TrusteeIndividualIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -12486,7 +12486,7 @@ public class GrantorTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -12526,7 +12526,7 @@ public class GrantorTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -12577,7 +12577,7 @@ public class GrantorTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -12628,7 +12628,7 @@ public class GrantorTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -12675,7 +12675,7 @@ public class GrantorTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -12726,7 +12726,7 @@ public class GrantorTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -12774,7 +12774,7 @@ public class GrantorTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -12822,7 +12822,7 @@ public class GrantorTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -12869,7 +12869,7 @@ public class GrantorTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -12920,7 +12920,7 @@ public class GrantorTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -12970,7 +12970,7 @@ public class GrantorTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -13205,7 +13205,7 @@ public class GrantorIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -13231,7 +13231,7 @@ public class GrantorIdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         GrantorIdentificationOther expectedOther = new()
@@ -13267,7 +13267,7 @@ public class GrantorIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -13306,7 +13306,7 @@ public class GrantorIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -13339,7 +13339,7 @@ public class GrantorIdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         GrantorIdentificationOther expectedOther = new()
@@ -13375,7 +13375,7 @@ public class GrantorIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -13476,7 +13476,7 @@ public class GrantorIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -13574,13 +13574,13 @@ public class GrantorIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, model.ExpirationDate);
@@ -13596,7 +13596,7 @@ public class GrantorIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -13616,7 +13616,7 @@ public class GrantorIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -13629,7 +13629,7 @@ public class GrantorIdentificationDriversLicenseTest : TestBase
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
@@ -13645,7 +13645,7 @@ public class GrantorIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -13659,7 +13659,7 @@ public class GrantorIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         Assert.Null(model.BackFileID);
@@ -13673,7 +13673,7 @@ public class GrantorIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         model.Validate();
@@ -13686,7 +13686,7 @@ public class GrantorIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -13703,7 +13703,7 @@ public class GrantorIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -13719,7 +13719,7 @@ public class GrantorIdentificationDriversLicenseTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
