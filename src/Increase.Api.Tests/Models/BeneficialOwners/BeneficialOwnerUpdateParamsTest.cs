@@ -32,7 +32,7 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -72,7 +72,7 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -185,7 +185,7 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -419,7 +419,7 @@ public class BeneficialOwnerUpdateParamsIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -445,7 +445,7 @@ public class BeneficialOwnerUpdateParamsIdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         BeneficialOwnerUpdateParamsIdentificationOther expectedOther = new()
@@ -481,7 +481,7 @@ public class BeneficialOwnerUpdateParamsIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -520,7 +520,7 @@ public class BeneficialOwnerUpdateParamsIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -553,7 +553,7 @@ public class BeneficialOwnerUpdateParamsIdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         BeneficialOwnerUpdateParamsIdentificationOther expectedOther = new()
@@ -589,7 +589,7 @@ public class BeneficialOwnerUpdateParamsIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -690,7 +690,7 @@ public class BeneficialOwnerUpdateParamsIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -790,13 +790,13 @@ public class BeneficialOwnerUpdateParamsIdentificationDriversLicenseTest : TestB
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, model.ExpirationDate);
@@ -812,7 +812,7 @@ public class BeneficialOwnerUpdateParamsIdentificationDriversLicenseTest : TestB
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -833,7 +833,7 @@ public class BeneficialOwnerUpdateParamsIdentificationDriversLicenseTest : TestB
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -847,7 +847,7 @@ public class BeneficialOwnerUpdateParamsIdentificationDriversLicenseTest : TestB
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
@@ -863,7 +863,7 @@ public class BeneficialOwnerUpdateParamsIdentificationDriversLicenseTest : TestB
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -877,7 +877,7 @@ public class BeneficialOwnerUpdateParamsIdentificationDriversLicenseTest : TestB
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         Assert.Null(model.BackFileID);
@@ -891,7 +891,7 @@ public class BeneficialOwnerUpdateParamsIdentificationDriversLicenseTest : TestB
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         model.Validate();
@@ -904,7 +904,7 @@ public class BeneficialOwnerUpdateParamsIdentificationDriversLicenseTest : TestB
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -921,7 +921,7 @@ public class BeneficialOwnerUpdateParamsIdentificationDriversLicenseTest : TestB
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -937,7 +937,7 @@ public class BeneficialOwnerUpdateParamsIdentificationDriversLicenseTest : TestB
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 

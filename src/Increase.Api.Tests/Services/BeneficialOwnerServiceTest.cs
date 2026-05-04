@@ -32,7 +32,7 @@ public class BeneficialOwnerServiceTest : TestBase
                         {
                             ExpirationDate = "2019-12-27",
                             FileID = "file_id",
-                            State = "x",
+                            State = "xx",
                             BackFileID = "back_file_id",
                         },
                         Other = new()

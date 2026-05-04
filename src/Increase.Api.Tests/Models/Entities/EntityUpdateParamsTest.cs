@@ -45,7 +45,7 @@ public class EntityUpdateParamsTest : TestBase
                 {
                     City = "x",
                     Line1 = "x",
-                    State = "x",
+                    State = "xx",
                     Zip = "x",
                     Line2 = "x",
                 },
@@ -72,7 +72,7 @@ public class EntityUpdateParamsTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -117,7 +117,7 @@ public class EntityUpdateParamsTest : TestBase
                 {
                     City = "x",
                     Line1 = "x",
-                    State = "x",
+                    State = "xx",
                     Zip = "x",
                     Line2 = "x",
                 },
@@ -158,7 +158,7 @@ public class EntityUpdateParamsTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -184,7 +184,7 @@ public class EntityUpdateParamsTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -229,7 +229,7 @@ public class EntityUpdateParamsTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -362,7 +362,7 @@ public class EntityUpdateParamsTest : TestBase
                 {
                     City = "x",
                     Line1 = "x",
-                    State = "x",
+                    State = "xx",
                     Zip = "x",
                     Line2 = "x",
                 },
@@ -389,7 +389,7 @@ public class EntityUpdateParamsTest : TestBase
                     {
                         ExpirationDate = "2019-12-27",
                         FileID = "file_id",
-                        State = "x",
+                        State = "xx",
                         BackFileID = "back_file_id",
                     },
                     Other = new()
@@ -434,7 +434,7 @@ public class EntityUpdateParamsTest : TestBase
                 {
                     City = "x",
                     Line1 = "x",
-                    State = "x",
+                    State = "xx",
                     Zip = "x",
                     Line2 = "x",
                 },
@@ -1152,7 +1152,7 @@ public class EntityUpdateParamsGovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -1163,7 +1163,7 @@ public class EntityUpdateParamsGovernmentAuthorityTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -1182,7 +1182,7 @@ public class EntityUpdateParamsGovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -1207,7 +1207,7 @@ public class EntityUpdateParamsGovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -1225,7 +1225,7 @@ public class EntityUpdateParamsGovernmentAuthorityTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -1244,7 +1244,7 @@ public class EntityUpdateParamsGovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -1311,7 +1311,7 @@ public class EntityUpdateParamsGovernmentAuthorityTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -1333,14 +1333,14 @@ public class EntityUpdateParamsGovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
 
         string expectedCity = "x";
         string expectedLine1 = "x";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedZip = "x";
         string expectedLine2 = "x";
 
@@ -1358,7 +1358,7 @@ public class EntityUpdateParamsGovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -1379,7 +1379,7 @@ public class EntityUpdateParamsGovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -1393,7 +1393,7 @@ public class EntityUpdateParamsGovernmentAuthorityAddressTest : TestBase
 
         string expectedCity = "x";
         string expectedLine1 = "x";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedZip = "x";
         string expectedLine2 = "x";
 
@@ -1411,7 +1411,7 @@ public class EntityUpdateParamsGovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -1426,7 +1426,7 @@ public class EntityUpdateParamsGovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
         };
 
@@ -1441,7 +1441,7 @@ public class EntityUpdateParamsGovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
         };
 
@@ -1455,7 +1455,7 @@ public class EntityUpdateParamsGovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
 
             // Null should be interpreted as omitted for these properties
@@ -1473,7 +1473,7 @@ public class EntityUpdateParamsGovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
 
             // Null should be interpreted as omitted for these properties
@@ -1490,7 +1490,7 @@ public class EntityUpdateParamsGovernmentAuthorityAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -1526,7 +1526,7 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -1565,7 +1565,7 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -1614,7 +1614,7 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -1667,7 +1667,7 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -1713,7 +1713,7 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -1762,7 +1762,7 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -1869,7 +1869,7 @@ public class EntityUpdateParamsNaturalPersonTest : TestBase
                 {
                     ExpirationDate = "2019-12-27",
                     FileID = "file_id",
-                    State = "x",
+                    State = "xx",
                     BackFileID = "back_file_id",
                 },
                 Other = new()
@@ -2103,7 +2103,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -2129,7 +2129,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         EntityUpdateParamsNaturalPersonIdentificationOther expectedOther = new()
@@ -2165,7 +2165,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -2205,7 +2205,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -2239,7 +2239,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationTest : TestBase
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
         EntityUpdateParamsNaturalPersonIdentificationOther expectedOther = new()
@@ -2275,7 +2275,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -2376,7 +2376,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationTest : TestBase
             {
                 ExpirationDate = "2019-12-27",
                 FileID = "file_id",
-                State = "x",
+                State = "xx",
                 BackFileID = "back_file_id",
             },
             Other = new()
@@ -2476,13 +2476,13 @@ public class EntityUpdateParamsNaturalPersonIdentificationDriversLicenseTest : T
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, model.ExpirationDate);
@@ -2498,7 +2498,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationDriversLicenseTest : T
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -2519,7 +2519,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationDriversLicenseTest : T
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -2533,7 +2533,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationDriversLicenseTest : T
 
         string expectedExpirationDate = "2019-12-27";
         string expectedFileID = "file_id";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedBackFileID = "back_file_id";
 
         Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
@@ -2549,7 +2549,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationDriversLicenseTest : T
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -2563,7 +2563,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationDriversLicenseTest : T
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         Assert.Null(model.BackFileID);
@@ -2577,7 +2577,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationDriversLicenseTest : T
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
         };
 
         model.Validate();
@@ -2590,7 +2590,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationDriversLicenseTest : T
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -2607,7 +2607,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationDriversLicenseTest : T
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             BackFileID = null,
@@ -2623,7 +2623,7 @@ public class EntityUpdateParamsNaturalPersonIdentificationDriversLicenseTest : T
         {
             ExpirationDate = "2019-12-27",
             FileID = "file_id",
-            State = "x",
+            State = "xx",
             BackFileID = "back_file_id",
         };
 
@@ -3313,7 +3313,7 @@ public class EntityUpdateParamsTrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -3324,7 +3324,7 @@ public class EntityUpdateParamsTrustTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -3343,7 +3343,7 @@ public class EntityUpdateParamsTrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -3368,7 +3368,7 @@ public class EntityUpdateParamsTrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -3386,7 +3386,7 @@ public class EntityUpdateParamsTrustTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -3405,7 +3405,7 @@ public class EntityUpdateParamsTrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -3472,7 +3472,7 @@ public class EntityUpdateParamsTrustTest : TestBase
             {
                 City = "x",
                 Line1 = "x",
-                State = "x",
+                State = "xx",
                 Zip = "x",
                 Line2 = "x",
             },
@@ -3494,14 +3494,14 @@ public class EntityUpdateParamsTrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
 
         string expectedCity = "x";
         string expectedLine1 = "x";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedZip = "x";
         string expectedLine2 = "x";
 
@@ -3519,7 +3519,7 @@ public class EntityUpdateParamsTrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -3540,7 +3540,7 @@ public class EntityUpdateParamsTrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -3554,7 +3554,7 @@ public class EntityUpdateParamsTrustAddressTest : TestBase
 
         string expectedCity = "x";
         string expectedLine1 = "x";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedZip = "x";
         string expectedLine2 = "x";
 
@@ -3572,7 +3572,7 @@ public class EntityUpdateParamsTrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
@@ -3587,7 +3587,7 @@ public class EntityUpdateParamsTrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
         };
 
@@ -3602,7 +3602,7 @@ public class EntityUpdateParamsTrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
         };
 
@@ -3616,7 +3616,7 @@ public class EntityUpdateParamsTrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
 
             // Null should be interpreted as omitted for these properties
@@ -3634,7 +3634,7 @@ public class EntityUpdateParamsTrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
 
             // Null should be interpreted as omitted for these properties
@@ -3651,7 +3651,7 @@ public class EntityUpdateParamsTrustAddressTest : TestBase
         {
             City = "x",
             Line1 = "x",
-            State = "x",
+            State = "xx",
             Zip = "x",
             Line2 = "x",
         };
