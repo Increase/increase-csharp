@@ -29,7 +29,7 @@ public class FednowTransferCreateParamsTest : TestBase
             {
                 City = "x",
                 PostalCode = "21029-9469",
-                State = "x",
+                State = "xx",
                 Line1 = "x",
             },
             ExternalAccountID = "external_account_id",
@@ -54,7 +54,7 @@ public class FednowTransferCreateParamsTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line1 = "x",
         };
         string expectedExternalAccountID = "external_account_id";
@@ -176,7 +176,7 @@ public class FednowTransferCreateParamsTest : TestBase
             {
                 City = "x",
                 PostalCode = "21029-9469",
-                State = "x",
+                State = "xx",
                 Line1 = "x",
             },
             ExternalAccountID = "external_account_id",
@@ -199,13 +199,13 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line1 = "x",
         };
 
         string expectedCity = "x";
         string expectedPostalCode = "21029-9469";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedLine1 = "x";
 
         Assert.Equal(expectedCity, model.City);
@@ -221,7 +221,7 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line1 = "x",
         };
 
@@ -241,7 +241,7 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line1 = "x",
         };
 
@@ -254,7 +254,7 @@ public class CreditorAddressTest : TestBase
 
         string expectedCity = "x";
         string expectedPostalCode = "21029-9469";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedLine1 = "x";
 
         Assert.Equal(expectedCity, deserialized.City);
@@ -270,7 +270,7 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line1 = "x",
         };
 
@@ -284,7 +284,7 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
         };
 
         Assert.Null(model.Line1);
@@ -298,7 +298,7 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
         };
 
         model.Validate();
@@ -311,7 +311,7 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             Line1 = null,
@@ -328,7 +328,7 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             Line1 = null,
@@ -344,7 +344,7 @@ public class CreditorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line1 = "x",
         };
 
@@ -363,13 +363,13 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line1 = "x",
         };
 
         string expectedCity = "x";
         string expectedPostalCode = "21029-9469";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedLine1 = "x";
 
         Assert.Equal(expectedCity, model.City);
@@ -385,7 +385,7 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line1 = "x",
         };
 
@@ -405,7 +405,7 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line1 = "x",
         };
 
@@ -418,7 +418,7 @@ public class DebtorAddressTest : TestBase
 
         string expectedCity = "x";
         string expectedPostalCode = "21029-9469";
-        string expectedState = "x";
+        string expectedState = "xx";
         string expectedLine1 = "x";
 
         Assert.Equal(expectedCity, deserialized.City);
@@ -434,7 +434,7 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line1 = "x",
         };
 
@@ -448,7 +448,7 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
         };
 
         Assert.Null(model.Line1);
@@ -462,7 +462,7 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
         };
 
         model.Validate();
@@ -475,7 +475,7 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             Line1 = null,
@@ -492,7 +492,7 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
 
             // Null should be interpreted as omitted for these properties
             Line1 = null,
@@ -508,7 +508,7 @@ public class DebtorAddressTest : TestBase
         {
             City = "x",
             PostalCode = "21029-9469",
-            State = "x",
+            State = "xx",
             Line1 = "x",
         };
 
