@@ -15,7 +15,7 @@ public class CardPushTransferCreateParamsTest : TestBase
         {
             BusinessApplicationIdentifier = BusinessApplicationIdentifier.FundsDisbursement,
             CardTokenID = "outbound_card_token_zlt0ml6youq3q7vcdlg0",
-            MerchantCategoryCode = "1234",
+            MerchantCategoryCode = "5734",
             MerchantCityName = "New York",
             MerchantName = "Acme Corp",
             MerchantNamePrefix = "Acme",
@@ -41,7 +41,7 @@ public class CardPushTransferCreateParamsTest : TestBase
         ApiEnum<string, BusinessApplicationIdentifier> expectedBusinessApplicationIdentifier =
             BusinessApplicationIdentifier.FundsDisbursement;
         string expectedCardTokenID = "outbound_card_token_zlt0ml6youq3q7vcdlg0";
-        string expectedMerchantCategoryCode = "1234";
+        string expectedMerchantCategoryCode = "5734";
         string expectedMerchantCityName = "New York";
         string expectedMerchantName = "Acme Corp";
         string expectedMerchantNamePrefix = "Acme";
@@ -102,7 +102,7 @@ public class CardPushTransferCreateParamsTest : TestBase
         {
             BusinessApplicationIdentifier = BusinessApplicationIdentifier.FundsDisbursement,
             CardTokenID = "outbound_card_token_zlt0ml6youq3q7vcdlg0",
-            MerchantCategoryCode = "1234",
+            MerchantCategoryCode = "5734",
             MerchantCityName = "New York",
             MerchantName = "Acme Corp",
             MerchantNamePrefix = "Acme",
@@ -141,7 +141,7 @@ public class CardPushTransferCreateParamsTest : TestBase
         {
             BusinessApplicationIdentifier = BusinessApplicationIdentifier.FundsDisbursement,
             CardTokenID = "outbound_card_token_zlt0ml6youq3q7vcdlg0",
-            MerchantCategoryCode = "1234",
+            MerchantCategoryCode = "5734",
             MerchantCityName = "New York",
             MerchantName = "Acme Corp",
             MerchantNamePrefix = "Acme",
@@ -189,7 +189,7 @@ public class CardPushTransferCreateParamsTest : TestBase
         {
             BusinessApplicationIdentifier = BusinessApplicationIdentifier.FundsDisbursement,
             CardTokenID = "outbound_card_token_zlt0ml6youq3q7vcdlg0",
-            MerchantCategoryCode = "1234",
+            MerchantCategoryCode = "5734",
             MerchantCityName = "New York",
             MerchantName = "Acme Corp",
             MerchantNamePrefix = "Acme",
@@ -219,7 +219,7 @@ public class CardPushTransferCreateParamsTest : TestBase
         {
             BusinessApplicationIdentifier = BusinessApplicationIdentifier.FundsDisbursement,
             CardTokenID = "outbound_card_token_zlt0ml6youq3q7vcdlg0",
-            MerchantCategoryCode = "1234",
+            MerchantCategoryCode = "5734",
             MerchantCityName = "New York",
             MerchantName = "Acme Corp",
             MerchantNamePrefix = "Acme",
