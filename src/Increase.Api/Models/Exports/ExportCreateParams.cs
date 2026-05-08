@@ -391,7 +391,8 @@ public enum Category
     TransactionCsv,
 
     /// <summary>
-    /// Export a CSV of account balances for the dates in a given range.
+    /// Export a CSV of account balances for the dates in a given range. (deprecated,
+    /// use `daily_account_balance_csv` instead)
     /// </summary>
     BalanceCsv,
 
