@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.31.1 (2026-05-08)
+
+Full Changelog: [v0.31.0...v0.31.1](https://github.com/Increase/increase-csharp/compare/v0.31.0...v0.31.1)
+
+### Bug Fixes
+
+* **internal:** disable default HttpClient timeout as we have our own ([90042e2](https://github.com/Increase/increase-csharp/commit/90042e2d169068aec15a1dd8c1ec98cb35d88849))
+
 ## 0.31.0 (2026-05-08)
 
 Full Changelog: [v0.30.0...v0.31.0](https://github.com/Increase/increase-csharp/compare/v0.30.0...v0.31.0)
