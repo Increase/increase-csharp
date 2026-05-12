@@ -38,10 +38,19 @@ public class PendingTransactionTest : TestBase
                     Amount = 100,
                     TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                 },
-                BlockchainOfframpTransferInstruction = new()
+                BlockchainOfframpTransfer = new()
                 {
+                    ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                    Token = PendingTransactions::Token.Usdc,
+                    Amount = 10000,
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                    InitiatingTransactionHash =
+                        "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                     SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                    TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                    Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                    TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                    Type = PendingTransactions::Type.BlockchainOfframpTransfer,
                 },
                 BlockchainOnrampTransferInstruction = new()
                 {
@@ -121,7 +130,7 @@ public class PendingTransactionTest : TestBase
                         },
                     ],
                     TerminalID = "RCN5VNXS",
-                    Type = PendingTransactions::Type.CardAuthorization,
+                    Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                     Verification = new()
                     {
                         CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -224,10 +233,19 @@ public class PendingTransactionTest : TestBase
                 Amount = 100,
                 TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             },
-            BlockchainOfframpTransferInstruction = new()
+            BlockchainOfframpTransfer = new()
             {
+                ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Token = PendingTransactions::Token.Usdc,
+                Amount = 10000,
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                InitiatingTransactionHash =
+                    "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                 SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                Type = PendingTransactions::Type.BlockchainOfframpTransfer,
             },
             BlockchainOnrampTransferInstruction = new()
             {
@@ -307,7 +325,7 @@ public class PendingTransactionTest : TestBase
                     },
                 ],
                 TerminalID = "RCN5VNXS",
-                Type = PendingTransactions::Type.CardAuthorization,
+                Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                 Verification = new()
                 {
                     CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -430,10 +448,19 @@ public class PendingTransactionTest : TestBase
                     Amount = 100,
                     TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                 },
-                BlockchainOfframpTransferInstruction = new()
+                BlockchainOfframpTransfer = new()
                 {
+                    ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                    Token = PendingTransactions::Token.Usdc,
+                    Amount = 10000,
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                    InitiatingTransactionHash =
+                        "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                     SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                    TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                    Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                    TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                    Type = PendingTransactions::Type.BlockchainOfframpTransfer,
                 },
                 BlockchainOnrampTransferInstruction = new()
                 {
@@ -513,7 +540,7 @@ public class PendingTransactionTest : TestBase
                         },
                     ],
                     TerminalID = "RCN5VNXS",
-                    Type = PendingTransactions::Type.CardAuthorization,
+                    Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                     Verification = new()
                     {
                         CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -629,10 +656,19 @@ public class PendingTransactionTest : TestBase
                     Amount = 100,
                     TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                 },
-                BlockchainOfframpTransferInstruction = new()
+                BlockchainOfframpTransfer = new()
                 {
+                    ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                    Token = PendingTransactions::Token.Usdc,
+                    Amount = 10000,
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                    InitiatingTransactionHash =
+                        "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                     SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                    TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                    Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                    TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                    Type = PendingTransactions::Type.BlockchainOfframpTransfer,
                 },
                 BlockchainOnrampTransferInstruction = new()
                 {
@@ -712,7 +748,7 @@ public class PendingTransactionTest : TestBase
                         },
                     ],
                     TerminalID = "RCN5VNXS",
-                    Type = PendingTransactions::Type.CardAuthorization,
+                    Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                     Verification = new()
                     {
                         CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -822,10 +858,19 @@ public class PendingTransactionTest : TestBase
                 Amount = 100,
                 TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             },
-            BlockchainOfframpTransferInstruction = new()
+            BlockchainOfframpTransfer = new()
             {
+                ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Token = PendingTransactions::Token.Usdc,
+                Amount = 10000,
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                InitiatingTransactionHash =
+                    "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                 SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                Type = PendingTransactions::Type.BlockchainOfframpTransfer,
             },
             BlockchainOnrampTransferInstruction = new()
             {
@@ -905,7 +950,7 @@ public class PendingTransactionTest : TestBase
                     },
                 ],
                 TerminalID = "RCN5VNXS",
-                Type = PendingTransactions::Type.CardAuthorization,
+                Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                 Verification = new()
                 {
                     CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -1028,10 +1073,19 @@ public class PendingTransactionTest : TestBase
                     Amount = 100,
                     TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                 },
-                BlockchainOfframpTransferInstruction = new()
+                BlockchainOfframpTransfer = new()
                 {
+                    ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                    Token = PendingTransactions::Token.Usdc,
+                    Amount = 10000,
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                    InitiatingTransactionHash =
+                        "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                     SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                    TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                    Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                    TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                    Type = PendingTransactions::Type.BlockchainOfframpTransfer,
                 },
                 BlockchainOnrampTransferInstruction = new()
                 {
@@ -1111,7 +1165,7 @@ public class PendingTransactionTest : TestBase
                         },
                     ],
                     TerminalID = "RCN5VNXS",
-                    Type = PendingTransactions::Type.CardAuthorization,
+                    Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                     Verification = new()
                     {
                         CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -1221,10 +1275,19 @@ public class PendingTransactionTest : TestBase
                     Amount = 100,
                     TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                 },
-                BlockchainOfframpTransferInstruction = new()
+                BlockchainOfframpTransfer = new()
                 {
+                    ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                    Token = PendingTransactions::Token.Usdc,
+                    Amount = 10000,
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                    InitiatingTransactionHash =
+                        "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                     SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                    TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                    Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                    TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                    Type = PendingTransactions::Type.BlockchainOfframpTransfer,
                 },
                 BlockchainOnrampTransferInstruction = new()
                 {
@@ -1304,7 +1367,7 @@ public class PendingTransactionTest : TestBase
                         },
                     ],
                     TerminalID = "RCN5VNXS",
-                    Type = PendingTransactions::Type.CardAuthorization,
+                    Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                     Verification = new()
                     {
                         CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -1519,10 +1582,19 @@ public class SourceTest : TestBase
                 Amount = 100,
                 TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             },
-            BlockchainOfframpTransferInstruction = new()
+            BlockchainOfframpTransfer = new()
             {
+                ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Token = PendingTransactions::Token.Usdc,
+                Amount = 10000,
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                InitiatingTransactionHash =
+                    "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                 SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                Type = PendingTransactions::Type.BlockchainOfframpTransfer,
             },
             BlockchainOnrampTransferInstruction = new()
             {
@@ -1602,7 +1674,7 @@ public class SourceTest : TestBase
                     },
                 ],
                 TerminalID = "RCN5VNXS",
-                Type = PendingTransactions::Type.CardAuthorization,
+                Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                 Verification = new()
                 {
                     CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -1690,12 +1762,20 @@ public class SourceTest : TestBase
             Amount = 100,
             TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
         };
-        PendingTransactions::BlockchainOfframpTransferInstruction expectedBlockchainOfframpTransferInstruction =
-            new()
-            {
-                SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
-            };
+        PendingTransactions::BlockchainOfframpTransfer expectedBlockchainOfframpTransfer = new()
+        {
+            ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+            Token = PendingTransactions::Token.Usdc,
+            Amount = 10000,
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            DestinationAccountID = "account_in71c4amph0vgo2qllky",
+            InitiatingTransactionHash =
+                "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
+            SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
+            Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            Type = PendingTransactions::Type.BlockchainOfframpTransfer,
+        };
         PendingTransactions::BlockchainOnrampTransferInstruction expectedBlockchainOnrampTransferInstruction =
             new()
             {
@@ -1774,7 +1854,7 @@ public class SourceTest : TestBase
                 },
             ],
             TerminalID = "RCN5VNXS",
-            Type = PendingTransactions::Type.CardAuthorization,
+            Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
             Verification = new()
             {
                 CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -1854,10 +1934,7 @@ public class SourceTest : TestBase
         Assert.Equal(expectedCategory, model.Category);
         Assert.Equal(expectedAccountTransferInstruction, model.AccountTransferInstruction);
         Assert.Equal(expectedAchTransferInstruction, model.AchTransferInstruction);
-        Assert.Equal(
-            expectedBlockchainOfframpTransferInstruction,
-            model.BlockchainOfframpTransferInstruction
-        );
+        Assert.Equal(expectedBlockchainOfframpTransfer, model.BlockchainOfframpTransfer);
         Assert.Equal(
             expectedBlockchainOnrampTransferInstruction,
             model.BlockchainOnrampTransferInstruction
@@ -1903,10 +1980,19 @@ public class SourceTest : TestBase
                 Amount = 100,
                 TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             },
-            BlockchainOfframpTransferInstruction = new()
+            BlockchainOfframpTransfer = new()
             {
+                ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Token = PendingTransactions::Token.Usdc,
+                Amount = 10000,
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                InitiatingTransactionHash =
+                    "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                 SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                Type = PendingTransactions::Type.BlockchainOfframpTransfer,
             },
             BlockchainOnrampTransferInstruction = new()
             {
@@ -1986,7 +2072,7 @@ public class SourceTest : TestBase
                     },
                 ],
                 TerminalID = "RCN5VNXS",
-                Type = PendingTransactions::Type.CardAuthorization,
+                Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                 Verification = new()
                 {
                     CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -2087,10 +2173,19 @@ public class SourceTest : TestBase
                 Amount = 100,
                 TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             },
-            BlockchainOfframpTransferInstruction = new()
+            BlockchainOfframpTransfer = new()
             {
+                ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Token = PendingTransactions::Token.Usdc,
+                Amount = 10000,
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                InitiatingTransactionHash =
+                    "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                 SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                Type = PendingTransactions::Type.BlockchainOfframpTransfer,
             },
             BlockchainOnrampTransferInstruction = new()
             {
@@ -2170,7 +2265,7 @@ public class SourceTest : TestBase
                     },
                 ],
                 TerminalID = "RCN5VNXS",
-                Type = PendingTransactions::Type.CardAuthorization,
+                Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                 Verification = new()
                 {
                     CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -2265,12 +2360,20 @@ public class SourceTest : TestBase
             Amount = 100,
             TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
         };
-        PendingTransactions::BlockchainOfframpTransferInstruction expectedBlockchainOfframpTransferInstruction =
-            new()
-            {
-                SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
-            };
+        PendingTransactions::BlockchainOfframpTransfer expectedBlockchainOfframpTransfer = new()
+        {
+            ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+            Token = PendingTransactions::Token.Usdc,
+            Amount = 10000,
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            DestinationAccountID = "account_in71c4amph0vgo2qllky",
+            InitiatingTransactionHash =
+                "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
+            SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
+            Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            Type = PendingTransactions::Type.BlockchainOfframpTransfer,
+        };
         PendingTransactions::BlockchainOnrampTransferInstruction expectedBlockchainOnrampTransferInstruction =
             new()
             {
@@ -2349,7 +2452,7 @@ public class SourceTest : TestBase
                 },
             ],
             TerminalID = "RCN5VNXS",
-            Type = PendingTransactions::Type.CardAuthorization,
+            Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
             Verification = new()
             {
                 CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -2429,10 +2532,7 @@ public class SourceTest : TestBase
         Assert.Equal(expectedCategory, deserialized.Category);
         Assert.Equal(expectedAccountTransferInstruction, deserialized.AccountTransferInstruction);
         Assert.Equal(expectedAchTransferInstruction, deserialized.AchTransferInstruction);
-        Assert.Equal(
-            expectedBlockchainOfframpTransferInstruction,
-            deserialized.BlockchainOfframpTransferInstruction
-        );
+        Assert.Equal(expectedBlockchainOfframpTransfer, deserialized.BlockchainOfframpTransfer);
         Assert.Equal(
             expectedBlockchainOnrampTransferInstruction,
             deserialized.BlockchainOnrampTransferInstruction
@@ -2478,10 +2578,19 @@ public class SourceTest : TestBase
                 Amount = 100,
                 TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             },
-            BlockchainOfframpTransferInstruction = new()
+            BlockchainOfframpTransfer = new()
             {
+                ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Token = PendingTransactions::Token.Usdc,
+                Amount = 10000,
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                InitiatingTransactionHash =
+                    "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                 SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                Type = PendingTransactions::Type.BlockchainOfframpTransfer,
             },
             BlockchainOnrampTransferInstruction = new()
             {
@@ -2561,7 +2670,7 @@ public class SourceTest : TestBase
                     },
                 ],
                 TerminalID = "RCN5VNXS",
-                Type = PendingTransactions::Type.CardAuthorization,
+                Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                 Verification = new()
                 {
                     CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -2651,8 +2760,8 @@ public class SourceTest : TestBase
         Assert.False(model.RawData.ContainsKey("account_transfer_instruction"));
         Assert.Null(model.AchTransferInstruction);
         Assert.False(model.RawData.ContainsKey("ach_transfer_instruction"));
-        Assert.Null(model.BlockchainOfframpTransferInstruction);
-        Assert.False(model.RawData.ContainsKey("blockchain_offramp_transfer_instruction"));
+        Assert.Null(model.BlockchainOfframpTransfer);
+        Assert.False(model.RawData.ContainsKey("blockchain_offramp_transfer"));
         Assert.Null(model.BlockchainOnrampTransferInstruction);
         Assert.False(model.RawData.ContainsKey("blockchain_onramp_transfer_instruction"));
         Assert.Null(model.CardAuthorization);
@@ -2701,7 +2810,7 @@ public class SourceTest : TestBase
 
             AccountTransferInstruction = null,
             AchTransferInstruction = null,
-            BlockchainOfframpTransferInstruction = null,
+            BlockchainOfframpTransfer = null,
             BlockchainOnrampTransferInstruction = null,
             CardAuthorization = null,
             CardPushTransferInstruction = null,
@@ -2721,8 +2830,8 @@ public class SourceTest : TestBase
         Assert.True(model.RawData.ContainsKey("account_transfer_instruction"));
         Assert.Null(model.AchTransferInstruction);
         Assert.True(model.RawData.ContainsKey("ach_transfer_instruction"));
-        Assert.Null(model.BlockchainOfframpTransferInstruction);
-        Assert.True(model.RawData.ContainsKey("blockchain_offramp_transfer_instruction"));
+        Assert.Null(model.BlockchainOfframpTransfer);
+        Assert.True(model.RawData.ContainsKey("blockchain_offramp_transfer"));
         Assert.Null(model.BlockchainOnrampTransferInstruction);
         Assert.True(model.RawData.ContainsKey("blockchain_onramp_transfer_instruction"));
         Assert.Null(model.CardAuthorization);
@@ -2760,7 +2869,7 @@ public class SourceTest : TestBase
 
             AccountTransferInstruction = null,
             AchTransferInstruction = null,
-            BlockchainOfframpTransferInstruction = null,
+            BlockchainOfframpTransfer = null,
             BlockchainOnrampTransferInstruction = null,
             CardAuthorization = null,
             CardPushTransferInstruction = null,
@@ -2796,10 +2905,19 @@ public class SourceTest : TestBase
                 Amount = 100,
                 TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             },
-            BlockchainOfframpTransferInstruction = new()
+            BlockchainOfframpTransfer = new()
             {
+                ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Token = PendingTransactions::Token.Usdc,
+                Amount = 10000,
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                InitiatingTransactionHash =
+                    "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                 SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                Type = PendingTransactions::Type.BlockchainOfframpTransfer,
             },
             BlockchainOnrampTransferInstruction = new()
             {
@@ -2879,7 +2997,7 @@ public class SourceTest : TestBase
                     },
                 ],
                 TerminalID = "RCN5VNXS",
-                Type = PendingTransactions::Type.CardAuthorization,
+                Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                 Verification = new()
                 {
                     CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -2977,7 +3095,7 @@ public class SourceCategoryTest : TestBase
     [InlineData(PendingTransactions::SourceCategory.SwiftTransferInstruction)]
     [InlineData(PendingTransactions::SourceCategory.CardPushTransferInstruction)]
     [InlineData(PendingTransactions::SourceCategory.BlockchainOnrampTransferInstruction)]
-    [InlineData(PendingTransactions::SourceCategory.BlockchainOfframpTransferInstruction)]
+    [InlineData(PendingTransactions::SourceCategory.BlockchainOfframpTransfer)]
     [InlineData(PendingTransactions::SourceCategory.Other)]
     public void Validation_Works(PendingTransactions::SourceCategory rawValue)
     {
@@ -3012,7 +3130,7 @@ public class SourceCategoryTest : TestBase
     [InlineData(PendingTransactions::SourceCategory.SwiftTransferInstruction)]
     [InlineData(PendingTransactions::SourceCategory.CardPushTransferInstruction)]
     [InlineData(PendingTransactions::SourceCategory.BlockchainOnrampTransferInstruction)]
-    [InlineData(PendingTransactions::SourceCategory.BlockchainOfframpTransferInstruction)]
+    [InlineData(PendingTransactions::SourceCategory.BlockchainOfframpTransfer)]
     [InlineData(PendingTransactions::SourceCategory.Other)]
     public void SerializationRoundtrip_Works(PendingTransactions::SourceCategory rawValue)
     {
@@ -3281,36 +3399,73 @@ public class AchTransferInstructionTest : TestBase
     }
 }
 
-public class BlockchainOfframpTransferInstructionTest : TestBase
+public class BlockchainOfframpTransferTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new PendingTransactions::BlockchainOfframpTransferInstruction
+        var model = new PendingTransactions::BlockchainOfframpTransfer
         {
+            ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+            Token = PendingTransactions::Token.Usdc,
+            Amount = 10000,
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            DestinationAccountID = "account_in71c4amph0vgo2qllky",
+            InitiatingTransactionHash =
+                "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
             SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-            TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+            Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            Type = PendingTransactions::Type.BlockchainOfframpTransfer,
         };
 
+        string expectedID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m";
+        ApiEnum<string, PendingTransactions::Token> expectedToken = PendingTransactions::Token.Usdc;
+        long expectedAmount = 10000;
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedDestinationAccountID = "account_in71c4amph0vgo2qllky";
+        string expectedInitiatingTransactionHash =
+            "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a";
         string expectedSourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi";
-        string expectedTransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m";
+        ApiEnum<string, PendingTransactions::BlockchainOfframpTransferStatus> expectedStatus =
+            PendingTransactions::BlockchainOfframpTransferStatus.Settled;
+        string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
+        ApiEnum<string, PendingTransactions::Type> expectedType =
+            PendingTransactions::Type.BlockchainOfframpTransfer;
 
+        Assert.Equal(expectedID, model.ID);
+        Assert.Equal(expectedToken, model.Token);
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedDestinationAccountID, model.DestinationAccountID);
+        Assert.Equal(expectedInitiatingTransactionHash, model.InitiatingTransactionHash);
         Assert.Equal(expectedSourceBlockchainAddressID, model.SourceBlockchainAddressID);
-        Assert.Equal(expectedTransferID, model.TransferID);
+        Assert.Equal(expectedStatus, model.Status);
+        Assert.Equal(expectedTransactionID, model.TransactionID);
+        Assert.Equal(expectedType, model.Type);
     }
 
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new PendingTransactions::BlockchainOfframpTransferInstruction
+        var model = new PendingTransactions::BlockchainOfframpTransfer
         {
+            ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+            Token = PendingTransactions::Token.Usdc,
+            Amount = 10000,
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            DestinationAccountID = "account_in71c4amph0vgo2qllky",
+            InitiatingTransactionHash =
+                "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
             SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-            TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+            Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            Type = PendingTransactions::Type.BlockchainOfframpTransfer,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<PendingTransactions::BlockchainOfframpTransferInstruction>(
+            JsonSerializer.Deserialize<PendingTransactions::BlockchainOfframpTransfer>(
                 json,
                 ModelBase.SerializerOptions
             );
@@ -3321,34 +3476,71 @@ public class BlockchainOfframpTransferInstructionTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new PendingTransactions::BlockchainOfframpTransferInstruction
+        var model = new PendingTransactions::BlockchainOfframpTransfer
         {
+            ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+            Token = PendingTransactions::Token.Usdc,
+            Amount = 10000,
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            DestinationAccountID = "account_in71c4amph0vgo2qllky",
+            InitiatingTransactionHash =
+                "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
             SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-            TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+            Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            Type = PendingTransactions::Type.BlockchainOfframpTransfer,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized =
-            JsonSerializer.Deserialize<PendingTransactions::BlockchainOfframpTransferInstruction>(
+            JsonSerializer.Deserialize<PendingTransactions::BlockchainOfframpTransfer>(
                 element,
                 ModelBase.SerializerOptions
             );
         Assert.NotNull(deserialized);
 
+        string expectedID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m";
+        ApiEnum<string, PendingTransactions::Token> expectedToken = PendingTransactions::Token.Usdc;
+        long expectedAmount = 10000;
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedDestinationAccountID = "account_in71c4amph0vgo2qllky";
+        string expectedInitiatingTransactionHash =
+            "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a";
         string expectedSourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi";
-        string expectedTransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m";
+        ApiEnum<string, PendingTransactions::BlockchainOfframpTransferStatus> expectedStatus =
+            PendingTransactions::BlockchainOfframpTransferStatus.Settled;
+        string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
+        ApiEnum<string, PendingTransactions::Type> expectedType =
+            PendingTransactions::Type.BlockchainOfframpTransfer;
 
+        Assert.Equal(expectedID, deserialized.ID);
+        Assert.Equal(expectedToken, deserialized.Token);
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedDestinationAccountID, deserialized.DestinationAccountID);
+        Assert.Equal(expectedInitiatingTransactionHash, deserialized.InitiatingTransactionHash);
         Assert.Equal(expectedSourceBlockchainAddressID, deserialized.SourceBlockchainAddressID);
-        Assert.Equal(expectedTransferID, deserialized.TransferID);
+        Assert.Equal(expectedStatus, deserialized.Status);
+        Assert.Equal(expectedTransactionID, deserialized.TransactionID);
+        Assert.Equal(expectedType, deserialized.Type);
     }
 
     [Fact]
     public void Validation_Works()
     {
-        var model = new PendingTransactions::BlockchainOfframpTransferInstruction
+        var model = new PendingTransactions::BlockchainOfframpTransfer
         {
+            ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+            Token = PendingTransactions::Token.Usdc,
+            Amount = 10000,
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            DestinationAccountID = "account_in71c4amph0vgo2qllky",
+            InitiatingTransactionHash =
+                "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
             SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-            TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+            Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            Type = PendingTransactions::Type.BlockchainOfframpTransfer,
         };
 
         model.Validate();
@@ -3357,15 +3549,192 @@ public class BlockchainOfframpTransferInstructionTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new PendingTransactions::BlockchainOfframpTransferInstruction
+        var model = new PendingTransactions::BlockchainOfframpTransfer
         {
+            ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+            Token = PendingTransactions::Token.Usdc,
+            Amount = 10000,
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            DestinationAccountID = "account_in71c4amph0vgo2qllky",
+            InitiatingTransactionHash =
+                "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
             SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-            TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+            Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            Type = PendingTransactions::Type.BlockchainOfframpTransfer,
         };
 
-        PendingTransactions::BlockchainOfframpTransferInstruction copied = new(model);
+        PendingTransactions::BlockchainOfframpTransfer copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class TokenTest : TestBase
+{
+    [Theory]
+    [InlineData(PendingTransactions::Token.Usdc)]
+    public void Validation_Works(PendingTransactions::Token rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::Token> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Token>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PendingTransactions::Token.Usdc)]
+    public void SerializationRoundtrip_Works(PendingTransactions::Token rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::Token> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Token>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Token>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Token>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class BlockchainOfframpTransferStatusTest : TestBase
+{
+    [Theory]
+    [InlineData(PendingTransactions::BlockchainOfframpTransferStatus.PendingSettlement)]
+    [InlineData(PendingTransactions::BlockchainOfframpTransferStatus.Settled)]
+    public void Validation_Works(PendingTransactions::BlockchainOfframpTransferStatus rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::BlockchainOfframpTransferStatus> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::BlockchainOfframpTransferStatus>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PendingTransactions::BlockchainOfframpTransferStatus.PendingSettlement)]
+    [InlineData(PendingTransactions::BlockchainOfframpTransferStatus.Settled)]
+    public void SerializationRoundtrip_Works(
+        PendingTransactions::BlockchainOfframpTransferStatus rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::BlockchainOfframpTransferStatus> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::BlockchainOfframpTransferStatus>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::BlockchainOfframpTransferStatus>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::BlockchainOfframpTransferStatus>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class TypeTest : TestBase
+{
+    [Theory]
+    [InlineData(PendingTransactions::Type.BlockchainOfframpTransfer)]
+    public void Validation_Works(PendingTransactions::Type rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::Type> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Type>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PendingTransactions::Type.BlockchainOfframpTransfer)]
+    public void SerializationRoundtrip_Works(PendingTransactions::Type rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::Type> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Type>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Type>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Type>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }
 
@@ -3545,7 +3914,7 @@ public class CardAuthorizationTest : TestBase
                 },
             ],
             TerminalID = "RCN5VNXS",
-            Type = PendingTransactions::Type.CardAuthorization,
+            Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
             Verification = new()
             {
                 CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -3636,8 +4005,8 @@ public class CardAuthorizationTest : TestBase
             },
         ];
         string expectedTerminalID = "RCN5VNXS";
-        ApiEnum<string, PendingTransactions::Type> expectedType =
-            PendingTransactions::Type.CardAuthorization;
+        ApiEnum<string, PendingTransactions::CardAuthorizationType> expectedType =
+            PendingTransactions::CardAuthorizationType.CardAuthorization;
         PendingTransactions::Verification expectedVerification = new()
         {
             CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -3766,7 +4135,7 @@ public class CardAuthorizationTest : TestBase
                 },
             ],
             TerminalID = "RCN5VNXS",
-            Type = PendingTransactions::Type.CardAuthorization,
+            Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
             Verification = new()
             {
                 CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -3871,7 +4240,7 @@ public class CardAuthorizationTest : TestBase
                 },
             ],
             TerminalID = "RCN5VNXS",
-            Type = PendingTransactions::Type.CardAuthorization,
+            Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
             Verification = new()
             {
                 CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -3969,8 +4338,8 @@ public class CardAuthorizationTest : TestBase
             },
         ];
         string expectedTerminalID = "RCN5VNXS";
-        ApiEnum<string, PendingTransactions::Type> expectedType =
-            PendingTransactions::Type.CardAuthorization;
+        ApiEnum<string, PendingTransactions::CardAuthorizationType> expectedType =
+            PendingTransactions::CardAuthorizationType.CardAuthorization;
         PendingTransactions::Verification expectedVerification = new()
         {
             CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -4099,7 +4468,7 @@ public class CardAuthorizationTest : TestBase
                 },
             ],
             TerminalID = "RCN5VNXS",
-            Type = PendingTransactions::Type.CardAuthorization,
+            Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
             Verification = new()
             {
                 CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -4198,7 +4567,7 @@ public class CardAuthorizationTest : TestBase
                 },
             ],
             TerminalID = "RCN5VNXS",
-            Type = PendingTransactions::Type.CardAuthorization,
+            Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
             Verification = new()
             {
                 CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -6387,41 +6756,39 @@ public class FeeTypeTest : TestBase
     }
 }
 
-public class TypeTest : TestBase
+public class CardAuthorizationTypeTest : TestBase
 {
     [Theory]
-    [InlineData(PendingTransactions::Type.CardAuthorization)]
-    public void Validation_Works(PendingTransactions::Type rawValue)
+    [InlineData(PendingTransactions::CardAuthorizationType.CardAuthorization)]
+    public void Validation_Works(PendingTransactions::CardAuthorizationType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, PendingTransactions::Type> value = rawValue;
+        ApiEnum<string, PendingTransactions::CardAuthorizationType> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Type>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::CardAuthorizationType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
 
         Assert.NotNull(value);
         Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
     }
 
     [Theory]
-    [InlineData(PendingTransactions::Type.CardAuthorization)]
-    public void SerializationRoundtrip_Works(PendingTransactions::Type rawValue)
+    [InlineData(PendingTransactions::CardAuthorizationType.CardAuthorization)]
+    public void SerializationRoundtrip_Works(PendingTransactions::CardAuthorizationType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, PendingTransactions::Type> value = rawValue;
+        ApiEnum<string, PendingTransactions::CardAuthorizationType> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Type>>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::CardAuthorizationType>
+        >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
     }
@@ -6429,15 +6796,13 @@ public class TypeTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Type>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::CardAuthorizationType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Type>>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::CardAuthorizationType>
+        >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
     }

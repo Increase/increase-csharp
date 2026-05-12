@@ -416,19 +416,21 @@ public sealed record class Source : JsonModel
     }
 
     /// <summary>
-    /// A Blockchain Off-Ramp Transfer Instruction object. This field will be present
-    /// in the JSON response if and only if `category` is equal to `blockchain_offramp_transfer_instruction`.
+    /// A Blockchain Off-Ramp Transfer object. This field will be present in the
+    /// JSON response if and only if `category` is equal to `blockchain_offramp_transfer`.
+    /// Blockchain Off-Ramp Transfers move funds from a Blockchain Address to an
+    /// Account. They're automatically created when funds land in a Blockchain Address.
     /// </summary>
-    public BlockchainOfframpTransferInstruction? BlockchainOfframpTransferInstruction
+    public BlockchainOfframpTransfer? BlockchainOfframpTransfer
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<BlockchainOfframpTransferInstruction>(
-                "blockchain_offramp_transfer_instruction"
+            return this._rawData.GetNullableClass<BlockchainOfframpTransfer>(
+                "blockchain_offramp_transfer"
             );
         }
-        init { this._rawData.Set("blockchain_offramp_transfer_instruction", value); }
+        init { this._rawData.Set("blockchain_offramp_transfer", value); }
     }
 
     /// <summary>
@@ -652,7 +654,7 @@ public sealed record class Source : JsonModel
         this.Category.Validate();
         this.AccountTransferInstruction?.Validate();
         this.AchTransferInstruction?.Validate();
-        this.BlockchainOfframpTransferInstruction?.Validate();
+        this.BlockchainOfframpTransfer?.Validate();
         this.BlockchainOnrampTransferInstruction?.Validate();
         this.CardAuthorization?.Validate();
         this.CardPushTransferInstruction?.Validate();
@@ -788,9 +790,9 @@ public enum SourceCategory
     BlockchainOnrampTransferInstruction,
 
     /// <summary>
-    /// Blockchain Off-Ramp Transfer Instruction: details will be under the `blockchain_offramp_transfer_instruction` object.
+    /// Blockchain Off-Ramp Transfer: details will be under the `blockchain_offramp_transfer` object.
     /// </summary>
-    BlockchainOfframpTransferInstruction,
+    BlockchainOfframpTransfer,
 
     /// <summary>
     /// The Pending Transaction was made for an undocumented or deprecated reason.
@@ -824,8 +826,7 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
             "card_push_transfer_instruction" => SourceCategory.CardPushTransferInstruction,
             "blockchain_onramp_transfer_instruction" =>
                 SourceCategory.BlockchainOnrampTransferInstruction,
-            "blockchain_offramp_transfer_instruction" =>
-                SourceCategory.BlockchainOfframpTransferInstruction,
+            "blockchain_offramp_transfer" => SourceCategory.BlockchainOfframpTransfer,
             "other" => SourceCategory.Other,
             _ => (SourceCategory)(-1),
         };
@@ -857,8 +858,7 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
                 SourceCategory.CardPushTransferInstruction => "card_push_transfer_instruction",
                 SourceCategory.BlockchainOnrampTransferInstruction =>
                     "blockchain_onramp_transfer_instruction",
-                SourceCategory.BlockchainOfframpTransferInstruction =>
-                    "blockchain_offramp_transfer_instruction",
+                SourceCategory.BlockchainOfframpTransfer => "blockchain_offramp_transfer",
                 SourceCategory.Other => "other",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -1095,19 +1095,97 @@ class AchTransferInstructionFromRaw : IFromRawJson<AchTransferInstruction>
 }
 
 /// <summary>
-/// A Blockchain Off-Ramp Transfer Instruction object. This field will be present
-/// in the JSON response if and only if `category` is equal to `blockchain_offramp_transfer_instruction`.
+/// A Blockchain Off-Ramp Transfer object. This field will be present in the JSON
+/// response if and only if `category` is equal to `blockchain_offramp_transfer`.
+/// Blockchain Off-Ramp Transfers move funds from a Blockchain Address to an Account.
+/// They're automatically created when funds land in a Blockchain Address.
 /// </summary>
 [JsonConverter(
-    typeof(JsonModelConverter<
-        BlockchainOfframpTransferInstruction,
-        BlockchainOfframpTransferInstructionFromRaw
-    >)
+    typeof(JsonModelConverter<BlockchainOfframpTransfer, BlockchainOfframpTransferFromRaw>)
 )]
-public sealed record class BlockchainOfframpTransferInstruction : JsonModel
+public sealed record class BlockchainOfframpTransfer : JsonModel
 {
     /// <summary>
-    /// The identifier of the Blockchain Address the funds were received at.
+    /// The Blockchain Off-Ramp Transfer's identifier.
+    /// </summary>
+    public required string ID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("id");
+        }
+        init { this._rawData.Set("id", value); }
+    }
+
+    /// <summary>
+    /// The token that was received.
+    /// </summary>
+    public required ApiEnum<string, Token> Token
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, Token>>("token");
+        }
+        init { this._rawData.Set("token", value); }
+    }
+
+    /// <summary>
+    /// The transfer amount in USD cents.
+    /// </summary>
+    public required long Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the transfer was created.
+    /// </summary>
+    public required System::DateTimeOffset CreatedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("created_at");
+        }
+        init { this._rawData.Set("created_at", value); }
+    }
+
+    /// <summary>
+    /// The Account the funds were transferred into.
+    /// </summary>
+    public required string DestinationAccountID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("destination_account_id");
+        }
+        init { this._rawData.Set("destination_account_id", value); }
+    }
+
+    /// <summary>
+    /// The transaction hash of the blockchain transaction that initiated this transfer.
+    /// </summary>
+    public required string InitiatingTransactionHash
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("initiating_transaction_hash");
+        }
+        init { this._rawData.Set("initiating_transaction_hash", value); }
+    }
+
+    /// <summary>
+    /// The Blockchain Address from which the transfer originated.
     /// </summary>
     public required string SourceBlockchainAddressID
     {
@@ -1120,50 +1198,87 @@ public sealed record class BlockchainOfframpTransferInstruction : JsonModel
     }
 
     /// <summary>
-    /// The identifier of the Blockchain Off-Ramp Transfer that led to this Transaction.
+    /// The lifecycle status of the transfer.
     /// </summary>
-    public required string TransferID
+    public required ApiEnum<string, BlockchainOfframpTransferStatus> Status
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("transfer_id");
+            return this._rawData.GetNotNullClass<ApiEnum<string, BlockchainOfframpTransferStatus>>(
+                "status"
+            );
         }
-        init { this._rawData.Set("transfer_id", value); }
+        init { this._rawData.Set("status", value); }
+    }
+
+    /// <summary>
+    /// The Transaction crediting the Account once the transfer is settled.
+    /// </summary>
+    public required string? TransactionID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("transaction_id");
+        }
+        init { this._rawData.Set("transaction_id", value); }
+    }
+
+    /// <summary>
+    /// A constant representing the object's type. For this resource it will always
+    /// be `blockchain_offramp_transfer`.
+    /// </summary>
+    public required ApiEnum<string, global::Increase.Api.Models.PendingTransactions.Type> Type
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, global::Increase.Api.Models.PendingTransactions.Type>
+            >("type");
+        }
+        init { this._rawData.Set("type", value); }
     }
 
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.ID;
+        this.Token.Validate();
+        _ = this.Amount;
+        _ = this.CreatedAt;
+        _ = this.DestinationAccountID;
+        _ = this.InitiatingTransactionHash;
         _ = this.SourceBlockchainAddressID;
-        _ = this.TransferID;
+        this.Status.Validate();
+        _ = this.TransactionID;
+        this.Type.Validate();
     }
 
-    public BlockchainOfframpTransferInstruction() { }
+    public BlockchainOfframpTransfer() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public BlockchainOfframpTransferInstruction(
-        BlockchainOfframpTransferInstruction blockchainOfframpTransferInstruction
-    )
-        : base(blockchainOfframpTransferInstruction) { }
+    public BlockchainOfframpTransfer(BlockchainOfframpTransfer blockchainOfframpTransfer)
+        : base(blockchainOfframpTransfer) { }
 #pragma warning restore CS8618
 
-    public BlockchainOfframpTransferInstruction(IReadOnlyDictionary<string, JsonElement> rawData)
+    public BlockchainOfframpTransfer(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    BlockchainOfframpTransferInstruction(FrozenDictionary<string, JsonElement> rawData)
+    BlockchainOfframpTransfer(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="BlockchainOfframpTransferInstructionFromRaw.FromRawUnchecked"/>
-    public static BlockchainOfframpTransferInstruction FromRawUnchecked(
+    /// <inheritdoc cref="BlockchainOfframpTransferFromRaw.FromRawUnchecked"/>
+    public static BlockchainOfframpTransfer FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -1171,13 +1286,160 @@ public sealed record class BlockchainOfframpTransferInstruction : JsonModel
     }
 }
 
-class BlockchainOfframpTransferInstructionFromRaw
-    : IFromRawJson<BlockchainOfframpTransferInstruction>
+class BlockchainOfframpTransferFromRaw : IFromRawJson<BlockchainOfframpTransfer>
 {
     /// <inheritdoc/>
-    public BlockchainOfframpTransferInstruction FromRawUnchecked(
+    public BlockchainOfframpTransfer FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
-    ) => BlockchainOfframpTransferInstruction.FromRawUnchecked(rawData);
+    ) => BlockchainOfframpTransfer.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The token that was received.
+/// </summary>
+[JsonConverter(typeof(TokenConverter))]
+public enum Token
+{
+    /// <summary>
+    /// A USD stablecoin issued by Circle.
+    /// </summary>
+    Usdc,
+}
+
+sealed class TokenConverter : JsonConverter<Token>
+{
+    public override Token Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "usdc" => Token.Usdc,
+            _ => (Token)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Token value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Token.Usdc => "usdc",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The lifecycle status of the transfer.
+/// </summary>
+[JsonConverter(typeof(BlockchainOfframpTransferStatusConverter))]
+public enum BlockchainOfframpTransferStatus
+{
+    /// <summary>
+    /// The transfer is pending settlement at Increase.
+    /// </summary>
+    PendingSettlement,
+
+    /// <summary>
+    /// The transfer has been settled and funds have been credited.
+    /// </summary>
+    Settled,
+}
+
+sealed class BlockchainOfframpTransferStatusConverter
+    : JsonConverter<BlockchainOfframpTransferStatus>
+{
+    public override BlockchainOfframpTransferStatus Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "pending_settlement" => BlockchainOfframpTransferStatus.PendingSettlement,
+            "settled" => BlockchainOfframpTransferStatus.Settled,
+            _ => (BlockchainOfframpTransferStatus)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        BlockchainOfframpTransferStatus value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                BlockchainOfframpTransferStatus.PendingSettlement => "pending_settlement",
+                BlockchainOfframpTransferStatus.Settled => "settled",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// A constant representing the object's type. For this resource it will always be `blockchain_offramp_transfer`.
+/// </summary>
+[JsonConverter(typeof(TypeConverter))]
+public enum Type
+{
+    BlockchainOfframpTransfer,
+}
+
+sealed class TypeConverter : JsonConverter<global::Increase.Api.Models.PendingTransactions.Type>
+{
+    public override global::Increase.Api.Models.PendingTransactions.Type Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "blockchain_offramp_transfer" => global::Increase
+                .Api
+                .Models
+                .PendingTransactions
+                .Type
+                .BlockchainOfframpTransfer,
+            _ => (global::Increase.Api.Models.PendingTransactions.Type)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        global::Increase.Api.Models.PendingTransactions.Type value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                global::Increase.Api.Models.PendingTransactions.Type.BlockchainOfframpTransfer =>
+                    "blockchain_offramp_transfer",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>
@@ -1669,14 +1931,12 @@ public sealed record class CardAuthorization : JsonModel
     /// A constant representing the object's type. For this resource it will always
     /// be `card_authorization`.
     /// </summary>
-    public required ApiEnum<string, global::Increase.Api.Models.PendingTransactions.Type> Type
+    public required ApiEnum<string, CardAuthorizationType> Type
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<
-                ApiEnum<string, global::Increase.Api.Models.PendingTransactions.Type>
-            >("type");
+            return this._rawData.GetNotNullClass<ApiEnum<string, CardAuthorizationType>>("type");
         }
         init { this._rawData.Set("type", value); }
     }
@@ -4345,15 +4605,15 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
 /// <summary>
 /// A constant representing the object's type. For this resource it will always be `card_authorization`.
 /// </summary>
-[JsonConverter(typeof(TypeConverter))]
-public enum Type
+[JsonConverter(typeof(CardAuthorizationTypeConverter))]
+public enum CardAuthorizationType
 {
     CardAuthorization,
 }
 
-sealed class TypeConverter : JsonConverter<global::Increase.Api.Models.PendingTransactions.Type>
+sealed class CardAuthorizationTypeConverter : JsonConverter<CardAuthorizationType>
 {
-    public override global::Increase.Api.Models.PendingTransactions.Type Read(
+    public override CardAuthorizationType Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -4361,19 +4621,14 @@ sealed class TypeConverter : JsonConverter<global::Increase.Api.Models.PendingTr
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "card_authorization" => global::Increase
-                .Api
-                .Models
-                .PendingTransactions
-                .Type
-                .CardAuthorization,
-            _ => (global::Increase.Api.Models.PendingTransactions.Type)(-1),
+            "card_authorization" => CardAuthorizationType.CardAuthorization,
+            _ => (CardAuthorizationType)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        global::Increase.Api.Models.PendingTransactions.Type value,
+        CardAuthorizationType value,
         JsonSerializerOptions options
     )
     {
@@ -4381,8 +4636,7 @@ sealed class TypeConverter : JsonConverter<global::Increase.Api.Models.PendingTr
             writer,
             value switch
             {
-                global::Increase.Api.Models.PendingTransactions.Type.CardAuthorization =>
-                    "card_authorization",
+                CardAuthorizationType.CardAuthorization => "card_authorization",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
