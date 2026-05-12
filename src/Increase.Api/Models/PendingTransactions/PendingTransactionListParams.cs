@@ -397,9 +397,9 @@ public enum In
     BlockchainOnrampTransferInstruction,
 
     /// <summary>
-    /// Blockchain Off-Ramp Transfer Instruction: details will be under the `blockchain_offramp_transfer_instruction` object.
+    /// Blockchain Off-Ramp Transfer: details will be under the `blockchain_offramp_transfer` object.
     /// </summary>
-    BlockchainOfframpTransferInstruction,
+    BlockchainOfframpTransfer,
 
     /// <summary>
     /// The Pending Transaction was made for an undocumented or deprecated reason.
@@ -431,7 +431,7 @@ sealed class InConverter : JsonConverter<In>
             "swift_transfer_instruction" => In.SwiftTransferInstruction,
             "card_push_transfer_instruction" => In.CardPushTransferInstruction,
             "blockchain_onramp_transfer_instruction" => In.BlockchainOnrampTransferInstruction,
-            "blockchain_offramp_transfer_instruction" => In.BlockchainOfframpTransferInstruction,
+            "blockchain_offramp_transfer" => In.BlockchainOfframpTransfer,
             "other" => In.Other,
             _ => (In)(-1),
         };
@@ -457,8 +457,7 @@ sealed class InConverter : JsonConverter<In>
                 In.SwiftTransferInstruction => "swift_transfer_instruction",
                 In.CardPushTransferInstruction => "card_push_transfer_instruction",
                 In.BlockchainOnrampTransferInstruction => "blockchain_onramp_transfer_instruction",
-                In.BlockchainOfframpTransferInstruction =>
-                    "blockchain_offramp_transfer_instruction",
+                In.BlockchainOfframpTransfer => "blockchain_offramp_transfer",
                 In.Other => "other",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

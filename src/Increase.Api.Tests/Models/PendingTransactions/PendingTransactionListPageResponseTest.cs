@@ -41,10 +41,19 @@ public class PendingTransactionListPageResponseTest : TestBase
                             Amount = 100,
                             TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                         },
-                        BlockchainOfframpTransferInstruction = new()
+                        BlockchainOfframpTransfer = new()
                         {
+                            ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                            Token = PendingTransactions::Token.Usdc,
+                            Amount = 10000,
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                            InitiatingTransactionHash =
+                                "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                             SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                            TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                            Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                            Type = PendingTransactions::Type.BlockchainOfframpTransfer,
                         },
                         BlockchainOnrampTransferInstruction = new()
                         {
@@ -126,7 +135,7 @@ public class PendingTransactionListPageResponseTest : TestBase
                                 },
                             ],
                             TerminalID = "RCN5VNXS",
-                            Type = PendingTransactions::Type.CardAuthorization,
+                            Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                             Verification = new()
                             {
                                 CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -237,10 +246,19 @@ public class PendingTransactionListPageResponseTest : TestBase
                         Amount = 100,
                         TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                     },
-                    BlockchainOfframpTransferInstruction = new()
+                    BlockchainOfframpTransfer = new()
                     {
+                        ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                        Token = PendingTransactions::Token.Usdc,
+                        Amount = 10000,
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                        InitiatingTransactionHash =
+                            "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                         SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                        TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                        Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                        TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                        Type = PendingTransactions::Type.BlockchainOfframpTransfer,
                     },
                     BlockchainOnrampTransferInstruction = new()
                     {
@@ -320,7 +338,7 @@ public class PendingTransactionListPageResponseTest : TestBase
                             },
                         ],
                         TerminalID = "RCN5VNXS",
-                        Type = PendingTransactions::Type.CardAuthorization,
+                        Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                         Verification = new()
                         {
                             CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -441,10 +459,19 @@ public class PendingTransactionListPageResponseTest : TestBase
                             Amount = 100,
                             TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                         },
-                        BlockchainOfframpTransferInstruction = new()
+                        BlockchainOfframpTransfer = new()
                         {
+                            ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                            Token = PendingTransactions::Token.Usdc,
+                            Amount = 10000,
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                            InitiatingTransactionHash =
+                                "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                             SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                            TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                            Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                            Type = PendingTransactions::Type.BlockchainOfframpTransfer,
                         },
                         BlockchainOnrampTransferInstruction = new()
                         {
@@ -526,7 +553,7 @@ public class PendingTransactionListPageResponseTest : TestBase
                                 },
                             ],
                             TerminalID = "RCN5VNXS",
-                            Type = PendingTransactions::Type.CardAuthorization,
+                            Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                             Verification = new()
                             {
                                 CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -652,10 +679,19 @@ public class PendingTransactionListPageResponseTest : TestBase
                             Amount = 100,
                             TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                         },
-                        BlockchainOfframpTransferInstruction = new()
+                        BlockchainOfframpTransfer = new()
                         {
+                            ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                            Token = PendingTransactions::Token.Usdc,
+                            Amount = 10000,
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                            InitiatingTransactionHash =
+                                "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                             SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                            TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                            Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                            Type = PendingTransactions::Type.BlockchainOfframpTransfer,
                         },
                         BlockchainOnrampTransferInstruction = new()
                         {
@@ -737,7 +773,7 @@ public class PendingTransactionListPageResponseTest : TestBase
                                 },
                             ],
                             TerminalID = "RCN5VNXS",
-                            Type = PendingTransactions::Type.CardAuthorization,
+                            Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                             Verification = new()
                             {
                                 CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -856,10 +892,19 @@ public class PendingTransactionListPageResponseTest : TestBase
                         Amount = 100,
                         TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                     },
-                    BlockchainOfframpTransferInstruction = new()
+                    BlockchainOfframpTransfer = new()
                     {
+                        ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                        Token = PendingTransactions::Token.Usdc,
+                        Amount = 10000,
+                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                        InitiatingTransactionHash =
+                            "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                         SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                        TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                        Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                        TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                        Type = PendingTransactions::Type.BlockchainOfframpTransfer,
                     },
                     BlockchainOnrampTransferInstruction = new()
                     {
@@ -939,7 +984,7 @@ public class PendingTransactionListPageResponseTest : TestBase
                             },
                         ],
                         TerminalID = "RCN5VNXS",
-                        Type = PendingTransactions::Type.CardAuthorization,
+                        Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                         Verification = new()
                         {
                             CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -1060,10 +1105,19 @@ public class PendingTransactionListPageResponseTest : TestBase
                             Amount = 100,
                             TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                         },
-                        BlockchainOfframpTransferInstruction = new()
+                        BlockchainOfframpTransfer = new()
                         {
+                            ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                            Token = PendingTransactions::Token.Usdc,
+                            Amount = 10000,
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                            InitiatingTransactionHash =
+                                "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                             SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                            TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                            Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                            Type = PendingTransactions::Type.BlockchainOfframpTransfer,
                         },
                         BlockchainOnrampTransferInstruction = new()
                         {
@@ -1145,7 +1199,7 @@ public class PendingTransactionListPageResponseTest : TestBase
                                 },
                             ],
                             TerminalID = "RCN5VNXS",
-                            Type = PendingTransactions::Type.CardAuthorization,
+                            Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                             Verification = new()
                             {
                                 CardVerificationCode = new(PendingTransactions::Result.Match),
@@ -1264,10 +1318,19 @@ public class PendingTransactionListPageResponseTest : TestBase
                             Amount = 100,
                             TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                         },
-                        BlockchainOfframpTransferInstruction = new()
+                        BlockchainOfframpTransfer = new()
                         {
+                            ID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                            Token = PendingTransactions::Token.Usdc,
+                            Amount = 10000,
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            DestinationAccountID = "account_in71c4amph0vgo2qllky",
+                            InitiatingTransactionHash =
+                                "0xcd7c2ab9e2075a3be3740c3a1f6e6e2c112e37d6b3f4a15e9e3e5a93b82c2c0a",
                             SourceBlockchainAddressID = "blockchain_address_tijjpqp9t5d358ehydqi",
-                            TransferID = "blockchain_offramp_transfer_sqd2x3ti6u2sy91v696m",
+                            Status = PendingTransactions::BlockchainOfframpTransferStatus.Settled,
+                            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                            Type = PendingTransactions::Type.BlockchainOfframpTransfer,
                         },
                         BlockchainOnrampTransferInstruction = new()
                         {
@@ -1349,7 +1412,7 @@ public class PendingTransactionListPageResponseTest : TestBase
                                 },
                             ],
                             TerminalID = "RCN5VNXS",
-                            Type = PendingTransactions::Type.CardAuthorization,
+                            Type = PendingTransactions::CardAuthorizationType.CardAuthorization,
                             Verification = new()
                             {
                                 CardVerificationCode = new(PendingTransactions::Result.Match),
