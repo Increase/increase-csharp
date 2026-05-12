@@ -290,7 +290,7 @@ public class InTest : TestBase
     [InlineData(In.SwiftTransferInstruction)]
     [InlineData(In.CardPushTransferInstruction)]
     [InlineData(In.BlockchainOnrampTransferInstruction)]
-    [InlineData(In.BlockchainOfframpTransferInstruction)]
+    [InlineData(In.BlockchainOfframpTransfer)]
     [InlineData(In.Other)]
     public void Validation_Works(In rawValue)
     {
@@ -326,7 +326,7 @@ public class InTest : TestBase
     [InlineData(In.SwiftTransferInstruction)]
     [InlineData(In.CardPushTransferInstruction)]
     [InlineData(In.BlockchainOnrampTransferInstruction)]
-    [InlineData(In.BlockchainOfframpTransferInstruction)]
+    [InlineData(In.BlockchainOfframpTransfer)]
     [InlineData(In.Other)]
     public void SerializationRoundtrip_Works(In rawValue)
     {
