@@ -18,19 +18,20 @@ public class AchPrenotificationListPageResponseTest : TestBase
                 new()
                 {
                     ID = "ach_prenotification_ubjf9qqsxl3obbcn1u34",
-                    AccountID = null,
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
                     Addendum = null,
                     CompanyDescriptiveDate = null,
                     CompanyDiscretionaryData = null,
-                    CompanyEntryDescription = null,
-                    CompanyName = null,
+                    CompanyEntryDescription = "Account Funding",
+                    CompanyName = "National Phonograph Company",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    CreditDebitIndicator = null,
-                    EffectiveDate = null,
+                    CreditDebitIndicator =
+                        AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit,
+                    EffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     IdempotencyKey = null,
                     IndividualID = null,
-                    IndividualName = null,
+                    IndividualName = "Ian Crease",
                     NotificationsOfChange =
                     [
                         new()
@@ -47,7 +48,8 @@ public class AchPrenotificationListPageResponseTest : TestBase
                             AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
                     },
                     RoutingNumber = "101050001",
-                    StandardEntryClassCode = null,
+                    StandardEntryClassCode =
+                        AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit,
                     Status = AchPrenotifications::Status.Submitted,
                     Type = AchPrenotifications::Type.AchPrenotification,
                 },
@@ -60,19 +62,20 @@ public class AchPrenotificationListPageResponseTest : TestBase
             new()
             {
                 ID = "ach_prenotification_ubjf9qqsxl3obbcn1u34",
-                AccountID = null,
+                AccountID = "account_in71c4amph0vgo2qllky",
                 AccountNumber = "987654321",
                 Addendum = null,
                 CompanyDescriptiveDate = null,
                 CompanyDiscretionaryData = null,
-                CompanyEntryDescription = null,
-                CompanyName = null,
+                CompanyEntryDescription = "Account Funding",
+                CompanyName = "National Phonograph Company",
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                CreditDebitIndicator = null,
-                EffectiveDate = null,
+                CreditDebitIndicator =
+                    AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit,
+                EffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 IdempotencyKey = null,
                 IndividualID = null,
-                IndividualName = null,
+                IndividualName = "Ian Crease",
                 NotificationsOfChange =
                 [
                     new()
@@ -89,7 +92,8 @@ public class AchPrenotificationListPageResponseTest : TestBase
                         AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
                 },
                 RoutingNumber = "101050001",
-                StandardEntryClassCode = null,
+                StandardEntryClassCode =
+                    AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit,
                 Status = AchPrenotifications::Status.Submitted,
                 Type = AchPrenotifications::Type.AchPrenotification,
             },
@@ -114,19 +118,20 @@ public class AchPrenotificationListPageResponseTest : TestBase
                 new()
                 {
                     ID = "ach_prenotification_ubjf9qqsxl3obbcn1u34",
-                    AccountID = null,
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
                     Addendum = null,
                     CompanyDescriptiveDate = null,
                     CompanyDiscretionaryData = null,
-                    CompanyEntryDescription = null,
-                    CompanyName = null,
+                    CompanyEntryDescription = "Account Funding",
+                    CompanyName = "National Phonograph Company",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    CreditDebitIndicator = null,
-                    EffectiveDate = null,
+                    CreditDebitIndicator =
+                        AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit,
+                    EffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     IdempotencyKey = null,
                     IndividualID = null,
-                    IndividualName = null,
+                    IndividualName = "Ian Crease",
                     NotificationsOfChange =
                     [
                         new()
@@ -143,7 +148,8 @@ public class AchPrenotificationListPageResponseTest : TestBase
                             AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
                     },
                     RoutingNumber = "101050001",
-                    StandardEntryClassCode = null,
+                    StandardEntryClassCode =
+                        AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit,
                     Status = AchPrenotifications::Status.Submitted,
                     Type = AchPrenotifications::Type.AchPrenotification,
                 },
@@ -171,19 +177,20 @@ public class AchPrenotificationListPageResponseTest : TestBase
                 new()
                 {
                     ID = "ach_prenotification_ubjf9qqsxl3obbcn1u34",
-                    AccountID = null,
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
                     Addendum = null,
                     CompanyDescriptiveDate = null,
                     CompanyDiscretionaryData = null,
-                    CompanyEntryDescription = null,
-                    CompanyName = null,
+                    CompanyEntryDescription = "Account Funding",
+                    CompanyName = "National Phonograph Company",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    CreditDebitIndicator = null,
-                    EffectiveDate = null,
+                    CreditDebitIndicator =
+                        AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit,
+                    EffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     IdempotencyKey = null,
                     IndividualID = null,
-                    IndividualName = null,
+                    IndividualName = "Ian Crease",
                     NotificationsOfChange =
                     [
                         new()
@@ -200,7 +207,8 @@ public class AchPrenotificationListPageResponseTest : TestBase
                             AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
                     },
                     RoutingNumber = "101050001",
-                    StandardEntryClassCode = null,
+                    StandardEntryClassCode =
+                        AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit,
                     Status = AchPrenotifications::Status.Submitted,
                     Type = AchPrenotifications::Type.AchPrenotification,
                 },
@@ -221,19 +229,20 @@ public class AchPrenotificationListPageResponseTest : TestBase
             new()
             {
                 ID = "ach_prenotification_ubjf9qqsxl3obbcn1u34",
-                AccountID = null,
+                AccountID = "account_in71c4amph0vgo2qllky",
                 AccountNumber = "987654321",
                 Addendum = null,
                 CompanyDescriptiveDate = null,
                 CompanyDiscretionaryData = null,
-                CompanyEntryDescription = null,
-                CompanyName = null,
+                CompanyEntryDescription = "Account Funding",
+                CompanyName = "National Phonograph Company",
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                CreditDebitIndicator = null,
-                EffectiveDate = null,
+                CreditDebitIndicator =
+                    AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit,
+                EffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 IdempotencyKey = null,
                 IndividualID = null,
-                IndividualName = null,
+                IndividualName = "Ian Crease",
                 NotificationsOfChange =
                 [
                     new()
@@ -250,7 +259,8 @@ public class AchPrenotificationListPageResponseTest : TestBase
                         AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
                 },
                 RoutingNumber = "101050001",
-                StandardEntryClassCode = null,
+                StandardEntryClassCode =
+                    AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit,
                 Status = AchPrenotifications::Status.Submitted,
                 Type = AchPrenotifications::Type.AchPrenotification,
             },
@@ -275,19 +285,20 @@ public class AchPrenotificationListPageResponseTest : TestBase
                 new()
                 {
                     ID = "ach_prenotification_ubjf9qqsxl3obbcn1u34",
-                    AccountID = null,
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
                     Addendum = null,
                     CompanyDescriptiveDate = null,
                     CompanyDiscretionaryData = null,
-                    CompanyEntryDescription = null,
-                    CompanyName = null,
+                    CompanyEntryDescription = "Account Funding",
+                    CompanyName = "National Phonograph Company",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    CreditDebitIndicator = null,
-                    EffectiveDate = null,
+                    CreditDebitIndicator =
+                        AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit,
+                    EffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     IdempotencyKey = null,
                     IndividualID = null,
-                    IndividualName = null,
+                    IndividualName = "Ian Crease",
                     NotificationsOfChange =
                     [
                         new()
@@ -304,7 +315,8 @@ public class AchPrenotificationListPageResponseTest : TestBase
                             AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
                     },
                     RoutingNumber = "101050001",
-                    StandardEntryClassCode = null,
+                    StandardEntryClassCode =
+                        AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit,
                     Status = AchPrenotifications::Status.Submitted,
                     Type = AchPrenotifications::Type.AchPrenotification,
                 },
@@ -325,19 +337,20 @@ public class AchPrenotificationListPageResponseTest : TestBase
                 new()
                 {
                     ID = "ach_prenotification_ubjf9qqsxl3obbcn1u34",
-                    AccountID = null,
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
                     Addendum = null,
                     CompanyDescriptiveDate = null,
                     CompanyDiscretionaryData = null,
-                    CompanyEntryDescription = null,
-                    CompanyName = null,
+                    CompanyEntryDescription = "Account Funding",
+                    CompanyName = "National Phonograph Company",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    CreditDebitIndicator = null,
-                    EffectiveDate = null,
+                    CreditDebitIndicator =
+                        AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit,
+                    EffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     IdempotencyKey = null,
                     IndividualID = null,
-                    IndividualName = null,
+                    IndividualName = "Ian Crease",
                     NotificationsOfChange =
                     [
                         new()
@@ -354,7 +367,8 @@ public class AchPrenotificationListPageResponseTest : TestBase
                             AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
                     },
                     RoutingNumber = "101050001",
-                    StandardEntryClassCode = null,
+                    StandardEntryClassCode =
+                        AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit,
                     Status = AchPrenotifications::Status.Submitted,
                     Type = AchPrenotifications::Type.AchPrenotification,
                 },

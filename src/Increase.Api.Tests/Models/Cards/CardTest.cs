@@ -23,19 +23,19 @@ public class CardTest : TestBase
                     Allowed = [new("identifier")],
                     Blocked = [new("identifier")],
                 },
-                MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
+                MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("5734")] },
                 MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
                 Usage = new()
                 {
-                    Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                    Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                     MultiUse = new(
                         [
                             new()
                             {
                                 Interval =
-                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                                 MerchantCategoryCodes = [new("code")],
-                                SettlementAmount = 0,
+                                SettlementAmount = 100000,
                             },
                         ]
                     ),
@@ -83,19 +83,19 @@ public class CardTest : TestBase
                 Allowed = [new("identifier")],
                 Blocked = [new("identifier")],
             },
-            MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
+            MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("5734")] },
             MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
             Usage = new()
             {
-                Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                 MultiUse = new(
                     [
                         new()
                         {
                             Interval =
-                                Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                             MerchantCategoryCodes = [new("code")],
-                            SettlementAmount = 0,
+                            SettlementAmount = 100000,
                         },
                     ]
                 ),
@@ -161,19 +161,19 @@ public class CardTest : TestBase
                     Allowed = [new("identifier")],
                     Blocked = [new("identifier")],
                 },
-                MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
+                MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("5734")] },
                 MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
                 Usage = new()
                 {
-                    Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                    Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                     MultiUse = new(
                         [
                             new()
                             {
                                 Interval =
-                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                                 MerchantCategoryCodes = [new("code")],
-                                SettlementAmount = 0,
+                                SettlementAmount = 100000,
                             },
                         ]
                     ),
@@ -235,19 +235,19 @@ public class CardTest : TestBase
                     Allowed = [new("identifier")],
                     Blocked = [new("identifier")],
                 },
-                MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
+                MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("5734")] },
                 MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
                 Usage = new()
                 {
-                    Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                    Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                     MultiUse = new(
                         [
                             new()
                             {
                                 Interval =
-                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                                 MerchantCategoryCodes = [new("code")],
-                                SettlementAmount = 0,
+                                SettlementAmount = 100000,
                             },
                         ]
                     ),
@@ -302,19 +302,19 @@ public class CardTest : TestBase
                 Allowed = [new("identifier")],
                 Blocked = [new("identifier")],
             },
-            MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
+            MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("5734")] },
             MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
             Usage = new()
             {
-                Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                 MultiUse = new(
                     [
                         new()
                         {
                             Interval =
-                                Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                             MerchantCategoryCodes = [new("code")],
-                            SettlementAmount = 0,
+                            SettlementAmount = 100000,
                         },
                     ]
                 ),
@@ -380,19 +380,19 @@ public class CardTest : TestBase
                     Allowed = [new("identifier")],
                     Blocked = [new("identifier")],
                 },
-                MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
+                MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("5734")] },
                 MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
                 Usage = new()
                 {
-                    Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                    Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                     MultiUse = new(
                         [
                             new()
                             {
                                 Interval =
-                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                                 MerchantCategoryCodes = [new("code")],
-                                SettlementAmount = 0,
+                                SettlementAmount = 100000,
                             },
                         ]
                     ),
@@ -448,19 +448,19 @@ public class CardTest : TestBase
                     Allowed = [new("identifier")],
                     Blocked = [new("identifier")],
                 },
-                MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("code")] },
+                MerchantCategoryCode = new() { Allowed = [new("code")], Blocked = [new("5734")] },
                 MerchantCountry = new() { Allowed = [new("country")], Blocked = [new("country")] },
                 Usage = new()
                 {
-                    Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                    Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                     MultiUse = new(
                         [
                             new()
                             {
                                 Interval =
-                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                    Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                                 MerchantCategoryCodes = [new("code")],
-                                SettlementAmount = 0,
+                                SettlementAmount = 100000,
                             },
                         ]
                     ),

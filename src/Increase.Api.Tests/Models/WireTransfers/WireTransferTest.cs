@@ -41,7 +41,7 @@ public class WireTransferTest : TestBase
                     new WireTransfers::WireTransferCreditorAddressUnstructured()
                     {
                         Line1 = "33 Liberty Street",
-                        Line2 = null,
+                        Line2 = "New York, NY, 10045",
                         Line3 = null,
                     }
                 ),
@@ -53,12 +53,12 @@ public class WireTransferTest : TestBase
                 Address = new(
                     new WireTransfers::WireTransferDebtorAddressUnstructured()
                     {
-                        Line1 = "line1",
-                        Line2 = "line2",
-                        Line3 = "line3",
+                        Line1 = "1500 Pennsylvania Avenue, NW",
+                        Line2 = "Washington, D.C. 20220",
+                        Line3 = null,
                     }
                 ),
-                Name = "name",
+                Name = "Ian Crease",
             },
             ExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv",
             IdempotencyKey = null,
@@ -94,7 +94,7 @@ public class WireTransferTest : TestBase
                 WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
             },
             RoutingNumber = "101050001",
-            SourceAccountNumberID = null,
+            SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = WireTransfers::WireTransferStatus.Complete,
             Submission = new()
             {
@@ -103,7 +103,7 @@ public class WireTransferTest : TestBase
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
-            UniqueEndToEndTransactionReference = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
         };
 
         string expectedID = "wire_transfer_5akynk7dqsq25qwk9q2u";
@@ -134,7 +134,7 @@ public class WireTransferTest : TestBase
                 new WireTransfers::WireTransferCreditorAddressUnstructured()
                 {
                     Line1 = "33 Liberty Street",
-                    Line2 = null,
+                    Line2 = "New York, NY, 10045",
                     Line3 = null,
                 }
             ),
@@ -146,12 +146,12 @@ public class WireTransferTest : TestBase
             Address = new(
                 new WireTransfers::WireTransferDebtorAddressUnstructured()
                 {
-                    Line1 = "line1",
-                    Line2 = "line2",
-                    Line3 = "line3",
+                    Line1 = "1500 Pennsylvania Avenue, NW",
+                    Line2 = "Washington, D.C. 20220",
+                    Line3 = null,
                 }
             ),
-            Name = "name",
+            Name = "Ian Crease",
         };
         string expectedExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv";
         ApiEnum<string, WireTransfers::Network> expectedNetwork = WireTransfers::Network.Wire;
@@ -184,6 +184,7 @@ public class WireTransferTest : TestBase
             WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
         };
         string expectedRoutingNumber = "101050001";
+        string expectedSourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         ApiEnum<string, WireTransfers::WireTransferStatus> expectedStatus =
             WireTransfers::WireTransferStatus.Complete;
         WireTransfers::Submission expectedSubmission = new()
@@ -193,6 +194,7 @@ public class WireTransferTest : TestBase
         };
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, WireTransfers::Type> expectedType = WireTransfers::Type.WireTransfer;
+        string expectedUniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a";
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedAccountID, model.AccountID);
@@ -213,12 +215,15 @@ public class WireTransferTest : TestBase
         Assert.Equal(expectedRemittance, model.Remittance);
         Assert.Equal(expectedReversal, model.Reversal);
         Assert.Equal(expectedRoutingNumber, model.RoutingNumber);
-        Assert.Null(model.SourceAccountNumberID);
+        Assert.Equal(expectedSourceAccountNumberID, model.SourceAccountNumberID);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedSubmission, model.Submission);
         Assert.Equal(expectedTransactionID, model.TransactionID);
         Assert.Equal(expectedType, model.Type);
-        Assert.Null(model.UniqueEndToEndTransactionReference);
+        Assert.Equal(
+            expectedUniqueEndToEndTransactionReference,
+            model.UniqueEndToEndTransactionReference
+        );
     }
 
     [Fact]
@@ -254,7 +259,7 @@ public class WireTransferTest : TestBase
                     new WireTransfers::WireTransferCreditorAddressUnstructured()
                     {
                         Line1 = "33 Liberty Street",
-                        Line2 = null,
+                        Line2 = "New York, NY, 10045",
                         Line3 = null,
                     }
                 ),
@@ -266,12 +271,12 @@ public class WireTransferTest : TestBase
                 Address = new(
                     new WireTransfers::WireTransferDebtorAddressUnstructured()
                     {
-                        Line1 = "line1",
-                        Line2 = "line2",
-                        Line3 = "line3",
+                        Line1 = "1500 Pennsylvania Avenue, NW",
+                        Line2 = "Washington, D.C. 20220",
+                        Line3 = null,
                     }
                 ),
-                Name = "name",
+                Name = "Ian Crease",
             },
             ExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv",
             IdempotencyKey = null,
@@ -307,7 +312,7 @@ public class WireTransferTest : TestBase
                 WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
             },
             RoutingNumber = "101050001",
-            SourceAccountNumberID = null,
+            SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = WireTransfers::WireTransferStatus.Complete,
             Submission = new()
             {
@@ -316,7 +321,7 @@ public class WireTransferTest : TestBase
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
-            UniqueEndToEndTransactionReference = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -361,7 +366,7 @@ public class WireTransferTest : TestBase
                     new WireTransfers::WireTransferCreditorAddressUnstructured()
                     {
                         Line1 = "33 Liberty Street",
-                        Line2 = null,
+                        Line2 = "New York, NY, 10045",
                         Line3 = null,
                     }
                 ),
@@ -373,12 +378,12 @@ public class WireTransferTest : TestBase
                 Address = new(
                     new WireTransfers::WireTransferDebtorAddressUnstructured()
                     {
-                        Line1 = "line1",
-                        Line2 = "line2",
-                        Line3 = "line3",
+                        Line1 = "1500 Pennsylvania Avenue, NW",
+                        Line2 = "Washington, D.C. 20220",
+                        Line3 = null,
                     }
                 ),
-                Name = "name",
+                Name = "Ian Crease",
             },
             ExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv",
             IdempotencyKey = null,
@@ -414,7 +419,7 @@ public class WireTransferTest : TestBase
                 WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
             },
             RoutingNumber = "101050001",
-            SourceAccountNumberID = null,
+            SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = WireTransfers::WireTransferStatus.Complete,
             Submission = new()
             {
@@ -423,7 +428,7 @@ public class WireTransferTest : TestBase
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
-            UniqueEndToEndTransactionReference = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -461,7 +466,7 @@ public class WireTransferTest : TestBase
                 new WireTransfers::WireTransferCreditorAddressUnstructured()
                 {
                     Line1 = "33 Liberty Street",
-                    Line2 = null,
+                    Line2 = "New York, NY, 10045",
                     Line3 = null,
                 }
             ),
@@ -473,12 +478,12 @@ public class WireTransferTest : TestBase
             Address = new(
                 new WireTransfers::WireTransferDebtorAddressUnstructured()
                 {
-                    Line1 = "line1",
-                    Line2 = "line2",
-                    Line3 = "line3",
+                    Line1 = "1500 Pennsylvania Avenue, NW",
+                    Line2 = "Washington, D.C. 20220",
+                    Line3 = null,
                 }
             ),
-            Name = "name",
+            Name = "Ian Crease",
         };
         string expectedExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv";
         ApiEnum<string, WireTransfers::Network> expectedNetwork = WireTransfers::Network.Wire;
@@ -511,6 +516,7 @@ public class WireTransferTest : TestBase
             WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
         };
         string expectedRoutingNumber = "101050001";
+        string expectedSourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         ApiEnum<string, WireTransfers::WireTransferStatus> expectedStatus =
             WireTransfers::WireTransferStatus.Complete;
         WireTransfers::Submission expectedSubmission = new()
@@ -520,6 +526,7 @@ public class WireTransferTest : TestBase
         };
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, WireTransfers::Type> expectedType = WireTransfers::Type.WireTransfer;
+        string expectedUniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a";
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedAccountID, deserialized.AccountID);
@@ -540,12 +547,15 @@ public class WireTransferTest : TestBase
         Assert.Equal(expectedRemittance, deserialized.Remittance);
         Assert.Equal(expectedReversal, deserialized.Reversal);
         Assert.Equal(expectedRoutingNumber, deserialized.RoutingNumber);
-        Assert.Null(deserialized.SourceAccountNumberID);
+        Assert.Equal(expectedSourceAccountNumberID, deserialized.SourceAccountNumberID);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedSubmission, deserialized.Submission);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
         Assert.Equal(expectedType, deserialized.Type);
-        Assert.Null(deserialized.UniqueEndToEndTransactionReference);
+        Assert.Equal(
+            expectedUniqueEndToEndTransactionReference,
+            deserialized.UniqueEndToEndTransactionReference
+        );
     }
 
     [Fact]
@@ -581,7 +591,7 @@ public class WireTransferTest : TestBase
                     new WireTransfers::WireTransferCreditorAddressUnstructured()
                     {
                         Line1 = "33 Liberty Street",
-                        Line2 = null,
+                        Line2 = "New York, NY, 10045",
                         Line3 = null,
                     }
                 ),
@@ -593,12 +603,12 @@ public class WireTransferTest : TestBase
                 Address = new(
                     new WireTransfers::WireTransferDebtorAddressUnstructured()
                     {
-                        Line1 = "line1",
-                        Line2 = "line2",
-                        Line3 = "line3",
+                        Line1 = "1500 Pennsylvania Avenue, NW",
+                        Line2 = "Washington, D.C. 20220",
+                        Line3 = null,
                     }
                 ),
-                Name = "name",
+                Name = "Ian Crease",
             },
             ExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv",
             IdempotencyKey = null,
@@ -634,7 +644,7 @@ public class WireTransferTest : TestBase
                 WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
             },
             RoutingNumber = "101050001",
-            SourceAccountNumberID = null,
+            SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = WireTransfers::WireTransferStatus.Complete,
             Submission = new()
             {
@@ -643,7 +653,7 @@ public class WireTransferTest : TestBase
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
-            UniqueEndToEndTransactionReference = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
         };
 
         model.Validate();
@@ -682,7 +692,7 @@ public class WireTransferTest : TestBase
                     new WireTransfers::WireTransferCreditorAddressUnstructured()
                     {
                         Line1 = "33 Liberty Street",
-                        Line2 = null,
+                        Line2 = "New York, NY, 10045",
                         Line3 = null,
                     }
                 ),
@@ -694,12 +704,12 @@ public class WireTransferTest : TestBase
                 Address = new(
                     new WireTransfers::WireTransferDebtorAddressUnstructured()
                     {
-                        Line1 = "line1",
-                        Line2 = "line2",
-                        Line3 = "line3",
+                        Line1 = "1500 Pennsylvania Avenue, NW",
+                        Line2 = "Washington, D.C. 20220",
+                        Line3 = null,
                     }
                 ),
-                Name = "name",
+                Name = "Ian Crease",
             },
             ExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv",
             IdempotencyKey = null,
@@ -735,7 +745,7 @@ public class WireTransferTest : TestBase
                 WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
             },
             RoutingNumber = "101050001",
-            SourceAccountNumberID = null,
+            SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = WireTransfers::WireTransferStatus.Complete,
             Submission = new()
             {
@@ -744,7 +754,7 @@ public class WireTransferTest : TestBase
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
-            UniqueEndToEndTransactionReference = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
         };
 
         WireTransfers::WireTransfer copied = new(model);
