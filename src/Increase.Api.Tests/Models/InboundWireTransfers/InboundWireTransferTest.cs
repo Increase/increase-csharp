@@ -16,26 +16,26 @@ public class InboundWireTransferTest : TestBase
             ID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             Acceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                TransactionID = "transaction_id",
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             },
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Amount = 100,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            CreditorAddressLine1 = null,
-            CreditorAddressLine2 = null,
+            CreditorAddressLine1 = "33 Liberty Street",
+            CreditorAddressLine2 = "New York, NY, 10045",
             CreditorAddressLine3 = null,
-            CreditorName = null,
-            DebtorAddressLine1 = null,
-            DebtorAddressLine2 = null,
+            CreditorName = "National Phonograph Company",
+            DebtorAddressLine1 = "33 Liberty Street",
+            DebtorAddressLine2 = "New York, NY, 10045",
             DebtorAddressLine3 = null,
-            DebtorName = null,
+            DebtorName = "Ian Crease",
             Description = "Inbound wire transfer",
-            EndToEndIdentification = null,
-            InputMessageAccountabilityData = null,
-            InstructingAgentRoutingNumber = null,
-            InstructionIdentification = null,
+            EndToEndIdentification = "Invoice 29582",
+            InputMessageAccountabilityData = "20220118MMQFMP0P000001",
+            InstructingAgentRoutingNumber = "101050001",
+            InstructionIdentification = "202201180000001",
             Reversal = new()
             {
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -43,22 +43,32 @@ public class InboundWireTransferTest : TestBase
             },
             Status = InboundWireTransfers::InboundWireTransferStatus.Accepted,
             Type = InboundWireTransfers::Type.InboundWireTransfer,
-            UniqueEndToEndTransactionReference = null,
-            UnstructuredRemittanceInformation = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
+            UnstructuredRemittanceInformation = "INVOICE 2468",
             WireDrawdownRequestID = null,
         };
 
         string expectedID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0";
         InboundWireTransfers::Acceptance expectedAcceptance = new()
         {
-            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            TransactionID = "transaction_id",
+            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
         };
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         long expectedAmount = 100;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedCreditorAddressLine1 = "33 Liberty Street";
+        string expectedCreditorAddressLine2 = "New York, NY, 10045";
+        string expectedCreditorName = "National Phonograph Company";
+        string expectedDebtorAddressLine1 = "33 Liberty Street";
+        string expectedDebtorAddressLine2 = "New York, NY, 10045";
+        string expectedDebtorName = "Ian Crease";
         string expectedDescription = "Inbound wire transfer";
+        string expectedEndToEndIdentification = "Invoice 29582";
+        string expectedInputMessageAccountabilityData = "20220118MMQFMP0P000001";
+        string expectedInstructingAgentRoutingNumber = "101050001";
+        string expectedInstructionIdentification = "202201180000001";
         InboundWireTransfers::Reversal expectedReversal = new()
         {
             Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -68,6 +78,8 @@ public class InboundWireTransferTest : TestBase
             InboundWireTransfers::InboundWireTransferStatus.Accepted;
         ApiEnum<string, InboundWireTransfers::Type> expectedType =
             InboundWireTransfers::Type.InboundWireTransfer;
+        string expectedUniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a";
+        string expectedUnstructuredRemittanceInformation = "INVOICE 2468";
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedAcceptance, model.Acceptance);
@@ -75,24 +87,30 @@ public class InboundWireTransferTest : TestBase
         Assert.Equal(expectedAccountNumberID, model.AccountNumberID);
         Assert.Equal(expectedAmount, model.Amount);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
-        Assert.Null(model.CreditorAddressLine1);
-        Assert.Null(model.CreditorAddressLine2);
+        Assert.Equal(expectedCreditorAddressLine1, model.CreditorAddressLine1);
+        Assert.Equal(expectedCreditorAddressLine2, model.CreditorAddressLine2);
         Assert.Null(model.CreditorAddressLine3);
-        Assert.Null(model.CreditorName);
-        Assert.Null(model.DebtorAddressLine1);
-        Assert.Null(model.DebtorAddressLine2);
+        Assert.Equal(expectedCreditorName, model.CreditorName);
+        Assert.Equal(expectedDebtorAddressLine1, model.DebtorAddressLine1);
+        Assert.Equal(expectedDebtorAddressLine2, model.DebtorAddressLine2);
         Assert.Null(model.DebtorAddressLine3);
-        Assert.Null(model.DebtorName);
+        Assert.Equal(expectedDebtorName, model.DebtorName);
         Assert.Equal(expectedDescription, model.Description);
-        Assert.Null(model.EndToEndIdentification);
-        Assert.Null(model.InputMessageAccountabilityData);
-        Assert.Null(model.InstructingAgentRoutingNumber);
-        Assert.Null(model.InstructionIdentification);
+        Assert.Equal(expectedEndToEndIdentification, model.EndToEndIdentification);
+        Assert.Equal(expectedInputMessageAccountabilityData, model.InputMessageAccountabilityData);
+        Assert.Equal(expectedInstructingAgentRoutingNumber, model.InstructingAgentRoutingNumber);
+        Assert.Equal(expectedInstructionIdentification, model.InstructionIdentification);
         Assert.Equal(expectedReversal, model.Reversal);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedType, model.Type);
-        Assert.Null(model.UniqueEndToEndTransactionReference);
-        Assert.Null(model.UnstructuredRemittanceInformation);
+        Assert.Equal(
+            expectedUniqueEndToEndTransactionReference,
+            model.UniqueEndToEndTransactionReference
+        );
+        Assert.Equal(
+            expectedUnstructuredRemittanceInformation,
+            model.UnstructuredRemittanceInformation
+        );
         Assert.Null(model.WireDrawdownRequestID);
     }
 
@@ -104,26 +122,26 @@ public class InboundWireTransferTest : TestBase
             ID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             Acceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                TransactionID = "transaction_id",
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             },
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Amount = 100,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            CreditorAddressLine1 = null,
-            CreditorAddressLine2 = null,
+            CreditorAddressLine1 = "33 Liberty Street",
+            CreditorAddressLine2 = "New York, NY, 10045",
             CreditorAddressLine3 = null,
-            CreditorName = null,
-            DebtorAddressLine1 = null,
-            DebtorAddressLine2 = null,
+            CreditorName = "National Phonograph Company",
+            DebtorAddressLine1 = "33 Liberty Street",
+            DebtorAddressLine2 = "New York, NY, 10045",
             DebtorAddressLine3 = null,
-            DebtorName = null,
+            DebtorName = "Ian Crease",
             Description = "Inbound wire transfer",
-            EndToEndIdentification = null,
-            InputMessageAccountabilityData = null,
-            InstructingAgentRoutingNumber = null,
-            InstructionIdentification = null,
+            EndToEndIdentification = "Invoice 29582",
+            InputMessageAccountabilityData = "20220118MMQFMP0P000001",
+            InstructingAgentRoutingNumber = "101050001",
+            InstructionIdentification = "202201180000001",
             Reversal = new()
             {
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -131,8 +149,8 @@ public class InboundWireTransferTest : TestBase
             },
             Status = InboundWireTransfers::InboundWireTransferStatus.Accepted,
             Type = InboundWireTransfers::Type.InboundWireTransfer,
-            UniqueEndToEndTransactionReference = null,
-            UnstructuredRemittanceInformation = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
+            UnstructuredRemittanceInformation = "INVOICE 2468",
             WireDrawdownRequestID = null,
         };
 
@@ -153,26 +171,26 @@ public class InboundWireTransferTest : TestBase
             ID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             Acceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                TransactionID = "transaction_id",
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             },
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Amount = 100,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            CreditorAddressLine1 = null,
-            CreditorAddressLine2 = null,
+            CreditorAddressLine1 = "33 Liberty Street",
+            CreditorAddressLine2 = "New York, NY, 10045",
             CreditorAddressLine3 = null,
-            CreditorName = null,
-            DebtorAddressLine1 = null,
-            DebtorAddressLine2 = null,
+            CreditorName = "National Phonograph Company",
+            DebtorAddressLine1 = "33 Liberty Street",
+            DebtorAddressLine2 = "New York, NY, 10045",
             DebtorAddressLine3 = null,
-            DebtorName = null,
+            DebtorName = "Ian Crease",
             Description = "Inbound wire transfer",
-            EndToEndIdentification = null,
-            InputMessageAccountabilityData = null,
-            InstructingAgentRoutingNumber = null,
-            InstructionIdentification = null,
+            EndToEndIdentification = "Invoice 29582",
+            InputMessageAccountabilityData = "20220118MMQFMP0P000001",
+            InstructingAgentRoutingNumber = "101050001",
+            InstructionIdentification = "202201180000001",
             Reversal = new()
             {
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -180,8 +198,8 @@ public class InboundWireTransferTest : TestBase
             },
             Status = InboundWireTransfers::InboundWireTransferStatus.Accepted,
             Type = InboundWireTransfers::Type.InboundWireTransfer,
-            UniqueEndToEndTransactionReference = null,
-            UnstructuredRemittanceInformation = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
+            UnstructuredRemittanceInformation = "INVOICE 2468",
             WireDrawdownRequestID = null,
         };
 
@@ -195,14 +213,24 @@ public class InboundWireTransferTest : TestBase
         string expectedID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0";
         InboundWireTransfers::Acceptance expectedAcceptance = new()
         {
-            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            TransactionID = "transaction_id",
+            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
         };
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         long expectedAmount = 100;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedCreditorAddressLine1 = "33 Liberty Street";
+        string expectedCreditorAddressLine2 = "New York, NY, 10045";
+        string expectedCreditorName = "National Phonograph Company";
+        string expectedDebtorAddressLine1 = "33 Liberty Street";
+        string expectedDebtorAddressLine2 = "New York, NY, 10045";
+        string expectedDebtorName = "Ian Crease";
         string expectedDescription = "Inbound wire transfer";
+        string expectedEndToEndIdentification = "Invoice 29582";
+        string expectedInputMessageAccountabilityData = "20220118MMQFMP0P000001";
+        string expectedInstructingAgentRoutingNumber = "101050001";
+        string expectedInstructionIdentification = "202201180000001";
         InboundWireTransfers::Reversal expectedReversal = new()
         {
             Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -212,6 +240,8 @@ public class InboundWireTransferTest : TestBase
             InboundWireTransfers::InboundWireTransferStatus.Accepted;
         ApiEnum<string, InboundWireTransfers::Type> expectedType =
             InboundWireTransfers::Type.InboundWireTransfer;
+        string expectedUniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a";
+        string expectedUnstructuredRemittanceInformation = "INVOICE 2468";
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedAcceptance, deserialized.Acceptance);
@@ -219,24 +249,36 @@ public class InboundWireTransferTest : TestBase
         Assert.Equal(expectedAccountNumberID, deserialized.AccountNumberID);
         Assert.Equal(expectedAmount, deserialized.Amount);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
-        Assert.Null(deserialized.CreditorAddressLine1);
-        Assert.Null(deserialized.CreditorAddressLine2);
+        Assert.Equal(expectedCreditorAddressLine1, deserialized.CreditorAddressLine1);
+        Assert.Equal(expectedCreditorAddressLine2, deserialized.CreditorAddressLine2);
         Assert.Null(deserialized.CreditorAddressLine3);
-        Assert.Null(deserialized.CreditorName);
-        Assert.Null(deserialized.DebtorAddressLine1);
-        Assert.Null(deserialized.DebtorAddressLine2);
+        Assert.Equal(expectedCreditorName, deserialized.CreditorName);
+        Assert.Equal(expectedDebtorAddressLine1, deserialized.DebtorAddressLine1);
+        Assert.Equal(expectedDebtorAddressLine2, deserialized.DebtorAddressLine2);
         Assert.Null(deserialized.DebtorAddressLine3);
-        Assert.Null(deserialized.DebtorName);
+        Assert.Equal(expectedDebtorName, deserialized.DebtorName);
         Assert.Equal(expectedDescription, deserialized.Description);
-        Assert.Null(deserialized.EndToEndIdentification);
-        Assert.Null(deserialized.InputMessageAccountabilityData);
-        Assert.Null(deserialized.InstructingAgentRoutingNumber);
-        Assert.Null(deserialized.InstructionIdentification);
+        Assert.Equal(expectedEndToEndIdentification, deserialized.EndToEndIdentification);
+        Assert.Equal(
+            expectedInputMessageAccountabilityData,
+            deserialized.InputMessageAccountabilityData
+        );
+        Assert.Equal(
+            expectedInstructingAgentRoutingNumber,
+            deserialized.InstructingAgentRoutingNumber
+        );
+        Assert.Equal(expectedInstructionIdentification, deserialized.InstructionIdentification);
         Assert.Equal(expectedReversal, deserialized.Reversal);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedType, deserialized.Type);
-        Assert.Null(deserialized.UniqueEndToEndTransactionReference);
-        Assert.Null(deserialized.UnstructuredRemittanceInformation);
+        Assert.Equal(
+            expectedUniqueEndToEndTransactionReference,
+            deserialized.UniqueEndToEndTransactionReference
+        );
+        Assert.Equal(
+            expectedUnstructuredRemittanceInformation,
+            deserialized.UnstructuredRemittanceInformation
+        );
         Assert.Null(deserialized.WireDrawdownRequestID);
     }
 
@@ -248,26 +290,26 @@ public class InboundWireTransferTest : TestBase
             ID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             Acceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                TransactionID = "transaction_id",
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             },
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Amount = 100,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            CreditorAddressLine1 = null,
-            CreditorAddressLine2 = null,
+            CreditorAddressLine1 = "33 Liberty Street",
+            CreditorAddressLine2 = "New York, NY, 10045",
             CreditorAddressLine3 = null,
-            CreditorName = null,
-            DebtorAddressLine1 = null,
-            DebtorAddressLine2 = null,
+            CreditorName = "National Phonograph Company",
+            DebtorAddressLine1 = "33 Liberty Street",
+            DebtorAddressLine2 = "New York, NY, 10045",
             DebtorAddressLine3 = null,
-            DebtorName = null,
+            DebtorName = "Ian Crease",
             Description = "Inbound wire transfer",
-            EndToEndIdentification = null,
-            InputMessageAccountabilityData = null,
-            InstructingAgentRoutingNumber = null,
-            InstructionIdentification = null,
+            EndToEndIdentification = "Invoice 29582",
+            InputMessageAccountabilityData = "20220118MMQFMP0P000001",
+            InstructingAgentRoutingNumber = "101050001",
+            InstructionIdentification = "202201180000001",
             Reversal = new()
             {
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -275,8 +317,8 @@ public class InboundWireTransferTest : TestBase
             },
             Status = InboundWireTransfers::InboundWireTransferStatus.Accepted,
             Type = InboundWireTransfers::Type.InboundWireTransfer,
-            UniqueEndToEndTransactionReference = null,
-            UnstructuredRemittanceInformation = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
+            UnstructuredRemittanceInformation = "INVOICE 2468",
             WireDrawdownRequestID = null,
         };
 
@@ -291,26 +333,26 @@ public class InboundWireTransferTest : TestBase
             ID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             Acceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                TransactionID = "transaction_id",
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             },
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Amount = 100,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            CreditorAddressLine1 = null,
-            CreditorAddressLine2 = null,
+            CreditorAddressLine1 = "33 Liberty Street",
+            CreditorAddressLine2 = "New York, NY, 10045",
             CreditorAddressLine3 = null,
-            CreditorName = null,
-            DebtorAddressLine1 = null,
-            DebtorAddressLine2 = null,
+            CreditorName = "National Phonograph Company",
+            DebtorAddressLine1 = "33 Liberty Street",
+            DebtorAddressLine2 = "New York, NY, 10045",
             DebtorAddressLine3 = null,
-            DebtorName = null,
+            DebtorName = "Ian Crease",
             Description = "Inbound wire transfer",
-            EndToEndIdentification = null,
-            InputMessageAccountabilityData = null,
-            InstructingAgentRoutingNumber = null,
-            InstructionIdentification = null,
+            EndToEndIdentification = "Invoice 29582",
+            InputMessageAccountabilityData = "20220118MMQFMP0P000001",
+            InstructingAgentRoutingNumber = "101050001",
+            InstructionIdentification = "202201180000001",
             Reversal = new()
             {
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -318,8 +360,8 @@ public class InboundWireTransferTest : TestBase
             },
             Status = InboundWireTransfers::InboundWireTransferStatus.Accepted,
             Type = InboundWireTransfers::Type.InboundWireTransfer,
-            UniqueEndToEndTransactionReference = null,
-            UnstructuredRemittanceInformation = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
+            UnstructuredRemittanceInformation = "INVOICE 2468",
             WireDrawdownRequestID = null,
         };
 
