@@ -38,7 +38,7 @@ public class RealTimePaymentsTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
-            DebtorName = null,
+            DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
             PendingTransactionID = null,
@@ -91,6 +91,7 @@ public class RealTimePaymentsTransferTest : TestBase
         string expectedCreditorName = "Ian Crease";
         ApiEnum<string, RealTimePaymentsTransfers::Currency> expectedCurrency =
             RealTimePaymentsTransfers::Currency.Usd;
+        string expectedDebtorName = "National Phonograph Company";
         RealTimePaymentsTransfers::Rejection expectedRejection = new()
         {
             RejectReasonAdditionalInformation = null,
@@ -122,7 +123,7 @@ public class RealTimePaymentsTransferTest : TestBase
         Assert.Equal(expectedCreatedBy, model.CreatedBy);
         Assert.Equal(expectedCreditorName, model.CreditorName);
         Assert.Equal(expectedCurrency, model.Currency);
-        Assert.Null(model.DebtorName);
+        Assert.Equal(expectedDebtorName, model.DebtorName);
         Assert.Null(model.ExternalAccountID);
         Assert.Null(model.IdempotencyKey);
         Assert.Null(model.PendingTransactionID);
@@ -171,7 +172,7 @@ public class RealTimePaymentsTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
-            DebtorName = null,
+            DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
             PendingTransactionID = null,
@@ -236,7 +237,7 @@ public class RealTimePaymentsTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
-            DebtorName = null,
+            DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
             PendingTransactionID = null,
@@ -297,6 +298,7 @@ public class RealTimePaymentsTransferTest : TestBase
         string expectedCreditorName = "Ian Crease";
         ApiEnum<string, RealTimePaymentsTransfers::Currency> expectedCurrency =
             RealTimePaymentsTransfers::Currency.Usd;
+        string expectedDebtorName = "National Phonograph Company";
         RealTimePaymentsTransfers::Rejection expectedRejection = new()
         {
             RejectReasonAdditionalInformation = null,
@@ -328,7 +330,7 @@ public class RealTimePaymentsTransferTest : TestBase
         Assert.Equal(expectedCreatedBy, deserialized.CreatedBy);
         Assert.Equal(expectedCreditorName, deserialized.CreditorName);
         Assert.Equal(expectedCurrency, deserialized.Currency);
-        Assert.Null(deserialized.DebtorName);
+        Assert.Equal(expectedDebtorName, deserialized.DebtorName);
         Assert.Null(deserialized.ExternalAccountID);
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Null(deserialized.PendingTransactionID);
@@ -377,7 +379,7 @@ public class RealTimePaymentsTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
-            DebtorName = null,
+            DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
             PendingTransactionID = null,
@@ -435,7 +437,7 @@ public class RealTimePaymentsTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
-            DebtorName = null,
+            DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
             PendingTransactionID = null,

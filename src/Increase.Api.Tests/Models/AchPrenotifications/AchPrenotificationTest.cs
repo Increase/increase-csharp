@@ -15,19 +15,20 @@ public class AchPrenotificationTest : TestBase
         var model = new AchPrenotifications::AchPrenotification
         {
             ID = "ach_prenotification_ubjf9qqsxl3obbcn1u34",
-            AccountID = null,
+            AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
             Addendum = null,
             CompanyDescriptiveDate = null,
             CompanyDiscretionaryData = null,
-            CompanyEntryDescription = null,
-            CompanyName = null,
+            CompanyEntryDescription = "Account Funding",
+            CompanyName = "National Phonograph Company",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            CreditDebitIndicator = null,
-            EffectiveDate = null,
+            CreditDebitIndicator =
+                AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit,
+            EffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             IdempotencyKey = null,
             IndividualID = null,
-            IndividualName = null,
+            IndividualName = "Ian Crease",
             NotificationsOfChange =
             [
                 new()
@@ -44,14 +45,25 @@ public class AchPrenotificationTest : TestBase
                     AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
             },
             RoutingNumber = "101050001",
-            StandardEntryClassCode = null,
+            StandardEntryClassCode =
+                AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit,
             Status = AchPrenotifications::Status.Submitted,
             Type = AchPrenotifications::Type.AchPrenotification,
         };
 
         string expectedID = "ach_prenotification_ubjf9qqsxl3obbcn1u34";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedAccountNumber = "987654321";
+        string expectedCompanyEntryDescription = "Account Funding";
+        string expectedCompanyName = "National Phonograph Company";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<
+            string,
+            AchPrenotifications::AchPrenotificationCreditDebitIndicator
+        > expectedCreditDebitIndicator =
+            AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit;
+        DateTimeOffset expectedEffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedIndividualName = "Ian Crease";
         List<AchPrenotifications::NotificationsOfChange> expectedNotificationsOfChange =
         [
             new()
@@ -68,25 +80,30 @@ public class AchPrenotificationTest : TestBase
                 AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
         };
         string expectedRoutingNumber = "101050001";
+        ApiEnum<
+            string,
+            AchPrenotifications::AchPrenotificationStandardEntryClassCode
+        > expectedStandardEntryClassCode =
+            AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit;
         ApiEnum<string, AchPrenotifications::Status> expectedStatus =
             AchPrenotifications::Status.Submitted;
         ApiEnum<string, AchPrenotifications::Type> expectedType =
             AchPrenotifications::Type.AchPrenotification;
 
         Assert.Equal(expectedID, model.ID);
-        Assert.Null(model.AccountID);
+        Assert.Equal(expectedAccountID, model.AccountID);
         Assert.Equal(expectedAccountNumber, model.AccountNumber);
         Assert.Null(model.Addendum);
         Assert.Null(model.CompanyDescriptiveDate);
         Assert.Null(model.CompanyDiscretionaryData);
-        Assert.Null(model.CompanyEntryDescription);
-        Assert.Null(model.CompanyName);
+        Assert.Equal(expectedCompanyEntryDescription, model.CompanyEntryDescription);
+        Assert.Equal(expectedCompanyName, model.CompanyName);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
-        Assert.Null(model.CreditDebitIndicator);
-        Assert.Null(model.EffectiveDate);
+        Assert.Equal(expectedCreditDebitIndicator, model.CreditDebitIndicator);
+        Assert.Equal(expectedEffectiveDate, model.EffectiveDate);
         Assert.Null(model.IdempotencyKey);
         Assert.Null(model.IndividualID);
-        Assert.Null(model.IndividualName);
+        Assert.Equal(expectedIndividualName, model.IndividualName);
         Assert.Equal(expectedNotificationsOfChange.Count, model.NotificationsOfChange.Count);
         for (int i = 0; i < expectedNotificationsOfChange.Count; i++)
         {
@@ -94,7 +111,7 @@ public class AchPrenotificationTest : TestBase
         }
         Assert.Equal(expectedPrenotificationReturn, model.PrenotificationReturn);
         Assert.Equal(expectedRoutingNumber, model.RoutingNumber);
-        Assert.Null(model.StandardEntryClassCode);
+        Assert.Equal(expectedStandardEntryClassCode, model.StandardEntryClassCode);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedType, model.Type);
     }
@@ -105,19 +122,20 @@ public class AchPrenotificationTest : TestBase
         var model = new AchPrenotifications::AchPrenotification
         {
             ID = "ach_prenotification_ubjf9qqsxl3obbcn1u34",
-            AccountID = null,
+            AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
             Addendum = null,
             CompanyDescriptiveDate = null,
             CompanyDiscretionaryData = null,
-            CompanyEntryDescription = null,
-            CompanyName = null,
+            CompanyEntryDescription = "Account Funding",
+            CompanyName = "National Phonograph Company",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            CreditDebitIndicator = null,
-            EffectiveDate = null,
+            CreditDebitIndicator =
+                AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit,
+            EffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             IdempotencyKey = null,
             IndividualID = null,
-            IndividualName = null,
+            IndividualName = "Ian Crease",
             NotificationsOfChange =
             [
                 new()
@@ -134,7 +152,8 @@ public class AchPrenotificationTest : TestBase
                     AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
             },
             RoutingNumber = "101050001",
-            StandardEntryClassCode = null,
+            StandardEntryClassCode =
+                AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit,
             Status = AchPrenotifications::Status.Submitted,
             Type = AchPrenotifications::Type.AchPrenotification,
         };
@@ -154,19 +173,20 @@ public class AchPrenotificationTest : TestBase
         var model = new AchPrenotifications::AchPrenotification
         {
             ID = "ach_prenotification_ubjf9qqsxl3obbcn1u34",
-            AccountID = null,
+            AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
             Addendum = null,
             CompanyDescriptiveDate = null,
             CompanyDiscretionaryData = null,
-            CompanyEntryDescription = null,
-            CompanyName = null,
+            CompanyEntryDescription = "Account Funding",
+            CompanyName = "National Phonograph Company",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            CreditDebitIndicator = null,
-            EffectiveDate = null,
+            CreditDebitIndicator =
+                AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit,
+            EffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             IdempotencyKey = null,
             IndividualID = null,
-            IndividualName = null,
+            IndividualName = "Ian Crease",
             NotificationsOfChange =
             [
                 new()
@@ -183,7 +203,8 @@ public class AchPrenotificationTest : TestBase
                     AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
             },
             RoutingNumber = "101050001",
-            StandardEntryClassCode = null,
+            StandardEntryClassCode =
+                AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit,
             Status = AchPrenotifications::Status.Submitted,
             Type = AchPrenotifications::Type.AchPrenotification,
         };
@@ -196,8 +217,18 @@ public class AchPrenotificationTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedID = "ach_prenotification_ubjf9qqsxl3obbcn1u34";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedAccountNumber = "987654321";
+        string expectedCompanyEntryDescription = "Account Funding";
+        string expectedCompanyName = "National Phonograph Company";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        ApiEnum<
+            string,
+            AchPrenotifications::AchPrenotificationCreditDebitIndicator
+        > expectedCreditDebitIndicator =
+            AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit;
+        DateTimeOffset expectedEffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedIndividualName = "Ian Crease";
         List<AchPrenotifications::NotificationsOfChange> expectedNotificationsOfChange =
         [
             new()
@@ -214,25 +245,30 @@ public class AchPrenotificationTest : TestBase
                 AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
         };
         string expectedRoutingNumber = "101050001";
+        ApiEnum<
+            string,
+            AchPrenotifications::AchPrenotificationStandardEntryClassCode
+        > expectedStandardEntryClassCode =
+            AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit;
         ApiEnum<string, AchPrenotifications::Status> expectedStatus =
             AchPrenotifications::Status.Submitted;
         ApiEnum<string, AchPrenotifications::Type> expectedType =
             AchPrenotifications::Type.AchPrenotification;
 
         Assert.Equal(expectedID, deserialized.ID);
-        Assert.Null(deserialized.AccountID);
+        Assert.Equal(expectedAccountID, deserialized.AccountID);
         Assert.Equal(expectedAccountNumber, deserialized.AccountNumber);
         Assert.Null(deserialized.Addendum);
         Assert.Null(deserialized.CompanyDescriptiveDate);
         Assert.Null(deserialized.CompanyDiscretionaryData);
-        Assert.Null(deserialized.CompanyEntryDescription);
-        Assert.Null(deserialized.CompanyName);
+        Assert.Equal(expectedCompanyEntryDescription, deserialized.CompanyEntryDescription);
+        Assert.Equal(expectedCompanyName, deserialized.CompanyName);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
-        Assert.Null(deserialized.CreditDebitIndicator);
-        Assert.Null(deserialized.EffectiveDate);
+        Assert.Equal(expectedCreditDebitIndicator, deserialized.CreditDebitIndicator);
+        Assert.Equal(expectedEffectiveDate, deserialized.EffectiveDate);
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Null(deserialized.IndividualID);
-        Assert.Null(deserialized.IndividualName);
+        Assert.Equal(expectedIndividualName, deserialized.IndividualName);
         Assert.Equal(expectedNotificationsOfChange.Count, deserialized.NotificationsOfChange.Count);
         for (int i = 0; i < expectedNotificationsOfChange.Count; i++)
         {
@@ -240,7 +276,7 @@ public class AchPrenotificationTest : TestBase
         }
         Assert.Equal(expectedPrenotificationReturn, deserialized.PrenotificationReturn);
         Assert.Equal(expectedRoutingNumber, deserialized.RoutingNumber);
-        Assert.Null(deserialized.StandardEntryClassCode);
+        Assert.Equal(expectedStandardEntryClassCode, deserialized.StandardEntryClassCode);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedType, deserialized.Type);
     }
@@ -251,19 +287,20 @@ public class AchPrenotificationTest : TestBase
         var model = new AchPrenotifications::AchPrenotification
         {
             ID = "ach_prenotification_ubjf9qqsxl3obbcn1u34",
-            AccountID = null,
+            AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
             Addendum = null,
             CompanyDescriptiveDate = null,
             CompanyDiscretionaryData = null,
-            CompanyEntryDescription = null,
-            CompanyName = null,
+            CompanyEntryDescription = "Account Funding",
+            CompanyName = "National Phonograph Company",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            CreditDebitIndicator = null,
-            EffectiveDate = null,
+            CreditDebitIndicator =
+                AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit,
+            EffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             IdempotencyKey = null,
             IndividualID = null,
-            IndividualName = null,
+            IndividualName = "Ian Crease",
             NotificationsOfChange =
             [
                 new()
@@ -280,7 +317,8 @@ public class AchPrenotificationTest : TestBase
                     AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
             },
             RoutingNumber = "101050001",
-            StandardEntryClassCode = null,
+            StandardEntryClassCode =
+                AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit,
             Status = AchPrenotifications::Status.Submitted,
             Type = AchPrenotifications::Type.AchPrenotification,
         };
@@ -294,19 +332,20 @@ public class AchPrenotificationTest : TestBase
         var model = new AchPrenotifications::AchPrenotification
         {
             ID = "ach_prenotification_ubjf9qqsxl3obbcn1u34",
-            AccountID = null,
+            AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
             Addendum = null,
             CompanyDescriptiveDate = null,
             CompanyDiscretionaryData = null,
-            CompanyEntryDescription = null,
-            CompanyName = null,
+            CompanyEntryDescription = "Account Funding",
+            CompanyName = "National Phonograph Company",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            CreditDebitIndicator = null,
-            EffectiveDate = null,
+            CreditDebitIndicator =
+                AchPrenotifications::AchPrenotificationCreditDebitIndicator.Credit,
+            EffectiveDate = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             IdempotencyKey = null,
             IndividualID = null,
-            IndividualName = null,
+            IndividualName = "Ian Crease",
             NotificationsOfChange =
             [
                 new()
@@ -323,7 +362,8 @@ public class AchPrenotificationTest : TestBase
                     AchPrenotifications::ReturnReasonCode.CorporateCustomerAdvisedNotAuthorized,
             },
             RoutingNumber = "101050001",
-            StandardEntryClassCode = null,
+            StandardEntryClassCode =
+                AchPrenotifications::AchPrenotificationStandardEntryClassCode.CorporateCreditOrDebit,
             Status = AchPrenotifications::Status.Submitted,
             Type = AchPrenotifications::Type.AchPrenotification,
         };

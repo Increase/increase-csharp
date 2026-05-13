@@ -28,12 +28,12 @@ public class InboundWireDrawdownRequestTest : TestBase
             DebtorAddressLine3 = null,
             DebtorName = "Ian Crease",
             EndToEndIdentification = "Invoice 29582",
-            InputMessageAccountabilityData = null,
-            InstructionIdentification = null,
+            InputMessageAccountabilityData = "20220118MMQFMP0P000001",
+            InstructionIdentification = "202201180000001",
             RecipientAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Type = InboundWireDrawdownRequests::Type.InboundWireDrawdownRequest,
-            UniqueEndToEndTransactionReference = null,
-            UnstructuredRemittanceInformation = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
+            UnstructuredRemittanceInformation = "INVOICE 2468",
         };
 
         string expectedID = "inbound_wire_drawdown_request_u5a92ikqhz1ytphn799e";
@@ -49,9 +49,13 @@ public class InboundWireDrawdownRequestTest : TestBase
         string expectedDebtorAddressLine2 = "New York, NY, 10045";
         string expectedDebtorName = "Ian Crease";
         string expectedEndToEndIdentification = "Invoice 29582";
+        string expectedInputMessageAccountabilityData = "20220118MMQFMP0P000001";
+        string expectedInstructionIdentification = "202201180000001";
         string expectedRecipientAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         ApiEnum<string, InboundWireDrawdownRequests::Type> expectedType =
             InboundWireDrawdownRequests::Type.InboundWireDrawdownRequest;
+        string expectedUniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a";
+        string expectedUnstructuredRemittanceInformation = "INVOICE 2468";
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedAmount, model.Amount);
@@ -68,12 +72,18 @@ public class InboundWireDrawdownRequestTest : TestBase
         Assert.Null(model.DebtorAddressLine3);
         Assert.Equal(expectedDebtorName, model.DebtorName);
         Assert.Equal(expectedEndToEndIdentification, model.EndToEndIdentification);
-        Assert.Null(model.InputMessageAccountabilityData);
-        Assert.Null(model.InstructionIdentification);
+        Assert.Equal(expectedInputMessageAccountabilityData, model.InputMessageAccountabilityData);
+        Assert.Equal(expectedInstructionIdentification, model.InstructionIdentification);
         Assert.Equal(expectedRecipientAccountNumberID, model.RecipientAccountNumberID);
         Assert.Equal(expectedType, model.Type);
-        Assert.Null(model.UniqueEndToEndTransactionReference);
-        Assert.Null(model.UnstructuredRemittanceInformation);
+        Assert.Equal(
+            expectedUniqueEndToEndTransactionReference,
+            model.UniqueEndToEndTransactionReference
+        );
+        Assert.Equal(
+            expectedUnstructuredRemittanceInformation,
+            model.UnstructuredRemittanceInformation
+        );
     }
 
     [Fact]
@@ -96,12 +106,12 @@ public class InboundWireDrawdownRequestTest : TestBase
             DebtorAddressLine3 = null,
             DebtorName = "Ian Crease",
             EndToEndIdentification = "Invoice 29582",
-            InputMessageAccountabilityData = null,
-            InstructionIdentification = null,
+            InputMessageAccountabilityData = "20220118MMQFMP0P000001",
+            InstructionIdentification = "202201180000001",
             RecipientAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Type = InboundWireDrawdownRequests::Type.InboundWireDrawdownRequest,
-            UniqueEndToEndTransactionReference = null,
-            UnstructuredRemittanceInformation = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
+            UnstructuredRemittanceInformation = "INVOICE 2468",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -134,12 +144,12 @@ public class InboundWireDrawdownRequestTest : TestBase
             DebtorAddressLine3 = null,
             DebtorName = "Ian Crease",
             EndToEndIdentification = "Invoice 29582",
-            InputMessageAccountabilityData = null,
-            InstructionIdentification = null,
+            InputMessageAccountabilityData = "20220118MMQFMP0P000001",
+            InstructionIdentification = "202201180000001",
             RecipientAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Type = InboundWireDrawdownRequests::Type.InboundWireDrawdownRequest,
-            UniqueEndToEndTransactionReference = null,
-            UnstructuredRemittanceInformation = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
+            UnstructuredRemittanceInformation = "INVOICE 2468",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -163,9 +173,13 @@ public class InboundWireDrawdownRequestTest : TestBase
         string expectedDebtorAddressLine2 = "New York, NY, 10045";
         string expectedDebtorName = "Ian Crease";
         string expectedEndToEndIdentification = "Invoice 29582";
+        string expectedInputMessageAccountabilityData = "20220118MMQFMP0P000001";
+        string expectedInstructionIdentification = "202201180000001";
         string expectedRecipientAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         ApiEnum<string, InboundWireDrawdownRequests::Type> expectedType =
             InboundWireDrawdownRequests::Type.InboundWireDrawdownRequest;
+        string expectedUniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a";
+        string expectedUnstructuredRemittanceInformation = "INVOICE 2468";
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedAmount, deserialized.Amount);
@@ -182,12 +196,21 @@ public class InboundWireDrawdownRequestTest : TestBase
         Assert.Null(deserialized.DebtorAddressLine3);
         Assert.Equal(expectedDebtorName, deserialized.DebtorName);
         Assert.Equal(expectedEndToEndIdentification, deserialized.EndToEndIdentification);
-        Assert.Null(deserialized.InputMessageAccountabilityData);
-        Assert.Null(deserialized.InstructionIdentification);
+        Assert.Equal(
+            expectedInputMessageAccountabilityData,
+            deserialized.InputMessageAccountabilityData
+        );
+        Assert.Equal(expectedInstructionIdentification, deserialized.InstructionIdentification);
         Assert.Equal(expectedRecipientAccountNumberID, deserialized.RecipientAccountNumberID);
         Assert.Equal(expectedType, deserialized.Type);
-        Assert.Null(deserialized.UniqueEndToEndTransactionReference);
-        Assert.Null(deserialized.UnstructuredRemittanceInformation);
+        Assert.Equal(
+            expectedUniqueEndToEndTransactionReference,
+            deserialized.UniqueEndToEndTransactionReference
+        );
+        Assert.Equal(
+            expectedUnstructuredRemittanceInformation,
+            deserialized.UnstructuredRemittanceInformation
+        );
     }
 
     [Fact]
@@ -210,12 +233,12 @@ public class InboundWireDrawdownRequestTest : TestBase
             DebtorAddressLine3 = null,
             DebtorName = "Ian Crease",
             EndToEndIdentification = "Invoice 29582",
-            InputMessageAccountabilityData = null,
-            InstructionIdentification = null,
+            InputMessageAccountabilityData = "20220118MMQFMP0P000001",
+            InstructionIdentification = "202201180000001",
             RecipientAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Type = InboundWireDrawdownRequests::Type.InboundWireDrawdownRequest,
-            UniqueEndToEndTransactionReference = null,
-            UnstructuredRemittanceInformation = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
+            UnstructuredRemittanceInformation = "INVOICE 2468",
         };
 
         model.Validate();
@@ -241,12 +264,12 @@ public class InboundWireDrawdownRequestTest : TestBase
             DebtorAddressLine3 = null,
             DebtorName = "Ian Crease",
             EndToEndIdentification = "Invoice 29582",
-            InputMessageAccountabilityData = null,
-            InstructionIdentification = null,
+            InputMessageAccountabilityData = "20220118MMQFMP0P000001",
+            InstructionIdentification = "202201180000001",
             RecipientAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Type = InboundWireDrawdownRequests::Type.InboundWireDrawdownRequest,
-            UniqueEndToEndTransactionReference = null,
-            UnstructuredRemittanceInformation = null,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
+            UnstructuredRemittanceInformation = "INVOICE 2468",
         };
 
         InboundWireDrawdownRequests::InboundWireDrawdownRequest copied = new(model);

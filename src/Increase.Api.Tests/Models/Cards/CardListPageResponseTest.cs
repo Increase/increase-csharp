@@ -29,7 +29,7 @@ public class CardListPageResponseTest : TestBase
                         MerchantCategoryCode = new()
                         {
                             Allowed = [new("code")],
-                            Blocked = [new("code")],
+                            Blocked = [new("5734")],
                         },
                         MerchantCountry = new()
                         {
@@ -38,15 +38,15 @@ public class CardListPageResponseTest : TestBase
                         },
                         Usage = new()
                         {
-                            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                            Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                             MultiUse = new(
                                 [
                                     new()
                                     {
                                         Interval =
-                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                                         MerchantCategoryCodes = [new("code")],
-                                        SettlementAmount = 0,
+                                        SettlementAmount = 100000,
                                     },
                                 ]
                             ),
@@ -104,7 +104,7 @@ public class CardListPageResponseTest : TestBase
                     MerchantCategoryCode = new()
                     {
                         Allowed = [new("code")],
-                        Blocked = [new("code")],
+                        Blocked = [new("5734")],
                     },
                     MerchantCountry = new()
                     {
@@ -113,15 +113,15 @@ public class CardListPageResponseTest : TestBase
                     },
                     Usage = new()
                     {
-                        Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                        Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                         MultiUse = new(
                             [
                                 new()
                                 {
                                     Interval =
-                                        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                                     MerchantCategoryCodes = [new("code")],
-                                    SettlementAmount = 0,
+                                    SettlementAmount = 100000,
                                 },
                             ]
                         ),
@@ -191,7 +191,7 @@ public class CardListPageResponseTest : TestBase
                         MerchantCategoryCode = new()
                         {
                             Allowed = [new("code")],
-                            Blocked = [new("code")],
+                            Blocked = [new("5734")],
                         },
                         MerchantCountry = new()
                         {
@@ -200,15 +200,15 @@ public class CardListPageResponseTest : TestBase
                         },
                         Usage = new()
                         {
-                            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                            Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                             MultiUse = new(
                                 [
                                     new()
                                     {
                                         Interval =
-                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                                         MerchantCategoryCodes = [new("code")],
-                                        SettlementAmount = 0,
+                                        SettlementAmount = 100000,
                                     },
                                 ]
                             ),
@@ -280,7 +280,7 @@ public class CardListPageResponseTest : TestBase
                         MerchantCategoryCode = new()
                         {
                             Allowed = [new("code")],
-                            Blocked = [new("code")],
+                            Blocked = [new("5734")],
                         },
                         MerchantCountry = new()
                         {
@@ -289,15 +289,15 @@ public class CardListPageResponseTest : TestBase
                         },
                         Usage = new()
                         {
-                            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                            Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                             MultiUse = new(
                                 [
                                     new()
                                     {
                                         Interval =
-                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                                         MerchantCategoryCodes = [new("code")],
-                                        SettlementAmount = 0,
+                                        SettlementAmount = 100000,
                                     },
                                 ]
                             ),
@@ -362,7 +362,7 @@ public class CardListPageResponseTest : TestBase
                     MerchantCategoryCode = new()
                     {
                         Allowed = [new("code")],
-                        Blocked = [new("code")],
+                        Blocked = [new("5734")],
                     },
                     MerchantCountry = new()
                     {
@@ -371,15 +371,15 @@ public class CardListPageResponseTest : TestBase
                     },
                     Usage = new()
                     {
-                        Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                        Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                         MultiUse = new(
                             [
                                 new()
                                 {
                                     Interval =
-                                        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                        Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                                     MerchantCategoryCodes = [new("code")],
-                                    SettlementAmount = 0,
+                                    SettlementAmount = 100000,
                                 },
                             ]
                         ),
@@ -449,7 +449,7 @@ public class CardListPageResponseTest : TestBase
                         MerchantCategoryCode = new()
                         {
                             Allowed = [new("code")],
-                            Blocked = [new("code")],
+                            Blocked = [new("5734")],
                         },
                         MerchantCountry = new()
                         {
@@ -458,15 +458,15 @@ public class CardListPageResponseTest : TestBase
                         },
                         Usage = new()
                         {
-                            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                            Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                             MultiUse = new(
                                 [
                                     new()
                                     {
                                         Interval =
-                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                                         MerchantCategoryCodes = [new("code")],
-                                        SettlementAmount = 0,
+                                        SettlementAmount = 100000,
                                     },
                                 ]
                             ),
@@ -532,7 +532,7 @@ public class CardListPageResponseTest : TestBase
                         MerchantCategoryCode = new()
                         {
                             Allowed = [new("code")],
-                            Blocked = [new("code")],
+                            Blocked = [new("5734")],
                         },
                         MerchantCountry = new()
                         {
@@ -541,15 +541,15 @@ public class CardListPageResponseTest : TestBase
                         },
                         Usage = new()
                         {
-                            Category = Cards::CardAuthorizationControlsUsageCategory.SingleUse,
+                            Category = Cards::CardAuthorizationControlsUsageCategory.MultiUse,
                             MultiUse = new(
                                 [
                                     new()
                                     {
                                         Interval =
-                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.AllTime,
+                                            Cards::CardAuthorizationControlsUsageMultiUseSpendingLimitInterval.PerMonth,
                                         MerchantCategoryCodes = [new("code")],
-                                        SettlementAmount = 0,
+                                        SettlementAmount = 100000,
                                     },
                                 ]
                             ),
