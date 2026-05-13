@@ -45,7 +45,7 @@ public class WireTransferListPageResponseTest : TestBase
                             new WireTransfers::WireTransferCreditorAddressUnstructured()
                             {
                                 Line1 = "33 Liberty Street",
-                                Line2 = null,
+                                Line2 = "New York, NY, 10045",
                                 Line3 = null,
                             }
                         ),
@@ -57,12 +57,12 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferDebtorAddressUnstructured()
                             {
-                                Line1 = "line1",
-                                Line2 = "line2",
-                                Line3 = "line3",
+                                Line1 = "1500 Pennsylvania Avenue, NW",
+                                Line2 = "Washington, D.C. 20220",
+                                Line3 = null,
                             }
                         ),
-                        Name = "name",
+                        Name = "Ian Crease",
                     },
                     ExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv",
                     IdempotencyKey = null,
@@ -98,7 +98,7 @@ public class WireTransferListPageResponseTest : TestBase
                         WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
                     },
                     RoutingNumber = "101050001",
-                    SourceAccountNumberID = null,
+                    SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Status = WireTransfers::WireTransferStatus.Complete,
                     Submission = new()
                     {
@@ -107,7 +107,7 @@ public class WireTransferListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
-                    UniqueEndToEndTransactionReference = null,
+                    UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
                 },
             ],
             NextCursor = "v57w5d",
@@ -145,7 +145,7 @@ public class WireTransferListPageResponseTest : TestBase
                         new WireTransfers::WireTransferCreditorAddressUnstructured()
                         {
                             Line1 = "33 Liberty Street",
-                            Line2 = null,
+                            Line2 = "New York, NY, 10045",
                             Line3 = null,
                         }
                     ),
@@ -157,12 +157,12 @@ public class WireTransferListPageResponseTest : TestBase
                     Address = new(
                         new WireTransfers::WireTransferDebtorAddressUnstructured()
                         {
-                            Line1 = "line1",
-                            Line2 = "line2",
-                            Line3 = "line3",
+                            Line1 = "1500 Pennsylvania Avenue, NW",
+                            Line2 = "Washington, D.C. 20220",
+                            Line3 = null,
                         }
                     ),
-                    Name = "name",
+                    Name = "Ian Crease",
                 },
                 ExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv",
                 IdempotencyKey = null,
@@ -198,7 +198,7 @@ public class WireTransferListPageResponseTest : TestBase
                     WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
                 },
                 RoutingNumber = "101050001",
-                SourceAccountNumberID = null,
+                SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                 Status = WireTransfers::WireTransferStatus.Complete,
                 Submission = new()
                 {
@@ -207,7 +207,7 @@ public class WireTransferListPageResponseTest : TestBase
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = WireTransfers::Type.WireTransfer,
-                UniqueEndToEndTransactionReference = null,
+                UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             },
         ];
         string expectedNextCursor = "v57w5d";
@@ -257,7 +257,7 @@ public class WireTransferListPageResponseTest : TestBase
                             new WireTransfers::WireTransferCreditorAddressUnstructured()
                             {
                                 Line1 = "33 Liberty Street",
-                                Line2 = null,
+                                Line2 = "New York, NY, 10045",
                                 Line3 = null,
                             }
                         ),
@@ -269,12 +269,12 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferDebtorAddressUnstructured()
                             {
-                                Line1 = "line1",
-                                Line2 = "line2",
-                                Line3 = "line3",
+                                Line1 = "1500 Pennsylvania Avenue, NW",
+                                Line2 = "Washington, D.C. 20220",
+                                Line3 = null,
                             }
                         ),
-                        Name = "name",
+                        Name = "Ian Crease",
                     },
                     ExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv",
                     IdempotencyKey = null,
@@ -310,7 +310,7 @@ public class WireTransferListPageResponseTest : TestBase
                         WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
                     },
                     RoutingNumber = "101050001",
-                    SourceAccountNumberID = null,
+                    SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Status = WireTransfers::WireTransferStatus.Complete,
                     Submission = new()
                     {
@@ -319,7 +319,7 @@ public class WireTransferListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
-                    UniqueEndToEndTransactionReference = null,
+                    UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
                 },
             ],
             NextCursor = "v57w5d",
@@ -371,7 +371,7 @@ public class WireTransferListPageResponseTest : TestBase
                             new WireTransfers::WireTransferCreditorAddressUnstructured()
                             {
                                 Line1 = "33 Liberty Street",
-                                Line2 = null,
+                                Line2 = "New York, NY, 10045",
                                 Line3 = null,
                             }
                         ),
@@ -383,12 +383,12 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferDebtorAddressUnstructured()
                             {
-                                Line1 = "line1",
-                                Line2 = "line2",
-                                Line3 = "line3",
+                                Line1 = "1500 Pennsylvania Avenue, NW",
+                                Line2 = "Washington, D.C. 20220",
+                                Line3 = null,
                             }
                         ),
-                        Name = "name",
+                        Name = "Ian Crease",
                     },
                     ExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv",
                     IdempotencyKey = null,
@@ -424,7 +424,7 @@ public class WireTransferListPageResponseTest : TestBase
                         WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
                     },
                     RoutingNumber = "101050001",
-                    SourceAccountNumberID = null,
+                    SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Status = WireTransfers::WireTransferStatus.Complete,
                     Submission = new()
                     {
@@ -433,7 +433,7 @@ public class WireTransferListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
-                    UniqueEndToEndTransactionReference = null,
+                    UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
                 },
             ],
             NextCursor = "v57w5d",
@@ -478,7 +478,7 @@ public class WireTransferListPageResponseTest : TestBase
                         new WireTransfers::WireTransferCreditorAddressUnstructured()
                         {
                             Line1 = "33 Liberty Street",
-                            Line2 = null,
+                            Line2 = "New York, NY, 10045",
                             Line3 = null,
                         }
                     ),
@@ -490,12 +490,12 @@ public class WireTransferListPageResponseTest : TestBase
                     Address = new(
                         new WireTransfers::WireTransferDebtorAddressUnstructured()
                         {
-                            Line1 = "line1",
-                            Line2 = "line2",
-                            Line3 = "line3",
+                            Line1 = "1500 Pennsylvania Avenue, NW",
+                            Line2 = "Washington, D.C. 20220",
+                            Line3 = null,
                         }
                     ),
-                    Name = "name",
+                    Name = "Ian Crease",
                 },
                 ExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv",
                 IdempotencyKey = null,
@@ -531,7 +531,7 @@ public class WireTransferListPageResponseTest : TestBase
                     WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
                 },
                 RoutingNumber = "101050001",
-                SourceAccountNumberID = null,
+                SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                 Status = WireTransfers::WireTransferStatus.Complete,
                 Submission = new()
                 {
@@ -540,7 +540,7 @@ public class WireTransferListPageResponseTest : TestBase
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = WireTransfers::Type.WireTransfer,
-                UniqueEndToEndTransactionReference = null,
+                UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             },
         ];
         string expectedNextCursor = "v57w5d";
@@ -590,7 +590,7 @@ public class WireTransferListPageResponseTest : TestBase
                             new WireTransfers::WireTransferCreditorAddressUnstructured()
                             {
                                 Line1 = "33 Liberty Street",
-                                Line2 = null,
+                                Line2 = "New York, NY, 10045",
                                 Line3 = null,
                             }
                         ),
@@ -602,12 +602,12 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferDebtorAddressUnstructured()
                             {
-                                Line1 = "line1",
-                                Line2 = "line2",
-                                Line3 = "line3",
+                                Line1 = "1500 Pennsylvania Avenue, NW",
+                                Line2 = "Washington, D.C. 20220",
+                                Line3 = null,
                             }
                         ),
-                        Name = "name",
+                        Name = "Ian Crease",
                     },
                     ExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv",
                     IdempotencyKey = null,
@@ -643,7 +643,7 @@ public class WireTransferListPageResponseTest : TestBase
                         WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
                     },
                     RoutingNumber = "101050001",
-                    SourceAccountNumberID = null,
+                    SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Status = WireTransfers::WireTransferStatus.Complete,
                     Submission = new()
                     {
@@ -652,7 +652,7 @@ public class WireTransferListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
-                    UniqueEndToEndTransactionReference = null,
+                    UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
                 },
             ],
             NextCursor = "v57w5d",
@@ -698,7 +698,7 @@ public class WireTransferListPageResponseTest : TestBase
                             new WireTransfers::WireTransferCreditorAddressUnstructured()
                             {
                                 Line1 = "33 Liberty Street",
-                                Line2 = null,
+                                Line2 = "New York, NY, 10045",
                                 Line3 = null,
                             }
                         ),
@@ -710,12 +710,12 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferDebtorAddressUnstructured()
                             {
-                                Line1 = "line1",
-                                Line2 = "line2",
-                                Line3 = "line3",
+                                Line1 = "1500 Pennsylvania Avenue, NW",
+                                Line2 = "Washington, D.C. 20220",
+                                Line3 = null,
                             }
                         ),
-                        Name = "name",
+                        Name = "Ian Crease",
                     },
                     ExternalAccountID = "external_account_ukk55lr923a3ac0pp7iv",
                     IdempotencyKey = null,
@@ -751,7 +751,7 @@ public class WireTransferListPageResponseTest : TestBase
                         WireTransferID = "wire_transfer_5akynk7dqsq25qwk9q2u",
                     },
                     RoutingNumber = "101050001",
-                    SourceAccountNumberID = null,
+                    SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Status = WireTransfers::WireTransferStatus.Complete,
                     Submission = new()
                     {
@@ -760,7 +760,7 @@ public class WireTransferListPageResponseTest : TestBase
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
-                    UniqueEndToEndTransactionReference = null,
+                    UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
                 },
             ],
             NextCursor = "v57w5d",
