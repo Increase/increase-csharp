@@ -44,8 +44,8 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferCreditorAddressUnstructured()
                             {
-                                Line1 = "33 Liberty Street",
-                                Line2 = "New York, NY, 10045",
+                                Line1 = "1500 Pennsylvania Avenue, NW",
+                                Line2 = "Washington, DC 20220",
                                 Line3 = null,
                             }
                         ),
@@ -57,8 +57,8 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferDebtorAddressUnstructured()
                             {
-                                Line1 = "1500 Pennsylvania Avenue, NW",
-                                Line2 = "Washington, D.C. 20220",
+                                Line1 = "33 Liberty Street",
+                                Line2 = "New York, NY 10045",
                                 Line3 = null,
                             }
                         ),
@@ -144,8 +144,8 @@ public class WireTransferListPageResponseTest : TestBase
                     Address = new(
                         new WireTransfers::WireTransferCreditorAddressUnstructured()
                         {
-                            Line1 = "33 Liberty Street",
-                            Line2 = "New York, NY, 10045",
+                            Line1 = "1500 Pennsylvania Avenue, NW",
+                            Line2 = "Washington, DC 20220",
                             Line3 = null,
                         }
                     ),
@@ -157,8 +157,8 @@ public class WireTransferListPageResponseTest : TestBase
                     Address = new(
                         new WireTransfers::WireTransferDebtorAddressUnstructured()
                         {
-                            Line1 = "1500 Pennsylvania Avenue, NW",
-                            Line2 = "Washington, D.C. 20220",
+                            Line1 = "33 Liberty Street",
+                            Line2 = "New York, NY 10045",
                             Line3 = null,
                         }
                     ),
@@ -256,8 +256,8 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferCreditorAddressUnstructured()
                             {
-                                Line1 = "33 Liberty Street",
-                                Line2 = "New York, NY, 10045",
+                                Line1 = "1500 Pennsylvania Avenue, NW",
+                                Line2 = "Washington, DC 20220",
                                 Line3 = null,
                             }
                         ),
@@ -269,8 +269,8 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferDebtorAddressUnstructured()
                             {
-                                Line1 = "1500 Pennsylvania Avenue, NW",
-                                Line2 = "Washington, D.C. 20220",
+                                Line1 = "33 Liberty Street",
+                                Line2 = "New York, NY 10045",
                                 Line3 = null,
                             }
                         ),
@@ -370,8 +370,8 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferCreditorAddressUnstructured()
                             {
-                                Line1 = "33 Liberty Street",
-                                Line2 = "New York, NY, 10045",
+                                Line1 = "1500 Pennsylvania Avenue, NW",
+                                Line2 = "Washington, DC 20220",
                                 Line3 = null,
                             }
                         ),
@@ -383,8 +383,8 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferDebtorAddressUnstructured()
                             {
-                                Line1 = "1500 Pennsylvania Avenue, NW",
-                                Line2 = "Washington, D.C. 20220",
+                                Line1 = "33 Liberty Street",
+                                Line2 = "New York, NY 10045",
                                 Line3 = null,
                             }
                         ),
@@ -477,8 +477,8 @@ public class WireTransferListPageResponseTest : TestBase
                     Address = new(
                         new WireTransfers::WireTransferCreditorAddressUnstructured()
                         {
-                            Line1 = "33 Liberty Street",
-                            Line2 = "New York, NY, 10045",
+                            Line1 = "1500 Pennsylvania Avenue, NW",
+                            Line2 = "Washington, DC 20220",
                             Line3 = null,
                         }
                     ),
@@ -490,8 +490,8 @@ public class WireTransferListPageResponseTest : TestBase
                     Address = new(
                         new WireTransfers::WireTransferDebtorAddressUnstructured()
                         {
-                            Line1 = "1500 Pennsylvania Avenue, NW",
-                            Line2 = "Washington, D.C. 20220",
+                            Line1 = "33 Liberty Street",
+                            Line2 = "New York, NY 10045",
                             Line3 = null,
                         }
                     ),
@@ -589,8 +589,8 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferCreditorAddressUnstructured()
                             {
-                                Line1 = "33 Liberty Street",
-                                Line2 = "New York, NY, 10045",
+                                Line1 = "1500 Pennsylvania Avenue, NW",
+                                Line2 = "Washington, DC 20220",
                                 Line3 = null,
                             }
                         ),
@@ -602,8 +602,8 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferDebtorAddressUnstructured()
                             {
-                                Line1 = "1500 Pennsylvania Avenue, NW",
-                                Line2 = "Washington, D.C. 20220",
+                                Line1 = "33 Liberty Street",
+                                Line2 = "New York, NY 10045",
                                 Line3 = null,
                             }
                         ),
@@ -697,8 +697,8 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferCreditorAddressUnstructured()
                             {
-                                Line1 = "33 Liberty Street",
-                                Line2 = "New York, NY, 10045",
+                                Line1 = "1500 Pennsylvania Avenue, NW",
+                                Line2 = "Washington, DC 20220",
                                 Line3 = null,
                             }
                         ),
@@ -710,8 +710,8 @@ public class WireTransferListPageResponseTest : TestBase
                         Address = new(
                             new WireTransfers::WireTransferDebtorAddressUnstructured()
                             {
-                                Line1 = "1500 Pennsylvania Avenue, NW",
-                                Line2 = "Washington, D.C. 20220",
+                                Line1 = "33 Liberty Street",
+                                Line2 = "New York, NY 10045",
                                 Line3 = null,
                             }
                         ),
