@@ -60,6 +60,7 @@ public class EntityTest : TestBase
                         ],
                     },
                 ],
+                BeneficialOwnershipExemptionReason = null,
                 Email = null,
                 IncorporationState = "NY",
                 IndustryCode = null,
@@ -306,6 +307,7 @@ public class EntityTest : TestBase
                     ],
                 },
             ],
+            BeneficialOwnershipExemptionReason = null,
             Email = null,
             IncorporationState = "NY",
             IndustryCode = null,
@@ -581,6 +583,7 @@ public class EntityTest : TestBase
                         ],
                     },
                 ],
+                BeneficialOwnershipExemptionReason = null,
                 Email = null,
                 IncorporationState = "NY",
                 IndustryCode = null,
@@ -841,6 +844,7 @@ public class EntityTest : TestBase
                         ],
                     },
                 ],
+                BeneficialOwnershipExemptionReason = null,
                 Email = null,
                 IncorporationState = "NY",
                 IndustryCode = null,
@@ -1094,6 +1098,7 @@ public class EntityTest : TestBase
                     ],
                 },
             ],
+            BeneficialOwnershipExemptionReason = null,
             Email = null,
             IncorporationState = "NY",
             IndustryCode = null,
@@ -1369,6 +1374,7 @@ public class EntityTest : TestBase
                         ],
                     },
                 ],
+                BeneficialOwnershipExemptionReason = null,
                 Email = null,
                 IncorporationState = "NY",
                 IndustryCode = null,
@@ -1623,6 +1629,7 @@ public class EntityTest : TestBase
                         ],
                     },
                 ],
+                BeneficialOwnershipExemptionReason = null,
                 Email = null,
                 IncorporationState = "NY",
                 IndustryCode = null,
@@ -1879,6 +1886,8 @@ public class EntityCorporationTest : TestBase
                     ],
                 },
             ],
+            BeneficialOwnershipExemptionReason =
+                Entities::EntityCorporationBeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "email",
             IncorporationState = "incorporation_state",
             IndustryCode = "industry_code",
@@ -1934,6 +1943,11 @@ public class EntityCorporationTest : TestBase
                 ],
             },
         ];
+        ApiEnum<
+            string,
+            Entities::EntityCorporationBeneficialOwnershipExemptionReason
+        > expectedBeneficialOwnershipExemptionReason =
+            Entities::EntityCorporationBeneficialOwnershipExemptionReason.RegulatedFinancialInstitution;
         string expectedEmail = "email";
         string expectedIncorporationState = "incorporation_state";
         string expectedIndustryCode = "industry_code";
@@ -1952,6 +1966,10 @@ public class EntityCorporationTest : TestBase
         {
             Assert.Equal(expectedBeneficialOwners[i], model.BeneficialOwners[i]);
         }
+        Assert.Equal(
+            expectedBeneficialOwnershipExemptionReason,
+            model.BeneficialOwnershipExemptionReason
+        );
         Assert.Equal(expectedEmail, model.Email);
         Assert.Equal(expectedIncorporationState, model.IncorporationState);
         Assert.Equal(expectedIndustryCode, model.IndustryCode);
@@ -2007,6 +2025,8 @@ public class EntityCorporationTest : TestBase
                     ],
                 },
             ],
+            BeneficialOwnershipExemptionReason =
+                Entities::EntityCorporationBeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "email",
             IncorporationState = "incorporation_state",
             IndustryCode = "industry_code",
@@ -2076,6 +2096,8 @@ public class EntityCorporationTest : TestBase
                     ],
                 },
             ],
+            BeneficialOwnershipExemptionReason =
+                Entities::EntityCorporationBeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "email",
             IncorporationState = "incorporation_state",
             IndustryCode = "industry_code",
@@ -2138,6 +2160,11 @@ public class EntityCorporationTest : TestBase
                 ],
             },
         ];
+        ApiEnum<
+            string,
+            Entities::EntityCorporationBeneficialOwnershipExemptionReason
+        > expectedBeneficialOwnershipExemptionReason =
+            Entities::EntityCorporationBeneficialOwnershipExemptionReason.RegulatedFinancialInstitution;
         string expectedEmail = "email";
         string expectedIncorporationState = "incorporation_state";
         string expectedIndustryCode = "industry_code";
@@ -2156,6 +2183,10 @@ public class EntityCorporationTest : TestBase
         {
             Assert.Equal(expectedBeneficialOwners[i], deserialized.BeneficialOwners[i]);
         }
+        Assert.Equal(
+            expectedBeneficialOwnershipExemptionReason,
+            deserialized.BeneficialOwnershipExemptionReason
+        );
         Assert.Equal(expectedEmail, deserialized.Email);
         Assert.Equal(expectedIncorporationState, deserialized.IncorporationState);
         Assert.Equal(expectedIndustryCode, deserialized.IndustryCode);
@@ -2211,6 +2242,8 @@ public class EntityCorporationTest : TestBase
                     ],
                 },
             ],
+            BeneficialOwnershipExemptionReason =
+                Entities::EntityCorporationBeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "email",
             IncorporationState = "incorporation_state",
             IndustryCode = "industry_code",
@@ -2274,6 +2307,8 @@ public class EntityCorporationTest : TestBase
                     ],
                 },
             ],
+            BeneficialOwnershipExemptionReason =
+                Entities::EntityCorporationBeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
             Email = "email",
             IncorporationState = "incorporation_state",
             IndustryCode = "industry_code",
@@ -3252,6 +3287,78 @@ public class EntityCorporationBeneficialOwnerProngTest : TestBase
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, Entities::EntityCorporationBeneficialOwnerProng>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class EntityCorporationBeneficialOwnershipExemptionReasonTest : TestBase
+{
+    [Theory]
+    [InlineData(
+        Entities::EntityCorporationBeneficialOwnershipExemptionReason.RegulatedFinancialInstitution
+    )]
+    [InlineData(
+        Entities::EntityCorporationBeneficialOwnershipExemptionReason.PubliclyTradedCompany
+    )]
+    [InlineData(Entities::EntityCorporationBeneficialOwnershipExemptionReason.PublicEntity)]
+    [InlineData(Entities::EntityCorporationBeneficialOwnershipExemptionReason.Other)]
+    public void Validation_Works(
+        Entities::EntityCorporationBeneficialOwnershipExemptionReason rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Entities::EntityCorporationBeneficialOwnershipExemptionReason> value =
+            rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Entities::EntityCorporationBeneficialOwnershipExemptionReason>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        Entities::EntityCorporationBeneficialOwnershipExemptionReason.RegulatedFinancialInstitution
+    )]
+    [InlineData(
+        Entities::EntityCorporationBeneficialOwnershipExemptionReason.PubliclyTradedCompany
+    )]
+    [InlineData(Entities::EntityCorporationBeneficialOwnershipExemptionReason.PublicEntity)]
+    [InlineData(Entities::EntityCorporationBeneficialOwnershipExemptionReason.Other)]
+    public void SerializationRoundtrip_Works(
+        Entities::EntityCorporationBeneficialOwnershipExemptionReason rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Entities::EntityCorporationBeneficialOwnershipExemptionReason> value =
+            rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Entities::EntityCorporationBeneficialOwnershipExemptionReason>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Entities::EntityCorporationBeneficialOwnershipExemptionReason>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Entities::EntityCorporationBeneficialOwnershipExemptionReason>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
