@@ -1344,6 +1344,11 @@ sealed class TokenConverter : JsonConverter<Token>
 public enum BlockchainOfframpTransferStatus
 {
     /// <summary>
+    /// The transfer has been canceled.
+    /// </summary>
+    Canceled,
+
+    /// <summary>
     /// The transfer is pending settlement at Increase.
     /// </summary>
     PendingSettlement,
@@ -1365,6 +1370,7 @@ sealed class BlockchainOfframpTransferStatusConverter
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "canceled" => BlockchainOfframpTransferStatus.Canceled,
             "pending_settlement" => BlockchainOfframpTransferStatus.PendingSettlement,
             "settled" => BlockchainOfframpTransferStatus.Settled,
             _ => (BlockchainOfframpTransferStatus)(-1),
@@ -1381,6 +1387,7 @@ sealed class BlockchainOfframpTransferStatusConverter
             writer,
             value switch
             {
+                BlockchainOfframpTransferStatus.Canceled => "canceled",
                 BlockchainOfframpTransferStatus.PendingSettlement => "pending_settlement",
                 BlockchainOfframpTransferStatus.Settled => "settled",
                 _ => throw new IncreaseInvalidDataException(
