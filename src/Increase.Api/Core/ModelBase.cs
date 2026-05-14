@@ -1301,6 +1301,10 @@ public abstract record class ModelBase
                 Entities::EntityCorporationBeneficialOwnerIndividualIdentificationMethod
             >(),
             new ApiEnumConverter<string, Entities::EntityCorporationBeneficialOwnerProng>(),
+            new ApiEnumConverter<
+                string,
+                Entities::EntityCorporationBeneficialOwnershipExemptionReason
+            >(),
             new ApiEnumConverter<string, Entities::EntityCorporationLegalIdentifierCategory>(),
             new ApiEnumConverter<string, Entities::EntityGovernmentAuthorityCategory>(),
             new ApiEnumConverter<string, Entities::EntityJointIndividualIdentificationMethod>(),

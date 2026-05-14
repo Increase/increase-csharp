@@ -408,6 +408,25 @@ public sealed record class EntityCorporation : JsonModel
     }
 
     /// <summary>
+    /// If the entity is exempt from the requirement to submit beneficial owners,
+    /// the justification for the exemption.
+    /// </summary>
+    public required ApiEnum<
+        string,
+        EntityCorporationBeneficialOwnershipExemptionReason
+    >? BeneficialOwnershipExemptionReason
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<
+                ApiEnum<string, EntityCorporationBeneficialOwnershipExemptionReason>
+            >("beneficial_ownership_exemption_reason");
+        }
+        init { this._rawData.Set("beneficial_ownership_exemption_reason", value); }
+    }
+
+    /// <summary>
     /// An email address for the business.
     /// </summary>
     public required string? Email
@@ -497,6 +516,7 @@ public sealed record class EntityCorporation : JsonModel
         {
             item.Validate();
         }
+        this.BeneficialOwnershipExemptionReason?.Validate();
         _ = this.Email;
         _ = this.IncorporationState;
         _ = this.IndustryCode;
@@ -1283,6 +1303,82 @@ sealed class EntityCorporationBeneficialOwnerProngConverter
             {
                 EntityCorporationBeneficialOwnerProng.Ownership => "ownership",
                 EntityCorporationBeneficialOwnerProng.Control => "control",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// If the entity is exempt from the requirement to submit beneficial owners, the
+/// justification for the exemption.
+/// </summary>
+[JsonConverter(typeof(EntityCorporationBeneficialOwnershipExemptionReasonConverter))]
+public enum EntityCorporationBeneficialOwnershipExemptionReason
+{
+    /// <summary>
+    /// A regulated financial institution.
+    /// </summary>
+    RegulatedFinancialInstitution,
+
+    /// <summary>
+    /// A publicly traded company.
+    /// </summary>
+    PubliclyTradedCompany,
+
+    /// <summary>
+    /// A public entity acting on behalf of the federal or a state government.
+    /// </summary>
+    PublicEntity,
+
+    /// <summary>
+    /// Any other reason why this entity is exempt from the requirement to submit
+    /// beneficial owners. You can only use this exemption after approval from your
+    /// bank partner.
+    /// </summary>
+    Other,
+}
+
+sealed class EntityCorporationBeneficialOwnershipExemptionReasonConverter
+    : JsonConverter<EntityCorporationBeneficialOwnershipExemptionReason>
+{
+    public override EntityCorporationBeneficialOwnershipExemptionReason Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "regulated_financial_institution" =>
+                EntityCorporationBeneficialOwnershipExemptionReason.RegulatedFinancialInstitution,
+            "publicly_traded_company" =>
+                EntityCorporationBeneficialOwnershipExemptionReason.PubliclyTradedCompany,
+            "public_entity" => EntityCorporationBeneficialOwnershipExemptionReason.PublicEntity,
+            "other" => EntityCorporationBeneficialOwnershipExemptionReason.Other,
+            _ => (EntityCorporationBeneficialOwnershipExemptionReason)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        EntityCorporationBeneficialOwnershipExemptionReason value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                EntityCorporationBeneficialOwnershipExemptionReason.RegulatedFinancialInstitution =>
+                    "regulated_financial_institution",
+                EntityCorporationBeneficialOwnershipExemptionReason.PubliclyTradedCompany =>
+                    "publicly_traded_company",
+                EntityCorporationBeneficialOwnershipExemptionReason.PublicEntity => "public_entity",
+                EntityCorporationBeneficialOwnershipExemptionReason.Other => "other",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
