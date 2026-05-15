@@ -3629,7 +3629,6 @@ public class TokenTest : TestBase
 public class BlockchainOfframpTransferStatusTest : TestBase
 {
     [Theory]
-    [InlineData(PendingTransactions::BlockchainOfframpTransferStatus.Canceled)]
     [InlineData(PendingTransactions::BlockchainOfframpTransferStatus.PendingSettlement)]
     [InlineData(PendingTransactions::BlockchainOfframpTransferStatus.Settled)]
     public void Validation_Works(PendingTransactions::BlockchainOfframpTransferStatus rawValue)
@@ -3651,7 +3650,6 @@ public class BlockchainOfframpTransferStatusTest : TestBase
     }
 
     [Theory]
-    [InlineData(PendingTransactions::BlockchainOfframpTransferStatus.Canceled)]
     [InlineData(PendingTransactions::BlockchainOfframpTransferStatus.PendingSettlement)]
     [InlineData(PendingTransactions::BlockchainOfframpTransferStatus.Settled)]
     public void SerializationRoundtrip_Works(
