@@ -1123,6 +1123,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, AchTransfers::Type>(),
             new ApiEnumConverter<string, AchTransfers::Network>(),
             new ApiEnumConverter<string, AchTransfers::ChangeCode>(),
+            new ApiEnumConverter<string, AchTransfers::CorrectedAccountFunding>(),
             new ApiEnumConverter<
                 string,
                 AchTransfers::AchTransferPreferredEffectiveDateSettlementSchedule
@@ -1169,6 +1170,7 @@ public abstract record class ModelBase
                 AchPrenotifications::AchPrenotificationCreditDebitIndicator
             >(),
             new ApiEnumConverter<string, AchPrenotifications::ChangeCode>(),
+            new ApiEnumConverter<string, AchPrenotifications::CorrectedAccountFunding>(),
             new ApiEnumConverter<string, AchPrenotifications::ReturnReasonCode>(),
             new ApiEnumConverter<
                 string,
@@ -1560,7 +1562,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, SimulationsPhysicalCards::ShipmentStatus>(),
             new ApiEnumConverter<string, DigitalWalletTokenRequests::DeclineReason>(),
             new ApiEnumConverter<string, DigitalWalletTokenRequests::Type>(),
-            new ApiEnumConverter<string, ChangeCode>(),
+            new ApiEnumConverter<string, CorrectedAccountFunding>(),
             new ApiEnumConverter<string, Reason>(),
             new ApiEnumConverter<string, InboundFundsHoldBehavior>(),
             new ApiEnumConverter<string, SimulationsInboundAchTransfers::Category>(),

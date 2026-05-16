@@ -78,8 +78,13 @@ public class AchTransferListPageResponseTest : TestBase
                     [
                         new()
                         {
-                            ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                            CorrectedData = "32",
+                            ChangeCode =
+                                AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                            CorrectedAccountFunding =
+                                AchTransfers::CorrectedAccountFunding.Checking,
+                            CorrectedAccountNumber = "987654321",
+                            CorrectedIndividualID = null,
+                            CorrectedRoutingNumber = "123456789",
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
@@ -189,8 +194,12 @@ public class AchTransferListPageResponseTest : TestBase
                 [
                     new()
                     {
-                        ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                        CorrectedData = "32",
+                        ChangeCode =
+                            AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                        CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+                        CorrectedAccountNumber = "987654321",
+                        CorrectedIndividualID = null,
+                        CorrectedRoutingNumber = "123456789",
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
                 ],
@@ -310,8 +319,13 @@ public class AchTransferListPageResponseTest : TestBase
                     [
                         new()
                         {
-                            ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                            CorrectedData = "32",
+                            ChangeCode =
+                                AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                            CorrectedAccountFunding =
+                                AchTransfers::CorrectedAccountFunding.Checking,
+                            CorrectedAccountNumber = "987654321",
+                            CorrectedIndividualID = null,
+                            CorrectedRoutingNumber = "123456789",
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
@@ -435,8 +449,13 @@ public class AchTransferListPageResponseTest : TestBase
                     [
                         new()
                         {
-                            ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                            CorrectedData = "32",
+                            ChangeCode =
+                                AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                            CorrectedAccountFunding =
+                                AchTransfers::CorrectedAccountFunding.Checking,
+                            CorrectedAccountNumber = "987654321",
+                            CorrectedIndividualID = null,
+                            CorrectedRoutingNumber = "123456789",
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
@@ -553,8 +572,12 @@ public class AchTransferListPageResponseTest : TestBase
                 [
                     new()
                     {
-                        ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                        CorrectedData = "32",
+                        ChangeCode =
+                            AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                        CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+                        CorrectedAccountNumber = "987654321",
+                        CorrectedIndividualID = null,
+                        CorrectedRoutingNumber = "123456789",
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
                 ],
@@ -674,8 +697,13 @@ public class AchTransferListPageResponseTest : TestBase
                     [
                         new()
                         {
-                            ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                            CorrectedData = "32",
+                            ChangeCode =
+                                AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                            CorrectedAccountFunding =
+                                AchTransfers::CorrectedAccountFunding.Checking,
+                            CorrectedAccountNumber = "987654321",
+                            CorrectedIndividualID = null,
+                            CorrectedRoutingNumber = "123456789",
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
@@ -793,8 +821,13 @@ public class AchTransferListPageResponseTest : TestBase
                     [
                         new()
                         {
-                            ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                            CorrectedData = "32",
+                            ChangeCode =
+                                AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                            CorrectedAccountFunding =
+                                AchTransfers::CorrectedAccountFunding.Checking,
+                            CorrectedAccountNumber = "987654321",
+                            CorrectedIndividualID = null,
+                            CorrectedRoutingNumber = "123456789",
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
