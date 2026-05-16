@@ -74,8 +74,12 @@ public class AchTransferTest : TestBase
             [
                 new()
                 {
-                    ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                    CorrectedData = "32",
+                    ChangeCode =
+                        AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                    CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+                    CorrectedAccountNumber = "987654321",
+                    CorrectedIndividualID = null,
+                    CorrectedRoutingNumber = "123456789",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
             ],
@@ -174,8 +178,12 @@ public class AchTransferTest : TestBase
         [
             new()
             {
-                ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                CorrectedData = "32",
+                ChangeCode =
+                    AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+                CorrectedAccountNumber = "987654321",
+                CorrectedIndividualID = null,
+                CorrectedRoutingNumber = "123456789",
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
         ];
@@ -326,8 +334,12 @@ public class AchTransferTest : TestBase
             [
                 new()
                 {
-                    ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                    CorrectedData = "32",
+                    ChangeCode =
+                        AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                    CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+                    CorrectedAccountNumber = "987654321",
+                    CorrectedIndividualID = null,
+                    CorrectedRoutingNumber = "123456789",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
             ],
@@ -440,8 +452,12 @@ public class AchTransferTest : TestBase
             [
                 new()
                 {
-                    ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                    CorrectedData = "32",
+                    ChangeCode =
+                        AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                    CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+                    CorrectedAccountNumber = "987654321",
+                    CorrectedIndividualID = null,
+                    CorrectedRoutingNumber = "123456789",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
             ],
@@ -547,8 +563,12 @@ public class AchTransferTest : TestBase
         [
             new()
             {
-                ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                CorrectedData = "32",
+                ChangeCode =
+                    AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+                CorrectedAccountNumber = "987654321",
+                CorrectedIndividualID = null,
+                CorrectedRoutingNumber = "123456789",
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
         ];
@@ -699,8 +719,12 @@ public class AchTransferTest : TestBase
             [
                 new()
                 {
-                    ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                    CorrectedData = "32",
+                    ChangeCode =
+                        AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                    CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+                    CorrectedAccountNumber = "987654321",
+                    CorrectedIndividualID = null,
+                    CorrectedRoutingNumber = "123456789",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
             ],
@@ -807,8 +831,12 @@ public class AchTransferTest : TestBase
             [
                 new()
                 {
-                    ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-                    CorrectedData = "32",
+                    ChangeCode =
+                        AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                    CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+                    CorrectedAccountNumber = "987654321",
+                    CorrectedIndividualID = null,
+                    CorrectedRoutingNumber = "123456789",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
             ],
@@ -2616,18 +2644,28 @@ public class NotificationsOfChangeTest : TestBase
     {
         var model = new AchTransfers::NotificationsOfChange
         {
-            ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-            CorrectedData = "32",
+            ChangeCode =
+                AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+            CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+            CorrectedAccountNumber = "987654321",
+            CorrectedIndividualID = null,
+            CorrectedRoutingNumber = "123456789",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
         };
 
         ApiEnum<string, AchTransfers::ChangeCode> expectedChangeCode =
-            AchTransfers::ChangeCode.IncorrectTransactionCode;
-        string expectedCorrectedData = "32";
+            AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode;
+        ApiEnum<string, AchTransfers::CorrectedAccountFunding> expectedCorrectedAccountFunding =
+            AchTransfers::CorrectedAccountFunding.Checking;
+        string expectedCorrectedAccountNumber = "987654321";
+        string expectedCorrectedRoutingNumber = "123456789";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
 
         Assert.Equal(expectedChangeCode, model.ChangeCode);
-        Assert.Equal(expectedCorrectedData, model.CorrectedData);
+        Assert.Equal(expectedCorrectedAccountFunding, model.CorrectedAccountFunding);
+        Assert.Equal(expectedCorrectedAccountNumber, model.CorrectedAccountNumber);
+        Assert.Null(model.CorrectedIndividualID);
+        Assert.Equal(expectedCorrectedRoutingNumber, model.CorrectedRoutingNumber);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
     }
 
@@ -2636,8 +2674,12 @@ public class NotificationsOfChangeTest : TestBase
     {
         var model = new AchTransfers::NotificationsOfChange
         {
-            ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-            CorrectedData = "32",
+            ChangeCode =
+                AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+            CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+            CorrectedAccountNumber = "987654321",
+            CorrectedIndividualID = null,
+            CorrectedRoutingNumber = "123456789",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
         };
 
@@ -2655,8 +2697,12 @@ public class NotificationsOfChangeTest : TestBase
     {
         var model = new AchTransfers::NotificationsOfChange
         {
-            ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-            CorrectedData = "32",
+            ChangeCode =
+                AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+            CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+            CorrectedAccountNumber = "987654321",
+            CorrectedIndividualID = null,
+            CorrectedRoutingNumber = "123456789",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
         };
 
@@ -2668,12 +2714,18 @@ public class NotificationsOfChangeTest : TestBase
         Assert.NotNull(deserialized);
 
         ApiEnum<string, AchTransfers::ChangeCode> expectedChangeCode =
-            AchTransfers::ChangeCode.IncorrectTransactionCode;
-        string expectedCorrectedData = "32";
+            AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode;
+        ApiEnum<string, AchTransfers::CorrectedAccountFunding> expectedCorrectedAccountFunding =
+            AchTransfers::CorrectedAccountFunding.Checking;
+        string expectedCorrectedAccountNumber = "987654321";
+        string expectedCorrectedRoutingNumber = "123456789";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
 
         Assert.Equal(expectedChangeCode, deserialized.ChangeCode);
-        Assert.Equal(expectedCorrectedData, deserialized.CorrectedData);
+        Assert.Equal(expectedCorrectedAccountFunding, deserialized.CorrectedAccountFunding);
+        Assert.Equal(expectedCorrectedAccountNumber, deserialized.CorrectedAccountNumber);
+        Assert.Null(deserialized.CorrectedIndividualID);
+        Assert.Equal(expectedCorrectedRoutingNumber, deserialized.CorrectedRoutingNumber);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
     }
 
@@ -2682,8 +2734,12 @@ public class NotificationsOfChangeTest : TestBase
     {
         var model = new AchTransfers::NotificationsOfChange
         {
-            ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-            CorrectedData = "32",
+            ChangeCode =
+                AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+            CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+            CorrectedAccountNumber = "987654321",
+            CorrectedIndividualID = null,
+            CorrectedRoutingNumber = "123456789",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
         };
 
@@ -2695,8 +2751,12 @@ public class NotificationsOfChangeTest : TestBase
     {
         var model = new AchTransfers::NotificationsOfChange
         {
-            ChangeCode = AchTransfers::ChangeCode.IncorrectTransactionCode,
-            CorrectedData = "32",
+            ChangeCode =
+                AchTransfers::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+            CorrectedAccountFunding = AchTransfers::CorrectedAccountFunding.Checking,
+            CorrectedAccountNumber = "987654321",
+            CorrectedIndividualID = null,
+            CorrectedRoutingNumber = "123456789",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
         };
 
@@ -2809,6 +2869,62 @@ public class ChangeCodeTest : TestBase
             json,
             ModelBase.SerializerOptions
         );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CorrectedAccountFundingTest : TestBase
+{
+    [Theory]
+    [InlineData(AchTransfers::CorrectedAccountFunding.Checking)]
+    [InlineData(AchTransfers::CorrectedAccountFunding.Savings)]
+    [InlineData(AchTransfers::CorrectedAccountFunding.GeneralLedger)]
+    public void Validation_Works(AchTransfers::CorrectedAccountFunding rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, AchTransfers::CorrectedAccountFunding> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, AchTransfers::CorrectedAccountFunding>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(AchTransfers::CorrectedAccountFunding.Checking)]
+    [InlineData(AchTransfers::CorrectedAccountFunding.Savings)]
+    [InlineData(AchTransfers::CorrectedAccountFunding.GeneralLedger)]
+    public void SerializationRoundtrip_Works(AchTransfers::CorrectedAccountFunding rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, AchTransfers::CorrectedAccountFunding> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, AchTransfers::CorrectedAccountFunding>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, AchTransfers::CorrectedAccountFunding>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, AchTransfers::CorrectedAccountFunding>
+        >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
     }

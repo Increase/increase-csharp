@@ -29,29 +29,89 @@ public record class AchTransferCreateNotificationOfChangeParams : ParamsBase
     public string? AchTransferID { get; init; }
 
     /// <summary>
-    /// The reason for the notification of change.
+    /// The corrected account funding type.
     /// </summary>
-    public required ApiEnum<string, ChangeCode> ChangeCode
+    public ApiEnum<string, CorrectedAccountFunding>? CorrectedAccountFunding
     {
         get
         {
             this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNotNullClass<ApiEnum<string, ChangeCode>>("change_code");
+            return this._rawBodyData.GetNullableClass<ApiEnum<string, CorrectedAccountFunding>>(
+                "corrected_account_funding"
+            );
         }
-        init { this._rawBodyData.Set("change_code", value); }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("corrected_account_funding", value);
+        }
     }
 
     /// <summary>
-    /// The corrected data for the notification of change (e.g., a new routing number).
+    /// The corrected account number.
     /// </summary>
-    public required string CorrectedData
+    public string? CorrectedAccountNumber
     {
         get
         {
             this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNotNullClass<string>("corrected_data");
+            return this._rawBodyData.GetNullableClass<string>("corrected_account_number");
         }
-        init { this._rawBodyData.Set("corrected_data", value); }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("corrected_account_number", value);
+        }
+    }
+
+    /// <summary>
+    /// The corrected individual identifier.
+    /// </summary>
+    public string? CorrectedIndividualID
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("corrected_individual_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("corrected_individual_id", value);
+        }
+    }
+
+    /// <summary>
+    /// The corrected routing number.
+    /// </summary>
+    public string? CorrectedRoutingNumber
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("corrected_routing_number");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("corrected_routing_number", value);
+        }
     }
 
     public AchTransferCreateNotificationOfChangeParams() { }
@@ -181,113 +241,30 @@ public record class AchTransferCreateNotificationOfChangeParams : ParamsBase
 }
 
 /// <summary>
-/// The reason for the notification of change.
+/// The corrected account funding type.
 /// </summary>
-[JsonConverter(typeof(ChangeCodeConverter))]
-public enum ChangeCode
+[JsonConverter(typeof(CorrectedAccountFundingConverter))]
+public enum CorrectedAccountFunding
 {
     /// <summary>
-    /// The account number was incorrect.
+    /// A checking account.
     /// </summary>
-    IncorrectAccountNumber,
+    Checking,
 
     /// <summary>
-    /// The routing number was incorrect.
+    /// A savings account.
     /// </summary>
-    IncorrectRoutingNumber,
+    Savings,
 
     /// <summary>
-    /// Both the routing number and the account number were incorrect.
+    /// A bank's general ledger. Uncommon.
     /// </summary>
-    IncorrectRoutingNumberAndAccountNumber,
-
-    /// <summary>
-    /// The transaction code was incorrect. Try changing the `funding` parameter
-    /// from checking to savings or vice-versa.
-    /// </summary>
-    IncorrectTransactionCode,
-
-    /// <summary>
-    /// The account number and the transaction code were incorrect.
-    /// </summary>
-    IncorrectAccountNumberAndTransactionCode,
-
-    /// <summary>
-    /// The routing number, account number, and transaction code were incorrect.
-    /// </summary>
-    IncorrectRoutingNumberAccountNumberAndTransactionCode,
-
-    /// <summary>
-    /// The receiving depository financial institution identification was incorrect.
-    /// </summary>
-    IncorrectReceivingDepositoryFinancialInstitutionIdentification,
-
-    /// <summary>
-    /// The individual identification number was incorrect.
-    /// </summary>
-    IncorrectIndividualIdentificationNumber,
-
-    /// <summary>
-    /// The addenda had an incorrect format.
-    /// </summary>
-    AddendaFormatError,
-
-    /// <summary>
-    /// The standard entry class code was incorrect for an outbound international payment.
-    /// </summary>
-    IncorrectStandardEntryClassCodeForOutboundInternationalPayment,
-
-    /// <summary>
-    /// The notification of change was misrouted.
-    /// </summary>
-    MisroutedNotificationOfChange,
-
-    /// <summary>
-    /// The trace number was incorrect.
-    /// </summary>
-    IncorrectTraceNumber,
-
-    /// <summary>
-    /// The company identification number was incorrect.
-    /// </summary>
-    IncorrectCompanyIdentificationNumber,
-
-    /// <summary>
-    /// The individual identification number or identification number was incorrect.
-    /// </summary>
-    IncorrectIdentificationNumber,
-
-    /// <summary>
-    /// The corrected data was incorrectly formatted.
-    /// </summary>
-    IncorrectlyFormattedCorrectedData,
-
-    /// <summary>
-    /// The discretionary data was incorrect.
-    /// </summary>
-    IncorrectDiscretionaryData,
-
-    /// <summary>
-    /// The routing number was not from the original entry detail record.
-    /// </summary>
-    RoutingNumberNotFromOriginalEntryDetailRecord,
-
-    /// <summary>
-    /// The depository financial institution account number was not from the original
-    /// entry detail record.
-    /// </summary>
-    DepositoryFinancialInstitutionAccountNumberNotFromOriginalEntryDetailRecord,
-
-    /// <summary>
-    /// The transaction code was incorrect, initiated by the originating depository
-    /// financial institution.
-    /// </summary>
-    IncorrectTransactionCodeByOriginatingDepositoryFinancialInstitution,
+    GeneralLedger,
 }
 
-sealed class ChangeCodeConverter : JsonConverter<ChangeCode>
+sealed class CorrectedAccountFundingConverter : JsonConverter<CorrectedAccountFunding>
 {
-    public override ChangeCode Read(
+    public override CorrectedAccountFunding Read(
         ref Utf8JsonReader reader,
         Type typeToConvert,
         JsonSerializerOptions options
@@ -295,42 +272,16 @@ sealed class ChangeCodeConverter : JsonConverter<ChangeCode>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "incorrect_account_number" => ChangeCode.IncorrectAccountNumber,
-            "incorrect_routing_number" => ChangeCode.IncorrectRoutingNumber,
-            "incorrect_routing_number_and_account_number" =>
-                ChangeCode.IncorrectRoutingNumberAndAccountNumber,
-            "incorrect_transaction_code" => ChangeCode.IncorrectTransactionCode,
-            "incorrect_account_number_and_transaction_code" =>
-                ChangeCode.IncorrectAccountNumberAndTransactionCode,
-            "incorrect_routing_number_account_number_and_transaction_code" =>
-                ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
-            "incorrect_receiving_depository_financial_institution_identification" =>
-                ChangeCode.IncorrectReceivingDepositoryFinancialInstitutionIdentification,
-            "incorrect_individual_identification_number" =>
-                ChangeCode.IncorrectIndividualIdentificationNumber,
-            "addenda_format_error" => ChangeCode.AddendaFormatError,
-            "incorrect_standard_entry_class_code_for_outbound_international_payment" =>
-                ChangeCode.IncorrectStandardEntryClassCodeForOutboundInternationalPayment,
-            "misrouted_notification_of_change" => ChangeCode.MisroutedNotificationOfChange,
-            "incorrect_trace_number" => ChangeCode.IncorrectTraceNumber,
-            "incorrect_company_identification_number" =>
-                ChangeCode.IncorrectCompanyIdentificationNumber,
-            "incorrect_identification_number" => ChangeCode.IncorrectIdentificationNumber,
-            "incorrectly_formatted_corrected_data" => ChangeCode.IncorrectlyFormattedCorrectedData,
-            "incorrect_discretionary_data" => ChangeCode.IncorrectDiscretionaryData,
-            "routing_number_not_from_original_entry_detail_record" =>
-                ChangeCode.RoutingNumberNotFromOriginalEntryDetailRecord,
-            "depository_financial_institution_account_number_not_from_original_entry_detail_record" =>
-                ChangeCode.DepositoryFinancialInstitutionAccountNumberNotFromOriginalEntryDetailRecord,
-            "incorrect_transaction_code_by_originating_depository_financial_institution" =>
-                ChangeCode.IncorrectTransactionCodeByOriginatingDepositoryFinancialInstitution,
-            _ => (ChangeCode)(-1),
+            "checking" => CorrectedAccountFunding.Checking,
+            "savings" => CorrectedAccountFunding.Savings,
+            "general_ledger" => CorrectedAccountFunding.GeneralLedger,
+            _ => (CorrectedAccountFunding)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        ChangeCode value,
+        CorrectedAccountFunding value,
         JsonSerializerOptions options
     )
     {
@@ -338,36 +289,9 @@ sealed class ChangeCodeConverter : JsonConverter<ChangeCode>
             writer,
             value switch
             {
-                ChangeCode.IncorrectAccountNumber => "incorrect_account_number",
-                ChangeCode.IncorrectRoutingNumber => "incorrect_routing_number",
-                ChangeCode.IncorrectRoutingNumberAndAccountNumber =>
-                    "incorrect_routing_number_and_account_number",
-                ChangeCode.IncorrectTransactionCode => "incorrect_transaction_code",
-                ChangeCode.IncorrectAccountNumberAndTransactionCode =>
-                    "incorrect_account_number_and_transaction_code",
-                ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode =>
-                    "incorrect_routing_number_account_number_and_transaction_code",
-                ChangeCode.IncorrectReceivingDepositoryFinancialInstitutionIdentification =>
-                    "incorrect_receiving_depository_financial_institution_identification",
-                ChangeCode.IncorrectIndividualIdentificationNumber =>
-                    "incorrect_individual_identification_number",
-                ChangeCode.AddendaFormatError => "addenda_format_error",
-                ChangeCode.IncorrectStandardEntryClassCodeForOutboundInternationalPayment =>
-                    "incorrect_standard_entry_class_code_for_outbound_international_payment",
-                ChangeCode.MisroutedNotificationOfChange => "misrouted_notification_of_change",
-                ChangeCode.IncorrectTraceNumber => "incorrect_trace_number",
-                ChangeCode.IncorrectCompanyIdentificationNumber =>
-                    "incorrect_company_identification_number",
-                ChangeCode.IncorrectIdentificationNumber => "incorrect_identification_number",
-                ChangeCode.IncorrectlyFormattedCorrectedData =>
-                    "incorrectly_formatted_corrected_data",
-                ChangeCode.IncorrectDiscretionaryData => "incorrect_discretionary_data",
-                ChangeCode.RoutingNumberNotFromOriginalEntryDetailRecord =>
-                    "routing_number_not_from_original_entry_detail_record",
-                ChangeCode.DepositoryFinancialInstitutionAccountNumberNotFromOriginalEntryDetailRecord =>
-                    "depository_financial_institution_account_number_not_from_original_entry_detail_record",
-                ChangeCode.IncorrectTransactionCodeByOriginatingDepositoryFinancialInstitution =>
-                    "incorrect_transaction_code_by_originating_depository_financial_institution",
+                CorrectedAccountFunding.Checking => "checking",
+                CorrectedAccountFunding.Savings => "savings",
+                CorrectedAccountFunding.GeneralLedger => "general_ledger",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

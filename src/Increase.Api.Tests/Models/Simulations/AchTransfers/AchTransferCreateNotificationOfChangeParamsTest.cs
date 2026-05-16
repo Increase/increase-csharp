@@ -14,17 +14,66 @@ public class AchTransferCreateNotificationOfChangeParamsTest : TestBase
         var parameters = new AchTransferCreateNotificationOfChangeParams
         {
             AchTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
-            ChangeCode = ChangeCode.IncorrectRoutingNumber,
-            CorrectedData = "123456789",
+            CorrectedAccountFunding = CorrectedAccountFunding.Checking,
+            CorrectedAccountNumber = "x",
+            CorrectedIndividualID = "x",
+            CorrectedRoutingNumber = "123456789",
         };
 
         string expectedAchTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q";
-        ApiEnum<string, ChangeCode> expectedChangeCode = ChangeCode.IncorrectRoutingNumber;
-        string expectedCorrectedData = "123456789";
+        ApiEnum<string, CorrectedAccountFunding> expectedCorrectedAccountFunding =
+            CorrectedAccountFunding.Checking;
+        string expectedCorrectedAccountNumber = "x";
+        string expectedCorrectedIndividualID = "x";
+        string expectedCorrectedRoutingNumber = "123456789";
 
         Assert.Equal(expectedAchTransferID, parameters.AchTransferID);
-        Assert.Equal(expectedChangeCode, parameters.ChangeCode);
-        Assert.Equal(expectedCorrectedData, parameters.CorrectedData);
+        Assert.Equal(expectedCorrectedAccountFunding, parameters.CorrectedAccountFunding);
+        Assert.Equal(expectedCorrectedAccountNumber, parameters.CorrectedAccountNumber);
+        Assert.Equal(expectedCorrectedIndividualID, parameters.CorrectedIndividualID);
+        Assert.Equal(expectedCorrectedRoutingNumber, parameters.CorrectedRoutingNumber);
+    }
+
+    [Fact]
+    public void OptionalNonNullableParamsUnsetAreNotSet_Works()
+    {
+        var parameters = new AchTransferCreateNotificationOfChangeParams
+        {
+            AchTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+        };
+
+        Assert.Null(parameters.CorrectedAccountFunding);
+        Assert.False(parameters.RawBodyData.ContainsKey("corrected_account_funding"));
+        Assert.Null(parameters.CorrectedAccountNumber);
+        Assert.False(parameters.RawBodyData.ContainsKey("corrected_account_number"));
+        Assert.Null(parameters.CorrectedIndividualID);
+        Assert.False(parameters.RawBodyData.ContainsKey("corrected_individual_id"));
+        Assert.Null(parameters.CorrectedRoutingNumber);
+        Assert.False(parameters.RawBodyData.ContainsKey("corrected_routing_number"));
+    }
+
+    [Fact]
+    public void OptionalNonNullableParamsSetToNullAreNotSet_Works()
+    {
+        var parameters = new AchTransferCreateNotificationOfChangeParams
+        {
+            AchTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+
+            // Null should be interpreted as omitted for these properties
+            CorrectedAccountFunding = null,
+            CorrectedAccountNumber = null,
+            CorrectedIndividualID = null,
+            CorrectedRoutingNumber = null,
+        };
+
+        Assert.Null(parameters.CorrectedAccountFunding);
+        Assert.False(parameters.RawBodyData.ContainsKey("corrected_account_funding"));
+        Assert.Null(parameters.CorrectedAccountNumber);
+        Assert.False(parameters.RawBodyData.ContainsKey("corrected_account_number"));
+        Assert.Null(parameters.CorrectedIndividualID);
+        Assert.False(parameters.RawBodyData.ContainsKey("corrected_individual_id"));
+        Assert.Null(parameters.CorrectedRoutingNumber);
+        Assert.False(parameters.RawBodyData.ContainsKey("corrected_routing_number"));
     }
 
     [Fact]
@@ -33,8 +82,6 @@ public class AchTransferCreateNotificationOfChangeParamsTest : TestBase
         AchTransferCreateNotificationOfChangeParams parameters = new()
         {
             AchTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
-            ChangeCode = ChangeCode.IncorrectRoutingNumber,
-            CorrectedData = "123456789",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -55,8 +102,10 @@ public class AchTransferCreateNotificationOfChangeParamsTest : TestBase
         var parameters = new AchTransferCreateNotificationOfChangeParams
         {
             AchTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
-            ChangeCode = ChangeCode.IncorrectRoutingNumber,
-            CorrectedData = "123456789",
+            CorrectedAccountFunding = CorrectedAccountFunding.Checking,
+            CorrectedAccountNumber = "x",
+            CorrectedIndividualID = "x",
+            CorrectedRoutingNumber = "123456789",
         };
 
         AchTransferCreateNotificationOfChangeParams copied = new(parameters);
@@ -65,41 +114,23 @@ public class AchTransferCreateNotificationOfChangeParamsTest : TestBase
     }
 }
 
-public class ChangeCodeTest : TestBase
+public class CorrectedAccountFundingTest : TestBase
 {
     [Theory]
-    [InlineData(ChangeCode.IncorrectAccountNumber)]
-    [InlineData(ChangeCode.IncorrectRoutingNumber)]
-    [InlineData(ChangeCode.IncorrectRoutingNumberAndAccountNumber)]
-    [InlineData(ChangeCode.IncorrectTransactionCode)]
-    [InlineData(ChangeCode.IncorrectAccountNumberAndTransactionCode)]
-    [InlineData(ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode)]
-    [InlineData(ChangeCode.IncorrectReceivingDepositoryFinancialInstitutionIdentification)]
-    [InlineData(ChangeCode.IncorrectIndividualIdentificationNumber)]
-    [InlineData(ChangeCode.AddendaFormatError)]
-    [InlineData(ChangeCode.IncorrectStandardEntryClassCodeForOutboundInternationalPayment)]
-    [InlineData(ChangeCode.MisroutedNotificationOfChange)]
-    [InlineData(ChangeCode.IncorrectTraceNumber)]
-    [InlineData(ChangeCode.IncorrectCompanyIdentificationNumber)]
-    [InlineData(ChangeCode.IncorrectIdentificationNumber)]
-    [InlineData(ChangeCode.IncorrectlyFormattedCorrectedData)]
-    [InlineData(ChangeCode.IncorrectDiscretionaryData)]
-    [InlineData(ChangeCode.RoutingNumberNotFromOriginalEntryDetailRecord)]
-    [InlineData(
-        ChangeCode.DepositoryFinancialInstitutionAccountNumberNotFromOriginalEntryDetailRecord
-    )]
-    [InlineData(ChangeCode.IncorrectTransactionCodeByOriginatingDepositoryFinancialInstitution)]
-    public void Validation_Works(ChangeCode rawValue)
+    [InlineData(CorrectedAccountFunding.Checking)]
+    [InlineData(CorrectedAccountFunding.Savings)]
+    [InlineData(CorrectedAccountFunding.GeneralLedger)]
+    public void Validation_Works(CorrectedAccountFunding rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, ChangeCode> value = rawValue;
+        ApiEnum<string, CorrectedAccountFunding> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, ChangeCode>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, CorrectedAccountFunding>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
@@ -109,34 +140,16 @@ public class ChangeCodeTest : TestBase
     }
 
     [Theory]
-    [InlineData(ChangeCode.IncorrectAccountNumber)]
-    [InlineData(ChangeCode.IncorrectRoutingNumber)]
-    [InlineData(ChangeCode.IncorrectRoutingNumberAndAccountNumber)]
-    [InlineData(ChangeCode.IncorrectTransactionCode)]
-    [InlineData(ChangeCode.IncorrectAccountNumberAndTransactionCode)]
-    [InlineData(ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode)]
-    [InlineData(ChangeCode.IncorrectReceivingDepositoryFinancialInstitutionIdentification)]
-    [InlineData(ChangeCode.IncorrectIndividualIdentificationNumber)]
-    [InlineData(ChangeCode.AddendaFormatError)]
-    [InlineData(ChangeCode.IncorrectStandardEntryClassCodeForOutboundInternationalPayment)]
-    [InlineData(ChangeCode.MisroutedNotificationOfChange)]
-    [InlineData(ChangeCode.IncorrectTraceNumber)]
-    [InlineData(ChangeCode.IncorrectCompanyIdentificationNumber)]
-    [InlineData(ChangeCode.IncorrectIdentificationNumber)]
-    [InlineData(ChangeCode.IncorrectlyFormattedCorrectedData)]
-    [InlineData(ChangeCode.IncorrectDiscretionaryData)]
-    [InlineData(ChangeCode.RoutingNumberNotFromOriginalEntryDetailRecord)]
-    [InlineData(
-        ChangeCode.DepositoryFinancialInstitutionAccountNumberNotFromOriginalEntryDetailRecord
-    )]
-    [InlineData(ChangeCode.IncorrectTransactionCodeByOriginatingDepositoryFinancialInstitution)]
-    public void SerializationRoundtrip_Works(ChangeCode rawValue)
+    [InlineData(CorrectedAccountFunding.Checking)]
+    [InlineData(CorrectedAccountFunding.Savings)]
+    [InlineData(CorrectedAccountFunding.GeneralLedger)]
+    public void SerializationRoundtrip_Works(CorrectedAccountFunding rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, ChangeCode> value = rawValue;
+        ApiEnum<string, CorrectedAccountFunding> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ChangeCode>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, CorrectedAccountFunding>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -147,12 +160,12 @@ public class ChangeCodeTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, ChangeCode>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, CorrectedAccountFunding>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ChangeCode>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, CorrectedAccountFunding>>(
             json,
             ModelBase.SerializerOptions
         );

@@ -80,10 +80,12 @@ public sealed class AchTransferService : IAchTransferService
     /// <inheritdoc/>
     public Task<AchTransfer> CreateNotificationOfChange(
         string achTransferID,
-        AchTransferCreateNotificationOfChangeParams parameters,
+        AchTransferCreateNotificationOfChangeParams? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
+        parameters ??= new();
+
         return this.CreateNotificationOfChange(
             parameters with
             {
@@ -271,10 +273,12 @@ public sealed class AchTransferServiceWithRawResponse : IAchTransferServiceWithR
     /// <inheritdoc/>
     public Task<HttpResponse<AchTransfer>> CreateNotificationOfChange(
         string achTransferID,
-        AchTransferCreateNotificationOfChangeParams parameters,
+        AchTransferCreateNotificationOfChangeParams? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
+        parameters ??= new();
+
         return this.CreateNotificationOfChange(
             parameters with
             {
