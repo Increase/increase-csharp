@@ -59,7 +59,7 @@ public interface IAchTransferService
     /// <inheritdoc cref="CreateNotificationOfChange(AchTransferCreateNotificationOfChangeParams, CancellationToken)"/>
     Task<AchTransfer> CreateNotificationOfChange(
         string achTransferID,
-        AchTransferCreateNotificationOfChangeParams parameters,
+        AchTransferCreateNotificationOfChangeParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 
@@ -165,7 +165,7 @@ public interface IAchTransferServiceWithRawResponse
     /// <inheritdoc cref="CreateNotificationOfChange(AchTransferCreateNotificationOfChangeParams, CancellationToken)"/>
     Task<HttpResponse<AchTransfer>> CreateNotificationOfChange(
         string achTransferID,
-        AchTransferCreateNotificationOfChangeParams parameters,
+        AchTransferCreateNotificationOfChangeParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 

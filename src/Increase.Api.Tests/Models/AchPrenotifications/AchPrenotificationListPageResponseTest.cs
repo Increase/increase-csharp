@@ -36,8 +36,13 @@ public class AchPrenotificationListPageResponseTest : TestBase
                     [
                         new()
                         {
-                            ChangeCode = AchPrenotifications::ChangeCode.IncorrectTransactionCode,
-                            CorrectedData = "32",
+                            ChangeCode =
+                                AchPrenotifications::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                            CorrectedAccountFunding =
+                                AchPrenotifications::CorrectedAccountFunding.Checking,
+                            CorrectedAccountNumber = "987654321",
+                            CorrectedIndividualID = null,
+                            CorrectedRoutingNumber = "123456789",
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
@@ -80,8 +85,13 @@ public class AchPrenotificationListPageResponseTest : TestBase
                 [
                     new()
                     {
-                        ChangeCode = AchPrenotifications::ChangeCode.IncorrectTransactionCode,
-                        CorrectedData = "32",
+                        ChangeCode =
+                            AchPrenotifications::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                        CorrectedAccountFunding =
+                            AchPrenotifications::CorrectedAccountFunding.Checking,
+                        CorrectedAccountNumber = "987654321",
+                        CorrectedIndividualID = null,
+                        CorrectedRoutingNumber = "123456789",
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
                 ],
@@ -136,8 +146,13 @@ public class AchPrenotificationListPageResponseTest : TestBase
                     [
                         new()
                         {
-                            ChangeCode = AchPrenotifications::ChangeCode.IncorrectTransactionCode,
-                            CorrectedData = "32",
+                            ChangeCode =
+                                AchPrenotifications::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                            CorrectedAccountFunding =
+                                AchPrenotifications::CorrectedAccountFunding.Checking,
+                            CorrectedAccountNumber = "987654321",
+                            CorrectedIndividualID = null,
+                            CorrectedRoutingNumber = "123456789",
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
@@ -195,8 +210,13 @@ public class AchPrenotificationListPageResponseTest : TestBase
                     [
                         new()
                         {
-                            ChangeCode = AchPrenotifications::ChangeCode.IncorrectTransactionCode,
-                            CorrectedData = "32",
+                            ChangeCode =
+                                AchPrenotifications::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                            CorrectedAccountFunding =
+                                AchPrenotifications::CorrectedAccountFunding.Checking,
+                            CorrectedAccountNumber = "987654321",
+                            CorrectedIndividualID = null,
+                            CorrectedRoutingNumber = "123456789",
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
@@ -247,8 +267,13 @@ public class AchPrenotificationListPageResponseTest : TestBase
                 [
                     new()
                     {
-                        ChangeCode = AchPrenotifications::ChangeCode.IncorrectTransactionCode,
-                        CorrectedData = "32",
+                        ChangeCode =
+                            AchPrenotifications::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                        CorrectedAccountFunding =
+                            AchPrenotifications::CorrectedAccountFunding.Checking,
+                        CorrectedAccountNumber = "987654321",
+                        CorrectedIndividualID = null,
+                        CorrectedRoutingNumber = "123456789",
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
                 ],
@@ -303,8 +328,13 @@ public class AchPrenotificationListPageResponseTest : TestBase
                     [
                         new()
                         {
-                            ChangeCode = AchPrenotifications::ChangeCode.IncorrectTransactionCode,
-                            CorrectedData = "32",
+                            ChangeCode =
+                                AchPrenotifications::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                            CorrectedAccountFunding =
+                                AchPrenotifications::CorrectedAccountFunding.Checking,
+                            CorrectedAccountNumber = "987654321",
+                            CorrectedIndividualID = null,
+                            CorrectedRoutingNumber = "123456789",
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
@@ -355,8 +385,13 @@ public class AchPrenotificationListPageResponseTest : TestBase
                     [
                         new()
                         {
-                            ChangeCode = AchPrenotifications::ChangeCode.IncorrectTransactionCode,
-                            CorrectedData = "32",
+                            ChangeCode =
+                                AchPrenotifications::ChangeCode.IncorrectRoutingNumberAccountNumberAndTransactionCode,
+                            CorrectedAccountFunding =
+                                AchPrenotifications::CorrectedAccountFunding.Checking,
+                            CorrectedAccountNumber = "987654321",
+                            CorrectedIndividualID = null,
+                            CorrectedRoutingNumber = "123456789",
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],

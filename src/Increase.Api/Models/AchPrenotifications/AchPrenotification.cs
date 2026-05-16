@@ -438,20 +438,58 @@ public sealed record class NotificationsOfChange : JsonModel
     }
 
     /// <summary>
-    /// The corrected data that should be used in future ACHs to this account. This
-    /// may contain the suggested new account number or routing number. When the
-    /// `change_code` is `incorrect_transaction_code`, this field contains an integer.
-    /// Numbers starting with a 2 encourage changing the `funding` parameter to checking;
-    /// numbers starting with a 3 encourage changing to savings.
+    /// The corrected account funding type that should be used in future ACHs to this
+    /// account. This is derived from the corrected transaction code.
     /// </summary>
-    public required string CorrectedData
+    public required ApiEnum<string, CorrectedAccountFunding>? CorrectedAccountFunding
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("corrected_data");
+            return this._rawData.GetNullableClass<ApiEnum<string, CorrectedAccountFunding>>(
+                "corrected_account_funding"
+            );
         }
-        init { this._rawData.Set("corrected_data", value); }
+        init { this._rawData.Set("corrected_account_funding", value); }
+    }
+
+    /// <summary>
+    /// The corrected account number that should be used in future ACHs to this account.
+    /// </summary>
+    public required string? CorrectedAccountNumber
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("corrected_account_number");
+        }
+        init { this._rawData.Set("corrected_account_number", value); }
+    }
+
+    /// <summary>
+    /// The corrected individual identifier that should be used in future ACHs.
+    /// </summary>
+    public required string? CorrectedIndividualID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("corrected_individual_id");
+        }
+        init { this._rawData.Set("corrected_individual_id", value); }
+    }
+
+    /// <summary>
+    /// The corrected routing number that should be used in future ACHs to this account.
+    /// </summary>
+    public required string? CorrectedRoutingNumber
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("corrected_routing_number");
+        }
+        init { this._rawData.Set("corrected_routing_number", value); }
     }
 
     /// <summary>
@@ -472,7 +510,10 @@ public sealed record class NotificationsOfChange : JsonModel
     public override void Validate()
     {
         this.ChangeCode.Validate();
-        _ = this.CorrectedData;
+        this.CorrectedAccountFunding?.Validate();
+        _ = this.CorrectedAccountNumber;
+        _ = this.CorrectedIndividualID;
+        _ = this.CorrectedRoutingNumber;
         _ = this.CreatedAt;
     }
 
@@ -702,6 +743,68 @@ sealed class ChangeCodeConverter : JsonConverter<ChangeCode>
                     "depository_financial_institution_account_number_not_from_original_entry_detail_record",
                 ChangeCode.IncorrectTransactionCodeByOriginatingDepositoryFinancialInstitution =>
                     "incorrect_transaction_code_by_originating_depository_financial_institution",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The corrected account funding type that should be used in future ACHs to this
+/// account. This is derived from the corrected transaction code.
+/// </summary>
+[JsonConverter(typeof(CorrectedAccountFundingConverter))]
+public enum CorrectedAccountFunding
+{
+    /// <summary>
+    /// A checking account.
+    /// </summary>
+    Checking,
+
+    /// <summary>
+    /// A savings account.
+    /// </summary>
+    Savings,
+
+    /// <summary>
+    /// A bank's general ledger. Uncommon.
+    /// </summary>
+    GeneralLedger,
+}
+
+sealed class CorrectedAccountFundingConverter : JsonConverter<CorrectedAccountFunding>
+{
+    public override CorrectedAccountFunding Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "checking" => CorrectedAccountFunding.Checking,
+            "savings" => CorrectedAccountFunding.Savings,
+            "general_ledger" => CorrectedAccountFunding.GeneralLedger,
+            _ => (CorrectedAccountFunding)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        CorrectedAccountFunding value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                CorrectedAccountFunding.Checking => "checking",
+                CorrectedAccountFunding.Savings => "savings",
+                CorrectedAccountFunding.GeneralLedger => "general_ledger",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

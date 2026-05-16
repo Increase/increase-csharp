@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using Increase.Api.Models.Simulations.AchTransfers;
 
 namespace Increase.Api.Tests.Services.Simulations;
 
@@ -21,7 +20,7 @@ public class AchTransferServiceTest : TestBase
     {
         var achTransfer = await this.client.Simulations.AchTransfers.CreateNotificationOfChange(
             "ach_transfer_uoxatyh3lt5evrsdvo7q",
-            new() { ChangeCode = ChangeCode.IncorrectRoutingNumber, CorrectedData = "123456789" },
+            new(),
             TestContext.Current.CancellationToken
         );
         achTransfer.Validate();
