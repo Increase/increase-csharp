@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text.Json;
 using Increase.Api.Core;
 using Increase.Api.Exceptions;
@@ -51,6 +52,7 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
                 },
             },
             Name = "x",
+            Prongs = [BeneficialOwnerUpdateParamsProng.Ownership],
         };
 
         string expectedEntityBeneficialOwnerID = "entity_beneficial_owner_vozma8szzu1sxezp5zq6";
@@ -91,12 +93,22 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
             },
         };
         string expectedName = "x";
+        List<ApiEnum<string, BeneficialOwnerUpdateParamsProng>> expectedProngs =
+        [
+            BeneficialOwnerUpdateParamsProng.Ownership,
+        ];
 
         Assert.Equal(expectedEntityBeneficialOwnerID, parameters.EntityBeneficialOwnerID);
         Assert.Equal(expectedAddress, parameters.Address);
         Assert.Equal(expectedConfirmedNoUsTaxID, parameters.ConfirmedNoUsTaxID);
         Assert.Equal(expectedIdentification, parameters.Identification);
         Assert.Equal(expectedName, parameters.Name);
+        Assert.NotNull(parameters.Prongs);
+        Assert.Equal(expectedProngs.Count, parameters.Prongs.Count);
+        for (int i = 0; i < expectedProngs.Count; i++)
+        {
+            Assert.Equal(expectedProngs[i], parameters.Prongs[i]);
+        }
     }
 
     [Fact]
@@ -115,6 +127,8 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("identification"));
         Assert.Null(parameters.Name);
         Assert.False(parameters.RawBodyData.ContainsKey("name"));
+        Assert.Null(parameters.Prongs);
+        Assert.False(parameters.RawBodyData.ContainsKey("prongs"));
     }
 
     [Fact]
@@ -129,6 +143,7 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
             ConfirmedNoUsTaxID = null,
             Identification = null,
             Name = null,
+            Prongs = null,
         };
 
         Assert.Null(parameters.Address);
@@ -139,6 +154,8 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("identification"));
         Assert.Null(parameters.Name);
         Assert.False(parameters.RawBodyData.ContainsKey("name"));
+        Assert.Null(parameters.Prongs);
+        Assert.False(parameters.RawBodyData.ContainsKey("prongs"));
     }
 
     [Fact]
@@ -204,6 +221,7 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
                 },
             },
             Name = "x",
+            Prongs = [BeneficialOwnerUpdateParamsProng.Ownership],
         };
 
         BeneficialOwnerUpdateParams copied = new(parameters);
@@ -1222,5 +1240,61 @@ public class BeneficialOwnerUpdateParamsIdentificationPassportTest : TestBase
         BeneficialOwnerUpdateParamsIdentificationPassport copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class BeneficialOwnerUpdateParamsProngTest : TestBase
+{
+    [Theory]
+    [InlineData(BeneficialOwnerUpdateParamsProng.Ownership)]
+    [InlineData(BeneficialOwnerUpdateParamsProng.Control)]
+    public void Validation_Works(BeneficialOwnerUpdateParamsProng rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, BeneficialOwnerUpdateParamsProng> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, BeneficialOwnerUpdateParamsProng>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(BeneficialOwnerUpdateParamsProng.Ownership)]
+    [InlineData(BeneficialOwnerUpdateParamsProng.Control)]
+    public void SerializationRoundtrip_Works(BeneficialOwnerUpdateParamsProng rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, BeneficialOwnerUpdateParamsProng> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, BeneficialOwnerUpdateParamsProng>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, BeneficialOwnerUpdateParamsProng>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, BeneficialOwnerUpdateParamsProng>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
     }
 }
