@@ -1,5 +1,6 @@
 using System.Collections.Frozen;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using System.Text;
@@ -116,6 +117,34 @@ public record class BeneficialOwnerUpdateParams : ParamsBase
             }
 
             this._rawBodyData.Set("name", value);
+        }
+    }
+
+    /// <summary>
+    /// Why this person is considered a beneficial owner of the entity. At least one
+    /// option is required, if a person is both a control person and owner, submit
+    /// an array containing both. Providing this replaces the beneficial owner's
+    /// current prongs.
+    /// </summary>
+    public IReadOnlyList<ApiEnum<string, BeneficialOwnerUpdateParamsProng>>? Prongs
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableStruct<
+                ImmutableArray<ApiEnum<string, BeneficialOwnerUpdateParamsProng>>
+            >("prongs");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set<ImmutableArray<
+                ApiEnum<string, BeneficialOwnerUpdateParamsProng>
+            >?>("prongs", value == null ? null : ImmutableArray.ToImmutableArray(value));
         }
     }
 
@@ -1032,4 +1061,56 @@ class BeneficialOwnerUpdateParamsIdentificationPassportFromRaw
     public BeneficialOwnerUpdateParamsIdentificationPassport FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => BeneficialOwnerUpdateParamsIdentificationPassport.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(typeof(BeneficialOwnerUpdateParamsProngConverter))]
+public enum BeneficialOwnerUpdateParamsProng
+{
+    /// <summary>
+    /// A person with 25% or greater direct or indirect ownership of the entity.
+    /// </summary>
+    Ownership,
+
+    /// <summary>
+    /// A person who manages, directs, or has significant control of the entity.
+    /// </summary>
+    Control,
+}
+
+sealed class BeneficialOwnerUpdateParamsProngConverter
+    : JsonConverter<BeneficialOwnerUpdateParamsProng>
+{
+    public override BeneficialOwnerUpdateParamsProng Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "ownership" => BeneficialOwnerUpdateParamsProng.Ownership,
+            "control" => BeneficialOwnerUpdateParamsProng.Control,
+            _ => (BeneficialOwnerUpdateParamsProng)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        BeneficialOwnerUpdateParamsProng value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                BeneficialOwnerUpdateParamsProng.Ownership => "ownership",
+                BeneficialOwnerUpdateParamsProng.Control => "control",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
