@@ -1367,6 +1367,7 @@ public abstract record class ModelBase
                 string,
                 BeneficialOwners::BeneficialOwnerUpdateParamsIdentificationMethod
             >(),
+            new ApiEnumConverter<string, BeneficialOwners::BeneficialOwnerUpdateParamsProng>(),
             new ApiEnumConverter<string, SupplementalDocuments::Type>(),
             new ApiEnumConverter<string, EntityOnboardingSessions::EntityOnboardingSessionStatus>(),
             new ApiEnumConverter<string, EntityOnboardingSessions::Type>(),
