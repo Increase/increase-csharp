@@ -76,6 +76,19 @@ public sealed record class CardPurchaseSupplement : JsonModel
     }
 
     /// <summary>
+    /// Shipping information for the purchase.
+    /// </summary>
+    public required Shipping? Shipping
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<Shipping>("shipping");
+        }
+        init { this._rawData.Set("shipping", value); }
+    }
+
+    /// <summary>
     /// The ID of the transaction.
     /// </summary>
     public required string TransactionID
@@ -114,6 +127,7 @@ public sealed record class CardPurchaseSupplement : JsonModel
         {
             item.Validate();
         }
+        this.Shipping?.Validate();
         _ = this.TransactionID;
         this.Type.Validate();
     }
@@ -984,6 +998,332 @@ sealed class LineItemDiscountTreatmentCodeConverter : JsonConverter<LineItemDisc
             options
         );
     }
+}
+
+/// <summary>
+/// Shipping information for the purchase.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Shipping, ShippingFromRaw>))]
+public sealed record class Shipping : JsonModel
+{
+    /// <summary>
+    /// The customer reference number.
+    /// </summary>
+    public required string? CustomerReferenceNumber
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("customer_reference_number");
+        }
+        init { this._rawData.Set("customer_reference_number", value); }
+    }
+
+    /// <summary>
+    /// Address of the destination.
+    /// </summary>
+    public required string? DestinationAddress
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("destination_address");
+        }
+        init { this._rawData.Set("destination_address", value); }
+    }
+
+    /// <summary>
+    /// Country code of the destination.
+    /// </summary>
+    public required string? DestinationCountryCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("destination_country_code");
+        }
+        init { this._rawData.Set("destination_country_code", value); }
+    }
+
+    /// <summary>
+    /// Postal code of the destination.
+    /// </summary>
+    public required string? DestinationPostalCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("destination_postal_code");
+        }
+        init { this._rawData.Set("destination_postal_code", value); }
+    }
+
+    /// <summary>
+    /// Name of the receiver at the destination.
+    /// </summary>
+    public required string? DestinationReceiverName
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("destination_receiver_name");
+        }
+        init { this._rawData.Set("destination_receiver_name", value); }
+    }
+
+    /// <summary>
+    /// Discount amount for the shipment.
+    /// </summary>
+    public required long? DiscountAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("discount_amount");
+        }
+        init { this._rawData.Set("discount_amount", value); }
+    }
+
+    /// <summary>
+    /// Net shipping amount.
+    /// </summary>
+    public required long? NetAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("net_amount");
+        }
+        init { this._rawData.Set("net_amount", value); }
+    }
+
+    /// <summary>
+    /// Number of packages shipped.
+    /// </summary>
+    public required long? NumberOfPackages
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("number_of_packages");
+        }
+        init { this._rawData.Set("number_of_packages", value); }
+    }
+
+    /// <summary>
+    /// Address of the origin.
+    /// </summary>
+    public required string? OriginAddress
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("origin_address");
+        }
+        init { this._rawData.Set("origin_address", value); }
+    }
+
+    /// <summary>
+    /// Country code of the origin.
+    /// </summary>
+    public required string? OriginCountryCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("origin_country_code");
+        }
+        init { this._rawData.Set("origin_country_code", value); }
+    }
+
+    /// <summary>
+    /// Postal code of the origin.
+    /// </summary>
+    public required string? OriginPostalCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("origin_postal_code");
+        }
+        init { this._rawData.Set("origin_postal_code", value); }
+    }
+
+    /// <summary>
+    /// Name of the sender at the origin.
+    /// </summary>
+    public required string? OriginSenderName
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("origin_sender_name");
+        }
+        init { this._rawData.Set("origin_sender_name", value); }
+    }
+
+    /// <summary>
+    /// Date the shipment should be picked up.
+    /// </summary>
+    public required string? PickUpDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("pick_up_date");
+        }
+        init { this._rawData.Set("pick_up_date", value); }
+    }
+
+    /// <summary>
+    /// Description of the shipping service.
+    /// </summary>
+    public required string? ServiceDescription
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("service_description");
+        }
+        init { this._rawData.Set("service_description", value); }
+    }
+
+    /// <summary>
+    /// Service level code for the shipment.
+    /// </summary>
+    public required string? ServiceLevelCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("service_level_code");
+        }
+        init { this._rawData.Set("service_level_code", value); }
+    }
+
+    /// <summary>
+    /// Name of the shipping courier.
+    /// </summary>
+    public required string? ShippingCourierName
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("shipping_courier_name");
+        }
+        init { this._rawData.Set("shipping_courier_name", value); }
+    }
+
+    /// <summary>
+    /// Tax amount for the shipment.
+    /// </summary>
+    public required long? TaxAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("tax_amount");
+        }
+        init { this._rawData.Set("tax_amount", value); }
+    }
+
+    /// <summary>
+    /// Tracking number for the shipment.
+    /// </summary>
+    public required string? TrackingNumber
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("tracking_number");
+        }
+        init { this._rawData.Set("tracking_number", value); }
+    }
+
+    /// <summary>
+    /// Unit of measure for the shipment weight.
+    /// </summary>
+    public required string? UnitOfMeasure
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("unit_of_measure");
+        }
+        init { this._rawData.Set("unit_of_measure", value); }
+    }
+
+    /// <summary>
+    /// Weight of the shipment.
+    /// </summary>
+    public required string? Weight
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("weight");
+        }
+        init { this._rawData.Set("weight", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.CustomerReferenceNumber;
+        _ = this.DestinationAddress;
+        _ = this.DestinationCountryCode;
+        _ = this.DestinationPostalCode;
+        _ = this.DestinationReceiverName;
+        _ = this.DiscountAmount;
+        _ = this.NetAmount;
+        _ = this.NumberOfPackages;
+        _ = this.OriginAddress;
+        _ = this.OriginCountryCode;
+        _ = this.OriginPostalCode;
+        _ = this.OriginSenderName;
+        _ = this.PickUpDate;
+        _ = this.ServiceDescription;
+        _ = this.ServiceLevelCode;
+        _ = this.ShippingCourierName;
+        _ = this.TaxAmount;
+        _ = this.TrackingNumber;
+        _ = this.UnitOfMeasure;
+        _ = this.Weight;
+    }
+
+    public Shipping() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Shipping(Shipping shipping)
+        : base(shipping) { }
+#pragma warning restore CS8618
+
+    public Shipping(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Shipping(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="ShippingFromRaw.FromRawUnchecked"/>
+    public static Shipping FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class ShippingFromRaw : IFromRawJson<Shipping>
+{
+    /// <inheritdoc/>
+    public Shipping FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Shipping.FromRawUnchecked(rawData);
 }
 
 /// <summary>
