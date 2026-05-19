@@ -57,6 +57,29 @@ public class CardPurchaseSupplementTest : TestBase
                     UnitOfMeasureCode = "NMB",
                 },
             ],
+            Shipping = new()
+            {
+                CustomerReferenceNumber = null,
+                DestinationAddress = null,
+                DestinationCountryCode = "US",
+                DestinationPostalCode = "10045",
+                DestinationReceiverName = null,
+                DiscountAmount = null,
+                NetAmount = 500,
+                NumberOfPackages = 1,
+                OriginAddress = null,
+                OriginCountryCode = "US",
+                OriginPostalCode = "10045",
+                OriginSenderName = null,
+                PickUpDate = "2023-07-20",
+                ServiceDescription = null,
+                ServiceLevelCode = null,
+                ShippingCourierName = "UPS",
+                TaxAmount = null,
+                TrackingNumber = "1Z9999999999999999",
+                UnitOfMeasure = null,
+                Weight = null,
+            },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = Type.CardPurchaseSupplement,
         };
@@ -105,6 +128,29 @@ public class CardPurchaseSupplementTest : TestBase
                 UnitOfMeasureCode = "NMB",
             },
         ];
+        Shipping expectedShipping = new()
+        {
+            CustomerReferenceNumber = null,
+            DestinationAddress = null,
+            DestinationCountryCode = "US",
+            DestinationPostalCode = "10045",
+            DestinationReceiverName = null,
+            DiscountAmount = null,
+            NetAmount = 500,
+            NumberOfPackages = 1,
+            OriginAddress = null,
+            OriginCountryCode = "US",
+            OriginPostalCode = "10045",
+            OriginSenderName = null,
+            PickUpDate = "2023-07-20",
+            ServiceDescription = null,
+            ServiceLevelCode = null,
+            ShippingCourierName = "UPS",
+            TaxAmount = null,
+            TrackingNumber = "1Z9999999999999999",
+            UnitOfMeasure = null,
+            Weight = null,
+        };
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, Type> expectedType = Type.CardPurchaseSupplement;
 
@@ -117,6 +163,7 @@ public class CardPurchaseSupplementTest : TestBase
         {
             Assert.Equal(expectedLineItems[i], model.LineItems[i]);
         }
+        Assert.Equal(expectedShipping, model.Shipping);
         Assert.Equal(expectedTransactionID, model.TransactionID);
         Assert.Equal(expectedType, model.Type);
     }
@@ -170,6 +217,29 @@ public class CardPurchaseSupplementTest : TestBase
                     UnitOfMeasureCode = "NMB",
                 },
             ],
+            Shipping = new()
+            {
+                CustomerReferenceNumber = null,
+                DestinationAddress = null,
+                DestinationCountryCode = "US",
+                DestinationPostalCode = "10045",
+                DestinationReceiverName = null,
+                DiscountAmount = null,
+                NetAmount = 500,
+                NumberOfPackages = 1,
+                OriginAddress = null,
+                OriginCountryCode = "US",
+                OriginPostalCode = "10045",
+                OriginSenderName = null,
+                PickUpDate = "2023-07-20",
+                ServiceDescription = null,
+                ServiceLevelCode = null,
+                ShippingCourierName = "UPS",
+                TaxAmount = null,
+                TrackingNumber = "1Z9999999999999999",
+                UnitOfMeasure = null,
+                Weight = null,
+            },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = Type.CardPurchaseSupplement,
         };
@@ -232,6 +302,29 @@ public class CardPurchaseSupplementTest : TestBase
                     UnitOfMeasureCode = "NMB",
                 },
             ],
+            Shipping = new()
+            {
+                CustomerReferenceNumber = null,
+                DestinationAddress = null,
+                DestinationCountryCode = "US",
+                DestinationPostalCode = "10045",
+                DestinationReceiverName = null,
+                DiscountAmount = null,
+                NetAmount = 500,
+                NumberOfPackages = 1,
+                OriginAddress = null,
+                OriginCountryCode = "US",
+                OriginPostalCode = "10045",
+                OriginSenderName = null,
+                PickUpDate = "2023-07-20",
+                ServiceDescription = null,
+                ServiceLevelCode = null,
+                ShippingCourierName = "UPS",
+                TaxAmount = null,
+                TrackingNumber = "1Z9999999999999999",
+                UnitOfMeasure = null,
+                Weight = null,
+            },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = Type.CardPurchaseSupplement,
         };
@@ -287,6 +380,29 @@ public class CardPurchaseSupplementTest : TestBase
                 UnitOfMeasureCode = "NMB",
             },
         ];
+        Shipping expectedShipping = new()
+        {
+            CustomerReferenceNumber = null,
+            DestinationAddress = null,
+            DestinationCountryCode = "US",
+            DestinationPostalCode = "10045",
+            DestinationReceiverName = null,
+            DiscountAmount = null,
+            NetAmount = 500,
+            NumberOfPackages = 1,
+            OriginAddress = null,
+            OriginCountryCode = "US",
+            OriginPostalCode = "10045",
+            OriginSenderName = null,
+            PickUpDate = "2023-07-20",
+            ServiceDescription = null,
+            ServiceLevelCode = null,
+            ShippingCourierName = "UPS",
+            TaxAmount = null,
+            TrackingNumber = "1Z9999999999999999",
+            UnitOfMeasure = null,
+            Weight = null,
+        };
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, Type> expectedType = Type.CardPurchaseSupplement;
 
@@ -299,6 +415,7 @@ public class CardPurchaseSupplementTest : TestBase
         {
             Assert.Equal(expectedLineItems[i], deserialized.LineItems[i]);
         }
+        Assert.Equal(expectedShipping, deserialized.Shipping);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
         Assert.Equal(expectedType, deserialized.Type);
     }
@@ -352,6 +469,29 @@ public class CardPurchaseSupplementTest : TestBase
                     UnitOfMeasureCode = "NMB",
                 },
             ],
+            Shipping = new()
+            {
+                CustomerReferenceNumber = null,
+                DestinationAddress = null,
+                DestinationCountryCode = "US",
+                DestinationPostalCode = "10045",
+                DestinationReceiverName = null,
+                DiscountAmount = null,
+                NetAmount = 500,
+                NumberOfPackages = 1,
+                OriginAddress = null,
+                OriginCountryCode = "US",
+                OriginPostalCode = "10045",
+                OriginSenderName = null,
+                PickUpDate = "2023-07-20",
+                ServiceDescription = null,
+                ServiceLevelCode = null,
+                ShippingCourierName = "UPS",
+                TaxAmount = null,
+                TrackingNumber = "1Z9999999999999999",
+                UnitOfMeasure = null,
+                Weight = null,
+            },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = Type.CardPurchaseSupplement,
         };
@@ -408,6 +548,29 @@ public class CardPurchaseSupplementTest : TestBase
                     UnitOfMeasureCode = "NMB",
                 },
             ],
+            Shipping = new()
+            {
+                CustomerReferenceNumber = null,
+                DestinationAddress = null,
+                DestinationCountryCode = "US",
+                DestinationPostalCode = "10045",
+                DestinationReceiverName = null,
+                DiscountAmount = null,
+                NetAmount = 500,
+                NumberOfPackages = 1,
+                OriginAddress = null,
+                OriginCountryCode = "US",
+                OriginPostalCode = "10045",
+                OriginSenderName = null,
+                PickUpDate = "2023-07-20",
+                ServiceDescription = null,
+                ServiceLevelCode = null,
+                ShippingCourierName = "UPS",
+                TaxAmount = null,
+                TrackingNumber = "1Z9999999999999999",
+                UnitOfMeasure = null,
+                Weight = null,
+            },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = Type.CardPurchaseSupplement,
         };
@@ -1102,6 +1265,251 @@ public class LineItemDiscountTreatmentCodeTest : TestBase
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
+    }
+}
+
+public class ShippingTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Shipping
+        {
+            CustomerReferenceNumber = "customer_reference_number",
+            DestinationAddress = "destination_address",
+            DestinationCountryCode = "destination_country_code",
+            DestinationPostalCode = "destination_postal_code",
+            DestinationReceiverName = "destination_receiver_name",
+            DiscountAmount = 0,
+            NetAmount = 0,
+            NumberOfPackages = 0,
+            OriginAddress = "origin_address",
+            OriginCountryCode = "origin_country_code",
+            OriginPostalCode = "origin_postal_code",
+            OriginSenderName = "origin_sender_name",
+            PickUpDate = "2019-12-27",
+            ServiceDescription = "service_description",
+            ServiceLevelCode = "service_level_code",
+            ShippingCourierName = "shipping_courier_name",
+            TaxAmount = 0,
+            TrackingNumber = "tracking_number",
+            UnitOfMeasure = "unit_of_measure",
+            Weight = "weight",
+        };
+
+        string expectedCustomerReferenceNumber = "customer_reference_number";
+        string expectedDestinationAddress = "destination_address";
+        string expectedDestinationCountryCode = "destination_country_code";
+        string expectedDestinationPostalCode = "destination_postal_code";
+        string expectedDestinationReceiverName = "destination_receiver_name";
+        long expectedDiscountAmount = 0;
+        long expectedNetAmount = 0;
+        long expectedNumberOfPackages = 0;
+        string expectedOriginAddress = "origin_address";
+        string expectedOriginCountryCode = "origin_country_code";
+        string expectedOriginPostalCode = "origin_postal_code";
+        string expectedOriginSenderName = "origin_sender_name";
+        string expectedPickUpDate = "2019-12-27";
+        string expectedServiceDescription = "service_description";
+        string expectedServiceLevelCode = "service_level_code";
+        string expectedShippingCourierName = "shipping_courier_name";
+        long expectedTaxAmount = 0;
+        string expectedTrackingNumber = "tracking_number";
+        string expectedUnitOfMeasure = "unit_of_measure";
+        string expectedWeight = "weight";
+
+        Assert.Equal(expectedCustomerReferenceNumber, model.CustomerReferenceNumber);
+        Assert.Equal(expectedDestinationAddress, model.DestinationAddress);
+        Assert.Equal(expectedDestinationCountryCode, model.DestinationCountryCode);
+        Assert.Equal(expectedDestinationPostalCode, model.DestinationPostalCode);
+        Assert.Equal(expectedDestinationReceiverName, model.DestinationReceiverName);
+        Assert.Equal(expectedDiscountAmount, model.DiscountAmount);
+        Assert.Equal(expectedNetAmount, model.NetAmount);
+        Assert.Equal(expectedNumberOfPackages, model.NumberOfPackages);
+        Assert.Equal(expectedOriginAddress, model.OriginAddress);
+        Assert.Equal(expectedOriginCountryCode, model.OriginCountryCode);
+        Assert.Equal(expectedOriginPostalCode, model.OriginPostalCode);
+        Assert.Equal(expectedOriginSenderName, model.OriginSenderName);
+        Assert.Equal(expectedPickUpDate, model.PickUpDate);
+        Assert.Equal(expectedServiceDescription, model.ServiceDescription);
+        Assert.Equal(expectedServiceLevelCode, model.ServiceLevelCode);
+        Assert.Equal(expectedShippingCourierName, model.ShippingCourierName);
+        Assert.Equal(expectedTaxAmount, model.TaxAmount);
+        Assert.Equal(expectedTrackingNumber, model.TrackingNumber);
+        Assert.Equal(expectedUnitOfMeasure, model.UnitOfMeasure);
+        Assert.Equal(expectedWeight, model.Weight);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Shipping
+        {
+            CustomerReferenceNumber = "customer_reference_number",
+            DestinationAddress = "destination_address",
+            DestinationCountryCode = "destination_country_code",
+            DestinationPostalCode = "destination_postal_code",
+            DestinationReceiverName = "destination_receiver_name",
+            DiscountAmount = 0,
+            NetAmount = 0,
+            NumberOfPackages = 0,
+            OriginAddress = "origin_address",
+            OriginCountryCode = "origin_country_code",
+            OriginPostalCode = "origin_postal_code",
+            OriginSenderName = "origin_sender_name",
+            PickUpDate = "2019-12-27",
+            ServiceDescription = "service_description",
+            ServiceLevelCode = "service_level_code",
+            ShippingCourierName = "shipping_courier_name",
+            TaxAmount = 0,
+            TrackingNumber = "tracking_number",
+            UnitOfMeasure = "unit_of_measure",
+            Weight = "weight",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Shipping>(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Shipping
+        {
+            CustomerReferenceNumber = "customer_reference_number",
+            DestinationAddress = "destination_address",
+            DestinationCountryCode = "destination_country_code",
+            DestinationPostalCode = "destination_postal_code",
+            DestinationReceiverName = "destination_receiver_name",
+            DiscountAmount = 0,
+            NetAmount = 0,
+            NumberOfPackages = 0,
+            OriginAddress = "origin_address",
+            OriginCountryCode = "origin_country_code",
+            OriginPostalCode = "origin_postal_code",
+            OriginSenderName = "origin_sender_name",
+            PickUpDate = "2019-12-27",
+            ServiceDescription = "service_description",
+            ServiceLevelCode = "service_level_code",
+            ShippingCourierName = "shipping_courier_name",
+            TaxAmount = 0,
+            TrackingNumber = "tracking_number",
+            UnitOfMeasure = "unit_of_measure",
+            Weight = "weight",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Shipping>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCustomerReferenceNumber = "customer_reference_number";
+        string expectedDestinationAddress = "destination_address";
+        string expectedDestinationCountryCode = "destination_country_code";
+        string expectedDestinationPostalCode = "destination_postal_code";
+        string expectedDestinationReceiverName = "destination_receiver_name";
+        long expectedDiscountAmount = 0;
+        long expectedNetAmount = 0;
+        long expectedNumberOfPackages = 0;
+        string expectedOriginAddress = "origin_address";
+        string expectedOriginCountryCode = "origin_country_code";
+        string expectedOriginPostalCode = "origin_postal_code";
+        string expectedOriginSenderName = "origin_sender_name";
+        string expectedPickUpDate = "2019-12-27";
+        string expectedServiceDescription = "service_description";
+        string expectedServiceLevelCode = "service_level_code";
+        string expectedShippingCourierName = "shipping_courier_name";
+        long expectedTaxAmount = 0;
+        string expectedTrackingNumber = "tracking_number";
+        string expectedUnitOfMeasure = "unit_of_measure";
+        string expectedWeight = "weight";
+
+        Assert.Equal(expectedCustomerReferenceNumber, deserialized.CustomerReferenceNumber);
+        Assert.Equal(expectedDestinationAddress, deserialized.DestinationAddress);
+        Assert.Equal(expectedDestinationCountryCode, deserialized.DestinationCountryCode);
+        Assert.Equal(expectedDestinationPostalCode, deserialized.DestinationPostalCode);
+        Assert.Equal(expectedDestinationReceiverName, deserialized.DestinationReceiverName);
+        Assert.Equal(expectedDiscountAmount, deserialized.DiscountAmount);
+        Assert.Equal(expectedNetAmount, deserialized.NetAmount);
+        Assert.Equal(expectedNumberOfPackages, deserialized.NumberOfPackages);
+        Assert.Equal(expectedOriginAddress, deserialized.OriginAddress);
+        Assert.Equal(expectedOriginCountryCode, deserialized.OriginCountryCode);
+        Assert.Equal(expectedOriginPostalCode, deserialized.OriginPostalCode);
+        Assert.Equal(expectedOriginSenderName, deserialized.OriginSenderName);
+        Assert.Equal(expectedPickUpDate, deserialized.PickUpDate);
+        Assert.Equal(expectedServiceDescription, deserialized.ServiceDescription);
+        Assert.Equal(expectedServiceLevelCode, deserialized.ServiceLevelCode);
+        Assert.Equal(expectedShippingCourierName, deserialized.ShippingCourierName);
+        Assert.Equal(expectedTaxAmount, deserialized.TaxAmount);
+        Assert.Equal(expectedTrackingNumber, deserialized.TrackingNumber);
+        Assert.Equal(expectedUnitOfMeasure, deserialized.UnitOfMeasure);
+        Assert.Equal(expectedWeight, deserialized.Weight);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Shipping
+        {
+            CustomerReferenceNumber = "customer_reference_number",
+            DestinationAddress = "destination_address",
+            DestinationCountryCode = "destination_country_code",
+            DestinationPostalCode = "destination_postal_code",
+            DestinationReceiverName = "destination_receiver_name",
+            DiscountAmount = 0,
+            NetAmount = 0,
+            NumberOfPackages = 0,
+            OriginAddress = "origin_address",
+            OriginCountryCode = "origin_country_code",
+            OriginPostalCode = "origin_postal_code",
+            OriginSenderName = "origin_sender_name",
+            PickUpDate = "2019-12-27",
+            ServiceDescription = "service_description",
+            ServiceLevelCode = "service_level_code",
+            ShippingCourierName = "shipping_courier_name",
+            TaxAmount = 0,
+            TrackingNumber = "tracking_number",
+            UnitOfMeasure = "unit_of_measure",
+            Weight = "weight",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Shipping
+        {
+            CustomerReferenceNumber = "customer_reference_number",
+            DestinationAddress = "destination_address",
+            DestinationCountryCode = "destination_country_code",
+            DestinationPostalCode = "destination_postal_code",
+            DestinationReceiverName = "destination_receiver_name",
+            DiscountAmount = 0,
+            NetAmount = 0,
+            NumberOfPackages = 0,
+            OriginAddress = "origin_address",
+            OriginCountryCode = "origin_country_code",
+            OriginPostalCode = "origin_postal_code",
+            OriginSenderName = "origin_sender_name",
+            PickUpDate = "2019-12-27",
+            ServiceDescription = "service_description",
+            ServiceLevelCode = "service_level_code",
+            ShippingCourierName = "shipping_courier_name",
+            TaxAmount = 0,
+            TrackingNumber = "tracking_number",
+            UnitOfMeasure = "unit_of_measure",
+            Weight = "weight",
+        };
+
+        Shipping copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
