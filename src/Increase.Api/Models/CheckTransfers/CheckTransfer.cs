@@ -84,7 +84,9 @@ public sealed record class CheckTransfer : JsonModel
 
     /// <summary>
     /// If the Check Transfer was successfully deposited, this will contain the identifier
-    /// of the Inbound Check Deposit object with details of the deposit.
+    /// of the Inbound Check Deposit object with details of the deposit. The Inbound
+    /// Check Deposit object will have information about any associated Transactions
+    /// for this Check Transfer.
     /// </summary>
     public required string? ApprovedInboundCheckDepositID
     {
