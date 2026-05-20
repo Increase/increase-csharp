@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.43.1](https://github.com/Increase/increase-csharp/compare/v0.43.0...v0.43.1) (2026-05-20)
+
+
+### Chores
+
+* add release workflow and migrate config to Increase/release-please fork ([#45](https://github.com/Increase/increase-csharp/issues/45)) ([af663cf](https://github.com/Increase/increase-csharp/commit/af663cf375be6b2209adebc9ecaa3168109d7d38))
+* collapse CI into a single job ([#48](https://github.com/Increase/increase-csharp/issues/48)) ([ce9a5bb](https://github.com/Increase/increase-csharp/commit/ce9a5bbb17c31d62519637be3a8258a86db1a323))
+* cut over to Increase/release-please and prune Stainless CI cruft ([#46](https://github.com/Increase/increase-csharp/issues/46)) ([9b5e301](https://github.com/Increase/increase-csharp/commit/9b5e301ae226d1b95f3a57bfdecf5eee2a8fe326))
+
 ## 0.43.0 (2026-05-20)
 
 Full Changelog: [v0.42.0...v0.43.0](https://github.com/Increase/increase-csharp/compare/v0.42.0...v0.43.0)
