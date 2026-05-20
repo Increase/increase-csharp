@@ -5,51 +5,27 @@ on:
   pull_request:
 
 jobs:
-  lint:
+  ci:
     timeout-minutes: 10
-    name: lint
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@v6
 
-      - name: Set up .NET
-        uses: actions/setup-dotnet@55ec9447dda3d1cf6bd587150f3262f30ee10815 # v3.4.2
+      - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
-      - name: Run bootstrap
+      - name: Bootstrap
         run: ./scripts/bootstrap
 
-      - name: Run lints
+      - name: Lint
         run: ./scripts/lint
 
-  build:
-    timeout-minutes: 10
-    name: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-
-      - name: Set up .NET
-        uses: actions/setup-dotnet@55ec9447dda3d1cf6bd587150f3262f30ee10815 # v3.4.2
-        with:
-          dotnet-version: '8.0.x'
-
-      - name: Build SDK
+      - name: Build
         run: ./scripts/build
 
-  test:
-    timeout-minutes: 10
-    name: test
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-
-      - name: Set up .NET
-        uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5.2.0
-        with:
-          dotnet-version: '8.0.x'
-
-      - name: Run tests
+      - name: Test
         run: ./scripts/test
-        shell: bash
