@@ -15,7 +15,7 @@ public class SwiftTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            BankIdentificationCode = "ECBFDEFFTPP",
+            BankIdentificationCode = "FRNYUS33XXX",
             CreditorAddress = new()
             {
                 City = "Frankfurt",
@@ -46,7 +46,7 @@ public class SwiftTransferCreateParamsTest : TestBase
 
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedAccountNumber = "987654321";
-        string expectedBankIdentificationCode = "ECBFDEFFTPP";
+        string expectedBankIdentificationCode = "FRNYUS33XXX";
         CreditorAddress expectedCreditorAddress = new()
         {
             City = "Frankfurt",
@@ -99,7 +99,7 @@ public class SwiftTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            BankIdentificationCode = "ECBFDEFFTPP",
+            BankIdentificationCode = "FRNYUS33XXX",
             CreditorAddress = new()
             {
                 City = "Frankfurt",
@@ -139,7 +139,7 @@ public class SwiftTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            BankIdentificationCode = "ECBFDEFFTPP",
+            BankIdentificationCode = "FRNYUS33XXX",
             CreditorAddress = new()
             {
                 City = "Frankfurt",
@@ -183,7 +183,7 @@ public class SwiftTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            BankIdentificationCode = "ECBFDEFFTPP",
+            BankIdentificationCode = "FRNYUS33XXX",
             CreditorAddress = new()
             {
                 City = "Frankfurt",
@@ -222,7 +222,7 @@ public class SwiftTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            BankIdentificationCode = "ECBFDEFFTPP",
+            BankIdentificationCode = "FRNYUS33XXX",
             CreditorAddress = new()
             {
                 City = "Frankfurt",

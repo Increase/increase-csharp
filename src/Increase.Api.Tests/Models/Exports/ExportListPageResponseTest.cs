@@ -64,10 +64,12 @@ public class ExportListPageResponseTest : TestBase
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
                     FeeCsv = new(
-                        new Exports::FeeCsvCreatedAt()
+                        new Exports::ExportFeeCsvCreatedAt()
                         {
                             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         }
                     ),
                     Form1099Int = new()
@@ -159,10 +161,12 @@ public class ExportListPageResponseTest : TestBase
                 DashboardTableCsv = new(),
                 EntityCsv = new(),
                 FeeCsv = new(
-                    new Exports::FeeCsvCreatedAt()
+                    new Exports::ExportFeeCsvCreatedAt()
                     {
                         After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     }
                 ),
                 Form1099Int = new()
@@ -266,10 +270,12 @@ public class ExportListPageResponseTest : TestBase
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
                     FeeCsv = new(
-                        new Exports::FeeCsvCreatedAt()
+                        new Exports::ExportFeeCsvCreatedAt()
                         {
                             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         }
                     ),
                     Form1099Int = new()
@@ -375,10 +381,12 @@ public class ExportListPageResponseTest : TestBase
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
                     FeeCsv = new(
-                        new Exports::FeeCsvCreatedAt()
+                        new Exports::ExportFeeCsvCreatedAt()
                         {
                             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         }
                     ),
                     Form1099Int = new()
@@ -477,10 +485,12 @@ public class ExportListPageResponseTest : TestBase
                 DashboardTableCsv = new(),
                 EntityCsv = new(),
                 FeeCsv = new(
-                    new Exports::FeeCsvCreatedAt()
+                    new Exports::ExportFeeCsvCreatedAt()
                     {
                         After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     }
                 ),
                 Form1099Int = new()
@@ -584,10 +594,12 @@ public class ExportListPageResponseTest : TestBase
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
                     FeeCsv = new(
-                        new Exports::FeeCsvCreatedAt()
+                        new Exports::ExportFeeCsvCreatedAt()
                         {
                             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         }
                     ),
                     Form1099Int = new()
@@ -687,10 +699,12 @@ public class ExportListPageResponseTest : TestBase
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
                     FeeCsv = new(
-                        new Exports::FeeCsvCreatedAt()
+                        new Exports::ExportFeeCsvCreatedAt()
                         {
                             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         }
                     ),
                     Form1099Int = new()

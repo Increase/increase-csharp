@@ -267,6 +267,19 @@ public sealed record class InboundWireTransfer : JsonModel
     }
 
     /// <summary>
+    /// The reason for the wire transfer, as set by the sender.
+    /// </summary>
+    public required string? Purpose
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("purpose");
+        }
+        init { this._rawData.Set("purpose", value); }
+    }
+
+    /// <summary>
     /// If the transfer is reversed, this will contain details of the reversal.
     /// </summary>
     public required Reversal? Reversal
@@ -374,6 +387,7 @@ public sealed record class InboundWireTransfer : JsonModel
         _ = this.InputMessageAccountabilityData;
         _ = this.InstructingAgentRoutingNumber;
         _ = this.InstructionIdentification;
+        _ = this.Purpose;
         this.Reversal?.Validate();
         this.Status.Validate();
         this.Type.Validate();

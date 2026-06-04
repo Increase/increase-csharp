@@ -57,6 +57,7 @@ public class CardTest : TestBase
                 PostalCode = "10045",
                 State = "NY",
             },
+            Bin = "42424242",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Office Expenses",
             DigitalWallet = new()
@@ -117,6 +118,7 @@ public class CardTest : TestBase
             PostalCode = "10045",
             State = "NY",
         };
+        string expectedBin = "42424242";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedDescription = "Office Expenses";
         Cards::CardDigitalWallet expectedDigitalWallet = new()
@@ -135,6 +137,7 @@ public class CardTest : TestBase
         Assert.Equal(expectedAccountID, model.AccountID);
         Assert.Equal(expectedAuthorizationControls, model.AuthorizationControls);
         Assert.Equal(expectedBillingAddress, model.BillingAddress);
+        Assert.Equal(expectedBin, model.Bin);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
         Assert.Equal(expectedDescription, model.Description);
         Assert.Equal(expectedDigitalWallet, model.DigitalWallet);
@@ -195,6 +198,7 @@ public class CardTest : TestBase
                 PostalCode = "10045",
                 State = "NY",
             },
+            Bin = "42424242",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Office Expenses",
             DigitalWallet = new()
@@ -269,6 +273,7 @@ public class CardTest : TestBase
                 PostalCode = "10045",
                 State = "NY",
             },
+            Bin = "42424242",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Office Expenses",
             DigitalWallet = new()
@@ -336,6 +341,7 @@ public class CardTest : TestBase
             PostalCode = "10045",
             State = "NY",
         };
+        string expectedBin = "42424242";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedDescription = "Office Expenses";
         Cards::CardDigitalWallet expectedDigitalWallet = new()
@@ -354,6 +360,7 @@ public class CardTest : TestBase
         Assert.Equal(expectedAccountID, deserialized.AccountID);
         Assert.Equal(expectedAuthorizationControls, deserialized.AuthorizationControls);
         Assert.Equal(expectedBillingAddress, deserialized.BillingAddress);
+        Assert.Equal(expectedBin, deserialized.Bin);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
         Assert.Equal(expectedDescription, deserialized.Description);
         Assert.Equal(expectedDigitalWallet, deserialized.DigitalWallet);
@@ -414,6 +421,7 @@ public class CardTest : TestBase
                 PostalCode = "10045",
                 State = "NY",
             },
+            Bin = "42424242",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Office Expenses",
             DigitalWallet = new()
@@ -482,6 +490,7 @@ public class CardTest : TestBase
                 PostalCode = "10045",
                 State = "NY",
             },
+            Bin = "42424242",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Office Expenses",
             DigitalWallet = new()

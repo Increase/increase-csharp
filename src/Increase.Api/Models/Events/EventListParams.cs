@@ -655,6 +655,26 @@ public enum In
     IntrafiExclusionUpdated,
 
     /// <summary>
+    /// Occurs whenever a Loan Application is created.
+    /// </summary>
+    LoanApplicationCreated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Application is updated.
+    /// </summary>
+    LoanApplicationUpdated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Offer is created.
+    /// </summary>
+    LoanOfferCreated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Offer is updated.
+    /// </summary>
+    LoanOfferUpdated,
+
+    /// <summary>
     /// Occurs whenever a Lockbox is created.
     /// </summary>
     LockboxCreated,
@@ -924,6 +944,10 @@ sealed class InConverter : JsonConverter<In>
             "intrafi_account_enrollment.updated" => In.IntrafiAccountEnrollmentUpdated,
             "intrafi_exclusion.created" => In.IntrafiExclusionCreated,
             "intrafi_exclusion.updated" => In.IntrafiExclusionUpdated,
+            "loan_application.created" => In.LoanApplicationCreated,
+            "loan_application.updated" => In.LoanApplicationUpdated,
+            "loan_offer.created" => In.LoanOfferCreated,
+            "loan_offer.updated" => In.LoanOfferUpdated,
             "lockbox.created" => In.LockboxCreated,
             "lockbox.updated" => In.LockboxUpdated,
             "oauth_connection.created" => In.OAuthConnectionCreated,
@@ -1051,6 +1075,10 @@ sealed class InConverter : JsonConverter<In>
                 In.IntrafiAccountEnrollmentUpdated => "intrafi_account_enrollment.updated",
                 In.IntrafiExclusionCreated => "intrafi_exclusion.created",
                 In.IntrafiExclusionUpdated => "intrafi_exclusion.updated",
+                In.LoanApplicationCreated => "loan_application.created",
+                In.LoanApplicationUpdated => "loan_application.updated",
+                In.LoanOfferCreated => "loan_offer.created",
+                In.LoanOfferUpdated => "loan_offer.updated",
                 In.LockboxCreated => "lockbox.created",
                 In.LockboxUpdated => "lockbox.updated",
                 In.OAuthConnectionCreated => "oauth_connection.created",
