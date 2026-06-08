@@ -166,9 +166,9 @@ public class EntityTest : TestBase
             [
                 new()
                 {
-                    AgreedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    IPAddress = "128.32.0.1",
-                    TermsUrl = "https://increase.com/example_terms",
+                    AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    IPAddress = "ip_address",
+                    TermsUrl = "terms_url",
                 },
             ],
             ThirdPartyVerification = new()
@@ -410,9 +410,9 @@ public class EntityTest : TestBase
         [
             new()
             {
-                AgreedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                IPAddress = "128.32.0.1",
-                TermsUrl = "https://increase.com/example_terms",
+                AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                IPAddress = "ip_address",
+                TermsUrl = "terms_url",
             },
         ];
         Entities::EntityThirdPartyVerification expectedThirdPartyVerification = new()
@@ -689,9 +689,9 @@ public class EntityTest : TestBase
             [
                 new()
                 {
-                    AgreedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    IPAddress = "128.32.0.1",
-                    TermsUrl = "https://increase.com/example_terms",
+                    AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    IPAddress = "ip_address",
+                    TermsUrl = "terms_url",
                 },
             ],
             ThirdPartyVerification = new()
@@ -950,9 +950,9 @@ public class EntityTest : TestBase
             [
                 new()
                 {
-                    AgreedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    IPAddress = "128.32.0.1",
-                    TermsUrl = "https://increase.com/example_terms",
+                    AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    IPAddress = "ip_address",
+                    TermsUrl = "terms_url",
                 },
             ],
             ThirdPartyVerification = new()
@@ -1201,9 +1201,9 @@ public class EntityTest : TestBase
         [
             new()
             {
-                AgreedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                IPAddress = "128.32.0.1",
-                TermsUrl = "https://increase.com/example_terms",
+                AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                IPAddress = "ip_address",
+                TermsUrl = "terms_url",
             },
         ];
         Entities::EntityThirdPartyVerification expectedThirdPartyVerification = new()
@@ -1480,9 +1480,9 @@ public class EntityTest : TestBase
             [
                 new()
                 {
-                    AgreedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    IPAddress = "128.32.0.1",
-                    TermsUrl = "https://increase.com/example_terms",
+                    AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    IPAddress = "ip_address",
+                    TermsUrl = "terms_url",
                 },
             ],
             ThirdPartyVerification = new()
@@ -1735,9 +1735,9 @@ public class EntityTest : TestBase
             [
                 new()
                 {
-                    AgreedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    IPAddress = "128.32.0.1",
-                    TermsUrl = "https://increase.com/example_terms",
+                    AgreedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    IPAddress = "ip_address",
+                    TermsUrl = "terms_url",
                 },
             ],
             ThirdPartyVerification = new()

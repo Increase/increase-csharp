@@ -18,6 +18,7 @@ public class DigitalWalletTokenTest : TestBase
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new("John Smith"),
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Decline = new(DigitalWalletTokens::Reason.CardNotActive),
             Device = new()
             {
                 DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,
@@ -43,6 +44,9 @@ public class DigitalWalletTokenTest : TestBase
         string expectedCardID = "card_oubs0hwk5rn6knuecxg2";
         DigitalWalletTokens::Cardholder expectedCardholder = new("John Smith");
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DigitalWalletTokens::Decline expectedDecline = new(
+            DigitalWalletTokens::Reason.CardNotActive
+        );
         DigitalWalletTokens::Device expectedDevice = new()
         {
             DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,
@@ -74,6 +78,7 @@ public class DigitalWalletTokenTest : TestBase
         Assert.Equal(expectedCardID, model.CardID);
         Assert.Equal(expectedCardholder, model.Cardholder);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedDecline, model.Decline);
         Assert.Equal(expectedDevice, model.Device);
         Assert.Equal(expectedDynamicPrimaryAccountNumber, model.DynamicPrimaryAccountNumber);
         Assert.Equal(expectedStatus, model.Status);
@@ -95,6 +100,7 @@ public class DigitalWalletTokenTest : TestBase
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new("John Smith"),
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Decline = new(DigitalWalletTokens::Reason.CardNotActive),
             Device = new()
             {
                 DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,
@@ -134,6 +140,7 @@ public class DigitalWalletTokenTest : TestBase
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new("John Smith"),
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Decline = new(DigitalWalletTokens::Reason.CardNotActive),
             Device = new()
             {
                 DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,
@@ -166,6 +173,9 @@ public class DigitalWalletTokenTest : TestBase
         string expectedCardID = "card_oubs0hwk5rn6knuecxg2";
         DigitalWalletTokens::Cardholder expectedCardholder = new("John Smith");
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DigitalWalletTokens::Decline expectedDecline = new(
+            DigitalWalletTokens::Reason.CardNotActive
+        );
         DigitalWalletTokens::Device expectedDevice = new()
         {
             DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,
@@ -197,6 +207,7 @@ public class DigitalWalletTokenTest : TestBase
         Assert.Equal(expectedCardID, deserialized.CardID);
         Assert.Equal(expectedCardholder, deserialized.Cardholder);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedDecline, deserialized.Decline);
         Assert.Equal(expectedDevice, deserialized.Device);
         Assert.Equal(expectedDynamicPrimaryAccountNumber, deserialized.DynamicPrimaryAccountNumber);
         Assert.Equal(expectedStatus, deserialized.Status);
@@ -218,6 +229,7 @@ public class DigitalWalletTokenTest : TestBase
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new("John Smith"),
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Decline = new(DigitalWalletTokens::Reason.CardNotActive),
             Device = new()
             {
                 DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,
@@ -251,6 +263,7 @@ public class DigitalWalletTokenTest : TestBase
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new("John Smith"),
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Decline = new(DigitalWalletTokens::Reason.CardNotActive),
             Device = new()
             {
                 DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,
@@ -337,6 +350,151 @@ public class CardholderTest : TestBase
         DigitalWalletTokens::Cardholder copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class DeclineTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new DigitalWalletTokens::Decline
+        {
+            Reason = DigitalWalletTokens::Reason.CardNotActive,
+        };
+
+        ApiEnum<string, DigitalWalletTokens::Reason> expectedReason =
+            DigitalWalletTokens::Reason.CardNotActive;
+
+        Assert.Equal(expectedReason, model.Reason);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new DigitalWalletTokens::Decline
+        {
+            Reason = DigitalWalletTokens::Reason.CardNotActive,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<DigitalWalletTokens::Decline>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new DigitalWalletTokens::Decline
+        {
+            Reason = DigitalWalletTokens::Reason.CardNotActive,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<DigitalWalletTokens::Decline>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<string, DigitalWalletTokens::Reason> expectedReason =
+            DigitalWalletTokens::Reason.CardNotActive;
+
+        Assert.Equal(expectedReason, deserialized.Reason);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new DigitalWalletTokens::Decline
+        {
+            Reason = DigitalWalletTokens::Reason.CardNotActive,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DigitalWalletTokens::Decline
+        {
+            Reason = DigitalWalletTokens::Reason.CardNotActive,
+        };
+
+        DigitalWalletTokens::Decline copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class ReasonTest : TestBase
+{
+    [Theory]
+    [InlineData(DigitalWalletTokens::Reason.CardNotActive)]
+    [InlineData(DigitalWalletTokens::Reason.NoVerificationMethod)]
+    [InlineData(DigitalWalletTokens::Reason.WebhookTimedOut)]
+    [InlineData(DigitalWalletTokens::Reason.WebhookDeclined)]
+    [InlineData(DigitalWalletTokens::Reason.IncorrectCardVerificationCode)]
+    [InlineData(DigitalWalletTokens::Reason.DeclinedByTokenRequestor)]
+    public void Validation_Works(DigitalWalletTokens::Reason rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, DigitalWalletTokens::Reason> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, DigitalWalletTokens::Reason>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(DigitalWalletTokens::Reason.CardNotActive)]
+    [InlineData(DigitalWalletTokens::Reason.NoVerificationMethod)]
+    [InlineData(DigitalWalletTokens::Reason.WebhookTimedOut)]
+    [InlineData(DigitalWalletTokens::Reason.WebhookDeclined)]
+    [InlineData(DigitalWalletTokens::Reason.IncorrectCardVerificationCode)]
+    [InlineData(DigitalWalletTokens::Reason.DeclinedByTokenRequestor)]
+    public void SerializationRoundtrip_Works(DigitalWalletTokens::Reason rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, DigitalWalletTokens::Reason> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, DigitalWalletTokens::Reason>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, DigitalWalletTokens::Reason>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, DigitalWalletTokens::Reason>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }
 
@@ -611,6 +769,7 @@ public class StatusTest : TestBase
     [InlineData(DigitalWalletTokens::Status.Inactive)]
     [InlineData(DigitalWalletTokens::Status.Suspended)]
     [InlineData(DigitalWalletTokens::Status.Deactivated)]
+    [InlineData(DigitalWalletTokens::Status.Declined)]
     public void Validation_Works(DigitalWalletTokens::Status rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -635,6 +794,7 @@ public class StatusTest : TestBase
     [InlineData(DigitalWalletTokens::Status.Inactive)]
     [InlineData(DigitalWalletTokens::Status.Suspended)]
     [InlineData(DigitalWalletTokens::Status.Deactivated)]
+    [InlineData(DigitalWalletTokens::Status.Declined)]
     public void SerializationRoundtrip_Works(DigitalWalletTokens::Status rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -875,6 +1035,7 @@ public class UpdateStatusTest : TestBase
     [InlineData(DigitalWalletTokens::UpdateStatus.Inactive)]
     [InlineData(DigitalWalletTokens::UpdateStatus.Suspended)]
     [InlineData(DigitalWalletTokens::UpdateStatus.Deactivated)]
+    [InlineData(DigitalWalletTokens::UpdateStatus.Declined)]
     public void Validation_Works(DigitalWalletTokens::UpdateStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -899,6 +1060,7 @@ public class UpdateStatusTest : TestBase
     [InlineData(DigitalWalletTokens::UpdateStatus.Inactive)]
     [InlineData(DigitalWalletTokens::UpdateStatus.Suspended)]
     [InlineData(DigitalWalletTokens::UpdateStatus.Deactivated)]
+    [InlineData(DigitalWalletTokens::UpdateStatus.Declined)]
     public void SerializationRoundtrip_Works(DigitalWalletTokens::UpdateStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us

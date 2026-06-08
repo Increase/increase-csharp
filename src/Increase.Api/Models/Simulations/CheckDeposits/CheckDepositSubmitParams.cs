@@ -29,7 +29,8 @@ public record class CheckDepositSubmitParams : ParamsBase
     public string? CheckDepositID { get; init; }
 
     /// <summary>
-    /// If set, the simulation will use these values for the check's scanned MICR data.
+    /// If set, the simulation will use these values for the check's scanned MICR
+    /// data. If not set, the simulation will use random values.
     /// </summary>
     public Scan? Scan
     {
@@ -172,6 +173,7 @@ public record class CheckDepositSubmitParams : ParamsBase
 
 /// <summary>
 /// If set, the simulation will use these values for the check's scanned MICR data.
+/// If not set, the simulation will use random values.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<Scan, ScanFromRaw>))]
 public sealed record class Scan : JsonModel
@@ -204,6 +206,7 @@ public sealed record class Scan : JsonModel
 
     /// <summary>
     /// The auxiliary on-us data to be returned in the check deposit's scan data.
+    /// Auxiliary on-us is typically the check number for business checks.
     /// </summary>
     public string? AuxiliaryOnUs
     {
@@ -223,12 +226,35 @@ public sealed record class Scan : JsonModel
         }
     }
 
+    /// <summary>
+    /// The serial number to be returned in the check deposit's scan data. Serial
+    /// number is typically the check number for consumer checks.
+    /// </summary>
+    public string? SerialNumber
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("serial_number");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("serial_number", value);
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         _ = this.AccountNumber;
         _ = this.RoutingNumber;
         _ = this.AuxiliaryOnUs;
+        _ = this.SerialNumber;
     }
 
     public Scan() { }

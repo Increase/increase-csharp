@@ -421,6 +421,7 @@ public class InTest : TestBase
     [InlineData(In.PendingResponse)]
     [InlineData(In.Lost)]
     [InlineData(In.Won)]
+    [InlineData(In.Rejected)]
     public void Validation_Works(In rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -448,6 +449,7 @@ public class InTest : TestBase
     [InlineData(In.PendingResponse)]
     [InlineData(In.Lost)]
     [InlineData(In.Won)]
+    [InlineData(In.Rejected)]
     public void SerializationRoundtrip_Works(In rawValue)
     {
         // force implicit conversion because Theory can't do that for us

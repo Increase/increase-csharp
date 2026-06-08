@@ -610,6 +610,7 @@ public class TransactionTest : TestBase
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
                     InstructionIdentification = null,
+                    Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     UniqueEndToEndTransactionReference = null,
                     UnstructuredRemittanceInformation = null,
@@ -1242,6 +1243,7 @@ public class TransactionTest : TestBase
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
                 InstructionIdentification = null,
+                Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                 UniqueEndToEndTransactionReference = null,
                 UnstructuredRemittanceInformation = null,
@@ -1898,6 +1900,7 @@ public class TransactionTest : TestBase
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
                     InstructionIdentification = null,
+                    Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     UniqueEndToEndTransactionReference = null,
                     UnstructuredRemittanceInformation = null,
@@ -2551,6 +2554,7 @@ public class TransactionTest : TestBase
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
                     InstructionIdentification = null,
+                    Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     UniqueEndToEndTransactionReference = null,
                     UnstructuredRemittanceInformation = null,
@@ -3190,6 +3194,7 @@ public class TransactionTest : TestBase
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
                 InstructionIdentification = null,
+                Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                 UniqueEndToEndTransactionReference = null,
                 UnstructuredRemittanceInformation = null,
@@ -3846,6 +3851,7 @@ public class TransactionTest : TestBase
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
                     InstructionIdentification = null,
+                    Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     UniqueEndToEndTransactionReference = null,
                     UnstructuredRemittanceInformation = null,
@@ -4493,6 +4499,7 @@ public class TransactionTest : TestBase
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
                     InstructionIdentification = null,
+                    Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     UniqueEndToEndTransactionReference = null,
                     UnstructuredRemittanceInformation = null,
@@ -5243,6 +5250,7 @@ public class SourceTest : TestBase
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
                 InstructionIdentification = null,
+                Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                 UniqueEndToEndTransactionReference = null,
                 UnstructuredRemittanceInformation = null,
@@ -5866,6 +5874,7 @@ public class SourceTest : TestBase
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
             InstructionIdentification = null,
+            Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             UniqueEndToEndTransactionReference = null,
             UnstructuredRemittanceInformation = null,
@@ -6558,6 +6567,7 @@ public class SourceTest : TestBase
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
                 InstructionIdentification = null,
+                Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                 UniqueEndToEndTransactionReference = null,
                 UnstructuredRemittanceInformation = null,
@@ -7191,6 +7201,7 @@ public class SourceTest : TestBase
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
                 InstructionIdentification = null,
+                Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                 UniqueEndToEndTransactionReference = null,
                 UnstructuredRemittanceInformation = null,
@@ -7821,6 +7832,7 @@ public class SourceTest : TestBase
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
             InstructionIdentification = null,
+            Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             UniqueEndToEndTransactionReference = null,
             UnstructuredRemittanceInformation = null,
@@ -8516,6 +8528,7 @@ public class SourceTest : TestBase
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
                 InstructionIdentification = null,
+                Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                 UniqueEndToEndTransactionReference = null,
                 UnstructuredRemittanceInformation = null,
@@ -9415,6 +9428,7 @@ public class SourceTest : TestBase
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
                 InstructionIdentification = null,
+                Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                 UniqueEndToEndTransactionReference = null,
                 UnstructuredRemittanceInformation = null,
@@ -26760,6 +26774,7 @@ public class InboundWireTransferTest : TestBase
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
             InstructionIdentification = null,
+            Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             UniqueEndToEndTransactionReference = null,
             UnstructuredRemittanceInformation = null,
@@ -26783,6 +26798,7 @@ public class InboundWireTransferTest : TestBase
         Assert.Null(model.InputMessageAccountabilityData);
         Assert.Null(model.InstructingAgentRoutingNumber);
         Assert.Null(model.InstructionIdentification);
+        Assert.Null(model.Purpose);
         Assert.Equal(expectedTransferID, model.TransferID);
         Assert.Null(model.UniqueEndToEndTransactionReference);
         Assert.Null(model.UnstructuredRemittanceInformation);
@@ -26807,6 +26823,7 @@ public class InboundWireTransferTest : TestBase
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
             InstructionIdentification = null,
+            Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             UniqueEndToEndTransactionReference = null,
             UnstructuredRemittanceInformation = null,
@@ -26840,6 +26857,7 @@ public class InboundWireTransferTest : TestBase
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
             InstructionIdentification = null,
+            Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             UniqueEndToEndTransactionReference = null,
             UnstructuredRemittanceInformation = null,
@@ -26870,6 +26888,7 @@ public class InboundWireTransferTest : TestBase
         Assert.Null(deserialized.InputMessageAccountabilityData);
         Assert.Null(deserialized.InstructingAgentRoutingNumber);
         Assert.Null(deserialized.InstructionIdentification);
+        Assert.Null(deserialized.Purpose);
         Assert.Equal(expectedTransferID, deserialized.TransferID);
         Assert.Null(deserialized.UniqueEndToEndTransactionReference);
         Assert.Null(deserialized.UnstructuredRemittanceInformation);
@@ -26894,6 +26913,7 @@ public class InboundWireTransferTest : TestBase
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
             InstructionIdentification = null,
+            Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             UniqueEndToEndTransactionReference = null,
             UnstructuredRemittanceInformation = null,
@@ -26921,6 +26941,7 @@ public class InboundWireTransferTest : TestBase
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
             InstructionIdentification = null,
+            Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             UniqueEndToEndTransactionReference = null,
             UnstructuredRemittanceInformation = null,

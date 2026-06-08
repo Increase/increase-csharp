@@ -185,12 +185,12 @@ public sealed record class Export : JsonModel
     /// Details of the fee CSV export. This field will be present when the `category`
     /// is equal to `fee_csv`.
     /// </summary>
-    public required FeeCsv? FeeCsv
+    public required ExportFeeCsv? FeeCsv
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<FeeCsv>("fee_csv");
+            return this._rawData.GetNullableClass<ExportFeeCsv>("fee_csv");
         }
         init { this._rawData.Set("fee_csv", value); }
     }
@@ -1335,19 +1335,19 @@ class ExportEntityCsvFromRaw : IFromRawJson<ExportEntityCsv>
 /// Details of the fee CSV export. This field will be present when the `category`
 /// is equal to `fee_csv`.
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<FeeCsv, FeeCsvFromRaw>))]
-public sealed record class FeeCsv : JsonModel
+[JsonConverter(typeof(JsonModelConverter<ExportFeeCsv, ExportFeeCsvFromRaw>))]
+public sealed record class ExportFeeCsv : JsonModel
 {
     /// <summary>
     /// Filter fees by their created date. The time range must not include any fees
     /// that are part of an open fee statement.
     /// </summary>
-    public required FeeCsvCreatedAt? CreatedAt
+    public required ExportFeeCsvCreatedAt? CreatedAt
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<FeeCsvCreatedAt>("created_at");
+            return this._rawData.GetNullableClass<ExportFeeCsvCreatedAt>("created_at");
         }
         init { this._rawData.Set("created_at", value); }
     }
@@ -1358,54 +1358,54 @@ public sealed record class FeeCsv : JsonModel
         this.CreatedAt?.Validate();
     }
 
-    public FeeCsv() { }
+    public ExportFeeCsv() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public FeeCsv(FeeCsv feeCsv)
-        : base(feeCsv) { }
+    public ExportFeeCsv(ExportFeeCsv exportFeeCsv)
+        : base(exportFeeCsv) { }
 #pragma warning restore CS8618
 
-    public FeeCsv(IReadOnlyDictionary<string, JsonElement> rawData)
+    public ExportFeeCsv(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    FeeCsv(FrozenDictionary<string, JsonElement> rawData)
+    ExportFeeCsv(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="FeeCsvFromRaw.FromRawUnchecked"/>
-    public static FeeCsv FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    /// <inheritdoc cref="ExportFeeCsvFromRaw.FromRawUnchecked"/>
+    public static ExportFeeCsv FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
     }
 
     [SetsRequiredMembers]
-    public FeeCsv(FeeCsvCreatedAt? createdAt)
+    public ExportFeeCsv(ExportFeeCsvCreatedAt? createdAt)
         : this()
     {
         this.CreatedAt = createdAt;
     }
 }
 
-class FeeCsvFromRaw : IFromRawJson<FeeCsv>
+class ExportFeeCsvFromRaw : IFromRawJson<ExportFeeCsv>
 {
     /// <inheritdoc/>
-    public FeeCsv FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        FeeCsv.FromRawUnchecked(rawData);
+    public ExportFeeCsv FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        ExportFeeCsv.FromRawUnchecked(rawData);
 }
 
 /// <summary>
 /// Filter fees by their created date. The time range must not include any fees that
 /// are part of an open fee statement.
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<FeeCsvCreatedAt, FeeCsvCreatedAtFromRaw>))]
-public sealed record class FeeCsvCreatedAt : JsonModel
+[JsonConverter(typeof(JsonModelConverter<ExportFeeCsvCreatedAt, ExportFeeCsvCreatedAtFromRaw>))]
+public sealed record class ExportFeeCsvCreatedAt : JsonModel
 {
     /// <summary>
     /// Filter fees created after this time.
@@ -1433,46 +1433,77 @@ public sealed record class FeeCsvCreatedAt : JsonModel
         init { this._rawData.Set("before", value); }
     }
 
+    /// <summary>
+    /// Filter fees created on or after this time.
+    /// </summary>
+    public required System::DateTimeOffset? OnOrAfter
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<System::DateTimeOffset>("on_or_after");
+        }
+        init { this._rawData.Set("on_or_after", value); }
+    }
+
+    /// <summary>
+    /// Filter fees created on or before this time.
+    /// </summary>
+    public required System::DateTimeOffset? OnOrBefore
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<System::DateTimeOffset>("on_or_before");
+        }
+        init { this._rawData.Set("on_or_before", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         _ = this.After;
         _ = this.Before;
+        _ = this.OnOrAfter;
+        _ = this.OnOrBefore;
     }
 
-    public FeeCsvCreatedAt() { }
+    public ExportFeeCsvCreatedAt() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public FeeCsvCreatedAt(FeeCsvCreatedAt feeCsvCreatedAt)
-        : base(feeCsvCreatedAt) { }
+    public ExportFeeCsvCreatedAt(ExportFeeCsvCreatedAt exportFeeCsvCreatedAt)
+        : base(exportFeeCsvCreatedAt) { }
 #pragma warning restore CS8618
 
-    public FeeCsvCreatedAt(IReadOnlyDictionary<string, JsonElement> rawData)
+    public ExportFeeCsvCreatedAt(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    FeeCsvCreatedAt(FrozenDictionary<string, JsonElement> rawData)
+    ExportFeeCsvCreatedAt(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="FeeCsvCreatedAtFromRaw.FromRawUnchecked"/>
-    public static FeeCsvCreatedAt FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    /// <inheritdoc cref="ExportFeeCsvCreatedAtFromRaw.FromRawUnchecked"/>
+    public static ExportFeeCsvCreatedAt FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
     }
 }
 
-class FeeCsvCreatedAtFromRaw : IFromRawJson<FeeCsvCreatedAt>
+class ExportFeeCsvCreatedAtFromRaw : IFromRawJson<ExportFeeCsvCreatedAt>
 {
     /// <inheritdoc/>
-    public FeeCsvCreatedAt FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        FeeCsvCreatedAt.FromRawUnchecked(rawData);
+    public ExportFeeCsvCreatedAt FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => ExportFeeCsvCreatedAt.FromRawUnchecked(rawData);
 }
 
 /// <summary>

@@ -145,6 +145,17 @@ public enum DeclineReason
     /// Your webhook declined the token provisioning attempt.
     /// </summary>
     WebhookDeclined,
+
+    /// <summary>
+    /// The tokenization attempt failed because the Card Verification Code (CVC)
+    /// was incorrect.
+    /// </summary>
+    IncorrectCardVerificationCode,
+
+    /// <summary>
+    /// The tokenization attempt was declined by the token requestor.
+    /// </summary>
+    DeclinedByTokenRequestor,
 }
 
 sealed class DeclineReasonConverter : JsonConverter<DeclineReason>
@@ -161,6 +172,8 @@ sealed class DeclineReasonConverter : JsonConverter<DeclineReason>
             "no_verification_method" => DeclineReason.NoVerificationMethod,
             "webhook_timed_out" => DeclineReason.WebhookTimedOut,
             "webhook_declined" => DeclineReason.WebhookDeclined,
+            "incorrect_card_verification_code" => DeclineReason.IncorrectCardVerificationCode,
+            "declined_by_token_requestor" => DeclineReason.DeclinedByTokenRequestor,
             _ => (DeclineReason)(-1),
         };
     }
@@ -179,6 +192,8 @@ sealed class DeclineReasonConverter : JsonConverter<DeclineReason>
                 DeclineReason.NoVerificationMethod => "no_verification_method",
                 DeclineReason.WebhookTimedOut => "webhook_timed_out",
                 DeclineReason.WebhookDeclined => "webhook_declined",
+                DeclineReason.IncorrectCardVerificationCode => "incorrect_card_verification_code",
+                DeclineReason.DeclinedByTokenRequestor => "declined_by_token_requestor",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

@@ -527,7 +527,7 @@ public enum DeclineReason
     TransactionNotAllowed,
 
     /// <summary>
-    /// The transaction was blocked by a Limit.
+    /// The transaction was blocked by a limit or an authorization control.
     /// </summary>
     BreachesLimit,
 
