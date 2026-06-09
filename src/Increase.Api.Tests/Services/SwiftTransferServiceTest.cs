@@ -13,7 +13,7 @@ public class SwiftTransferServiceTest : TestBase
             {
                 AccountID = "account_in71c4amph0vgo2qllky",
                 AccountNumber = "987654321",
-                BankIdentificationCode = "ECBFDEFFTPP",
+                BankIdentificationCode = "FRNYUS33XXX",
                 CreditorAddress = new()
                 {
                     City = "Frankfurt",

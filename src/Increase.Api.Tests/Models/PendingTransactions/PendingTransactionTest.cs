@@ -81,6 +81,9 @@ public class PendingTransactionTest : TestBase
                     DigitalWalletTokenID = null,
                     Direction = PendingTransactions::Direction.Settlement,
                     ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Healthcare = new(
+                        PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+                    ),
                     MerchantAcceptorID = "5665270011000168",
                     MerchantCategoryCode = "5734",
                     MerchantCity = "New York",
@@ -276,6 +279,7 @@ public class PendingTransactionTest : TestBase
                 DigitalWalletTokenID = null,
                 Direction = PendingTransactions::Direction.Settlement,
                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
                 MerchantAcceptorID = "5665270011000168",
                 MerchantCategoryCode = "5734",
                 MerchantCity = "New York",
@@ -491,6 +495,9 @@ public class PendingTransactionTest : TestBase
                     DigitalWalletTokenID = null,
                     Direction = PendingTransactions::Direction.Settlement,
                     ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Healthcare = new(
+                        PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+                    ),
                     MerchantAcceptorID = "5665270011000168",
                     MerchantCategoryCode = "5734",
                     MerchantCity = "New York",
@@ -699,6 +706,9 @@ public class PendingTransactionTest : TestBase
                     DigitalWalletTokenID = null,
                     Direction = PendingTransactions::Direction.Settlement,
                     ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Healthcare = new(
+                        PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+                    ),
                     MerchantAcceptorID = "5665270011000168",
                     MerchantCategoryCode = "5734",
                     MerchantCity = "New York",
@@ -901,6 +911,7 @@ public class PendingTransactionTest : TestBase
                 DigitalWalletTokenID = null,
                 Direction = PendingTransactions::Direction.Settlement,
                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
                 MerchantAcceptorID = "5665270011000168",
                 MerchantCategoryCode = "5734",
                 MerchantCity = "New York",
@@ -1116,6 +1127,9 @@ public class PendingTransactionTest : TestBase
                     DigitalWalletTokenID = null,
                     Direction = PendingTransactions::Direction.Settlement,
                     ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Healthcare = new(
+                        PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+                    ),
                     MerchantAcceptorID = "5665270011000168",
                     MerchantCategoryCode = "5734",
                     MerchantCity = "New York",
@@ -1318,6 +1332,9 @@ public class PendingTransactionTest : TestBase
                     DigitalWalletTokenID = null,
                     Direction = PendingTransactions::Direction.Settlement,
                     ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Healthcare = new(
+                        PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+                    ),
                     MerchantAcceptorID = "5665270011000168",
                     MerchantCategoryCode = "5734",
                     MerchantCity = "New York",
@@ -1625,6 +1642,7 @@ public class SourceTest : TestBase
                 DigitalWalletTokenID = null,
                 Direction = PendingTransactions::Direction.Settlement,
                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
                 MerchantAcceptorID = "5665270011000168",
                 MerchantCategoryCode = "5734",
                 MerchantCity = "New York",
@@ -1806,6 +1824,7 @@ public class SourceTest : TestBase
             DigitalWalletTokenID = null,
             Direction = PendingTransactions::Direction.Settlement,
             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "5665270011000168",
             MerchantCategoryCode = "5734",
             MerchantCity = "New York",
@@ -2023,6 +2042,7 @@ public class SourceTest : TestBase
                 DigitalWalletTokenID = null,
                 Direction = PendingTransactions::Direction.Settlement,
                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
                 MerchantAcceptorID = "5665270011000168",
                 MerchantCategoryCode = "5734",
                 MerchantCity = "New York",
@@ -2216,6 +2236,7 @@ public class SourceTest : TestBase
                 DigitalWalletTokenID = null,
                 Direction = PendingTransactions::Direction.Settlement,
                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
                 MerchantAcceptorID = "5665270011000168",
                 MerchantCategoryCode = "5734",
                 MerchantCity = "New York",
@@ -2404,6 +2425,7 @@ public class SourceTest : TestBase
             DigitalWalletTokenID = null,
             Direction = PendingTransactions::Direction.Settlement,
             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "5665270011000168",
             MerchantCategoryCode = "5734",
             MerchantCity = "New York",
@@ -2621,6 +2643,7 @@ public class SourceTest : TestBase
                 DigitalWalletTokenID = null,
                 Direction = PendingTransactions::Direction.Settlement,
                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
                 MerchantAcceptorID = "5665270011000168",
                 MerchantCategoryCode = "5734",
                 MerchantCity = "New York",
@@ -2948,6 +2971,7 @@ public class SourceTest : TestBase
                 DigitalWalletTokenID = null,
                 Direction = PendingTransactions::Direction.Settlement,
                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
                 MerchantAcceptorID = "5665270011000168",
                 MerchantCategoryCode = "5734",
                 MerchantCity = "New York",
@@ -3866,6 +3890,7 @@ public class CardAuthorizationTest : TestBase
             DigitalWalletTokenID = null,
             Direction = PendingTransactions::Direction.Settlement,
             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "5665270011000168",
             MerchantCategoryCode = "5734",
             MerchantCity = "New York",
@@ -3959,6 +3984,9 @@ public class CardAuthorizationTest : TestBase
         ApiEnum<string, PendingTransactions::Direction> expectedDirection =
             PendingTransactions::Direction.Settlement;
         DateTimeOffset expectedExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        PendingTransactions::Healthcare expectedHealthcare = new(
+            PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+        );
         string expectedMerchantAcceptorID = "5665270011000168";
         string expectedMerchantCategoryCode = "5734";
         string expectedMerchantCity = "New York";
@@ -4035,6 +4063,7 @@ public class CardAuthorizationTest : TestBase
         Assert.Null(model.DigitalWalletTokenID);
         Assert.Equal(expectedDirection, model.Direction);
         Assert.Equal(expectedExpiresAt, model.ExpiresAt);
+        Assert.Equal(expectedHealthcare, model.Healthcare);
         Assert.Equal(expectedMerchantAcceptorID, model.MerchantAcceptorID);
         Assert.Equal(expectedMerchantCategoryCode, model.MerchantCategoryCode);
         Assert.Equal(expectedMerchantCity, model.MerchantCity);
@@ -4087,6 +4116,7 @@ public class CardAuthorizationTest : TestBase
             DigitalWalletTokenID = null,
             Direction = PendingTransactions::Direction.Settlement,
             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "5665270011000168",
             MerchantCategoryCode = "5734",
             MerchantCity = "New York",
@@ -4192,6 +4222,7 @@ public class CardAuthorizationTest : TestBase
             DigitalWalletTokenID = null,
             Direction = PendingTransactions::Direction.Settlement,
             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "5665270011000168",
             MerchantCategoryCode = "5734",
             MerchantCity = "New York",
@@ -4292,6 +4323,9 @@ public class CardAuthorizationTest : TestBase
         ApiEnum<string, PendingTransactions::Direction> expectedDirection =
             PendingTransactions::Direction.Settlement;
         DateTimeOffset expectedExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        PendingTransactions::Healthcare expectedHealthcare = new(
+            PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+        );
         string expectedMerchantAcceptorID = "5665270011000168";
         string expectedMerchantCategoryCode = "5734";
         string expectedMerchantCity = "New York";
@@ -4368,6 +4402,7 @@ public class CardAuthorizationTest : TestBase
         Assert.Null(deserialized.DigitalWalletTokenID);
         Assert.Equal(expectedDirection, deserialized.Direction);
         Assert.Equal(expectedExpiresAt, deserialized.ExpiresAt);
+        Assert.Equal(expectedHealthcare, deserialized.Healthcare);
         Assert.Equal(expectedMerchantAcceptorID, deserialized.MerchantAcceptorID);
         Assert.Equal(expectedMerchantCategoryCode, deserialized.MerchantCategoryCode);
         Assert.Equal(expectedMerchantCity, deserialized.MerchantCity);
@@ -4420,6 +4455,7 @@ public class CardAuthorizationTest : TestBase
             DigitalWalletTokenID = null,
             Direction = PendingTransactions::Direction.Settlement,
             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "5665270011000168",
             MerchantCategoryCode = "5734",
             MerchantCity = "New York",
@@ -4519,6 +4555,7 @@ public class CardAuthorizationTest : TestBase
             DigitalWalletTokenID = null,
             Direction = PendingTransactions::Direction.Settlement,
             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            Healthcare = new(PendingTransactions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "5665270011000168",
             MerchantCategoryCode = "5734",
             MerchantCity = "New York",
@@ -5615,6 +5652,158 @@ public class DirectionTest : TestBase
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, PendingTransactions::Direction>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class HealthcareTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new PendingTransactions::Healthcare
+        {
+            MerchantNinetyPercentEligibility =
+                PendingTransactions::MerchantNinetyPercentEligibility.Eligible,
+        };
+
+        ApiEnum<
+            string,
+            PendingTransactions::MerchantNinetyPercentEligibility
+        > expectedMerchantNinetyPercentEligibility =
+            PendingTransactions::MerchantNinetyPercentEligibility.Eligible;
+
+        Assert.Equal(
+            expectedMerchantNinetyPercentEligibility,
+            model.MerchantNinetyPercentEligibility
+        );
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new PendingTransactions::Healthcare
+        {
+            MerchantNinetyPercentEligibility =
+                PendingTransactions::MerchantNinetyPercentEligibility.Eligible,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<PendingTransactions::Healthcare>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new PendingTransactions::Healthcare
+        {
+            MerchantNinetyPercentEligibility =
+                PendingTransactions::MerchantNinetyPercentEligibility.Eligible,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<PendingTransactions::Healthcare>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<
+            string,
+            PendingTransactions::MerchantNinetyPercentEligibility
+        > expectedMerchantNinetyPercentEligibility =
+            PendingTransactions::MerchantNinetyPercentEligibility.Eligible;
+
+        Assert.Equal(
+            expectedMerchantNinetyPercentEligibility,
+            deserialized.MerchantNinetyPercentEligibility
+        );
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new PendingTransactions::Healthcare
+        {
+            MerchantNinetyPercentEligibility =
+                PendingTransactions::MerchantNinetyPercentEligibility.Eligible,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PendingTransactions::Healthcare
+        {
+            MerchantNinetyPercentEligibility =
+                PendingTransactions::MerchantNinetyPercentEligibility.Eligible,
+        };
+
+        PendingTransactions::Healthcare copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class MerchantNinetyPercentEligibilityTest : TestBase
+{
+    [Theory]
+    [InlineData(PendingTransactions::MerchantNinetyPercentEligibility.Eligible)]
+    [InlineData(PendingTransactions::MerchantNinetyPercentEligibility.NotEligible)]
+    public void Validation_Works(PendingTransactions::MerchantNinetyPercentEligibility rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::MerchantNinetyPercentEligibility> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::MerchantNinetyPercentEligibility>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PendingTransactions::MerchantNinetyPercentEligibility.Eligible)]
+    [InlineData(PendingTransactions::MerchantNinetyPercentEligibility.NotEligible)]
+    public void SerializationRoundtrip_Works(
+        PendingTransactions::MerchantNinetyPercentEligibility rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::MerchantNinetyPercentEligibility> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::MerchantNinetyPercentEligibility>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::MerchantNinetyPercentEligibility>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::MerchantNinetyPercentEligibility>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);

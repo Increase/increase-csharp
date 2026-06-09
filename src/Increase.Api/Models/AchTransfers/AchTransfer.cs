@@ -344,8 +344,8 @@ public sealed record class AchTransfer : JsonModel
     }
 
     /// <summary>
-    /// If the receiving bank accepts the transfer but notifies that future transfers
-    /// should use different details, this will contain those details.
+    /// If the receiving bank notifies that future transfers should use different
+    /// details, this will contain those details.
     /// </summary>
     public required IReadOnlyList<NotificationsOfChange> NotificationsOfChange
     {
@@ -2590,6 +2590,11 @@ public enum CorrectedAccountFunding
     Savings,
 
     /// <summary>
+    /// A loan account used in a lender-borrower relationship. Uncommon.
+    /// </summary>
+    Loan,
+
+    /// <summary>
     /// A bank's general ledger. Uncommon.
     /// </summary>
     GeneralLedger,
@@ -2607,6 +2612,7 @@ sealed class CorrectedAccountFundingConverter : JsonConverter<CorrectedAccountFu
         {
             "checking" => CorrectedAccountFunding.Checking,
             "savings" => CorrectedAccountFunding.Savings,
+            "loan" => CorrectedAccountFunding.Loan,
             "general_ledger" => CorrectedAccountFunding.GeneralLedger,
             _ => (CorrectedAccountFunding)(-1),
         };
@@ -2624,6 +2630,7 @@ sealed class CorrectedAccountFundingConverter : JsonConverter<CorrectedAccountFu
             {
                 CorrectedAccountFunding.Checking => "checking",
                 CorrectedAccountFunding.Savings => "savings",
+                CorrectedAccountFunding.Loan => "loan",
                 CorrectedAccountFunding.GeneralLedger => "general_ledger",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

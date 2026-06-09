@@ -1303,12 +1303,12 @@ public sealed record class CheckTransferPhysicalCheck : JsonModel
     /// <summary>
     /// The shipping method for the check.
     /// </summary>
-    public required ApiEnum<string, CheckTransferPhysicalCheckShippingMethod>? ShippingMethod
+    public required ApiEnum<string, CheckTransferPhysicalCheckShippingMethod> ShippingMethod
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<
+            return this._rawData.GetNotNullClass<
                 ApiEnum<string, CheckTransferPhysicalCheckShippingMethod>
             >("shipping_method");
         }
@@ -1363,7 +1363,7 @@ public sealed record class CheckTransferPhysicalCheck : JsonModel
         }
         _ = this.RecipientName;
         this.ReturnAddress?.Validate();
-        this.ShippingMethod?.Validate();
+        this.ShippingMethod.Validate();
         this.Signature.Validate();
         foreach (var item in this.TrackingUpdates)
         {
@@ -2055,7 +2055,9 @@ public enum TrackingUpdateCategory
     ProcessedForDelivery,
 
     /// <summary>
-    /// The check has been delivered.
+    /// The check has been delivered. Note that some couriers track delivery status
+    /// based on driver location data rather than an explicit scan. While uncommon,
+    /// a single check may have more than one delivered event.
     /// </summary>
     Delivered,
 

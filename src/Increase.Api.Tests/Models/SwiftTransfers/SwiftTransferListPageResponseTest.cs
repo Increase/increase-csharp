@@ -21,7 +21,7 @@ public class SwiftTransferListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
                     Amount = 100,
-                    BankIdentificationCode = "ECBFDEFFTPP",
+                    BankIdentificationCode = "FRNYUS33XXX",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreatedBy = new()
                     {
@@ -74,7 +74,7 @@ public class SwiftTransferListPageResponseTest : TestBase
                 AccountID = "account_in71c4amph0vgo2qllky",
                 AccountNumber = "987654321",
                 Amount = 100,
-                BankIdentificationCode = "ECBFDEFFTPP",
+                BankIdentificationCode = "FRNYUS33XXX",
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CreatedBy = new()
                 {
@@ -139,7 +139,7 @@ public class SwiftTransferListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
                     Amount = 100,
-                    BankIdentificationCode = "ECBFDEFFTPP",
+                    BankIdentificationCode = "FRNYUS33XXX",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreatedBy = new()
                     {
@@ -207,7 +207,7 @@ public class SwiftTransferListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
                     Amount = 100,
-                    BankIdentificationCode = "ECBFDEFFTPP",
+                    BankIdentificationCode = "FRNYUS33XXX",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreatedBy = new()
                     {
@@ -268,7 +268,7 @@ public class SwiftTransferListPageResponseTest : TestBase
                 AccountID = "account_in71c4amph0vgo2qllky",
                 AccountNumber = "987654321",
                 Amount = 100,
-                BankIdentificationCode = "ECBFDEFFTPP",
+                BankIdentificationCode = "FRNYUS33XXX",
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CreatedBy = new()
                 {
@@ -333,7 +333,7 @@ public class SwiftTransferListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
                     Amount = 100,
-                    BankIdentificationCode = "ECBFDEFFTPP",
+                    BankIdentificationCode = "FRNYUS33XXX",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreatedBy = new()
                     {
@@ -394,7 +394,7 @@ public class SwiftTransferListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
                     Amount = 100,
-                    BankIdentificationCode = "ECBFDEFFTPP",
+                    BankIdentificationCode = "FRNYUS33XXX",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreatedBy = new()
                     {

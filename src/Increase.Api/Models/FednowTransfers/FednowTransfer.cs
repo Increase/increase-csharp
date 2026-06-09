@@ -153,6 +153,19 @@ public sealed record class FednowTransfer : JsonModel
     }
 
     /// <summary>
+    /// The debtor's address.
+    /// </summary>
+    public required FednowTransferDebtorAddress? DebtorAddress
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<FednowTransferDebtorAddress>("debtor_address");
+        }
+        init { this._rawData.Set("debtor_address", value); }
+    }
+
+    /// <summary>
     /// The name of the transfer's sender. If not provided, defaults to the name of
     /// the account's entity.
     /// </summary>
@@ -342,6 +355,7 @@ public sealed record class FednowTransfer : JsonModel
         this.CreditorAddress?.Validate();
         _ = this.CreditorName;
         this.Currency.Validate();
+        this.DebtorAddress?.Validate();
         _ = this.DebtorName;
         _ = this.ExternalAccountID;
         _ = this.IdempotencyKey;
@@ -980,6 +994,113 @@ sealed class CurrencyConverter : JsonConverter<Currency>
             options
         );
     }
+}
+
+/// <summary>
+/// The debtor's address.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<FednowTransferDebtorAddress, FednowTransferDebtorAddressFromRaw>)
+)]
+public sealed record class FednowTransferDebtorAddress : JsonModel
+{
+    /// <summary>
+    /// The city, district, town, or village of the address.
+    /// </summary>
+    public required string? City
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("city");
+        }
+        init { this._rawData.Set("city", value); }
+    }
+
+    /// <summary>
+    /// The first line of the address.
+    /// </summary>
+    public required string? Line1
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("line1");
+        }
+        init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// The ZIP code of the address.
+    /// </summary>
+    public required string? PostalCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("postal_code");
+        }
+        init { this._rawData.Set("postal_code", value); }
+    }
+
+    /// <summary>
+    /// The address state.
+    /// </summary>
+    public required string? State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("state");
+        }
+        init { this._rawData.Set("state", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.City;
+        _ = this.Line1;
+        _ = this.PostalCode;
+        _ = this.State;
+    }
+
+    public FednowTransferDebtorAddress() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public FednowTransferDebtorAddress(FednowTransferDebtorAddress fednowTransferDebtorAddress)
+        : base(fednowTransferDebtorAddress) { }
+#pragma warning restore CS8618
+
+    public FednowTransferDebtorAddress(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    FednowTransferDebtorAddress(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="FednowTransferDebtorAddressFromRaw.FromRawUnchecked"/>
+    public static FednowTransferDebtorAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class FednowTransferDebtorAddressFromRaw : IFromRawJson<FednowTransferDebtorAddress>
+{
+    /// <inheritdoc/>
+    public FednowTransferDebtorAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => FednowTransferDebtorAddress.FromRawUnchecked(rawData);
 }
 
 /// <summary>

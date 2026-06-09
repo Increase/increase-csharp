@@ -72,7 +72,8 @@ public class CheckTransferTest : TestBase
                     PostalCode = "10045",
                     State = "NY",
                 },
-                ShippingMethod = null,
+                ShippingMethod =
+                    CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                 Signature = new() { ImageFileID = null, Text = "Ian Crease" },
                 TrackingUpdates =
                 [
@@ -172,7 +173,8 @@ public class CheckTransferTest : TestBase
                 PostalCode = "10045",
                 State = "NY",
             },
-            ShippingMethod = null,
+            ShippingMethod =
+                CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = null, Text = "Ian Crease" },
             TrackingUpdates =
             [
@@ -305,7 +307,8 @@ public class CheckTransferTest : TestBase
                     PostalCode = "10045",
                     State = "NY",
                 },
-                ShippingMethod = null,
+                ShippingMethod =
+                    CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                 Signature = new() { ImageFileID = null, Text = "Ian Crease" },
                 TrackingUpdates =
                 [
@@ -420,7 +423,8 @@ public class CheckTransferTest : TestBase
                     PostalCode = "10045",
                     State = "NY",
                 },
-                ShippingMethod = null,
+                ShippingMethod =
+                    CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                 Signature = new() { ImageFileID = null, Text = "Ian Crease" },
                 TrackingUpdates =
                 [
@@ -527,7 +531,8 @@ public class CheckTransferTest : TestBase
                 PostalCode = "10045",
                 State = "NY",
             },
-            ShippingMethod = null,
+            ShippingMethod =
+                CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = null, Text = "Ian Crease" },
             TrackingUpdates =
             [
@@ -663,7 +668,8 @@ public class CheckTransferTest : TestBase
                     PostalCode = "10045",
                     State = "NY",
                 },
-                ShippingMethod = null,
+                ShippingMethod =
+                    CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                 Signature = new() { ImageFileID = null, Text = "Ian Crease" },
                 TrackingUpdates =
                 [
@@ -772,7 +778,8 @@ public class CheckTransferTest : TestBase
                     PostalCode = "10045",
                     State = "NY",
                 },
-                ShippingMethod = null,
+                ShippingMethod =
+                    CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                 Signature = new() { ImageFileID = null, Text = "Ian Crease" },
                 TrackingUpdates =
                 [

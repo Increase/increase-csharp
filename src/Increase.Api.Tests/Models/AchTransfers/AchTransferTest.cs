@@ -2879,6 +2879,7 @@ public class CorrectedAccountFundingTest : TestBase
     [Theory]
     [InlineData(AchTransfers::CorrectedAccountFunding.Checking)]
     [InlineData(AchTransfers::CorrectedAccountFunding.Savings)]
+    [InlineData(AchTransfers::CorrectedAccountFunding.Loan)]
     [InlineData(AchTransfers::CorrectedAccountFunding.GeneralLedger)]
     public void Validation_Works(AchTransfers::CorrectedAccountFunding rawValue)
     {
@@ -2901,6 +2902,7 @@ public class CorrectedAccountFundingTest : TestBase
     [Theory]
     [InlineData(AchTransfers::CorrectedAccountFunding.Checking)]
     [InlineData(AchTransfers::CorrectedAccountFunding.Savings)]
+    [InlineData(AchTransfers::CorrectedAccountFunding.Loan)]
     [InlineData(AchTransfers::CorrectedAccountFunding.GeneralLedger)]
     public void SerializationRoundtrip_Works(AchTransfers::CorrectedAccountFunding rawValue)
     {

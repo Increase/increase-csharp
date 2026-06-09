@@ -111,6 +111,7 @@ public class RealTimeDecisionTest : TestBase
                 ),
                 DigitalWalletTokenID = null,
                 Direction = RealTimeDecisions::Direction.Settlement,
+                Healthcare = new(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible),
                 MerchantAcceptorID = "5665270011000168",
                 MerchantCategoryCode = "5734",
                 MerchantCity = "New York",
@@ -382,6 +383,7 @@ public class RealTimeDecisionTest : TestBase
             ),
             DigitalWalletTokenID = null,
             Direction = RealTimeDecisions::Direction.Settlement,
+            Healthcare = new(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "5665270011000168",
             MerchantCategoryCode = "5734",
             MerchantCity = "New York",
@@ -673,6 +675,7 @@ public class RealTimeDecisionTest : TestBase
                 ),
                 DigitalWalletTokenID = null,
                 Direction = RealTimeDecisions::Direction.Settlement,
+                Healthcare = new(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible),
                 MerchantAcceptorID = "5665270011000168",
                 MerchantCategoryCode = "5734",
                 MerchantCity = "New York",
@@ -957,6 +960,7 @@ public class RealTimeDecisionTest : TestBase
                 ),
                 DigitalWalletTokenID = null,
                 Direction = RealTimeDecisions::Direction.Settlement,
+                Healthcare = new(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible),
                 MerchantAcceptorID = "5665270011000168",
                 MerchantCategoryCode = "5734",
                 MerchantCity = "New York",
@@ -1235,6 +1239,7 @@ public class RealTimeDecisionTest : TestBase
             ),
             DigitalWalletTokenID = null,
             Direction = RealTimeDecisions::Direction.Settlement,
+            Healthcare = new(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "5665270011000168",
             MerchantCategoryCode = "5734",
             MerchantCity = "New York",
@@ -1526,6 +1531,7 @@ public class RealTimeDecisionTest : TestBase
                 ),
                 DigitalWalletTokenID = null,
                 Direction = RealTimeDecisions::Direction.Settlement,
+                Healthcare = new(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible),
                 MerchantAcceptorID = "5665270011000168",
                 MerchantCategoryCode = "5734",
                 MerchantCity = "New York",
@@ -1804,6 +1810,7 @@ public class RealTimeDecisionTest : TestBase
                 ),
                 DigitalWalletTokenID = null,
                 Direction = RealTimeDecisions::Direction.Settlement,
+                Healthcare = new(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible),
                 MerchantAcceptorID = "5665270011000168",
                 MerchantCategoryCode = "5734",
                 MerchantCity = "New York",
@@ -4000,6 +4007,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
             ),
             DigitalWalletTokenID = "digital_wallet_token_id",
             Direction = RealTimeDecisions::Direction.Settlement,
+            Healthcare = new(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "merchant_acceptor_id",
             MerchantCategoryCode = "merchant_category_code",
             MerchantCity = "merchant_city",
@@ -4096,6 +4104,9 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
         string expectedDigitalWalletTokenID = "digital_wallet_token_id";
         ApiEnum<string, RealTimeDecisions::Direction> expectedDirection =
             RealTimeDecisions::Direction.Settlement;
+        RealTimeDecisions::Healthcare expectedHealthcare = new(
+            RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible
+        );
         string expectedMerchantAcceptorID = "merchant_acceptor_id";
         string expectedMerchantCategoryCode = "merchant_category_code";
         string expectedMerchantCity = "merchant_city";
@@ -4175,6 +4186,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
         Assert.Equal(expectedDecline, model.Decline);
         Assert.Equal(expectedDigitalWalletTokenID, model.DigitalWalletTokenID);
         Assert.Equal(expectedDirection, model.Direction);
+        Assert.Equal(expectedHealthcare, model.Healthcare);
         Assert.Equal(expectedMerchantAcceptorID, model.MerchantAcceptorID);
         Assert.Equal(expectedMerchantCategoryCode, model.MerchantCategoryCode);
         Assert.Equal(expectedMerchantCity, model.MerchantCity);
@@ -4225,6 +4237,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
             ),
             DigitalWalletTokenID = "digital_wallet_token_id",
             Direction = RealTimeDecisions::Direction.Settlement,
+            Healthcare = new(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "merchant_acceptor_id",
             MerchantCategoryCode = "merchant_category_code",
             MerchantCity = "merchant_city",
@@ -4332,6 +4345,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
             ),
             DigitalWalletTokenID = "digital_wallet_token_id",
             Direction = RealTimeDecisions::Direction.Settlement,
+            Healthcare = new(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "merchant_acceptor_id",
             MerchantCategoryCode = "merchant_category_code",
             MerchantCity = "merchant_city",
@@ -4436,6 +4450,9 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
         string expectedDigitalWalletTokenID = "digital_wallet_token_id";
         ApiEnum<string, RealTimeDecisions::Direction> expectedDirection =
             RealTimeDecisions::Direction.Settlement;
+        RealTimeDecisions::Healthcare expectedHealthcare = new(
+            RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible
+        );
         string expectedMerchantAcceptorID = "merchant_acceptor_id";
         string expectedMerchantCategoryCode = "merchant_category_code";
         string expectedMerchantCity = "merchant_city";
@@ -4515,6 +4532,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
         Assert.Equal(expectedDecline, deserialized.Decline);
         Assert.Equal(expectedDigitalWalletTokenID, deserialized.DigitalWalletTokenID);
         Assert.Equal(expectedDirection, deserialized.Direction);
+        Assert.Equal(expectedHealthcare, deserialized.Healthcare);
         Assert.Equal(expectedMerchantAcceptorID, deserialized.MerchantAcceptorID);
         Assert.Equal(expectedMerchantCategoryCode, deserialized.MerchantCategoryCode);
         Assert.Equal(expectedMerchantCity, deserialized.MerchantCity);
@@ -4565,6 +4583,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
             ),
             DigitalWalletTokenID = "digital_wallet_token_id",
             Direction = RealTimeDecisions::Direction.Settlement,
+            Healthcare = new(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "merchant_acceptor_id",
             MerchantCategoryCode = "merchant_category_code",
             MerchantCity = "merchant_city",
@@ -4665,6 +4684,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
             ),
             DigitalWalletTokenID = "digital_wallet_token_id",
             Direction = RealTimeDecisions::Direction.Settlement,
+            Healthcare = new(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible),
             MerchantAcceptorID = "merchant_acceptor_id",
             MerchantCategoryCode = "merchant_category_code",
             MerchantCity = "merchant_city",
@@ -5956,6 +5976,158 @@ public class DirectionTest : TestBase
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, RealTimeDecisions::Direction>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class HealthcareTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new RealTimeDecisions::Healthcare
+        {
+            MerchantNinetyPercentEligibility =
+                RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible,
+        };
+
+        ApiEnum<
+            string,
+            RealTimeDecisions::MerchantNinetyPercentEligibility
+        > expectedMerchantNinetyPercentEligibility =
+            RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible;
+
+        Assert.Equal(
+            expectedMerchantNinetyPercentEligibility,
+            model.MerchantNinetyPercentEligibility
+        );
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new RealTimeDecisions::Healthcare
+        {
+            MerchantNinetyPercentEligibility =
+                RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<RealTimeDecisions::Healthcare>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new RealTimeDecisions::Healthcare
+        {
+            MerchantNinetyPercentEligibility =
+                RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<RealTimeDecisions::Healthcare>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<
+            string,
+            RealTimeDecisions::MerchantNinetyPercentEligibility
+        > expectedMerchantNinetyPercentEligibility =
+            RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible;
+
+        Assert.Equal(
+            expectedMerchantNinetyPercentEligibility,
+            deserialized.MerchantNinetyPercentEligibility
+        );
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new RealTimeDecisions::Healthcare
+        {
+            MerchantNinetyPercentEligibility =
+                RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RealTimeDecisions::Healthcare
+        {
+            MerchantNinetyPercentEligibility =
+                RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible,
+        };
+
+        RealTimeDecisions::Healthcare copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class MerchantNinetyPercentEligibilityTest : TestBase
+{
+    [Theory]
+    [InlineData(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible)]
+    [InlineData(RealTimeDecisions::MerchantNinetyPercentEligibility.NotEligible)]
+    public void Validation_Works(RealTimeDecisions::MerchantNinetyPercentEligibility rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, RealTimeDecisions::MerchantNinetyPercentEligibility> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, RealTimeDecisions::MerchantNinetyPercentEligibility>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(RealTimeDecisions::MerchantNinetyPercentEligibility.Eligible)]
+    [InlineData(RealTimeDecisions::MerchantNinetyPercentEligibility.NotEligible)]
+    public void SerializationRoundtrip_Works(
+        RealTimeDecisions::MerchantNinetyPercentEligibility rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, RealTimeDecisions::MerchantNinetyPercentEligibility> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, RealTimeDecisions::MerchantNinetyPercentEligibility>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, RealTimeDecisions::MerchantNinetyPercentEligibility>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, RealTimeDecisions::MerchantNinetyPercentEligibility>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
