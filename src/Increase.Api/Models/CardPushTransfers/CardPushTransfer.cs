@@ -201,6 +201,20 @@ public sealed record class CardPushTransfer : JsonModel
     }
 
     /// <summary>
+    /// The legal business name of the merchant (generally your business) sending
+    /// the transfer.
+    /// </summary>
+    public required string? MerchantLegalBusinessName
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("merchant_legal_business_name");
+        }
+        init { this._rawData.Set("merchant_legal_business_name", value); }
+    }
+
+    /// <summary>
     /// The merchant name shows up as the statement descriptor for the transfer.
     /// This is typically the name of your business or organization.
     /// </summary>
@@ -256,6 +270,19 @@ public sealed record class CardPushTransfer : JsonModel
     }
 
     /// <summary>
+    /// The street address of the merchant (generally your business) sending the transfer.
+    /// </summary>
+    public required string? MerchantStreetAddress
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("merchant_street_address");
+        }
+        init { this._rawData.Set("merchant_street_address", value); }
+    }
+
+    /// <summary>
     /// The amount that was transferred. The receiving bank will have converted this
     /// to the cardholder's currency. The amount that is applied to your Increase
     /// account matches the currency of your account.
@@ -270,6 +297,59 @@ public sealed record class CardPushTransfer : JsonModel
             );
         }
         init { this._rawData.Set("presentment_amount", value); }
+    }
+
+    /// <summary>
+    /// The city of the recipient. Required if the card is issued in Canada.
+    /// </summary>
+    public required string? RecipientAddressCity
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("recipient_address_city");
+        }
+        init { this._rawData.Set("recipient_address_city", value); }
+    }
+
+    /// <summary>
+    /// The first line of the recipient's address. Required if the card is issued
+    /// in Canada.
+    /// </summary>
+    public required string? RecipientAddressLine1
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("recipient_address_line1");
+        }
+        init { this._rawData.Set("recipient_address_line1", value); }
+    }
+
+    /// <summary>
+    /// The postal code of the recipient. Required if the card is issued in Canada.
+    /// </summary>
+    public required string? RecipientAddressPostalCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("recipient_address_postal_code");
+        }
+        init { this._rawData.Set("recipient_address_postal_code", value); }
+    }
+
+    /// <summary>
+    /// The state or province of the recipient. Required if the card is issued in Canada.
+    /// </summary>
+    public required string? RecipientAddressState
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("recipient_address_state");
+        }
+        init { this._rawData.Set("recipient_address_state", value); }
     }
 
     /// <summary>
@@ -434,11 +514,17 @@ public sealed record class CardPushTransfer : JsonModel
         _ = this.IdempotencyKey;
         _ = this.MerchantCategoryCode;
         _ = this.MerchantCityName;
+        _ = this.MerchantLegalBusinessName;
         _ = this.MerchantName;
         _ = this.MerchantNamePrefix;
         _ = this.MerchantPostalCode;
         _ = this.MerchantState;
+        _ = this.MerchantStreetAddress;
         this.PresentmentAmount.Validate();
+        _ = this.RecipientAddressCity;
+        _ = this.RecipientAddressLine1;
+        _ = this.RecipientAddressPostalCode;
+        _ = this.RecipientAddressState;
         _ = this.RecipientName;
         this.Route.Validate();
         _ = this.SenderAddressCity;

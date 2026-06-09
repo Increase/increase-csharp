@@ -1677,6 +1677,19 @@ public sealed record class CardAuthorization : JsonModel
     }
 
     /// <summary>
+    /// The healthcare-related fields for this authorization. Only present for specific programs.
+    /// </summary>
+    public required Healthcare? Healthcare
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<Healthcare>("healthcare");
+        }
+        init { this._rawData.Set("healthcare", value); }
+    }
+
+    /// <summary>
     /// The merchant identifier (commonly abbreviated as MID) of the merchant the
     /// card is transacting with.
     /// </summary>
@@ -1966,6 +1979,7 @@ public sealed record class CardAuthorization : JsonModel
         _ = this.DigitalWalletTokenID;
         this.Direction.Validate();
         _ = this.ExpiresAt;
+        this.Healthcare?.Validate();
         _ = this.MerchantAcceptorID;
         _ = this.MerchantCategoryCode;
         _ = this.MerchantCity;
@@ -3140,6 +3154,141 @@ sealed class DirectionConverter : JsonConverter<Direction>
             {
                 Direction.Settlement => "settlement",
                 Direction.Refund => "refund",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The healthcare-related fields for this authorization. Only present for specific programs.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Healthcare, HealthcareFromRaw>))]
+public sealed record class Healthcare : JsonModel
+{
+    /// <summary>
+    /// The merchant's eligibility under the Internal Revenue Service's 90% Rule
+    /// for Flexible Spending Account (FSA) and Health Savings Account (HSA) eligible
+    /// products. The eligibility is determined based on the list of merchants maintained
+    /// by the Special Interest Group for IIAS Standards (SIGIS).
+    /// </summary>
+    public required ApiEnum<
+        string,
+        MerchantNinetyPercentEligibility
+    > MerchantNinetyPercentEligibility
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, MerchantNinetyPercentEligibility>>(
+                "merchant_ninety_percent_eligibility"
+            );
+        }
+        init { this._rawData.Set("merchant_ninety_percent_eligibility", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.MerchantNinetyPercentEligibility.Validate();
+    }
+
+    public Healthcare() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Healthcare(Healthcare healthcare)
+        : base(healthcare) { }
+#pragma warning restore CS8618
+
+    public Healthcare(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Healthcare(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="HealthcareFromRaw.FromRawUnchecked"/>
+    public static Healthcare FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public Healthcare(
+        ApiEnum<string, MerchantNinetyPercentEligibility> merchantNinetyPercentEligibility
+    )
+        : this()
+    {
+        this.MerchantNinetyPercentEligibility = merchantNinetyPercentEligibility;
+    }
+}
+
+class HealthcareFromRaw : IFromRawJson<Healthcare>
+{
+    /// <inheritdoc/>
+    public Healthcare FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Healthcare.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The merchant's eligibility under the Internal Revenue Service's 90% Rule for Flexible
+/// Spending Account (FSA) and Health Savings Account (HSA) eligible products. The
+/// eligibility is determined based on the list of merchants maintained by the Special
+/// Interest Group for IIAS Standards (SIGIS).
+/// </summary>
+[JsonConverter(typeof(MerchantNinetyPercentEligibilityConverter))]
+public enum MerchantNinetyPercentEligibility
+{
+    /// <summary>
+    /// The merchant is eligible for treatment under the 90% rule.
+    /// </summary>
+    Eligible,
+
+    /// <summary>
+    /// The merchant is not eligible for treatment under the 90% rule.
+    /// </summary>
+    NotEligible,
+}
+
+sealed class MerchantNinetyPercentEligibilityConverter
+    : JsonConverter<MerchantNinetyPercentEligibility>
+{
+    public override MerchantNinetyPercentEligibility Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "eligible" => MerchantNinetyPercentEligibility.Eligible,
+            "not_eligible" => MerchantNinetyPercentEligibility.NotEligible,
+            _ => (MerchantNinetyPercentEligibility)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        MerchantNinetyPercentEligibility value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                MerchantNinetyPercentEligibility.Eligible => "eligible",
+                MerchantNinetyPercentEligibility.NotEligible => "not_eligible",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

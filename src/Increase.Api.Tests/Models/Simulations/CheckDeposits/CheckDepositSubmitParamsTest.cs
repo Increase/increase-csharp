@@ -18,6 +18,7 @@ public class CheckDepositSubmitParamsTest : TestBase
                 AccountNumber = "x",
                 RoutingNumber = "x",
                 AuxiliaryOnUs = "x",
+                SerialNumber = "x",
             },
         };
 
@@ -27,6 +28,7 @@ public class CheckDepositSubmitParamsTest : TestBase
             AccountNumber = "x",
             RoutingNumber = "x",
             AuxiliaryOnUs = "x",
+            SerialNumber = "x",
         };
 
         Assert.Equal(expectedCheckDepositID, parameters.CheckDepositID);
@@ -91,6 +93,7 @@ public class CheckDepositSubmitParamsTest : TestBase
                 AccountNumber = "x",
                 RoutingNumber = "x",
                 AuxiliaryOnUs = "x",
+                SerialNumber = "x",
             },
         };
 
@@ -110,15 +113,18 @@ public class ScanTest : TestBase
             AccountNumber = "x",
             RoutingNumber = "x",
             AuxiliaryOnUs = "x",
+            SerialNumber = "x",
         };
 
         string expectedAccountNumber = "x";
         string expectedRoutingNumber = "x";
         string expectedAuxiliaryOnUs = "x";
+        string expectedSerialNumber = "x";
 
         Assert.Equal(expectedAccountNumber, model.AccountNumber);
         Assert.Equal(expectedRoutingNumber, model.RoutingNumber);
         Assert.Equal(expectedAuxiliaryOnUs, model.AuxiliaryOnUs);
+        Assert.Equal(expectedSerialNumber, model.SerialNumber);
     }
 
     [Fact]
@@ -129,6 +135,7 @@ public class ScanTest : TestBase
             AccountNumber = "x",
             RoutingNumber = "x",
             AuxiliaryOnUs = "x",
+            SerialNumber = "x",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -145,6 +152,7 @@ public class ScanTest : TestBase
             AccountNumber = "x",
             RoutingNumber = "x",
             AuxiliaryOnUs = "x",
+            SerialNumber = "x",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -154,10 +162,12 @@ public class ScanTest : TestBase
         string expectedAccountNumber = "x";
         string expectedRoutingNumber = "x";
         string expectedAuxiliaryOnUs = "x";
+        string expectedSerialNumber = "x";
 
         Assert.Equal(expectedAccountNumber, deserialized.AccountNumber);
         Assert.Equal(expectedRoutingNumber, deserialized.RoutingNumber);
         Assert.Equal(expectedAuxiliaryOnUs, deserialized.AuxiliaryOnUs);
+        Assert.Equal(expectedSerialNumber, deserialized.SerialNumber);
     }
 
     [Fact]
@@ -168,6 +178,7 @@ public class ScanTest : TestBase
             AccountNumber = "x",
             RoutingNumber = "x",
             AuxiliaryOnUs = "x",
+            SerialNumber = "x",
         };
 
         model.Validate();
@@ -180,6 +191,8 @@ public class ScanTest : TestBase
 
         Assert.Null(model.AuxiliaryOnUs);
         Assert.False(model.RawData.ContainsKey("auxiliary_on_us"));
+        Assert.Null(model.SerialNumber);
+        Assert.False(model.RawData.ContainsKey("serial_number"));
     }
 
     [Fact]
@@ -200,10 +213,13 @@ public class ScanTest : TestBase
 
             // Null should be interpreted as omitted for these properties
             AuxiliaryOnUs = null,
+            SerialNumber = null,
         };
 
         Assert.Null(model.AuxiliaryOnUs);
         Assert.False(model.RawData.ContainsKey("auxiliary_on_us"));
+        Assert.Null(model.SerialNumber);
+        Assert.False(model.RawData.ContainsKey("serial_number"));
     }
 
     [Fact]
@@ -216,6 +232,7 @@ public class ScanTest : TestBase
 
             // Null should be interpreted as omitted for these properties
             AuxiliaryOnUs = null,
+            SerialNumber = null,
         };
 
         model.Validate();
@@ -229,6 +246,7 @@ public class ScanTest : TestBase
             AccountNumber = "x",
             RoutingNumber = "x",
             AuxiliaryOnUs = "x",
+            SerialNumber = "x",
         };
 
         Scan copied = new(model);

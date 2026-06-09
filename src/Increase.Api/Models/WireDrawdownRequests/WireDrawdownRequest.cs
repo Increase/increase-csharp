@@ -183,6 +183,20 @@ public sealed record class WireDrawdownRequest : JsonModel
     }
 
     /// <summary>
+    /// A free-form reference string set by the sender, to be mirrored back in the
+    /// subsequent wire transfer.
+    /// </summary>
+    public required string? EndToEndIdentification
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("end_to_end_identification");
+        }
+        init { this._rawData.Set("end_to_end_identification", value); }
+    }
+
+    /// <summary>
     /// If the recipient fulfills the drawdown request by sending funds, then this
     /// will be the identifier of the corresponding Transaction.
     /// </summary>
@@ -256,6 +270,22 @@ public sealed record class WireDrawdownRequest : JsonModel
     }
 
     /// <summary>
+    /// The unique end-to-end transaction reference ([UETR](https://www.swift.com/payments/what-unique-end-end-transaction-reference-uetr))
+    /// of the drawdown request.
+    /// </summary>
+    public required string? UniqueEndToEndTransactionReference
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>(
+                "unique_end_to_end_transaction_reference"
+            );
+        }
+        init { this._rawData.Set("unique_end_to_end_transaction_reference", value); }
+    }
+
+    /// <summary>
     /// Remittance information the debtor will see as part of the drawdown request.
     /// </summary>
     public required string UnstructuredRemittanceInformation
@@ -283,11 +313,13 @@ public sealed record class WireDrawdownRequest : JsonModel
         _ = this.DebtorExternalAccountID;
         _ = this.DebtorName;
         _ = this.DebtorRoutingNumber;
+        _ = this.EndToEndIdentification;
         _ = this.FulfillmentInboundWireTransferID;
         _ = this.IdempotencyKey;
         this.Status.Validate();
         this.Submission?.Validate();
         this.Type.Validate();
+        _ = this.UniqueEndToEndTransactionReference;
         _ = this.UnstructuredRemittanceInformation;
     }
 

@@ -256,6 +256,9 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         DigitalWalletTokenID = null,
                         Direction = PendingTransactions::Direction.Settlement,
                         ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Healthcare = new(
+                            PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+                        ),
                         MerchantAcceptorID = "5665270011000168",
                         MerchantCategoryCode = "5734",
                         MerchantCity = "New York",
@@ -625,6 +628,9 @@ public class CardAuthorizationCreateResponseTest : TestBase
                     DigitalWalletTokenID = null,
                     Direction = PendingTransactions::Direction.Settlement,
                     ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Healthcare = new(
+                        PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+                    ),
                     MerchantAcceptorID = "5665270011000168",
                     MerchantCategoryCode = "5734",
                     MerchantCity = "New York",
@@ -1004,6 +1010,9 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         DigitalWalletTokenID = null,
                         Direction = PendingTransactions::Direction.Settlement,
                         ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Healthcare = new(
+                            PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+                        ),
                         MerchantAcceptorID = "5665270011000168",
                         MerchantCategoryCode = "5734",
                         MerchantCity = "New York",
@@ -1388,6 +1397,9 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         DigitalWalletTokenID = null,
                         Direction = PendingTransactions::Direction.Settlement,
                         ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Healthcare = new(
+                            PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+                        ),
                         MerchantAcceptorID = "5665270011000168",
                         MerchantCategoryCode = "5734",
                         MerchantCity = "New York",
@@ -1765,6 +1777,9 @@ public class CardAuthorizationCreateResponseTest : TestBase
                     DigitalWalletTokenID = null,
                     Direction = PendingTransactions::Direction.Settlement,
                     ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Healthcare = new(
+                        PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+                    ),
                     MerchantAcceptorID = "5665270011000168",
                     MerchantCategoryCode = "5734",
                     MerchantCity = "New York",
@@ -2144,6 +2159,9 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         DigitalWalletTokenID = null,
                         Direction = PendingTransactions::Direction.Settlement,
                         ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Healthcare = new(
+                            PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+                        ),
                         MerchantAcceptorID = "5665270011000168",
                         MerchantCategoryCode = "5734",
                         MerchantCity = "New York",
@@ -2521,6 +2539,9 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         DigitalWalletTokenID = null,
                         Direction = PendingTransactions::Direction.Settlement,
                         ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        Healthcare = new(
+                            PendingTransactions::MerchantNinetyPercentEligibility.Eligible
+                        ),
                         MerchantAcceptorID = "5665270011000168",
                         MerchantCategoryCode = "5734",
                         MerchantCity = "New York",

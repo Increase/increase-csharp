@@ -497,8 +497,10 @@ public sealed record class Source : JsonModel
 
     /// <summary>
     /// A Card Financial object. This field will be present in the JSON response if
-    /// and only if `category` is equal to `card_financial`. Card Financials are temporary
-    /// holds placed on a customer's funds with the intent to later clear a transaction.
+    /// and only if `category` is equal to `card_financial`. Card Financials are card
+    /// transactions that have cleared and settled. Unlike a Card Settlement, which
+    /// clears a previous authorization, a Card Financial is authorized and cleared
+    /// in a single message.
     /// </summary>
     public CardFinancial? CardFinancial
     {
@@ -3275,8 +3277,9 @@ class CardDisputeLossFromRaw : IFromRawJson<CardDisputeLoss>
 
 /// <summary>
 /// A Card Financial object. This field will be present in the JSON response if and
-/// only if `category` is equal to `card_financial`. Card Financials are temporary
-/// holds placed on a customer's funds with the intent to later clear a transaction.
+/// only if `category` is equal to `card_financial`. Card Financials are card transactions
+/// that have cleared and settled. Unlike a Card Settlement, which clears a previous
+/// authorization, a Card Financial is authorized and cleared in a single message.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<CardFinancial, CardFinancialFromRaw>))]
 public sealed record class CardFinancial : JsonModel
@@ -17384,6 +17387,19 @@ public sealed record class InboundWireTransfer : JsonModel
     }
 
     /// <summary>
+    /// The reason for the wire transfer, as set by the sender.
+    /// </summary>
+    public required string? Purpose
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("purpose");
+        }
+        init { this._rawData.Set("purpose", value); }
+    }
+
+    /// <summary>
     /// The ID of the Inbound Wire Transfer object that resulted in this Transaction.
     /// </summary>
     public required string TransferID
@@ -17442,6 +17458,7 @@ public sealed record class InboundWireTransfer : JsonModel
         _ = this.InputMessageAccountabilityData;
         _ = this.InstructingAgentRoutingNumber;
         _ = this.InstructionIdentification;
+        _ = this.Purpose;
         _ = this.TransferID;
         _ = this.UniqueEndToEndTransactionReference;
         _ = this.UnstructuredRemittanceInformation;

@@ -36,6 +36,7 @@ public class InboundWireTransferTest : TestBase
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
             InstructingAgentRoutingNumber = "101050001",
             InstructionIdentification = "202201180000001",
+            Purpose = "CASH",
             Reversal = new()
             {
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -69,6 +70,7 @@ public class InboundWireTransferTest : TestBase
         string expectedInputMessageAccountabilityData = "20220118MMQFMP0P000001";
         string expectedInstructingAgentRoutingNumber = "101050001";
         string expectedInstructionIdentification = "202201180000001";
+        string expectedPurpose = "CASH";
         InboundWireTransfers::Reversal expectedReversal = new()
         {
             Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -100,6 +102,7 @@ public class InboundWireTransferTest : TestBase
         Assert.Equal(expectedInputMessageAccountabilityData, model.InputMessageAccountabilityData);
         Assert.Equal(expectedInstructingAgentRoutingNumber, model.InstructingAgentRoutingNumber);
         Assert.Equal(expectedInstructionIdentification, model.InstructionIdentification);
+        Assert.Equal(expectedPurpose, model.Purpose);
         Assert.Equal(expectedReversal, model.Reversal);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedType, model.Type);
@@ -142,6 +145,7 @@ public class InboundWireTransferTest : TestBase
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
             InstructingAgentRoutingNumber = "101050001",
             InstructionIdentification = "202201180000001",
+            Purpose = "CASH",
             Reversal = new()
             {
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -191,6 +195,7 @@ public class InboundWireTransferTest : TestBase
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
             InstructingAgentRoutingNumber = "101050001",
             InstructionIdentification = "202201180000001",
+            Purpose = "CASH",
             Reversal = new()
             {
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -231,6 +236,7 @@ public class InboundWireTransferTest : TestBase
         string expectedInputMessageAccountabilityData = "20220118MMQFMP0P000001";
         string expectedInstructingAgentRoutingNumber = "101050001";
         string expectedInstructionIdentification = "202201180000001";
+        string expectedPurpose = "CASH";
         InboundWireTransfers::Reversal expectedReversal = new()
         {
             Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -268,6 +274,7 @@ public class InboundWireTransferTest : TestBase
             deserialized.InstructingAgentRoutingNumber
         );
         Assert.Equal(expectedInstructionIdentification, deserialized.InstructionIdentification);
+        Assert.Equal(expectedPurpose, deserialized.Purpose);
         Assert.Equal(expectedReversal, deserialized.Reversal);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedType, deserialized.Type);
@@ -310,6 +317,7 @@ public class InboundWireTransferTest : TestBase
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
             InstructingAgentRoutingNumber = "101050001",
             InstructionIdentification = "202201180000001",
+            Purpose = "CASH",
             Reversal = new()
             {
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -353,6 +361,7 @@ public class InboundWireTransferTest : TestBase
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
             InstructingAgentRoutingNumber = "101050001",
             InstructionIdentification = "202201180000001",
+            Purpose = "CASH",
             Reversal = new()
             {
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,

@@ -506,6 +506,26 @@ public enum UnwrapWebhookEventCategory
     IntrafiExclusionUpdated,
 
     /// <summary>
+    /// Occurs whenever a Loan Application is created.
+    /// </summary>
+    LoanApplicationCreated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Application is updated.
+    /// </summary>
+    LoanApplicationUpdated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Offer is created.
+    /// </summary>
+    LoanOfferCreated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Offer is updated.
+    /// </summary>
+    LoanOfferUpdated,
+
+    /// <summary>
     /// Occurs whenever a Lockbox is created.
     /// </summary>
     LockboxCreated,
@@ -792,6 +812,10 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                 UnwrapWebhookEventCategory.IntrafiAccountEnrollmentUpdated,
             "intrafi_exclusion.created" => UnwrapWebhookEventCategory.IntrafiExclusionCreated,
             "intrafi_exclusion.updated" => UnwrapWebhookEventCategory.IntrafiExclusionUpdated,
+            "loan_application.created" => UnwrapWebhookEventCategory.LoanApplicationCreated,
+            "loan_application.updated" => UnwrapWebhookEventCategory.LoanApplicationUpdated,
+            "loan_offer.created" => UnwrapWebhookEventCategory.LoanOfferCreated,
+            "loan_offer.updated" => UnwrapWebhookEventCategory.LoanOfferUpdated,
             "lockbox.created" => UnwrapWebhookEventCategory.LockboxCreated,
             "lockbox.updated" => UnwrapWebhookEventCategory.LockboxUpdated,
             "oauth_connection.created" => UnwrapWebhookEventCategory.OAuthConnectionCreated,
@@ -959,6 +983,10 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                     "intrafi_account_enrollment.updated",
                 UnwrapWebhookEventCategory.IntrafiExclusionCreated => "intrafi_exclusion.created",
                 UnwrapWebhookEventCategory.IntrafiExclusionUpdated => "intrafi_exclusion.updated",
+                UnwrapWebhookEventCategory.LoanApplicationCreated => "loan_application.created",
+                UnwrapWebhookEventCategory.LoanApplicationUpdated => "loan_application.updated",
+                UnwrapWebhookEventCategory.LoanOfferCreated => "loan_offer.created",
+                UnwrapWebhookEventCategory.LoanOfferUpdated => "loan_offer.updated",
                 UnwrapWebhookEventCategory.LockboxCreated => "lockbox.created",
                 UnwrapWebhookEventCategory.LockboxUpdated => "lockbox.updated",
                 UnwrapWebhookEventCategory.OAuthConnectionCreated => "oauth_connection.created",

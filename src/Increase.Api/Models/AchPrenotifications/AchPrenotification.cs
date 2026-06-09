@@ -373,12 +373,12 @@ class AchPrenotificationFromRaw : IFromRawJson<AchPrenotification>
 public enum AchPrenotificationCreditDebitIndicator
 {
     /// <summary>
-    /// The Prenotification is for an anticipated credit.
+    /// Credit
     /// </summary>
     Credit,
 
     /// <summary>
-    /// The Prenotification is for an anticipated debit.
+    /// Debit
     /// </summary>
     Debit,
 }
@@ -770,6 +770,11 @@ public enum CorrectedAccountFunding
     Savings,
 
     /// <summary>
+    /// A loan account used in a lender-borrower relationship. Uncommon.
+    /// </summary>
+    Loan,
+
+    /// <summary>
     /// A bank's general ledger. Uncommon.
     /// </summary>
     GeneralLedger,
@@ -787,6 +792,7 @@ sealed class CorrectedAccountFundingConverter : JsonConverter<CorrectedAccountFu
         {
             "checking" => CorrectedAccountFunding.Checking,
             "savings" => CorrectedAccountFunding.Savings,
+            "loan" => CorrectedAccountFunding.Loan,
             "general_ledger" => CorrectedAccountFunding.GeneralLedger,
             _ => (CorrectedAccountFunding)(-1),
         };
@@ -804,6 +810,7 @@ sealed class CorrectedAccountFundingConverter : JsonConverter<CorrectedAccountFu
             {
                 CorrectedAccountFunding.Checking => "checking",
                 CorrectedAccountFunding.Savings => "savings",
+                CorrectedAccountFunding.Loan => "loan",
                 CorrectedAccountFunding.GeneralLedger => "general_ledger",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

@@ -105,6 +105,8 @@ public class DeclineReasonTest : TestBase
     [InlineData(DeclineReason.NoVerificationMethod)]
     [InlineData(DeclineReason.WebhookTimedOut)]
     [InlineData(DeclineReason.WebhookDeclined)]
+    [InlineData(DeclineReason.IncorrectCardVerificationCode)]
+    [InlineData(DeclineReason.DeclinedByTokenRequestor)]
     public void Validation_Works(DeclineReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -129,6 +131,8 @@ public class DeclineReasonTest : TestBase
     [InlineData(DeclineReason.NoVerificationMethod)]
     [InlineData(DeclineReason.WebhookTimedOut)]
     [InlineData(DeclineReason.WebhookDeclined)]
+    [InlineData(DeclineReason.IncorrectCardVerificationCode)]
+    [InlineData(DeclineReason.DeclinedByTokenRequestor)]
     public void SerializationRoundtrip_Works(DeclineReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

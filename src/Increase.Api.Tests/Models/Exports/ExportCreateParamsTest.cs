@@ -48,6 +48,17 @@ public class ExportCreateParamsTest : TestBase
                 OnOrBeforeDate = "2019-12-27",
             },
             EntityCsv = new(),
+            FeeCsv = new()
+            {
+                CreatedAt = new()
+                {
+                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+                ProgramID = "program_id",
+            },
             FundingInstructions = new("account_number_id"),
             TransactionCsv = new()
             {
@@ -98,6 +109,17 @@ public class ExportCreateParamsTest : TestBase
             OnOrBeforeDate = "2019-12-27",
         };
         EntityCsv expectedEntityCsv = new();
+        FeeCsv expectedFeeCsv = new()
+        {
+            CreatedAt = new()
+            {
+                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ProgramID = "program_id",
+        };
         FundingInstructions expectedFundingInstructions = new("account_number_id");
         TransactionCsv expectedTransactionCsv = new()
         {
@@ -124,6 +146,7 @@ public class ExportCreateParamsTest : TestBase
         Assert.Equal(expectedBookkeepingAccountBalanceCsv, parameters.BookkeepingAccountBalanceCsv);
         Assert.Equal(expectedDailyAccountBalanceCsv, parameters.DailyAccountBalanceCsv);
         Assert.Equal(expectedEntityCsv, parameters.EntityCsv);
+        Assert.Equal(expectedFeeCsv, parameters.FeeCsv);
         Assert.Equal(expectedFundingInstructions, parameters.FundingInstructions);
         Assert.Equal(expectedTransactionCsv, parameters.TransactionCsv);
         Assert.Equal(expectedVendorCsv, parameters.VendorCsv);
@@ -147,6 +170,8 @@ public class ExportCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("daily_account_balance_csv"));
         Assert.Null(parameters.EntityCsv);
         Assert.False(parameters.RawBodyData.ContainsKey("entity_csv"));
+        Assert.Null(parameters.FeeCsv);
+        Assert.False(parameters.RawBodyData.ContainsKey("fee_csv"));
         Assert.Null(parameters.FundingInstructions);
         Assert.False(parameters.RawBodyData.ContainsKey("funding_instructions"));
         Assert.Null(parameters.TransactionCsv);
@@ -171,6 +196,7 @@ public class ExportCreateParamsTest : TestBase
             BookkeepingAccountBalanceCsv = null,
             DailyAccountBalanceCsv = null,
             EntityCsv = null,
+            FeeCsv = null,
             FundingInstructions = null,
             TransactionCsv = null,
             VendorCsv = null,
@@ -189,6 +215,8 @@ public class ExportCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("daily_account_balance_csv"));
         Assert.Null(parameters.EntityCsv);
         Assert.False(parameters.RawBodyData.ContainsKey("entity_csv"));
+        Assert.Null(parameters.FeeCsv);
+        Assert.False(parameters.RawBodyData.ContainsKey("fee_csv"));
         Assert.Null(parameters.FundingInstructions);
         Assert.False(parameters.RawBodyData.ContainsKey("funding_instructions"));
         Assert.Null(parameters.TransactionCsv);
@@ -248,6 +276,17 @@ public class ExportCreateParamsTest : TestBase
                 OnOrBeforeDate = "2019-12-27",
             },
             EntityCsv = new(),
+            FeeCsv = new()
+            {
+                CreatedAt = new()
+                {
+                    After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+                ProgramID = "program_id",
+            },
             FundingInstructions = new("account_number_id"),
             TransactionCsv = new()
             {
@@ -282,6 +321,7 @@ public class CategoryTest : TestBase
     [InlineData(Category.VendorCsv)]
     [InlineData(Category.AccountVerificationLetter)]
     [InlineData(Category.FundingInstructions)]
+    [InlineData(Category.FeeCsv)]
     [InlineData(Category.VoidedCheck)]
     [InlineData(Category.DailyAccountBalanceCsv)]
     public void Validation_Works(Category rawValue)
@@ -313,6 +353,7 @@ public class CategoryTest : TestBase
     [InlineData(Category.VendorCsv)]
     [InlineData(Category.AccountVerificationLetter)]
     [InlineData(Category.FundingInstructions)]
+    [InlineData(Category.FeeCsv)]
     [InlineData(Category.VoidedCheck)]
     [InlineData(Category.DailyAccountBalanceCsv)]
     public void SerializationRoundtrip_Works(Category rawValue)
@@ -1262,6 +1303,340 @@ public class EntityCsvTest : TestBase
         var model = new EntityCsv { };
 
         EntityCsv copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class FeeCsvTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new FeeCsv
+        {
+            CreatedAt = new()
+            {
+                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ProgramID = "program_id",
+        };
+
+        FeeCsvCreatedAt expectedCreatedAt = new()
+        {
+            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+        string expectedProgramID = "program_id";
+
+        Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedProgramID, model.ProgramID);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new FeeCsv
+        {
+            CreatedAt = new()
+            {
+                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ProgramID = "program_id",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<FeeCsv>(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new FeeCsv
+        {
+            CreatedAt = new()
+            {
+                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ProgramID = "program_id",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<FeeCsv>(element, ModelBase.SerializerOptions);
+        Assert.NotNull(deserialized);
+
+        FeeCsvCreatedAt expectedCreatedAt = new()
+        {
+            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+        string expectedProgramID = "program_id";
+
+        Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedProgramID, deserialized.ProgramID);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new FeeCsv
+        {
+            CreatedAt = new()
+            {
+                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ProgramID = "program_id",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new FeeCsv { };
+
+        Assert.Null(model.CreatedAt);
+        Assert.False(model.RawData.ContainsKey("created_at"));
+        Assert.Null(model.ProgramID);
+        Assert.False(model.RawData.ContainsKey("program_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new FeeCsv { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new FeeCsv
+        {
+            // Null should be interpreted as omitted for these properties
+            CreatedAt = null,
+            ProgramID = null,
+        };
+
+        Assert.Null(model.CreatedAt);
+        Assert.False(model.RawData.ContainsKey("created_at"));
+        Assert.Null(model.ProgramID);
+        Assert.False(model.RawData.ContainsKey("program_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new FeeCsv
+        {
+            // Null should be interpreted as omitted for these properties
+            CreatedAt = null,
+            ProgramID = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new FeeCsv
+        {
+            CreatedAt = new()
+            {
+                After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ProgramID = "program_id",
+        };
+
+        FeeCsv copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class FeeCsvCreatedAtTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new FeeCsvCreatedAt
+        {
+            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        DateTimeOffset expectedAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedOnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+
+        Assert.Equal(expectedAfter, model.After);
+        Assert.Equal(expectedBefore, model.Before);
+        Assert.Equal(expectedOnOrAfter, model.OnOrAfter);
+        Assert.Equal(expectedOnOrBefore, model.OnOrBefore);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new FeeCsvCreatedAt
+        {
+            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<FeeCsvCreatedAt>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new FeeCsvCreatedAt
+        {
+            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<FeeCsvCreatedAt>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        DateTimeOffset expectedAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedOnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+
+        Assert.Equal(expectedAfter, deserialized.After);
+        Assert.Equal(expectedBefore, deserialized.Before);
+        Assert.Equal(expectedOnOrAfter, deserialized.OnOrAfter);
+        Assert.Equal(expectedOnOrBefore, deserialized.OnOrBefore);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new FeeCsvCreatedAt
+        {
+            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new FeeCsvCreatedAt { };
+
+        Assert.Null(model.After);
+        Assert.False(model.RawData.ContainsKey("after"));
+        Assert.Null(model.Before);
+        Assert.False(model.RawData.ContainsKey("before"));
+        Assert.Null(model.OnOrAfter);
+        Assert.False(model.RawData.ContainsKey("on_or_after"));
+        Assert.Null(model.OnOrBefore);
+        Assert.False(model.RawData.ContainsKey("on_or_before"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new FeeCsvCreatedAt { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new FeeCsvCreatedAt
+        {
+            // Null should be interpreted as omitted for these properties
+            After = null,
+            Before = null,
+            OnOrAfter = null,
+            OnOrBefore = null,
+        };
+
+        Assert.Null(model.After);
+        Assert.False(model.RawData.ContainsKey("after"));
+        Assert.Null(model.Before);
+        Assert.False(model.RawData.ContainsKey("before"));
+        Assert.Null(model.OnOrAfter);
+        Assert.False(model.RawData.ContainsKey("on_or_after"));
+        Assert.Null(model.OnOrBefore);
+        Assert.False(model.RawData.ContainsKey("on_or_before"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new FeeCsvCreatedAt
+        {
+            // Null should be interpreted as omitted for these properties
+            After = null,
+            Before = null,
+            OnOrAfter = null,
+            OnOrBefore = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new FeeCsvCreatedAt
+        {
+            After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        FeeCsvCreatedAt copied = new(model);
 
         Assert.Equal(model, copied);
     }

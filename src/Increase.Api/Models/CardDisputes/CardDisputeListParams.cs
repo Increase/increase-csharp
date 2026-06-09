@@ -453,6 +453,12 @@ public enum In
     /// The Card Dispute has been won and no further action can be taken.
     /// </summary>
     Won,
+
+    /// <summary>
+    /// The Card Dispute has been reviewed and rejected, please review the explanation
+    /// for more details.
+    /// </summary>
+    Rejected,
 }
 
 sealed class InConverter : JsonConverter<In>
@@ -472,6 +478,7 @@ sealed class InConverter : JsonConverter<In>
             "pending_response" => In.PendingResponse,
             "lost" => In.Lost,
             "won" => In.Won,
+            "rejected" => In.Rejected,
             _ => (In)(-1),
         };
     }
@@ -489,6 +496,7 @@ sealed class InConverter : JsonConverter<In>
                 In.PendingResponse => "pending_response",
                 In.Lost => "lost",
                 In.Won => "won",
+                In.Rejected => "rejected",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

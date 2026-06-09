@@ -17,7 +17,7 @@ public class SwiftTransferTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
             Amount = 100,
-            BankIdentificationCode = "ECBFDEFFTPP",
+            BankIdentificationCode = "FRNYUS33XXX",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CreatedBy = new()
             {
@@ -63,7 +63,7 @@ public class SwiftTransferTest : TestBase
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedAccountNumber = "987654321";
         long expectedAmount = 100;
-        string expectedBankIdentificationCode = "ECBFDEFFTPP";
+        string expectedBankIdentificationCode = "FRNYUS33XXX";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         SwiftTransfers::CreatedBy expectedCreatedBy = new()
         {
@@ -145,7 +145,7 @@ public class SwiftTransferTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
             Amount = 100,
-            BankIdentificationCode = "ECBFDEFFTPP",
+            BankIdentificationCode = "FRNYUS33XXX",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CreatedBy = new()
             {
@@ -205,7 +205,7 @@ public class SwiftTransferTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
             Amount = 100,
-            BankIdentificationCode = "ECBFDEFFTPP",
+            BankIdentificationCode = "FRNYUS33XXX",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CreatedBy = new()
             {
@@ -258,7 +258,7 @@ public class SwiftTransferTest : TestBase
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedAccountNumber = "987654321";
         long expectedAmount = 100;
-        string expectedBankIdentificationCode = "ECBFDEFFTPP";
+        string expectedBankIdentificationCode = "FRNYUS33XXX";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         SwiftTransfers::CreatedBy expectedCreatedBy = new()
         {
@@ -340,7 +340,7 @@ public class SwiftTransferTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
             Amount = 100,
-            BankIdentificationCode = "ECBFDEFFTPP",
+            BankIdentificationCode = "FRNYUS33XXX",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CreatedBy = new()
             {
@@ -394,7 +394,7 @@ public class SwiftTransferTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
             Amount = 100,
-            BankIdentificationCode = "ECBFDEFFTPP",
+            BankIdentificationCode = "FRNYUS33XXX",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CreatedBy = new()
             {

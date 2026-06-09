@@ -196,7 +196,7 @@ public class EntityCreateParamsTest : TestBase
                 RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Rating = Rating.Low,
             },
-            SupplementalDocuments = [new("file_makxrc67oh9l6sg7w9yc")],
+            SupplementalDocuments = [new("file_id")],
             TermsAgreements =
             [
                 new()
@@ -496,10 +496,7 @@ public class EntityCreateParamsTest : TestBase
             RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Rating = Rating.Low,
         };
-        List<SupplementalDocument> expectedSupplementalDocuments =
-        [
-            new("file_makxrc67oh9l6sg7w9yc"),
-        ];
+        List<SupplementalDocument> expectedSupplementalDocuments = [new("file_id")];
         List<TermsAgreement> expectedTermsAgreements =
         [
             new()
@@ -909,7 +906,7 @@ public class EntityCreateParamsTest : TestBase
                 RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Rating = Rating.Low,
             },
-            SupplementalDocuments = [new("file_makxrc67oh9l6sg7w9yc")],
+            SupplementalDocuments = [new("file_id")],
             TermsAgreements =
             [
                 new()

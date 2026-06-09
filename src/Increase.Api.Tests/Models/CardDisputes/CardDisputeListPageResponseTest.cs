@@ -29,6 +29,11 @@ public class CardDisputeListPageResponseTest : TestBase
                         Reason = CardDisputes::LossReason.UserWithdrawn,
                     },
                     Network = CardDisputes::CardDisputeNetwork.Visa,
+                    Rejection = new()
+                    {
+                        Explanation = "Card Dispute is not allowed per network rules.",
+                        RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
                     Status = CardDisputes::CardDisputeStatus.PendingResponse,
                     Type = CardDisputes::Type.CardDispute,
                     UserSubmissionRequiredBy = null,
@@ -525,6 +530,11 @@ public class CardDisputeListPageResponseTest : TestBase
                     Reason = CardDisputes::LossReason.UserWithdrawn,
                 },
                 Network = CardDisputes::CardDisputeNetwork.Visa,
+                Rejection = new()
+                {
+                    Explanation = "Card Dispute is not allowed per network rules.",
+                    RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
                 Status = CardDisputes::CardDisputeStatus.PendingResponse,
                 Type = CardDisputes::Type.CardDispute,
                 UserSubmissionRequiredBy = null,
@@ -1025,6 +1035,11 @@ public class CardDisputeListPageResponseTest : TestBase
                         Reason = CardDisputes::LossReason.UserWithdrawn,
                     },
                     Network = CardDisputes::CardDisputeNetwork.Visa,
+                    Rejection = new()
+                    {
+                        Explanation = "Card Dispute is not allowed per network rules.",
+                        RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
                     Status = CardDisputes::CardDisputeStatus.PendingResponse,
                     Type = CardDisputes::Type.CardDispute,
                     UserSubmissionRequiredBy = null,
@@ -1535,6 +1550,11 @@ public class CardDisputeListPageResponseTest : TestBase
                         Reason = CardDisputes::LossReason.UserWithdrawn,
                     },
                     Network = CardDisputes::CardDisputeNetwork.Visa,
+                    Rejection = new()
+                    {
+                        Explanation = "Card Dispute is not allowed per network rules.",
+                        RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
                     Status = CardDisputes::CardDisputeStatus.PendingResponse,
                     Type = CardDisputes::Type.CardDispute,
                     UserSubmissionRequiredBy = null,
@@ -2038,6 +2058,11 @@ public class CardDisputeListPageResponseTest : TestBase
                     Reason = CardDisputes::LossReason.UserWithdrawn,
                 },
                 Network = CardDisputes::CardDisputeNetwork.Visa,
+                Rejection = new()
+                {
+                    Explanation = "Card Dispute is not allowed per network rules.",
+                    RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
                 Status = CardDisputes::CardDisputeStatus.PendingResponse,
                 Type = CardDisputes::Type.CardDispute,
                 UserSubmissionRequiredBy = null,
@@ -2538,6 +2563,11 @@ public class CardDisputeListPageResponseTest : TestBase
                         Reason = CardDisputes::LossReason.UserWithdrawn,
                     },
                     Network = CardDisputes::CardDisputeNetwork.Visa,
+                    Rejection = new()
+                    {
+                        Explanation = "Card Dispute is not allowed per network rules.",
+                        RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
                     Status = CardDisputes::CardDisputeStatus.PendingResponse,
                     Type = CardDisputes::Type.CardDispute,
                     UserSubmissionRequiredBy = null,
@@ -3042,6 +3072,11 @@ public class CardDisputeListPageResponseTest : TestBase
                         Reason = CardDisputes::LossReason.UserWithdrawn,
                     },
                     Network = CardDisputes::CardDisputeNetwork.Visa,
+                    Rejection = new()
+                    {
+                        Explanation = "Card Dispute is not allowed per network rules.",
+                        RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
                     Status = CardDisputes::CardDisputeStatus.PendingResponse,
                     Type = CardDisputes::Type.CardDispute,
                     UserSubmissionRequiredBy = null,
