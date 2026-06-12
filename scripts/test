@@ -1,3 +1,4 @@
+
 #!/usr/bin/env bash
 
 set -e
@@ -57,4 +58,6 @@ else
 fi
 
 echo "==> Running tests"
-dotnet test
+# .NET Framework 4.7.2 needs `mono` on non-Windows hosts; pin to net8.0 so
+# CI (and developer macOS/Linux machines) don't need a separate mono install.
+dotnet test -f net8.0

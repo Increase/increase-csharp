@@ -143,6 +143,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -1153,6 +1156,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -2163,6 +2169,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -3173,6 +3182,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -4209,6 +4221,9 @@ public class CardPaymentListPageResponseTest : TestBase
                             DigitalWalletTokenID = null,
                             Direction = CardPayments::Direction.Settlement,
                             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Healthcare = new(
+                                CardPayments::MerchantNinetyPercentEligibility.Eligible
+                            ),
                             MerchantAcceptorID = "5665270011000168",
                             MerchantCategoryCode = "5734",
                             MerchantCity = "New York",
@@ -5208,6 +5223,9 @@ public class CardPaymentListPageResponseTest : TestBase
                             DigitalWalletTokenID = null,
                             Direction = CardPayments::Direction.Settlement,
                             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Healthcare = new(
+                                CardPayments::MerchantNinetyPercentEligibility.Eligible
+                            ),
                             MerchantAcceptorID = "5665270011000168",
                             MerchantCategoryCode = "5734",
                             MerchantCity = "New York",
@@ -6207,6 +6225,9 @@ public class CardPaymentListPageResponseTest : TestBase
                             DigitalWalletTokenID = null,
                             Direction = CardPayments::Direction.Settlement,
                             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Healthcare = new(
+                                CardPayments::MerchantNinetyPercentEligibility.Eligible
+                            ),
                             MerchantAcceptorID = "5665270011000168",
                             MerchantCategoryCode = "5734",
                             MerchantCity = "New York",
@@ -7206,6 +7227,9 @@ public class CardPaymentListPageResponseTest : TestBase
                             DigitalWalletTokenID = null,
                             Direction = CardPayments::Direction.Settlement,
                             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Healthcare = new(
+                                CardPayments::MerchantNinetyPercentEligibility.Eligible
+                            ),
                             MerchantAcceptorID = "5665270011000168",
                             MerchantCategoryCode = "5734",
                             MerchantCity = "New York",
@@ -8249,6 +8273,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -9259,6 +9286,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -10269,6 +10299,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -11279,6 +11312,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -12332,6 +12368,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -13342,6 +13381,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -14352,6 +14394,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -15362,6 +15407,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -16405,6 +16453,9 @@ public class CardPaymentListPageResponseTest : TestBase
                             DigitalWalletTokenID = null,
                             Direction = CardPayments::Direction.Settlement,
                             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Healthcare = new(
+                                CardPayments::MerchantNinetyPercentEligibility.Eligible
+                            ),
                             MerchantAcceptorID = "5665270011000168",
                             MerchantCategoryCode = "5734",
                             MerchantCity = "New York",
@@ -17404,6 +17455,9 @@ public class CardPaymentListPageResponseTest : TestBase
                             DigitalWalletTokenID = null,
                             Direction = CardPayments::Direction.Settlement,
                             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Healthcare = new(
+                                CardPayments::MerchantNinetyPercentEligibility.Eligible
+                            ),
                             MerchantAcceptorID = "5665270011000168",
                             MerchantCategoryCode = "5734",
                             MerchantCity = "New York",
@@ -18403,6 +18457,9 @@ public class CardPaymentListPageResponseTest : TestBase
                             DigitalWalletTokenID = null,
                             Direction = CardPayments::Direction.Settlement,
                             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Healthcare = new(
+                                CardPayments::MerchantNinetyPercentEligibility.Eligible
+                            ),
                             MerchantAcceptorID = "5665270011000168",
                             MerchantCategoryCode = "5734",
                             MerchantCity = "New York",
@@ -19402,6 +19459,9 @@ public class CardPaymentListPageResponseTest : TestBase
                             DigitalWalletTokenID = null,
                             Direction = CardPayments::Direction.Settlement,
                             ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            Healthcare = new(
+                                CardPayments::MerchantNinetyPercentEligibility.Eligible
+                            ),
                             MerchantAcceptorID = "5665270011000168",
                             MerchantCategoryCode = "5734",
                             MerchantCity = "New York",
@@ -20445,6 +20505,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -21455,6 +21518,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -22465,6 +22531,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -23475,6 +23544,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -24522,6 +24594,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -25532,6 +25607,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -26542,6 +26620,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",
@@ -27552,6 +27633,9 @@ public class CardPaymentListPageResponseTest : TestBase
                                 DigitalWalletTokenID = null,
                                 Direction = CardPayments::Direction.Settlement,
                                 ExpiresAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                Healthcare = new(
+                                    CardPayments::MerchantNinetyPercentEligibility.Eligible
+                                ),
                                 MerchantAcceptorID = "5665270011000168",
                                 MerchantCategoryCode = "5734",
                                 MerchantCity = "New York",

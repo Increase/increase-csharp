@@ -403,12 +403,12 @@ public record class AchPrenotificationCreateParams : ParamsBase
 public enum CreditDebitIndicator
 {
     /// <summary>
-    /// The Prenotification is for an anticipated credit.
+    /// Credit
     /// </summary>
     Credit,
 
     /// <summary>
-    /// The Prenotification is for an anticipated debit.
+    /// Debit
     /// </summary>
     Debit,
 }

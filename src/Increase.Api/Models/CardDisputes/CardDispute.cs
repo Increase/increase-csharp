@@ -125,6 +125,19 @@ public sealed record class CardDispute : JsonModel
     }
 
     /// <summary>
+    /// If the Card Dispute has been rejected, this will contain details of the rejection.
+    /// </summary>
+    public required Rejection? Rejection
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<Rejection>("rejection");
+        }
+        init { this._rawData.Set("rejection", value); }
+    }
+
+    /// <summary>
     /// The status of the Card Dispute.
     /// </summary>
     public required ApiEnum<string, CardDisputeStatus> Status
@@ -223,6 +236,7 @@ public sealed record class CardDispute : JsonModel
         _ = this.IdempotencyKey;
         this.Loss?.Validate();
         this.Network.Validate();
+        this.Rejection?.Validate();
         this.Status.Validate();
         this.Type.Validate();
         _ = this.UserSubmissionRequiredBy;
@@ -450,6 +464,81 @@ sealed class CardDisputeNetworkConverter : JsonConverter<CardDisputeNetwork>
 }
 
 /// <summary>
+/// If the Card Dispute has been rejected, this will contain details of the rejection.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Rejection, RejectionFromRaw>))]
+public sealed record class Rejection : JsonModel
+{
+    /// <summary>
+    /// Why the Card Dispute was rejected.
+    /// </summary>
+    public required string Explanation
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("explanation");
+        }
+        init { this._rawData.Set("explanation", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the Card Dispute was rejected.
+    /// </summary>
+    public required System::DateTimeOffset RejectedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("rejected_at");
+        }
+        init { this._rawData.Set("rejected_at", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Explanation;
+        _ = this.RejectedAt;
+    }
+
+    public Rejection() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Rejection(Rejection rejection)
+        : base(rejection) { }
+#pragma warning restore CS8618
+
+    public Rejection(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Rejection(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="RejectionFromRaw.FromRawUnchecked"/>
+    public static Rejection FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class RejectionFromRaw : IFromRawJson<Rejection>
+{
+    /// <inheritdoc/>
+    public Rejection FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Rejection.FromRawUnchecked(rawData);
+}
+
+/// <summary>
 /// The status of the Card Dispute.
 /// </summary>
 [JsonConverter(typeof(CardDisputeStatusConverter))]
@@ -490,6 +579,12 @@ public enum CardDisputeStatus
     /// The Card Dispute has been won and no further action can be taken.
     /// </summary>
     Won,
+
+    /// <summary>
+    /// The Card Dispute has been reviewed and rejected, please review the explanation
+    /// for more details.
+    /// </summary>
+    Rejected,
 }
 
 sealed class CardDisputeStatusConverter : JsonConverter<CardDisputeStatus>
@@ -511,6 +606,7 @@ sealed class CardDisputeStatusConverter : JsonConverter<CardDisputeStatus>
             "pending_response" => CardDisputeStatus.PendingResponse,
             "lost" => CardDisputeStatus.Lost,
             "won" => CardDisputeStatus.Won,
+            "rejected" => CardDisputeStatus.Rejected,
             _ => (CardDisputeStatus)(-1),
         };
     }
@@ -535,6 +631,7 @@ sealed class CardDisputeStatusConverter : JsonConverter<CardDisputeStatus>
                 CardDisputeStatus.PendingResponse => "pending_response",
                 CardDisputeStatus.Lost => "lost",
                 CardDisputeStatus.Won => "won",
+                CardDisputeStatus.Rejected => "rejected",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

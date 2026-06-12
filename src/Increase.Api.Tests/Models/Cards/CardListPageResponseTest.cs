@@ -68,6 +68,7 @@ public class CardListPageResponseTest : TestBase
                         PostalCode = "10045",
                         State = "NY",
                     },
+                    Bin = "42424242",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Office Expenses",
                     DigitalWallet = new()
@@ -143,6 +144,7 @@ public class CardListPageResponseTest : TestBase
                     PostalCode = "10045",
                     State = "NY",
                 },
+                Bin = "42424242",
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Description = "Office Expenses",
                 DigitalWallet = new()
@@ -230,6 +232,7 @@ public class CardListPageResponseTest : TestBase
                         PostalCode = "10045",
                         State = "NY",
                     },
+                    Bin = "42424242",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Office Expenses",
                     DigitalWallet = new()
@@ -319,6 +322,7 @@ public class CardListPageResponseTest : TestBase
                         PostalCode = "10045",
                         State = "NY",
                     },
+                    Bin = "42424242",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Office Expenses",
                     DigitalWallet = new()
@@ -401,6 +405,7 @@ public class CardListPageResponseTest : TestBase
                     PostalCode = "10045",
                     State = "NY",
                 },
+                Bin = "42424242",
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Description = "Office Expenses",
                 DigitalWallet = new()
@@ -488,6 +493,7 @@ public class CardListPageResponseTest : TestBase
                         PostalCode = "10045",
                         State = "NY",
                     },
+                    Bin = "42424242",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Office Expenses",
                     DigitalWallet = new()
@@ -571,6 +577,7 @@ public class CardListPageResponseTest : TestBase
                         PostalCode = "10045",
                         State = "NY",
                     },
+                    Bin = "42424242",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Office Expenses",
                     DigitalWallet = new()

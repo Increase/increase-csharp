@@ -26,6 +26,11 @@ public class CardDisputeTest : TestBase
                 Reason = CardDisputes::LossReason.UserWithdrawn,
             },
             Network = CardDisputes::CardDisputeNetwork.Visa,
+            Rejection = new()
+            {
+                Explanation = "Card Dispute is not allowed per network rules.",
+                RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
             Status = CardDisputes::CardDisputeStatus.PendingResponse,
             Type = CardDisputes::Type.CardDispute,
             UserSubmissionRequiredBy = null,
@@ -503,6 +508,11 @@ public class CardDisputeTest : TestBase
         };
         ApiEnum<string, CardDisputes::CardDisputeNetwork> expectedNetwork =
             CardDisputes::CardDisputeNetwork.Visa;
+        CardDisputes::Rejection expectedRejection = new()
+        {
+            Explanation = "Card Dispute is not allowed per network rules.",
+            RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
         ApiEnum<string, CardDisputes::CardDisputeStatus> expectedStatus =
             CardDisputes::CardDisputeStatus.PendingResponse;
         ApiEnum<string, CardDisputes::Type> expectedType = CardDisputes::Type.CardDispute;
@@ -971,6 +981,7 @@ public class CardDisputeTest : TestBase
         Assert.Null(model.IdempotencyKey);
         Assert.Equal(expectedLoss, model.Loss);
         Assert.Equal(expectedNetwork, model.Network);
+        Assert.Equal(expectedRejection, model.Rejection);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedType, model.Type);
         Assert.Null(model.UserSubmissionRequiredBy);
@@ -996,6 +1007,11 @@ public class CardDisputeTest : TestBase
                 Reason = CardDisputes::LossReason.UserWithdrawn,
             },
             Network = CardDisputes::CardDisputeNetwork.Visa,
+            Rejection = new()
+            {
+                Explanation = "Card Dispute is not allowed per network rules.",
+                RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
             Status = CardDisputes::CardDisputeStatus.PendingResponse,
             Type = CardDisputes::Type.CardDispute,
             UserSubmissionRequiredBy = null,
@@ -1487,6 +1503,11 @@ public class CardDisputeTest : TestBase
                 Reason = CardDisputes::LossReason.UserWithdrawn,
             },
             Network = CardDisputes::CardDisputeNetwork.Visa,
+            Rejection = new()
+            {
+                Explanation = "Card Dispute is not allowed per network rules.",
+                RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
             Status = CardDisputes::CardDisputeStatus.PendingResponse,
             Type = CardDisputes::Type.CardDispute,
             UserSubmissionRequiredBy = null,
@@ -1971,6 +1992,11 @@ public class CardDisputeTest : TestBase
         };
         ApiEnum<string, CardDisputes::CardDisputeNetwork> expectedNetwork =
             CardDisputes::CardDisputeNetwork.Visa;
+        CardDisputes::Rejection expectedRejection = new()
+        {
+            Explanation = "Card Dispute is not allowed per network rules.",
+            RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
         ApiEnum<string, CardDisputes::CardDisputeStatus> expectedStatus =
             CardDisputes::CardDisputeStatus.PendingResponse;
         ApiEnum<string, CardDisputes::Type> expectedType = CardDisputes::Type.CardDispute;
@@ -2439,6 +2465,7 @@ public class CardDisputeTest : TestBase
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Equal(expectedLoss, deserialized.Loss);
         Assert.Equal(expectedNetwork, deserialized.Network);
+        Assert.Equal(expectedRejection, deserialized.Rejection);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedType, deserialized.Type);
         Assert.Null(deserialized.UserSubmissionRequiredBy);
@@ -2464,6 +2491,11 @@ public class CardDisputeTest : TestBase
                 Reason = CardDisputes::LossReason.UserWithdrawn,
             },
             Network = CardDisputes::CardDisputeNetwork.Visa,
+            Rejection = new()
+            {
+                Explanation = "Card Dispute is not allowed per network rules.",
+                RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
             Status = CardDisputes::CardDisputeStatus.PendingResponse,
             Type = CardDisputes::Type.CardDispute,
             UserSubmissionRequiredBy = null,
@@ -2949,6 +2981,11 @@ public class CardDisputeTest : TestBase
                 Reason = CardDisputes::LossReason.UserWithdrawn,
             },
             Network = CardDisputes::CardDisputeNetwork.Visa,
+            Rejection = new()
+            {
+                Explanation = "Card Dispute is not allowed per network rules.",
+                RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
             Status = CardDisputes::CardDisputeStatus.PendingResponse,
             Type = CardDisputes::Type.CardDispute,
             UserSubmissionRequiredBy = null,
@@ -3622,6 +3659,92 @@ public class CardDisputeNetworkTest : TestBase
     }
 }
 
+public class RejectionTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardDisputes::Rejection
+        {
+            Explanation = "Card Dispute is not allowed per network rules.",
+            RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        string expectedExplanation = "Card Dispute is not allowed per network rules.";
+        DateTimeOffset expectedRejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+
+        Assert.Equal(expectedExplanation, model.Explanation);
+        Assert.Equal(expectedRejectedAt, model.RejectedAt);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardDisputes::Rejection
+        {
+            Explanation = "Card Dispute is not allowed per network rules.",
+            RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardDisputes::Rejection>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardDisputes::Rejection
+        {
+            Explanation = "Card Dispute is not allowed per network rules.",
+            RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardDisputes::Rejection>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedExplanation = "Card Dispute is not allowed per network rules.";
+        DateTimeOffset expectedRejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+
+        Assert.Equal(expectedExplanation, deserialized.Explanation);
+        Assert.Equal(expectedRejectedAt, deserialized.RejectedAt);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardDisputes::Rejection
+        {
+            Explanation = "Card Dispute is not allowed per network rules.",
+            RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardDisputes::Rejection
+        {
+            Explanation = "Card Dispute is not allowed per network rules.",
+            RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        CardDisputes::Rejection copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
 public class CardDisputeStatusTest : TestBase
 {
     [Theory]
@@ -3632,6 +3755,7 @@ public class CardDisputeStatusTest : TestBase
     [InlineData(CardDisputes::CardDisputeStatus.PendingResponse)]
     [InlineData(CardDisputes::CardDisputeStatus.Lost)]
     [InlineData(CardDisputes::CardDisputeStatus.Won)]
+    [InlineData(CardDisputes::CardDisputeStatus.Rejected)]
     public void Validation_Works(CardDisputes::CardDisputeStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -3659,6 +3783,7 @@ public class CardDisputeStatusTest : TestBase
     [InlineData(CardDisputes::CardDisputeStatus.PendingResponse)]
     [InlineData(CardDisputes::CardDisputeStatus.Lost)]
     [InlineData(CardDisputes::CardDisputeStatus.Won)]
+    [InlineData(CardDisputes::CardDisputeStatus.Rejected)]
     public void SerializationRoundtrip_Works(CardDisputes::CardDisputeStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us

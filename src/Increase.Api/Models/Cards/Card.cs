@@ -74,6 +74,19 @@ public sealed record class Card : JsonModel
     }
 
     /// <summary>
+    /// The Bank Identification Number (BIN) of the Card.
+    /// </summary>
+    public required string Bin
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("bin");
+        }
+        init { this._rawData.Set("bin", value); }
+    }
+
+    /// <summary>
     /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
     /// the Card was created.
     /// </summary>
@@ -217,6 +230,7 @@ public sealed record class Card : JsonModel
         _ = this.AccountID;
         this.AuthorizationControls?.Validate();
         this.BillingAddress.Validate();
+        _ = this.Bin;
         _ = this.CreatedAt;
         _ = this.Description;
         this.DigitalWallet?.Validate();

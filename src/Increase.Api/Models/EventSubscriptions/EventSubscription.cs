@@ -633,6 +633,26 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     IntrafiExclusionUpdated,
 
     /// <summary>
+    /// Occurs whenever a Loan Application is created.
+    /// </summary>
+    LoanApplicationCreated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Application is updated.
+    /// </summary>
+    LoanApplicationUpdated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Offer is created.
+    /// </summary>
+    LoanOfferCreated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Offer is updated.
+    /// </summary>
+    LoanOfferUpdated,
+
+    /// <summary>
     /// Occurs whenever a Lockbox is created.
     /// </summary>
     LockboxCreated,
@@ -960,6 +980,14 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.IntrafiExclusionCreated,
             "intrafi_exclusion.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.IntrafiExclusionUpdated,
+            "loan_application.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanApplicationCreated,
+            "loan_application.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanApplicationUpdated,
+            "loan_offer.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferCreated,
+            "loan_offer.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferUpdated,
             "lockbox.created" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated,
             "lockbox.updated" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated,
             "oauth_connection.created" =>
@@ -1180,6 +1208,14 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "intrafi_exclusion.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.IntrafiExclusionUpdated =>
                     "intrafi_exclusion.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanApplicationCreated =>
+                    "loan_application.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanApplicationUpdated =>
+                    "loan_application.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferCreated =>
+                    "loan_offer.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferUpdated =>
+                    "loan_offer.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated =>
                     "lockbox.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated =>

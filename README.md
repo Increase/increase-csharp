@@ -6,9 +6,10 @@ The REST API documentation can be found on [increase.com](https://increase.com/d
 
 ## Installation
 
+Install the package from [NuGet](https://www.nuget.org/packages/Increase.Api):
+
 ```bash
-git clone git@github.com:Increase/increase-csharp.git
-dotnet add reference increase-csharp/src/Increase.Api
+dotnet add package Increase.Api
 ```
 
 ## Requirements

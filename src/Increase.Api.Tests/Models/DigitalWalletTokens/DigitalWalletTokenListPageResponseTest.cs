@@ -21,6 +21,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new("John Smith"),
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Decline = new(DigitalWalletTokens::Reason.CardNotActive),
                     Device = new()
                     {
                         DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,
@@ -53,6 +54,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                 CardID = "card_oubs0hwk5rn6knuecxg2",
                 Cardholder = new("John Smith"),
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Decline = new(DigitalWalletTokens::Reason.CardNotActive),
                 Device = new()
                 {
                     DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,
@@ -97,6 +99,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new("John Smith"),
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Decline = new(DigitalWalletTokens::Reason.CardNotActive),
                     Device = new()
                     {
                         DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,
@@ -144,6 +147,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new("John Smith"),
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Decline = new(DigitalWalletTokens::Reason.CardNotActive),
                     Device = new()
                     {
                         DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,
@@ -184,6 +188,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                 CardID = "card_oubs0hwk5rn6knuecxg2",
                 Cardholder = new("John Smith"),
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                Decline = new(DigitalWalletTokens::Reason.CardNotActive),
                 Device = new()
                 {
                     DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,
@@ -228,6 +233,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new("John Smith"),
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Decline = new(DigitalWalletTokens::Reason.CardNotActive),
                     Device = new()
                     {
                         DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,
@@ -268,6 +274,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new("John Smith"),
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    Decline = new(DigitalWalletTokens::Reason.CardNotActive),
                     Device = new()
                     {
                         DeviceType = DigitalWalletTokens::DeviceType.MobilePhone,

@@ -39,6 +39,13 @@ public class FednowTransferListPageResponseTest : TestBase
                     },
                     CreditorName = "Ian Crease",
                     Currency = FednowTransfers::Currency.Usd,
+                    DebtorAddress = new()
+                    {
+                        City = "New York",
+                        Line1 = "33 Liberty Street",
+                        PostalCode = "10045",
+                        State = "NY",
+                    },
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
@@ -92,6 +99,13 @@ public class FednowTransferListPageResponseTest : TestBase
                 },
                 CreditorName = "Ian Crease",
                 Currency = FednowTransfers::Currency.Usd,
+                DebtorAddress = new()
+                {
+                    City = "New York",
+                    Line1 = "33 Liberty Street",
+                    PostalCode = "10045",
+                    State = "NY",
+                },
                 DebtorName = "National Phonograph Company",
                 ExternalAccountID = null,
                 IdempotencyKey = null,
@@ -157,6 +171,13 @@ public class FednowTransferListPageResponseTest : TestBase
                     },
                     CreditorName = "Ian Crease",
                     Currency = FednowTransfers::Currency.Usd,
+                    DebtorAddress = new()
+                    {
+                        City = "New York",
+                        Line1 = "33 Liberty Street",
+                        PostalCode = "10045",
+                        State = "NY",
+                    },
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
@@ -225,6 +246,13 @@ public class FednowTransferListPageResponseTest : TestBase
                     },
                     CreditorName = "Ian Crease",
                     Currency = FednowTransfers::Currency.Usd,
+                    DebtorAddress = new()
+                    {
+                        City = "New York",
+                        Line1 = "33 Liberty Street",
+                        PostalCode = "10045",
+                        State = "NY",
+                    },
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
@@ -286,6 +314,13 @@ public class FednowTransferListPageResponseTest : TestBase
                 },
                 CreditorName = "Ian Crease",
                 Currency = FednowTransfers::Currency.Usd,
+                DebtorAddress = new()
+                {
+                    City = "New York",
+                    Line1 = "33 Liberty Street",
+                    PostalCode = "10045",
+                    State = "NY",
+                },
                 DebtorName = "National Phonograph Company",
                 ExternalAccountID = null,
                 IdempotencyKey = null,
@@ -351,6 +386,13 @@ public class FednowTransferListPageResponseTest : TestBase
                     },
                     CreditorName = "Ian Crease",
                     Currency = FednowTransfers::Currency.Usd,
+                    DebtorAddress = new()
+                    {
+                        City = "New York",
+                        Line1 = "33 Liberty Street",
+                        PostalCode = "10045",
+                        State = "NY",
+                    },
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
@@ -412,6 +454,13 @@ public class FednowTransferListPageResponseTest : TestBase
                     },
                     CreditorName = "Ian Crease",
                     Currency = FednowTransfers::Currency.Usd,
+                    DebtorAddress = new()
+                    {
+                        City = "New York",
+                        Line1 = "33 Liberty Street",
+                        PostalCode = "10045",
+                        State = "NY",
+                    },
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,

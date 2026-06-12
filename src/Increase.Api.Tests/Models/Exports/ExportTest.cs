@@ -61,10 +61,12 @@ public class ExportTest : TestBase
             DashboardTableCsv = new(),
             EntityCsv = new(),
             FeeCsv = new(
-                new Exports::FeeCsvCreatedAt()
+                new Exports::ExportFeeCsvCreatedAt()
                 {
                     After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 }
             ),
             Form1099Int = new()
@@ -145,11 +147,13 @@ public class ExportTest : TestBase
         };
         Exports::DashboardTableCsv expectedDashboardTableCsv = new();
         Exports::ExportEntityCsv expectedEntityCsv = new();
-        Exports::FeeCsv expectedFeeCsv = new(
-            new Exports::FeeCsvCreatedAt()
+        Exports::ExportFeeCsv expectedFeeCsv = new(
+            new Exports::ExportFeeCsvCreatedAt()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             }
         );
         Exports::ExportForm1099Int expectedForm1099Int = new()
@@ -261,10 +265,12 @@ public class ExportTest : TestBase
             DashboardTableCsv = new(),
             EntityCsv = new(),
             FeeCsv = new(
-                new Exports::FeeCsvCreatedAt()
+                new Exports::ExportFeeCsvCreatedAt()
                 {
                     After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 }
             ),
             Form1099Int = new()
@@ -359,10 +365,12 @@ public class ExportTest : TestBase
             DashboardTableCsv = new(),
             EntityCsv = new(),
             FeeCsv = new(
-                new Exports::FeeCsvCreatedAt()
+                new Exports::ExportFeeCsvCreatedAt()
                 {
                     After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 }
             ),
             Form1099Int = new()
@@ -450,11 +458,13 @@ public class ExportTest : TestBase
         };
         Exports::DashboardTableCsv expectedDashboardTableCsv = new();
         Exports::ExportEntityCsv expectedEntityCsv = new();
-        Exports::FeeCsv expectedFeeCsv = new(
-            new Exports::FeeCsvCreatedAt()
+        Exports::ExportFeeCsv expectedFeeCsv = new(
+            new Exports::ExportFeeCsvCreatedAt()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             }
         );
         Exports::ExportForm1099Int expectedForm1099Int = new()
@@ -569,10 +579,12 @@ public class ExportTest : TestBase
             DashboardTableCsv = new(),
             EntityCsv = new(),
             FeeCsv = new(
-                new Exports::FeeCsvCreatedAt()
+                new Exports::ExportFeeCsvCreatedAt()
                 {
                     After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 }
             ),
             Form1099Int = new()
@@ -661,10 +673,12 @@ public class ExportTest : TestBase
             DashboardTableCsv = new(),
             EntityCsv = new(),
             FeeCsv = new(
-                new Exports::FeeCsvCreatedAt()
+                new Exports::ExportFeeCsvCreatedAt()
                 {
                     After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 }
             ),
             Form1099Int = new()
@@ -1667,24 +1681,28 @@ public class ExportEntityCsvTest : TestBase
     }
 }
 
-public class FeeCsvTest : TestBase
+public class ExportFeeCsvTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Exports::FeeCsv
+        var model = new Exports::ExportFeeCsv
         {
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
-        Exports::FeeCsvCreatedAt expectedCreatedAt = new()
+        Exports::ExportFeeCsvCreatedAt expectedCreatedAt = new()
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
@@ -1693,17 +1711,19 @@ public class FeeCsvTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Exports::FeeCsv
+        var model = new Exports::ExportFeeCsv
         {
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Exports::FeeCsv>(
+        var deserialized = JsonSerializer.Deserialize<Exports::ExportFeeCsv>(
             json,
             ModelBase.SerializerOptions
         );
@@ -1714,26 +1734,30 @@ public class FeeCsvTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Exports::FeeCsv
+        var model = new Exports::ExportFeeCsv
         {
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Exports::FeeCsv>(
+        var deserialized = JsonSerializer.Deserialize<Exports::ExportFeeCsv>(
             element,
             ModelBase.SerializerOptions
         );
         Assert.NotNull(deserialized);
 
-        Exports::FeeCsvCreatedAt expectedCreatedAt = new()
+        Exports::ExportFeeCsvCreatedAt expectedCreatedAt = new()
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
@@ -1742,12 +1766,14 @@ public class FeeCsvTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Exports::FeeCsv
+        var model = new Exports::ExportFeeCsv
         {
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
@@ -1757,50 +1783,60 @@ public class FeeCsvTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Exports::FeeCsv
+        var model = new Exports::ExportFeeCsv
         {
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
         };
 
-        Exports::FeeCsv copied = new(model);
+        Exports::ExportFeeCsv copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class FeeCsvCreatedAtTest : TestBase
+public class ExportFeeCsvCreatedAtTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Exports::FeeCsvCreatedAt
+        var model = new Exports::ExportFeeCsvCreatedAt
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         DateTimeOffset expectedAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         DateTimeOffset expectedBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedOnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedAfter, model.After);
         Assert.Equal(expectedBefore, model.Before);
+        Assert.Equal(expectedOnOrAfter, model.OnOrAfter);
+        Assert.Equal(expectedOnOrBefore, model.OnOrBefore);
     }
 
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Exports::FeeCsvCreatedAt
+        var model = new Exports::ExportFeeCsvCreatedAt
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Exports::FeeCsvCreatedAt>(
+        var deserialized = JsonSerializer.Deserialize<Exports::ExportFeeCsvCreatedAt>(
             json,
             ModelBase.SerializerOptions
         );
@@ -1811,14 +1847,16 @@ public class FeeCsvCreatedAtTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Exports::FeeCsvCreatedAt
+        var model = new Exports::ExportFeeCsvCreatedAt
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Exports::FeeCsvCreatedAt>(
+        var deserialized = JsonSerializer.Deserialize<Exports::ExportFeeCsvCreatedAt>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1826,18 +1864,24 @@ public class FeeCsvCreatedAtTest : TestBase
 
         DateTimeOffset expectedAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         DateTimeOffset expectedBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedOnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedOnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedAfter, deserialized.After);
         Assert.Equal(expectedBefore, deserialized.Before);
+        Assert.Equal(expectedOnOrAfter, deserialized.OnOrAfter);
+        Assert.Equal(expectedOnOrBefore, deserialized.OnOrBefore);
     }
 
     [Fact]
     public void Validation_Works()
     {
-        var model = new Exports::FeeCsvCreatedAt
+        var model = new Exports::ExportFeeCsvCreatedAt
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         model.Validate();
@@ -1846,13 +1890,15 @@ public class FeeCsvCreatedAtTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Exports::FeeCsvCreatedAt
+        var model = new Exports::ExportFeeCsvCreatedAt
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
-        Exports::FeeCsvCreatedAt copied = new(model);
+        Exports::ExportFeeCsvCreatedAt copied = new(model);
 
         Assert.Equal(model, copied);
     }

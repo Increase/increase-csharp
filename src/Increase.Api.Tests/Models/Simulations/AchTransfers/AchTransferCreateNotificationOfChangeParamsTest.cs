@@ -119,6 +119,7 @@ public class CorrectedAccountFundingTest : TestBase
     [Theory]
     [InlineData(CorrectedAccountFunding.Checking)]
     [InlineData(CorrectedAccountFunding.Savings)]
+    [InlineData(CorrectedAccountFunding.Loan)]
     [InlineData(CorrectedAccountFunding.GeneralLedger)]
     public void Validation_Works(CorrectedAccountFunding rawValue)
     {
@@ -142,6 +143,7 @@ public class CorrectedAccountFundingTest : TestBase
     [Theory]
     [InlineData(CorrectedAccountFunding.Checking)]
     [InlineData(CorrectedAccountFunding.Savings)]
+    [InlineData(CorrectedAccountFunding.Loan)]
     [InlineData(CorrectedAccountFunding.GeneralLedger)]
     public void SerializationRoundtrip_Works(CorrectedAccountFunding rawValue)
     {

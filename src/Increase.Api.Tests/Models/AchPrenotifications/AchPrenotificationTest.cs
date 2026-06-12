@@ -710,6 +710,7 @@ public class CorrectedAccountFundingTest : TestBase
     [Theory]
     [InlineData(AchPrenotifications::CorrectedAccountFunding.Checking)]
     [InlineData(AchPrenotifications::CorrectedAccountFunding.Savings)]
+    [InlineData(AchPrenotifications::CorrectedAccountFunding.Loan)]
     [InlineData(AchPrenotifications::CorrectedAccountFunding.GeneralLedger)]
     public void Validation_Works(AchPrenotifications::CorrectedAccountFunding rawValue)
     {
@@ -732,6 +733,7 @@ public class CorrectedAccountFundingTest : TestBase
     [Theory]
     [InlineData(AchPrenotifications::CorrectedAccountFunding.Checking)]
     [InlineData(AchPrenotifications::CorrectedAccountFunding.Savings)]
+    [InlineData(AchPrenotifications::CorrectedAccountFunding.Loan)]
     [InlineData(AchPrenotifications::CorrectedAccountFunding.GeneralLedger)]
     public void SerializationRoundtrip_Works(AchPrenotifications::CorrectedAccountFunding rawValue)
     {

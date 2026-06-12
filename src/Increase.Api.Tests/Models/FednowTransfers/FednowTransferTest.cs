@@ -35,6 +35,13 @@ public class FednowTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = FednowTransfers::Currency.Usd,
+            DebtorAddress = new()
+            {
+                City = "New York",
+                Line1 = "33 Liberty Street",
+                PostalCode = "10045",
+                State = "NY",
+            },
             DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
@@ -83,6 +90,13 @@ public class FednowTransferTest : TestBase
         };
         string expectedCreditorName = "Ian Crease";
         ApiEnum<string, FednowTransfers::Currency> expectedCurrency = FednowTransfers::Currency.Usd;
+        FednowTransfers::FednowTransferDebtorAddress expectedDebtorAddress = new()
+        {
+            City = "New York",
+            Line1 = "33 Liberty Street",
+            PostalCode = "10045",
+            State = "NY",
+        };
         string expectedDebtorName = "National Phonograph Company";
         string expectedPendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4";
         FednowTransfers::Rejection expectedRejection = new()
@@ -115,6 +129,7 @@ public class FednowTransferTest : TestBase
         Assert.Equal(expectedCreditorAddress, model.CreditorAddress);
         Assert.Equal(expectedCreditorName, model.CreditorName);
         Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedDebtorAddress, model.DebtorAddress);
         Assert.Equal(expectedDebtorName, model.DebtorName);
         Assert.Null(model.ExternalAccountID);
         Assert.Null(model.IdempotencyKey);
@@ -163,6 +178,13 @@ public class FednowTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = FednowTransfers::Currency.Usd,
+            DebtorAddress = new()
+            {
+                City = "New York",
+                Line1 = "33 Liberty Street",
+                PostalCode = "10045",
+                State = "NY",
+            },
             DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
@@ -223,6 +245,13 @@ public class FednowTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = FednowTransfers::Currency.Usd,
+            DebtorAddress = new()
+            {
+                City = "New York",
+                Line1 = "33 Liberty Street",
+                PostalCode = "10045",
+                State = "NY",
+            },
             DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
@@ -278,6 +307,13 @@ public class FednowTransferTest : TestBase
         };
         string expectedCreditorName = "Ian Crease";
         ApiEnum<string, FednowTransfers::Currency> expectedCurrency = FednowTransfers::Currency.Usd;
+        FednowTransfers::FednowTransferDebtorAddress expectedDebtorAddress = new()
+        {
+            City = "New York",
+            Line1 = "33 Liberty Street",
+            PostalCode = "10045",
+            State = "NY",
+        };
         string expectedDebtorName = "National Phonograph Company";
         string expectedPendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4";
         FednowTransfers::Rejection expectedRejection = new()
@@ -310,6 +346,7 @@ public class FednowTransferTest : TestBase
         Assert.Equal(expectedCreditorAddress, deserialized.CreditorAddress);
         Assert.Equal(expectedCreditorName, deserialized.CreditorName);
         Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedDebtorAddress, deserialized.DebtorAddress);
         Assert.Equal(expectedDebtorName, deserialized.DebtorName);
         Assert.Null(deserialized.ExternalAccountID);
         Assert.Null(deserialized.IdempotencyKey);
@@ -358,6 +395,13 @@ public class FednowTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = FednowTransfers::Currency.Usd,
+            DebtorAddress = new()
+            {
+                City = "New York",
+                Line1 = "33 Liberty Street",
+                PostalCode = "10045",
+                State = "NY",
+            },
             DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
@@ -412,6 +456,13 @@ public class FednowTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = FednowTransfers::Currency.Usd,
+            DebtorAddress = new()
+            {
+                City = "New York",
+                Line1 = "33 Liberty Street",
+                PostalCode = "10045",
+                State = "NY",
+            },
             DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
@@ -1086,6 +1137,110 @@ public class CurrencyTest : TestBase
         );
 
         Assert.Equal(value, deserialized);
+    }
+}
+
+public class FednowTransferDebtorAddressTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new FednowTransfers::FednowTransferDebtorAddress
+        {
+            City = "city",
+            Line1 = "line1",
+            PostalCode = "postal_code",
+            State = "state",
+        };
+
+        string expectedCity = "city";
+        string expectedLine1 = "line1";
+        string expectedPostalCode = "postal_code";
+        string expectedState = "state";
+
+        Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedLine1, model.Line1);
+        Assert.Equal(expectedPostalCode, model.PostalCode);
+        Assert.Equal(expectedState, model.State);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new FednowTransfers::FednowTransferDebtorAddress
+        {
+            City = "city",
+            Line1 = "line1",
+            PostalCode = "postal_code",
+            State = "state",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<FednowTransfers::FednowTransferDebtorAddress>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new FednowTransfers::FednowTransferDebtorAddress
+        {
+            City = "city",
+            Line1 = "line1",
+            PostalCode = "postal_code",
+            State = "state",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<FednowTransfers::FednowTransferDebtorAddress>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCity = "city";
+        string expectedLine1 = "line1";
+        string expectedPostalCode = "postal_code";
+        string expectedState = "state";
+
+        Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Equal(expectedPostalCode, deserialized.PostalCode);
+        Assert.Equal(expectedState, deserialized.State);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new FednowTransfers::FednowTransferDebtorAddress
+        {
+            City = "city",
+            Line1 = "line1",
+            PostalCode = "postal_code",
+            State = "state",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new FednowTransfers::FednowTransferDebtorAddress
+        {
+            City = "city",
+            Line1 = "line1",
+            PostalCode = "postal_code",
+            State = "state",
+        };
+
+        FednowTransfers::FednowTransferDebtorAddress copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
