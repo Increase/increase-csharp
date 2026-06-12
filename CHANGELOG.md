@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.44.0](https://github.com/Increase/increase-csharp/compare/v0.43.1...v0.44.0) (2026-06-12)
+
+
+### Features
+
+* **api:** api update ([#56](https://github.com/Increase/increase-csharp/issues/56)) ([8d02aeb](https://github.com/Increase/increase-csharp/commit/8d02aeb3197e0c56529d9d5d2395ed50e88d5949))
+
 ## [0.43.1](https://github.com/Increase/increase-csharp/compare/v0.43.0...v0.43.1) (2026-05-20)
 
 
