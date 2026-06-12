@@ -175,6 +175,27 @@ public record class ExportCreateParams : ParamsBase
     }
 
     /// <summary>
+    /// Options for the created export. Required if `category` is equal to `fee_csv`.
+    /// </summary>
+    public FeeCsv? FeeCsv
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<FeeCsv>("fee_csv");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("fee_csv", value);
+        }
+    }
+
+    /// <summary>
     /// Options for the created export. Required if `category` is equal to `funding_instructions`.
     /// </summary>
     public FundingInstructions? FundingInstructions
@@ -422,6 +443,12 @@ public enum Category
     FundingInstructions,
 
     /// <summary>
+    /// Export a CSV of fees. The time range must not include any fees that are part
+    /// of an open fee statement.
+    /// </summary>
+    FeeCsv,
+
+    /// <summary>
     /// A PDF of a voided check.
     /// </summary>
     VoidedCheck,
@@ -452,6 +479,7 @@ sealed class CategoryConverter : JsonConverter<Category>
             "vendor_csv" => Category.VendorCsv,
             "account_verification_letter" => Category.AccountVerificationLetter,
             "funding_instructions" => Category.FundingInstructions,
+            "fee_csv" => Category.FeeCsv,
             "voided_check" => Category.VoidedCheck,
             "daily_account_balance_csv" => Category.DailyAccountBalanceCsv,
             _ => (Category)(-1),
@@ -473,6 +501,7 @@ sealed class CategoryConverter : JsonConverter<Category>
                 Category.VendorCsv => "vendor_csv",
                 Category.AccountVerificationLetter => "account_verification_letter",
                 Category.FundingInstructions => "funding_instructions",
+                Category.FeeCsv => "fee_csv",
                 Category.VoidedCheck => "voided_check",
                 Category.DailyAccountBalanceCsv => "daily_account_balance_csv",
                 _ => throw new IncreaseInvalidDataException(
@@ -1153,6 +1182,230 @@ class EntityCsvFromRaw : IFromRawJson<EntityCsv>
     /// <inheritdoc/>
     public EntityCsv FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         EntityCsv.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Options for the created export. Required if `category` is equal to `fee_csv`.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<FeeCsv, FeeCsvFromRaw>))]
+public sealed record class FeeCsv : JsonModel
+{
+    /// <summary>
+    /// Filter results by time range on the `created_at` attribute.
+    /// </summary>
+    public FeeCsvCreatedAt? CreatedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<FeeCsvCreatedAt>("created_at");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("created_at", value);
+        }
+    }
+
+    /// <summary>
+    /// Filter exported Fees to the specified Program.
+    /// </summary>
+    public string? ProgramID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("program_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("program_id", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.CreatedAt?.Validate();
+        _ = this.ProgramID;
+    }
+
+    public FeeCsv() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public FeeCsv(FeeCsv feeCsv)
+        : base(feeCsv) { }
+#pragma warning restore CS8618
+
+    public FeeCsv(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    FeeCsv(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="FeeCsvFromRaw.FromRawUnchecked"/>
+    public static FeeCsv FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class FeeCsvFromRaw : IFromRawJson<FeeCsv>
+{
+    /// <inheritdoc/>
+    public FeeCsv FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        FeeCsv.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Filter results by time range on the `created_at` attribute.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<FeeCsvCreatedAt, FeeCsvCreatedAtFromRaw>))]
+public sealed record class FeeCsvCreatedAt : JsonModel
+{
+    /// <summary>
+    /// Return results after this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp.
+    /// </summary>
+    public System::DateTimeOffset? After
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<System::DateTimeOffset>("after");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("after", value);
+        }
+    }
+
+    /// <summary>
+    /// Return results before this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp.
+    /// </summary>
+    public System::DateTimeOffset? Before
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<System::DateTimeOffset>("before");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("before", value);
+        }
+    }
+
+    /// <summary>
+    /// Return results on or after this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp.
+    /// </summary>
+    public System::DateTimeOffset? OnOrAfter
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<System::DateTimeOffset>("on_or_after");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("on_or_after", value);
+        }
+    }
+
+    /// <summary>
+    /// Return results on or before this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp.
+    /// </summary>
+    public System::DateTimeOffset? OnOrBefore
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<System::DateTimeOffset>("on_or_before");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("on_or_before", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.After;
+        _ = this.Before;
+        _ = this.OnOrAfter;
+        _ = this.OnOrBefore;
+    }
+
+    public FeeCsvCreatedAt() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public FeeCsvCreatedAt(FeeCsvCreatedAt feeCsvCreatedAt)
+        : base(feeCsvCreatedAt) { }
+#pragma warning restore CS8618
+
+    public FeeCsvCreatedAt(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    FeeCsvCreatedAt(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="FeeCsvCreatedAtFromRaw.FromRawUnchecked"/>
+    public static FeeCsvCreatedAt FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class FeeCsvCreatedAtFromRaw : IFromRawJson<FeeCsvCreatedAt>
+{
+    /// <inheritdoc/>
+    public FeeCsvCreatedAt FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        FeeCsvCreatedAt.FromRawUnchecked(rawData);
 }
 
 /// <summary>

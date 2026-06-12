@@ -125,6 +125,20 @@ public sealed record class PhysicalCardProfile : JsonModel
     }
 
     /// <summary>
+    /// Text printed on the front of the card. Reach out to [support@increase.com](mailto:support@increase.com)
+    /// for more information.
+    /// </summary>
+    public required PhysicalCardProfileFrontText? FrontText
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<PhysicalCardProfileFrontText>("front_text");
+        }
+        init { this._rawData.Set("front_text", value); }
+    }
+
+    /// <summary>
     /// The idempotency key you chose for this object. This value is unique across
     /// Increase and is used to ensure that a request is only processed once. Learn
     /// more about [idempotency](https://increase.com/documentation/idempotency-keys).
@@ -207,6 +221,7 @@ public sealed record class PhysicalCardProfile : JsonModel
         this.Creator.Validate();
         _ = this.Description;
         _ = this.FrontImageFileID;
+        this.FrontText?.Validate();
         _ = this.IdempotencyKey;
         _ = this.IsDefault;
         _ = this.ProgramID;
@@ -299,6 +314,88 @@ sealed class CreatorConverter : JsonConverter<Creator>
             options
         );
     }
+}
+
+/// <summary>
+/// Text printed on the front of the card. Reach out to [support@increase.com](mailto:support@increase.com)
+/// for more information.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<PhysicalCardProfileFrontText, PhysicalCardProfileFrontTextFromRaw>)
+)]
+public sealed record class PhysicalCardProfileFrontText : JsonModel
+{
+    /// <summary>
+    /// The first line of text on the front of the card.
+    /// </summary>
+    public required string Line1
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("line1");
+        }
+        init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// The second line of text on the front of the card. Providing a second line
+    /// moves the first line slightly higher and prints the second line in the spot
+    /// where the first line would have otherwise been printed.
+    /// </summary>
+    public required string? Line2
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("line2");
+        }
+        init { this._rawData.Set("line2", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Line1;
+        _ = this.Line2;
+    }
+
+    public PhysicalCardProfileFrontText() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public PhysicalCardProfileFrontText(PhysicalCardProfileFrontText physicalCardProfileFrontText)
+        : base(physicalCardProfileFrontText) { }
+#pragma warning restore CS8618
+
+    public PhysicalCardProfileFrontText(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    PhysicalCardProfileFrontText(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="PhysicalCardProfileFrontTextFromRaw.FromRawUnchecked"/>
+    public static PhysicalCardProfileFrontText FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class PhysicalCardProfileFrontTextFromRaw : IFromRawJson<PhysicalCardProfileFrontText>
+{
+    /// <inheritdoc/>
+    public PhysicalCardProfileFrontText FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => PhysicalCardProfileFrontText.FromRawUnchecked(rawData);
 }
 
 /// <summary>

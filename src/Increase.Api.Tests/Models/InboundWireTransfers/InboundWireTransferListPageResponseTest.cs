@@ -40,6 +40,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
                     InstructionIdentification = "202201180000001",
+                    Purpose = "CASH",
                     Reversal = new()
                     {
                         Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -82,6 +83,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                 InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                 InstructingAgentRoutingNumber = "101050001",
                 InstructionIdentification = "202201180000001",
+                Purpose = "CASH",
                 Reversal = new()
                 {
                     Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -136,6 +138,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
                     InstructionIdentification = "202201180000001",
+                    Purpose = "CASH",
                     Reversal = new()
                     {
                         Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -193,6 +196,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
                     InstructionIdentification = "202201180000001",
+                    Purpose = "CASH",
                     Reversal = new()
                     {
                         Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -243,6 +247,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                 InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                 InstructingAgentRoutingNumber = "101050001",
                 InstructionIdentification = "202201180000001",
+                Purpose = "CASH",
                 Reversal = new()
                 {
                     Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -297,6 +302,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
                     InstructionIdentification = "202201180000001",
+                    Purpose = "CASH",
                     Reversal = new()
                     {
                         Reason = InboundWireTransfers::ReversalReason.Duplicate,
@@ -347,6 +353,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
                     InstructionIdentification = "202201180000001",
+                    Purpose = "CASH",
                     Reversal = new()
                     {
                         Reason = InboundWireTransfers::ReversalReason.Duplicate,

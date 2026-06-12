@@ -21,6 +21,7 @@ public class PhysicalCardProfileTest : TestBase
             Creator = PhysicalCardProfiles::Creator.User,
             Description = "Corporate logo card",
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
+            FrontText = new() { Line1 = "line1", Line2 = "line2" },
             IdempotencyKey = null,
             IsDefault = false,
             ProgramID = "program_i2v2os4mwza1oetokh9i",
@@ -37,6 +38,11 @@ public class PhysicalCardProfileTest : TestBase
             PhysicalCardProfiles::Creator.User;
         string expectedDescription = "Corporate logo card";
         string expectedFrontImageFileID = "file_makxrc67oh9l6sg7w9yc";
+        PhysicalCardProfiles::PhysicalCardProfileFrontText expectedFrontText = new()
+        {
+            Line1 = "line1",
+            Line2 = "line2",
+        };
         bool expectedIsDefault = false;
         string expectedProgramID = "program_i2v2os4mwza1oetokh9i";
         ApiEnum<string, PhysicalCardProfiles::PhysicalCardProfileStatus> expectedStatus =
@@ -52,6 +58,7 @@ public class PhysicalCardProfileTest : TestBase
         Assert.Equal(expectedCreator, model.Creator);
         Assert.Equal(expectedDescription, model.Description);
         Assert.Equal(expectedFrontImageFileID, model.FrontImageFileID);
+        Assert.Equal(expectedFrontText, model.FrontText);
         Assert.Null(model.IdempotencyKey);
         Assert.Equal(expectedIsDefault, model.IsDefault);
         Assert.Equal(expectedProgramID, model.ProgramID);
@@ -72,6 +79,7 @@ public class PhysicalCardProfileTest : TestBase
             Creator = PhysicalCardProfiles::Creator.User,
             Description = "Corporate logo card",
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
+            FrontText = new() { Line1 = "line1", Line2 = "line2" },
             IdempotencyKey = null,
             IsDefault = false,
             ProgramID = "program_i2v2os4mwza1oetokh9i",
@@ -101,6 +109,7 @@ public class PhysicalCardProfileTest : TestBase
             Creator = PhysicalCardProfiles::Creator.User,
             Description = "Corporate logo card",
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
+            FrontText = new() { Line1 = "line1", Line2 = "line2" },
             IdempotencyKey = null,
             IsDefault = false,
             ProgramID = "program_i2v2os4mwza1oetokh9i",
@@ -124,6 +133,11 @@ public class PhysicalCardProfileTest : TestBase
             PhysicalCardProfiles::Creator.User;
         string expectedDescription = "Corporate logo card";
         string expectedFrontImageFileID = "file_makxrc67oh9l6sg7w9yc";
+        PhysicalCardProfiles::PhysicalCardProfileFrontText expectedFrontText = new()
+        {
+            Line1 = "line1",
+            Line2 = "line2",
+        };
         bool expectedIsDefault = false;
         string expectedProgramID = "program_i2v2os4mwza1oetokh9i";
         ApiEnum<string, PhysicalCardProfiles::PhysicalCardProfileStatus> expectedStatus =
@@ -139,6 +153,7 @@ public class PhysicalCardProfileTest : TestBase
         Assert.Equal(expectedCreator, deserialized.Creator);
         Assert.Equal(expectedDescription, deserialized.Description);
         Assert.Equal(expectedFrontImageFileID, deserialized.FrontImageFileID);
+        Assert.Equal(expectedFrontText, deserialized.FrontText);
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Equal(expectedIsDefault, deserialized.IsDefault);
         Assert.Equal(expectedProgramID, deserialized.ProgramID);
@@ -159,6 +174,7 @@ public class PhysicalCardProfileTest : TestBase
             Creator = PhysicalCardProfiles::Creator.User,
             Description = "Corporate logo card",
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
+            FrontText = new() { Line1 = "line1", Line2 = "line2" },
             IdempotencyKey = null,
             IsDefault = false,
             ProgramID = "program_i2v2os4mwza1oetokh9i",
@@ -182,6 +198,7 @@ public class PhysicalCardProfileTest : TestBase
             Creator = PhysicalCardProfiles::Creator.User,
             Description = "Corporate logo card",
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
+            FrontText = new() { Line1 = "line1", Line2 = "line2" },
             IdempotencyKey = null,
             IsDefault = false,
             ProgramID = "program_i2v2os4mwza1oetokh9i",
@@ -248,6 +265,94 @@ public class CreatorTest : TestBase
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
+    }
+}
+
+public class PhysicalCardProfileFrontTextTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new PhysicalCardProfiles::PhysicalCardProfileFrontText
+        {
+            Line1 = "line1",
+            Line2 = "line2",
+        };
+
+        string expectedLine1 = "line1";
+        string expectedLine2 = "line2";
+
+        Assert.Equal(expectedLine1, model.Line1);
+        Assert.Equal(expectedLine2, model.Line2);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new PhysicalCardProfiles::PhysicalCardProfileFrontText
+        {
+            Line1 = "line1",
+            Line2 = "line2",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<PhysicalCardProfiles::PhysicalCardProfileFrontText>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new PhysicalCardProfiles::PhysicalCardProfileFrontText
+        {
+            Line1 = "line1",
+            Line2 = "line2",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<PhysicalCardProfiles::PhysicalCardProfileFrontText>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedLine1 = "line1";
+        string expectedLine2 = "line2";
+
+        Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Equal(expectedLine2, deserialized.Line2);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new PhysicalCardProfiles::PhysicalCardProfileFrontText
+        {
+            Line1 = "line1",
+            Line2 = "line2",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PhysicalCardProfiles::PhysicalCardProfileFrontText
+        {
+            Line1 = "line1",
+            Line2 = "line2",
+        };
+
+        PhysicalCardProfiles::PhysicalCardProfileFrontText copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

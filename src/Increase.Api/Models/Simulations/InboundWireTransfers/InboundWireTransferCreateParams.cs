@@ -293,6 +293,27 @@ public record class InboundWireTransferCreateParams : ParamsBase
     }
 
     /// <summary>
+    /// The sending bank will set purpose in production. You can simulate any value here.
+    /// </summary>
+    public string? Purpose
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("purpose");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("purpose", value);
+        }
+    }
+
+    /// <summary>
     /// The sending bank will set unique_end_to_end_transaction_reference in production.
     /// You can simulate any value here.
     /// </summary>

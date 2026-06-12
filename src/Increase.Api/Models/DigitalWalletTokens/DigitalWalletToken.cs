@@ -72,6 +72,20 @@ public sealed record class DigitalWalletToken : JsonModel
     }
 
     /// <summary>
+    /// If the Digital Wallet Token was declined during provisioning, details about
+    /// the decline.
+    /// </summary>
+    public required Decline? Decline
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<Decline>("decline");
+        }
+        init { this._rawData.Set("decline", value); }
+    }
+
+    /// <summary>
     /// The device that was used to create the Digital Wallet Token.
     /// </summary>
     public required Device Device
@@ -169,6 +183,7 @@ public sealed record class DigitalWalletToken : JsonModel
         _ = this.CardID;
         this.Cardholder.Validate();
         _ = this.CreatedAt;
+        this.Decline?.Validate();
         this.Device.Validate();
         this.DynamicPrimaryAccountNumber?.Validate();
         this.Status.Validate();
@@ -282,6 +297,152 @@ class CardholderFromRaw : IFromRawJson<Cardholder>
     /// <inheritdoc/>
     public Cardholder FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         Cardholder.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// If the Digital Wallet Token was declined during provisioning, details about the decline.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Decline, DeclineFromRaw>))]
+public sealed record class Decline : JsonModel
+{
+    /// <summary>
+    /// The reason the token provisioning was declined.
+    /// </summary>
+    public required ApiEnum<string, Reason> Reason
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, Reason>>("reason");
+        }
+        init { this._rawData.Set("reason", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Reason.Validate();
+    }
+
+    public Decline() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Decline(Decline decline)
+        : base(decline) { }
+#pragma warning restore CS8618
+
+    public Decline(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Decline(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="DeclineFromRaw.FromRawUnchecked"/>
+    public static Decline FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public Decline(ApiEnum<string, Reason> reason)
+        : this()
+    {
+        this.Reason = reason;
+    }
+}
+
+class DeclineFromRaw : IFromRawJson<Decline>
+{
+    /// <inheritdoc/>
+    public Decline FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Decline.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The reason the token provisioning was declined.
+/// </summary>
+[JsonConverter(typeof(ReasonConverter))]
+public enum Reason
+{
+    /// <summary>
+    /// The card is not active.
+    /// </summary>
+    CardNotActive,
+
+    /// <summary>
+    /// The card does not have a two-factor authentication method.
+    /// </summary>
+    NoVerificationMethod,
+
+    /// <summary>
+    /// Your webhook timed out when evaluating the token provisioning attempt.
+    /// </summary>
+    WebhookTimedOut,
+
+    /// <summary>
+    /// Your webhook declined the token provisioning attempt.
+    /// </summary>
+    WebhookDeclined,
+
+    /// <summary>
+    /// The tokenization attempt failed because the Card Verification Code (CVC)
+    /// was incorrect.
+    /// </summary>
+    IncorrectCardVerificationCode,
+
+    /// <summary>
+    /// The tokenization attempt was declined by the token requestor.
+    /// </summary>
+    DeclinedByTokenRequestor,
+}
+
+sealed class ReasonConverter : JsonConverter<Reason>
+{
+    public override Reason Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "card_not_active" => Reason.CardNotActive,
+            "no_verification_method" => Reason.NoVerificationMethod,
+            "webhook_timed_out" => Reason.WebhookTimedOut,
+            "webhook_declined" => Reason.WebhookDeclined,
+            "incorrect_card_verification_code" => Reason.IncorrectCardVerificationCode,
+            "declined_by_token_requestor" => Reason.DeclinedByTokenRequestor,
+            _ => (Reason)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Reason value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Reason.CardNotActive => "card_not_active",
+                Reason.NoVerificationMethod => "no_verification_method",
+                Reason.WebhookTimedOut => "webhook_timed_out",
+                Reason.WebhookDeclined => "webhook_declined",
+                Reason.IncorrectCardVerificationCode => "incorrect_card_verification_code",
+                Reason.DeclinedByTokenRequestor => "declined_by_token_requestor",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>
@@ -594,6 +755,11 @@ public enum Status
     /// The digital wallet token has been permanently canceled.
     /// </summary>
     Deactivated,
+
+    /// <summary>
+    /// The digital wallet token was declined during provisioning.
+    /// </summary>
+    Declined,
 }
 
 sealed class StatusConverter : JsonConverter<Status>
@@ -610,6 +776,7 @@ sealed class StatusConverter : JsonConverter<Status>
             "inactive" => Status.Inactive,
             "suspended" => Status.Suspended,
             "deactivated" => Status.Deactivated,
+            "declined" => Status.Declined,
             _ => (Status)(-1),
         };
     }
@@ -624,6 +791,7 @@ sealed class StatusConverter : JsonConverter<Status>
                 Status.Inactive => "inactive",
                 Status.Suspended => "suspended",
                 Status.Deactivated => "deactivated",
+                Status.Declined => "declined",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -849,6 +1017,11 @@ public enum UpdateStatus
     /// The digital wallet token has been permanently canceled.
     /// </summary>
     Deactivated,
+
+    /// <summary>
+    /// The digital wallet token was declined during provisioning.
+    /// </summary>
+    Declined,
 }
 
 sealed class UpdateStatusConverter : JsonConverter<UpdateStatus>
@@ -865,6 +1038,7 @@ sealed class UpdateStatusConverter : JsonConverter<UpdateStatus>
             "inactive" => UpdateStatus.Inactive,
             "suspended" => UpdateStatus.Suspended,
             "deactivated" => UpdateStatus.Deactivated,
+            "declined" => UpdateStatus.Declined,
             _ => (UpdateStatus)(-1),
         };
     }
@@ -883,6 +1057,7 @@ sealed class UpdateStatusConverter : JsonConverter<UpdateStatus>
                 UpdateStatus.Inactive => "inactive",
                 UpdateStatus.Suspended => "suspended",
                 UpdateStatus.Deactivated => "deactivated",
+                UpdateStatus.Declined => "declined",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

@@ -23,6 +23,7 @@ public class InboundWireTransferCreateParamsTest : TestBase
             EndToEndIdentification = "x",
             InstructingAgentRoutingNumber = "x",
             InstructionIdentification = "x",
+            Purpose = "x",
             UniqueEndToEndTransactionReference = "x",
             UnstructuredRemittanceInformation = "x",
             WireDrawdownRequestID = "wire_drawdown_request_id",
@@ -41,6 +42,7 @@ public class InboundWireTransferCreateParamsTest : TestBase
         string expectedEndToEndIdentification = "x";
         string expectedInstructingAgentRoutingNumber = "x";
         string expectedInstructionIdentification = "x";
+        string expectedPurpose = "x";
         string expectedUniqueEndToEndTransactionReference = "x";
         string expectedUnstructuredRemittanceInformation = "x";
         string expectedWireDrawdownRequestID = "wire_drawdown_request_id";
@@ -61,6 +63,7 @@ public class InboundWireTransferCreateParamsTest : TestBase
             parameters.InstructingAgentRoutingNumber
         );
         Assert.Equal(expectedInstructionIdentification, parameters.InstructionIdentification);
+        Assert.Equal(expectedPurpose, parameters.Purpose);
         Assert.Equal(
             expectedUniqueEndToEndTransactionReference,
             parameters.UniqueEndToEndTransactionReference
@@ -103,6 +106,8 @@ public class InboundWireTransferCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("instructing_agent_routing_number"));
         Assert.Null(parameters.InstructionIdentification);
         Assert.False(parameters.RawBodyData.ContainsKey("instruction_identification"));
+        Assert.Null(parameters.Purpose);
+        Assert.False(parameters.RawBodyData.ContainsKey("purpose"));
         Assert.Null(parameters.UniqueEndToEndTransactionReference);
         Assert.False(parameters.RawBodyData.ContainsKey("unique_end_to_end_transaction_reference"));
         Assert.Null(parameters.UnstructuredRemittanceInformation);
@@ -131,6 +136,7 @@ public class InboundWireTransferCreateParamsTest : TestBase
             EndToEndIdentification = null,
             InstructingAgentRoutingNumber = null,
             InstructionIdentification = null,
+            Purpose = null,
             UniqueEndToEndTransactionReference = null,
             UnstructuredRemittanceInformation = null,
             WireDrawdownRequestID = null,
@@ -158,6 +164,8 @@ public class InboundWireTransferCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("instructing_agent_routing_number"));
         Assert.Null(parameters.InstructionIdentification);
         Assert.False(parameters.RawBodyData.ContainsKey("instruction_identification"));
+        Assert.Null(parameters.Purpose);
+        Assert.False(parameters.RawBodyData.ContainsKey("purpose"));
         Assert.Null(parameters.UniqueEndToEndTransactionReference);
         Assert.False(parameters.RawBodyData.ContainsKey("unique_end_to_end_transaction_reference"));
         Assert.Null(parameters.UnstructuredRemittanceInformation);
@@ -203,6 +211,7 @@ public class InboundWireTransferCreateParamsTest : TestBase
             EndToEndIdentification = "x",
             InstructingAgentRoutingNumber = "x",
             InstructionIdentification = "x",
+            Purpose = "x",
             UniqueEndToEndTransactionReference = "x",
             UnstructuredRemittanceInformation = "x",
             WireDrawdownRequestID = "wire_drawdown_request_id",

@@ -53,15 +53,21 @@ public class CardPushTransferTest : TestBase
             IdempotencyKey = null,
             MerchantCategoryCode = "1234",
             MerchantCityName = "New York",
+            MerchantLegalBusinessName = null,
             MerchantName = "Acme Corp",
             MerchantNamePrefix = "Acme",
             MerchantPostalCode = "10045",
             MerchantState = "NY",
+            MerchantStreetAddress = null,
             PresentmentAmount = new()
             {
                 Currency = CardPushTransfers::CardPushTransferPresentmentAmountCurrency.Usd,
                 Value = "12.34",
             },
+            RecipientAddressCity = null,
+            RecipientAddressLine1 = null,
+            RecipientAddressPostalCode = null,
+            RecipientAddressState = null,
             RecipientName = "Ian Crease",
             Route = CardPushTransfers::Route.Visa,
             SenderAddressCity = "New York",
@@ -165,11 +171,17 @@ public class CardPushTransferTest : TestBase
         Assert.Null(model.IdempotencyKey);
         Assert.Equal(expectedMerchantCategoryCode, model.MerchantCategoryCode);
         Assert.Equal(expectedMerchantCityName, model.MerchantCityName);
+        Assert.Null(model.MerchantLegalBusinessName);
         Assert.Equal(expectedMerchantName, model.MerchantName);
         Assert.Equal(expectedMerchantNamePrefix, model.MerchantNamePrefix);
         Assert.Equal(expectedMerchantPostalCode, model.MerchantPostalCode);
         Assert.Equal(expectedMerchantState, model.MerchantState);
+        Assert.Null(model.MerchantStreetAddress);
         Assert.Equal(expectedPresentmentAmount, model.PresentmentAmount);
+        Assert.Null(model.RecipientAddressCity);
+        Assert.Null(model.RecipientAddressLine1);
+        Assert.Null(model.RecipientAddressPostalCode);
+        Assert.Null(model.RecipientAddressState);
         Assert.Equal(expectedRecipientName, model.RecipientName);
         Assert.Equal(expectedRoute, model.Route);
         Assert.Equal(expectedSenderAddressCity, model.SenderAddressCity);
@@ -228,15 +240,21 @@ public class CardPushTransferTest : TestBase
             IdempotencyKey = null,
             MerchantCategoryCode = "1234",
             MerchantCityName = "New York",
+            MerchantLegalBusinessName = null,
             MerchantName = "Acme Corp",
             MerchantNamePrefix = "Acme",
             MerchantPostalCode = "10045",
             MerchantState = "NY",
+            MerchantStreetAddress = null,
             PresentmentAmount = new()
             {
                 Currency = CardPushTransfers::CardPushTransferPresentmentAmountCurrency.Usd,
                 Value = "12.34",
             },
+            RecipientAddressCity = null,
+            RecipientAddressLine1 = null,
+            RecipientAddressPostalCode = null,
+            RecipientAddressState = null,
             RecipientName = "Ian Crease",
             Route = CardPushTransfers::Route.Visa,
             SenderAddressCity = "New York",
@@ -310,15 +328,21 @@ public class CardPushTransferTest : TestBase
             IdempotencyKey = null,
             MerchantCategoryCode = "1234",
             MerchantCityName = "New York",
+            MerchantLegalBusinessName = null,
             MerchantName = "Acme Corp",
             MerchantNamePrefix = "Acme",
             MerchantPostalCode = "10045",
             MerchantState = "NY",
+            MerchantStreetAddress = null,
             PresentmentAmount = new()
             {
                 Currency = CardPushTransfers::CardPushTransferPresentmentAmountCurrency.Usd,
                 Value = "12.34",
             },
+            RecipientAddressCity = null,
+            RecipientAddressLine1 = null,
+            RecipientAddressPostalCode = null,
+            RecipientAddressState = null,
             RecipientName = "Ian Crease",
             Route = CardPushTransfers::Route.Visa,
             SenderAddressCity = "New York",
@@ -432,11 +456,17 @@ public class CardPushTransferTest : TestBase
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Equal(expectedMerchantCategoryCode, deserialized.MerchantCategoryCode);
         Assert.Equal(expectedMerchantCityName, deserialized.MerchantCityName);
+        Assert.Null(deserialized.MerchantLegalBusinessName);
         Assert.Equal(expectedMerchantName, deserialized.MerchantName);
         Assert.Equal(expectedMerchantNamePrefix, deserialized.MerchantNamePrefix);
         Assert.Equal(expectedMerchantPostalCode, deserialized.MerchantPostalCode);
         Assert.Equal(expectedMerchantState, deserialized.MerchantState);
+        Assert.Null(deserialized.MerchantStreetAddress);
         Assert.Equal(expectedPresentmentAmount, deserialized.PresentmentAmount);
+        Assert.Null(deserialized.RecipientAddressCity);
+        Assert.Null(deserialized.RecipientAddressLine1);
+        Assert.Null(deserialized.RecipientAddressPostalCode);
+        Assert.Null(deserialized.RecipientAddressState);
         Assert.Equal(expectedRecipientName, deserialized.RecipientName);
         Assert.Equal(expectedRoute, deserialized.Route);
         Assert.Equal(expectedSenderAddressCity, deserialized.SenderAddressCity);
@@ -495,15 +525,21 @@ public class CardPushTransferTest : TestBase
             IdempotencyKey = null,
             MerchantCategoryCode = "1234",
             MerchantCityName = "New York",
+            MerchantLegalBusinessName = null,
             MerchantName = "Acme Corp",
             MerchantNamePrefix = "Acme",
             MerchantPostalCode = "10045",
             MerchantState = "NY",
+            MerchantStreetAddress = null,
             PresentmentAmount = new()
             {
                 Currency = CardPushTransfers::CardPushTransferPresentmentAmountCurrency.Usd,
                 Value = "12.34",
             },
+            RecipientAddressCity = null,
+            RecipientAddressLine1 = null,
+            RecipientAddressPostalCode = null,
+            RecipientAddressState = null,
             RecipientName = "Ian Crease",
             Route = CardPushTransfers::Route.Visa,
             SenderAddressCity = "New York",
@@ -571,15 +607,21 @@ public class CardPushTransferTest : TestBase
             IdempotencyKey = null,
             MerchantCategoryCode = "1234",
             MerchantCityName = "New York",
+            MerchantLegalBusinessName = null,
             MerchantName = "Acme Corp",
             MerchantNamePrefix = "Acme",
             MerchantPostalCode = "10045",
             MerchantState = "NY",
+            MerchantStreetAddress = null,
             PresentmentAmount = new()
             {
                 Currency = CardPushTransfers::CardPushTransferPresentmentAmountCurrency.Usd,
                 Value = "12.34",
             },
+            RecipientAddressCity = null,
+            RecipientAddressLine1 = null,
+            RecipientAddressPostalCode = null,
+            RecipientAddressState = null,
             RecipientName = "Ian Crease",
             Route = CardPushTransfers::Route.Visa,
             SenderAddressCity = "New York",
