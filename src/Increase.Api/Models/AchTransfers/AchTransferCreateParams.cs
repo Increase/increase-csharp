@@ -1082,6 +1082,11 @@ public enum Funding
     Savings,
 
     /// <summary>
+    /// A loan account used in a lender-borrower relationship. Uncommon.
+    /// </summary>
+    Loan,
+
+    /// <summary>
     /// A bank's general ledger. Uncommon.
     /// </summary>
     GeneralLedger,
@@ -1099,6 +1104,7 @@ sealed class FundingConverter : JsonConverter<Funding>
         {
             "checking" => Funding.Checking,
             "savings" => Funding.Savings,
+            "loan" => Funding.Loan,
             "general_ledger" => Funding.GeneralLedger,
             _ => (Funding)(-1),
         };
@@ -1112,6 +1118,7 @@ sealed class FundingConverter : JsonConverter<Funding>
             {
                 Funding.Checking => "checking",
                 Funding.Savings => "savings",
+                Funding.Loan => "loan",
                 Funding.GeneralLedger => "general_ledger",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
