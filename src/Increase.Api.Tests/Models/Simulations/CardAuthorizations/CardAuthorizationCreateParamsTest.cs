@@ -717,6 +717,7 @@ public class CategoryTest : TestBase
     [InlineData(Category.QuasiCash)]
     [InlineData(Category.Refund)]
     [InlineData(Category.CashDisbursement)]
+    [InlineData(Category.CashDeposit)]
     [InlineData(Category.BalanceInquiry)]
     public void Validation_Works(Category rawValue)
     {
@@ -746,6 +747,7 @@ public class CategoryTest : TestBase
     [InlineData(Category.QuasiCash)]
     [InlineData(Category.Refund)]
     [InlineData(Category.CashDisbursement)]
+    [InlineData(Category.CashDeposit)]
     [InlineData(Category.BalanceInquiry)]
     public void SerializationRoundtrip_Works(Category rawValue)
     {

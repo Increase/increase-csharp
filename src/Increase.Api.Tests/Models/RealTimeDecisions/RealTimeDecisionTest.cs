@@ -6972,6 +6972,7 @@ public class ProcessingCategoryTest : TestBase
     [InlineData(RealTimeDecisions::ProcessingCategory.QuasiCash)]
     [InlineData(RealTimeDecisions::ProcessingCategory.Refund)]
     [InlineData(RealTimeDecisions::ProcessingCategory.CashDisbursement)]
+    [InlineData(RealTimeDecisions::ProcessingCategory.CashDeposit)]
     [InlineData(RealTimeDecisions::ProcessingCategory.BalanceInquiry)]
     [InlineData(RealTimeDecisions::ProcessingCategory.Unknown)]
     public void Validation_Works(RealTimeDecisions::ProcessingCategory rawValue)
@@ -7001,6 +7002,7 @@ public class ProcessingCategoryTest : TestBase
     [InlineData(RealTimeDecisions::ProcessingCategory.QuasiCash)]
     [InlineData(RealTimeDecisions::ProcessingCategory.Refund)]
     [InlineData(RealTimeDecisions::ProcessingCategory.CashDisbursement)]
+    [InlineData(RealTimeDecisions::ProcessingCategory.CashDeposit)]
     [InlineData(RealTimeDecisions::ProcessingCategory.BalanceInquiry)]
     [InlineData(RealTimeDecisions::ProcessingCategory.Unknown)]
     public void SerializationRoundtrip_Works(RealTimeDecisions::ProcessingCategory rawValue)

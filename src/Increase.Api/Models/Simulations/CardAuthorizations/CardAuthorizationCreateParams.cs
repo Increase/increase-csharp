@@ -1087,6 +1087,11 @@ public enum Category
     CashDisbursement,
 
     /// <summary>
+    /// Cash deposit transactions are used to deposit cash at an ATM or a point of sale.
+    /// </summary>
+    CashDeposit,
+
+    /// <summary>
     /// A balance inquiry transaction is used to check the balance of an account associated
     /// with a card.
     /// </summary>
@@ -1111,6 +1116,7 @@ sealed class CategoryConverter : JsonConverter<Category>
             "quasi_cash" => Category.QuasiCash,
             "refund" => Category.Refund,
             "cash_disbursement" => Category.CashDisbursement,
+            "cash_deposit" => Category.CashDeposit,
             "balance_inquiry" => Category.BalanceInquiry,
             _ => (Category)(-1),
         };
@@ -1130,6 +1136,7 @@ sealed class CategoryConverter : JsonConverter<Category>
                 Category.QuasiCash => "quasi_cash",
                 Category.Refund => "refund",
                 Category.CashDisbursement => "cash_disbursement",
+                Category.CashDeposit => "cash_deposit",
                 Category.BalanceInquiry => "balance_inquiry",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

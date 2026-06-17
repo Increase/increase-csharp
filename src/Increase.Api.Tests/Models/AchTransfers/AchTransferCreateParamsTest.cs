@@ -808,6 +808,7 @@ public class FundingTest : TestBase
     [Theory]
     [InlineData(Funding.Checking)]
     [InlineData(Funding.Savings)]
+    [InlineData(Funding.Loan)]
     [InlineData(Funding.GeneralLedger)]
     public void Validation_Works(Funding rawValue)
     {
@@ -831,6 +832,7 @@ public class FundingTest : TestBase
     [Theory]
     [InlineData(Funding.Checking)]
     [InlineData(Funding.Savings)]
+    [InlineData(Funding.Loan)]
     [InlineData(Funding.GeneralLedger)]
     public void SerializationRoundtrip_Works(Funding rawValue)
     {

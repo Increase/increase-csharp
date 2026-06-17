@@ -2211,6 +2211,7 @@ public class AchTransferFundingTest : TestBase
     [Theory]
     [InlineData(AchTransfers::AchTransferFunding.Checking)]
     [InlineData(AchTransfers::AchTransferFunding.Savings)]
+    [InlineData(AchTransfers::AchTransferFunding.Loan)]
     [InlineData(AchTransfers::AchTransferFunding.GeneralLedger)]
     public void Validation_Works(AchTransfers::AchTransferFunding rawValue)
     {
@@ -2234,6 +2235,7 @@ public class AchTransferFundingTest : TestBase
     [Theory]
     [InlineData(AchTransfers::AchTransferFunding.Checking)]
     [InlineData(AchTransfers::AchTransferFunding.Savings)]
+    [InlineData(AchTransfers::AchTransferFunding.Loan)]
     [InlineData(AchTransfers::AchTransferFunding.GeneralLedger)]
     public void SerializationRoundtrip_Works(AchTransfers::AchTransferFunding rawValue)
     {

@@ -13573,6 +13573,7 @@ public class ProcessingCategoryTest : TestBase
     [InlineData(Transactions::ProcessingCategory.QuasiCash)]
     [InlineData(Transactions::ProcessingCategory.Refund)]
     [InlineData(Transactions::ProcessingCategory.CashDisbursement)]
+    [InlineData(Transactions::ProcessingCategory.CashDeposit)]
     [InlineData(Transactions::ProcessingCategory.BalanceInquiry)]
     [InlineData(Transactions::ProcessingCategory.Unknown)]
     public void Validation_Works(Transactions::ProcessingCategory rawValue)
@@ -13603,6 +13604,7 @@ public class ProcessingCategoryTest : TestBase
     [InlineData(Transactions::ProcessingCategory.QuasiCash)]
     [InlineData(Transactions::ProcessingCategory.Refund)]
     [InlineData(Transactions::ProcessingCategory.CashDisbursement)]
+    [InlineData(Transactions::ProcessingCategory.CashDeposit)]
     [InlineData(Transactions::ProcessingCategory.BalanceInquiry)]
     [InlineData(Transactions::ProcessingCategory.Unknown)]
     public void SerializationRoundtrip_Works(Transactions::ProcessingCategory rawValue)

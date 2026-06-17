@@ -5604,6 +5604,11 @@ public enum ProcessingCategory
     CashDisbursement,
 
     /// <summary>
+    /// Cash deposit transactions are used to deposit cash at an ATM or a point of sale.
+    /// </summary>
+    CashDeposit,
+
+    /// <summary>
     /// A balance inquiry transaction is used to check the balance of an account associated
     /// with a card.
     /// </summary>
@@ -5633,6 +5638,7 @@ sealed class ProcessingCategoryConverter : JsonConverter<ProcessingCategory>
             "quasi_cash" => ProcessingCategory.QuasiCash,
             "refund" => ProcessingCategory.Refund,
             "cash_disbursement" => ProcessingCategory.CashDisbursement,
+            "cash_deposit" => ProcessingCategory.CashDeposit,
             "balance_inquiry" => ProcessingCategory.BalanceInquiry,
             "unknown" => ProcessingCategory.Unknown,
             _ => (ProcessingCategory)(-1),
@@ -5657,6 +5663,7 @@ sealed class ProcessingCategoryConverter : JsonConverter<ProcessingCategory>
                 ProcessingCategory.QuasiCash => "quasi_cash",
                 ProcessingCategory.Refund => "refund",
                 ProcessingCategory.CashDisbursement => "cash_disbursement",
+                ProcessingCategory.CashDeposit => "cash_deposit",
                 ProcessingCategory.BalanceInquiry => "balance_inquiry",
                 ProcessingCategory.Unknown => "unknown",
                 _ => throw new IncreaseInvalidDataException(
@@ -13402,6 +13409,11 @@ public enum CardDeclineProcessingCategory
     CashDisbursement,
 
     /// <summary>
+    /// Cash deposit transactions are used to deposit cash at an ATM or a point of sale.
+    /// </summary>
+    CashDeposit,
+
+    /// <summary>
     /// A balance inquiry transaction is used to check the balance of an account associated
     /// with a card.
     /// </summary>
@@ -13431,6 +13443,7 @@ sealed class CardDeclineProcessingCategoryConverter : JsonConverter<CardDeclineP
             "quasi_cash" => CardDeclineProcessingCategory.QuasiCash,
             "refund" => CardDeclineProcessingCategory.Refund,
             "cash_disbursement" => CardDeclineProcessingCategory.CashDisbursement,
+            "cash_deposit" => CardDeclineProcessingCategory.CashDeposit,
             "balance_inquiry" => CardDeclineProcessingCategory.BalanceInquiry,
             "unknown" => CardDeclineProcessingCategory.Unknown,
             _ => (CardDeclineProcessingCategory)(-1),
@@ -13455,6 +13468,7 @@ sealed class CardDeclineProcessingCategoryConverter : JsonConverter<CardDeclineP
                 CardDeclineProcessingCategory.QuasiCash => "quasi_cash",
                 CardDeclineProcessingCategory.Refund => "refund",
                 CardDeclineProcessingCategory.CashDisbursement => "cash_disbursement",
+                CardDeclineProcessingCategory.CashDeposit => "cash_deposit",
                 CardDeclineProcessingCategory.BalanceInquiry => "balance_inquiry",
                 CardDeclineProcessingCategory.Unknown => "unknown",
                 _ => throw new IncreaseInvalidDataException(
@@ -17553,6 +17567,11 @@ public enum CardFinancialProcessingCategory
     CashDisbursement,
 
     /// <summary>
+    /// Cash deposit transactions are used to deposit cash at an ATM or a point of sale.
+    /// </summary>
+    CashDeposit,
+
+    /// <summary>
     /// A balance inquiry transaction is used to check the balance of an account associated
     /// with a card.
     /// </summary>
@@ -17583,6 +17602,7 @@ sealed class CardFinancialProcessingCategoryConverter
             "quasi_cash" => CardFinancialProcessingCategory.QuasiCash,
             "refund" => CardFinancialProcessingCategory.Refund,
             "cash_disbursement" => CardFinancialProcessingCategory.CashDisbursement,
+            "cash_deposit" => CardFinancialProcessingCategory.CashDeposit,
             "balance_inquiry" => CardFinancialProcessingCategory.BalanceInquiry,
             "unknown" => CardFinancialProcessingCategory.Unknown,
             _ => (CardFinancialProcessingCategory)(-1),
@@ -17608,6 +17628,7 @@ sealed class CardFinancialProcessingCategoryConverter
                 CardFinancialProcessingCategory.QuasiCash => "quasi_cash",
                 CardFinancialProcessingCategory.Refund => "refund",
                 CardFinancialProcessingCategory.CashDisbursement => "cash_disbursement",
+                CardFinancialProcessingCategory.CashDeposit => "cash_deposit",
                 CardFinancialProcessingCategory.BalanceInquiry => "balance_inquiry",
                 CardFinancialProcessingCategory.Unknown => "unknown",
                 _ => throw new IncreaseInvalidDataException(
