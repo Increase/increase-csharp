@@ -1826,6 +1826,11 @@ public enum AchTransferFunding
     Savings,
 
     /// <summary>
+    /// A loan account used in a lender-borrower relationship. Uncommon.
+    /// </summary>
+    Loan,
+
+    /// <summary>
     /// A bank's general ledger. Uncommon.
     /// </summary>
     GeneralLedger,
@@ -1843,6 +1848,7 @@ sealed class AchTransferFundingConverter : JsonConverter<AchTransferFunding>
         {
             "checking" => AchTransferFunding.Checking,
             "savings" => AchTransferFunding.Savings,
+            "loan" => AchTransferFunding.Loan,
             "general_ledger" => AchTransferFunding.GeneralLedger,
             _ => (AchTransferFunding)(-1),
         };
@@ -1860,6 +1866,7 @@ sealed class AchTransferFundingConverter : JsonConverter<AchTransferFunding>
             {
                 AchTransferFunding.Checking => "checking",
                 AchTransferFunding.Savings => "savings",
+                AchTransferFunding.Loan => "loan",
                 AchTransferFunding.GeneralLedger => "general_ledger",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

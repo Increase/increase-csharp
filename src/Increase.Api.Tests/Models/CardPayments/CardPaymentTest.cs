@@ -39937,6 +39937,7 @@ public class ProcessingCategoryTest : TestBase
     [InlineData(CardPayments::ProcessingCategory.QuasiCash)]
     [InlineData(CardPayments::ProcessingCategory.Refund)]
     [InlineData(CardPayments::ProcessingCategory.CashDisbursement)]
+    [InlineData(CardPayments::ProcessingCategory.CashDeposit)]
     [InlineData(CardPayments::ProcessingCategory.BalanceInquiry)]
     [InlineData(CardPayments::ProcessingCategory.Unknown)]
     public void Validation_Works(CardPayments::ProcessingCategory rawValue)
@@ -39967,6 +39968,7 @@ public class ProcessingCategoryTest : TestBase
     [InlineData(CardPayments::ProcessingCategory.QuasiCash)]
     [InlineData(CardPayments::ProcessingCategory.Refund)]
     [InlineData(CardPayments::ProcessingCategory.CashDisbursement)]
+    [InlineData(CardPayments::ProcessingCategory.CashDeposit)]
     [InlineData(CardPayments::ProcessingCategory.BalanceInquiry)]
     [InlineData(CardPayments::ProcessingCategory.Unknown)]
     public void SerializationRoundtrip_Works(CardPayments::ProcessingCategory rawValue)
@@ -48152,6 +48154,7 @@ public class CardDeclineProcessingCategoryTest : TestBase
     [InlineData(CardPayments::CardDeclineProcessingCategory.QuasiCash)]
     [InlineData(CardPayments::CardDeclineProcessingCategory.Refund)]
     [InlineData(CardPayments::CardDeclineProcessingCategory.CashDisbursement)]
+    [InlineData(CardPayments::CardDeclineProcessingCategory.CashDeposit)]
     [InlineData(CardPayments::CardDeclineProcessingCategory.BalanceInquiry)]
     [InlineData(CardPayments::CardDeclineProcessingCategory.Unknown)]
     public void Validation_Works(CardPayments::CardDeclineProcessingCategory rawValue)
@@ -48181,6 +48184,7 @@ public class CardDeclineProcessingCategoryTest : TestBase
     [InlineData(CardPayments::CardDeclineProcessingCategory.QuasiCash)]
     [InlineData(CardPayments::CardDeclineProcessingCategory.Refund)]
     [InlineData(CardPayments::CardDeclineProcessingCategory.CashDisbursement)]
+    [InlineData(CardPayments::CardDeclineProcessingCategory.CashDeposit)]
     [InlineData(CardPayments::CardDeclineProcessingCategory.BalanceInquiry)]
     [InlineData(CardPayments::CardDeclineProcessingCategory.Unknown)]
     public void SerializationRoundtrip_Works(CardPayments::CardDeclineProcessingCategory rawValue)
@@ -52337,6 +52341,7 @@ public class CardFinancialProcessingCategoryTest : TestBase
     [InlineData(CardPayments::CardFinancialProcessingCategory.QuasiCash)]
     [InlineData(CardPayments::CardFinancialProcessingCategory.Refund)]
     [InlineData(CardPayments::CardFinancialProcessingCategory.CashDisbursement)]
+    [InlineData(CardPayments::CardFinancialProcessingCategory.CashDeposit)]
     [InlineData(CardPayments::CardFinancialProcessingCategory.BalanceInquiry)]
     [InlineData(CardPayments::CardFinancialProcessingCategory.Unknown)]
     public void Validation_Works(CardPayments::CardFinancialProcessingCategory rawValue)
@@ -52366,6 +52371,7 @@ public class CardFinancialProcessingCategoryTest : TestBase
     [InlineData(CardPayments::CardFinancialProcessingCategory.QuasiCash)]
     [InlineData(CardPayments::CardFinancialProcessingCategory.Refund)]
     [InlineData(CardPayments::CardFinancialProcessingCategory.CashDisbursement)]
+    [InlineData(CardPayments::CardFinancialProcessingCategory.CashDeposit)]
     [InlineData(CardPayments::CardFinancialProcessingCategory.BalanceInquiry)]
     [InlineData(CardPayments::CardFinancialProcessingCategory.Unknown)]
     public void SerializationRoundtrip_Works(CardPayments::CardFinancialProcessingCategory rawValue)

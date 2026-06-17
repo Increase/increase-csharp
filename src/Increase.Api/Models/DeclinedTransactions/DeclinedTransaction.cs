@@ -3564,6 +3564,11 @@ public enum ProcessingCategory
     CashDisbursement,
 
     /// <summary>
+    /// Cash deposit transactions are used to deposit cash at an ATM or a point of sale.
+    /// </summary>
+    CashDeposit,
+
+    /// <summary>
     /// A balance inquiry transaction is used to check the balance of an account associated
     /// with a card.
     /// </summary>
@@ -3593,6 +3598,7 @@ sealed class ProcessingCategoryConverter : JsonConverter<ProcessingCategory>
             "quasi_cash" => ProcessingCategory.QuasiCash,
             "refund" => ProcessingCategory.Refund,
             "cash_disbursement" => ProcessingCategory.CashDisbursement,
+            "cash_deposit" => ProcessingCategory.CashDeposit,
             "balance_inquiry" => ProcessingCategory.BalanceInquiry,
             "unknown" => ProcessingCategory.Unknown,
             _ => (ProcessingCategory)(-1),
@@ -3617,6 +3623,7 @@ sealed class ProcessingCategoryConverter : JsonConverter<ProcessingCategory>
                 ProcessingCategory.QuasiCash => "quasi_cash",
                 ProcessingCategory.Refund => "refund",
                 ProcessingCategory.CashDisbursement => "cash_disbursement",
+                ProcessingCategory.CashDeposit => "cash_deposit",
                 ProcessingCategory.BalanceInquiry => "balance_inquiry",
                 ProcessingCategory.Unknown => "unknown",
                 _ => throw new IncreaseInvalidDataException(
