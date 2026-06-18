@@ -1609,11 +1609,6 @@ public enum Status
     PendingSubmitting,
 
     /// <summary>
-    /// The Prenotification requires attention.
-    /// </summary>
-    RequiresAttention,
-
-    /// <summary>
     /// The Prenotification has been returned.
     /// </summary>
     Returned,
@@ -1622,6 +1617,11 @@ public enum Status
     /// The Prenotification is complete.
     /// </summary>
     Submitted,
+
+    /// <summary>
+    /// The Prenotification requires attention.
+    /// </summary>
+    RequiresAttention,
 }
 
 sealed class StatusConverter : JsonConverter<Status>
@@ -1635,9 +1635,9 @@ sealed class StatusConverter : JsonConverter<Status>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "pending_submitting" => Status.PendingSubmitting,
-            "requires_attention" => Status.RequiresAttention,
             "returned" => Status.Returned,
             "submitted" => Status.Submitted,
+            "requires_attention" => Status.RequiresAttention,
             _ => (Status)(-1),
         };
     }
@@ -1649,9 +1649,9 @@ sealed class StatusConverter : JsonConverter<Status>
             value switch
             {
                 Status.PendingSubmitting => "pending_submitting",
-                Status.RequiresAttention => "requires_attention",
                 Status.Returned => "returned",
                 Status.Submitted => "submitted",
+                Status.RequiresAttention => "requires_attention",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

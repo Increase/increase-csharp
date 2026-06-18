@@ -1142,9 +1142,9 @@ public class StatusTest : TestBase
 {
     [Theory]
     [InlineData(AchPrenotifications::Status.PendingSubmitting)]
-    [InlineData(AchPrenotifications::Status.RequiresAttention)]
     [InlineData(AchPrenotifications::Status.Returned)]
     [InlineData(AchPrenotifications::Status.Submitted)]
+    [InlineData(AchPrenotifications::Status.RequiresAttention)]
     public void Validation_Works(AchPrenotifications::Status rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1166,9 +1166,9 @@ public class StatusTest : TestBase
 
     [Theory]
     [InlineData(AchPrenotifications::Status.PendingSubmitting)]
-    [InlineData(AchPrenotifications::Status.RequiresAttention)]
     [InlineData(AchPrenotifications::Status.Returned)]
     [InlineData(AchPrenotifications::Status.Submitted)]
+    [InlineData(AchPrenotifications::Status.RequiresAttention)]
     public void SerializationRoundtrip_Works(AchPrenotifications::Status rawValue)
     {
         // force implicit conversion because Theory can't do that for us

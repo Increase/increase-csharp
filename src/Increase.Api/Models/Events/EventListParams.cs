@@ -665,6 +665,11 @@ public enum In
     LoanApplicationUpdated,
 
     /// <summary>
+    /// Occurs whenever a Loan Distribution is created.
+    /// </summary>
+    LoanDistributionCreated,
+
+    /// <summary>
     /// Occurs whenever a Loan Offer is created.
     /// </summary>
     LoanOfferCreated,
@@ -673,6 +678,11 @@ public enum In
     /// Occurs whenever a Loan Offer is updated.
     /// </summary>
     LoanOfferUpdated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Purchase is created.
+    /// </summary>
+    LoanPurchaseCreated,
 
     /// <summary>
     /// Occurs whenever a Lockbox is created.
@@ -946,8 +956,10 @@ sealed class InConverter : JsonConverter<In>
             "intrafi_exclusion.updated" => In.IntrafiExclusionUpdated,
             "loan_application.created" => In.LoanApplicationCreated,
             "loan_application.updated" => In.LoanApplicationUpdated,
+            "loan_distribution.created" => In.LoanDistributionCreated,
             "loan_offer.created" => In.LoanOfferCreated,
             "loan_offer.updated" => In.LoanOfferUpdated,
+            "loan_purchase.created" => In.LoanPurchaseCreated,
             "lockbox.created" => In.LockboxCreated,
             "lockbox.updated" => In.LockboxUpdated,
             "oauth_connection.created" => In.OAuthConnectionCreated,
@@ -1077,8 +1089,10 @@ sealed class InConverter : JsonConverter<In>
                 In.IntrafiExclusionUpdated => "intrafi_exclusion.updated",
                 In.LoanApplicationCreated => "loan_application.created",
                 In.LoanApplicationUpdated => "loan_application.updated",
+                In.LoanDistributionCreated => "loan_distribution.created",
                 In.LoanOfferCreated => "loan_offer.created",
                 In.LoanOfferUpdated => "loan_offer.updated",
+                In.LoanPurchaseCreated => "loan_purchase.created",
                 In.LockboxCreated => "lockbox.created",
                 In.LockboxUpdated => "lockbox.updated",
                 In.OAuthConnectionCreated => "oauth_connection.created",
