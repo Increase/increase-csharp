@@ -1319,12 +1319,6 @@ public enum EventSubscriptionStatus
     /// The subscription is permanently disabled and Events will not be delivered.
     /// </summary>
     Deleted,
-
-    /// <summary>
-    /// The subscription is temporarily disabled due to delivery errors and Events
-    /// will not be delivered.
-    /// </summary>
-    RequiresAttention,
 }
 
 sealed class EventSubscriptionStatusConverter : JsonConverter<EventSubscriptionStatus>
@@ -1340,7 +1334,6 @@ sealed class EventSubscriptionStatusConverter : JsonConverter<EventSubscriptionS
             "active" => EventSubscriptionStatus.Active,
             "disabled" => EventSubscriptionStatus.Disabled,
             "deleted" => EventSubscriptionStatus.Deleted,
-            "requires_attention" => EventSubscriptionStatus.RequiresAttention,
             _ => (EventSubscriptionStatus)(-1),
         };
     }
@@ -1358,7 +1351,6 @@ sealed class EventSubscriptionStatusConverter : JsonConverter<EventSubscriptionS
                 EventSubscriptionStatus.Active => "active",
                 EventSubscriptionStatus.Disabled => "disabled",
                 EventSubscriptionStatus.Deleted => "deleted",
-                EventSubscriptionStatus.RequiresAttention => "requires_attention",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

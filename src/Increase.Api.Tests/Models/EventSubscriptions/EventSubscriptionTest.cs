@@ -1022,7 +1022,6 @@ public class EventSubscriptionStatusTest : TestBase
     [InlineData(EventSubscriptions::EventSubscriptionStatus.Active)]
     [InlineData(EventSubscriptions::EventSubscriptionStatus.Disabled)]
     [InlineData(EventSubscriptions::EventSubscriptionStatus.Deleted)]
-    [InlineData(EventSubscriptions::EventSubscriptionStatus.RequiresAttention)]
     public void Validation_Works(EventSubscriptions::EventSubscriptionStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1045,7 +1044,6 @@ public class EventSubscriptionStatusTest : TestBase
     [InlineData(EventSubscriptions::EventSubscriptionStatus.Active)]
     [InlineData(EventSubscriptions::EventSubscriptionStatus.Disabled)]
     [InlineData(EventSubscriptions::EventSubscriptionStatus.Deleted)]
-    [InlineData(EventSubscriptions::EventSubscriptionStatus.RequiresAttention)]
     public void SerializationRoundtrip_Works(EventSubscriptions::EventSubscriptionStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
