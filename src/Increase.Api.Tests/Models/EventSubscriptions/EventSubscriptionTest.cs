@@ -510,10 +510,16 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanApplicationUpdated
     )]
     [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanDistributionCreated
+    )]
+    [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferCreated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferUpdated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseCreated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated
@@ -867,10 +873,16 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanApplicationUpdated
     )]
     [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanDistributionCreated
+    )]
+    [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferCreated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferUpdated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseCreated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated
@@ -1022,7 +1034,6 @@ public class EventSubscriptionStatusTest : TestBase
     [InlineData(EventSubscriptions::EventSubscriptionStatus.Active)]
     [InlineData(EventSubscriptions::EventSubscriptionStatus.Disabled)]
     [InlineData(EventSubscriptions::EventSubscriptionStatus.Deleted)]
-    [InlineData(EventSubscriptions::EventSubscriptionStatus.RequiresAttention)]
     public void Validation_Works(EventSubscriptions::EventSubscriptionStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1045,7 +1056,6 @@ public class EventSubscriptionStatusTest : TestBase
     [InlineData(EventSubscriptions::EventSubscriptionStatus.Active)]
     [InlineData(EventSubscriptions::EventSubscriptionStatus.Disabled)]
     [InlineData(EventSubscriptions::EventSubscriptionStatus.Deleted)]
-    [InlineData(EventSubscriptions::EventSubscriptionStatus.RequiresAttention)]
     public void SerializationRoundtrip_Works(EventSubscriptions::EventSubscriptionStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
