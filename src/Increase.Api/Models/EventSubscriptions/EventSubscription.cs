@@ -643,6 +643,11 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     LoanApplicationUpdated,
 
     /// <summary>
+    /// Occurs whenever a Loan Distribution is created.
+    /// </summary>
+    LoanDistributionCreated,
+
+    /// <summary>
     /// Occurs whenever a Loan Offer is created.
     /// </summary>
     LoanOfferCreated,
@@ -651,6 +656,11 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     /// Occurs whenever a Loan Offer is updated.
     /// </summary>
     LoanOfferUpdated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Purchase is created.
+    /// </summary>
+    LoanPurchaseCreated,
 
     /// <summary>
     /// Occurs whenever a Lockbox is created.
@@ -984,10 +994,14 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanApplicationCreated,
             "loan_application.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanApplicationUpdated,
+            "loan_distribution.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanDistributionCreated,
             "loan_offer.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferCreated,
             "loan_offer.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferUpdated,
+            "loan_purchase.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseCreated,
             "lockbox.created" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated,
             "lockbox.updated" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated,
             "oauth_connection.created" =>
@@ -1212,10 +1226,14 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "loan_application.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanApplicationUpdated =>
                     "loan_application.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanDistributionCreated =>
+                    "loan_distribution.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferCreated =>
                     "loan_offer.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferUpdated =>
                     "loan_offer.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseCreated =>
+                    "loan_purchase.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated =>
                     "lockbox.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated =>
@@ -1319,12 +1337,6 @@ public enum EventSubscriptionStatus
     /// The subscription is permanently disabled and Events will not be delivered.
     /// </summary>
     Deleted,
-
-    /// <summary>
-    /// The subscription is temporarily disabled due to delivery errors and Events
-    /// will not be delivered.
-    /// </summary>
-    RequiresAttention,
 }
 
 sealed class EventSubscriptionStatusConverter : JsonConverter<EventSubscriptionStatus>
@@ -1340,7 +1352,6 @@ sealed class EventSubscriptionStatusConverter : JsonConverter<EventSubscriptionS
             "active" => EventSubscriptionStatus.Active,
             "disabled" => EventSubscriptionStatus.Disabled,
             "deleted" => EventSubscriptionStatus.Deleted,
-            "requires_attention" => EventSubscriptionStatus.RequiresAttention,
             _ => (EventSubscriptionStatus)(-1),
         };
     }
@@ -1358,7 +1369,6 @@ sealed class EventSubscriptionStatusConverter : JsonConverter<EventSubscriptionS
                 EventSubscriptionStatus.Active => "active",
                 EventSubscriptionStatus.Disabled => "disabled",
                 EventSubscriptionStatus.Deleted => "deleted",
-                EventSubscriptionStatus.RequiresAttention => "requires_attention",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

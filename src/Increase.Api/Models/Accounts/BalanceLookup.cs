@@ -174,12 +174,26 @@ public sealed record class BalanceLookupLoan : JsonModel
         init { this._rawData.Set("past_due_balance", value); }
     }
 
+    /// <summary>
+    /// The receivables balances for the loan.
+    /// </summary>
+    public required Receivables? Receivables
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<Receivables>("receivables");
+        }
+        init { this._rawData.Set("receivables", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         _ = this.DueAt;
         _ = this.DueBalance;
         _ = this.PastDueBalance;
+        this.Receivables?.Validate();
     }
 
     public BalanceLookupLoan() { }
@@ -217,6 +231,80 @@ class BalanceLookupLoanFromRaw : IFromRawJson<BalanceLookupLoan>
     /// <inheritdoc/>
     public BalanceLookupLoan FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         BalanceLookupLoan.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The receivables balances for the loan.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Receivables, ReceivablesFromRaw>))]
+public sealed record class Receivables : JsonModel
+{
+    /// <summary>
+    /// The balance of seasoned receivables available to be purchased.
+    /// </summary>
+    public required long PurchasableBalance
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("purchasable_balance");
+        }
+        init { this._rawData.Set("purchasable_balance", value); }
+    }
+
+    /// <summary>
+    /// The balance of receivables that have been purchased.
+    /// </summary>
+    public required long PurchasedBalance
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("purchased_balance");
+        }
+        init { this._rawData.Set("purchased_balance", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.PurchasableBalance;
+        _ = this.PurchasedBalance;
+    }
+
+    public Receivables() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Receivables(Receivables receivables)
+        : base(receivables) { }
+#pragma warning restore CS8618
+
+    public Receivables(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Receivables(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="ReceivablesFromRaw.FromRawUnchecked"/>
+    public static Receivables FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class ReceivablesFromRaw : IFromRawJson<Receivables>
+{
+    /// <inheritdoc/>
+    public Receivables FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Receivables.FromRawUnchecked(rawData);
 }
 
 /// <summary>

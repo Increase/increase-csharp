@@ -682,6 +682,11 @@ public enum EventCategory
     LoanApplicationUpdated,
 
     /// <summary>
+    /// Occurs whenever a Loan Distribution is created.
+    /// </summary>
+    LoanDistributionCreated,
+
+    /// <summary>
     /// Occurs whenever a Loan Offer is created.
     /// </summary>
     LoanOfferCreated,
@@ -690,6 +695,11 @@ public enum EventCategory
     /// Occurs whenever a Loan Offer is updated.
     /// </summary>
     LoanOfferUpdated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Purchase is created.
+    /// </summary>
+    LoanPurchaseCreated,
 
     /// <summary>
     /// Occurs whenever a Lockbox is created.
@@ -964,8 +974,10 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
             "intrafi_exclusion.updated" => EventCategory.IntrafiExclusionUpdated,
             "loan_application.created" => EventCategory.LoanApplicationCreated,
             "loan_application.updated" => EventCategory.LoanApplicationUpdated,
+            "loan_distribution.created" => EventCategory.LoanDistributionCreated,
             "loan_offer.created" => EventCategory.LoanOfferCreated,
             "loan_offer.updated" => EventCategory.LoanOfferUpdated,
+            "loan_purchase.created" => EventCategory.LoanPurchaseCreated,
             "lockbox.created" => EventCategory.LockboxCreated,
             "lockbox.updated" => EventCategory.LockboxUpdated,
             "oauth_connection.created" => EventCategory.OAuthConnectionCreated,
@@ -1110,8 +1122,10 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.IntrafiExclusionUpdated => "intrafi_exclusion.updated",
                 EventCategory.LoanApplicationCreated => "loan_application.created",
                 EventCategory.LoanApplicationUpdated => "loan_application.updated",
+                EventCategory.LoanDistributionCreated => "loan_distribution.created",
                 EventCategory.LoanOfferCreated => "loan_offer.created",
                 EventCategory.LoanOfferUpdated => "loan_offer.updated",
+                EventCategory.LoanPurchaseCreated => "loan_purchase.created",
                 EventCategory.LockboxCreated => "lockbox.created",
                 EventCategory.LockboxUpdated => "lockbox.updated",
                 EventCategory.OAuthConnectionCreated => "oauth_connection.created",
