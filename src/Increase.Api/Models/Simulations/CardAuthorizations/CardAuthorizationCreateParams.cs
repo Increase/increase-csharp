@@ -770,6 +770,55 @@ class NetworkDetailsFromRaw : IFromRawJson<NetworkDetails>
 public sealed record class Visa : JsonModel
 {
     /// <summary>
+    /// For electronic commerce transactions, this identifies the level of security
+    /// used in obtaining the customer's payment credential. For mail or telephone
+    /// order transactions, identifies the type of mail or telephone order.
+    /// </summary>
+    public ApiEnum<string, ElectronicCommerceIndicator>? ElectronicCommerceIndicator
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, ElectronicCommerceIndicator>>(
+                "electronic_commerce_indicator"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("electronic_commerce_indicator", value);
+        }
+    }
+
+    /// <summary>
+    /// The method used to enter the cardholder's primary account number and card
+    /// expiration date.
+    /// </summary>
+    public ApiEnum<string, PointOfServiceEntryMode>? PointOfServiceEntryMode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, PointOfServiceEntryMode>>(
+                "point_of_service_entry_mode"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("point_of_service_entry_mode", value);
+        }
+    }
+
+    /// <summary>
     /// The reason code for the stand-in processing.
     /// </summary>
     public ApiEnum<string, StandInProcessingReason>? StandInProcessingReason
@@ -792,10 +841,40 @@ public sealed record class Visa : JsonModel
         }
     }
 
+    /// <summary>
+    /// The capability of the terminal being used to read the card. Shows whether
+    /// a terminal can e.g., accept chip cards or if it only supports magnetic stripe
+    /// reads. This reflects the highest capability of the terminal — for example,
+    /// a terminal that supports both chip and magnetic stripe will be identified
+    /// as chip-capable.
+    /// </summary>
+    public ApiEnum<string, TerminalEntryCapability>? TerminalEntryCapability
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, TerminalEntryCapability>>(
+                "terminal_entry_capability"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("terminal_entry_capability", value);
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
+        this.ElectronicCommerceIndicator?.Validate();
+        this.PointOfServiceEntryMode?.Validate();
         this.StandInProcessingReason?.Validate();
+        this.TerminalEntryCapability?.Validate();
     }
 
     public Visa() { }
@@ -831,6 +910,238 @@ class VisaFromRaw : IFromRawJson<Visa>
     /// <inheritdoc/>
     public Visa FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         Visa.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// For electronic commerce transactions, this identifies the level of security used
+/// in obtaining the customer's payment credential. For mail or telephone order transactions,
+/// identifies the type of mail or telephone order.
+/// </summary>
+[JsonConverter(typeof(ElectronicCommerceIndicatorConverter))]
+public enum ElectronicCommerceIndicator
+{
+    /// <summary>
+    /// Single transaction of a mail/phone order: Use to indicate that the transaction
+    /// is a mail/phone order purchase, not a recurring transaction or installment
+    /// payment. For domestic transactions in the US region, this value may also indicate
+    /// one bill payment transaction in the card-present or card-absent environments.
+    /// </summary>
+    MailPhoneOrder,
+
+    /// <summary>
+    /// Recurring transaction: Payment indicator used to indicate a recurring transaction
+    /// that originates from an acquirer in the US region.
+    /// </summary>
+    Recurring,
+
+    /// <summary>
+    /// Installment payment: Payment indicator used to indicate one purchase of goods
+    /// or services that is billed to the account in multiple charges over a period
+    /// of time agreed upon by the cardholder and merchant from transactions that
+    /// originate from an acquirer in the US region.
+    /// </summary>
+    Installment,
+
+    /// <summary>
+    /// Unknown classification: other mail order: Use to indicate that the type of
+    /// mail/telephone order is unknown.
+    /// </summary>
+    UnknownMailPhoneOrder,
+
+    /// <summary>
+    /// Secure electronic commerce transaction: Use to indicate that the electronic
+    /// commerce transaction has been authenticated using e.g., 3-D Secure
+    /// </summary>
+    SecureElectronicCommerce,
+
+    /// <summary>
+    /// Non-authenticated security transaction at a 3-D Secure-capable merchant,
+    /// and merchant attempted to authenticate the cardholder using 3-D Secure: Use
+    /// to identify an electronic commerce transaction where the merchant attempted
+    /// to authenticate the cardholder using 3-D Secure, but was unable to complete
+    /// the authentication because the issuer or cardholder does not participate in
+    /// the 3-D Secure program.
+    /// </summary>
+    NonAuthenticatedSecurityTransactionAt3dsCapableMerchant,
+
+    /// <summary>
+    /// Non-authenticated security transaction: Use to identify an electronic commerce
+    /// transaction that uses data encryption for security however, cardholder authentication
+    /// is not performed using 3-D Secure.
+    /// </summary>
+    NonAuthenticatedSecurityTransaction,
+
+    /// <summary>
+    /// Non-secure transaction: Use to identify an electronic commerce transaction
+    /// that has no data protection.
+    /// </summary>
+    NonSecureTransaction,
+}
+
+sealed class ElectronicCommerceIndicatorConverter : JsonConverter<ElectronicCommerceIndicator>
+{
+    public override ElectronicCommerceIndicator Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "mail_phone_order" => ElectronicCommerceIndicator.MailPhoneOrder,
+            "recurring" => ElectronicCommerceIndicator.Recurring,
+            "installment" => ElectronicCommerceIndicator.Installment,
+            "unknown_mail_phone_order" => ElectronicCommerceIndicator.UnknownMailPhoneOrder,
+            "secure_electronic_commerce" => ElectronicCommerceIndicator.SecureElectronicCommerce,
+            "non_authenticated_security_transaction_at_3ds_capable_merchant" =>
+                ElectronicCommerceIndicator.NonAuthenticatedSecurityTransactionAt3dsCapableMerchant,
+            "non_authenticated_security_transaction" =>
+                ElectronicCommerceIndicator.NonAuthenticatedSecurityTransaction,
+            "non_secure_transaction" => ElectronicCommerceIndicator.NonSecureTransaction,
+            _ => (ElectronicCommerceIndicator)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        ElectronicCommerceIndicator value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                ElectronicCommerceIndicator.MailPhoneOrder => "mail_phone_order",
+                ElectronicCommerceIndicator.Recurring => "recurring",
+                ElectronicCommerceIndicator.Installment => "installment",
+                ElectronicCommerceIndicator.UnknownMailPhoneOrder => "unknown_mail_phone_order",
+                ElectronicCommerceIndicator.SecureElectronicCommerce =>
+                    "secure_electronic_commerce",
+                ElectronicCommerceIndicator.NonAuthenticatedSecurityTransactionAt3dsCapableMerchant =>
+                    "non_authenticated_security_transaction_at_3ds_capable_merchant",
+                ElectronicCommerceIndicator.NonAuthenticatedSecurityTransaction =>
+                    "non_authenticated_security_transaction",
+                ElectronicCommerceIndicator.NonSecureTransaction => "non_secure_transaction",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The method used to enter the cardholder's primary account number and card expiration date.
+/// </summary>
+[JsonConverter(typeof(PointOfServiceEntryModeConverter))]
+public enum PointOfServiceEntryMode
+{
+    /// <summary>
+    /// Unknown
+    /// </summary>
+    Unknown,
+
+    /// <summary>
+    /// Manual key entry
+    /// </summary>
+    Manual,
+
+    /// <summary>
+    /// Magnetic stripe read, without card verification value
+    /// </summary>
+    MagneticStripeNoCvv,
+
+    /// <summary>
+    /// Optical code
+    /// </summary>
+    OpticalCode,
+
+    /// <summary>
+    /// Contact chip card
+    /// </summary>
+    IntegratedCircuitCard,
+
+    /// <summary>
+    /// Contactless read of chip card
+    /// </summary>
+    Contactless,
+
+    /// <summary>
+    /// Transaction initiated using a credential that has previously been stored
+    /// on file
+    /// </summary>
+    CredentialOnFile,
+
+    /// <summary>
+    /// Magnetic stripe read
+    /// </summary>
+    MagneticStripe,
+
+    /// <summary>
+    /// Contactless read of magnetic stripe data
+    /// </summary>
+    ContactlessMagneticStripe,
+
+    /// <summary>
+    /// Contact chip card, without card verification value
+    /// </summary>
+    IntegratedCircuitCardNoCvv,
+}
+
+sealed class PointOfServiceEntryModeConverter : JsonConverter<PointOfServiceEntryMode>
+{
+    public override PointOfServiceEntryMode Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "unknown" => PointOfServiceEntryMode.Unknown,
+            "manual" => PointOfServiceEntryMode.Manual,
+            "magnetic_stripe_no_cvv" => PointOfServiceEntryMode.MagneticStripeNoCvv,
+            "optical_code" => PointOfServiceEntryMode.OpticalCode,
+            "integrated_circuit_card" => PointOfServiceEntryMode.IntegratedCircuitCard,
+            "contactless" => PointOfServiceEntryMode.Contactless,
+            "credential_on_file" => PointOfServiceEntryMode.CredentialOnFile,
+            "magnetic_stripe" => PointOfServiceEntryMode.MagneticStripe,
+            "contactless_magnetic_stripe" => PointOfServiceEntryMode.ContactlessMagneticStripe,
+            "integrated_circuit_card_no_cvv" => PointOfServiceEntryMode.IntegratedCircuitCardNoCvv,
+            _ => (PointOfServiceEntryMode)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        PointOfServiceEntryMode value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                PointOfServiceEntryMode.Unknown => "unknown",
+                PointOfServiceEntryMode.Manual => "manual",
+                PointOfServiceEntryMode.MagneticStripeNoCvv => "magnetic_stripe_no_cvv",
+                PointOfServiceEntryMode.OpticalCode => "optical_code",
+                PointOfServiceEntryMode.IntegratedCircuitCard => "integrated_circuit_card",
+                PointOfServiceEntryMode.Contactless => "contactless",
+                PointOfServiceEntryMode.CredentialOnFile => "credential_on_file",
+                PointOfServiceEntryMode.MagneticStripe => "magnetic_stripe",
+                PointOfServiceEntryMode.ContactlessMagneticStripe => "contactless_magnetic_stripe",
+                PointOfServiceEntryMode.IntegratedCircuitCardNoCvv =>
+                    "integrated_circuit_card_no_cvv",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>
@@ -931,6 +1242,110 @@ sealed class StandInProcessingReasonConverter : JsonConverter<StandInProcessingR
                 StandInProcessingReason.PaymentFraudDisruptionAcquirerBlock =>
                     "payment_fraud_disruption_acquirer_block",
                 StandInProcessingReason.Other => "other",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The capability of the terminal being used to read the card. Shows whether a terminal
+/// can e.g., accept chip cards or if it only supports magnetic stripe reads. This
+/// reflects the highest capability of the terminal — for example, a terminal that
+/// supports both chip and magnetic stripe will be identified as chip-capable.
+/// </summary>
+[JsonConverter(typeof(TerminalEntryCapabilityConverter))]
+public enum TerminalEntryCapability
+{
+    /// <summary>
+    /// Unknown
+    /// </summary>
+    Unknown,
+
+    /// <summary>
+    /// No terminal was used for this transaction.
+    /// </summary>
+    TerminalNotUsed,
+
+    /// <summary>
+    /// The terminal can only read magnetic stripes and does not have chip or contactless
+    /// reading capability.
+    /// </summary>
+    MagneticStripe,
+
+    /// <summary>
+    /// The terminal can only read barcodes.
+    /// </summary>
+    Barcode,
+
+    /// <summary>
+    /// The terminal can only read cards via Optical Character Recognition.
+    /// </summary>
+    OpticalCharacterRecognition,
+
+    /// <summary>
+    /// The terminal supports contact chip cards and can also read the magnetic stripe.
+    /// If contact chip is supported, this value is used regardless of whether contactless
+    /// is also supported.
+    /// </summary>
+    ChipOrContactless,
+
+    /// <summary>
+    /// The terminal supports contactless reads but does not support contact chip.
+    /// Only used when the terminal lacks contact chip capability.
+    /// </summary>
+    ContactlessOnly,
+
+    /// <summary>
+    /// The terminal has no card reading capability.
+    /// </summary>
+    NoCapability,
+}
+
+sealed class TerminalEntryCapabilityConverter : JsonConverter<TerminalEntryCapability>
+{
+    public override TerminalEntryCapability Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "unknown" => TerminalEntryCapability.Unknown,
+            "terminal_not_used" => TerminalEntryCapability.TerminalNotUsed,
+            "magnetic_stripe" => TerminalEntryCapability.MagneticStripe,
+            "barcode" => TerminalEntryCapability.Barcode,
+            "optical_character_recognition" => TerminalEntryCapability.OpticalCharacterRecognition,
+            "chip_or_contactless" => TerminalEntryCapability.ChipOrContactless,
+            "contactless_only" => TerminalEntryCapability.ContactlessOnly,
+            "no_capability" => TerminalEntryCapability.NoCapability,
+            _ => (TerminalEntryCapability)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        TerminalEntryCapability value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                TerminalEntryCapability.Unknown => "unknown",
+                TerminalEntryCapability.TerminalNotUsed => "terminal_not_used",
+                TerminalEntryCapability.MagneticStripe => "magnetic_stripe",
+                TerminalEntryCapability.Barcode => "barcode",
+                TerminalEntryCapability.OpticalCharacterRecognition =>
+                    "optical_character_recognition",
+                TerminalEntryCapability.ChipOrContactless => "chip_or_contactless",
+                TerminalEntryCapability.ContactlessOnly => "contactless_only",
+                TerminalEntryCapability.NoCapability => "no_capability",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
