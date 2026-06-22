@@ -26,7 +26,13 @@ public class CardAuthorizationCreateParamsTest : TestBase
             MerchantDescriptor = "AMAZON.COM",
             MerchantState = "NY",
             NetworkDetails = new(
-                new Visa() { StandInProcessingReason = StandInProcessingReason.IssuerError }
+                new Visa()
+                {
+                    ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+                    PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+                    StandInProcessingReason = StandInProcessingReason.IssuerError,
+                    TerminalEntryCapability = TerminalEntryCapability.Unknown,
+                }
             ),
             NetworkRiskScore = 0,
             PhysicalCardID = "physical_card_id",
@@ -51,7 +57,13 @@ public class CardAuthorizationCreateParamsTest : TestBase
         string expectedMerchantDescriptor = "AMAZON.COM";
         string expectedMerchantState = "NY";
         NetworkDetails expectedNetworkDetails = new(
-            new Visa() { StandInProcessingReason = StandInProcessingReason.IssuerError }
+            new Visa()
+            {
+                ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+                PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+                StandInProcessingReason = StandInProcessingReason.IssuerError,
+                TerminalEntryCapability = TerminalEntryCapability.Unknown,
+            }
         );
         long expectedNetworkRiskScore = 0;
         string expectedPhysicalCardID = "physical_card_id";
@@ -213,7 +225,13 @@ public class CardAuthorizationCreateParamsTest : TestBase
             MerchantDescriptor = "AMAZON.COM",
             MerchantState = "NY",
             NetworkDetails = new(
-                new Visa() { StandInProcessingReason = StandInProcessingReason.IssuerError }
+                new Visa()
+                {
+                    ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+                    PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+                    StandInProcessingReason = StandInProcessingReason.IssuerError,
+                    TerminalEntryCapability = TerminalEntryCapability.Unknown,
+                }
             ),
             NetworkRiskScore = 0,
             PhysicalCardID = "physical_card_id",
@@ -334,10 +352,22 @@ public class NetworkDetailsTest : TestBase
     {
         var model = new NetworkDetails
         {
-            Visa = new() { StandInProcessingReason = StandInProcessingReason.IssuerError },
+            Visa = new()
+            {
+                ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+                PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+                StandInProcessingReason = StandInProcessingReason.IssuerError,
+                TerminalEntryCapability = TerminalEntryCapability.Unknown,
+            },
         };
 
-        Visa expectedVisa = new() { StandInProcessingReason = StandInProcessingReason.IssuerError };
+        Visa expectedVisa = new()
+        {
+            ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+            PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+            StandInProcessingReason = StandInProcessingReason.IssuerError,
+            TerminalEntryCapability = TerminalEntryCapability.Unknown,
+        };
 
         Assert.Equal(expectedVisa, model.Visa);
     }
@@ -347,7 +377,13 @@ public class NetworkDetailsTest : TestBase
     {
         var model = new NetworkDetails
         {
-            Visa = new() { StandInProcessingReason = StandInProcessingReason.IssuerError },
+            Visa = new()
+            {
+                ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+                PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+                StandInProcessingReason = StandInProcessingReason.IssuerError,
+                TerminalEntryCapability = TerminalEntryCapability.Unknown,
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -364,7 +400,13 @@ public class NetworkDetailsTest : TestBase
     {
         var model = new NetworkDetails
         {
-            Visa = new() { StandInProcessingReason = StandInProcessingReason.IssuerError },
+            Visa = new()
+            {
+                ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+                PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+                StandInProcessingReason = StandInProcessingReason.IssuerError,
+                TerminalEntryCapability = TerminalEntryCapability.Unknown,
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -374,7 +416,13 @@ public class NetworkDetailsTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        Visa expectedVisa = new() { StandInProcessingReason = StandInProcessingReason.IssuerError };
+        Visa expectedVisa = new()
+        {
+            ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+            PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+            StandInProcessingReason = StandInProcessingReason.IssuerError,
+            TerminalEntryCapability = TerminalEntryCapability.Unknown,
+        };
 
         Assert.Equal(expectedVisa, deserialized.Visa);
     }
@@ -384,7 +432,13 @@ public class NetworkDetailsTest : TestBase
     {
         var model = new NetworkDetails
         {
-            Visa = new() { StandInProcessingReason = StandInProcessingReason.IssuerError },
+            Visa = new()
+            {
+                ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+                PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+                StandInProcessingReason = StandInProcessingReason.IssuerError,
+                TerminalEntryCapability = TerminalEntryCapability.Unknown,
+            },
         };
 
         model.Validate();
@@ -395,7 +449,13 @@ public class NetworkDetailsTest : TestBase
     {
         var model = new NetworkDetails
         {
-            Visa = new() { StandInProcessingReason = StandInProcessingReason.IssuerError },
+            Visa = new()
+            {
+                ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+                PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+                StandInProcessingReason = StandInProcessingReason.IssuerError,
+                TerminalEntryCapability = TerminalEntryCapability.Unknown,
+            },
         };
 
         NetworkDetails copied = new(model);
@@ -409,18 +469,39 @@ public class VisaTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Visa { StandInProcessingReason = StandInProcessingReason.IssuerError };
+        var model = new Visa
+        {
+            ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+            PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+            StandInProcessingReason = StandInProcessingReason.IssuerError,
+            TerminalEntryCapability = TerminalEntryCapability.Unknown,
+        };
 
+        ApiEnum<string, ElectronicCommerceIndicator> expectedElectronicCommerceIndicator =
+            ElectronicCommerceIndicator.MailPhoneOrder;
+        ApiEnum<string, PointOfServiceEntryMode> expectedPointOfServiceEntryMode =
+            PointOfServiceEntryMode.Unknown;
         ApiEnum<string, StandInProcessingReason> expectedStandInProcessingReason =
             StandInProcessingReason.IssuerError;
+        ApiEnum<string, TerminalEntryCapability> expectedTerminalEntryCapability =
+            TerminalEntryCapability.Unknown;
 
+        Assert.Equal(expectedElectronicCommerceIndicator, model.ElectronicCommerceIndicator);
+        Assert.Equal(expectedPointOfServiceEntryMode, model.PointOfServiceEntryMode);
         Assert.Equal(expectedStandInProcessingReason, model.StandInProcessingReason);
+        Assert.Equal(expectedTerminalEntryCapability, model.TerminalEntryCapability);
     }
 
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Visa { StandInProcessingReason = StandInProcessingReason.IssuerError };
+        var model = new Visa
+        {
+            ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+            PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+            StandInProcessingReason = StandInProcessingReason.IssuerError,
+            TerminalEntryCapability = TerminalEntryCapability.Unknown,
+        };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Visa>(json, ModelBase.SerializerOptions);
@@ -431,22 +512,43 @@ public class VisaTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Visa { StandInProcessingReason = StandInProcessingReason.IssuerError };
+        var model = new Visa
+        {
+            ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+            PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+            StandInProcessingReason = StandInProcessingReason.IssuerError,
+            TerminalEntryCapability = TerminalEntryCapability.Unknown,
+        };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Visa>(element, ModelBase.SerializerOptions);
         Assert.NotNull(deserialized);
 
+        ApiEnum<string, ElectronicCommerceIndicator> expectedElectronicCommerceIndicator =
+            ElectronicCommerceIndicator.MailPhoneOrder;
+        ApiEnum<string, PointOfServiceEntryMode> expectedPointOfServiceEntryMode =
+            PointOfServiceEntryMode.Unknown;
         ApiEnum<string, StandInProcessingReason> expectedStandInProcessingReason =
             StandInProcessingReason.IssuerError;
+        ApiEnum<string, TerminalEntryCapability> expectedTerminalEntryCapability =
+            TerminalEntryCapability.Unknown;
 
+        Assert.Equal(expectedElectronicCommerceIndicator, deserialized.ElectronicCommerceIndicator);
+        Assert.Equal(expectedPointOfServiceEntryMode, deserialized.PointOfServiceEntryMode);
         Assert.Equal(expectedStandInProcessingReason, deserialized.StandInProcessingReason);
+        Assert.Equal(expectedTerminalEntryCapability, deserialized.TerminalEntryCapability);
     }
 
     [Fact]
     public void Validation_Works()
     {
-        var model = new Visa { StandInProcessingReason = StandInProcessingReason.IssuerError };
+        var model = new Visa
+        {
+            ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+            PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+            StandInProcessingReason = StandInProcessingReason.IssuerError,
+            TerminalEntryCapability = TerminalEntryCapability.Unknown,
+        };
 
         model.Validate();
     }
@@ -456,8 +558,14 @@ public class VisaTest : TestBase
     {
         var model = new Visa { };
 
+        Assert.Null(model.ElectronicCommerceIndicator);
+        Assert.False(model.RawData.ContainsKey("electronic_commerce_indicator"));
+        Assert.Null(model.PointOfServiceEntryMode);
+        Assert.False(model.RawData.ContainsKey("point_of_service_entry_mode"));
         Assert.Null(model.StandInProcessingReason);
         Assert.False(model.RawData.ContainsKey("stand_in_processing_reason"));
+        Assert.Null(model.TerminalEntryCapability);
+        Assert.False(model.RawData.ContainsKey("terminal_entry_capability"));
     }
 
     [Fact]
@@ -474,11 +582,20 @@ public class VisaTest : TestBase
         var model = new Visa
         {
             // Null should be interpreted as omitted for these properties
+            ElectronicCommerceIndicator = null,
+            PointOfServiceEntryMode = null,
             StandInProcessingReason = null,
+            TerminalEntryCapability = null,
         };
 
+        Assert.Null(model.ElectronicCommerceIndicator);
+        Assert.False(model.RawData.ContainsKey("electronic_commerce_indicator"));
+        Assert.Null(model.PointOfServiceEntryMode);
+        Assert.False(model.RawData.ContainsKey("point_of_service_entry_mode"));
         Assert.Null(model.StandInProcessingReason);
         Assert.False(model.RawData.ContainsKey("stand_in_processing_reason"));
+        Assert.Null(model.TerminalEntryCapability);
+        Assert.False(model.RawData.ContainsKey("terminal_entry_capability"));
     }
 
     [Fact]
@@ -487,7 +604,10 @@ public class VisaTest : TestBase
         var model = new Visa
         {
             // Null should be interpreted as omitted for these properties
+            ElectronicCommerceIndicator = null,
+            PointOfServiceEntryMode = null,
             StandInProcessingReason = null,
+            TerminalEntryCapability = null,
         };
 
         model.Validate();
@@ -496,11 +616,165 @@ public class VisaTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Visa { StandInProcessingReason = StandInProcessingReason.IssuerError };
+        var model = new Visa
+        {
+            ElectronicCommerceIndicator = ElectronicCommerceIndicator.MailPhoneOrder,
+            PointOfServiceEntryMode = PointOfServiceEntryMode.Unknown,
+            StandInProcessingReason = StandInProcessingReason.IssuerError,
+            TerminalEntryCapability = TerminalEntryCapability.Unknown,
+        };
 
         Visa copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class ElectronicCommerceIndicatorTest : TestBase
+{
+    [Theory]
+    [InlineData(ElectronicCommerceIndicator.MailPhoneOrder)]
+    [InlineData(ElectronicCommerceIndicator.Recurring)]
+    [InlineData(ElectronicCommerceIndicator.Installment)]
+    [InlineData(ElectronicCommerceIndicator.UnknownMailPhoneOrder)]
+    [InlineData(ElectronicCommerceIndicator.SecureElectronicCommerce)]
+    [InlineData(
+        ElectronicCommerceIndicator.NonAuthenticatedSecurityTransactionAt3dsCapableMerchant
+    )]
+    [InlineData(ElectronicCommerceIndicator.NonAuthenticatedSecurityTransaction)]
+    [InlineData(ElectronicCommerceIndicator.NonSecureTransaction)]
+    public void Validation_Works(ElectronicCommerceIndicator rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ElectronicCommerceIndicator> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ElectronicCommerceIndicator>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(ElectronicCommerceIndicator.MailPhoneOrder)]
+    [InlineData(ElectronicCommerceIndicator.Recurring)]
+    [InlineData(ElectronicCommerceIndicator.Installment)]
+    [InlineData(ElectronicCommerceIndicator.UnknownMailPhoneOrder)]
+    [InlineData(ElectronicCommerceIndicator.SecureElectronicCommerce)]
+    [InlineData(
+        ElectronicCommerceIndicator.NonAuthenticatedSecurityTransactionAt3dsCapableMerchant
+    )]
+    [InlineData(ElectronicCommerceIndicator.NonAuthenticatedSecurityTransaction)]
+    [InlineData(ElectronicCommerceIndicator.NonSecureTransaction)]
+    public void SerializationRoundtrip_Works(ElectronicCommerceIndicator rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ElectronicCommerceIndicator> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ElectronicCommerceIndicator>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ElectronicCommerceIndicator>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ElectronicCommerceIndicator>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class PointOfServiceEntryModeTest : TestBase
+{
+    [Theory]
+    [InlineData(PointOfServiceEntryMode.Unknown)]
+    [InlineData(PointOfServiceEntryMode.Manual)]
+    [InlineData(PointOfServiceEntryMode.MagneticStripeNoCvv)]
+    [InlineData(PointOfServiceEntryMode.OpticalCode)]
+    [InlineData(PointOfServiceEntryMode.IntegratedCircuitCard)]
+    [InlineData(PointOfServiceEntryMode.Contactless)]
+    [InlineData(PointOfServiceEntryMode.CredentialOnFile)]
+    [InlineData(PointOfServiceEntryMode.MagneticStripe)]
+    [InlineData(PointOfServiceEntryMode.ContactlessMagneticStripe)]
+    [InlineData(PointOfServiceEntryMode.IntegratedCircuitCardNoCvv)]
+    public void Validation_Works(PointOfServiceEntryMode rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PointOfServiceEntryMode> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PointOfServiceEntryMode>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PointOfServiceEntryMode.Unknown)]
+    [InlineData(PointOfServiceEntryMode.Manual)]
+    [InlineData(PointOfServiceEntryMode.MagneticStripeNoCvv)]
+    [InlineData(PointOfServiceEntryMode.OpticalCode)]
+    [InlineData(PointOfServiceEntryMode.IntegratedCircuitCard)]
+    [InlineData(PointOfServiceEntryMode.Contactless)]
+    [InlineData(PointOfServiceEntryMode.CredentialOnFile)]
+    [InlineData(PointOfServiceEntryMode.MagneticStripe)]
+    [InlineData(PointOfServiceEntryMode.ContactlessMagneticStripe)]
+    [InlineData(PointOfServiceEntryMode.IntegratedCircuitCardNoCvv)]
+    public void SerializationRoundtrip_Works(PointOfServiceEntryMode rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PointOfServiceEntryMode> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PointOfServiceEntryMode>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PointOfServiceEntryMode>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PointOfServiceEntryMode>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }
 
@@ -566,6 +840,76 @@ public class StandInProcessingReasonTest : TestBase
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ApiEnum<string, StandInProcessingReason>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class TerminalEntryCapabilityTest : TestBase
+{
+    [Theory]
+    [InlineData(TerminalEntryCapability.Unknown)]
+    [InlineData(TerminalEntryCapability.TerminalNotUsed)]
+    [InlineData(TerminalEntryCapability.MagneticStripe)]
+    [InlineData(TerminalEntryCapability.Barcode)]
+    [InlineData(TerminalEntryCapability.OpticalCharacterRecognition)]
+    [InlineData(TerminalEntryCapability.ChipOrContactless)]
+    [InlineData(TerminalEntryCapability.ContactlessOnly)]
+    [InlineData(TerminalEntryCapability.NoCapability)]
+    public void Validation_Works(TerminalEntryCapability rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, TerminalEntryCapability> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, TerminalEntryCapability>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(TerminalEntryCapability.Unknown)]
+    [InlineData(TerminalEntryCapability.TerminalNotUsed)]
+    [InlineData(TerminalEntryCapability.MagneticStripe)]
+    [InlineData(TerminalEntryCapability.Barcode)]
+    [InlineData(TerminalEntryCapability.OpticalCharacterRecognition)]
+    [InlineData(TerminalEntryCapability.ChipOrContactless)]
+    [InlineData(TerminalEntryCapability.ContactlessOnly)]
+    [InlineData(TerminalEntryCapability.NoCapability)]
+    public void SerializationRoundtrip_Works(TerminalEntryCapability rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, TerminalEntryCapability> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, TerminalEntryCapability>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, TerminalEntryCapability>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, TerminalEntryCapability>>(
             json,
             ModelBase.SerializerOptions
         );
