@@ -59,6 +59,7 @@ public class FednowTransferTest : TestBase
             {
                 MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
                 SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = FednowTransfers::Type.FednowTransfer,
@@ -113,6 +114,7 @@ public class FednowTransferTest : TestBase
         {
             MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
             SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
         };
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, FednowTransfers::Type> expectedType = FednowTransfers::Type.FednowTransfer;
@@ -202,6 +204,7 @@ public class FednowTransferTest : TestBase
             {
                 MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
                 SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = FednowTransfers::Type.FednowTransfer,
@@ -269,6 +272,7 @@ public class FednowTransferTest : TestBase
             {
                 MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
                 SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = FednowTransfers::Type.FednowTransfer,
@@ -330,6 +334,7 @@ public class FednowTransferTest : TestBase
         {
             MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
             SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
         };
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, FednowTransfers::Type> expectedType = FednowTransfers::Type.FednowTransfer;
@@ -419,6 +424,7 @@ public class FednowTransferTest : TestBase
             {
                 MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
                 SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = FednowTransfers::Type.FednowTransfer,
@@ -480,6 +486,7 @@ public class FednowTransferTest : TestBase
             {
                 MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
                 SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = FednowTransfers::Type.FednowTransfer,
@@ -1498,13 +1505,19 @@ public class SubmissionTest : TestBase
         {
             MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
             SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
         };
 
         string expectedMessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS";
         DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedUniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a";
 
         Assert.Equal(expectedMessageIdentification, model.MessageIdentification);
         Assert.Equal(expectedSubmittedAt, model.SubmittedAt);
+        Assert.Equal(
+            expectedUniqueEndToEndTransactionReference,
+            model.UniqueEndToEndTransactionReference
+        );
     }
 
     [Fact]
@@ -1514,6 +1527,7 @@ public class SubmissionTest : TestBase
         {
             MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
             SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1532,6 +1546,7 @@ public class SubmissionTest : TestBase
         {
             MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
             SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1543,9 +1558,14 @@ public class SubmissionTest : TestBase
 
         string expectedMessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS";
         DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedUniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a";
 
         Assert.Equal(expectedMessageIdentification, deserialized.MessageIdentification);
         Assert.Equal(expectedSubmittedAt, deserialized.SubmittedAt);
+        Assert.Equal(
+            expectedUniqueEndToEndTransactionReference,
+            deserialized.UniqueEndToEndTransactionReference
+        );
     }
 
     [Fact]
@@ -1555,6 +1575,7 @@ public class SubmissionTest : TestBase
         {
             MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
             SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
         };
 
         model.Validate();
@@ -1567,6 +1588,7 @@ public class SubmissionTest : TestBase
         {
             MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
             SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
         };
 
         FednowTransfers::Submission copied = new(model);

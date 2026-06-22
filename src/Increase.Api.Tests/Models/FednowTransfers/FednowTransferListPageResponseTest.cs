@@ -63,6 +63,7 @@ public class FednowTransferListPageResponseTest : TestBase
                     {
                         MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
                         SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = FednowTransfers::Type.FednowTransfer,
@@ -123,6 +124,7 @@ public class FednowTransferListPageResponseTest : TestBase
                 {
                     MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
                     SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = FednowTransfers::Type.FednowTransfer,
@@ -195,6 +197,7 @@ public class FednowTransferListPageResponseTest : TestBase
                     {
                         MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
                         SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = FednowTransfers::Type.FednowTransfer,
@@ -270,6 +273,7 @@ public class FednowTransferListPageResponseTest : TestBase
                     {
                         MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
                         SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = FednowTransfers::Type.FednowTransfer,
@@ -338,6 +342,7 @@ public class FednowTransferListPageResponseTest : TestBase
                 {
                     MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
                     SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = FednowTransfers::Type.FednowTransfer,
@@ -410,6 +415,7 @@ public class FednowTransferListPageResponseTest : TestBase
                     {
                         MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
                         SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = FednowTransfers::Type.FednowTransfer,
@@ -478,6 +484,7 @@ public class FednowTransferListPageResponseTest : TestBase
                     {
                         MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
                         SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = FednowTransfers::Type.FednowTransfer,

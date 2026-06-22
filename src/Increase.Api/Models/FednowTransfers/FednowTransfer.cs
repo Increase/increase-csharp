@@ -1491,11 +1491,26 @@ public sealed record class Submission : JsonModel
         init { this._rawData.Set("submitted_at", value); }
     }
 
+    /// <summary>
+    /// The Unique End-to-end Transaction Reference ([UETR](https://www.swift.com/payments/what-unique-end-end-transaction-reference-uetr))
+    /// of the transfer.
+    /// </summary>
+    public required string UniqueEndToEndTransactionReference
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("unique_end_to_end_transaction_reference");
+        }
+        init { this._rawData.Set("unique_end_to_end_transaction_reference", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         _ = this.MessageIdentification;
         _ = this.SubmittedAt;
+        _ = this.UniqueEndToEndTransactionReference;
     }
 
     public Submission() { }
