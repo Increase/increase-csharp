@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.47.0](https://github.com/Increase/increase-csharp/compare/v0.46.0...v0.47.0) (2026-06-22)
+
+
+### Features
+
+* **api:** add Visa network fields to card authorization simulations ([4db0365](https://github.com/Increase/increase-csharp/commit/4db036544f0245953c449339840dce468625269f))
+
 ## [0.46.0](https://github.com/Increase/increase-csharp/compare/v0.45.0...v0.46.0) (2026-06-18)
 
 
