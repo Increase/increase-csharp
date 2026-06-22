@@ -32,6 +32,7 @@ public class InboundFednowTransferTest : TestBase
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = InboundFednowTransfers::Type.InboundFednowTransfer,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             UnstructuredRemittanceInformation = "Invoice 29582",
         };
 
@@ -59,6 +60,7 @@ public class InboundFednowTransferTest : TestBase
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, InboundFednowTransfers::Type> expectedType =
             InboundFednowTransfers::Type.InboundFednowTransfer;
+        string expectedUniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a";
         string expectedUnstructuredRemittanceInformation = "Invoice 29582";
 
         Assert.Equal(expectedID, model.ID);
@@ -76,6 +78,10 @@ public class InboundFednowTransferTest : TestBase
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedTransactionID, model.TransactionID);
         Assert.Equal(expectedType, model.Type);
+        Assert.Equal(
+            expectedUniqueEndToEndTransactionReference,
+            model.UniqueEndToEndTransactionReference
+        );
         Assert.Equal(
             expectedUnstructuredRemittanceInformation,
             model.UnstructuredRemittanceInformation
@@ -106,6 +112,7 @@ public class InboundFednowTransferTest : TestBase
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = InboundFednowTransfers::Type.InboundFednowTransfer,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             UnstructuredRemittanceInformation = "Invoice 29582",
         };
 
@@ -143,6 +150,7 @@ public class InboundFednowTransferTest : TestBase
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = InboundFednowTransfers::Type.InboundFednowTransfer,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             UnstructuredRemittanceInformation = "Invoice 29582",
         };
 
@@ -178,6 +186,7 @@ public class InboundFednowTransferTest : TestBase
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, InboundFednowTransfers::Type> expectedType =
             InboundFednowTransfers::Type.InboundFednowTransfer;
+        string expectedUniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a";
         string expectedUnstructuredRemittanceInformation = "Invoice 29582";
 
         Assert.Equal(expectedID, deserialized.ID);
@@ -195,6 +204,10 @@ public class InboundFednowTransferTest : TestBase
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
         Assert.Equal(expectedType, deserialized.Type);
+        Assert.Equal(
+            expectedUniqueEndToEndTransactionReference,
+            deserialized.UniqueEndToEndTransactionReference
+        );
         Assert.Equal(
             expectedUnstructuredRemittanceInformation,
             deserialized.UnstructuredRemittanceInformation
@@ -225,6 +238,7 @@ public class InboundFednowTransferTest : TestBase
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = InboundFednowTransfers::Type.InboundFednowTransfer,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             UnstructuredRemittanceInformation = "Invoice 29582",
         };
 
@@ -255,6 +269,7 @@ public class InboundFednowTransferTest : TestBase
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = InboundFednowTransfers::Type.InboundFednowTransfer,
+            UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             UnstructuredRemittanceInformation = "Invoice 29582",
         };
 

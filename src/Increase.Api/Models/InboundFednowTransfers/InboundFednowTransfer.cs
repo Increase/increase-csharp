@@ -217,6 +217,22 @@ public sealed record class InboundFednowTransfer : JsonModel
     }
 
     /// <summary>
+    /// The Unique End-to-end Transaction Reference ([UETR](https://www.swift.com/payments/what-unique-end-end-transaction-reference-uetr))
+    /// of the transfer.
+    /// </summary>
+    public required string? UniqueEndToEndTransactionReference
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>(
+                "unique_end_to_end_transaction_reference"
+            );
+        }
+        init { this._rawData.Set("unique_end_to_end_transaction_reference", value); }
+    }
+
+    /// <summary>
     /// Additional information included with the transfer.
     /// </summary>
     public required string? UnstructuredRemittanceInformation
@@ -247,6 +263,7 @@ public sealed record class InboundFednowTransfer : JsonModel
         this.Status.Validate();
         _ = this.TransactionID;
         this.Type.Validate();
+        _ = this.UniqueEndToEndTransactionReference;
         _ = this.UnstructuredRemittanceInformation;
     }
 
