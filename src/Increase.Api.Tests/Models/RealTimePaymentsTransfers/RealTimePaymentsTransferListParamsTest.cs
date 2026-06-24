@@ -436,10 +436,10 @@ public class InTest : TestBase
     [Theory]
     [InlineData(In.PendingApproval)]
     [InlineData(In.Canceled)]
+    [InlineData(In.PendingSubmission)]
     [InlineData(In.PendingReviewing)]
     [InlineData(In.RequiresAttention)]
     [InlineData(In.Rejected)]
-    [InlineData(In.PendingSubmission)]
     [InlineData(In.Submitted)]
     [InlineData(In.Complete)]
     public void Validation_Works(In rawValue)
@@ -464,10 +464,10 @@ public class InTest : TestBase
     [Theory]
     [InlineData(In.PendingApproval)]
     [InlineData(In.Canceled)]
+    [InlineData(In.PendingSubmission)]
     [InlineData(In.PendingReviewing)]
     [InlineData(In.RequiresAttention)]
     [InlineData(In.Rejected)]
-    [InlineData(In.PendingSubmission)]
     [InlineData(In.Submitted)]
     [InlineData(In.Complete)]
     public void SerializationRoundtrip_Works(In rawValue)

@@ -1081,6 +1081,11 @@ public enum SwiftTransferStatus
     Canceled,
 
     /// <summary>
+    /// The transfer is pending initiation.
+    /// </summary>
+    PendingInitiating,
+
+    /// <summary>
     /// The transfer is pending review by Increase.
     /// </summary>
     PendingReviewing,
@@ -1089,11 +1094,6 @@ public enum SwiftTransferStatus
     /// The transfer requires attention from an Increase operator.
     /// </summary>
     RequiresAttention,
-
-    /// <summary>
-    /// The transfer is pending initiation.
-    /// </summary>
-    PendingInitiating,
 
     /// <summary>
     /// The transfer has been initiated.
@@ -1123,9 +1123,9 @@ sealed class SwiftTransferStatusConverter : JsonConverter<SwiftTransferStatus>
         {
             "pending_approval" => SwiftTransferStatus.PendingApproval,
             "canceled" => SwiftTransferStatus.Canceled,
+            "pending_initiating" => SwiftTransferStatus.PendingInitiating,
             "pending_reviewing" => SwiftTransferStatus.PendingReviewing,
             "requires_attention" => SwiftTransferStatus.RequiresAttention,
-            "pending_initiating" => SwiftTransferStatus.PendingInitiating,
             "initiated" => SwiftTransferStatus.Initiated,
             "rejected" => SwiftTransferStatus.Rejected,
             "returned" => SwiftTransferStatus.Returned,
@@ -1145,9 +1145,9 @@ sealed class SwiftTransferStatusConverter : JsonConverter<SwiftTransferStatus>
             {
                 SwiftTransferStatus.PendingApproval => "pending_approval",
                 SwiftTransferStatus.Canceled => "canceled",
+                SwiftTransferStatus.PendingInitiating => "pending_initiating",
                 SwiftTransferStatus.PendingReviewing => "pending_reviewing",
                 SwiftTransferStatus.RequiresAttention => "requires_attention",
-                SwiftTransferStatus.PendingInitiating => "pending_initiating",
                 SwiftTransferStatus.Initiated => "initiated",
                 SwiftTransferStatus.Rejected => "rejected",
                 SwiftTransferStatus.Returned => "returned",

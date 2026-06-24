@@ -1371,10 +1371,10 @@ public class RealTimePaymentsTransferStatusTest : TestBase
     [Theory]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.PendingApproval)]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Canceled)]
+    [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.PendingSubmission)]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.PendingReviewing)]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.RequiresAttention)]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Rejected)]
-    [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.PendingSubmission)]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Submitted)]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete)]
     public void Validation_Works(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus rawValue)
@@ -1398,10 +1398,10 @@ public class RealTimePaymentsTransferStatusTest : TestBase
     [Theory]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.PendingApproval)]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Canceled)]
+    [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.PendingSubmission)]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.PendingReviewing)]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.RequiresAttention)]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Rejected)]
-    [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.PendingSubmission)]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Submitted)]
     [InlineData(RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete)]
     public void SerializationRoundtrip_Works(

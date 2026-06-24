@@ -10,7 +10,11 @@ using System = System;
 namespace Increase.Api.Models.LockboxAddresses;
 
 /// <summary>
-/// Lockbox Addresses are physical locations that can receive mail containing paper checks.
+/// Lockbox Addresses are physical locations that can receive mail containing paper
+/// checks. A Lockbox Address is not itself linked to an Account; Lockbox Recipients
+/// determine where checks received at the address are deposited. Lockbox Addresses
+/// are created with a `pending` status and a null `address`. Increase generates the
+/// mailing address shortly after creation, at which point the status becomes `active`.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<LockboxAddress, LockboxAddressFromRaw>))]
 public sealed record class LockboxAddress : JsonModel

@@ -2879,7 +2879,8 @@ public sealed record class Return : JsonModel
     }
 
     /// <summary>
-    /// The identifier of the ACH Transfer associated with this return.
+    /// The identifier of the ACH Transfer associated with this return. This matches
+    /// the original Transaction's `source.ach_transfer_intention.transfer_id`.
     /// </summary>
     public required string TransferID
     {
@@ -3743,7 +3744,8 @@ public enum AchTransferStatus
     Rejected,
 
     /// <summary>
-    /// The transfer is complete.
+    /// The transfer has been submitted to the Federal Reserve. When the transfer
+    /// settles, the status remains `submitted` and the `settlement` sub-object is populated.
     /// </summary>
     Submitted,
 
