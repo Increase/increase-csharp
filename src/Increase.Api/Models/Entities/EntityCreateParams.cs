@@ -504,7 +504,7 @@ public sealed record class Corporation : JsonModel
 
     /// <summary>
     /// The legal identifier of the corporation. This is usually the Employer Identification
-    /// Number (EIN).
+    /// Number (EIN). This replaces the deprecated `tax_identifier` field.
     /// </summary>
     public required LegalIdentifier LegalIdentifier
     {
@@ -1261,7 +1261,8 @@ public sealed record class Identification : JsonModel
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
     /// such as a social security number. For Social Security Numbers and Individual
-    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
+    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
     /// </summary>
     public required string Number
     {
@@ -1842,14 +1843,15 @@ sealed class ProngConverter : JsonConverter<Prong>
 
 /// <summary>
 /// The legal identifier of the corporation. This is usually the Employer Identification
-/// Number (EIN).
+/// Number (EIN). This replaces the deprecated `tax_identifier` field.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<LegalIdentifier, LegalIdentifierFromRaw>))]
 public sealed record class LegalIdentifier : JsonModel
 {
     /// <summary>
     /// The legal identifier. For US Employer Identification Numbers, submit nine
-    /// digits with no dashes or other separators.
+    /// digits with no dashes or other separators. When testing in sandbox, use one
+    /// of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
     /// </summary>
     public required string Value
     {
@@ -2866,7 +2868,8 @@ public sealed record class JointIndividualIdentification : JsonModel
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
     /// such as a social security number. For Social Security Numbers and Individual
-    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
+    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
     /// </summary>
     public required string Number
     {
@@ -3761,7 +3764,8 @@ public sealed record class NaturalPersonIdentification : JsonModel
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
     /// such as a social security number. For Social Security Numbers and Individual
-    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
+    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
     /// </summary>
     public required string Number
     {
@@ -5611,7 +5615,8 @@ public sealed record class TrusteeIndividualIdentification : JsonModel
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
     /// such as a social security number. For Social Security Numbers and Individual
-    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
+    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
     /// </summary>
     public required string Number
     {
@@ -6500,7 +6505,8 @@ public sealed record class GrantorIdentification : JsonModel
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
     /// such as a social security number. For Social Security Numbers and Individual
-    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
+    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
     /// </summary>
     public required string Number
     {

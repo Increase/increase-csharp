@@ -3338,6 +3338,11 @@ public enum CardPushTransferStatus
     Canceled,
 
     /// <summary>
+    /// The transfer is queued to be submitted to the card network.
+    /// </summary>
+    PendingSubmission,
+
+    /// <summary>
     /// The transfer is pending review by Increase.
     /// </summary>
     PendingReviewing,
@@ -3346,11 +3351,6 @@ public enum CardPushTransferStatus
     /// The transfer requires attention from an Increase operator.
     /// </summary>
     RequiresAttention,
-
-    /// <summary>
-    /// The transfer is queued to be submitted to the card network.
-    /// </summary>
-    PendingSubmission,
 
     /// <summary>
     /// The transfer has been submitted and is pending a response from the card network.
@@ -3380,9 +3380,9 @@ sealed class CardPushTransferStatusConverter : JsonConverter<CardPushTransferSta
         {
             "pending_approval" => CardPushTransferStatus.PendingApproval,
             "canceled" => CardPushTransferStatus.Canceled,
+            "pending_submission" => CardPushTransferStatus.PendingSubmission,
             "pending_reviewing" => CardPushTransferStatus.PendingReviewing,
             "requires_attention" => CardPushTransferStatus.RequiresAttention,
-            "pending_submission" => CardPushTransferStatus.PendingSubmission,
             "submitted" => CardPushTransferStatus.Submitted,
             "complete" => CardPushTransferStatus.Complete,
             "declined" => CardPushTransferStatus.Declined,
@@ -3402,9 +3402,9 @@ sealed class CardPushTransferStatusConverter : JsonConverter<CardPushTransferSta
             {
                 CardPushTransferStatus.PendingApproval => "pending_approval",
                 CardPushTransferStatus.Canceled => "canceled",
+                CardPushTransferStatus.PendingSubmission => "pending_submission",
                 CardPushTransferStatus.PendingReviewing => "pending_reviewing",
                 CardPushTransferStatus.RequiresAttention => "requires_attention",
-                CardPushTransferStatus.PendingSubmission => "pending_submission",
                 CardPushTransferStatus.Submitted => "submitted",
                 CardPushTransferStatus.Complete => "complete",
                 CardPushTransferStatus.Declined => "declined",

@@ -496,7 +496,8 @@ public enum In
     Rejected,
 
     /// <summary>
-    /// The transfer is complete.
+    /// The transfer has been submitted to the Federal Reserve. When the transfer
+    /// settles, the status remains `submitted` and the `settlement` sub-object is populated.
     /// </summary>
     Submitted,
 

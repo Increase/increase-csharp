@@ -278,13 +278,18 @@ public enum Category
 
     /// <summary>
     /// There is an issue preventing delivery. The delivery will be attempted again
-    /// if possible. If the issue cannot be resolved, the physical card will be returned
-    /// to sender.
+    /// if possible. If the issue cannot be resolved, the physical card will be rerouted
+    /// to the return address.
     /// </summary>
     DeliveryIssue,
 
     /// <summary>
-    /// Delivery failed and the physical card was returned to sender.
+    /// The physical card has been rerouted to the return address.
+    /// </summary>
+    ReturningToSender,
+
+    /// <summary>
+    /// The physical card has been delivered to the return address.
     /// </summary>
     ReturnedToSender,
 }
@@ -303,6 +308,7 @@ sealed class CategoryConverter : JsonConverter<Category>
             "processed_for_delivery" => Category.ProcessedForDelivery,
             "delivered" => Category.Delivered,
             "delivery_issue" => Category.DeliveryIssue,
+            "returning_to_sender" => Category.ReturningToSender,
             "returned_to_sender" => Category.ReturnedToSender,
             _ => (Category)(-1),
         };
@@ -318,6 +324,7 @@ sealed class CategoryConverter : JsonConverter<Category>
                 Category.ProcessedForDelivery => "processed_for_delivery",
                 Category.Delivered => "delivered",
                 Category.DeliveryIssue => "delivery_issue",
+                Category.ReturningToSender => "returning_to_sender",
                 Category.ReturnedToSender => "returned_to_sender",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

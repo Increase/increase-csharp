@@ -12,6 +12,9 @@ namespace Increase.Api.Models.InboundMailItems;
 
 /// <summary>
 /// Inbound Mail Items represent pieces of physical mail delivered to a Lockbox Address.
+/// Increase automatically deposits checks mailed to a Lockbox Recipient into the
+/// recipient's Account. Checks that are not matched to a Lockbox Recipient must
+/// be deposited or ignored using the Action an Inbound Mail Item endpoint.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<InboundMailItem, InboundMailItemFromRaw>))]
 public sealed record class InboundMailItem : JsonModel

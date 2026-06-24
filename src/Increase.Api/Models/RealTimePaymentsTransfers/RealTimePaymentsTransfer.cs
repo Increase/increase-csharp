@@ -1387,6 +1387,11 @@ public enum RealTimePaymentsTransferStatus
     Canceled,
 
     /// <summary>
+    /// The transfer is queued to be submitted to Real-Time Payments.
+    /// </summary>
+    PendingSubmission,
+
+    /// <summary>
     /// The transfer is pending review by Increase.
     /// </summary>
     PendingReviewing,
@@ -1400,11 +1405,6 @@ public enum RealTimePaymentsTransferStatus
     /// The transfer was rejected by the network or the recipient's bank.
     /// </summary>
     Rejected,
-
-    /// <summary>
-    /// The transfer is queued to be submitted to Real-Time Payments.
-    /// </summary>
-    PendingSubmission,
 
     /// <summary>
     /// The transfer has been submitted and is pending a response from Real-Time Payments.
@@ -1429,10 +1429,10 @@ sealed class RealTimePaymentsTransferStatusConverter : JsonConverter<RealTimePay
         {
             "pending_approval" => RealTimePaymentsTransferStatus.PendingApproval,
             "canceled" => RealTimePaymentsTransferStatus.Canceled,
+            "pending_submission" => RealTimePaymentsTransferStatus.PendingSubmission,
             "pending_reviewing" => RealTimePaymentsTransferStatus.PendingReviewing,
             "requires_attention" => RealTimePaymentsTransferStatus.RequiresAttention,
             "rejected" => RealTimePaymentsTransferStatus.Rejected,
-            "pending_submission" => RealTimePaymentsTransferStatus.PendingSubmission,
             "submitted" => RealTimePaymentsTransferStatus.Submitted,
             "complete" => RealTimePaymentsTransferStatus.Complete,
             _ => (RealTimePaymentsTransferStatus)(-1),
@@ -1451,10 +1451,10 @@ sealed class RealTimePaymentsTransferStatusConverter : JsonConverter<RealTimePay
             {
                 RealTimePaymentsTransferStatus.PendingApproval => "pending_approval",
                 RealTimePaymentsTransferStatus.Canceled => "canceled",
+                RealTimePaymentsTransferStatus.PendingSubmission => "pending_submission",
                 RealTimePaymentsTransferStatus.PendingReviewing => "pending_reviewing",
                 RealTimePaymentsTransferStatus.RequiresAttention => "requires_attention",
                 RealTimePaymentsTransferStatus.Rejected => "rejected",
-                RealTimePaymentsTransferStatus.PendingSubmission => "pending_submission",
                 RealTimePaymentsTransferStatus.Submitted => "submitted",
                 RealTimePaymentsTransferStatus.Complete => "complete",
                 _ => throw new IncreaseInvalidDataException(

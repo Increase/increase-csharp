@@ -126,7 +126,8 @@ public record class AccountCreateParams : ParamsBase
 
     /// <summary>
     /// The identifier for the Program that this Account falls under. Required if
-    /// you operate more than one Program.
+    /// your Group operates more than one Program. List your [Programs](#programs)
+    /// to find their identifiers.
     /// </summary>
     public string? ProgramID
     {

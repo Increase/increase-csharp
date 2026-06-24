@@ -26,7 +26,7 @@ public class FednowTransferListParamsTest : TestBase
             ExternalAccountID = "external_account_id",
             IdempotencyKey = "x",
             Limit = 1,
-            Status = new() { In = [In.PendingReviewing] },
+            Status = new() { In = [In.PendingSubmitting] },
         };
 
         string expectedAccountID = "account_id";
@@ -41,7 +41,7 @@ public class FednowTransferListParamsTest : TestBase
         string expectedExternalAccountID = "external_account_id";
         string expectedIdempotencyKey = "x";
         long expectedLimit = 1;
-        Status expectedStatus = new() { In = [In.PendingReviewing] };
+        Status expectedStatus = new() { In = [In.PendingSubmitting] };
 
         Assert.Equal(expectedAccountID, parameters.AccountID);
         Assert.Equal(expectedCreatedAt, parameters.CreatedAt);
@@ -121,7 +121,7 @@ public class FednowTransferListParamsTest : TestBase
             ExternalAccountID = "external_account_id",
             IdempotencyKey = "x",
             Limit = 1,
-            Status = new() { In = [In.PendingReviewing] },
+            Status = new() { In = [In.PendingSubmitting] },
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -129,7 +129,7 @@ public class FednowTransferListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.increase.com/fednow_transfers?account_id=account_id&created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&external_account_id=external_account_id&idempotency_key=x&limit=1&status.in=pending_reviewing"
+                    "https://api.increase.com/fednow_transfers?account_id=account_id&created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&external_account_id=external_account_id&idempotency_key=x&limit=1&status.in=pending_submitting"
                 ),
                 url
             )
@@ -153,7 +153,7 @@ public class FednowTransferListParamsTest : TestBase
             ExternalAccountID = "external_account_id",
             IdempotencyKey = "x",
             Limit = 1,
-            Status = new() { In = [In.PendingReviewing] },
+            Status = new() { In = [In.PendingSubmitting] },
         };
 
         FednowTransferListParams copied = new(parameters);
@@ -328,9 +328,9 @@ public class StatusTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Status { In = [In.PendingReviewing] };
+        var model = new Status { In = [In.PendingSubmitting] };
 
-        List<ApiEnum<string, In>> expectedIn = [In.PendingReviewing];
+        List<ApiEnum<string, In>> expectedIn = [In.PendingSubmitting];
 
         Assert.NotNull(model.In);
         Assert.Equal(expectedIn.Count, model.In.Count);
@@ -343,7 +343,7 @@ public class StatusTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Status { In = [In.PendingReviewing] };
+        var model = new Status { In = [In.PendingSubmitting] };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Status>(json, ModelBase.SerializerOptions);
@@ -354,13 +354,13 @@ public class StatusTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Status { In = [In.PendingReviewing] };
+        var model = new Status { In = [In.PendingSubmitting] };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Status>(element, ModelBase.SerializerOptions);
         Assert.NotNull(deserialized);
 
-        List<ApiEnum<string, In>> expectedIn = [In.PendingReviewing];
+        List<ApiEnum<string, In>> expectedIn = [In.PendingSubmitting];
 
         Assert.NotNull(deserialized.In);
         Assert.Equal(expectedIn.Count, deserialized.In.Count);
@@ -373,7 +373,7 @@ public class StatusTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Status { In = [In.PendingReviewing] };
+        var model = new Status { In = [In.PendingSubmitting] };
 
         model.Validate();
     }
@@ -423,7 +423,7 @@ public class StatusTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Status { In = [In.PendingReviewing] };
+        var model = new Status { In = [In.PendingSubmitting] };
 
         Status copied = new(model);
 
@@ -434,12 +434,12 @@ public class StatusTest : TestBase
 public class InTest : TestBase
 {
     [Theory]
+    [InlineData(In.PendingSubmitting)]
     [InlineData(In.PendingReviewing)]
     [InlineData(In.Canceled)]
     [InlineData(In.ReviewingRejected)]
     [InlineData(In.RequiresAttention)]
     [InlineData(In.PendingApproval)]
-    [InlineData(In.PendingSubmitting)]
     [InlineData(In.PendingResponse)]
     [InlineData(In.Complete)]
     [InlineData(In.Rejected)]
@@ -463,12 +463,12 @@ public class InTest : TestBase
     }
 
     [Theory]
+    [InlineData(In.PendingSubmitting)]
     [InlineData(In.PendingReviewing)]
     [InlineData(In.Canceled)]
     [InlineData(In.ReviewingRejected)]
     [InlineData(In.RequiresAttention)]
     [InlineData(In.PendingApproval)]
-    [InlineData(In.PendingSubmitting)]
     [InlineData(In.PendingResponse)]
     [InlineData(In.Complete)]
     [InlineData(In.Rejected)]

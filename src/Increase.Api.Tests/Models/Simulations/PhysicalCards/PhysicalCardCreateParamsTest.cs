@@ -129,6 +129,7 @@ public class CategoryTest : TestBase
     [InlineData(Category.ProcessedForDelivery)]
     [InlineData(Category.Delivered)]
     [InlineData(Category.DeliveryIssue)]
+    [InlineData(Category.ReturningToSender)]
     [InlineData(Category.ReturnedToSender)]
     public void Validation_Works(Category rawValue)
     {
@@ -154,6 +155,7 @@ public class CategoryTest : TestBase
     [InlineData(Category.ProcessedForDelivery)]
     [InlineData(Category.Delivered)]
     [InlineData(Category.DeliveryIssue)]
+    [InlineData(Category.ReturningToSender)]
     [InlineData(Category.ReturnedToSender)]
     public void SerializationRoundtrip_Works(Category rawValue)
     {
