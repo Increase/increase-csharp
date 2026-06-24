@@ -407,7 +407,8 @@ public sealed record class Source : JsonModel
     /// Return is created when an ACH Transfer is returned by the receiving bank.
     /// It offsets the ACH Transfer Intention. ACH Transfer Returns usually occur
     /// within the first two business days after the transfer is initiated, but can
-    /// occur much later.
+    /// occur much later. The return appears as a new posted Transaction; no Pending
+    /// Transaction is created.
     /// </summary>
     public AchTransferReturn? AchTransferReturn
     {
@@ -1857,7 +1858,9 @@ class AchTransferRejectionFromRaw : IFromRawJson<AchTransferRejection>
 /// if and only if `category` is equal to `ach_transfer_return`. An ACH Transfer
 /// Return is created when an ACH Transfer is returned by the receiving bank. It
 /// offsets the ACH Transfer Intention. ACH Transfer Returns usually occur within
-/// the first two business days after the transfer is initiated, but can occur much later.
+/// the first two business days after the transfer is initiated, but can occur much
+/// later. The return appears as a new posted Transaction; no Pending Transaction
+/// is created.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<AchTransferReturn, AchTransferReturnFromRaw>))]
 public sealed record class AchTransferReturn : JsonModel
@@ -1935,7 +1938,8 @@ public sealed record class AchTransferReturn : JsonModel
     }
 
     /// <summary>
-    /// The identifier of the ACH Transfer associated with this return.
+    /// The identifier of the ACH Transfer associated with this return. This matches
+    /// the original Transaction's `source.ach_transfer_intention.transfer_id`.
     /// </summary>
     public required string TransferID
     {

@@ -74,7 +74,9 @@ public record class AchTransferCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The account number for the destination account.
+    /// The receiver's account number. For credit transfers (positive `amount`) this
+    /// is the account that funds will be sent to. For debit transfers (negative `amount`)
+    /// this is the account that funds will be pulled from.
     /// </summary>
     public string? AccountNumber
     {
@@ -95,8 +97,10 @@ public record class AchTransferCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// Additional information that will be sent to the recipient. This is included
-    /// in the transfer data sent to the receiving bank.
+    /// Additional information passed through to the receiving bank with the transfer.
+    /// Most ACH transfers do not need this. Only set this if your recipient has asked
+    /// for addendum data, typically unstructured remittance information. Corporate
+    /// Trade Exchange (CTX) flows can carry structured X12 remittance advice instead.
     /// </summary>
     public Addenda? Addenda
     {
@@ -117,8 +121,10 @@ public record class AchTransferCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The description of the date of the transfer, usually in the format `YYMMDD`.
-    /// This is included in the transfer data sent to the receiving bank.
+    /// A description of the transfer date (typically `YYMMDD`), sent in the company
+    /// batch header. This value is informational and does not affect funds movement,
+    /// settlement timing, or returns. Only set this if your recipient has asked
+    /// for it.
     /// </summary>
     public string? CompanyDescriptiveDate
     {
@@ -139,8 +145,9 @@ public record class AchTransferCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The data you choose to associate with the transfer. This is included in the
-    /// transfer data sent to the receiving bank.
+    /// Custom data sent in the company batch header. This value is informational
+    /// and does not affect funds movement, settlement timing, or returns. Most ACH
+    /// transfers do not need this. Only set this if your recipient has asked for it.
     /// </summary>
     public string? CompanyDiscretionaryData
     {
@@ -161,9 +168,11 @@ public record class AchTransferCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// A description of the transfer, included in the transfer data sent to the receiving
-    /// bank. Standardized formatting may be required, for example `PAYROLL` for
-    /// payroll-related Prearranged Payments and Deposits (PPD) credit transfers.
+    /// A short description sent in the company batch header. Most receivers do not
+    /// surface this. Only set this if your recipient has asked for a specific value
+    /// or if Nacha mandates one for your Standard Entry Class (SEC) code and use
+    /// case. For example, Prearranged Payment and Deposit (PPD) payroll credits must
+    /// use `PAYROLL`, and reversals must use `REVERSAL`.
     /// </summary>
     public string? CompanyEntryDescription
     {
@@ -184,8 +193,9 @@ public record class AchTransferCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The name by which the recipient knows you. This is included in the transfer
-    /// data sent to the receiving bank.
+    /// The name by which the recipient knows you, sent in the company batch header.
+    /// We recommend setting this on every transfer; if you do not, we fall back
+    /// to the ACH company name configured on your account.
     /// </summary>
     public string? CompanyName
     {
@@ -206,7 +216,7 @@ public record class AchTransferCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The type of entity that owns the account to which the ACH Transfer is being sent.
+    /// The type of entity that owns the receiver's account.
     /// </summary>
     public ApiEnum<string, DestinationAccountHolder>? DestinationAccountHolder
     {
@@ -251,7 +261,7 @@ public record class AchTransferCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The type of the account to which the transfer will be sent.
+    /// The type of the receiver's bank account.
     /// </summary>
     public ApiEnum<string, Funding>? Funding
     {
@@ -272,7 +282,8 @@ public record class AchTransferCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// Your identifier for the transfer recipient.
+    /// Your internal identifier for the transfer recipient. This value is informational
+    /// and not verified by the recipient's bank. Most callers can leave this unset.
     /// </summary>
     public string? IndividualID
     {
@@ -362,8 +373,8 @@ public record class AchTransferCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The American Bankers' Association (ABA) Routing Transit Number (RTN) for
-    /// the destination account.
+    /// The American Bankers' Association (ABA) Routing Transit Number (RTN) of the
+    /// receiver's bank.
     /// </summary>
     public string? RoutingNumber
     {
@@ -385,7 +396,7 @@ public record class AchTransferCreateParams : ParamsBase
 
     /// <summary>
     /// The [Standard Entry Class (SEC) code](/documentation/ach-standard-entry-class-codes)
-    /// to use for the transfer.
+    /// to use for the transfer. If not provided, the default is `corporate_credit_or_debit`.
     /// </summary>
     public ApiEnum<string, StandardEntryClassCode>? StandardEntryClassCode
     {
@@ -541,8 +552,10 @@ public record class AchTransferCreateParams : ParamsBase
 }
 
 /// <summary>
-/// Additional information that will be sent to the recipient. This is included in
-/// the transfer data sent to the receiving bank.
+/// Additional information passed through to the receiving bank with the transfer.
+/// Most ACH transfers do not need this. Only set this if your recipient has asked
+/// for addendum data, typically unstructured remittance information. Corporate Trade
+/// Exchange (CTX) flows can carry structured X12 remittance advice instead.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<Addenda, AddendaFromRaw>))]
 public sealed record class Addenda : JsonModel
@@ -1005,7 +1018,7 @@ class InvoiceFromRaw : IFromRawJson<Invoice>
 }
 
 /// <summary>
-/// The type of entity that owns the account to which the ACH Transfer is being sent.
+/// The type of entity that owns the receiver's account.
 /// </summary>
 [JsonConverter(typeof(DestinationAccountHolderConverter))]
 public enum DestinationAccountHolder
@@ -1066,7 +1079,7 @@ sealed class DestinationAccountHolderConverter : JsonConverter<DestinationAccoun
 }
 
 /// <summary>
-/// The type of the account to which the transfer will be sent.
+/// The type of the receiver's bank account.
 /// </summary>
 [JsonConverter(typeof(FundingConverter))]
 public enum Funding
@@ -1237,7 +1250,7 @@ public enum SettlementSchedule
     /// The chosen effective date will be the same as the ACH processing date on
     /// which the transfer is submitted. This is necessary, but not sufficient for
     /// the transfer to be settled same-day: it must also be submitted before the
-    /// last same-day cutoff and be less than or equal to $1,000.000.00.
+    /// last same-day cutoff and be less than or equal to $1,000,000.00.
     /// </summary>
     SameDay,
 
@@ -1288,7 +1301,7 @@ sealed class SettlementScheduleConverter : JsonConverter<SettlementSchedule>
 
 /// <summary>
 /// The [Standard Entry Class (SEC) code](/documentation/ach-standard-entry-class-codes)
-/// to use for the transfer.
+/// to use for the transfer. If not provided, the default is `corporate_credit_or_debit`.
 /// </summary>
 [JsonConverter(typeof(StandardEntryClassCodeConverter))]
 public enum StandardEntryClassCode

@@ -27,7 +27,10 @@ public interface ILockboxAddressService
     ILockboxAddressService WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Create a Lockbox Address
+    /// The Lockbox Address starts with a `pending` status and a null `address`. Shortly
+    /// after creation, Increase generates the mailing address and the status becomes
+    /// `active`. You can only create Lockbox Recipients for an `active` Lockbox
+    /// Address.
     /// </summary>
     Task<LockboxAddress> Create(
         LockboxAddressCreateParams? parameters = null,

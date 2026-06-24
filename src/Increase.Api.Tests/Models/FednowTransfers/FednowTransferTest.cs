@@ -1424,12 +1424,12 @@ public class RejectReasonCodeTest : TestBase
 public class FednowTransferStatusTest : TestBase
 {
     [Theory]
+    [InlineData(FednowTransfers::FednowTransferStatus.PendingSubmitting)]
     [InlineData(FednowTransfers::FednowTransferStatus.PendingReviewing)]
     [InlineData(FednowTransfers::FednowTransferStatus.Canceled)]
     [InlineData(FednowTransfers::FednowTransferStatus.ReviewingRejected)]
     [InlineData(FednowTransfers::FednowTransferStatus.RequiresAttention)]
     [InlineData(FednowTransfers::FednowTransferStatus.PendingApproval)]
-    [InlineData(FednowTransfers::FednowTransferStatus.PendingSubmitting)]
     [InlineData(FednowTransfers::FednowTransferStatus.PendingResponse)]
     [InlineData(FednowTransfers::FednowTransferStatus.Complete)]
     [InlineData(FednowTransfers::FednowTransferStatus.Rejected)]
@@ -1452,12 +1452,12 @@ public class FednowTransferStatusTest : TestBase
     }
 
     [Theory]
+    [InlineData(FednowTransfers::FednowTransferStatus.PendingSubmitting)]
     [InlineData(FednowTransfers::FednowTransferStatus.PendingReviewing)]
     [InlineData(FednowTransfers::FednowTransferStatus.Canceled)]
     [InlineData(FednowTransfers::FednowTransferStatus.ReviewingRejected)]
     [InlineData(FednowTransfers::FednowTransferStatus.RequiresAttention)]
     [InlineData(FednowTransfers::FednowTransferStatus.PendingApproval)]
-    [InlineData(FednowTransfers::FednowTransferStatus.PendingSubmitting)]
     [InlineData(FednowTransfers::FednowTransferStatus.PendingResponse)]
     [InlineData(FednowTransfers::FednowTransferStatus.Complete)]
     [InlineData(FednowTransfers::FednowTransferStatus.Rejected)]
