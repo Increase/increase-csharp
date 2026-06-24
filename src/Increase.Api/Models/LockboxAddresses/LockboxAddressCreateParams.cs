@@ -10,7 +10,9 @@ using Increase.Api.Core;
 namespace Increase.Api.Models.LockboxAddresses;
 
 /// <summary>
-/// Create a Lockbox Address
+/// The Lockbox Address starts with a `pending` status and a null `address`. Shortly
+/// after creation, Increase generates the mailing address and the status becomes
+/// `active`. You can only create Lockbox Recipients for an `active` Lockbox Address.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that

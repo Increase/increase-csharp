@@ -461,6 +461,11 @@ class StatusFromRaw : IFromRawJson<Status>
 public enum In
 {
     /// <summary>
+    /// The transfer is queued to be submitted to FedNow.
+    /// </summary>
+    PendingSubmitting,
+
+    /// <summary>
     /// The transfer is pending review by Increase.
     /// </summary>
     PendingReviewing,
@@ -484,11 +489,6 @@ public enum In
     /// The transfer is pending approval.
     /// </summary>
     PendingApproval,
-
-    /// <summary>
-    /// The transfer is queued to be submitted to FedNow.
-    /// </summary>
-    PendingSubmitting,
 
     /// <summary>
     /// The transfer has been submitted and is pending a response from FedNow.
@@ -516,12 +516,12 @@ sealed class InConverter : JsonConverter<In>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "pending_submitting" => In.PendingSubmitting,
             "pending_reviewing" => In.PendingReviewing,
             "canceled" => In.Canceled,
             "reviewing_rejected" => In.ReviewingRejected,
             "requires_attention" => In.RequiresAttention,
             "pending_approval" => In.PendingApproval,
-            "pending_submitting" => In.PendingSubmitting,
             "pending_response" => In.PendingResponse,
             "complete" => In.Complete,
             "rejected" => In.Rejected,
@@ -535,12 +535,12 @@ sealed class InConverter : JsonConverter<In>
             writer,
             value switch
             {
+                In.PendingSubmitting => "pending_submitting",
                 In.PendingReviewing => "pending_reviewing",
                 In.Canceled => "canceled",
                 In.ReviewingRejected => "reviewing_rejected",
                 In.RequiresAttention => "requires_attention",
                 In.PendingApproval => "pending_approval",
-                In.PendingSubmitting => "pending_submitting",
                 In.PendingResponse => "pending_response",
                 In.Complete => "complete",
                 In.Rejected => "rejected",

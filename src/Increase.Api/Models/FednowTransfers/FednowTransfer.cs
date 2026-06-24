@@ -1362,6 +1362,11 @@ sealed class RejectReasonCodeConverter : JsonConverter<RejectReasonCode>
 public enum FednowTransferStatus
 {
     /// <summary>
+    /// The transfer is queued to be submitted to FedNow.
+    /// </summary>
+    PendingSubmitting,
+
+    /// <summary>
     /// The transfer is pending review by Increase.
     /// </summary>
     PendingReviewing,
@@ -1385,11 +1390,6 @@ public enum FednowTransferStatus
     /// The transfer is pending approval.
     /// </summary>
     PendingApproval,
-
-    /// <summary>
-    /// The transfer is queued to be submitted to FedNow.
-    /// </summary>
-    PendingSubmitting,
 
     /// <summary>
     /// The transfer has been submitted and is pending a response from FedNow.
@@ -1417,12 +1417,12 @@ sealed class FednowTransferStatusConverter : JsonConverter<FednowTransferStatus>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
+            "pending_submitting" => FednowTransferStatus.PendingSubmitting,
             "pending_reviewing" => FednowTransferStatus.PendingReviewing,
             "canceled" => FednowTransferStatus.Canceled,
             "reviewing_rejected" => FednowTransferStatus.ReviewingRejected,
             "requires_attention" => FednowTransferStatus.RequiresAttention,
             "pending_approval" => FednowTransferStatus.PendingApproval,
-            "pending_submitting" => FednowTransferStatus.PendingSubmitting,
             "pending_response" => FednowTransferStatus.PendingResponse,
             "complete" => FednowTransferStatus.Complete,
             "rejected" => FednowTransferStatus.Rejected,
@@ -1440,12 +1440,12 @@ sealed class FednowTransferStatusConverter : JsonConverter<FednowTransferStatus>
             writer,
             value switch
             {
+                FednowTransferStatus.PendingSubmitting => "pending_submitting",
                 FednowTransferStatus.PendingReviewing => "pending_reviewing",
                 FednowTransferStatus.Canceled => "canceled",
                 FednowTransferStatus.ReviewingRejected => "reviewing_rejected",
                 FednowTransferStatus.RequiresAttention => "requires_attention",
                 FednowTransferStatus.PendingApproval => "pending_approval",
-                FednowTransferStatus.PendingSubmitting => "pending_submitting",
                 FednowTransferStatus.PendingResponse => "pending_response",
                 FednowTransferStatus.Complete => "complete",
                 FednowTransferStatus.Rejected => "rejected",

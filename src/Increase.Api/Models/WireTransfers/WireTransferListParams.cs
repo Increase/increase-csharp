@@ -471,6 +471,11 @@ public enum In
     Canceled,
 
     /// <summary>
+    /// The transfer is pending creation.
+    /// </summary>
+    PendingCreating,
+
+    /// <summary>
     /// The transfer is pending review by Increase.
     /// </summary>
     PendingReviewing,
@@ -484,11 +489,6 @@ public enum In
     /// The transfer requires attention from an Increase operator.
     /// </summary>
     RequiresAttention,
-
-    /// <summary>
-    /// The transfer is pending creation.
-    /// </summary>
-    PendingCreating,
 
     /// <summary>
     /// The transfer has been reversed.
@@ -518,10 +518,10 @@ sealed class InConverter : JsonConverter<In>
         {
             "pending_approval" => In.PendingApproval,
             "canceled" => In.Canceled,
+            "pending_creating" => In.PendingCreating,
             "pending_reviewing" => In.PendingReviewing,
             "rejected" => In.Rejected,
             "requires_attention" => In.RequiresAttention,
-            "pending_creating" => In.PendingCreating,
             "reversed" => In.Reversed,
             "submitted" => In.Submitted,
             "complete" => In.Complete,
@@ -537,10 +537,10 @@ sealed class InConverter : JsonConverter<In>
             {
                 In.PendingApproval => "pending_approval",
                 In.Canceled => "canceled",
+                In.PendingCreating => "pending_creating",
                 In.PendingReviewing => "pending_reviewing",
                 In.Rejected => "rejected",
                 In.RequiresAttention => "requires_attention",
-                In.PendingCreating => "pending_creating",
                 In.Reversed => "reversed",
                 In.Submitted => "submitted",
                 In.Complete => "complete",
