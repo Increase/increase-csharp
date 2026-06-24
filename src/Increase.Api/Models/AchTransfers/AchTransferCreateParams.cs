@@ -385,7 +385,7 @@ public record class AchTransferCreateParams : ParamsBase
 
     /// <summary>
     /// The [Standard Entry Class (SEC) code](/documentation/ach-standard-entry-class-codes)
-    /// to use for the transfer.
+    /// to use for the transfer. If not provided, the default is `corporate_credit_or_debit`.
     /// </summary>
     public ApiEnum<string, StandardEntryClassCode>? StandardEntryClassCode
     {
@@ -1288,7 +1288,7 @@ sealed class SettlementScheduleConverter : JsonConverter<SettlementSchedule>
 
 /// <summary>
 /// The [Standard Entry Class (SEC) code](/documentation/ach-standard-entry-class-codes)
-/// to use for the transfer.
+/// to use for the transfer. If not provided, the default is `corporate_credit_or_debit`.
 /// </summary>
 [JsonConverter(typeof(StandardEntryClassCodeConverter))]
 public enum StandardEntryClassCode
