@@ -455,6 +455,11 @@ public enum In
     PendingSubmission,
 
     /// <summary>
+    /// The transfer is pending submission.
+    /// </summary>
+    PendingReviewing,
+
+    /// <summary>
     /// The transfer requires attention from an Increase operator.
     /// </summary>
     RequiresAttention,
@@ -503,6 +508,7 @@ sealed class InConverter : JsonConverter<In>
             "pending_approval" => In.PendingApproval,
             "canceled" => In.Canceled,
             "pending_submission" => In.PendingSubmission,
+            "pending_reviewing" => In.PendingReviewing,
             "requires_attention" => In.RequiresAttention,
             "rejected" => In.Rejected,
             "pending_mailing" => In.PendingMailing,
@@ -523,6 +529,7 @@ sealed class InConverter : JsonConverter<In>
                 In.PendingApproval => "pending_approval",
                 In.Canceled => "canceled",
                 In.PendingSubmission => "pending_submission",
+                In.PendingReviewing => "pending_reviewing",
                 In.RequiresAttention => "requires_attention",
                 In.Rejected => "rejected",
                 In.PendingMailing => "pending_mailing",
