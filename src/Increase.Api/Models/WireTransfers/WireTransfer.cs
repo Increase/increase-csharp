@@ -2123,6 +2123,11 @@ public enum WireTransferStatus
     Canceled,
 
     /// <summary>
+    /// The transfer is pending creation.
+    /// </summary>
+    PendingCreating,
+
+    /// <summary>
     /// The transfer is pending review by Increase.
     /// </summary>
     PendingReviewing,
@@ -2136,11 +2141,6 @@ public enum WireTransferStatus
     /// The transfer requires attention from an Increase operator.
     /// </summary>
     RequiresAttention,
-
-    /// <summary>
-    /// The transfer is pending creation.
-    /// </summary>
-    PendingCreating,
 
     /// <summary>
     /// The transfer has been reversed.
@@ -2170,10 +2170,10 @@ sealed class WireTransferStatusConverter : JsonConverter<WireTransferStatus>
         {
             "pending_approval" => WireTransferStatus.PendingApproval,
             "canceled" => WireTransferStatus.Canceled,
+            "pending_creating" => WireTransferStatus.PendingCreating,
             "pending_reviewing" => WireTransferStatus.PendingReviewing,
             "rejected" => WireTransferStatus.Rejected,
             "requires_attention" => WireTransferStatus.RequiresAttention,
-            "pending_creating" => WireTransferStatus.PendingCreating,
             "reversed" => WireTransferStatus.Reversed,
             "submitted" => WireTransferStatus.Submitted,
             "complete" => WireTransferStatus.Complete,
@@ -2193,10 +2193,10 @@ sealed class WireTransferStatusConverter : JsonConverter<WireTransferStatus>
             {
                 WireTransferStatus.PendingApproval => "pending_approval",
                 WireTransferStatus.Canceled => "canceled",
+                WireTransferStatus.PendingCreating => "pending_creating",
                 WireTransferStatus.PendingReviewing => "pending_reviewing",
                 WireTransferStatus.Rejected => "rejected",
                 WireTransferStatus.RequiresAttention => "requires_attention",
-                WireTransferStatus.PendingCreating => "pending_creating",
                 WireTransferStatus.Reversed => "reversed",
                 WireTransferStatus.Submitted => "submitted",
                 WireTransferStatus.Complete => "complete",

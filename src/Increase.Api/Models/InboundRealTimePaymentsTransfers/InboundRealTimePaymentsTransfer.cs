@@ -594,7 +594,8 @@ public enum Status
     PendingConfirming,
 
     /// <summary>
-    /// The transfer was not responded to in time.
+    /// The transfer was not responded to in time. This is rare and represents an
+    /// error at Increase.
     /// </summary>
     TimedOut,
 

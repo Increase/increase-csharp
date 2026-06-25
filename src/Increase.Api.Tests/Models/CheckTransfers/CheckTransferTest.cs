@@ -2625,6 +2625,7 @@ public class TrackingUpdateCategoryTest : TestBase
     [InlineData(CheckTransfers::TrackingUpdateCategory.ProcessedForDelivery)]
     [InlineData(CheckTransfers::TrackingUpdateCategory.Delivered)]
     [InlineData(CheckTransfers::TrackingUpdateCategory.DeliveryIssue)]
+    [InlineData(CheckTransfers::TrackingUpdateCategory.ReturningToSender)]
     [InlineData(CheckTransfers::TrackingUpdateCategory.ReturnedToSender)]
     public void Validation_Works(CheckTransfers::TrackingUpdateCategory rawValue)
     {
@@ -2649,6 +2650,7 @@ public class TrackingUpdateCategoryTest : TestBase
     [InlineData(CheckTransfers::TrackingUpdateCategory.ProcessedForDelivery)]
     [InlineData(CheckTransfers::TrackingUpdateCategory.Delivered)]
     [InlineData(CheckTransfers::TrackingUpdateCategory.DeliveryIssue)]
+    [InlineData(CheckTransfers::TrackingUpdateCategory.ReturningToSender)]
     [InlineData(CheckTransfers::TrackingUpdateCategory.ReturnedToSender)]
     public void SerializationRoundtrip_Works(CheckTransfers::TrackingUpdateCategory rawValue)
     {

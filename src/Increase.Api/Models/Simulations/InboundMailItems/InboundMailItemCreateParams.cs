@@ -11,7 +11,10 @@ namespace Increase.Api.Models.Simulations.InboundMailItems;
 
 /// <summary>
 /// Simulates an Inbound Mail Item to one of your Lockbox Addresses or Lockbox Recipients,
-/// as if someone had mailed a physical check.
+/// as if someone had mailed a physical check. Increase automatically deposits a
+/// check mailed to a Lockbox Recipient into the recipient's Account. A check mailed
+/// to a Lockbox Address must be deposited or ignored with the [Action an Inbound
+/// Mail Item](#inbound-mail-items) endpoint.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
@@ -61,7 +64,8 @@ public record class InboundMailItemCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The identifier of the Lockbox Address to simulate inbound mail to.
+    /// The identifier of the Lockbox Address to simulate inbound mail to. Exactly
+    /// one lockbox identifier parameter must be provided.
     /// </summary>
     public string? LockboxAddressID
     {
@@ -82,7 +86,8 @@ public record class InboundMailItemCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The identifier of the Lockbox Recipient to simulate inbound mail to.
+    /// The identifier of the Lockbox Recipient to simulate inbound mail to. Exactly
+    /// one lockbox identifier parameter must be provided.
     /// </summary>
     public string? LockboxRecipientID
     {

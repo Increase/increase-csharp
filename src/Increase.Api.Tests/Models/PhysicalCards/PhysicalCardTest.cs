@@ -1471,6 +1471,7 @@ public class CategoryTest : TestBase
     [InlineData(PhysicalCards::Category.ProcessedForDelivery)]
     [InlineData(PhysicalCards::Category.Delivered)]
     [InlineData(PhysicalCards::Category.DeliveryIssue)]
+    [InlineData(PhysicalCards::Category.ReturningToSender)]
     [InlineData(PhysicalCards::Category.ReturnedToSender)]
     public void Validation_Works(PhysicalCards::Category rawValue)
     {
@@ -1496,6 +1497,7 @@ public class CategoryTest : TestBase
     [InlineData(PhysicalCards::Category.ProcessedForDelivery)]
     [InlineData(PhysicalCards::Category.Delivered)]
     [InlineData(PhysicalCards::Category.DeliveryIssue)]
+    [InlineData(PhysicalCards::Category.ReturningToSender)]
     [InlineData(PhysicalCards::Category.ReturnedToSender)]
     public void SerializationRoundtrip_Works(PhysicalCards::Category rawValue)
     {

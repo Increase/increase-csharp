@@ -38,7 +38,8 @@ public record class LockboxRecipientCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The Lockbox Address where this Lockbox Recipient may receive mail.
+    /// The Lockbox Address where this Lockbox Recipient may receive mail. The Lockbox
+    /// Address must have a `status` of `active`.
     /// </summary>
     public required string LockboxAddressID
     {

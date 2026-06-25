@@ -13,7 +13,8 @@ using System = System;
 namespace Increase.Api.Models.InboundMailItems;
 
 /// <summary>
-/// Action an Inbound Mail Item
+/// Deposits or ignores each check contained in a pending Inbound Mail Item. Depositing
+/// a check creates a [Check Deposit](#check-deposits) into the Account you specify.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that

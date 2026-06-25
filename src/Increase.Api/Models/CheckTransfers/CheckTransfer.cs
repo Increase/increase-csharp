@@ -2063,12 +2063,18 @@ public enum TrackingUpdateCategory
 
     /// <summary>
     /// There is an issue preventing delivery. The delivery will be attempted again
-    /// if possible. If the issue cannot be resolved, the check will be returned to sender.
+    /// if possible. If the issue cannot be resolved, the check will be rerouted to
+    /// the return address.
     /// </summary>
     DeliveryIssue,
 
     /// <summary>
-    /// Delivery failed and the check was returned to sender.
+    /// The check has been rerouted to the return address.
+    /// </summary>
+    ReturningToSender,
+
+    /// <summary>
+    /// The check has been delivered to the return address.
     /// </summary>
     ReturnedToSender,
 }
@@ -2087,6 +2093,7 @@ sealed class TrackingUpdateCategoryConverter : JsonConverter<TrackingUpdateCateg
             "processed_for_delivery" => TrackingUpdateCategory.ProcessedForDelivery,
             "delivered" => TrackingUpdateCategory.Delivered,
             "delivery_issue" => TrackingUpdateCategory.DeliveryIssue,
+            "returning_to_sender" => TrackingUpdateCategory.ReturningToSender,
             "returned_to_sender" => TrackingUpdateCategory.ReturnedToSender,
             _ => (TrackingUpdateCategory)(-1),
         };
@@ -2106,6 +2113,7 @@ sealed class TrackingUpdateCategoryConverter : JsonConverter<TrackingUpdateCateg
                 TrackingUpdateCategory.ProcessedForDelivery => "processed_for_delivery",
                 TrackingUpdateCategory.Delivered => "delivered",
                 TrackingUpdateCategory.DeliveryIssue => "delivery_issue",
+                TrackingUpdateCategory.ReturningToSender => "returning_to_sender",
                 TrackingUpdateCategory.ReturnedToSender => "returned_to_sender",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

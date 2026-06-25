@@ -46,7 +46,10 @@ public sealed record class PendingTransaction : JsonModel
 
     /// <summary>
     /// The Pending Transaction amount in the minor unit of its currency. For dollars,
-    /// for example, this is cents.
+    /// for example, this is cents. This amount does not change after the Pending
+    /// Transaction is created. If a card authorization settles for a different amount,
+    /// the settled amount is available on the resulting Transaction and on the Card
+    /// Payment's `state.settled_amount`.
     /// </summary>
     public required long Amount
     {
@@ -6529,7 +6532,8 @@ public enum PendingTransactionStatus
     /// <summary>
     /// The Pending Transaction is confirmed. An associated Transaction exists for
     /// this object. The Pending Transaction will no longer count against your balance
-    /// and can generally be hidden from UIs, etc.
+    /// and can generally be hidden from UIs, etc. The Pending Transaction's `amount`
+    /// is not updated if the associated Transaction settles for a different amount.
     /// </summary>
     Complete,
 }

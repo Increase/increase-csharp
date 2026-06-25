@@ -475,6 +475,11 @@ public enum In
     Canceled,
 
     /// <summary>
+    /// The transfer is queued to be submitted to Real-Time Payments.
+    /// </summary>
+    PendingSubmission,
+
+    /// <summary>
     /// The transfer is pending review by Increase.
     /// </summary>
     PendingReviewing,
@@ -488,11 +493,6 @@ public enum In
     /// The transfer was rejected by the network or the recipient's bank.
     /// </summary>
     Rejected,
-
-    /// <summary>
-    /// The transfer is queued to be submitted to Real-Time Payments.
-    /// </summary>
-    PendingSubmission,
 
     /// <summary>
     /// The transfer has been submitted and is pending a response from Real-Time Payments.
@@ -517,10 +517,10 @@ sealed class InConverter : JsonConverter<In>
         {
             "pending_approval" => In.PendingApproval,
             "canceled" => In.Canceled,
+            "pending_submission" => In.PendingSubmission,
             "pending_reviewing" => In.PendingReviewing,
             "requires_attention" => In.RequiresAttention,
             "rejected" => In.Rejected,
-            "pending_submission" => In.PendingSubmission,
             "submitted" => In.Submitted,
             "complete" => In.Complete,
             _ => (In)(-1),
@@ -535,10 +535,10 @@ sealed class InConverter : JsonConverter<In>
             {
                 In.PendingApproval => "pending_approval",
                 In.Canceled => "canceled",
+                In.PendingSubmission => "pending_submission",
                 In.PendingReviewing => "pending_reviewing",
                 In.RequiresAttention => "requires_attention",
                 In.Rejected => "rejected",
-                In.PendingSubmission => "pending_submission",
                 In.Submitted => "submitted",
                 In.Complete => "complete",
                 _ => throw new IncreaseInvalidDataException(

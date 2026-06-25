@@ -44,7 +44,7 @@ public sealed record class AchTransfer : JsonModel
     }
 
     /// <summary>
-    /// The destination account number.
+    /// The receiver's account number.
     /// </summary>
     public required string AccountNumber
     {
@@ -234,7 +234,7 @@ public sealed record class AchTransfer : JsonModel
     }
 
     /// <summary>
-    /// The type of entity that owns the account to which the ACH Transfer is being sent.
+    /// The type of entity that owns the receiver's account.
     /// </summary>
     public required ApiEnum<string, AchTransferDestinationAccountHolder> DestinationAccountHolder
     {
@@ -262,7 +262,7 @@ public sealed record class AchTransfer : JsonModel
     }
 
     /// <summary>
-    /// The type of the account to which the transfer will be sent.
+    /// The type of the receiver's bank account.
     /// </summary>
     public required ApiEnum<string, AchTransferFunding> Funding
     {
@@ -304,7 +304,8 @@ public sealed record class AchTransfer : JsonModel
     }
 
     /// <summary>
-    /// Your identifier for the transfer recipient.
+    /// Your internal identifier for the transfer recipient. This value is informational
+    /// and not verified by the recipient's bank.
     /// </summary>
     public required string? IndividualID
     {
@@ -412,7 +413,8 @@ public sealed record class AchTransfer : JsonModel
     }
 
     /// <summary>
-    /// The American Bankers' Association (ABA) Routing Transit Number (RTN).
+    /// The American Bankers' Association (ABA) Routing Transit Number (RTN) of the
+    /// receiver's bank.
     /// </summary>
     public required string RoutingNumber
     {
@@ -1748,7 +1750,7 @@ sealed class CurrencyConverter : JsonConverter<Currency>
 }
 
 /// <summary>
-/// The type of entity that owns the account to which the ACH Transfer is being sent.
+/// The type of entity that owns the receiver's account.
 /// </summary>
 [JsonConverter(typeof(AchTransferDestinationAccountHolderConverter))]
 public enum AchTransferDestinationAccountHolder
@@ -1810,7 +1812,7 @@ sealed class AchTransferDestinationAccountHolderConverter
 }
 
 /// <summary>
-/// The type of the account to which the transfer will be sent.
+/// The type of the receiver's bank account.
 /// </summary>
 [JsonConverter(typeof(AchTransferFundingConverter))]
 public enum AchTransferFunding
@@ -2750,7 +2752,7 @@ public enum AchTransferPreferredEffectiveDateSettlementSchedule
     /// The chosen effective date will be the same as the ACH processing date on
     /// which the transfer is submitted. This is necessary, but not sufficient for
     /// the transfer to be settled same-day: it must also be submitted before the
-    /// last same-day cutoff and be less than or equal to $1,000.000.00.
+    /// last same-day cutoff and be less than or equal to $1,000,000.00.
     /// </summary>
     SameDay,
 
@@ -2879,7 +2881,8 @@ public sealed record class Return : JsonModel
     }
 
     /// <summary>
-    /// The identifier of the ACH Transfer associated with this return.
+    /// The identifier of the ACH Transfer associated with this return. This matches
+    /// the original Transaction's `source.ach_transfer_intention.transfer_id`.
     /// </summary>
     public required string TransferID
     {
@@ -3743,7 +3746,8 @@ public enum AchTransferStatus
     Rejected,
 
     /// <summary>
-    /// The transfer is complete.
+    /// The transfer has been submitted to the Federal Reserve. When the transfer
+    /// settles, the status remains `submitted` and the `settlement` sub-object is populated.
     /// </summary>
     Submitted,
 
