@@ -13,7 +13,7 @@ namespace Increase.Api.Models.Entities;
 
 /// <summary>
 /// Entities are the legal entities that own accounts. They can be people, corporations,
-/// partnerships, government authorities, or trusts. To learn more, see [Entities](/documentation/entities).
+/// joint accounts, trusts, or government authorities. To learn more, see [Entities](/documentation/entities).
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<Entity, EntityFromRaw>))]
 public sealed record class Entity : JsonModel
@@ -468,7 +468,8 @@ public sealed record class EntityCorporation : JsonModel
     }
 
     /// <summary>
-    /// The legal identifier of the corporation.
+    /// The legal identifier of the corporation, like an Employer Identification
+    /// Number (EIN).
     /// </summary>
     public required EntityCorporationLegalIdentifier? LegalIdentifier
     {
@@ -1389,7 +1390,7 @@ sealed class EntityCorporationBeneficialOwnershipExemptionReasonConverter
 }
 
 /// <summary>
-/// The legal identifier of the corporation.
+/// The legal identifier of the corporation, like an Employer Identification Number (EIN).
 /// </summary>
 [JsonConverter(
     typeof(JsonModelConverter<
@@ -1415,7 +1416,7 @@ public sealed record class EntityCorporationLegalIdentifier : JsonModel
     }
 
     /// <summary>
-    /// The identifier of the legal identifier.
+    /// The legal identifier itself.
     /// </summary>
     public required string Value
     {

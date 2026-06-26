@@ -11,6 +11,7 @@ namespace Increase.Api.Models.SupplementalDocuments;
 
 /// <summary>
 /// Supplemental Documents are uploaded files connected to an Entity during onboarding.
+/// Not all programs require supplemental documents.
 /// </summary>
 [JsonConverter(
     typeof(JsonModelConverter<EntitySupplementalDocument, EntitySupplementalDocumentFromRaw>)

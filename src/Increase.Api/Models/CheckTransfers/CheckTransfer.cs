@@ -2146,6 +2146,11 @@ public enum CheckTransferStatus
     PendingSubmission,
 
     /// <summary>
+    /// The transfer is pending review by Increase.
+    /// </summary>
+    PendingReviewing,
+
+    /// <summary>
     /// The transfer requires attention from an Increase operator.
     /// </summary>
     RequiresAttention,
@@ -2194,6 +2199,7 @@ sealed class CheckTransferStatusConverter : JsonConverter<CheckTransferStatus>
             "pending_approval" => CheckTransferStatus.PendingApproval,
             "canceled" => CheckTransferStatus.Canceled,
             "pending_submission" => CheckTransferStatus.PendingSubmission,
+            "pending_reviewing" => CheckTransferStatus.PendingReviewing,
             "requires_attention" => CheckTransferStatus.RequiresAttention,
             "rejected" => CheckTransferStatus.Rejected,
             "pending_mailing" => CheckTransferStatus.PendingMailing,
@@ -2218,6 +2224,7 @@ sealed class CheckTransferStatusConverter : JsonConverter<CheckTransferStatus>
                 CheckTransferStatus.PendingApproval => "pending_approval",
                 CheckTransferStatus.Canceled => "canceled",
                 CheckTransferStatus.PendingSubmission => "pending_submission",
+                CheckTransferStatus.PendingReviewing => "pending_reviewing",
                 CheckTransferStatus.RequiresAttention => "requires_attention",
                 CheckTransferStatus.Rejected => "rejected",
                 CheckTransferStatus.PendingMailing => "pending_mailing",
