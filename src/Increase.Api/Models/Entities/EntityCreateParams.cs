@@ -1849,9 +1849,9 @@ sealed class ProngConverter : JsonConverter<Prong>
 public sealed record class LegalIdentifier : JsonModel
 {
     /// <summary>
-    /// The legal identifier. For US Employer Identification Numbers, submit nine
-    /// digits with no dashes or other separators. When testing in sandbox, use one
-    /// of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
+    /// The legal identifier itself. For US Employer Identification Numbers, submit
+    /// nine digits with no dashes or other separators. When testing in sandbox,
+    /// use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
     /// </summary>
     public required string Value
     {

@@ -736,8 +736,8 @@ class EntityUpdateParamsCorporationAddressFromRaw
 public sealed record class EntityUpdateParamsCorporationLegalIdentifier : JsonModel
 {
     /// <summary>
-    /// The identifier of the legal identifier. For US Employer Identification Numbers,
-    /// submit nine digits with no dashes or other separators.
+    /// The legal identifier itself. For US Employer Identification Numbers, submit
+    /// nine digits with no dashes or other separators.
     /// </summary>
     public required string Value
     {

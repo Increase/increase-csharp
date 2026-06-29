@@ -29,6 +29,7 @@ public record class BeneficialOwnerCreateParams : ParamsBase
 
     /// <summary>
     /// The identifier of the Entity to associate with the new Beneficial Owner.
+    /// Only `corporation` entities have beneficial owners.
     /// </summary>
     public required string EntityID
     {
