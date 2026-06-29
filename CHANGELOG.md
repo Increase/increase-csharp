@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.50.0](https://github.com/Increase/increase-csharp/compare/v0.49.0...v0.50.0) (2026-06-29)
+
+
+### Features
+
+* **api:** add pending_reviewing check transfer status ([2970a11](https://github.com/Increase/increase-csharp/commit/2970a114a72a008d22145a1cea15d8b0a3168c8a))
+
 ## [0.49.0](https://github.com/Increase/increase-csharp/compare/v0.48.0...v0.49.0) (2026-06-25)
 
 
