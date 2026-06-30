@@ -25,6 +25,7 @@ public class EntityListParamsTest : TestBase
             IdempotencyKey = "x",
             Limit = 1,
             Status = new() { In = [In.Active] },
+            ValidationStatus = new() { In = [ValidationStatusIn.Pending] },
         };
 
         CreatedAt expectedCreatedAt = new()
@@ -38,12 +39,14 @@ public class EntityListParamsTest : TestBase
         string expectedIdempotencyKey = "x";
         long expectedLimit = 1;
         Status expectedStatus = new() { In = [In.Active] };
+        ValidationStatus expectedValidationStatus = new() { In = [ValidationStatusIn.Pending] };
 
         Assert.Equal(expectedCreatedAt, parameters.CreatedAt);
         Assert.Equal(expectedCursor, parameters.Cursor);
         Assert.Equal(expectedIdempotencyKey, parameters.IdempotencyKey);
         Assert.Equal(expectedLimit, parameters.Limit);
         Assert.Equal(expectedStatus, parameters.Status);
+        Assert.Equal(expectedValidationStatus, parameters.ValidationStatus);
     }
 
     [Fact]
@@ -61,6 +64,8 @@ public class EntityListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("limit"));
         Assert.Null(parameters.Status);
         Assert.False(parameters.RawQueryData.ContainsKey("status"));
+        Assert.Null(parameters.ValidationStatus);
+        Assert.False(parameters.RawQueryData.ContainsKey("validation_status"));
     }
 
     [Fact]
@@ -74,6 +79,7 @@ public class EntityListParamsTest : TestBase
             IdempotencyKey = null,
             Limit = null,
             Status = null,
+            ValidationStatus = null,
         };
 
         Assert.Null(parameters.CreatedAt);
@@ -86,6 +92,8 @@ public class EntityListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("limit"));
         Assert.Null(parameters.Status);
         Assert.False(parameters.RawQueryData.ContainsKey("status"));
+        Assert.Null(parameters.ValidationStatus);
+        Assert.False(parameters.RawQueryData.ContainsKey("validation_status"));
     }
 
     [Fact]
@@ -104,6 +112,7 @@ public class EntityListParamsTest : TestBase
             IdempotencyKey = "x",
             Limit = 1,
             Status = new() { In = [In.Active] },
+            ValidationStatus = new() { In = [ValidationStatusIn.Pending] },
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -111,7 +120,7 @@ public class EntityListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.increase.com/entities?created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&idempotency_key=x&limit=1&status.in=active"
+                    "https://api.increase.com/entities?created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&idempotency_key=x&limit=1&status.in=active&validation_status.in=pending"
                 ),
                 url
             )
@@ -134,6 +143,7 @@ public class EntityListParamsTest : TestBase
             IdempotencyKey = "x",
             Limit = 1,
             Status = new() { In = [In.Active] },
+            ValidationStatus = new() { In = [ValidationStatusIn.Pending] },
         };
 
         EntityListParams copied = new(parameters);
@@ -463,6 +473,180 @@ public class InTest : TestBase
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ApiEnum<string, In>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class ValidationStatusTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new ValidationStatus { In = [ValidationStatusIn.Pending] };
+
+        List<ApiEnum<string, ValidationStatusIn>> expectedIn = [ValidationStatusIn.Pending];
+
+        Assert.NotNull(model.In);
+        Assert.Equal(expectedIn.Count, model.In.Count);
+        for (int i = 0; i < expectedIn.Count; i++)
+        {
+            Assert.Equal(expectedIn[i], model.In[i]);
+        }
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new ValidationStatus { In = [ValidationStatusIn.Pending] };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ValidationStatus>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new ValidationStatus { In = [ValidationStatusIn.Pending] };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ValidationStatus>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        List<ApiEnum<string, ValidationStatusIn>> expectedIn = [ValidationStatusIn.Pending];
+
+        Assert.NotNull(deserialized.In);
+        Assert.Equal(expectedIn.Count, deserialized.In.Count);
+        for (int i = 0; i < expectedIn.Count; i++)
+        {
+            Assert.Equal(expectedIn[i], deserialized.In[i]);
+        }
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new ValidationStatus { In = [ValidationStatusIn.Pending] };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new ValidationStatus { };
+
+        Assert.Null(model.In);
+        Assert.False(model.RawData.ContainsKey("in"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new ValidationStatus { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new ValidationStatus
+        {
+            // Null should be interpreted as omitted for these properties
+            In = null,
+        };
+
+        Assert.Null(model.In);
+        Assert.False(model.RawData.ContainsKey("in"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new ValidationStatus
+        {
+            // Null should be interpreted as omitted for these properties
+            In = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new ValidationStatus { In = [ValidationStatusIn.Pending] };
+
+        ValidationStatus copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class ValidationStatusInTest : TestBase
+{
+    [Theory]
+    [InlineData(ValidationStatusIn.Pending)]
+    [InlineData(ValidationStatusIn.Valid)]
+    [InlineData(ValidationStatusIn.Invalid)]
+    public void Validation_Works(ValidationStatusIn rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ValidationStatusIn> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ValidationStatusIn>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(ValidationStatusIn.Pending)]
+    [InlineData(ValidationStatusIn.Valid)]
+    [InlineData(ValidationStatusIn.Invalid)]
+    public void SerializationRoundtrip_Works(ValidationStatusIn rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ValidationStatusIn> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ValidationStatusIn>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, ValidationStatusIn>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, ValidationStatusIn>>(
             json,
             ModelBase.SerializerOptions
         );
