@@ -122,6 +122,24 @@ public record class EntityListParams : ParamsBase
         }
     }
 
+    public ValidationStatus? ValidationStatus
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<ValidationStatus>("validation_status");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("validation_status", value);
+        }
+    }
+
     public EntityListParams() { }
 
 #pragma warning disable CS8618
@@ -460,6 +478,140 @@ sealed class InConverter : JsonConverter<In>
                 In.Active => "active",
                 In.Archived => "archived",
                 In.Disabled => "disabled",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+[JsonConverter(typeof(JsonModelConverter<ValidationStatus, ValidationStatusFromRaw>))]
+public sealed record class ValidationStatus : JsonModel
+{
+    /// <summary>
+    /// Filter Entities for those with the specified validation status. For GET requests,
+    /// this should be encoded as a comma-delimited string, such as `?in=one,two,three`.
+    /// </summary>
+    public IReadOnlyList<ApiEnum<string, ValidationStatusIn>>? In
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<ApiEnum<string, ValidationStatusIn>>
+            >("in");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set<ImmutableArray<ApiEnum<string, ValidationStatusIn>>?>(
+                "in",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        foreach (var item in this.In ?? [])
+        {
+            item.Validate();
+        }
+    }
+
+    public ValidationStatus() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public ValidationStatus(ValidationStatus validationStatus)
+        : base(validationStatus) { }
+#pragma warning restore CS8618
+
+    public ValidationStatus(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    ValidationStatus(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="ValidationStatusFromRaw.FromRawUnchecked"/>
+    public static ValidationStatus FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class ValidationStatusFromRaw : IFromRawJson<ValidationStatus>
+{
+    /// <inheritdoc/>
+    public ValidationStatus FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        ValidationStatus.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(typeof(ValidationStatusInConverter))]
+public enum ValidationStatusIn
+{
+    /// <summary>
+    /// The submitted data is being validated.
+    /// </summary>
+    Pending,
+
+    /// <summary>
+    /// The submitted data is valid.
+    /// </summary>
+    Valid,
+
+    /// <summary>
+    /// Additional information is required to validate the data.
+    /// </summary>
+    Invalid,
+}
+
+sealed class ValidationStatusInConverter : JsonConverter<ValidationStatusIn>
+{
+    public override ValidationStatusIn Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "pending" => ValidationStatusIn.Pending,
+            "valid" => ValidationStatusIn.Valid,
+            "invalid" => ValidationStatusIn.Invalid,
+            _ => (ValidationStatusIn)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        ValidationStatusIn value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                ValidationStatusIn.Pending => "pending",
+                ValidationStatusIn.Valid => "valid",
+                ValidationStatusIn.Invalid => "invalid",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

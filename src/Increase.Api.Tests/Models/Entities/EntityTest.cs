@@ -258,7 +258,7 @@ public class EntityTest : TestBase
                         EntityTaxIdentifier = new(),
                     },
                 ],
-                Status = Entities::ValidationStatus.Pending,
+                Status = Entities::StatusModel.Pending,
             },
         };
 
@@ -501,7 +501,7 @@ public class EntityTest : TestBase
                     EntityTaxIdentifier = new(),
                 },
             ],
-            Status = Entities::ValidationStatus.Pending,
+            Status = Entities::StatusModel.Pending,
         };
 
         Assert.Equal(expectedID, model.ID);
@@ -781,7 +781,7 @@ public class EntityTest : TestBase
                         EntityTaxIdentifier = new(),
                     },
                 ],
-                Status = Entities::ValidationStatus.Pending,
+                Status = Entities::StatusModel.Pending,
             },
         };
 
@@ -1042,7 +1042,7 @@ public class EntityTest : TestBase
                         EntityTaxIdentifier = new(),
                     },
                 ],
-                Status = Entities::ValidationStatus.Pending,
+                Status = Entities::StatusModel.Pending,
             },
         };
 
@@ -1292,7 +1292,7 @@ public class EntityTest : TestBase
                     EntityTaxIdentifier = new(),
                 },
             ],
-            Status = Entities::ValidationStatus.Pending,
+            Status = Entities::StatusModel.Pending,
         };
 
         Assert.Equal(expectedID, deserialized.ID);
@@ -1572,7 +1572,7 @@ public class EntityTest : TestBase
                         EntityTaxIdentifier = new(),
                     },
                 ],
-                Status = Entities::ValidationStatus.Pending,
+                Status = Entities::StatusModel.Pending,
             },
         };
 
@@ -1827,7 +1827,7 @@ public class EntityTest : TestBase
                         EntityTaxIdentifier = new(),
                     },
                 ],
-                Status = Entities::ValidationStatus.Pending,
+                Status = Entities::StatusModel.Pending,
             },
         };
 
@@ -7661,7 +7661,7 @@ public class ValidationTest : TestBase
                     EntityTaxIdentifier = new(),
                 },
             ],
-            Status = Entities::ValidationStatus.Pending,
+            Status = Entities::StatusModel.Pending,
         };
 
         List<Entities::Issue> expectedIssues =
@@ -7679,8 +7679,7 @@ public class ValidationTest : TestBase
                 EntityTaxIdentifier = new(),
             },
         ];
-        ApiEnum<string, Entities::ValidationStatus> expectedStatus =
-            Entities::ValidationStatus.Pending;
+        ApiEnum<string, Entities::StatusModel> expectedStatus = Entities::StatusModel.Pending;
 
         Assert.Equal(expectedIssues.Count, model.Issues.Count);
         for (int i = 0; i < expectedIssues.Count; i++)
@@ -7710,7 +7709,7 @@ public class ValidationTest : TestBase
                     EntityTaxIdentifier = new(),
                 },
             ],
-            Status = Entities::ValidationStatus.Pending,
+            Status = Entities::StatusModel.Pending,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -7742,7 +7741,7 @@ public class ValidationTest : TestBase
                     EntityTaxIdentifier = new(),
                 },
             ],
-            Status = Entities::ValidationStatus.Pending,
+            Status = Entities::StatusModel.Pending,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -7767,8 +7766,7 @@ public class ValidationTest : TestBase
                 EntityTaxIdentifier = new(),
             },
         ];
-        ApiEnum<string, Entities::ValidationStatus> expectedStatus =
-            Entities::ValidationStatus.Pending;
+        ApiEnum<string, Entities::StatusModel> expectedStatus = Entities::StatusModel.Pending;
 
         Assert.Equal(expectedIssues.Count, deserialized.Issues.Count);
         for (int i = 0; i < expectedIssues.Count; i++)
@@ -7798,7 +7796,7 @@ public class ValidationTest : TestBase
                     EntityTaxIdentifier = new(),
                 },
             ],
-            Status = Entities::ValidationStatus.Pending,
+            Status = Entities::StatusModel.Pending,
         };
 
         model.Validate();
@@ -7824,7 +7822,7 @@ public class ValidationTest : TestBase
                     EntityTaxIdentifier = new(),
                 },
             ],
-            Status = Entities::ValidationStatus.Pending,
+            Status = Entities::StatusModel.Pending,
         };
 
         Entities::Validation copied = new(model);
@@ -8452,23 +8450,23 @@ public class EntityTaxIdentifierTest : TestBase
     }
 }
 
-public class ValidationStatusTest : TestBase
+public class StatusModelTest : TestBase
 {
     [Theory]
-    [InlineData(Entities::ValidationStatus.Pending)]
-    [InlineData(Entities::ValidationStatus.Valid)]
-    [InlineData(Entities::ValidationStatus.Invalid)]
-    public void Validation_Works(Entities::ValidationStatus rawValue)
+    [InlineData(Entities::StatusModel.Pending)]
+    [InlineData(Entities::StatusModel.Valid)]
+    [InlineData(Entities::StatusModel.Invalid)]
+    public void Validation_Works(Entities::StatusModel rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Entities::ValidationStatus> value = rawValue;
+        ApiEnum<string, Entities::StatusModel> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Entities::ValidationStatus>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Entities::StatusModel>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
@@ -8478,16 +8476,16 @@ public class ValidationStatusTest : TestBase
     }
 
     [Theory]
-    [InlineData(Entities::ValidationStatus.Pending)]
-    [InlineData(Entities::ValidationStatus.Valid)]
-    [InlineData(Entities::ValidationStatus.Invalid)]
-    public void SerializationRoundtrip_Works(Entities::ValidationStatus rawValue)
+    [InlineData(Entities::StatusModel.Pending)]
+    [InlineData(Entities::StatusModel.Valid)]
+    [InlineData(Entities::StatusModel.Invalid)]
+    public void SerializationRoundtrip_Works(Entities::StatusModel rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Entities::ValidationStatus> value = rawValue;
+        ApiEnum<string, Entities::StatusModel> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Entities::ValidationStatus>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Entities::StatusModel>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -8498,12 +8496,12 @@ public class ValidationStatusTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Entities::ValidationStatus>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Entities::StatusModel>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Entities::ValidationStatus>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Entities::StatusModel>>(
             json,
             ModelBase.SerializerOptions
         );
