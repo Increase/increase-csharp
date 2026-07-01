@@ -1301,6 +1301,19 @@ public sealed record class CheckTransferPhysicalCheck : JsonModel
     }
 
     /// <summary>
+    /// A custom name printed above the Increase-managed return address.
+    /// </summary>
+    public required string? ReturnAddressName
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("return_address_name");
+        }
+        init { this._rawData.Set("return_address_name", value); }
+    }
+
+    /// <summary>
     /// The shipping method for the check.
     /// </summary>
     public required ApiEnum<string, CheckTransferPhysicalCheckShippingMethod> ShippingMethod
@@ -1363,6 +1376,7 @@ public sealed record class CheckTransferPhysicalCheck : JsonModel
         }
         _ = this.RecipientName;
         this.ReturnAddress?.Validate();
+        _ = this.ReturnAddressName;
         this.ShippingMethod.Validate();
         this.Signature.Validate();
         foreach (var item in this.TrackingUpdates)
