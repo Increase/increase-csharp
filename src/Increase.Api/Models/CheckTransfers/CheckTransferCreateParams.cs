@@ -479,6 +479,27 @@ public sealed record class PhysicalCheck : JsonModel
     }
 
     /// <summary>
+    /// The payer of the check. This will be printed on the top-left portion of the
+    /// check. This should be an array of up to 4 elements, each of which represents
+    /// a line of the payer.
+    /// </summary>
+    public required IReadOnlyList<Payer> Payer
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<Payer>>("payer");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<Payer>>(
+                "payer",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// The name that will be printed on the check in the 'To:' field.
     /// </summary>
     public required string RecipientName
@@ -557,32 +578,6 @@ public sealed record class PhysicalCheck : JsonModel
     }
 
     /// <summary>
-    /// The payer of the check. This will be printed on the top-left portion of the
-    /// check and defaults to the return address if unspecified. This should be an
-    /// array of up to 4 elements, each of which represents a line of the payer.
-    /// </summary>
-    public IReadOnlyList<Payer>? Payer
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<ImmutableArray<Payer>>("payer");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set<ImmutableArray<Payer>?>(
-                "payer",
-                value == null ? null : ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <summary>
     /// The return address to be printed on the check. If omitted this will default
     /// to an Increase-owned address that will mark checks as delivery failed and
     /// shred them.
@@ -602,6 +597,28 @@ public sealed record class PhysicalCheck : JsonModel
             }
 
             this._rawData.Set("return_address", value);
+        }
+    }
+
+    /// <summary>
+    /// A custom name to print above the default return address. Cannot be provided
+    /// together with `return_address`.
+    /// </summary>
+    public string? ReturnAddressName
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("return_address_name");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("return_address_name", value);
         }
     }
 
@@ -657,15 +674,16 @@ public sealed record class PhysicalCheck : JsonModel
     {
         this.MailingAddress.Validate();
         _ = this.Memo;
+        foreach (var item in this.Payer)
+        {
+            item.Validate();
+        }
         _ = this.RecipientName;
         _ = this.AttachmentFileID;
         _ = this.CheckVoucherImageFileID;
         _ = this.Note;
-        foreach (var item in this.Payer ?? [])
-        {
-            item.Validate();
-        }
         this.ReturnAddress?.Validate();
+        _ = this.ReturnAddressName;
         this.ShippingMethod?.Validate();
         this.Signature?.Validate();
     }

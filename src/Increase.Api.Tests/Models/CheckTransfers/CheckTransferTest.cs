@@ -72,6 +72,7 @@ public class CheckTransferTest : TestBase
                     PostalCode = "10045",
                     State = "NY",
                 },
+                ReturnAddressName = null,
                 ShippingMethod =
                     CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                 Signature = new() { ImageFileID = null, Text = "Ian Crease" },
@@ -173,6 +174,7 @@ public class CheckTransferTest : TestBase
                 PostalCode = "10045",
                 State = "NY",
             },
+            ReturnAddressName = null,
             ShippingMethod =
                 CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = null, Text = "Ian Crease" },
@@ -307,6 +309,7 @@ public class CheckTransferTest : TestBase
                     PostalCode = "10045",
                     State = "NY",
                 },
+                ReturnAddressName = null,
                 ShippingMethod =
                     CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                 Signature = new() { ImageFileID = null, Text = "Ian Crease" },
@@ -423,6 +426,7 @@ public class CheckTransferTest : TestBase
                     PostalCode = "10045",
                     State = "NY",
                 },
+                ReturnAddressName = null,
                 ShippingMethod =
                     CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                 Signature = new() { ImageFileID = null, Text = "Ian Crease" },
@@ -531,6 +535,7 @@ public class CheckTransferTest : TestBase
                 PostalCode = "10045",
                 State = "NY",
             },
+            ReturnAddressName = null,
             ShippingMethod =
                 CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = null, Text = "Ian Crease" },
@@ -668,6 +673,7 @@ public class CheckTransferTest : TestBase
                     PostalCode = "10045",
                     State = "NY",
                 },
+                ReturnAddressName = null,
                 ShippingMethod =
                     CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                 Signature = new() { ImageFileID = null, Text = "Ian Crease" },
@@ -778,6 +784,7 @@ public class CheckTransferTest : TestBase
                     PostalCode = "10045",
                     State = "NY",
                 },
+                ReturnAddressName = null,
                 ShippingMethod =
                     CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                 Signature = new() { ImageFileID = null, Text = "Ian Crease" },
@@ -1678,6 +1685,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
                 PostalCode = "postal_code",
                 State = "state",
             },
+            ReturnAddressName = "return_address_name",
             ShippingMethod =
                 CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = "image_file_id", Text = "text" },
@@ -1719,6 +1727,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
             PostalCode = "postal_code",
             State = "state",
         };
+        string expectedReturnAddressName = "return_address_name";
         ApiEnum<
             string,
             CheckTransfers::CheckTransferPhysicalCheckShippingMethod
@@ -1752,6 +1761,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
         }
         Assert.Equal(expectedRecipientName, model.RecipientName);
         Assert.Equal(expectedReturnAddress, model.ReturnAddress);
+        Assert.Equal(expectedReturnAddressName, model.ReturnAddressName);
         Assert.Equal(expectedShippingMethod, model.ShippingMethod);
         Assert.Equal(expectedSignature, model.Signature);
         Assert.Equal(expectedTrackingUpdates.Count, model.TrackingUpdates.Count);
@@ -1792,6 +1802,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
                 PostalCode = "postal_code",
                 State = "state",
             },
+            ReturnAddressName = "return_address_name",
             ShippingMethod =
                 CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = "image_file_id", Text = "text" },
@@ -1847,6 +1858,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
                 PostalCode = "postal_code",
                 State = "state",
             },
+            ReturnAddressName = "return_address_name",
             ShippingMethod =
                 CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = "image_file_id", Text = "text" },
@@ -1895,6 +1907,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
             PostalCode = "postal_code",
             State = "state",
         };
+        string expectedReturnAddressName = "return_address_name";
         ApiEnum<
             string,
             CheckTransfers::CheckTransferPhysicalCheckShippingMethod
@@ -1928,6 +1941,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
         }
         Assert.Equal(expectedRecipientName, deserialized.RecipientName);
         Assert.Equal(expectedReturnAddress, deserialized.ReturnAddress);
+        Assert.Equal(expectedReturnAddressName, deserialized.ReturnAddressName);
         Assert.Equal(expectedShippingMethod, deserialized.ShippingMethod);
         Assert.Equal(expectedSignature, deserialized.Signature);
         Assert.Equal(expectedTrackingUpdates.Count, deserialized.TrackingUpdates.Count);
@@ -1968,6 +1982,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
                 PostalCode = "postal_code",
                 State = "state",
             },
+            ReturnAddressName = "return_address_name",
             ShippingMethod =
                 CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = "image_file_id", Text = "text" },
@@ -2017,6 +2032,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
                 PostalCode = "postal_code",
                 State = "state",
             },
+            ReturnAddressName = "return_address_name",
             ShippingMethod =
                 CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = "image_file_id", Text = "text" },

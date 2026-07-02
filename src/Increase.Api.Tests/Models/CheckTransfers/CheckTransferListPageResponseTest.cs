@@ -81,6 +81,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             PostalCode = "10045",
                             State = "NY",
                         },
+                        ReturnAddressName = null,
                         ShippingMethod =
                             CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                         Signature = new() { ImageFileID = null, Text = "Ian Crease" },
@@ -195,6 +196,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         PostalCode = "10045",
                         State = "NY",
                     },
+                    ReturnAddressName = null,
                     ShippingMethod =
                         CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                     Signature = new() { ImageFileID = null, Text = "Ian Crease" },
@@ -322,6 +324,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             PostalCode = "10045",
                             State = "NY",
                         },
+                        ReturnAddressName = null,
                         ShippingMethod =
                             CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                         Signature = new() { ImageFileID = null, Text = "Ian Crease" },
@@ -452,6 +455,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             PostalCode = "10045",
                             State = "NY",
                         },
+                        ReturnAddressName = null,
                         ShippingMethod =
                             CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                         Signature = new() { ImageFileID = null, Text = "Ian Crease" },
@@ -574,6 +578,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         PostalCode = "10045",
                         State = "NY",
                     },
+                    ReturnAddressName = null,
                     ShippingMethod =
                         CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                     Signature = new() { ImageFileID = null, Text = "Ian Crease" },
@@ -701,6 +706,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             PostalCode = "10045",
                             State = "NY",
                         },
+                        ReturnAddressName = null,
                         ShippingMethod =
                             CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                         Signature = new() { ImageFileID = null, Text = "Ian Crease" },
@@ -824,6 +830,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             PostalCode = "10045",
                             State = "NY",
                         },
+                        ReturnAddressName = null,
                         ShippingMethod =
                             CheckTransfers::CheckTransferPhysicalCheckShippingMethod.UspsFirstClass,
                         Signature = new() { ImageFileID = null, Text = "Ian Crease" },
