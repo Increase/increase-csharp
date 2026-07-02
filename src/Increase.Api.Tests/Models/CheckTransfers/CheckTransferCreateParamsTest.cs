@@ -33,11 +33,16 @@ public class CheckTransferCreateParamsTest : TestBase
                     Phone = "+16505046304",
                 },
                 Memo = "Check payment",
+                Payer =
+                [
+                    new("National Phonograph Company"),
+                    new("33 Liberty Street"),
+                    new("New York, NY 10045"),
+                ],
                 RecipientName = "Ian Crease",
                 AttachmentFileID = "attachment_file_id",
                 CheckVoucherImageFileID = "check_voucher_image_file_id",
                 Note = "note",
-                Payer = [new("contents")],
                 ReturnAddress = new()
                 {
                     City = "city",
@@ -48,6 +53,7 @@ public class CheckTransferCreateParamsTest : TestBase
                     Line2 = "line2",
                     Phone = "x",
                 },
+                ReturnAddressName = "return_address_name",
                 ShippingMethod = ShippingMethod.UspsFirstClass,
                 Signature = new() { ImageFileID = "image_file_id", Text = "Ian Crease" },
             },
@@ -76,11 +82,16 @@ public class CheckTransferCreateParamsTest : TestBase
                 Phone = "+16505046304",
             },
             Memo = "Check payment",
+            Payer =
+            [
+                new("National Phonograph Company"),
+                new("33 Liberty Street"),
+                new("New York, NY 10045"),
+            ],
             RecipientName = "Ian Crease",
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
-            Payer = [new("contents")],
             ReturnAddress = new()
             {
                 City = "city",
@@ -91,6 +102,7 @@ public class CheckTransferCreateParamsTest : TestBase
                 Line2 = "line2",
                 Phone = "x",
             },
+            ReturnAddressName = "return_address_name",
             ShippingMethod = ShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = "image_file_id", Text = "Ian Crease" },
         };
@@ -208,11 +220,16 @@ public class CheckTransferCreateParamsTest : TestBase
                     Phone = "+16505046304",
                 },
                 Memo = "Check payment",
+                Payer =
+                [
+                    new("National Phonograph Company"),
+                    new("33 Liberty Street"),
+                    new("New York, NY 10045"),
+                ],
                 RecipientName = "Ian Crease",
                 AttachmentFileID = "attachment_file_id",
                 CheckVoucherImageFileID = "check_voucher_image_file_id",
                 Note = "note",
-                Payer = [new("contents")],
                 ReturnAddress = new()
                 {
                     City = "city",
@@ -223,6 +240,7 @@ public class CheckTransferCreateParamsTest : TestBase
                     Line2 = "line2",
                     Phone = "x",
                 },
+                ReturnAddressName = "return_address_name",
                 ShippingMethod = ShippingMethod.UspsFirstClass,
                 Signature = new() { ImageFileID = "image_file_id", Text = "Ian Crease" },
             },
@@ -371,11 +389,11 @@ public class PhysicalCheckTest : TestBase
                 Phone = "x",
             },
             Memo = "memo",
+            Payer = [new("contents")],
             RecipientName = "recipient_name",
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
-            Payer = [new("contents")],
             ReturnAddress = new()
             {
                 City = "city",
@@ -386,6 +404,7 @@ public class PhysicalCheckTest : TestBase
                 Line2 = "line2",
                 Phone = "x",
             },
+            ReturnAddressName = "return_address_name",
             ShippingMethod = ShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = "image_file_id", Text = "text" },
         };
@@ -401,11 +420,11 @@ public class PhysicalCheckTest : TestBase
             Phone = "x",
         };
         string expectedMemo = "memo";
+        List<Payer> expectedPayer = [new("contents")];
         string expectedRecipientName = "recipient_name";
         string expectedAttachmentFileID = "attachment_file_id";
         string expectedCheckVoucherImageFileID = "check_voucher_image_file_id";
         string expectedNote = "note";
-        List<Payer> expectedPayer = [new("contents")];
         ReturnAddress expectedReturnAddress = new()
         {
             City = "city",
@@ -416,22 +435,23 @@ public class PhysicalCheckTest : TestBase
             Line2 = "line2",
             Phone = "x",
         };
+        string expectedReturnAddressName = "return_address_name";
         ApiEnum<string, ShippingMethod> expectedShippingMethod = ShippingMethod.UspsFirstClass;
         Signature expectedSignature = new() { ImageFileID = "image_file_id", Text = "text" };
 
         Assert.Equal(expectedMailingAddress, model.MailingAddress);
         Assert.Equal(expectedMemo, model.Memo);
-        Assert.Equal(expectedRecipientName, model.RecipientName);
-        Assert.Equal(expectedAttachmentFileID, model.AttachmentFileID);
-        Assert.Equal(expectedCheckVoucherImageFileID, model.CheckVoucherImageFileID);
-        Assert.Equal(expectedNote, model.Note);
-        Assert.NotNull(model.Payer);
         Assert.Equal(expectedPayer.Count, model.Payer.Count);
         for (int i = 0; i < expectedPayer.Count; i++)
         {
             Assert.Equal(expectedPayer[i], model.Payer[i]);
         }
+        Assert.Equal(expectedRecipientName, model.RecipientName);
+        Assert.Equal(expectedAttachmentFileID, model.AttachmentFileID);
+        Assert.Equal(expectedCheckVoucherImageFileID, model.CheckVoucherImageFileID);
+        Assert.Equal(expectedNote, model.Note);
         Assert.Equal(expectedReturnAddress, model.ReturnAddress);
+        Assert.Equal(expectedReturnAddressName, model.ReturnAddressName);
         Assert.Equal(expectedShippingMethod, model.ShippingMethod);
         Assert.Equal(expectedSignature, model.Signature);
     }
@@ -452,11 +472,11 @@ public class PhysicalCheckTest : TestBase
                 Phone = "x",
             },
             Memo = "memo",
+            Payer = [new("contents")],
             RecipientName = "recipient_name",
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
-            Payer = [new("contents")],
             ReturnAddress = new()
             {
                 City = "city",
@@ -467,6 +487,7 @@ public class PhysicalCheckTest : TestBase
                 Line2 = "line2",
                 Phone = "x",
             },
+            ReturnAddressName = "return_address_name",
             ShippingMethod = ShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = "image_file_id", Text = "text" },
         };
@@ -496,11 +517,11 @@ public class PhysicalCheckTest : TestBase
                 Phone = "x",
             },
             Memo = "memo",
+            Payer = [new("contents")],
             RecipientName = "recipient_name",
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
-            Payer = [new("contents")],
             ReturnAddress = new()
             {
                 City = "city",
@@ -511,6 +532,7 @@ public class PhysicalCheckTest : TestBase
                 Line2 = "line2",
                 Phone = "x",
             },
+            ReturnAddressName = "return_address_name",
             ShippingMethod = ShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = "image_file_id", Text = "text" },
         };
@@ -533,11 +555,11 @@ public class PhysicalCheckTest : TestBase
             Phone = "x",
         };
         string expectedMemo = "memo";
+        List<Payer> expectedPayer = [new("contents")];
         string expectedRecipientName = "recipient_name";
         string expectedAttachmentFileID = "attachment_file_id";
         string expectedCheckVoucherImageFileID = "check_voucher_image_file_id";
         string expectedNote = "note";
-        List<Payer> expectedPayer = [new("contents")];
         ReturnAddress expectedReturnAddress = new()
         {
             City = "city",
@@ -548,22 +570,23 @@ public class PhysicalCheckTest : TestBase
             Line2 = "line2",
             Phone = "x",
         };
+        string expectedReturnAddressName = "return_address_name";
         ApiEnum<string, ShippingMethod> expectedShippingMethod = ShippingMethod.UspsFirstClass;
         Signature expectedSignature = new() { ImageFileID = "image_file_id", Text = "text" };
 
         Assert.Equal(expectedMailingAddress, deserialized.MailingAddress);
         Assert.Equal(expectedMemo, deserialized.Memo);
-        Assert.Equal(expectedRecipientName, deserialized.RecipientName);
-        Assert.Equal(expectedAttachmentFileID, deserialized.AttachmentFileID);
-        Assert.Equal(expectedCheckVoucherImageFileID, deserialized.CheckVoucherImageFileID);
-        Assert.Equal(expectedNote, deserialized.Note);
-        Assert.NotNull(deserialized.Payer);
         Assert.Equal(expectedPayer.Count, deserialized.Payer.Count);
         for (int i = 0; i < expectedPayer.Count; i++)
         {
             Assert.Equal(expectedPayer[i], deserialized.Payer[i]);
         }
+        Assert.Equal(expectedRecipientName, deserialized.RecipientName);
+        Assert.Equal(expectedAttachmentFileID, deserialized.AttachmentFileID);
+        Assert.Equal(expectedCheckVoucherImageFileID, deserialized.CheckVoucherImageFileID);
+        Assert.Equal(expectedNote, deserialized.Note);
         Assert.Equal(expectedReturnAddress, deserialized.ReturnAddress);
+        Assert.Equal(expectedReturnAddressName, deserialized.ReturnAddressName);
         Assert.Equal(expectedShippingMethod, deserialized.ShippingMethod);
         Assert.Equal(expectedSignature, deserialized.Signature);
     }
@@ -584,11 +607,11 @@ public class PhysicalCheckTest : TestBase
                 Phone = "x",
             },
             Memo = "memo",
+            Payer = [new("contents")],
             RecipientName = "recipient_name",
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
-            Payer = [new("contents")],
             ReturnAddress = new()
             {
                 City = "city",
@@ -599,6 +622,7 @@ public class PhysicalCheckTest : TestBase
                 Line2 = "line2",
                 Phone = "x",
             },
+            ReturnAddressName = "return_address_name",
             ShippingMethod = ShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = "image_file_id", Text = "text" },
         };
@@ -622,6 +646,7 @@ public class PhysicalCheckTest : TestBase
                 Phone = "x",
             },
             Memo = "memo",
+            Payer = [new("contents")],
             RecipientName = "recipient_name",
         };
 
@@ -631,10 +656,10 @@ public class PhysicalCheckTest : TestBase
         Assert.False(model.RawData.ContainsKey("check_voucher_image_file_id"));
         Assert.Null(model.Note);
         Assert.False(model.RawData.ContainsKey("note"));
-        Assert.Null(model.Payer);
-        Assert.False(model.RawData.ContainsKey("payer"));
         Assert.Null(model.ReturnAddress);
         Assert.False(model.RawData.ContainsKey("return_address"));
+        Assert.Null(model.ReturnAddressName);
+        Assert.False(model.RawData.ContainsKey("return_address_name"));
         Assert.Null(model.ShippingMethod);
         Assert.False(model.RawData.ContainsKey("shipping_method"));
         Assert.Null(model.Signature);
@@ -657,6 +682,7 @@ public class PhysicalCheckTest : TestBase
                 Phone = "x",
             },
             Memo = "memo",
+            Payer = [new("contents")],
             RecipientName = "recipient_name",
         };
 
@@ -679,14 +705,15 @@ public class PhysicalCheckTest : TestBase
                 Phone = "x",
             },
             Memo = "memo",
+            Payer = [new("contents")],
             RecipientName = "recipient_name",
 
             // Null should be interpreted as omitted for these properties
             AttachmentFileID = null,
             CheckVoucherImageFileID = null,
             Note = null,
-            Payer = null,
             ReturnAddress = null,
+            ReturnAddressName = null,
             ShippingMethod = null,
             Signature = null,
         };
@@ -697,10 +724,10 @@ public class PhysicalCheckTest : TestBase
         Assert.False(model.RawData.ContainsKey("check_voucher_image_file_id"));
         Assert.Null(model.Note);
         Assert.False(model.RawData.ContainsKey("note"));
-        Assert.Null(model.Payer);
-        Assert.False(model.RawData.ContainsKey("payer"));
         Assert.Null(model.ReturnAddress);
         Assert.False(model.RawData.ContainsKey("return_address"));
+        Assert.Null(model.ReturnAddressName);
+        Assert.False(model.RawData.ContainsKey("return_address_name"));
         Assert.Null(model.ShippingMethod);
         Assert.False(model.RawData.ContainsKey("shipping_method"));
         Assert.Null(model.Signature);
@@ -723,14 +750,15 @@ public class PhysicalCheckTest : TestBase
                 Phone = "x",
             },
             Memo = "memo",
+            Payer = [new("contents")],
             RecipientName = "recipient_name",
 
             // Null should be interpreted as omitted for these properties
             AttachmentFileID = null,
             CheckVoucherImageFileID = null,
             Note = null,
-            Payer = null,
             ReturnAddress = null,
+            ReturnAddressName = null,
             ShippingMethod = null,
             Signature = null,
         };
@@ -754,11 +782,11 @@ public class PhysicalCheckTest : TestBase
                 Phone = "x",
             },
             Memo = "memo",
+            Payer = [new("contents")],
             RecipientName = "recipient_name",
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
-            Payer = [new("contents")],
             ReturnAddress = new()
             {
                 City = "city",
@@ -769,6 +797,7 @@ public class PhysicalCheckTest : TestBase
                 Line2 = "line2",
                 Phone = "x",
             },
+            ReturnAddressName = "return_address_name",
             ShippingMethod = ShippingMethod.UspsFirstClass,
             Signature = new() { ImageFileID = "image_file_id", Text = "text" },
         };

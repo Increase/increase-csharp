@@ -4782,12 +4782,12 @@ public sealed record class Validation : JsonModel
     /// The validation status for the entity. If the status is `invalid`, the `issues`
     /// array will be populated.
     /// </summary>
-    public required ApiEnum<string, ValidationStatus> Status
+    public required ApiEnum<string, StatusModel> Status
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<ApiEnum<string, ValidationStatus>>("status");
+            return this._rawData.GetNotNullClass<ApiEnum<string, StatusModel>>("status");
         }
         init { this._rawData.Set("status", value); }
     }
@@ -5382,8 +5382,8 @@ class EntityTaxIdentifierFromRaw : IFromRawJson<EntityTaxIdentifier>
 /// The validation status for the entity. If the status is `invalid`, the `issues`
 /// array will be populated.
 /// </summary>
-[JsonConverter(typeof(ValidationStatusConverter))]
-public enum ValidationStatus
+[JsonConverter(typeof(StatusModelConverter))]
+public enum StatusModel
 {
     /// <summary>
     /// The submitted data is being validated.
@@ -5401,9 +5401,9 @@ public enum ValidationStatus
     Invalid,
 }
 
-sealed class ValidationStatusConverter : JsonConverter<ValidationStatus>
+sealed class StatusModelConverter : JsonConverter<StatusModel>
 {
-    public override ValidationStatus Read(
+    public override StatusModel Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -5411,16 +5411,16 @@ sealed class ValidationStatusConverter : JsonConverter<ValidationStatus>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "pending" => ValidationStatus.Pending,
-            "valid" => ValidationStatus.Valid,
-            "invalid" => ValidationStatus.Invalid,
-            _ => (ValidationStatus)(-1),
+            "pending" => StatusModel.Pending,
+            "valid" => StatusModel.Valid,
+            "invalid" => StatusModel.Invalid,
+            _ => (StatusModel)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        ValidationStatus value,
+        StatusModel value,
         JsonSerializerOptions options
     )
     {
@@ -5428,9 +5428,9 @@ sealed class ValidationStatusConverter : JsonConverter<ValidationStatus>
             writer,
             value switch
             {
-                ValidationStatus.Pending => "pending",
-                ValidationStatus.Valid => "valid",
-                ValidationStatus.Invalid => "invalid",
+                StatusModel.Pending => "pending",
+                StatusModel.Valid => "valid",
+                StatusModel.Invalid => "invalid",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
