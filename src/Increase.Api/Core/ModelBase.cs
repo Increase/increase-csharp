@@ -26,7 +26,7 @@ using DeclinedTransactions = Increase.Api.Models.DeclinedTransactions;
 using DigitalCardProfiles = Increase.Api.Models.DigitalCardProfiles;
 using DigitalWalletTokenRequests = Increase.Api.Models.Simulations.DigitalWalletTokenRequests;
 using DigitalWalletTokens = Increase.Api.Models.DigitalWalletTokens;
-using Entities = Increase.Api.Models.Entities;
+using Entities = Increase.Api.Models.Simulations.Entities;
 using EntityOnboardingSessions = Increase.Api.Models.EntityOnboardingSessions;
 using Events = Increase.Api.Models.Events;
 using EventSubscriptions = Increase.Api.Models.EventSubscriptions;
@@ -48,6 +48,7 @@ using IntrafiBalances = Increase.Api.Models.IntrafiBalances;
 using IntrafiExclusions = Increase.Api.Models.IntrafiExclusions;
 using LockboxAddresses = Increase.Api.Models.LockboxAddresses;
 using LockboxRecipients = Increase.Api.Models.LockboxRecipients;
+using ModelsEntities = Increase.Api.Models.Entities;
 using OAuthApplications = Increase.Api.Models.OAuthApplications;
 using OAuthConnections = Increase.Api.Models.OAuthConnections;
 using OAuthTokens = Increase.Api.Models.OAuthTokens;
@@ -60,7 +61,6 @@ using RealTimePaymentsTransfers = Increase.Api.Models.RealTimePaymentsTransfers;
 using RoutingNumbers = Increase.Api.Models.RoutingNumbers;
 using SimulationsCardTokens = Increase.Api.Models.Simulations.CardTokens;
 using SimulationsCheckDeposits = Increase.Api.Models.Simulations.CheckDeposits;
-using SimulationsEntities = Increase.Api.Models.Simulations.Entities;
 using SimulationsExports = Increase.Api.Models.Simulations.Exports;
 using SimulationsInboundAchTransfers = Increase.Api.Models.Simulations.InboundAchTransfers;
 using SimulationsInboundCheckDeposits = Increase.Api.Models.Simulations.InboundCheckDeposits;
@@ -1303,61 +1303,68 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, ExternalAccounts::In>(),
             new ApiEnumConverter<
                 string,
-                Entities::EntityCorporationBeneficialOwnerIndividualIdentificationMethod
+                ModelsEntities::EntityCorporationBeneficialOwnerIndividualIdentificationMethod
             >(),
-            new ApiEnumConverter<string, Entities::EntityCorporationBeneficialOwnerProng>(),
+            new ApiEnumConverter<string, ModelsEntities::EntityCorporationBeneficialOwnerProng>(),
             new ApiEnumConverter<
                 string,
-                Entities::EntityCorporationBeneficialOwnershipExemptionReason
-            >(),
-            new ApiEnumConverter<string, Entities::EntityCorporationLegalIdentifierCategory>(),
-            new ApiEnumConverter<string, Entities::EntityGovernmentAuthorityCategory>(),
-            new ApiEnumConverter<string, Entities::EntityJointIndividualIdentificationMethod>(),
-            new ApiEnumConverter<string, Entities::EntityNaturalPersonIdentificationMethod>(),
-            new ApiEnumConverter<string, Entities::EntityRiskRatingRating>(),
-            new ApiEnumConverter<string, Entities::EntityStatus>(),
-            new ApiEnumConverter<string, Entities::EntityStructure>(),
-            new ApiEnumConverter<string, Entities::EntityThirdPartyVerificationVendor>(),
-            new ApiEnumConverter<string, Entities::EntityTrustCategory>(),
-            new ApiEnumConverter<string, Entities::EntityTrustGrantorIdentificationMethod>(),
-            new ApiEnumConverter<
-                string,
-                Entities::EntityTrustTrusteeIndividualIdentificationMethod
-            >(),
-            new ApiEnumConverter<string, Entities::EntityTrustTrusteeStructure>(),
-            new ApiEnumConverter<string, Entities::Type>(),
-            new ApiEnumConverter<string, Entities::Reason>(),
-            new ApiEnumConverter<string, Entities::IssueCategory>(),
-            new ApiEnumConverter<string, Entities::EntityAddressReason>(),
-            new ApiEnumConverter<string, Entities::ValidationStatus>(),
-            new ApiEnumConverter<string, Entities::Structure>(),
-            new ApiEnumConverter<string, Entities::Method>(),
-            new ApiEnumConverter<string, Entities::Prong>(),
-            new ApiEnumConverter<string, Entities::Category>(),
-            new ApiEnumConverter<string, Entities::BeneficialOwnershipExemptionReason>(),
-            new ApiEnumConverter<string, Entities::GovernmentAuthorityCategory>(),
-            new ApiEnumConverter<string, Entities::JointIndividualIdentificationMethod>(),
-            new ApiEnumConverter<string, Entities::NaturalPersonIdentificationMethod>(),
-            new ApiEnumConverter<string, Entities::Rating>(),
-            new ApiEnumConverter<string, Entities::Vendor>(),
-            new ApiEnumConverter<string, Entities::TrustCategory>(),
-            new ApiEnumConverter<string, Entities::TrusteeStructure>(),
-            new ApiEnumConverter<string, Entities::TrusteeIndividualIdentificationMethod>(),
-            new ApiEnumConverter<string, Entities::GrantorIdentificationMethod>(),
-            new ApiEnumConverter<
-                string,
-                Entities::EntityUpdateParamsCorporationLegalIdentifierCategory
+                ModelsEntities::EntityCorporationBeneficialOwnershipExemptionReason
             >(),
             new ApiEnumConverter<
                 string,
-                Entities::EntityUpdateParamsNaturalPersonIdentificationMethod
+                ModelsEntities::EntityCorporationLegalIdentifierCategory
             >(),
-            new ApiEnumConverter<string, Entities::EntityUpdateParamsRiskRatingRating>(),
+            new ApiEnumConverter<string, ModelsEntities::EntityGovernmentAuthorityCategory>(),
             new ApiEnumConverter<
                 string,
-                Entities::EntityUpdateParamsThirdPartyVerificationVendor
+                ModelsEntities::EntityJointIndividualIdentificationMethod
             >(),
-            new ApiEnumConverter<string, Entities::In>(),
+            new ApiEnumConverter<string, ModelsEntities::EntityNaturalPersonIdentificationMethod>(),
+            new ApiEnumConverter<string, ModelsEntities::EntityRiskRatingRating>(),
+            new ApiEnumConverter<string, ModelsEntities::EntityStatus>(),
+            new ApiEnumConverter<string, ModelsEntities::EntityStructure>(),
+            new ApiEnumConverter<string, ModelsEntities::EntityThirdPartyVerificationVendor>(),
+            new ApiEnumConverter<string, ModelsEntities::EntityTrustCategory>(),
+            new ApiEnumConverter<string, ModelsEntities::EntityTrustGrantorIdentificationMethod>(),
+            new ApiEnumConverter<
+                string,
+                ModelsEntities::EntityTrustTrusteeIndividualIdentificationMethod
+            >(),
+            new ApiEnumConverter<string, ModelsEntities::EntityTrustTrusteeStructure>(),
+            new ApiEnumConverter<string, ModelsEntities::Type>(),
+            new ApiEnumConverter<string, ModelsEntities::Reason>(),
+            new ApiEnumConverter<string, ModelsEntities::IssueCategory>(),
+            new ApiEnumConverter<string, ModelsEntities::EntityAddressReason>(),
+            new ApiEnumConverter<string, ModelsEntities::StatusModel>(),
+            new ApiEnumConverter<string, ModelsEntities::Structure>(),
+            new ApiEnumConverter<string, ModelsEntities::Method>(),
+            new ApiEnumConverter<string, ModelsEntities::Prong>(),
+            new ApiEnumConverter<string, ModelsEntities::Category>(),
+            new ApiEnumConverter<string, ModelsEntities::BeneficialOwnershipExemptionReason>(),
+            new ApiEnumConverter<string, ModelsEntities::GovernmentAuthorityCategory>(),
+            new ApiEnumConverter<string, ModelsEntities::JointIndividualIdentificationMethod>(),
+            new ApiEnumConverter<string, ModelsEntities::NaturalPersonIdentificationMethod>(),
+            new ApiEnumConverter<string, ModelsEntities::Rating>(),
+            new ApiEnumConverter<string, ModelsEntities::Vendor>(),
+            new ApiEnumConverter<string, ModelsEntities::TrustCategory>(),
+            new ApiEnumConverter<string, ModelsEntities::TrusteeStructure>(),
+            new ApiEnumConverter<string, ModelsEntities::TrusteeIndividualIdentificationMethod>(),
+            new ApiEnumConverter<string, ModelsEntities::GrantorIdentificationMethod>(),
+            new ApiEnumConverter<
+                string,
+                ModelsEntities::EntityUpdateParamsCorporationLegalIdentifierCategory
+            >(),
+            new ApiEnumConverter<
+                string,
+                ModelsEntities::EntityUpdateParamsNaturalPersonIdentificationMethod
+            >(),
+            new ApiEnumConverter<string, ModelsEntities::EntityUpdateParamsRiskRatingRating>(),
+            new ApiEnumConverter<
+                string,
+                ModelsEntities::EntityUpdateParamsThirdPartyVerificationVendor
+            >(),
+            new ApiEnumConverter<string, ModelsEntities::In>(),
+            new ApiEnumConverter<string, ModelsEntities::ValidationStatusIn>(),
             new ApiEnumConverter<
                 string,
                 BeneficialOwners::EntityBeneficialOwnerIndividualIdentificationMethod
@@ -1579,7 +1586,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, SimulationsInboundCheckDeposits::Reason>(),
             new ApiEnumConverter<string, RejectReasonCode>(),
             new ApiEnumConverter<string, SimulationsCheckDeposits::Reason>(),
-            new ApiEnumConverter<string, SimulationsEntities::Category>(),
+            new ApiEnumConverter<string, Entities::Category>(),
             new ApiEnumConverter<string, SimulationsPrograms::Bank>(),
             new ApiEnumConverter<string, SimulationsExports::Category>(),
             new ApiEnumConverter<string, SimulationsCardTokens::CrossBorderPushTransfers>(),

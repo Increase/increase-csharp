@@ -43,8 +43,8 @@ public record class PendingTransactionCreateParams : ParamsBase
 
     /// <summary>
     /// The amount to hold in the minor unit of the account's currency. For dollars,
-    /// for example, this is cents. This should be a negative amount - to hold $1.00
-    /// from the account, you would pass -100.
+    /// for example, this is cents. This should be a negative amount: To hold $1.00
+    /// from the account, pass -100 as `amount`.
     /// </summary>
     public required long Amount
     {
