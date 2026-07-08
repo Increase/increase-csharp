@@ -40,6 +40,7 @@ public class SwiftTransferCreateParamsTest : TestBase
             InstructedCurrency = InstructedCurrency.Usd,
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             UnstructuredRemittanceInformation = "New Swift transfer",
+            IntermediaryBankIdentificationCode = "210BF73A",
             RequireApproval = true,
             RoutingNumber = "sq",
         };
@@ -71,6 +72,7 @@ public class SwiftTransferCreateParamsTest : TestBase
         ApiEnum<string, InstructedCurrency> expectedInstructedCurrency = InstructedCurrency.Usd;
         string expectedSourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         string expectedUnstructuredRemittanceInformation = "New Swift transfer";
+        string expectedIntermediaryBankIdentificationCode = "210BF73A";
         bool expectedRequireApproval = true;
         string expectedRoutingNumber = "sq";
 
@@ -87,6 +89,10 @@ public class SwiftTransferCreateParamsTest : TestBase
         Assert.Equal(
             expectedUnstructuredRemittanceInformation,
             parameters.UnstructuredRemittanceInformation
+        );
+        Assert.Equal(
+            expectedIntermediaryBankIdentificationCode,
+            parameters.IntermediaryBankIdentificationCode
         );
         Assert.Equal(expectedRequireApproval, parameters.RequireApproval);
         Assert.Equal(expectedRoutingNumber, parameters.RoutingNumber);
@@ -126,6 +132,8 @@ public class SwiftTransferCreateParamsTest : TestBase
             UnstructuredRemittanceInformation = "New Swift transfer",
         };
 
+        Assert.Null(parameters.IntermediaryBankIdentificationCode);
+        Assert.False(parameters.RawBodyData.ContainsKey("intermediary_bank_identification_code"));
         Assert.Null(parameters.RequireApproval);
         Assert.False(parameters.RawBodyData.ContainsKey("require_approval"));
         Assert.Null(parameters.RoutingNumber);
@@ -166,10 +174,13 @@ public class SwiftTransferCreateParamsTest : TestBase
             UnstructuredRemittanceInformation = "New Swift transfer",
 
             // Null should be interpreted as omitted for these properties
+            IntermediaryBankIdentificationCode = null,
             RequireApproval = null,
             RoutingNumber = null,
         };
 
+        Assert.Null(parameters.IntermediaryBankIdentificationCode);
+        Assert.False(parameters.RawBodyData.ContainsKey("intermediary_bank_identification_code"));
         Assert.Null(parameters.RequireApproval);
         Assert.False(parameters.RawBodyData.ContainsKey("require_approval"));
         Assert.Null(parameters.RoutingNumber);
@@ -247,6 +258,7 @@ public class SwiftTransferCreateParamsTest : TestBase
             InstructedCurrency = InstructedCurrency.Usd,
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             UnstructuredRemittanceInformation = "New Swift transfer",
+            IntermediaryBankIdentificationCode = "210BF73A",
             RequireApproval = true,
             RoutingNumber = "sq",
         };
