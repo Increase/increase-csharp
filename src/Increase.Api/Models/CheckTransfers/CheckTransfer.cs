@@ -1342,7 +1342,8 @@ public sealed record class CheckTransferPhysicalCheck : JsonModel
     }
 
     /// <summary>
-    /// Tracking updates relating to the physical check's delivery.
+    /// Tracking updates relating to the physical check's delivery. Sorted by `created_at`
+    /// in ascending order.
     /// </summary>
     public required IReadOnlyList<TrackingUpdate> TrackingUpdates
     {

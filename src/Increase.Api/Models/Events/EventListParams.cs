@@ -610,6 +610,16 @@ public enum In
     InboundMailItemUpdated,
 
     /// <summary>
+    /// Occurs whenever an Inbound Real-Time Payments Request for Payment is created.
+    /// </summary>
+    InboundRealTimePaymentsRequestForPaymentCreated,
+
+    /// <summary>
+    /// Occurs whenever an Inbound Real-Time Payments Request for Payment is updated.
+    /// </summary>
+    InboundRealTimePaymentsRequestForPaymentUpdated,
+
+    /// <summary>
     /// Occurs whenever an Inbound Real-Time Payments Transfer is created.
     /// </summary>
     InboundRealTimePaymentsTransferCreated,
@@ -943,6 +953,10 @@ sealed class InConverter : JsonConverter<In>
             "inbound_fednow_transfer.updated" => In.InboundFednowTransferUpdated,
             "inbound_mail_item.created" => In.InboundMailItemCreated,
             "inbound_mail_item.updated" => In.InboundMailItemUpdated,
+            "inbound_real_time_payments_request_for_payment.created" =>
+                In.InboundRealTimePaymentsRequestForPaymentCreated,
+            "inbound_real_time_payments_request_for_payment.updated" =>
+                In.InboundRealTimePaymentsRequestForPaymentUpdated,
             "inbound_real_time_payments_transfer.created" =>
                 In.InboundRealTimePaymentsTransferCreated,
             "inbound_real_time_payments_transfer.updated" =>
@@ -1076,6 +1090,10 @@ sealed class InConverter : JsonConverter<In>
                 In.InboundFednowTransferUpdated => "inbound_fednow_transfer.updated",
                 In.InboundMailItemCreated => "inbound_mail_item.created",
                 In.InboundMailItemUpdated => "inbound_mail_item.updated",
+                In.InboundRealTimePaymentsRequestForPaymentCreated =>
+                    "inbound_real_time_payments_request_for_payment.created",
+                In.InboundRealTimePaymentsRequestForPaymentUpdated =>
+                    "inbound_real_time_payments_request_for_payment.updated",
                 In.InboundRealTimePaymentsTransferCreated =>
                     "inbound_real_time_payments_transfer.created",
                 In.InboundRealTimePaymentsTransferUpdated =>
