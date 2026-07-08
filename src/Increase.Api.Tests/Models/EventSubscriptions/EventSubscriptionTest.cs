@@ -477,6 +477,12 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InboundMailItemUpdated
     )]
     [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InboundRealTimePaymentsRequestForPaymentCreated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InboundRealTimePaymentsRequestForPaymentUpdated
+    )]
+    [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InboundRealTimePaymentsTransferCreated
     )]
     [InlineData(
@@ -838,6 +844,12 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InboundMailItemUpdated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InboundRealTimePaymentsRequestForPaymentCreated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InboundRealTimePaymentsRequestForPaymentUpdated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InboundRealTimePaymentsTransferCreated

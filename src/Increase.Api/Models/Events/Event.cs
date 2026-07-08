@@ -459,6 +459,16 @@ public enum EventCategory
     InboundMailItemUpdated,
 
     /// <summary>
+    /// Occurs whenever an Inbound Real-Time Payments Request for Payment is created.
+    /// </summary>
+    InboundRealTimePaymentsRequestForPaymentCreated,
+
+    /// <summary>
+    /// Occurs whenever an Inbound Real-Time Payments Request for Payment is updated.
+    /// </summary>
+    InboundRealTimePaymentsRequestForPaymentUpdated,
+
+    /// <summary>
     /// Occurs whenever an Inbound Real-Time Payments Transfer is created.
     /// </summary>
     InboundRealTimePaymentsTransferCreated,
@@ -792,6 +802,10 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
             "inbound_fednow_transfer.updated" => EventCategory.InboundFednowTransferUpdated,
             "inbound_mail_item.created" => EventCategory.InboundMailItemCreated,
             "inbound_mail_item.updated" => EventCategory.InboundMailItemUpdated,
+            "inbound_real_time_payments_request_for_payment.created" =>
+                EventCategory.InboundRealTimePaymentsRequestForPaymentCreated,
+            "inbound_real_time_payments_request_for_payment.updated" =>
+                EventCategory.InboundRealTimePaymentsRequestForPaymentUpdated,
             "inbound_real_time_payments_transfer.created" =>
                 EventCategory.InboundRealTimePaymentsTransferCreated,
             "inbound_real_time_payments_transfer.updated" =>
@@ -938,6 +952,10 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.InboundFednowTransferUpdated => "inbound_fednow_transfer.updated",
                 EventCategory.InboundMailItemCreated => "inbound_mail_item.created",
                 EventCategory.InboundMailItemUpdated => "inbound_mail_item.updated",
+                EventCategory.InboundRealTimePaymentsRequestForPaymentCreated =>
+                    "inbound_real_time_payments_request_for_payment.created",
+                EventCategory.InboundRealTimePaymentsRequestForPaymentUpdated =>
+                    "inbound_real_time_payments_request_for_payment.updated",
                 EventCategory.InboundRealTimePaymentsTransferCreated =>
                     "inbound_real_time_payments_transfer.created",
                 EventCategory.InboundRealTimePaymentsTransferUpdated =>

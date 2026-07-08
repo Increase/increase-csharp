@@ -11,30 +11,28 @@ public class CardSettlementCreateParamsTest : TestBase
         var parameters = new CardSettlementCreateParams
         {
             CardID = "card_oubs0hwk5rn6knuecxg2",
-            PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             Amount = 1,
+            PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
         };
 
         string expectedCardID = "card_oubs0hwk5rn6knuecxg2";
-        string expectedPendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4";
         long expectedAmount = 1;
+        string expectedPendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4";
 
         Assert.Equal(expectedCardID, parameters.CardID);
-        Assert.Equal(expectedPendingTransactionID, parameters.PendingTransactionID);
         Assert.Equal(expectedAmount, parameters.Amount);
+        Assert.Equal(expectedPendingTransactionID, parameters.PendingTransactionID);
     }
 
     [Fact]
     public void OptionalNonNullableParamsUnsetAreNotSet_Works()
     {
-        var parameters = new CardSettlementCreateParams
-        {
-            CardID = "card_oubs0hwk5rn6knuecxg2",
-            PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
-        };
+        var parameters = new CardSettlementCreateParams { CardID = "card_oubs0hwk5rn6knuecxg2" };
 
         Assert.Null(parameters.Amount);
         Assert.False(parameters.RawBodyData.ContainsKey("amount"));
+        Assert.Null(parameters.PendingTransactionID);
+        Assert.False(parameters.RawBodyData.ContainsKey("pending_transaction_id"));
     }
 
     [Fact]
@@ -43,24 +41,22 @@ public class CardSettlementCreateParamsTest : TestBase
         var parameters = new CardSettlementCreateParams
         {
             CardID = "card_oubs0hwk5rn6knuecxg2",
-            PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
 
             // Null should be interpreted as omitted for these properties
             Amount = null,
+            PendingTransactionID = null,
         };
 
         Assert.Null(parameters.Amount);
         Assert.False(parameters.RawBodyData.ContainsKey("amount"));
+        Assert.Null(parameters.PendingTransactionID);
+        Assert.False(parameters.RawBodyData.ContainsKey("pending_transaction_id"));
     }
 
     [Fact]
     public void Url_Works()
     {
-        CardSettlementCreateParams parameters = new()
-        {
-            CardID = "card_oubs0hwk5rn6knuecxg2",
-            PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
-        };
+        CardSettlementCreateParams parameters = new() { CardID = "card_oubs0hwk5rn6knuecxg2" };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
@@ -78,8 +74,8 @@ public class CardSettlementCreateParamsTest : TestBase
         var parameters = new CardSettlementCreateParams
         {
             CardID = "card_oubs0hwk5rn6knuecxg2",
-            PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             Amount = 1,
+            PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
         };
 
         CardSettlementCreateParams copied = new(parameters);
