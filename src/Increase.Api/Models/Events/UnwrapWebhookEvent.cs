@@ -461,6 +461,16 @@ public enum UnwrapWebhookEventCategory
     InboundMailItemUpdated,
 
     /// <summary>
+    /// Occurs whenever an Inbound Real-Time Payments Request for Payment is created.
+    /// </summary>
+    InboundRealTimePaymentsRequestForPaymentCreated,
+
+    /// <summary>
+    /// Occurs whenever an Inbound Real-Time Payments Request for Payment is updated.
+    /// </summary>
+    InboundRealTimePaymentsRequestForPaymentUpdated,
+
+    /// <summary>
     /// Occurs whenever an Inbound Real-Time Payments Transfer is created.
     /// </summary>
     InboundRealTimePaymentsTransferCreated,
@@ -806,6 +816,10 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                 UnwrapWebhookEventCategory.InboundFednowTransferUpdated,
             "inbound_mail_item.created" => UnwrapWebhookEventCategory.InboundMailItemCreated,
             "inbound_mail_item.updated" => UnwrapWebhookEventCategory.InboundMailItemUpdated,
+            "inbound_real_time_payments_request_for_payment.created" =>
+                UnwrapWebhookEventCategory.InboundRealTimePaymentsRequestForPaymentCreated,
+            "inbound_real_time_payments_request_for_payment.updated" =>
+                UnwrapWebhookEventCategory.InboundRealTimePaymentsRequestForPaymentUpdated,
             "inbound_real_time_payments_transfer.created" =>
                 UnwrapWebhookEventCategory.InboundRealTimePaymentsTransferCreated,
             "inbound_real_time_payments_transfer.updated" =>
@@ -979,6 +993,10 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                     "inbound_fednow_transfer.updated",
                 UnwrapWebhookEventCategory.InboundMailItemCreated => "inbound_mail_item.created",
                 UnwrapWebhookEventCategory.InboundMailItemUpdated => "inbound_mail_item.updated",
+                UnwrapWebhookEventCategory.InboundRealTimePaymentsRequestForPaymentCreated =>
+                    "inbound_real_time_payments_request_for_payment.created",
+                UnwrapWebhookEventCategory.InboundRealTimePaymentsRequestForPaymentUpdated =>
+                    "inbound_real_time_payments_request_for_payment.updated",
                 UnwrapWebhookEventCategory.InboundRealTimePaymentsTransferCreated =>
                     "inbound_real_time_payments_transfer.created",
                 UnwrapWebhookEventCategory.InboundRealTimePaymentsTransferUpdated =>
