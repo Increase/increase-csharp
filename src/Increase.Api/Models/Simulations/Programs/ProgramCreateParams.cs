@@ -234,11 +234,6 @@ public enum Bank
     /// Grasshopper Bank
     /// </summary>
     GrasshopperBank,
-
-    /// <summary>
-    /// Twin City Bank
-    /// </summary>
-    TwinCityBank,
 }
 
 sealed class BankConverter : JsonConverter<Bank>
@@ -254,7 +249,6 @@ sealed class BankConverter : JsonConverter<Bank>
             "core_bank" => Bank.CoreBank,
             "first_internet_bank" => Bank.FirstInternetBank,
             "grasshopper_bank" => Bank.GrasshopperBank,
-            "twin_city_bank" => Bank.TwinCityBank,
             _ => (Bank)(-1),
         };
     }
@@ -268,7 +262,6 @@ sealed class BankConverter : JsonConverter<Bank>
                 Bank.CoreBank => "core_bank",
                 Bank.FirstInternetBank => "first_internet_bank",
                 Bank.GrasshopperBank => "grasshopper_bank",
-                Bank.TwinCityBank => "twin_city_bank",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
