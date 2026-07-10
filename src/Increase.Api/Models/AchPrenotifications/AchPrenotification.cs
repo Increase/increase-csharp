@@ -996,7 +996,10 @@ public enum ReturnReasonCode
     InvalidAchRoutingNumber,
 
     /// <summary>
-    /// Code R17. The receiving bank is unable to process a field in the transfer.
+    /// Code R17. This return code has multiple meanings. The receiving bank was
+    /// either unable to process a field in the transfer, or believes the transfer
+    /// was initiated under questionable circumstances (such as fraud), or identified
+    /// an improperly-initiated reversing entry.
     /// </summary>
     FileRecordEditCriteria,
 

@@ -204,6 +204,20 @@ public sealed record class SwiftTransfer : JsonModel
     }
 
     /// <summary>
+    /// The bank identification code (BIC) of the intermediary bank, if the transfer
+    /// is routed through one.
+    /// </summary>
+    public required string? IntermediaryBankIdentificationCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("intermediary_bank_identification_code");
+        }
+        init { this._rawData.Set("intermediary_bank_identification_code", value); }
+    }
+
+    /// <summary>
     /// The ID for the pending transaction representing the transfer.
     /// </summary>
     public required string? PendingTransactionID
@@ -329,6 +343,7 @@ public sealed record class SwiftTransfer : JsonModel
         _ = this.IdempotencyKey;
         _ = this.InstructedAmount;
         this.InstructedCurrency.Validate();
+        _ = this.IntermediaryBankIdentificationCode;
         _ = this.PendingTransactionID;
         _ = this.RoutingNumber;
         _ = this.SourceAccountNumberID;

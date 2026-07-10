@@ -175,6 +175,30 @@ public record class SwiftTransferCreateParams : ParamsBase
     }
 
     /// <summary>
+    /// The bank identification code (BIC) of the intermediary bank, if the transfer
+    /// should be routed through one.
+    /// </summary>
+    public string? IntermediaryBankIdentificationCode
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>(
+                "intermediary_bank_identification_code"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("intermediary_bank_identification_code", value);
+        }
+    }
+
+    /// <summary>
     /// Whether the transfer requires explicit approval via the dashboard or API.
     /// </summary>
     public bool? RequireApproval

@@ -42,22 +42,8 @@ public record class CardSettlementCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The identifier of the Pending Transaction for the Card Authorization you wish
-    /// to settle.
-    /// </summary>
-    public required string PendingTransactionID
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNotNullClass<string>("pending_transaction_id");
-        }
-        init { this._rawBodyData.Set("pending_transaction_id", value); }
-    }
-
-    /// <summary>
     /// The amount to be settled. This defaults to the amount of the Pending Transaction
-    /// being settled.
+    /// being settled, or a random amount if `pending_transaction_id` is not provided.
     /// </summary>
     public long? Amount
     {
@@ -74,6 +60,29 @@ public record class CardSettlementCreateParams : ParamsBase
             }
 
             this._rawBodyData.Set("amount", value);
+        }
+    }
+
+    /// <summary>
+    /// The identifier of the Pending Transaction for the Card Authorization you wish
+    /// to settle. If not provided, the settlement will be force posted without a
+    /// Card Authorization.
+    /// </summary>
+    public string? PendingTransactionID
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("pending_transaction_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("pending_transaction_id", value);
         }
     }
 

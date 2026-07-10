@@ -588,6 +588,16 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     InboundMailItemUpdated,
 
     /// <summary>
+    /// Occurs whenever an Inbound Real-Time Payments Request for Payment is created.
+    /// </summary>
+    InboundRealTimePaymentsRequestForPaymentCreated,
+
+    /// <summary>
+    /// Occurs whenever an Inbound Real-Time Payments Request for Payment is updated.
+    /// </summary>
+    InboundRealTimePaymentsRequestForPaymentUpdated,
+
+    /// <summary>
     /// Occurs whenever an Inbound Real-Time Payments Transfer is created.
     /// </summary>
     InboundRealTimePaymentsTransferCreated,
@@ -972,6 +982,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.InboundMailItemCreated,
             "inbound_mail_item.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.InboundMailItemUpdated,
+            "inbound_real_time_payments_request_for_payment.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.InboundRealTimePaymentsRequestForPaymentCreated,
+            "inbound_real_time_payments_request_for_payment.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.InboundRealTimePaymentsRequestForPaymentUpdated,
             "inbound_real_time_payments_transfer.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.InboundRealTimePaymentsTransferCreated,
             "inbound_real_time_payments_transfer.updated" =>
@@ -1204,6 +1218,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "inbound_mail_item.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.InboundMailItemUpdated =>
                     "inbound_mail_item.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.InboundRealTimePaymentsRequestForPaymentCreated =>
+                    "inbound_real_time_payments_request_for_payment.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.InboundRealTimePaymentsRequestForPaymentUpdated =>
+                    "inbound_real_time_payments_request_for_payment.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.InboundRealTimePaymentsTransferCreated =>
                     "inbound_real_time_payments_transfer.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.InboundRealTimePaymentsTransferUpdated =>

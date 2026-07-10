@@ -147,6 +147,19 @@ public sealed record class InboundWireTransfer : JsonModel
     }
 
     /// <summary>
+    /// The account number of the sender.
+    /// </summary>
+    public required string? DebtorAccountNumber
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("debtor_account_number");
+        }
+        init { this._rawData.Set("debtor_account_number", value); }
+    }
+
+    /// <summary>
     /// A free-form address field set by the sender.
     /// </summary>
     public required string? DebtorAddressLine1
@@ -196,6 +209,19 @@ public sealed record class InboundWireTransfer : JsonModel
             return this._rawData.GetNullableClass<string>("debtor_name");
         }
         init { this._rawData.Set("debtor_name", value); }
+    }
+
+    /// <summary>
+    /// The American Banking Association (ABA) routing number of the sender.
+    /// </summary>
+    public required string? DebtorRoutingNumber
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("debtor_routing_number");
+        }
+        init { this._rawData.Set("debtor_routing_number", value); }
     }
 
     /// <summary>
@@ -378,10 +404,12 @@ public sealed record class InboundWireTransfer : JsonModel
         _ = this.CreditorAddressLine2;
         _ = this.CreditorAddressLine3;
         _ = this.CreditorName;
+        _ = this.DebtorAccountNumber;
         _ = this.DebtorAddressLine1;
         _ = this.DebtorAddressLine2;
         _ = this.DebtorAddressLine3;
         _ = this.DebtorName;
+        _ = this.DebtorRoutingNumber;
         _ = this.Description;
         _ = this.EndToEndIdentification;
         _ = this.InputMessageAccountabilityData;

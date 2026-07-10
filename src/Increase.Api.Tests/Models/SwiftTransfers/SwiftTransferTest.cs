@@ -49,6 +49,7 @@ public class SwiftTransferTest : TestBase
             IdempotencyKey = null,
             InstructedAmount = 100,
             InstructedCurrency = SwiftTransfers::SwiftTransferInstructedCurrency.Usd,
+            IntermediaryBankIdentificationCode = null,
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             RoutingNumber = null,
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
@@ -120,6 +121,7 @@ public class SwiftTransferTest : TestBase
         Assert.Null(model.IdempotencyKey);
         Assert.Equal(expectedInstructedAmount, model.InstructedAmount);
         Assert.Equal(expectedInstructedCurrency, model.InstructedCurrency);
+        Assert.Null(model.IntermediaryBankIdentificationCode);
         Assert.Equal(expectedPendingTransactionID, model.PendingTransactionID);
         Assert.Null(model.RoutingNumber);
         Assert.Equal(expectedSourceAccountNumberID, model.SourceAccountNumberID);
@@ -177,6 +179,7 @@ public class SwiftTransferTest : TestBase
             IdempotencyKey = null,
             InstructedAmount = 100,
             InstructedCurrency = SwiftTransfers::SwiftTransferInstructedCurrency.Usd,
+            IntermediaryBankIdentificationCode = null,
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             RoutingNumber = null,
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
@@ -237,6 +240,7 @@ public class SwiftTransferTest : TestBase
             IdempotencyKey = null,
             InstructedAmount = 100,
             InstructedCurrency = SwiftTransfers::SwiftTransferInstructedCurrency.Usd,
+            IntermediaryBankIdentificationCode = null,
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             RoutingNumber = null,
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
@@ -315,6 +319,7 @@ public class SwiftTransferTest : TestBase
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Equal(expectedInstructedAmount, deserialized.InstructedAmount);
         Assert.Equal(expectedInstructedCurrency, deserialized.InstructedCurrency);
+        Assert.Null(deserialized.IntermediaryBankIdentificationCode);
         Assert.Equal(expectedPendingTransactionID, deserialized.PendingTransactionID);
         Assert.Null(deserialized.RoutingNumber);
         Assert.Equal(expectedSourceAccountNumberID, deserialized.SourceAccountNumberID);
@@ -372,6 +377,7 @@ public class SwiftTransferTest : TestBase
             IdempotencyKey = null,
             InstructedAmount = 100,
             InstructedCurrency = SwiftTransfers::SwiftTransferInstructedCurrency.Usd,
+            IntermediaryBankIdentificationCode = null,
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             RoutingNumber = null,
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
@@ -426,6 +432,7 @@ public class SwiftTransferTest : TestBase
             IdempotencyKey = null,
             InstructedAmount = 100,
             InstructedCurrency = SwiftTransfers::SwiftTransferInstructedCurrency.Usd,
+            IntermediaryBankIdentificationCode = null,
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             RoutingNumber = null,
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",

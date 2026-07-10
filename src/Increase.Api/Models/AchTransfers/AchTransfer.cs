@@ -2809,6 +2809,23 @@ sealed class AchTransferPreferredEffectiveDateSettlementScheduleConverter
 public sealed record class Return : JsonModel
 {
     /// <summary>
+    /// Additional free-form information included by the receiving bank in the return's
+    /// addenda record. This is raw, uninterpreted text whose presence and format
+    /// are not guaranteed. For a `file_record_edit_criteria` (R17) return the receiving
+    /// bank may set this to `QUESTIONABLE` (optionally followed by more text) to
+    /// indicate it believes the transfer was initiated under questionable circumstances.
+    /// </summary>
+    public required string? AddendaInformation
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("addenda_information");
+        }
+        init { this._rawData.Set("addenda_information", value); }
+    }
+
+    /// <summary>
     /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
     /// the transfer was created.
     /// </summary>
@@ -2897,6 +2914,7 @@ public sealed record class Return : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.AddendaInformation;
         _ = this.CreatedAt;
         _ = this.RawReturnReasonCode;
         this.ReturnReasonCode.Validate();
@@ -3036,7 +3054,10 @@ public enum ReturnReasonCode
     InvalidAchRoutingNumber,
 
     /// <summary>
-    /// Code R17. The receiving bank is unable to process a field in the transfer.
+    /// Code R17. This return code has multiple meanings. The receiving bank was
+    /// either unable to process a field in the transfer, or believes the transfer
+    /// was initiated under questionable circumstances (such as fraud), or identified
+    /// an improperly-initiated reversing entry.
     /// </summary>
     FileRecordEditCriteria,
 

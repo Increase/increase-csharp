@@ -27,10 +27,12 @@ public class InboundWireTransferTest : TestBase
             CreditorAddressLine2 = "New York, NY, 10045",
             CreditorAddressLine3 = null,
             CreditorName = "National Phonograph Company",
+            DebtorAccountNumber = "987654321",
             DebtorAddressLine1 = "33 Liberty Street",
             DebtorAddressLine2 = "New York, NY, 10045",
             DebtorAddressLine3 = null,
             DebtorName = "Ian Crease",
+            DebtorRoutingNumber = "101050001",
             Description = "Inbound wire transfer",
             EndToEndIdentification = "Invoice 29582",
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
@@ -62,9 +64,11 @@ public class InboundWireTransferTest : TestBase
         string expectedCreditorAddressLine1 = "33 Liberty Street";
         string expectedCreditorAddressLine2 = "New York, NY, 10045";
         string expectedCreditorName = "National Phonograph Company";
+        string expectedDebtorAccountNumber = "987654321";
         string expectedDebtorAddressLine1 = "33 Liberty Street";
         string expectedDebtorAddressLine2 = "New York, NY, 10045";
         string expectedDebtorName = "Ian Crease";
+        string expectedDebtorRoutingNumber = "101050001";
         string expectedDescription = "Inbound wire transfer";
         string expectedEndToEndIdentification = "Invoice 29582";
         string expectedInputMessageAccountabilityData = "20220118MMQFMP0P000001";
@@ -93,10 +97,12 @@ public class InboundWireTransferTest : TestBase
         Assert.Equal(expectedCreditorAddressLine2, model.CreditorAddressLine2);
         Assert.Null(model.CreditorAddressLine3);
         Assert.Equal(expectedCreditorName, model.CreditorName);
+        Assert.Equal(expectedDebtorAccountNumber, model.DebtorAccountNumber);
         Assert.Equal(expectedDebtorAddressLine1, model.DebtorAddressLine1);
         Assert.Equal(expectedDebtorAddressLine2, model.DebtorAddressLine2);
         Assert.Null(model.DebtorAddressLine3);
         Assert.Equal(expectedDebtorName, model.DebtorName);
+        Assert.Equal(expectedDebtorRoutingNumber, model.DebtorRoutingNumber);
         Assert.Equal(expectedDescription, model.Description);
         Assert.Equal(expectedEndToEndIdentification, model.EndToEndIdentification);
         Assert.Equal(expectedInputMessageAccountabilityData, model.InputMessageAccountabilityData);
@@ -136,10 +142,12 @@ public class InboundWireTransferTest : TestBase
             CreditorAddressLine2 = "New York, NY, 10045",
             CreditorAddressLine3 = null,
             CreditorName = "National Phonograph Company",
+            DebtorAccountNumber = "987654321",
             DebtorAddressLine1 = "33 Liberty Street",
             DebtorAddressLine2 = "New York, NY, 10045",
             DebtorAddressLine3 = null,
             DebtorName = "Ian Crease",
+            DebtorRoutingNumber = "101050001",
             Description = "Inbound wire transfer",
             EndToEndIdentification = "Invoice 29582",
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
@@ -186,10 +194,12 @@ public class InboundWireTransferTest : TestBase
             CreditorAddressLine2 = "New York, NY, 10045",
             CreditorAddressLine3 = null,
             CreditorName = "National Phonograph Company",
+            DebtorAccountNumber = "987654321",
             DebtorAddressLine1 = "33 Liberty Street",
             DebtorAddressLine2 = "New York, NY, 10045",
             DebtorAddressLine3 = null,
             DebtorName = "Ian Crease",
+            DebtorRoutingNumber = "101050001",
             Description = "Inbound wire transfer",
             EndToEndIdentification = "Invoice 29582",
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
@@ -228,9 +238,11 @@ public class InboundWireTransferTest : TestBase
         string expectedCreditorAddressLine1 = "33 Liberty Street";
         string expectedCreditorAddressLine2 = "New York, NY, 10045";
         string expectedCreditorName = "National Phonograph Company";
+        string expectedDebtorAccountNumber = "987654321";
         string expectedDebtorAddressLine1 = "33 Liberty Street";
         string expectedDebtorAddressLine2 = "New York, NY, 10045";
         string expectedDebtorName = "Ian Crease";
+        string expectedDebtorRoutingNumber = "101050001";
         string expectedDescription = "Inbound wire transfer";
         string expectedEndToEndIdentification = "Invoice 29582";
         string expectedInputMessageAccountabilityData = "20220118MMQFMP0P000001";
@@ -259,10 +271,12 @@ public class InboundWireTransferTest : TestBase
         Assert.Equal(expectedCreditorAddressLine2, deserialized.CreditorAddressLine2);
         Assert.Null(deserialized.CreditorAddressLine3);
         Assert.Equal(expectedCreditorName, deserialized.CreditorName);
+        Assert.Equal(expectedDebtorAccountNumber, deserialized.DebtorAccountNumber);
         Assert.Equal(expectedDebtorAddressLine1, deserialized.DebtorAddressLine1);
         Assert.Equal(expectedDebtorAddressLine2, deserialized.DebtorAddressLine2);
         Assert.Null(deserialized.DebtorAddressLine3);
         Assert.Equal(expectedDebtorName, deserialized.DebtorName);
+        Assert.Equal(expectedDebtorRoutingNumber, deserialized.DebtorRoutingNumber);
         Assert.Equal(expectedDescription, deserialized.Description);
         Assert.Equal(expectedEndToEndIdentification, deserialized.EndToEndIdentification);
         Assert.Equal(
@@ -308,10 +322,12 @@ public class InboundWireTransferTest : TestBase
             CreditorAddressLine2 = "New York, NY, 10045",
             CreditorAddressLine3 = null,
             CreditorName = "National Phonograph Company",
+            DebtorAccountNumber = "987654321",
             DebtorAddressLine1 = "33 Liberty Street",
             DebtorAddressLine2 = "New York, NY, 10045",
             DebtorAddressLine3 = null,
             DebtorName = "Ian Crease",
+            DebtorRoutingNumber = "101050001",
             Description = "Inbound wire transfer",
             EndToEndIdentification = "Invoice 29582",
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
@@ -352,10 +368,12 @@ public class InboundWireTransferTest : TestBase
             CreditorAddressLine2 = "New York, NY, 10045",
             CreditorAddressLine3 = null,
             CreditorName = "National Phonograph Company",
+            DebtorAccountNumber = "987654321",
             DebtorAddressLine1 = "33 Liberty Street",
             DebtorAddressLine2 = "New York, NY, 10045",
             DebtorAddressLine3 = null,
             DebtorName = "Ian Crease",
+            DebtorRoutingNumber = "101050001",
             Description = "Inbound wire transfer",
             EndToEndIdentification = "Invoice 29582",
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",

@@ -14,13 +14,16 @@ public class AchTransferReturnParamsTest : TestBase
         var parameters = new AchTransferReturnParams
         {
             AchTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            AddendaInformation = "x",
             Reason = Reason.InsufficientFund,
         };
 
         string expectedAchTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q";
+        string expectedAddendaInformation = "x";
         ApiEnum<string, Reason> expectedReason = Reason.InsufficientFund;
 
         Assert.Equal(expectedAchTransferID, parameters.AchTransferID);
+        Assert.Equal(expectedAddendaInformation, parameters.AddendaInformation);
         Assert.Equal(expectedReason, parameters.Reason);
     }
 
@@ -32,6 +35,8 @@ public class AchTransferReturnParamsTest : TestBase
             AchTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
         };
 
+        Assert.Null(parameters.AddendaInformation);
+        Assert.False(parameters.RawBodyData.ContainsKey("addenda_information"));
         Assert.Null(parameters.Reason);
         Assert.False(parameters.RawBodyData.ContainsKey("reason"));
     }
@@ -44,9 +49,12 @@ public class AchTransferReturnParamsTest : TestBase
             AchTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
 
             // Null should be interpreted as omitted for these properties
+            AddendaInformation = null,
             Reason = null,
         };
 
+        Assert.Null(parameters.AddendaInformation);
+        Assert.False(parameters.RawBodyData.ContainsKey("addenda_information"));
         Assert.Null(parameters.Reason);
         Assert.False(parameters.RawBodyData.ContainsKey("reason"));
     }
@@ -77,6 +85,7 @@ public class AchTransferReturnParamsTest : TestBase
         var parameters = new AchTransferReturnParams
         {
             AchTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            AddendaInformation = "x",
             Reason = Reason.InsufficientFund,
         };
 

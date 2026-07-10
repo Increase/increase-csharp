@@ -97,6 +97,7 @@ public class AchTransferListPageResponseTest : TestBase
                     },
                     Return = new()
                     {
+                        AddendaInformation = null,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         RawReturnReasonCode = "R01",
                         ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -212,6 +213,7 @@ public class AchTransferListPageResponseTest : TestBase
                 },
                 Return = new()
                 {
+                    AddendaInformation = null,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     RawReturnReasonCode = "R01",
                     ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -338,6 +340,7 @@ public class AchTransferListPageResponseTest : TestBase
                     },
                     Return = new()
                     {
+                        AddendaInformation = null,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         RawReturnReasonCode = "R01",
                         ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -468,6 +471,7 @@ public class AchTransferListPageResponseTest : TestBase
                     },
                     Return = new()
                     {
+                        AddendaInformation = null,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         RawReturnReasonCode = "R01",
                         ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -590,6 +594,7 @@ public class AchTransferListPageResponseTest : TestBase
                 },
                 Return = new()
                 {
+                    AddendaInformation = null,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     RawReturnReasonCode = "R01",
                     ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -716,6 +721,7 @@ public class AchTransferListPageResponseTest : TestBase
                     },
                     Return = new()
                     {
+                        AddendaInformation = null,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         RawReturnReasonCode = "R01",
                         ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -840,6 +846,7 @@ public class AchTransferListPageResponseTest : TestBase
                     },
                     Return = new()
                     {
+                        AddendaInformation = null,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         RawReturnReasonCode = "R01",
                         ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,

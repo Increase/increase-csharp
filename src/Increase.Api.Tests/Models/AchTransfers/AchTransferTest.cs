@@ -92,6 +92,7 @@ public class AchTransferTest : TestBase
             },
             Return = new()
             {
+                AddendaInformation = null,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 RawReturnReasonCode = "R01",
                 ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -195,6 +196,7 @@ public class AchTransferTest : TestBase
         };
         AchTransfers::Return expectedReturn = new()
         {
+            AddendaInformation = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             RawReturnReasonCode = "R01",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -352,6 +354,7 @@ public class AchTransferTest : TestBase
             },
             Return = new()
             {
+                AddendaInformation = null,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 RawReturnReasonCode = "R01",
                 ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -470,6 +473,7 @@ public class AchTransferTest : TestBase
             },
             Return = new()
             {
+                AddendaInformation = null,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 RawReturnReasonCode = "R01",
                 ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -580,6 +584,7 @@ public class AchTransferTest : TestBase
         };
         AchTransfers::Return expectedReturn = new()
         {
+            AddendaInformation = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             RawReturnReasonCode = "R01",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -737,6 +742,7 @@ public class AchTransferTest : TestBase
             },
             Return = new()
             {
+                AddendaInformation = null,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 RawReturnReasonCode = "R01",
                 ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -849,6 +855,7 @@ public class AchTransferTest : TestBase
             },
             Return = new()
             {
+                AddendaInformation = null,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 RawReturnReasonCode = "R01",
                 ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -3102,6 +3109,7 @@ public class ReturnTest : TestBase
     {
         var model = new AchTransfers::Return
         {
+            AddendaInformation = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             RawReturnReasonCode = "R01",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -3118,6 +3126,7 @@ public class ReturnTest : TestBase
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         string expectedTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q";
 
+        Assert.Null(model.AddendaInformation);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
         Assert.Equal(expectedRawReturnReasonCode, model.RawReturnReasonCode);
         Assert.Equal(expectedReturnReasonCode, model.ReturnReasonCode);
@@ -3131,6 +3140,7 @@ public class ReturnTest : TestBase
     {
         var model = new AchTransfers::Return
         {
+            AddendaInformation = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             RawReturnReasonCode = "R01",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -3153,6 +3163,7 @@ public class ReturnTest : TestBase
     {
         var model = new AchTransfers::Return
         {
+            AddendaInformation = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             RawReturnReasonCode = "R01",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -3176,6 +3187,7 @@ public class ReturnTest : TestBase
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         string expectedTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q";
 
+        Assert.Null(deserialized.AddendaInformation);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
         Assert.Equal(expectedRawReturnReasonCode, deserialized.RawReturnReasonCode);
         Assert.Equal(expectedReturnReasonCode, deserialized.ReturnReasonCode);
@@ -3189,6 +3201,7 @@ public class ReturnTest : TestBase
     {
         var model = new AchTransfers::Return
         {
+            AddendaInformation = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             RawReturnReasonCode = "R01",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
@@ -3205,6 +3218,7 @@ public class ReturnTest : TestBase
     {
         var model = new AchTransfers::Return
         {
+            AddendaInformation = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             RawReturnReasonCode = "R01",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
