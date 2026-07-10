@@ -54,6 +54,7 @@ public class TransactionListPageResponseTest : TestBase
                         AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
                         AchTransferReturn = new()
                         {
+                            AddendaInformation = null,
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             RawReturnReasonCode = "R01",
                             ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
@@ -715,6 +716,7 @@ public class TransactionListPageResponseTest : TestBase
                     AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
                     AchTransferReturn = new()
                     {
+                        AddendaInformation = null,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         RawReturnReasonCode = "R01",
                         ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
@@ -1379,6 +1381,7 @@ public class TransactionListPageResponseTest : TestBase
                         AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
                         AchTransferReturn = new()
                         {
+                            AddendaInformation = null,
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             RawReturnReasonCode = "R01",
                             ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
@@ -2054,6 +2057,7 @@ public class TransactionListPageResponseTest : TestBase
                         AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
                         AchTransferReturn = new()
                         {
+                            AddendaInformation = null,
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             RawReturnReasonCode = "R01",
                             ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
@@ -2722,6 +2726,7 @@ public class TransactionListPageResponseTest : TestBase
                     AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
                     AchTransferReturn = new()
                     {
+                        AddendaInformation = null,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         RawReturnReasonCode = "R01",
                         ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
@@ -3386,6 +3391,7 @@ public class TransactionListPageResponseTest : TestBase
                         AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
                         AchTransferReturn = new()
                         {
+                            AddendaInformation = null,
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             RawReturnReasonCode = "R01",
                             ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
@@ -4055,6 +4061,7 @@ public class TransactionListPageResponseTest : TestBase
                         AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
                         AchTransferReturn = new()
                         {
+                            AddendaInformation = null,
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             RawReturnReasonCode = "R01",
                             ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,

@@ -31,6 +31,29 @@ public record class AchTransferReturnParams : ParamsBase
     public string? AchTransferID { get; init; }
 
     /// <summary>
+    /// Free-form information the returning bank includes in the return addenda.
+    /// For a `file_record_edit_criteria` (R17) return, set this to `QUESTIONABLE`
+    /// to simulate a return the bank believes was initiated under questionable circumstances.
+    /// </summary>
+    public string? AddendaInformation
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("addenda_information");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("addenda_information", value);
+        }
+    }
+
+    /// <summary>
     /// The reason why the Federal Reserve or destination bank returned this transfer.
     /// Defaults to `no_account`.
     /// </summary>
@@ -269,7 +292,10 @@ public enum Reason
     InvalidAchRoutingNumber,
 
     /// <summary>
-    /// Code R17. The receiving bank is unable to process a field in the transfer.
+    /// Code R17. This return code has multiple meanings. The receiving bank was
+    /// either unable to process a field in the transfer, or believes the transfer
+    /// was initiated under questionable circumstances (such as fraud), or identified
+    /// an improperly-initiated reversing entry.
     /// </summary>
     FileRecordEditCriteria,
 
