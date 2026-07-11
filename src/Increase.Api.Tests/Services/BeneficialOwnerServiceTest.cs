@@ -17,8 +17,8 @@ public class BeneficialOwnerServiceTest : TestBase
                     Address = new()
                     {
                         City = "New York",
-                        Country = "US",
                         Line1 = "33 Liberty Street",
+                        Country = "US",
                         Line2 = "x",
                         State = "NY",
                         Zip = "10045",

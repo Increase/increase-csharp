@@ -715,19 +715,6 @@ public sealed record class Address : JsonModel
     }
 
     /// <summary>
-    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
-    /// </summary>
-    public required string Country
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("country");
-        }
-        init { this._rawData.Set("country", value); }
-    }
-
-    /// <summary>
     /// The first line of the address. This is usually the street number and street.
     /// </summary>
     public required string Line1
@@ -738,6 +725,28 @@ public sealed record class Address : JsonModel
             return this._rawData.GetNotNullClass<string>("line1");
         }
         init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address. Defaults
+    /// to `US`.
+    /// </summary>
+    public string? Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("country");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("country", value);
+        }
     }
 
     /// <summary>
@@ -808,8 +817,8 @@ public sealed record class Address : JsonModel
     public override void Validate()
     {
         _ = this.City;
-        _ = this.Country;
         _ = this.Line1;
+        _ = this.Country;
         _ = this.Line2;
         _ = this.State;
         _ = this.Zip;
@@ -1102,19 +1111,6 @@ public sealed record class IndividualAddress : JsonModel
     }
 
     /// <summary>
-    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
-    /// </summary>
-    public required string Country
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("country");
-        }
-        init { this._rawData.Set("country", value); }
-    }
-
-    /// <summary>
     /// The first line of the address. This is usually the street number and street.
     /// </summary>
     public required string Line1
@@ -1125,6 +1121,28 @@ public sealed record class IndividualAddress : JsonModel
             return this._rawData.GetNotNullClass<string>("line1");
         }
         init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address. Defaults
+    /// to `US`.
+    /// </summary>
+    public string? Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("country");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("country", value);
+        }
     }
 
     /// <summary>
@@ -1195,8 +1213,8 @@ public sealed record class IndividualAddress : JsonModel
     public override void Validate()
     {
         _ = this.City;
-        _ = this.Country;
         _ = this.Line1;
+        _ = this.Country;
         _ = this.Line2;
         _ = this.State;
         _ = this.Zip;
@@ -2704,19 +2722,6 @@ public sealed record class JointIndividualAddress : JsonModel
     }
 
     /// <summary>
-    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
-    /// </summary>
-    public required string Country
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("country");
-        }
-        init { this._rawData.Set("country", value); }
-    }
-
-    /// <summary>
     /// The first line of the address. This is usually the street number and street.
     /// </summary>
     public required string Line1
@@ -2727,6 +2732,28 @@ public sealed record class JointIndividualAddress : JsonModel
             return this._rawData.GetNotNullClass<string>("line1");
         }
         init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address. Defaults
+    /// to `US`.
+    /// </summary>
+    public string? Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("country");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("country", value);
+        }
     }
 
     /// <summary>
@@ -2797,8 +2824,8 @@ public sealed record class JointIndividualAddress : JsonModel
     public override void Validate()
     {
         _ = this.City;
-        _ = this.Country;
         _ = this.Line1;
+        _ = this.Country;
         _ = this.Line2;
         _ = this.State;
         _ = this.Zip;
@@ -3600,19 +3627,6 @@ public sealed record class NaturalPersonAddress : JsonModel
     }
 
     /// <summary>
-    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
-    /// </summary>
-    public required string Country
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("country");
-        }
-        init { this._rawData.Set("country", value); }
-    }
-
-    /// <summary>
     /// The first line of the address. This is usually the street number and street.
     /// </summary>
     public required string Line1
@@ -3623,6 +3637,28 @@ public sealed record class NaturalPersonAddress : JsonModel
             return this._rawData.GetNotNullClass<string>("line1");
         }
         init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address. Defaults
+    /// to `US`.
+    /// </summary>
+    public string? Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("country");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("country", value);
+        }
     }
 
     /// <summary>
@@ -3693,8 +3729,8 @@ public sealed record class NaturalPersonAddress : JsonModel
     public override void Validate()
     {
         _ = this.City;
-        _ = this.Country;
         _ = this.Line1;
+        _ = this.Country;
         _ = this.Line2;
         _ = this.State;
         _ = this.Zip;
@@ -5448,19 +5484,6 @@ public sealed record class TrusteeIndividualAddress : JsonModel
     }
 
     /// <summary>
-    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
-    /// </summary>
-    public required string Country
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("country");
-        }
-        init { this._rawData.Set("country", value); }
-    }
-
-    /// <summary>
     /// The first line of the address. This is usually the street number and street.
     /// </summary>
     public required string Line1
@@ -5471,6 +5494,28 @@ public sealed record class TrusteeIndividualAddress : JsonModel
             return this._rawData.GetNotNullClass<string>("line1");
         }
         init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address. Defaults
+    /// to `US`.
+    /// </summary>
+    public string? Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("country");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("country", value);
+        }
     }
 
     /// <summary>
@@ -5541,8 +5586,8 @@ public sealed record class TrusteeIndividualAddress : JsonModel
     public override void Validate()
     {
         _ = this.City;
-        _ = this.Country;
         _ = this.Line1;
+        _ = this.Country;
         _ = this.Line2;
         _ = this.State;
         _ = this.Zip;
@@ -6346,19 +6391,6 @@ public sealed record class GrantorAddress : JsonModel
     }
 
     /// <summary>
-    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
-    /// </summary>
-    public required string Country
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("country");
-        }
-        init { this._rawData.Set("country", value); }
-    }
-
-    /// <summary>
     /// The first line of the address. This is usually the street number and street.
     /// </summary>
     public required string Line1
@@ -6369,6 +6401,28 @@ public sealed record class GrantorAddress : JsonModel
             return this._rawData.GetNotNullClass<string>("line1");
         }
         init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address. Defaults
+    /// to `US`.
+    /// </summary>
+    public string? Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("country");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("country", value);
+        }
     }
 
     /// <summary>
@@ -6439,8 +6493,8 @@ public sealed record class GrantorAddress : JsonModel
     public override void Validate()
     {
         _ = this.City;
-        _ = this.Country;
         _ = this.Line1;
+        _ = this.Country;
         _ = this.Line2;
         _ = this.State;
         _ = this.Zip;

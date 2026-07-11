@@ -18,8 +18,8 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
             Address = new()
             {
                 City = "New York",
-                Country = "US",
                 Line1 = "33 Liberty Street",
+                Country = "US",
                 Line2 = "Unit 2",
                 State = "NY",
                 Zip = "10045",
@@ -59,8 +59,8 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
         BeneficialOwnerUpdateParamsAddress expectedAddress = new()
         {
             City = "New York",
-            Country = "US",
             Line1 = "33 Liberty Street",
+            Country = "US",
             Line2 = "Unit 2",
             State = "NY",
             Zip = "10045",
@@ -187,8 +187,8 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
             Address = new()
             {
                 City = "New York",
-                Country = "US",
                 Line1 = "33 Liberty Street",
+                Country = "US",
                 Line2 = "Unit 2",
                 State = "NY",
                 Zip = "10045",
@@ -238,23 +238,23 @@ public class BeneficialOwnerUpdateParamsAddressTest : TestBase
         var model = new BeneficialOwnerUpdateParamsAddress
         {
             City = "x",
-            Country = "x",
             Line1 = "x",
+            Country = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
         };
 
         string expectedCity = "x";
-        string expectedCountry = "x";
         string expectedLine1 = "x";
+        string expectedCountry = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, model.City);
-        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine1, model.Line1);
+        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine2, model.Line2);
         Assert.Equal(expectedState, model.State);
         Assert.Equal(expectedZip, model.Zip);
@@ -266,8 +266,8 @@ public class BeneficialOwnerUpdateParamsAddressTest : TestBase
         var model = new BeneficialOwnerUpdateParamsAddress
         {
             City = "x",
-            Country = "x",
             Line1 = "x",
+            Country = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -288,8 +288,8 @@ public class BeneficialOwnerUpdateParamsAddressTest : TestBase
         var model = new BeneficialOwnerUpdateParamsAddress
         {
             City = "x",
-            Country = "x",
             Line1 = "x",
+            Country = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -303,15 +303,15 @@ public class BeneficialOwnerUpdateParamsAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "x";
-        string expectedCountry = "x";
         string expectedLine1 = "x";
+        string expectedCountry = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, deserialized.City);
-        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine2, deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
         Assert.Equal(expectedZip, deserialized.Zip);
@@ -323,8 +323,8 @@ public class BeneficialOwnerUpdateParamsAddressTest : TestBase
         var model = new BeneficialOwnerUpdateParamsAddress
         {
             City = "x",
-            Country = "x",
             Line1 = "x",
+            Country = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -336,13 +336,10 @@ public class BeneficialOwnerUpdateParamsAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new BeneficialOwnerUpdateParamsAddress
-        {
-            City = "x",
-            Country = "x",
-            Line1 = "x",
-        };
+        var model = new BeneficialOwnerUpdateParamsAddress { City = "x", Line1 = "x" };
 
+        Assert.Null(model.Country);
+        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -354,12 +351,7 @@ public class BeneficialOwnerUpdateParamsAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new BeneficialOwnerUpdateParamsAddress
-        {
-            City = "x",
-            Country = "x",
-            Line1 = "x",
-        };
+        var model = new BeneficialOwnerUpdateParamsAddress { City = "x", Line1 = "x" };
 
         model.Validate();
     }
@@ -370,15 +362,17 @@ public class BeneficialOwnerUpdateParamsAddressTest : TestBase
         var model = new BeneficialOwnerUpdateParamsAddress
         {
             City = "x",
-            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
+            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
         };
 
+        Assert.Null(model.Country);
+        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -393,10 +387,10 @@ public class BeneficialOwnerUpdateParamsAddressTest : TestBase
         var model = new BeneficialOwnerUpdateParamsAddress
         {
             City = "x",
-            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
+            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
@@ -411,8 +405,8 @@ public class BeneficialOwnerUpdateParamsAddressTest : TestBase
         var model = new BeneficialOwnerUpdateParamsAddress
         {
             City = "x",
-            Country = "x",
             Line1 = "x",
+            Country = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
