@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.52.0](https://github.com/Increase/increase-csharp/compare/v0.51.0...v0.52.0) (2026-07-13)
+
+
+### Features
+
+* **api:** api update ([#105](https://github.com/Increase/increase-csharp/issues/105)) ([2820cf7](https://github.com/Increase/increase-csharp/commit/2820cf78189190caeb0e85ff0d1e4b0914651240))
+
+
+### Bug Fixes
+
+* **api:** make address country optional, defaulting to US ([43a30a3](https://github.com/Increase/increase-csharp/commit/43a30a31656f1d8811044d3a190b3135f795e413))
+
 ## [0.51.0](https://github.com/Increase/increase-csharp/compare/v0.50.0...v0.51.0) (2026-07-02)
 
 
