@@ -775,6 +775,16 @@ public enum In
     PhysicalCheckUpdated,
 
     /// <summary>
+    /// Occurs whenever a Physical Check Book is created.
+    /// </summary>
+    PhysicalCheckBookCreated,
+
+    /// <summary>
+    /// Occurs whenever a Physical Check Book is updated.
+    /// </summary>
+    PhysicalCheckBookUpdated,
+
+    /// <summary>
     /// Occurs whenever a Program is created.
     /// </summary>
     ProgramCreated,
@@ -990,6 +1000,8 @@ sealed class InConverter : JsonConverter<In>
             "physical_card_profile.updated" => In.PhysicalCardProfileUpdated,
             "physical_check.created" => In.PhysicalCheckCreated,
             "physical_check.updated" => In.PhysicalCheckUpdated,
+            "physical_check_book.created" => In.PhysicalCheckBookCreated,
+            "physical_check_book.updated" => In.PhysicalCheckBookUpdated,
             "program.created" => In.ProgramCreated,
             "program.updated" => In.ProgramUpdated,
             "proof_of_authorization_request.created" => In.ProofOfAuthorizationRequestCreated,
@@ -1127,6 +1139,8 @@ sealed class InConverter : JsonConverter<In>
                 In.PhysicalCardProfileUpdated => "physical_card_profile.updated",
                 In.PhysicalCheckCreated => "physical_check.created",
                 In.PhysicalCheckUpdated => "physical_check.updated",
+                In.PhysicalCheckBookCreated => "physical_check_book.created",
+                In.PhysicalCheckBookUpdated => "physical_check_book.updated",
                 In.ProgramCreated => "program.created",
                 In.ProgramUpdated => "program.updated",
                 In.ProofOfAuthorizationRequestCreated => "proof_of_authorization_request.created",

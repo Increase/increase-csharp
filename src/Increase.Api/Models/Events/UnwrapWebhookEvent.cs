@@ -626,6 +626,16 @@ public enum UnwrapWebhookEventCategory
     PhysicalCheckUpdated,
 
     /// <summary>
+    /// Occurs whenever a Physical Check Book is created.
+    /// </summary>
+    PhysicalCheckBookCreated,
+
+    /// <summary>
+    /// Occurs whenever a Physical Check Book is updated.
+    /// </summary>
+    PhysicalCheckBookUpdated,
+
+    /// <summary>
     /// Occurs whenever a Program is created.
     /// </summary>
     ProgramCreated,
@@ -860,6 +870,8 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                 UnwrapWebhookEventCategory.PhysicalCardProfileUpdated,
             "physical_check.created" => UnwrapWebhookEventCategory.PhysicalCheckCreated,
             "physical_check.updated" => UnwrapWebhookEventCategory.PhysicalCheckUpdated,
+            "physical_check_book.created" => UnwrapWebhookEventCategory.PhysicalCheckBookCreated,
+            "physical_check_book.updated" => UnwrapWebhookEventCategory.PhysicalCheckBookUpdated,
             "program.created" => UnwrapWebhookEventCategory.ProgramCreated,
             "program.updated" => UnwrapWebhookEventCategory.ProgramUpdated,
             "proof_of_authorization_request.created" =>
@@ -1040,6 +1052,10 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                     "physical_card_profile.updated",
                 UnwrapWebhookEventCategory.PhysicalCheckCreated => "physical_check.created",
                 UnwrapWebhookEventCategory.PhysicalCheckUpdated => "physical_check.updated",
+                UnwrapWebhookEventCategory.PhysicalCheckBookCreated =>
+                    "physical_check_book.created",
+                UnwrapWebhookEventCategory.PhysicalCheckBookUpdated =>
+                    "physical_check_book.updated",
                 UnwrapWebhookEventCategory.ProgramCreated => "program.created",
                 UnwrapWebhookEventCategory.ProgramUpdated => "program.updated",
                 UnwrapWebhookEventCategory.ProofOfAuthorizationRequestCreated =>
