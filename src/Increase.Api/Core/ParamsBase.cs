@@ -4,7 +4,6 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Net.Http;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json;
 using System.Web;
@@ -17,17 +16,7 @@ public abstract record class ParamsBase
 
     static ParamsBase()
     {
-        var runtime = GetRuntime();
-        var headers = new Dictionary<string, string>
-        {
-            ["User-Agent"] = GetUserAgent(),
-            ["X-Stainless-Arch"] = GetOSArch(),
-            ["X-Stainless-Lang"] = "csharp",
-            ["X-Stainless-OS"] = GetOS(),
-            ["X-Stainless-Package-Version"] = GetPackageVersion(),
-            ["X-Stainless-Runtime"] = runtime.Name,
-            ["X-Stainless-Runtime-Version"] = runtime.Version,
-        };
+        var headers = new Dictionary<string, string> { ["User-Agent"] = GetUserAgent() };
 
         var customHeadersEnv = Environment.GetEnvironmentVariable("INCREASE_CUSTOM_HEADERS");
         if (customHeadersEnv != null)
@@ -215,10 +204,6 @@ public abstract record class ParamsBase
         {
             request.Headers.Add("Authorization", string.Format("Bearer {0}", options.ApiKey));
         }
-        request.Headers.Add(
-            "X-Stainless-Timeout",
-            (options.Timeout ?? ClientOptions.DefaultTimeout).TotalSeconds.ToString()
-        );
     }
 
     static string GetUserAgent() => $"{typeof(IncreaseClient).Name}/C# {GetPackageVersion()}";
@@ -229,63 +214,4 @@ public abstract record class ParamsBase
             .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
             ?.InformationalVersion
         ?? "unknown";
-
-    static string GetOSArch() =>
-        RuntimeInformation.OSArchitecture switch
-        {
-            Architecture.X86 => "x32",
-            Architecture.X64 => "x64",
-            Architecture.Arm => "arm",
-            Architecture.Arm64 => "arm64",
-#if !NETSTANDARD2_0
-            Architecture.Armv6 => "arm64",
-            Architecture.Wasm
-            or Architecture.S390x
-            or Architecture.LoongArch64
-            or Architecture.Ppc64le => $"other:{RuntimeInformation.OSArchitecture}",
-#endif
-            _ => "unknown",
-        };
-
-    static string GetOS()
-    {
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-        {
-            return "Windows";
-        }
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-        {
-            return "MacOS";
-        }
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-        {
-            return "Linux";
-        }
-        return $"Other:{RuntimeInformation.OSDescription}";
-    }
-
-    static Runtime GetRuntime()
-    {
-        var runtimeDescription = RuntimeInformation.FrameworkDescription;
-        var lastSpaceIndex = runtimeDescription.LastIndexOf(' ');
-        if (lastSpaceIndex == -1)
-        {
-            return new() { Name = runtimeDescription, Version = "unknown" };
-        }
-
-        var name = runtimeDescription.Substring(0, lastSpaceIndex).Trim();
-        var version = runtimeDescription.Substring(lastSpaceIndex + 1).Trim();
-        return new()
-        {
-            Name = name.Length == 0 ? "unknown" : name,
-            Version = version.Length == 0 ? "unknown" : version,
-        };
-    }
-
-    readonly record struct Runtime
-    {
-        public string Name { get; init; }
-
-        public string Version { get; init; }
-    }
 }

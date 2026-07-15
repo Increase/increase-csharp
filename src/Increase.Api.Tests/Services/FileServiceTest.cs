@@ -37,4 +37,14 @@ public class FileServiceTest : TestBase
         var page = await this.client.Files.List(new(), TestContext.Current.CancellationToken);
         page.Validate();
     }
+
+    [Fact]
+    public async Task Contents_Works()
+    {
+        await this.client.Files.Contents(
+            "file_makxrc67oh9l6sg7w9yc",
+            new(),
+            TestContext.Current.CancellationToken
+        );
+    }
 }

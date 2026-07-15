@@ -988,10 +988,6 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
             Content = request.Params.BodyContent(),
         };
         request.Params.AddHeadersToRequest(requestMessage, this._options);
-        if (!requestMessage.Headers.Contains("x-stainless-retry-count"))
-        {
-            requestMessage.Headers.Add("x-stainless-retry-count", retryCount.ToString());
-        }
         if (!requestMessage.Headers.Contains("Idempotency-Key"))
         {
             requestMessage.Headers.Add("Idempotency-Key", idempotencyHeaderValue);
