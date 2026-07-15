@@ -98,6 +98,34 @@ To send a request to the Increase API, build an instance of some `Params` class 
 
 For example, `client.Accounts.Create` should be called with an instance of `AccountCreateParams`, and it will return an instance of `Task<Account>`.
 
+## Binary responses
+
+The SDK defines methods that return binary responses, which are used for API responses that shouldn't necessarily be parsed, like non-JSON data.
+
+These methods return `HttpResponse`:
+
+```csharp
+using System;
+using Increase.Api.Models.Files;
+
+FileContentsParams parameters = new() { FileID = "file_makxrc67oh9l6sg7w9yc" };
+
+var response = await client.Files.Contents(parameters);
+
+Console.WriteLine(response);
+```
+
+To save the response content to a file, or any [`Stream`](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream?view=net-9.0), use the [`CopyToAsync`](<https://learn.microsoft.com/en-us/dotnet/api/system.io.stream.copytoasync?view=net-9.0#system-io-stream-copytoasync(system-io-stream)>) method:
+
+```csharp
+using System.IO;
+
+using var response = await client.Files.Contents(parameters);
+using var contentStream = await response.ReadAsStream();
+using var fileStream = File.Open(path, FileMode.OpenOrCreate);
+await contentStream.CopyToAsync(fileStream); // Or any other Stream
+```
+
 ## Raw responses
 
 The SDK defines methods that deserialize responses into instances of C# classes. However, these methods don't provide access to the response headers, status code, or the raw response body.

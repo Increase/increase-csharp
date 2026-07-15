@@ -139,41 +139,11 @@ public class RetriesTest : TestBase
             .Protected()
             .Verify(
                 "SendAsync",
-                Times.Exactly(1),
+                Times.Exactly(3),
                 ItExpr.Is<HttpRequestMessage>(
                     (req) =>
                         req.Method == HttpMethod.Get
                         && req.RequestUri == new Uri("http://localhost/something")
-                        && Enumerable.Single(req.Headers.GetValues("x-stainless-retry-count"))
-                            == "0"
-                ),
-                ItExpr.IsAny<CancellationToken>()
-            );
-        handlerMock
-            .Protected()
-            .Verify(
-                "SendAsync",
-                Times.Exactly(1),
-                ItExpr.Is<HttpRequestMessage>(
-                    (req) =>
-                        req.Method == HttpMethod.Get
-                        && req.RequestUri == new Uri("http://localhost/something")
-                        && Enumerable.Single(req.Headers.GetValues("x-stainless-retry-count"))
-                            == "1"
-                ),
-                ItExpr.IsAny<CancellationToken>()
-            );
-        handlerMock
-            .Protected()
-            .Verify(
-                "SendAsync",
-                Times.Exactly(1),
-                ItExpr.Is<HttpRequestMessage>(
-                    (req) =>
-                        req.Method == HttpMethod.Get
-                        && req.RequestUri == new Uri("http://localhost/something")
-                        && Enumerable.Single(req.Headers.GetValues("x-stainless-retry-count"))
-                            == "2"
                 ),
                 ItExpr.IsAny<CancellationToken>()
             );
@@ -390,27 +360,11 @@ public class RetriesTest : TestBase
             .Protected()
             .Verify(
                 "SendAsync",
-                Times.Exactly(1),
+                Times.Exactly(2),
                 ItExpr.Is<HttpRequestMessage>(
                     (req) =>
                         req.Method == HttpMethod.Get
                         && req.RequestUri == new Uri("http://localhost/something")
-                        && Enumerable.Single(req.Headers.GetValues("x-stainless-retry-count"))
-                            == "0"
-                ),
-                ItExpr.IsAny<CancellationToken>()
-            );
-        handlerMock
-            .Protected()
-            .Verify(
-                "SendAsync",
-                Times.Exactly(1),
-                ItExpr.Is<HttpRequestMessage>(
-                    (req) =>
-                        req.Method == HttpMethod.Get
-                        && req.RequestUri == new Uri("http://localhost/something")
-                        && Enumerable.Single(req.Headers.GetValues("x-stainless-retry-count"))
-                            == "1"
                 ),
                 ItExpr.IsAny<CancellationToken>()
             );

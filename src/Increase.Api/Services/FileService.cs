@@ -81,6 +81,27 @@ public sealed class FileService : IFileService
             .ConfigureAwait(false);
         return await response.Deserialize(cancellationToken).ConfigureAwait(false);
     }
+
+    /// <inheritdoc/>
+    public Task<HttpResponse> Contents(
+        FileContentsParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        return this.WithRawResponse.Contents(parameters, cancellationToken);
+    }
+
+    /// <inheritdoc/>
+    public Task<HttpResponse> Contents(
+        string fileID,
+        FileContentsParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.Contents(parameters with { FileID = fileID }, cancellationToken);
+    }
 }
 
 /// <inheritdoc/>
@@ -196,5 +217,36 @@ public sealed class FileServiceWithRawResponse : IFileServiceWithRawResponse
                 return new FileListPage(this, parameters, page);
             }
         );
+    }
+
+    /// <inheritdoc/>
+    public Task<HttpResponse> Contents(
+        FileContentsParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        if (parameters.FileID == null)
+        {
+            throw new IncreaseInvalidDataException("'parameters.FileID' cannot be null");
+        }
+
+        HttpRequest<FileContentsParams> request = new()
+        {
+            Method = HttpMethod.Get,
+            Params = parameters,
+        };
+        return this._client.Execute(request, cancellationToken);
+    }
+
+    /// <inheritdoc/>
+    public Task<HttpResponse> Contents(
+        string fileID,
+        FileContentsParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.Contents(parameters with { FileID = fileID }, cancellationToken);
     }
 }

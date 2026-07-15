@@ -55,6 +55,30 @@ public interface IFileService
         FileListParams? parameters = null,
         CancellationToken cancellationToken = default
     );
+
+    /// <summary>
+    /// Download the contents of a File. Responds with a 307 redirect whose `Location`
+    /// header points at a short-lived, pre-signed URL. Our
+    /// [SDKs](/documentation/software-development-kits) follow the redirect and return
+    /// the File's contents; if you call the API directly, follow the redirect to
+    /// download it. The pre-signed URL serves the File with a `Content-Type` matching
+    /// its `mime` and a `Content-Disposition` header set to its `filename`. It expires
+    /// in 10 minutes. To share a File with someone who doesn't have access to your API
+    /// key, create a File Link.
+    ///
+    /// <para>It's the caller's responsibility to dispose the returned response.</para>
+    /// </summary>
+    Task<HttpResponse> Contents(
+        FileContentsParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="Contents(FileContentsParams, CancellationToken)"/>
+    Task<HttpResponse> Contents(
+        string fileID,
+        FileContentsParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
 }
 
 /// <summary>
@@ -101,6 +125,22 @@ public interface IFileServiceWithRawResponse
     /// </summary>
     Task<HttpResponse<FileListPage>> List(
         FileListParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>get /files/{file_id}/contents</c>, but is otherwise the
+    /// same as <see cref="IFileService.Contents(FileContentsParams, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse> Contents(
+        FileContentsParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="Contents(FileContentsParams, CancellationToken)"/>
+    Task<HttpResponse> Contents(
+        string fileID,
+        FileContentsParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 }

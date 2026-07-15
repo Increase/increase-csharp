@@ -20,8 +20,8 @@ public class EntityCreateParamsTest : TestBase
                 Address = new()
                 {
                     City = "New York",
-                    Line1 = "33 Liberty Street",
                     Country = "x",
+                    Line1 = "33 Liberty Street",
                     Line2 = "x",
                     State = "NY",
                     Zip = "10045",
@@ -35,8 +35,8 @@ public class EntityCreateParamsTest : TestBase
                             Address = new()
                             {
                                 City = "New York",
-                                Line1 = "33 Liberty Street",
                                 Country = "x",
+                                Line1 = "33 Liberty Street",
                                 Line2 = "x",
                                 State = "NY",
                                 Zip = "10045",
@@ -112,8 +112,8 @@ public class EntityCreateParamsTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -155,8 +155,8 @@ public class EntityCreateParamsTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -229,8 +229,8 @@ public class EntityCreateParamsTest : TestBase
                             Address = new()
                             {
                                 City = "x",
-                                Line1 = "x",
                                 Country = "x",
+                                Line1 = "x",
                                 Line2 = "x",
                                 State = "x",
                                 Zip = "x",
@@ -274,8 +274,8 @@ public class EntityCreateParamsTest : TestBase
                     Address = new()
                     {
                         City = "x",
-                        Line1 = "x",
                         Country = "x",
+                        Line1 = "x",
                         Line2 = "x",
                         State = "x",
                         Zip = "x",
@@ -320,8 +320,8 @@ public class EntityCreateParamsTest : TestBase
             Address = new()
             {
                 City = "New York",
-                Line1 = "33 Liberty Street",
                 Country = "x",
+                Line1 = "33 Liberty Street",
                 Line2 = "x",
                 State = "NY",
                 Zip = "10045",
@@ -335,8 +335,8 @@ public class EntityCreateParamsTest : TestBase
                         Address = new()
                         {
                             City = "New York",
-                            Line1 = "33 Liberty Street",
                             Country = "x",
+                            Line1 = "33 Liberty Street",
                             Line2 = "x",
                             State = "NY",
                             Zip = "10045",
@@ -412,8 +412,8 @@ public class EntityCreateParamsTest : TestBase
                     Address = new()
                     {
                         City = "x",
-                        Line1 = "x",
                         Country = "x",
+                        Line1 = "x",
                         Line2 = "x",
                         State = "x",
                         Zip = "x",
@@ -455,8 +455,8 @@ public class EntityCreateParamsTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -533,8 +533,8 @@ public class EntityCreateParamsTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -578,8 +578,8 @@ public class EntityCreateParamsTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -730,8 +730,8 @@ public class EntityCreateParamsTest : TestBase
                 Address = new()
                 {
                     City = "New York",
-                    Line1 = "33 Liberty Street",
                     Country = "x",
+                    Line1 = "33 Liberty Street",
                     Line2 = "x",
                     State = "NY",
                     Zip = "10045",
@@ -745,8 +745,8 @@ public class EntityCreateParamsTest : TestBase
                             Address = new()
                             {
                                 City = "New York",
-                                Line1 = "33 Liberty Street",
                                 Country = "x",
+                                Line1 = "33 Liberty Street",
                                 Line2 = "x",
                                 State = "NY",
                                 Zip = "10045",
@@ -822,8 +822,8 @@ public class EntityCreateParamsTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -865,8 +865,8 @@ public class EntityCreateParamsTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -939,8 +939,8 @@ public class EntityCreateParamsTest : TestBase
                             Address = new()
                             {
                                 City = "x",
-                                Line1 = "x",
                                 Country = "x",
+                                Line1 = "x",
                                 Line2 = "x",
                                 State = "x",
                                 Zip = "x",
@@ -984,8 +984,8 @@ public class EntityCreateParamsTest : TestBase
                     Address = new()
                     {
                         City = "x",
-                        Line1 = "x",
                         Country = "x",
+                        Line1 = "x",
                         Line2 = "x",
                         State = "x",
                         Zip = "x",
@@ -1104,8 +1104,8 @@ public class CorporationTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -1119,8 +1119,8 @@ public class CorporationTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -1176,8 +1176,8 @@ public class CorporationTest : TestBase
         Address expectedAddress = new()
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -1191,8 +1191,8 @@ public class CorporationTest : TestBase
                     Address = new()
                     {
                         City = "x",
-                        Line1 = "x",
                         Country = "x",
+                        Line1 = "x",
                         Line2 = "x",
                         State = "x",
                         Zip = "x",
@@ -1273,8 +1273,8 @@ public class CorporationTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -1288,8 +1288,8 @@ public class CorporationTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -1359,8 +1359,8 @@ public class CorporationTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -1374,8 +1374,8 @@ public class CorporationTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -1438,8 +1438,8 @@ public class CorporationTest : TestBase
         Address expectedAddress = new()
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -1453,8 +1453,8 @@ public class CorporationTest : TestBase
                     Address = new()
                     {
                         City = "x",
-                        Line1 = "x",
                         Country = "x",
+                        Line1 = "x",
                         Line2 = "x",
                         State = "x",
                         Zip = "x",
@@ -1535,8 +1535,8 @@ public class CorporationTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -1550,8 +1550,8 @@ public class CorporationTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -1615,8 +1615,8 @@ public class CorporationTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -1630,8 +1630,8 @@ public class CorporationTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -1698,8 +1698,8 @@ public class CorporationTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -1713,8 +1713,8 @@ public class CorporationTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -1772,8 +1772,8 @@ public class CorporationTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -1787,8 +1787,8 @@ public class CorporationTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -1862,8 +1862,8 @@ public class CorporationTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -1877,8 +1877,8 @@ public class CorporationTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -1943,8 +1943,8 @@ public class CorporationTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -1958,8 +1958,8 @@ public class CorporationTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -2026,23 +2026,23 @@ public class AddressTest : TestBase
         var model = new Address
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
         };
 
         string expectedCity = "x";
-        string expectedLine1 = "x";
         string expectedCountry = "x";
+        string expectedLine1 = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, model.City);
-        Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedLine2, model.Line2);
         Assert.Equal(expectedState, model.State);
         Assert.Equal(expectedZip, model.Zip);
@@ -2054,8 +2054,8 @@ public class AddressTest : TestBase
         var model = new Address
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -2073,8 +2073,8 @@ public class AddressTest : TestBase
         var model = new Address
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -2088,15 +2088,15 @@ public class AddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "x";
-        string expectedLine1 = "x";
         string expectedCountry = "x";
+        string expectedLine1 = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, deserialized.City);
-        Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedLine2, deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
         Assert.Equal(expectedZip, deserialized.Zip);
@@ -2108,8 +2108,8 @@ public class AddressTest : TestBase
         var model = new Address
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -2121,10 +2121,13 @@ public class AddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Address { City = "x", Line1 = "x" };
+        var model = new Address
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
 
-        Assert.Null(model.Country);
-        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -2136,7 +2139,12 @@ public class AddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Address { City = "x", Line1 = "x" };
+        var model = new Address
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
 
         model.Validate();
     }
@@ -2147,17 +2155,15 @@ public class AddressTest : TestBase
         var model = new Address
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
-            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
         };
 
-        Assert.Null(model.Country);
-        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -2172,10 +2178,10 @@ public class AddressTest : TestBase
         var model = new Address
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
-            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
@@ -2190,8 +2196,8 @@ public class AddressTest : TestBase
         var model = new Address
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -2215,8 +2221,8 @@ public class BeneficialOwnerTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -2260,8 +2266,8 @@ public class BeneficialOwnerTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -2318,8 +2324,8 @@ public class BeneficialOwnerTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -2377,8 +2383,8 @@ public class BeneficialOwnerTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -2429,8 +2435,8 @@ public class BeneficialOwnerTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -2487,8 +2493,8 @@ public class BeneficialOwnerTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -2540,8 +2546,8 @@ public class BeneficialOwnerTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -2593,8 +2599,8 @@ public class BeneficialOwnerTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -2645,8 +2651,8 @@ public class BeneficialOwnerTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -2701,8 +2707,8 @@ public class BeneficialOwnerTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -2756,8 +2762,8 @@ public class BeneficialOwnerTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -2812,8 +2818,8 @@ public class IndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -2852,8 +2858,8 @@ public class IndividualTest : TestBase
         IndividualAddress expectedAddress = new()
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -2903,8 +2909,8 @@ public class IndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -2957,8 +2963,8 @@ public class IndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -3004,8 +3010,8 @@ public class IndividualTest : TestBase
         IndividualAddress expectedAddress = new()
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -3055,8 +3061,8 @@ public class IndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -3103,8 +3109,8 @@ public class IndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -3151,8 +3157,8 @@ public class IndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -3198,8 +3204,8 @@ public class IndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -3249,8 +3255,8 @@ public class IndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -3299,8 +3305,8 @@ public class IndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -3350,23 +3356,23 @@ public class IndividualAddressTest : TestBase
         var model = new IndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
         };
 
         string expectedCity = "x";
-        string expectedLine1 = "x";
         string expectedCountry = "x";
+        string expectedLine1 = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, model.City);
-        Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedLine2, model.Line2);
         Assert.Equal(expectedState, model.State);
         Assert.Equal(expectedZip, model.Zip);
@@ -3378,8 +3384,8 @@ public class IndividualAddressTest : TestBase
         var model = new IndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -3400,8 +3406,8 @@ public class IndividualAddressTest : TestBase
         var model = new IndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -3415,15 +3421,15 @@ public class IndividualAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "x";
-        string expectedLine1 = "x";
         string expectedCountry = "x";
+        string expectedLine1 = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, deserialized.City);
-        Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedLine2, deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
         Assert.Equal(expectedZip, deserialized.Zip);
@@ -3435,8 +3441,8 @@ public class IndividualAddressTest : TestBase
         var model = new IndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -3448,10 +3454,13 @@ public class IndividualAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new IndividualAddress { City = "x", Line1 = "x" };
+        var model = new IndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
 
-        Assert.Null(model.Country);
-        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -3463,7 +3472,12 @@ public class IndividualAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new IndividualAddress { City = "x", Line1 = "x" };
+        var model = new IndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
 
         model.Validate();
     }
@@ -3474,17 +3488,15 @@ public class IndividualAddressTest : TestBase
         var model = new IndividualAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
-            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
         };
 
-        Assert.Null(model.Country);
-        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -3499,10 +3511,10 @@ public class IndividualAddressTest : TestBase
         var model = new IndividualAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
-            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
@@ -3517,8 +3529,8 @@ public class IndividualAddressTest : TestBase
         var model = new IndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -5222,8 +5234,8 @@ public class JointTest : TestBase
                     Address = new()
                     {
                         City = "x",
-                        Line1 = "x",
                         Country = "x",
+                        Line1 = "x",
                         Line2 = "x",
                         State = "x",
                         Zip = "x",
@@ -5268,8 +5280,8 @@ public class JointTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -5325,8 +5337,8 @@ public class JointTest : TestBase
                     Address = new()
                     {
                         City = "x",
-                        Line1 = "x",
                         Country = "x",
+                        Line1 = "x",
                         Line2 = "x",
                         State = "x",
                         Zip = "x",
@@ -5382,8 +5394,8 @@ public class JointTest : TestBase
                     Address = new()
                     {
                         City = "x",
-                        Line1 = "x",
                         Country = "x",
+                        Line1 = "x",
                         Line2 = "x",
                         State = "x",
                         Zip = "x",
@@ -5432,8 +5444,8 @@ public class JointTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -5489,8 +5501,8 @@ public class JointTest : TestBase
                     Address = new()
                     {
                         City = "x",
-                        Line1 = "x",
                         Country = "x",
+                        Line1 = "x",
                         Line2 = "x",
                         State = "x",
                         Zip = "x",
@@ -5543,8 +5555,8 @@ public class JointTest : TestBase
                     Address = new()
                     {
                         City = "x",
-                        Line1 = "x",
                         Country = "x",
+                        Line1 = "x",
                         Line2 = "x",
                         State = "x",
                         Zip = "x",
@@ -5598,8 +5610,8 @@ public class JointIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -5638,8 +5650,8 @@ public class JointIndividualTest : TestBase
         JointIndividualAddress expectedAddress = new()
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -5689,8 +5701,8 @@ public class JointIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -5743,8 +5755,8 @@ public class JointIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -5790,8 +5802,8 @@ public class JointIndividualTest : TestBase
         JointIndividualAddress expectedAddress = new()
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -5841,8 +5853,8 @@ public class JointIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -5889,8 +5901,8 @@ public class JointIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -5937,8 +5949,8 @@ public class JointIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -5984,8 +5996,8 @@ public class JointIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -6035,8 +6047,8 @@ public class JointIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -6085,8 +6097,8 @@ public class JointIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -6136,23 +6148,23 @@ public class JointIndividualAddressTest : TestBase
         var model = new JointIndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
         };
 
         string expectedCity = "x";
-        string expectedLine1 = "x";
         string expectedCountry = "x";
+        string expectedLine1 = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, model.City);
-        Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedLine2, model.Line2);
         Assert.Equal(expectedState, model.State);
         Assert.Equal(expectedZip, model.Zip);
@@ -6164,8 +6176,8 @@ public class JointIndividualAddressTest : TestBase
         var model = new JointIndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -6186,8 +6198,8 @@ public class JointIndividualAddressTest : TestBase
         var model = new JointIndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -6201,15 +6213,15 @@ public class JointIndividualAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "x";
-        string expectedLine1 = "x";
         string expectedCountry = "x";
+        string expectedLine1 = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, deserialized.City);
-        Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedLine2, deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
         Assert.Equal(expectedZip, deserialized.Zip);
@@ -6221,8 +6233,8 @@ public class JointIndividualAddressTest : TestBase
         var model = new JointIndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -6234,10 +6246,13 @@ public class JointIndividualAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new JointIndividualAddress { City = "x", Line1 = "x" };
+        var model = new JointIndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
 
-        Assert.Null(model.Country);
-        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -6249,7 +6264,12 @@ public class JointIndividualAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new JointIndividualAddress { City = "x", Line1 = "x" };
+        var model = new JointIndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
 
         model.Validate();
     }
@@ -6260,17 +6280,15 @@ public class JointIndividualAddressTest : TestBase
         var model = new JointIndividualAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
-            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
         };
 
-        Assert.Null(model.Country);
-        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -6285,10 +6303,10 @@ public class JointIndividualAddressTest : TestBase
         var model = new JointIndividualAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
-            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
@@ -6303,8 +6321,8 @@ public class JointIndividualAddressTest : TestBase
         var model = new JointIndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -7133,8 +7151,8 @@ public class NaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -7173,8 +7191,8 @@ public class NaturalPersonTest : TestBase
         NaturalPersonAddress expectedAddress = new()
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -7224,8 +7242,8 @@ public class NaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -7278,8 +7296,8 @@ public class NaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -7325,8 +7343,8 @@ public class NaturalPersonTest : TestBase
         NaturalPersonAddress expectedAddress = new()
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -7376,8 +7394,8 @@ public class NaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -7424,8 +7442,8 @@ public class NaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -7472,8 +7490,8 @@ public class NaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -7519,8 +7537,8 @@ public class NaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -7570,8 +7588,8 @@ public class NaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -7620,8 +7638,8 @@ public class NaturalPersonTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -7671,23 +7689,23 @@ public class NaturalPersonAddressTest : TestBase
         var model = new NaturalPersonAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
         };
 
         string expectedCity = "x";
-        string expectedLine1 = "x";
         string expectedCountry = "x";
+        string expectedLine1 = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, model.City);
-        Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedLine2, model.Line2);
         Assert.Equal(expectedState, model.State);
         Assert.Equal(expectedZip, model.Zip);
@@ -7699,8 +7717,8 @@ public class NaturalPersonAddressTest : TestBase
         var model = new NaturalPersonAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -7721,8 +7739,8 @@ public class NaturalPersonAddressTest : TestBase
         var model = new NaturalPersonAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -7736,15 +7754,15 @@ public class NaturalPersonAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "x";
-        string expectedLine1 = "x";
         string expectedCountry = "x";
+        string expectedLine1 = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, deserialized.City);
-        Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedLine2, deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
         Assert.Equal(expectedZip, deserialized.Zip);
@@ -7756,8 +7774,8 @@ public class NaturalPersonAddressTest : TestBase
         var model = new NaturalPersonAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -7769,10 +7787,13 @@ public class NaturalPersonAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new NaturalPersonAddress { City = "x", Line1 = "x" };
+        var model = new NaturalPersonAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
 
-        Assert.Null(model.Country);
-        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -7784,7 +7805,12 @@ public class NaturalPersonAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new NaturalPersonAddress { City = "x", Line1 = "x" };
+        var model = new NaturalPersonAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
 
         model.Validate();
     }
@@ -7795,17 +7821,15 @@ public class NaturalPersonAddressTest : TestBase
         var model = new NaturalPersonAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
-            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
         };
 
-        Assert.Null(model.Country);
-        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -7820,10 +7844,10 @@ public class NaturalPersonAddressTest : TestBase
         var model = new NaturalPersonAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
-            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
@@ -7838,8 +7862,8 @@ public class NaturalPersonAddressTest : TestBase
         var model = new NaturalPersonAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -9120,8 +9144,8 @@ public class TrustTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -9165,8 +9189,8 @@ public class TrustTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -9224,8 +9248,8 @@ public class TrustTest : TestBase
                     Address = new()
                     {
                         City = "x",
-                        Line1 = "x",
                         Country = "x",
+                        Line1 = "x",
                         Line2 = "x",
                         State = "x",
                         Zip = "x",
@@ -9269,8 +9293,8 @@ public class TrustTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -9346,8 +9370,8 @@ public class TrustTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -9391,8 +9415,8 @@ public class TrustTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -9461,8 +9485,8 @@ public class TrustTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -9506,8 +9530,8 @@ public class TrustTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -9569,8 +9593,8 @@ public class TrustTest : TestBase
                     Address = new()
                     {
                         City = "x",
-                        Line1 = "x",
                         Country = "x",
+                        Line1 = "x",
                         Line2 = "x",
                         State = "x",
                         Zip = "x",
@@ -9614,8 +9638,8 @@ public class TrustTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -9691,8 +9715,8 @@ public class TrustTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -9736,8 +9760,8 @@ public class TrustTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -9803,8 +9827,8 @@ public class TrustTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -9878,8 +9902,8 @@ public class TrustTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -9946,8 +9970,8 @@ public class TrustTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -10027,8 +10051,8 @@ public class TrustTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -10101,8 +10125,8 @@ public class TrustTest : TestBase
                         Address = new()
                         {
                             City = "x",
-                            Line1 = "x",
                             Country = "x",
+                            Line1 = "x",
                             Line2 = "x",
                             State = "x",
                             Zip = "x",
@@ -10146,8 +10170,8 @@ public class TrustTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -10439,8 +10463,8 @@ public class TrusteeTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -10483,8 +10507,8 @@ public class TrusteeTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -10535,8 +10559,8 @@ public class TrusteeTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -10590,8 +10614,8 @@ public class TrusteeTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -10641,8 +10665,8 @@ public class TrusteeTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -10693,8 +10717,8 @@ public class TrusteeTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -10791,8 +10815,8 @@ public class TrusteeTest : TestBase
                 Address = new()
                 {
                     City = "x",
-                    Line1 = "x",
                     Country = "x",
+                    Line1 = "x",
                     Line2 = "x",
                     State = "x",
                     Zip = "x",
@@ -10901,8 +10925,8 @@ public class TrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -10941,8 +10965,8 @@ public class TrusteeIndividualTest : TestBase
         TrusteeIndividualAddress expectedAddress = new()
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -10992,8 +11016,8 @@ public class TrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -11046,8 +11070,8 @@ public class TrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -11093,8 +11117,8 @@ public class TrusteeIndividualTest : TestBase
         TrusteeIndividualAddress expectedAddress = new()
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -11144,8 +11168,8 @@ public class TrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -11192,8 +11216,8 @@ public class TrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -11240,8 +11264,8 @@ public class TrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -11287,8 +11311,8 @@ public class TrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -11338,8 +11362,8 @@ public class TrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -11388,8 +11412,8 @@ public class TrusteeIndividualTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -11439,23 +11463,23 @@ public class TrusteeIndividualAddressTest : TestBase
         var model = new TrusteeIndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
         };
 
         string expectedCity = "x";
-        string expectedLine1 = "x";
         string expectedCountry = "x";
+        string expectedLine1 = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, model.City);
-        Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedLine2, model.Line2);
         Assert.Equal(expectedState, model.State);
         Assert.Equal(expectedZip, model.Zip);
@@ -11467,8 +11491,8 @@ public class TrusteeIndividualAddressTest : TestBase
         var model = new TrusteeIndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -11489,8 +11513,8 @@ public class TrusteeIndividualAddressTest : TestBase
         var model = new TrusteeIndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -11504,15 +11528,15 @@ public class TrusteeIndividualAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "x";
-        string expectedLine1 = "x";
         string expectedCountry = "x";
+        string expectedLine1 = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, deserialized.City);
-        Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedLine2, deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
         Assert.Equal(expectedZip, deserialized.Zip);
@@ -11524,8 +11548,8 @@ public class TrusteeIndividualAddressTest : TestBase
         var model = new TrusteeIndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -11537,10 +11561,13 @@ public class TrusteeIndividualAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new TrusteeIndividualAddress { City = "x", Line1 = "x" };
+        var model = new TrusteeIndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
 
-        Assert.Null(model.Country);
-        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -11552,7 +11579,12 @@ public class TrusteeIndividualAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new TrusteeIndividualAddress { City = "x", Line1 = "x" };
+        var model = new TrusteeIndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
 
         model.Validate();
     }
@@ -11563,17 +11595,15 @@ public class TrusteeIndividualAddressTest : TestBase
         var model = new TrusteeIndividualAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
-            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
         };
 
-        Assert.Null(model.Country);
-        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -11588,10 +11618,10 @@ public class TrusteeIndividualAddressTest : TestBase
         var model = new TrusteeIndividualAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
-            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
@@ -11606,8 +11636,8 @@ public class TrusteeIndividualAddressTest : TestBase
         var model = new TrusteeIndividualAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -12438,8 +12468,8 @@ public class GrantorTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -12478,8 +12508,8 @@ public class GrantorTest : TestBase
         GrantorAddress expectedAddress = new()
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -12529,8 +12559,8 @@ public class GrantorTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -12580,8 +12610,8 @@ public class GrantorTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -12627,8 +12657,8 @@ public class GrantorTest : TestBase
         GrantorAddress expectedAddress = new()
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -12678,8 +12708,8 @@ public class GrantorTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -12726,8 +12756,8 @@ public class GrantorTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -12774,8 +12804,8 @@ public class GrantorTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -12821,8 +12851,8 @@ public class GrantorTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -12872,8 +12902,8 @@ public class GrantorTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -12922,8 +12952,8 @@ public class GrantorTest : TestBase
             Address = new()
             {
                 City = "x",
-                Line1 = "x",
                 Country = "x",
+                Line1 = "x",
                 Line2 = "x",
                 State = "x",
                 Zip = "x",
@@ -12973,23 +13003,23 @@ public class GrantorAddressTest : TestBase
         var model = new GrantorAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
         };
 
         string expectedCity = "x";
-        string expectedLine1 = "x";
         string expectedCountry = "x";
+        string expectedLine1 = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, model.City);
-        Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedLine2, model.Line2);
         Assert.Equal(expectedState, model.State);
         Assert.Equal(expectedZip, model.Zip);
@@ -13001,8 +13031,8 @@ public class GrantorAddressTest : TestBase
         var model = new GrantorAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -13023,8 +13053,8 @@ public class GrantorAddressTest : TestBase
         var model = new GrantorAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -13038,15 +13068,15 @@ public class GrantorAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "x";
-        string expectedLine1 = "x";
         string expectedCountry = "x";
+        string expectedLine1 = "x";
         string expectedLine2 = "x";
         string expectedState = "x";
         string expectedZip = "x";
 
         Assert.Equal(expectedCity, deserialized.City);
-        Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedLine2, deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
         Assert.Equal(expectedZip, deserialized.Zip);
@@ -13058,8 +13088,8 @@ public class GrantorAddressTest : TestBase
         var model = new GrantorAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
@@ -13071,10 +13101,13 @@ public class GrantorAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new GrantorAddress { City = "x", Line1 = "x" };
+        var model = new GrantorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
 
-        Assert.Null(model.Country);
-        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -13086,7 +13119,12 @@ public class GrantorAddressTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new GrantorAddress { City = "x", Line1 = "x" };
+        var model = new GrantorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
 
         model.Validate();
     }
@@ -13097,17 +13135,15 @@ public class GrantorAddressTest : TestBase
         var model = new GrantorAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
-            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
         };
 
-        Assert.Null(model.Country);
-        Assert.False(model.RawData.ContainsKey("country"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
         Assert.Null(model.State);
@@ -13122,10 +13158,10 @@ public class GrantorAddressTest : TestBase
         var model = new GrantorAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
 
             // Null should be interpreted as omitted for these properties
-            Country = null,
             Line2 = null,
             State = null,
             Zip = null,
@@ -13140,8 +13176,8 @@ public class GrantorAddressTest : TestBase
         var model = new GrantorAddress
         {
             City = "x",
-            Line1 = "x",
             Country = "x",
+            Line1 = "x",
             Line2 = "x",
             State = "x",
             Zip = "x",
