@@ -792,14 +792,14 @@ public enum EventCategory
     PhysicalCheckUpdated,
 
     /// <summary>
-    /// Occurs whenever a Physical Check Book is created.
+    /// Occurs whenever a Checkbook is created.
     /// </summary>
-    PhysicalCheckBookCreated,
+    CheckbookCreated,
 
     /// <summary>
-    /// Occurs whenever a Physical Check Book is updated.
+    /// Occurs whenever a Checkbook is updated.
     /// </summary>
-    PhysicalCheckBookUpdated,
+    CheckbookUpdated,
 
     /// <summary>
     /// Occurs whenever a Program is created.
@@ -1018,8 +1018,8 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
             "physical_card_profile.updated" => EventCategory.PhysicalCardProfileUpdated,
             "physical_check.created" => EventCategory.PhysicalCheckCreated,
             "physical_check.updated" => EventCategory.PhysicalCheckUpdated,
-            "physical_check_book.created" => EventCategory.PhysicalCheckBookCreated,
-            "physical_check_book.updated" => EventCategory.PhysicalCheckBookUpdated,
+            "checkbook.created" => EventCategory.CheckbookCreated,
+            "checkbook.updated" => EventCategory.CheckbookUpdated,
             "program.created" => EventCategory.ProgramCreated,
             "program.updated" => EventCategory.ProgramUpdated,
             "proof_of_authorization_request.created" =>
@@ -1172,8 +1172,8 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.PhysicalCardProfileUpdated => "physical_card_profile.updated",
                 EventCategory.PhysicalCheckCreated => "physical_check.created",
                 EventCategory.PhysicalCheckUpdated => "physical_check.updated",
-                EventCategory.PhysicalCheckBookCreated => "physical_check_book.created",
-                EventCategory.PhysicalCheckBookUpdated => "physical_check_book.updated",
+                EventCategory.CheckbookCreated => "checkbook.created",
+                EventCategory.CheckbookUpdated => "checkbook.updated",
                 EventCategory.ProgramCreated => "program.created",
                 EventCategory.ProgramUpdated => "program.updated",
                 EventCategory.ProofOfAuthorizationRequestCreated =>
