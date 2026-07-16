@@ -753,6 +753,16 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     PhysicalCheckUpdated,
 
     /// <summary>
+    /// Occurs whenever a Physical Check Book is created.
+    /// </summary>
+    PhysicalCheckBookCreated,
+
+    /// <summary>
+    /// Occurs whenever a Physical Check Book is updated.
+    /// </summary>
+    PhysicalCheckBookUpdated,
+
+    /// <summary>
     /// Occurs whenever a Program is created.
     /// </summary>
     ProgramCreated,
@@ -1046,6 +1056,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckCreated,
             "physical_check.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckUpdated,
+            "physical_check_book.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckBookCreated,
+            "physical_check_book.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckBookUpdated,
             "program.created" => EventSubscriptionSelectedEventCategoryEventCategory.ProgramCreated,
             "program.updated" => EventSubscriptionSelectedEventCategoryEventCategory.ProgramUpdated,
             "proof_of_authorization_request.created" =>
@@ -1284,6 +1298,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "physical_check.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckUpdated =>
                     "physical_check.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckBookCreated =>
+                    "physical_check_book.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckBookUpdated =>
+                    "physical_check_book.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.ProgramCreated =>
                     "program.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.ProgramUpdated =>

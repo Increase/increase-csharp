@@ -792,6 +792,16 @@ public enum EventCategory
     PhysicalCheckUpdated,
 
     /// <summary>
+    /// Occurs whenever a Physical Check Book is created.
+    /// </summary>
+    PhysicalCheckBookCreated,
+
+    /// <summary>
+    /// Occurs whenever a Physical Check Book is updated.
+    /// </summary>
+    PhysicalCheckBookUpdated,
+
+    /// <summary>
     /// Occurs whenever a Program is created.
     /// </summary>
     ProgramCreated,
@@ -1008,6 +1018,8 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
             "physical_card_profile.updated" => EventCategory.PhysicalCardProfileUpdated,
             "physical_check.created" => EventCategory.PhysicalCheckCreated,
             "physical_check.updated" => EventCategory.PhysicalCheckUpdated,
+            "physical_check_book.created" => EventCategory.PhysicalCheckBookCreated,
+            "physical_check_book.updated" => EventCategory.PhysicalCheckBookUpdated,
             "program.created" => EventCategory.ProgramCreated,
             "program.updated" => EventCategory.ProgramUpdated,
             "proof_of_authorization_request.created" =>
@@ -1160,6 +1172,8 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.PhysicalCardProfileUpdated => "physical_card_profile.updated",
                 EventCategory.PhysicalCheckCreated => "physical_check.created",
                 EventCategory.PhysicalCheckUpdated => "physical_check.updated",
+                EventCategory.PhysicalCheckBookCreated => "physical_check_book.created",
+                EventCategory.PhysicalCheckBookUpdated => "physical_check_book.updated",
                 EventCategory.ProgramCreated => "program.created",
                 EventCategory.ProgramUpdated => "program.updated",
                 EventCategory.ProofOfAuthorizationRequestCreated =>
