@@ -753,14 +753,14 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     PhysicalCheckUpdated,
 
     /// <summary>
-    /// Occurs whenever a Physical Check Book is created.
+    /// Occurs whenever a Checkbook is created.
     /// </summary>
-    PhysicalCheckBookCreated,
+    CheckbookCreated,
 
     /// <summary>
-    /// Occurs whenever a Physical Check Book is updated.
+    /// Occurs whenever a Checkbook is updated.
     /// </summary>
-    PhysicalCheckBookUpdated,
+    CheckbookUpdated,
 
     /// <summary>
     /// Occurs whenever a Program is created.
@@ -1056,10 +1056,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckCreated,
             "physical_check.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckUpdated,
-            "physical_check_book.created" =>
-                EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckBookCreated,
-            "physical_check_book.updated" =>
-                EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckBookUpdated,
+            "checkbook.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.CheckbookCreated,
+            "checkbook.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.CheckbookUpdated,
             "program.created" => EventSubscriptionSelectedEventCategoryEventCategory.ProgramCreated,
             "program.updated" => EventSubscriptionSelectedEventCategoryEventCategory.ProgramUpdated,
             "proof_of_authorization_request.created" =>
@@ -1298,10 +1298,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "physical_check.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckUpdated =>
                     "physical_check.updated",
-                EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckBookCreated =>
-                    "physical_check_book.created",
-                EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckBookUpdated =>
-                    "physical_check_book.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.CheckbookCreated =>
+                    "checkbook.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.CheckbookUpdated =>
+                    "checkbook.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.ProgramCreated =>
                     "program.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.ProgramUpdated =>

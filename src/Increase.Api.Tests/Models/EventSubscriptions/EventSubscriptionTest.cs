@@ -576,10 +576,10 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckUpdated
     )]
     [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckBookCreated
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.CheckbookCreated
     )]
     [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckBookUpdated
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.CheckbookUpdated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.ProgramCreated
@@ -951,10 +951,10 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckUpdated
     )]
     [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckBookCreated
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.CheckbookCreated
     )]
     [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckBookUpdated
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.CheckbookUpdated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.ProgramCreated
