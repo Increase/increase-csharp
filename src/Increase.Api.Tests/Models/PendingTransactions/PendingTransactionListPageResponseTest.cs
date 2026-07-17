@@ -19,14 +19,14 @@ public class PendingTransactionListPageResponseTest : TestBase
                 {
                     ID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                     AccountID = "account_in71c4amph0vgo2qllky",
-                    Amount = 100,
+                    Amount = -100,
                     CompletedAt = null,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Currency = PendingTransactions::Currency.Usd,
                     Description = "INVOICE 2468",
-                    HeldAmount = 100,
-                    RouteID = "card_oubs0hwk5rn6knuecxg2",
-                    RouteType = PendingTransactions::RouteType.Card,
+                    HeldAmount = -100,
+                    RouteID = null,
+                    RouteType = null,
                     Source = new()
                     {
                         Category = PendingTransactions::SourceCategory.AchTransferInstruction,
@@ -227,14 +227,14 @@ public class PendingTransactionListPageResponseTest : TestBase
             {
                 ID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                 AccountID = "account_in71c4amph0vgo2qllky",
-                Amount = 100,
+                Amount = -100,
                 CompletedAt = null,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Currency = PendingTransactions::Currency.Usd,
                 Description = "INVOICE 2468",
-                HeldAmount = 100,
-                RouteID = "card_oubs0hwk5rn6knuecxg2",
-                RouteType = PendingTransactions::RouteType.Card,
+                HeldAmount = -100,
+                RouteID = null,
+                RouteType = null,
                 Source = new()
                 {
                     Category = PendingTransactions::SourceCategory.AchTransferInstruction,
@@ -443,14 +443,14 @@ public class PendingTransactionListPageResponseTest : TestBase
                 {
                     ID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                     AccountID = "account_in71c4amph0vgo2qllky",
-                    Amount = 100,
+                    Amount = -100,
                     CompletedAt = null,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Currency = PendingTransactions::Currency.Usd,
                     Description = "INVOICE 2468",
-                    HeldAmount = 100,
-                    RouteID = "card_oubs0hwk5rn6knuecxg2",
-                    RouteType = PendingTransactions::RouteType.Card,
+                    HeldAmount = -100,
+                    RouteID = null,
+                    RouteType = null,
                     Source = new()
                     {
                         Category = PendingTransactions::SourceCategory.AchTransferInstruction,
@@ -666,14 +666,14 @@ public class PendingTransactionListPageResponseTest : TestBase
                 {
                     ID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                     AccountID = "account_in71c4amph0vgo2qllky",
-                    Amount = 100,
+                    Amount = -100,
                     CompletedAt = null,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Currency = PendingTransactions::Currency.Usd,
                     Description = "INVOICE 2468",
-                    HeldAmount = 100,
-                    RouteID = "card_oubs0hwk5rn6knuecxg2",
-                    RouteType = PendingTransactions::RouteType.Card,
+                    HeldAmount = -100,
+                    RouteID = null,
+                    RouteType = null,
                     Source = new()
                     {
                         Category = PendingTransactions::SourceCategory.AchTransferInstruction,
@@ -882,14 +882,14 @@ public class PendingTransactionListPageResponseTest : TestBase
             {
                 ID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                 AccountID = "account_in71c4amph0vgo2qllky",
-                Amount = 100,
+                Amount = -100,
                 CompletedAt = null,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Currency = PendingTransactions::Currency.Usd,
                 Description = "INVOICE 2468",
-                HeldAmount = 100,
-                RouteID = "card_oubs0hwk5rn6knuecxg2",
-                RouteType = PendingTransactions::RouteType.Card,
+                HeldAmount = -100,
+                RouteID = null,
+                RouteType = null,
                 Source = new()
                 {
                     Category = PendingTransactions::SourceCategory.AchTransferInstruction,
@@ -1098,14 +1098,14 @@ public class PendingTransactionListPageResponseTest : TestBase
                 {
                     ID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                     AccountID = "account_in71c4amph0vgo2qllky",
-                    Amount = 100,
+                    Amount = -100,
                     CompletedAt = null,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Currency = PendingTransactions::Currency.Usd,
                     Description = "INVOICE 2468",
-                    HeldAmount = 100,
-                    RouteID = "card_oubs0hwk5rn6knuecxg2",
-                    RouteType = PendingTransactions::RouteType.Card,
+                    HeldAmount = -100,
+                    RouteID = null,
+                    RouteType = null,
                     Source = new()
                     {
                         Category = PendingTransactions::SourceCategory.AchTransferInstruction,
@@ -1314,14 +1314,14 @@ public class PendingTransactionListPageResponseTest : TestBase
                 {
                     ID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                     AccountID = "account_in71c4amph0vgo2qllky",
-                    Amount = 100,
+                    Amount = -100,
                     CompletedAt = null,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Currency = PendingTransactions::Currency.Usd,
                     Description = "INVOICE 2468",
-                    HeldAmount = 100,
-                    RouteID = "card_oubs0hwk5rn6knuecxg2",
-                    RouteType = PendingTransactions::RouteType.Card,
+                    HeldAmount = -100,
+                    RouteID = null,
+                    RouteType = null,
                     Source = new()
                     {
                         Category = PendingTransactions::SourceCategory.AchTransferInstruction,

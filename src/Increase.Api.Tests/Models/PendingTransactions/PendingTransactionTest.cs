@@ -16,14 +16,14 @@ public class PendingTransactionTest : TestBase
         {
             ID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             AccountID = "account_in71c4amph0vgo2qllky",
-            Amount = 100,
+            Amount = -100,
             CompletedAt = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = PendingTransactions::Currency.Usd,
             Description = "INVOICE 2468",
-            HeldAmount = 100,
-            RouteID = "card_oubs0hwk5rn6knuecxg2",
-            RouteType = PendingTransactions::RouteType.Card,
+            HeldAmount = -100,
+            RouteID = null,
+            RouteType = null,
             Source = new()
             {
                 Category = PendingTransactions::SourceCategory.AchTransferInstruction,
@@ -213,15 +213,12 @@ public class PendingTransactionTest : TestBase
 
         string expectedID = "pending_transaction_k1sfetcau2qbvjbzgju4";
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
-        long expectedAmount = 100;
+        long expectedAmount = -100;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         ApiEnum<string, PendingTransactions::Currency> expectedCurrency =
             PendingTransactions::Currency.Usd;
         string expectedDescription = "INVOICE 2468";
-        long expectedHeldAmount = 100;
-        string expectedRouteID = "card_oubs0hwk5rn6knuecxg2";
-        ApiEnum<string, PendingTransactions::RouteType> expectedRouteType =
-            PendingTransactions::RouteType.Card;
+        long expectedHeldAmount = -100;
         PendingTransactions::Source expectedSource = new()
         {
             Category = PendingTransactions::SourceCategory.AchTransferInstruction,
@@ -416,8 +413,8 @@ public class PendingTransactionTest : TestBase
         Assert.Equal(expectedCurrency, model.Currency);
         Assert.Equal(expectedDescription, model.Description);
         Assert.Equal(expectedHeldAmount, model.HeldAmount);
-        Assert.Equal(expectedRouteID, model.RouteID);
-        Assert.Equal(expectedRouteType, model.RouteType);
+        Assert.Null(model.RouteID);
+        Assert.Null(model.RouteType);
         Assert.Equal(expectedSource, model.Source);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedType, model.Type);
@@ -430,14 +427,14 @@ public class PendingTransactionTest : TestBase
         {
             ID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             AccountID = "account_in71c4amph0vgo2qllky",
-            Amount = 100,
+            Amount = -100,
             CompletedAt = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = PendingTransactions::Currency.Usd,
             Description = "INVOICE 2468",
-            HeldAmount = 100,
-            RouteID = "card_oubs0hwk5rn6knuecxg2",
-            RouteType = PendingTransactions::RouteType.Card,
+            HeldAmount = -100,
+            RouteID = null,
+            RouteType = null,
             Source = new()
             {
                 Category = PendingTransactions::SourceCategory.AchTransferInstruction,
@@ -641,14 +638,14 @@ public class PendingTransactionTest : TestBase
         {
             ID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             AccountID = "account_in71c4amph0vgo2qllky",
-            Amount = 100,
+            Amount = -100,
             CompletedAt = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = PendingTransactions::Currency.Usd,
             Description = "INVOICE 2468",
-            HeldAmount = 100,
-            RouteID = "card_oubs0hwk5rn6knuecxg2",
-            RouteType = PendingTransactions::RouteType.Card,
+            HeldAmount = -100,
+            RouteID = null,
+            RouteType = null,
             Source = new()
             {
                 Category = PendingTransactions::SourceCategory.AchTransferInstruction,
@@ -845,15 +842,12 @@ public class PendingTransactionTest : TestBase
 
         string expectedID = "pending_transaction_k1sfetcau2qbvjbzgju4";
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
-        long expectedAmount = 100;
+        long expectedAmount = -100;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         ApiEnum<string, PendingTransactions::Currency> expectedCurrency =
             PendingTransactions::Currency.Usd;
         string expectedDescription = "INVOICE 2468";
-        long expectedHeldAmount = 100;
-        string expectedRouteID = "card_oubs0hwk5rn6knuecxg2";
-        ApiEnum<string, PendingTransactions::RouteType> expectedRouteType =
-            PendingTransactions::RouteType.Card;
+        long expectedHeldAmount = -100;
         PendingTransactions::Source expectedSource = new()
         {
             Category = PendingTransactions::SourceCategory.AchTransferInstruction,
@@ -1048,8 +1042,8 @@ public class PendingTransactionTest : TestBase
         Assert.Equal(expectedCurrency, deserialized.Currency);
         Assert.Equal(expectedDescription, deserialized.Description);
         Assert.Equal(expectedHeldAmount, deserialized.HeldAmount);
-        Assert.Equal(expectedRouteID, deserialized.RouteID);
-        Assert.Equal(expectedRouteType, deserialized.RouteType);
+        Assert.Null(deserialized.RouteID);
+        Assert.Null(deserialized.RouteType);
         Assert.Equal(expectedSource, deserialized.Source);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedType, deserialized.Type);
@@ -1062,14 +1056,14 @@ public class PendingTransactionTest : TestBase
         {
             ID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             AccountID = "account_in71c4amph0vgo2qllky",
-            Amount = 100,
+            Amount = -100,
             CompletedAt = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = PendingTransactions::Currency.Usd,
             Description = "INVOICE 2468",
-            HeldAmount = 100,
-            RouteID = "card_oubs0hwk5rn6knuecxg2",
-            RouteType = PendingTransactions::RouteType.Card,
+            HeldAmount = -100,
+            RouteID = null,
+            RouteType = null,
             Source = new()
             {
                 Category = PendingTransactions::SourceCategory.AchTransferInstruction,
@@ -1267,14 +1261,14 @@ public class PendingTransactionTest : TestBase
         {
             ID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             AccountID = "account_in71c4amph0vgo2qllky",
-            Amount = 100,
+            Amount = -100,
             CompletedAt = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = PendingTransactions::Currency.Usd,
             Description = "INVOICE 2468",
-            HeldAmount = 100,
-            RouteID = "card_oubs0hwk5rn6knuecxg2",
-            RouteType = PendingTransactions::RouteType.Card,
+            HeldAmount = -100,
+            RouteID = null,
+            RouteType = null,
             Source = new()
             {
                 Category = PendingTransactions::SourceCategory.AchTransferInstruction,
