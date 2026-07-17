@@ -6205,8 +6205,8 @@ class TrusteeIndividualIdentificationPassportFromRaw
 public sealed record class Grantor : JsonModel
 {
     /// <summary>
-    /// The individual's physical address. Mail receiving locations like PO Boxes
-    /// and PMB's are disallowed.
+    /// The grantor's physical address. Mail receiving locations like PO Boxes and
+    /// PMB's are disallowed.
     /// </summary>
     public required GrantorAddress Address
     {
@@ -6219,7 +6219,7 @@ public sealed record class Grantor : JsonModel
     }
 
     /// <summary>
-    /// The person's date of birth in YYYY-MM-DD format.
+    /// The grantor's date of birth in YYYY-MM-DD format.
     /// </summary>
     public required string DateOfBirth
     {
@@ -6245,7 +6245,7 @@ public sealed record class Grantor : JsonModel
     }
 
     /// <summary>
-    /// The person's legal name.
+    /// The grantor's legal name.
     /// </summary>
     public required string Name
     {
@@ -6326,8 +6326,8 @@ class GrantorFromRaw : IFromRawJson<Grantor>
 }
 
 /// <summary>
-/// The individual's physical address. Mail receiving locations like PO Boxes and
-/// PMB's are disallowed.
+/// The grantor's physical address. Mail receiving locations like PO Boxes and PMB's
+/// are disallowed.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<GrantorAddress, GrantorAddressFromRaw>))]
 public sealed record class GrantorAddress : JsonModel
