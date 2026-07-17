@@ -89,6 +89,9 @@ public class CheckTransferListPageResponseTest : TestBase
                         [
                             new()
                             {
+                                CarrierEstimatedDeliveryAt = DateTimeOffset.Parse(
+                                    "2019-12-27T18:11:19.117Z"
+                                ),
                                 Category = CheckTransfers::TrackingUpdateCategory.InTransit,
                                 Country = "country",
                                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -204,6 +207,9 @@ public class CheckTransferListPageResponseTest : TestBase
                     [
                         new()
                         {
+                            CarrierEstimatedDeliveryAt = DateTimeOffset.Parse(
+                                "2019-12-27T18:11:19.117Z"
+                            ),
                             Category = CheckTransfers::TrackingUpdateCategory.InTransit,
                             Country = "country",
                             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -332,6 +338,9 @@ public class CheckTransferListPageResponseTest : TestBase
                         [
                             new()
                             {
+                                CarrierEstimatedDeliveryAt = DateTimeOffset.Parse(
+                                    "2019-12-27T18:11:19.117Z"
+                                ),
                                 Category = CheckTransfers::TrackingUpdateCategory.InTransit,
                                 Country = "country",
                                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -463,6 +472,9 @@ public class CheckTransferListPageResponseTest : TestBase
                         [
                             new()
                             {
+                                CarrierEstimatedDeliveryAt = DateTimeOffset.Parse(
+                                    "2019-12-27T18:11:19.117Z"
+                                ),
                                 Category = CheckTransfers::TrackingUpdateCategory.InTransit,
                                 Country = "country",
                                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -586,6 +598,9 @@ public class CheckTransferListPageResponseTest : TestBase
                     [
                         new()
                         {
+                            CarrierEstimatedDeliveryAt = DateTimeOffset.Parse(
+                                "2019-12-27T18:11:19.117Z"
+                            ),
                             Category = CheckTransfers::TrackingUpdateCategory.InTransit,
                             Country = "country",
                             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -714,6 +729,9 @@ public class CheckTransferListPageResponseTest : TestBase
                         [
                             new()
                             {
+                                CarrierEstimatedDeliveryAt = DateTimeOffset.Parse(
+                                    "2019-12-27T18:11:19.117Z"
+                                ),
                                 Category = CheckTransfers::TrackingUpdateCategory.InTransit,
                                 Country = "country",
                                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -838,6 +856,9 @@ public class CheckTransferListPageResponseTest : TestBase
                         [
                             new()
                             {
+                                CarrierEstimatedDeliveryAt = DateTimeOffset.Parse(
+                                    "2019-12-27T18:11:19.117Z"
+                                ),
                                 Category = CheckTransfers::TrackingUpdateCategory.InTransit,
                                 Country = "country",
                                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),

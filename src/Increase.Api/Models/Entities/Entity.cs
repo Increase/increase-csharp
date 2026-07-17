@@ -3763,33 +3763,33 @@ sealed class EntityTrustCategoryConverter : JsonConverter<EntityTrustCategory>
 public sealed record class EntityTrustGrantor : JsonModel
 {
     /// <summary>
-    /// The person's address.
+    /// The grantor's address.
     /// </summary>
-    public required EntityTrustGrantorAddress Address
+    public required EntityTrustGrantorAddress? Address
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<EntityTrustGrantorAddress>("address");
+            return this._rawData.GetNullableClass<EntityTrustGrantorAddress>("address");
         }
         init { this._rawData.Set("address", value); }
     }
 
     /// <summary>
-    /// The person's date of birth in YYYY-MM-DD format.
+    /// The grantor's date of birth in YYYY-MM-DD format.
     /// </summary>
-    public required string DateOfBirth
+    public required string? DateOfBirth
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("date_of_birth");
+            return this._rawData.GetNullableClass<string>("date_of_birth");
         }
         init { this._rawData.Set("date_of_birth", value); }
     }
 
     /// <summary>
-    /// A means of verifying the person's identity.
+    /// A means of verifying the grantor's identity.
     /// </summary>
     public required EntityTrustGrantorIdentification? Identification
     {
@@ -3804,7 +3804,7 @@ public sealed record class EntityTrustGrantor : JsonModel
     }
 
     /// <summary>
-    /// The person's legal name.
+    /// The grantor's legal name.
     /// </summary>
     public required string Name
     {
@@ -3819,7 +3819,7 @@ public sealed record class EntityTrustGrantor : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
-        this.Address.Validate();
+        this.Address?.Validate();
         _ = this.DateOfBirth;
         this.Identification?.Validate();
         _ = this.Name;
@@ -3863,7 +3863,7 @@ class EntityTrustGrantorFromRaw : IFromRawJson<EntityTrustGrantor>
 }
 
 /// <summary>
-/// The person's address.
+/// The grantor's address.
 /// </summary>
 [JsonConverter(
     typeof(JsonModelConverter<EntityTrustGrantorAddress, EntityTrustGrantorAddressFromRaw>)
@@ -3999,7 +3999,7 @@ class EntityTrustGrantorAddressFromRaw : IFromRawJson<EntityTrustGrantorAddress>
 }
 
 /// <summary>
-/// A means of verifying the person's identity.
+/// A means of verifying the grantor's identity.
 /// </summary>
 [JsonConverter(
     typeof(JsonModelConverter<
@@ -4010,7 +4010,7 @@ class EntityTrustGrantorAddressFromRaw : IFromRawJson<EntityTrustGrantorAddress>
 public sealed record class EntityTrustGrantorIdentification : JsonModel
 {
     /// <summary>
-    /// A method that can be used to verify the individual's identity.
+    /// A method that can be used to verify the grantor's identity.
     /// </summary>
     public required ApiEnum<string, EntityTrustGrantorIdentificationMethod> Method
     {
@@ -4026,7 +4026,7 @@ public sealed record class EntityTrustGrantorIdentification : JsonModel
 
     /// <summary>
     /// The last 4 digits of the identification number that can be used to verify
-    /// the individual's identity.
+    /// the grantor's identity.
     /// </summary>
     public required string NumberLast4
     {
@@ -4086,7 +4086,7 @@ class EntityTrustGrantorIdentificationFromRaw : IFromRawJson<EntityTrustGrantorI
 }
 
 /// <summary>
-/// A method that can be used to verify the individual's identity.
+/// A method that can be used to verify the grantor's identity.
 /// </summary>
 [JsonConverter(typeof(EntityTrustGrantorIdentificationMethodConverter))]
 public enum EntityTrustGrantorIdentificationMethod

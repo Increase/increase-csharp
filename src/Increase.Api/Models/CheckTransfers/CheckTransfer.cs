@@ -1955,6 +1955,22 @@ class CheckTransferPhysicalCheckSignatureFromRaw : IFromRawJson<CheckTransferPhy
 public sealed record class TrackingUpdate : JsonModel
 {
     /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time when
+    /// the carrier expects the check to be delivered.
+    /// </summary>
+    public required System::DateTimeOffset? CarrierEstimatedDeliveryAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<System::DateTimeOffset>(
+                "carrier_estimated_delivery_at"
+            );
+        }
+        init { this._rawData.Set("carrier_estimated_delivery_at", value); }
+    }
+
+    /// <summary>
     /// The type of tracking event.
     /// </summary>
     public required ApiEnum<string, TrackingUpdateCategory> Category
@@ -2012,6 +2028,7 @@ public sealed record class TrackingUpdate : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.CarrierEstimatedDeliveryAt;
         this.Category.Validate();
         _ = this.Country;
         _ = this.CreatedAt;
