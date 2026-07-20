@@ -1819,12 +1819,14 @@ class CheckTransferPhysicalCheckReturnAddressFromRaw
 public enum CheckTransferPhysicalCheckShippingMethod
 {
     /// <summary>
-    /// USPS First Class
+    /// Ship the checks via USPS First Class, which supports a maximum of 1000 pages
+    /// (checks and attachments combined).
     /// </summary>
     UspsFirstClass,
 
     /// <summary>
-    /// FedEx Overnight
+    /// Ship the checks via FedEx Overnight, which supports a maximum of 50 pages
+    /// (checks and attachments combined).
     /// </summary>
     FedexOvernight,
 }
