@@ -645,6 +645,16 @@ public enum In
     InboundWireTransferUpdated,
 
     /// <summary>
+    /// Occurs whenever an Interest Rate Plan is created.
+    /// </summary>
+    InterestRatePlanCreated,
+
+    /// <summary>
+    /// Occurs whenever an Interest Rate Plan is updated.
+    /// </summary>
+    InterestRatePlanUpdated,
+
+    /// <summary>
     /// Occurs whenever an IntraFi Account Enrollment is created.
     /// </summary>
     IntrafiAccountEnrollmentCreated,
@@ -974,6 +984,8 @@ sealed class InConverter : JsonConverter<In>
             "inbound_wire_drawdown_request.created" => In.InboundWireDrawdownRequestCreated,
             "inbound_wire_transfer.created" => In.InboundWireTransferCreated,
             "inbound_wire_transfer.updated" => In.InboundWireTransferUpdated,
+            "interest_rate_plan.created" => In.InterestRatePlanCreated,
+            "interest_rate_plan.updated" => In.InterestRatePlanUpdated,
             "intrafi_account_enrollment.created" => In.IntrafiAccountEnrollmentCreated,
             "intrafi_account_enrollment.updated" => In.IntrafiAccountEnrollmentUpdated,
             "intrafi_exclusion.created" => In.IntrafiExclusionCreated,
@@ -1113,6 +1125,8 @@ sealed class InConverter : JsonConverter<In>
                 In.InboundWireDrawdownRequestCreated => "inbound_wire_drawdown_request.created",
                 In.InboundWireTransferCreated => "inbound_wire_transfer.created",
                 In.InboundWireTransferUpdated => "inbound_wire_transfer.updated",
+                In.InterestRatePlanCreated => "interest_rate_plan.created",
+                In.InterestRatePlanUpdated => "interest_rate_plan.updated",
                 In.IntrafiAccountEnrollmentCreated => "intrafi_account_enrollment.created",
                 In.IntrafiAccountEnrollmentUpdated => "intrafi_account_enrollment.updated",
                 In.IntrafiExclusionCreated => "intrafi_exclusion.created",
