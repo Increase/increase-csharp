@@ -662,6 +662,16 @@ public enum EventCategory
     InboundWireTransferUpdated,
 
     /// <summary>
+    /// Occurs whenever an Interest Rate Plan is created.
+    /// </summary>
+    InterestRatePlanCreated,
+
+    /// <summary>
+    /// Occurs whenever an Interest Rate Plan is updated.
+    /// </summary>
+    InterestRatePlanUpdated,
+
+    /// <summary>
     /// Occurs whenever an IntraFi Account Enrollment is created.
     /// </summary>
     IntrafiAccountEnrollmentCreated,
@@ -992,6 +1002,8 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.InboundWireDrawdownRequestCreated,
             "inbound_wire_transfer.created" => EventCategory.InboundWireTransferCreated,
             "inbound_wire_transfer.updated" => EventCategory.InboundWireTransferUpdated,
+            "interest_rate_plan.created" => EventCategory.InterestRatePlanCreated,
+            "interest_rate_plan.updated" => EventCategory.InterestRatePlanUpdated,
             "intrafi_account_enrollment.created" => EventCategory.IntrafiAccountEnrollmentCreated,
             "intrafi_account_enrollment.updated" => EventCategory.IntrafiAccountEnrollmentUpdated,
             "intrafi_exclusion.created" => EventCategory.IntrafiExclusionCreated,
@@ -1144,6 +1156,8 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                     "inbound_wire_drawdown_request.created",
                 EventCategory.InboundWireTransferCreated => "inbound_wire_transfer.created",
                 EventCategory.InboundWireTransferUpdated => "inbound_wire_transfer.updated",
+                EventCategory.InterestRatePlanCreated => "interest_rate_plan.created",
+                EventCategory.InterestRatePlanUpdated => "interest_rate_plan.updated",
                 EventCategory.IntrafiAccountEnrollmentCreated =>
                     "intrafi_account_enrollment.created",
                 EventCategory.IntrafiAccountEnrollmentUpdated =>
