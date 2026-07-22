@@ -19,6 +19,7 @@ public class RoutingNumberListPageResponseTest : TestBase
                     AchTransfers = RoutingNumberListResponseAchTransfers.Supported,
                     FednowTransfers = RoutingNumberListResponseFednowTransfers.Supported,
                     Name = "First Bank of the United States",
+                    RealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported,
                     RealTimePaymentsTransfers =
                         RoutingNumberListResponseRealTimePaymentsTransfers.Supported,
                     RoutingNumber = "021000021",
@@ -36,6 +37,7 @@ public class RoutingNumberListPageResponseTest : TestBase
                 AchTransfers = RoutingNumberListResponseAchTransfers.Supported,
                 FednowTransfers = RoutingNumberListResponseFednowTransfers.Supported,
                 Name = "First Bank of the United States",
+                RealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported,
                 RealTimePaymentsTransfers =
                     RoutingNumberListResponseRealTimePaymentsTransfers.Supported,
                 RoutingNumber = "021000021",
@@ -65,6 +67,7 @@ public class RoutingNumberListPageResponseTest : TestBase
                     AchTransfers = RoutingNumberListResponseAchTransfers.Supported,
                     FednowTransfers = RoutingNumberListResponseFednowTransfers.Supported,
                     Name = "First Bank of the United States",
+                    RealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported,
                     RealTimePaymentsTransfers =
                         RoutingNumberListResponseRealTimePaymentsTransfers.Supported,
                     RoutingNumber = "021000021",
@@ -96,6 +99,7 @@ public class RoutingNumberListPageResponseTest : TestBase
                     AchTransfers = RoutingNumberListResponseAchTransfers.Supported,
                     FednowTransfers = RoutingNumberListResponseFednowTransfers.Supported,
                     Name = "First Bank of the United States",
+                    RealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported,
                     RealTimePaymentsTransfers =
                         RoutingNumberListResponseRealTimePaymentsTransfers.Supported,
                     RoutingNumber = "021000021",
@@ -120,6 +124,7 @@ public class RoutingNumberListPageResponseTest : TestBase
                 AchTransfers = RoutingNumberListResponseAchTransfers.Supported,
                 FednowTransfers = RoutingNumberListResponseFednowTransfers.Supported,
                 Name = "First Bank of the United States",
+                RealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported,
                 RealTimePaymentsTransfers =
                     RoutingNumberListResponseRealTimePaymentsTransfers.Supported,
                 RoutingNumber = "021000021",
@@ -149,6 +154,7 @@ public class RoutingNumberListPageResponseTest : TestBase
                     AchTransfers = RoutingNumberListResponseAchTransfers.Supported,
                     FednowTransfers = RoutingNumberListResponseFednowTransfers.Supported,
                     Name = "First Bank of the United States",
+                    RealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported,
                     RealTimePaymentsTransfers =
                         RoutingNumberListResponseRealTimePaymentsTransfers.Supported,
                     RoutingNumber = "021000021",
@@ -174,6 +180,7 @@ public class RoutingNumberListPageResponseTest : TestBase
                     AchTransfers = RoutingNumberListResponseAchTransfers.Supported,
                     FednowTransfers = RoutingNumberListResponseFednowTransfers.Supported,
                     Name = "First Bank of the United States",
+                    RealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported,
                     RealTimePaymentsTransfers =
                         RoutingNumberListResponseRealTimePaymentsTransfers.Supported,
                     RoutingNumber = "021000021",
