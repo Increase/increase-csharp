@@ -102,6 +102,7 @@ public class BankTest : TestBase
     [InlineData(Bank.CoreBank)]
     [InlineData(Bank.FirstInternetBank)]
     [InlineData(Bank.GrasshopperBank)]
+    [InlineData(Bank.IncreaseBank)]
     public void Validation_Works(Bank rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -125,6 +126,7 @@ public class BankTest : TestBase
     [InlineData(Bank.CoreBank)]
     [InlineData(Bank.FirstInternetBank)]
     [InlineData(Bank.GrasshopperBank)]
+    [InlineData(Bank.IncreaseBank)]
     public void SerializationRoundtrip_Works(Bank rawValue)
     {
         // force implicit conversion because Theory can't do that for us

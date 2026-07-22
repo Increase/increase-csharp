@@ -438,20 +438,28 @@ public sealed record class Address : JsonModel
     /// <summary>
     /// Unstructured address lines.
     /// </summary>
-    public required Unstructured Unstructured
+    public Unstructured? Unstructured
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<Unstructured>("unstructured");
+            return this._rawData.GetNullableClass<Unstructured>("unstructured");
         }
-        init { this._rawData.Set("unstructured", value); }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("unstructured", value);
+        }
     }
 
     /// <inheritdoc/>
     public override void Validate()
     {
-        this.Unstructured.Validate();
+        this.Unstructured?.Validate();
     }
 
     public Address() { }
@@ -479,13 +487,6 @@ public sealed record class Address : JsonModel
     public static Address FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-
-    [SetsRequiredMembers]
-    public Address(Unstructured unstructured)
-        : this()
-    {
-        this.Unstructured = unstructured;
     }
 }
 
@@ -1029,20 +1030,28 @@ public sealed record class DebtorAddress : JsonModel
     /// <summary>
     /// Unstructured address lines.
     /// </summary>
-    public required DebtorAddressUnstructured Unstructured
+    public DebtorAddressUnstructured? Unstructured
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<DebtorAddressUnstructured>("unstructured");
+            return this._rawData.GetNullableClass<DebtorAddressUnstructured>("unstructured");
         }
-        init { this._rawData.Set("unstructured", value); }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("unstructured", value);
+        }
     }
 
     /// <inheritdoc/>
     public override void Validate()
     {
-        this.Unstructured.Validate();
+        this.Unstructured?.Validate();
     }
 
     public DebtorAddress() { }
@@ -1070,13 +1079,6 @@ public sealed record class DebtorAddress : JsonModel
     public static DebtorAddress FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-
-    [SetsRequiredMembers]
-    public DebtorAddress(DebtorAddressUnstructured unstructured)
-        : this()
-    {
-        this.Unstructured = unstructured;
     }
 }
 
