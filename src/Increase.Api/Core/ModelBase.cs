@@ -1282,6 +1282,7 @@ public abstract record class ModelBase
                 string,
                 RoutingNumbers::RoutingNumberListResponseFednowTransfers
             >(),
+            new ApiEnumConverter<string, RoutingNumbers::RealTimePaymentsRequestForPayment>(),
             new ApiEnumConverter<
                 string,
                 RoutingNumbers::RoutingNumberListResponseRealTimePaymentsTransfers
