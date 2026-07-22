@@ -425,7 +425,7 @@ public sealed record class WireDrawdownRequestCreditorAddress : JsonModel
     }
 
     /// <summary>
-    /// The ZIP code of the address.
+    /// The postal code of the address.
     /// </summary>
     public required string? PostalCode
     {
@@ -566,7 +566,7 @@ public sealed record class WireDrawdownRequestDebtorAddress : JsonModel
     }
 
     /// <summary>
-    /// The ZIP code of the address.
+    /// The postal code of the address.
     /// </summary>
     public required string? PostalCode
     {
