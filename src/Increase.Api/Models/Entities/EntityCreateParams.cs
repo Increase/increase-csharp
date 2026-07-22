@@ -1864,7 +1864,7 @@ public sealed record class LegalIdentifier : JsonModel
     }
 
     /// <summary>
-    /// The category of the legal identifier. If not provided, the default is `us_employer_identification_number`.
+    /// The category of the legal identifier.
     /// </summary>
     public ApiEnum<string, Category>? Category
     {
@@ -1934,7 +1934,7 @@ class LegalIdentifierFromRaw : IFromRawJson<LegalIdentifier>
 }
 
 /// <summary>
-/// The category of the legal identifier. If not provided, the default is `us_employer_identification_number`.
+/// The category of the legal identifier.
 /// </summary>
 [JsonConverter(typeof(CategoryConverter))]
 public enum Category

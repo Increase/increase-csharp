@@ -12,7 +12,9 @@ using System = System;
 namespace Increase.Api.Models.CheckTransfers;
 
 /// <summary>
-/// Stop payment on a Check Transfer
+/// Request a stop payment on a Check Transfer. This can be done any time before the
+/// check is deposited. A stopped check cannot be deposited and the funds held by
+/// the transfer's Pending Transaction are released back to the account's available balance.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that

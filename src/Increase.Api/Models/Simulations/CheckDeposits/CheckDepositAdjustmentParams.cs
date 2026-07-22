@@ -55,8 +55,7 @@ public record class CheckDepositAdjustmentParams : ParamsBase
     }
 
     /// <summary>
-    /// The reason for the adjustment. Defaults to `non_conforming_item`, which is
-    /// often used for a low quality image that the recipient wasn't able to handle.
+    /// The reason for the adjustment.
     /// </summary>
     public ApiEnum<string, Reason>? Reason
     {
@@ -198,8 +197,7 @@ public record class CheckDepositAdjustmentParams : ParamsBase
 }
 
 /// <summary>
-/// The reason for the adjustment. Defaults to `non_conforming_item`, which is often
-/// used for a low quality image that the recipient wasn't able to handle.
+/// The reason for the adjustment.
 /// </summary>
 [JsonConverter(typeof(ReasonConverter))]
 public enum Reason

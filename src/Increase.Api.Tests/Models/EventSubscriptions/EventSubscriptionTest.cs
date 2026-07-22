@@ -498,6 +498,12 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InboundWireTransferUpdated
     )]
     [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InterestRatePlanCreated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InterestRatePlanUpdated
+    )]
+    [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.IntrafiAccountEnrollmentCreated
     )]
     [InlineData(
@@ -871,6 +877,12 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InboundWireTransferUpdated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InterestRatePlanCreated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.InterestRatePlanUpdated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.IntrafiAccountEnrollmentCreated
