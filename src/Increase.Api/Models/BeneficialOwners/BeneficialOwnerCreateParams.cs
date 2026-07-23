@@ -359,6 +359,8 @@ public sealed record class Address : JsonModel
 
     /// <summary>
     /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
     /// </summary>
     public required string Country
     {
@@ -501,6 +503,8 @@ public sealed record class Identification : JsonModel
 {
     /// <summary>
     /// A method that can be used to verify the individual's identity.
+    ///
+    /// <para>Defaults to `social_security_number`.</para>
     /// </summary>
     public required ApiEnum<string, Method> Method
     {

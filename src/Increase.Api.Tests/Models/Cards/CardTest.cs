@@ -58,6 +58,12 @@ public class CardTest : TestBase
                 State = "NY",
             },
             Bin = "42424242",
+            CardholderName = new()
+            {
+                First = "Ian",
+                Last = "Crease",
+                Middle = null,
+            },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Office Expenses",
             DigitalWallet = new()
@@ -119,6 +125,12 @@ public class CardTest : TestBase
             State = "NY",
         };
         string expectedBin = "42424242";
+        Cards::CardCardholderName expectedCardholderName = new()
+        {
+            First = "Ian",
+            Last = "Crease",
+            Middle = null,
+        };
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedDescription = "Office Expenses";
         Cards::CardDigitalWallet expectedDigitalWallet = new()
@@ -138,6 +150,7 @@ public class CardTest : TestBase
         Assert.Equal(expectedAuthorizationControls, model.AuthorizationControls);
         Assert.Equal(expectedBillingAddress, model.BillingAddress);
         Assert.Equal(expectedBin, model.Bin);
+        Assert.Equal(expectedCardholderName, model.CardholderName);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
         Assert.Equal(expectedDescription, model.Description);
         Assert.Equal(expectedDigitalWallet, model.DigitalWallet);
@@ -199,6 +212,12 @@ public class CardTest : TestBase
                 State = "NY",
             },
             Bin = "42424242",
+            CardholderName = new()
+            {
+                First = "Ian",
+                Last = "Crease",
+                Middle = null,
+            },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Office Expenses",
             DigitalWallet = new()
@@ -274,6 +293,12 @@ public class CardTest : TestBase
                 State = "NY",
             },
             Bin = "42424242",
+            CardholderName = new()
+            {
+                First = "Ian",
+                Last = "Crease",
+                Middle = null,
+            },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Office Expenses",
             DigitalWallet = new()
@@ -342,6 +367,12 @@ public class CardTest : TestBase
             State = "NY",
         };
         string expectedBin = "42424242";
+        Cards::CardCardholderName expectedCardholderName = new()
+        {
+            First = "Ian",
+            Last = "Crease",
+            Middle = null,
+        };
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedDescription = "Office Expenses";
         Cards::CardDigitalWallet expectedDigitalWallet = new()
@@ -361,6 +392,7 @@ public class CardTest : TestBase
         Assert.Equal(expectedAuthorizationControls, deserialized.AuthorizationControls);
         Assert.Equal(expectedBillingAddress, deserialized.BillingAddress);
         Assert.Equal(expectedBin, deserialized.Bin);
+        Assert.Equal(expectedCardholderName, deserialized.CardholderName);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
         Assert.Equal(expectedDescription, deserialized.Description);
         Assert.Equal(expectedDigitalWallet, deserialized.DigitalWallet);
@@ -422,6 +454,12 @@ public class CardTest : TestBase
                 State = "NY",
             },
             Bin = "42424242",
+            CardholderName = new()
+            {
+                First = "Ian",
+                Last = "Crease",
+                Middle = null,
+            },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Office Expenses",
             DigitalWallet = new()
@@ -491,6 +529,12 @@ public class CardTest : TestBase
                 State = "NY",
             },
             Bin = "42424242",
+            CardholderName = new()
+            {
+                First = "Ian",
+                Last = "Crease",
+                Middle = null,
+            },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Office Expenses",
             DigitalWallet = new()
@@ -2742,6 +2786,101 @@ public class CardBillingAddressTest : TestBase
         };
 
         Cards::CardBillingAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardCardholderNameTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::CardCardholderName
+        {
+            First = "first",
+            Last = "last",
+            Middle = "middle",
+        };
+
+        string expectedFirst = "first";
+        string expectedLast = "last";
+        string expectedMiddle = "middle";
+
+        Assert.Equal(expectedFirst, model.First);
+        Assert.Equal(expectedLast, model.Last);
+        Assert.Equal(expectedMiddle, model.Middle);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::CardCardholderName
+        {
+            First = "first",
+            Last = "last",
+            Middle = "middle",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::CardCardholderName>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::CardCardholderName
+        {
+            First = "first",
+            Last = "last",
+            Middle = "middle",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::CardCardholderName>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedFirst = "first";
+        string expectedLast = "last";
+        string expectedMiddle = "middle";
+
+        Assert.Equal(expectedFirst, deserialized.First);
+        Assert.Equal(expectedLast, deserialized.Last);
+        Assert.Equal(expectedMiddle, deserialized.Middle);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::CardCardholderName
+        {
+            First = "first",
+            Last = "last",
+            Middle = "middle",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::CardCardholderName
+        {
+            First = "first",
+            Last = "last",
+            Middle = "middle",
+        };
+
+        Cards::CardCardholderName copied = new(model);
 
         Assert.Equal(model, copied);
     }
