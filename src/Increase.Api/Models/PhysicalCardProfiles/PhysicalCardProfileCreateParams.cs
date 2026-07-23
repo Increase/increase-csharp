@@ -26,7 +26,9 @@ public record class PhysicalCardProfileCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The identifier of the File containing the physical card's carrier image.
+    /// The identifier of the File containing the physical card's carrier image. This
+    /// must have `purpose: physical_card_carrier` and be a 2550x3300 pixel PNG with
+    /// a density of 300 dots per inch (DPI).
     /// </summary>
     public required string CarrierImageFileID
     {
@@ -65,7 +67,9 @@ public record class PhysicalCardProfileCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The identifier of the File containing the physical card's front image.
+    /// The identifier of the File containing the physical card's front image. This
+    /// must have `purpose: physical_card_front` and be a 2100x1344 pixel PNG with
+    /// a density of 600 dots per inch (DPI).
     /// </summary>
     public required string FrontImageFileID
     {

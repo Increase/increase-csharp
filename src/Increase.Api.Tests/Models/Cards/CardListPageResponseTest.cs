@@ -69,6 +69,12 @@ public class CardListPageResponseTest : TestBase
                         State = "NY",
                     },
                     Bin = "42424242",
+                    CardholderName = new()
+                    {
+                        First = "Ian",
+                        Last = "Crease",
+                        Middle = null,
+                    },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Office Expenses",
                     DigitalWallet = new()
@@ -145,6 +151,12 @@ public class CardListPageResponseTest : TestBase
                     State = "NY",
                 },
                 Bin = "42424242",
+                CardholderName = new()
+                {
+                    First = "Ian",
+                    Last = "Crease",
+                    Middle = null,
+                },
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Description = "Office Expenses",
                 DigitalWallet = new()
@@ -233,6 +245,12 @@ public class CardListPageResponseTest : TestBase
                         State = "NY",
                     },
                     Bin = "42424242",
+                    CardholderName = new()
+                    {
+                        First = "Ian",
+                        Last = "Crease",
+                        Middle = null,
+                    },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Office Expenses",
                     DigitalWallet = new()
@@ -323,6 +341,12 @@ public class CardListPageResponseTest : TestBase
                         State = "NY",
                     },
                     Bin = "42424242",
+                    CardholderName = new()
+                    {
+                        First = "Ian",
+                        Last = "Crease",
+                        Middle = null,
+                    },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Office Expenses",
                     DigitalWallet = new()
@@ -406,6 +430,12 @@ public class CardListPageResponseTest : TestBase
                     State = "NY",
                 },
                 Bin = "42424242",
+                CardholderName = new()
+                {
+                    First = "Ian",
+                    Last = "Crease",
+                    Middle = null,
+                },
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Description = "Office Expenses",
                 DigitalWallet = new()
@@ -494,6 +524,12 @@ public class CardListPageResponseTest : TestBase
                         State = "NY",
                     },
                     Bin = "42424242",
+                    CardholderName = new()
+                    {
+                        First = "Ian",
+                        Last = "Crease",
+                        Middle = null,
+                    },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Office Expenses",
                     DigitalWallet = new()
@@ -578,6 +614,12 @@ public class CardListPageResponseTest : TestBase
                         State = "NY",
                     },
                     Bin = "42424242",
+                    CardholderName = new()
+                    {
+                        First = "Ian",
+                        Last = "Crease",
+                        Middle = null,
+                    },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Office Expenses",
                     DigitalWallet = new()
