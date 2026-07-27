@@ -623,6 +623,16 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     InboundWireTransferUpdated,
 
     /// <summary>
+    /// Occurs whenever an Interest Rate Plan is created.
+    /// </summary>
+    InterestRatePlanCreated,
+
+    /// <summary>
+    /// Occurs whenever an Interest Rate Plan is updated.
+    /// </summary>
+    InterestRatePlanUpdated,
+
+    /// <summary>
     /// Occurs whenever an IntraFi Account Enrollment is created.
     /// </summary>
     IntrafiAccountEnrollmentCreated,
@@ -1006,6 +1016,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.InboundWireTransferCreated,
             "inbound_wire_transfer.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.InboundWireTransferUpdated,
+            "interest_rate_plan.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.InterestRatePlanCreated,
+            "interest_rate_plan.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.InterestRatePlanUpdated,
             "intrafi_account_enrollment.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.IntrafiAccountEnrollmentCreated,
             "intrafi_account_enrollment.updated" =>
@@ -1246,6 +1260,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "inbound_wire_transfer.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.InboundWireTransferUpdated =>
                     "inbound_wire_transfer.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.InterestRatePlanCreated =>
+                    "interest_rate_plan.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.InterestRatePlanUpdated =>
+                    "interest_rate_plan.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.IntrafiAccountEnrollmentCreated =>
                     "intrafi_account_enrollment.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.IntrafiAccountEnrollmentUpdated =>
