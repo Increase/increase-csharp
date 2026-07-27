@@ -173,6 +173,8 @@ public record class AchPrenotificationCreateParams : ParamsBase
 
     /// <summary>
     /// Whether the Prenotification is for a future debit or credit.
+    ///
+    /// <para>Defaults to `debit`.</para>
     /// </summary>
     public ApiEnum<string, CreditDebitIndicator>? CreditDebitIndicator
     {
@@ -261,6 +263,8 @@ public record class AchPrenotificationCreateParams : ParamsBase
     /// <summary>
     /// The [Standard Entry Class (SEC) code](/documentation/ach-standard-entry-class-codes)
     /// to use for the ACH Prenotification.
+    ///
+    /// <para>Defaults to `corporate_credit_or_debit`.</para>
     /// </summary>
     public ApiEnum<string, StandardEntryClassCode>? StandardEntryClassCode
     {

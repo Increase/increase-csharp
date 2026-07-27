@@ -583,6 +583,8 @@ public sealed record class EntityUpdateParamsCorporationAddress : JsonModel
 
     /// <summary>
     /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
     /// </summary>
     public required string Country
     {
@@ -751,6 +753,8 @@ public sealed record class EntityUpdateParamsCorporationLegalIdentifier : JsonMo
 
     /// <summary>
     /// The category of the legal identifier.
+    ///
+    /// <para>Defaults to `us_employer_identification_number`.</para>
     /// </summary>
     public ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory>? Category
     {
@@ -1311,6 +1315,8 @@ public sealed record class EntityUpdateParamsNaturalPersonAddress : JsonModel
 
     /// <summary>
     /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
     /// </summary>
     public required string Country
     {
@@ -1464,6 +1470,8 @@ public sealed record class EntityUpdateParamsNaturalPersonIdentification : JsonM
 {
     /// <summary>
     /// A method that can be used to verify the individual's identity.
+    ///
+    /// <para>Defaults to `social_security_number`.</para>
     /// </summary>
     public required ApiEnum<string, EntityUpdateParamsNaturalPersonIdentificationMethod> Method
     {
