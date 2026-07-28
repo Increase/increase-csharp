@@ -496,6 +496,16 @@ public enum UnwrapWebhookEventCategory
     InboundWireTransferUpdated,
 
     /// <summary>
+    /// Occurs whenever an Interest Rate Plan is created.
+    /// </summary>
+    InterestRatePlanCreated,
+
+    /// <summary>
+    /// Occurs whenever an Interest Rate Plan is updated.
+    /// </summary>
+    InterestRatePlanUpdated,
+
+    /// <summary>
     /// Occurs whenever an IntraFi Account Enrollment is created.
     /// </summary>
     IntrafiAccountEnrollmentCreated,
@@ -840,6 +850,8 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                 UnwrapWebhookEventCategory.InboundWireTransferCreated,
             "inbound_wire_transfer.updated" =>
                 UnwrapWebhookEventCategory.InboundWireTransferUpdated,
+            "interest_rate_plan.created" => UnwrapWebhookEventCategory.InterestRatePlanCreated,
+            "interest_rate_plan.updated" => UnwrapWebhookEventCategory.InterestRatePlanUpdated,
             "intrafi_account_enrollment.created" =>
                 UnwrapWebhookEventCategory.IntrafiAccountEnrollmentCreated,
             "intrafi_account_enrollment.updated" =>
@@ -1019,6 +1031,8 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                     "inbound_wire_transfer.created",
                 UnwrapWebhookEventCategory.InboundWireTransferUpdated =>
                     "inbound_wire_transfer.updated",
+                UnwrapWebhookEventCategory.InterestRatePlanCreated => "interest_rate_plan.created",
+                UnwrapWebhookEventCategory.InterestRatePlanUpdated => "interest_rate_plan.updated",
                 UnwrapWebhookEventCategory.IntrafiAccountEnrollmentCreated =>
                     "intrafi_account_enrollment.created",
                 UnwrapWebhookEventCategory.IntrafiAccountEnrollmentUpdated =>

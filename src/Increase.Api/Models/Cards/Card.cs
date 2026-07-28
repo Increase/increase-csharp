@@ -87,6 +87,20 @@ public sealed record class Card : JsonModel
     }
 
     /// <summary>
+    /// The name of the cardholder. Used to respond to Account Name Inquiry requests
+    /// from acquirers in Card Validations.
+    /// </summary>
+    public required CardCardholderName? CardholderName
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<CardCardholderName>("cardholder_name");
+        }
+        init { this._rawData.Set("cardholder_name", value); }
+    }
+
+    /// <summary>
     /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
     /// the Card was created.
     /// </summary>
@@ -231,6 +245,7 @@ public sealed record class Card : JsonModel
         this.AuthorizationControls?.Validate();
         this.BillingAddress.Validate();
         _ = this.Bin;
+        this.CardholderName?.Validate();
         _ = this.CreatedAt;
         _ = this.Description;
         this.DigitalWallet?.Validate();
@@ -2075,6 +2090,97 @@ class CardBillingAddressFromRaw : IFromRawJson<CardBillingAddress>
     /// <inheritdoc/>
     public CardBillingAddress FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         CardBillingAddress.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The name of the cardholder. Used to respond to Account Name Inquiry requests from
+/// acquirers in Card Validations.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<CardCardholderName, CardCardholderNameFromRaw>))]
+public sealed record class CardCardholderName : JsonModel
+{
+    /// <summary>
+    /// The cardholder's first name.
+    /// </summary>
+    public required string First
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("first");
+        }
+        init { this._rawData.Set("first", value); }
+    }
+
+    /// <summary>
+    /// The cardholder's last name.
+    /// </summary>
+    public required string Last
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("last");
+        }
+        init { this._rawData.Set("last", value); }
+    }
+
+    /// <summary>
+    /// The cardholder's middle name.
+    /// </summary>
+    public required string? Middle
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("middle");
+        }
+        init { this._rawData.Set("middle", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.First;
+        _ = this.Last;
+        _ = this.Middle;
+    }
+
+    public CardCardholderName() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardCardholderName(CardCardholderName cardCardholderName)
+        : base(cardCardholderName) { }
+#pragma warning restore CS8618
+
+    public CardCardholderName(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardCardholderName(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardCardholderNameFromRaw.FromRawUnchecked"/>
+    public static CardCardholderName FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class CardCardholderNameFromRaw : IFromRawJson<CardCardholderName>
+{
+    /// <inheritdoc/>
+    public CardCardholderName FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        CardCardholderName.FromRawUnchecked(rawData);
 }
 
 /// <summary>
