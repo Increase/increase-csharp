@@ -16,14 +16,15 @@ public class WireTransferServiceTest : TestBase
                 Creditor = new()
                 {
                     Name = "Ian Crease",
-                    Address = new(
-                        new Unstructured()
+                    Address = new()
+                    {
+                        Unstructured = new()
                         {
                             Line1 = "33 Liberty Street",
                             Line2 = "New York",
                             Line3 = "NY 10045",
-                        }
-                    ),
+                        },
+                    },
                 },
                 Remittance = new()
                 {
