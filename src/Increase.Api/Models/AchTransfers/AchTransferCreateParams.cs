@@ -262,6 +262,8 @@ public record class AchTransferCreateParams : ParamsBase
 
     /// <summary>
     /// The type of the receiver's bank account.
+    ///
+    /// <para>Defaults to `checking`.</para>
     /// </summary>
     public ApiEnum<string, Funding>? Funding
     {

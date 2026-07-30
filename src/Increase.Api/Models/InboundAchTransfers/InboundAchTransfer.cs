@@ -1258,7 +1258,7 @@ public sealed record class InternationalAddenda : JsonModel
 
     /// <summary>
     /// An identifier for the originating bank. One of an International Bank Account
-    /// Number (IBAN) bank identifier, SWIFT Bank Identification Code (BIC), or a
+    /// Number (IBAN) bank identifier, Swift Bank Identification Code (BIC), or a
     /// domestic identifier like a US Routing Number.
     /// </summary>
     public required string OriginatingDepositoryFinancialInstitutionID
@@ -1540,7 +1540,7 @@ public sealed record class InternationalAddenda : JsonModel
 
     /// <summary>
     /// An identifier for the receiving bank. One of an International Bank Account
-    /// Number (IBAN) bank identifier, SWIFT Bank Identification Code (BIC), or a
+    /// Number (IBAN) bank identifier, Swift Bank Identification Code (BIC), or a
     /// domestic identifier like a US Routing Number.
     /// </summary>
     public required string ReceivingDepositoryFinancialInstitutionID
@@ -1995,7 +1995,7 @@ public enum OriginatingDepositoryFinancialInstitutionIDQualifier
     NationalClearingSystemNumber,
 
     /// <summary>
-    /// The SWIFT Bank Identifier Code (BIC) of the bank.
+    /// The Swift Bank Identifier Code (BIC) of the bank.
     /// </summary>
     BicCode,
 
@@ -2061,7 +2061,7 @@ public enum ReceivingDepositoryFinancialInstitutionIDQualifier
     NationalClearingSystemNumber,
 
     /// <summary>
-    /// The SWIFT Bank Identifier Code (BIC) of the bank.
+    /// The Swift Bank Identifier Code (BIC) of the bank.
     /// </summary>
     BicCode,
 
