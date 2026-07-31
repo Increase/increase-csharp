@@ -90,7 +90,9 @@ public record class ExternalAccountCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The type of the destination account. Defaults to `checking`.
+    /// The type of the destination account.
+    ///
+    /// <para>Defaults to `checking`.</para>
     /// </summary>
     public ApiEnum<string, Funding>? Funding
     {
@@ -284,7 +286,7 @@ sealed class AccountHolderConverter : JsonConverter<AccountHolder>
 }
 
 /// <summary>
-/// The type of the destination account. Defaults to `checking`.
+/// The type of the destination account.
 /// </summary>
 [JsonConverter(typeof(FundingConverter))]
 public enum Funding
