@@ -1128,14 +1128,12 @@ class ReturnAddressFromRaw : IFromRawJson<ReturnAddress>
 public enum ShippingMethod
 {
     /// <summary>
-    /// Ship the checks via USPS First Class, which supports a maximum of 1000 pages
-    /// (checks and attachments combined).
+    /// USPS First Class
     /// </summary>
     UspsFirstClass,
 
     /// <summary>
-    /// Ship the checks via FedEx Overnight, which supports a maximum of 50 pages
-    /// (checks and attachments combined).
+    /// FedEx Overnight
     /// </summary>
     FedexOvernight,
 }

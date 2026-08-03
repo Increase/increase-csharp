@@ -3173,12 +3173,12 @@ public sealed record class EntityTermsAgreement : JsonModel
     /// <summary>
     /// The IP address the Entity accessed reviewed the terms from.
     /// </summary>
-    public required string IPAddress
+    public required string? IPAddress
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("ip_address");
+            return this._rawData.GetNullableClass<string>("ip_address");
         }
         init { this._rawData.Set("ip_address", value); }
     }
