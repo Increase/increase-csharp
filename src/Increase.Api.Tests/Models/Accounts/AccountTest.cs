@@ -267,6 +267,7 @@ public class BankTest : TestBase
     [InlineData(Accounts::Bank.CoreBank)]
     [InlineData(Accounts::Bank.FirstInternetBank)]
     [InlineData(Accounts::Bank.GrasshopperBank)]
+    [InlineData(Accounts::Bank.IncreaseBank)]
     public void Validation_Works(Accounts::Bank rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -290,6 +291,7 @@ public class BankTest : TestBase
     [InlineData(Accounts::Bank.CoreBank)]
     [InlineData(Accounts::Bank.FirstInternetBank)]
     [InlineData(Accounts::Bank.GrasshopperBank)]
+    [InlineData(Accounts::Bank.IncreaseBank)]
     public void SerializationRoundtrip_Works(Accounts::Bank rawValue)
     {
         // force implicit conversion because Theory can't do that for us

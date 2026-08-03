@@ -52,6 +52,12 @@ public class CardCreateParamsTest : TestBase
                 State = "x",
                 Line2 = "x",
             },
+            CardholderName = new()
+            {
+                First = "x",
+                Last = "x",
+                Middle = "x",
+            },
             Description = "Card for Ian Crease",
             DigitalWallet = new()
             {
@@ -100,6 +106,12 @@ public class CardCreateParamsTest : TestBase
             State = "x",
             Line2 = "x",
         };
+        Cards::CardholderName expectedCardholderName = new()
+        {
+            First = "x",
+            Last = "x",
+            Middle = "x",
+        };
         string expectedDescription = "Card for Ian Crease";
         Cards::DigitalWallet expectedDigitalWallet = new()
         {
@@ -112,6 +124,7 @@ public class CardCreateParamsTest : TestBase
         Assert.Equal(expectedAccountID, parameters.AccountID);
         Assert.Equal(expectedAuthorizationControls, parameters.AuthorizationControls);
         Assert.Equal(expectedBillingAddress, parameters.BillingAddress);
+        Assert.Equal(expectedCardholderName, parameters.CardholderName);
         Assert.Equal(expectedDescription, parameters.Description);
         Assert.Equal(expectedDigitalWallet, parameters.DigitalWallet);
         Assert.Equal(expectedEntityID, parameters.EntityID);
@@ -126,6 +139,8 @@ public class CardCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("authorization_controls"));
         Assert.Null(parameters.BillingAddress);
         Assert.False(parameters.RawBodyData.ContainsKey("billing_address"));
+        Assert.Null(parameters.CardholderName);
+        Assert.False(parameters.RawBodyData.ContainsKey("cardholder_name"));
         Assert.Null(parameters.Description);
         Assert.False(parameters.RawBodyData.ContainsKey("description"));
         Assert.Null(parameters.DigitalWallet);
@@ -144,6 +159,7 @@ public class CardCreateParamsTest : TestBase
             // Null should be interpreted as omitted for these properties
             AuthorizationControls = null,
             BillingAddress = null,
+            CardholderName = null,
             Description = null,
             DigitalWallet = null,
             EntityID = null,
@@ -153,6 +169,8 @@ public class CardCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("authorization_controls"));
         Assert.Null(parameters.BillingAddress);
         Assert.False(parameters.RawBodyData.ContainsKey("billing_address"));
+        Assert.Null(parameters.CardholderName);
+        Assert.False(parameters.RawBodyData.ContainsKey("cardholder_name"));
         Assert.Null(parameters.Description);
         Assert.False(parameters.RawBodyData.ContainsKey("description"));
         Assert.Null(parameters.DigitalWallet);
@@ -213,6 +231,12 @@ public class CardCreateParamsTest : TestBase
                 PostalCode = "x",
                 State = "x",
                 Line2 = "x",
+            },
+            CardholderName = new()
+            {
+                First = "x",
+                Last = "x",
+                Middle = "x",
             },
             Description = "Card for Ian Crease",
             DigitalWallet = new()
@@ -2547,6 +2571,149 @@ public class BillingAddressTest : TestBase
         };
 
         Cards::BillingAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardholderNameTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::CardholderName
+        {
+            First = "x",
+            Last = "x",
+            Middle = "x",
+        };
+
+        string expectedFirst = "x";
+        string expectedLast = "x";
+        string expectedMiddle = "x";
+
+        Assert.Equal(expectedFirst, model.First);
+        Assert.Equal(expectedLast, model.Last);
+        Assert.Equal(expectedMiddle, model.Middle);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::CardholderName
+        {
+            First = "x",
+            Last = "x",
+            Middle = "x",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::CardholderName>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::CardholderName
+        {
+            First = "x",
+            Last = "x",
+            Middle = "x",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::CardholderName>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedFirst = "x";
+        string expectedLast = "x";
+        string expectedMiddle = "x";
+
+        Assert.Equal(expectedFirst, deserialized.First);
+        Assert.Equal(expectedLast, deserialized.Last);
+        Assert.Equal(expectedMiddle, deserialized.Middle);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::CardholderName
+        {
+            First = "x",
+            Last = "x",
+            Middle = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new Cards::CardholderName { First = "x", Last = "x" };
+
+        Assert.Null(model.Middle);
+        Assert.False(model.RawData.ContainsKey("middle"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new Cards::CardholderName { First = "x", Last = "x" };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new Cards::CardholderName
+        {
+            First = "x",
+            Last = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Middle = null,
+        };
+
+        Assert.Null(model.Middle);
+        Assert.False(model.RawData.ContainsKey("middle"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new Cards::CardholderName
+        {
+            First = "x",
+            Last = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Middle = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::CardholderName
+        {
+            First = "x",
+            Last = "x",
+            Middle = "x",
+        };
+
+        Cards::CardholderName copied = new(model);
 
         Assert.Equal(model, copied);
     }
