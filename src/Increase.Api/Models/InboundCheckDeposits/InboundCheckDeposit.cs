@@ -104,6 +104,23 @@ public sealed record class InboundCheckDeposit : JsonModel
     }
 
     /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the Inbound Check Deposit will be automatically resolved if it has not been
+    /// actioned by then.
+    /// </summary>
+    public required System::DateTimeOffset AutomaticallyResolvesAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>(
+                "automatically_resolves_at"
+            );
+        }
+        init { this._rawData.Set("automatically_resolves_at", value); }
+    }
+
+    /// <summary>
     /// The ID for the File containing the image of the back of the check.
     /// </summary>
     public required string? BackImageFileID
@@ -310,6 +327,7 @@ public sealed record class InboundCheckDeposit : JsonModel
             item.Validate();
         }
         _ = this.Amount;
+        _ = this.AutomaticallyResolvesAt;
         _ = this.BackImageFileID;
         _ = this.BankOfFirstDepositRoutingNumber;
         _ = this.CheckNumber;
