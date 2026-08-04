@@ -1828,6 +1828,23 @@ public sealed record class CardAuthorization : JsonModel
     }
 
     /// <summary>
+    /// The ID of the Card Payment containing the original authorization or card
+    /// validation this transaction references. For a merchant-initiated transaction,
+    /// this is the Card Payment from when the card was first stored, which is typically
+    /// where the CVV2 was verified. The reference this is derived from is supplied
+    /// by the merchant or their acquirer, so it is not guaranteed to be present.
+    /// </summary>
+    public required string? OriginalCardPaymentID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("original_card_payment_id");
+        }
+        init { this._rawData.Set("original_card_payment_id", value); }
+    }
+
+    /// <summary>
     /// The identifier of the Pending Transaction associated with this Transaction.
     /// </summary>
     public required string? PendingTransactionID
@@ -1993,6 +2010,7 @@ public sealed record class CardAuthorization : JsonModel
         this.NetworkDetails.Validate();
         this.NetworkIdentifiers.Validate();
         _ = this.NetworkRiskScore;
+        _ = this.OriginalCardPaymentID;
         _ = this.PendingTransactionID;
         _ = this.PhysicalCardID;
         _ = this.PresentmentAmount;

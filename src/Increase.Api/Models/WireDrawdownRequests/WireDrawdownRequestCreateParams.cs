@@ -409,7 +409,7 @@ public sealed record class CreditorAddress : JsonModel
     }
 
     /// <summary>
-    /// The ZIP code of the address.
+    /// The postal code of the address.
     /// </summary>
     public string? PostalCode
     {
@@ -564,7 +564,7 @@ public sealed record class DebtorAddress : JsonModel
     }
 
     /// <summary>
-    /// The ZIP code of the address.
+    /// The postal code of the address.
     /// </summary>
     public string? PostalCode
     {
