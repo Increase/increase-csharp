@@ -38,7 +38,7 @@ public class PhysicalCardTest : TestBase
                 Status = PhysicalCards::PhysicalCardShipmentStatus.Shipped,
                 Tracking = new()
                 {
-                    Number = "9400110200881234567890",
+                    Number = null,
                     ReturnNumber = null,
                     ReturnReason = null,
                     ShippedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -47,7 +47,7 @@ public class PhysicalCardTest : TestBase
                         new()
                         {
                             CarrierEstimatedDeliveryAt = null,
-                            Category = PhysicalCards::Category.Delivered,
+                            Category = PhysicalCards::Category.InTransit,
                             City = null,
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             PostalCode = "10001",
@@ -87,7 +87,7 @@ public class PhysicalCardTest : TestBase
             Status = PhysicalCards::PhysicalCardShipmentStatus.Shipped,
             Tracking = new()
             {
-                Number = "9400110200881234567890",
+                Number = null,
                 ReturnNumber = null,
                 ReturnReason = null,
                 ShippedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -96,7 +96,7 @@ public class PhysicalCardTest : TestBase
                     new()
                     {
                         CarrierEstimatedDeliveryAt = null,
-                        Category = PhysicalCards::Category.Delivered,
+                        Category = PhysicalCards::Category.InTransit,
                         City = null,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         PostalCode = "10001",
@@ -149,7 +149,7 @@ public class PhysicalCardTest : TestBase
                 Status = PhysicalCards::PhysicalCardShipmentStatus.Shipped,
                 Tracking = new()
                 {
-                    Number = "9400110200881234567890",
+                    Number = null,
                     ReturnNumber = null,
                     ReturnReason = null,
                     ShippedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -158,7 +158,7 @@ public class PhysicalCardTest : TestBase
                         new()
                         {
                             CarrierEstimatedDeliveryAt = null,
-                            Category = PhysicalCards::Category.Delivered,
+                            Category = PhysicalCards::Category.InTransit,
                             City = null,
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             PostalCode = "10001",
@@ -209,7 +209,7 @@ public class PhysicalCardTest : TestBase
                 Status = PhysicalCards::PhysicalCardShipmentStatus.Shipped,
                 Tracking = new()
                 {
-                    Number = "9400110200881234567890",
+                    Number = null,
                     ReturnNumber = null,
                     ReturnReason = null,
                     ShippedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -218,7 +218,7 @@ public class PhysicalCardTest : TestBase
                         new()
                         {
                             CarrierEstimatedDeliveryAt = null,
-                            Category = PhysicalCards::Category.Delivered,
+                            Category = PhysicalCards::Category.InTransit,
                             City = null,
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             PostalCode = "10001",
@@ -265,7 +265,7 @@ public class PhysicalCardTest : TestBase
             Status = PhysicalCards::PhysicalCardShipmentStatus.Shipped,
             Tracking = new()
             {
-                Number = "9400110200881234567890",
+                Number = null,
                 ReturnNumber = null,
                 ReturnReason = null,
                 ShippedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -274,7 +274,7 @@ public class PhysicalCardTest : TestBase
                     new()
                     {
                         CarrierEstimatedDeliveryAt = null,
-                        Category = PhysicalCards::Category.Delivered,
+                        Category = PhysicalCards::Category.InTransit,
                         City = null,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         PostalCode = "10001",
@@ -327,7 +327,7 @@ public class PhysicalCardTest : TestBase
                 Status = PhysicalCards::PhysicalCardShipmentStatus.Shipped,
                 Tracking = new()
                 {
-                    Number = "9400110200881234567890",
+                    Number = null,
                     ReturnNumber = null,
                     ReturnReason = null,
                     ShippedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -336,7 +336,7 @@ public class PhysicalCardTest : TestBase
                         new()
                         {
                             CarrierEstimatedDeliveryAt = null,
-                            Category = PhysicalCards::Category.Delivered,
+                            Category = PhysicalCards::Category.InTransit,
                             City = null,
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             PostalCode = "10001",
@@ -381,7 +381,7 @@ public class PhysicalCardTest : TestBase
                 Status = PhysicalCards::PhysicalCardShipmentStatus.Shipped,
                 Tracking = new()
                 {
-                    Number = "9400110200881234567890",
+                    Number = null,
                     ReturnNumber = null,
                     ReturnReason = null,
                     ShippedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -390,7 +390,7 @@ public class PhysicalCardTest : TestBase
                         new()
                         {
                             CarrierEstimatedDeliveryAt = null,
-                            Category = PhysicalCards::Category.Delivered,
+                            Category = PhysicalCards::Category.InTransit,
                             City = null,
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             PostalCode = "10001",
