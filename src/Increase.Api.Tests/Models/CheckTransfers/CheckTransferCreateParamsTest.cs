@@ -43,6 +43,7 @@ public class CheckTransferCreateParamsTest : TestBase
                 AttachmentFileID = "attachment_file_id",
                 CheckVoucherImageFileID = "check_voucher_image_file_id",
                 Note = "note",
+                PhysicalCheckBatchID = "physical_check_batch_id",
                 ReturnAddress = new()
                 {
                     City = "city",
@@ -92,6 +93,7 @@ public class CheckTransferCreateParamsTest : TestBase
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
+            PhysicalCheckBatchID = "physical_check_batch_id",
             ReturnAddress = new()
             {
                 City = "city",
@@ -230,6 +232,7 @@ public class CheckTransferCreateParamsTest : TestBase
                 AttachmentFileID = "attachment_file_id",
                 CheckVoucherImageFileID = "check_voucher_image_file_id",
                 Note = "note",
+                PhysicalCheckBatchID = "physical_check_batch_id",
                 ReturnAddress = new()
                 {
                     City = "city",
@@ -394,6 +397,7 @@ public class PhysicalCheckTest : TestBase
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
+            PhysicalCheckBatchID = "physical_check_batch_id",
             ReturnAddress = new()
             {
                 City = "city",
@@ -425,6 +429,7 @@ public class PhysicalCheckTest : TestBase
         string expectedAttachmentFileID = "attachment_file_id";
         string expectedCheckVoucherImageFileID = "check_voucher_image_file_id";
         string expectedNote = "note";
+        string expectedPhysicalCheckBatchID = "physical_check_batch_id";
         ReturnAddress expectedReturnAddress = new()
         {
             City = "city",
@@ -450,6 +455,7 @@ public class PhysicalCheckTest : TestBase
         Assert.Equal(expectedAttachmentFileID, model.AttachmentFileID);
         Assert.Equal(expectedCheckVoucherImageFileID, model.CheckVoucherImageFileID);
         Assert.Equal(expectedNote, model.Note);
+        Assert.Equal(expectedPhysicalCheckBatchID, model.PhysicalCheckBatchID);
         Assert.Equal(expectedReturnAddress, model.ReturnAddress);
         Assert.Equal(expectedReturnAddressName, model.ReturnAddressName);
         Assert.Equal(expectedShippingMethod, model.ShippingMethod);
@@ -477,6 +483,7 @@ public class PhysicalCheckTest : TestBase
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
+            PhysicalCheckBatchID = "physical_check_batch_id",
             ReturnAddress = new()
             {
                 City = "city",
@@ -522,6 +529,7 @@ public class PhysicalCheckTest : TestBase
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
+            PhysicalCheckBatchID = "physical_check_batch_id",
             ReturnAddress = new()
             {
                 City = "city",
@@ -560,6 +568,7 @@ public class PhysicalCheckTest : TestBase
         string expectedAttachmentFileID = "attachment_file_id";
         string expectedCheckVoucherImageFileID = "check_voucher_image_file_id";
         string expectedNote = "note";
+        string expectedPhysicalCheckBatchID = "physical_check_batch_id";
         ReturnAddress expectedReturnAddress = new()
         {
             City = "city",
@@ -585,6 +594,7 @@ public class PhysicalCheckTest : TestBase
         Assert.Equal(expectedAttachmentFileID, deserialized.AttachmentFileID);
         Assert.Equal(expectedCheckVoucherImageFileID, deserialized.CheckVoucherImageFileID);
         Assert.Equal(expectedNote, deserialized.Note);
+        Assert.Equal(expectedPhysicalCheckBatchID, deserialized.PhysicalCheckBatchID);
         Assert.Equal(expectedReturnAddress, deserialized.ReturnAddress);
         Assert.Equal(expectedReturnAddressName, deserialized.ReturnAddressName);
         Assert.Equal(expectedShippingMethod, deserialized.ShippingMethod);
@@ -612,6 +622,7 @@ public class PhysicalCheckTest : TestBase
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
+            PhysicalCheckBatchID = "physical_check_batch_id",
             ReturnAddress = new()
             {
                 City = "city",
@@ -656,6 +667,8 @@ public class PhysicalCheckTest : TestBase
         Assert.False(model.RawData.ContainsKey("check_voucher_image_file_id"));
         Assert.Null(model.Note);
         Assert.False(model.RawData.ContainsKey("note"));
+        Assert.Null(model.PhysicalCheckBatchID);
+        Assert.False(model.RawData.ContainsKey("physical_check_batch_id"));
         Assert.Null(model.ReturnAddress);
         Assert.False(model.RawData.ContainsKey("return_address"));
         Assert.Null(model.ReturnAddressName);
@@ -712,6 +725,7 @@ public class PhysicalCheckTest : TestBase
             AttachmentFileID = null,
             CheckVoucherImageFileID = null,
             Note = null,
+            PhysicalCheckBatchID = null,
             ReturnAddress = null,
             ReturnAddressName = null,
             ShippingMethod = null,
@@ -724,6 +738,8 @@ public class PhysicalCheckTest : TestBase
         Assert.False(model.RawData.ContainsKey("check_voucher_image_file_id"));
         Assert.Null(model.Note);
         Assert.False(model.RawData.ContainsKey("note"));
+        Assert.Null(model.PhysicalCheckBatchID);
+        Assert.False(model.RawData.ContainsKey("physical_check_batch_id"));
         Assert.Null(model.ReturnAddress);
         Assert.False(model.RawData.ContainsKey("return_address"));
         Assert.Null(model.ReturnAddressName);
@@ -757,6 +773,7 @@ public class PhysicalCheckTest : TestBase
             AttachmentFileID = null,
             CheckVoucherImageFileID = null,
             Note = null,
+            PhysicalCheckBatchID = null,
             ReturnAddress = null,
             ReturnAddressName = null,
             ShippingMethod = null,
@@ -787,6 +804,7 @@ public class PhysicalCheckTest : TestBase
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
+            PhysicalCheckBatchID = "physical_check_batch_id",
             ReturnAddress = new()
             {
                 City = "city",

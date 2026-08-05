@@ -262,6 +262,8 @@ public record class AchTransferCreateParams : ParamsBase
 
     /// <summary>
     /// The type of the receiver's bank account.
+    ///
+    /// <para>Defaults to `checking`.</para>
     /// </summary>
     public ApiEnum<string, Funding>? Funding
     {
@@ -415,29 +417,6 @@ public record class AchTransferCreateParams : ParamsBase
             }
 
             this._rawBodyData.Set("standard_entry_class_code", value);
-        }
-    }
-
-    /// <summary>
-    /// The timing of the transaction.
-    /// </summary>
-    public ApiEnum<string, TransactionTiming>? TransactionTiming
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<ApiEnum<string, TransactionTiming>>(
-                "transaction_timing"
-            );
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawBodyData.Set("transaction_timing", value);
         }
     }
 
@@ -1365,60 +1344,6 @@ sealed class StandardEntryClassCodeConverter : JsonConverter<StandardEntryClassC
                 StandardEntryClassCode.PrearrangedPaymentsAndDeposit =>
                     "prearranged_payments_and_deposit",
                 StandardEntryClassCode.InternetInitiated => "internet_initiated",
-                _ => throw new IncreaseInvalidDataException(
-                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
-                ),
-            },
-            options
-        );
-    }
-}
-
-/// <summary>
-/// The timing of the transaction.
-/// </summary>
-[JsonConverter(typeof(TransactionTimingConverter))]
-public enum TransactionTiming
-{
-    /// <summary>
-    /// A Transaction will be created immediately.
-    /// </summary>
-    Synchronous,
-
-    /// <summary>
-    /// A Transaction will be created when the funds settle at the Federal Reserve.
-    /// </summary>
-    Asynchronous,
-}
-
-sealed class TransactionTimingConverter : JsonConverter<TransactionTiming>
-{
-    public override TransactionTiming Read(
-        ref Utf8JsonReader reader,
-        System::Type typeToConvert,
-        JsonSerializerOptions options
-    )
-    {
-        return JsonSerializer.Deserialize<string>(ref reader, options) switch
-        {
-            "synchronous" => TransactionTiming.Synchronous,
-            "asynchronous" => TransactionTiming.Asynchronous,
-            _ => (TransactionTiming)(-1),
-        };
-    }
-
-    public override void Write(
-        Utf8JsonWriter writer,
-        TransactionTiming value,
-        JsonSerializerOptions options
-    )
-    {
-        JsonSerializer.Serialize(
-            writer,
-            value switch
-            {
-                TransactionTiming.Synchronous => "synchronous",
-                TransactionTiming.Asynchronous => "asynchronous",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

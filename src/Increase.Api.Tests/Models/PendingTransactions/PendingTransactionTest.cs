@@ -114,6 +114,7 @@ public class PendingTransactionTest : TestBase
                         TransactionID = "627199945183184",
                     },
                     NetworkRiskScore = 10,
+                    OriginalCardPaymentID = null,
                     PendingTransactionID = null,
                     PhysicalCardID = null,
                     PresentmentAmount = 100,
@@ -307,6 +308,7 @@ public class PendingTransactionTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 NetworkRiskScore = 10,
+                OriginalCardPaymentID = null,
                 PendingTransactionID = null,
                 PhysicalCardID = null,
                 PresentmentAmount = 100,
@@ -525,6 +527,7 @@ public class PendingTransactionTest : TestBase
                         TransactionID = "627199945183184",
                     },
                     NetworkRiskScore = 10,
+                    OriginalCardPaymentID = null,
                     PendingTransactionID = null,
                     PhysicalCardID = null,
                     PresentmentAmount = 100,
@@ -736,6 +739,7 @@ public class PendingTransactionTest : TestBase
                         TransactionID = "627199945183184",
                     },
                     NetworkRiskScore = 10,
+                    OriginalCardPaymentID = null,
                     PendingTransactionID = null,
                     PhysicalCardID = null,
                     PresentmentAmount = 100,
@@ -936,6 +940,7 @@ public class PendingTransactionTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 NetworkRiskScore = 10,
+                OriginalCardPaymentID = null,
                 PendingTransactionID = null,
                 PhysicalCardID = null,
                 PresentmentAmount = 100,
@@ -1154,6 +1159,7 @@ public class PendingTransactionTest : TestBase
                         TransactionID = "627199945183184",
                     },
                     NetworkRiskScore = 10,
+                    OriginalCardPaymentID = null,
                     PendingTransactionID = null,
                     PhysicalCardID = null,
                     PresentmentAmount = 100,
@@ -1359,6 +1365,7 @@ public class PendingTransactionTest : TestBase
                         TransactionID = "627199945183184",
                     },
                     NetworkRiskScore = 10,
+                    OriginalCardPaymentID = null,
                     PendingTransactionID = null,
                     PhysicalCardID = null,
                     PresentmentAmount = 100,
@@ -1667,6 +1674,7 @@ public class SourceTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 NetworkRiskScore = 10,
+                OriginalCardPaymentID = null,
                 PendingTransactionID = null,
                 PhysicalCardID = null,
                 PresentmentAmount = 100,
@@ -1848,6 +1856,7 @@ public class SourceTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 10,
+            OriginalCardPaymentID = null,
             PendingTransactionID = null,
             PhysicalCardID = null,
             PresentmentAmount = 100,
@@ -2067,6 +2076,7 @@ public class SourceTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 NetworkRiskScore = 10,
+                OriginalCardPaymentID = null,
                 PendingTransactionID = null,
                 PhysicalCardID = null,
                 PresentmentAmount = 100,
@@ -2261,6 +2271,7 @@ public class SourceTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 NetworkRiskScore = 10,
+                OriginalCardPaymentID = null,
                 PendingTransactionID = null,
                 PhysicalCardID = null,
                 PresentmentAmount = 100,
@@ -2449,6 +2460,7 @@ public class SourceTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 10,
+            OriginalCardPaymentID = null,
             PendingTransactionID = null,
             PhysicalCardID = null,
             PresentmentAmount = 100,
@@ -2668,6 +2680,7 @@ public class SourceTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 NetworkRiskScore = 10,
+                OriginalCardPaymentID = null,
                 PendingTransactionID = null,
                 PhysicalCardID = null,
                 PresentmentAmount = 100,
@@ -2996,6 +3009,7 @@ public class SourceTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 NetworkRiskScore = 10,
+                OriginalCardPaymentID = null,
                 PendingTransactionID = null,
                 PhysicalCardID = null,
                 PresentmentAmount = 100,
@@ -3914,6 +3928,7 @@ public class CardAuthorizationTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 10,
+            OriginalCardPaymentID = null,
             PendingTransactionID = null,
             PhysicalCardID = null,
             PresentmentAmount = 100,
@@ -4068,6 +4083,7 @@ public class CardAuthorizationTest : TestBase
         Assert.Equal(expectedNetworkDetails, model.NetworkDetails);
         Assert.Equal(expectedNetworkIdentifiers, model.NetworkIdentifiers);
         Assert.Equal(expectedNetworkRiskScore, model.NetworkRiskScore);
+        Assert.Null(model.OriginalCardPaymentID);
         Assert.Null(model.PendingTransactionID);
         Assert.Null(model.PhysicalCardID);
         Assert.Equal(expectedPresentmentAmount, model.PresentmentAmount);
@@ -4140,6 +4156,7 @@ public class CardAuthorizationTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 10,
+            OriginalCardPaymentID = null,
             PendingTransactionID = null,
             PhysicalCardID = null,
             PresentmentAmount = 100,
@@ -4246,6 +4263,7 @@ public class CardAuthorizationTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 10,
+            OriginalCardPaymentID = null,
             PendingTransactionID = null,
             PhysicalCardID = null,
             PresentmentAmount = 100,
@@ -4407,6 +4425,7 @@ public class CardAuthorizationTest : TestBase
         Assert.Equal(expectedNetworkDetails, deserialized.NetworkDetails);
         Assert.Equal(expectedNetworkIdentifiers, deserialized.NetworkIdentifiers);
         Assert.Equal(expectedNetworkRiskScore, deserialized.NetworkRiskScore);
+        Assert.Null(deserialized.OriginalCardPaymentID);
         Assert.Null(deserialized.PendingTransactionID);
         Assert.Null(deserialized.PhysicalCardID);
         Assert.Equal(expectedPresentmentAmount, deserialized.PresentmentAmount);
@@ -4479,6 +4498,7 @@ public class CardAuthorizationTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 10,
+            OriginalCardPaymentID = null,
             PendingTransactionID = null,
             PhysicalCardID = null,
             PresentmentAmount = 100,
@@ -4579,6 +4599,7 @@ public class CardAuthorizationTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 10,
+            OriginalCardPaymentID = null,
             PendingTransactionID = null,
             PhysicalCardID = null,
             PresentmentAmount = 100,

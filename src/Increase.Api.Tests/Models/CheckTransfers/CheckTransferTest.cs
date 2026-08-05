@@ -61,6 +61,7 @@ public class CheckTransferTest : TestBase
                 Memo = "Invoice 29582",
                 Note = null,
                 Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
+                PhysicalCheckBatchID = null,
                 RecipientName = "Ian Crease",
                 ReturnAddress = new()
                 {
@@ -166,6 +167,7 @@ public class CheckTransferTest : TestBase
             Memo = "Invoice 29582",
             Note = null,
             Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
+            PhysicalCheckBatchID = null,
             RecipientName = "Ian Crease",
             ReturnAddress = new()
             {
@@ -302,6 +304,7 @@ public class CheckTransferTest : TestBase
                 Memo = "Invoice 29582",
                 Note = null,
                 Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
+                PhysicalCheckBatchID = null,
                 RecipientName = "Ian Crease",
                 ReturnAddress = new()
                 {
@@ -422,6 +425,7 @@ public class CheckTransferTest : TestBase
                 Memo = "Invoice 29582",
                 Note = null,
                 Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
+                PhysicalCheckBatchID = null,
                 RecipientName = "Ian Crease",
                 ReturnAddress = new()
                 {
@@ -534,6 +538,7 @@ public class CheckTransferTest : TestBase
             Memo = "Invoice 29582",
             Note = null,
             Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
+            PhysicalCheckBatchID = null,
             RecipientName = "Ian Crease",
             ReturnAddress = new()
             {
@@ -673,6 +678,7 @@ public class CheckTransferTest : TestBase
                 Memo = "Invoice 29582",
                 Note = null,
                 Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
+                PhysicalCheckBatchID = null,
                 RecipientName = "Ian Crease",
                 ReturnAddress = new()
                 {
@@ -787,6 +793,7 @@ public class CheckTransferTest : TestBase
                 Memo = "Invoice 29582",
                 Note = null,
                 Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
+                PhysicalCheckBatchID = null,
                 RecipientName = "Ian Crease",
                 ReturnAddress = new()
                 {
@@ -1691,6 +1698,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
             Memo = "memo",
             Note = "note",
             Payer = [new("contents")],
+            PhysicalCheckBatchID = "physical_check_batch_id",
             RecipientName = "recipient_name",
             ReturnAddress = new()
             {
@@ -1734,6 +1742,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
         string expectedMemo = "memo";
         string expectedNote = "note";
         List<CheckTransfers::CheckTransferPhysicalCheckPayer> expectedPayer = [new("contents")];
+        string expectedPhysicalCheckBatchID = "physical_check_batch_id";
         string expectedRecipientName = "recipient_name";
         CheckTransfers::CheckTransferPhysicalCheckReturnAddress expectedReturnAddress = new()
         {
@@ -1778,6 +1787,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
         {
             Assert.Equal(expectedPayer[i], model.Payer[i]);
         }
+        Assert.Equal(expectedPhysicalCheckBatchID, model.PhysicalCheckBatchID);
         Assert.Equal(expectedRecipientName, model.RecipientName);
         Assert.Equal(expectedReturnAddress, model.ReturnAddress);
         Assert.Equal(expectedReturnAddressName, model.ReturnAddressName);
@@ -1810,6 +1820,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
             Memo = "memo",
             Note = "note",
             Payer = [new("contents")],
+            PhysicalCheckBatchID = "physical_check_batch_id",
             RecipientName = "recipient_name",
             ReturnAddress = new()
             {
@@ -1867,6 +1878,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
             Memo = "memo",
             Note = "note",
             Payer = [new("contents")],
+            PhysicalCheckBatchID = "physical_check_batch_id",
             RecipientName = "recipient_name",
             ReturnAddress = new()
             {
@@ -1917,6 +1929,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
         string expectedMemo = "memo";
         string expectedNote = "note";
         List<CheckTransfers::CheckTransferPhysicalCheckPayer> expectedPayer = [new("contents")];
+        string expectedPhysicalCheckBatchID = "physical_check_batch_id";
         string expectedRecipientName = "recipient_name";
         CheckTransfers::CheckTransferPhysicalCheckReturnAddress expectedReturnAddress = new()
         {
@@ -1961,6 +1974,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
         {
             Assert.Equal(expectedPayer[i], deserialized.Payer[i]);
         }
+        Assert.Equal(expectedPhysicalCheckBatchID, deserialized.PhysicalCheckBatchID);
         Assert.Equal(expectedRecipientName, deserialized.RecipientName);
         Assert.Equal(expectedReturnAddress, deserialized.ReturnAddress);
         Assert.Equal(expectedReturnAddressName, deserialized.ReturnAddressName);
@@ -1993,6 +2007,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
             Memo = "memo",
             Note = "note",
             Payer = [new("contents")],
+            PhysicalCheckBatchID = "physical_check_batch_id",
             RecipientName = "recipient_name",
             ReturnAddress = new()
             {
@@ -2044,6 +2059,7 @@ public class CheckTransferPhysicalCheckTest : TestBase
             Memo = "memo",
             Note = "note",
             Payer = [new("contents")],
+            PhysicalCheckBatchID = "physical_check_batch_id",
             RecipientName = "recipient_name",
             ReturnAddress = new()
             {
@@ -2738,6 +2754,7 @@ public class CheckTransferStatusTest : TestBase
     [Theory]
     [InlineData(CheckTransfers::CheckTransferStatus.PendingApproval)]
     [InlineData(CheckTransfers::CheckTransferStatus.Canceled)]
+    [InlineData(CheckTransfers::CheckTransferStatus.PendingBatchCompleting)]
     [InlineData(CheckTransfers::CheckTransferStatus.PendingSubmission)]
     [InlineData(CheckTransfers::CheckTransferStatus.PendingReviewing)]
     [InlineData(CheckTransfers::CheckTransferStatus.RequiresAttention)]
@@ -2768,6 +2785,7 @@ public class CheckTransferStatusTest : TestBase
     [Theory]
     [InlineData(CheckTransfers::CheckTransferStatus.PendingApproval)]
     [InlineData(CheckTransfers::CheckTransferStatus.Canceled)]
+    [InlineData(CheckTransfers::CheckTransferStatus.PendingBatchCompleting)]
     [InlineData(CheckTransfers::CheckTransferStatus.PendingSubmission)]
     [InlineData(CheckTransfers::CheckTransferStatus.PendingReviewing)]
     [InlineData(CheckTransfers::CheckTransferStatus.RequiresAttention)]
