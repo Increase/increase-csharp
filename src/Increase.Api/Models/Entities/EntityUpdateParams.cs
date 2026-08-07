@@ -583,6 +583,8 @@ public sealed record class EntityUpdateParamsCorporationAddress : JsonModel
 
     /// <summary>
     /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
     /// </summary>
     public required string Country
     {
@@ -751,6 +753,8 @@ public sealed record class EntityUpdateParamsCorporationLegalIdentifier : JsonMo
 
     /// <summary>
     /// The category of the legal identifier.
+    ///
+    /// <para>Defaults to `us_employer_identification_number`.</para>
     /// </summary>
     public ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory>? Category
     {
@@ -1311,6 +1315,8 @@ public sealed record class EntityUpdateParamsNaturalPersonAddress : JsonModel
 
     /// <summary>
     /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
     /// </summary>
     public required string Country
     {
@@ -1464,6 +1470,8 @@ public sealed record class EntityUpdateParamsNaturalPersonIdentification : JsonM
 {
     /// <summary>
     /// A method that can be used to verify the individual's identity.
+    ///
+    /// <para>Defaults to `social_security_number`.</para>
     /// </summary>
     public required ApiEnum<string, EntityUpdateParamsNaturalPersonIdentificationMethod> Method
     {
@@ -2537,11 +2545,42 @@ public sealed record class EntityUpdateParamsTrust : JsonModel
         }
     }
 
+    /// <summary>
+    /// The trustees of the trust. If you specify this parameter, the trust's existing
+    /// trustees will be archived and replaced with the trustees you provide.
+    /// </summary>
+    public IReadOnlyList<EntityUpdateParamsTrustTrustee>? Trustees
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<EntityUpdateParamsTrustTrustee>>(
+                "trustees"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set<ImmutableArray<EntityUpdateParamsTrustTrustee>?>(
+                "trustees",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.Address?.Validate();
         _ = this.Name;
+        foreach (var item in this.Trustees ?? [])
+        {
+            item.Validate();
+        }
     }
 
     public EntityUpdateParamsTrust() { }
@@ -2716,4 +2755,1113 @@ class EntityUpdateParamsTrustAddressFromRaw : IFromRawJson<EntityUpdateParamsTru
     public EntityUpdateParamsTrustAddress FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => EntityUpdateParamsTrustAddress.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsTrustTrustee,
+        EntityUpdateParamsTrustTrusteeFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsTrustTrustee : JsonModel
+{
+    /// <summary>
+    /// The structure of the trustee.
+    /// </summary>
+    public required ApiEnum<string, EntityUpdateParamsTrustTrusteeStructure> Structure
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, EntityUpdateParamsTrustTrusteeStructure>
+            >("structure");
+        }
+        init { this._rawData.Set("structure", value); }
+    }
+
+    /// <summary>
+    /// Details of the individual trustee. Within the trustee object, this is required
+    /// if `structure` is equal to `individual`.
+    /// </summary>
+    public EntityUpdateParamsTrustTrusteeIndividual? Individual
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsTrustTrusteeIndividual>(
+                "individual"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("individual", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Structure.Validate();
+        this.Individual?.Validate();
+    }
+
+    public EntityUpdateParamsTrustTrustee() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsTrustTrustee(
+        EntityUpdateParamsTrustTrustee entityUpdateParamsTrustTrustee
+    )
+        : base(entityUpdateParamsTrustTrustee) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsTrustTrustee(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsTrustTrustee(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsTrustTrusteeFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsTrustTrustee FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public EntityUpdateParamsTrustTrustee(
+        ApiEnum<string, EntityUpdateParamsTrustTrusteeStructure> structure
+    )
+        : this()
+    {
+        this.Structure = structure;
+    }
+}
+
+class EntityUpdateParamsTrustTrusteeFromRaw : IFromRawJson<EntityUpdateParamsTrustTrustee>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsTrustTrustee FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsTrustTrustee.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The structure of the trustee.
+/// </summary>
+[JsonConverter(typeof(EntityUpdateParamsTrustTrusteeStructureConverter))]
+public enum EntityUpdateParamsTrustTrusteeStructure
+{
+    /// <summary>
+    /// The trustee is an individual.
+    /// </summary>
+    Individual,
+}
+
+sealed class EntityUpdateParamsTrustTrusteeStructureConverter
+    : JsonConverter<EntityUpdateParamsTrustTrusteeStructure>
+{
+    public override EntityUpdateParamsTrustTrusteeStructure Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "individual" => EntityUpdateParamsTrustTrusteeStructure.Individual,
+            _ => (EntityUpdateParamsTrustTrusteeStructure)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        EntityUpdateParamsTrustTrusteeStructure value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                EntityUpdateParamsTrustTrusteeStructure.Individual => "individual",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Details of the individual trustee. Within the trustee object, this is required
+/// if `structure` is equal to `individual`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsTrustTrusteeIndividual,
+        EntityUpdateParamsTrustTrusteeIndividualFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsTrustTrusteeIndividual : JsonModel
+{
+    /// <summary>
+    /// The individual's physical address. Mail receiving locations like PO Boxes
+    /// and PMB's are disallowed.
+    /// </summary>
+    public required EntityUpdateParamsTrustTrusteeIndividualAddress Address
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<EntityUpdateParamsTrustTrusteeIndividualAddress>(
+                "address"
+            );
+        }
+        init { this._rawData.Set("address", value); }
+    }
+
+    /// <summary>
+    /// The person's date of birth in YYYY-MM-DD format.
+    /// </summary>
+    public required string DateOfBirth
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("date_of_birth");
+        }
+        init { this._rawData.Set("date_of_birth", value); }
+    }
+
+    /// <summary>
+    /// A means of verifying the person's identity.
+    /// </summary>
+    public required EntityUpdateParamsTrustTrusteeIndividualIdentification Identification
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<EntityUpdateParamsTrustTrusteeIndividualIdentification>(
+                "identification"
+            );
+        }
+        init { this._rawData.Set("identification", value); }
+    }
+
+    /// <summary>
+    /// The person's legal name.
+    /// </summary>
+    public required string Name
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("name");
+        }
+        init { this._rawData.Set("name", value); }
+    }
+
+    /// <summary>
+    /// The identification method for an individual can only be a passport, driver's
+    /// license, or other document if you've confirmed the individual does not have
+    /// a US tax id (either a Social Security Number or Individual Taxpayer Identification Number).
+    /// </summary>
+    public bool? ConfirmedNoUsTaxID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("confirmed_no_us_tax_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("confirmed_no_us_tax_id", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Address.Validate();
+        _ = this.DateOfBirth;
+        this.Identification.Validate();
+        _ = this.Name;
+        _ = this.ConfirmedNoUsTaxID;
+    }
+
+    public EntityUpdateParamsTrustTrusteeIndividual() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsTrustTrusteeIndividual(
+        EntityUpdateParamsTrustTrusteeIndividual entityUpdateParamsTrustTrusteeIndividual
+    )
+        : base(entityUpdateParamsTrustTrusteeIndividual) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsTrustTrusteeIndividual(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsTrustTrusteeIndividual(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsTrustTrusteeIndividualFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsTrustTrusteeIndividual FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsTrustTrusteeIndividualFromRaw
+    : IFromRawJson<EntityUpdateParamsTrustTrusteeIndividual>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsTrustTrusteeIndividual FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsTrustTrusteeIndividual.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The individual's physical address. Mail receiving locations like PO Boxes and
+/// PMB's are disallowed.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsTrustTrusteeIndividualAddress,
+        EntityUpdateParamsTrustTrusteeIndividualAddressFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsTrustTrusteeIndividualAddress : JsonModel
+{
+    /// <summary>
+    /// The city, district, town, or village of the address.
+    /// </summary>
+    public required string City
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("city");
+        }
+        init { this._rawData.Set("city", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <summary>
+    /// The first line of the address. This is usually the street number and street.
+    /// </summary>
+    public required string Line1
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("line1");
+        }
+        init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// The second line of the address. This might be the floor or room number.
+    /// </summary>
+    public string? Line2
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("line2");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("line2", value);
+        }
+    }
+
+    /// <summary>
+    /// The two-letter United States Postal Service (USPS) abbreviation for the US
+    /// state, province, or region of the address. Required in certain countries.
+    /// </summary>
+    public string? State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("state");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("state", value);
+        }
+    }
+
+    /// <summary>
+    /// The ZIP or postal code of the address. Required in certain countries.
+    /// </summary>
+    public string? Zip
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("zip");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("zip", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.City;
+        _ = this.Country;
+        _ = this.Line1;
+        _ = this.Line2;
+        _ = this.State;
+        _ = this.Zip;
+    }
+
+    public EntityUpdateParamsTrustTrusteeIndividualAddress() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsTrustTrusteeIndividualAddress(
+        EntityUpdateParamsTrustTrusteeIndividualAddress entityUpdateParamsTrustTrusteeIndividualAddress
+    )
+        : base(entityUpdateParamsTrustTrusteeIndividualAddress) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsTrustTrusteeIndividualAddress(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsTrustTrusteeIndividualAddress(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsTrustTrusteeIndividualAddressFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsTrustTrusteeIndividualAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsTrustTrusteeIndividualAddressFromRaw
+    : IFromRawJson<EntityUpdateParamsTrustTrusteeIndividualAddress>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsTrustTrusteeIndividualAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsTrustTrusteeIndividualAddress.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// A means of verifying the person's identity.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsTrustTrusteeIndividualIdentification,
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsTrustTrusteeIndividualIdentification : JsonModel
+{
+    /// <summary>
+    /// A method that can be used to verify the individual's identity.
+    ///
+    /// <para>Defaults to `social_security_number`.</para>
+    /// </summary>
+    public required ApiEnum<
+        string,
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod
+    > Method
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod>
+            >("method");
+        }
+        init { this._rawData.Set("method", value); }
+    }
+
+    /// <summary>
+    /// An identification number that can be used to verify the individual's identity,
+    /// such as a social security number. For Social Security Numbers and Individual
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
+    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
+    /// </summary>
+    public required string Number
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("number");
+        }
+        init { this._rawData.Set("number", value); }
+    }
+
+    /// <summary>
+    /// Information about the United States driver's license used for identification.
+    /// Required if `method` is equal to `drivers_license`.
+    /// </summary>
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense? DriversLicense
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense>(
+                "drivers_license"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("drivers_license", value);
+        }
+    }
+
+    /// <summary>
+    /// Information about the identification document provided. Required if `method`
+    /// is equal to `other`.
+    /// </summary>
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationOther? Other
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsTrustTrusteeIndividualIdentificationOther>(
+                "other"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("other", value);
+        }
+    }
+
+    /// <summary>
+    /// Information about the passport used for identification. Required if `method`
+    /// is equal to `passport`.
+    /// </summary>
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport? Passport
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport>(
+                "passport"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("passport", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Method.Validate();
+        _ = this.Number;
+        this.DriversLicense?.Validate();
+        this.Other?.Validate();
+        this.Passport?.Validate();
+    }
+
+    public EntityUpdateParamsTrustTrusteeIndividualIdentification() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsTrustTrusteeIndividualIdentification(
+        EntityUpdateParamsTrustTrusteeIndividualIdentification entityUpdateParamsTrustTrusteeIndividualIdentification
+    )
+        : base(entityUpdateParamsTrustTrusteeIndividualIdentification) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsTrustTrusteeIndividualIdentification(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsTrustTrusteeIndividualIdentification(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsTrustTrusteeIndividualIdentificationFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsTrustTrusteeIndividualIdentification FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsTrustTrusteeIndividualIdentificationFromRaw
+    : IFromRawJson<EntityUpdateParamsTrustTrusteeIndividualIdentification>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsTrustTrusteeIndividualIdentification FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsTrustTrusteeIndividualIdentification.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// A method that can be used to verify the individual's identity.
+/// </summary>
+[JsonConverter(typeof(EntityUpdateParamsTrustTrusteeIndividualIdentificationMethodConverter))]
+public enum EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod
+{
+    /// <summary>
+    /// A social security number.
+    /// </summary>
+    SocialSecurityNumber,
+
+    /// <summary>
+    /// An individual taxpayer identification number (ITIN).
+    /// </summary>
+    IndividualTaxpayerIdentificationNumber,
+
+    /// <summary>
+    /// A passport number.
+    /// </summary>
+    Passport,
+
+    /// <summary>
+    /// A driver's license number.
+    /// </summary>
+    DriversLicense,
+
+    /// <summary>
+    /// Another identifying document.
+    /// </summary>
+    Other,
+}
+
+sealed class EntityUpdateParamsTrustTrusteeIndividualIdentificationMethodConverter
+    : JsonConverter<EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod>
+{
+    public override EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "social_security_number" =>
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+            "individual_taxpayer_identification_number" =>
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber,
+            "passport" => EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.Passport,
+            "drivers_license" =>
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.DriversLicense,
+            "other" => EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.Other,
+            _ => (EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber =>
+                    "social_security_number",
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber =>
+                    "individual_taxpayer_identification_number",
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.Passport => "passport",
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.DriversLicense =>
+                    "drivers_license",
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.Other => "other",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Information about the United States driver's license used for identification.
+/// Required if `method` is equal to `drivers_license`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense,
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicenseFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense
+    : JsonModel
+{
+    /// <summary>
+    /// The driver's license's expiration date in YYYY-MM-DD format.
+    /// </summary>
+    public required string ExpirationDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("expiration_date");
+        }
+        init { this._rawData.Set("expiration_date", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the front of the driver's license.
+    /// </summary>
+    public required string FileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("file_id");
+        }
+        init { this._rawData.Set("file_id", value); }
+    }
+
+    /// <summary>
+    /// The state that issued the provided driver's license.
+    /// </summary>
+    public required string State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("state");
+        }
+        init { this._rawData.Set("state", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the back of the driver's license.
+    /// </summary>
+    public string? BackFileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("back_file_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("back_file_id", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.ExpirationDate;
+        _ = this.FileID;
+        _ = this.State;
+        _ = this.BackFileID;
+    }
+
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense(
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense entityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense
+    )
+        : base(entityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicenseFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicenseFromRaw
+    : IFromRawJson<EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) =>
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense.FromRawUnchecked(
+            rawData
+        );
+}
+
+/// <summary>
+/// Information about the identification document provided. Required if `method` is
+/// equal to `other`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationOther,
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationOtherFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsTrustTrusteeIndividualIdentificationOther : JsonModel
+{
+    /// <summary>
+    /// The two-character ISO 3166-1 code representing the country that issued the
+    /// document (e.g., `US`).
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <summary>
+    /// A description of the document submitted.
+    /// </summary>
+    public required string Description
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("description");
+        }
+        init { this._rawData.Set("description", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the front of the document.
+    /// </summary>
+    public required string FileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("file_id");
+        }
+        init { this._rawData.Set("file_id", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the back of the document. Not every
+    /// document has a reverse side.
+    /// </summary>
+    public string? BackFileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("back_file_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("back_file_id", value);
+        }
+    }
+
+    /// <summary>
+    /// The document's expiration date in YYYY-MM-DD format.
+    /// </summary>
+    public string? ExpirationDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("expiration_date");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("expiration_date", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Country;
+        _ = this.Description;
+        _ = this.FileID;
+        _ = this.BackFileID;
+        _ = this.ExpirationDate;
+    }
+
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationOther() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationOther(
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationOther entityUpdateParamsTrustTrusteeIndividualIdentificationOther
+    )
+        : base(entityUpdateParamsTrustTrusteeIndividualIdentificationOther) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationOther(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsTrustTrusteeIndividualIdentificationOther(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsTrustTrusteeIndividualIdentificationOtherFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsTrustTrusteeIndividualIdentificationOther FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsTrustTrusteeIndividualIdentificationOtherFromRaw
+    : IFromRawJson<EntityUpdateParamsTrustTrusteeIndividualIdentificationOther>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationOther FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsTrustTrusteeIndividualIdentificationOther.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Information about the passport used for identification. Required if `method`
+/// is equal to `passport`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport,
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationPassportFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport
+    : JsonModel
+{
+    /// <summary>
+    /// The two-character ISO 3166-1 code representing the country that issued the
+    /// document (e.g., `US`).
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <summary>
+    /// The passport's expiration date in YYYY-MM-DD format.
+    /// </summary>
+    public required string ExpirationDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("expiration_date");
+        }
+        init { this._rawData.Set("expiration_date", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the passport.
+    /// </summary>
+    public required string FileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("file_id");
+        }
+        init { this._rawData.Set("file_id", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Country;
+        _ = this.ExpirationDate;
+        _ = this.FileID;
+    }
+
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport(
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport entityUpdateParamsTrustTrusteeIndividualIdentificationPassport
+    )
+        : base(entityUpdateParamsTrustTrusteeIndividualIdentificationPassport) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsTrustTrusteeIndividualIdentificationPassportFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsTrustTrusteeIndividualIdentificationPassportFromRaw
+    : IFromRawJson<EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport.FromRawUnchecked(rawData);
 }

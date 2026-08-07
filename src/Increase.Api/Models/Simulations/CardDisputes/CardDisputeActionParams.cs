@@ -351,6 +351,28 @@ public sealed record class Visa : JsonModel
     }
 
     /// <summary>
+    /// The parameters for rejecting the dispute. Required if and only if `action`
+    /// is `reject`.
+    /// </summary>
+    public Reject? Reject
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<Reject>("reject");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("reject", value);
+        }
+    }
+
+    /// <summary>
     /// The parameters for re-presenting the dispute. Required if and only if `action`
     /// is `represent`.
     /// </summary>
@@ -496,6 +518,7 @@ public sealed record class Visa : JsonModel
         this.AcceptUserSubmission?.Validate();
         this.DeclineUserPrearbitration?.Validate();
         this.ReceiveMerchantPrearbitration?.Validate();
+        this.Reject?.Validate();
         this.Represent?.Validate();
         this.RequestFurtherInformation?.Validate();
         this.TimeOutChargeback?.Validate();
@@ -578,6 +601,12 @@ public enum Action
     ReceiveMerchantPrearbitration,
 
     /// <summary>
+    /// Simulate the dispute being rejected before it is submitted to the network.
+    /// This will move the dispute to a `rejected` state.
+    /// </summary>
+    Reject,
+
+    /// <summary>
     /// Simulate the merchant re-presenting the dispute. This will move the dispute
     /// to a `user_submission_required` state.
     /// </summary>
@@ -653,6 +682,7 @@ sealed class ActionConverter
                 .CardDisputes
                 .Action
                 .ReceiveMerchantPrearbitration,
+            "reject" => global::Increase.Api.Models.Simulations.CardDisputes.Action.Reject,
             "represent" => global::Increase.Api.Models.Simulations.CardDisputes.Action.Represent,
             "request_further_information" => global::Increase
                 .Api
@@ -721,6 +751,7 @@ sealed class ActionConverter
                     .CardDisputes
                     .Action
                     .ReceiveMerchantPrearbitration => "receive_merchant_prearbitration",
+                global::Increase.Api.Models.Simulations.CardDisputes.Action.Reject => "reject",
                 global::Increase.Api.Models.Simulations.CardDisputes.Action.Represent =>
                     "represent",
                 global::Increase
@@ -952,6 +983,73 @@ class ReceiveMerchantPrearbitrationFromRaw : IFromRawJson<ReceiveMerchantPrearbi
     public ReceiveMerchantPrearbitration FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => ReceiveMerchantPrearbitration.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The parameters for rejecting the dispute. Required if and only if `action` is `reject`.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Reject, RejectFromRaw>))]
+public sealed record class Reject : JsonModel
+{
+    /// <summary>
+    /// The explanation for rejecting the dispute.
+    /// </summary>
+    public required string Explanation
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("explanation");
+        }
+        init { this._rawData.Set("explanation", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Explanation;
+    }
+
+    public Reject() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Reject(Reject reject)
+        : base(reject) { }
+#pragma warning restore CS8618
+
+    public Reject(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Reject(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="RejectFromRaw.FromRawUnchecked"/>
+    public static Reject FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public Reject(string explanation)
+        : this()
+    {
+        this.Explanation = explanation;
+    }
+}
+
+class RejectFromRaw : IFromRawJson<Reject>
+{
+    /// <inheritdoc/>
+    public Reject FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Reject.FromRawUnchecked(rawData);
 }
 
 /// <summary>
