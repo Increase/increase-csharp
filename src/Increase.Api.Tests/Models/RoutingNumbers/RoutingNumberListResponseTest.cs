@@ -15,6 +15,7 @@ public class RoutingNumberListResponseTest : TestBase
             AchTransfers = RoutingNumberListResponseAchTransfers.Supported,
             FednowTransfers = RoutingNumberListResponseFednowTransfers.Supported,
             Name = "First Bank of the United States",
+            RealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported,
             RealTimePaymentsTransfers =
                 RoutingNumberListResponseRealTimePaymentsTransfers.Supported,
             RoutingNumber = "021000021",
@@ -29,6 +30,10 @@ public class RoutingNumberListResponseTest : TestBase
         string expectedName = "First Bank of the United States";
         ApiEnum<
             string,
+            RealTimePaymentsRequestForPayment
+        > expectedRealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported;
+        ApiEnum<
+            string,
             RoutingNumberListResponseRealTimePaymentsTransfers
         > expectedRealTimePaymentsTransfers =
             RoutingNumberListResponseRealTimePaymentsTransfers.Supported;
@@ -40,6 +45,10 @@ public class RoutingNumberListResponseTest : TestBase
         Assert.Equal(expectedAchTransfers, model.AchTransfers);
         Assert.Equal(expectedFednowTransfers, model.FednowTransfers);
         Assert.Equal(expectedName, model.Name);
+        Assert.Equal(
+            expectedRealTimePaymentsRequestForPayment,
+            model.RealTimePaymentsRequestForPayment
+        );
         Assert.Equal(expectedRealTimePaymentsTransfers, model.RealTimePaymentsTransfers);
         Assert.Equal(expectedRoutingNumber, model.RoutingNumber);
         Assert.Equal(expectedType, model.Type);
@@ -54,6 +63,7 @@ public class RoutingNumberListResponseTest : TestBase
             AchTransfers = RoutingNumberListResponseAchTransfers.Supported,
             FednowTransfers = RoutingNumberListResponseFednowTransfers.Supported,
             Name = "First Bank of the United States",
+            RealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported,
             RealTimePaymentsTransfers =
                 RoutingNumberListResponseRealTimePaymentsTransfers.Supported,
             RoutingNumber = "021000021",
@@ -78,6 +88,7 @@ public class RoutingNumberListResponseTest : TestBase
             AchTransfers = RoutingNumberListResponseAchTransfers.Supported,
             FednowTransfers = RoutingNumberListResponseFednowTransfers.Supported,
             Name = "First Bank of the United States",
+            RealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported,
             RealTimePaymentsTransfers =
                 RoutingNumberListResponseRealTimePaymentsTransfers.Supported,
             RoutingNumber = "021000021",
@@ -99,6 +110,10 @@ public class RoutingNumberListResponseTest : TestBase
         string expectedName = "First Bank of the United States";
         ApiEnum<
             string,
+            RealTimePaymentsRequestForPayment
+        > expectedRealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported;
+        ApiEnum<
+            string,
             RoutingNumberListResponseRealTimePaymentsTransfers
         > expectedRealTimePaymentsTransfers =
             RoutingNumberListResponseRealTimePaymentsTransfers.Supported;
@@ -110,6 +125,10 @@ public class RoutingNumberListResponseTest : TestBase
         Assert.Equal(expectedAchTransfers, deserialized.AchTransfers);
         Assert.Equal(expectedFednowTransfers, deserialized.FednowTransfers);
         Assert.Equal(expectedName, deserialized.Name);
+        Assert.Equal(
+            expectedRealTimePaymentsRequestForPayment,
+            deserialized.RealTimePaymentsRequestForPayment
+        );
         Assert.Equal(expectedRealTimePaymentsTransfers, deserialized.RealTimePaymentsTransfers);
         Assert.Equal(expectedRoutingNumber, deserialized.RoutingNumber);
         Assert.Equal(expectedType, deserialized.Type);
@@ -124,6 +143,7 @@ public class RoutingNumberListResponseTest : TestBase
             AchTransfers = RoutingNumberListResponseAchTransfers.Supported,
             FednowTransfers = RoutingNumberListResponseFednowTransfers.Supported,
             Name = "First Bank of the United States",
+            RealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported,
             RealTimePaymentsTransfers =
                 RoutingNumberListResponseRealTimePaymentsTransfers.Supported,
             RoutingNumber = "021000021",
@@ -142,6 +162,7 @@ public class RoutingNumberListResponseTest : TestBase
             AchTransfers = RoutingNumberListResponseAchTransfers.Supported,
             FednowTransfers = RoutingNumberListResponseFednowTransfers.Supported,
             Name = "First Bank of the United States",
+            RealTimePaymentsRequestForPayment = RealTimePaymentsRequestForPayment.Supported,
             RealTimePaymentsTransfers =
                 RoutingNumberListResponseRealTimePaymentsTransfers.Supported,
             RoutingNumber = "021000021",
@@ -257,6 +278,62 @@ public class RoutingNumberListResponseFednowTransfersTest : TestBase
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, RoutingNumberListResponseFednowTransfers>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class RealTimePaymentsRequestForPaymentTest : TestBase
+{
+    [Theory]
+    [InlineData(RealTimePaymentsRequestForPayment.Supported)]
+    [InlineData(RealTimePaymentsRequestForPayment.NotSupported)]
+    public void Validation_Works(RealTimePaymentsRequestForPayment rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, RealTimePaymentsRequestForPayment> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, RealTimePaymentsRequestForPayment>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(RealTimePaymentsRequestForPayment.Supported)]
+    [InlineData(RealTimePaymentsRequestForPayment.NotSupported)]
+    public void SerializationRoundtrip_Works(RealTimePaymentsRequestForPayment rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, RealTimePaymentsRequestForPayment> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, RealTimePaymentsRequestForPayment>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, RealTimePaymentsRequestForPayment>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, RealTimePaymentsRequestForPayment>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);

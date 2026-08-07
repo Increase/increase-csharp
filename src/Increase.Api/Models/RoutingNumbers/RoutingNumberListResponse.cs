@@ -61,6 +61,24 @@ public sealed record class RoutingNumberListResponse : JsonModel
     }
 
     /// <summary>
+    /// This routing number's support for Real-Time Payments Requests for Payment.
+    /// </summary>
+    public required ApiEnum<
+        string,
+        RealTimePaymentsRequestForPayment
+    > RealTimePaymentsRequestForPayment
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, RealTimePaymentsRequestForPayment>
+            >("real_time_payments_request_for_payment");
+        }
+        init { this._rawData.Set("real_time_payments_request_for_payment", value); }
+    }
+
+    /// <summary>
     /// This routing number's support for Real-Time Payments Transfers.
     /// </summary>
     public required ApiEnum<
@@ -128,6 +146,7 @@ public sealed record class RoutingNumberListResponse : JsonModel
         this.AchTransfers.Validate();
         this.FednowTransfers.Validate();
         _ = this.Name;
+        this.RealTimePaymentsRequestForPayment.Validate();
         this.RealTimePaymentsTransfers.Validate();
         _ = this.RoutingNumber;
         this.Type.Validate();
@@ -273,6 +292,61 @@ sealed class RoutingNumberListResponseFednowTransfersConverter
             {
                 RoutingNumberListResponseFednowTransfers.Supported => "supported",
                 RoutingNumberListResponseFednowTransfers.NotSupported => "not_supported",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// This routing number's support for Real-Time Payments Requests for Payment.
+/// </summary>
+[JsonConverter(typeof(RealTimePaymentsRequestForPaymentConverter))]
+public enum RealTimePaymentsRequestForPayment
+{
+    /// <summary>
+    /// The routing number can receive this transfer type.
+    /// </summary>
+    Supported,
+
+    /// <summary>
+    /// The routing number cannot receive this transfer type.
+    /// </summary>
+    NotSupported,
+}
+
+sealed class RealTimePaymentsRequestForPaymentConverter
+    : JsonConverter<RealTimePaymentsRequestForPayment>
+{
+    public override RealTimePaymentsRequestForPayment Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "supported" => RealTimePaymentsRequestForPayment.Supported,
+            "not_supported" => RealTimePaymentsRequestForPayment.NotSupported,
+            _ => (RealTimePaymentsRequestForPayment)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        RealTimePaymentsRequestForPayment value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                RealTimePaymentsRequestForPayment.Supported => "supported",
+                RealTimePaymentsRequestForPayment.NotSupported => "not_supported",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
