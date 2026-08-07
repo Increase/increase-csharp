@@ -453,7 +453,8 @@ sealed class BalanceCheckConverter : JsonConverter<BalanceCheck>
 public sealed record class PhysicalCheck : JsonModel
 {
     /// <summary>
-    /// Details for where Increase will mail the check.
+    /// Details for where Increase will mail the check. When `physical_check_batch_id`
+    /// is set, the address must match the Physical Check Batch.
     /// </summary>
     public required MailingAddress MailingAddress
     {
@@ -578,9 +579,30 @@ public sealed record class PhysicalCheck : JsonModel
     }
 
     /// <summary>
-    /// The return address to be printed on the check. If omitted this will default
-    /// to an Increase-owned address that will mark checks as delivery failed and
-    /// shred them.
+    /// The identifier of the Physical Check Batch to mail this check as a part of.
+    /// </summary>
+    public string? PhysicalCheckBatchID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("physical_check_batch_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("physical_check_batch_id", value);
+        }
+    }
+
+    /// <summary>
+    /// Details for where the courier will return the check to if it is unable to
+    /// be delivered. Defaults to an Increase-owned address that will mark checks
+    /// as delivery failed and shred them.
     /// </summary>
     public ReturnAddress? ReturnAddress
     {
@@ -682,6 +704,7 @@ public sealed record class PhysicalCheck : JsonModel
         _ = this.AttachmentFileID;
         _ = this.CheckVoucherImageFileID;
         _ = this.Note;
+        _ = this.PhysicalCheckBatchID;
         this.ReturnAddress?.Validate();
         _ = this.ReturnAddressName;
         this.ShippingMethod?.Validate();
@@ -724,7 +747,8 @@ class PhysicalCheckFromRaw : IFromRawJson<PhysicalCheck>
 }
 
 /// <summary>
-/// Details for where Increase will mail the check.
+/// Details for where Increase will mail the check. When `physical_check_batch_id`
+/// is set, the address must match the Physical Check Batch.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<MailingAddress, MailingAddressFromRaw>))]
 public sealed record class MailingAddress : JsonModel
@@ -959,8 +983,9 @@ class PayerFromRaw : IFromRawJson<Payer>
 }
 
 /// <summary>
-/// The return address to be printed on the check. If omitted this will default to
-/// an Increase-owned address that will mark checks as delivery failed and shred them.
+/// Details for where the courier will return the check to if it is unable to be
+/// delivered. Defaults to an Increase-owned address that will mark checks as delivery
+/// failed and shred them.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<ReturnAddress, ReturnAddressFromRaw>))]
 public sealed record class ReturnAddress : JsonModel
@@ -1128,14 +1153,12 @@ class ReturnAddressFromRaw : IFromRawJson<ReturnAddress>
 public enum ShippingMethod
 {
     /// <summary>
-    /// Ship the checks via USPS First Class, which supports a maximum of 1000 pages
-    /// (checks and attachments combined).
+    /// USPS First Class
     /// </summary>
     UspsFirstClass,
 
     /// <summary>
-    /// Ship the checks via FedEx Overnight, which supports a maximum of 50 pages
-    /// (checks and attachments combined).
+    /// FedEx Overnight
     /// </summary>
     FedexOvernight,
 }

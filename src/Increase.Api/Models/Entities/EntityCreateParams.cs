@@ -716,6 +716,8 @@ public sealed record class Address : JsonModel
 
     /// <summary>
     /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
     /// </summary>
     public required string Country
     {
@@ -1103,6 +1105,8 @@ public sealed record class IndividualAddress : JsonModel
 
     /// <summary>
     /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
     /// </summary>
     public required string Country
     {
@@ -1247,6 +1251,8 @@ public sealed record class Identification : JsonModel
 {
     /// <summary>
     /// A method that can be used to verify the individual's identity.
+    ///
+    /// <para>Defaults to `social_security_number`.</para>
     /// </summary>
     public required ApiEnum<string, Method> Method
     {
@@ -1864,7 +1870,9 @@ public sealed record class LegalIdentifier : JsonModel
     }
 
     /// <summary>
-    /// The category of the legal identifier. If not provided, the default is `us_employer_identification_number`.
+    /// The category of the legal identifier.
+    ///
+    /// <para>Defaults to `us_employer_identification_number`.</para>
     /// </summary>
     public ApiEnum<string, Category>? Category
     {
@@ -1934,7 +1942,7 @@ class LegalIdentifierFromRaw : IFromRawJson<LegalIdentifier>
 }
 
 /// <summary>
-/// The category of the legal identifier. If not provided, the default is `us_employer_identification_number`.
+/// The category of the legal identifier.
 /// </summary>
 [JsonConverter(typeof(CategoryConverter))]
 public enum Category
@@ -2705,6 +2713,8 @@ public sealed record class JointIndividualAddress : JsonModel
 
     /// <summary>
     /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
     /// </summary>
     public required string Country
     {
@@ -2852,6 +2862,8 @@ public sealed record class JointIndividualIdentification : JsonModel
 {
     /// <summary>
     /// A method that can be used to verify the individual's identity.
+    ///
+    /// <para>Defaults to `social_security_number`.</para>
     /// </summary>
     public required ApiEnum<string, JointIndividualIdentificationMethod> Method
     {
@@ -3601,6 +3613,8 @@ public sealed record class NaturalPersonAddress : JsonModel
 
     /// <summary>
     /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
     /// </summary>
     public required string Country
     {
@@ -3748,6 +3762,8 @@ public sealed record class NaturalPersonIdentification : JsonModel
 {
     /// <summary>
     /// A method that can be used to verify the individual's identity.
+    ///
+    /// <para>Defaults to `social_security_number`.</para>
     /// </summary>
     public required ApiEnum<string, NaturalPersonIdentificationMethod> Method
     {
@@ -5449,6 +5465,8 @@ public sealed record class TrusteeIndividualAddress : JsonModel
 
     /// <summary>
     /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
     /// </summary>
     public required string Country
     {
@@ -5599,6 +5617,8 @@ public sealed record class TrusteeIndividualIdentification : JsonModel
 {
     /// <summary>
     /// A method that can be used to verify the individual's identity.
+    ///
+    /// <para>Defaults to `social_security_number`.</para>
     /// </summary>
     public required ApiEnum<string, TrusteeIndividualIdentificationMethod> Method
     {
@@ -6347,6 +6367,8 @@ public sealed record class GrantorAddress : JsonModel
 
     /// <summary>
     /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
     /// </summary>
     public required string Country
     {
@@ -6489,6 +6511,8 @@ public sealed record class GrantorIdentification : JsonModel
 {
     /// <summary>
     /// A method that can be used to verify the individual's identity.
+    ///
+    /// <para>Defaults to `social_security_number`.</para>
     /// </summary>
     public required ApiEnum<string, GrantorIdentificationMethod> Method
     {
