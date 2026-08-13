@@ -260,37 +260,37 @@ public enum RejectReasonCode
 {
     /// <summary>
     /// The destination account is closed. Corresponds to the Real-Time Payments
-    /// reason code `AC04`.
+    /// reason code "AC04".
     /// </summary>
     AccountClosed,
 
     /// <summary>
     /// The destination account is currently blocked from receiving transactions.
-    /// Corresponds to the Real-Time Payments reason code `AC06`.
+    /// Corresponds to the Real-Time Payments reason code "AC06".
     /// </summary>
     AccountBlocked,
 
     /// <summary>
     /// The destination account is ineligible to receive Real-Time Payments transfers.
-    /// Corresponds to the Real-Time Payments reason code `AC14`.
+    /// Corresponds to the Real-Time Payments reason code "AC14".
     /// </summary>
     InvalidCreditorAccountType,
 
     /// <summary>
     /// The destination account does not exist. Corresponds to the Real-Time Payments
-    /// reason code `AC03`.
+    /// reason code "AC03".
     /// </summary>
     InvalidCreditorAccountNumber,
 
     /// <summary>
     /// The destination routing number is invalid. Corresponds to the Real-Time Payments
-    /// reason code `RC04`.
+    /// reason code "RC04".
     /// </summary>
     InvalidCreditorFinancialInstitutionIdentifier,
 
     /// <summary>
     /// The destination account holder is deceased. Corresponds to the Real-Time
-    /// Payments reason code `MD07`.
+    /// Payments reason code "MD07".
     /// </summary>
     EndCustomerDeceased,
 
@@ -301,73 +301,73 @@ public enum RejectReasonCode
 
     /// <summary>
     /// Real-Time Payments transfers are not allowed to the destination account.
-    /// Corresponds to the Real-Time Payments reason code `AG01`.
+    /// Corresponds to the Real-Time Payments reason code "AG01".
     /// </summary>
     TransactionForbidden,
 
     /// <summary>
     /// Real-Time Payments transfers are not enabled for the destination account.
-    /// Corresponds to the Real-Time Payments reason code `AG03`.
+    /// Corresponds to the Real-Time Payments reason code "AG03".
     /// </summary>
     TransactionTypeNotSupported,
 
     /// <summary>
     /// The amount of the transfer is different than expected by the recipient. Corresponds
-    /// to the Real-Time Payments reason code `AM09`.
+    /// to the Real-Time Payments reason code "AM09".
     /// </summary>
     UnexpectedAmount,
 
     /// <summary>
     /// The amount is higher than the recipient is authorized to send or receive.
-    /// Corresponds to the Real-Time Payments reason code `AM14`.
+    /// Corresponds to the Real-Time Payments reason code "AM14".
     /// </summary>
     AmountExceedsBankLimits,
 
     /// <summary>
     /// The creditor's address is required, but missing or invalid. Corresponds to
-    /// the Real-Time Payments reason code `BE04`.
+    /// the Real-Time Payments reason code "BE04".
     /// </summary>
     InvalidCreditorAddress,
 
     /// <summary>
     /// The specified creditor is unknown. Corresponds to the Real-Time Payments
-    /// reason code `BE06`.
+    /// reason code "BE06".
     /// </summary>
     UnknownEndCustomer,
 
     /// <summary>
     /// The debtor's address is required, but missing or invalid. Corresponds to the
-    /// Real-Time Payments reason code `BE07`.
+    /// Real-Time Payments reason code "BE07".
     /// </summary>
     InvalidDebtorAddress,
 
     /// <summary>
     /// There was a timeout processing the transfer. Corresponds to the Real-Time
-    /// Payments reason code `DS24`.
+    /// Payments reason code "DS24".
     /// </summary>
     Timeout,
 
     /// <summary>
     /// Real-Time Payments transfers are not enabled for the destination account.
-    /// Corresponds to the Real-Time Payments reason code `NOAT`.
+    /// Corresponds to the Real-Time Payments reason code "NOAT".
     /// </summary>
     UnsupportedMessageForRecipient,
 
     /// <summary>
     /// The destination financial institution is currently not connected to Real-Time
-    /// Payments. Corresponds to the Real-Time Payments reason code `9912`.
+    /// Payments. Corresponds to the Real-Time Payments reason code "9912".
     /// </summary>
     RecipientConnectionNotAvailable,
 
     /// <summary>
     /// Real-Time Payments is currently unavailable. Corresponds to the Real-Time
-    /// Payments reason code `9948`.
+    /// Payments reason code "9948".
     /// </summary>
     RealTimePaymentsSuspended,
 
     /// <summary>
     /// The destination financial institution is currently signed off of Real-Time
-    /// Payments. Corresponds to the Real-Time Payments reason code `9910`.
+    /// Payments. Corresponds to the Real-Time Payments reason code "9910".
     /// </summary>
     InstructedAgentSignedOff,
 

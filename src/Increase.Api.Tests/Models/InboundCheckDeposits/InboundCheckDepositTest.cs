@@ -29,6 +29,7 @@ public class InboundCheckDepositTest : TestBase
                 },
             ],
             Amount = 1000,
+            AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
             BankOfFirstDepositRoutingNumber = "101050001",
             CheckNumber = "123",
@@ -65,6 +66,9 @@ public class InboundCheckDepositTest : TestBase
             },
         ];
         long expectedAmount = 1000;
+        DateTimeOffset expectedAutomaticallyResolvesAt = DateTimeOffset.Parse(
+            "2020-01-31T23:59:59Z"
+        );
         string expectedBackImageFileID = "file_makxrc67oh9l6sg7w9yc";
         string expectedBankOfFirstDepositRoutingNumber = "101050001";
         string expectedCheckNumber = "123";
@@ -97,6 +101,7 @@ public class InboundCheckDepositTest : TestBase
             Assert.Equal(expectedAdjustments[i], model.Adjustments[i]);
         }
         Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedAutomaticallyResolvesAt, model.AutomaticallyResolvesAt);
         Assert.Equal(expectedBackImageFileID, model.BackImageFileID);
         Assert.Equal(
             expectedBankOfFirstDepositRoutingNumber,
@@ -136,6 +141,7 @@ public class InboundCheckDepositTest : TestBase
                 },
             ],
             Amount = 1000,
+            AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
             BankOfFirstDepositRoutingNumber = "101050001",
             CheckNumber = "123",
@@ -186,6 +192,7 @@ public class InboundCheckDepositTest : TestBase
                 },
             ],
             Amount = 1000,
+            AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
             BankOfFirstDepositRoutingNumber = "101050001",
             CheckNumber = "123",
@@ -229,6 +236,9 @@ public class InboundCheckDepositTest : TestBase
             },
         ];
         long expectedAmount = 1000;
+        DateTimeOffset expectedAutomaticallyResolvesAt = DateTimeOffset.Parse(
+            "2020-01-31T23:59:59Z"
+        );
         string expectedBackImageFileID = "file_makxrc67oh9l6sg7w9yc";
         string expectedBankOfFirstDepositRoutingNumber = "101050001";
         string expectedCheckNumber = "123";
@@ -261,6 +271,7 @@ public class InboundCheckDepositTest : TestBase
             Assert.Equal(expectedAdjustments[i], deserialized.Adjustments[i]);
         }
         Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedAutomaticallyResolvesAt, deserialized.AutomaticallyResolvesAt);
         Assert.Equal(expectedBackImageFileID, deserialized.BackImageFileID);
         Assert.Equal(
             expectedBankOfFirstDepositRoutingNumber,
@@ -300,6 +311,7 @@ public class InboundCheckDepositTest : TestBase
                 },
             ],
             Amount = 1000,
+            AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
             BankOfFirstDepositRoutingNumber = "101050001",
             CheckNumber = "123",
@@ -344,6 +356,7 @@ public class InboundCheckDepositTest : TestBase
                 },
             ],
             Amount = 1000,
+            AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
             BankOfFirstDepositRoutingNumber = "101050001",
             CheckNumber = "123",
