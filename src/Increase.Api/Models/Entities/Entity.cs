@@ -3173,12 +3173,12 @@ public sealed record class EntityTermsAgreement : JsonModel
     /// <summary>
     /// The IP address the Entity accessed reviewed the terms from.
     /// </summary>
-    public required string IPAddress
+    public required string? IPAddress
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("ip_address");
+            return this._rawData.GetNullableClass<string>("ip_address");
         }
         init { this._rawData.Set("ip_address", value); }
     }
@@ -4898,6 +4898,19 @@ public sealed record class Issue : JsonModel
     }
 
     /// <summary>
+    /// Details when the issue is with the entity's identity verification.
+    /// </summary>
+    public required EntityIdentity? EntityIdentity
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityIdentity>("entity_identity");
+        }
+        init { this._rawData.Set("entity_identity", value); }
+    }
+
+    /// <summary>
     /// Details when the issue is with the entity's tax ID.
     /// </summary>
     public required EntityTaxIdentifier? EntityTaxIdentifier
@@ -4917,6 +4930,7 @@ public sealed record class Issue : JsonModel
         this.BeneficialOwnerIdentity?.Validate();
         this.Category.Validate();
         this.EntityAddress?.Validate();
+        this.EntityIdentity?.Validate();
         this.EntityTaxIdentifier?.Validate();
     }
 
@@ -5165,6 +5179,12 @@ public enum IssueCategory
     EntityAddress,
 
     /// <summary>
+    /// The entity's identity could not be verified. Update the identification with
+    /// the [update an entity API](/documentation/api/entities#update-an-entity.natural_person.identification).
+    /// </summary>
+    EntityIdentity,
+
+    /// <summary>
     /// A beneficial owner's identity could not be verified. Update the identification
     /// with the [update a beneficial owner API](/documentation/api/beneficial-owners#update-a-beneficial-owner).
     /// </summary>
@@ -5189,6 +5209,7 @@ sealed class IssueCategoryConverter : JsonConverter<IssueCategory>
         {
             "entity_tax_identifier" => IssueCategory.EntityTaxIdentifier,
             "entity_address" => IssueCategory.EntityAddress,
+            "entity_identity" => IssueCategory.EntityIdentity,
             "beneficial_owner_identity" => IssueCategory.BeneficialOwnerIdentity,
             "beneficial_owner_address" => IssueCategory.BeneficialOwnerAddress,
             _ => (IssueCategory)(-1),
@@ -5207,6 +5228,7 @@ sealed class IssueCategoryConverter : JsonConverter<IssueCategory>
             {
                 IssueCategory.EntityTaxIdentifier => "entity_tax_identifier",
                 IssueCategory.EntityAddress => "entity_address",
+                IssueCategory.EntityIdentity => "entity_identity",
                 IssueCategory.BeneficialOwnerIdentity => "beneficial_owner_identity",
                 IssueCategory.BeneficialOwnerAddress => "beneficial_owner_address",
                 _ => throw new IncreaseInvalidDataException(
@@ -5330,6 +5352,50 @@ sealed class EntityAddressReasonConverter : JsonConverter<EntityAddressReason>
             options
         );
     }
+}
+
+/// <summary>
+/// Details when the issue is with the entity's identity verification.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<EntityIdentity, EntityIdentityFromRaw>))]
+public sealed record class EntityIdentity : JsonModel
+{
+    /// <inheritdoc/>
+    public override void Validate() { }
+
+    public EntityIdentity() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityIdentity(EntityIdentity entityIdentity)
+        : base(entityIdentity) { }
+#pragma warning restore CS8618
+
+    public EntityIdentity(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityIdentity(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityIdentityFromRaw.FromRawUnchecked"/>
+    public static EntityIdentity FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityIdentityFromRaw : IFromRawJson<EntityIdentity>
+{
+    /// <inheritdoc/>
+    public EntityIdentity FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        EntityIdentity.FromRawUnchecked(rawData);
 }
 
 /// <summary>
