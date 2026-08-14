@@ -55,7 +55,8 @@ public record class AchTransferReturnParams : ParamsBase
 
     /// <summary>
     /// The reason why the Federal Reserve or destination bank returned this transfer.
-    /// Defaults to `no_account`.
+    ///
+    /// <para>Defaults to `no_account`.</para>
     /// </summary>
     public ApiEnum<string, Reason>? Reason
     {
@@ -198,7 +199,6 @@ public record class AchTransferReturnParams : ParamsBase
 
 /// <summary>
 /// The reason why the Federal Reserve or destination bank returned this transfer.
-/// Defaults to `no_account`.
 /// </summary>
 [JsonConverter(typeof(ReasonConverter))]
 public enum Reason
