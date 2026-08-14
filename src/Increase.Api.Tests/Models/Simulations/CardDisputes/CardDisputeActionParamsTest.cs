@@ -22,6 +22,7 @@ public class CardDisputeActionParamsTest : TestBase
                 AcceptUserSubmission = new(),
                 DeclineUserPrearbitration = new(),
                 ReceiveMerchantPrearbitration = new(),
+                Reject = new("x"),
                 Represent = new(),
                 RequestFurtherInformation = new("x"),
                 TimeOutChargeback = new(),
@@ -40,6 +41,7 @@ public class CardDisputeActionParamsTest : TestBase
             AcceptUserSubmission = new(),
             DeclineUserPrearbitration = new(),
             ReceiveMerchantPrearbitration = new(),
+            Reject = new("x"),
             Represent = new(),
             RequestFurtherInformation = new("x"),
             TimeOutChargeback = new(),
@@ -117,6 +119,7 @@ public class CardDisputeActionParamsTest : TestBase
                 AcceptUserSubmission = new(),
                 DeclineUserPrearbitration = new(),
                 ReceiveMerchantPrearbitration = new(),
+                Reject = new("x"),
                 Represent = new(),
                 RequestFurtherInformation = new("x"),
                 TimeOutChargeback = new(),
@@ -200,6 +203,7 @@ public class VisaTest : TestBase
             AcceptUserSubmission = new(),
             DeclineUserPrearbitration = new(),
             ReceiveMerchantPrearbitration = new(),
+            Reject = new("x"),
             Represent = new(),
             RequestFurtherInformation = new("x"),
             TimeOutChargeback = new(),
@@ -214,6 +218,7 @@ public class VisaTest : TestBase
         CardDisputes::AcceptUserSubmission expectedAcceptUserSubmission = new();
         CardDisputes::DeclineUserPrearbitration expectedDeclineUserPrearbitration = new();
         CardDisputes::ReceiveMerchantPrearbitration expectedReceiveMerchantPrearbitration = new();
+        CardDisputes::Reject expectedReject = new("x");
         CardDisputes::Represent expectedRepresent = new();
         CardDisputes::RequestFurtherInformation expectedRequestFurtherInformation = new("x");
         CardDisputes::TimeOutChargeback expectedTimeOutChargeback = new();
@@ -226,6 +231,7 @@ public class VisaTest : TestBase
         Assert.Equal(expectedAcceptUserSubmission, model.AcceptUserSubmission);
         Assert.Equal(expectedDeclineUserPrearbitration, model.DeclineUserPrearbitration);
         Assert.Equal(expectedReceiveMerchantPrearbitration, model.ReceiveMerchantPrearbitration);
+        Assert.Equal(expectedReject, model.Reject);
         Assert.Equal(expectedRepresent, model.Represent);
         Assert.Equal(expectedRequestFurtherInformation, model.RequestFurtherInformation);
         Assert.Equal(expectedTimeOutChargeback, model.TimeOutChargeback);
@@ -244,6 +250,7 @@ public class VisaTest : TestBase
             AcceptUserSubmission = new(),
             DeclineUserPrearbitration = new(),
             ReceiveMerchantPrearbitration = new(),
+            Reject = new("x"),
             Represent = new(),
             RequestFurtherInformation = new("x"),
             TimeOutChargeback = new(),
@@ -271,6 +278,7 @@ public class VisaTest : TestBase
             AcceptUserSubmission = new(),
             DeclineUserPrearbitration = new(),
             ReceiveMerchantPrearbitration = new(),
+            Reject = new("x"),
             Represent = new(),
             RequestFurtherInformation = new("x"),
             TimeOutChargeback = new(),
@@ -292,6 +300,7 @@ public class VisaTest : TestBase
         CardDisputes::AcceptUserSubmission expectedAcceptUserSubmission = new();
         CardDisputes::DeclineUserPrearbitration expectedDeclineUserPrearbitration = new();
         CardDisputes::ReceiveMerchantPrearbitration expectedReceiveMerchantPrearbitration = new();
+        CardDisputes::Reject expectedReject = new("x");
         CardDisputes::Represent expectedRepresent = new();
         CardDisputes::RequestFurtherInformation expectedRequestFurtherInformation = new("x");
         CardDisputes::TimeOutChargeback expectedTimeOutChargeback = new();
@@ -307,6 +316,7 @@ public class VisaTest : TestBase
             expectedReceiveMerchantPrearbitration,
             deserialized.ReceiveMerchantPrearbitration
         );
+        Assert.Equal(expectedReject, deserialized.Reject);
         Assert.Equal(expectedRepresent, deserialized.Represent);
         Assert.Equal(expectedRequestFurtherInformation, deserialized.RequestFurtherInformation);
         Assert.Equal(expectedTimeOutChargeback, deserialized.TimeOutChargeback);
@@ -328,6 +338,7 @@ public class VisaTest : TestBase
             AcceptUserSubmission = new(),
             DeclineUserPrearbitration = new(),
             ReceiveMerchantPrearbitration = new(),
+            Reject = new("x"),
             Represent = new(),
             RequestFurtherInformation = new("x"),
             TimeOutChargeback = new(),
@@ -352,6 +363,8 @@ public class VisaTest : TestBase
         Assert.False(model.RawData.ContainsKey("decline_user_prearbitration"));
         Assert.Null(model.ReceiveMerchantPrearbitration);
         Assert.False(model.RawData.ContainsKey("receive_merchant_prearbitration"));
+        Assert.Null(model.Reject);
+        Assert.False(model.RawData.ContainsKey("reject"));
         Assert.Null(model.Represent);
         Assert.False(model.RawData.ContainsKey("represent"));
         Assert.Null(model.RequestFurtherInformation);
@@ -386,6 +399,7 @@ public class VisaTest : TestBase
             AcceptUserSubmission = null,
             DeclineUserPrearbitration = null,
             ReceiveMerchantPrearbitration = null,
+            Reject = null,
             Represent = null,
             RequestFurtherInformation = null,
             TimeOutChargeback = null,
@@ -402,6 +416,8 @@ public class VisaTest : TestBase
         Assert.False(model.RawData.ContainsKey("decline_user_prearbitration"));
         Assert.Null(model.ReceiveMerchantPrearbitration);
         Assert.False(model.RawData.ContainsKey("receive_merchant_prearbitration"));
+        Assert.Null(model.Reject);
+        Assert.False(model.RawData.ContainsKey("reject"));
         Assert.Null(model.Represent);
         Assert.False(model.RawData.ContainsKey("represent"));
         Assert.Null(model.RequestFurtherInformation);
@@ -428,6 +444,7 @@ public class VisaTest : TestBase
             AcceptUserSubmission = null,
             DeclineUserPrearbitration = null,
             ReceiveMerchantPrearbitration = null,
+            Reject = null,
             Represent = null,
             RequestFurtherInformation = null,
             TimeOutChargeback = null,
@@ -449,6 +466,7 @@ public class VisaTest : TestBase
             AcceptUserSubmission = new(),
             DeclineUserPrearbitration = new(),
             ReceiveMerchantPrearbitration = new(),
+            Reject = new("x"),
             Represent = new(),
             RequestFurtherInformation = new("x"),
             TimeOutChargeback = new(),
@@ -470,6 +488,7 @@ public class ActionTest : TestBase
     [InlineData(CardDisputes::Action.AcceptUserSubmission)]
     [InlineData(CardDisputes::Action.DeclineUserPrearbitration)]
     [InlineData(CardDisputes::Action.ReceiveMerchantPrearbitration)]
+    [InlineData(CardDisputes::Action.Reject)]
     [InlineData(CardDisputes::Action.Represent)]
     [InlineData(CardDisputes::Action.RequestFurtherInformation)]
     [InlineData(CardDisputes::Action.TimeOutChargeback)]
@@ -500,6 +519,7 @@ public class ActionTest : TestBase
     [InlineData(CardDisputes::Action.AcceptUserSubmission)]
     [InlineData(CardDisputes::Action.DeclineUserPrearbitration)]
     [InlineData(CardDisputes::Action.ReceiveMerchantPrearbitration)]
+    [InlineData(CardDisputes::Action.Reject)]
     [InlineData(CardDisputes::Action.Represent)]
     [InlineData(CardDisputes::Action.RequestFurtherInformation)]
     [InlineData(CardDisputes::Action.TimeOutChargeback)]
@@ -748,6 +768,68 @@ public class ReceiveMerchantPrearbitrationTest : TestBase
         var model = new CardDisputes::ReceiveMerchantPrearbitration { };
 
         CardDisputes::ReceiveMerchantPrearbitration copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class RejectTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardDisputes::Reject { Explanation = "x" };
+
+        string expectedExplanation = "x";
+
+        Assert.Equal(expectedExplanation, model.Explanation);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardDisputes::Reject { Explanation = "x" };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardDisputes::Reject>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardDisputes::Reject { Explanation = "x" };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardDisputes::Reject>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedExplanation = "x";
+
+        Assert.Equal(expectedExplanation, deserialized.Explanation);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardDisputes::Reject { Explanation = "x" };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardDisputes::Reject { Explanation = "x" };
+
+        CardDisputes::Reject copied = new(model);
 
         Assert.Equal(model, copied);
     }
