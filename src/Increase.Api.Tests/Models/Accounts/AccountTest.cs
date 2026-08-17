@@ -15,7 +15,7 @@ public class AccountTest : TestBase
         {
             ID = "account_in71c4amph0vgo2qllky",
             AccountRevenueRate = null,
-            Bank = Accounts::Bank.FirstInternetBank,
+            Bank = Accounts::Bank.IncreaseBank,
             ClosedAt = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = Accounts::Currency.Usd,
@@ -39,7 +39,7 @@ public class AccountTest : TestBase
         };
 
         string expectedID = "account_in71c4amph0vgo2qllky";
-        ApiEnum<string, Accounts::Bank> expectedBank = Accounts::Bank.FirstInternetBank;
+        ApiEnum<string, Accounts::Bank> expectedBank = Accounts::Bank.IncreaseBank;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         ApiEnum<string, Accounts::Currency> expectedCurrency = Accounts::Currency.Usd;
         string expectedEntityID = "entity_n8y8tnk2p9339ti393yi";
@@ -84,7 +84,7 @@ public class AccountTest : TestBase
         {
             ID = "account_in71c4amph0vgo2qllky",
             AccountRevenueRate = null,
-            Bank = Accounts::Bank.FirstInternetBank,
+            Bank = Accounts::Bank.IncreaseBank,
             ClosedAt = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = Accounts::Currency.Usd,
@@ -123,7 +123,7 @@ public class AccountTest : TestBase
         {
             ID = "account_in71c4amph0vgo2qllky",
             AccountRevenueRate = null,
-            Bank = Accounts::Bank.FirstInternetBank,
+            Bank = Accounts::Bank.IncreaseBank,
             ClosedAt = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = Accounts::Currency.Usd,
@@ -154,7 +154,7 @@ public class AccountTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedID = "account_in71c4amph0vgo2qllky";
-        ApiEnum<string, Accounts::Bank> expectedBank = Accounts::Bank.FirstInternetBank;
+        ApiEnum<string, Accounts::Bank> expectedBank = Accounts::Bank.IncreaseBank;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         ApiEnum<string, Accounts::Currency> expectedCurrency = Accounts::Currency.Usd;
         string expectedEntityID = "entity_n8y8tnk2p9339ti393yi";
@@ -199,7 +199,7 @@ public class AccountTest : TestBase
         {
             ID = "account_in71c4amph0vgo2qllky",
             AccountRevenueRate = null,
-            Bank = Accounts::Bank.FirstInternetBank,
+            Bank = Accounts::Bank.IncreaseBank,
             ClosedAt = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = Accounts::Currency.Usd,
@@ -232,7 +232,7 @@ public class AccountTest : TestBase
         {
             ID = "account_in71c4amph0vgo2qllky",
             AccountRevenueRate = null,
-            Bank = Accounts::Bank.FirstInternetBank,
+            Bank = Accounts::Bank.IncreaseBank,
             ClosedAt = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = Accounts::Currency.Usd,
@@ -267,6 +267,7 @@ public class BankTest : TestBase
     [InlineData(Accounts::Bank.CoreBank)]
     [InlineData(Accounts::Bank.FirstInternetBank)]
     [InlineData(Accounts::Bank.GrasshopperBank)]
+    [InlineData(Accounts::Bank.IncreaseBank)]
     public void Validation_Works(Accounts::Bank rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -290,6 +291,7 @@ public class BankTest : TestBase
     [InlineData(Accounts::Bank.CoreBank)]
     [InlineData(Accounts::Bank.FirstInternetBank)]
     [InlineData(Accounts::Bank.GrasshopperBank)]
+    [InlineData(Accounts::Bank.IncreaseBank)]
     public void SerializationRoundtrip_Works(Accounts::Bank rawValue)
     {
         // force implicit conversion because Theory can't do that for us

@@ -70,6 +70,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             new("33 Liberty Street"),
                             new("New York, NY 10045"),
                         ],
+                        PhysicalCheckBatchID = null,
                         RecipientName = "Ian Crease",
                         ReturnAddress = new()
                         {
@@ -188,6 +189,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         new("33 Liberty Street"),
                         new("New York, NY 10045"),
                     ],
+                    PhysicalCheckBatchID = null,
                     RecipientName = "Ian Crease",
                     ReturnAddress = new()
                     {
@@ -319,6 +321,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             new("33 Liberty Street"),
                             new("New York, NY 10045"),
                         ],
+                        PhysicalCheckBatchID = null,
                         RecipientName = "Ian Crease",
                         ReturnAddress = new()
                         {
@@ -453,6 +456,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             new("33 Liberty Street"),
                             new("New York, NY 10045"),
                         ],
+                        PhysicalCheckBatchID = null,
                         RecipientName = "Ian Crease",
                         ReturnAddress = new()
                         {
@@ -579,6 +583,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         new("33 Liberty Street"),
                         new("New York, NY 10045"),
                     ],
+                    PhysicalCheckBatchID = null,
                     RecipientName = "Ian Crease",
                     ReturnAddress = new()
                     {
@@ -710,6 +715,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             new("33 Liberty Street"),
                             new("New York, NY 10045"),
                         ],
+                        PhysicalCheckBatchID = null,
                         RecipientName = "Ian Crease",
                         ReturnAddress = new()
                         {
@@ -837,6 +843,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             new("33 Liberty Street"),
                             new("New York, NY 10045"),
                         ],
+                        PhysicalCheckBatchID = null,
                         RecipientName = "Ian Crease",
                         ReturnAddress = new()
                         {

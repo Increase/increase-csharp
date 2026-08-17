@@ -256,6 +256,12 @@ public enum Category
     EntityAddress,
 
     /// <summary>
+    /// The entity's identity could not be verified. Update the identification with
+    /// the [update an entity API](/documentation/api/entities#update-an-entity.natural_person.identification).
+    /// </summary>
+    EntityIdentity,
+
+    /// <summary>
     /// A beneficial owner's identity could not be verified. Update the identification
     /// with the [update a beneficial owner API](/documentation/api/beneficial-owners#update-a-beneficial-owner).
     /// </summary>
@@ -280,6 +286,7 @@ sealed class CategoryConverter : JsonConverter<Category>
         {
             "entity_tax_identifier" => Category.EntityTaxIdentifier,
             "entity_address" => Category.EntityAddress,
+            "entity_identity" => Category.EntityIdentity,
             "beneficial_owner_identity" => Category.BeneficialOwnerIdentity,
             "beneficial_owner_address" => Category.BeneficialOwnerAddress,
             _ => (Category)(-1),
@@ -294,6 +301,7 @@ sealed class CategoryConverter : JsonConverter<Category>
             {
                 Category.EntityTaxIdentifier => "entity_tax_identifier",
                 Category.EntityAddress => "entity_address",
+                Category.EntityIdentity => "entity_identity",
                 Category.BeneficialOwnerIdentity => "beneficial_owner_identity",
                 Category.BeneficialOwnerAddress => "beneficial_owner_address",
                 _ => throw new IncreaseInvalidDataException(

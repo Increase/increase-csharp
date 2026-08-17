@@ -126,6 +126,7 @@ public class CategoryTest : TestBase
     [Theory]
     [InlineData(Category.EntityTaxIdentifier)]
     [InlineData(Category.EntityAddress)]
+    [InlineData(Category.EntityIdentity)]
     [InlineData(Category.BeneficialOwnerIdentity)]
     [InlineData(Category.BeneficialOwnerAddress)]
     public void Validation_Works(Category rawValue)
@@ -150,6 +151,7 @@ public class CategoryTest : TestBase
     [Theory]
     [InlineData(Category.EntityTaxIdentifier)]
     [InlineData(Category.EntityAddress)]
+    [InlineData(Category.EntityIdentity)]
     [InlineData(Category.BeneficialOwnerIdentity)]
     [InlineData(Category.BeneficialOwnerAddress)]
     public void SerializationRoundtrip_Works(Category rawValue)

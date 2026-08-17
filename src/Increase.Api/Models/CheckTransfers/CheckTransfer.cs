@@ -1273,6 +1273,19 @@ public sealed record class CheckTransferPhysicalCheck : JsonModel
     }
 
     /// <summary>
+    /// The identifier of the Physical Check Batch that this check is a part of.
+    /// </summary>
+    public required string? PhysicalCheckBatchID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("physical_check_batch_id");
+        }
+        init { this._rawData.Set("physical_check_batch_id", value); }
+    }
+
+    /// <summary>
     /// The name that will be printed on the check.
     /// </summary>
     public required string RecipientName
@@ -1375,6 +1388,7 @@ public sealed record class CheckTransferPhysicalCheck : JsonModel
         {
             item.Validate();
         }
+        _ = this.PhysicalCheckBatchID;
         _ = this.RecipientName;
         this.ReturnAddress?.Validate();
         _ = this.ReturnAddressName;
@@ -1819,14 +1833,12 @@ class CheckTransferPhysicalCheckReturnAddressFromRaw
 public enum CheckTransferPhysicalCheckShippingMethod
 {
     /// <summary>
-    /// Ship the checks via USPS First Class, which supports a maximum of 1000 pages
-    /// (checks and attachments combined).
+    /// USPS First Class
     /// </summary>
     UspsFirstClass,
 
     /// <summary>
-    /// Ship the checks via FedEx Overnight, which supports a maximum of 50 pages
-    /// (checks and attachments combined).
+    /// FedEx Overnight
     /// </summary>
     FedexOvernight,
 }
@@ -2175,6 +2187,11 @@ public enum CheckTransferStatus
     Canceled,
 
     /// <summary>
+    /// The transfer is waiting for its Physical Check Batch to be completed.
+    /// </summary>
+    PendingBatchCompleting,
+
+    /// <summary>
     /// The transfer is pending submission.
     /// </summary>
     PendingSubmission,
@@ -2232,6 +2249,7 @@ sealed class CheckTransferStatusConverter : JsonConverter<CheckTransferStatus>
         {
             "pending_approval" => CheckTransferStatus.PendingApproval,
             "canceled" => CheckTransferStatus.Canceled,
+            "pending_batch_completing" => CheckTransferStatus.PendingBatchCompleting,
             "pending_submission" => CheckTransferStatus.PendingSubmission,
             "pending_reviewing" => CheckTransferStatus.PendingReviewing,
             "requires_attention" => CheckTransferStatus.RequiresAttention,
@@ -2257,6 +2275,7 @@ sealed class CheckTransferStatusConverter : JsonConverter<CheckTransferStatus>
             {
                 CheckTransferStatus.PendingApproval => "pending_approval",
                 CheckTransferStatus.Canceled => "canceled",
+                CheckTransferStatus.PendingBatchCompleting => "pending_batch_completing",
                 CheckTransferStatus.PendingSubmission => "pending_submission",
                 CheckTransferStatus.PendingReviewing => "pending_reviewing",
                 CheckTransferStatus.RequiresAttention => "requires_attention",
