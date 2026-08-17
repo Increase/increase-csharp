@@ -18,14 +18,18 @@ public class WireTransferCreateParamsTest : TestBase
             Creditor = new()
             {
                 Name = "Ian Crease",
-                Address = new(
-                    new Unstructured()
+                Address = new()
+                {
+                    Structured = new()
                     {
+                        City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
-                        Line2 = "New York",
-                        Line3 = "NY 10045",
-                    }
-                ),
+                        Line2 = "line2",
+                        PostalCode = "10045",
+                        State = "NY",
+                    },
+                },
             },
             Remittance = new()
             {
@@ -42,14 +46,18 @@ public class WireTransferCreateParamsTest : TestBase
             Debtor = new()
             {
                 Name = "name",
-                Address = new(
-                    new DebtorAddressUnstructured()
+                Address = new()
+                {
+                    Structured = new()
                     {
+                        City = "city",
+                        Country = "xx",
                         Line1 = "line1",
                         Line2 = "line2",
-                        Line3 = "line3",
-                    }
-                ),
+                        PostalCode = "postal_code",
+                        State = "state",
+                    },
+                },
             },
             ExternalAccountID = "external_account_id",
             InboundWireDrawdownRequestID = "inbound_wire_drawdown_request_id",
@@ -63,14 +71,18 @@ public class WireTransferCreateParamsTest : TestBase
         Creditor expectedCreditor = new()
         {
             Name = "Ian Crease",
-            Address = new(
-                new Unstructured()
+            Address = new()
+            {
+                Structured = new()
                 {
+                    City = "New York",
+                    Country = "US",
                     Line1 = "33 Liberty Street",
-                    Line2 = "New York",
-                    Line3 = "NY 10045",
-                }
-            ),
+                    Line2 = "line2",
+                    PostalCode = "10045",
+                    State = "NY",
+                },
+            },
         };
         Remittance expectedRemittance = new()
         {
@@ -87,14 +99,18 @@ public class WireTransferCreateParamsTest : TestBase
         Debtor expectedDebtor = new()
         {
             Name = "name",
-            Address = new(
-                new DebtorAddressUnstructured()
+            Address = new()
+            {
+                Structured = new()
                 {
+                    City = "city",
+                    Country = "xx",
                     Line1 = "line1",
                     Line2 = "line2",
-                    Line3 = "line3",
-                }
-            ),
+                    PostalCode = "postal_code",
+                    State = "state",
+                },
+            },
         };
         string expectedExternalAccountID = "external_account_id";
         string expectedInboundWireDrawdownRequestID = "inbound_wire_drawdown_request_id";
@@ -125,14 +141,18 @@ public class WireTransferCreateParamsTest : TestBase
             Creditor = new()
             {
                 Name = "Ian Crease",
-                Address = new(
-                    new Unstructured()
+                Address = new()
+                {
+                    Structured = new()
                     {
+                        City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
-                        Line2 = "New York",
-                        Line3 = "NY 10045",
-                    }
-                ),
+                        Line2 = "line2",
+                        PostalCode = "10045",
+                        State = "NY",
+                    },
+                },
             },
             Remittance = new()
             {
@@ -173,14 +193,18 @@ public class WireTransferCreateParamsTest : TestBase
             Creditor = new()
             {
                 Name = "Ian Crease",
-                Address = new(
-                    new Unstructured()
+                Address = new()
+                {
+                    Structured = new()
                     {
+                        City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
-                        Line2 = "New York",
-                        Line3 = "NY 10045",
-                    }
-                ),
+                        Line2 = "line2",
+                        PostalCode = "10045",
+                        State = "NY",
+                    },
+                },
             },
             Remittance = new()
             {
@@ -230,14 +254,18 @@ public class WireTransferCreateParamsTest : TestBase
             Creditor = new()
             {
                 Name = "Ian Crease",
-                Address = new(
-                    new Unstructured()
+                Address = new()
+                {
+                    Structured = new()
                     {
+                        City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
-                        Line2 = "New York",
-                        Line3 = "NY 10045",
-                    }
-                ),
+                        Line2 = "line2",
+                        PostalCode = "10045",
+                        State = "NY",
+                    },
+                },
             },
             Remittance = new()
             {
@@ -267,14 +295,18 @@ public class WireTransferCreateParamsTest : TestBase
             Creditor = new()
             {
                 Name = "Ian Crease",
-                Address = new(
-                    new Unstructured()
+                Address = new()
+                {
+                    Structured = new()
                     {
+                        City = "New York",
+                        Country = "US",
                         Line1 = "33 Liberty Street",
-                        Line2 = "New York",
-                        Line3 = "NY 10045",
-                    }
-                ),
+                        Line2 = "line2",
+                        PostalCode = "10045",
+                        State = "NY",
+                    },
+                },
             },
             Remittance = new()
             {
@@ -291,14 +323,18 @@ public class WireTransferCreateParamsTest : TestBase
             Debtor = new()
             {
                 Name = "name",
-                Address = new(
-                    new DebtorAddressUnstructured()
+                Address = new()
+                {
+                    Structured = new()
                     {
+                        City = "city",
+                        Country = "xx",
                         Line1 = "line1",
                         Line2 = "line2",
-                        Line3 = "line3",
-                    }
-                ),
+                        PostalCode = "postal_code",
+                        State = "state",
+                    },
+                },
             },
             ExternalAccountID = "external_account_id",
             InboundWireDrawdownRequestID = "inbound_wire_drawdown_request_id",
@@ -321,25 +357,33 @@ public class CreditorTest : TestBase
         var model = new Creditor
         {
             Name = "name",
-            Address = new(
-                new Unstructured()
+            Address = new()
+            {
+                Structured = new()
                 {
+                    City = "city",
+                    Country = "xx",
                     Line1 = "line1",
                     Line2 = "line2",
-                    Line3 = "line3",
-                }
-            ),
+                    PostalCode = "postal_code",
+                    State = "state",
+                },
+            },
         };
 
         string expectedName = "name";
-        Address expectedAddress = new(
-            new Unstructured()
+        Address expectedAddress = new()
+        {
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
-            }
-        );
+                PostalCode = "postal_code",
+                State = "state",
+            },
+        };
 
         Assert.Equal(expectedName, model.Name);
         Assert.Equal(expectedAddress, model.Address);
@@ -351,14 +395,18 @@ public class CreditorTest : TestBase
         var model = new Creditor
         {
             Name = "name",
-            Address = new(
-                new Unstructured()
+            Address = new()
+            {
+                Structured = new()
                 {
+                    City = "city",
+                    Country = "xx",
                     Line1 = "line1",
                     Line2 = "line2",
-                    Line3 = "line3",
-                }
-            ),
+                    PostalCode = "postal_code",
+                    State = "state",
+                },
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -373,14 +421,18 @@ public class CreditorTest : TestBase
         var model = new Creditor
         {
             Name = "name",
-            Address = new(
-                new Unstructured()
+            Address = new()
+            {
+                Structured = new()
                 {
+                    City = "city",
+                    Country = "xx",
                     Line1 = "line1",
                     Line2 = "line2",
-                    Line3 = "line3",
-                }
-            ),
+                    PostalCode = "postal_code",
+                    State = "state",
+                },
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -391,14 +443,18 @@ public class CreditorTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedName = "name";
-        Address expectedAddress = new(
-            new Unstructured()
+        Address expectedAddress = new()
+        {
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
-            }
-        );
+                PostalCode = "postal_code",
+                State = "state",
+            },
+        };
 
         Assert.Equal(expectedName, deserialized.Name);
         Assert.Equal(expectedAddress, deserialized.Address);
@@ -410,14 +466,18 @@ public class CreditorTest : TestBase
         var model = new Creditor
         {
             Name = "name",
-            Address = new(
-                new Unstructured()
+            Address = new()
+            {
+                Structured = new()
                 {
+                    City = "city",
+                    Country = "xx",
                     Line1 = "line1",
                     Line2 = "line2",
-                    Line3 = "line3",
-                }
-            ),
+                    PostalCode = "postal_code",
+                    State = "state",
+                },
+            },
         };
 
         model.Validate();
@@ -475,14 +535,18 @@ public class CreditorTest : TestBase
         var model = new Creditor
         {
             Name = "name",
-            Address = new(
-                new Unstructured()
+            Address = new()
+            {
+                Structured = new()
                 {
+                    City = "city",
+                    Country = "xx",
                     Line1 = "line1",
                     Line2 = "line2",
-                    Line3 = "line3",
-                }
-            ),
+                    PostalCode = "postal_code",
+                    State = "state",
+                },
+            },
         };
 
         Creditor copied = new(model);
@@ -498,22 +562,28 @@ public class AddressTest : TestBase
     {
         var model = new Address
         {
-            Unstructured = new()
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
+                PostalCode = "postal_code",
+                State = "state",
             },
         };
 
-        Unstructured expectedUnstructured = new()
+        Structured expectedStructured = new()
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
-        Assert.Equal(expectedUnstructured, model.Unstructured);
+        Assert.Equal(expectedStructured, model.Structured);
     }
 
     [Fact]
@@ -521,11 +591,14 @@ public class AddressTest : TestBase
     {
         var model = new Address
         {
-            Unstructured = new()
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
+                PostalCode = "postal_code",
+                State = "state",
             },
         };
 
@@ -540,11 +613,14 @@ public class AddressTest : TestBase
     {
         var model = new Address
         {
-            Unstructured = new()
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
+                PostalCode = "postal_code",
+                State = "state",
             },
         };
 
@@ -555,14 +631,17 @@ public class AddressTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        Unstructured expectedUnstructured = new()
+        Structured expectedStructured = new()
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
-        Assert.Equal(expectedUnstructured, deserialized.Unstructured);
+        Assert.Equal(expectedStructured, deserialized.Structured);
     }
 
     [Fact]
@@ -570,12 +649,57 @@ public class AddressTest : TestBase
     {
         var model = new Address
         {
-            Unstructured = new()
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
+                PostalCode = "postal_code",
+                State = "state",
             },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new Address { };
+
+        Assert.Null(model.Structured);
+        Assert.False(model.RawData.ContainsKey("structured"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new Address { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new Address
+        {
+            // Null should be interpreted as omitted for these properties
+            Structured = null,
+        };
+
+        Assert.Null(model.Structured);
+        Assert.False(model.RawData.ContainsKey("structured"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new Address
+        {
+            // Null should be interpreted as omitted for these properties
+            Structured = null,
         };
 
         model.Validate();
@@ -586,11 +710,14 @@ public class AddressTest : TestBase
     {
         var model = new Address
         {
-            Unstructured = new()
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
+                PostalCode = "postal_code",
+                State = "state",
             },
         };
 
@@ -600,39 +727,51 @@ public class AddressTest : TestBase
     }
 }
 
-public class UnstructuredTest : TestBase
+public class StructuredTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Unstructured
+        var model = new Structured
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
+        string expectedCity = "city";
+        string expectedCountry = "xx";
         string expectedLine1 = "line1";
         string expectedLine2 = "line2";
-        string expectedLine3 = "line3";
+        string expectedPostalCode = "postal_code";
+        string expectedState = "state";
 
+        Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedLine2, model.Line2);
-        Assert.Equal(expectedLine3, model.Line3);
+        Assert.Equal(expectedPostalCode, model.PostalCode);
+        Assert.Equal(expectedState, model.State);
     }
 
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Unstructured
+        var model = new Structured
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Unstructured>(
+        var deserialized = JsonSerializer.Deserialize<Structured>(
             json,
             ModelBase.SerializerOptions
         );
@@ -643,37 +782,49 @@ public class UnstructuredTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Unstructured
+        var model = new Structured
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Unstructured>(
+        var deserialized = JsonSerializer.Deserialize<Structured>(
             element,
             ModelBase.SerializerOptions
         );
         Assert.NotNull(deserialized);
 
+        string expectedCity = "city";
+        string expectedCountry = "xx";
         string expectedLine1 = "line1";
         string expectedLine2 = "line2";
-        string expectedLine3 = "line3";
+        string expectedPostalCode = "postal_code";
+        string expectedState = "state";
 
+        Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedLine2, deserialized.Line2);
-        Assert.Equal(expectedLine3, deserialized.Line3);
+        Assert.Equal(expectedPostalCode, deserialized.PostalCode);
+        Assert.Equal(expectedState, deserialized.State);
     }
 
     [Fact]
     public void Validation_Works()
     {
-        var model = new Unstructured
+        var model = new Structured
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
         model.Validate();
@@ -682,18 +833,22 @@ public class UnstructuredTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Unstructured { Line1 = "line1" };
+        var model = new Structured { City = "city", Country = "xx" };
 
+        Assert.Null(model.Line1);
+        Assert.False(model.RawData.ContainsKey("line1"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
-        Assert.Null(model.Line3);
-        Assert.False(model.RawData.ContainsKey("line3"));
+        Assert.Null(model.PostalCode);
+        Assert.False(model.RawData.ContainsKey("postal_code"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
     }
 
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Unstructured { Line1 = "line1" };
+        var model = new Structured { City = "city", Country = "xx" };
 
         model.Validate();
     }
@@ -701,31 +856,41 @@ public class UnstructuredTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
     {
-        var model = new Unstructured
+        var model = new Structured
         {
-            Line1 = "line1",
+            City = "city",
+            Country = "xx",
 
             // Null should be interpreted as omitted for these properties
+            Line1 = null,
             Line2 = null,
-            Line3 = null,
+            PostalCode = null,
+            State = null,
         };
 
+        Assert.Null(model.Line1);
+        Assert.False(model.RawData.ContainsKey("line1"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
-        Assert.Null(model.Line3);
-        Assert.False(model.RawData.ContainsKey("line3"));
+        Assert.Null(model.PostalCode);
+        Assert.False(model.RawData.ContainsKey("postal_code"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
     }
 
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new Unstructured
+        var model = new Structured
         {
-            Line1 = "line1",
+            City = "city",
+            Country = "xx",
 
             // Null should be interpreted as omitted for these properties
+            Line1 = null,
             Line2 = null,
-            Line3 = null,
+            PostalCode = null,
+            State = null,
         };
 
         model.Validate();
@@ -734,14 +899,17 @@ public class UnstructuredTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Unstructured
+        var model = new Structured
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
-        Unstructured copied = new(model);
+        Structured copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -771,7 +939,7 @@ public class RemittanceTest : TestBase
             IdentificationNumber = "483310694",
             TypeCode = "1I5r3",
         };
-        RemittanceUnstructured expectedUnstructured = new("message");
+        Unstructured expectedUnstructured = new("message");
 
         Assert.Equal(expectedCategory, model.Category);
         Assert.Equal(expectedTax, model.Tax);
@@ -831,7 +999,7 @@ public class RemittanceTest : TestBase
             IdentificationNumber = "483310694",
             TypeCode = "1I5r3",
         };
-        RemittanceUnstructured expectedUnstructured = new("message");
+        Unstructured expectedUnstructured = new("message");
 
         Assert.Equal(expectedCategory, deserialized.Category);
         Assert.Equal(expectedTax, deserialized.Tax);
@@ -1076,12 +1244,12 @@ public class TaxTest : TestBase
     }
 }
 
-public class RemittanceUnstructuredTest : TestBase
+public class UnstructuredTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new RemittanceUnstructured { Message = "message" };
+        var model = new Unstructured { Message = "message" };
 
         string expectedMessage = "message";
 
@@ -1091,10 +1259,10 @@ public class RemittanceUnstructuredTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new RemittanceUnstructured { Message = "message" };
+        var model = new Unstructured { Message = "message" };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<RemittanceUnstructured>(
+        var deserialized = JsonSerializer.Deserialize<Unstructured>(
             json,
             ModelBase.SerializerOptions
         );
@@ -1105,10 +1273,10 @@ public class RemittanceUnstructuredTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new RemittanceUnstructured { Message = "message" };
+        var model = new Unstructured { Message = "message" };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<RemittanceUnstructured>(
+        var deserialized = JsonSerializer.Deserialize<Unstructured>(
             element,
             ModelBase.SerializerOptions
         );
@@ -1122,7 +1290,7 @@ public class RemittanceUnstructuredTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new RemittanceUnstructured { Message = "message" };
+        var model = new Unstructured { Message = "message" };
 
         model.Validate();
     }
@@ -1130,9 +1298,9 @@ public class RemittanceUnstructuredTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new RemittanceUnstructured { Message = "message" };
+        var model = new Unstructured { Message = "message" };
 
-        RemittanceUnstructured copied = new(model);
+        Unstructured copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -1146,25 +1314,33 @@ public class DebtorTest : TestBase
         var model = new Debtor
         {
             Name = "name",
-            Address = new(
-                new DebtorAddressUnstructured()
+            Address = new()
+            {
+                Structured = new()
                 {
+                    City = "city",
+                    Country = "xx",
                     Line1 = "line1",
                     Line2 = "line2",
-                    Line3 = "line3",
-                }
-            ),
+                    PostalCode = "postal_code",
+                    State = "state",
+                },
+            },
         };
 
         string expectedName = "name";
-        DebtorAddress expectedAddress = new(
-            new DebtorAddressUnstructured()
+        DebtorAddress expectedAddress = new()
+        {
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
-            }
-        );
+                PostalCode = "postal_code",
+                State = "state",
+            },
+        };
 
         Assert.Equal(expectedName, model.Name);
         Assert.Equal(expectedAddress, model.Address);
@@ -1176,14 +1352,18 @@ public class DebtorTest : TestBase
         var model = new Debtor
         {
             Name = "name",
-            Address = new(
-                new DebtorAddressUnstructured()
+            Address = new()
+            {
+                Structured = new()
                 {
+                    City = "city",
+                    Country = "xx",
                     Line1 = "line1",
                     Line2 = "line2",
-                    Line3 = "line3",
-                }
-            ),
+                    PostalCode = "postal_code",
+                    State = "state",
+                },
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1198,14 +1378,18 @@ public class DebtorTest : TestBase
         var model = new Debtor
         {
             Name = "name",
-            Address = new(
-                new DebtorAddressUnstructured()
+            Address = new()
+            {
+                Structured = new()
                 {
+                    City = "city",
+                    Country = "xx",
                     Line1 = "line1",
                     Line2 = "line2",
-                    Line3 = "line3",
-                }
-            ),
+                    PostalCode = "postal_code",
+                    State = "state",
+                },
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1213,14 +1397,18 @@ public class DebtorTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedName = "name";
-        DebtorAddress expectedAddress = new(
-            new DebtorAddressUnstructured()
+        DebtorAddress expectedAddress = new()
+        {
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
-            }
-        );
+                PostalCode = "postal_code",
+                State = "state",
+            },
+        };
 
         Assert.Equal(expectedName, deserialized.Name);
         Assert.Equal(expectedAddress, deserialized.Address);
@@ -1232,14 +1420,18 @@ public class DebtorTest : TestBase
         var model = new Debtor
         {
             Name = "name",
-            Address = new(
-                new DebtorAddressUnstructured()
+            Address = new()
+            {
+                Structured = new()
                 {
+                    City = "city",
+                    Country = "xx",
                     Line1 = "line1",
                     Line2 = "line2",
-                    Line3 = "line3",
-                }
-            ),
+                    PostalCode = "postal_code",
+                    State = "state",
+                },
+            },
         };
 
         model.Validate();
@@ -1297,14 +1489,18 @@ public class DebtorTest : TestBase
         var model = new Debtor
         {
             Name = "name",
-            Address = new(
-                new DebtorAddressUnstructured()
+            Address = new()
+            {
+                Structured = new()
                 {
+                    City = "city",
+                    Country = "xx",
                     Line1 = "line1",
                     Line2 = "line2",
-                    Line3 = "line3",
-                }
-            ),
+                    PostalCode = "postal_code",
+                    State = "state",
+                },
+            },
         };
 
         Debtor copied = new(model);
@@ -1320,22 +1516,28 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            Unstructured = new()
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
+                PostalCode = "postal_code",
+                State = "state",
             },
         };
 
-        DebtorAddressUnstructured expectedUnstructured = new()
+        DebtorAddressStructured expectedStructured = new()
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
-        Assert.Equal(expectedUnstructured, model.Unstructured);
+        Assert.Equal(expectedStructured, model.Structured);
     }
 
     [Fact]
@@ -1343,11 +1545,14 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            Unstructured = new()
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
+                PostalCode = "postal_code",
+                State = "state",
             },
         };
 
@@ -1365,11 +1570,14 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            Unstructured = new()
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
+                PostalCode = "postal_code",
+                State = "state",
             },
         };
 
@@ -1380,14 +1588,17 @@ public class DebtorAddressTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        DebtorAddressUnstructured expectedUnstructured = new()
+        DebtorAddressStructured expectedStructured = new()
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
-        Assert.Equal(expectedUnstructured, deserialized.Unstructured);
+        Assert.Equal(expectedStructured, deserialized.Structured);
     }
 
     [Fact]
@@ -1395,12 +1606,57 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            Unstructured = new()
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
+                PostalCode = "postal_code",
+                State = "state",
             },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new DebtorAddress { };
+
+        Assert.Null(model.Structured);
+        Assert.False(model.RawData.ContainsKey("structured"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new DebtorAddress { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new DebtorAddress
+        {
+            // Null should be interpreted as omitted for these properties
+            Structured = null,
+        };
+
+        Assert.Null(model.Structured);
+        Assert.False(model.RawData.ContainsKey("structured"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new DebtorAddress
+        {
+            // Null should be interpreted as omitted for these properties
+            Structured = null,
         };
 
         model.Validate();
@@ -1411,11 +1667,14 @@ public class DebtorAddressTest : TestBase
     {
         var model = new DebtorAddress
         {
-            Unstructured = new()
+            Structured = new()
             {
+                City = "city",
+                Country = "xx",
                 Line1 = "line1",
                 Line2 = "line2",
-                Line3 = "line3",
+                PostalCode = "postal_code",
+                State = "state",
             },
         };
 
@@ -1425,39 +1684,51 @@ public class DebtorAddressTest : TestBase
     }
 }
 
-public class DebtorAddressUnstructuredTest : TestBase
+public class DebtorAddressStructuredTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new DebtorAddressUnstructured
+        var model = new DebtorAddressStructured
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
+        string expectedCity = "city";
+        string expectedCountry = "xx";
         string expectedLine1 = "line1";
         string expectedLine2 = "line2";
-        string expectedLine3 = "line3";
+        string expectedPostalCode = "postal_code";
+        string expectedState = "state";
 
+        Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine1, model.Line1);
         Assert.Equal(expectedLine2, model.Line2);
-        Assert.Equal(expectedLine3, model.Line3);
+        Assert.Equal(expectedPostalCode, model.PostalCode);
+        Assert.Equal(expectedState, model.State);
     }
 
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new DebtorAddressUnstructured
+        var model = new DebtorAddressStructured
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<DebtorAddressUnstructured>(
+        var deserialized = JsonSerializer.Deserialize<DebtorAddressStructured>(
             json,
             ModelBase.SerializerOptions
         );
@@ -1468,37 +1739,49 @@ public class DebtorAddressUnstructuredTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new DebtorAddressUnstructured
+        var model = new DebtorAddressStructured
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<DebtorAddressUnstructured>(
+        var deserialized = JsonSerializer.Deserialize<DebtorAddressStructured>(
             element,
             ModelBase.SerializerOptions
         );
         Assert.NotNull(deserialized);
 
+        string expectedCity = "city";
+        string expectedCountry = "xx";
         string expectedLine1 = "line1";
         string expectedLine2 = "line2";
-        string expectedLine3 = "line3";
+        string expectedPostalCode = "postal_code";
+        string expectedState = "state";
 
+        Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine1, deserialized.Line1);
         Assert.Equal(expectedLine2, deserialized.Line2);
-        Assert.Equal(expectedLine3, deserialized.Line3);
+        Assert.Equal(expectedPostalCode, deserialized.PostalCode);
+        Assert.Equal(expectedState, deserialized.State);
     }
 
     [Fact]
     public void Validation_Works()
     {
-        var model = new DebtorAddressUnstructured
+        var model = new DebtorAddressStructured
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
         model.Validate();
@@ -1507,18 +1790,22 @@ public class DebtorAddressUnstructuredTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new DebtorAddressUnstructured { Line1 = "line1" };
+        var model = new DebtorAddressStructured { City = "city", Country = "xx" };
 
+        Assert.Null(model.Line1);
+        Assert.False(model.RawData.ContainsKey("line1"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
-        Assert.Null(model.Line3);
-        Assert.False(model.RawData.ContainsKey("line3"));
+        Assert.Null(model.PostalCode);
+        Assert.False(model.RawData.ContainsKey("postal_code"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
     }
 
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new DebtorAddressUnstructured { Line1 = "line1" };
+        var model = new DebtorAddressStructured { City = "city", Country = "xx" };
 
         model.Validate();
     }
@@ -1526,31 +1813,41 @@ public class DebtorAddressUnstructuredTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
     {
-        var model = new DebtorAddressUnstructured
+        var model = new DebtorAddressStructured
         {
-            Line1 = "line1",
+            City = "city",
+            Country = "xx",
 
             // Null should be interpreted as omitted for these properties
+            Line1 = null,
             Line2 = null,
-            Line3 = null,
+            PostalCode = null,
+            State = null,
         };
 
+        Assert.Null(model.Line1);
+        Assert.False(model.RawData.ContainsKey("line1"));
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
-        Assert.Null(model.Line3);
-        Assert.False(model.RawData.ContainsKey("line3"));
+        Assert.Null(model.PostalCode);
+        Assert.False(model.RawData.ContainsKey("postal_code"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
     }
 
     [Fact]
     public void OptionalNonNullablePropertiesSetToNullValidation_Works()
     {
-        var model = new DebtorAddressUnstructured
+        var model = new DebtorAddressStructured
         {
-            Line1 = "line1",
+            City = "city",
+            Country = "xx",
 
             // Null should be interpreted as omitted for these properties
+            Line1 = null,
             Line2 = null,
-            Line3 = null,
+            PostalCode = null,
+            State = null,
         };
 
         model.Validate();
@@ -1559,14 +1856,17 @@ public class DebtorAddressUnstructuredTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new DebtorAddressUnstructured
+        var model = new DebtorAddressStructured
         {
+            City = "city",
+            Country = "xx",
             Line1 = "line1",
             Line2 = "line2",
-            Line3 = "line3",
+            PostalCode = "postal_code",
+            State = "state",
         };
 
-        DebtorAddressUnstructured copied = new(model);
+        DebtorAddressStructured copied = new(model);
 
         Assert.Equal(model, copied);
     }

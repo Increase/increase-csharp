@@ -45,6 +45,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
+                    InboundRealTimePaymentsRequestForPaymentID = null,
                     PendingTransactionID = null,
                     Rejection = new()
                     {
@@ -103,6 +104,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                 DebtorName = "National Phonograph Company",
                 ExternalAccountID = null,
                 IdempotencyKey = null,
+                InboundRealTimePaymentsRequestForPaymentID = null,
                 PendingTransactionID = null,
                 Rejection = new()
                 {
@@ -172,6 +174,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
+                    InboundRealTimePaymentsRequestForPaymentID = null,
                     PendingTransactionID = null,
                     Rejection = new()
                     {
@@ -245,6 +248,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
+                    InboundRealTimePaymentsRequestForPaymentID = null,
                     PendingTransactionID = null,
                     Rejection = new()
                     {
@@ -311,6 +315,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                 DebtorName = "National Phonograph Company",
                 ExternalAccountID = null,
                 IdempotencyKey = null,
+                InboundRealTimePaymentsRequestForPaymentID = null,
                 PendingTransactionID = null,
                 Rejection = new()
                 {
@@ -380,6 +385,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
+                    InboundRealTimePaymentsRequestForPaymentID = null,
                     PendingTransactionID = null,
                     Rejection = new()
                     {
@@ -446,6 +452,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
+                    InboundRealTimePaymentsRequestForPaymentID = null,
                     PendingTransactionID = null,
                     Rejection = new()
                     {
