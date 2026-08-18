@@ -20,6 +20,12 @@ public class BalanceLookupTest : TestBase
             {
                 DueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 DueBalance = 0,
+                DueFees = 0,
+                DueInterest = 0,
+                DuePrincipal = 0,
+                NotDueFees = 0,
+                NotDueInterest = 0,
+                NotDuePrincipal = 0,
                 PastDueBalance = 0,
                 Receivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 },
             },
@@ -33,6 +39,12 @@ public class BalanceLookupTest : TestBase
         {
             DueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             DueBalance = 0,
+            DueFees = 0,
+            DueInterest = 0,
+            DuePrincipal = 0,
+            NotDueFees = 0,
+            NotDueInterest = 0,
+            NotDuePrincipal = 0,
             PastDueBalance = 0,
             Receivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 },
         };
@@ -57,6 +69,12 @@ public class BalanceLookupTest : TestBase
             {
                 DueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 DueBalance = 0,
+                DueFees = 0,
+                DueInterest = 0,
+                DuePrincipal = 0,
+                NotDueFees = 0,
+                NotDueInterest = 0,
+                NotDuePrincipal = 0,
                 PastDueBalance = 0,
                 Receivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 },
             },
@@ -84,6 +102,12 @@ public class BalanceLookupTest : TestBase
             {
                 DueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 DueBalance = 0,
+                DueFees = 0,
+                DueInterest = 0,
+                DuePrincipal = 0,
+                NotDueFees = 0,
+                NotDueInterest = 0,
+                NotDuePrincipal = 0,
                 PastDueBalance = 0,
                 Receivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 },
             },
@@ -104,6 +128,12 @@ public class BalanceLookupTest : TestBase
         {
             DueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             DueBalance = 0,
+            DueFees = 0,
+            DueInterest = 0,
+            DuePrincipal = 0,
+            NotDueFees = 0,
+            NotDueInterest = 0,
+            NotDuePrincipal = 0,
             PastDueBalance = 0,
             Receivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 },
         };
@@ -128,6 +158,12 @@ public class BalanceLookupTest : TestBase
             {
                 DueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 DueBalance = 0,
+                DueFees = 0,
+                DueInterest = 0,
+                DuePrincipal = 0,
+                NotDueFees = 0,
+                NotDueInterest = 0,
+                NotDuePrincipal = 0,
                 PastDueBalance = 0,
                 Receivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 },
             },
@@ -149,6 +185,12 @@ public class BalanceLookupTest : TestBase
             {
                 DueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 DueBalance = 0,
+                DueFees = 0,
+                DueInterest = 0,
+                DuePrincipal = 0,
+                NotDueFees = 0,
+                NotDueInterest = 0,
+                NotDuePrincipal = 0,
                 PastDueBalance = 0,
                 Receivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 },
             },
@@ -170,17 +212,35 @@ public class BalanceLookupLoanTest : TestBase
         {
             DueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             DueBalance = 0,
+            DueFees = 0,
+            DueInterest = 0,
+            DuePrincipal = 0,
+            NotDueFees = 0,
+            NotDueInterest = 0,
+            NotDuePrincipal = 0,
             PastDueBalance = 0,
             Receivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 },
         };
 
         DateTimeOffset expectedDueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         long expectedDueBalance = 0;
+        long expectedDueFees = 0;
+        long expectedDueInterest = 0;
+        long expectedDuePrincipal = 0;
+        long expectedNotDueFees = 0;
+        long expectedNotDueInterest = 0;
+        long expectedNotDuePrincipal = 0;
         long expectedPastDueBalance = 0;
         Receivables expectedReceivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 };
 
         Assert.Equal(expectedDueAt, model.DueAt);
         Assert.Equal(expectedDueBalance, model.DueBalance);
+        Assert.Equal(expectedDueFees, model.DueFees);
+        Assert.Equal(expectedDueInterest, model.DueInterest);
+        Assert.Equal(expectedDuePrincipal, model.DuePrincipal);
+        Assert.Equal(expectedNotDueFees, model.NotDueFees);
+        Assert.Equal(expectedNotDueInterest, model.NotDueInterest);
+        Assert.Equal(expectedNotDuePrincipal, model.NotDuePrincipal);
         Assert.Equal(expectedPastDueBalance, model.PastDueBalance);
         Assert.Equal(expectedReceivables, model.Receivables);
     }
@@ -192,6 +252,12 @@ public class BalanceLookupLoanTest : TestBase
         {
             DueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             DueBalance = 0,
+            DueFees = 0,
+            DueInterest = 0,
+            DuePrincipal = 0,
+            NotDueFees = 0,
+            NotDueInterest = 0,
+            NotDuePrincipal = 0,
             PastDueBalance = 0,
             Receivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 },
         };
@@ -212,6 +278,12 @@ public class BalanceLookupLoanTest : TestBase
         {
             DueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             DueBalance = 0,
+            DueFees = 0,
+            DueInterest = 0,
+            DuePrincipal = 0,
+            NotDueFees = 0,
+            NotDueInterest = 0,
+            NotDuePrincipal = 0,
             PastDueBalance = 0,
             Receivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 },
         };
@@ -225,11 +297,23 @@ public class BalanceLookupLoanTest : TestBase
 
         DateTimeOffset expectedDueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         long expectedDueBalance = 0;
+        long expectedDueFees = 0;
+        long expectedDueInterest = 0;
+        long expectedDuePrincipal = 0;
+        long expectedNotDueFees = 0;
+        long expectedNotDueInterest = 0;
+        long expectedNotDuePrincipal = 0;
         long expectedPastDueBalance = 0;
         Receivables expectedReceivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 };
 
         Assert.Equal(expectedDueAt, deserialized.DueAt);
         Assert.Equal(expectedDueBalance, deserialized.DueBalance);
+        Assert.Equal(expectedDueFees, deserialized.DueFees);
+        Assert.Equal(expectedDueInterest, deserialized.DueInterest);
+        Assert.Equal(expectedDuePrincipal, deserialized.DuePrincipal);
+        Assert.Equal(expectedNotDueFees, deserialized.NotDueFees);
+        Assert.Equal(expectedNotDueInterest, deserialized.NotDueInterest);
+        Assert.Equal(expectedNotDuePrincipal, deserialized.NotDuePrincipal);
         Assert.Equal(expectedPastDueBalance, deserialized.PastDueBalance);
         Assert.Equal(expectedReceivables, deserialized.Receivables);
     }
@@ -241,6 +325,12 @@ public class BalanceLookupLoanTest : TestBase
         {
             DueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             DueBalance = 0,
+            DueFees = 0,
+            DueInterest = 0,
+            DuePrincipal = 0,
+            NotDueFees = 0,
+            NotDueInterest = 0,
+            NotDuePrincipal = 0,
             PastDueBalance = 0,
             Receivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 },
         };
@@ -255,6 +345,12 @@ public class BalanceLookupLoanTest : TestBase
         {
             DueAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             DueBalance = 0,
+            DueFees = 0,
+            DueInterest = 0,
+            DuePrincipal = 0,
+            NotDueFees = 0,
+            NotDueInterest = 0,
+            NotDuePrincipal = 0,
             PastDueBalance = 0,
             Receivables = new() { PurchasableBalance = 0, PurchasedBalance = 0 },
         };

@@ -436,22 +436,30 @@ class CreditorFromRaw : IFromRawJson<Creditor>
 public sealed record class Address : JsonModel
 {
     /// <summary>
-    /// Unstructured address lines.
+    /// Structured address components. City and country are required.
     /// </summary>
-    public required Unstructured Unstructured
+    public Structured? Structured
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<Unstructured>("unstructured");
+            return this._rawData.GetNullableClass<Structured>("structured");
         }
-        init { this._rawData.Set("unstructured", value); }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("structured", value);
+        }
     }
 
     /// <inheritdoc/>
     public override void Validate()
     {
-        this.Unstructured.Validate();
+        this.Structured?.Validate();
     }
 
     public Address() { }
@@ -480,13 +488,6 @@ public sealed record class Address : JsonModel
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
     }
-
-    [SetsRequiredMembers]
-    public Address(Unstructured unstructured)
-        : this()
-    {
-        this.Unstructured = unstructured;
-    }
 }
 
 class AddressFromRaw : IFromRawJson<Address>
@@ -497,26 +498,61 @@ class AddressFromRaw : IFromRawJson<Address>
 }
 
 /// <summary>
-/// Unstructured address lines.
+/// Structured address components. City and country are required.
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<Unstructured, UnstructuredFromRaw>))]
-public sealed record class Unstructured : JsonModel
+[JsonConverter(typeof(JsonModelConverter<Structured, StructuredFromRaw>))]
+public sealed record class Structured : JsonModel
 {
     /// <summary>
-    /// The address line 1.
+    /// The city, district, town, or village of the address.
     /// </summary>
-    public required string Line1
+    public required string City
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("line1");
+            return this._rawData.GetNotNullClass<string>("city");
         }
-        init { this._rawData.Set("line1", value); }
+        init { this._rawData.Set("city", value); }
     }
 
     /// <summary>
-    /// The address line 2.
+    /// The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+    /// code for the country of the address.
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <summary>
+    /// The first line of the address.
+    /// </summary>
+    public string? Line1
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("line1");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("line1", value);
+        }
+    }
+
+    /// <summary>
+    /// The second line of the address.
     /// </summary>
     public string? Line2
     {
@@ -537,14 +573,14 @@ public sealed record class Unstructured : JsonModel
     }
 
     /// <summary>
-    /// The address line 3.
+    /// The postal code of the address.
     /// </summary>
-    public string? Line3
+    public string? PostalCode
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("line3");
+            return this._rawData.GetNullableClass<string>("postal_code");
         }
         init
         {
@@ -553,58 +589,75 @@ public sealed record class Unstructured : JsonModel
                 return;
             }
 
-            this._rawData.Set("line3", value);
+            this._rawData.Set("postal_code", value);
+        }
+    }
+
+    /// <summary>
+    /// The address state.
+    /// </summary>
+    public string? State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("state");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("state", value);
         }
     }
 
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.City;
+        _ = this.Country;
         _ = this.Line1;
         _ = this.Line2;
-        _ = this.Line3;
+        _ = this.PostalCode;
+        _ = this.State;
     }
 
-    public Unstructured() { }
+    public Structured() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public Unstructured(Unstructured unstructured)
-        : base(unstructured) { }
+    public Structured(Structured structured)
+        : base(structured) { }
 #pragma warning restore CS8618
 
-    public Unstructured(IReadOnlyDictionary<string, JsonElement> rawData)
+    public Structured(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    Unstructured(FrozenDictionary<string, JsonElement> rawData)
+    Structured(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="UnstructuredFromRaw.FromRawUnchecked"/>
-    public static Unstructured FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    /// <inheritdoc cref="StructuredFromRaw.FromRawUnchecked"/>
+    public static Structured FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
     }
-
-    [SetsRequiredMembers]
-    public Unstructured(string line1)
-        : this()
-    {
-        this.Line1 = line1;
-    }
 }
 
-class UnstructuredFromRaw : IFromRawJson<Unstructured>
+class StructuredFromRaw : IFromRawJson<Structured>
 {
     /// <inheritdoc/>
-    public Unstructured FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        Unstructured.FromRawUnchecked(rawData);
+    public Structured FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Structured.FromRawUnchecked(rawData);
 }
 
 /// <summary>
@@ -651,12 +704,12 @@ public sealed record class Remittance : JsonModel
     /// <summary>
     /// Unstructured remittance information. Required if `category` is equal to `unstructured`.
     /// </summary>
-    public RemittanceUnstructured? Unstructured
+    public Unstructured? Unstructured
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<RemittanceUnstructured>("unstructured");
+            return this._rawData.GetNullableClass<Unstructured>("unstructured");
         }
         init
         {
@@ -862,8 +915,8 @@ class TaxFromRaw : IFromRawJson<Tax>
 /// <summary>
 /// Unstructured remittance information. Required if `category` is equal to `unstructured`.
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<RemittanceUnstructured, RemittanceUnstructuredFromRaw>))]
-public sealed record class RemittanceUnstructured : JsonModel
+[JsonConverter(typeof(JsonModelConverter<Unstructured, UnstructuredFromRaw>))]
+public sealed record class Unstructured : JsonModel
 {
     /// <summary>
     /// The information.
@@ -884,49 +937,46 @@ public sealed record class RemittanceUnstructured : JsonModel
         _ = this.Message;
     }
 
-    public RemittanceUnstructured() { }
+    public Unstructured() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public RemittanceUnstructured(RemittanceUnstructured remittanceUnstructured)
-        : base(remittanceUnstructured) { }
+    public Unstructured(Unstructured unstructured)
+        : base(unstructured) { }
 #pragma warning restore CS8618
 
-    public RemittanceUnstructured(IReadOnlyDictionary<string, JsonElement> rawData)
+    public Unstructured(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    RemittanceUnstructured(FrozenDictionary<string, JsonElement> rawData)
+    Unstructured(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="RemittanceUnstructuredFromRaw.FromRawUnchecked"/>
-    public static RemittanceUnstructured FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
+    /// <inheritdoc cref="UnstructuredFromRaw.FromRawUnchecked"/>
+    public static Unstructured FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
     }
 
     [SetsRequiredMembers]
-    public RemittanceUnstructured(string message)
+    public Unstructured(string message)
         : this()
     {
         this.Message = message;
     }
 }
 
-class RemittanceUnstructuredFromRaw : IFromRawJson<RemittanceUnstructured>
+class UnstructuredFromRaw : IFromRawJson<Unstructured>
 {
     /// <inheritdoc/>
-    public RemittanceUnstructured FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => RemittanceUnstructured.FromRawUnchecked(rawData);
+    public Unstructured FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Unstructured.FromRawUnchecked(rawData);
 }
 
 /// <summary>
@@ -1027,22 +1077,30 @@ class DebtorFromRaw : IFromRawJson<Debtor>
 public sealed record class DebtorAddress : JsonModel
 {
     /// <summary>
-    /// Unstructured address lines.
+    /// Structured address components. City and country are required.
     /// </summary>
-    public required DebtorAddressUnstructured Unstructured
+    public DebtorAddressStructured? Structured
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<DebtorAddressUnstructured>("unstructured");
+            return this._rawData.GetNullableClass<DebtorAddressStructured>("structured");
         }
-        init { this._rawData.Set("unstructured", value); }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("structured", value);
+        }
     }
 
     /// <inheritdoc/>
     public override void Validate()
     {
-        this.Unstructured.Validate();
+        this.Structured?.Validate();
     }
 
     public DebtorAddress() { }
@@ -1071,13 +1129,6 @@ public sealed record class DebtorAddress : JsonModel
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
     }
-
-    [SetsRequiredMembers]
-    public DebtorAddress(DebtorAddressUnstructured unstructured)
-        : this()
-    {
-        this.Unstructured = unstructured;
-    }
 }
 
 class DebtorAddressFromRaw : IFromRawJson<DebtorAddress>
@@ -1088,28 +1139,61 @@ class DebtorAddressFromRaw : IFromRawJson<DebtorAddress>
 }
 
 /// <summary>
-/// Unstructured address lines.
+/// Structured address components. City and country are required.
 /// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<DebtorAddressUnstructured, DebtorAddressUnstructuredFromRaw>)
-)]
-public sealed record class DebtorAddressUnstructured : JsonModel
+[JsonConverter(typeof(JsonModelConverter<DebtorAddressStructured, DebtorAddressStructuredFromRaw>))]
+public sealed record class DebtorAddressStructured : JsonModel
 {
     /// <summary>
-    /// The address line 1.
+    /// The city, district, town, or village of the address.
     /// </summary>
-    public required string Line1
+    public required string City
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("line1");
+            return this._rawData.GetNotNullClass<string>("city");
         }
-        init { this._rawData.Set("line1", value); }
+        init { this._rawData.Set("city", value); }
     }
 
     /// <summary>
-    /// The address line 2.
+    /// The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+    /// code for the country of the address.
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <summary>
+    /// The first line of the address.
+    /// </summary>
+    public string? Line1
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("line1");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("line1", value);
+        }
+    }
+
+    /// <summary>
+    /// The second line of the address.
     /// </summary>
     public string? Line2
     {
@@ -1130,14 +1214,14 @@ public sealed record class DebtorAddressUnstructured : JsonModel
     }
 
     /// <summary>
-    /// The address line 3.
+    /// The postal code of the address.
     /// </summary>
-    public string? Line3
+    public string? PostalCode
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("line3");
+            return this._rawData.GetNullableClass<string>("postal_code");
         }
         init
         {
@@ -1146,59 +1230,76 @@ public sealed record class DebtorAddressUnstructured : JsonModel
                 return;
             }
 
-            this._rawData.Set("line3", value);
+            this._rawData.Set("postal_code", value);
+        }
+    }
+
+    /// <summary>
+    /// The address state.
+    /// </summary>
+    public string? State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("state");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("state", value);
         }
     }
 
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.City;
+        _ = this.Country;
         _ = this.Line1;
         _ = this.Line2;
-        _ = this.Line3;
+        _ = this.PostalCode;
+        _ = this.State;
     }
 
-    public DebtorAddressUnstructured() { }
+    public DebtorAddressStructured() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public DebtorAddressUnstructured(DebtorAddressUnstructured debtorAddressUnstructured)
-        : base(debtorAddressUnstructured) { }
+    public DebtorAddressStructured(DebtorAddressStructured debtorAddressStructured)
+        : base(debtorAddressStructured) { }
 #pragma warning restore CS8618
 
-    public DebtorAddressUnstructured(IReadOnlyDictionary<string, JsonElement> rawData)
+    public DebtorAddressStructured(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    DebtorAddressUnstructured(FrozenDictionary<string, JsonElement> rawData)
+    DebtorAddressStructured(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="DebtorAddressUnstructuredFromRaw.FromRawUnchecked"/>
-    public static DebtorAddressUnstructured FromRawUnchecked(
+    /// <inheritdoc cref="DebtorAddressStructuredFromRaw.FromRawUnchecked"/>
+    public static DebtorAddressStructured FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
     }
-
-    [SetsRequiredMembers]
-    public DebtorAddressUnstructured(string line1)
-        : this()
-    {
-        this.Line1 = line1;
-    }
 }
 
-class DebtorAddressUnstructuredFromRaw : IFromRawJson<DebtorAddressUnstructured>
+class DebtorAddressStructuredFromRaw : IFromRawJson<DebtorAddressStructured>
 {
     /// <inheritdoc/>
-    public DebtorAddressUnstructured FromRawUnchecked(
+    public DebtorAddressStructured FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
-    ) => DebtorAddressUnstructured.FromRawUnchecked(rawData);
+    ) => DebtorAddressStructured.FromRawUnchecked(rawData);
 }
