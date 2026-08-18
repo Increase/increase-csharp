@@ -581,7 +581,8 @@ public enum CardDisputeStatus
     Won,
 
     /// <summary>
-    /// The Card Dispute has been reviewed and rejected, please review the explanation
+    /// The Card Dispute was rejected before it was submitted to the network, either
+    /// by Increase or because the user withdrew it. Please review the explanation
     /// for more details.
     /// </summary>
     Rejected,

@@ -1141,7 +1141,6 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, AchTransfers::Funding>(),
             new ApiEnumConverter<string, AchTransfers::SettlementSchedule>(),
             new ApiEnumConverter<string, AchTransfers::StandardEntryClassCode>(),
-            new ApiEnumConverter<string, AchTransfers::TransactionTiming>(),
             new ApiEnumConverter<string, AchTransfers::In>(),
             new ApiEnumConverter<string, InboundAchTransfers::Category>(),
             new ApiEnumConverter<string, InboundAchTransfers::DeclineReason>(),
@@ -1282,6 +1281,7 @@ public abstract record class ModelBase
                 string,
                 RoutingNumbers::RoutingNumberListResponseFednowTransfers
             >(),
+            new ApiEnumConverter<string, RoutingNumbers::RealTimePaymentsRequestForPayment>(),
             new ApiEnumConverter<
                 string,
                 RoutingNumbers::RoutingNumberListResponseRealTimePaymentsTransfers
@@ -1362,6 +1362,15 @@ public abstract record class ModelBase
             new ApiEnumConverter<
                 string,
                 ModelsEntities::EntityUpdateParamsThirdPartyVerificationVendor
+            >(),
+            new ApiEnumConverter<
+                string,
+                ModelsEntities::EntityUpdateParamsTrustGrantorIdentificationMethod
+            >(),
+            new ApiEnumConverter<string, ModelsEntities::EntityUpdateParamsTrustTrusteeStructure>(),
+            new ApiEnumConverter<
+                string,
+                ModelsEntities::EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod
             >(),
             new ApiEnumConverter<string, ModelsEntities::In>(),
             new ApiEnumConverter<string, ModelsEntities::ValidationStatusIn>(),

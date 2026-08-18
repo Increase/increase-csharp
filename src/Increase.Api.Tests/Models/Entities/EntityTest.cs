@@ -255,10 +255,11 @@ public class EntityTest : TestBase
                         BeneficialOwnerIdentity = new("beneficial_owner_id"),
                         Category = Entities::IssueCategory.EntityTaxIdentifier,
                         EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                        EntityIdentity = new(),
                         EntityTaxIdentifier = new(),
                     },
                 ],
-                Status = Entities::StatusModel.Pending,
+                Status = Entities::StatusModel.Valid,
             },
         };
 
@@ -498,10 +499,11 @@ public class EntityTest : TestBase
                     BeneficialOwnerIdentity = new("beneficial_owner_id"),
                     Category = Entities::IssueCategory.EntityTaxIdentifier,
                     EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                    EntityIdentity = new(),
                     EntityTaxIdentifier = new(),
                 },
             ],
-            Status = Entities::StatusModel.Pending,
+            Status = Entities::StatusModel.Valid,
         };
 
         Assert.Equal(expectedID, model.ID);
@@ -778,10 +780,11 @@ public class EntityTest : TestBase
                         BeneficialOwnerIdentity = new("beneficial_owner_id"),
                         Category = Entities::IssueCategory.EntityTaxIdentifier,
                         EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                        EntityIdentity = new(),
                         EntityTaxIdentifier = new(),
                     },
                 ],
-                Status = Entities::StatusModel.Pending,
+                Status = Entities::StatusModel.Valid,
             },
         };
 
@@ -1039,10 +1042,11 @@ public class EntityTest : TestBase
                         BeneficialOwnerIdentity = new("beneficial_owner_id"),
                         Category = Entities::IssueCategory.EntityTaxIdentifier,
                         EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                        EntityIdentity = new(),
                         EntityTaxIdentifier = new(),
                     },
                 ],
-                Status = Entities::StatusModel.Pending,
+                Status = Entities::StatusModel.Valid,
             },
         };
 
@@ -1289,10 +1293,11 @@ public class EntityTest : TestBase
                     BeneficialOwnerIdentity = new("beneficial_owner_id"),
                     Category = Entities::IssueCategory.EntityTaxIdentifier,
                     EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                    EntityIdentity = new(),
                     EntityTaxIdentifier = new(),
                 },
             ],
-            Status = Entities::StatusModel.Pending,
+            Status = Entities::StatusModel.Valid,
         };
 
         Assert.Equal(expectedID, deserialized.ID);
@@ -1569,10 +1574,11 @@ public class EntityTest : TestBase
                         BeneficialOwnerIdentity = new("beneficial_owner_id"),
                         Category = Entities::IssueCategory.EntityTaxIdentifier,
                         EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                        EntityIdentity = new(),
                         EntityTaxIdentifier = new(),
                     },
                 ],
-                Status = Entities::StatusModel.Pending,
+                Status = Entities::StatusModel.Valid,
             },
         };
 
@@ -1824,10 +1830,11 @@ public class EntityTest : TestBase
                         BeneficialOwnerIdentity = new("beneficial_owner_id"),
                         Category = Entities::IssueCategory.EntityTaxIdentifier,
                         EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                        EntityIdentity = new(),
                         EntityTaxIdentifier = new(),
                     },
                 ],
-                Status = Entities::StatusModel.Pending,
+                Status = Entities::StatusModel.Valid,
             },
         };
 
@@ -7658,6 +7665,7 @@ public class ValidationTest : TestBase
                     BeneficialOwnerIdentity = new("beneficial_owner_id"),
                     Category = Entities::IssueCategory.EntityTaxIdentifier,
                     EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                    EntityIdentity = new(),
                     EntityTaxIdentifier = new(),
                 },
             ],
@@ -7676,6 +7684,7 @@ public class ValidationTest : TestBase
                 BeneficialOwnerIdentity = new("beneficial_owner_id"),
                 Category = Entities::IssueCategory.EntityTaxIdentifier,
                 EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                EntityIdentity = new(),
                 EntityTaxIdentifier = new(),
             },
         ];
@@ -7706,6 +7715,7 @@ public class ValidationTest : TestBase
                     BeneficialOwnerIdentity = new("beneficial_owner_id"),
                     Category = Entities::IssueCategory.EntityTaxIdentifier,
                     EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                    EntityIdentity = new(),
                     EntityTaxIdentifier = new(),
                 },
             ],
@@ -7738,6 +7748,7 @@ public class ValidationTest : TestBase
                     BeneficialOwnerIdentity = new("beneficial_owner_id"),
                     Category = Entities::IssueCategory.EntityTaxIdentifier,
                     EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                    EntityIdentity = new(),
                     EntityTaxIdentifier = new(),
                 },
             ],
@@ -7763,6 +7774,7 @@ public class ValidationTest : TestBase
                 BeneficialOwnerIdentity = new("beneficial_owner_id"),
                 Category = Entities::IssueCategory.EntityTaxIdentifier,
                 EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                EntityIdentity = new(),
                 EntityTaxIdentifier = new(),
             },
         ];
@@ -7793,6 +7805,7 @@ public class ValidationTest : TestBase
                     BeneficialOwnerIdentity = new("beneficial_owner_id"),
                     Category = Entities::IssueCategory.EntityTaxIdentifier,
                     EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                    EntityIdentity = new(),
                     EntityTaxIdentifier = new(),
                 },
             ],
@@ -7819,6 +7832,7 @@ public class ValidationTest : TestBase
                     BeneficialOwnerIdentity = new("beneficial_owner_id"),
                     Category = Entities::IssueCategory.EntityTaxIdentifier,
                     EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+                    EntityIdentity = new(),
                     EntityTaxIdentifier = new(),
                 },
             ],
@@ -7846,6 +7860,7 @@ public class IssueTest : TestBase
             BeneficialOwnerIdentity = new("beneficial_owner_id"),
             Category = Entities::IssueCategory.EntityTaxIdentifier,
             EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+            EntityIdentity = new(),
             EntityTaxIdentifier = new(),
         };
 
@@ -7862,12 +7877,14 @@ public class IssueTest : TestBase
         Entities::EntityAddress expectedEntityAddress = new(
             Entities::EntityAddressReason.MailboxAddress
         );
+        Entities::EntityIdentity expectedEntityIdentity = new();
         Entities::EntityTaxIdentifier expectedEntityTaxIdentifier = new();
 
         Assert.Equal(expectedBeneficialOwnerAddress, model.BeneficialOwnerAddress);
         Assert.Equal(expectedBeneficialOwnerIdentity, model.BeneficialOwnerIdentity);
         Assert.Equal(expectedCategory, model.Category);
         Assert.Equal(expectedEntityAddress, model.EntityAddress);
+        Assert.Equal(expectedEntityIdentity, model.EntityIdentity);
         Assert.Equal(expectedEntityTaxIdentifier, model.EntityTaxIdentifier);
     }
 
@@ -7884,6 +7901,7 @@ public class IssueTest : TestBase
             BeneficialOwnerIdentity = new("beneficial_owner_id"),
             Category = Entities::IssueCategory.EntityTaxIdentifier,
             EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+            EntityIdentity = new(),
             EntityTaxIdentifier = new(),
         };
 
@@ -7909,6 +7927,7 @@ public class IssueTest : TestBase
             BeneficialOwnerIdentity = new("beneficial_owner_id"),
             Category = Entities::IssueCategory.EntityTaxIdentifier,
             EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+            EntityIdentity = new(),
             EntityTaxIdentifier = new(),
         };
 
@@ -7932,12 +7951,14 @@ public class IssueTest : TestBase
         Entities::EntityAddress expectedEntityAddress = new(
             Entities::EntityAddressReason.MailboxAddress
         );
+        Entities::EntityIdentity expectedEntityIdentity = new();
         Entities::EntityTaxIdentifier expectedEntityTaxIdentifier = new();
 
         Assert.Equal(expectedBeneficialOwnerAddress, deserialized.BeneficialOwnerAddress);
         Assert.Equal(expectedBeneficialOwnerIdentity, deserialized.BeneficialOwnerIdentity);
         Assert.Equal(expectedCategory, deserialized.Category);
         Assert.Equal(expectedEntityAddress, deserialized.EntityAddress);
+        Assert.Equal(expectedEntityIdentity, deserialized.EntityIdentity);
         Assert.Equal(expectedEntityTaxIdentifier, deserialized.EntityTaxIdentifier);
     }
 
@@ -7954,6 +7975,7 @@ public class IssueTest : TestBase
             BeneficialOwnerIdentity = new("beneficial_owner_id"),
             Category = Entities::IssueCategory.EntityTaxIdentifier,
             EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+            EntityIdentity = new(),
             EntityTaxIdentifier = new(),
         };
 
@@ -7973,6 +7995,7 @@ public class IssueTest : TestBase
             BeneficialOwnerIdentity = new("beneficial_owner_id"),
             Category = Entities::IssueCategory.EntityTaxIdentifier,
             EntityAddress = new(Entities::EntityAddressReason.MailboxAddress),
+            EntityIdentity = new(),
             EntityTaxIdentifier = new(),
         };
 
@@ -8206,6 +8229,7 @@ public class IssueCategoryTest : TestBase
     [Theory]
     [InlineData(Entities::IssueCategory.EntityTaxIdentifier)]
     [InlineData(Entities::IssueCategory.EntityAddress)]
+    [InlineData(Entities::IssueCategory.EntityIdentity)]
     [InlineData(Entities::IssueCategory.BeneficialOwnerIdentity)]
     [InlineData(Entities::IssueCategory.BeneficialOwnerAddress)]
     public void Validation_Works(Entities::IssueCategory rawValue)
@@ -8230,6 +8254,7 @@ public class IssueCategoryTest : TestBase
     [Theory]
     [InlineData(Entities::IssueCategory.EntityTaxIdentifier)]
     [InlineData(Entities::IssueCategory.EntityAddress)]
+    [InlineData(Entities::IssueCategory.EntityIdentity)]
     [InlineData(Entities::IssueCategory.BeneficialOwnerIdentity)]
     [InlineData(Entities::IssueCategory.BeneficialOwnerAddress)]
     public void SerializationRoundtrip_Works(Entities::IssueCategory rawValue)
@@ -8393,6 +8418,60 @@ public class EntityAddressReasonTest : TestBase
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
+    }
+}
+
+public class EntityIdentityTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Entities::EntityIdentity { };
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Entities::EntityIdentity { };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::EntityIdentity>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Entities::EntityIdentity { };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::EntityIdentity>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Entities::EntityIdentity { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Entities::EntityIdentity { };
+
+        Entities::EntityIdentity copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

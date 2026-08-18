@@ -19,7 +19,7 @@ public class AccountListPageResponseTest : TestBase
                 {
                     ID = "account_in71c4amph0vgo2qllky",
                     AccountRevenueRate = null,
-                    Bank = Accounts::Bank.FirstInternetBank,
+                    Bank = Accounts::Bank.IncreaseBank,
                     ClosedAt = null,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Currency = Accounts::Currency.Usd,
@@ -51,7 +51,7 @@ public class AccountListPageResponseTest : TestBase
             {
                 ID = "account_in71c4amph0vgo2qllky",
                 AccountRevenueRate = null,
-                Bank = Accounts::Bank.FirstInternetBank,
+                Bank = Accounts::Bank.IncreaseBank,
                 ClosedAt = null,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Currency = Accounts::Currency.Usd,
@@ -95,7 +95,7 @@ public class AccountListPageResponseTest : TestBase
                 {
                     ID = "account_in71c4amph0vgo2qllky",
                     AccountRevenueRate = null,
-                    Bank = Accounts::Bank.FirstInternetBank,
+                    Bank = Accounts::Bank.IncreaseBank,
                     ClosedAt = null,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Currency = Accounts::Currency.Usd,
@@ -141,7 +141,7 @@ public class AccountListPageResponseTest : TestBase
                 {
                     ID = "account_in71c4amph0vgo2qllky",
                     AccountRevenueRate = null,
-                    Bank = Accounts::Bank.FirstInternetBank,
+                    Bank = Accounts::Bank.IncreaseBank,
                     ClosedAt = null,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Currency = Accounts::Currency.Usd,
@@ -180,7 +180,7 @@ public class AccountListPageResponseTest : TestBase
             {
                 ID = "account_in71c4amph0vgo2qllky",
                 AccountRevenueRate = null,
-                Bank = Accounts::Bank.FirstInternetBank,
+                Bank = Accounts::Bank.IncreaseBank,
                 ClosedAt = null,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Currency = Accounts::Currency.Usd,
@@ -224,7 +224,7 @@ public class AccountListPageResponseTest : TestBase
                 {
                     ID = "account_in71c4amph0vgo2qllky",
                     AccountRevenueRate = null,
-                    Bank = Accounts::Bank.FirstInternetBank,
+                    Bank = Accounts::Bank.IncreaseBank,
                     ClosedAt = null,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Currency = Accounts::Currency.Usd,
@@ -264,7 +264,7 @@ public class AccountListPageResponseTest : TestBase
                 {
                     ID = "account_in71c4amph0vgo2qllky",
                     AccountRevenueRate = null,
-                    Bank = Accounts::Bank.FirstInternetBank,
+                    Bank = Accounts::Bank.IncreaseBank,
                     ClosedAt = null,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Currency = Accounts::Currency.Usd,

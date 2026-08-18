@@ -141,6 +141,7 @@ public class RealTimeDecisionTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 NetworkRiskScore = 10,
+                OriginalCardPaymentID = null,
                 PartialApprovalCapability =
                     RealTimeDecisions::PartialApprovalCapability.NotSupported,
                 PhysicalCardID = null,
@@ -413,6 +414,7 @@ public class RealTimeDecisionTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 10,
+            OriginalCardPaymentID = null,
             PartialApprovalCapability = RealTimeDecisions::PartialApprovalCapability.NotSupported,
             PhysicalCardID = null,
             PresentmentAmount = 100,
@@ -705,6 +707,7 @@ public class RealTimeDecisionTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 NetworkRiskScore = 10,
+                OriginalCardPaymentID = null,
                 PartialApprovalCapability =
                     RealTimeDecisions::PartialApprovalCapability.NotSupported,
                 PhysicalCardID = null,
@@ -990,6 +993,7 @@ public class RealTimeDecisionTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 NetworkRiskScore = 10,
+                OriginalCardPaymentID = null,
                 PartialApprovalCapability =
                     RealTimeDecisions::PartialApprovalCapability.NotSupported,
                 PhysicalCardID = null,
@@ -1269,6 +1273,7 @@ public class RealTimeDecisionTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 10,
+            OriginalCardPaymentID = null,
             PartialApprovalCapability = RealTimeDecisions::PartialApprovalCapability.NotSupported,
             PhysicalCardID = null,
             PresentmentAmount = 100,
@@ -1561,6 +1566,7 @@ public class RealTimeDecisionTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 NetworkRiskScore = 10,
+                OriginalCardPaymentID = null,
                 PartialApprovalCapability =
                     RealTimeDecisions::PartialApprovalCapability.NotSupported,
                 PhysicalCardID = null,
@@ -1840,6 +1846,7 @@ public class RealTimeDecisionTest : TestBase
                     TransactionID = "627199945183184",
                 },
                 NetworkRiskScore = 10,
+                OriginalCardPaymentID = null,
                 PartialApprovalCapability =
                     RealTimeDecisions::PartialApprovalCapability.NotSupported,
                 PhysicalCardID = null,
@@ -4037,6 +4044,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 0,
+            OriginalCardPaymentID = "original_card_payment_id",
             PartialApprovalCapability = RealTimeDecisions::PartialApprovalCapability.Supported,
             PhysicalCardID = "physical_card_id",
             PresentmentAmount = 0,
@@ -4135,6 +4143,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
             TransactionID = "627199945183184",
         };
         long expectedNetworkRiskScore = 0;
+        string expectedOriginalCardPaymentID = "original_card_payment_id";
         ApiEnum<
             string,
             RealTimeDecisions::PartialApprovalCapability
@@ -4197,6 +4206,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
         Assert.Equal(expectedNetworkDetails, model.NetworkDetails);
         Assert.Equal(expectedNetworkIdentifiers, model.NetworkIdentifiers);
         Assert.Equal(expectedNetworkRiskScore, model.NetworkRiskScore);
+        Assert.Equal(expectedOriginalCardPaymentID, model.OriginalCardPaymentID);
         Assert.Equal(expectedPartialApprovalCapability, model.PartialApprovalCapability);
         Assert.Equal(expectedPhysicalCardID, model.PhysicalCardID);
         Assert.Equal(expectedPresentmentAmount, model.PresentmentAmount);
@@ -4267,6 +4277,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 0,
+            OriginalCardPaymentID = "original_card_payment_id",
             PartialApprovalCapability = RealTimeDecisions::PartialApprovalCapability.Supported,
             PhysicalCardID = "physical_card_id",
             PresentmentAmount = 0,
@@ -4375,6 +4386,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 0,
+            OriginalCardPaymentID = "original_card_payment_id",
             PartialApprovalCapability = RealTimeDecisions::PartialApprovalCapability.Supported,
             PhysicalCardID = "physical_card_id",
             PresentmentAmount = 0,
@@ -4481,6 +4493,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
             TransactionID = "627199945183184",
         };
         long expectedNetworkRiskScore = 0;
+        string expectedOriginalCardPaymentID = "original_card_payment_id";
         ApiEnum<
             string,
             RealTimeDecisions::PartialApprovalCapability
@@ -4543,6 +4556,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
         Assert.Equal(expectedNetworkDetails, deserialized.NetworkDetails);
         Assert.Equal(expectedNetworkIdentifiers, deserialized.NetworkIdentifiers);
         Assert.Equal(expectedNetworkRiskScore, deserialized.NetworkRiskScore);
+        Assert.Equal(expectedOriginalCardPaymentID, deserialized.OriginalCardPaymentID);
         Assert.Equal(expectedPartialApprovalCapability, deserialized.PartialApprovalCapability);
         Assert.Equal(expectedPhysicalCardID, deserialized.PhysicalCardID);
         Assert.Equal(expectedPresentmentAmount, deserialized.PresentmentAmount);
@@ -4613,6 +4627,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 0,
+            OriginalCardPaymentID = "original_card_payment_id",
             PartialApprovalCapability = RealTimeDecisions::PartialApprovalCapability.Supported,
             PhysicalCardID = "physical_card_id",
             PresentmentAmount = 0,
@@ -4714,6 +4729,7 @@ public class RealTimeDecisionCardAuthorizationTest : TestBase
                 TransactionID = "627199945183184",
             },
             NetworkRiskScore = 0,
+            OriginalCardPaymentID = "original_card_payment_id",
             PartialApprovalCapability = RealTimeDecisions::PartialApprovalCapability.Supported,
             PhysicalCardID = "physical_card_id",
             PresentmentAmount = 0,

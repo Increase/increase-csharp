@@ -121,7 +121,98 @@ public class EntityUpdateParamsTest : TestBase
                     Zip = "x",
                     Line2 = "x",
                 },
+                Grantor = new()
+                {
+                    Address = new()
+                    {
+                        City = "x",
+                        Country = "x",
+                        Line1 = "x",
+                        Line2 = "x",
+                        State = "x",
+                        Zip = "x",
+                    },
+                    DateOfBirth = "2019-12-27",
+                    Identification = new()
+                    {
+                        Method =
+                            EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                        Number = "xxxx",
+                        DriversLicense = new()
+                        {
+                            ExpirationDate = "2019-12-27",
+                            FileID = "file_id",
+                            State = "xx",
+                            BackFileID = "back_file_id",
+                        },
+                        Other = new()
+                        {
+                            Country = "x",
+                            Description = "x",
+                            FileID = "file_id",
+                            BackFileID = "back_file_id",
+                            ExpirationDate = "2019-12-27",
+                        },
+                        Passport = new()
+                        {
+                            Country = "x",
+                            ExpirationDate = "2019-12-27",
+                            FileID = "file_id",
+                        },
+                    },
+                    Name = "x",
+                    ConfirmedNoUsTaxID = true,
+                },
                 Name = "x",
+                Trustees =
+                [
+                    new()
+                    {
+                        Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+                        Individual = new()
+                        {
+                            Address = new()
+                            {
+                                City = "x",
+                                Country = "x",
+                                Line1 = "x",
+                                Line2 = "x",
+                                State = "x",
+                                Zip = "x",
+                            },
+                            DateOfBirth = "2019-12-27",
+                            Identification = new()
+                            {
+                                Method =
+                                    EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                                Number = "xxxx",
+                                DriversLicense = new()
+                                {
+                                    ExpirationDate = "2019-12-27",
+                                    FileID = "file_id",
+                                    State = "xx",
+                                    BackFileID = "back_file_id",
+                                },
+                                Other = new()
+                                {
+                                    Country = "x",
+                                    Description = "x",
+                                    FileID = "file_id",
+                                    BackFileID = "back_file_id",
+                                    ExpirationDate = "2019-12-27",
+                                },
+                                Passport = new()
+                                {
+                                    Country = "x",
+                                    ExpirationDate = "2019-12-27",
+                                    FileID = "file_id",
+                                },
+                            },
+                            Name = "x",
+                            ConfirmedNoUsTaxID = true,
+                        },
+                    },
+                ],
             },
         };
 
@@ -233,7 +324,98 @@ public class EntityUpdateParamsTest : TestBase
                 Zip = "x",
                 Line2 = "x",
             },
+            Grantor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+                ConfirmedNoUsTaxID = true,
+            },
             Name = "x",
+            Trustees =
+            [
+                new()
+                {
+                    Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+                    Individual = new()
+                    {
+                        Address = new()
+                        {
+                            City = "x",
+                            Country = "x",
+                            Line1 = "x",
+                            Line2 = "x",
+                            State = "x",
+                            Zip = "x",
+                        },
+                        DateOfBirth = "2019-12-27",
+                        Identification = new()
+                        {
+                            Method =
+                                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                            Number = "xxxx",
+                            DriversLicense = new()
+                            {
+                                ExpirationDate = "2019-12-27",
+                                FileID = "file_id",
+                                State = "xx",
+                                BackFileID = "back_file_id",
+                            },
+                            Other = new()
+                            {
+                                Country = "x",
+                                Description = "x",
+                                FileID = "file_id",
+                                BackFileID = "back_file_id",
+                                ExpirationDate = "2019-12-27",
+                            },
+                            Passport = new()
+                            {
+                                Country = "x",
+                                ExpirationDate = "2019-12-27",
+                                FileID = "file_id",
+                            },
+                        },
+                        Name = "x",
+                        ConfirmedNoUsTaxID = true,
+                    },
+                },
+            ],
         };
 
         Assert.Equal(expectedEntityID, parameters.EntityID);
@@ -438,7 +620,98 @@ public class EntityUpdateParamsTest : TestBase
                     Zip = "x",
                     Line2 = "x",
                 },
+                Grantor = new()
+                {
+                    Address = new()
+                    {
+                        City = "x",
+                        Country = "x",
+                        Line1 = "x",
+                        Line2 = "x",
+                        State = "x",
+                        Zip = "x",
+                    },
+                    DateOfBirth = "2019-12-27",
+                    Identification = new()
+                    {
+                        Method =
+                            EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                        Number = "xxxx",
+                        DriversLicense = new()
+                        {
+                            ExpirationDate = "2019-12-27",
+                            FileID = "file_id",
+                            State = "xx",
+                            BackFileID = "back_file_id",
+                        },
+                        Other = new()
+                        {
+                            Country = "x",
+                            Description = "x",
+                            FileID = "file_id",
+                            BackFileID = "back_file_id",
+                            ExpirationDate = "2019-12-27",
+                        },
+                        Passport = new()
+                        {
+                            Country = "x",
+                            ExpirationDate = "2019-12-27",
+                            FileID = "file_id",
+                        },
+                    },
+                    Name = "x",
+                    ConfirmedNoUsTaxID = true,
+                },
                 Name = "x",
+                Trustees =
+                [
+                    new()
+                    {
+                        Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+                        Individual = new()
+                        {
+                            Address = new()
+                            {
+                                City = "x",
+                                Country = "x",
+                                Line1 = "x",
+                                Line2 = "x",
+                                State = "x",
+                                Zip = "x",
+                            },
+                            DateOfBirth = "2019-12-27",
+                            Identification = new()
+                            {
+                                Method =
+                                    EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                                Number = "xxxx",
+                                DriversLicense = new()
+                                {
+                                    ExpirationDate = "2019-12-27",
+                                    FileID = "file_id",
+                                    State = "xx",
+                                    BackFileID = "back_file_id",
+                                },
+                                Other = new()
+                                {
+                                    Country = "x",
+                                    Description = "x",
+                                    FileID = "file_id",
+                                    BackFileID = "back_file_id",
+                                    ExpirationDate = "2019-12-27",
+                                },
+                                Passport = new()
+                                {
+                                    Country = "x",
+                                    ExpirationDate = "2019-12-27",
+                                    FileID = "file_id",
+                                },
+                            },
+                            Name = "x",
+                            ConfirmedNoUsTaxID = true,
+                        },
+                    },
+                ],
             },
         };
 
@@ -3317,7 +3590,98 @@ public class EntityUpdateParamsTrustTest : TestBase
                 Zip = "x",
                 Line2 = "x",
             },
+            Grantor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+                ConfirmedNoUsTaxID = true,
+            },
             Name = "x",
+            Trustees =
+            [
+                new()
+                {
+                    Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+                    Individual = new()
+                    {
+                        Address = new()
+                        {
+                            City = "x",
+                            Country = "x",
+                            Line1 = "x",
+                            Line2 = "x",
+                            State = "x",
+                            Zip = "x",
+                        },
+                        DateOfBirth = "2019-12-27",
+                        Identification = new()
+                        {
+                            Method =
+                                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                            Number = "xxxx",
+                            DriversLicense = new()
+                            {
+                                ExpirationDate = "2019-12-27",
+                                FileID = "file_id",
+                                State = "xx",
+                                BackFileID = "back_file_id",
+                            },
+                            Other = new()
+                            {
+                                Country = "x",
+                                Description = "x",
+                                FileID = "file_id",
+                                BackFileID = "back_file_id",
+                                ExpirationDate = "2019-12-27",
+                            },
+                            Passport = new()
+                            {
+                                Country = "x",
+                                ExpirationDate = "2019-12-27",
+                                FileID = "file_id",
+                            },
+                        },
+                        Name = "x",
+                        ConfirmedNoUsTaxID = true,
+                    },
+                },
+            ],
         };
 
         EntityUpdateParamsTrustAddress expectedAddress = new()
@@ -3328,10 +3692,107 @@ public class EntityUpdateParamsTrustTest : TestBase
             Zip = "x",
             Line2 = "x",
         };
+        EntityUpdateParamsTrustGrantor expectedGrantor = new()
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
         string expectedName = "x";
+        List<EntityUpdateParamsTrustTrustee> expectedTrustees =
+        [
+            new()
+            {
+                Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+                Individual = new()
+                {
+                    Address = new()
+                    {
+                        City = "x",
+                        Country = "x",
+                        Line1 = "x",
+                        Line2 = "x",
+                        State = "x",
+                        Zip = "x",
+                    },
+                    DateOfBirth = "2019-12-27",
+                    Identification = new()
+                    {
+                        Method =
+                            EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                        Number = "xxxx",
+                        DriversLicense = new()
+                        {
+                            ExpirationDate = "2019-12-27",
+                            FileID = "file_id",
+                            State = "xx",
+                            BackFileID = "back_file_id",
+                        },
+                        Other = new()
+                        {
+                            Country = "x",
+                            Description = "x",
+                            FileID = "file_id",
+                            BackFileID = "back_file_id",
+                            ExpirationDate = "2019-12-27",
+                        },
+                        Passport = new()
+                        {
+                            Country = "x",
+                            ExpirationDate = "2019-12-27",
+                            FileID = "file_id",
+                        },
+                    },
+                    Name = "x",
+                    ConfirmedNoUsTaxID = true,
+                },
+            },
+        ];
 
         Assert.Equal(expectedAddress, model.Address);
+        Assert.Equal(expectedGrantor, model.Grantor);
         Assert.Equal(expectedName, model.Name);
+        Assert.NotNull(model.Trustees);
+        Assert.Equal(expectedTrustees.Count, model.Trustees.Count);
+        for (int i = 0; i < expectedTrustees.Count; i++)
+        {
+            Assert.Equal(expectedTrustees[i], model.Trustees[i]);
+        }
     }
 
     [Fact]
@@ -3347,7 +3808,98 @@ public class EntityUpdateParamsTrustTest : TestBase
                 Zip = "x",
                 Line2 = "x",
             },
+            Grantor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+                ConfirmedNoUsTaxID = true,
+            },
             Name = "x",
+            Trustees =
+            [
+                new()
+                {
+                    Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+                    Individual = new()
+                    {
+                        Address = new()
+                        {
+                            City = "x",
+                            Country = "x",
+                            Line1 = "x",
+                            Line2 = "x",
+                            State = "x",
+                            Zip = "x",
+                        },
+                        DateOfBirth = "2019-12-27",
+                        Identification = new()
+                        {
+                            Method =
+                                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                            Number = "xxxx",
+                            DriversLicense = new()
+                            {
+                                ExpirationDate = "2019-12-27",
+                                FileID = "file_id",
+                                State = "xx",
+                                BackFileID = "back_file_id",
+                            },
+                            Other = new()
+                            {
+                                Country = "x",
+                                Description = "x",
+                                FileID = "file_id",
+                                BackFileID = "back_file_id",
+                                ExpirationDate = "2019-12-27",
+                            },
+                            Passport = new()
+                            {
+                                Country = "x",
+                                ExpirationDate = "2019-12-27",
+                                FileID = "file_id",
+                            },
+                        },
+                        Name = "x",
+                        ConfirmedNoUsTaxID = true,
+                    },
+                },
+            ],
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -3372,7 +3924,98 @@ public class EntityUpdateParamsTrustTest : TestBase
                 Zip = "x",
                 Line2 = "x",
             },
+            Grantor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+                ConfirmedNoUsTaxID = true,
+            },
             Name = "x",
+            Trustees =
+            [
+                new()
+                {
+                    Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+                    Individual = new()
+                    {
+                        Address = new()
+                        {
+                            City = "x",
+                            Country = "x",
+                            Line1 = "x",
+                            Line2 = "x",
+                            State = "x",
+                            Zip = "x",
+                        },
+                        DateOfBirth = "2019-12-27",
+                        Identification = new()
+                        {
+                            Method =
+                                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                            Number = "xxxx",
+                            DriversLicense = new()
+                            {
+                                ExpirationDate = "2019-12-27",
+                                FileID = "file_id",
+                                State = "xx",
+                                BackFileID = "back_file_id",
+                            },
+                            Other = new()
+                            {
+                                Country = "x",
+                                Description = "x",
+                                FileID = "file_id",
+                                BackFileID = "back_file_id",
+                                ExpirationDate = "2019-12-27",
+                            },
+                            Passport = new()
+                            {
+                                Country = "x",
+                                ExpirationDate = "2019-12-27",
+                                FileID = "file_id",
+                            },
+                        },
+                        Name = "x",
+                        ConfirmedNoUsTaxID = true,
+                    },
+                },
+            ],
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -3390,10 +4033,107 @@ public class EntityUpdateParamsTrustTest : TestBase
             Zip = "x",
             Line2 = "x",
         };
+        EntityUpdateParamsTrustGrantor expectedGrantor = new()
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
         string expectedName = "x";
+        List<EntityUpdateParamsTrustTrustee> expectedTrustees =
+        [
+            new()
+            {
+                Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+                Individual = new()
+                {
+                    Address = new()
+                    {
+                        City = "x",
+                        Country = "x",
+                        Line1 = "x",
+                        Line2 = "x",
+                        State = "x",
+                        Zip = "x",
+                    },
+                    DateOfBirth = "2019-12-27",
+                    Identification = new()
+                    {
+                        Method =
+                            EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                        Number = "xxxx",
+                        DriversLicense = new()
+                        {
+                            ExpirationDate = "2019-12-27",
+                            FileID = "file_id",
+                            State = "xx",
+                            BackFileID = "back_file_id",
+                        },
+                        Other = new()
+                        {
+                            Country = "x",
+                            Description = "x",
+                            FileID = "file_id",
+                            BackFileID = "back_file_id",
+                            ExpirationDate = "2019-12-27",
+                        },
+                        Passport = new()
+                        {
+                            Country = "x",
+                            ExpirationDate = "2019-12-27",
+                            FileID = "file_id",
+                        },
+                    },
+                    Name = "x",
+                    ConfirmedNoUsTaxID = true,
+                },
+            },
+        ];
 
         Assert.Equal(expectedAddress, deserialized.Address);
+        Assert.Equal(expectedGrantor, deserialized.Grantor);
         Assert.Equal(expectedName, deserialized.Name);
+        Assert.NotNull(deserialized.Trustees);
+        Assert.Equal(expectedTrustees.Count, deserialized.Trustees.Count);
+        for (int i = 0; i < expectedTrustees.Count; i++)
+        {
+            Assert.Equal(expectedTrustees[i], deserialized.Trustees[i]);
+        }
     }
 
     [Fact]
@@ -3409,7 +4149,98 @@ public class EntityUpdateParamsTrustTest : TestBase
                 Zip = "x",
                 Line2 = "x",
             },
+            Grantor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+                ConfirmedNoUsTaxID = true,
+            },
             Name = "x",
+            Trustees =
+            [
+                new()
+                {
+                    Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+                    Individual = new()
+                    {
+                        Address = new()
+                        {
+                            City = "x",
+                            Country = "x",
+                            Line1 = "x",
+                            Line2 = "x",
+                            State = "x",
+                            Zip = "x",
+                        },
+                        DateOfBirth = "2019-12-27",
+                        Identification = new()
+                        {
+                            Method =
+                                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                            Number = "xxxx",
+                            DriversLicense = new()
+                            {
+                                ExpirationDate = "2019-12-27",
+                                FileID = "file_id",
+                                State = "xx",
+                                BackFileID = "back_file_id",
+                            },
+                            Other = new()
+                            {
+                                Country = "x",
+                                Description = "x",
+                                FileID = "file_id",
+                                BackFileID = "back_file_id",
+                                ExpirationDate = "2019-12-27",
+                            },
+                            Passport = new()
+                            {
+                                Country = "x",
+                                ExpirationDate = "2019-12-27",
+                                FileID = "file_id",
+                            },
+                        },
+                        Name = "x",
+                        ConfirmedNoUsTaxID = true,
+                    },
+                },
+            ],
         };
 
         model.Validate();
@@ -3422,8 +4253,12 @@ public class EntityUpdateParamsTrustTest : TestBase
 
         Assert.Null(model.Address);
         Assert.False(model.RawData.ContainsKey("address"));
+        Assert.Null(model.Grantor);
+        Assert.False(model.RawData.ContainsKey("grantor"));
         Assert.Null(model.Name);
         Assert.False(model.RawData.ContainsKey("name"));
+        Assert.Null(model.Trustees);
+        Assert.False(model.RawData.ContainsKey("trustees"));
     }
 
     [Fact]
@@ -3441,13 +4276,19 @@ public class EntityUpdateParamsTrustTest : TestBase
         {
             // Null should be interpreted as omitted for these properties
             Address = null,
+            Grantor = null,
             Name = null,
+            Trustees = null,
         };
 
         Assert.Null(model.Address);
         Assert.False(model.RawData.ContainsKey("address"));
+        Assert.Null(model.Grantor);
+        Assert.False(model.RawData.ContainsKey("grantor"));
         Assert.Null(model.Name);
         Assert.False(model.RawData.ContainsKey("name"));
+        Assert.Null(model.Trustees);
+        Assert.False(model.RawData.ContainsKey("trustees"));
     }
 
     [Fact]
@@ -3457,7 +4298,9 @@ public class EntityUpdateParamsTrustTest : TestBase
         {
             // Null should be interpreted as omitted for these properties
             Address = null,
+            Grantor = null,
             Name = null,
+            Trustees = null,
         };
 
         model.Validate();
@@ -3476,7 +4319,98 @@ public class EntityUpdateParamsTrustTest : TestBase
                 Zip = "x",
                 Line2 = "x",
             },
+            Grantor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+                ConfirmedNoUsTaxID = true,
+            },
             Name = "x",
+            Trustees =
+            [
+                new()
+                {
+                    Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+                    Individual = new()
+                    {
+                        Address = new()
+                        {
+                            City = "x",
+                            Country = "x",
+                            Line1 = "x",
+                            Line2 = "x",
+                            State = "x",
+                            Zip = "x",
+                        },
+                        DateOfBirth = "2019-12-27",
+                        Identification = new()
+                        {
+                            Method =
+                                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                            Number = "xxxx",
+                            DriversLicense = new()
+                            {
+                                ExpirationDate = "2019-12-27",
+                                FileID = "file_id",
+                                State = "xx",
+                                BackFileID = "back_file_id",
+                            },
+                            Other = new()
+                            {
+                                Country = "x",
+                                Description = "x",
+                                FileID = "file_id",
+                                BackFileID = "back_file_id",
+                                ExpirationDate = "2019-12-27",
+                            },
+                            Passport = new()
+                            {
+                                Country = "x",
+                                ExpirationDate = "2019-12-27",
+                                FileID = "file_id",
+                            },
+                        },
+                        Name = "x",
+                        ConfirmedNoUsTaxID = true,
+                    },
+                },
+            ],
         };
 
         EntityUpdateParamsTrust copied = new(model);
@@ -3657,6 +4591,3627 @@ public class EntityUpdateParamsTrustAddressTest : TestBase
         };
 
         EntityUpdateParamsTrustAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsTrustGrantorTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
+
+        EntityUpdateParamsTrustGrantorAddress expectedAddress = new()
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+        string expectedDateOfBirth = "2019-12-27";
+        EntityUpdateParamsTrustGrantorIdentification expectedIdentification = new()
+        {
+            Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+        string expectedName = "x";
+        bool expectedConfirmedNoUsTaxID = true;
+
+        Assert.Equal(expectedAddress, model.Address);
+        Assert.Equal(expectedDateOfBirth, model.DateOfBirth);
+        Assert.Equal(expectedIdentification, model.Identification);
+        Assert.Equal(expectedName, model.Name);
+        Assert.Equal(expectedConfirmedNoUsTaxID, model.ConfirmedNoUsTaxID);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsTrustGrantor>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsTrustGrantor>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        EntityUpdateParamsTrustGrantorAddress expectedAddress = new()
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+        string expectedDateOfBirth = "2019-12-27";
+        EntityUpdateParamsTrustGrantorIdentification expectedIdentification = new()
+        {
+            Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+        string expectedName = "x";
+        bool expectedConfirmedNoUsTaxID = true;
+
+        Assert.Equal(expectedAddress, deserialized.Address);
+        Assert.Equal(expectedDateOfBirth, deserialized.DateOfBirth);
+        Assert.Equal(expectedIdentification, deserialized.Identification);
+        Assert.Equal(expectedName, deserialized.Name);
+        Assert.Equal(expectedConfirmedNoUsTaxID, deserialized.ConfirmedNoUsTaxID);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+        };
+
+        Assert.Null(model.ConfirmedNoUsTaxID);
+        Assert.False(model.RawData.ContainsKey("confirmed_no_us_tax_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+
+            // Null should be interpreted as omitted for these properties
+            ConfirmedNoUsTaxID = null,
+        };
+
+        Assert.Null(model.ConfirmedNoUsTaxID);
+        Assert.False(model.RawData.ContainsKey("confirmed_no_us_tax_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+
+            // Null should be interpreted as omitted for these properties
+            ConfirmedNoUsTaxID = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
+
+        EntityUpdateParamsTrustGrantor copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsTrustGrantorAddressTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        string expectedCity = "x";
+        string expectedCountry = "x";
+        string expectedLine1 = "x";
+        string expectedLine2 = "x";
+        string expectedState = "x";
+        string expectedZip = "x";
+
+        Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedLine1, model.Line1);
+        Assert.Equal(expectedLine2, model.Line2);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedZip, model.Zip);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsTrustGrantorAddress>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsTrustGrantorAddress>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCity = "x";
+        string expectedCountry = "x";
+        string expectedLine1 = "x";
+        string expectedLine2 = "x";
+        string expectedState = "x";
+        string expectedZip = "x";
+
+        Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Equal(expectedLine2, deserialized.Line2);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedZip, deserialized.Zip);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
+
+        Assert.Null(model.Line2);
+        Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Line2 = null,
+            State = null,
+            Zip = null,
+        };
+
+        Assert.Null(model.Line2);
+        Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Line2 = null,
+            State = null,
+            Zip = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        EntityUpdateParamsTrustGrantorAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsTrustGrantorIdentificationTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentification
+        {
+            Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        ApiEnum<string, EntityUpdateParamsTrustGrantorIdentificationMethod> expectedMethod =
+            EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber;
+        string expectedNumber = "xxxx";
+        EntityUpdateParamsTrustGrantorIdentificationDriversLicense expectedDriversLicense = new()
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+            BackFileID = "back_file_id",
+        };
+        EntityUpdateParamsTrustGrantorIdentificationOther expectedOther = new()
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+        EntityUpdateParamsTrustGrantorIdentificationPassport expectedPassport = new()
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        Assert.Equal(expectedMethod, model.Method);
+        Assert.Equal(expectedNumber, model.Number);
+        Assert.Equal(expectedDriversLicense, model.DriversLicense);
+        Assert.Equal(expectedOther, model.Other);
+        Assert.Equal(expectedPassport, model.Passport);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentification
+        {
+            Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsTrustGrantorIdentification>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentification
+        {
+            Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsTrustGrantorIdentification>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<string, EntityUpdateParamsTrustGrantorIdentificationMethod> expectedMethod =
+            EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber;
+        string expectedNumber = "xxxx";
+        EntityUpdateParamsTrustGrantorIdentificationDriversLicense expectedDriversLicense = new()
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+            BackFileID = "back_file_id",
+        };
+        EntityUpdateParamsTrustGrantorIdentificationOther expectedOther = new()
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+        EntityUpdateParamsTrustGrantorIdentificationPassport expectedPassport = new()
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        Assert.Equal(expectedMethod, deserialized.Method);
+        Assert.Equal(expectedNumber, deserialized.Number);
+        Assert.Equal(expectedDriversLicense, deserialized.DriversLicense);
+        Assert.Equal(expectedOther, deserialized.Other);
+        Assert.Equal(expectedPassport, deserialized.Passport);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentification
+        {
+            Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentification
+        {
+            Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+
+        Assert.Null(model.DriversLicense);
+        Assert.False(model.RawData.ContainsKey("drivers_license"));
+        Assert.Null(model.Other);
+        Assert.False(model.RawData.ContainsKey("other"));
+        Assert.Null(model.Passport);
+        Assert.False(model.RawData.ContainsKey("passport"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentification
+        {
+            Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentification
+        {
+            Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+
+            // Null should be interpreted as omitted for these properties
+            DriversLicense = null,
+            Other = null,
+            Passport = null,
+        };
+
+        Assert.Null(model.DriversLicense);
+        Assert.False(model.RawData.ContainsKey("drivers_license"));
+        Assert.Null(model.Other);
+        Assert.False(model.RawData.ContainsKey("other"));
+        Assert.Null(model.Passport);
+        Assert.False(model.RawData.ContainsKey("passport"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentification
+        {
+            Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+
+            // Null should be interpreted as omitted for these properties
+            DriversLicense = null,
+            Other = null,
+            Passport = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentification
+        {
+            Method = EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        EntityUpdateParamsTrustGrantorIdentification copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsTrustGrantorIdentificationMethodTest : TestBase
+{
+    [Theory]
+    [InlineData(EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(
+        EntityUpdateParamsTrustGrantorIdentificationMethod.IndividualTaxpayerIdentificationNumber
+    )]
+    [InlineData(EntityUpdateParamsTrustGrantorIdentificationMethod.Passport)]
+    [InlineData(EntityUpdateParamsTrustGrantorIdentificationMethod.DriversLicense)]
+    [InlineData(EntityUpdateParamsTrustGrantorIdentificationMethod.Other)]
+    public void Validation_Works(EntityUpdateParamsTrustGrantorIdentificationMethod rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, EntityUpdateParamsTrustGrantorIdentificationMethod> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsTrustGrantorIdentificationMethod>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(EntityUpdateParamsTrustGrantorIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(
+        EntityUpdateParamsTrustGrantorIdentificationMethod.IndividualTaxpayerIdentificationNumber
+    )]
+    [InlineData(EntityUpdateParamsTrustGrantorIdentificationMethod.Passport)]
+    [InlineData(EntityUpdateParamsTrustGrantorIdentificationMethod.DriversLicense)]
+    [InlineData(EntityUpdateParamsTrustGrantorIdentificationMethod.Other)]
+    public void SerializationRoundtrip_Works(
+        EntityUpdateParamsTrustGrantorIdentificationMethod rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, EntityUpdateParamsTrustGrantorIdentificationMethod> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsTrustGrantorIdentificationMethod>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsTrustGrantorIdentificationMethod>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsTrustGrantorIdentificationMethod>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class EntityUpdateParamsTrustGrantorIdentificationDriversLicenseTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+            BackFileID = "back_file_id",
+        };
+
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+        string expectedState = "xx";
+        string expectedBackFileID = "back_file_id";
+
+        Assert.Equal(expectedExpirationDate, model.ExpirationDate);
+        Assert.Equal(expectedFileID, model.FileID);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedBackFileID, model.BackFileID);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+            BackFileID = "back_file_id",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustGrantorIdentificationDriversLicense>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+            BackFileID = "back_file_id",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustGrantorIdentificationDriversLicense>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+        string expectedState = "xx";
+        string expectedBackFileID = "back_file_id";
+
+        Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
+        Assert.Equal(expectedFileID, deserialized.FileID);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedBackFileID, deserialized.BackFileID);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+            BackFileID = "back_file_id",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+            BackFileID = "back_file_id",
+        };
+
+        EntityUpdateParamsTrustGrantorIdentificationDriversLicense copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsTrustGrantorIdentificationOtherTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        string expectedCountry = "x";
+        string expectedDescription = "x";
+        string expectedFileID = "file_id";
+        string expectedBackFileID = "back_file_id";
+        string expectedExpirationDate = "2019-12-27";
+
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedDescription, model.Description);
+        Assert.Equal(expectedFileID, model.FileID);
+        Assert.Equal(expectedBackFileID, model.BackFileID);
+        Assert.Equal(expectedExpirationDate, model.ExpirationDate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustGrantorIdentificationOther>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustGrantorIdentificationOther>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedCountry = "x";
+        string expectedDescription = "x";
+        string expectedFileID = "file_id";
+        string expectedBackFileID = "back_file_id";
+        string expectedExpirationDate = "2019-12-27";
+
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedDescription, deserialized.Description);
+        Assert.Equal(expectedFileID, deserialized.FileID);
+        Assert.Equal(expectedBackFileID, deserialized.BackFileID);
+        Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+        Assert.Null(model.ExpirationDate);
+        Assert.False(model.RawData.ContainsKey("expiration_date"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+            ExpirationDate = null,
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+        Assert.Null(model.ExpirationDate);
+        Assert.False(model.RawData.ContainsKey("expiration_date"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+            ExpirationDate = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        EntityUpdateParamsTrustGrantorIdentificationOther copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsTrustGrantorIdentificationPassportTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        string expectedCountry = "x";
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedExpirationDate, model.ExpirationDate);
+        Assert.Equal(expectedFileID, model.FileID);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustGrantorIdentificationPassport>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustGrantorIdentificationPassport>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedCountry = "x";
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
+        Assert.Equal(expectedFileID, deserialized.FileID);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTrustGrantorIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        EntityUpdateParamsTrustGrantorIdentificationPassport copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsTrustTrusteeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrustee
+        {
+            Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+            Individual = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+                ConfirmedNoUsTaxID = true,
+            },
+        };
+
+        ApiEnum<string, EntityUpdateParamsTrustTrusteeStructure> expectedStructure =
+            EntityUpdateParamsTrustTrusteeStructure.Individual;
+        EntityUpdateParamsTrustTrusteeIndividual expectedIndividual = new()
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
+
+        Assert.Equal(expectedStructure, model.Structure);
+        Assert.Equal(expectedIndividual, model.Individual);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrustee
+        {
+            Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+            Individual = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+                ConfirmedNoUsTaxID = true,
+            },
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsTrustTrustee>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrustee
+        {
+            Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+            Individual = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+                ConfirmedNoUsTaxID = true,
+            },
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsTrustTrustee>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<string, EntityUpdateParamsTrustTrusteeStructure> expectedStructure =
+            EntityUpdateParamsTrustTrusteeStructure.Individual;
+        EntityUpdateParamsTrustTrusteeIndividual expectedIndividual = new()
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
+
+        Assert.Equal(expectedStructure, deserialized.Structure);
+        Assert.Equal(expectedIndividual, deserialized.Individual);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrustee
+        {
+            Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+            Individual = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+                ConfirmedNoUsTaxID = true,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrustee
+        {
+            Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+        };
+
+        Assert.Null(model.Individual);
+        Assert.False(model.RawData.ContainsKey("individual"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrustee
+        {
+            Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrustee
+        {
+            Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+
+            // Null should be interpreted as omitted for these properties
+            Individual = null,
+        };
+
+        Assert.Null(model.Individual);
+        Assert.False(model.RawData.ContainsKey("individual"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrustee
+        {
+            Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+
+            // Null should be interpreted as omitted for these properties
+            Individual = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrustee
+        {
+            Structure = EntityUpdateParamsTrustTrusteeStructure.Individual,
+            Individual = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+                ConfirmedNoUsTaxID = true,
+            },
+        };
+
+        EntityUpdateParamsTrustTrustee copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsTrustTrusteeStructureTest : TestBase
+{
+    [Theory]
+    [InlineData(EntityUpdateParamsTrustTrusteeStructure.Individual)]
+    public void Validation_Works(EntityUpdateParamsTrustTrusteeStructure rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, EntityUpdateParamsTrustTrusteeStructure> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsTrustTrusteeStructure>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(EntityUpdateParamsTrustTrusteeStructure.Individual)]
+    public void SerializationRoundtrip_Works(EntityUpdateParamsTrustTrusteeStructure rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, EntityUpdateParamsTrustTrusteeStructure> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsTrustTrusteeStructure>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsTrustTrusteeStructure>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsTrustTrusteeStructure>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class EntityUpdateParamsTrustTrusteeIndividualTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividual
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
+
+        EntityUpdateParamsTrustTrusteeIndividualAddress expectedAddress = new()
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+        string expectedDateOfBirth = "2019-12-27";
+        EntityUpdateParamsTrustTrusteeIndividualIdentification expectedIdentification = new()
+        {
+            Method =
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+        string expectedName = "x";
+        bool expectedConfirmedNoUsTaxID = true;
+
+        Assert.Equal(expectedAddress, model.Address);
+        Assert.Equal(expectedDateOfBirth, model.DateOfBirth);
+        Assert.Equal(expectedIdentification, model.Identification);
+        Assert.Equal(expectedName, model.Name);
+        Assert.Equal(expectedConfirmedNoUsTaxID, model.ConfirmedNoUsTaxID);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividual
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsTrustTrusteeIndividual>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividual
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsTrustTrusteeIndividual>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        EntityUpdateParamsTrustTrusteeIndividualAddress expectedAddress = new()
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+        string expectedDateOfBirth = "2019-12-27";
+        EntityUpdateParamsTrustTrusteeIndividualIdentification expectedIdentification = new()
+        {
+            Method =
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+        string expectedName = "x";
+        bool expectedConfirmedNoUsTaxID = true;
+
+        Assert.Equal(expectedAddress, deserialized.Address);
+        Assert.Equal(expectedDateOfBirth, deserialized.DateOfBirth);
+        Assert.Equal(expectedIdentification, deserialized.Identification);
+        Assert.Equal(expectedName, deserialized.Name);
+        Assert.Equal(expectedConfirmedNoUsTaxID, deserialized.ConfirmedNoUsTaxID);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividual
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividual
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+        };
+
+        Assert.Null(model.ConfirmedNoUsTaxID);
+        Assert.False(model.RawData.ContainsKey("confirmed_no_us_tax_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividual
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividual
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+
+            // Null should be interpreted as omitted for these properties
+            ConfirmedNoUsTaxID = null,
+        };
+
+        Assert.Null(model.ConfirmedNoUsTaxID);
+        Assert.False(model.RawData.ContainsKey("confirmed_no_us_tax_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividual
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+
+            // Null should be interpreted as omitted for these properties
+            ConfirmedNoUsTaxID = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividual
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+            ConfirmedNoUsTaxID = true,
+        };
+
+        EntityUpdateParamsTrustTrusteeIndividual copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsTrustTrusteeIndividualAddressTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        string expectedCity = "x";
+        string expectedCountry = "x";
+        string expectedLine1 = "x";
+        string expectedLine2 = "x";
+        string expectedState = "x";
+        string expectedZip = "x";
+
+        Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedLine1, model.Line1);
+        Assert.Equal(expectedLine2, model.Line2);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedZip, model.Zip);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustTrusteeIndividualAddress>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustTrusteeIndividualAddress>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedCity = "x";
+        string expectedCountry = "x";
+        string expectedLine1 = "x";
+        string expectedLine2 = "x";
+        string expectedState = "x";
+        string expectedZip = "x";
+
+        Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Equal(expectedLine2, deserialized.Line2);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedZip, deserialized.Zip);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
+
+        Assert.Null(model.Line2);
+        Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Line2 = null,
+            State = null,
+            Zip = null,
+        };
+
+        Assert.Null(model.Line2);
+        Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Line2 = null,
+            State = null,
+            Zip = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        EntityUpdateParamsTrustTrusteeIndividualAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsTrustTrusteeIndividualIdentificationTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentification
+        {
+            Method =
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        ApiEnum<
+            string,
+            EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod
+        > expectedMethod =
+            EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber;
+        string expectedNumber = "xxxx";
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense expectedDriversLicense =
+            new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            };
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationOther expectedOther = new()
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport expectedPassport = new()
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        Assert.Equal(expectedMethod, model.Method);
+        Assert.Equal(expectedNumber, model.Number);
+        Assert.Equal(expectedDriversLicense, model.DriversLicense);
+        Assert.Equal(expectedOther, model.Other);
+        Assert.Equal(expectedPassport, model.Passport);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentification
+        {
+            Method =
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustTrusteeIndividualIdentification>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentification
+        {
+            Method =
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustTrusteeIndividualIdentification>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<
+            string,
+            EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod
+        > expectedMethod =
+            EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber;
+        string expectedNumber = "xxxx";
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense expectedDriversLicense =
+            new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            };
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationOther expectedOther = new()
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport expectedPassport = new()
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        Assert.Equal(expectedMethod, deserialized.Method);
+        Assert.Equal(expectedNumber, deserialized.Number);
+        Assert.Equal(expectedDriversLicense, deserialized.DriversLicense);
+        Assert.Equal(expectedOther, deserialized.Other);
+        Assert.Equal(expectedPassport, deserialized.Passport);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentification
+        {
+            Method =
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentification
+        {
+            Method =
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+
+        Assert.Null(model.DriversLicense);
+        Assert.False(model.RawData.ContainsKey("drivers_license"));
+        Assert.Null(model.Other);
+        Assert.False(model.RawData.ContainsKey("other"));
+        Assert.Null(model.Passport);
+        Assert.False(model.RawData.ContainsKey("passport"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentification
+        {
+            Method =
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentification
+        {
+            Method =
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+
+            // Null should be interpreted as omitted for these properties
+            DriversLicense = null,
+            Other = null,
+            Passport = null,
+        };
+
+        Assert.Null(model.DriversLicense);
+        Assert.False(model.RawData.ContainsKey("drivers_license"));
+        Assert.Null(model.Other);
+        Assert.False(model.RawData.ContainsKey("other"));
+        Assert.Null(model.Passport);
+        Assert.False(model.RawData.ContainsKey("passport"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentification
+        {
+            Method =
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+
+            // Null should be interpreted as omitted for these properties
+            DriversLicense = null,
+            Other = null,
+            Passport = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentification
+        {
+            Method =
+                EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        EntityUpdateParamsTrustTrusteeIndividualIdentification copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsTrustTrusteeIndividualIdentificationMethodTest : TestBase
+{
+    [Theory]
+    [InlineData(EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber
+    )]
+    [InlineData(EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.Passport)]
+    [InlineData(EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.DriversLicense)]
+    [InlineData(EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.Other)]
+    public void Validation_Works(
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod> value =
+            rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber
+    )]
+    [InlineData(EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.Passport)]
+    [InlineData(EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.DriversLicense)]
+    [InlineData(EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod.Other)]
+    public void SerializationRoundtrip_Works(
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod> value =
+            rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsTrustTrusteeIndividualIdentificationMethod>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicenseTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+            BackFileID = "back_file_id",
+        };
+
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+        string expectedState = "xx";
+        string expectedBackFileID = "back_file_id";
+
+        Assert.Equal(expectedExpirationDate, model.ExpirationDate);
+        Assert.Equal(expectedFileID, model.FileID);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedBackFileID, model.BackFileID);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+            BackFileID = "back_file_id",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+            BackFileID = "back_file_id",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+        string expectedState = "xx";
+        string expectedBackFileID = "back_file_id";
+
+        Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
+        Assert.Equal(expectedFileID, deserialized.FileID);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedBackFileID, deserialized.BackFileID);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+            BackFileID = "back_file_id",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense
+        {
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+            State = "xx",
+            BackFileID = "back_file_id",
+        };
+
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationDriversLicense copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsTrustTrusteeIndividualIdentificationOtherTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        string expectedCountry = "x";
+        string expectedDescription = "x";
+        string expectedFileID = "file_id";
+        string expectedBackFileID = "back_file_id";
+        string expectedExpirationDate = "2019-12-27";
+
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedDescription, model.Description);
+        Assert.Equal(expectedFileID, model.FileID);
+        Assert.Equal(expectedBackFileID, model.BackFileID);
+        Assert.Equal(expectedExpirationDate, model.ExpirationDate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustTrusteeIndividualIdentificationOther>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustTrusteeIndividualIdentificationOther>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedCountry = "x";
+        string expectedDescription = "x";
+        string expectedFileID = "file_id";
+        string expectedBackFileID = "back_file_id";
+        string expectedExpirationDate = "2019-12-27";
+
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedDescription, deserialized.Description);
+        Assert.Equal(expectedFileID, deserialized.FileID);
+        Assert.Equal(expectedBackFileID, deserialized.BackFileID);
+        Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+        Assert.Null(model.ExpirationDate);
+        Assert.False(model.RawData.ContainsKey("expiration_date"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+            ExpirationDate = null,
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+        Assert.Null(model.ExpirationDate);
+        Assert.False(model.RawData.ContainsKey("expiration_date"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+            ExpirationDate = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationOther copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsTrustTrusteeIndividualIdentificationPassportTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        string expectedCountry = "x";
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedExpirationDate, model.ExpirationDate);
+        Assert.Equal(expectedFileID, model.FileID);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedCountry = "x";
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
+        Assert.Equal(expectedFileID, deserialized.FileID);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        EntityUpdateParamsTrustTrusteeIndividualIdentificationPassport copied = new(model);
 
         Assert.Equal(model, copied);
     }

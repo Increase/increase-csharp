@@ -496,6 +496,16 @@ public enum UnwrapWebhookEventCategory
     InboundWireTransferUpdated,
 
     /// <summary>
+    /// Occurs whenever an Interest Rate Plan is created.
+    /// </summary>
+    InterestRatePlanCreated,
+
+    /// <summary>
+    /// Occurs whenever an Interest Rate Plan is updated.
+    /// </summary>
+    InterestRatePlanUpdated,
+
+    /// <summary>
     /// Occurs whenever an IntraFi Account Enrollment is created.
     /// </summary>
     IntrafiAccountEnrollmentCreated,
@@ -531,6 +541,11 @@ public enum UnwrapWebhookEventCategory
     LoanDistributionCreated,
 
     /// <summary>
+    /// Occurs whenever a Loan Obligation is created.
+    /// </summary>
+    LoanObligationCreated,
+
+    /// <summary>
     /// Occurs whenever a Loan Offer is created.
     /// </summary>
     LoanOfferCreated,
@@ -554,6 +569,16 @@ public enum UnwrapWebhookEventCategory
     /// Occurs whenever a Lockbox is updated.
     /// </summary>
     LockboxUpdated,
+
+    /// <summary>
+    /// Occurs whenever a Lockbox Address is created.
+    /// </summary>
+    LockboxAddressCreated,
+
+    /// <summary>
+    /// Occurs whenever a Lockbox Address is updated.
+    /// </summary>
+    LockboxAddressUpdated,
 
     /// <summary>
     /// Occurs whenever an OAuth Connection is created.
@@ -840,6 +865,8 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                 UnwrapWebhookEventCategory.InboundWireTransferCreated,
             "inbound_wire_transfer.updated" =>
                 UnwrapWebhookEventCategory.InboundWireTransferUpdated,
+            "interest_rate_plan.created" => UnwrapWebhookEventCategory.InterestRatePlanCreated,
+            "interest_rate_plan.updated" => UnwrapWebhookEventCategory.InterestRatePlanUpdated,
             "intrafi_account_enrollment.created" =>
                 UnwrapWebhookEventCategory.IntrafiAccountEnrollmentCreated,
             "intrafi_account_enrollment.updated" =>
@@ -849,11 +876,14 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
             "loan_application.created" => UnwrapWebhookEventCategory.LoanApplicationCreated,
             "loan_application.updated" => UnwrapWebhookEventCategory.LoanApplicationUpdated,
             "loan_distribution.created" => UnwrapWebhookEventCategory.LoanDistributionCreated,
+            "loan_obligation.created" => UnwrapWebhookEventCategory.LoanObligationCreated,
             "loan_offer.created" => UnwrapWebhookEventCategory.LoanOfferCreated,
             "loan_offer.updated" => UnwrapWebhookEventCategory.LoanOfferUpdated,
             "loan_purchase.created" => UnwrapWebhookEventCategory.LoanPurchaseCreated,
             "lockbox.created" => UnwrapWebhookEventCategory.LockboxCreated,
             "lockbox.updated" => UnwrapWebhookEventCategory.LockboxUpdated,
+            "lockbox_address.created" => UnwrapWebhookEventCategory.LockboxAddressCreated,
+            "lockbox_address.updated" => UnwrapWebhookEventCategory.LockboxAddressUpdated,
             "oauth_connection.created" => UnwrapWebhookEventCategory.OAuthConnectionCreated,
             "oauth_connection.deactivated" => UnwrapWebhookEventCategory.OAuthConnectionDeactivated,
             "card_push_transfer.created" => UnwrapWebhookEventCategory.CardPushTransferCreated,
@@ -1019,6 +1049,8 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                     "inbound_wire_transfer.created",
                 UnwrapWebhookEventCategory.InboundWireTransferUpdated =>
                     "inbound_wire_transfer.updated",
+                UnwrapWebhookEventCategory.InterestRatePlanCreated => "interest_rate_plan.created",
+                UnwrapWebhookEventCategory.InterestRatePlanUpdated => "interest_rate_plan.updated",
                 UnwrapWebhookEventCategory.IntrafiAccountEnrollmentCreated =>
                     "intrafi_account_enrollment.created",
                 UnwrapWebhookEventCategory.IntrafiAccountEnrollmentUpdated =>
@@ -1028,11 +1060,14 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                 UnwrapWebhookEventCategory.LoanApplicationCreated => "loan_application.created",
                 UnwrapWebhookEventCategory.LoanApplicationUpdated => "loan_application.updated",
                 UnwrapWebhookEventCategory.LoanDistributionCreated => "loan_distribution.created",
+                UnwrapWebhookEventCategory.LoanObligationCreated => "loan_obligation.created",
                 UnwrapWebhookEventCategory.LoanOfferCreated => "loan_offer.created",
                 UnwrapWebhookEventCategory.LoanOfferUpdated => "loan_offer.updated",
                 UnwrapWebhookEventCategory.LoanPurchaseCreated => "loan_purchase.created",
                 UnwrapWebhookEventCategory.LockboxCreated => "lockbox.created",
                 UnwrapWebhookEventCategory.LockboxUpdated => "lockbox.updated",
+                UnwrapWebhookEventCategory.LockboxAddressCreated => "lockbox_address.created",
+                UnwrapWebhookEventCategory.LockboxAddressUpdated => "lockbox_address.updated",
                 UnwrapWebhookEventCategory.OAuthConnectionCreated => "oauth_connection.created",
                 UnwrapWebhookEventCategory.OAuthConnectionDeactivated =>
                     "oauth_connection.deactivated",
