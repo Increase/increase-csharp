@@ -41,6 +41,7 @@ public class RealTimePaymentsTransferTest : TestBase
             DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
+            InboundRealTimePaymentsRequestForPaymentID = null,
             PendingTransactionID = null,
             Rejection = new()
             {
@@ -126,6 +127,7 @@ public class RealTimePaymentsTransferTest : TestBase
         Assert.Equal(expectedDebtorName, model.DebtorName);
         Assert.Null(model.ExternalAccountID);
         Assert.Null(model.IdempotencyKey);
+        Assert.Null(model.InboundRealTimePaymentsRequestForPaymentID);
         Assert.Null(model.PendingTransactionID);
         Assert.Equal(expectedRejection, model.Rejection);
         Assert.Equal(expectedRoutingNumber, model.RoutingNumber);
@@ -175,6 +177,7 @@ public class RealTimePaymentsTransferTest : TestBase
             DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
+            InboundRealTimePaymentsRequestForPaymentID = null,
             PendingTransactionID = null,
             Rejection = new()
             {
@@ -240,6 +243,7 @@ public class RealTimePaymentsTransferTest : TestBase
             DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
+            InboundRealTimePaymentsRequestForPaymentID = null,
             PendingTransactionID = null,
             Rejection = new()
             {
@@ -333,6 +337,7 @@ public class RealTimePaymentsTransferTest : TestBase
         Assert.Equal(expectedDebtorName, deserialized.DebtorName);
         Assert.Null(deserialized.ExternalAccountID);
         Assert.Null(deserialized.IdempotencyKey);
+        Assert.Null(deserialized.InboundRealTimePaymentsRequestForPaymentID);
         Assert.Null(deserialized.PendingTransactionID);
         Assert.Equal(expectedRejection, deserialized.Rejection);
         Assert.Equal(expectedRoutingNumber, deserialized.RoutingNumber);
@@ -382,6 +387,7 @@ public class RealTimePaymentsTransferTest : TestBase
             DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
+            InboundRealTimePaymentsRequestForPaymentID = null,
             PendingTransactionID = null,
             Rejection = new()
             {
@@ -440,6 +446,7 @@ public class RealTimePaymentsTransferTest : TestBase
             DebtorName = "National Phonograph Company",
             ExternalAccountID = null,
             IdempotencyKey = null,
+            InboundRealTimePaymentsRequestForPaymentID = null,
             PendingTransactionID = null,
             Rejection = new()
             {

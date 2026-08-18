@@ -85,6 +85,8 @@ public record class CardDisputeListParams : ParamsBase
     /// <summary>
     /// Limit the size of the list that is returned. The default (and maximum) is
     /// 100 objects.
+    ///
+    /// <para>Defaults to `100`.</para>
     /// </summary>
     public long? Limit
     {
@@ -455,7 +457,8 @@ public enum In
     Won,
 
     /// <summary>
-    /// The Card Dispute has been reviewed and rejected, please review the explanation
+    /// The Card Dispute was rejected before it was submitted to the network, either
+    /// by Increase or because the user withdrew it. Please review the explanation
     /// for more details.
     /// </summary>
     Rejected,

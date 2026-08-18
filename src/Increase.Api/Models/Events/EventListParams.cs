@@ -101,6 +101,8 @@ public record class EventListParams : ParamsBase
     /// <summary>
     /// Limit the size of the list that is returned. The default (and maximum) is
     /// 100 objects.
+    ///
+    /// <para>Defaults to `100`.</para>
     /// </summary>
     public long? Limit
     {
@@ -645,6 +647,16 @@ public enum In
     InboundWireTransferUpdated,
 
     /// <summary>
+    /// Occurs whenever an Interest Rate Plan is created.
+    /// </summary>
+    InterestRatePlanCreated,
+
+    /// <summary>
+    /// Occurs whenever an Interest Rate Plan is updated.
+    /// </summary>
+    InterestRatePlanUpdated,
+
+    /// <summary>
     /// Occurs whenever an IntraFi Account Enrollment is created.
     /// </summary>
     IntrafiAccountEnrollmentCreated,
@@ -680,6 +692,11 @@ public enum In
     LoanDistributionCreated,
 
     /// <summary>
+    /// Occurs whenever a Loan Obligation is created.
+    /// </summary>
+    LoanObligationCreated,
+
+    /// <summary>
     /// Occurs whenever a Loan Offer is created.
     /// </summary>
     LoanOfferCreated,
@@ -703,6 +720,16 @@ public enum In
     /// Occurs whenever a Lockbox is updated.
     /// </summary>
     LockboxUpdated,
+
+    /// <summary>
+    /// Occurs whenever a Lockbox Address is created.
+    /// </summary>
+    LockboxAddressCreated,
+
+    /// <summary>
+    /// Occurs whenever a Lockbox Address is updated.
+    /// </summary>
+    LockboxAddressUpdated,
 
     /// <summary>
     /// Occurs whenever an OAuth Connection is created.
@@ -974,6 +1001,8 @@ sealed class InConverter : JsonConverter<In>
             "inbound_wire_drawdown_request.created" => In.InboundWireDrawdownRequestCreated,
             "inbound_wire_transfer.created" => In.InboundWireTransferCreated,
             "inbound_wire_transfer.updated" => In.InboundWireTransferUpdated,
+            "interest_rate_plan.created" => In.InterestRatePlanCreated,
+            "interest_rate_plan.updated" => In.InterestRatePlanUpdated,
             "intrafi_account_enrollment.created" => In.IntrafiAccountEnrollmentCreated,
             "intrafi_account_enrollment.updated" => In.IntrafiAccountEnrollmentUpdated,
             "intrafi_exclusion.created" => In.IntrafiExclusionCreated,
@@ -981,11 +1010,14 @@ sealed class InConverter : JsonConverter<In>
             "loan_application.created" => In.LoanApplicationCreated,
             "loan_application.updated" => In.LoanApplicationUpdated,
             "loan_distribution.created" => In.LoanDistributionCreated,
+            "loan_obligation.created" => In.LoanObligationCreated,
             "loan_offer.created" => In.LoanOfferCreated,
             "loan_offer.updated" => In.LoanOfferUpdated,
             "loan_purchase.created" => In.LoanPurchaseCreated,
             "lockbox.created" => In.LockboxCreated,
             "lockbox.updated" => In.LockboxUpdated,
+            "lockbox_address.created" => In.LockboxAddressCreated,
+            "lockbox_address.updated" => In.LockboxAddressUpdated,
             "oauth_connection.created" => In.OAuthConnectionCreated,
             "oauth_connection.deactivated" => In.OAuthConnectionDeactivated,
             "card_push_transfer.created" => In.CardPushTransferCreated,
@@ -1113,6 +1145,8 @@ sealed class InConverter : JsonConverter<In>
                 In.InboundWireDrawdownRequestCreated => "inbound_wire_drawdown_request.created",
                 In.InboundWireTransferCreated => "inbound_wire_transfer.created",
                 In.InboundWireTransferUpdated => "inbound_wire_transfer.updated",
+                In.InterestRatePlanCreated => "interest_rate_plan.created",
+                In.InterestRatePlanUpdated => "interest_rate_plan.updated",
                 In.IntrafiAccountEnrollmentCreated => "intrafi_account_enrollment.created",
                 In.IntrafiAccountEnrollmentUpdated => "intrafi_account_enrollment.updated",
                 In.IntrafiExclusionCreated => "intrafi_exclusion.created",
@@ -1120,11 +1154,14 @@ sealed class InConverter : JsonConverter<In>
                 In.LoanApplicationCreated => "loan_application.created",
                 In.LoanApplicationUpdated => "loan_application.updated",
                 In.LoanDistributionCreated => "loan_distribution.created",
+                In.LoanObligationCreated => "loan_obligation.created",
                 In.LoanOfferCreated => "loan_offer.created",
                 In.LoanOfferUpdated => "loan_offer.updated",
                 In.LoanPurchaseCreated => "loan_purchase.created",
                 In.LockboxCreated => "lockbox.created",
                 In.LockboxUpdated => "lockbox.updated",
+                In.LockboxAddressCreated => "lockbox_address.created",
+                In.LockboxAddressUpdated => "lockbox_address.updated",
                 In.OAuthConnectionCreated => "oauth_connection.created",
                 In.OAuthConnectionDeactivated => "oauth_connection.deactivated",
                 In.CardPushTransferCreated => "card_push_transfer.created",
@@ -1315,6 +1352,8 @@ public sealed record class OrderBy : JsonModel
 {
     /// <summary>
     /// The direction to order in.
+    ///
+    /// <para>Defaults to `ascending`.</para>
     /// </summary>
     public ApiEnum<string, Direction>? Direction
     {
