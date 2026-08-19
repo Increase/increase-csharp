@@ -43,6 +43,8 @@ public record class FileCreateParams : ParamsBase
 
     /// <summary>
     /// What the File will be used for in Increase's systems.
+    ///
+    /// <para>Defaults to `other`.</para>
     /// </summary>
     public required ApiEnum<string, Purpose> Purpose
     {
@@ -264,13 +266,15 @@ public enum Purpose
 
     /// <summary>
     /// A card image to be printed on the front of a physical card. This must be
-    /// a 2100x1344 pixel PNG with no other color but black.
+    /// a 2100x1344 pixel PNG with a density of 600 dots per inch (DPI) and no other
+    /// color but black.
     /// </summary>
     PhysicalCardFront,
 
     /// <summary>
     /// An image representing the entirety of the carrier used for a physical card.
-    /// This must be a 2550x3300 pixel PNG with no other color but black.
+    /// This must be a 2550x3300 pixel PNG with a density of 300 dots per inch (DPI)
+    /// and no other color but black.
     /// </summary>
     PhysicalCardCarrier,
 

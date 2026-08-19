@@ -623,6 +623,16 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     InboundWireTransferUpdated,
 
     /// <summary>
+    /// Occurs whenever an Interest Rate Plan is created.
+    /// </summary>
+    InterestRatePlanCreated,
+
+    /// <summary>
+    /// Occurs whenever an Interest Rate Plan is updated.
+    /// </summary>
+    InterestRatePlanUpdated,
+
+    /// <summary>
     /// Occurs whenever an IntraFi Account Enrollment is created.
     /// </summary>
     IntrafiAccountEnrollmentCreated,
@@ -658,6 +668,11 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     LoanDistributionCreated,
 
     /// <summary>
+    /// Occurs whenever a Loan Obligation is created.
+    /// </summary>
+    LoanObligationCreated,
+
+    /// <summary>
     /// Occurs whenever a Loan Offer is created.
     /// </summary>
     LoanOfferCreated,
@@ -681,6 +696,16 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     /// Occurs whenever a Lockbox is updated.
     /// </summary>
     LockboxUpdated,
+
+    /// <summary>
+    /// Occurs whenever a Lockbox Address is created.
+    /// </summary>
+    LockboxAddressCreated,
+
+    /// <summary>
+    /// Occurs whenever a Lockbox Address is updated.
+    /// </summary>
+    LockboxAddressUpdated,
 
     /// <summary>
     /// Occurs whenever an OAuth Connection is created.
@@ -1006,6 +1031,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.InboundWireTransferCreated,
             "inbound_wire_transfer.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.InboundWireTransferUpdated,
+            "interest_rate_plan.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.InterestRatePlanCreated,
+            "interest_rate_plan.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.InterestRatePlanUpdated,
             "intrafi_account_enrollment.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.IntrafiAccountEnrollmentCreated,
             "intrafi_account_enrollment.updated" =>
@@ -1020,6 +1049,8 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanApplicationUpdated,
             "loan_distribution.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanDistributionCreated,
+            "loan_obligation.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanObligationCreated,
             "loan_offer.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferCreated,
             "loan_offer.updated" =>
@@ -1028,6 +1059,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseCreated,
             "lockbox.created" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated,
             "lockbox.updated" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated,
+            "lockbox_address.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LockboxAddressCreated,
+            "lockbox_address.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LockboxAddressUpdated,
             "oauth_connection.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.OAuthConnectionCreated,
             "oauth_connection.deactivated" =>
@@ -1246,6 +1281,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "inbound_wire_transfer.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.InboundWireTransferUpdated =>
                     "inbound_wire_transfer.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.InterestRatePlanCreated =>
+                    "interest_rate_plan.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.InterestRatePlanUpdated =>
+                    "interest_rate_plan.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.IntrafiAccountEnrollmentCreated =>
                     "intrafi_account_enrollment.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.IntrafiAccountEnrollmentUpdated =>
@@ -1260,6 +1299,8 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "loan_application.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanDistributionCreated =>
                     "loan_distribution.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanObligationCreated =>
+                    "loan_obligation.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferCreated =>
                     "loan_offer.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferUpdated =>
@@ -1270,6 +1311,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "lockbox.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated =>
                     "lockbox.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.LockboxAddressCreated =>
+                    "lockbox_address.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.LockboxAddressUpdated =>
+                    "lockbox_address.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.OAuthConnectionCreated =>
                     "oauth_connection.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.OAuthConnectionDeactivated =>

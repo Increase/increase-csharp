@@ -77,6 +77,27 @@ public record class BeneficialOwnerUpdateParams : ParamsBase
     }
 
     /// <summary>
+    /// The person's date of birth in YYYY-MM-DD format.
+    /// </summary>
+    public string? DateOfBirth
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("date_of_birth");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("date_of_birth", value);
+        }
+    }
+
+    /// <summary>
     /// A means of verifying the person's identity.
     /// </summary>
     public BeneficialOwnerUpdateParamsIdentification? Identification
@@ -301,6 +322,8 @@ public sealed record class BeneficialOwnerUpdateParamsAddress : JsonModel
 
     /// <summary>
     /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
     /// </summary>
     public required string Country
     {
@@ -453,6 +476,8 @@ public sealed record class BeneficialOwnerUpdateParamsIdentification : JsonModel
 {
     /// <summary>
     /// A method that can be used to verify the individual's identity.
+    ///
+    /// <para>Defaults to `social_security_number`.</para>
     /// </summary>
     public required ApiEnum<string, BeneficialOwnerUpdateParamsIdentificationMethod> Method
     {

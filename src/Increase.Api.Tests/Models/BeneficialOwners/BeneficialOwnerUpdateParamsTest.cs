@@ -25,6 +25,7 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
                 Zip = "10045",
             },
             ConfirmedNoUsTaxID = true,
+            DateOfBirth = "2019-12-27",
             Identification = new()
             {
                 Method = BeneficialOwnerUpdateParamsIdentificationMethod.SocialSecurityNumber,
@@ -66,6 +67,7 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
             Zip = "10045",
         };
         bool expectedConfirmedNoUsTaxID = true;
+        string expectedDateOfBirth = "2019-12-27";
         BeneficialOwnerUpdateParamsIdentification expectedIdentification = new()
         {
             Method = BeneficialOwnerUpdateParamsIdentificationMethod.SocialSecurityNumber,
@@ -101,6 +103,7 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
         Assert.Equal(expectedEntityBeneficialOwnerID, parameters.EntityBeneficialOwnerID);
         Assert.Equal(expectedAddress, parameters.Address);
         Assert.Equal(expectedConfirmedNoUsTaxID, parameters.ConfirmedNoUsTaxID);
+        Assert.Equal(expectedDateOfBirth, parameters.DateOfBirth);
         Assert.Equal(expectedIdentification, parameters.Identification);
         Assert.Equal(expectedName, parameters.Name);
         Assert.NotNull(parameters.Prongs);
@@ -123,6 +126,8 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("address"));
         Assert.Null(parameters.ConfirmedNoUsTaxID);
         Assert.False(parameters.RawBodyData.ContainsKey("confirmed_no_us_tax_id"));
+        Assert.Null(parameters.DateOfBirth);
+        Assert.False(parameters.RawBodyData.ContainsKey("date_of_birth"));
         Assert.Null(parameters.Identification);
         Assert.False(parameters.RawBodyData.ContainsKey("identification"));
         Assert.Null(parameters.Name);
@@ -141,6 +146,7 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
             // Null should be interpreted as omitted for these properties
             Address = null,
             ConfirmedNoUsTaxID = null,
+            DateOfBirth = null,
             Identification = null,
             Name = null,
             Prongs = null,
@@ -150,6 +156,8 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("address"));
         Assert.Null(parameters.ConfirmedNoUsTaxID);
         Assert.False(parameters.RawBodyData.ContainsKey("confirmed_no_us_tax_id"));
+        Assert.Null(parameters.DateOfBirth);
+        Assert.False(parameters.RawBodyData.ContainsKey("date_of_birth"));
         Assert.Null(parameters.Identification);
         Assert.False(parameters.RawBodyData.ContainsKey("identification"));
         Assert.Null(parameters.Name);
@@ -194,6 +202,7 @@ public class BeneficialOwnerUpdateParamsTest : TestBase
                 Zip = "10045",
             },
             ConfirmedNoUsTaxID = true,
+            DateOfBirth = "2019-12-27",
             Identification = new()
             {
                 Method = BeneficialOwnerUpdateParamsIdentificationMethod.SocialSecurityNumber,

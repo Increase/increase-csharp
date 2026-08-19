@@ -142,6 +142,30 @@ public record class RealTimePaymentsTransferCreateParams : ParamsBase
     }
 
     /// <summary>
+    /// The ID of an Inbound Real-Time Payments Request for Payment in response to
+    /// which this transfer is being sent.
+    /// </summary>
+    public string? InboundRealTimePaymentsRequestForPaymentID
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>(
+                "inbound_real_time_payments_request_for_payment_id"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("inbound_real_time_payments_request_for_payment_id", value);
+        }
+    }
+
+    /// <summary>
     /// Whether the transfer requires explicit approval via the dashboard or API.
     /// </summary>
     public bool? RequireApproval
