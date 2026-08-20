@@ -667,6 +667,8 @@ public sealed record class Decline : JsonModel
 {
     /// <summary>
     /// The reason for the decline.
+    ///
+    /// <para>Defaults to `do_not_honor`.</para>
     /// </summary>
     public ApiEnum<string, Reason>? Reason
     {

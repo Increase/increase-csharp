@@ -162,6 +162,84 @@ public sealed record class BalanceLookupLoan : JsonModel
     }
 
     /// <summary>
+    /// The fees on the loan that are due and unpaid.
+    /// </summary>
+    public required long? DueFees
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("due_fees");
+        }
+        init { this._rawData.Set("due_fees", value); }
+    }
+
+    /// <summary>
+    /// The interest on the loan that is due and unpaid.
+    /// </summary>
+    public required long? DueInterest
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("due_interest");
+        }
+        init { this._rawData.Set("due_interest", value); }
+    }
+
+    /// <summary>
+    /// The principal on the loan that is due and unpaid.
+    /// </summary>
+    public required long? DuePrincipal
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("due_principal");
+        }
+        init { this._rawData.Set("due_principal", value); }
+    }
+
+    /// <summary>
+    /// The fees on the loan that are not yet due.
+    /// </summary>
+    public required long? NotDueFees
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("not_due_fees");
+        }
+        init { this._rawData.Set("not_due_fees", value); }
+    }
+
+    /// <summary>
+    /// The interest on the loan that is not yet due.
+    /// </summary>
+    public required long? NotDueInterest
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("not_due_interest");
+        }
+        init { this._rawData.Set("not_due_interest", value); }
+    }
+
+    /// <summary>
+    /// The principal on the loan that is not yet due.
+    /// </summary>
+    public required long? NotDuePrincipal
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("not_due_principal");
+        }
+        init { this._rawData.Set("not_due_principal", value); }
+    }
+
+    /// <summary>
     /// The amount past due on the loan.
     /// </summary>
     public required long PastDueBalance
@@ -192,6 +270,12 @@ public sealed record class BalanceLookupLoan : JsonModel
     {
         _ = this.DueAt;
         _ = this.DueBalance;
+        _ = this.DueFees;
+        _ = this.DueInterest;
+        _ = this.DuePrincipal;
+        _ = this.NotDueFees;
+        _ = this.NotDueInterest;
+        _ = this.NotDuePrincipal;
         _ = this.PastDueBalance;
         this.Receivables?.Validate();
     }

@@ -67,6 +67,8 @@ public record class DigitalCardProfileListParams : ParamsBase
     /// <summary>
     /// Limit the size of the list that is returned. The default (and maximum) is
     /// 100 objects.
+    ///
+    /// <para>Defaults to `100`.</para>
     /// </summary>
     public long? Limit
     {

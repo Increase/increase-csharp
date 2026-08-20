@@ -43,7 +43,6 @@ public class AchTransferCreateParamsTest : TestBase
             RequireApproval = true,
             RoutingNumber = "101050001",
             StandardEntryClassCode = StandardEntryClassCode.CorporateCreditOrDebit,
-            TransactionTiming = TransactionTiming.Synchronous,
         };
 
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
@@ -75,8 +74,6 @@ public class AchTransferCreateParamsTest : TestBase
         string expectedRoutingNumber = "101050001";
         ApiEnum<string, StandardEntryClassCode> expectedStandardEntryClassCode =
             StandardEntryClassCode.CorporateCreditOrDebit;
-        ApiEnum<string, TransactionTiming> expectedTransactionTiming =
-            TransactionTiming.Synchronous;
 
         Assert.Equal(expectedAccountID, parameters.AccountID);
         Assert.Equal(expectedAmount, parameters.Amount);
@@ -96,7 +93,6 @@ public class AchTransferCreateParamsTest : TestBase
         Assert.Equal(expectedRequireApproval, parameters.RequireApproval);
         Assert.Equal(expectedRoutingNumber, parameters.RoutingNumber);
         Assert.Equal(expectedStandardEntryClassCode, parameters.StandardEntryClassCode);
-        Assert.Equal(expectedTransactionTiming, parameters.TransactionTiming);
     }
 
     [Fact]
@@ -139,8 +135,6 @@ public class AchTransferCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("routing_number"));
         Assert.Null(parameters.StandardEntryClassCode);
         Assert.False(parameters.RawBodyData.ContainsKey("standard_entry_class_code"));
-        Assert.Null(parameters.TransactionTiming);
-        Assert.False(parameters.RawBodyData.ContainsKey("transaction_timing"));
     }
 
     [Fact]
@@ -168,7 +162,6 @@ public class AchTransferCreateParamsTest : TestBase
             RequireApproval = null,
             RoutingNumber = null,
             StandardEntryClassCode = null,
-            TransactionTiming = null,
         };
 
         Assert.Null(parameters.AccountNumber);
@@ -201,8 +194,6 @@ public class AchTransferCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("routing_number"));
         Assert.Null(parameters.StandardEntryClassCode);
         Assert.False(parameters.RawBodyData.ContainsKey("standard_entry_class_code"));
-        Assert.Null(parameters.TransactionTiming);
-        Assert.False(parameters.RawBodyData.ContainsKey("transaction_timing"));
     }
 
     [Fact]
@@ -254,7 +245,6 @@ public class AchTransferCreateParamsTest : TestBase
             RequireApproval = true,
             RoutingNumber = "101050001",
             StandardEntryClassCode = StandardEntryClassCode.CorporateCreditOrDebit,
-            TransactionTiming = TransactionTiming.Synchronous,
         };
 
         AchTransferCreateParams copied = new(parameters);
@@ -1111,64 +1101,6 @@ public class StandardEntryClassCodeTest : TestBase
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ApiEnum<string, StandardEntryClassCode>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-}
-
-public class TransactionTimingTest : TestBase
-{
-    [Theory]
-    [InlineData(TransactionTiming.Synchronous)]
-    [InlineData(TransactionTiming.Asynchronous)]
-    public void Validation_Works(TransactionTiming rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, TransactionTiming> value = rawValue;
-        value.Validate();
-    }
-
-    [Fact]
-    public void InvalidEnumValidationThrows_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, TransactionTiming>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-
-        Assert.NotNull(value);
-        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
-    }
-
-    [Theory]
-    [InlineData(TransactionTiming.Synchronous)]
-    [InlineData(TransactionTiming.Asynchronous)]
-    public void SerializationRoundtrip_Works(TransactionTiming rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, TransactionTiming> value = rawValue;
-
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, TransactionTiming>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-
-    [Fact]
-    public void InvalidEnumSerializationRoundtrip_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, TransactionTiming>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, TransactionTiming>>(
             json,
             ModelBase.SerializerOptions
         );

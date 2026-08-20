@@ -494,6 +494,16 @@ public enum EventCategory
     InboundWireTransferUpdated,
 
     /// <summary>
+    /// Occurs whenever an Interest Rate Plan is created.
+    /// </summary>
+    InterestRatePlanCreated,
+
+    /// <summary>
+    /// Occurs whenever an Interest Rate Plan is updated.
+    /// </summary>
+    InterestRatePlanUpdated,
+
+    /// <summary>
     /// Occurs whenever an IntraFi Account Enrollment is created.
     /// </summary>
     IntrafiAccountEnrollmentCreated,
@@ -529,6 +539,11 @@ public enum EventCategory
     LoanDistributionCreated,
 
     /// <summary>
+    /// Occurs whenever a Loan Obligation is created.
+    /// </summary>
+    LoanObligationCreated,
+
+    /// <summary>
     /// Occurs whenever a Loan Offer is created.
     /// </summary>
     LoanOfferCreated,
@@ -552,6 +567,16 @@ public enum EventCategory
     /// Occurs whenever a Lockbox is updated.
     /// </summary>
     LockboxUpdated,
+
+    /// <summary>
+    /// Occurs whenever a Lockbox Address is created.
+    /// </summary>
+    LockboxAddressCreated,
+
+    /// <summary>
+    /// Occurs whenever a Lockbox Address is updated.
+    /// </summary>
+    LockboxAddressUpdated,
 
     /// <summary>
     /// Occurs whenever an OAuth Connection is created.
@@ -824,6 +849,8 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.InboundWireDrawdownRequestCreated,
             "inbound_wire_transfer.created" => EventCategory.InboundWireTransferCreated,
             "inbound_wire_transfer.updated" => EventCategory.InboundWireTransferUpdated,
+            "interest_rate_plan.created" => EventCategory.InterestRatePlanCreated,
+            "interest_rate_plan.updated" => EventCategory.InterestRatePlanUpdated,
             "intrafi_account_enrollment.created" => EventCategory.IntrafiAccountEnrollmentCreated,
             "intrafi_account_enrollment.updated" => EventCategory.IntrafiAccountEnrollmentUpdated,
             "intrafi_exclusion.created" => EventCategory.IntrafiExclusionCreated,
@@ -831,11 +858,14 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
             "loan_application.created" => EventCategory.LoanApplicationCreated,
             "loan_application.updated" => EventCategory.LoanApplicationUpdated,
             "loan_distribution.created" => EventCategory.LoanDistributionCreated,
+            "loan_obligation.created" => EventCategory.LoanObligationCreated,
             "loan_offer.created" => EventCategory.LoanOfferCreated,
             "loan_offer.updated" => EventCategory.LoanOfferUpdated,
             "loan_purchase.created" => EventCategory.LoanPurchaseCreated,
             "lockbox.created" => EventCategory.LockboxCreated,
             "lockbox.updated" => EventCategory.LockboxUpdated,
+            "lockbox_address.created" => EventCategory.LockboxAddressCreated,
+            "lockbox_address.updated" => EventCategory.LockboxAddressUpdated,
             "oauth_connection.created" => EventCategory.OAuthConnectionCreated,
             "oauth_connection.deactivated" => EventCategory.OAuthConnectionDeactivated,
             "card_push_transfer.created" => EventCategory.CardPushTransferCreated,
@@ -976,6 +1006,8 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                     "inbound_wire_drawdown_request.created",
                 EventCategory.InboundWireTransferCreated => "inbound_wire_transfer.created",
                 EventCategory.InboundWireTransferUpdated => "inbound_wire_transfer.updated",
+                EventCategory.InterestRatePlanCreated => "interest_rate_plan.created",
+                EventCategory.InterestRatePlanUpdated => "interest_rate_plan.updated",
                 EventCategory.IntrafiAccountEnrollmentCreated =>
                     "intrafi_account_enrollment.created",
                 EventCategory.IntrafiAccountEnrollmentUpdated =>
@@ -985,11 +1017,14 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.LoanApplicationCreated => "loan_application.created",
                 EventCategory.LoanApplicationUpdated => "loan_application.updated",
                 EventCategory.LoanDistributionCreated => "loan_distribution.created",
+                EventCategory.LoanObligationCreated => "loan_obligation.created",
                 EventCategory.LoanOfferCreated => "loan_offer.created",
                 EventCategory.LoanOfferUpdated => "loan_offer.updated",
                 EventCategory.LoanPurchaseCreated => "loan_purchase.created",
                 EventCategory.LockboxCreated => "lockbox.created",
                 EventCategory.LockboxUpdated => "lockbox.updated",
+                EventCategory.LockboxAddressCreated => "lockbox_address.created",
+                EventCategory.LockboxAddressUpdated => "lockbox_address.updated",
                 EventCategory.OAuthConnectionCreated => "oauth_connection.created",
                 EventCategory.OAuthConnectionDeactivated => "oauth_connection.deactivated",
                 EventCategory.CardPushTransferCreated => "card_push_transfer.created",

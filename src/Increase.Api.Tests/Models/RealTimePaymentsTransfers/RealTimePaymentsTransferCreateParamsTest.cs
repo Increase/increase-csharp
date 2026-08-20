@@ -17,6 +17,8 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
             AccountNumber = "987654321",
             DebtorName = "debtor_name",
             ExternalAccountID = "external_account_id",
+            InboundRealTimePaymentsRequestForPaymentID =
+                "inbound_real_time_payments_request_for_payment_id",
             RequireApproval = true,
             RoutingNumber = "101050001",
             UltimateCreditorName = "ultimate_creditor_name",
@@ -30,6 +32,8 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
         string expectedAccountNumber = "987654321";
         string expectedDebtorName = "debtor_name";
         string expectedExternalAccountID = "external_account_id";
+        string expectedInboundRealTimePaymentsRequestForPaymentID =
+            "inbound_real_time_payments_request_for_payment_id";
         bool expectedRequireApproval = true;
         string expectedRoutingNumber = "101050001";
         string expectedUltimateCreditorName = "ultimate_creditor_name";
@@ -45,6 +49,10 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
         Assert.Equal(expectedAccountNumber, parameters.AccountNumber);
         Assert.Equal(expectedDebtorName, parameters.DebtorName);
         Assert.Equal(expectedExternalAccountID, parameters.ExternalAccountID);
+        Assert.Equal(
+            expectedInboundRealTimePaymentsRequestForPaymentID,
+            parameters.InboundRealTimePaymentsRequestForPaymentID
+        );
         Assert.Equal(expectedRequireApproval, parameters.RequireApproval);
         Assert.Equal(expectedRoutingNumber, parameters.RoutingNumber);
         Assert.Equal(expectedUltimateCreditorName, parameters.UltimateCreditorName);
@@ -68,6 +76,10 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("debtor_name"));
         Assert.Null(parameters.ExternalAccountID);
         Assert.False(parameters.RawBodyData.ContainsKey("external_account_id"));
+        Assert.Null(parameters.InboundRealTimePaymentsRequestForPaymentID);
+        Assert.False(
+            parameters.RawBodyData.ContainsKey("inbound_real_time_payments_request_for_payment_id")
+        );
         Assert.Null(parameters.RequireApproval);
         Assert.False(parameters.RawBodyData.ContainsKey("require_approval"));
         Assert.Null(parameters.RoutingNumber);
@@ -92,6 +104,7 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
             AccountNumber = null,
             DebtorName = null,
             ExternalAccountID = null,
+            InboundRealTimePaymentsRequestForPaymentID = null,
             RequireApproval = null,
             RoutingNumber = null,
             UltimateCreditorName = null,
@@ -104,6 +117,10 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("debtor_name"));
         Assert.Null(parameters.ExternalAccountID);
         Assert.False(parameters.RawBodyData.ContainsKey("external_account_id"));
+        Assert.Null(parameters.InboundRealTimePaymentsRequestForPaymentID);
+        Assert.False(
+            parameters.RawBodyData.ContainsKey("inbound_real_time_payments_request_for_payment_id")
+        );
         Assert.Null(parameters.RequireApproval);
         Assert.False(parameters.RawBodyData.ContainsKey("require_approval"));
         Assert.Null(parameters.RoutingNumber);
@@ -147,6 +164,8 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
             AccountNumber = "987654321",
             DebtorName = "debtor_name",
             ExternalAccountID = "external_account_id",
+            InboundRealTimePaymentsRequestForPaymentID =
+                "inbound_real_time_payments_request_for_payment_id",
             RequireApproval = true,
             RoutingNumber = "101050001",
             UltimateCreditorName = "ultimate_creditor_name",
