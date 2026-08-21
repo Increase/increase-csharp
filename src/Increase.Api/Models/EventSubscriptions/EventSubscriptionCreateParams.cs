@@ -817,6 +817,11 @@ public enum EventCategory
     PhysicalCheckUpdated,
 
     /// <summary>
+    /// Occurs whenever a Plaid Processor Token is created.
+    /// </summary>
+    PlaidProcessorTokenCreated,
+
+    /// <summary>
     /// Occurs whenever a Checkbook is created.
     /// </summary>
     CheckbookCreated,
@@ -1048,6 +1053,7 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
             "physical_card_profile.updated" => EventCategory.PhysicalCardProfileUpdated,
             "physical_check.created" => EventCategory.PhysicalCheckCreated,
             "physical_check.updated" => EventCategory.PhysicalCheckUpdated,
+            "plaid_processor_token.created" => EventCategory.PlaidProcessorTokenCreated,
             "checkbook.created" => EventCategory.CheckbookCreated,
             "checkbook.updated" => EventCategory.CheckbookUpdated,
             "program.created" => EventCategory.ProgramCreated,
@@ -1207,6 +1213,7 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.PhysicalCardProfileUpdated => "physical_card_profile.updated",
                 EventCategory.PhysicalCheckCreated => "physical_check.created",
                 EventCategory.PhysicalCheckUpdated => "physical_check.updated",
+                EventCategory.PlaidProcessorTokenCreated => "plaid_processor_token.created",
                 EventCategory.CheckbookCreated => "checkbook.created",
                 EventCategory.CheckbookUpdated => "checkbook.updated",
                 EventCategory.ProgramCreated => "program.created",

@@ -651,6 +651,11 @@ public enum UnwrapWebhookEventCategory
     PhysicalCheckUpdated,
 
     /// <summary>
+    /// Occurs whenever a Plaid Processor Token is created.
+    /// </summary>
+    PlaidProcessorTokenCreated,
+
+    /// <summary>
     /// Occurs whenever a Checkbook is created.
     /// </summary>
     CheckbookCreated,
@@ -900,6 +905,8 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                 UnwrapWebhookEventCategory.PhysicalCardProfileUpdated,
             "physical_check.created" => UnwrapWebhookEventCategory.PhysicalCheckCreated,
             "physical_check.updated" => UnwrapWebhookEventCategory.PhysicalCheckUpdated,
+            "plaid_processor_token.created" =>
+                UnwrapWebhookEventCategory.PlaidProcessorTokenCreated,
             "checkbook.created" => UnwrapWebhookEventCategory.CheckbookCreated,
             "checkbook.updated" => UnwrapWebhookEventCategory.CheckbookUpdated,
             "program.created" => UnwrapWebhookEventCategory.ProgramCreated,
@@ -1087,6 +1094,8 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                     "physical_card_profile.updated",
                 UnwrapWebhookEventCategory.PhysicalCheckCreated => "physical_check.created",
                 UnwrapWebhookEventCategory.PhysicalCheckUpdated => "physical_check.updated",
+                UnwrapWebhookEventCategory.PlaidProcessorTokenCreated =>
+                    "plaid_processor_token.created",
                 UnwrapWebhookEventCategory.CheckbookCreated => "checkbook.created",
                 UnwrapWebhookEventCategory.CheckbookUpdated => "checkbook.updated",
                 UnwrapWebhookEventCategory.ProgramCreated => "program.created",
