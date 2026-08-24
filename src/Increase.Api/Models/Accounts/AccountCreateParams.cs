@@ -331,42 +331,22 @@ public sealed record class Loan : JsonModel
     /// The number of days after the statement date that the Account can be past
     /// due before being considered delinquent.
     /// </summary>
-    public required long GracePeriodDays
+    public long? GracePeriodDays
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<long>("grace_period_days");
+            return this._rawData.GetNullableStruct<long>("grace_period_days");
         }
-        init { this._rawData.Set("grace_period_days", value); }
-    }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
 
-    /// <summary>
-    /// The day of the month on which the loan statement is generated.
-    /// </summary>
-    public required long StatementDayOfMonth
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<long>("statement_day_of_month");
+            this._rawData.Set("grace_period_days", value);
         }
-        init { this._rawData.Set("statement_day_of_month", value); }
-    }
-
-    /// <summary>
-    /// The type of statement payment for the account.
-    /// </summary>
-    public required ApiEnum<string, StatementPaymentType> StatementPaymentType
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<ApiEnum<string, StatementPaymentType>>(
-                "statement_payment_type"
-            );
-        }
-        init { this._rawData.Set("statement_payment_type", value); }
     }
 
     /// <summary>
@@ -390,14 +370,58 @@ public sealed record class Loan : JsonModel
         }
     }
 
+    /// <summary>
+    /// The day of the month on which the loan statement is generated.
+    /// </summary>
+    public long? StatementDayOfMonth
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("statement_day_of_month");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("statement_day_of_month", value);
+        }
+    }
+
+    /// <summary>
+    /// The type of statement payment for the account.
+    /// </summary>
+    public ApiEnum<string, StatementPaymentType>? StatementPaymentType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, StatementPaymentType>>(
+                "statement_payment_type"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("statement_payment_type", value);
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         _ = this.CreditLimit;
         _ = this.GracePeriodDays;
-        _ = this.StatementDayOfMonth;
-        this.StatementPaymentType.Validate();
         _ = this.MaturityDate;
+        _ = this.StatementDayOfMonth;
+        this.StatementPaymentType?.Validate();
     }
 
     public Loan() { }
@@ -425,6 +449,13 @@ public sealed record class Loan : JsonModel
     public static Loan FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public Loan(long creditLimit)
+        : this()
+    {
+        this.CreditLimit = creditLimit;
     }
 }
 
