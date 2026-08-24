@@ -21,9 +21,9 @@ public class AccountCreateParamsTest : TestBase
             {
                 CreditLimit = 0,
                 GracePeriodDays = 0,
+                MaturityDate = "2019-12-27",
                 StatementDayOfMonth = 1,
                 StatementPaymentType = StatementPaymentType.Balance,
-                MaturityDate = "2019-12-27",
             },
             ProgramID = "program_i2v2os4mwza1oetokh9i",
         };
@@ -36,9 +36,9 @@ public class AccountCreateParamsTest : TestBase
         {
             CreditLimit = 0,
             GracePeriodDays = 0,
+            MaturityDate = "2019-12-27",
             StatementDayOfMonth = 1,
             StatementPaymentType = StatementPaymentType.Balance,
-            MaturityDate = "2019-12-27",
         };
         string expectedProgramID = "program_i2v2os4mwza1oetokh9i";
 
@@ -117,9 +117,9 @@ public class AccountCreateParamsTest : TestBase
             {
                 CreditLimit = 0,
                 GracePeriodDays = 0,
+                MaturityDate = "2019-12-27",
                 StatementDayOfMonth = 1,
                 StatementPaymentType = StatementPaymentType.Balance,
-                MaturityDate = "2019-12-27",
             },
             ProgramID = "program_i2v2os4mwza1oetokh9i",
         };
@@ -197,23 +197,23 @@ public class LoanTest : TestBase
         {
             CreditLimit = 0,
             GracePeriodDays = 0,
+            MaturityDate = "2019-12-27",
             StatementDayOfMonth = 1,
             StatementPaymentType = StatementPaymentType.Balance,
-            MaturityDate = "2019-12-27",
         };
 
         long expectedCreditLimit = 0;
         long expectedGracePeriodDays = 0;
+        string expectedMaturityDate = "2019-12-27";
         long expectedStatementDayOfMonth = 1;
         ApiEnum<string, StatementPaymentType> expectedStatementPaymentType =
             StatementPaymentType.Balance;
-        string expectedMaturityDate = "2019-12-27";
 
         Assert.Equal(expectedCreditLimit, model.CreditLimit);
         Assert.Equal(expectedGracePeriodDays, model.GracePeriodDays);
+        Assert.Equal(expectedMaturityDate, model.MaturityDate);
         Assert.Equal(expectedStatementDayOfMonth, model.StatementDayOfMonth);
         Assert.Equal(expectedStatementPaymentType, model.StatementPaymentType);
-        Assert.Equal(expectedMaturityDate, model.MaturityDate);
     }
 
     [Fact]
@@ -223,9 +223,9 @@ public class LoanTest : TestBase
         {
             CreditLimit = 0,
             GracePeriodDays = 0,
+            MaturityDate = "2019-12-27",
             StatementDayOfMonth = 1,
             StatementPaymentType = StatementPaymentType.Balance,
-            MaturityDate = "2019-12-27",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -241,9 +241,9 @@ public class LoanTest : TestBase
         {
             CreditLimit = 0,
             GracePeriodDays = 0,
+            MaturityDate = "2019-12-27",
             StatementDayOfMonth = 1,
             StatementPaymentType = StatementPaymentType.Balance,
-            MaturityDate = "2019-12-27",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -252,16 +252,16 @@ public class LoanTest : TestBase
 
         long expectedCreditLimit = 0;
         long expectedGracePeriodDays = 0;
+        string expectedMaturityDate = "2019-12-27";
         long expectedStatementDayOfMonth = 1;
         ApiEnum<string, StatementPaymentType> expectedStatementPaymentType =
             StatementPaymentType.Balance;
-        string expectedMaturityDate = "2019-12-27";
 
         Assert.Equal(expectedCreditLimit, deserialized.CreditLimit);
         Assert.Equal(expectedGracePeriodDays, deserialized.GracePeriodDays);
+        Assert.Equal(expectedMaturityDate, deserialized.MaturityDate);
         Assert.Equal(expectedStatementDayOfMonth, deserialized.StatementDayOfMonth);
         Assert.Equal(expectedStatementPaymentType, deserialized.StatementPaymentType);
-        Assert.Equal(expectedMaturityDate, deserialized.MaturityDate);
     }
 
     [Fact]
@@ -271,9 +271,9 @@ public class LoanTest : TestBase
         {
             CreditLimit = 0,
             GracePeriodDays = 0,
+            MaturityDate = "2019-12-27",
             StatementDayOfMonth = 1,
             StatementPaymentType = StatementPaymentType.Balance,
-            MaturityDate = "2019-12-27",
         };
 
         model.Validate();
@@ -282,28 +282,22 @@ public class LoanTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Loan
-        {
-            CreditLimit = 0,
-            GracePeriodDays = 0,
-            StatementDayOfMonth = 1,
-            StatementPaymentType = StatementPaymentType.Balance,
-        };
+        var model = new Loan { CreditLimit = 0 };
 
+        Assert.Null(model.GracePeriodDays);
+        Assert.False(model.RawData.ContainsKey("grace_period_days"));
         Assert.Null(model.MaturityDate);
         Assert.False(model.RawData.ContainsKey("maturity_date"));
+        Assert.Null(model.StatementDayOfMonth);
+        Assert.False(model.RawData.ContainsKey("statement_day_of_month"));
+        Assert.Null(model.StatementPaymentType);
+        Assert.False(model.RawData.ContainsKey("statement_payment_type"));
     }
 
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Loan
-        {
-            CreditLimit = 0,
-            GracePeriodDays = 0,
-            StatementDayOfMonth = 1,
-            StatementPaymentType = StatementPaymentType.Balance,
-        };
+        var model = new Loan { CreditLimit = 0 };
 
         model.Validate();
     }
@@ -314,16 +308,22 @@ public class LoanTest : TestBase
         var model = new Loan
         {
             CreditLimit = 0,
-            GracePeriodDays = 0,
-            StatementDayOfMonth = 1,
-            StatementPaymentType = StatementPaymentType.Balance,
 
             // Null should be interpreted as omitted for these properties
+            GracePeriodDays = null,
             MaturityDate = null,
+            StatementDayOfMonth = null,
+            StatementPaymentType = null,
         };
 
+        Assert.Null(model.GracePeriodDays);
+        Assert.False(model.RawData.ContainsKey("grace_period_days"));
         Assert.Null(model.MaturityDate);
         Assert.False(model.RawData.ContainsKey("maturity_date"));
+        Assert.Null(model.StatementDayOfMonth);
+        Assert.False(model.RawData.ContainsKey("statement_day_of_month"));
+        Assert.Null(model.StatementPaymentType);
+        Assert.False(model.RawData.ContainsKey("statement_payment_type"));
     }
 
     [Fact]
@@ -332,12 +332,12 @@ public class LoanTest : TestBase
         var model = new Loan
         {
             CreditLimit = 0,
-            GracePeriodDays = 0,
-            StatementDayOfMonth = 1,
-            StatementPaymentType = StatementPaymentType.Balance,
 
             // Null should be interpreted as omitted for these properties
+            GracePeriodDays = null,
             MaturityDate = null,
+            StatementDayOfMonth = null,
+            StatementPaymentType = null,
         };
 
         model.Validate();
@@ -350,9 +350,9 @@ public class LoanTest : TestBase
         {
             CreditLimit = 0,
             GracePeriodDays = 0,
+            MaturityDate = "2019-12-27",
             StatementDayOfMonth = 1,
             StatementPaymentType = StatementPaymentType.Balance,
-            MaturityDate = "2019-12-27",
         };
 
         Loan copied = new(model);

@@ -802,6 +802,11 @@ public enum In
     PhysicalCheckUpdated,
 
     /// <summary>
+    /// Occurs whenever a Plaid Processor Token is created.
+    /// </summary>
+    PlaidProcessorTokenCreated,
+
+    /// <summary>
     /// Occurs whenever a Checkbook is created.
     /// </summary>
     CheckbookCreated,
@@ -1032,6 +1037,7 @@ sealed class InConverter : JsonConverter<In>
             "physical_card_profile.updated" => In.PhysicalCardProfileUpdated,
             "physical_check.created" => In.PhysicalCheckCreated,
             "physical_check.updated" => In.PhysicalCheckUpdated,
+            "plaid_processor_token.created" => In.PlaidProcessorTokenCreated,
             "checkbook.created" => In.CheckbookCreated,
             "checkbook.updated" => In.CheckbookUpdated,
             "program.created" => In.ProgramCreated,
@@ -1176,6 +1182,7 @@ sealed class InConverter : JsonConverter<In>
                 In.PhysicalCardProfileUpdated => "physical_card_profile.updated",
                 In.PhysicalCheckCreated => "physical_check.created",
                 In.PhysicalCheckUpdated => "physical_check.updated",
+                In.PlaidProcessorTokenCreated => "plaid_processor_token.created",
                 In.CheckbookCreated => "checkbook.created",
                 In.CheckbookUpdated => "checkbook.updated",
                 In.ProgramCreated => "program.created",

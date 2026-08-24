@@ -778,6 +778,11 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     PhysicalCheckUpdated,
 
     /// <summary>
+    /// Occurs whenever a Plaid Processor Token is created.
+    /// </summary>
+    PlaidProcessorTokenCreated,
+
+    /// <summary>
     /// Occurs whenever a Checkbook is created.
     /// </summary>
     CheckbookCreated,
@@ -1091,6 +1096,8 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckCreated,
             "physical_check.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckUpdated,
+            "plaid_processor_token.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.PlaidProcessorTokenCreated,
             "checkbook.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.CheckbookCreated,
             "checkbook.updated" =>
@@ -1343,6 +1350,8 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "physical_check.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.PhysicalCheckUpdated =>
                     "physical_check.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.PlaidProcessorTokenCreated =>
+                    "plaid_processor_token.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.CheckbookCreated =>
                     "checkbook.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.CheckbookUpdated =>
