@@ -29,8 +29,10 @@ public class InboundFednowTransferTest : TestBase
                 Reason = InboundFednowTransfers::Reason.AccountNumberDisabled,
                 TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
             },
+            EndToEndIdentification = "Invoice 29582",
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            TransactionIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
             Type = InboundFednowTransfers::Type.InboundFednowTransfer,
             UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             UnstructuredRemittanceInformation = "Invoice 29582",
@@ -55,9 +57,11 @@ public class InboundFednowTransferTest : TestBase
             Reason = InboundFednowTransfers::Reason.AccountNumberDisabled,
             TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
         };
+        string expectedEndToEndIdentification = "Invoice 29582";
         ApiEnum<string, InboundFednowTransfers::Status> expectedStatus =
             InboundFednowTransfers::Status.Confirmed;
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
+        string expectedTransactionIdentification = "20250308723260130GT4LAKENDXBHQCZDWS";
         ApiEnum<string, InboundFednowTransfers::Type> expectedType =
             InboundFednowTransfers::Type.InboundFednowTransfer;
         string expectedUniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a";
@@ -75,8 +79,10 @@ public class InboundFednowTransferTest : TestBase
         Assert.Equal(expectedDebtorName, model.DebtorName);
         Assert.Equal(expectedDebtorRoutingNumber, model.DebtorRoutingNumber);
         Assert.Equal(expectedDecline, model.Decline);
+        Assert.Equal(expectedEndToEndIdentification, model.EndToEndIdentification);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedTransactionID, model.TransactionID);
+        Assert.Equal(expectedTransactionIdentification, model.TransactionIdentification);
         Assert.Equal(expectedType, model.Type);
         Assert.Equal(
             expectedUniqueEndToEndTransactionReference,
@@ -109,8 +115,10 @@ public class InboundFednowTransferTest : TestBase
                 Reason = InboundFednowTransfers::Reason.AccountNumberDisabled,
                 TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
             },
+            EndToEndIdentification = "Invoice 29582",
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            TransactionIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
             Type = InboundFednowTransfers::Type.InboundFednowTransfer,
             UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             UnstructuredRemittanceInformation = "Invoice 29582",
@@ -147,8 +155,10 @@ public class InboundFednowTransferTest : TestBase
                 Reason = InboundFednowTransfers::Reason.AccountNumberDisabled,
                 TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
             },
+            EndToEndIdentification = "Invoice 29582",
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            TransactionIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
             Type = InboundFednowTransfers::Type.InboundFednowTransfer,
             UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             UnstructuredRemittanceInformation = "Invoice 29582",
@@ -181,9 +191,11 @@ public class InboundFednowTransferTest : TestBase
             Reason = InboundFednowTransfers::Reason.AccountNumberDisabled,
             TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
         };
+        string expectedEndToEndIdentification = "Invoice 29582";
         ApiEnum<string, InboundFednowTransfers::Status> expectedStatus =
             InboundFednowTransfers::Status.Confirmed;
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
+        string expectedTransactionIdentification = "20250308723260130GT4LAKENDXBHQCZDWS";
         ApiEnum<string, InboundFednowTransfers::Type> expectedType =
             InboundFednowTransfers::Type.InboundFednowTransfer;
         string expectedUniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a";
@@ -201,8 +213,10 @@ public class InboundFednowTransferTest : TestBase
         Assert.Equal(expectedDebtorName, deserialized.DebtorName);
         Assert.Equal(expectedDebtorRoutingNumber, deserialized.DebtorRoutingNumber);
         Assert.Equal(expectedDecline, deserialized.Decline);
+        Assert.Equal(expectedEndToEndIdentification, deserialized.EndToEndIdentification);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
+        Assert.Equal(expectedTransactionIdentification, deserialized.TransactionIdentification);
         Assert.Equal(expectedType, deserialized.Type);
         Assert.Equal(
             expectedUniqueEndToEndTransactionReference,
@@ -235,8 +249,10 @@ public class InboundFednowTransferTest : TestBase
                 Reason = InboundFednowTransfers::Reason.AccountNumberDisabled,
                 TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
             },
+            EndToEndIdentification = "Invoice 29582",
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            TransactionIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
             Type = InboundFednowTransfers::Type.InboundFednowTransfer,
             UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             UnstructuredRemittanceInformation = "Invoice 29582",
@@ -266,8 +282,10 @@ public class InboundFednowTransferTest : TestBase
                 Reason = InboundFednowTransfers::Reason.AccountNumberDisabled,
                 TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
             },
+            EndToEndIdentification = "Invoice 29582",
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            TransactionIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
             Type = InboundFednowTransfers::Type.InboundFednowTransfer,
             UniqueEndToEndTransactionReference = "9a21e10a-7600-4a24-8ff3-2cbc5943c27a",
             UnstructuredRemittanceInformation = "Invoice 29582",

@@ -40,7 +40,8 @@ public record class PhysicalCardCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// Details about the cardholder, as it will appear on the physical card.
+    /// Details about the cardholder, as it will appear on the physical card. The
+    /// combined first name and last name cannot exceed 25 characters.
     /// </summary>
     public required Cardholder Cardholder
     {
@@ -198,7 +199,8 @@ public record class PhysicalCardCreateParams : ParamsBase
 }
 
 /// <summary>
-/// Details about the cardholder, as it will appear on the physical card.
+/// Details about the cardholder, as it will appear on the physical card. The combined
+/// first name and last name cannot exceed 25 characters.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<Cardholder, CardholderFromRaw>))]
 public sealed record class Cardholder : JsonModel
