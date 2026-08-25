@@ -175,6 +175,19 @@ public sealed record class InboundFednowTransfer : JsonModel
     }
 
     /// <summary>
+    /// A free-form reference string set by the sender, to help identify the transfer.
+    /// </summary>
+    public required string? EndToEndIdentification
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("end_to_end_identification");
+        }
+        init { this._rawData.Set("end_to_end_identification", value); }
+    }
+
+    /// <summary>
     /// The lifecycle status of the transfer.
     /// </summary>
     public required ApiEnum<string, Status> Status
@@ -198,6 +211,19 @@ public sealed record class InboundFednowTransfer : JsonModel
             return this._rawData.GetNullableClass<string>("transaction_id");
         }
         init { this._rawData.Set("transaction_id", value); }
+    }
+
+    /// <summary>
+    /// The FedNow network identification of the transfer.
+    /// </summary>
+    public required string? TransactionIdentification
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("transaction_identification");
+        }
+        init { this._rawData.Set("transaction_identification", value); }
     }
 
     /// <summary>
@@ -260,8 +286,10 @@ public sealed record class InboundFednowTransfer : JsonModel
         _ = this.DebtorName;
         _ = this.DebtorRoutingNumber;
         this.Decline?.Validate();
+        _ = this.EndToEndIdentification;
         this.Status.Validate();
         _ = this.TransactionID;
+        _ = this.TransactionIdentification;
         this.Type.Validate();
         _ = this.UniqueEndToEndTransactionReference;
         _ = this.UnstructuredRemittanceInformation;
