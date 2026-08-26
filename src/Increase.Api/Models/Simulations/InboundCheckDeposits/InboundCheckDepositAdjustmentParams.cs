@@ -30,7 +30,11 @@ public record class InboundCheckDepositAdjustmentParams : ParamsBase
     public string? InboundCheckDepositID { get; init; }
 
     /// <summary>
-    /// The adjustment amount in cents. Defaults to the amount of the Inbound Check Deposit.
+    /// The adjustment amount in cents. A positive amount means that the funds are
+    /// being returned to you by the other bank and is a credit to your account,
+    /// as happens for a `wrong_payee_credit`. A negative amount is a debit to your
+    /// account, as happens for a `late_return`. Defaults to the amount of the Inbound
+    /// Check Deposit.
     /// </summary>
     public long? Amount
     {
