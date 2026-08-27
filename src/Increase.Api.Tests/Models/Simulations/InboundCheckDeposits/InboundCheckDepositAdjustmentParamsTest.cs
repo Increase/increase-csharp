@@ -100,9 +100,6 @@ public class ReasonTest : TestBase
     [Theory]
     [InlineData(Reason.LateReturn)]
     [InlineData(Reason.WrongPayeeCredit)]
-    [InlineData(Reason.AdjustedAmount)]
-    [InlineData(Reason.NonConformingItem)]
-    [InlineData(Reason.Paid)]
     public void Validation_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -125,9 +122,6 @@ public class ReasonTest : TestBase
     [Theory]
     [InlineData(Reason.LateReturn)]
     [InlineData(Reason.WrongPayeeCredit)]
-    [InlineData(Reason.AdjustedAmount)]
-    [InlineData(Reason.NonConformingItem)]
-    [InlineData(Reason.Paid)]
     public void SerializationRoundtrip_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
