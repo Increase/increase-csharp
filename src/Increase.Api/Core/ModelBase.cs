@@ -1321,7 +1321,10 @@ public abstract record class ModelBase
             >(),
             new ApiEnumConverter<string, ModelsEntities::EntityNaturalPersonIdentificationMethod>(),
             new ApiEnumConverter<string, ModelsEntities::EntityRiskRatingRating>(),
-            new ApiEnumConverter<string, ModelsEntities::SoleProprietorIdentificationMethod>(),
+            new ApiEnumConverter<
+                string,
+                ModelsEntities::EntitySoleProprietorshipSoleProprietorIdentificationMethod
+            >(),
             new ApiEnumConverter<string, ModelsEntities::EntityStatus>(),
             new ApiEnumConverter<string, ModelsEntities::EntityStructure>(),
             new ApiEnumConverter<string, ModelsEntities::EntityThirdPartyVerificationVendor>(),
@@ -1346,6 +1349,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, ModelsEntities::JointIndividualIdentificationMethod>(),
             new ApiEnumConverter<string, ModelsEntities::NaturalPersonIdentificationMethod>(),
             new ApiEnumConverter<string, ModelsEntities::Rating>(),
+            new ApiEnumConverter<string, ModelsEntities::SoleProprietorIdentificationMethod>(),
             new ApiEnumConverter<string, ModelsEntities::Vendor>(),
             new ApiEnumConverter<string, ModelsEntities::TrustCategory>(),
             new ApiEnumConverter<string, ModelsEntities::TrusteeStructure>(),
