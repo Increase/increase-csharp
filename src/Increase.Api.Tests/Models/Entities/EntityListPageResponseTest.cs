@@ -153,6 +153,43 @@ public class EntityListPageResponseTest : TestBase
                         RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         Rating = Entities::EntityRiskRatingRating.Low,
                     },
+                    SoleProprietorship = new()
+                    {
+                        Address = new()
+                        {
+                            City = "New York",
+                            Country = "US",
+                            Line1 = "33 Liberty Street",
+                            Line2 = null,
+                            State = "NY",
+                            Zip = "10045",
+                        },
+                        DoingBusinessAsName = "doing_business_as_name",
+                        Email = "email",
+                        IndustryCode = "industry_code",
+                        SoleProprietor = new()
+                        {
+                            Address = new()
+                            {
+                                City = "New York",
+                                Country = "US",
+                                Line1 = "33 Liberty Street",
+                                Line2 = null,
+                                State = "NY",
+                                Zip = "10045",
+                            },
+                            DateOfBirth = "2019-12-27",
+                            Identification = new()
+                            {
+                                Method =
+                                    Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                                NumberLast4 = "number_last4",
+                            },
+                            Name = "name",
+                        },
+                        TaxIdentifier = "tax_identifier",
+                        Website = "website",
+                    },
                     Status = Entities::EntityStatus.Active,
                     Structure = Entities::EntityStructure.Corporation,
                     SupplementalDocuments =
@@ -408,6 +445,43 @@ public class EntityListPageResponseTest : TestBase
                 {
                     RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Rating = Entities::EntityRiskRatingRating.Low,
+                },
+                SoleProprietorship = new()
+                {
+                    Address = new()
+                    {
+                        City = "New York",
+                        Country = "US",
+                        Line1 = "33 Liberty Street",
+                        Line2 = null,
+                        State = "NY",
+                        Zip = "10045",
+                    },
+                    DoingBusinessAsName = "doing_business_as_name",
+                    Email = "email",
+                    IndustryCode = "industry_code",
+                    SoleProprietor = new()
+                    {
+                        Address = new()
+                        {
+                            City = "New York",
+                            Country = "US",
+                            Line1 = "33 Liberty Street",
+                            Line2 = null,
+                            State = "NY",
+                            Zip = "10045",
+                        },
+                        DateOfBirth = "2019-12-27",
+                        Identification = new()
+                        {
+                            Method =
+                                Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                            NumberLast4 = "number_last4",
+                        },
+                        Name = "name",
+                    },
+                    TaxIdentifier = "tax_identifier",
+                    Website = "website",
                 },
                 Status = Entities::EntityStatus.Active,
                 Structure = Entities::EntityStructure.Corporation,
@@ -676,6 +750,43 @@ public class EntityListPageResponseTest : TestBase
                     {
                         RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         Rating = Entities::EntityRiskRatingRating.Low,
+                    },
+                    SoleProprietorship = new()
+                    {
+                        Address = new()
+                        {
+                            City = "New York",
+                            Country = "US",
+                            Line1 = "33 Liberty Street",
+                            Line2 = null,
+                            State = "NY",
+                            Zip = "10045",
+                        },
+                        DoingBusinessAsName = "doing_business_as_name",
+                        Email = "email",
+                        IndustryCode = "industry_code",
+                        SoleProprietor = new()
+                        {
+                            Address = new()
+                            {
+                                City = "New York",
+                                Country = "US",
+                                Line1 = "33 Liberty Street",
+                                Line2 = null,
+                                State = "NY",
+                                Zip = "10045",
+                            },
+                            DateOfBirth = "2019-12-27",
+                            Identification = new()
+                            {
+                                Method =
+                                    Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                                NumberLast4 = "number_last4",
+                            },
+                            Name = "name",
+                        },
+                        TaxIdentifier = "tax_identifier",
+                        Website = "website",
                     },
                     Status = Entities::EntityStatus.Active,
                     Structure = Entities::EntityStructure.Corporation,
@@ -947,6 +1058,43 @@ public class EntityListPageResponseTest : TestBase
                         RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         Rating = Entities::EntityRiskRatingRating.Low,
                     },
+                    SoleProprietorship = new()
+                    {
+                        Address = new()
+                        {
+                            City = "New York",
+                            Country = "US",
+                            Line1 = "33 Liberty Street",
+                            Line2 = null,
+                            State = "NY",
+                            Zip = "10045",
+                        },
+                        DoingBusinessAsName = "doing_business_as_name",
+                        Email = "email",
+                        IndustryCode = "industry_code",
+                        SoleProprietor = new()
+                        {
+                            Address = new()
+                            {
+                                City = "New York",
+                                Country = "US",
+                                Line1 = "33 Liberty Street",
+                                Line2 = null,
+                                State = "NY",
+                                Zip = "10045",
+                            },
+                            DateOfBirth = "2019-12-27",
+                            Identification = new()
+                            {
+                                Method =
+                                    Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                                NumberLast4 = "number_last4",
+                            },
+                            Name = "name",
+                        },
+                        TaxIdentifier = "tax_identifier",
+                        Website = "website",
+                    },
                     Status = Entities::EntityStatus.Active,
                     Structure = Entities::EntityStructure.Corporation,
                     SupplementalDocuments =
@@ -1209,6 +1357,43 @@ public class EntityListPageResponseTest : TestBase
                 {
                     RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Rating = Entities::EntityRiskRatingRating.Low,
+                },
+                SoleProprietorship = new()
+                {
+                    Address = new()
+                    {
+                        City = "New York",
+                        Country = "US",
+                        Line1 = "33 Liberty Street",
+                        Line2 = null,
+                        State = "NY",
+                        Zip = "10045",
+                    },
+                    DoingBusinessAsName = "doing_business_as_name",
+                    Email = "email",
+                    IndustryCode = "industry_code",
+                    SoleProprietor = new()
+                    {
+                        Address = new()
+                        {
+                            City = "New York",
+                            Country = "US",
+                            Line1 = "33 Liberty Street",
+                            Line2 = null,
+                            State = "NY",
+                            Zip = "10045",
+                        },
+                        DateOfBirth = "2019-12-27",
+                        Identification = new()
+                        {
+                            Method =
+                                Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                            NumberLast4 = "number_last4",
+                        },
+                        Name = "name",
+                    },
+                    TaxIdentifier = "tax_identifier",
+                    Website = "website",
                 },
                 Status = Entities::EntityStatus.Active,
                 Structure = Entities::EntityStructure.Corporation,
@@ -1478,6 +1663,43 @@ public class EntityListPageResponseTest : TestBase
                         RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         Rating = Entities::EntityRiskRatingRating.Low,
                     },
+                    SoleProprietorship = new()
+                    {
+                        Address = new()
+                        {
+                            City = "New York",
+                            Country = "US",
+                            Line1 = "33 Liberty Street",
+                            Line2 = null,
+                            State = "NY",
+                            Zip = "10045",
+                        },
+                        DoingBusinessAsName = "doing_business_as_name",
+                        Email = "email",
+                        IndustryCode = "industry_code",
+                        SoleProprietor = new()
+                        {
+                            Address = new()
+                            {
+                                City = "New York",
+                                Country = "US",
+                                Line1 = "33 Liberty Street",
+                                Line2 = null,
+                                State = "NY",
+                                Zip = "10045",
+                            },
+                            DateOfBirth = "2019-12-27",
+                            Identification = new()
+                            {
+                                Method =
+                                    Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                                NumberLast4 = "number_last4",
+                            },
+                            Name = "name",
+                        },
+                        TaxIdentifier = "tax_identifier",
+                        Website = "website",
+                    },
                     Status = Entities::EntityStatus.Active,
                     Structure = Entities::EntityStructure.Corporation,
                     SupplementalDocuments =
@@ -1741,6 +1963,43 @@ public class EntityListPageResponseTest : TestBase
                     {
                         RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         Rating = Entities::EntityRiskRatingRating.Low,
+                    },
+                    SoleProprietorship = new()
+                    {
+                        Address = new()
+                        {
+                            City = "New York",
+                            Country = "US",
+                            Line1 = "33 Liberty Street",
+                            Line2 = null,
+                            State = "NY",
+                            Zip = "10045",
+                        },
+                        DoingBusinessAsName = "doing_business_as_name",
+                        Email = "email",
+                        IndustryCode = "industry_code",
+                        SoleProprietor = new()
+                        {
+                            Address = new()
+                            {
+                                City = "New York",
+                                Country = "US",
+                                Line1 = "33 Liberty Street",
+                                Line2 = null,
+                                State = "NY",
+                                Zip = "10045",
+                            },
+                            DateOfBirth = "2019-12-27",
+                            Identification = new()
+                            {
+                                Method =
+                                    Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                                NumberLast4 = "number_last4",
+                            },
+                            Name = "name",
+                        },
+                        TaxIdentifier = "tax_identifier",
+                        Website = "website",
                     },
                     Status = Entities::EntityStatus.Active,
                     Structure = Entities::EntityStructure.Corporation,
