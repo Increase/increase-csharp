@@ -149,6 +149,42 @@ public class EntityTest : TestBase
                 RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Rating = Entities::EntityRiskRatingRating.Low,
             },
+            SoleProprietorship = new()
+            {
+                Address = new()
+                {
+                    City = "New York",
+                    Country = "US",
+                    Line1 = "33 Liberty Street",
+                    Line2 = null,
+                    State = "NY",
+                    Zip = "10045",
+                },
+                DoingBusinessAsName = "doing_business_as_name",
+                Email = "email",
+                IndustryCode = "industry_code",
+                SoleProprietor = new()
+                {
+                    Address = new()
+                    {
+                        City = "New York",
+                        Country = "US",
+                        Line1 = "33 Liberty Street",
+                        Line2 = null,
+                        State = "NY",
+                        Zip = "10045",
+                    },
+                    DateOfBirth = "2019-12-27",
+                    Identification = new()
+                    {
+                        Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        NumberLast4 = "number_last4",
+                    },
+                    Name = "name",
+                },
+                TaxIdentifier = "tax_identifier",
+                Website = "website",
+            },
             Status = Entities::EntityStatus.Active,
             Structure = Entities::EntityStructure.Corporation,
             SupplementalDocuments =
@@ -393,6 +429,42 @@ public class EntityTest : TestBase
             RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Rating = Entities::EntityRiskRatingRating.Low,
         };
+        Entities::SoleProprietorship expectedSoleProprietorship = new()
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DoingBusinessAsName = "doing_business_as_name",
+            Email = "email",
+            IndustryCode = "industry_code",
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "New York",
+                    Country = "US",
+                    Line1 = "33 Liberty Street",
+                    Line2 = null,
+                    State = "NY",
+                    Zip = "10045",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    NumberLast4 = "number_last4",
+                },
+                Name = "name",
+            },
+            TaxIdentifier = "tax_identifier",
+            Website = "website",
+        };
         ApiEnum<string, Entities::EntityStatus> expectedStatus = Entities::EntityStatus.Active;
         ApiEnum<string, Entities::EntityStructure> expectedStructure =
             Entities::EntityStructure.Corporation;
@@ -517,6 +589,7 @@ public class EntityTest : TestBase
         Assert.Equal(expectedJoint, model.Joint);
         Assert.Equal(expectedNaturalPerson, model.NaturalPerson);
         Assert.Equal(expectedRiskRating, model.RiskRating);
+        Assert.Equal(expectedSoleProprietorship, model.SoleProprietorship);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedStructure, model.Structure);
         Assert.Equal(expectedSupplementalDocuments.Count, model.SupplementalDocuments.Count);
@@ -673,6 +746,42 @@ public class EntityTest : TestBase
             {
                 RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Rating = Entities::EntityRiskRatingRating.Low,
+            },
+            SoleProprietorship = new()
+            {
+                Address = new()
+                {
+                    City = "New York",
+                    Country = "US",
+                    Line1 = "33 Liberty Street",
+                    Line2 = null,
+                    State = "NY",
+                    Zip = "10045",
+                },
+                DoingBusinessAsName = "doing_business_as_name",
+                Email = "email",
+                IndustryCode = "industry_code",
+                SoleProprietor = new()
+                {
+                    Address = new()
+                    {
+                        City = "New York",
+                        Country = "US",
+                        Line1 = "33 Liberty Street",
+                        Line2 = null,
+                        State = "NY",
+                        Zip = "10045",
+                    },
+                    DateOfBirth = "2019-12-27",
+                    Identification = new()
+                    {
+                        Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        NumberLast4 = "number_last4",
+                    },
+                    Name = "name",
+                },
+                TaxIdentifier = "tax_identifier",
+                Website = "website",
             },
             Status = Entities::EntityStatus.Active,
             Structure = Entities::EntityStructure.Corporation,
@@ -936,6 +1045,42 @@ public class EntityTest : TestBase
                 RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Rating = Entities::EntityRiskRatingRating.Low,
             },
+            SoleProprietorship = new()
+            {
+                Address = new()
+                {
+                    City = "New York",
+                    Country = "US",
+                    Line1 = "33 Liberty Street",
+                    Line2 = null,
+                    State = "NY",
+                    Zip = "10045",
+                },
+                DoingBusinessAsName = "doing_business_as_name",
+                Email = "email",
+                IndustryCode = "industry_code",
+                SoleProprietor = new()
+                {
+                    Address = new()
+                    {
+                        City = "New York",
+                        Country = "US",
+                        Line1 = "33 Liberty Street",
+                        Line2 = null,
+                        State = "NY",
+                        Zip = "10045",
+                    },
+                    DateOfBirth = "2019-12-27",
+                    Identification = new()
+                    {
+                        Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        NumberLast4 = "number_last4",
+                    },
+                    Name = "name",
+                },
+                TaxIdentifier = "tax_identifier",
+                Website = "website",
+            },
             Status = Entities::EntityStatus.Active,
             Structure = Entities::EntityStructure.Corporation,
             SupplementalDocuments =
@@ -1187,6 +1332,42 @@ public class EntityTest : TestBase
             RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Rating = Entities::EntityRiskRatingRating.Low,
         };
+        Entities::SoleProprietorship expectedSoleProprietorship = new()
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DoingBusinessAsName = "doing_business_as_name",
+            Email = "email",
+            IndustryCode = "industry_code",
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "New York",
+                    Country = "US",
+                    Line1 = "33 Liberty Street",
+                    Line2 = null,
+                    State = "NY",
+                    Zip = "10045",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    NumberLast4 = "number_last4",
+                },
+                Name = "name",
+            },
+            TaxIdentifier = "tax_identifier",
+            Website = "website",
+        };
         ApiEnum<string, Entities::EntityStatus> expectedStatus = Entities::EntityStatus.Active;
         ApiEnum<string, Entities::EntityStructure> expectedStructure =
             Entities::EntityStructure.Corporation;
@@ -1311,6 +1492,7 @@ public class EntityTest : TestBase
         Assert.Equal(expectedJoint, deserialized.Joint);
         Assert.Equal(expectedNaturalPerson, deserialized.NaturalPerson);
         Assert.Equal(expectedRiskRating, deserialized.RiskRating);
+        Assert.Equal(expectedSoleProprietorship, deserialized.SoleProprietorship);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedStructure, deserialized.Structure);
         Assert.Equal(expectedSupplementalDocuments.Count, deserialized.SupplementalDocuments.Count);
@@ -1467,6 +1649,42 @@ public class EntityTest : TestBase
             {
                 RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Rating = Entities::EntityRiskRatingRating.Low,
+            },
+            SoleProprietorship = new()
+            {
+                Address = new()
+                {
+                    City = "New York",
+                    Country = "US",
+                    Line1 = "33 Liberty Street",
+                    Line2 = null,
+                    State = "NY",
+                    Zip = "10045",
+                },
+                DoingBusinessAsName = "doing_business_as_name",
+                Email = "email",
+                IndustryCode = "industry_code",
+                SoleProprietor = new()
+                {
+                    Address = new()
+                    {
+                        City = "New York",
+                        Country = "US",
+                        Line1 = "33 Liberty Street",
+                        Line2 = null,
+                        State = "NY",
+                        Zip = "10045",
+                    },
+                    DateOfBirth = "2019-12-27",
+                    Identification = new()
+                    {
+                        Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        NumberLast4 = "number_last4",
+                    },
+                    Name = "name",
+                },
+                TaxIdentifier = "tax_identifier",
+                Website = "website",
             },
             Status = Entities::EntityStatus.Active,
             Structure = Entities::EntityStructure.Corporation,
@@ -1723,6 +1941,42 @@ public class EntityTest : TestBase
             {
                 RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Rating = Entities::EntityRiskRatingRating.Low,
+            },
+            SoleProprietorship = new()
+            {
+                Address = new()
+                {
+                    City = "New York",
+                    Country = "US",
+                    Line1 = "33 Liberty Street",
+                    Line2 = null,
+                    State = "NY",
+                    Zip = "10045",
+                },
+                DoingBusinessAsName = "doing_business_as_name",
+                Email = "email",
+                IndustryCode = "industry_code",
+                SoleProprietor = new()
+                {
+                    Address = new()
+                    {
+                        City = "New York",
+                        Country = "US",
+                        Line1 = "33 Liberty Street",
+                        Line2 = null,
+                        State = "NY",
+                        Zip = "10045",
+                    },
+                    DateOfBirth = "2019-12-27",
+                    Identification = new()
+                    {
+                        Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        NumberLast4 = "number_last4",
+                    },
+                    Name = "name",
+                },
+                TaxIdentifier = "tax_identifier",
+                Website = "website",
             },
             Status = Entities::EntityStatus.Active,
             Structure = Entities::EntityStructure.Corporation,
@@ -5316,6 +5570,899 @@ public class EntityRiskRatingRatingTest : TestBase
     }
 }
 
+public class SoleProprietorshipTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Entities::SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DoingBusinessAsName = "doing_business_as_name",
+            Email = "email",
+            IndustryCode = "industry_code",
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "New York",
+                    Country = "US",
+                    Line1 = "33 Liberty Street",
+                    Line2 = null,
+                    State = "NY",
+                    Zip = "10045",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    NumberLast4 = "number_last4",
+                },
+                Name = "name",
+            },
+            TaxIdentifier = "tax_identifier",
+            Website = "website",
+        };
+
+        Entities::SoleProprietorshipAddress expectedAddress = new()
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+        string expectedDoingBusinessAsName = "doing_business_as_name";
+        string expectedEmail = "email";
+        string expectedIndustryCode = "industry_code";
+        Entities::SoleProprietor expectedSoleProprietor = new()
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                NumberLast4 = "number_last4",
+            },
+            Name = "name",
+        };
+        string expectedTaxIdentifier = "tax_identifier";
+        string expectedWebsite = "website";
+
+        Assert.Equal(expectedAddress, model.Address);
+        Assert.Equal(expectedDoingBusinessAsName, model.DoingBusinessAsName);
+        Assert.Equal(expectedEmail, model.Email);
+        Assert.Equal(expectedIndustryCode, model.IndustryCode);
+        Assert.Equal(expectedSoleProprietor, model.SoleProprietor);
+        Assert.Equal(expectedTaxIdentifier, model.TaxIdentifier);
+        Assert.Equal(expectedWebsite, model.Website);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Entities::SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DoingBusinessAsName = "doing_business_as_name",
+            Email = "email",
+            IndustryCode = "industry_code",
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "New York",
+                    Country = "US",
+                    Line1 = "33 Liberty Street",
+                    Line2 = null,
+                    State = "NY",
+                    Zip = "10045",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    NumberLast4 = "number_last4",
+                },
+                Name = "name",
+            },
+            TaxIdentifier = "tax_identifier",
+            Website = "website",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorship>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Entities::SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DoingBusinessAsName = "doing_business_as_name",
+            Email = "email",
+            IndustryCode = "industry_code",
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "New York",
+                    Country = "US",
+                    Line1 = "33 Liberty Street",
+                    Line2 = null,
+                    State = "NY",
+                    Zip = "10045",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    NumberLast4 = "number_last4",
+                },
+                Name = "name",
+            },
+            TaxIdentifier = "tax_identifier",
+            Website = "website",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorship>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        Entities::SoleProprietorshipAddress expectedAddress = new()
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+        string expectedDoingBusinessAsName = "doing_business_as_name";
+        string expectedEmail = "email";
+        string expectedIndustryCode = "industry_code";
+        Entities::SoleProprietor expectedSoleProprietor = new()
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                NumberLast4 = "number_last4",
+            },
+            Name = "name",
+        };
+        string expectedTaxIdentifier = "tax_identifier";
+        string expectedWebsite = "website";
+
+        Assert.Equal(expectedAddress, deserialized.Address);
+        Assert.Equal(expectedDoingBusinessAsName, deserialized.DoingBusinessAsName);
+        Assert.Equal(expectedEmail, deserialized.Email);
+        Assert.Equal(expectedIndustryCode, deserialized.IndustryCode);
+        Assert.Equal(expectedSoleProprietor, deserialized.SoleProprietor);
+        Assert.Equal(expectedTaxIdentifier, deserialized.TaxIdentifier);
+        Assert.Equal(expectedWebsite, deserialized.Website);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Entities::SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DoingBusinessAsName = "doing_business_as_name",
+            Email = "email",
+            IndustryCode = "industry_code",
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "New York",
+                    Country = "US",
+                    Line1 = "33 Liberty Street",
+                    Line2 = null,
+                    State = "NY",
+                    Zip = "10045",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    NumberLast4 = "number_last4",
+                },
+                Name = "name",
+            },
+            TaxIdentifier = "tax_identifier",
+            Website = "website",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Entities::SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DoingBusinessAsName = "doing_business_as_name",
+            Email = "email",
+            IndustryCode = "industry_code",
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "New York",
+                    Country = "US",
+                    Line1 = "33 Liberty Street",
+                    Line2 = null,
+                    State = "NY",
+                    Zip = "10045",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    NumberLast4 = "number_last4",
+                },
+                Name = "name",
+            },
+            TaxIdentifier = "tax_identifier",
+            Website = "website",
+        };
+
+        Entities::SoleProprietorship copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SoleProprietorshipAddressTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Entities::SoleProprietorshipAddress
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+
+        string expectedCity = "New York";
+        string expectedCountry = "US";
+        string expectedLine1 = "33 Liberty Street";
+        string expectedState = "NY";
+        string expectedZip = "10045";
+
+        Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedLine1, model.Line1);
+        Assert.Null(model.Line2);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedZip, model.Zip);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Entities::SoleProprietorshipAddress
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorshipAddress>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Entities::SoleProprietorshipAddress
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorshipAddress>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCity = "New York";
+        string expectedCountry = "US";
+        string expectedLine1 = "33 Liberty Street";
+        string expectedState = "NY";
+        string expectedZip = "10045";
+
+        Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Null(deserialized.Line2);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedZip, deserialized.Zip);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Entities::SoleProprietorshipAddress
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Entities::SoleProprietorshipAddress
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+
+        Entities::SoleProprietorshipAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SoleProprietorTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Entities::SoleProprietor
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                NumberLast4 = "number_last4",
+            },
+            Name = "name",
+        };
+
+        Entities::SoleProprietorAddress expectedAddress = new()
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+        string expectedDateOfBirth = "2019-12-27";
+        Entities::SoleProprietorIdentification expectedIdentification = new()
+        {
+            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            NumberLast4 = "number_last4",
+        };
+        string expectedName = "name";
+
+        Assert.Equal(expectedAddress, model.Address);
+        Assert.Equal(expectedDateOfBirth, model.DateOfBirth);
+        Assert.Equal(expectedIdentification, model.Identification);
+        Assert.Equal(expectedName, model.Name);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Entities::SoleProprietor
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                NumberLast4 = "number_last4",
+            },
+            Name = "name",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietor>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Entities::SoleProprietor
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                NumberLast4 = "number_last4",
+            },
+            Name = "name",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietor>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        Entities::SoleProprietorAddress expectedAddress = new()
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+        string expectedDateOfBirth = "2019-12-27";
+        Entities::SoleProprietorIdentification expectedIdentification = new()
+        {
+            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            NumberLast4 = "number_last4",
+        };
+        string expectedName = "name";
+
+        Assert.Equal(expectedAddress, deserialized.Address);
+        Assert.Equal(expectedDateOfBirth, deserialized.DateOfBirth);
+        Assert.Equal(expectedIdentification, deserialized.Identification);
+        Assert.Equal(expectedName, deserialized.Name);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Entities::SoleProprietor
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                NumberLast4 = "number_last4",
+            },
+            Name = "name",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Entities::SoleProprietor
+        {
+            Address = new()
+            {
+                City = "New York",
+                Country = "US",
+                Line1 = "33 Liberty Street",
+                Line2 = null,
+                State = "NY",
+                Zip = "10045",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                NumberLast4 = "number_last4",
+            },
+            Name = "name",
+        };
+
+        Entities::SoleProprietor copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SoleProprietorAddressTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Entities::SoleProprietorAddress
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+
+        string expectedCity = "New York";
+        string expectedCountry = "US";
+        string expectedLine1 = "33 Liberty Street";
+        string expectedState = "NY";
+        string expectedZip = "10045";
+
+        Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedLine1, model.Line1);
+        Assert.Null(model.Line2);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedZip, model.Zip);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Entities::SoleProprietorAddress
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorAddress>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Entities::SoleProprietorAddress
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorAddress>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCity = "New York";
+        string expectedCountry = "US";
+        string expectedLine1 = "33 Liberty Street";
+        string expectedState = "NY";
+        string expectedZip = "10045";
+
+        Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Null(deserialized.Line2);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedZip, deserialized.Zip);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Entities::SoleProprietorAddress
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Entities::SoleProprietorAddress
+        {
+            City = "New York",
+            Country = "US",
+            Line1 = "33 Liberty Street",
+            Line2 = null,
+            State = "NY",
+            Zip = "10045",
+        };
+
+        Entities::SoleProprietorAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SoleProprietorIdentificationTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Entities::SoleProprietorIdentification
+        {
+            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            NumberLast4 = "number_last4",
+        };
+
+        ApiEnum<string, Entities::SoleProprietorIdentificationMethod> expectedMethod =
+            Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber;
+        string expectedNumberLast4 = "number_last4";
+
+        Assert.Equal(expectedMethod, model.Method);
+        Assert.Equal(expectedNumberLast4, model.NumberLast4);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Entities::SoleProprietorIdentification
+        {
+            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            NumberLast4 = "number_last4",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorIdentification>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Entities::SoleProprietorIdentification
+        {
+            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            NumberLast4 = "number_last4",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorIdentification>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<string, Entities::SoleProprietorIdentificationMethod> expectedMethod =
+            Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber;
+        string expectedNumberLast4 = "number_last4";
+
+        Assert.Equal(expectedMethod, deserialized.Method);
+        Assert.Equal(expectedNumberLast4, deserialized.NumberLast4);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Entities::SoleProprietorIdentification
+        {
+            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            NumberLast4 = "number_last4",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Entities::SoleProprietorIdentification
+        {
+            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            NumberLast4 = "number_last4",
+        };
+
+        Entities::SoleProprietorIdentification copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SoleProprietorIdentificationMethodTest : TestBase
+{
+    [Theory]
+    [InlineData(Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(
+        Entities::SoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber
+    )]
+    [InlineData(Entities::SoleProprietorIdentificationMethod.Passport)]
+    [InlineData(Entities::SoleProprietorIdentificationMethod.DriversLicense)]
+    [InlineData(Entities::SoleProprietorIdentificationMethod.Other)]
+    public void Validation_Works(Entities::SoleProprietorIdentificationMethod rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Entities::SoleProprietorIdentificationMethod> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Entities::SoleProprietorIdentificationMethod>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(
+        Entities::SoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber
+    )]
+    [InlineData(Entities::SoleProprietorIdentificationMethod.Passport)]
+    [InlineData(Entities::SoleProprietorIdentificationMethod.DriversLicense)]
+    [InlineData(Entities::SoleProprietorIdentificationMethod.Other)]
+    public void SerializationRoundtrip_Works(Entities::SoleProprietorIdentificationMethod rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Entities::SoleProprietorIdentificationMethod> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Entities::SoleProprietorIdentificationMethod>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Entities::SoleProprietorIdentificationMethod>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Entities::SoleProprietorIdentificationMethod>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class EntityStatusTest : TestBase
 {
     [Theory]
@@ -5384,6 +6531,7 @@ public class EntityStructureTest : TestBase
     [InlineData(Entities::EntityStructure.Joint)]
     [InlineData(Entities::EntityStructure.Trust)]
     [InlineData(Entities::EntityStructure.GovernmentAuthority)]
+    [InlineData(Entities::EntityStructure.SoleProprietorship)]
     public void Validation_Works(Entities::EntityStructure rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -5409,6 +6557,7 @@ public class EntityStructureTest : TestBase
     [InlineData(Entities::EntityStructure.Joint)]
     [InlineData(Entities::EntityStructure.Trust)]
     [InlineData(Entities::EntityStructure.GovernmentAuthority)]
+    [InlineData(Entities::EntityStructure.SoleProprietorship)]
     public void SerializationRoundtrip_Works(Entities::EntityStructure rawValue)
     {
         // force implicit conversion because Theory can't do that for us

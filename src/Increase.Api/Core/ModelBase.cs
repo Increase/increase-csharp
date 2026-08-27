@@ -1321,6 +1321,7 @@ public abstract record class ModelBase
             >(),
             new ApiEnumConverter<string, ModelsEntities::EntityNaturalPersonIdentificationMethod>(),
             new ApiEnumConverter<string, ModelsEntities::EntityRiskRatingRating>(),
+            new ApiEnumConverter<string, ModelsEntities::SoleProprietorIdentificationMethod>(),
             new ApiEnumConverter<string, ModelsEntities::EntityStatus>(),
             new ApiEnumConverter<string, ModelsEntities::EntityStructure>(),
             new ApiEnumConverter<string, ModelsEntities::EntityThirdPartyVerificationVendor>(),

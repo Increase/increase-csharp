@@ -16421,7 +16421,8 @@ public sealed record class InboundCheckAdjustment : JsonModel
     }
 
     /// <summary>
-    /// The amount of the check adjustment.
+    /// The amount of the check adjustment in USD cents. A positive amount is a credit
+    /// to your account and a negative amount is a debit.
     /// </summary>
     public required long Amount
     {
