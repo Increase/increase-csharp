@@ -176,12 +176,12 @@ public sealed record class Entity : JsonModel
     /// Details of the sole proprietorship entity. Will be present if `structure`
     /// is equal to `sole_proprietorship`.
     /// </summary>
-    public required SoleProprietorship? SoleProprietorship
+    public required EntitySoleProprietorship? SoleProprietorship
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<SoleProprietorship>("sole_proprietorship");
+            return this._rawData.GetNullableClass<EntitySoleProprietorship>("sole_proprietorship");
         }
         init { this._rawData.Set("sole_proprietorship", value); }
     }
@@ -3037,18 +3037,20 @@ sealed class EntityRiskRatingRatingConverter : JsonConverter<EntityRiskRatingRat
 /// Details of the sole proprietorship entity. Will be present if `structure` is
 /// equal to `sole_proprietorship`.
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<SoleProprietorship, SoleProprietorshipFromRaw>))]
-public sealed record class SoleProprietorship : JsonModel
+[JsonConverter(
+    typeof(JsonModelConverter<EntitySoleProprietorship, EntitySoleProprietorshipFromRaw>)
+)]
+public sealed record class EntitySoleProprietorship : JsonModel
 {
     /// <summary>
     /// The sole proprietorship's address.
     /// </summary>
-    public required SoleProprietorshipAddress Address
+    public required EntitySoleProprietorshipAddress Address
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<SoleProprietorshipAddress>("address");
+            return this._rawData.GetNotNullClass<EntitySoleProprietorshipAddress>("address");
         }
         init { this._rawData.Set("address", value); }
     }
@@ -3096,12 +3098,14 @@ public sealed record class SoleProprietorship : JsonModel
     /// <summary>
     /// The individual who operates the sole proprietorship.
     /// </summary>
-    public required SoleProprietor SoleProprietor
+    public required EntitySoleProprietorshipSoleProprietor SoleProprietor
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<SoleProprietor>("sole_proprietor");
+            return this._rawData.GetNotNullClass<EntitySoleProprietorshipSoleProprietor>(
+                "sole_proprietor"
+            );
         }
         init { this._rawData.Set("sole_proprietor", value); }
     }
@@ -3144,29 +3148,29 @@ public sealed record class SoleProprietorship : JsonModel
         _ = this.Website;
     }
 
-    public SoleProprietorship() { }
+    public EntitySoleProprietorship() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public SoleProprietorship(SoleProprietorship soleProprietorship)
-        : base(soleProprietorship) { }
+    public EntitySoleProprietorship(EntitySoleProprietorship entitySoleProprietorship)
+        : base(entitySoleProprietorship) { }
 #pragma warning restore CS8618
 
-    public SoleProprietorship(IReadOnlyDictionary<string, JsonElement> rawData)
+    public EntitySoleProprietorship(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    SoleProprietorship(FrozenDictionary<string, JsonElement> rawData)
+    EntitySoleProprietorship(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="SoleProprietorshipFromRaw.FromRawUnchecked"/>
-    public static SoleProprietorship FromRawUnchecked(
+    /// <inheritdoc cref="EntitySoleProprietorshipFromRaw.FromRawUnchecked"/>
+    public static EntitySoleProprietorship FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -3174,20 +3178,24 @@ public sealed record class SoleProprietorship : JsonModel
     }
 }
 
-class SoleProprietorshipFromRaw : IFromRawJson<SoleProprietorship>
+class EntitySoleProprietorshipFromRaw : IFromRawJson<EntitySoleProprietorship>
 {
     /// <inheritdoc/>
-    public SoleProprietorship FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        SoleProprietorship.FromRawUnchecked(rawData);
+    public EntitySoleProprietorship FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntitySoleProprietorship.FromRawUnchecked(rawData);
 }
 
 /// <summary>
 /// The sole proprietorship's address.
 /// </summary>
 [JsonConverter(
-    typeof(JsonModelConverter<SoleProprietorshipAddress, SoleProprietorshipAddressFromRaw>)
+    typeof(JsonModelConverter<
+        EntitySoleProprietorshipAddress,
+        EntitySoleProprietorshipAddressFromRaw
+    >)
 )]
-public sealed record class SoleProprietorshipAddress : JsonModel
+public sealed record class EntitySoleProprietorshipAddress : JsonModel
 {
     /// <summary>
     /// The city, district, town, or village of the address.
@@ -3279,29 +3287,31 @@ public sealed record class SoleProprietorshipAddress : JsonModel
         _ = this.Zip;
     }
 
-    public SoleProprietorshipAddress() { }
+    public EntitySoleProprietorshipAddress() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public SoleProprietorshipAddress(SoleProprietorshipAddress soleProprietorshipAddress)
-        : base(soleProprietorshipAddress) { }
+    public EntitySoleProprietorshipAddress(
+        EntitySoleProprietorshipAddress entitySoleProprietorshipAddress
+    )
+        : base(entitySoleProprietorshipAddress) { }
 #pragma warning restore CS8618
 
-    public SoleProprietorshipAddress(IReadOnlyDictionary<string, JsonElement> rawData)
+    public EntitySoleProprietorshipAddress(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    SoleProprietorshipAddress(FrozenDictionary<string, JsonElement> rawData)
+    EntitySoleProprietorshipAddress(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="SoleProprietorshipAddressFromRaw.FromRawUnchecked"/>
-    public static SoleProprietorshipAddress FromRawUnchecked(
+    /// <inheritdoc cref="EntitySoleProprietorshipAddressFromRaw.FromRawUnchecked"/>
+    public static EntitySoleProprietorshipAddress FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -3309,29 +3319,36 @@ public sealed record class SoleProprietorshipAddress : JsonModel
     }
 }
 
-class SoleProprietorshipAddressFromRaw : IFromRawJson<SoleProprietorshipAddress>
+class EntitySoleProprietorshipAddressFromRaw : IFromRawJson<EntitySoleProprietorshipAddress>
 {
     /// <inheritdoc/>
-    public SoleProprietorshipAddress FromRawUnchecked(
+    public EntitySoleProprietorshipAddress FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
-    ) => SoleProprietorshipAddress.FromRawUnchecked(rawData);
+    ) => EntitySoleProprietorshipAddress.FromRawUnchecked(rawData);
 }
 
 /// <summary>
 /// The individual who operates the sole proprietorship.
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<SoleProprietor, SoleProprietorFromRaw>))]
-public sealed record class SoleProprietor : JsonModel
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntitySoleProprietorshipSoleProprietor,
+        EntitySoleProprietorshipSoleProprietorFromRaw
+    >)
+)]
+public sealed record class EntitySoleProprietorshipSoleProprietor : JsonModel
 {
     /// <summary>
     /// The person's address.
     /// </summary>
-    public required SoleProprietorAddress Address
+    public required EntitySoleProprietorshipSoleProprietorAddress Address
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<SoleProprietorAddress>("address");
+            return this._rawData.GetNotNullClass<EntitySoleProprietorshipSoleProprietorAddress>(
+                "address"
+            );
         }
         init { this._rawData.Set("address", value); }
     }
@@ -3352,12 +3369,14 @@ public sealed record class SoleProprietor : JsonModel
     /// <summary>
     /// A means of verifying the person's identity.
     /// </summary>
-    public required SoleProprietorIdentification? Identification
+    public required EntitySoleProprietorshipSoleProprietorIdentification? Identification
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<SoleProprietorIdentification>("identification");
+            return this._rawData.GetNullableClass<EntitySoleProprietorshipSoleProprietorIdentification>(
+                "identification"
+            );
         }
         init { this._rawData.Set("identification", value); }
     }
@@ -3384,46 +3403,57 @@ public sealed record class SoleProprietor : JsonModel
         _ = this.Name;
     }
 
-    public SoleProprietor() { }
+    public EntitySoleProprietorshipSoleProprietor() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public SoleProprietor(SoleProprietor soleProprietor)
-        : base(soleProprietor) { }
+    public EntitySoleProprietorshipSoleProprietor(
+        EntitySoleProprietorshipSoleProprietor entitySoleProprietorshipSoleProprietor
+    )
+        : base(entitySoleProprietorshipSoleProprietor) { }
 #pragma warning restore CS8618
 
-    public SoleProprietor(IReadOnlyDictionary<string, JsonElement> rawData)
+    public EntitySoleProprietorshipSoleProprietor(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    SoleProprietor(FrozenDictionary<string, JsonElement> rawData)
+    EntitySoleProprietorshipSoleProprietor(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="SoleProprietorFromRaw.FromRawUnchecked"/>
-    public static SoleProprietor FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    /// <inheritdoc cref="EntitySoleProprietorshipSoleProprietorFromRaw.FromRawUnchecked"/>
+    public static EntitySoleProprietorshipSoleProprietor FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
     }
 }
 
-class SoleProprietorFromRaw : IFromRawJson<SoleProprietor>
+class EntitySoleProprietorshipSoleProprietorFromRaw
+    : IFromRawJson<EntitySoleProprietorshipSoleProprietor>
 {
     /// <inheritdoc/>
-    public SoleProprietor FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        SoleProprietor.FromRawUnchecked(rawData);
+    public EntitySoleProprietorshipSoleProprietor FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntitySoleProprietorshipSoleProprietor.FromRawUnchecked(rawData);
 }
 
 /// <summary>
 /// The person's address.
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<SoleProprietorAddress, SoleProprietorAddressFromRaw>))]
-public sealed record class SoleProprietorAddress : JsonModel
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntitySoleProprietorshipSoleProprietorAddress,
+        EntitySoleProprietorshipSoleProprietorAddressFromRaw
+    >)
+)]
+public sealed record class EntitySoleProprietorshipSoleProprietorAddress : JsonModel
 {
     /// <summary>
     /// The city, district, town, or village of the address.
@@ -3515,29 +3545,33 @@ public sealed record class SoleProprietorAddress : JsonModel
         _ = this.Zip;
     }
 
-    public SoleProprietorAddress() { }
+    public EntitySoleProprietorshipSoleProprietorAddress() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public SoleProprietorAddress(SoleProprietorAddress soleProprietorAddress)
-        : base(soleProprietorAddress) { }
+    public EntitySoleProprietorshipSoleProprietorAddress(
+        EntitySoleProprietorshipSoleProprietorAddress entitySoleProprietorshipSoleProprietorAddress
+    )
+        : base(entitySoleProprietorshipSoleProprietorAddress) { }
 #pragma warning restore CS8618
 
-    public SoleProprietorAddress(IReadOnlyDictionary<string, JsonElement> rawData)
+    public EntitySoleProprietorshipSoleProprietorAddress(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    SoleProprietorAddress(FrozenDictionary<string, JsonElement> rawData)
+    EntitySoleProprietorshipSoleProprietorAddress(FrozenDictionary<string, JsonElement> rawData)
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="SoleProprietorAddressFromRaw.FromRawUnchecked"/>
-    public static SoleProprietorAddress FromRawUnchecked(
+    /// <inheritdoc cref="EntitySoleProprietorshipSoleProprietorAddressFromRaw.FromRawUnchecked"/>
+    public static EntitySoleProprietorshipSoleProprietorAddress FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -3545,32 +3579,39 @@ public sealed record class SoleProprietorAddress : JsonModel
     }
 }
 
-class SoleProprietorAddressFromRaw : IFromRawJson<SoleProprietorAddress>
+class EntitySoleProprietorshipSoleProprietorAddressFromRaw
+    : IFromRawJson<EntitySoleProprietorshipSoleProprietorAddress>
 {
     /// <inheritdoc/>
-    public SoleProprietorAddress FromRawUnchecked(
+    public EntitySoleProprietorshipSoleProprietorAddress FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
-    ) => SoleProprietorAddress.FromRawUnchecked(rawData);
+    ) => EntitySoleProprietorshipSoleProprietorAddress.FromRawUnchecked(rawData);
 }
 
 /// <summary>
 /// A means of verifying the person's identity.
 /// </summary>
 [JsonConverter(
-    typeof(JsonModelConverter<SoleProprietorIdentification, SoleProprietorIdentificationFromRaw>)
+    typeof(JsonModelConverter<
+        EntitySoleProprietorshipSoleProprietorIdentification,
+        EntitySoleProprietorshipSoleProprietorIdentificationFromRaw
+    >)
 )]
-public sealed record class SoleProprietorIdentification : JsonModel
+public sealed record class EntitySoleProprietorshipSoleProprietorIdentification : JsonModel
 {
     /// <summary>
     /// A method that can be used to verify the individual's identity.
     /// </summary>
-    public required ApiEnum<string, SoleProprietorIdentificationMethod> Method
+    public required ApiEnum<
+        string,
+        EntitySoleProprietorshipSoleProprietorIdentificationMethod
+    > Method
     {
         get
         {
             this._rawData.Freeze();
             return this._rawData.GetNotNullClass<
-                ApiEnum<string, SoleProprietorIdentificationMethod>
+                ApiEnum<string, EntitySoleProprietorshipSoleProprietorIdentificationMethod>
             >("method");
         }
         init { this._rawData.Set("method", value); }
@@ -3597,29 +3638,35 @@ public sealed record class SoleProprietorIdentification : JsonModel
         _ = this.NumberLast4;
     }
 
-    public SoleProprietorIdentification() { }
+    public EntitySoleProprietorshipSoleProprietorIdentification() { }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    public SoleProprietorIdentification(SoleProprietorIdentification soleProprietorIdentification)
-        : base(soleProprietorIdentification) { }
+    public EntitySoleProprietorshipSoleProprietorIdentification(
+        EntitySoleProprietorshipSoleProprietorIdentification entitySoleProprietorshipSoleProprietorIdentification
+    )
+        : base(entitySoleProprietorshipSoleProprietorIdentification) { }
 #pragma warning restore CS8618
 
-    public SoleProprietorIdentification(IReadOnlyDictionary<string, JsonElement> rawData)
+    public EntitySoleProprietorshipSoleProprietorIdentification(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
     {
         this._rawData = new(rawData);
     }
 
 #pragma warning disable CS8618
     [SetsRequiredMembers]
-    SoleProprietorIdentification(FrozenDictionary<string, JsonElement> rawData)
+    EntitySoleProprietorshipSoleProprietorIdentification(
+        FrozenDictionary<string, JsonElement> rawData
+    )
     {
         this._rawData = new(rawData);
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="SoleProprietorIdentificationFromRaw.FromRawUnchecked"/>
-    public static SoleProprietorIdentification FromRawUnchecked(
+    /// <inheritdoc cref="EntitySoleProprietorshipSoleProprietorIdentificationFromRaw.FromRawUnchecked"/>
+    public static EntitySoleProprietorshipSoleProprietorIdentification FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     )
     {
@@ -3627,19 +3674,20 @@ public sealed record class SoleProprietorIdentification : JsonModel
     }
 }
 
-class SoleProprietorIdentificationFromRaw : IFromRawJson<SoleProprietorIdentification>
+class EntitySoleProprietorshipSoleProprietorIdentificationFromRaw
+    : IFromRawJson<EntitySoleProprietorshipSoleProprietorIdentification>
 {
     /// <inheritdoc/>
-    public SoleProprietorIdentification FromRawUnchecked(
+    public EntitySoleProprietorshipSoleProprietorIdentification FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
-    ) => SoleProprietorIdentification.FromRawUnchecked(rawData);
+    ) => EntitySoleProprietorshipSoleProprietorIdentification.FromRawUnchecked(rawData);
 }
 
 /// <summary>
 /// A method that can be used to verify the individual's identity.
 /// </summary>
-[JsonConverter(typeof(SoleProprietorIdentificationMethodConverter))]
-public enum SoleProprietorIdentificationMethod
+[JsonConverter(typeof(EntitySoleProprietorshipSoleProprietorIdentificationMethodConverter))]
+public enum EntitySoleProprietorshipSoleProprietorIdentificationMethod
 {
     /// <summary>
     /// A social security number.
@@ -3667,10 +3715,10 @@ public enum SoleProprietorIdentificationMethod
     Other,
 }
 
-sealed class SoleProprietorIdentificationMethodConverter
-    : JsonConverter<SoleProprietorIdentificationMethod>
+sealed class EntitySoleProprietorshipSoleProprietorIdentificationMethodConverter
+    : JsonConverter<EntitySoleProprietorshipSoleProprietorIdentificationMethod>
 {
-    public override SoleProprietorIdentificationMethod Read(
+    public override EntitySoleProprietorshipSoleProprietorIdentificationMethod Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -3678,19 +3726,21 @@ sealed class SoleProprietorIdentificationMethodConverter
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "social_security_number" => SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            "social_security_number" =>
+                EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
             "individual_taxpayer_identification_number" =>
-                SoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber,
-            "passport" => SoleProprietorIdentificationMethod.Passport,
-            "drivers_license" => SoleProprietorIdentificationMethod.DriversLicense,
-            "other" => SoleProprietorIdentificationMethod.Other,
-            _ => (SoleProprietorIdentificationMethod)(-1),
+                EntitySoleProprietorshipSoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber,
+            "passport" => EntitySoleProprietorshipSoleProprietorIdentificationMethod.Passport,
+            "drivers_license" =>
+                EntitySoleProprietorshipSoleProprietorIdentificationMethod.DriversLicense,
+            "other" => EntitySoleProprietorshipSoleProprietorIdentificationMethod.Other,
+            _ => (EntitySoleProprietorshipSoleProprietorIdentificationMethod)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        SoleProprietorIdentificationMethod value,
+        EntitySoleProprietorshipSoleProprietorIdentificationMethod value,
         JsonSerializerOptions options
     )
     {
@@ -3698,12 +3748,14 @@ sealed class SoleProprietorIdentificationMethodConverter
             writer,
             value switch
             {
-                SoleProprietorIdentificationMethod.SocialSecurityNumber => "social_security_number",
-                SoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber =>
+                EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber =>
+                    "social_security_number",
+                EntitySoleProprietorshipSoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber =>
                     "individual_taxpayer_identification_number",
-                SoleProprietorIdentificationMethod.Passport => "passport",
-                SoleProprietorIdentificationMethod.DriversLicense => "drivers_license",
-                SoleProprietorIdentificationMethod.Other => "other",
+                EntitySoleProprietorshipSoleProprietorIdentificationMethod.Passport => "passport",
+                EntitySoleProprietorshipSoleProprietorIdentificationMethod.DriversLicense =>
+                    "drivers_license",
+                EntitySoleProprietorshipSoleProprietorIdentificationMethod.Other => "other",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
