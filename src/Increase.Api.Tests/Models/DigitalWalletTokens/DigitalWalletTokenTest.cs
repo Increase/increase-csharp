@@ -15,6 +15,7 @@ public class DigitalWalletTokenTest : TestBase
         var model = new DigitalWalletTokens::DigitalWalletToken
         {
             ID = "digital_wallet_token_izi62go3h51p369jrie0",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new("John Smith"),
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -41,6 +42,7 @@ public class DigitalWalletTokenTest : TestBase
         };
 
         string expectedID = "digital_wallet_token_izi62go3h51p369jrie0";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedCardID = "card_oubs0hwk5rn6knuecxg2";
         DigitalWalletTokens::Cardholder expectedCardholder = new("John Smith");
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
@@ -75,6 +77,7 @@ public class DigitalWalletTokenTest : TestBase
         ];
 
         Assert.Equal(expectedID, model.ID);
+        Assert.Equal(expectedAccountID, model.AccountID);
         Assert.Equal(expectedCardID, model.CardID);
         Assert.Equal(expectedCardholder, model.Cardholder);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
@@ -97,6 +100,7 @@ public class DigitalWalletTokenTest : TestBase
         var model = new DigitalWalletTokens::DigitalWalletToken
         {
             ID = "digital_wallet_token_izi62go3h51p369jrie0",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new("John Smith"),
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -137,6 +141,7 @@ public class DigitalWalletTokenTest : TestBase
         var model = new DigitalWalletTokens::DigitalWalletToken
         {
             ID = "digital_wallet_token_izi62go3h51p369jrie0",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new("John Smith"),
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -170,6 +175,7 @@ public class DigitalWalletTokenTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedID = "digital_wallet_token_izi62go3h51p369jrie0";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedCardID = "card_oubs0hwk5rn6knuecxg2";
         DigitalWalletTokens::Cardholder expectedCardholder = new("John Smith");
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
@@ -204,6 +210,7 @@ public class DigitalWalletTokenTest : TestBase
         ];
 
         Assert.Equal(expectedID, deserialized.ID);
+        Assert.Equal(expectedAccountID, deserialized.AccountID);
         Assert.Equal(expectedCardID, deserialized.CardID);
         Assert.Equal(expectedCardholder, deserialized.Cardholder);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
@@ -226,6 +233,7 @@ public class DigitalWalletTokenTest : TestBase
         var model = new DigitalWalletTokens::DigitalWalletToken
         {
             ID = "digital_wallet_token_izi62go3h51p369jrie0",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new("John Smith"),
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -260,6 +268,7 @@ public class DigitalWalletTokenTest : TestBase
         var model = new DigitalWalletTokens::DigitalWalletToken
         {
             ID = "digital_wallet_token_izi62go3h51p369jrie0",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new("John Smith"),
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
