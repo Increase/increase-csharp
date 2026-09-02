@@ -32,6 +32,20 @@ public sealed record class InboundWireDrawdownRequest : JsonModel
     }
 
     /// <summary>
+    /// The Account from which the recipient of this request is being requested to
+    /// send funds.
+    /// </summary>
+    public required string AccountID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("account_id");
+        }
+        init { this._rawData.Set("account_id", value); }
+    }
+
+    /// <summary>
     /// The amount being requested in cents.
     /// </summary>
     public required long Amount
@@ -309,6 +323,7 @@ public sealed record class InboundWireDrawdownRequest : JsonModel
     public override void Validate()
     {
         _ = this.ID;
+        _ = this.AccountID;
         _ = this.Amount;
         _ = this.CreatedAt;
         _ = this.CreditorAccountNumber;

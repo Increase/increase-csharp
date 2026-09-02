@@ -478,11 +478,6 @@ public enum In
     Canceled,
 
     /// <summary>
-    /// The transfer has been rejected by Increase.
-    /// </summary>
-    ReviewingRejected,
-
-    /// <summary>
     /// The transfer requires attention from an Increase operator.
     /// </summary>
     RequiresAttention,
@@ -521,7 +516,6 @@ sealed class InConverter : JsonConverter<In>
             "pending_submitting" => In.PendingSubmitting,
             "pending_reviewing" => In.PendingReviewing,
             "canceled" => In.Canceled,
-            "reviewing_rejected" => In.ReviewingRejected,
             "requires_attention" => In.RequiresAttention,
             "pending_approval" => In.PendingApproval,
             "pending_response" => In.PendingResponse,
@@ -540,7 +534,6 @@ sealed class InConverter : JsonConverter<In>
                 In.PendingSubmitting => "pending_submitting",
                 In.PendingReviewing => "pending_reviewing",
                 In.Canceled => "canceled",
-                In.ReviewingRejected => "reviewing_rejected",
                 In.RequiresAttention => "requires_attention",
                 In.PendingApproval => "pending_approval",
                 In.PendingResponse => "pending_response",

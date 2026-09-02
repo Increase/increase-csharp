@@ -15,6 +15,7 @@ public class InboundMailItemTest : TestBase
         var model = new InboundMailItems::InboundMailItem
         {
             ID = "inbound_mail_item_q6rrg7mmqpplx80zceev",
+            AccountID = "account_in71c4amph0vgo2qllky",
             Checks =
             [
                 new()
@@ -45,6 +46,7 @@ public class InboundMailItemTest : TestBase
         };
 
         string expectedID = "inbound_mail_item_q6rrg7mmqpplx80zceev";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         List<InboundMailItems::InboundMailItemCheck> expectedChecks =
         [
             new()
@@ -75,6 +77,7 @@ public class InboundMailItemTest : TestBase
             InboundMailItems::Type.InboundMailItem;
 
         Assert.Equal(expectedID, model.ID);
+        Assert.Equal(expectedAccountID, model.AccountID);
         Assert.Equal(expectedChecks.Count, model.Checks.Count);
         for (int i = 0; i < expectedChecks.Count; i++)
         {
@@ -96,6 +99,7 @@ public class InboundMailItemTest : TestBase
         var model = new InboundMailItems::InboundMailItem
         {
             ID = "inbound_mail_item_q6rrg7mmqpplx80zceev",
+            AccountID = "account_in71c4amph0vgo2qllky",
             Checks =
             [
                 new()
@@ -140,6 +144,7 @@ public class InboundMailItemTest : TestBase
         var model = new InboundMailItems::InboundMailItem
         {
             ID = "inbound_mail_item_q6rrg7mmqpplx80zceev",
+            AccountID = "account_in71c4amph0vgo2qllky",
             Checks =
             [
                 new()
@@ -177,6 +182,7 @@ public class InboundMailItemTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedID = "inbound_mail_item_q6rrg7mmqpplx80zceev";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         List<InboundMailItems::InboundMailItemCheck> expectedChecks =
         [
             new()
@@ -207,6 +213,7 @@ public class InboundMailItemTest : TestBase
             InboundMailItems::Type.InboundMailItem;
 
         Assert.Equal(expectedID, deserialized.ID);
+        Assert.Equal(expectedAccountID, deserialized.AccountID);
         Assert.Equal(expectedChecks.Count, deserialized.Checks.Count);
         for (int i = 0; i < expectedChecks.Count; i++)
         {
@@ -228,6 +235,7 @@ public class InboundMailItemTest : TestBase
         var model = new InboundMailItems::InboundMailItem
         {
             ID = "inbound_mail_item_q6rrg7mmqpplx80zceev",
+            AccountID = "account_in71c4amph0vgo2qllky",
             Checks =
             [
                 new()
@@ -266,6 +274,7 @@ public class InboundMailItemTest : TestBase
         var model = new InboundMailItems::InboundMailItem
         {
             ID = "inbound_mail_item_q6rrg7mmqpplx80zceev",
+            AccountID = "account_in71c4amph0vgo2qllky",
             Checks =
             [
                 new()
