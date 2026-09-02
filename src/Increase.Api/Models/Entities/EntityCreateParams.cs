@@ -172,6 +172,28 @@ public record class EntityCreateParams : ParamsBase
     }
 
     /// <summary>
+    /// Details of the sole proprietorship entity to create. Required if `structure`
+    /// is equal to `sole_proprietorship`.
+    /// </summary>
+    public SoleProprietorship? SoleProprietorship
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<SoleProprietorship>("sole_proprietorship");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("sole_proprietorship", value);
+        }
+    }
+
+    /// <summary>
     /// Additional documentation associated with the entity.
     /// </summary>
     public IReadOnlyList<SupplementalDocument>? SupplementalDocuments
@@ -410,6 +432,11 @@ public enum Structure
     /// A government authority.
     /// </summary>
     GovernmentAuthority,
+
+    /// <summary>
+    /// A sole proprietorship.
+    /// </summary>
+    SoleProprietorship,
 }
 
 sealed class StructureConverter : JsonConverter<Structure>
@@ -427,6 +454,7 @@ sealed class StructureConverter : JsonConverter<Structure>
             "joint" => Structure.Joint,
             "trust" => Structure.Trust,
             "government_authority" => Structure.GovernmentAuthority,
+            "sole_proprietorship" => Structure.SoleProprietorship,
             _ => (Structure)(-1),
         };
     }
@@ -446,6 +474,7 @@ sealed class StructureConverter : JsonConverter<Structure>
                 Structure.Joint => "joint",
                 Structure.Trust => "trust",
                 Structure.GovernmentAuthority => "government_authority",
+                Structure.SoleProprietorship => "sole_proprietorship",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1267,8 +1296,7 @@ public sealed record class Identification : JsonModel
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
     /// such as a social security number. For Social Security Numbers and Individual
-    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
-    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {
@@ -1856,8 +1884,7 @@ public sealed record class LegalIdentifier : JsonModel
 {
     /// <summary>
     /// The legal identifier itself. For US Employer Identification Numbers, submit
-    /// nine digits with no dashes or other separators. When testing in sandbox,
-    /// use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
+    /// nine digits with no dashes or other separators.
     /// </summary>
     public required string Value
     {
@@ -2880,8 +2907,7 @@ public sealed record class JointIndividualIdentification : JsonModel
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
     /// such as a social security number. For Social Security Numbers and Individual
-    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
-    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {
@@ -3780,8 +3806,7 @@ public sealed record class NaturalPersonIdentification : JsonModel
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
     /// such as a social security number. For Social Security Numbers and Individual
-    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
-    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {
@@ -4480,6 +4505,738 @@ sealed class RatingConverter : JsonConverter<Rating>
                 Rating.Low => "low",
                 Rating.Medium => "medium",
                 Rating.High => "high",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Details of the sole proprietorship entity to create. Required if `structure` is
+/// equal to `sole_proprietorship`.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<SoleProprietorship, SoleProprietorshipFromRaw>))]
+public sealed record class SoleProprietorship : JsonModel
+{
+    /// <summary>
+    /// The sole proprietorship's business address. Mail receiving locations like
+    /// PO Boxes and PMB's are disallowed.
+    /// </summary>
+    public required SoleProprietorshipAddress Address
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<SoleProprietorshipAddress>("address");
+        }
+        init { this._rawData.Set("address", value); }
+    }
+
+    /// <summary>
+    /// The individual who operates the sole proprietorship.
+    /// </summary>
+    public required SoleProprietor SoleProprietor
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<SoleProprietor>("sole_proprietor");
+        }
+        init { this._rawData.Set("sole_proprietor", value); }
+    }
+
+    /// <summary>
+    /// The name under which the sole proprietorship does business, if it is different
+    /// from the name of the sole proprietor.
+    /// </summary>
+    public string? DoingBusinessAsName
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("doing_business_as_name");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("doing_business_as_name", value);
+        }
+    }
+
+    /// <summary>
+    /// An email address for the sole proprietorship. Not every program requires an
+    /// email for submitted Entities.
+    /// </summary>
+    public string? Email
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("email");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("email", value);
+        }
+    }
+
+    /// <summary>
+    /// The North American Industry Classification System (NAICS) code for the sole
+    /// proprietorship's primary line of business. This is a number, like `5132`
+    /// for `Software Publishers`. A full list of classification codes is available [here](https://increase.com/documentation/data-dictionary#north-american-industry-classification-system-codes).
+    /// </summary>
+    public string? IndustryCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("industry_code");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("industry_code", value);
+        }
+    }
+
+    /// <summary>
+    /// The United States Employer Identification Number (EIN) for the sole proprietorship,
+    /// if the sole proprietor has one. Submit nine digits with no dashes or other separators.
+    /// </summary>
+    public string? TaxIdentifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("tax_identifier");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("tax_identifier", value);
+        }
+    }
+
+    /// <summary>
+    /// A website for the sole proprietorship. Not every program requires a website
+    /// for submitted Entities.
+    /// </summary>
+    public string? Website
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("website");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("website", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Address.Validate();
+        this.SoleProprietor.Validate();
+        _ = this.DoingBusinessAsName;
+        _ = this.Email;
+        _ = this.IndustryCode;
+        _ = this.TaxIdentifier;
+        _ = this.Website;
+    }
+
+    public SoleProprietorship() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public SoleProprietorship(SoleProprietorship soleProprietorship)
+        : base(soleProprietorship) { }
+#pragma warning restore CS8618
+
+    public SoleProprietorship(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    SoleProprietorship(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="SoleProprietorshipFromRaw.FromRawUnchecked"/>
+    public static SoleProprietorship FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class SoleProprietorshipFromRaw : IFromRawJson<SoleProprietorship>
+{
+    /// <inheritdoc/>
+    public SoleProprietorship FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        SoleProprietorship.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The sole proprietorship's business address. Mail receiving locations like PO
+/// Boxes and PMB's are disallowed.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<SoleProprietorshipAddress, SoleProprietorshipAddressFromRaw>)
+)]
+public sealed record class SoleProprietorshipAddress : JsonModel
+{
+    /// <summary>
+    /// The city of the address.
+    /// </summary>
+    public required string City
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("city");
+        }
+        init { this._rawData.Set("city", value); }
+    }
+
+    /// <summary>
+    /// The first line of the address. This is usually the street number and street.
+    /// </summary>
+    public required string Line1
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("line1");
+        }
+        init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// The two-letter United States Postal Service (USPS) abbreviation for the state
+    /// of the address.
+    /// </summary>
+    public required string State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("state");
+        }
+        init { this._rawData.Set("state", value); }
+    }
+
+    /// <summary>
+    /// The ZIP code of the address.
+    /// </summary>
+    public required string Zip
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("zip");
+        }
+        init { this._rawData.Set("zip", value); }
+    }
+
+    /// <summary>
+    /// The second line of the address. This might be the floor or room number.
+    /// </summary>
+    public string? Line2
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("line2");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("line2", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.City;
+        _ = this.Line1;
+        _ = this.State;
+        _ = this.Zip;
+        _ = this.Line2;
+    }
+
+    public SoleProprietorshipAddress() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public SoleProprietorshipAddress(SoleProprietorshipAddress soleProprietorshipAddress)
+        : base(soleProprietorshipAddress) { }
+#pragma warning restore CS8618
+
+    public SoleProprietorshipAddress(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    SoleProprietorshipAddress(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="SoleProprietorshipAddressFromRaw.FromRawUnchecked"/>
+    public static SoleProprietorshipAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class SoleProprietorshipAddressFromRaw : IFromRawJson<SoleProprietorshipAddress>
+{
+    /// <inheritdoc/>
+    public SoleProprietorshipAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => SoleProprietorshipAddress.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The individual who operates the sole proprietorship.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<SoleProprietor, SoleProprietorFromRaw>))]
+public sealed record class SoleProprietor : JsonModel
+{
+    /// <summary>
+    /// The individual's physical address. Mail receiving locations like PO Boxes
+    /// and PMB's are disallowed.
+    /// </summary>
+    public required SoleProprietorAddress Address
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<SoleProprietorAddress>("address");
+        }
+        init { this._rawData.Set("address", value); }
+    }
+
+    /// <summary>
+    /// The person's date of birth in YYYY-MM-DD format.
+    /// </summary>
+    public required string DateOfBirth
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("date_of_birth");
+        }
+        init { this._rawData.Set("date_of_birth", value); }
+    }
+
+    /// <summary>
+    /// A means of verifying the person's identity. Sole proprietors must be identified
+    /// with a `social_security_number` or an `individual_taxpayer_identification_number`.
+    /// </summary>
+    public required SoleProprietorIdentification Identification
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<SoleProprietorIdentification>("identification");
+        }
+        init { this._rawData.Set("identification", value); }
+    }
+
+    /// <summary>
+    /// The person's legal name.
+    /// </summary>
+    public required string Name
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("name");
+        }
+        init { this._rawData.Set("name", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Address.Validate();
+        _ = this.DateOfBirth;
+        this.Identification.Validate();
+        _ = this.Name;
+    }
+
+    public SoleProprietor() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public SoleProprietor(SoleProprietor soleProprietor)
+        : base(soleProprietor) { }
+#pragma warning restore CS8618
+
+    public SoleProprietor(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    SoleProprietor(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="SoleProprietorFromRaw.FromRawUnchecked"/>
+    public static SoleProprietor FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class SoleProprietorFromRaw : IFromRawJson<SoleProprietor>
+{
+    /// <inheritdoc/>
+    public SoleProprietor FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        SoleProprietor.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The individual's physical address. Mail receiving locations like PO Boxes and
+/// PMB's are disallowed.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<SoleProprietorAddress, SoleProprietorAddressFromRaw>))]
+public sealed record class SoleProprietorAddress : JsonModel
+{
+    /// <summary>
+    /// The city, district, town, or village of the address.
+    /// </summary>
+    public required string City
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("city");
+        }
+        init { this._rawData.Set("city", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <summary>
+    /// The first line of the address. This is usually the street number and street.
+    /// </summary>
+    public required string Line1
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("line1");
+        }
+        init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// The second line of the address. This might be the floor or room number.
+    /// </summary>
+    public string? Line2
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("line2");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("line2", value);
+        }
+    }
+
+    /// <summary>
+    /// The two-letter United States Postal Service (USPS) abbreviation for the US
+    /// state, province, or region of the address. Required in certain countries.
+    /// </summary>
+    public string? State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("state");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("state", value);
+        }
+    }
+
+    /// <summary>
+    /// The ZIP or postal code of the address. Required in certain countries.
+    /// </summary>
+    public string? Zip
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("zip");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("zip", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.City;
+        _ = this.Country;
+        _ = this.Line1;
+        _ = this.Line2;
+        _ = this.State;
+        _ = this.Zip;
+    }
+
+    public SoleProprietorAddress() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public SoleProprietorAddress(SoleProprietorAddress soleProprietorAddress)
+        : base(soleProprietorAddress) { }
+#pragma warning restore CS8618
+
+    public SoleProprietorAddress(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    SoleProprietorAddress(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="SoleProprietorAddressFromRaw.FromRawUnchecked"/>
+    public static SoleProprietorAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class SoleProprietorAddressFromRaw : IFromRawJson<SoleProprietorAddress>
+{
+    /// <inheritdoc/>
+    public SoleProprietorAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => SoleProprietorAddress.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// A means of verifying the person's identity. Sole proprietors must be identified
+/// with a `social_security_number` or an `individual_taxpayer_identification_number`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<SoleProprietorIdentification, SoleProprietorIdentificationFromRaw>)
+)]
+public sealed record class SoleProprietorIdentification : JsonModel
+{
+    /// <summary>
+    /// A method that can be used to verify the individual's identity.
+    ///
+    /// <para>Defaults to `social_security_number`.</para>
+    /// </summary>
+    public required ApiEnum<string, SoleProprietorIdentificationMethod> Method
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, SoleProprietorIdentificationMethod>
+            >("method");
+        }
+        init { this._rawData.Set("method", value); }
+    }
+
+    /// <summary>
+    /// An identification number that can be used to verify the individual's identity,
+    /// such as a social security number. Submit nine digits with no dashes or other separators.
+    /// </summary>
+    public required string Number
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("number");
+        }
+        init { this._rawData.Set("number", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Method.Validate();
+        _ = this.Number;
+    }
+
+    public SoleProprietorIdentification() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public SoleProprietorIdentification(SoleProprietorIdentification soleProprietorIdentification)
+        : base(soleProprietorIdentification) { }
+#pragma warning restore CS8618
+
+    public SoleProprietorIdentification(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    SoleProprietorIdentification(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="SoleProprietorIdentificationFromRaw.FromRawUnchecked"/>
+    public static SoleProprietorIdentification FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class SoleProprietorIdentificationFromRaw : IFromRawJson<SoleProprietorIdentification>
+{
+    /// <inheritdoc/>
+    public SoleProprietorIdentification FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => SoleProprietorIdentification.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// A method that can be used to verify the individual's identity.
+/// </summary>
+[JsonConverter(typeof(SoleProprietorIdentificationMethodConverter))]
+public enum SoleProprietorIdentificationMethod
+{
+    /// <summary>
+    /// A social security number.
+    /// </summary>
+    SocialSecurityNumber,
+
+    /// <summary>
+    /// An individual taxpayer identification number (ITIN).
+    /// </summary>
+    IndividualTaxpayerIdentificationNumber,
+}
+
+sealed class SoleProprietorIdentificationMethodConverter
+    : JsonConverter<SoleProprietorIdentificationMethod>
+{
+    public override SoleProprietorIdentificationMethod Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "social_security_number" => SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            "individual_taxpayer_identification_number" =>
+                SoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber,
+            _ => (SoleProprietorIdentificationMethod)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        SoleProprietorIdentificationMethod value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                SoleProprietorIdentificationMethod.SocialSecurityNumber => "social_security_number",
+                SoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber =>
+                    "individual_taxpayer_identification_number",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -5635,8 +6392,7 @@ public sealed record class TrusteeIndividualIdentification : JsonModel
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
     /// such as a social security number. For Social Security Numbers and Individual
-    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
-    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {
@@ -6529,8 +7285,7 @@ public sealed record class GrantorIdentification : JsonModel
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
     /// such as a social security number. For Social Security Numbers and Individual
-    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
-    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {

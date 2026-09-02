@@ -84,6 +84,28 @@ public record class ProgramCreateParams : ParamsBase
     }
 
     /// <summary>
+    /// Whether opening a loan Account under this Program requires an accepted Loan
+    /// Offer. Requires `lending_maximum_extendable_credit`. Defaults to `false`.
+    /// </summary>
+    public bool? LoanAccountsRequireLoanOffers
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableStruct<bool>("loan_accounts_require_loan_offers");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("loan_accounts_require_loan_offers", value);
+        }
+    }
+
+    /// <summary>
     /// The identifier of the Account the Program should be added to is for.
     /// </summary>
     public string? ReserveAccountID

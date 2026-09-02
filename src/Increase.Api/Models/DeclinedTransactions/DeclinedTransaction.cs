@@ -5653,6 +5653,11 @@ public enum InboundFednowTransferDeclineReason
     /// Your account is not enabled to receive FedNow transfers.
     /// </summary>
     FednowNotEnabled,
+
+    /// <summary>
+    /// The transaction is not allowed per Increase's terms.
+    /// </summary>
+    TransactionNotAllowed,
 }
 
 sealed class InboundFednowTransferDeclineReasonConverter
@@ -5672,6 +5677,7 @@ sealed class InboundFednowTransferDeclineReasonConverter
             "group_locked" => InboundFednowTransferDeclineReason.GroupLocked,
             "entity_not_active" => InboundFednowTransferDeclineReason.EntityNotActive,
             "fednow_not_enabled" => InboundFednowTransferDeclineReason.FednowNotEnabled,
+            "transaction_not_allowed" => InboundFednowTransferDeclineReason.TransactionNotAllowed,
             _ => (InboundFednowTransferDeclineReason)(-1),
         };
     }
@@ -5694,6 +5700,8 @@ sealed class InboundFednowTransferDeclineReasonConverter
                 InboundFednowTransferDeclineReason.GroupLocked => "group_locked",
                 InboundFednowTransferDeclineReason.EntityNotActive => "entity_not_active",
                 InboundFednowTransferDeclineReason.FednowNotEnabled => "fednow_not_enabled",
+                InboundFednowTransferDeclineReason.TransactionNotAllowed =>
+                    "transaction_not_allowed",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
