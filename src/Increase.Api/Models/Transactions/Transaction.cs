@@ -721,7 +721,7 @@ public sealed record class Source : JsonModel
     /// An Inbound Check Adjustment object. This field will be present in the JSON
     /// response if and only if `category` is equal to `inbound_check_adjustment`.
     /// An Inbound Check Adjustment is created when Increase receives an adjustment
-    /// for a check or return deposited through Check21.
+    /// for a check or return deposited through Check 21.
     /// </summary>
     public InboundCheckAdjustment? InboundCheckAdjustment
     {
@@ -15431,7 +15431,7 @@ public sealed record class CheckTransferDeposit : JsonModel
     /// <summary>
     /// The American Bankers' Association (ABA) Routing Transit Number (RTN) for
     /// the bank depositing this check. In some rare cases, this is not transmitted
-    /// via Check21 and the value will be null.
+    /// via Check 21 and the value will be null.
     /// </summary>
     public required string? BankOfFirstDepositRoutingNumber
     {
@@ -16402,7 +16402,7 @@ class InboundAchTransferReturnIntentionFromRaw : IFromRawJson<InboundAchTransfer
 /// An Inbound Check Adjustment object. This field will be present in the JSON response
 /// if and only if `category` is equal to `inbound_check_adjustment`. An Inbound Check
 /// Adjustment is created when Increase receives an adjustment for a check or return
-/// deposited through Check21.
+/// deposited through Check 21.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<InboundCheckAdjustment, InboundCheckAdjustmentFromRaw>))]
 public sealed record class InboundCheckAdjustment : JsonModel
