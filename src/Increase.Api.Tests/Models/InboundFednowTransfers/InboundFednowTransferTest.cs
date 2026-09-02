@@ -525,6 +525,7 @@ public class ReasonTest : TestBase
     [InlineData(InboundFednowTransfers::Reason.GroupLocked)]
     [InlineData(InboundFednowTransfers::Reason.EntityNotActive)]
     [InlineData(InboundFednowTransfers::Reason.FednowNotEnabled)]
+    [InlineData(InboundFednowTransfers::Reason.TransactionNotAllowed)]
     public void Validation_Works(InboundFednowTransfers::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -551,6 +552,7 @@ public class ReasonTest : TestBase
     [InlineData(InboundFednowTransfers::Reason.GroupLocked)]
     [InlineData(InboundFednowTransfers::Reason.EntityNotActive)]
     [InlineData(InboundFednowTransfers::Reason.FednowNotEnabled)]
+    [InlineData(InboundFednowTransfers::Reason.TransactionNotAllowed)]
     public void SerializationRoundtrip_Works(InboundFednowTransfers::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
