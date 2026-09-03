@@ -97,6 +97,60 @@ public class EntityUpdateParamsTest : TestBase
                 RatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Rating = EntityUpdateParamsRiskRatingRating.Low,
             },
+            SoleProprietorship = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Line1 = "x",
+                    State = "xx",
+                    Zip = "x",
+                    Line2 = "x",
+                },
+                Email = "dev@stainless.com",
+                SoleProprietor = new()
+                {
+                    Address = new()
+                    {
+                        City = "x",
+                        Country = "x",
+                        Line1 = "x",
+                        Line2 = "x",
+                        State = "x",
+                        Zip = "x",
+                    },
+                    Identification = new()
+                    {
+                        Method =
+                            EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        Number = "xxxx",
+                        DriversLicense = new()
+                        {
+                            ExpirationDate = "2019-12-27",
+                            FileID = "file_id",
+                            State = "xx",
+                            BackFileID = "back_file_id",
+                        },
+                        Other = new()
+                        {
+                            Country = "x",
+                            Description = "x",
+                            FileID = "file_id",
+                            BackFileID = "back_file_id",
+                            ExpirationDate = "2019-12-27",
+                        },
+                        Passport = new()
+                        {
+                            Country = "x",
+                            ExpirationDate = "2019-12-27",
+                            FileID = "file_id",
+                        },
+                    },
+                    Name = "x",
+                },
+                TaxIdentifier = "x",
+                Website = "website",
+            },
             TermsAgreements =
             [
                 new()
@@ -300,6 +354,60 @@ public class EntityUpdateParamsTest : TestBase
             RatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Rating = EntityUpdateParamsRiskRatingRating.Low,
         };
+        EntityUpdateParamsSoleProprietorship expectedSoleProprietorship = new()
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            Email = "dev@stainless.com",
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+            },
+            TaxIdentifier = "x",
+            Website = "website",
+        };
         List<EntityUpdateParamsTermsAgreement> expectedTermsAgreements =
         [
             new()
@@ -424,6 +532,7 @@ public class EntityUpdateParamsTest : TestBase
         Assert.Equal(expectedGovernmentAuthority, parameters.GovernmentAuthority);
         Assert.Equal(expectedNaturalPerson, parameters.NaturalPerson);
         Assert.Equal(expectedRiskRating, parameters.RiskRating);
+        Assert.Equal(expectedSoleProprietorship, parameters.SoleProprietorship);
         Assert.NotNull(parameters.TermsAgreements);
         Assert.Equal(expectedTermsAgreements.Count, parameters.TermsAgreements.Count);
         for (int i = 0; i < expectedTermsAgreements.Count; i++)
@@ -449,6 +558,8 @@ public class EntityUpdateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("natural_person"));
         Assert.Null(parameters.RiskRating);
         Assert.False(parameters.RawBodyData.ContainsKey("risk_rating"));
+        Assert.Null(parameters.SoleProprietorship);
+        Assert.False(parameters.RawBodyData.ContainsKey("sole_proprietorship"));
         Assert.Null(parameters.TermsAgreements);
         Assert.False(parameters.RawBodyData.ContainsKey("terms_agreements"));
         Assert.Null(parameters.ThirdPartyVerification);
@@ -470,6 +581,7 @@ public class EntityUpdateParamsTest : TestBase
             GovernmentAuthority = null,
             NaturalPerson = null,
             RiskRating = null,
+            SoleProprietorship = null,
             TermsAgreements = null,
             ThirdPartyVerification = null,
             Trust = null,
@@ -485,6 +597,8 @@ public class EntityUpdateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("natural_person"));
         Assert.Null(parameters.RiskRating);
         Assert.False(parameters.RawBodyData.ContainsKey("risk_rating"));
+        Assert.Null(parameters.SoleProprietorship);
+        Assert.False(parameters.RawBodyData.ContainsKey("sole_proprietorship"));
         Assert.Null(parameters.TermsAgreements);
         Assert.False(parameters.RawBodyData.ContainsKey("terms_agreements"));
         Assert.Null(parameters.ThirdPartyVerification);
@@ -595,6 +709,60 @@ public class EntityUpdateParamsTest : TestBase
             {
                 RatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Rating = EntityUpdateParamsRiskRatingRating.Low,
+            },
+            SoleProprietorship = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Line1 = "x",
+                    State = "xx",
+                    Zip = "x",
+                    Line2 = "x",
+                },
+                Email = "dev@stainless.com",
+                SoleProprietor = new()
+                {
+                    Address = new()
+                    {
+                        City = "x",
+                        Country = "x",
+                        Line1 = "x",
+                        Line2 = "x",
+                        State = "x",
+                        Zip = "x",
+                    },
+                    Identification = new()
+                    {
+                        Method =
+                            EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        Number = "xxxx",
+                        DriversLicense = new()
+                        {
+                            ExpirationDate = "2019-12-27",
+                            FileID = "file_id",
+                            State = "xx",
+                            BackFileID = "back_file_id",
+                        },
+                        Other = new()
+                        {
+                            Country = "x",
+                            Description = "x",
+                            FileID = "file_id",
+                            BackFileID = "back_file_id",
+                            ExpirationDate = "2019-12-27",
+                        },
+                        Passport = new()
+                        {
+                            Country = "x",
+                            ExpirationDate = "2019-12-27",
+                            FileID = "file_id",
+                        },
+                    },
+                    Name = "x",
+                },
+                TaxIdentifier = "x",
+                Website = "website",
             },
             TermsAgreements =
             [
@@ -3327,6 +3495,2141 @@ public class EntityUpdateParamsRiskRatingRatingTest : TestBase
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
+    }
+}
+
+public class EntityUpdateParamsSoleProprietorshipTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            Email = "dev@stainless.com",
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+            },
+            TaxIdentifier = "x",
+            Website = "website",
+        };
+
+        EntityUpdateParamsSoleProprietorshipAddress expectedAddress = new()
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+        string expectedEmail = "dev@stainless.com";
+        EntityUpdateParamsSoleProprietorshipSoleProprietor expectedSoleProprietor = new()
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+        };
+        string expectedTaxIdentifier = "x";
+        string expectedWebsite = "website";
+
+        Assert.Equal(expectedAddress, model.Address);
+        Assert.Equal(expectedEmail, model.Email);
+        Assert.Equal(expectedSoleProprietor, model.SoleProprietor);
+        Assert.Equal(expectedTaxIdentifier, model.TaxIdentifier);
+        Assert.Equal(expectedWebsite, model.Website);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            Email = "dev@stainless.com",
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+            },
+            TaxIdentifier = "x",
+            Website = "website",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorship>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            Email = "dev@stainless.com",
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+            },
+            TaxIdentifier = "x",
+            Website = "website",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorship>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        EntityUpdateParamsSoleProprietorshipAddress expectedAddress = new()
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+        string expectedEmail = "dev@stainless.com";
+        EntityUpdateParamsSoleProprietorshipSoleProprietor expectedSoleProprietor = new()
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+        };
+        string expectedTaxIdentifier = "x";
+        string expectedWebsite = "website";
+
+        Assert.Equal(expectedAddress, deserialized.Address);
+        Assert.Equal(expectedEmail, deserialized.Email);
+        Assert.Equal(expectedSoleProprietor, deserialized.SoleProprietor);
+        Assert.Equal(expectedTaxIdentifier, deserialized.TaxIdentifier);
+        Assert.Equal(expectedWebsite, deserialized.Website);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            Email = "dev@stainless.com",
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+            },
+            TaxIdentifier = "x",
+            Website = "website",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorship { };
+
+        Assert.Null(model.Address);
+        Assert.False(model.RawData.ContainsKey("address"));
+        Assert.Null(model.Email);
+        Assert.False(model.RawData.ContainsKey("email"));
+        Assert.Null(model.SoleProprietor);
+        Assert.False(model.RawData.ContainsKey("sole_proprietor"));
+        Assert.Null(model.TaxIdentifier);
+        Assert.False(model.RawData.ContainsKey("tax_identifier"));
+        Assert.Null(model.Website);
+        Assert.False(model.RawData.ContainsKey("website"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorship { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorship
+        {
+            // Null should be interpreted as omitted for these properties
+            Address = null,
+            Email = null,
+            SoleProprietor = null,
+            TaxIdentifier = null,
+            Website = null,
+        };
+
+        Assert.Null(model.Address);
+        Assert.False(model.RawData.ContainsKey("address"));
+        Assert.Null(model.Email);
+        Assert.False(model.RawData.ContainsKey("email"));
+        Assert.Null(model.SoleProprietor);
+        Assert.False(model.RawData.ContainsKey("sole_proprietor"));
+        Assert.Null(model.TaxIdentifier);
+        Assert.False(model.RawData.ContainsKey("tax_identifier"));
+        Assert.Null(model.Website);
+        Assert.False(model.RawData.ContainsKey("website"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorship
+        {
+            // Null should be interpreted as omitted for these properties
+            Address = null,
+            Email = null,
+            SoleProprietor = null,
+            TaxIdentifier = null,
+            Website = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            Email = "dev@stainless.com",
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                Identification = new()
+                {
+                    Method =
+                        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                    DriversLicense = new()
+                    {
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                        State = "xx",
+                        BackFileID = "back_file_id",
+                    },
+                    Other = new()
+                    {
+                        Country = "x",
+                        Description = "x",
+                        FileID = "file_id",
+                        BackFileID = "back_file_id",
+                        ExpirationDate = "2019-12-27",
+                    },
+                    Passport = new()
+                    {
+                        Country = "x",
+                        ExpirationDate = "2019-12-27",
+                        FileID = "file_id",
+                    },
+                },
+                Name = "x",
+            },
+            TaxIdentifier = "x",
+            Website = "website",
+        };
+
+        EntityUpdateParamsSoleProprietorship copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsSoleProprietorshipAddressTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+
+        string expectedCity = "x";
+        string expectedLine1 = "x";
+        string expectedState = "xx";
+        string expectedZip = "x";
+        string expectedLine2 = "x";
+
+        Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedLine1, model.Line1);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedZip, model.Zip);
+        Assert.Equal(expectedLine2, model.Line2);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipAddress>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipAddress>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCity = "x";
+        string expectedLine1 = "x";
+        string expectedState = "xx";
+        string expectedZip = "x";
+        string expectedLine2 = "x";
+
+        Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedZip, deserialized.Zip);
+        Assert.Equal(expectedLine2, deserialized.Line2);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+        };
+
+        Assert.Null(model.Line2);
+        Assert.False(model.RawData.ContainsKey("line2"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Line2 = null,
+        };
+
+        Assert.Null(model.Line2);
+        Assert.False(model.RawData.ContainsKey("line2"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Line2 = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+
+        EntityUpdateParamsSoleProprietorshipAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsSoleProprietorshipSoleProprietorTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+        };
+
+        EntityUpdateParamsSoleProprietorshipSoleProprietorAddress expectedAddress = new()
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification expectedIdentification =
+            new()
+            {
+                Method =
+                    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            };
+        string expectedName = "x";
+
+        Assert.Equal(expectedAddress, model.Address);
+        Assert.Equal(expectedIdentification, model.Identification);
+        Assert.Equal(expectedName, model.Name);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipSoleProprietor>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipSoleProprietor>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        EntityUpdateParamsSoleProprietorshipSoleProprietorAddress expectedAddress = new()
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification expectedIdentification =
+            new()
+            {
+                Method =
+                    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            };
+        string expectedName = "x";
+
+        Assert.Equal(expectedAddress, deserialized.Address);
+        Assert.Equal(expectedIdentification, deserialized.Identification);
+        Assert.Equal(expectedName, deserialized.Name);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietor { };
+
+        Assert.Null(model.Address);
+        Assert.False(model.RawData.ContainsKey("address"));
+        Assert.Null(model.Identification);
+        Assert.False(model.RawData.ContainsKey("identification"));
+        Assert.Null(model.Name);
+        Assert.False(model.RawData.ContainsKey("name"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietor { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietor
+        {
+            // Null should be interpreted as omitted for these properties
+            Address = null,
+            Identification = null,
+            Name = null,
+        };
+
+        Assert.Null(model.Address);
+        Assert.False(model.RawData.ContainsKey("address"));
+        Assert.Null(model.Identification);
+        Assert.False(model.RawData.ContainsKey("identification"));
+        Assert.Null(model.Name);
+        Assert.False(model.RawData.ContainsKey("name"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietor
+        {
+            // Null should be interpreted as omitted for these properties
+            Address = null,
+            Identification = null,
+            Name = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            Identification = new()
+            {
+                Method =
+                    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+                DriversLicense = new()
+                {
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                    State = "xx",
+                    BackFileID = "back_file_id",
+                },
+                Other = new()
+                {
+                    Country = "x",
+                    Description = "x",
+                    FileID = "file_id",
+                    BackFileID = "back_file_id",
+                    ExpirationDate = "2019-12-27",
+                },
+                Passport = new()
+                {
+                    Country = "x",
+                    ExpirationDate = "2019-12-27",
+                    FileID = "file_id",
+                },
+            },
+            Name = "x",
+        };
+
+        EntityUpdateParamsSoleProprietorshipSoleProprietor copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsSoleProprietorshipSoleProprietorAddressTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        string expectedCity = "x";
+        string expectedCountry = "x";
+        string expectedLine1 = "x";
+        string expectedLine2 = "x";
+        string expectedState = "x";
+        string expectedZip = "x";
+
+        Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedLine1, model.Line1);
+        Assert.Equal(expectedLine2, model.Line2);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedZip, model.Zip);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipSoleProprietorAddress>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipSoleProprietorAddress>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedCity = "x";
+        string expectedCountry = "x";
+        string expectedLine1 = "x";
+        string expectedLine2 = "x";
+        string expectedState = "x";
+        string expectedZip = "x";
+
+        Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Equal(expectedLine2, deserialized.Line2);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedZip, deserialized.Zip);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
+
+        Assert.Null(model.Line2);
+        Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Line2 = null,
+            State = null,
+            Zip = null,
+        };
+
+        Assert.Null(model.Line2);
+        Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Line2 = null,
+            State = null,
+            Zip = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        EntityUpdateParamsSoleProprietorshipSoleProprietorAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification
+        {
+            Method =
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        ApiEnum<
+            string,
+            EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod
+        > expectedMethod =
+            EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber;
+        string expectedNumber = "xxxx";
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense expectedDriversLicense =
+            new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            };
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther expectedOther = new()
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport expectedPassport =
+            new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            };
+
+        Assert.Equal(expectedMethod, model.Method);
+        Assert.Equal(expectedNumber, model.Number);
+        Assert.Equal(expectedDriversLicense, model.DriversLicense);
+        Assert.Equal(expectedOther, model.Other);
+        Assert.Equal(expectedPassport, model.Passport);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification
+        {
+            Method =
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification
+        {
+            Method =
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<
+            string,
+            EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod
+        > expectedMethod =
+            EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber;
+        string expectedNumber = "xxxx";
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense expectedDriversLicense =
+            new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            };
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther expectedOther = new()
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport expectedPassport =
+            new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            };
+
+        Assert.Equal(expectedMethod, deserialized.Method);
+        Assert.Equal(expectedNumber, deserialized.Number);
+        Assert.Equal(expectedDriversLicense, deserialized.DriversLicense);
+        Assert.Equal(expectedOther, deserialized.Other);
+        Assert.Equal(expectedPassport, deserialized.Passport);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification
+        {
+            Method =
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification
+        {
+            Method =
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+
+        Assert.Null(model.DriversLicense);
+        Assert.False(model.RawData.ContainsKey("drivers_license"));
+        Assert.Null(model.Other);
+        Assert.False(model.RawData.ContainsKey("other"));
+        Assert.Null(model.Passport);
+        Assert.False(model.RawData.ContainsKey("passport"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification
+        {
+            Method =
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification
+        {
+            Method =
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+
+            // Null should be interpreted as omitted for these properties
+            DriversLicense = null,
+            Other = null,
+            Passport = null,
+        };
+
+        Assert.Null(model.DriversLicense);
+        Assert.False(model.RawData.ContainsKey("drivers_license"));
+        Assert.Null(model.Other);
+        Assert.False(model.RawData.ContainsKey("other"));
+        Assert.Null(model.Passport);
+        Assert.False(model.RawData.ContainsKey("passport"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification
+        {
+            Method =
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+
+            // Null should be interpreted as omitted for these properties
+            DriversLicense = null,
+            Other = null,
+            Passport = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification
+        {
+            Method =
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+            DriversLicense = new()
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            },
+            Other = new()
+            {
+                Country = "x",
+                Description = "x",
+                FileID = "file_id",
+                BackFileID = "back_file_id",
+                ExpirationDate = "2019-12-27",
+            },
+            Passport = new()
+            {
+                Country = "x",
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+            },
+        };
+
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethodTest : TestBase
+{
+    [Theory]
+    [InlineData(
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber
+    )]
+    [InlineData(
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber
+    )]
+    [InlineData(EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.Passport)]
+    [InlineData(
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.DriversLicense
+    )]
+    [InlineData(EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.Other)]
+    public void Validation_Works(
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<
+            string,
+            EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod
+        > value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber
+    )]
+    [InlineData(
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber
+    )]
+    [InlineData(EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.Passport)]
+    [InlineData(
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.DriversLicense
+    )]
+    [InlineData(EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.Other)]
+    public void SerializationRoundtrip_Works(
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<
+            string,
+            EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod
+        > value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicenseTest
+    : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model =
+            new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            };
+
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+        string expectedState = "xx";
+        string expectedBackFileID = "back_file_id";
+
+        Assert.Equal(expectedExpirationDate, model.ExpirationDate);
+        Assert.Equal(expectedFileID, model.FileID);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedBackFileID, model.BackFileID);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model =
+            new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model =
+            new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+        string expectedState = "xx";
+        string expectedBackFileID = "back_file_id";
+
+        Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
+        Assert.Equal(expectedFileID, deserialized.FileID);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedBackFileID, deserialized.BackFileID);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model =
+            new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model =
+            new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+            };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model =
+            new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+            };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model =
+            new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+
+                // Null should be interpreted as omitted for these properties
+                BackFileID = null,
+            };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model =
+            new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+
+                // Null should be interpreted as omitted for these properties
+                BackFileID = null,
+            };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model =
+            new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense
+            {
+                ExpirationDate = "2019-12-27",
+                FileID = "file_id",
+                State = "xx",
+                BackFileID = "back_file_id",
+            };
+
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense copied = new(
+            model
+        );
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOtherTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        string expectedCountry = "x";
+        string expectedDescription = "x";
+        string expectedFileID = "file_id";
+        string expectedBackFileID = "back_file_id";
+        string expectedExpirationDate = "2019-12-27";
+
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedDescription, model.Description);
+        Assert.Equal(expectedFileID, model.FileID);
+        Assert.Equal(expectedBackFileID, model.BackFileID);
+        Assert.Equal(expectedExpirationDate, model.ExpirationDate);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedCountry = "x";
+        string expectedDescription = "x";
+        string expectedFileID = "file_id";
+        string expectedBackFileID = "back_file_id";
+        string expectedExpirationDate = "2019-12-27";
+
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedDescription, deserialized.Description);
+        Assert.Equal(expectedFileID, deserialized.FileID);
+        Assert.Equal(expectedBackFileID, deserialized.BackFileID);
+        Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+        Assert.Null(model.ExpirationDate);
+        Assert.False(model.RawData.ContainsKey("expiration_date"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+            ExpirationDate = null,
+        };
+
+        Assert.Null(model.BackFileID);
+        Assert.False(model.RawData.ContainsKey("back_file_id"));
+        Assert.Null(model.ExpirationDate);
+        Assert.False(model.RawData.ContainsKey("expiration_date"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+
+            // Null should be interpreted as omitted for these properties
+            BackFileID = null,
+            ExpirationDate = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther
+        {
+            Country = "x",
+            Description = "x",
+            FileID = "file_id",
+            BackFileID = "back_file_id",
+            ExpirationDate = "2019-12-27",
+        };
+
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassportTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        string expectedCountry = "x";
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedExpirationDate, model.ExpirationDate);
+        Assert.Equal(expectedFileID, model.FileID);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedCountry = "x";
+        string expectedExpirationDate = "2019-12-27";
+        string expectedFileID = "file_id";
+
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedExpirationDate, deserialized.ExpirationDate);
+        Assert.Equal(expectedFileID, deserialized.FileID);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport
+        {
+            Country = "x",
+            ExpirationDate = "2019-12-27",
+            FileID = "file_id",
+        };
+
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport copied = new(
+            model
+        );
+
+        Assert.Equal(model, copied);
     }
 }
 

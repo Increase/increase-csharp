@@ -33,6 +33,19 @@ public sealed record class PhysicalCard : JsonModel
     }
 
     /// <summary>
+    /// The identifier for the Account this Physical Card belongs to.
+    /// </summary>
+    public required string AccountID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("account_id");
+        }
+        init { this._rawData.Set("account_id", value); }
+    }
+
+    /// <summary>
     /// The identifier for the Card this Physical Card represents.
     /// </summary>
     public required string CardID
@@ -146,6 +159,7 @@ public sealed record class PhysicalCard : JsonModel
     public override void Validate()
     {
         _ = this.ID;
+        _ = this.AccountID;
         _ = this.CardID;
         this.Cardholder.Validate();
         _ = this.CreatedAt;
