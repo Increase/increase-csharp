@@ -1377,11 +1377,6 @@ public enum FednowTransferStatus
     Canceled,
 
     /// <summary>
-    /// The transfer has been rejected by Increase.
-    /// </summary>
-    ReviewingRejected,
-
-    /// <summary>
     /// The transfer requires attention from an Increase operator.
     /// </summary>
     RequiresAttention,
@@ -1420,7 +1415,6 @@ sealed class FednowTransferStatusConverter : JsonConverter<FednowTransferStatus>
             "pending_submitting" => FednowTransferStatus.PendingSubmitting,
             "pending_reviewing" => FednowTransferStatus.PendingReviewing,
             "canceled" => FednowTransferStatus.Canceled,
-            "reviewing_rejected" => FednowTransferStatus.ReviewingRejected,
             "requires_attention" => FednowTransferStatus.RequiresAttention,
             "pending_approval" => FednowTransferStatus.PendingApproval,
             "pending_response" => FednowTransferStatus.PendingResponse,
@@ -1443,7 +1437,6 @@ sealed class FednowTransferStatusConverter : JsonConverter<FednowTransferStatus>
                 FednowTransferStatus.PendingSubmitting => "pending_submitting",
                 FednowTransferStatus.PendingReviewing => "pending_reviewing",
                 FednowTransferStatus.Canceled => "canceled",
-                FednowTransferStatus.ReviewingRejected => "reviewing_rejected",
                 FednowTransferStatus.RequiresAttention => "requires_attention",
                 FednowTransferStatus.PendingApproval => "pending_approval",
                 FednowTransferStatus.PendingResponse => "pending_response",

@@ -19,7 +19,7 @@ namespace Increase.Api.Models.CardTokens;
 public sealed record class CardTokenCapabilities : JsonModel
 {
     /// <summary>
-    /// Each route represent a path e.g., a push transfer can take.
+    /// Each route represents a path e.g., a push transfer can take.
     /// </summary>
     public required IReadOnlyList<Route> Routes
     {
