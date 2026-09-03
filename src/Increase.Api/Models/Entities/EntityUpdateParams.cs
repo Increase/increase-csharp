@@ -147,6 +147,30 @@ public record class EntityUpdateParams : ParamsBase
     }
 
     /// <summary>
+    /// Details of the sole proprietorship entity to update. If you specify this
+    /// parameter and the entity is not a sole proprietorship, the request will fail.
+    /// </summary>
+    public EntityUpdateParamsSoleProprietorship? SoleProprietorship
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<EntityUpdateParamsSoleProprietorship>(
+                "sole_proprietorship"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("sole_proprietorship", value);
+        }
+    }
+
+    /// <summary>
     /// New terms that the Entity agreed to. Not all programs are required to submit
     /// this data. This will not archive previously submitted terms.
     /// </summary>
@@ -1488,8 +1512,7 @@ public sealed record class EntityUpdateParamsNaturalPersonIdentification : JsonM
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
     /// such as a social security number. For Social Security Numbers and Individual
-    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
-    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {
@@ -2233,6 +2256,1285 @@ sealed class EntityUpdateParamsRiskRatingRatingConverter
     }
 }
 
+/// <summary>
+/// Details of the sole proprietorship entity to update. If you specify this parameter
+/// and the entity is not a sole proprietorship, the request will fail.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsSoleProprietorship,
+        EntityUpdateParamsSoleProprietorshipFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsSoleProprietorship : JsonModel
+{
+    /// <summary>
+    /// The sole proprietorship's business address. Mail receiving locations like
+    /// PO Boxes and PMB's are disallowed.
+    /// </summary>
+    public EntityUpdateParamsSoleProprietorshipAddress? Address
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsSoleProprietorshipAddress>(
+                "address"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("address", value);
+        }
+    }
+
+    /// <summary>
+    /// An email address for the sole proprietorship. Not every program requires an
+    /// email for submitted Entities.
+    /// </summary>
+    public string? Email
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("email");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("email", value);
+        }
+    }
+
+    /// <summary>
+    /// Details of the individual who operates the sole proprietorship.
+    /// </summary>
+    public EntityUpdateParamsSoleProprietorshipSoleProprietor? SoleProprietor
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsSoleProprietorshipSoleProprietor>(
+                "sole_proprietor"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("sole_proprietor", value);
+        }
+    }
+
+    /// <summary>
+    /// The United States Employer Identification Number (EIN) for the sole proprietorship.
+    /// Submit nine digits with no dashes or other separators.
+    /// </summary>
+    public string? TaxIdentifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("tax_identifier");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("tax_identifier", value);
+        }
+    }
+
+    /// <summary>
+    /// A website for the sole proprietorship. Not every program requires a website
+    /// for submitted Entities.
+    /// </summary>
+    public string? Website
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("website");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("website", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Address?.Validate();
+        _ = this.Email;
+        this.SoleProprietor?.Validate();
+        _ = this.TaxIdentifier;
+        _ = this.Website;
+    }
+
+    public EntityUpdateParamsSoleProprietorship() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsSoleProprietorship(
+        EntityUpdateParamsSoleProprietorship entityUpdateParamsSoleProprietorship
+    )
+        : base(entityUpdateParamsSoleProprietorship) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsSoleProprietorship(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsSoleProprietorship(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsSoleProprietorshipFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsSoleProprietorship FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsSoleProprietorshipFromRaw
+    : IFromRawJson<EntityUpdateParamsSoleProprietorship>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsSoleProprietorship FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsSoleProprietorship.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The sole proprietorship's business address. Mail receiving locations like PO
+/// Boxes and PMB's are disallowed.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsSoleProprietorshipAddress,
+        EntityUpdateParamsSoleProprietorshipAddressFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsSoleProprietorshipAddress : JsonModel
+{
+    /// <summary>
+    /// The city of the address.
+    /// </summary>
+    public required string City
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("city");
+        }
+        init { this._rawData.Set("city", value); }
+    }
+
+    /// <summary>
+    /// The first line of the address. This is usually the street number and street.
+    /// </summary>
+    public required string Line1
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("line1");
+        }
+        init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// The two-letter United States Postal Service (USPS) abbreviation for the state
+    /// of the address.
+    /// </summary>
+    public required string State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("state");
+        }
+        init { this._rawData.Set("state", value); }
+    }
+
+    /// <summary>
+    /// The ZIP code of the address.
+    /// </summary>
+    public required string Zip
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("zip");
+        }
+        init { this._rawData.Set("zip", value); }
+    }
+
+    /// <summary>
+    /// The second line of the address. This might be the floor or room number.
+    /// </summary>
+    public string? Line2
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("line2");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("line2", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.City;
+        _ = this.Line1;
+        _ = this.State;
+        _ = this.Zip;
+        _ = this.Line2;
+    }
+
+    public EntityUpdateParamsSoleProprietorshipAddress() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsSoleProprietorshipAddress(
+        EntityUpdateParamsSoleProprietorshipAddress entityUpdateParamsSoleProprietorshipAddress
+    )
+        : base(entityUpdateParamsSoleProprietorshipAddress) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsSoleProprietorshipAddress(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsSoleProprietorshipAddress(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsSoleProprietorshipAddressFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsSoleProprietorshipAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsSoleProprietorshipAddressFromRaw
+    : IFromRawJson<EntityUpdateParamsSoleProprietorshipAddress>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsSoleProprietorshipAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsSoleProprietorshipAddress.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Details of the individual who operates the sole proprietorship.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsSoleProprietorshipSoleProprietor,
+        EntityUpdateParamsSoleProprietorshipSoleProprietorFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsSoleProprietorshipSoleProprietor : JsonModel
+{
+    /// <summary>
+    /// The sole proprietor's physical address. Mail receiving locations like PO
+    /// Boxes and PMB's are disallowed.
+    /// </summary>
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorAddress? Address
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsSoleProprietorshipSoleProprietorAddress>(
+                "address"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("address", value);
+        }
+    }
+
+    /// <summary>
+    /// A means of verifying the sole proprietor's identity. Unlike at creation, an
+    /// identity document is accepted here.
+    /// </summary>
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification? Identification
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification>(
+                "identification"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("identification", value);
+        }
+    }
+
+    /// <summary>
+    /// The sole proprietor's legal name.
+    /// </summary>
+    public string? Name
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("name");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("name", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Address?.Validate();
+        this.Identification?.Validate();
+        _ = this.Name;
+    }
+
+    public EntityUpdateParamsSoleProprietorshipSoleProprietor() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsSoleProprietorshipSoleProprietor(
+        EntityUpdateParamsSoleProprietorshipSoleProprietor entityUpdateParamsSoleProprietorshipSoleProprietor
+    )
+        : base(entityUpdateParamsSoleProprietorshipSoleProprietor) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsSoleProprietorshipSoleProprietor(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsSoleProprietorshipSoleProprietor(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsSoleProprietorshipSoleProprietorFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsSoleProprietorshipSoleProprietor FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsSoleProprietorshipSoleProprietorFromRaw
+    : IFromRawJson<EntityUpdateParamsSoleProprietorshipSoleProprietor>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsSoleProprietorshipSoleProprietor FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsSoleProprietorshipSoleProprietor.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The sole proprietor's physical address. Mail receiving locations like PO Boxes
+/// and PMB's are disallowed.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsSoleProprietorshipSoleProprietorAddress,
+        EntityUpdateParamsSoleProprietorshipSoleProprietorAddressFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsSoleProprietorshipSoleProprietorAddress : JsonModel
+{
+    /// <summary>
+    /// The city, district, town, or village of the address.
+    /// </summary>
+    public required string City
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("city");
+        }
+        init { this._rawData.Set("city", value); }
+    }
+
+    /// <summary>
+    /// The two-letter ISO 3166-1 alpha-2 code for the country of the address.
+    ///
+    /// <para>Defaults to `US`.</para>
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <summary>
+    /// The first line of the address. This is usually the street number and street.
+    /// </summary>
+    public required string Line1
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("line1");
+        }
+        init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// The second line of the address. This might be the floor or room number.
+    /// </summary>
+    public string? Line2
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("line2");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("line2", value);
+        }
+    }
+
+    /// <summary>
+    /// The two-letter United States Postal Service (USPS) abbreviation for the US
+    /// state, province, or region of the address. Required in certain countries.
+    /// </summary>
+    public string? State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("state");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("state", value);
+        }
+    }
+
+    /// <summary>
+    /// The ZIP or postal code of the address. Required in certain countries.
+    /// </summary>
+    public string? Zip
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("zip");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("zip", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.City;
+        _ = this.Country;
+        _ = this.Line1;
+        _ = this.Line2;
+        _ = this.State;
+        _ = this.Zip;
+    }
+
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorAddress() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorAddress(
+        EntityUpdateParamsSoleProprietorshipSoleProprietorAddress entityUpdateParamsSoleProprietorshipSoleProprietorAddress
+    )
+        : base(entityUpdateParamsSoleProprietorshipSoleProprietorAddress) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorAddress(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsSoleProprietorshipSoleProprietorAddress(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsSoleProprietorshipSoleProprietorAddressFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsSoleProprietorshipSoleProprietorAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsSoleProprietorshipSoleProprietorAddressFromRaw
+    : IFromRawJson<EntityUpdateParamsSoleProprietorshipSoleProprietorAddress>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsSoleProprietorshipSoleProprietorAddress.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// A means of verifying the sole proprietor's identity. Unlike at creation, an identity
+/// document is accepted here.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification,
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification
+    : JsonModel
+{
+    /// <summary>
+    /// A method that can be used to verify the individual's identity.
+    ///
+    /// <para>Defaults to `social_security_number`.</para>
+    /// </summary>
+    public required ApiEnum<
+        string,
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod
+    > Method
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<
+                    string,
+                    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod
+                >
+            >("method");
+        }
+        init { this._rawData.Set("method", value); }
+    }
+
+    /// <summary>
+    /// An identification number that can be used to verify the individual's identity,
+    /// such as a social security number. For Social Security Numbers and Individual
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
+    /// </summary>
+    public required string Number
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("number");
+        }
+        init { this._rawData.Set("number", value); }
+    }
+
+    /// <summary>
+    /// Information about the United States driver's license used for identification.
+    /// Required if `method` is equal to `drivers_license`.
+    /// </summary>
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense? DriversLicense
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense>(
+                "drivers_license"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("drivers_license", value);
+        }
+    }
+
+    /// <summary>
+    /// Information about the identification document provided. Required if `method`
+    /// is equal to `other`.
+    /// </summary>
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther? Other
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther>(
+                "other"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("other", value);
+        }
+    }
+
+    /// <summary>
+    /// Information about the passport used for identification. Required if `method`
+    /// is equal to `passport`.
+    /// </summary>
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport? Passport
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport>(
+                "passport"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("passport", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.Method.Validate();
+        _ = this.Number;
+        this.DriversLicense?.Validate();
+        this.Other?.Validate();
+        this.Passport?.Validate();
+    }
+
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification(
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification entityUpdateParamsSoleProprietorshipSoleProprietorIdentification
+    )
+        : base(entityUpdateParamsSoleProprietorshipSoleProprietorIdentification) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationFromRaw
+    : IFromRawJson<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => EntityUpdateParamsSoleProprietorshipSoleProprietorIdentification.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// A method that can be used to verify the individual's identity.
+/// </summary>
+[JsonConverter(
+    typeof(EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethodConverter)
+)]
+public enum EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod
+{
+    /// <summary>
+    /// A social security number.
+    /// </summary>
+    SocialSecurityNumber,
+
+    /// <summary>
+    /// An individual taxpayer identification number (ITIN).
+    /// </summary>
+    IndividualTaxpayerIdentificationNumber,
+
+    /// <summary>
+    /// A passport number.
+    /// </summary>
+    Passport,
+
+    /// <summary>
+    /// A driver's license number.
+    /// </summary>
+    DriversLicense,
+
+    /// <summary>
+    /// Another identifying document.
+    /// </summary>
+    Other,
+}
+
+sealed class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethodConverter
+    : JsonConverter<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod>
+{
+    public override EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "social_security_number" =>
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+            "individual_taxpayer_identification_number" =>
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber,
+            "passport" =>
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.Passport,
+            "drivers_license" =>
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.DriversLicense,
+            "other" => EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.Other,
+            _ => (EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber =>
+                    "social_security_number",
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber =>
+                    "individual_taxpayer_identification_number",
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.Passport =>
+                    "passport",
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.DriversLicense =>
+                    "drivers_license",
+                EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod.Other =>
+                    "other",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Information about the United States driver's license used for identification.
+/// Required if `method` is equal to `drivers_license`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense,
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicenseFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense
+    : JsonModel
+{
+    /// <summary>
+    /// The driver's license's expiration date in YYYY-MM-DD format.
+    /// </summary>
+    public required string ExpirationDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("expiration_date");
+        }
+        init { this._rawData.Set("expiration_date", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the front of the driver's license.
+    /// </summary>
+    public required string FileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("file_id");
+        }
+        init { this._rawData.Set("file_id", value); }
+    }
+
+    /// <summary>
+    /// The state that issued the provided driver's license.
+    /// </summary>
+    public required string State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("state");
+        }
+        init { this._rawData.Set("state", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the back of the driver's license.
+    /// </summary>
+    public string? BackFileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("back_file_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("back_file_id", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.ExpirationDate;
+        _ = this.FileID;
+        _ = this.State;
+        _ = this.BackFileID;
+    }
+
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense(
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense entityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense
+    )
+        : base(entityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicenseFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicenseFromRaw
+    : IFromRawJson<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) =>
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationDriversLicense.FromRawUnchecked(
+            rawData
+        );
+}
+
+/// <summary>
+/// Information about the identification document provided. Required if `method` is
+/// equal to `other`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther,
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOtherFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther
+    : JsonModel
+{
+    /// <summary>
+    /// The two-character ISO 3166-1 code representing the country that issued the
+    /// document (e.g., `US`).
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <summary>
+    /// A description of the document submitted.
+    /// </summary>
+    public required string Description
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("description");
+        }
+        init { this._rawData.Set("description", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the front of the document.
+    /// </summary>
+    public required string FileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("file_id");
+        }
+        init { this._rawData.Set("file_id", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the back of the document. Not every
+    /// document has a reverse side.
+    /// </summary>
+    public string? BackFileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("back_file_id");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("back_file_id", value);
+        }
+    }
+
+    /// <summary>
+    /// The document's expiration date in YYYY-MM-DD format.
+    /// </summary>
+    public string? ExpirationDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("expiration_date");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("expiration_date", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Country;
+        _ = this.Description;
+        _ = this.FileID;
+        _ = this.BackFileID;
+        _ = this.ExpirationDate;
+    }
+
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther(
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther entityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther
+    )
+        : base(entityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOtherFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOtherFromRaw
+    : IFromRawJson<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) =>
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationOther.FromRawUnchecked(
+            rawData
+        );
+}
+
+/// <summary>
+/// Information about the passport used for identification. Required if `method`
+/// is equal to `passport`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport,
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassportFromRaw
+    >)
+)]
+public sealed record class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport
+    : JsonModel
+{
+    /// <summary>
+    /// The two-character ISO 3166-1 code representing the country that issued the
+    /// document (e.g., `US`).
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <summary>
+    /// The passport's expiration date in YYYY-MM-DD format.
+    /// </summary>
+    public required string ExpirationDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("expiration_date");
+        }
+        init { this._rawData.Set("expiration_date", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the File containing the passport.
+    /// </summary>
+    public required string FileID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("file_id");
+        }
+        init { this._rawData.Set("file_id", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Country;
+        _ = this.ExpirationDate;
+        _ = this.FileID;
+    }
+
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport(
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport entityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport
+    )
+        : base(entityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport) { }
+#pragma warning restore CS8618
+
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassportFromRaw.FromRawUnchecked"/>
+    public static EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassportFromRaw
+    : IFromRawJson<EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport>
+{
+    /// <inheritdoc/>
+    public EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) =>
+        EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationPassport.FromRawUnchecked(
+            rawData
+        );
+}
+
 [JsonConverter(
     typeof(JsonModelConverter<
         EntityUpdateParamsTermsAgreement,
@@ -2255,7 +3557,7 @@ public sealed record class EntityUpdateParamsTermsAgreement : JsonModel
     }
 
     /// <summary>
-    /// The IP address the Entity accessed reviewed the terms from.
+    /// The IP address the Entity reviewed the terms from.
     /// </summary>
     public required string IPAddress
     {
@@ -3120,8 +4422,7 @@ public sealed record class EntityUpdateParamsTrustGrantorIdentification : JsonMo
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
     /// such as a social security number. For Social Security Numbers and Individual
-    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
-    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {
@@ -4219,8 +5520,7 @@ public sealed record class EntityUpdateParamsTrustTrusteeIndividualIdentificatio
     /// <summary>
     /// An identification number that can be used to verify the individual's identity,
     /// such as a social security number. For Social Security Numbers and Individual
-    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other
-    /// separators. When testing in sandbox, use one of our [sandbox test values](https://increase.com/documentation/sandbox-test-values).
+    /// Taxpayer Identification Numbers, submit nine digits with no dashes or other separators.
     /// </summary>
     public required string Number
     {
