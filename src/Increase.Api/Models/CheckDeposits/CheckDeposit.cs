@@ -146,7 +146,7 @@ public sealed record class CheckDeposit : JsonModel
     }
 
     /// <summary>
-    /// After the check is parsed, it is submitted to the Check21 network for processing.
+    /// After the check is parsed, it is submitted to the Check 21 network for processing.
     /// This will contain details of the submission.
     /// </summary>
     public required DepositSubmission? DepositSubmission
@@ -1414,7 +1414,7 @@ sealed class ReturnReasonConverter : JsonConverter<ReturnReason>
 }
 
 /// <summary>
-/// After the check is parsed, it is submitted to the Check21 network for processing.
+/// After the check is parsed, it is submitted to the Check 21 network for processing.
 /// This will contain details of the submission.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<DepositSubmission, DepositSubmissionFromRaw>))]
@@ -1422,7 +1422,7 @@ public sealed record class DepositSubmission : JsonModel
 {
     /// <summary>
     /// The ID for the File containing the check back image that was submitted to
-    /// the Check21 network.
+    /// the Check 21 network.
     /// </summary>
     public required string BackFileID
     {
@@ -1436,7 +1436,7 @@ public sealed record class DepositSubmission : JsonModel
 
     /// <summary>
     /// The ID for the File containing the check front image that was submitted to
-    /// the Check21 network.
+    /// the Check 21 network.
     /// </summary>
     public required string FrontFileID
     {
@@ -1449,9 +1449,9 @@ public sealed record class DepositSubmission : JsonModel
     }
 
     /// <summary>
-    /// When the check deposit was submitted to the Check21 network for processing.
-    /// During business days, this happens within a few hours of the check being accepted
-    /// by Increase.
+    /// When the check deposit was submitted to the Check 21 network for processing.
+    /// During business days, this happens within a few hours of the check being
+    /// accepted by Increase.
     /// </summary>
     public required System::DateTimeOffset SubmittedAt
     {

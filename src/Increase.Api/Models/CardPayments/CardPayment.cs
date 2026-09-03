@@ -2977,7 +2977,7 @@ public sealed record class CardAuthorization : JsonModel
     }
 
     /// <summary>
-    /// Additional amounts associated with the card authorization, such as ATM surcharges
+    /// Additional amounts associated with the card authorization, such as ATM surcharge
     /// fees. These are usually a subset of the `amount` field and are used to provide
     /// more detailed information about the transaction.
     /// </summary>
@@ -3060,8 +3060,8 @@ public sealed record class CardAuthorization : JsonModel
     }
 
     /// <summary>
-    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) when this authorization
-    /// will expire and the pending transaction will be released.
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time at which this
+    /// authorization will expire and the pending transaction will be released.
     /// </summary>
     public required System::DateTimeOffset ExpiresAt
     {
@@ -3516,7 +3516,7 @@ sealed class ActionerConverter : JsonConverter<Actioner>
 }
 
 /// <summary>
-/// Additional amounts associated with the card authorization, such as ATM surcharges
+/// Additional amounts associated with the card authorization, such as ATM surcharge
 /// fees. These are usually a subset of the `amount` field and are used to provide
 /// more detailed information about the transaction.
 /// </summary>
@@ -7041,7 +7041,7 @@ public sealed record class CardBalanceInquiry : JsonModel
     }
 
     /// <summary>
-    /// Additional amounts associated with the card authorization, such as ATM surcharges
+    /// Additional amounts associated with the card authorization, such as ATM surcharge
     /// fees. These are usually a subset of the `amount` field and are used to provide
     /// more detailed information about the transaction.
     /// </summary>
@@ -7409,7 +7409,7 @@ class CardBalanceInquiryFromRaw : IFromRawJson<CardBalanceInquiry>
 }
 
 /// <summary>
-/// Additional amounts associated with the card authorization, such as ATM surcharges
+/// Additional amounts associated with the card authorization, such as ATM surcharge
 /// fees. These are usually a subset of the `amount` field and are used to provide
 /// more detailed information about the transaction.
 /// </summary>
@@ -10718,7 +10718,7 @@ public sealed record class CardDecline : JsonModel
     }
 
     /// <summary>
-    /// Additional amounts associated with the card authorization, such as ATM surcharges
+    /// Additional amounts associated with the card authorization, such as ATM surcharge
     /// fees. These are usually a subset of the `amount` field and are used to provide
     /// more detailed information about the transaction.
     /// </summary>
@@ -11250,7 +11250,7 @@ sealed class CardDeclineActionerConverter : JsonConverter<CardDeclineActioner>
 }
 
 /// <summary>
-/// Additional amounts associated with the card authorization, such as ATM surcharges
+/// Additional amounts associated with the card authorization, such as ATM surcharge
 /// fees. These are usually a subset of the `amount` field and are used to provide
 /// more detailed information about the transaction.
 /// </summary>
@@ -14885,7 +14885,7 @@ public sealed record class CardFinancial : JsonModel
     }
 
     /// <summary>
-    /// Additional amounts associated with the card authorization, such as ATM surcharges
+    /// Additional amounts associated with the card authorization, such as ATM surcharge
     /// fees. These are usually a subset of the `amount` field and are used to provide
     /// more detailed information about the transaction.
     /// </summary>
@@ -15389,7 +15389,7 @@ sealed class CardFinancialActionerConverter : JsonConverter<CardFinancialActione
 }
 
 /// <summary>
-/// Additional amounts associated with the card authorization, such as ATM surcharges
+/// Additional amounts associated with the card authorization, such as ATM surcharge
 /// fees. These are usually a subset of the `amount` field and are used to provide
 /// more detailed information about the transaction.
 /// </summary>
@@ -19804,7 +19804,7 @@ public sealed record class CardIncrement : JsonModel
     }
 
     /// <summary>
-    /// Additional amounts associated with the card authorization, such as ATM surcharges
+    /// Additional amounts associated with the card authorization, such as ATM surcharge
     /// fees. These are usually a subset of the `amount` field and are used to provide
     /// more detailed information about the transaction.
     /// </summary>
@@ -20129,7 +20129,7 @@ sealed class CardIncrementActionerConverter : JsonConverter<CardIncrementActione
 }
 
 /// <summary>
-/// Additional amounts associated with the card authorization, such as ATM surcharges
+/// Additional amounts associated with the card authorization, such as ATM surcharge
 /// fees. These are usually a subset of the `amount` field and are used to provide
 /// more detailed information about the transaction.
 /// </summary>
@@ -30707,7 +30707,7 @@ public sealed record class CardValidation : JsonModel
     }
 
     /// <summary>
-    /// Additional amounts associated with the card authorization, such as ATM surcharges
+    /// Additional amounts associated with the card authorization, such as ATM surcharge
     /// fees. These are usually a subset of the `amount` field and are used to provide
     /// more detailed information about the transaction.
     /// </summary>
@@ -31119,7 +31119,7 @@ sealed class CardValidationActionerConverter : JsonConverter<CardValidationActio
 }
 
 /// <summary>
-/// Additional amounts associated with the card authorization, such as ATM surcharges
+/// Additional amounts associated with the card authorization, such as ATM surcharge
 /// fees. These are usually a subset of the `amount` field and are used to provide
 /// more detailed information about the transaction.
 /// </summary>

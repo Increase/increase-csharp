@@ -227,7 +227,7 @@ public sealed record class AccountNumberInboundAch : JsonModel
 {
     /// <summary>
     /// Whether ACH debits are allowed against this Account Number. Note that they
-    /// will still be declined if this is `allowed` if the Account Number is not active.
+    /// will still be declined if this is `allowed` but the Account Number is not active.
     /// </summary>
     public required ApiEnum<string, AccountNumberInboundAchDebitStatus> DebitStatus
     {
@@ -294,7 +294,7 @@ class AccountNumberInboundAchFromRaw : IFromRawJson<AccountNumberInboundAch>
 
 /// <summary>
 /// Whether ACH debits are allowed against this Account Number. Note that they will
-/// still be declined if this is `allowed` if the Account Number is not active.
+/// still be declined if this is `allowed` but the Account Number is not active.
 /// </summary>
 [JsonConverter(typeof(AccountNumberInboundAchDebitStatusConverter))]
 public enum AccountNumberInboundAchDebitStatus
