@@ -2217,7 +2217,7 @@ public sealed record class RealTimeDecisionCardAuthorization : JsonModel
     }
 
     /// <summary>
-    /// Additional amounts associated with the card authorization, such as ATM surcharges
+    /// Additional amounts associated with the card authorization, such as ATM surcharge
     /// fees. These are usually a subset of the `amount` field and are used to provide
     /// more detailed information about the transaction.
     /// </summary>
@@ -2717,7 +2717,7 @@ class RealTimeDecisionCardAuthorizationFromRaw : IFromRawJson<RealTimeDecisionCa
 }
 
 /// <summary>
-/// Additional amounts associated with the card authorization, such as ATM surcharges
+/// Additional amounts associated with the card authorization, such as ATM surcharge
 /// fees. These are usually a subset of the `amount` field and are used to provide
 /// more detailed information about the transaction.
 /// </summary>
@@ -6042,7 +6042,7 @@ public sealed record class RealTimeDecisionCardBalanceInquiry : JsonModel
     }
 
     /// <summary>
-    /// Additional amounts associated with the card authorization, such as ATM surcharges
+    /// Additional amounts associated with the card authorization, such as ATM surcharge
     /// fees. These are usually a subset of the `amount` field and are used to provide
     /// more detailed information about the transaction.
     /// </summary>
@@ -6378,7 +6378,7 @@ class RealTimeDecisionCardBalanceInquiryFromRaw : IFromRawJson<RealTimeDecisionC
 }
 
 /// <summary>
-/// Additional amounts associated with the card authorization, such as ATM surcharges
+/// Additional amounts associated with the card authorization, such as ATM surcharge
 /// fees. These are usually a subset of the `amount` field and are used to provide
 /// more detailed information about the transaction.
 /// </summary>
