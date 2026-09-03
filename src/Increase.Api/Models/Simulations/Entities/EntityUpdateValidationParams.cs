@@ -245,19 +245,19 @@ public enum Category
 {
     /// <summary>
     /// The entity's tax identifier could not be verified. Update the tax ID with
-    /// the [update an entity API](/documentation/api/entities#update-an-entity.corporation.legal_identifier).
+    /// the [update an entity API](/documentation/api/entities#update-an-entity).
     /// </summary>
     EntityTaxIdentifier,
 
     /// <summary>
     /// The entity's address could not be validated. Update the address with the
-    /// [update an entity API](/documentation/api/entities#update-an-entity.corporation.address).
+    /// [update an entity API](/documentation/api/entities#update-an-entity).
     /// </summary>
     EntityAddress,
 
     /// <summary>
     /// The entity's identity could not be verified. Update the identification with
-    /// the [update an entity API](/documentation/api/entities#update-an-entity.natural_person.identification).
+    /// the [update an entity API](/documentation/api/entities#update-an-entity).
     /// </summary>
     EntityIdentity,
 

@@ -177,7 +177,8 @@ public class EntityTest : TestBase
                     DateOfBirth = "2019-12-27",
                     Identification = new()
                     {
-                        Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        Method =
+                            Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                         NumberLast4 = "number_last4",
                     },
                     Name = "name",
@@ -429,7 +430,7 @@ public class EntityTest : TestBase
             RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Rating = Entities::EntityRiskRatingRating.Low,
         };
-        Entities::SoleProprietorship expectedSoleProprietorship = new()
+        Entities::EntitySoleProprietorship expectedSoleProprietorship = new()
         {
             Address = new()
             {
@@ -457,7 +458,8 @@ public class EntityTest : TestBase
                 DateOfBirth = "2019-12-27",
                 Identification = new()
                 {
-                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Method =
+                        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                     NumberLast4 = "number_last4",
                 },
                 Name = "name",
@@ -775,7 +777,8 @@ public class EntityTest : TestBase
                     DateOfBirth = "2019-12-27",
                     Identification = new()
                     {
-                        Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        Method =
+                            Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                         NumberLast4 = "number_last4",
                     },
                     Name = "name",
@@ -1073,7 +1076,8 @@ public class EntityTest : TestBase
                     DateOfBirth = "2019-12-27",
                     Identification = new()
                     {
-                        Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        Method =
+                            Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                         NumberLast4 = "number_last4",
                     },
                     Name = "name",
@@ -1332,7 +1336,7 @@ public class EntityTest : TestBase
             RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Rating = Entities::EntityRiskRatingRating.Low,
         };
-        Entities::SoleProprietorship expectedSoleProprietorship = new()
+        Entities::EntitySoleProprietorship expectedSoleProprietorship = new()
         {
             Address = new()
             {
@@ -1360,7 +1364,8 @@ public class EntityTest : TestBase
                 DateOfBirth = "2019-12-27",
                 Identification = new()
                 {
-                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Method =
+                        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                     NumberLast4 = "number_last4",
                 },
                 Name = "name",
@@ -1678,7 +1683,8 @@ public class EntityTest : TestBase
                     DateOfBirth = "2019-12-27",
                     Identification = new()
                     {
-                        Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        Method =
+                            Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                         NumberLast4 = "number_last4",
                     },
                     Name = "name",
@@ -1970,7 +1976,8 @@ public class EntityTest : TestBase
                     DateOfBirth = "2019-12-27",
                     Identification = new()
                     {
-                        Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        Method =
+                            Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                         NumberLast4 = "number_last4",
                     },
                     Name = "name",
@@ -5570,12 +5577,12 @@ public class EntityRiskRatingRatingTest : TestBase
     }
 }
 
-public class SoleProprietorshipTest : TestBase
+public class EntitySoleProprietorshipTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Entities::SoleProprietorship
+        var model = new Entities::EntitySoleProprietorship
         {
             Address = new()
             {
@@ -5603,7 +5610,8 @@ public class SoleProprietorshipTest : TestBase
                 DateOfBirth = "2019-12-27",
                 Identification = new()
                 {
-                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Method =
+                        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                     NumberLast4 = "number_last4",
                 },
                 Name = "name",
@@ -5612,7 +5620,7 @@ public class SoleProprietorshipTest : TestBase
             Website = "website",
         };
 
-        Entities::SoleProprietorshipAddress expectedAddress = new()
+        Entities::EntitySoleProprietorshipAddress expectedAddress = new()
         {
             City = "New York",
             Country = "US",
@@ -5624,7 +5632,7 @@ public class SoleProprietorshipTest : TestBase
         string expectedDoingBusinessAsName = "doing_business_as_name";
         string expectedEmail = "email";
         string expectedIndustryCode = "industry_code";
-        Entities::SoleProprietor expectedSoleProprietor = new()
+        Entities::EntitySoleProprietorshipSoleProprietor expectedSoleProprietor = new()
         {
             Address = new()
             {
@@ -5638,7 +5646,8 @@ public class SoleProprietorshipTest : TestBase
             DateOfBirth = "2019-12-27",
             Identification = new()
             {
-                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Method =
+                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                 NumberLast4 = "number_last4",
             },
             Name = "name",
@@ -5658,7 +5667,7 @@ public class SoleProprietorshipTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Entities::SoleProprietorship
+        var model = new Entities::EntitySoleProprietorship
         {
             Address = new()
             {
@@ -5686,7 +5695,8 @@ public class SoleProprietorshipTest : TestBase
                 DateOfBirth = "2019-12-27",
                 Identification = new()
                 {
-                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Method =
+                        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                     NumberLast4 = "number_last4",
                 },
                 Name = "name",
@@ -5696,7 +5706,7 @@ public class SoleProprietorshipTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorship>(
+        var deserialized = JsonSerializer.Deserialize<Entities::EntitySoleProprietorship>(
             json,
             ModelBase.SerializerOptions
         );
@@ -5707,7 +5717,7 @@ public class SoleProprietorshipTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Entities::SoleProprietorship
+        var model = new Entities::EntitySoleProprietorship
         {
             Address = new()
             {
@@ -5735,7 +5745,8 @@ public class SoleProprietorshipTest : TestBase
                 DateOfBirth = "2019-12-27",
                 Identification = new()
                 {
-                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Method =
+                        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                     NumberLast4 = "number_last4",
                 },
                 Name = "name",
@@ -5745,13 +5756,13 @@ public class SoleProprietorshipTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorship>(
+        var deserialized = JsonSerializer.Deserialize<Entities::EntitySoleProprietorship>(
             element,
             ModelBase.SerializerOptions
         );
         Assert.NotNull(deserialized);
 
-        Entities::SoleProprietorshipAddress expectedAddress = new()
+        Entities::EntitySoleProprietorshipAddress expectedAddress = new()
         {
             City = "New York",
             Country = "US",
@@ -5763,7 +5774,7 @@ public class SoleProprietorshipTest : TestBase
         string expectedDoingBusinessAsName = "doing_business_as_name";
         string expectedEmail = "email";
         string expectedIndustryCode = "industry_code";
-        Entities::SoleProprietor expectedSoleProprietor = new()
+        Entities::EntitySoleProprietorshipSoleProprietor expectedSoleProprietor = new()
         {
             Address = new()
             {
@@ -5777,7 +5788,8 @@ public class SoleProprietorshipTest : TestBase
             DateOfBirth = "2019-12-27",
             Identification = new()
             {
-                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Method =
+                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                 NumberLast4 = "number_last4",
             },
             Name = "name",
@@ -5797,7 +5809,7 @@ public class SoleProprietorshipTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Entities::SoleProprietorship
+        var model = new Entities::EntitySoleProprietorship
         {
             Address = new()
             {
@@ -5825,7 +5837,8 @@ public class SoleProprietorshipTest : TestBase
                 DateOfBirth = "2019-12-27",
                 Identification = new()
                 {
-                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Method =
+                        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                     NumberLast4 = "number_last4",
                 },
                 Name = "name",
@@ -5840,7 +5853,7 @@ public class SoleProprietorshipTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Entities::SoleProprietorship
+        var model = new Entities::EntitySoleProprietorship
         {
             Address = new()
             {
@@ -5868,7 +5881,8 @@ public class SoleProprietorshipTest : TestBase
                 DateOfBirth = "2019-12-27",
                 Identification = new()
                 {
-                    Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Method =
+                        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                     NumberLast4 = "number_last4",
                 },
                 Name = "name",
@@ -5877,18 +5891,18 @@ public class SoleProprietorshipTest : TestBase
             Website = "website",
         };
 
-        Entities::SoleProprietorship copied = new(model);
+        Entities::EntitySoleProprietorship copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class SoleProprietorshipAddressTest : TestBase
+public class EntitySoleProprietorshipAddressTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Entities::SoleProprietorshipAddress
+        var model = new Entities::EntitySoleProprietorshipAddress
         {
             City = "New York",
             Country = "US",
@@ -5915,7 +5929,7 @@ public class SoleProprietorshipAddressTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Entities::SoleProprietorshipAddress
+        var model = new Entities::EntitySoleProprietorshipAddress
         {
             City = "New York",
             Country = "US",
@@ -5926,7 +5940,7 @@ public class SoleProprietorshipAddressTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorshipAddress>(
+        var deserialized = JsonSerializer.Deserialize<Entities::EntitySoleProprietorshipAddress>(
             json,
             ModelBase.SerializerOptions
         );
@@ -5937,7 +5951,7 @@ public class SoleProprietorshipAddressTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Entities::SoleProprietorshipAddress
+        var model = new Entities::EntitySoleProprietorshipAddress
         {
             City = "New York",
             Country = "US",
@@ -5948,7 +5962,7 @@ public class SoleProprietorshipAddressTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorshipAddress>(
+        var deserialized = JsonSerializer.Deserialize<Entities::EntitySoleProprietorshipAddress>(
             element,
             ModelBase.SerializerOptions
         );
@@ -5971,7 +5985,7 @@ public class SoleProprietorshipAddressTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Entities::SoleProprietorshipAddress
+        var model = new Entities::EntitySoleProprietorshipAddress
         {
             City = "New York",
             Country = "US",
@@ -5987,7 +6001,7 @@ public class SoleProprietorshipAddressTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Entities::SoleProprietorshipAddress
+        var model = new Entities::EntitySoleProprietorshipAddress
         {
             City = "New York",
             Country = "US",
@@ -5997,18 +6011,18 @@ public class SoleProprietorshipAddressTest : TestBase
             Zip = "10045",
         };
 
-        Entities::SoleProprietorshipAddress copied = new(model);
+        Entities::EntitySoleProprietorshipAddress copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class SoleProprietorTest : TestBase
+public class EntitySoleProprietorshipSoleProprietorTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Entities::SoleProprietor
+        var model = new Entities::EntitySoleProprietorshipSoleProprietor
         {
             Address = new()
             {
@@ -6022,13 +6036,14 @@ public class SoleProprietorTest : TestBase
             DateOfBirth = "2019-12-27",
             Identification = new()
             {
-                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Method =
+                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                 NumberLast4 = "number_last4",
             },
             Name = "name",
         };
 
-        Entities::SoleProprietorAddress expectedAddress = new()
+        Entities::EntitySoleProprietorshipSoleProprietorAddress expectedAddress = new()
         {
             City = "New York",
             Country = "US",
@@ -6038,11 +6053,13 @@ public class SoleProprietorTest : TestBase
             Zip = "10045",
         };
         string expectedDateOfBirth = "2019-12-27";
-        Entities::SoleProprietorIdentification expectedIdentification = new()
-        {
-            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
-            NumberLast4 = "number_last4",
-        };
+        Entities::EntitySoleProprietorshipSoleProprietorIdentification expectedIdentification =
+            new()
+            {
+                Method =
+                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                NumberLast4 = "number_last4",
+            };
         string expectedName = "name";
 
         Assert.Equal(expectedAddress, model.Address);
@@ -6054,7 +6071,7 @@ public class SoleProprietorTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Entities::SoleProprietor
+        var model = new Entities::EntitySoleProprietorshipSoleProprietor
         {
             Address = new()
             {
@@ -6068,17 +6085,19 @@ public class SoleProprietorTest : TestBase
             DateOfBirth = "2019-12-27",
             Identification = new()
             {
-                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Method =
+                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                 NumberLast4 = "number_last4",
             },
             Name = "name",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietor>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized =
+            JsonSerializer.Deserialize<Entities::EntitySoleProprietorshipSoleProprietor>(
+                json,
+                ModelBase.SerializerOptions
+            );
 
         Assert.Equal(model, deserialized);
     }
@@ -6086,7 +6105,7 @@ public class SoleProprietorTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Entities::SoleProprietor
+        var model = new Entities::EntitySoleProprietorshipSoleProprietor
         {
             Address = new()
             {
@@ -6100,20 +6119,22 @@ public class SoleProprietorTest : TestBase
             DateOfBirth = "2019-12-27",
             Identification = new()
             {
-                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Method =
+                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                 NumberLast4 = "number_last4",
             },
             Name = "name",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietor>(
-            element,
-            ModelBase.SerializerOptions
-        );
+        var deserialized =
+            JsonSerializer.Deserialize<Entities::EntitySoleProprietorshipSoleProprietor>(
+                element,
+                ModelBase.SerializerOptions
+            );
         Assert.NotNull(deserialized);
 
-        Entities::SoleProprietorAddress expectedAddress = new()
+        Entities::EntitySoleProprietorshipSoleProprietorAddress expectedAddress = new()
         {
             City = "New York",
             Country = "US",
@@ -6123,11 +6144,13 @@ public class SoleProprietorTest : TestBase
             Zip = "10045",
         };
         string expectedDateOfBirth = "2019-12-27";
-        Entities::SoleProprietorIdentification expectedIdentification = new()
-        {
-            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
-            NumberLast4 = "number_last4",
-        };
+        Entities::EntitySoleProprietorshipSoleProprietorIdentification expectedIdentification =
+            new()
+            {
+                Method =
+                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+                NumberLast4 = "number_last4",
+            };
         string expectedName = "name";
 
         Assert.Equal(expectedAddress, deserialized.Address);
@@ -6139,7 +6162,7 @@ public class SoleProprietorTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Entities::SoleProprietor
+        var model = new Entities::EntitySoleProprietorshipSoleProprietor
         {
             Address = new()
             {
@@ -6153,7 +6176,8 @@ public class SoleProprietorTest : TestBase
             DateOfBirth = "2019-12-27",
             Identification = new()
             {
-                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Method =
+                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                 NumberLast4 = "number_last4",
             },
             Name = "name",
@@ -6165,7 +6189,7 @@ public class SoleProprietorTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Entities::SoleProprietor
+        var model = new Entities::EntitySoleProprietorshipSoleProprietor
         {
             Address = new()
             {
@@ -6179,24 +6203,25 @@ public class SoleProprietorTest : TestBase
             DateOfBirth = "2019-12-27",
             Identification = new()
             {
-                Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Method =
+                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                 NumberLast4 = "number_last4",
             },
             Name = "name",
         };
 
-        Entities::SoleProprietor copied = new(model);
+        Entities::EntitySoleProprietorshipSoleProprietor copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class SoleProprietorAddressTest : TestBase
+public class EntitySoleProprietorshipSoleProprietorAddressTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Entities::SoleProprietorAddress
+        var model = new Entities::EntitySoleProprietorshipSoleProprietorAddress
         {
             City = "New York",
             Country = "US",
@@ -6223,7 +6248,7 @@ public class SoleProprietorAddressTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Entities::SoleProprietorAddress
+        var model = new Entities::EntitySoleProprietorshipSoleProprietorAddress
         {
             City = "New York",
             Country = "US",
@@ -6234,10 +6259,11 @@ public class SoleProprietorAddressTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorAddress>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized =
+            JsonSerializer.Deserialize<Entities::EntitySoleProprietorshipSoleProprietorAddress>(
+                json,
+                ModelBase.SerializerOptions
+            );
 
         Assert.Equal(model, deserialized);
     }
@@ -6245,7 +6271,7 @@ public class SoleProprietorAddressTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Entities::SoleProprietorAddress
+        var model = new Entities::EntitySoleProprietorshipSoleProprietorAddress
         {
             City = "New York",
             Country = "US",
@@ -6256,10 +6282,11 @@ public class SoleProprietorAddressTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorAddress>(
-            element,
-            ModelBase.SerializerOptions
-        );
+        var deserialized =
+            JsonSerializer.Deserialize<Entities::EntitySoleProprietorshipSoleProprietorAddress>(
+                element,
+                ModelBase.SerializerOptions
+            );
         Assert.NotNull(deserialized);
 
         string expectedCity = "New York";
@@ -6279,7 +6306,7 @@ public class SoleProprietorAddressTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Entities::SoleProprietorAddress
+        var model = new Entities::EntitySoleProprietorshipSoleProprietorAddress
         {
             City = "New York",
             Country = "US",
@@ -6295,7 +6322,7 @@ public class SoleProprietorAddressTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Entities::SoleProprietorAddress
+        var model = new Entities::EntitySoleProprietorshipSoleProprietorAddress
         {
             City = "New York",
             Country = "US",
@@ -6305,25 +6332,29 @@ public class SoleProprietorAddressTest : TestBase
             Zip = "10045",
         };
 
-        Entities::SoleProprietorAddress copied = new(model);
+        Entities::EntitySoleProprietorshipSoleProprietorAddress copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class SoleProprietorIdentificationTest : TestBase
+public class EntitySoleProprietorshipSoleProprietorIdentificationTest : TestBase
 {
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Entities::SoleProprietorIdentification
+        var model = new Entities::EntitySoleProprietorshipSoleProprietorIdentification
         {
-            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Method =
+                Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
             NumberLast4 = "number_last4",
         };
 
-        ApiEnum<string, Entities::SoleProprietorIdentificationMethod> expectedMethod =
-            Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber;
+        ApiEnum<
+            string,
+            Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod
+        > expectedMethod =
+            Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber;
         string expectedNumberLast4 = "number_last4";
 
         Assert.Equal(expectedMethod, model.Method);
@@ -6333,17 +6364,19 @@ public class SoleProprietorIdentificationTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Entities::SoleProprietorIdentification
+        var model = new Entities::EntitySoleProprietorshipSoleProprietorIdentification
         {
-            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Method =
+                Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
             NumberLast4 = "number_last4",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorIdentification>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized =
+            JsonSerializer.Deserialize<Entities::EntitySoleProprietorshipSoleProprietorIdentification>(
+                json,
+                ModelBase.SerializerOptions
+            );
 
         Assert.Equal(model, deserialized);
     }
@@ -6351,21 +6384,26 @@ public class SoleProprietorIdentificationTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Entities::SoleProprietorIdentification
+        var model = new Entities::EntitySoleProprietorshipSoleProprietorIdentification
         {
-            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Method =
+                Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
             NumberLast4 = "number_last4",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Entities::SoleProprietorIdentification>(
-            element,
-            ModelBase.SerializerOptions
-        );
+        var deserialized =
+            JsonSerializer.Deserialize<Entities::EntitySoleProprietorshipSoleProprietorIdentification>(
+                element,
+                ModelBase.SerializerOptions
+            );
         Assert.NotNull(deserialized);
 
-        ApiEnum<string, Entities::SoleProprietorIdentificationMethod> expectedMethod =
-            Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber;
+        ApiEnum<
+            string,
+            Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod
+        > expectedMethod =
+            Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber;
         string expectedNumberLast4 = "number_last4";
 
         Assert.Equal(expectedMethod, deserialized.Method);
@@ -6375,9 +6413,10 @@ public class SoleProprietorIdentificationTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new Entities::SoleProprietorIdentification
+        var model = new Entities::EntitySoleProprietorshipSoleProprietorIdentification
         {
-            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Method =
+                Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
             NumberLast4 = "number_last4",
         };
 
@@ -6387,32 +6426,42 @@ public class SoleProprietorIdentificationTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Entities::SoleProprietorIdentification
+        var model = new Entities::EntitySoleProprietorshipSoleProprietorIdentification
         {
-            Method = Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Method =
+                Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
             NumberLast4 = "number_last4",
         };
 
-        Entities::SoleProprietorIdentification copied = new(model);
+        Entities::EntitySoleProprietorshipSoleProprietorIdentification copied = new(model);
 
         Assert.Equal(model, copied);
     }
 }
 
-public class SoleProprietorIdentificationMethodTest : TestBase
+public class EntitySoleProprietorshipSoleProprietorIdentificationMethodTest : TestBase
 {
     [Theory]
-    [InlineData(Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber)]
     [InlineData(
-        Entities::SoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber
+        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber
     )]
-    [InlineData(Entities::SoleProprietorIdentificationMethod.Passport)]
-    [InlineData(Entities::SoleProprietorIdentificationMethod.DriversLicense)]
-    [InlineData(Entities::SoleProprietorIdentificationMethod.Other)]
-    public void Validation_Works(Entities::SoleProprietorIdentificationMethod rawValue)
+    [InlineData(
+        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber
+    )]
+    [InlineData(Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.Passport)]
+    [InlineData(
+        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.DriversLicense
+    )]
+    [InlineData(Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.Other)]
+    public void Validation_Works(
+        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod rawValue
+    )
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Entities::SoleProprietorIdentificationMethod> value = rawValue;
+        ApiEnum<
+            string,
+            Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod
+        > value = rawValue;
         value.Validate();
     }
 
@@ -6420,7 +6469,7 @@ public class SoleProprietorIdentificationMethodTest : TestBase
     public void InvalidEnumValidationThrows_Works()
     {
         var value = JsonSerializer.Deserialize<
-            ApiEnum<string, Entities::SoleProprietorIdentificationMethod>
+            ApiEnum<string, Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod>
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
 
         Assert.NotNull(value);
@@ -6428,21 +6477,30 @@ public class SoleProprietorIdentificationMethodTest : TestBase
     }
 
     [Theory]
-    [InlineData(Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber)]
     [InlineData(
-        Entities::SoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber
+        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber
     )]
-    [InlineData(Entities::SoleProprietorIdentificationMethod.Passport)]
-    [InlineData(Entities::SoleProprietorIdentificationMethod.DriversLicense)]
-    [InlineData(Entities::SoleProprietorIdentificationMethod.Other)]
-    public void SerializationRoundtrip_Works(Entities::SoleProprietorIdentificationMethod rawValue)
+    [InlineData(
+        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber
+    )]
+    [InlineData(Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.Passport)]
+    [InlineData(
+        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.DriversLicense
+    )]
+    [InlineData(Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.Other)]
+    public void SerializationRoundtrip_Works(
+        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod rawValue
+    )
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Entities::SoleProprietorIdentificationMethod> value = rawValue;
+        ApiEnum<
+            string,
+            Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod
+        > value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, Entities::SoleProprietorIdentificationMethod>
+            ApiEnum<string, Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
@@ -6452,11 +6510,11 @@ public class SoleProprietorIdentificationMethodTest : TestBase
     public void InvalidEnumSerializationRoundtrip_Works()
     {
         var value = JsonSerializer.Deserialize<
-            ApiEnum<string, Entities::SoleProprietorIdentificationMethod>
+            ApiEnum<string, Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod>
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, Entities::SoleProprietorIdentificationMethod>
+            ApiEnum<string, Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);

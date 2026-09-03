@@ -14,6 +14,7 @@ public class WireDrawdownRequestTest : TestBase
         var model = new WireDrawdownRequests::WireDrawdownRequest
         {
             ID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3",
+            AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Amount = 10000,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -52,6 +53,7 @@ public class WireDrawdownRequestTest : TestBase
         };
 
         string expectedID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         long expectedAmount = 10000;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
@@ -90,6 +92,7 @@ public class WireDrawdownRequestTest : TestBase
         string expectedUnstructuredRemittanceInformation = "Invoice 29582";
 
         Assert.Equal(expectedID, model.ID);
+        Assert.Equal(expectedAccountID, model.AccountID);
         Assert.Equal(expectedAccountNumberID, model.AccountNumberID);
         Assert.Equal(expectedAmount, model.Amount);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
@@ -126,6 +129,7 @@ public class WireDrawdownRequestTest : TestBase
         var model = new WireDrawdownRequests::WireDrawdownRequest
         {
             ID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3",
+            AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Amount = 10000,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -178,6 +182,7 @@ public class WireDrawdownRequestTest : TestBase
         var model = new WireDrawdownRequests::WireDrawdownRequest
         {
             ID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3",
+            AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Amount = 10000,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -223,6 +228,7 @@ public class WireDrawdownRequestTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         long expectedAmount = 10000;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
@@ -261,6 +267,7 @@ public class WireDrawdownRequestTest : TestBase
         string expectedUnstructuredRemittanceInformation = "Invoice 29582";
 
         Assert.Equal(expectedID, deserialized.ID);
+        Assert.Equal(expectedAccountID, deserialized.AccountID);
         Assert.Equal(expectedAccountNumberID, deserialized.AccountNumberID);
         Assert.Equal(expectedAmount, deserialized.Amount);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
@@ -297,6 +304,7 @@ public class WireDrawdownRequestTest : TestBase
         var model = new WireDrawdownRequests::WireDrawdownRequest
         {
             ID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3",
+            AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Amount = 10000,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -343,6 +351,7 @@ public class WireDrawdownRequestTest : TestBase
         var model = new WireDrawdownRequests::WireDrawdownRequest
         {
             ID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3",
+            AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Amount = 10000,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
