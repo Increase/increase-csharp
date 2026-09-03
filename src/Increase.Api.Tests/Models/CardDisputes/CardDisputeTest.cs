@@ -15,6 +15,7 @@ public class CardDisputeTest : TestBase
         var model = new CardDisputes::CardDispute
         {
             ID = "card_dispute_h9sc95nbl1cgltpp7men",
+            AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 1000,
             CardID = "card_oubs0hwk5rn6knuecxg2",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -497,6 +498,7 @@ public class CardDisputeTest : TestBase
         };
 
         string expectedID = "card_dispute_h9sc95nbl1cgltpp7men";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         long expectedAmount = 1000;
         string expectedCardID = "card_oubs0hwk5rn6knuecxg2";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
@@ -974,6 +976,7 @@ public class CardDisputeTest : TestBase
         );
 
         Assert.Equal(expectedID, model.ID);
+        Assert.Equal(expectedAccountID, model.AccountID);
         Assert.Equal(expectedAmount, model.Amount);
         Assert.Equal(expectedCardID, model.CardID);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
@@ -996,6 +999,7 @@ public class CardDisputeTest : TestBase
         var model = new CardDisputes::CardDispute
         {
             ID = "card_dispute_h9sc95nbl1cgltpp7men",
+            AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 1000,
             CardID = "card_oubs0hwk5rn6knuecxg2",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -1492,6 +1496,7 @@ public class CardDisputeTest : TestBase
         var model = new CardDisputes::CardDispute
         {
             ID = "card_dispute_h9sc95nbl1cgltpp7men",
+            AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 1000,
             CardID = "card_oubs0hwk5rn6knuecxg2",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -1981,6 +1986,7 @@ public class CardDisputeTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedID = "card_dispute_h9sc95nbl1cgltpp7men";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         long expectedAmount = 1000;
         string expectedCardID = "card_oubs0hwk5rn6knuecxg2";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
@@ -2458,6 +2464,7 @@ public class CardDisputeTest : TestBase
         );
 
         Assert.Equal(expectedID, deserialized.ID);
+        Assert.Equal(expectedAccountID, deserialized.AccountID);
         Assert.Equal(expectedAmount, deserialized.Amount);
         Assert.Equal(expectedCardID, deserialized.CardID);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
@@ -2480,6 +2487,7 @@ public class CardDisputeTest : TestBase
         var model = new CardDisputes::CardDispute
         {
             ID = "card_dispute_h9sc95nbl1cgltpp7men",
+            AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 1000,
             CardID = "card_oubs0hwk5rn6knuecxg2",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -2970,6 +2978,7 @@ public class CardDisputeTest : TestBase
         var model = new CardDisputes::CardDispute
         {
             ID = "card_dispute_h9sc95nbl1cgltpp7men",
+            AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 1000,
             CardID = "card_oubs0hwk5rn6knuecxg2",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),

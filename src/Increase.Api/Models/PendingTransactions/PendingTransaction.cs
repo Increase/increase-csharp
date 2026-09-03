@@ -1581,7 +1581,7 @@ public sealed record class CardAuthorization : JsonModel
     }
 
     /// <summary>
-    /// Additional amounts associated with the card authorization, such as ATM surcharges
+    /// Additional amounts associated with the card authorization, such as ATM surcharge
     /// fees. These are usually a subset of the `amount` field and are used to provide
     /// more detailed information about the transaction.
     /// </summary>
@@ -1666,8 +1666,8 @@ public sealed record class CardAuthorization : JsonModel
     }
 
     /// <summary>
-    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) when this authorization
-    /// will expire and the pending transaction will be released.
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time at which this
+    /// authorization will expire and the pending transaction will be released.
     /// </summary>
     public required System::DateTimeOffset ExpiresAt
     {
@@ -2122,7 +2122,7 @@ sealed class ActionerConverter : JsonConverter<Actioner>
 }
 
 /// <summary>
-/// Additional amounts associated with the card authorization, such as ATM surcharges
+/// Additional amounts associated with the card authorization, such as ATM surcharge
 /// fees. These are usually a subset of the `amount` field and are used to provide
 /// more detailed information about the transaction.
 /// </summary>
