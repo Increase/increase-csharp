@@ -12,7 +12,7 @@ using System = System;
 namespace Increase.Api.Models.EntityOnboardingSessions;
 
 /// <summary>
-/// List Entity Onboarding Session
+/// List Entity Onboarding Sessions
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
@@ -204,7 +204,7 @@ public record class EntityOnboardingSessionListParams : ParamsBase
 public sealed record class Status : JsonModel
 {
     /// <summary>
-    /// Filter Entity Onboarding Session for those with the specified status or statuses.
+    /// Filter Entity Onboarding Sessions for those with the specified status or statuses.
     /// For GET requests, this should be encoded as a comma-delimited string, such
     /// as `?in=one,two,three`.
     /// </summary>
