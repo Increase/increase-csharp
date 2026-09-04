@@ -11806,6 +11806,9 @@ class UserPrearbitrationFromRaw : IFromRawJson<UserPrearbitration>
 [JsonConverter(typeof(JsonModelConverter<CategoryChange, CategoryChangeFromRaw>))]
 public sealed record class CategoryChange : JsonModel
 {
+    /// <summary>
+    /// The category the dispute is being changed to.
+    /// </summary>
     public required ApiEnum<string, CategoryChangeCategory> Category
     {
         get
@@ -11873,6 +11876,9 @@ class CategoryChangeFromRaw : IFromRawJson<CategoryChange>
         CategoryChange.FromRawUnchecked(rawData);
 }
 
+/// <summary>
+/// The category the dispute is being changed to.
+/// </summary>
 [JsonConverter(typeof(CategoryChangeCategoryConverter))]
 public enum CategoryChangeCategory
 {
