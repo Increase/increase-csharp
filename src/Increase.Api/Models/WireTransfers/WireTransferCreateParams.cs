@@ -210,7 +210,7 @@ public record class WireTransferCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The ID of an Account Number that will be passed to the wire's recipient
+    /// The ID of an Account Number that will be passed to the wire's recipient.
     /// </summary>
     public string? SourceAccountNumberID
     {

@@ -385,6 +385,11 @@ public enum In
     FednowTransferAcknowledgement,
 
     /// <summary>
+    /// FedNow Transfer Return: details will be under the `fednow_transfer_return` object.
+    /// </summary>
+    FednowTransferReturn,
+
+    /// <summary>
     /// Check Transfer Deposit: details will be under the `check_transfer_deposit` object.
     /// </summary>
     CheckTransferDeposit,
@@ -526,6 +531,7 @@ sealed class InConverter : JsonConverter<In>
             "check_deposit_acceptance" => In.CheckDepositAcceptance,
             "check_deposit_return" => In.CheckDepositReturn,
             "fednow_transfer_acknowledgement" => In.FednowTransferAcknowledgement,
+            "fednow_transfer_return" => In.FednowTransferReturn,
             "check_transfer_deposit" => In.CheckTransferDeposit,
             "fee_payment" => In.FeePayment,
             "inbound_ach_transfer" => In.InboundAchTransfer,
@@ -576,6 +582,7 @@ sealed class InConverter : JsonConverter<In>
                 In.CheckDepositAcceptance => "check_deposit_acceptance",
                 In.CheckDepositReturn => "check_deposit_return",
                 In.FednowTransferAcknowledgement => "fednow_transfer_acknowledgement",
+                In.FednowTransferReturn => "fednow_transfer_return",
                 In.CheckTransferDeposit => "check_transfer_deposit",
                 In.FeePayment => "fee_payment",
                 In.InboundAchTransfer => "inbound_ach_transfer",

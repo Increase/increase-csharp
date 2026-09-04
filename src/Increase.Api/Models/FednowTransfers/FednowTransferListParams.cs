@@ -478,11 +478,6 @@ public enum In
     Canceled,
 
     /// <summary>
-    /// The transfer has been rejected by Increase.
-    /// </summary>
-    ReviewingRejected,
-
-    /// <summary>
     /// The transfer requires attention from an Increase operator.
     /// </summary>
     RequiresAttention,
@@ -506,6 +501,11 @@ public enum In
     /// The transfer was rejected by the network or the recipient's bank.
     /// </summary>
     Rejected,
+
+    /// <summary>
+    /// The transfer was returned by the recipient's bank.
+    /// </summary>
+    Returned,
 }
 
 sealed class InConverter : JsonConverter<In>
@@ -521,12 +521,12 @@ sealed class InConverter : JsonConverter<In>
             "pending_submitting" => In.PendingSubmitting,
             "pending_reviewing" => In.PendingReviewing,
             "canceled" => In.Canceled,
-            "reviewing_rejected" => In.ReviewingRejected,
             "requires_attention" => In.RequiresAttention,
             "pending_approval" => In.PendingApproval,
             "pending_response" => In.PendingResponse,
             "complete" => In.Complete,
             "rejected" => In.Rejected,
+            "returned" => In.Returned,
             _ => (In)(-1),
         };
     }
@@ -540,12 +540,12 @@ sealed class InConverter : JsonConverter<In>
                 In.PendingSubmitting => "pending_submitting",
                 In.PendingReviewing => "pending_reviewing",
                 In.Canceled => "canceled",
-                In.ReviewingRejected => "reviewing_rejected",
                 In.RequiresAttention => "requires_attention",
                 In.PendingApproval => "pending_approval",
                 In.PendingResponse => "pending_response",
                 In.Complete => "complete",
                 In.Rejected => "rejected",
+                In.Returned => "returned",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

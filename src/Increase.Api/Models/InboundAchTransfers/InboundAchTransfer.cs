@@ -257,7 +257,7 @@ public sealed record class InboundAchTransfer : JsonModel
     }
 
     /// <summary>
-    /// The American Banking Association (ABA) routing number of the bank originating
+    /// The American Bankers' Association (ABA) routing number of the bank originating
     /// the transfer.
     /// </summary>
     public required string OriginatorRoutingNumber

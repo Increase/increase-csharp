@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text.Json;
 using Increase.Api.Core;
 using Increase.Api.Exceptions;
@@ -52,6 +53,16 @@ public class FednowTransferTest : TestBase
                 RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
                 RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
+            Returns =
+            [
+                new()
+                {
+                    Amount = 100,
+                    ReturnReasonAdditionalInformation = null,
+                    ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                    TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                },
+            ],
             RoutingNumber = "101050001",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = FednowTransfers::FednowTransferStatus.Complete,
@@ -105,6 +116,16 @@ public class FednowTransferTest : TestBase
             RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
             RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
         };
+        List<FednowTransfers::Return> expectedReturns =
+        [
+            new()
+            {
+                Amount = 100,
+                ReturnReasonAdditionalInformation = null,
+                ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+            },
+        ];
         string expectedRoutingNumber = "101050001";
         string expectedSourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         ApiEnum<string, FednowTransfers::FednowTransferStatus> expectedStatus =
@@ -135,6 +156,11 @@ public class FednowTransferTest : TestBase
         Assert.Null(model.IdempotencyKey);
         Assert.Equal(expectedPendingTransactionID, model.PendingTransactionID);
         Assert.Equal(expectedRejection, model.Rejection);
+        Assert.Equal(expectedReturns.Count, model.Returns.Count);
+        for (int i = 0; i < expectedReturns.Count; i++)
+        {
+            Assert.Equal(expectedReturns[i], model.Returns[i]);
+        }
         Assert.Equal(expectedRoutingNumber, model.RoutingNumber);
         Assert.Equal(expectedSourceAccountNumberID, model.SourceAccountNumberID);
         Assert.Equal(expectedStatus, model.Status);
@@ -195,6 +221,16 @@ public class FednowTransferTest : TestBase
                 RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
                 RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
+            Returns =
+            [
+                new()
+                {
+                    Amount = 100,
+                    ReturnReasonAdditionalInformation = null,
+                    ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                    TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                },
+            ],
             RoutingNumber = "101050001",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = FednowTransfers::FednowTransferStatus.Complete,
@@ -262,6 +298,16 @@ public class FednowTransferTest : TestBase
                 RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
                 RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
+            Returns =
+            [
+                new()
+                {
+                    Amount = 100,
+                    ReturnReasonAdditionalInformation = null,
+                    ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                    TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                },
+            ],
             RoutingNumber = "101050001",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = FednowTransfers::FednowTransferStatus.Complete,
@@ -322,6 +368,16 @@ public class FednowTransferTest : TestBase
             RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
             RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
         };
+        List<FednowTransfers::Return> expectedReturns =
+        [
+            new()
+            {
+                Amount = 100,
+                ReturnReasonAdditionalInformation = null,
+                ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+            },
+        ];
         string expectedRoutingNumber = "101050001";
         string expectedSourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         ApiEnum<string, FednowTransfers::FednowTransferStatus> expectedStatus =
@@ -352,6 +408,11 @@ public class FednowTransferTest : TestBase
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Equal(expectedPendingTransactionID, deserialized.PendingTransactionID);
         Assert.Equal(expectedRejection, deserialized.Rejection);
+        Assert.Equal(expectedReturns.Count, deserialized.Returns.Count);
+        for (int i = 0; i < expectedReturns.Count; i++)
+        {
+            Assert.Equal(expectedReturns[i], deserialized.Returns[i]);
+        }
         Assert.Equal(expectedRoutingNumber, deserialized.RoutingNumber);
         Assert.Equal(expectedSourceAccountNumberID, deserialized.SourceAccountNumberID);
         Assert.Equal(expectedStatus, deserialized.Status);
@@ -412,6 +473,16 @@ public class FednowTransferTest : TestBase
                 RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
                 RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
+            Returns =
+            [
+                new()
+                {
+                    Amount = 100,
+                    ReturnReasonAdditionalInformation = null,
+                    ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                    TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                },
+            ],
             RoutingNumber = "101050001",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = FednowTransfers::FednowTransferStatus.Complete,
@@ -473,6 +544,16 @@ public class FednowTransferTest : TestBase
                 RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
                 RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
+            Returns =
+            [
+                new()
+                {
+                    Amount = 100,
+                    ReturnReasonAdditionalInformation = null,
+                    ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                    TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                },
+            ],
             RoutingNumber = "101050001",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = FednowTransfers::FednowTransferStatus.Complete,
@@ -1421,18 +1502,206 @@ public class RejectReasonCodeTest : TestBase
     }
 }
 
+public class ReturnTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new FednowTransfers::Return
+        {
+            Amount = 100,
+            ReturnReasonAdditionalInformation = null,
+            ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+        };
+
+        long expectedAmount = 100;
+        ApiEnum<string, FednowTransfers::ReturnReasonCode> expectedReturnReasonCode =
+            FednowTransfers::ReturnReasonCode.UnableToApply;
+        string expectedTransferID = "fednow_transfer_4i0mptrdu1mueg1196bg";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Null(model.ReturnReasonAdditionalInformation);
+        Assert.Equal(expectedReturnReasonCode, model.ReturnReasonCode);
+        Assert.Equal(expectedTransferID, model.TransferID);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new FednowTransfers::Return
+        {
+            Amount = 100,
+            ReturnReasonAdditionalInformation = null,
+            ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<FednowTransfers::Return>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new FednowTransfers::Return
+        {
+            Amount = 100,
+            ReturnReasonAdditionalInformation = null,
+            ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<FednowTransfers::Return>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        long expectedAmount = 100;
+        ApiEnum<string, FednowTransfers::ReturnReasonCode> expectedReturnReasonCode =
+            FednowTransfers::ReturnReasonCode.UnableToApply;
+        string expectedTransferID = "fednow_transfer_4i0mptrdu1mueg1196bg";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Null(deserialized.ReturnReasonAdditionalInformation);
+        Assert.Equal(expectedReturnReasonCode, deserialized.ReturnReasonCode);
+        Assert.Equal(expectedTransferID, deserialized.TransferID);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new FednowTransfers::Return
+        {
+            Amount = 100,
+            ReturnReasonAdditionalInformation = null,
+            ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new FednowTransfers::Return
+        {
+            Amount = 100,
+            ReturnReasonAdditionalInformation = null,
+            ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+        };
+
+        FednowTransfers::Return copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class ReturnReasonCodeTest : TestBase
+{
+    [Theory]
+    [InlineData(FednowTransfers::ReturnReasonCode.AccountClosed)]
+    [InlineData(FednowTransfers::ReturnReasonCode.AccountBlocked)]
+    [InlineData(FednowTransfers::ReturnReasonCode.InvalidAgent)]
+    [InlineData(FednowTransfers::ReturnReasonCode.InvalidCreditorAccountNumber)]
+    [InlineData(FednowTransfers::ReturnReasonCode.IncorrectAccountNumber)]
+    [InlineData(FednowTransfers::ReturnReasonCode.EndCustomerDeceased)]
+    [InlineData(FednowTransfers::ReturnReasonCode.TransactionForbidden)]
+    [InlineData(FednowTransfers::ReturnReasonCode.RegulatoryReason)]
+    [InlineData(FednowTransfers::ReturnReasonCode.Fraud)]
+    [InlineData(FednowTransfers::ReturnReasonCode.Duplication)]
+    [InlineData(FednowTransfers::ReturnReasonCode.WrongAmount)]
+    [InlineData(FednowTransfers::ReturnReasonCode.RequestedByCustomer)]
+    [InlineData(FednowTransfers::ReturnReasonCode.UnableToApply)]
+    [InlineData(FednowTransfers::ReturnReasonCode.NotSpecified)]
+    [InlineData(FednowTransfers::ReturnReasonCode.Narrative)]
+    [InlineData(FednowTransfers::ReturnReasonCode.Other)]
+    public void Validation_Works(FednowTransfers::ReturnReasonCode rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, FednowTransfers::ReturnReasonCode> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, FednowTransfers::ReturnReasonCode>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(FednowTransfers::ReturnReasonCode.AccountClosed)]
+    [InlineData(FednowTransfers::ReturnReasonCode.AccountBlocked)]
+    [InlineData(FednowTransfers::ReturnReasonCode.InvalidAgent)]
+    [InlineData(FednowTransfers::ReturnReasonCode.InvalidCreditorAccountNumber)]
+    [InlineData(FednowTransfers::ReturnReasonCode.IncorrectAccountNumber)]
+    [InlineData(FednowTransfers::ReturnReasonCode.EndCustomerDeceased)]
+    [InlineData(FednowTransfers::ReturnReasonCode.TransactionForbidden)]
+    [InlineData(FednowTransfers::ReturnReasonCode.RegulatoryReason)]
+    [InlineData(FednowTransfers::ReturnReasonCode.Fraud)]
+    [InlineData(FednowTransfers::ReturnReasonCode.Duplication)]
+    [InlineData(FednowTransfers::ReturnReasonCode.WrongAmount)]
+    [InlineData(FednowTransfers::ReturnReasonCode.RequestedByCustomer)]
+    [InlineData(FednowTransfers::ReturnReasonCode.UnableToApply)]
+    [InlineData(FednowTransfers::ReturnReasonCode.NotSpecified)]
+    [InlineData(FednowTransfers::ReturnReasonCode.Narrative)]
+    [InlineData(FednowTransfers::ReturnReasonCode.Other)]
+    public void SerializationRoundtrip_Works(FednowTransfers::ReturnReasonCode rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, FednowTransfers::ReturnReasonCode> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, FednowTransfers::ReturnReasonCode>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, FednowTransfers::ReturnReasonCode>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, FednowTransfers::ReturnReasonCode>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class FednowTransferStatusTest : TestBase
 {
     [Theory]
     [InlineData(FednowTransfers::FednowTransferStatus.PendingSubmitting)]
     [InlineData(FednowTransfers::FednowTransferStatus.PendingReviewing)]
     [InlineData(FednowTransfers::FednowTransferStatus.Canceled)]
-    [InlineData(FednowTransfers::FednowTransferStatus.ReviewingRejected)]
     [InlineData(FednowTransfers::FednowTransferStatus.RequiresAttention)]
     [InlineData(FednowTransfers::FednowTransferStatus.PendingApproval)]
     [InlineData(FednowTransfers::FednowTransferStatus.PendingResponse)]
     [InlineData(FednowTransfers::FednowTransferStatus.Complete)]
     [InlineData(FednowTransfers::FednowTransferStatus.Rejected)]
+    [InlineData(FednowTransfers::FednowTransferStatus.Returned)]
     public void Validation_Works(FednowTransfers::FednowTransferStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1455,12 +1724,12 @@ public class FednowTransferStatusTest : TestBase
     [InlineData(FednowTransfers::FednowTransferStatus.PendingSubmitting)]
     [InlineData(FednowTransfers::FednowTransferStatus.PendingReviewing)]
     [InlineData(FednowTransfers::FednowTransferStatus.Canceled)]
-    [InlineData(FednowTransfers::FednowTransferStatus.ReviewingRejected)]
     [InlineData(FednowTransfers::FednowTransferStatus.RequiresAttention)]
     [InlineData(FednowTransfers::FednowTransferStatus.PendingApproval)]
     [InlineData(FednowTransfers::FednowTransferStatus.PendingResponse)]
     [InlineData(FednowTransfers::FednowTransferStatus.Complete)]
     [InlineData(FednowTransfers::FednowTransferStatus.Rejected)]
+    [InlineData(FednowTransfers::FednowTransferStatus.Returned)]
     public void SerializationRoundtrip_Works(FednowTransfers::FednowTransferStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
