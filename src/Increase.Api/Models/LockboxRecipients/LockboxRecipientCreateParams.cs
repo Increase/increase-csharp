@@ -73,7 +73,7 @@ public record class LockboxRecipientCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The name of the Lockbox Recipient
+    /// The name of the Lockbox Recipient.
     /// </summary>
     public string? RecipientName
     {
