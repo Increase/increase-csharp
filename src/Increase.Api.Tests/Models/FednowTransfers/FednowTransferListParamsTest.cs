@@ -437,12 +437,12 @@ public class InTest : TestBase
     [InlineData(In.PendingSubmitting)]
     [InlineData(In.PendingReviewing)]
     [InlineData(In.Canceled)]
-    [InlineData(In.ReviewingRejected)]
     [InlineData(In.RequiresAttention)]
     [InlineData(In.PendingApproval)]
     [InlineData(In.PendingResponse)]
     [InlineData(In.Complete)]
     [InlineData(In.Rejected)]
+    [InlineData(In.Returned)]
     public void Validation_Works(In rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -466,12 +466,12 @@ public class InTest : TestBase
     [InlineData(In.PendingSubmitting)]
     [InlineData(In.PendingReviewing)]
     [InlineData(In.Canceled)]
-    [InlineData(In.ReviewingRejected)]
     [InlineData(In.RequiresAttention)]
     [InlineData(In.PendingApproval)]
     [InlineData(In.PendingResponse)]
     [InlineData(In.Complete)]
     [InlineData(In.Rejected)]
+    [InlineData(In.Returned)]
     public void SerializationRoundtrip_Works(In rawValue)
     {
         // force implicit conversion because Theory can't do that for us
