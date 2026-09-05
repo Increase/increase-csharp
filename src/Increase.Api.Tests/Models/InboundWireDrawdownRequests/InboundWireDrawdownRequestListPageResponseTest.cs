@@ -18,6 +18,7 @@ public class InboundWireDrawdownRequestListPageResponseTest : TestBase
                 new()
                 {
                     ID = "inbound_wire_drawdown_request_u5a92ikqhz1ytphn799e",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     Amount = 10000,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreditorAccountNumber = "987654321",
@@ -48,6 +49,7 @@ public class InboundWireDrawdownRequestListPageResponseTest : TestBase
             new()
             {
                 ID = "inbound_wire_drawdown_request_u5a92ikqhz1ytphn799e",
+                AccountID = "account_in71c4amph0vgo2qllky",
                 Amount = 10000,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CreditorAccountNumber = "987654321",
@@ -90,6 +92,7 @@ public class InboundWireDrawdownRequestListPageResponseTest : TestBase
                 new()
                 {
                     ID = "inbound_wire_drawdown_request_u5a92ikqhz1ytphn799e",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     Amount = 10000,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreditorAccountNumber = "987654321",
@@ -135,6 +138,7 @@ public class InboundWireDrawdownRequestListPageResponseTest : TestBase
                 new()
                 {
                     ID = "inbound_wire_drawdown_request_u5a92ikqhz1ytphn799e",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     Amount = 10000,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreditorAccountNumber = "987654321",
@@ -173,6 +177,7 @@ public class InboundWireDrawdownRequestListPageResponseTest : TestBase
             new()
             {
                 ID = "inbound_wire_drawdown_request_u5a92ikqhz1ytphn799e",
+                AccountID = "account_in71c4amph0vgo2qllky",
                 Amount = 10000,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CreditorAccountNumber = "987654321",
@@ -215,6 +220,7 @@ public class InboundWireDrawdownRequestListPageResponseTest : TestBase
                 new()
                 {
                     ID = "inbound_wire_drawdown_request_u5a92ikqhz1ytphn799e",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     Amount = 10000,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreditorAccountNumber = "987654321",
@@ -253,6 +259,7 @@ public class InboundWireDrawdownRequestListPageResponseTest : TestBase
                 new()
                 {
                     ID = "inbound_wire_drawdown_request_u5a92ikqhz1ytphn799e",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     Amount = 10000,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreditorAccountNumber = "987654321",

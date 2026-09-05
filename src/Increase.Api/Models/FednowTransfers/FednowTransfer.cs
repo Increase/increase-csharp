@@ -1,5 +1,6 @@
 using System.Collections.Frozen;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -235,6 +236,27 @@ public sealed record class FednowTransfer : JsonModel
     }
 
     /// <summary>
+    /// If the transfer is returned by the recipient's bank, this will contain details
+    /// of each return. FedNow allows returning part of a transfer, so a transfer
+    /// can be returned more than once.
+    /// </summary>
+    public required IReadOnlyList<Return> Returns
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<Return>>("returns");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<Return>>(
+                "returns",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// The destination American Bankers' Association (ABA) Routing Transit Number (RTN).
     /// </summary>
     public required string RoutingNumber
@@ -361,6 +383,10 @@ public sealed record class FednowTransfer : JsonModel
         _ = this.IdempotencyKey;
         _ = this.PendingTransactionID;
         this.Rejection?.Validate();
+        foreach (var item in this.Returns)
+        {
+            item.Validate();
+        }
         _ = this.RoutingNumber;
         _ = this.SourceAccountNumberID;
         this.Status.Validate();
@@ -1356,6 +1382,276 @@ sealed class RejectReasonCodeConverter : JsonConverter<RejectReasonCode>
 }
 
 /// <summary>
+/// A FedNow Transfer Return is created when a FedNow Transfer sent from Increase
+/// is returned by the recipient's bank.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Return, ReturnFromRaw>))]
+public sealed record class Return : JsonModel
+{
+    /// <summary>
+    /// The returned amount in USD cents. This is always a positive number.
+    /// </summary>
+    public required long Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
+    /// Additional information about the return provided by the recipient's bank.
+    /// </summary>
+    public required string? ReturnReasonAdditionalInformation
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("return_reason_additional_information");
+        }
+        init { this._rawData.Set("return_reason_additional_information", value); }
+    }
+
+    /// <summary>
+    /// The reason the transfer was returned as provided by the recipient's bank.
+    /// </summary>
+    public required ApiEnum<string, ReturnReasonCode> ReturnReasonCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, ReturnReasonCode>>(
+                "return_reason_code"
+            );
+        }
+        init { this._rawData.Set("return_reason_code", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the FedNow Transfer that led to this Transaction.
+    /// </summary>
+    public required string TransferID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("transfer_id");
+        }
+        init { this._rawData.Set("transfer_id", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Amount;
+        _ = this.ReturnReasonAdditionalInformation;
+        this.ReturnReasonCode.Validate();
+        _ = this.TransferID;
+    }
+
+    public Return() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Return(Return return_)
+        : base(return_) { }
+#pragma warning restore CS8618
+
+    public Return(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Return(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="ReturnFromRaw.FromRawUnchecked"/>
+    public static Return FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class ReturnFromRaw : IFromRawJson<Return>
+{
+    /// <inheritdoc/>
+    public Return FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Return.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The reason the transfer was returned as provided by the recipient's bank.
+/// </summary>
+[JsonConverter(typeof(ReturnReasonCodeConverter))]
+public enum ReturnReasonCode
+{
+    /// <summary>
+    /// The destination account is closed. Corresponds to the FedNow reason codes
+    /// `AC04` and `AC07`.
+    /// </summary>
+    AccountClosed,
+
+    /// <summary>
+    /// The destination account is currently blocked from receiving transactions.
+    /// Corresponds to the FedNow reason code `AC06`.
+    /// </summary>
+    AccountBlocked,
+
+    /// <summary>
+    /// The recipient's bank was not a valid agent for this transfer. Corresponds
+    /// to the FedNow reason codes `AC14` and `AGNT`.
+    /// </summary>
+    InvalidAgent,
+
+    /// <summary>
+    /// The destination account does not exist. Corresponds to the FedNow reason code `AC03`.
+    /// </summary>
+    InvalidCreditorAccountNumber,
+
+    /// <summary>
+    /// The destination account number was incorrect. Corresponds to the FedNow reason
+    /// code `AC01`.
+    /// </summary>
+    IncorrectAccountNumber,
+
+    /// <summary>
+    /// The destination account holder is deceased. Corresponds to the FedNow reason
+    /// code `MD07`.
+    /// </summary>
+    EndCustomerDeceased,
+
+    /// <summary>
+    /// The transfer was not permitted by the recipient's bank. Corresponds to the
+    /// FedNow reason code `AG01`.
+    /// </summary>
+    TransactionForbidden,
+
+    /// <summary>
+    /// The transfer was returned for a regulatory reason at the recipient's bank.
+    /// Corresponds to the FedNow reason code `RR04`.
+    /// </summary>
+    RegulatoryReason,
+
+    /// <summary>
+    /// The transfer was reported as fraudulent. Corresponds to the FedNow reason
+    /// code `FR01`.
+    /// </summary>
+    Fraud,
+
+    /// <summary>
+    /// The transfer duplicated another transfer. Corresponds to the FedNow reason
+    /// codes `AM05` and `DUPL`.
+    /// </summary>
+    Duplication,
+
+    /// <summary>
+    /// The transfer amount was incorrect. Corresponds to the FedNow reason code `AM09`.
+    /// </summary>
+    WrongAmount,
+
+    /// <summary>
+    /// The transfer was returned at the request of the recipient's customer. Corresponds
+    /// to the FedNow reason code `CUST`.
+    /// </summary>
+    RequestedByCustomer,
+
+    /// <summary>
+    /// The recipient's bank could not apply the funds. Corresponds to the FedNow
+    /// reason code `RUTA`.
+    /// </summary>
+    UnableToApply,
+
+    /// <summary>
+    /// The recipient's bank did not specify a reason. Corresponds to the FedNow
+    /// reason codes `MS02` and `MS03`.
+    /// </summary>
+    NotSpecified,
+
+    /// <summary>
+    /// The reason is provided as narrative information in the additional information
+    /// field. Corresponds to the FedNow reason code `NARR`.
+    /// </summary>
+    Narrative,
+
+    /// <summary>
+    /// The transfer was returned for some other reason.
+    /// </summary>
+    Other,
+}
+
+sealed class ReturnReasonCodeConverter : JsonConverter<ReturnReasonCode>
+{
+    public override ReturnReasonCode Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "account_closed" => ReturnReasonCode.AccountClosed,
+            "account_blocked" => ReturnReasonCode.AccountBlocked,
+            "invalid_agent" => ReturnReasonCode.InvalidAgent,
+            "invalid_creditor_account_number" => ReturnReasonCode.InvalidCreditorAccountNumber,
+            "incorrect_account_number" => ReturnReasonCode.IncorrectAccountNumber,
+            "end_customer_deceased" => ReturnReasonCode.EndCustomerDeceased,
+            "transaction_forbidden" => ReturnReasonCode.TransactionForbidden,
+            "regulatory_reason" => ReturnReasonCode.RegulatoryReason,
+            "fraud" => ReturnReasonCode.Fraud,
+            "duplication" => ReturnReasonCode.Duplication,
+            "wrong_amount" => ReturnReasonCode.WrongAmount,
+            "requested_by_customer" => ReturnReasonCode.RequestedByCustomer,
+            "unable_to_apply" => ReturnReasonCode.UnableToApply,
+            "not_specified" => ReturnReasonCode.NotSpecified,
+            "narrative" => ReturnReasonCode.Narrative,
+            "other" => ReturnReasonCode.Other,
+            _ => (ReturnReasonCode)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        ReturnReasonCode value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                ReturnReasonCode.AccountClosed => "account_closed",
+                ReturnReasonCode.AccountBlocked => "account_blocked",
+                ReturnReasonCode.InvalidAgent => "invalid_agent",
+                ReturnReasonCode.InvalidCreditorAccountNumber => "invalid_creditor_account_number",
+                ReturnReasonCode.IncorrectAccountNumber => "incorrect_account_number",
+                ReturnReasonCode.EndCustomerDeceased => "end_customer_deceased",
+                ReturnReasonCode.TransactionForbidden => "transaction_forbidden",
+                ReturnReasonCode.RegulatoryReason => "regulatory_reason",
+                ReturnReasonCode.Fraud => "fraud",
+                ReturnReasonCode.Duplication => "duplication",
+                ReturnReasonCode.WrongAmount => "wrong_amount",
+                ReturnReasonCode.RequestedByCustomer => "requested_by_customer",
+                ReturnReasonCode.UnableToApply => "unable_to_apply",
+                ReturnReasonCode.NotSpecified => "not_specified",
+                ReturnReasonCode.Narrative => "narrative",
+                ReturnReasonCode.Other => "other",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
 /// The lifecycle status of the transfer.
 /// </summary>
 [JsonConverter(typeof(FednowTransferStatusConverter))]
@@ -1375,11 +1671,6 @@ public enum FednowTransferStatus
     /// The transfer has been canceled.
     /// </summary>
     Canceled,
-
-    /// <summary>
-    /// The transfer has been rejected by Increase.
-    /// </summary>
-    ReviewingRejected,
 
     /// <summary>
     /// The transfer requires attention from an Increase operator.
@@ -1405,6 +1696,11 @@ public enum FednowTransferStatus
     /// The transfer was rejected by the network or the recipient's bank.
     /// </summary>
     Rejected,
+
+    /// <summary>
+    /// The transfer was returned by the recipient's bank.
+    /// </summary>
+    Returned,
 }
 
 sealed class FednowTransferStatusConverter : JsonConverter<FednowTransferStatus>
@@ -1420,12 +1716,12 @@ sealed class FednowTransferStatusConverter : JsonConverter<FednowTransferStatus>
             "pending_submitting" => FednowTransferStatus.PendingSubmitting,
             "pending_reviewing" => FednowTransferStatus.PendingReviewing,
             "canceled" => FednowTransferStatus.Canceled,
-            "reviewing_rejected" => FednowTransferStatus.ReviewingRejected,
             "requires_attention" => FednowTransferStatus.RequiresAttention,
             "pending_approval" => FednowTransferStatus.PendingApproval,
             "pending_response" => FednowTransferStatus.PendingResponse,
             "complete" => FednowTransferStatus.Complete,
             "rejected" => FednowTransferStatus.Rejected,
+            "returned" => FednowTransferStatus.Returned,
             _ => (FednowTransferStatus)(-1),
         };
     }
@@ -1443,12 +1739,12 @@ sealed class FednowTransferStatusConverter : JsonConverter<FednowTransferStatus>
                 FednowTransferStatus.PendingSubmitting => "pending_submitting",
                 FednowTransferStatus.PendingReviewing => "pending_reviewing",
                 FednowTransferStatus.Canceled => "canceled",
-                FednowTransferStatus.ReviewingRejected => "reviewing_rejected",
                 FednowTransferStatus.RequiresAttention => "requires_attention",
                 FednowTransferStatus.PendingApproval => "pending_approval",
                 FednowTransferStatus.PendingResponse => "pending_response",
                 FednowTransferStatus.Complete => "complete",
                 FednowTransferStatus.Rejected => "rejected",
+                FednowTransferStatus.Returned => "returned",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

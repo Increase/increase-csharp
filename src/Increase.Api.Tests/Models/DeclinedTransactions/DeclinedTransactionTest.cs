@@ -7296,6 +7296,7 @@ public class InboundFednowTransferDeclineReasonTest : TestBase
     [InlineData(DeclinedTransactions::InboundFednowTransferDeclineReason.GroupLocked)]
     [InlineData(DeclinedTransactions::InboundFednowTransferDeclineReason.EntityNotActive)]
     [InlineData(DeclinedTransactions::InboundFednowTransferDeclineReason.FednowNotEnabled)]
+    [InlineData(DeclinedTransactions::InboundFednowTransferDeclineReason.TransactionNotAllowed)]
     public void Validation_Works(DeclinedTransactions::InboundFednowTransferDeclineReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -7321,6 +7322,7 @@ public class InboundFednowTransferDeclineReasonTest : TestBase
     [InlineData(DeclinedTransactions::InboundFednowTransferDeclineReason.GroupLocked)]
     [InlineData(DeclinedTransactions::InboundFednowTransferDeclineReason.EntityNotActive)]
     [InlineData(DeclinedTransactions::InboundFednowTransferDeclineReason.FednowNotEnabled)]
+    [InlineData(DeclinedTransactions::InboundFednowTransferDeclineReason.TransactionNotAllowed)]
     public void SerializationRoundtrip_Works(
         DeclinedTransactions::InboundFednowTransferDeclineReason rawValue
     )

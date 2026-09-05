@@ -606,8 +606,8 @@ public sealed record class Status : JsonModel
 {
     /// <summary>
     /// Filter Pending Transactions for those with the specified status. By default
-    /// only Pending Transactions in with status `pending` will be returned. For
-    /// GET requests, this should be encoded as a comma-delimited string, such as `?in=one,two,three`.
+    /// only Pending Transactions with status `pending` will be returned. For GET
+    /// requests, this should be encoded as a comma-delimited string, such as `?in=one,two,three`.
     /// </summary>
     public IReadOnlyList<ApiEnum<string, StatusIn>>? In
     {

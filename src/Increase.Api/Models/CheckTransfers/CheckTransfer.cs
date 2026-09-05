@@ -349,7 +349,7 @@ public sealed record class CheckTransfer : JsonModel
     /// <summary>
     /// If set, the check will be valid on or before this date. After this date, the
     /// check transfer will be automatically stopped and deposits will not be accepted.
-    /// For checks printed by Increase, this date is included on the check as its expiry.
+    /// For checks printed by Increase, this date is included on the check as its expiration.
     /// </summary>
     public required string? ValidUntilDate
     {

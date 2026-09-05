@@ -18,6 +18,7 @@ public class InboundMailItemListPageResponseTest : TestBase
                 new()
                 {
                     ID = "inbound_mail_item_q6rrg7mmqpplx80zceev",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     Checks =
                     [
                         new()
@@ -55,6 +56,7 @@ public class InboundMailItemListPageResponseTest : TestBase
             new()
             {
                 ID = "inbound_mail_item_q6rrg7mmqpplx80zceev",
+                AccountID = "account_in71c4amph0vgo2qllky",
                 Checks =
                 [
                     new()
@@ -104,6 +106,7 @@ public class InboundMailItemListPageResponseTest : TestBase
                 new()
                 {
                     ID = "inbound_mail_item_q6rrg7mmqpplx80zceev",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     Checks =
                     [
                         new()
@@ -156,6 +159,7 @@ public class InboundMailItemListPageResponseTest : TestBase
                 new()
                 {
                     ID = "inbound_mail_item_q6rrg7mmqpplx80zceev",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     Checks =
                     [
                         new()
@@ -201,6 +205,7 @@ public class InboundMailItemListPageResponseTest : TestBase
             new()
             {
                 ID = "inbound_mail_item_q6rrg7mmqpplx80zceev",
+                AccountID = "account_in71c4amph0vgo2qllky",
                 Checks =
                 [
                     new()
@@ -250,6 +255,7 @@ public class InboundMailItemListPageResponseTest : TestBase
                 new()
                 {
                     ID = "inbound_mail_item_q6rrg7mmqpplx80zceev",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     Checks =
                     [
                         new()
@@ -295,6 +301,7 @@ public class InboundMailItemListPageResponseTest : TestBase
                 new()
                 {
                     ID = "inbound_mail_item_q6rrg7mmqpplx80zceev",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     Checks =
                     [
                         new()

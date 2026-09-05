@@ -33,6 +33,21 @@ public sealed record class InboundMailItem : JsonModel
     }
 
     /// <summary>
+    /// The identifier for the Account that checks in this mail item are deposited
+    /// into. For mail items that could not be routed to a Lockbox Recipient, this
+    /// will be null.
+    /// </summary>
+    public required string? AccountID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("account_id");
+        }
+        init { this._rawData.Set("account_id", value); }
+    }
+
+    /// <summary>
     /// The checks in the mail item.
     /// </summary>
     public required IReadOnlyList<InboundMailItemCheck> Checks
@@ -166,6 +181,7 @@ public sealed record class InboundMailItem : JsonModel
     public override void Validate()
     {
         _ = this.ID;
+        _ = this.AccountID;
         foreach (var item in this.Checks)
         {
             item.Validate();

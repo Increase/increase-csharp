@@ -56,6 +56,16 @@ public class FednowTransferListPageResponseTest : TestBase
                         RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
                         RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
+                    Returns =
+                    [
+                        new()
+                        {
+                            Amount = 100,
+                            ReturnReasonAdditionalInformation = null,
+                            ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                        },
+                    ],
                     RoutingNumber = "101050001",
                     SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Status = FednowTransfers::FednowTransferStatus.Complete,
@@ -116,6 +126,16 @@ public class FednowTransferListPageResponseTest : TestBase
                     RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
                     RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
+                Returns =
+                [
+                    new()
+                    {
+                        Amount = 100,
+                        ReturnReasonAdditionalInformation = null,
+                        ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                        TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                    },
+                ],
                 RoutingNumber = "101050001",
                 SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                 Status = FednowTransfers::FednowTransferStatus.Complete,
@@ -188,6 +208,16 @@ public class FednowTransferListPageResponseTest : TestBase
                         RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
                         RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
+                    Returns =
+                    [
+                        new()
+                        {
+                            Amount = 100,
+                            ReturnReasonAdditionalInformation = null,
+                            ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                        },
+                    ],
                     RoutingNumber = "101050001",
                     SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Status = FednowTransfers::FednowTransferStatus.Complete,
@@ -263,6 +293,16 @@ public class FednowTransferListPageResponseTest : TestBase
                         RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
                         RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
+                    Returns =
+                    [
+                        new()
+                        {
+                            Amount = 100,
+                            ReturnReasonAdditionalInformation = null,
+                            ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                        },
+                    ],
                     RoutingNumber = "101050001",
                     SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Status = FednowTransfers::FednowTransferStatus.Complete,
@@ -331,6 +371,16 @@ public class FednowTransferListPageResponseTest : TestBase
                     RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
                     RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
+                Returns =
+                [
+                    new()
+                    {
+                        Amount = 100,
+                        ReturnReasonAdditionalInformation = null,
+                        ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                        TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                    },
+                ],
                 RoutingNumber = "101050001",
                 SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                 Status = FednowTransfers::FednowTransferStatus.Complete,
@@ -403,6 +453,16 @@ public class FednowTransferListPageResponseTest : TestBase
                         RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
                         RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
+                    Returns =
+                    [
+                        new()
+                        {
+                            Amount = 100,
+                            ReturnReasonAdditionalInformation = null,
+                            ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                        },
+                    ],
                     RoutingNumber = "101050001",
                     SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Status = FednowTransfers::FednowTransferStatus.Complete,
@@ -471,6 +531,16 @@ public class FednowTransferListPageResponseTest : TestBase
                         RejectReasonCode = FednowTransfers::RejectReasonCode.Other,
                         RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
+                    Returns =
+                    [
+                        new()
+                        {
+                            Amount = 100,
+                            ReturnReasonAdditionalInformation = null,
+                            ReturnReasonCode = FednowTransfers::ReturnReasonCode.UnableToApply,
+                            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                        },
+                    ],
                     RoutingNumber = "101050001",
                     SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Status = FednowTransfers::FednowTransferStatus.Complete,

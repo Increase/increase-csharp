@@ -16,12 +16,14 @@ public class ProgramCreateParamsTest : TestBase
             Name = "For Benefit Of",
             Bank = Bank.CoreBank,
             LendingMaximumExtendableCredit = 0,
+            LoanAccountsRequireLoanOffers = true,
             ReserveAccountID = "reserve_account_id",
         };
 
         string expectedName = "For Benefit Of";
         ApiEnum<string, Bank> expectedBank = Bank.CoreBank;
         long expectedLendingMaximumExtendableCredit = 0;
+        bool expectedLoanAccountsRequireLoanOffers = true;
         string expectedReserveAccountID = "reserve_account_id";
 
         Assert.Equal(expectedName, parameters.Name);
@@ -29,6 +31,10 @@ public class ProgramCreateParamsTest : TestBase
         Assert.Equal(
             expectedLendingMaximumExtendableCredit,
             parameters.LendingMaximumExtendableCredit
+        );
+        Assert.Equal(
+            expectedLoanAccountsRequireLoanOffers,
+            parameters.LoanAccountsRequireLoanOffers
         );
         Assert.Equal(expectedReserveAccountID, parameters.ReserveAccountID);
     }
@@ -42,6 +48,8 @@ public class ProgramCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("bank"));
         Assert.Null(parameters.LendingMaximumExtendableCredit);
         Assert.False(parameters.RawBodyData.ContainsKey("lending_maximum_extendable_credit"));
+        Assert.Null(parameters.LoanAccountsRequireLoanOffers);
+        Assert.False(parameters.RawBodyData.ContainsKey("loan_accounts_require_loan_offers"));
         Assert.Null(parameters.ReserveAccountID);
         Assert.False(parameters.RawBodyData.ContainsKey("reserve_account_id"));
     }
@@ -56,6 +64,7 @@ public class ProgramCreateParamsTest : TestBase
             // Null should be interpreted as omitted for these properties
             Bank = null,
             LendingMaximumExtendableCredit = null,
+            LoanAccountsRequireLoanOffers = null,
             ReserveAccountID = null,
         };
 
@@ -63,6 +72,8 @@ public class ProgramCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("bank"));
         Assert.Null(parameters.LendingMaximumExtendableCredit);
         Assert.False(parameters.RawBodyData.ContainsKey("lending_maximum_extendable_credit"));
+        Assert.Null(parameters.LoanAccountsRequireLoanOffers);
+        Assert.False(parameters.RawBodyData.ContainsKey("loan_accounts_require_loan_offers"));
         Assert.Null(parameters.ReserveAccountID);
         Assert.False(parameters.RawBodyData.ContainsKey("reserve_account_id"));
     }
@@ -87,6 +98,7 @@ public class ProgramCreateParamsTest : TestBase
             Name = "For Benefit Of",
             Bank = Bank.CoreBank,
             LendingMaximumExtendableCredit = 0,
+            LoanAccountsRequireLoanOffers = true,
             ReserveAccountID = "reserve_account_id",
         };
 

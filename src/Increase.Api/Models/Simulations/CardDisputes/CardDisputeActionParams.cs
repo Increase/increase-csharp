@@ -46,8 +46,8 @@ public record class CardDisputeActionParams : ParamsBase
     }
 
     /// <summary>
-    /// The Visa-specific parameters for the taking action on the dispute. Required
-    /// if and only if `network` is `visa`.
+    /// The Visa-specific parameters for taking action on the dispute. Required if
+    /// and only if `network` is `visa`.
     /// </summary>
     public Visa? Visa
     {
@@ -233,8 +233,8 @@ sealed class NetworkConverter : JsonConverter<Network>
 }
 
 /// <summary>
-/// The Visa-specific parameters for the taking action on the dispute. Required if
-/// and only if `network` is `visa`.
+/// The Visa-specific parameters for taking action on the dispute. Required if and
+/// only if `network` is `visa`.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<Visa, VisaFromRaw>))]
 public sealed record class Visa : JsonModel

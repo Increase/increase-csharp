@@ -151,7 +151,7 @@ public record class CardAuthenticationCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The name of the merchant
+    /// The name of the merchant.
     /// </summary>
     public string? MerchantName
     {

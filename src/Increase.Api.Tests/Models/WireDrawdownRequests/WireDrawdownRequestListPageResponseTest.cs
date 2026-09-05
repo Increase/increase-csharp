@@ -18,6 +18,7 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
                 new()
                 {
                     ID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Amount = 10000,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -63,6 +64,7 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
             new()
             {
                 ID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3",
+                AccountID = "account_in71c4amph0vgo2qllky",
                 AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                 Amount = 10000,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -120,6 +122,7 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
                 new()
                 {
                     ID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Amount = 10000,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -180,6 +183,7 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
                 new()
                 {
                     ID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Amount = 10000,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -233,6 +237,7 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
             new()
             {
                 ID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3",
+                AccountID = "account_in71c4amph0vgo2qllky",
                 AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                 Amount = 10000,
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -290,6 +295,7 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
                 new()
                 {
                     ID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Amount = 10000,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -343,6 +349,7 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
                 new()
                 {
                     ID = "wire_drawdown_request_q6lmocus3glo0lr2bfv3",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Amount = 10000,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),

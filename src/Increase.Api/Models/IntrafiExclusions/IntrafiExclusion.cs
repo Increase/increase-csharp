@@ -72,7 +72,7 @@ public sealed record class IntrafiExclusion : JsonModel
     }
 
     /// <summary>
-    /// When this was exclusion was confirmed by IntraFi.
+    /// When this exclusion was confirmed by IntraFi.
     /// </summary>
     public required System::DateTimeOffset? ExcludedAt
     {
@@ -126,7 +126,7 @@ public sealed record class IntrafiExclusion : JsonModel
     }
 
     /// <summary>
-    /// When this was exclusion was submitted to IntraFi by Increase.
+    /// When this exclusion was submitted to IntraFi by Increase.
     /// </summary>
     public required System::DateTimeOffset? SubmittedAt
     {

@@ -50,7 +50,7 @@ public interface IEntityOnboardingSessionService
     );
 
     /// <summary>
-    /// List Entity Onboarding Session
+    /// List Entity Onboarding Sessions
     /// </summary>
     Task<EntityOnboardingSessionListPage> List(
         EntityOnboardingSessionListParams? parameters = null,

@@ -136,7 +136,7 @@ public sealed record class InboundCheckDeposit : JsonModel
     /// <summary>
     /// The American Bankers' Association (ABA) Routing Transit Number (RTN) for
     /// the bank depositing this check. In some rare cases, this is not transmitted
-    /// via Check21 and the value will be null.
+    /// via Check 21 and the value will be null.
     /// </summary>
     public required string? BankOfFirstDepositRoutingNumber
     {

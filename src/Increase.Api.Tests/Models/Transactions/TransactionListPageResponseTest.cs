@@ -538,6 +538,14 @@ public class TransactionListPageResponseTest : TestBase
                             Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
                         },
                         FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                        FednowTransferReturn = new()
+                        {
+                            Amount = 100,
+                            ReturnReasonAdditionalInformation = null,
+                            ReturnReasonCode =
+                                Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                        },
                         FeePayment = new()
                         {
                             Amount = 100,
@@ -1193,6 +1201,14 @@ public class TransactionListPageResponseTest : TestBase
                         Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
                     },
                     FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                    FednowTransferReturn = new()
+                    {
+                        Amount = 100,
+                        ReturnReasonAdditionalInformation = null,
+                        ReturnReasonCode =
+                            Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                        TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                    },
                     FeePayment = new()
                     {
                         Amount = 100,
@@ -1865,6 +1881,14 @@ public class TransactionListPageResponseTest : TestBase
                             Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
                         },
                         FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                        FednowTransferReturn = new()
+                        {
+                            Amount = 100,
+                            ReturnReasonAdditionalInformation = null,
+                            ReturnReasonCode =
+                                Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                        },
                         FeePayment = new()
                         {
                             Amount = 100,
@@ -2541,6 +2565,14 @@ public class TransactionListPageResponseTest : TestBase
                             Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
                         },
                         FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                        FednowTransferReturn = new()
+                        {
+                            Amount = 100,
+                            ReturnReasonAdditionalInformation = null,
+                            ReturnReasonCode =
+                                Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                        },
                         FeePayment = new()
                         {
                             Amount = 100,
@@ -3203,6 +3235,14 @@ public class TransactionListPageResponseTest : TestBase
                         Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
                     },
                     FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                    FednowTransferReturn = new()
+                    {
+                        Amount = 100,
+                        ReturnReasonAdditionalInformation = null,
+                        ReturnReasonCode =
+                            Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                        TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                    },
                     FeePayment = new()
                     {
                         Amount = 100,
@@ -3875,6 +3915,14 @@ public class TransactionListPageResponseTest : TestBase
                             Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
                         },
                         FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                        FednowTransferReturn = new()
+                        {
+                            Amount = 100,
+                            ReturnReasonAdditionalInformation = null,
+                            ReturnReasonCode =
+                                Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                        },
                         FeePayment = new()
                         {
                             Amount = 100,
@@ -4545,6 +4593,14 @@ public class TransactionListPageResponseTest : TestBase
                             Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
                         },
                         FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                        FednowTransferReturn = new()
+                        {
+                            Amount = 100,
+                            ReturnReasonAdditionalInformation = null,
+                            ReturnReasonCode =
+                                Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                        },
                         FeePayment = new()
                         {
                             Amount = 100,
