@@ -15,6 +15,7 @@ public class PhysicalCardTest : TestBase
         var model = new PhysicalCards::PhysicalCard
         {
             ID = "physical_card_ode8duyq5v2ynhjoharl",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -61,6 +62,7 @@ public class PhysicalCardTest : TestBase
         };
 
         string expectedID = "physical_card_ode8duyq5v2ynhjoharl";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedCardID = "card_oubs0hwk5rn6knuecxg2";
         PhysicalCards::PhysicalCardCardholder expectedCardholder = new()
         {
@@ -110,6 +112,7 @@ public class PhysicalCardTest : TestBase
         ApiEnum<string, PhysicalCards::Type> expectedType = PhysicalCards::Type.PhysicalCard;
 
         Assert.Equal(expectedID, model.ID);
+        Assert.Equal(expectedAccountID, model.AccountID);
         Assert.Equal(expectedCardID, model.CardID);
         Assert.Equal(expectedCardholder, model.Cardholder);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
@@ -126,6 +129,7 @@ public class PhysicalCardTest : TestBase
         var model = new PhysicalCards::PhysicalCard
         {
             ID = "physical_card_ode8duyq5v2ynhjoharl",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -186,6 +190,7 @@ public class PhysicalCardTest : TestBase
         var model = new PhysicalCards::PhysicalCard
         {
             ID = "physical_card_ode8duyq5v2ynhjoharl",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -239,6 +244,7 @@ public class PhysicalCardTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedID = "physical_card_ode8duyq5v2ynhjoharl";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedCardID = "card_oubs0hwk5rn6knuecxg2";
         PhysicalCards::PhysicalCardCardholder expectedCardholder = new()
         {
@@ -288,6 +294,7 @@ public class PhysicalCardTest : TestBase
         ApiEnum<string, PhysicalCards::Type> expectedType = PhysicalCards::Type.PhysicalCard;
 
         Assert.Equal(expectedID, deserialized.ID);
+        Assert.Equal(expectedAccountID, deserialized.AccountID);
         Assert.Equal(expectedCardID, deserialized.CardID);
         Assert.Equal(expectedCardholder, deserialized.Cardholder);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
@@ -304,6 +311,7 @@ public class PhysicalCardTest : TestBase
         var model = new PhysicalCards::PhysicalCard
         {
             ID = "physical_card_ode8duyq5v2ynhjoharl",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -358,6 +366,7 @@ public class PhysicalCardTest : TestBase
         var model = new PhysicalCards::PhysicalCard
         {
             ID = "physical_card_ode8duyq5v2ynhjoharl",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),

@@ -212,7 +212,7 @@ public sealed record class InboundWireTransfer : JsonModel
     }
 
     /// <summary>
-    /// The American Banking Association (ABA) routing number of the sender.
+    /// The American Bankers' Association (ABA) routing number of the sender.
     /// </summary>
     public required string? DebtorRoutingNumber
     {
@@ -266,7 +266,7 @@ public sealed record class InboundWireTransfer : JsonModel
     }
 
     /// <summary>
-    /// The American Banking Association (ABA) routing number of the bank that sent
+    /// The American Bankers' Association (ABA) routing number of the bank that sent
     /// the wire.
     /// </summary>
     public required string? InstructingAgentRoutingNumber

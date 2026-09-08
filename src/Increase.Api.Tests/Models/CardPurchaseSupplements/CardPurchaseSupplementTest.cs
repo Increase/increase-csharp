@@ -14,6 +14,7 @@ public class CardPurchaseSupplementTest : TestBase
         var model = new CardPurchaseSupplement
         {
             ID = "card_purchase_supplement_ijuc45iym4jchnh2sfk3",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardPaymentID = "card_payment_nd3k2kacrqjli8482ave",
             Invoice = new()
             {
@@ -85,6 +86,7 @@ public class CardPurchaseSupplementTest : TestBase
         };
 
         string expectedID = "card_purchase_supplement_ijuc45iym4jchnh2sfk3";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedCardPaymentID = "card_payment_nd3k2kacrqjli8482ave";
         Invoice expectedInvoice = new()
         {
@@ -155,6 +157,7 @@ public class CardPurchaseSupplementTest : TestBase
         ApiEnum<string, Type> expectedType = Type.CardPurchaseSupplement;
 
         Assert.Equal(expectedID, model.ID);
+        Assert.Equal(expectedAccountID, model.AccountID);
         Assert.Equal(expectedCardPaymentID, model.CardPaymentID);
         Assert.Equal(expectedInvoice, model.Invoice);
         Assert.NotNull(model.LineItems);
@@ -174,6 +177,7 @@ public class CardPurchaseSupplementTest : TestBase
         var model = new CardPurchaseSupplement
         {
             ID = "card_purchase_supplement_ijuc45iym4jchnh2sfk3",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardPaymentID = "card_payment_nd3k2kacrqjli8482ave",
             Invoice = new()
             {
@@ -259,6 +263,7 @@ public class CardPurchaseSupplementTest : TestBase
         var model = new CardPurchaseSupplement
         {
             ID = "card_purchase_supplement_ijuc45iym4jchnh2sfk3",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardPaymentID = "card_payment_nd3k2kacrqjli8482ave",
             Invoice = new()
             {
@@ -337,6 +342,7 @@ public class CardPurchaseSupplementTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedID = "card_purchase_supplement_ijuc45iym4jchnh2sfk3";
+        string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedCardPaymentID = "card_payment_nd3k2kacrqjli8482ave";
         Invoice expectedInvoice = new()
         {
@@ -407,6 +413,7 @@ public class CardPurchaseSupplementTest : TestBase
         ApiEnum<string, Type> expectedType = Type.CardPurchaseSupplement;
 
         Assert.Equal(expectedID, deserialized.ID);
+        Assert.Equal(expectedAccountID, deserialized.AccountID);
         Assert.Equal(expectedCardPaymentID, deserialized.CardPaymentID);
         Assert.Equal(expectedInvoice, deserialized.Invoice);
         Assert.NotNull(deserialized.LineItems);
@@ -426,6 +433,7 @@ public class CardPurchaseSupplementTest : TestBase
         var model = new CardPurchaseSupplement
         {
             ID = "card_purchase_supplement_ijuc45iym4jchnh2sfk3",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardPaymentID = "card_payment_nd3k2kacrqjli8482ave",
             Invoice = new()
             {
@@ -505,6 +513,7 @@ public class CardPurchaseSupplementTest : TestBase
         var model = new CardPurchaseSupplement
         {
             ID = "card_purchase_supplement_ijuc45iym4jchnh2sfk3",
+            AccountID = "account_in71c4amph0vgo2qllky",
             CardPaymentID = "card_payment_nd3k2kacrqjli8482ave",
             Invoice = new()
             {

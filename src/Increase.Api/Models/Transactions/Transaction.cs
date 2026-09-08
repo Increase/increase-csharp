@@ -669,6 +669,22 @@ public sealed record class Source : JsonModel
     }
 
     /// <summary>
+    /// A FedNow Transfer Return object. This field will be present in the JSON response
+    /// if and only if `category` is equal to `fednow_transfer_return`. A FedNow Transfer
+    /// Return is created when a FedNow Transfer sent from Increase is returned by
+    /// the recipient's bank.
+    /// </summary>
+    public FednowTransferReturn? FednowTransferReturn
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<FednowTransferReturn>("fednow_transfer_return");
+        }
+        init { this._rawData.Set("fednow_transfer_return", value); }
+    }
+
+    /// <summary>
     /// A Fee Payment object. This field will be present in the JSON response if
     /// and only if `category` is equal to `fee_payment`. A Fee Payment represents
     /// a payment made to Increase.
@@ -721,7 +737,7 @@ public sealed record class Source : JsonModel
     /// An Inbound Check Adjustment object. This field will be present in the JSON
     /// response if and only if `category` is equal to `inbound_check_adjustment`.
     /// An Inbound Check Adjustment is created when Increase receives an adjustment
-    /// for a check or return deposited through Check21.
+    /// for a check or return deposited through Check 21.
     /// </summary>
     public InboundCheckAdjustment? InboundCheckAdjustment
     {
@@ -987,6 +1003,7 @@ public sealed record class Source : JsonModel
         this.CheckDepositReturn?.Validate();
         this.CheckTransferDeposit?.Validate();
         this.FednowTransferAcknowledgement?.Validate();
+        this.FednowTransferReturn?.Validate();
         this.FeePayment?.Validate();
         this.InboundAchTransfer?.Validate();
         this.InboundAchTransferReturnIntention?.Validate();
@@ -1132,6 +1149,11 @@ public enum SourceCategory
     FednowTransferAcknowledgement,
 
     /// <summary>
+    /// FedNow Transfer Return: details will be under the `fednow_transfer_return` object.
+    /// </summary>
+    FednowTransferReturn,
+
+    /// <summary>
     /// Check Transfer Deposit: details will be under the `check_transfer_deposit` object.
     /// </summary>
     CheckTransferDeposit,
@@ -1273,6 +1295,7 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
             "check_deposit_acceptance" => SourceCategory.CheckDepositAcceptance,
             "check_deposit_return" => SourceCategory.CheckDepositReturn,
             "fednow_transfer_acknowledgement" => SourceCategory.FednowTransferAcknowledgement,
+            "fednow_transfer_return" => SourceCategory.FednowTransferReturn,
             "check_transfer_deposit" => SourceCategory.CheckTransferDeposit,
             "fee_payment" => SourceCategory.FeePayment,
             "inbound_ach_transfer" => SourceCategory.InboundAchTransfer,
@@ -1332,6 +1355,7 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
                 SourceCategory.CheckDepositAcceptance => "check_deposit_acceptance",
                 SourceCategory.CheckDepositReturn => "check_deposit_return",
                 SourceCategory.FednowTransferAcknowledgement => "fednow_transfer_acknowledgement",
+                SourceCategory.FednowTransferReturn => "fednow_transfer_return",
                 SourceCategory.CheckTransferDeposit => "check_transfer_deposit",
                 SourceCategory.FeePayment => "fee_payment",
                 SourceCategory.InboundAchTransfer => "inbound_ach_transfer",
@@ -3338,7 +3362,7 @@ public sealed record class CardFinancial : JsonModel
     }
 
     /// <summary>
-    /// Additional amounts associated with the card authorization, such as ATM surcharges
+    /// Additional amounts associated with the card authorization, such as ATM surcharge
     /// fees. These are usually a subset of the `amount` field and are used to provide
     /// more detailed information about the transaction.
     /// </summary>
@@ -3832,7 +3856,7 @@ sealed class ActionerConverter : JsonConverter<Actioner>
 }
 
 /// <summary>
-/// Additional amounts associated with the card authorization, such as ATM surcharges
+/// Additional amounts associated with the card authorization, such as ATM surcharge
 /// fees. These are usually a subset of the `amount` field and are used to provide
 /// more detailed information about the transaction.
 /// </summary>
@@ -15431,7 +15455,7 @@ public sealed record class CheckTransferDeposit : JsonModel
     /// <summary>
     /// The American Bankers' Association (ABA) Routing Transit Number (RTN) for
     /// the bank depositing this check. In some rare cases, this is not transmitted
-    /// via Check21 and the value will be null.
+    /// via Check 21 and the value will be null.
     /// </summary>
     public required string? BankOfFirstDepositRoutingNumber
     {
@@ -15693,6 +15717,287 @@ class FednowTransferAcknowledgementFromRaw : IFromRawJson<FednowTransferAcknowle
     public FednowTransferAcknowledgement FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => FednowTransferAcknowledgement.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// A FedNow Transfer Return object. This field will be present in the JSON response
+/// if and only if `category` is equal to `fednow_transfer_return`. A FedNow Transfer
+/// Return is created when a FedNow Transfer sent from Increase is returned by the
+/// recipient's bank.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<FednowTransferReturn, FednowTransferReturnFromRaw>))]
+public sealed record class FednowTransferReturn : JsonModel
+{
+    /// <summary>
+    /// The returned amount in USD cents. This is always a positive number.
+    /// </summary>
+    public required long Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
+    /// Additional information about the return provided by the recipient's bank.
+    /// </summary>
+    public required string? ReturnReasonAdditionalInformation
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("return_reason_additional_information");
+        }
+        init { this._rawData.Set("return_reason_additional_information", value); }
+    }
+
+    /// <summary>
+    /// The reason the transfer was returned as provided by the recipient's bank.
+    /// </summary>
+    public required ApiEnum<string, FednowTransferReturnReturnReasonCode> ReturnReasonCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, FednowTransferReturnReturnReasonCode>
+            >("return_reason_code");
+        }
+        init { this._rawData.Set("return_reason_code", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the FedNow Transfer that led to this Transaction.
+    /// </summary>
+    public required string TransferID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("transfer_id");
+        }
+        init { this._rawData.Set("transfer_id", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Amount;
+        _ = this.ReturnReasonAdditionalInformation;
+        this.ReturnReasonCode.Validate();
+        _ = this.TransferID;
+    }
+
+    public FednowTransferReturn() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public FednowTransferReturn(FednowTransferReturn fednowTransferReturn)
+        : base(fednowTransferReturn) { }
+#pragma warning restore CS8618
+
+    public FednowTransferReturn(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    FednowTransferReturn(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="FednowTransferReturnFromRaw.FromRawUnchecked"/>
+    public static FednowTransferReturn FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class FednowTransferReturnFromRaw : IFromRawJson<FednowTransferReturn>
+{
+    /// <inheritdoc/>
+    public FednowTransferReturn FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => FednowTransferReturn.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The reason the transfer was returned as provided by the recipient's bank.
+/// </summary>
+[JsonConverter(typeof(FednowTransferReturnReturnReasonCodeConverter))]
+public enum FednowTransferReturnReturnReasonCode
+{
+    /// <summary>
+    /// The destination account is closed. Corresponds to the FedNow reason codes
+    /// `AC04` and `AC07`.
+    /// </summary>
+    AccountClosed,
+
+    /// <summary>
+    /// The destination account is currently blocked from receiving transactions.
+    /// Corresponds to the FedNow reason code `AC06`.
+    /// </summary>
+    AccountBlocked,
+
+    /// <summary>
+    /// The recipient's bank was not a valid agent for this transfer. Corresponds
+    /// to the FedNow reason codes `AC14` and `AGNT`.
+    /// </summary>
+    InvalidAgent,
+
+    /// <summary>
+    /// The destination account does not exist. Corresponds to the FedNow reason code `AC03`.
+    /// </summary>
+    InvalidCreditorAccountNumber,
+
+    /// <summary>
+    /// The destination account number was incorrect. Corresponds to the FedNow reason
+    /// code `AC01`.
+    /// </summary>
+    IncorrectAccountNumber,
+
+    /// <summary>
+    /// The destination account holder is deceased. Corresponds to the FedNow reason
+    /// code `MD07`.
+    /// </summary>
+    EndCustomerDeceased,
+
+    /// <summary>
+    /// The transfer was not permitted by the recipient's bank. Corresponds to the
+    /// FedNow reason code `AG01`.
+    /// </summary>
+    TransactionForbidden,
+
+    /// <summary>
+    /// The transfer was returned for a regulatory reason at the recipient's bank.
+    /// Corresponds to the FedNow reason code `RR04`.
+    /// </summary>
+    RegulatoryReason,
+
+    /// <summary>
+    /// The transfer was reported as fraudulent. Corresponds to the FedNow reason
+    /// code `FR01`.
+    /// </summary>
+    Fraud,
+
+    /// <summary>
+    /// The transfer duplicated another transfer. Corresponds to the FedNow reason
+    /// codes `AM05` and `DUPL`.
+    /// </summary>
+    Duplication,
+
+    /// <summary>
+    /// The transfer amount was incorrect. Corresponds to the FedNow reason code `AM09`.
+    /// </summary>
+    WrongAmount,
+
+    /// <summary>
+    /// The transfer was returned at the request of the recipient's customer. Corresponds
+    /// to the FedNow reason code `CUST`.
+    /// </summary>
+    RequestedByCustomer,
+
+    /// <summary>
+    /// The recipient's bank could not apply the funds. Corresponds to the FedNow
+    /// reason code `RUTA`.
+    /// </summary>
+    UnableToApply,
+
+    /// <summary>
+    /// The recipient's bank did not specify a reason. Corresponds to the FedNow
+    /// reason codes `MS02` and `MS03`.
+    /// </summary>
+    NotSpecified,
+
+    /// <summary>
+    /// The reason is provided as narrative information in the additional information
+    /// field. Corresponds to the FedNow reason code `NARR`.
+    /// </summary>
+    Narrative,
+
+    /// <summary>
+    /// The transfer was returned for some other reason.
+    /// </summary>
+    Other,
+}
+
+sealed class FednowTransferReturnReturnReasonCodeConverter
+    : JsonConverter<FednowTransferReturnReturnReasonCode>
+{
+    public override FednowTransferReturnReturnReasonCode Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "account_closed" => FednowTransferReturnReturnReasonCode.AccountClosed,
+            "account_blocked" => FednowTransferReturnReturnReasonCode.AccountBlocked,
+            "invalid_agent" => FednowTransferReturnReturnReasonCode.InvalidAgent,
+            "invalid_creditor_account_number" =>
+                FednowTransferReturnReturnReasonCode.InvalidCreditorAccountNumber,
+            "incorrect_account_number" =>
+                FednowTransferReturnReturnReasonCode.IncorrectAccountNumber,
+            "end_customer_deceased" => FednowTransferReturnReturnReasonCode.EndCustomerDeceased,
+            "transaction_forbidden" => FednowTransferReturnReturnReasonCode.TransactionForbidden,
+            "regulatory_reason" => FednowTransferReturnReturnReasonCode.RegulatoryReason,
+            "fraud" => FednowTransferReturnReturnReasonCode.Fraud,
+            "duplication" => FednowTransferReturnReturnReasonCode.Duplication,
+            "wrong_amount" => FednowTransferReturnReturnReasonCode.WrongAmount,
+            "requested_by_customer" => FednowTransferReturnReturnReasonCode.RequestedByCustomer,
+            "unable_to_apply" => FednowTransferReturnReturnReasonCode.UnableToApply,
+            "not_specified" => FednowTransferReturnReturnReasonCode.NotSpecified,
+            "narrative" => FednowTransferReturnReturnReasonCode.Narrative,
+            "other" => FednowTransferReturnReturnReasonCode.Other,
+            _ => (FednowTransferReturnReturnReasonCode)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        FednowTransferReturnReturnReasonCode value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                FednowTransferReturnReturnReasonCode.AccountClosed => "account_closed",
+                FednowTransferReturnReturnReasonCode.AccountBlocked => "account_blocked",
+                FednowTransferReturnReturnReasonCode.InvalidAgent => "invalid_agent",
+                FednowTransferReturnReturnReasonCode.InvalidCreditorAccountNumber =>
+                    "invalid_creditor_account_number",
+                FednowTransferReturnReturnReasonCode.IncorrectAccountNumber =>
+                    "incorrect_account_number",
+                FednowTransferReturnReturnReasonCode.EndCustomerDeceased => "end_customer_deceased",
+                FednowTransferReturnReturnReasonCode.TransactionForbidden =>
+                    "transaction_forbidden",
+                FednowTransferReturnReturnReasonCode.RegulatoryReason => "regulatory_reason",
+                FednowTransferReturnReturnReasonCode.Fraud => "fraud",
+                FednowTransferReturnReturnReasonCode.Duplication => "duplication",
+                FednowTransferReturnReturnReasonCode.WrongAmount => "wrong_amount",
+                FednowTransferReturnReturnReasonCode.RequestedByCustomer => "requested_by_customer",
+                FednowTransferReturnReturnReasonCode.UnableToApply => "unable_to_apply",
+                FednowTransferReturnReturnReasonCode.NotSpecified => "not_specified",
+                FednowTransferReturnReturnReasonCode.Narrative => "narrative",
+                FednowTransferReturnReturnReasonCode.Other => "other",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>
@@ -16402,7 +16707,7 @@ class InboundAchTransferReturnIntentionFromRaw : IFromRawJson<InboundAchTransfer
 /// An Inbound Check Adjustment object. This field will be present in the JSON response
 /// if and only if `category` is equal to `inbound_check_adjustment`. An Inbound Check
 /// Adjustment is created when Increase receives an adjustment for a check or return
-/// deposited through Check21.
+/// deposited through Check 21.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<InboundCheckAdjustment, InboundCheckAdjustmentFromRaw>))]
 public sealed record class InboundCheckAdjustment : JsonModel
@@ -17394,7 +17699,7 @@ public sealed record class InboundWireTransfer : JsonModel
     }
 
     /// <summary>
-    /// The American Banking Association (ABA) routing number of the bank that sent
+    /// The American Bankers' Association (ABA) routing number of the bank that sent
     /// the wire.
     /// </summary>
     public required string? InstructingAgentRoutingNumber

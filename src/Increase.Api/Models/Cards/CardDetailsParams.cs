@@ -9,7 +9,7 @@ using Increase.Api.Core;
 namespace Increase.Api.Models.Cards;
 
 /// <summary>
-/// Sensitive details for a Card include the primary account number, expiry, card
+/// Sensitive details for a Card include the primary account number, expiration, card
 /// verification code, and PIN.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with

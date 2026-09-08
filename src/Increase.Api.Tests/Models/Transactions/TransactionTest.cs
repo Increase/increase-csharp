@@ -523,6 +523,14 @@ public class TransactionTest : TestBase
                     Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
                 },
                 FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                FednowTransferReturn = new()
+                {
+                    Amount = 100,
+                    ReturnReasonAdditionalInformation = null,
+                    ReturnReasonCode =
+                        Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                    TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                },
                 FeePayment = new()
                 {
                     Amount = 100,
@@ -1162,6 +1170,13 @@ public class TransactionTest : TestBase
                 Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
             },
             FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            FednowTransferReturn = new()
+            {
+                Amount = 100,
+                ReturnReasonAdditionalInformation = null,
+                ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+            },
             FeePayment = new()
             {
                 Amount = 100,
@@ -1815,6 +1830,14 @@ public class TransactionTest : TestBase
                     Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
                 },
                 FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                FednowTransferReturn = new()
+                {
+                    Amount = 100,
+                    ReturnReasonAdditionalInformation = null,
+                    ReturnReasonCode =
+                        Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                    TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                },
                 FeePayment = new()
                 {
                     Amount = 100,
@@ -2470,6 +2493,14 @@ public class TransactionTest : TestBase
                     Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
                 },
                 FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                FednowTransferReturn = new()
+                {
+                    Amount = 100,
+                    ReturnReasonAdditionalInformation = null,
+                    ReturnReasonCode =
+                        Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                    TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                },
                 FeePayment = new()
                 {
                     Amount = 100,
@@ -3116,6 +3147,13 @@ public class TransactionTest : TestBase
                 Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
             },
             FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            FednowTransferReturn = new()
+            {
+                Amount = 100,
+                ReturnReasonAdditionalInformation = null,
+                ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+            },
             FeePayment = new()
             {
                 Amount = 100,
@@ -3769,6 +3807,14 @@ public class TransactionTest : TestBase
                     Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
                 },
                 FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                FednowTransferReturn = new()
+                {
+                    Amount = 100,
+                    ReturnReasonAdditionalInformation = null,
+                    ReturnReasonCode =
+                        Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                    TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                },
                 FeePayment = new()
                 {
                     Amount = 100,
@@ -4418,6 +4464,14 @@ public class TransactionTest : TestBase
                     Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
                 },
                 FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                FednowTransferReturn = new()
+                {
+                    Amount = 100,
+                    ReturnReasonAdditionalInformation = null,
+                    ReturnReasonCode =
+                        Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                    TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+                },
                 FeePayment = new()
                 {
                     Amount = 100,
@@ -5175,6 +5229,13 @@ public class SourceTest : TestBase
                 Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
             },
             FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            FednowTransferReturn = new()
+            {
+                Amount = 100,
+                ReturnReasonAdditionalInformation = null,
+                ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+            },
             FeePayment = new()
             {
                 Amount = 100,
@@ -5796,6 +5857,13 @@ public class SourceTest : TestBase
         Transactions::FednowTransferAcknowledgement expectedFednowTransferAcknowledgement = new(
             "fednow_transfer_4i0mptrdu1mueg1196bg"
         );
+        Transactions::FednowTransferReturn expectedFednowTransferReturn = new()
+        {
+            Amount = 100,
+            ReturnReasonAdditionalInformation = null,
+            ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+        };
         Transactions::FeePayment expectedFeePayment = new()
         {
             Amount = 100,
@@ -5958,6 +6026,7 @@ public class SourceTest : TestBase
         Assert.Equal(expectedCheckDepositReturn, model.CheckDepositReturn);
         Assert.Equal(expectedCheckTransferDeposit, model.CheckTransferDeposit);
         Assert.Equal(expectedFednowTransferAcknowledgement, model.FednowTransferAcknowledgement);
+        Assert.Equal(expectedFednowTransferReturn, model.FednowTransferReturn);
         Assert.Equal(expectedFeePayment, model.FeePayment);
         Assert.Equal(expectedInboundAchTransfer, model.InboundAchTransfer);
         Assert.Equal(
@@ -6494,6 +6563,13 @@ public class SourceTest : TestBase
                 Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
             },
             FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            FednowTransferReturn = new()
+            {
+                Amount = 100,
+                ReturnReasonAdditionalInformation = null,
+                ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+            },
             FeePayment = new()
             {
                 Amount = 100,
@@ -7129,6 +7205,13 @@ public class SourceTest : TestBase
                 Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
             },
             FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            FednowTransferReturn = new()
+            {
+                Amount = 100,
+                ReturnReasonAdditionalInformation = null,
+                ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+            },
             FeePayment = new()
             {
                 Amount = 100,
@@ -7757,6 +7840,13 @@ public class SourceTest : TestBase
         Transactions::FednowTransferAcknowledgement expectedFednowTransferAcknowledgement = new(
             "fednow_transfer_4i0mptrdu1mueg1196bg"
         );
+        Transactions::FednowTransferReturn expectedFednowTransferReturn = new()
+        {
+            Amount = 100,
+            ReturnReasonAdditionalInformation = null,
+            ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+        };
         Transactions::FeePayment expectedFeePayment = new()
         {
             Amount = 100,
@@ -7922,6 +8012,7 @@ public class SourceTest : TestBase
             expectedFednowTransferAcknowledgement,
             deserialized.FednowTransferAcknowledgement
         );
+        Assert.Equal(expectedFednowTransferReturn, deserialized.FednowTransferReturn);
         Assert.Equal(expectedFeePayment, deserialized.FeePayment);
         Assert.Equal(expectedInboundAchTransfer, deserialized.InboundAchTransfer);
         Assert.Equal(
@@ -8458,6 +8549,13 @@ public class SourceTest : TestBase
                 Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
             },
             FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            FednowTransferReturn = new()
+            {
+                Amount = 100,
+                ReturnReasonAdditionalInformation = null,
+                ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+            },
             FeePayment = new()
             {
                 Amount = 100,
@@ -8634,6 +8732,8 @@ public class SourceTest : TestBase
         Assert.False(model.RawData.ContainsKey("check_transfer_deposit"));
         Assert.Null(model.FednowTransferAcknowledgement);
         Assert.False(model.RawData.ContainsKey("fednow_transfer_acknowledgement"));
+        Assert.Null(model.FednowTransferReturn);
+        Assert.False(model.RawData.ContainsKey("fednow_transfer_return"));
         Assert.Null(model.FeePayment);
         Assert.False(model.RawData.ContainsKey("fee_payment"));
         Assert.Null(model.InboundAchTransfer);
@@ -8710,6 +8810,7 @@ public class SourceTest : TestBase
             CheckDepositReturn = null,
             CheckTransferDeposit = null,
             FednowTransferAcknowledgement = null,
+            FednowTransferReturn = null,
             FeePayment = null,
             InboundAchTransfer = null,
             InboundAchTransferReturnIntention = null,
@@ -8770,6 +8871,8 @@ public class SourceTest : TestBase
         Assert.True(model.RawData.ContainsKey("check_transfer_deposit"));
         Assert.Null(model.FednowTransferAcknowledgement);
         Assert.True(model.RawData.ContainsKey("fednow_transfer_acknowledgement"));
+        Assert.Null(model.FednowTransferReturn);
+        Assert.True(model.RawData.ContainsKey("fednow_transfer_return"));
         Assert.Null(model.FeePayment);
         Assert.True(model.RawData.ContainsKey("fee_payment"));
         Assert.Null(model.InboundAchTransfer);
@@ -8835,6 +8938,7 @@ public class SourceTest : TestBase
             CheckDepositReturn = null,
             CheckTransferDeposit = null,
             FednowTransferAcknowledgement = null,
+            FednowTransferReturn = null,
             FeePayment = null,
             InboundAchTransfer = null,
             InboundAchTransferReturnIntention = null,
@@ -9359,6 +9463,13 @@ public class SourceTest : TestBase
                 Type = Transactions::CheckTransferDepositType.CheckTransferDeposit,
             },
             FednowTransferAcknowledgement = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            FednowTransferReturn = new()
+            {
+                Amount = 100,
+                ReturnReasonAdditionalInformation = null,
+                ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+                TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+            },
             FeePayment = new()
             {
                 Amount = 100,
@@ -9508,6 +9619,7 @@ public class SourceCategoryTest : TestBase
     [InlineData(Transactions::SourceCategory.CheckDepositAcceptance)]
     [InlineData(Transactions::SourceCategory.CheckDepositReturn)]
     [InlineData(Transactions::SourceCategory.FednowTransferAcknowledgement)]
+    [InlineData(Transactions::SourceCategory.FednowTransferReturn)]
     [InlineData(Transactions::SourceCategory.CheckTransferDeposit)]
     [InlineData(Transactions::SourceCategory.FeePayment)]
     [InlineData(Transactions::SourceCategory.InboundAchTransfer)]
@@ -9566,6 +9678,7 @@ public class SourceCategoryTest : TestBase
     [InlineData(Transactions::SourceCategory.CheckDepositAcceptance)]
     [InlineData(Transactions::SourceCategory.CheckDepositReturn)]
     [InlineData(Transactions::SourceCategory.FednowTransferAcknowledgement)]
+    [InlineData(Transactions::SourceCategory.FednowTransferReturn)]
     [InlineData(Transactions::SourceCategory.CheckTransferDeposit)]
     [InlineData(Transactions::SourceCategory.FeePayment)]
     [InlineData(Transactions::SourceCategory.InboundAchTransfer)]
@@ -25312,6 +25425,200 @@ public class FednowTransferAcknowledgementTest : TestBase
         Transactions::FednowTransferAcknowledgement copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class FednowTransferReturnTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Transactions::FednowTransferReturn
+        {
+            Amount = 100,
+            ReturnReasonAdditionalInformation = null,
+            ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+        };
+
+        long expectedAmount = 100;
+        ApiEnum<
+            string,
+            Transactions::FednowTransferReturnReturnReasonCode
+        > expectedReturnReasonCode =
+            Transactions::FednowTransferReturnReturnReasonCode.UnableToApply;
+        string expectedTransferID = "fednow_transfer_4i0mptrdu1mueg1196bg";
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Null(model.ReturnReasonAdditionalInformation);
+        Assert.Equal(expectedReturnReasonCode, model.ReturnReasonCode);
+        Assert.Equal(expectedTransferID, model.TransferID);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Transactions::FednowTransferReturn
+        {
+            Amount = 100,
+            ReturnReasonAdditionalInformation = null,
+            ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Transactions::FednowTransferReturn>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Transactions::FednowTransferReturn
+        {
+            Amount = 100,
+            ReturnReasonAdditionalInformation = null,
+            ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Transactions::FednowTransferReturn>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        long expectedAmount = 100;
+        ApiEnum<
+            string,
+            Transactions::FednowTransferReturnReturnReasonCode
+        > expectedReturnReasonCode =
+            Transactions::FednowTransferReturnReturnReasonCode.UnableToApply;
+        string expectedTransferID = "fednow_transfer_4i0mptrdu1mueg1196bg";
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Null(deserialized.ReturnReasonAdditionalInformation);
+        Assert.Equal(expectedReturnReasonCode, deserialized.ReturnReasonCode);
+        Assert.Equal(expectedTransferID, deserialized.TransferID);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Transactions::FednowTransferReturn
+        {
+            Amount = 100,
+            ReturnReasonAdditionalInformation = null,
+            ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Transactions::FednowTransferReturn
+        {
+            Amount = 100,
+            ReturnReasonAdditionalInformation = null,
+            ReturnReasonCode = Transactions::FednowTransferReturnReturnReasonCode.UnableToApply,
+            TransferID = "fednow_transfer_4i0mptrdu1mueg1196bg",
+        };
+
+        Transactions::FednowTransferReturn copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class FednowTransferReturnReturnReasonCodeTest : TestBase
+{
+    [Theory]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.AccountClosed)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.AccountBlocked)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.InvalidAgent)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.InvalidCreditorAccountNumber)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.IncorrectAccountNumber)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.EndCustomerDeceased)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.TransactionForbidden)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.RegulatoryReason)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.Fraud)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.Duplication)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.WrongAmount)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.RequestedByCustomer)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.UnableToApply)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.NotSpecified)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.Narrative)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.Other)]
+    public void Validation_Works(Transactions::FednowTransferReturnReturnReasonCode rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::FednowTransferReturnReturnReasonCode> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::FednowTransferReturnReturnReasonCode>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.AccountClosed)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.AccountBlocked)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.InvalidAgent)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.InvalidCreditorAccountNumber)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.IncorrectAccountNumber)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.EndCustomerDeceased)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.TransactionForbidden)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.RegulatoryReason)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.Fraud)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.Duplication)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.WrongAmount)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.RequestedByCustomer)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.UnableToApply)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.NotSpecified)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.Narrative)]
+    [InlineData(Transactions::FednowTransferReturnReturnReasonCode.Other)]
+    public void SerializationRoundtrip_Works(
+        Transactions::FednowTransferReturnReturnReasonCode rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::FednowTransferReturnReturnReasonCode> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::FednowTransferReturnReturnReasonCode>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::FednowTransferReturnReturnReasonCode>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::FednowTransferReturnReturnReasonCode>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
     }
 }
 

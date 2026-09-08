@@ -33,6 +33,20 @@ public sealed record class WireDrawdownRequest : JsonModel
     }
 
     /// <summary>
+    /// The Account to which the debtor—the recipient of this request—is being requested
+    /// to send funds.
+    /// </summary>
+    public required string AccountID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("account_id");
+        }
+        init { this._rawData.Set("account_id", value); }
+    }
+
+    /// <summary>
     /// The Account Number to which the debtor—the recipient of this request—is being
     /// requested to send funds.
     /// </summary>
@@ -302,6 +316,7 @@ public sealed record class WireDrawdownRequest : JsonModel
     public override void Validate()
     {
         _ = this.ID;
+        _ = this.AccountID;
         _ = this.AccountNumberID;
         _ = this.Amount;
         _ = this.CreatedAt;

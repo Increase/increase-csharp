@@ -196,6 +196,41 @@ public class EntityCreateParamsTest : TestBase
                 RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Rating = Rating.Low,
             },
+            SoleProprietorship = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Line1 = "x",
+                    State = "xx",
+                    Zip = "x",
+                    Line2 = "x",
+                },
+                SoleProprietor = new()
+                {
+                    Address = new()
+                    {
+                        City = "x",
+                        Country = "x",
+                        Line1 = "x",
+                        Line2 = "x",
+                        State = "x",
+                        Zip = "x",
+                    },
+                    DateOfBirth = "2019-12-27",
+                    Identification = new()
+                    {
+                        Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        Number = "xxxx",
+                    },
+                    Name = "x",
+                },
+                DoingBusinessAsName = "x",
+                Email = "dev@stainless.com",
+                IndustryCode = "x",
+                TaxIdentifier = "x",
+                Website = "website",
+            },
             SupplementalDocuments = [new("file_id")],
             TermsAgreements =
             [
@@ -496,6 +531,41 @@ public class EntityCreateParamsTest : TestBase
             RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Rating = Rating.Low,
         };
+        SoleProprietorship expectedSoleProprietorship = new()
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                },
+                Name = "x",
+            },
+            DoingBusinessAsName = "x",
+            Email = "dev@stainless.com",
+            IndustryCode = "x",
+            TaxIdentifier = "x",
+            Website = "website",
+        };
         List<SupplementalDocument> expectedSupplementalDocuments = [new("file_id")];
         List<TermsAgreement> expectedTermsAgreements =
         [
@@ -624,6 +694,7 @@ public class EntityCreateParamsTest : TestBase
         Assert.Equal(expectedJoint, parameters.Joint);
         Assert.Equal(expectedNaturalPerson, parameters.NaturalPerson);
         Assert.Equal(expectedRiskRating, parameters.RiskRating);
+        Assert.Equal(expectedSoleProprietorship, parameters.SoleProprietorship);
         Assert.NotNull(parameters.SupplementalDocuments);
         Assert.Equal(expectedSupplementalDocuments.Count, parameters.SupplementalDocuments.Count);
         for (int i = 0; i < expectedSupplementalDocuments.Count; i++)
@@ -657,6 +728,8 @@ public class EntityCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("natural_person"));
         Assert.Null(parameters.RiskRating);
         Assert.False(parameters.RawBodyData.ContainsKey("risk_rating"));
+        Assert.Null(parameters.SoleProprietorship);
+        Assert.False(parameters.RawBodyData.ContainsKey("sole_proprietorship"));
         Assert.Null(parameters.SupplementalDocuments);
         Assert.False(parameters.RawBodyData.ContainsKey("supplemental_documents"));
         Assert.Null(parameters.TermsAgreements);
@@ -681,6 +754,7 @@ public class EntityCreateParamsTest : TestBase
             Joint = null,
             NaturalPerson = null,
             RiskRating = null,
+            SoleProprietorship = null,
             SupplementalDocuments = null,
             TermsAgreements = null,
             ThirdPartyVerification = null,
@@ -699,6 +773,8 @@ public class EntityCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("natural_person"));
         Assert.Null(parameters.RiskRating);
         Assert.False(parameters.RawBodyData.ContainsKey("risk_rating"));
+        Assert.Null(parameters.SoleProprietorship);
+        Assert.False(parameters.RawBodyData.ContainsKey("sole_proprietorship"));
         Assert.Null(parameters.SupplementalDocuments);
         Assert.False(parameters.RawBodyData.ContainsKey("supplemental_documents"));
         Assert.Null(parameters.TermsAgreements);
@@ -906,6 +982,41 @@ public class EntityCreateParamsTest : TestBase
                 RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Rating = Rating.Low,
             },
+            SoleProprietorship = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Line1 = "x",
+                    State = "xx",
+                    Zip = "x",
+                    Line2 = "x",
+                },
+                SoleProprietor = new()
+                {
+                    Address = new()
+                    {
+                        City = "x",
+                        Country = "x",
+                        Line1 = "x",
+                        Line2 = "x",
+                        State = "x",
+                        Zip = "x",
+                    },
+                    DateOfBirth = "2019-12-27",
+                    Identification = new()
+                    {
+                        Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                        Number = "xxxx",
+                    },
+                    Name = "x",
+                },
+                DoingBusinessAsName = "x",
+                Email = "dev@stainless.com",
+                IndustryCode = "x",
+                TaxIdentifier = "x",
+                Website = "website",
+            },
             SupplementalDocuments = [new("file_id")],
             TermsAgreements =
             [
@@ -1038,6 +1149,7 @@ public class StructureTest : TestBase
     [InlineData(Structure.Joint)]
     [InlineData(Structure.Trust)]
     [InlineData(Structure.GovernmentAuthority)]
+    [InlineData(Structure.SoleProprietorship)]
     public void Validation_Works(Structure rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1063,6 +1175,7 @@ public class StructureTest : TestBase
     [InlineData(Structure.Joint)]
     [InlineData(Structure.Trust)]
     [InlineData(Structure.GovernmentAuthority)]
+    [InlineData(Structure.SoleProprietorship)]
     public void SerializationRoundtrip_Works(Structure rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -8825,6 +8938,1195 @@ public class RatingTest : TestBase
             json,
             ModelBase.SerializerOptions
         );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class SoleProprietorshipTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                },
+                Name = "x",
+            },
+            DoingBusinessAsName = "x",
+            Email = "dev@stainless.com",
+            IndustryCode = "x",
+            TaxIdentifier = "x",
+            Website = "website",
+        };
+
+        SoleProprietorshipAddress expectedAddress = new()
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+        SoleProprietor expectedSoleProprietor = new()
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+            },
+            Name = "x",
+        };
+        string expectedDoingBusinessAsName = "x";
+        string expectedEmail = "dev@stainless.com";
+        string expectedIndustryCode = "x";
+        string expectedTaxIdentifier = "x";
+        string expectedWebsite = "website";
+
+        Assert.Equal(expectedAddress, model.Address);
+        Assert.Equal(expectedSoleProprietor, model.SoleProprietor);
+        Assert.Equal(expectedDoingBusinessAsName, model.DoingBusinessAsName);
+        Assert.Equal(expectedEmail, model.Email);
+        Assert.Equal(expectedIndustryCode, model.IndustryCode);
+        Assert.Equal(expectedTaxIdentifier, model.TaxIdentifier);
+        Assert.Equal(expectedWebsite, model.Website);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                },
+                Name = "x",
+            },
+            DoingBusinessAsName = "x",
+            Email = "dev@stainless.com",
+            IndustryCode = "x",
+            TaxIdentifier = "x",
+            Website = "website",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<SoleProprietorship>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                },
+                Name = "x",
+            },
+            DoingBusinessAsName = "x",
+            Email = "dev@stainless.com",
+            IndustryCode = "x",
+            TaxIdentifier = "x",
+            Website = "website",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<SoleProprietorship>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        SoleProprietorshipAddress expectedAddress = new()
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+        SoleProprietor expectedSoleProprietor = new()
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+            },
+            Name = "x",
+        };
+        string expectedDoingBusinessAsName = "x";
+        string expectedEmail = "dev@stainless.com";
+        string expectedIndustryCode = "x";
+        string expectedTaxIdentifier = "x";
+        string expectedWebsite = "website";
+
+        Assert.Equal(expectedAddress, deserialized.Address);
+        Assert.Equal(expectedSoleProprietor, deserialized.SoleProprietor);
+        Assert.Equal(expectedDoingBusinessAsName, deserialized.DoingBusinessAsName);
+        Assert.Equal(expectedEmail, deserialized.Email);
+        Assert.Equal(expectedIndustryCode, deserialized.IndustryCode);
+        Assert.Equal(expectedTaxIdentifier, deserialized.TaxIdentifier);
+        Assert.Equal(expectedWebsite, deserialized.Website);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                },
+                Name = "x",
+            },
+            DoingBusinessAsName = "x",
+            Email = "dev@stainless.com",
+            IndustryCode = "x",
+            TaxIdentifier = "x",
+            Website = "website",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                },
+                Name = "x",
+            },
+        };
+
+        Assert.Null(model.DoingBusinessAsName);
+        Assert.False(model.RawData.ContainsKey("doing_business_as_name"));
+        Assert.Null(model.Email);
+        Assert.False(model.RawData.ContainsKey("email"));
+        Assert.Null(model.IndustryCode);
+        Assert.False(model.RawData.ContainsKey("industry_code"));
+        Assert.Null(model.TaxIdentifier);
+        Assert.False(model.RawData.ContainsKey("tax_identifier"));
+        Assert.Null(model.Website);
+        Assert.False(model.RawData.ContainsKey("website"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                },
+                Name = "x",
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                },
+                Name = "x",
+            },
+
+            // Null should be interpreted as omitted for these properties
+            DoingBusinessAsName = null,
+            Email = null,
+            IndustryCode = null,
+            TaxIdentifier = null,
+            Website = null,
+        };
+
+        Assert.Null(model.DoingBusinessAsName);
+        Assert.False(model.RawData.ContainsKey("doing_business_as_name"));
+        Assert.Null(model.Email);
+        Assert.False(model.RawData.ContainsKey("email"));
+        Assert.Null(model.IndustryCode);
+        Assert.False(model.RawData.ContainsKey("industry_code"));
+        Assert.Null(model.TaxIdentifier);
+        Assert.False(model.RawData.ContainsKey("tax_identifier"));
+        Assert.Null(model.Website);
+        Assert.False(model.RawData.ContainsKey("website"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                },
+                Name = "x",
+            },
+
+            // Null should be interpreted as omitted for these properties
+            DoingBusinessAsName = null,
+            Email = null,
+            IndustryCode = null,
+            TaxIdentifier = null,
+            Website = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new SoleProprietorship
+        {
+            Address = new()
+            {
+                City = "x",
+                Line1 = "x",
+                State = "xx",
+                Zip = "x",
+                Line2 = "x",
+            },
+            SoleProprietor = new()
+            {
+                Address = new()
+                {
+                    City = "x",
+                    Country = "x",
+                    Line1 = "x",
+                    Line2 = "x",
+                    State = "x",
+                    Zip = "x",
+                },
+                DateOfBirth = "2019-12-27",
+                Identification = new()
+                {
+                    Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                    Number = "xxxx",
+                },
+                Name = "x",
+            },
+            DoingBusinessAsName = "x",
+            Email = "dev@stainless.com",
+            IndustryCode = "x",
+            TaxIdentifier = "x",
+            Website = "website",
+        };
+
+        SoleProprietorship copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SoleProprietorshipAddressTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new SoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+
+        string expectedCity = "x";
+        string expectedLine1 = "x";
+        string expectedState = "xx";
+        string expectedZip = "x";
+        string expectedLine2 = "x";
+
+        Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedLine1, model.Line1);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedZip, model.Zip);
+        Assert.Equal(expectedLine2, model.Line2);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new SoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<SoleProprietorshipAddress>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new SoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<SoleProprietorshipAddress>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCity = "x";
+        string expectedLine1 = "x";
+        string expectedState = "xx";
+        string expectedZip = "x";
+        string expectedLine2 = "x";
+
+        Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedZip, deserialized.Zip);
+        Assert.Equal(expectedLine2, deserialized.Line2);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new SoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new SoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+        };
+
+        Assert.Null(model.Line2);
+        Assert.False(model.RawData.ContainsKey("line2"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new SoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new SoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Line2 = null,
+        };
+
+        Assert.Null(model.Line2);
+        Assert.False(model.RawData.ContainsKey("line2"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new SoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Line2 = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new SoleProprietorshipAddress
+        {
+            City = "x",
+            Line1 = "x",
+            State = "xx",
+            Zip = "x",
+            Line2 = "x",
+        };
+
+        SoleProprietorshipAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SoleProprietorTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new SoleProprietor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+            },
+            Name = "x",
+        };
+
+        SoleProprietorAddress expectedAddress = new()
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+        string expectedDateOfBirth = "2019-12-27";
+        SoleProprietorIdentification expectedIdentification = new()
+        {
+            Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+        string expectedName = "x";
+
+        Assert.Equal(expectedAddress, model.Address);
+        Assert.Equal(expectedDateOfBirth, model.DateOfBirth);
+        Assert.Equal(expectedIdentification, model.Identification);
+        Assert.Equal(expectedName, model.Name);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new SoleProprietor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+            },
+            Name = "x",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<SoleProprietor>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new SoleProprietor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+            },
+            Name = "x",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<SoleProprietor>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        SoleProprietorAddress expectedAddress = new()
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+        string expectedDateOfBirth = "2019-12-27";
+        SoleProprietorIdentification expectedIdentification = new()
+        {
+            Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+        string expectedName = "x";
+
+        Assert.Equal(expectedAddress, deserialized.Address);
+        Assert.Equal(expectedDateOfBirth, deserialized.DateOfBirth);
+        Assert.Equal(expectedIdentification, deserialized.Identification);
+        Assert.Equal(expectedName, deserialized.Name);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new SoleProprietor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+            },
+            Name = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new SoleProprietor
+        {
+            Address = new()
+            {
+                City = "x",
+                Country = "x",
+                Line1 = "x",
+                Line2 = "x",
+                State = "x",
+                Zip = "x",
+            },
+            DateOfBirth = "2019-12-27",
+            Identification = new()
+            {
+                Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                Number = "xxxx",
+            },
+            Name = "x",
+        };
+
+        SoleProprietor copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SoleProprietorAddressTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new SoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        string expectedCity = "x";
+        string expectedCountry = "x";
+        string expectedLine1 = "x";
+        string expectedLine2 = "x";
+        string expectedState = "x";
+        string expectedZip = "x";
+
+        Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedLine1, model.Line1);
+        Assert.Equal(expectedLine2, model.Line2);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedZip, model.Zip);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new SoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<SoleProprietorAddress>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new SoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<SoleProprietorAddress>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCity = "x";
+        string expectedCountry = "x";
+        string expectedLine1 = "x";
+        string expectedLine2 = "x";
+        string expectedState = "x";
+        string expectedZip = "x";
+
+        Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Equal(expectedLine2, deserialized.Line2);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedZip, deserialized.Zip);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new SoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new SoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
+
+        Assert.Null(model.Line2);
+        Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new SoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new SoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Line2 = null,
+            State = null,
+            Zip = null,
+        };
+
+        Assert.Null(model.Line2);
+        Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new SoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+
+            // Null should be interpreted as omitted for these properties
+            Line2 = null,
+            State = null,
+            Zip = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new SoleProprietorAddress
+        {
+            City = "x",
+            Country = "x",
+            Line1 = "x",
+            Line2 = "x",
+            State = "x",
+            Zip = "x",
+        };
+
+        SoleProprietorAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SoleProprietorIdentificationTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new SoleProprietorIdentification
+        {
+            Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+
+        ApiEnum<string, SoleProprietorIdentificationMethod> expectedMethod =
+            SoleProprietorIdentificationMethod.SocialSecurityNumber;
+        string expectedNumber = "xxxx";
+
+        Assert.Equal(expectedMethod, model.Method);
+        Assert.Equal(expectedNumber, model.Number);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new SoleProprietorIdentification
+        {
+            Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<SoleProprietorIdentification>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new SoleProprietorIdentification
+        {
+            Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<SoleProprietorIdentification>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        ApiEnum<string, SoleProprietorIdentificationMethod> expectedMethod =
+            SoleProprietorIdentificationMethod.SocialSecurityNumber;
+        string expectedNumber = "xxxx";
+
+        Assert.Equal(expectedMethod, deserialized.Method);
+        Assert.Equal(expectedNumber, deserialized.Number);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new SoleProprietorIdentification
+        {
+            Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new SoleProprietorIdentification
+        {
+            Method = SoleProprietorIdentificationMethod.SocialSecurityNumber,
+            Number = "xxxx",
+        };
+
+        SoleProprietorIdentification copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SoleProprietorIdentificationMethodTest : TestBase
+{
+    [Theory]
+    [InlineData(SoleProprietorIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(SoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber)]
+    public void Validation_Works(SoleProprietorIdentificationMethod rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, SoleProprietorIdentificationMethod> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, SoleProprietorIdentificationMethod>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(SoleProprietorIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(SoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber)]
+    public void SerializationRoundtrip_Works(SoleProprietorIdentificationMethod rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, SoleProprietorIdentificationMethod> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, SoleProprietorIdentificationMethod>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, SoleProprietorIdentificationMethod>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, SoleProprietorIdentificationMethod>
+        >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
     }

@@ -182,7 +182,7 @@ public class EntityListPageResponseTest : TestBase
                             Identification = new()
                             {
                                 Method =
-                                    Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                                 NumberLast4 = "number_last4",
                             },
                             Name = "name",
@@ -475,7 +475,7 @@ public class EntityListPageResponseTest : TestBase
                         Identification = new()
                         {
                             Method =
-                                Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                                Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                             NumberLast4 = "number_last4",
                         },
                         Name = "name",
@@ -780,7 +780,7 @@ public class EntityListPageResponseTest : TestBase
                             Identification = new()
                             {
                                 Method =
-                                    Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                                 NumberLast4 = "number_last4",
                             },
                             Name = "name",
@@ -1087,7 +1087,7 @@ public class EntityListPageResponseTest : TestBase
                             Identification = new()
                             {
                                 Method =
-                                    Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                                 NumberLast4 = "number_last4",
                             },
                             Name = "name",
@@ -1387,7 +1387,7 @@ public class EntityListPageResponseTest : TestBase
                         Identification = new()
                         {
                             Method =
-                                Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                                Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                             NumberLast4 = "number_last4",
                         },
                         Name = "name",
@@ -1692,7 +1692,7 @@ public class EntityListPageResponseTest : TestBase
                             Identification = new()
                             {
                                 Method =
-                                    Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                                 NumberLast4 = "number_last4",
                             },
                             Name = "name",
@@ -1993,7 +1993,7 @@ public class EntityListPageResponseTest : TestBase
                             Identification = new()
                             {
                                 Method =
-                                    Entities::SoleProprietorIdentificationMethod.SocialSecurityNumber,
+                                    Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
                                 NumberLast4 = "number_last4",
                             },
                             Name = "name",

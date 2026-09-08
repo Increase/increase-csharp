@@ -10,7 +10,7 @@ using System = System;
 namespace Increase.Api.Models.Accounts;
 
 /// <summary>
-/// Represents a request to lookup the balance of an Account at a given point in time.
+/// Represents a request to look up the balance of an Account at a given point in time.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<BalanceLookup, BalanceLookupFromRaw>))]
 public sealed record class BalanceLookup : JsonModel

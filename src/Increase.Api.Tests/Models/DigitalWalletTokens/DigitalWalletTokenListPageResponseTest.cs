@@ -18,6 +18,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                 new()
                 {
                     ID = "digital_wallet_token_izi62go3h51p369jrie0",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new("John Smith"),
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -51,6 +52,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
             new()
             {
                 ID = "digital_wallet_token_izi62go3h51p369jrie0",
+                AccountID = "account_in71c4amph0vgo2qllky",
                 CardID = "card_oubs0hwk5rn6knuecxg2",
                 Cardholder = new("John Smith"),
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -96,6 +98,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                 new()
                 {
                     ID = "digital_wallet_token_izi62go3h51p369jrie0",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new("John Smith"),
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -144,6 +147,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                 new()
                 {
                     ID = "digital_wallet_token_izi62go3h51p369jrie0",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new("John Smith"),
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -185,6 +189,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
             new()
             {
                 ID = "digital_wallet_token_izi62go3h51p369jrie0",
+                AccountID = "account_in71c4amph0vgo2qllky",
                 CardID = "card_oubs0hwk5rn6knuecxg2",
                 Cardholder = new("John Smith"),
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -230,6 +235,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                 new()
                 {
                     ID = "digital_wallet_token_izi62go3h51p369jrie0",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new("John Smith"),
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -271,6 +277,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                 new()
                 {
                     ID = "digital_wallet_token_izi62go3h51p369jrie0",
+                    AccountID = "account_in71c4amph0vgo2qllky",
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new("John Smith"),
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),

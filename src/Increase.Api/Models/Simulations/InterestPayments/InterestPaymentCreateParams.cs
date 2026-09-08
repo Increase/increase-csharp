@@ -26,7 +26,7 @@ public record class InterestPaymentCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The identifier of the Account the Interest Payment should be paid to is for.
+    /// The identifier of the Account the Interest Payment should be paid to.
     /// </summary>
     public required string AccountID
     {
