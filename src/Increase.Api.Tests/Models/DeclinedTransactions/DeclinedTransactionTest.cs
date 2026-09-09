@@ -7619,6 +7619,9 @@ public class InboundRealTimePaymentsTransferDeclineReasonTest : TestBase
     [InlineData(
         DeclinedTransactions::InboundRealTimePaymentsTransferDeclineReason.RealTimePaymentsNotEnabled
     )]
+    [InlineData(
+        DeclinedTransactions::InboundRealTimePaymentsTransferDeclineReason.TransactionNotAllowed
+    )]
     public void Validation_Works(
         DeclinedTransactions::InboundRealTimePaymentsTransferDeclineReason rawValue
     )
@@ -7654,6 +7657,9 @@ public class InboundRealTimePaymentsTransferDeclineReasonTest : TestBase
     [InlineData(DeclinedTransactions::InboundRealTimePaymentsTransferDeclineReason.EntityNotActive)]
     [InlineData(
         DeclinedTransactions::InboundRealTimePaymentsTransferDeclineReason.RealTimePaymentsNotEnabled
+    )]
+    [InlineData(
+        DeclinedTransactions::InboundRealTimePaymentsTransferDeclineReason.TransactionNotAllowed
     )]
     public void SerializationRoundtrip_Works(
         DeclinedTransactions::InboundRealTimePaymentsTransferDeclineReason rawValue
