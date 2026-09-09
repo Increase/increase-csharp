@@ -31,7 +31,9 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                         Name = "My Work Phone",
                     },
                     DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
+                    PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
                     Status = DigitalWalletTokens::Status.Active,
+                    TokenReferenceIdentifier = "DNITHE000000000000000000000",
                     TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
                     Type = DigitalWalletTokens::Type.DigitalWalletToken,
                     Updates =
@@ -65,7 +67,9 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                     Name = "My Work Phone",
                 },
                 DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
+                PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
                 Status = DigitalWalletTokens::Status.Active,
+                TokenReferenceIdentifier = "DNITHE000000000000000000000",
                 TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
                 Type = DigitalWalletTokens::Type.DigitalWalletToken,
                 Updates =
@@ -111,7 +115,9 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                         Name = "My Work Phone",
                     },
                     DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
+                    PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
                     Status = DigitalWalletTokens::Status.Active,
+                    TokenReferenceIdentifier = "DNITHE000000000000000000000",
                     TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
                     Type = DigitalWalletTokens::Type.DigitalWalletToken,
                     Updates =
@@ -160,7 +166,9 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                         Name = "My Work Phone",
                     },
                     DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
+                    PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
                     Status = DigitalWalletTokens::Status.Active,
+                    TokenReferenceIdentifier = "DNITHE000000000000000000000",
                     TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
                     Type = DigitalWalletTokens::Type.DigitalWalletToken,
                     Updates =
@@ -202,7 +210,9 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                     Name = "My Work Phone",
                 },
                 DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
+                PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
                 Status = DigitalWalletTokens::Status.Active,
+                TokenReferenceIdentifier = "DNITHE000000000000000000000",
                 TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
                 Type = DigitalWalletTokens::Type.DigitalWalletToken,
                 Updates =
@@ -248,7 +258,9 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                         Name = "My Work Phone",
                     },
                     DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
+                    PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
                     Status = DigitalWalletTokens::Status.Active,
+                    TokenReferenceIdentifier = "DNITHE000000000000000000000",
                     TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
                     Type = DigitalWalletTokens::Type.DigitalWalletToken,
                     Updates =
@@ -290,7 +302,9 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                         Name = "My Work Phone",
                     },
                     DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
+                    PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
                     Status = DigitalWalletTokens::Status.Active,
+                    TokenReferenceIdentifier = "DNITHE000000000000000000000",
                     TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
                     Type = DigitalWalletTokens::Type.DigitalWalletToken,
                     Updates =

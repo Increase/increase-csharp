@@ -28,7 +28,9 @@ public class DigitalWalletTokenTest : TestBase
                 Name = "My Work Phone",
             },
             DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
+            PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
             Status = DigitalWalletTokens::Status.Active,
+            TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
             Updates =
@@ -61,8 +63,10 @@ public class DigitalWalletTokenTest : TestBase
             First6 = "first6",
             Last4 = "last4",
         };
+        string expectedPrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000";
         ApiEnum<string, DigitalWalletTokens::Status> expectedStatus =
             DigitalWalletTokens::Status.Active;
+        string expectedTokenReferenceIdentifier = "DNITHE000000000000000000000";
         ApiEnum<string, DigitalWalletTokens::TokenRequestor> expectedTokenRequestor =
             DigitalWalletTokens::TokenRequestor.ApplePay;
         ApiEnum<string, DigitalWalletTokens::Type> expectedType =
@@ -84,7 +88,12 @@ public class DigitalWalletTokenTest : TestBase
         Assert.Equal(expectedDecline, model.Decline);
         Assert.Equal(expectedDevice, model.Device);
         Assert.Equal(expectedDynamicPrimaryAccountNumber, model.DynamicPrimaryAccountNumber);
+        Assert.Equal(
+            expectedPrimaryAccountNumberReferenceIdentifier,
+            model.PrimaryAccountNumberReferenceIdentifier
+        );
         Assert.Equal(expectedStatus, model.Status);
+        Assert.Equal(expectedTokenReferenceIdentifier, model.TokenReferenceIdentifier);
         Assert.Equal(expectedTokenRequestor, model.TokenRequestor);
         Assert.Equal(expectedType, model.Type);
         Assert.Equal(expectedUpdates.Count, model.Updates.Count);
@@ -113,7 +122,9 @@ public class DigitalWalletTokenTest : TestBase
                 Name = "My Work Phone",
             },
             DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
+            PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
             Status = DigitalWalletTokens::Status.Active,
+            TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
             Updates =
@@ -154,7 +165,9 @@ public class DigitalWalletTokenTest : TestBase
                 Name = "My Work Phone",
             },
             DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
+            PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
             Status = DigitalWalletTokens::Status.Active,
+            TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
             Updates =
@@ -194,8 +207,10 @@ public class DigitalWalletTokenTest : TestBase
             First6 = "first6",
             Last4 = "last4",
         };
+        string expectedPrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000";
         ApiEnum<string, DigitalWalletTokens::Status> expectedStatus =
             DigitalWalletTokens::Status.Active;
+        string expectedTokenReferenceIdentifier = "DNITHE000000000000000000000";
         ApiEnum<string, DigitalWalletTokens::TokenRequestor> expectedTokenRequestor =
             DigitalWalletTokens::TokenRequestor.ApplePay;
         ApiEnum<string, DigitalWalletTokens::Type> expectedType =
@@ -217,7 +232,12 @@ public class DigitalWalletTokenTest : TestBase
         Assert.Equal(expectedDecline, deserialized.Decline);
         Assert.Equal(expectedDevice, deserialized.Device);
         Assert.Equal(expectedDynamicPrimaryAccountNumber, deserialized.DynamicPrimaryAccountNumber);
+        Assert.Equal(
+            expectedPrimaryAccountNumberReferenceIdentifier,
+            deserialized.PrimaryAccountNumberReferenceIdentifier
+        );
         Assert.Equal(expectedStatus, deserialized.Status);
+        Assert.Equal(expectedTokenReferenceIdentifier, deserialized.TokenReferenceIdentifier);
         Assert.Equal(expectedTokenRequestor, deserialized.TokenRequestor);
         Assert.Equal(expectedType, deserialized.Type);
         Assert.Equal(expectedUpdates.Count, deserialized.Updates.Count);
@@ -246,7 +266,9 @@ public class DigitalWalletTokenTest : TestBase
                 Name = "My Work Phone",
             },
             DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
+            PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
             Status = DigitalWalletTokens::Status.Active,
+            TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
             Updates =
@@ -281,7 +303,9 @@ public class DigitalWalletTokenTest : TestBase
                 Name = "My Work Phone",
             },
             DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
+            PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
             Status = DigitalWalletTokens::Status.Active,
+            TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
             Updates =

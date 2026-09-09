@@ -5999,6 +5999,11 @@ public enum InboundRealTimePaymentsTransferDeclineReason
     /// Your account is not enabled to receive Real-Time Payments transfers.
     /// </summary>
     RealTimePaymentsNotEnabled,
+
+    /// <summary>
+    /// The transaction is not allowed per Increase's terms.
+    /// </summary>
+    TransactionNotAllowed,
 }
 
 sealed class InboundRealTimePaymentsTransferDeclineReasonConverter
@@ -6021,6 +6026,8 @@ sealed class InboundRealTimePaymentsTransferDeclineReasonConverter
             "entity_not_active" => InboundRealTimePaymentsTransferDeclineReason.EntityNotActive,
             "real_time_payments_not_enabled" =>
                 InboundRealTimePaymentsTransferDeclineReason.RealTimePaymentsNotEnabled,
+            "transaction_not_allowed" =>
+                InboundRealTimePaymentsTransferDeclineReason.TransactionNotAllowed,
             _ => (InboundRealTimePaymentsTransferDeclineReason)(-1),
         };
     }
@@ -6045,6 +6052,8 @@ sealed class InboundRealTimePaymentsTransferDeclineReasonConverter
                 InboundRealTimePaymentsTransferDeclineReason.EntityNotActive => "entity_not_active",
                 InboundRealTimePaymentsTransferDeclineReason.RealTimePaymentsNotEnabled =>
                     "real_time_payments_not_enabled",
+                InboundRealTimePaymentsTransferDeclineReason.TransactionNotAllowed =>
+                    "transaction_not_allowed",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
