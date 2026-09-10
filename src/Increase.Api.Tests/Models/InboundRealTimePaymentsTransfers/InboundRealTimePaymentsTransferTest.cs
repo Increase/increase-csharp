@@ -541,6 +541,7 @@ public class ReasonTest : TestBase
     [InlineData(InboundRealTimePaymentsTransfers::Reason.GroupLocked)]
     [InlineData(InboundRealTimePaymentsTransfers::Reason.EntityNotActive)]
     [InlineData(InboundRealTimePaymentsTransfers::Reason.RealTimePaymentsNotEnabled)]
+    [InlineData(InboundRealTimePaymentsTransfers::Reason.TransactionNotAllowed)]
     public void Validation_Works(InboundRealTimePaymentsTransfers::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -566,6 +567,7 @@ public class ReasonTest : TestBase
     [InlineData(InboundRealTimePaymentsTransfers::Reason.GroupLocked)]
     [InlineData(InboundRealTimePaymentsTransfers::Reason.EntityNotActive)]
     [InlineData(InboundRealTimePaymentsTransfers::Reason.RealTimePaymentsNotEnabled)]
+    [InlineData(InboundRealTimePaymentsTransfers::Reason.TransactionNotAllowed)]
     public void SerializationRoundtrip_Works(InboundRealTimePaymentsTransfers::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
