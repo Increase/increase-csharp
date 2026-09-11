@@ -539,6 +539,11 @@ public enum Reason
     /// Your account is not enabled to receive Real-Time Payments transfers.
     /// </summary>
     RealTimePaymentsNotEnabled,
+
+    /// <summary>
+    /// The transaction is not allowed per Increase's terms.
+    /// </summary>
+    TransactionNotAllowed,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -557,6 +562,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "group_locked" => Reason.GroupLocked,
             "entity_not_active" => Reason.EntityNotActive,
             "real_time_payments_not_enabled" => Reason.RealTimePaymentsNotEnabled,
+            "transaction_not_allowed" => Reason.TransactionNotAllowed,
             _ => (Reason)(-1),
         };
     }
@@ -573,6 +579,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.GroupLocked => "group_locked",
                 Reason.EntityNotActive => "entity_not_active",
                 Reason.RealTimePaymentsNotEnabled => "real_time_payments_not_enabled",
+                Reason.TransactionNotAllowed => "transaction_not_allowed",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

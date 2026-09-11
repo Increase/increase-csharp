@@ -127,6 +127,21 @@ public sealed record class DigitalWalletToken : JsonModel
     }
 
     /// <summary>
+    /// The reference identifier assigned by the card network to the underlying Card.
+    /// </summary>
+    public required string PrimaryAccountNumberReferenceIdentifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>(
+                "primary_account_number_reference_identifier"
+            );
+        }
+        init { this._rawData.Set("primary_account_number_reference_identifier", value); }
+    }
+
+    /// <summary>
     /// This indicates if payments can be made with the Digital Wallet Token.
     /// </summary>
     public required ApiEnum<string, Status> Status
@@ -137,6 +152,19 @@ public sealed record class DigitalWalletToken : JsonModel
             return this._rawData.GetNotNullClass<ApiEnum<string, Status>>("status");
         }
         init { this._rawData.Set("status", value); }
+    }
+
+    /// <summary>
+    /// The reference identifier assigned by the card network to the token.
+    /// </summary>
+    public required string TokenReferenceIdentifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("token_reference_identifier");
+        }
+        init { this._rawData.Set("token_reference_identifier", value); }
     }
 
     /// <summary>
@@ -200,7 +228,9 @@ public sealed record class DigitalWalletToken : JsonModel
         this.Decline?.Validate();
         this.Device.Validate();
         this.DynamicPrimaryAccountNumber?.Validate();
+        _ = this.PrimaryAccountNumberReferenceIdentifier;
         this.Status.Validate();
+        _ = this.TokenReferenceIdentifier;
         this.TokenRequestor.Validate();
         this.Type.Validate();
         foreach (var item in this.Updates)

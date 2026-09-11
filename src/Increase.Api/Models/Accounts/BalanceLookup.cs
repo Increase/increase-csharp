@@ -135,33 +135,6 @@ class BalanceLookupFromRaw : IFromRawJson<BalanceLookup>
 public sealed record class BalanceLookupLoan : JsonModel
 {
     /// <summary>
-    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time at which the loan
-    /// payment is due.
-    /// </summary>
-    public required System::DateTimeOffset? DueAt
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<System::DateTimeOffset>("due_at");
-        }
-        init { this._rawData.Set("due_at", value); }
-    }
-
-    /// <summary>
-    /// The total amount due on the loan.
-    /// </summary>
-    public required long DueBalance
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<long>("due_balance");
-        }
-        init { this._rawData.Set("due_balance", value); }
-    }
-
-    /// <summary>
     /// The fees on the loan that are due and unpaid.
     /// </summary>
     public required long? DueFees
@@ -239,45 +212,15 @@ public sealed record class BalanceLookupLoan : JsonModel
         init { this._rawData.Set("not_due_principal", value); }
     }
 
-    /// <summary>
-    /// The amount past due on the loan.
-    /// </summary>
-    public required long PastDueBalance
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<long>("past_due_balance");
-        }
-        init { this._rawData.Set("past_due_balance", value); }
-    }
-
-    /// <summary>
-    /// The receivables balances for the loan.
-    /// </summary>
-    public required Receivables? Receivables
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<Receivables>("receivables");
-        }
-        init { this._rawData.Set("receivables", value); }
-    }
-
     /// <inheritdoc/>
     public override void Validate()
     {
-        _ = this.DueAt;
-        _ = this.DueBalance;
         _ = this.DueFees;
         _ = this.DueInterest;
         _ = this.DuePrincipal;
         _ = this.NotDueFees;
         _ = this.NotDueInterest;
         _ = this.NotDuePrincipal;
-        _ = this.PastDueBalance;
-        this.Receivables?.Validate();
     }
 
     public BalanceLookupLoan() { }
@@ -315,80 +258,6 @@ class BalanceLookupLoanFromRaw : IFromRawJson<BalanceLookupLoan>
     /// <inheritdoc/>
     public BalanceLookupLoan FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         BalanceLookupLoan.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// The receivables balances for the loan.
-/// </summary>
-[JsonConverter(typeof(JsonModelConverter<Receivables, ReceivablesFromRaw>))]
-public sealed record class Receivables : JsonModel
-{
-    /// <summary>
-    /// The balance of seasoned receivables available to be purchased.
-    /// </summary>
-    public required long PurchasableBalance
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<long>("purchasable_balance");
-        }
-        init { this._rawData.Set("purchasable_balance", value); }
-    }
-
-    /// <summary>
-    /// The balance of receivables that have been purchased.
-    /// </summary>
-    public required long PurchasedBalance
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<long>("purchased_balance");
-        }
-        init { this._rawData.Set("purchased_balance", value); }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        _ = this.PurchasableBalance;
-        _ = this.PurchasedBalance;
-    }
-
-    public Receivables() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public Receivables(Receivables receivables)
-        : base(receivables) { }
-#pragma warning restore CS8618
-
-    public Receivables(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    Receivables(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="ReceivablesFromRaw.FromRawUnchecked"/>
-    public static Receivables FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class ReceivablesFromRaw : IFromRawJson<Receivables>
-{
-    /// <inheritdoc/>
-    public Receivables FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        Receivables.FromRawUnchecked(rawData);
 }
 
 /// <summary>
