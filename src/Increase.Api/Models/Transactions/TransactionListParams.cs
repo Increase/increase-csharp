@@ -501,6 +501,16 @@ public enum In
     BlockchainOfframpTransferSettlement,
 
     /// <summary>
+    /// UK Faster Payment System Transfer Acceptance: details will be under the `uk_faster_payment_system_transfer_acceptance` object.
+    /// </summary>
+    UkFasterPaymentSystemTransferAcceptance,
+
+    /// <summary>
+    /// SEPA Instant Transfer Acceptance: details will be under the `sepa_instant_transfer_acceptance` object.
+    /// </summary>
+    SepaInstantTransferAcceptance,
+
+    /// <summary>
     /// The Transaction was made for an undocumented or deprecated reason.
     /// </summary>
     Other,
@@ -556,6 +566,9 @@ sealed class InConverter : JsonConverter<In>
             "account_revenue_payment" => In.AccountRevenuePayment,
             "blockchain_onramp_transfer_intention" => In.BlockchainOnrampTransferIntention,
             "blockchain_offramp_transfer_settlement" => In.BlockchainOfframpTransferSettlement,
+            "uk_faster_payment_system_transfer_acceptance" =>
+                In.UkFasterPaymentSystemTransferAcceptance,
+            "sepa_instant_transfer_acceptance" => In.SepaInstantTransferAcceptance,
             "other" => In.Other,
             _ => (In)(-1),
         };
@@ -607,6 +620,9 @@ sealed class InConverter : JsonConverter<In>
                 In.AccountRevenuePayment => "account_revenue_payment",
                 In.BlockchainOnrampTransferIntention => "blockchain_onramp_transfer_intention",
                 In.BlockchainOfframpTransferSettlement => "blockchain_offramp_transfer_settlement",
+                In.UkFasterPaymentSystemTransferAcceptance =>
+                    "uk_faster_payment_system_transfer_acceptance",
+                In.SepaInstantTransferAcceptance => "sepa_instant_transfer_acceptance",
                 In.Other => "other",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
