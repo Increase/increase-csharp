@@ -889,6 +889,16 @@ public enum In
     RealTimePaymentsRequestForPaymentUpdated,
 
     /// <summary>
+    /// Occurs whenever a SEPA Instant Transfer is created.
+    /// </summary>
+    SepaInstantTransferCreated,
+
+    /// <summary>
+    /// Occurs whenever a SEPA Instant Transfer is updated.
+    /// </summary>
+    SepaInstantTransferUpdated,
+
+    /// <summary>
     /// Occurs whenever a Swift Transfer is created.
     /// </summary>
     SwiftTransferCreated,
@@ -902,6 +912,16 @@ public enum In
     /// Occurs whenever a Transaction is created.
     /// </summary>
     TransactionCreated,
+
+    /// <summary>
+    /// Occurs whenever a UK Faster Payment System Transfer is created.
+    /// </summary>
+    UkFasterPaymentSystemTransferCreated,
+
+    /// <summary>
+    /// Occurs whenever a UK Faster Payment System Transfer is updated.
+    /// </summary>
+    UkFasterPaymentSystemTransferUpdated,
 
     /// <summary>
     /// Occurs whenever a Wire Drawdown Request is created.
@@ -1062,9 +1082,13 @@ sealed class InConverter : JsonConverter<In>
                 In.RealTimePaymentsRequestForPaymentCreated,
             "real_time_payments_request_for_payment.updated" =>
                 In.RealTimePaymentsRequestForPaymentUpdated,
+            "sepa_instant_transfer.created" => In.SepaInstantTransferCreated,
+            "sepa_instant_transfer.updated" => In.SepaInstantTransferUpdated,
             "swift_transfer.created" => In.SwiftTransferCreated,
             "swift_transfer.updated" => In.SwiftTransferUpdated,
             "transaction.created" => In.TransactionCreated,
+            "uk_faster_payment_system_transfer.created" => In.UkFasterPaymentSystemTransferCreated,
+            "uk_faster_payment_system_transfer.updated" => In.UkFasterPaymentSystemTransferUpdated,
             "wire_drawdown_request.created" => In.WireDrawdownRequestCreated,
             "wire_drawdown_request.updated" => In.WireDrawdownRequestUpdated,
             "wire_transfer.created" => In.WireTransferCreated,
@@ -1207,9 +1231,15 @@ sealed class InConverter : JsonConverter<In>
                     "real_time_payments_request_for_payment.created",
                 In.RealTimePaymentsRequestForPaymentUpdated =>
                     "real_time_payments_request_for_payment.updated",
+                In.SepaInstantTransferCreated => "sepa_instant_transfer.created",
+                In.SepaInstantTransferUpdated => "sepa_instant_transfer.updated",
                 In.SwiftTransferCreated => "swift_transfer.created",
                 In.SwiftTransferUpdated => "swift_transfer.updated",
                 In.TransactionCreated => "transaction.created",
+                In.UkFasterPaymentSystemTransferCreated =>
+                    "uk_faster_payment_system_transfer.created",
+                In.UkFasterPaymentSystemTransferUpdated =>
+                    "uk_faster_payment_system_transfer.updated",
                 In.WireDrawdownRequestCreated => "wire_drawdown_request.created",
                 In.WireDrawdownRequestUpdated => "wire_drawdown_request.updated",
                 In.WireTransferCreated => "wire_transfer.created",

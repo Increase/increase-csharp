@@ -304,6 +304,7 @@ public class InTest : TestBase
     [InlineData(In.AccountRevenuePayment)]
     [InlineData(In.BlockchainOnrampTransferIntention)]
     [InlineData(In.BlockchainOfframpTransferSettlement)]
+    [InlineData(In.UkFasterPaymentSystemTransferAcceptance)]
     [InlineData(In.Other)]
     public void Validation_Works(In rawValue)
     {
@@ -363,6 +364,7 @@ public class InTest : TestBase
     [InlineData(In.AccountRevenuePayment)]
     [InlineData(In.BlockchainOnrampTransferIntention)]
     [InlineData(In.BlockchainOfframpTransferSettlement)]
+    [InlineData(In.UkFasterPaymentSystemTransferAcceptance)]
     [InlineData(In.Other)]
     public void SerializationRoundtrip_Works(In rawValue)
     {

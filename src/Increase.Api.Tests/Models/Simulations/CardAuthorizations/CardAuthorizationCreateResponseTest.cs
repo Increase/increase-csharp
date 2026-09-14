@@ -370,6 +370,12 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                     },
                     SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                    UkFasterPaymentSystemTransferInstruction = new()
+                    {
+                        Amount = 12500,
+                        Currency =
+                            PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                    },
                     UserInitiatedHold = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -743,6 +749,12 @@ public class CardAuthorizationCreateResponseTest : TestBase
                     TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                 },
                 SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                UkFasterPaymentSystemTransferInstruction = new()
+                {
+                    Amount = 12500,
+                    Currency =
+                        PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                },
                 UserInitiatedHold = new Dictionary<string, JsonElement>()
                 {
                     { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1126,6 +1138,12 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                     },
                     SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                    UkFasterPaymentSystemTransferInstruction = new()
+                    {
+                        Amount = 12500,
+                        Currency =
+                            PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                    },
                     UserInitiatedHold = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1514,6 +1532,12 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                     },
                     SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                    UkFasterPaymentSystemTransferInstruction = new()
+                    {
+                        Amount = 12500,
+                        Currency =
+                            PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                    },
                     UserInitiatedHold = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1895,6 +1919,12 @@ public class CardAuthorizationCreateResponseTest : TestBase
                     TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                 },
                 SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                UkFasterPaymentSystemTransferInstruction = new()
+                {
+                    Amount = 12500,
+                    Currency =
+                        PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                },
                 UserInitiatedHold = new Dictionary<string, JsonElement>()
                 {
                     { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -2278,6 +2308,12 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                     },
                     SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                    UkFasterPaymentSystemTransferInstruction = new()
+                    {
+                        Amount = 12500,
+                        Currency =
+                            PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                    },
                     UserInitiatedHold = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -2659,6 +2695,12 @@ public class CardAuthorizationCreateResponseTest : TestBase
                         TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                     },
                     SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                    UkFasterPaymentSystemTransferInstruction = new()
+                    {
+                        Amount = 12500,
+                        Currency =
+                            PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                    },
                     UserInitiatedHold = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
