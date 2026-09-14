@@ -738,6 +738,16 @@ public enum UnwrapWebhookEventCategory
     RealTimePaymentsRequestForPaymentUpdated,
 
     /// <summary>
+    /// Occurs whenever a SEPA Instant Transfer is created.
+    /// </summary>
+    SepaInstantTransferCreated,
+
+    /// <summary>
+    /// Occurs whenever a SEPA Instant Transfer is updated.
+    /// </summary>
+    SepaInstantTransferUpdated,
+
+    /// <summary>
     /// Occurs whenever a Swift Transfer is created.
     /// </summary>
     SwiftTransferCreated,
@@ -751,6 +761,16 @@ public enum UnwrapWebhookEventCategory
     /// Occurs whenever a Transaction is created.
     /// </summary>
     TransactionCreated,
+
+    /// <summary>
+    /// Occurs whenever a UK Faster Payment System Transfer is created.
+    /// </summary>
+    UkFasterPaymentSystemTransferCreated,
+
+    /// <summary>
+    /// Occurs whenever a UK Faster Payment System Transfer is updated.
+    /// </summary>
+    UkFasterPaymentSystemTransferUpdated,
 
     /// <summary>
     /// Occurs whenever a Wire Drawdown Request is created.
@@ -935,9 +955,17 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                 UnwrapWebhookEventCategory.RealTimePaymentsRequestForPaymentCreated,
             "real_time_payments_request_for_payment.updated" =>
                 UnwrapWebhookEventCategory.RealTimePaymentsRequestForPaymentUpdated,
+            "sepa_instant_transfer.created" =>
+                UnwrapWebhookEventCategory.SepaInstantTransferCreated,
+            "sepa_instant_transfer.updated" =>
+                UnwrapWebhookEventCategory.SepaInstantTransferUpdated,
             "swift_transfer.created" => UnwrapWebhookEventCategory.SwiftTransferCreated,
             "swift_transfer.updated" => UnwrapWebhookEventCategory.SwiftTransferUpdated,
             "transaction.created" => UnwrapWebhookEventCategory.TransactionCreated,
+            "uk_faster_payment_system_transfer.created" =>
+                UnwrapWebhookEventCategory.UkFasterPaymentSystemTransferCreated,
+            "uk_faster_payment_system_transfer.updated" =>
+                UnwrapWebhookEventCategory.UkFasterPaymentSystemTransferUpdated,
             "wire_drawdown_request.created" =>
                 UnwrapWebhookEventCategory.WireDrawdownRequestCreated,
             "wire_drawdown_request.updated" =>
@@ -1124,9 +1152,17 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                     "real_time_payments_request_for_payment.created",
                 UnwrapWebhookEventCategory.RealTimePaymentsRequestForPaymentUpdated =>
                     "real_time_payments_request_for_payment.updated",
+                UnwrapWebhookEventCategory.SepaInstantTransferCreated =>
+                    "sepa_instant_transfer.created",
+                UnwrapWebhookEventCategory.SepaInstantTransferUpdated =>
+                    "sepa_instant_transfer.updated",
                 UnwrapWebhookEventCategory.SwiftTransferCreated => "swift_transfer.created",
                 UnwrapWebhookEventCategory.SwiftTransferUpdated => "swift_transfer.updated",
                 UnwrapWebhookEventCategory.TransactionCreated => "transaction.created",
+                UnwrapWebhookEventCategory.UkFasterPaymentSystemTransferCreated =>
+                    "uk_faster_payment_system_transfer.created",
+                UnwrapWebhookEventCategory.UkFasterPaymentSystemTransferUpdated =>
+                    "uk_faster_payment_system_transfer.updated",
                 UnwrapWebhookEventCategory.WireDrawdownRequestCreated =>
                     "wire_drawdown_request.created",
                 UnwrapWebhookEventCategory.WireDrawdownRequestUpdated =>
