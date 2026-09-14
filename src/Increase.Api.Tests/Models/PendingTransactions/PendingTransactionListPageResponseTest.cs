@@ -201,7 +201,19 @@ public class PendingTransactionListPageResponseTest : TestBase
                             Amount = 100,
                             TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                         },
+                        SepaInstantTransferInstruction = new()
+                        {
+                            Amount = 4200,
+                            Currency =
+                                PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+                        },
                         SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                        UkFasterPaymentSystemTransferInstruction = new()
+                        {
+                            Amount = 12500,
+                            Currency =
+                                PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                        },
                         UserInitiatedHold = new Dictionary<string, JsonElement>()
                         {
                             { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -406,7 +418,18 @@ public class PendingTransactionListPageResponseTest : TestBase
                         Amount = 100,
                         TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                     },
+                    SepaInstantTransferInstruction = new()
+                    {
+                        Amount = 4200,
+                        Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+                    },
                     SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                    UkFasterPaymentSystemTransferInstruction = new()
+                    {
+                        Amount = 12500,
+                        Currency =
+                            PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                    },
                     UserInitiatedHold = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -627,7 +650,19 @@ public class PendingTransactionListPageResponseTest : TestBase
                             Amount = 100,
                             TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                         },
+                        SepaInstantTransferInstruction = new()
+                        {
+                            Amount = 4200,
+                            Currency =
+                                PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+                        },
                         SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                        UkFasterPaymentSystemTransferInstruction = new()
+                        {
+                            Amount = 12500,
+                            Currency =
+                                PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                        },
                         UserInitiatedHold = new Dictionary<string, JsonElement>()
                         {
                             { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -851,7 +886,19 @@ public class PendingTransactionListPageResponseTest : TestBase
                             Amount = 100,
                             TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                         },
+                        SepaInstantTransferInstruction = new()
+                        {
+                            Amount = 4200,
+                            Currency =
+                                PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+                        },
                         SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                        UkFasterPaymentSystemTransferInstruction = new()
+                        {
+                            Amount = 12500,
+                            Currency =
+                                PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                        },
                         UserInitiatedHold = new Dictionary<string, JsonElement>()
                         {
                             { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1064,7 +1111,18 @@ public class PendingTransactionListPageResponseTest : TestBase
                         Amount = 100,
                         TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                     },
+                    SepaInstantTransferInstruction = new()
+                    {
+                        Amount = 4200,
+                        Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+                    },
                     SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                    UkFasterPaymentSystemTransferInstruction = new()
+                    {
+                        Amount = 12500,
+                        Currency =
+                            PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                    },
                     UserInitiatedHold = new Dictionary<string, JsonElement>()
                     {
                         { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1285,7 +1343,19 @@ public class PendingTransactionListPageResponseTest : TestBase
                             Amount = 100,
                             TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                         },
+                        SepaInstantTransferInstruction = new()
+                        {
+                            Amount = 4200,
+                            Currency =
+                                PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+                        },
                         SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                        UkFasterPaymentSystemTransferInstruction = new()
+                        {
+                            Amount = 12500,
+                            Currency =
+                                PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                        },
                         UserInitiatedHold = new Dictionary<string, JsonElement>()
                         {
                             { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1502,7 +1572,19 @@ public class PendingTransactionListPageResponseTest : TestBase
                             Amount = 100,
                             TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                         },
+                        SepaInstantTransferInstruction = new()
+                        {
+                            Amount = 4200,
+                            Currency =
+                                PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+                        },
                         SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                        UkFasterPaymentSystemTransferInstruction = new()
+                        {
+                            Amount = 12500,
+                            Currency =
+                                PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                        },
                         UserInitiatedHold = new Dictionary<string, JsonElement>()
                         {
                             { "foo", JsonSerializer.SerializeToElement("bar") },
