@@ -651,6 +651,11 @@ public class TransactionTest : TestBase
                 SampleFunds = new("dashboard"),
                 SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                 SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+                UkFasterPaymentSystemTransferAcceptance = new()
+                {
+                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    SettlementAmount = 16765,
+                },
                 WireTransferIntention = new()
                 {
                     AccountNumber = "987654321",
@@ -1292,6 +1297,11 @@ public class TransactionTest : TestBase
             SampleFunds = new("dashboard"),
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferAcceptance = new()
+            {
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SettlementAmount = 16765,
+            },
             WireTransferIntention = new()
             {
                 AccountNumber = "987654321",
@@ -1958,6 +1968,11 @@ public class TransactionTest : TestBase
                 SampleFunds = new("dashboard"),
                 SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                 SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+                UkFasterPaymentSystemTransferAcceptance = new()
+                {
+                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    SettlementAmount = 16765,
+                },
                 WireTransferIntention = new()
                 {
                     AccountNumber = "987654321",
@@ -2621,6 +2636,11 @@ public class TransactionTest : TestBase
                 SampleFunds = new("dashboard"),
                 SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                 SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+                UkFasterPaymentSystemTransferAcceptance = new()
+                {
+                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    SettlementAmount = 16765,
+                },
                 WireTransferIntention = new()
                 {
                     AccountNumber = "987654321",
@@ -3269,6 +3289,11 @@ public class TransactionTest : TestBase
             SampleFunds = new("dashboard"),
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferAcceptance = new()
+            {
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SettlementAmount = 16765,
+            },
             WireTransferIntention = new()
             {
                 AccountNumber = "987654321",
@@ -3935,6 +3960,11 @@ public class TransactionTest : TestBase
                 SampleFunds = new("dashboard"),
                 SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                 SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+                UkFasterPaymentSystemTransferAcceptance = new()
+                {
+                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    SettlementAmount = 16765,
+                },
                 WireTransferIntention = new()
                 {
                     AccountNumber = "987654321",
@@ -4592,6 +4622,11 @@ public class TransactionTest : TestBase
                 SampleFunds = new("dashboard"),
                 SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                 SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+                UkFasterPaymentSystemTransferAcceptance = new()
+                {
+                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    SettlementAmount = 16765,
+                },
                 WireTransferIntention = new()
                 {
                     AccountNumber = "987654321",
@@ -5351,6 +5386,11 @@ public class SourceTest : TestBase
             SampleFunds = new("dashboard"),
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferAcceptance = new()
+            {
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SettlementAmount = 16765,
+            },
             WireTransferIntention = new()
             {
                 AccountNumber = "987654321",
@@ -5990,6 +6030,12 @@ public class SourceTest : TestBase
         Transactions::SwiftTransferReturn expectedSwiftTransferReturn = new(
             "swift_transfer_29h21xkng03788zwd3fh"
         );
+        Transactions::UkFasterPaymentSystemTransferAcceptance expectedUkFasterPaymentSystemTransferAcceptance =
+            new()
+            {
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SettlementAmount = 16765,
+            };
         Transactions::WireTransferIntention expectedWireTransferIntention = new()
         {
             AccountNumber = "987654321",
@@ -6059,6 +6105,10 @@ public class SourceTest : TestBase
         Assert.Equal(expectedSampleFunds, model.SampleFunds);
         Assert.Equal(expectedSwiftTransferIntention, model.SwiftTransferIntention);
         Assert.Equal(expectedSwiftTransferReturn, model.SwiftTransferReturn);
+        Assert.Equal(
+            expectedUkFasterPaymentSystemTransferAcceptance,
+            model.UkFasterPaymentSystemTransferAcceptance
+        );
         Assert.Equal(expectedWireTransferIntention, model.WireTransferIntention);
     }
 
@@ -6685,6 +6735,11 @@ public class SourceTest : TestBase
             SampleFunds = new("dashboard"),
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferAcceptance = new()
+            {
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SettlementAmount = 16765,
+            },
             WireTransferIntention = new()
             {
                 AccountNumber = "987654321",
@@ -7327,6 +7382,11 @@ public class SourceTest : TestBase
             SampleFunds = new("dashboard"),
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferAcceptance = new()
+            {
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SettlementAmount = 16765,
+            },
             WireTransferIntention = new()
             {
                 AccountNumber = "987654321",
@@ -7973,6 +8033,12 @@ public class SourceTest : TestBase
         Transactions::SwiftTransferReturn expectedSwiftTransferReturn = new(
             "swift_transfer_29h21xkng03788zwd3fh"
         );
+        Transactions::UkFasterPaymentSystemTransferAcceptance expectedUkFasterPaymentSystemTransferAcceptance =
+            new()
+            {
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SettlementAmount = 16765,
+            };
         Transactions::WireTransferIntention expectedWireTransferIntention = new()
         {
             AccountNumber = "987654321",
@@ -8045,6 +8111,10 @@ public class SourceTest : TestBase
         Assert.Equal(expectedSampleFunds, deserialized.SampleFunds);
         Assert.Equal(expectedSwiftTransferIntention, deserialized.SwiftTransferIntention);
         Assert.Equal(expectedSwiftTransferReturn, deserialized.SwiftTransferReturn);
+        Assert.Equal(
+            expectedUkFasterPaymentSystemTransferAcceptance,
+            deserialized.UkFasterPaymentSystemTransferAcceptance
+        );
         Assert.Equal(expectedWireTransferIntention, deserialized.WireTransferIntention);
     }
 
@@ -8671,6 +8741,11 @@ public class SourceTest : TestBase
             SampleFunds = new("dashboard"),
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferAcceptance = new()
+            {
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SettlementAmount = 16765,
+            },
             WireTransferIntention = new()
             {
                 AccountNumber = "987654321",
@@ -8768,6 +8843,8 @@ public class SourceTest : TestBase
         Assert.False(model.RawData.ContainsKey("swift_transfer_intention"));
         Assert.Null(model.SwiftTransferReturn);
         Assert.False(model.RawData.ContainsKey("swift_transfer_return"));
+        Assert.Null(model.UkFasterPaymentSystemTransferAcceptance);
+        Assert.False(model.RawData.ContainsKey("uk_faster_payment_system_transfer_acceptance"));
         Assert.Null(model.WireTransferIntention);
         Assert.False(model.RawData.ContainsKey("wire_transfer_intention"));
     }
@@ -8828,6 +8905,7 @@ public class SourceTest : TestBase
             SampleFunds = null,
             SwiftTransferIntention = null,
             SwiftTransferReturn = null,
+            UkFasterPaymentSystemTransferAcceptance = null,
             WireTransferIntention = null,
         };
 
@@ -8907,6 +8985,8 @@ public class SourceTest : TestBase
         Assert.True(model.RawData.ContainsKey("swift_transfer_intention"));
         Assert.Null(model.SwiftTransferReturn);
         Assert.True(model.RawData.ContainsKey("swift_transfer_return"));
+        Assert.Null(model.UkFasterPaymentSystemTransferAcceptance);
+        Assert.True(model.RawData.ContainsKey("uk_faster_payment_system_transfer_acceptance"));
         Assert.Null(model.WireTransferIntention);
         Assert.True(model.RawData.ContainsKey("wire_transfer_intention"));
     }
@@ -8956,6 +9036,7 @@ public class SourceTest : TestBase
             SampleFunds = null,
             SwiftTransferIntention = null,
             SwiftTransferReturn = null,
+            UkFasterPaymentSystemTransferAcceptance = null,
             WireTransferIntention = null,
         };
 
@@ -9585,6 +9666,11 @@ public class SourceTest : TestBase
             SampleFunds = new("dashboard"),
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferAcceptance = new()
+            {
+                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SettlementAmount = 16765,
+            },
             WireTransferIntention = new()
             {
                 AccountNumber = "987654321",
@@ -9642,6 +9728,7 @@ public class SourceCategoryTest : TestBase
     [InlineData(Transactions::SourceCategory.AccountRevenuePayment)]
     [InlineData(Transactions::SourceCategory.BlockchainOnrampTransferIntention)]
     [InlineData(Transactions::SourceCategory.BlockchainOfframpTransferSettlement)]
+    [InlineData(Transactions::SourceCategory.UkFasterPaymentSystemTransferAcceptance)]
     [InlineData(Transactions::SourceCategory.Other)]
     public void Validation_Works(Transactions::SourceCategory rawValue)
     {
@@ -9701,6 +9788,7 @@ public class SourceCategoryTest : TestBase
     [InlineData(Transactions::SourceCategory.AccountRevenuePayment)]
     [InlineData(Transactions::SourceCategory.BlockchainOnrampTransferIntention)]
     [InlineData(Transactions::SourceCategory.BlockchainOfframpTransferSettlement)]
+    [InlineData(Transactions::SourceCategory.UkFasterPaymentSystemTransferAcceptance)]
     [InlineData(Transactions::SourceCategory.Other)]
     public void SerializationRoundtrip_Works(Transactions::SourceCategory rawValue)
     {
@@ -28152,6 +28240,94 @@ public class SwiftTransferReturnTest : TestBase
         };
 
         Transactions::SwiftTransferReturn copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class UkFasterPaymentSystemTransferAcceptanceTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Transactions::UkFasterPaymentSystemTransferAcceptance
+        {
+            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            SettlementAmount = 16765,
+        };
+
+        DateTimeOffset expectedAcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        long expectedSettlementAmount = 16765;
+
+        Assert.Equal(expectedAcceptedAt, model.AcceptedAt);
+        Assert.Equal(expectedSettlementAmount, model.SettlementAmount);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Transactions::UkFasterPaymentSystemTransferAcceptance
+        {
+            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            SettlementAmount = 16765,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<Transactions::UkFasterPaymentSystemTransferAcceptance>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Transactions::UkFasterPaymentSystemTransferAcceptance
+        {
+            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            SettlementAmount = 16765,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<Transactions::UkFasterPaymentSystemTransferAcceptance>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        DateTimeOffset expectedAcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        long expectedSettlementAmount = 16765;
+
+        Assert.Equal(expectedAcceptedAt, deserialized.AcceptedAt);
+        Assert.Equal(expectedSettlementAmount, deserialized.SettlementAmount);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Transactions::UkFasterPaymentSystemTransferAcceptance
+        {
+            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            SettlementAmount = 16765,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Transactions::UkFasterPaymentSystemTransferAcceptance
+        {
+            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            SettlementAmount = 16765,
+        };
+
+        Transactions::UkFasterPaymentSystemTransferAcceptance copied = new(model);
 
         Assert.Equal(model, copied);
     }

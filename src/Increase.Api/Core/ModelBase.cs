@@ -1075,6 +1075,10 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, PendingTransactions::InboundFundsHoldCurrency>(),
             new ApiEnumConverter<string, PendingTransactions::InboundFundsHoldStatus>(),
             new ApiEnumConverter<string, PendingTransactions::InboundFundsHoldType>(),
+            new ApiEnumConverter<
+                string,
+                PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency
+            >(),
             new ApiEnumConverter<string, PendingTransactions::PendingTransactionStatus>(),
             new ApiEnumConverter<string, PendingTransactions::PendingTransactionType>(),
             new ApiEnumConverter<string, PendingTransactions::In>(),
