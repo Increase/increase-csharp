@@ -880,6 +880,16 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     TransactionCreated,
 
     /// <summary>
+    /// Occurs whenever a UK Faster Payment System Transfer is created.
+    /// </summary>
+    UkFasterPaymentSystemTransferCreated,
+
+    /// <summary>
+    /// Occurs whenever a UK Faster Payment System Transfer is updated.
+    /// </summary>
+    UkFasterPaymentSystemTransferUpdated,
+
+    /// <summary>
     /// Occurs whenever a Wire Drawdown Request is created.
     /// </summary>
     WireDrawdownRequestCreated,
@@ -1134,6 +1144,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.SwiftTransferUpdated,
             "transaction.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.TransactionCreated,
+            "uk_faster_payment_system_transfer.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.UkFasterPaymentSystemTransferCreated,
+            "uk_faster_payment_system_transfer.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.UkFasterPaymentSystemTransferUpdated,
             "wire_drawdown_request.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.WireDrawdownRequestCreated,
             "wire_drawdown_request.updated" =>
@@ -1390,6 +1404,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "swift_transfer.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.TransactionCreated =>
                     "transaction.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.UkFasterPaymentSystemTransferCreated =>
+                    "uk_faster_payment_system_transfer.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.UkFasterPaymentSystemTransferUpdated =>
+                    "uk_faster_payment_system_transfer.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.WireDrawdownRequestCreated =>
                     "wire_drawdown_request.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.WireDrawdownRequestUpdated =>

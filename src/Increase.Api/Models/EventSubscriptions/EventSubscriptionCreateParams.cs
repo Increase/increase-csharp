@@ -919,6 +919,16 @@ public enum EventCategory
     TransactionCreated,
 
     /// <summary>
+    /// Occurs whenever a UK Faster Payment System Transfer is created.
+    /// </summary>
+    UkFasterPaymentSystemTransferCreated,
+
+    /// <summary>
+    /// Occurs whenever a UK Faster Payment System Transfer is updated.
+    /// </summary>
+    UkFasterPaymentSystemTransferUpdated,
+
+    /// <summary>
     /// Occurs whenever a Wire Drawdown Request is created.
     /// </summary>
     WireDrawdownRequestCreated,
@@ -1083,6 +1093,10 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
             "swift_transfer.created" => EventCategory.SwiftTransferCreated,
             "swift_transfer.updated" => EventCategory.SwiftTransferUpdated,
             "transaction.created" => EventCategory.TransactionCreated,
+            "uk_faster_payment_system_transfer.created" =>
+                EventCategory.UkFasterPaymentSystemTransferCreated,
+            "uk_faster_payment_system_transfer.updated" =>
+                EventCategory.UkFasterPaymentSystemTransferUpdated,
             "wire_drawdown_request.created" => EventCategory.WireDrawdownRequestCreated,
             "wire_drawdown_request.updated" => EventCategory.WireDrawdownRequestUpdated,
             "wire_transfer.created" => EventCategory.WireTransferCreated,
@@ -1245,6 +1259,10 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.SwiftTransferCreated => "swift_transfer.created",
                 EventCategory.SwiftTransferUpdated => "swift_transfer.updated",
                 EventCategory.TransactionCreated => "transaction.created",
+                EventCategory.UkFasterPaymentSystemTransferCreated =>
+                    "uk_faster_payment_system_transfer.created",
+                EventCategory.UkFasterPaymentSystemTransferUpdated =>
+                    "uk_faster_payment_system_transfer.updated",
                 EventCategory.WireDrawdownRequestCreated => "wire_drawdown_request.created",
                 EventCategory.WireDrawdownRequestUpdated => "wire_drawdown_request.updated",
                 EventCategory.WireTransferCreated => "wire_transfer.created",
