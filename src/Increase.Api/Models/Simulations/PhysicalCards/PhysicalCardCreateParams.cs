@@ -67,7 +67,7 @@ public record class PhysicalCardCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The city where the event took place.
+    /// The city where the event took place. Required if postal_code is not provided.
     /// </summary>
     public string? City
     {
@@ -88,7 +88,8 @@ public record class PhysicalCardCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The postal code where the event took place.
+    /// The postal code where the event took place. Required unless both city and
+    /// state are provided.
     /// </summary>
     public string? PostalCode
     {
@@ -109,7 +110,7 @@ public record class PhysicalCardCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The state where the event took place.
+    /// The state where the event took place. Required if postal_code is not provided.
     /// </summary>
     public string? State
     {

@@ -865,6 +865,16 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     RealTimePaymentsRequestForPaymentUpdated,
 
     /// <summary>
+    /// Occurs whenever a SEPA Instant Transfer is created.
+    /// </summary>
+    SepaInstantTransferCreated,
+
+    /// <summary>
+    /// Occurs whenever a SEPA Instant Transfer is updated.
+    /// </summary>
+    SepaInstantTransferUpdated,
+
+    /// <summary>
     /// Occurs whenever a Swift Transfer is created.
     /// </summary>
     SwiftTransferCreated,
@@ -878,6 +888,16 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     /// Occurs whenever a Transaction is created.
     /// </summary>
     TransactionCreated,
+
+    /// <summary>
+    /// Occurs whenever a UK Faster Payment System Transfer is created.
+    /// </summary>
+    UkFasterPaymentSystemTransferCreated,
+
+    /// <summary>
+    /// Occurs whenever a UK Faster Payment System Transfer is updated.
+    /// </summary>
+    UkFasterPaymentSystemTransferUpdated,
 
     /// <summary>
     /// Occurs whenever a Wire Drawdown Request is created.
@@ -1128,12 +1148,20 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.RealTimePaymentsRequestForPaymentCreated,
             "real_time_payments_request_for_payment.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.RealTimePaymentsRequestForPaymentUpdated,
+            "sepa_instant_transfer.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.SepaInstantTransferCreated,
+            "sepa_instant_transfer.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.SepaInstantTransferUpdated,
             "swift_transfer.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.SwiftTransferCreated,
             "swift_transfer.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.SwiftTransferUpdated,
             "transaction.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.TransactionCreated,
+            "uk_faster_payment_system_transfer.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.UkFasterPaymentSystemTransferCreated,
+            "uk_faster_payment_system_transfer.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.UkFasterPaymentSystemTransferUpdated,
             "wire_drawdown_request.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.WireDrawdownRequestCreated,
             "wire_drawdown_request.updated" =>
@@ -1384,12 +1412,20 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "real_time_payments_request_for_payment.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.RealTimePaymentsRequestForPaymentUpdated =>
                     "real_time_payments_request_for_payment.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.SepaInstantTransferCreated =>
+                    "sepa_instant_transfer.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.SepaInstantTransferUpdated =>
+                    "sepa_instant_transfer.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.SwiftTransferCreated =>
                     "swift_transfer.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.SwiftTransferUpdated =>
                     "swift_transfer.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.TransactionCreated =>
                     "transaction.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.UkFasterPaymentSystemTransferCreated =>
+                    "uk_faster_payment_system_transfer.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.UkFasterPaymentSystemTransferUpdated =>
+                    "uk_faster_payment_system_transfer.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.WireDrawdownRequestCreated =>
                     "wire_drawdown_request.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.WireDrawdownRequestUpdated =>

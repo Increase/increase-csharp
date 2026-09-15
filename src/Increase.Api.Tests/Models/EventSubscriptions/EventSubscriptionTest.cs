@@ -642,6 +642,12 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.RealTimePaymentsRequestForPaymentUpdated
     )]
     [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.SepaInstantTransferCreated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.SepaInstantTransferUpdated
+    )]
+    [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.SwiftTransferCreated
     )]
     [InlineData(
@@ -649,6 +655,12 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.TransactionCreated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.UkFasterPaymentSystemTransferCreated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.UkFasterPaymentSystemTransferUpdated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.WireDrawdownRequestCreated
@@ -1035,6 +1047,12 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.RealTimePaymentsRequestForPaymentUpdated
     )]
     [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.SepaInstantTransferCreated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.SepaInstantTransferUpdated
+    )]
+    [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.SwiftTransferCreated
     )]
     [InlineData(
@@ -1042,6 +1060,12 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.TransactionCreated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.UkFasterPaymentSystemTransferCreated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.UkFasterPaymentSystemTransferUpdated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.WireDrawdownRequestCreated
