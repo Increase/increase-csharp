@@ -194,7 +194,18 @@ public class PendingTransactionTest : TestBase
                     Amount = 100,
                     TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                 },
+                SepaInstantTransferInstruction = new()
+                {
+                    Amount = 4200,
+                    Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+                },
                 SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                UkFasterPaymentSystemTransferInstruction = new()
+                {
+                    Amount = 12500,
+                    Currency =
+                        PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                },
                 UserInitiatedHold = new Dictionary<string, JsonElement>()
                 {
                     { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -388,7 +399,18 @@ public class PendingTransactionTest : TestBase
                 Amount = 100,
                 TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
             },
+            SepaInstantTransferInstruction = new()
+            {
+                Amount = 4200,
+                Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+            },
             SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferInstruction = new()
+            {
+                Amount = 12500,
+                Currency =
+                    PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+            },
             UserInitiatedHold = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -607,7 +629,18 @@ public class PendingTransactionTest : TestBase
                     Amount = 100,
                     TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                 },
+                SepaInstantTransferInstruction = new()
+                {
+                    Amount = 4200,
+                    Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+                },
                 SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                UkFasterPaymentSystemTransferInstruction = new()
+                {
+                    Amount = 12500,
+                    Currency =
+                        PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                },
                 UserInitiatedHold = new Dictionary<string, JsonElement>()
                 {
                     { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -819,7 +852,18 @@ public class PendingTransactionTest : TestBase
                     Amount = 100,
                     TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                 },
+                SepaInstantTransferInstruction = new()
+                {
+                    Amount = 4200,
+                    Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+                },
                 SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                UkFasterPaymentSystemTransferInstruction = new()
+                {
+                    Amount = 12500,
+                    Currency =
+                        PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                },
                 UserInitiatedHold = new Dictionary<string, JsonElement>()
                 {
                     { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1020,7 +1064,18 @@ public class PendingTransactionTest : TestBase
                 Amount = 100,
                 TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
             },
+            SepaInstantTransferInstruction = new()
+            {
+                Amount = 4200,
+                Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+            },
             SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferInstruction = new()
+            {
+                Amount = 12500,
+                Currency =
+                    PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+            },
             UserInitiatedHold = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1239,7 +1294,18 @@ public class PendingTransactionTest : TestBase
                     Amount = 100,
                     TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                 },
+                SepaInstantTransferInstruction = new()
+                {
+                    Amount = 4200,
+                    Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+                },
                 SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                UkFasterPaymentSystemTransferInstruction = new()
+                {
+                    Amount = 12500,
+                    Currency =
+                        PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                },
                 UserInitiatedHold = new Dictionary<string, JsonElement>()
                 {
                     { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1445,7 +1511,18 @@ public class PendingTransactionTest : TestBase
                     Amount = 100,
                     TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                 },
+                SepaInstantTransferInstruction = new()
+                {
+                    Amount = 4200,
+                    Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+                },
                 SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+                UkFasterPaymentSystemTransferInstruction = new()
+                {
+                    Amount = 12500,
+                    Currency =
+                        PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+                },
                 UserInitiatedHold = new Dictionary<string, JsonElement>()
                 {
                     { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1754,7 +1831,18 @@ public class SourceTest : TestBase
                 Amount = 100,
                 TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
             },
+            SepaInstantTransferInstruction = new()
+            {
+                Amount = 4200,
+                Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+            },
             SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferInstruction = new()
+            {
+                Amount = 12500,
+                Currency =
+                    PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+            },
             UserInitiatedHold = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1937,9 +2025,22 @@ public class SourceTest : TestBase
         PendingTransactions::Other expectedOther = new();
         PendingTransactions::RealTimePaymentsTransferInstruction expectedRealTimePaymentsTransferInstruction =
             new() { Amount = 100, TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq" };
+        PendingTransactions::SepaInstantTransferInstruction expectedSepaInstantTransferInstruction =
+            new()
+            {
+                Amount = 4200,
+                Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+            };
         PendingTransactions::SwiftTransferInstruction expectedSwiftTransferInstruction = new(
             "swift_transfer_29h21xkng03788zwd3fh"
         );
+        PendingTransactions::UkFasterPaymentSystemTransferInstruction expectedUkFasterPaymentSystemTransferInstruction =
+            new()
+            {
+                Amount = 12500,
+                Currency =
+                    PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+            };
         Dictionary<string, JsonElement> expectedUserInitiatedHold = new()
         {
             { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -1973,7 +2074,12 @@ public class SourceTest : TestBase
             expectedRealTimePaymentsTransferInstruction,
             model.RealTimePaymentsTransferInstruction
         );
+        Assert.Equal(expectedSepaInstantTransferInstruction, model.SepaInstantTransferInstruction);
         Assert.Equal(expectedSwiftTransferInstruction, model.SwiftTransferInstruction);
+        Assert.Equal(
+            expectedUkFasterPaymentSystemTransferInstruction,
+            model.UkFasterPaymentSystemTransferInstruction
+        );
         Assert.NotNull(model.UserInitiatedHold);
         Assert.Equal(expectedUserInitiatedHold.Count, model.UserInitiatedHold.Count);
         foreach (var item in expectedUserInitiatedHold)
@@ -2156,7 +2262,18 @@ public class SourceTest : TestBase
                 Amount = 100,
                 TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
             },
+            SepaInstantTransferInstruction = new()
+            {
+                Amount = 4200,
+                Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+            },
             SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferInstruction = new()
+            {
+                Amount = 12500,
+                Currency =
+                    PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+            },
             UserInitiatedHold = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -2351,7 +2468,18 @@ public class SourceTest : TestBase
                 Amount = 100,
                 TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
             },
+            SepaInstantTransferInstruction = new()
+            {
+                Amount = 4200,
+                Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+            },
             SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferInstruction = new()
+            {
+                Amount = 12500,
+                Currency =
+                    PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+            },
             UserInitiatedHold = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -2541,9 +2669,22 @@ public class SourceTest : TestBase
         PendingTransactions::Other expectedOther = new();
         PendingTransactions::RealTimePaymentsTransferInstruction expectedRealTimePaymentsTransferInstruction =
             new() { Amount = 100, TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq" };
+        PendingTransactions::SepaInstantTransferInstruction expectedSepaInstantTransferInstruction =
+            new()
+            {
+                Amount = 4200,
+                Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+            };
         PendingTransactions::SwiftTransferInstruction expectedSwiftTransferInstruction = new(
             "swift_transfer_29h21xkng03788zwd3fh"
         );
+        PendingTransactions::UkFasterPaymentSystemTransferInstruction expectedUkFasterPaymentSystemTransferInstruction =
+            new()
+            {
+                Amount = 12500,
+                Currency =
+                    PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+            };
         Dictionary<string, JsonElement> expectedUserInitiatedHold = new()
         {
             { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -2577,7 +2718,15 @@ public class SourceTest : TestBase
             expectedRealTimePaymentsTransferInstruction,
             deserialized.RealTimePaymentsTransferInstruction
         );
+        Assert.Equal(
+            expectedSepaInstantTransferInstruction,
+            deserialized.SepaInstantTransferInstruction
+        );
         Assert.Equal(expectedSwiftTransferInstruction, deserialized.SwiftTransferInstruction);
+        Assert.Equal(
+            expectedUkFasterPaymentSystemTransferInstruction,
+            deserialized.UkFasterPaymentSystemTransferInstruction
+        );
         Assert.NotNull(deserialized.UserInitiatedHold);
         Assert.Equal(expectedUserInitiatedHold.Count, deserialized.UserInitiatedHold.Count);
         foreach (var item in expectedUserInitiatedHold)
@@ -2760,7 +2909,18 @@ public class SourceTest : TestBase
                 Amount = 100,
                 TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
             },
+            SepaInstantTransferInstruction = new()
+            {
+                Amount = 4200,
+                Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+            },
             SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferInstruction = new()
+            {
+                Amount = 12500,
+                Currency =
+                    PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+            },
             UserInitiatedHold = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -2812,8 +2972,12 @@ public class SourceTest : TestBase
         Assert.False(model.RawData.ContainsKey("other"));
         Assert.Null(model.RealTimePaymentsTransferInstruction);
         Assert.False(model.RawData.ContainsKey("real_time_payments_transfer_instruction"));
+        Assert.Null(model.SepaInstantTransferInstruction);
+        Assert.False(model.RawData.ContainsKey("sepa_instant_transfer_instruction"));
         Assert.Null(model.SwiftTransferInstruction);
         Assert.False(model.RawData.ContainsKey("swift_transfer_instruction"));
+        Assert.Null(model.UkFasterPaymentSystemTransferInstruction);
+        Assert.False(model.RawData.ContainsKey("uk_faster_payment_system_transfer_instruction"));
         Assert.Null(model.UserInitiatedHold);
         Assert.False(model.RawData.ContainsKey("user_initiated_hold"));
         Assert.Null(model.WireTransferInstruction);
@@ -2851,7 +3015,9 @@ public class SourceTest : TestBase
             InboundWireTransferReversal = null,
             Other = null,
             RealTimePaymentsTransferInstruction = null,
+            SepaInstantTransferInstruction = null,
             SwiftTransferInstruction = null,
+            UkFasterPaymentSystemTransferInstruction = null,
             UserInitiatedHold = null,
             WireTransferInstruction = null,
         };
@@ -2882,8 +3048,12 @@ public class SourceTest : TestBase
         Assert.True(model.RawData.ContainsKey("other"));
         Assert.Null(model.RealTimePaymentsTransferInstruction);
         Assert.True(model.RawData.ContainsKey("real_time_payments_transfer_instruction"));
+        Assert.Null(model.SepaInstantTransferInstruction);
+        Assert.True(model.RawData.ContainsKey("sepa_instant_transfer_instruction"));
         Assert.Null(model.SwiftTransferInstruction);
         Assert.True(model.RawData.ContainsKey("swift_transfer_instruction"));
+        Assert.Null(model.UkFasterPaymentSystemTransferInstruction);
+        Assert.True(model.RawData.ContainsKey("uk_faster_payment_system_transfer_instruction"));
         Assert.Null(model.UserInitiatedHold);
         Assert.True(model.RawData.ContainsKey("user_initiated_hold"));
         Assert.Null(model.WireTransferInstruction);
@@ -2910,7 +3080,9 @@ public class SourceTest : TestBase
             InboundWireTransferReversal = null,
             Other = null,
             RealTimePaymentsTransferInstruction = null,
+            SepaInstantTransferInstruction = null,
             SwiftTransferInstruction = null,
+            UkFasterPaymentSystemTransferInstruction = null,
             UserInitiatedHold = null,
             WireTransferInstruction = null,
         };
@@ -3089,7 +3261,18 @@ public class SourceTest : TestBase
                 Amount = 100,
                 TransferID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
             },
+            SepaInstantTransferInstruction = new()
+            {
+                Amount = 4200,
+                Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+            },
             SwiftTransferInstruction = new("swift_transfer_29h21xkng03788zwd3fh"),
+            UkFasterPaymentSystemTransferInstruction = new()
+            {
+                Amount = 12500,
+                Currency =
+                    PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+            },
             UserInitiatedHold = new Dictionary<string, JsonElement>()
             {
                 { "foo", JsonSerializer.SerializeToElement("bar") },
@@ -3128,6 +3311,8 @@ public class SourceCategoryTest : TestBase
     [InlineData(PendingTransactions::SourceCategory.CardPushTransferInstruction)]
     [InlineData(PendingTransactions::SourceCategory.BlockchainOnrampTransferInstruction)]
     [InlineData(PendingTransactions::SourceCategory.BlockchainOfframpTransfer)]
+    [InlineData(PendingTransactions::SourceCategory.UkFasterPaymentSystemTransferInstruction)]
+    [InlineData(PendingTransactions::SourceCategory.SepaInstantTransferInstruction)]
     [InlineData(PendingTransactions::SourceCategory.Other)]
     public void Validation_Works(PendingTransactions::SourceCategory rawValue)
     {
@@ -3163,6 +3348,8 @@ public class SourceCategoryTest : TestBase
     [InlineData(PendingTransactions::SourceCategory.CardPushTransferInstruction)]
     [InlineData(PendingTransactions::SourceCategory.BlockchainOnrampTransferInstruction)]
     [InlineData(PendingTransactions::SourceCategory.BlockchainOfframpTransfer)]
+    [InlineData(PendingTransactions::SourceCategory.UkFasterPaymentSystemTransferInstruction)]
+    [InlineData(PendingTransactions::SourceCategory.SepaInstantTransferInstruction)]
     [InlineData(PendingTransactions::SourceCategory.Other)]
     public void SerializationRoundtrip_Works(PendingTransactions::SourceCategory rawValue)
     {
@@ -8633,6 +8820,158 @@ public class RealTimePaymentsTransferInstructionTest : TestBase
     }
 }
 
+public class SepaInstantTransferInstructionTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new PendingTransactions::SepaInstantTransferInstruction
+        {
+            Amount = 4200,
+            Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+        };
+
+        long expectedAmount = 4200;
+        ApiEnum<
+            string,
+            PendingTransactions::SepaInstantTransferInstructionCurrency
+        > expectedCurrency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur;
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCurrency, model.Currency);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new PendingTransactions::SepaInstantTransferInstruction
+        {
+            Amount = 4200,
+            Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<PendingTransactions::SepaInstantTransferInstruction>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new PendingTransactions::SepaInstantTransferInstruction
+        {
+            Amount = 4200,
+            Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<PendingTransactions::SepaInstantTransferInstruction>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        long expectedAmount = 4200;
+        ApiEnum<
+            string,
+            PendingTransactions::SepaInstantTransferInstructionCurrency
+        > expectedCurrency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur;
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new PendingTransactions::SepaInstantTransferInstruction
+        {
+            Amount = 4200,
+            Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PendingTransactions::SepaInstantTransferInstruction
+        {
+            Amount = 4200,
+            Currency = PendingTransactions::SepaInstantTransferInstructionCurrency.Eur,
+        };
+
+        PendingTransactions::SepaInstantTransferInstruction copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class SepaInstantTransferInstructionCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(PendingTransactions::SepaInstantTransferInstructionCurrency.Eur)]
+    public void Validation_Works(
+        PendingTransactions::SepaInstantTransferInstructionCurrency rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::SepaInstantTransferInstructionCurrency> value =
+            rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::SepaInstantTransferInstructionCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PendingTransactions::SepaInstantTransferInstructionCurrency.Eur)]
+    public void SerializationRoundtrip_Works(
+        PendingTransactions::SepaInstantTransferInstructionCurrency rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::SepaInstantTransferInstructionCurrency> value =
+            rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::SepaInstantTransferInstructionCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::SepaInstantTransferInstructionCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::SepaInstantTransferInstructionCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
 public class SwiftTransferInstructionTest : TestBase
 {
     [Fact]
@@ -8709,6 +9048,164 @@ public class SwiftTransferInstructionTest : TestBase
         PendingTransactions::SwiftTransferInstruction copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class UkFasterPaymentSystemTransferInstructionTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new PendingTransactions::UkFasterPaymentSystemTransferInstruction
+        {
+            Amount = 12500,
+            Currency = PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+        };
+
+        long expectedAmount = 12500;
+        ApiEnum<
+            string,
+            PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency
+        > expectedCurrency =
+            PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp;
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCurrency, model.Currency);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new PendingTransactions::UkFasterPaymentSystemTransferInstruction
+        {
+            Amount = 12500,
+            Currency = PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<PendingTransactions::UkFasterPaymentSystemTransferInstruction>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new PendingTransactions::UkFasterPaymentSystemTransferInstruction
+        {
+            Amount = 12500,
+            Currency = PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<PendingTransactions::UkFasterPaymentSystemTransferInstruction>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        long expectedAmount = 12500;
+        ApiEnum<
+            string,
+            PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency
+        > expectedCurrency =
+            PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp;
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCurrency, deserialized.Currency);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new PendingTransactions::UkFasterPaymentSystemTransferInstruction
+        {
+            Amount = 12500,
+            Currency = PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PendingTransactions::UkFasterPaymentSystemTransferInstruction
+        {
+            Amount = 12500,
+            Currency = PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+        };
+
+        PendingTransactions::UkFasterPaymentSystemTransferInstruction copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class UkFasterPaymentSystemTransferInstructionCurrencyTest : TestBase
+{
+    [Theory]
+    [InlineData(PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp)]
+    public void Validation_Works(
+        PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<
+            string,
+            PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency
+        > value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency.Gbp)]
+    public void SerializationRoundtrip_Works(
+        PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<
+            string,
+            PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency
+        > value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PendingTransactions::UkFasterPaymentSystemTransferInstructionCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
     }
 }
 

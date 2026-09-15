@@ -29,7 +29,8 @@ public interface IAccountStatementService
 
     /// <summary>
     /// Simulates an [Account Statement](#account-statements) being created for an
-    /// account. In production, Account Statements are generated once per month.
+    /// account. In production, Account Statements are generated once per month. As in
+    /// production, the simulated statement covers the previous calendar month.
     /// </summary>
     Task<AccountStatement> Create(
         AccountStatementCreateParams parameters,
