@@ -736,6 +736,16 @@ public enum EventCategory
     RealTimePaymentsRequestForPaymentUpdated,
 
     /// <summary>
+    /// Occurs whenever a SEPA Instant Transfer is created.
+    /// </summary>
+    SepaInstantTransferCreated,
+
+    /// <summary>
+    /// Occurs whenever a SEPA Instant Transfer is updated.
+    /// </summary>
+    SepaInstantTransferUpdated,
+
+    /// <summary>
     /// Occurs whenever a Swift Transfer is created.
     /// </summary>
     SwiftTransferCreated,
@@ -749,6 +759,16 @@ public enum EventCategory
     /// Occurs whenever a Transaction is created.
     /// </summary>
     TransactionCreated,
+
+    /// <summary>
+    /// Occurs whenever a UK Faster Payment System Transfer is created.
+    /// </summary>
+    UkFasterPaymentSystemTransferCreated,
+
+    /// <summary>
+    /// Occurs whenever a UK Faster Payment System Transfer is updated.
+    /// </summary>
+    UkFasterPaymentSystemTransferUpdated,
 
     /// <summary>
     /// Occurs whenever a Wire Drawdown Request is created.
@@ -912,9 +932,15 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.RealTimePaymentsRequestForPaymentCreated,
             "real_time_payments_request_for_payment.updated" =>
                 EventCategory.RealTimePaymentsRequestForPaymentUpdated,
+            "sepa_instant_transfer.created" => EventCategory.SepaInstantTransferCreated,
+            "sepa_instant_transfer.updated" => EventCategory.SepaInstantTransferUpdated,
             "swift_transfer.created" => EventCategory.SwiftTransferCreated,
             "swift_transfer.updated" => EventCategory.SwiftTransferUpdated,
             "transaction.created" => EventCategory.TransactionCreated,
+            "uk_faster_payment_system_transfer.created" =>
+                EventCategory.UkFasterPaymentSystemTransferCreated,
+            "uk_faster_payment_system_transfer.updated" =>
+                EventCategory.UkFasterPaymentSystemTransferUpdated,
             "wire_drawdown_request.created" => EventCategory.WireDrawdownRequestCreated,
             "wire_drawdown_request.updated" => EventCategory.WireDrawdownRequestUpdated,
             "wire_transfer.created" => EventCategory.WireTransferCreated,
@@ -1074,9 +1100,15 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                     "real_time_payments_request_for_payment.created",
                 EventCategory.RealTimePaymentsRequestForPaymentUpdated =>
                     "real_time_payments_request_for_payment.updated",
+                EventCategory.SepaInstantTransferCreated => "sepa_instant_transfer.created",
+                EventCategory.SepaInstantTransferUpdated => "sepa_instant_transfer.updated",
                 EventCategory.SwiftTransferCreated => "swift_transfer.created",
                 EventCategory.SwiftTransferUpdated => "swift_transfer.updated",
                 EventCategory.TransactionCreated => "transaction.created",
+                EventCategory.UkFasterPaymentSystemTransferCreated =>
+                    "uk_faster_payment_system_transfer.created",
+                EventCategory.UkFasterPaymentSystemTransferUpdated =>
+                    "uk_faster_payment_system_transfer.updated",
                 EventCategory.WireDrawdownRequestCreated => "wire_drawdown_request.created",
                 EventCategory.WireDrawdownRequestUpdated => "wire_drawdown_request.updated",
                 EventCategory.WireTransferCreated => "wire_transfer.created",

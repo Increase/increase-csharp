@@ -666,8 +666,18 @@ public class TransactionListPageResponseTest : TestBase
                             UnstructuredRemittanceInformation = "Invoice 29582",
                         },
                         SampleFunds = new("dashboard"),
+                        SepaInstantTransferAcceptance = new()
+                        {
+                            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            SettlementAmount = 4935,
+                        },
                         SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                         SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+                        UkFasterPaymentSystemTransferAcceptance = new()
+                        {
+                            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            SettlementAmount = 16765,
+                        },
                         WireTransferIntention = new()
                         {
                             AccountNumber = "987654321",
@@ -1327,8 +1337,18 @@ public class TransactionListPageResponseTest : TestBase
                         UnstructuredRemittanceInformation = "Invoice 29582",
                     },
                     SampleFunds = new("dashboard"),
+                    SepaInstantTransferAcceptance = new()
+                    {
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SettlementAmount = 4935,
+                    },
                     SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                     SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+                    UkFasterPaymentSystemTransferAcceptance = new()
+                    {
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SettlementAmount = 16765,
+                    },
                     WireTransferIntention = new()
                     {
                         AccountNumber = "987654321",
@@ -2009,8 +2029,18 @@ public class TransactionListPageResponseTest : TestBase
                             UnstructuredRemittanceInformation = "Invoice 29582",
                         },
                         SampleFunds = new("dashboard"),
+                        SepaInstantTransferAcceptance = new()
+                        {
+                            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            SettlementAmount = 4935,
+                        },
                         SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                         SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+                        UkFasterPaymentSystemTransferAcceptance = new()
+                        {
+                            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            SettlementAmount = 16765,
+                        },
                         WireTransferIntention = new()
                         {
                             AccountNumber = "987654321",
@@ -2693,8 +2723,18 @@ public class TransactionListPageResponseTest : TestBase
                             UnstructuredRemittanceInformation = "Invoice 29582",
                         },
                         SampleFunds = new("dashboard"),
+                        SepaInstantTransferAcceptance = new()
+                        {
+                            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            SettlementAmount = 4935,
+                        },
                         SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                         SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+                        UkFasterPaymentSystemTransferAcceptance = new()
+                        {
+                            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            SettlementAmount = 16765,
+                        },
                         WireTransferIntention = new()
                         {
                             AccountNumber = "987654321",
@@ -3361,8 +3401,18 @@ public class TransactionListPageResponseTest : TestBase
                         UnstructuredRemittanceInformation = "Invoice 29582",
                     },
                     SampleFunds = new("dashboard"),
+                    SepaInstantTransferAcceptance = new()
+                    {
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SettlementAmount = 4935,
+                    },
                     SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                     SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+                    UkFasterPaymentSystemTransferAcceptance = new()
+                    {
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SettlementAmount = 16765,
+                    },
                     WireTransferIntention = new()
                     {
                         AccountNumber = "987654321",
@@ -4043,8 +4093,18 @@ public class TransactionListPageResponseTest : TestBase
                             UnstructuredRemittanceInformation = "Invoice 29582",
                         },
                         SampleFunds = new("dashboard"),
+                        SepaInstantTransferAcceptance = new()
+                        {
+                            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            SettlementAmount = 4935,
+                        },
                         SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                         SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+                        UkFasterPaymentSystemTransferAcceptance = new()
+                        {
+                            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            SettlementAmount = 16765,
+                        },
                         WireTransferIntention = new()
                         {
                             AccountNumber = "987654321",
@@ -4721,8 +4781,18 @@ public class TransactionListPageResponseTest : TestBase
                             UnstructuredRemittanceInformation = "Invoice 29582",
                         },
                         SampleFunds = new("dashboard"),
+                        SepaInstantTransferAcceptance = new()
+                        {
+                            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            SettlementAmount = 4935,
+                        },
                         SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                         SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
+                        UkFasterPaymentSystemTransferAcceptance = new()
+                        {
+                            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            SettlementAmount = 16765,
+                        },
                         WireTransferIntention = new()
                         {
                             AccountNumber = "987654321",
