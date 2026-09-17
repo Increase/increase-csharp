@@ -247,10 +247,11 @@ public class EntityCreateParamsTest : TestBase
                 Address = new()
                 {
                     City = "x",
+                    Country = "x",
                     Line1 = "x",
-                    State = "xx",
-                    Zip = "x",
                     Line2 = "x",
+                    State = "x",
+                    Zip = "x",
                 },
                 Category = TrustCategory.Revocable,
                 Name = "x",
@@ -586,10 +587,11 @@ public class EntityCreateParamsTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
-                State = "xx",
-                Zip = "x",
                 Line2 = "x",
+                State = "x",
+                Zip = "x",
             },
             Category = TrustCategory.Revocable,
             Name = "x",
@@ -1033,10 +1035,11 @@ public class EntityCreateParamsTest : TestBase
                 Address = new()
                 {
                     City = "x",
+                    Country = "x",
                     Line1 = "x",
-                    State = "xx",
-                    Zip = "x",
                     Line2 = "x",
+                    State = "x",
+                    Zip = "x",
                 },
                 Category = TrustCategory.Revocable,
                 Name = "x",
@@ -10429,10 +10432,11 @@ public class TrustTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
-                State = "xx",
-                Zip = "x",
                 Line2 = "x",
+                State = "x",
+                Zip = "x",
             },
             Category = TrustCategory.Revocable,
             Name = "x",
@@ -10533,10 +10537,11 @@ public class TrustTest : TestBase
         TrustAddress expectedAddress = new()
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "xx",
-            Zip = "x",
             Line2 = "x",
+            State = "x",
+            Zip = "x",
         };
         ApiEnum<string, TrustCategory> expectedCategory = TrustCategory.Revocable;
         string expectedName = "x";
@@ -10655,10 +10660,11 @@ public class TrustTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
-                State = "xx",
-                Zip = "x",
                 Line2 = "x",
+                State = "x",
+                Zip = "x",
             },
             Category = TrustCategory.Revocable,
             Name = "x",
@@ -10770,10 +10776,11 @@ public class TrustTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
-                State = "xx",
-                Zip = "x",
                 Line2 = "x",
+                State = "x",
+                Zip = "x",
             },
             Category = TrustCategory.Revocable,
             Name = "x",
@@ -10878,10 +10885,11 @@ public class TrustTest : TestBase
         TrustAddress expectedAddress = new()
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "xx",
-            Zip = "x",
             Line2 = "x",
+            State = "x",
+            Zip = "x",
         };
         ApiEnum<string, TrustCategory> expectedCategory = TrustCategory.Revocable;
         string expectedName = "x";
@@ -11000,10 +11008,11 @@ public class TrustTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
-                State = "xx",
-                Zip = "x",
                 Line2 = "x",
+                State = "x",
+                Zip = "x",
             },
             Category = TrustCategory.Revocable,
             Name = "x",
@@ -11112,10 +11121,11 @@ public class TrustTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
-                State = "xx",
-                Zip = "x",
                 Line2 = "x",
+                State = "x",
+                Zip = "x",
             },
             Category = TrustCategory.Revocable,
             Name = "x",
@@ -11187,10 +11197,11 @@ public class TrustTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
-                State = "xx",
-                Zip = "x",
                 Line2 = "x",
+                State = "x",
+                Zip = "x",
             },
             Category = TrustCategory.Revocable,
             Name = "x",
@@ -11255,10 +11266,11 @@ public class TrustTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
-                State = "xx",
-                Zip = "x",
                 Line2 = "x",
+                State = "x",
+                Zip = "x",
             },
             Category = TrustCategory.Revocable,
             Name = "x",
@@ -11336,10 +11348,11 @@ public class TrustTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
-                State = "xx",
-                Zip = "x",
                 Line2 = "x",
+                State = "x",
+                Zip = "x",
             },
             Category = TrustCategory.Revocable,
             Name = "x",
@@ -11410,10 +11423,11 @@ public class TrustTest : TestBase
             Address = new()
             {
                 City = "x",
+                Country = "x",
                 Line1 = "x",
-                State = "xx",
-                Zip = "x",
                 Line2 = "x",
+                State = "x",
+                Zip = "x",
             },
             Category = TrustCategory.Revocable,
             Name = "x",
@@ -11525,23 +11539,26 @@ public class TrustAddressTest : TestBase
         var model = new TrustAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "xx",
-            Zip = "x",
             Line2 = "x",
+            State = "x",
+            Zip = "x",
         };
 
         string expectedCity = "x";
+        string expectedCountry = "x";
         string expectedLine1 = "x";
-        string expectedState = "xx";
-        string expectedZip = "x";
         string expectedLine2 = "x";
+        string expectedState = "x";
+        string expectedZip = "x";
 
         Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
         Assert.Equal(expectedLine1, model.Line1);
+        Assert.Equal(expectedLine2, model.Line2);
         Assert.Equal(expectedState, model.State);
         Assert.Equal(expectedZip, model.Zip);
-        Assert.Equal(expectedLine2, model.Line2);
     }
 
     [Fact]
@@ -11550,10 +11567,11 @@ public class TrustAddressTest : TestBase
         var model = new TrustAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "xx",
-            Zip = "x",
             Line2 = "x",
+            State = "x",
+            Zip = "x",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -11571,10 +11589,11 @@ public class TrustAddressTest : TestBase
         var model = new TrustAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "xx",
-            Zip = "x",
             Line2 = "x",
+            State = "x",
+            Zip = "x",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -11585,16 +11604,18 @@ public class TrustAddressTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCity = "x";
+        string expectedCountry = "x";
         string expectedLine1 = "x";
-        string expectedState = "xx";
-        string expectedZip = "x";
         string expectedLine2 = "x";
+        string expectedState = "x";
+        string expectedZip = "x";
 
         Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
         Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Equal(expectedLine2, deserialized.Line2);
         Assert.Equal(expectedState, deserialized.State);
         Assert.Equal(expectedZip, deserialized.Zip);
-        Assert.Equal(expectedLine2, deserialized.Line2);
     }
 
     [Fact]
@@ -11603,10 +11624,11 @@ public class TrustAddressTest : TestBase
         var model = new TrustAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "xx",
-            Zip = "x",
             Line2 = "x",
+            State = "x",
+            Zip = "x",
         };
 
         model.Validate();
@@ -11618,13 +11640,16 @@ public class TrustAddressTest : TestBase
         var model = new TrustAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "xx",
-            Zip = "x",
         };
 
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
     }
 
     [Fact]
@@ -11633,9 +11658,8 @@ public class TrustAddressTest : TestBase
         var model = new TrustAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "xx",
-            Zip = "x",
         };
 
         model.Validate();
@@ -11647,16 +11671,21 @@ public class TrustAddressTest : TestBase
         var model = new TrustAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "xx",
-            Zip = "x",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
+            State = null,
+            Zip = null,
         };
 
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
+        Assert.Null(model.State);
+        Assert.False(model.RawData.ContainsKey("state"));
+        Assert.Null(model.Zip);
+        Assert.False(model.RawData.ContainsKey("zip"));
     }
 
     [Fact]
@@ -11665,12 +11694,13 @@ public class TrustAddressTest : TestBase
         var model = new TrustAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "xx",
-            Zip = "x",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
+            State = null,
+            Zip = null,
         };
 
         model.Validate();
@@ -11682,10 +11712,11 @@ public class TrustAddressTest : TestBase
         var model = new TrustAddress
         {
             City = "x",
+            Country = "x",
             Line1 = "x",
-            State = "xx",
-            Zip = "x",
             Line2 = "x",
+            State = "x",
+            Zip = "x",
         };
 
         TrustAddress copied = new(model);

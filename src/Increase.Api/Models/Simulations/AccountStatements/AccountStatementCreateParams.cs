@@ -11,7 +11,8 @@ namespace Increase.Api.Models.Simulations.AccountStatements;
 
 /// <summary>
 /// Simulates an [Account Statement](#account-statements) being created for an account.
-/// In production, Account Statements are generated once per month.
+/// In production, Account Statements are generated once per month. As in production,
+/// the simulated statement covers the previous calendar month.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that

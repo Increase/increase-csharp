@@ -2553,6 +2553,19 @@ sealed class InboundAchTransferStatusConverter : JsonConverter<InboundAchTransfe
 public sealed record class TransferReturn : JsonModel
 {
     /// <summary>
+    /// The three character ACH return code, in the range R01 to R85.
+    /// </summary>
+    public required string RawReasonCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("raw_reason_code");
+        }
+        init { this._rawData.Set("raw_reason_code", value); }
+    }
+
+    /// <summary>
     /// The reason for the transfer return.
     /// </summary>
     public required ApiEnum<string, TransferReturnReason> Reason
@@ -2594,6 +2607,7 @@ public sealed record class TransferReturn : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.RawReasonCode;
         this.Reason.Validate();
         _ = this.ReturnedAt;
         _ = this.TransactionID;

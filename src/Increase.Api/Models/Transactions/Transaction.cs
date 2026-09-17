@@ -933,6 +933,24 @@ public sealed record class Source : JsonModel
     }
 
     /// <summary>
+    /// A SEPA Instant Transfer Acceptance object. This field will be present in
+    /// the JSON response if and only if `category` is equal to `sepa_instant_transfer_acceptance`.
+    /// A SEPA Instant Transfer Acceptance is created when a SEPA Instant Transfer
+    /// sent from Increase is accepted by the recipient's bank.
+    /// </summary>
+    public SepaInstantTransferAcceptance? SepaInstantTransferAcceptance
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<SepaInstantTransferAcceptance>(
+                "sepa_instant_transfer_acceptance"
+            );
+        }
+        init { this._rawData.Set("sepa_instant_transfer_acceptance", value); }
+    }
+
+    /// <summary>
     /// A Swift Transfer Intention object. This field will be present in the JSON
     /// response if and only if `category` is equal to `swift_transfer_intention`.
     /// A Swift Transfer initiated via Increase.
@@ -962,6 +980,24 @@ public sealed record class Source : JsonModel
             return this._rawData.GetNullableClass<SwiftTransferReturn>("swift_transfer_return");
         }
         init { this._rawData.Set("swift_transfer_return", value); }
+    }
+
+    /// <summary>
+    /// An UK Faster Payment System Transfer Acceptance object. This field will be
+    /// present in the JSON response if and only if `category` is equal to `uk_faster_payment_system_transfer_acceptance`.
+    /// A UK Faster Payment System Transfer Acceptance is created when a UK Faster
+    /// Payment System Transfer sent from Increase is accepted by the recipient's bank.
+    /// </summary>
+    public UkFasterPaymentSystemTransferAcceptance? UkFasterPaymentSystemTransferAcceptance
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<UkFasterPaymentSystemTransferAcceptance>(
+                "uk_faster_payment_system_transfer_acceptance"
+            );
+        }
+        init { this._rawData.Set("uk_faster_payment_system_transfer_acceptance", value); }
     }
 
     /// <summary>
@@ -1019,8 +1055,10 @@ public sealed record class Source : JsonModel
         this.Other?.Validate();
         this.RealTimePaymentsTransferAcknowledgement?.Validate();
         this.SampleFunds?.Validate();
+        this.SepaInstantTransferAcceptance?.Validate();
         this.SwiftTransferIntention?.Validate();
         this.SwiftTransferReturn?.Validate();
+        this.UkFasterPaymentSystemTransferAcceptance?.Validate();
         this.WireTransferIntention?.Validate();
     }
 
@@ -1265,6 +1303,16 @@ public enum SourceCategory
     BlockchainOfframpTransferSettlement,
 
     /// <summary>
+    /// UK Faster Payment System Transfer Acceptance: details will be under the `uk_faster_payment_system_transfer_acceptance` object.
+    /// </summary>
+    UkFasterPaymentSystemTransferAcceptance,
+
+    /// <summary>
+    /// SEPA Instant Transfer Acceptance: details will be under the `sepa_instant_transfer_acceptance` object.
+    /// </summary>
+    SepaInstantTransferAcceptance,
+
+    /// <summary>
     /// The Transaction was made for an undocumented or deprecated reason.
     /// </summary>
     Other,
@@ -1325,6 +1373,9 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
                 SourceCategory.BlockchainOnrampTransferIntention,
             "blockchain_offramp_transfer_settlement" =>
                 SourceCategory.BlockchainOfframpTransferSettlement,
+            "uk_faster_payment_system_transfer_acceptance" =>
+                SourceCategory.UkFasterPaymentSystemTransferAcceptance,
+            "sepa_instant_transfer_acceptance" => SourceCategory.SepaInstantTransferAcceptance,
             "other" => SourceCategory.Other,
             _ => (SourceCategory)(-1),
         };
@@ -1385,6 +1436,9 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
                     "blockchain_onramp_transfer_intention",
                 SourceCategory.BlockchainOfframpTransferSettlement =>
                     "blockchain_offramp_transfer_settlement",
+                SourceCategory.UkFasterPaymentSystemTransferAcceptance =>
+                    "uk_faster_payment_system_transfer_acceptance",
+                SourceCategory.SepaInstantTransferAcceptance => "sepa_instant_transfer_acceptance",
                 SourceCategory.Other => "other",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -18637,6 +18691,91 @@ class SampleFundsFromRaw : IFromRawJson<SampleFunds>
 }
 
 /// <summary>
+/// A SEPA Instant Transfer Acceptance object. This field will be present in the JSON
+/// response if and only if `category` is equal to `sepa_instant_transfer_acceptance`.
+/// A SEPA Instant Transfer Acceptance is created when a SEPA Instant Transfer sent
+/// from Increase is accepted by the recipient's bank.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<SepaInstantTransferAcceptance, SepaInstantTransferAcceptanceFromRaw>)
+)]
+public sealed record class SepaInstantTransferAcceptance : JsonModel
+{
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the recipient's bank accepted the transfer.
+    /// </summary>
+    public required System::DateTimeOffset AcceptedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("accepted_at");
+        }
+        init { this._rawData.Set("accepted_at", value); }
+    }
+
+    /// <summary>
+    /// The transfer amount in USD cents.
+    /// </summary>
+    public required long SettlementAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("settlement_amount");
+        }
+        init { this._rawData.Set("settlement_amount", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.AcceptedAt;
+        _ = this.SettlementAmount;
+    }
+
+    public SepaInstantTransferAcceptance() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public SepaInstantTransferAcceptance(
+        SepaInstantTransferAcceptance sepaInstantTransferAcceptance
+    )
+        : base(sepaInstantTransferAcceptance) { }
+#pragma warning restore CS8618
+
+    public SepaInstantTransferAcceptance(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    SepaInstantTransferAcceptance(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="SepaInstantTransferAcceptanceFromRaw.FromRawUnchecked"/>
+    public static SepaInstantTransferAcceptance FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class SepaInstantTransferAcceptanceFromRaw : IFromRawJson<SepaInstantTransferAcceptance>
+{
+    /// <inheritdoc/>
+    public SepaInstantTransferAcceptance FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => SepaInstantTransferAcceptance.FromRawUnchecked(rawData);
+}
+
+/// <summary>
 /// A Swift Transfer Intention object. This field will be present in the JSON response
 /// if and only if `category` is equal to `swift_transfer_intention`. A Swift Transfer
 /// initiated via Increase.
@@ -18777,6 +18916,95 @@ class SwiftTransferReturnFromRaw : IFromRawJson<SwiftTransferReturn>
     /// <inheritdoc/>
     public SwiftTransferReturn FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         SwiftTransferReturn.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// An UK Faster Payment System Transfer Acceptance object. This field will be present
+/// in the JSON response if and only if `category` is equal to `uk_faster_payment_system_transfer_acceptance`.
+/// A UK Faster Payment System Transfer Acceptance is created when a UK Faster Payment
+/// System Transfer sent from Increase is accepted by the recipient's bank.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        UkFasterPaymentSystemTransferAcceptance,
+        UkFasterPaymentSystemTransferAcceptanceFromRaw
+    >)
+)]
+public sealed record class UkFasterPaymentSystemTransferAcceptance : JsonModel
+{
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the recipient's bank accepted the transfer.
+    /// </summary>
+    public required System::DateTimeOffset AcceptedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("accepted_at");
+        }
+        init { this._rawData.Set("accepted_at", value); }
+    }
+
+    /// <summary>
+    /// The transfer amount in USD cents.
+    /// </summary>
+    public required long SettlementAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("settlement_amount");
+        }
+        init { this._rawData.Set("settlement_amount", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.AcceptedAt;
+        _ = this.SettlementAmount;
+    }
+
+    public UkFasterPaymentSystemTransferAcceptance() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public UkFasterPaymentSystemTransferAcceptance(
+        UkFasterPaymentSystemTransferAcceptance ukFasterPaymentSystemTransferAcceptance
+    )
+        : base(ukFasterPaymentSystemTransferAcceptance) { }
+#pragma warning restore CS8618
+
+    public UkFasterPaymentSystemTransferAcceptance(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    UkFasterPaymentSystemTransferAcceptance(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="UkFasterPaymentSystemTransferAcceptanceFromRaw.FromRawUnchecked"/>
+    public static UkFasterPaymentSystemTransferAcceptance FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class UkFasterPaymentSystemTransferAcceptanceFromRaw
+    : IFromRawJson<UkFasterPaymentSystemTransferAcceptance>
+{
+    /// <inheritdoc/>
+    public UkFasterPaymentSystemTransferAcceptance FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => UkFasterPaymentSystemTransferAcceptance.FromRawUnchecked(rawData);
 }
 
 /// <summary>

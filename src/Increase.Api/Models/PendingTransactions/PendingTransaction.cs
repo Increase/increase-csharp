@@ -597,6 +597,22 @@ public sealed record class Source : JsonModel
     }
 
     /// <summary>
+    /// A SEPA Instant Transfer Instruction object. This field will be present in
+    /// the JSON response if and only if `category` is equal to `sepa_instant_transfer_instruction`.
+    /// </summary>
+    public SepaInstantTransferInstruction? SepaInstantTransferInstruction
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<SepaInstantTransferInstruction>(
+                "sepa_instant_transfer_instruction"
+            );
+        }
+        init { this._rawData.Set("sepa_instant_transfer_instruction", value); }
+    }
+
+    /// <summary>
     /// A Swift Transfer Instruction object. This field will be present in the JSON
     /// response if and only if `category` is equal to `swift_transfer_instruction`.
     /// </summary>
@@ -610,6 +626,22 @@ public sealed record class Source : JsonModel
             );
         }
         init { this._rawData.Set("swift_transfer_instruction", value); }
+    }
+
+    /// <summary>
+    /// An UK Faster Payment System Transfer Instruction object. This field will be
+    /// present in the JSON response if and only if `category` is equal to `uk_faster_payment_system_transfer_instruction`.
+    /// </summary>
+    public UkFasterPaymentSystemTransferInstruction? UkFasterPaymentSystemTransferInstruction
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<UkFasterPaymentSystemTransferInstruction>(
+                "uk_faster_payment_system_transfer_instruction"
+            );
+        }
+        init { this._rawData.Set("uk_faster_payment_system_transfer_instruction", value); }
     }
 
     /// <summary>
@@ -668,7 +700,9 @@ public sealed record class Source : JsonModel
         this.InboundWireTransferReversal?.Validate();
         this.Other?.Validate();
         this.RealTimePaymentsTransferInstruction?.Validate();
+        this.SepaInstantTransferInstruction?.Validate();
         this.SwiftTransferInstruction?.Validate();
+        this.UkFasterPaymentSystemTransferInstruction?.Validate();
         _ = this.UserInitiatedHold;
         this.WireTransferInstruction?.Validate();
     }
@@ -798,6 +832,16 @@ public enum SourceCategory
     BlockchainOfframpTransfer,
 
     /// <summary>
+    /// UK Faster Payment System Transfer Instruction: details will be under the `uk_faster_payment_system_transfer_instruction` object.
+    /// </summary>
+    UkFasterPaymentSystemTransferInstruction,
+
+    /// <summary>
+    /// SEPA Instant Transfer Instruction: details will be under the `sepa_instant_transfer_instruction` object.
+    /// </summary>
+    SepaInstantTransferInstruction,
+
+    /// <summary>
     /// The Pending Transaction was made for an undocumented or deprecated reason.
     /// </summary>
     Other,
@@ -830,6 +874,9 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
             "blockchain_onramp_transfer_instruction" =>
                 SourceCategory.BlockchainOnrampTransferInstruction,
             "blockchain_offramp_transfer" => SourceCategory.BlockchainOfframpTransfer,
+            "uk_faster_payment_system_transfer_instruction" =>
+                SourceCategory.UkFasterPaymentSystemTransferInstruction,
+            "sepa_instant_transfer_instruction" => SourceCategory.SepaInstantTransferInstruction,
             "other" => SourceCategory.Other,
             _ => (SourceCategory)(-1),
         };
@@ -862,6 +909,10 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
                 SourceCategory.BlockchainOnrampTransferInstruction =>
                     "blockchain_onramp_transfer_instruction",
                 SourceCategory.BlockchainOfframpTransfer => "blockchain_offramp_transfer",
+                SourceCategory.UkFasterPaymentSystemTransferInstruction =>
+                    "uk_faster_payment_system_transfer_instruction",
+                SourceCategory.SepaInstantTransferInstruction =>
+                    "sepa_instant_transfer_instruction",
                 SourceCategory.Other => "other",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -6343,6 +6394,143 @@ class RealTimePaymentsTransferInstructionFromRaw : IFromRawJson<RealTimePayments
 }
 
 /// <summary>
+/// A SEPA Instant Transfer Instruction object. This field will be present in the
+/// JSON response if and only if `category` is equal to `sepa_instant_transfer_instruction`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        SepaInstantTransferInstruction,
+        SepaInstantTransferInstructionFromRaw
+    >)
+)]
+public sealed record class SepaInstantTransferInstruction : JsonModel
+{
+    /// <summary>
+    /// The transfer amount in EUR cents.
+    /// </summary>
+    public required long Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code for
+    /// the transfer's currency. This is always `EUR`.
+    /// </summary>
+    public required ApiEnum<string, SepaInstantTransferInstructionCurrency> Currency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, SepaInstantTransferInstructionCurrency>
+            >("currency");
+        }
+        init { this._rawData.Set("currency", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Amount;
+        this.Currency.Validate();
+    }
+
+    public SepaInstantTransferInstruction() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public SepaInstantTransferInstruction(
+        SepaInstantTransferInstruction sepaInstantTransferInstruction
+    )
+        : base(sepaInstantTransferInstruction) { }
+#pragma warning restore CS8618
+
+    public SepaInstantTransferInstruction(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    SepaInstantTransferInstruction(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="SepaInstantTransferInstructionFromRaw.FromRawUnchecked"/>
+    public static SepaInstantTransferInstruction FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class SepaInstantTransferInstructionFromRaw : IFromRawJson<SepaInstantTransferInstruction>
+{
+    /// <inheritdoc/>
+    public SepaInstantTransferInstruction FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => SepaInstantTransferInstruction.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code for the transfer's
+/// currency. This is always `EUR`.
+/// </summary>
+[JsonConverter(typeof(SepaInstantTransferInstructionCurrencyConverter))]
+public enum SepaInstantTransferInstructionCurrency
+{
+    /// <summary>
+    /// EUR
+    /// </summary>
+    Eur,
+}
+
+sealed class SepaInstantTransferInstructionCurrencyConverter
+    : JsonConverter<SepaInstantTransferInstructionCurrency>
+{
+    public override SepaInstantTransferInstructionCurrency Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "EUR" => SepaInstantTransferInstructionCurrency.Eur,
+            _ => (SepaInstantTransferInstructionCurrency)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        SepaInstantTransferInstructionCurrency value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                SepaInstantTransferInstructionCurrency.Eur => "EUR",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
 /// A Swift Transfer Instruction object. This field will be present in the JSON response
 /// if and only if `category` is equal to `swift_transfer_instruction`.
 /// </summary>
@@ -6413,6 +6601,146 @@ class SwiftTransferInstructionFromRaw : IFromRawJson<SwiftTransferInstruction>
     public SwiftTransferInstruction FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => SwiftTransferInstruction.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// An UK Faster Payment System Transfer Instruction object. This field will be present
+/// in the JSON response if and only if `category` is equal to `uk_faster_payment_system_transfer_instruction`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        UkFasterPaymentSystemTransferInstruction,
+        UkFasterPaymentSystemTransferInstructionFromRaw
+    >)
+)]
+public sealed record class UkFasterPaymentSystemTransferInstruction : JsonModel
+{
+    /// <summary>
+    /// The transfer amount in GBP pence.
+    /// </summary>
+    public required long Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code for
+    /// the transfer's currency. This is always `GBP`.
+    /// </summary>
+    public required ApiEnum<string, UkFasterPaymentSystemTransferInstructionCurrency> Currency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, UkFasterPaymentSystemTransferInstructionCurrency>
+            >("currency");
+        }
+        init { this._rawData.Set("currency", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Amount;
+        this.Currency.Validate();
+    }
+
+    public UkFasterPaymentSystemTransferInstruction() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public UkFasterPaymentSystemTransferInstruction(
+        UkFasterPaymentSystemTransferInstruction ukFasterPaymentSystemTransferInstruction
+    )
+        : base(ukFasterPaymentSystemTransferInstruction) { }
+#pragma warning restore CS8618
+
+    public UkFasterPaymentSystemTransferInstruction(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    UkFasterPaymentSystemTransferInstruction(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="UkFasterPaymentSystemTransferInstructionFromRaw.FromRawUnchecked"/>
+    public static UkFasterPaymentSystemTransferInstruction FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class UkFasterPaymentSystemTransferInstructionFromRaw
+    : IFromRawJson<UkFasterPaymentSystemTransferInstruction>
+{
+    /// <inheritdoc/>
+    public UkFasterPaymentSystemTransferInstruction FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => UkFasterPaymentSystemTransferInstruction.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code for the transfer's
+/// currency. This is always `GBP`.
+/// </summary>
+[JsonConverter(typeof(UkFasterPaymentSystemTransferInstructionCurrencyConverter))]
+public enum UkFasterPaymentSystemTransferInstructionCurrency
+{
+    /// <summary>
+    /// GBP
+    /// </summary>
+    Gbp,
+}
+
+sealed class UkFasterPaymentSystemTransferInstructionCurrencyConverter
+    : JsonConverter<UkFasterPaymentSystemTransferInstructionCurrency>
+{
+    public override UkFasterPaymentSystemTransferInstructionCurrency Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "GBP" => UkFasterPaymentSystemTransferInstructionCurrency.Gbp,
+            _ => (UkFasterPaymentSystemTransferInstructionCurrency)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        UkFasterPaymentSystemTransferInstructionCurrency value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                UkFasterPaymentSystemTransferInstructionCurrency.Gbp => "GBP",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>
