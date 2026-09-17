@@ -107,6 +107,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     TraceNumber = "021000038461022",
                     TransferReturn = new()
                     {
+                        RawReasonCode = "raw_reason_code",
                         Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
                         ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         TransactionID = "transaction_id",
@@ -211,6 +212,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                 TraceNumber = "021000038461022",
                 TransferReturn = new()
                 {
+                    RawReasonCode = "raw_reason_code",
                     Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
                     ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     TransactionID = "transaction_id",
@@ -327,6 +329,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     TraceNumber = "021000038461022",
                     TransferReturn = new()
                     {
+                        RawReasonCode = "raw_reason_code",
                         Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
                         ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         TransactionID = "transaction_id",
@@ -446,6 +449,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     TraceNumber = "021000038461022",
                     TransferReturn = new()
                     {
+                        RawReasonCode = "raw_reason_code",
                         Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
                         ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         TransactionID = "transaction_id",
@@ -558,6 +562,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                 TraceNumber = "021000038461022",
                 TransferReturn = new()
                 {
+                    RawReasonCode = "raw_reason_code",
                     Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
                     ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     TransactionID = "transaction_id",
@@ -674,6 +679,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     TraceNumber = "021000038461022",
                     TransferReturn = new()
                     {
+                        RawReasonCode = "raw_reason_code",
                         Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
                         ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         TransactionID = "transaction_id",
@@ -786,6 +792,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     TraceNumber = "021000038461022",
                     TransferReturn = new()
                     {
+                        RawReasonCode = "raw_reason_code",
                         Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
                         ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         TransactionID = "transaction_id",

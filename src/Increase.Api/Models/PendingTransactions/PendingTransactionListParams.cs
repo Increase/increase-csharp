@@ -404,6 +404,16 @@ public enum In
     BlockchainOfframpTransfer,
 
     /// <summary>
+    /// UK Faster Payment System Transfer Instruction: details will be under the `uk_faster_payment_system_transfer_instruction` object.
+    /// </summary>
+    UkFasterPaymentSystemTransferInstruction,
+
+    /// <summary>
+    /// SEPA Instant Transfer Instruction: details will be under the `sepa_instant_transfer_instruction` object.
+    /// </summary>
+    SepaInstantTransferInstruction,
+
+    /// <summary>
     /// The Pending Transaction was made for an undocumented or deprecated reason.
     /// </summary>
     Other,
@@ -434,6 +444,9 @@ sealed class InConverter : JsonConverter<In>
             "card_push_transfer_instruction" => In.CardPushTransferInstruction,
             "blockchain_onramp_transfer_instruction" => In.BlockchainOnrampTransferInstruction,
             "blockchain_offramp_transfer" => In.BlockchainOfframpTransfer,
+            "uk_faster_payment_system_transfer_instruction" =>
+                In.UkFasterPaymentSystemTransferInstruction,
+            "sepa_instant_transfer_instruction" => In.SepaInstantTransferInstruction,
             "other" => In.Other,
             _ => (In)(-1),
         };
@@ -460,6 +473,9 @@ sealed class InConverter : JsonConverter<In>
                 In.CardPushTransferInstruction => "card_push_transfer_instruction",
                 In.BlockchainOnrampTransferInstruction => "blockchain_onramp_transfer_instruction",
                 In.BlockchainOfframpTransfer => "blockchain_offramp_transfer",
+                In.UkFasterPaymentSystemTransferInstruction =>
+                    "uk_faster_payment_system_transfer_instruction",
+                In.SepaInstantTransferInstruction => "sepa_instant_transfer_instruction",
                 In.Other => "other",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

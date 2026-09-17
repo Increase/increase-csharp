@@ -102,6 +102,7 @@ public class InboundAchTransferTest : TestBase
             TraceNumber = "021000038461022",
             TransferReturn = new()
             {
+                RawReasonCode = "raw_reason_code",
                 Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
                 ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 TransactionID = "transaction_id",
@@ -203,6 +204,7 @@ public class InboundAchTransferTest : TestBase
         string expectedTraceNumber = "021000038461022";
         InboundAchTransfers::TransferReturn expectedTransferReturn = new()
         {
+            RawReasonCode = "raw_reason_code",
             Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
             ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             TransactionID = "transaction_id",
@@ -341,6 +343,7 @@ public class InboundAchTransferTest : TestBase
             TraceNumber = "021000038461022",
             TransferReturn = new()
             {
+                RawReasonCode = "raw_reason_code",
                 Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
                 ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 TransactionID = "transaction_id",
@@ -450,6 +453,7 @@ public class InboundAchTransferTest : TestBase
             TraceNumber = "021000038461022",
             TransferReturn = new()
             {
+                RawReasonCode = "raw_reason_code",
                 Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
                 ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 TransactionID = "transaction_id",
@@ -558,6 +562,7 @@ public class InboundAchTransferTest : TestBase
         string expectedTraceNumber = "021000038461022";
         InboundAchTransfers::TransferReturn expectedTransferReturn = new()
         {
+            RawReasonCode = "raw_reason_code",
             Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
             ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             TransactionID = "transaction_id",
@@ -696,6 +701,7 @@ public class InboundAchTransferTest : TestBase
             TraceNumber = "021000038461022",
             TransferReturn = new()
             {
+                RawReasonCode = "raw_reason_code",
                 Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
                 ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 TransactionID = "transaction_id",
@@ -799,6 +805,7 @@ public class InboundAchTransferTest : TestBase
             TraceNumber = "021000038461022",
             TransferReturn = new()
             {
+                RawReasonCode = "raw_reason_code",
                 Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
                 ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 TransactionID = "transaction_id",
@@ -2672,16 +2679,19 @@ public class TransferReturnTest : TestBase
     {
         var model = new InboundAchTransfers::TransferReturn
         {
+            RawReasonCode = "raw_reason_code",
             Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
             ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             TransactionID = "transaction_id",
         };
 
+        string expectedRawReasonCode = "raw_reason_code";
         ApiEnum<string, InboundAchTransfers::TransferReturnReason> expectedReason =
             InboundAchTransfers::TransferReturnReason.InsufficientFunds;
         DateTimeOffset expectedReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedTransactionID = "transaction_id";
 
+        Assert.Equal(expectedRawReasonCode, model.RawReasonCode);
         Assert.Equal(expectedReason, model.Reason);
         Assert.Equal(expectedReturnedAt, model.ReturnedAt);
         Assert.Equal(expectedTransactionID, model.TransactionID);
@@ -2692,6 +2702,7 @@ public class TransferReturnTest : TestBase
     {
         var model = new InboundAchTransfers::TransferReturn
         {
+            RawReasonCode = "raw_reason_code",
             Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
             ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             TransactionID = "transaction_id",
@@ -2711,6 +2722,7 @@ public class TransferReturnTest : TestBase
     {
         var model = new InboundAchTransfers::TransferReturn
         {
+            RawReasonCode = "raw_reason_code",
             Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
             ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             TransactionID = "transaction_id",
@@ -2723,11 +2735,13 @@ public class TransferReturnTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        string expectedRawReasonCode = "raw_reason_code";
         ApiEnum<string, InboundAchTransfers::TransferReturnReason> expectedReason =
             InboundAchTransfers::TransferReturnReason.InsufficientFunds;
         DateTimeOffset expectedReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedTransactionID = "transaction_id";
 
+        Assert.Equal(expectedRawReasonCode, deserialized.RawReasonCode);
         Assert.Equal(expectedReason, deserialized.Reason);
         Assert.Equal(expectedReturnedAt, deserialized.ReturnedAt);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
@@ -2738,6 +2752,7 @@ public class TransferReturnTest : TestBase
     {
         var model = new InboundAchTransfers::TransferReturn
         {
+            RawReasonCode = "raw_reason_code",
             Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
             ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             TransactionID = "transaction_id",
@@ -2751,6 +2766,7 @@ public class TransferReturnTest : TestBase
     {
         var model = new InboundAchTransfers::TransferReturn
         {
+            RawReasonCode = "raw_reason_code",
             Reason = InboundAchTransfers::TransferReturnReason.InsufficientFunds,
             ReturnedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             TransactionID = "transaction_id",
