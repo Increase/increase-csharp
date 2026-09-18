@@ -643,6 +643,11 @@ public enum BeneficialOwnerUpdateParamsIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
+    /// The last four digits of a social security number.
+    /// </summary>
+    SocialSecurityNumberLast4,
+
+    /// <summary>
     /// An individual taxpayer identification number (ITIN).
     /// </summary>
     IndividualTaxpayerIdentificationNumber,
@@ -676,6 +681,8 @@ sealed class BeneficialOwnerUpdateParamsIdentificationMethodConverter
         {
             "social_security_number" =>
                 BeneficialOwnerUpdateParamsIdentificationMethod.SocialSecurityNumber,
+            "social_security_number_last4" =>
+                BeneficialOwnerUpdateParamsIdentificationMethod.SocialSecurityNumberLast4,
             "individual_taxpayer_identification_number" =>
                 BeneficialOwnerUpdateParamsIdentificationMethod.IndividualTaxpayerIdentificationNumber,
             "passport" => BeneficialOwnerUpdateParamsIdentificationMethod.Passport,
@@ -697,6 +704,8 @@ sealed class BeneficialOwnerUpdateParamsIdentificationMethodConverter
             {
                 BeneficialOwnerUpdateParamsIdentificationMethod.SocialSecurityNumber =>
                     "social_security_number",
+                BeneficialOwnerUpdateParamsIdentificationMethod.SocialSecurityNumberLast4 =>
+                    "social_security_number_last4",
                 BeneficialOwnerUpdateParamsIdentificationMethod.IndividualTaxpayerIdentificationNumber =>
                     "individual_taxpayer_identification_number",
                 BeneficialOwnerUpdateParamsIdentificationMethod.Passport => "passport",

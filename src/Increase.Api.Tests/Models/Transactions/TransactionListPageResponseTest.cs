@@ -243,6 +243,27 @@ public class TransactionListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType = Transactions::FuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                                    ServiceType = Transactions::ServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -403,6 +424,31 @@ public class TransactionListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure =
+                                        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                    ServiceType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -922,6 +968,27 @@ public class TransactionListPageResponseTest : TestBase
                                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                             },
                             CustomerReferenceIdentifier = "51201",
+                            Fleet = new()
+                            {
+                                EmployeeNumber = "employee_number",
+                                FuelQuantity = "-16699",
+                                FuelType = Transactions::FuelType.Regular,
+                                FuelUnitCostAmount = 0,
+                                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                                GrossFuelPriceAmount = 0,
+                                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                GrossNonFuelPriceAmount = 0,
+                                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                NetFuelPriceAmount = 0,
+                                NetFuelPriceCurrency = "net_fuel_price_currency",
+                                NetNonFuelPriceAmount = 0,
+                                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                OdometerReading = 0,
+                                PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                                ServiceType = Transactions::ServiceType.FullService,
+                                TrailerNumber = "trailer_number",
+                            },
                             LocalTaxAmount = null,
                             LocalTaxCurrency = "usd",
                             Lodging = new()
@@ -1078,6 +1145,31 @@ public class TransactionListPageResponseTest : TestBase
                                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                             },
                             CustomerReferenceIdentifier = "51201",
+                            Fleet = new()
+                            {
+                                EmployeeNumber = "employee_number",
+                                FuelQuantity = "-16699",
+                                FuelType =
+                                    Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                FuelUnitCostAmount = 0,
+                                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                FuelUnitOfMeasure =
+                                    Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                GrossFuelPriceAmount = 0,
+                                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                GrossNonFuelPriceAmount = 0,
+                                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                NetFuelPriceAmount = 0,
+                                NetFuelPriceCurrency = "net_fuel_price_currency",
+                                NetNonFuelPriceAmount = 0,
+                                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                OdometerReading = 0,
+                                PurchaseType =
+                                    Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                ServiceType =
+                                    Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                TrailerNumber = "trailer_number",
+                            },
                             LocalTaxAmount = null,
                             LocalTaxCurrency = "usd",
                             Lodging = new()
@@ -1606,6 +1698,27 @@ public class TransactionListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType = Transactions::FuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                                    ServiceType = Transactions::ServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -1766,6 +1879,31 @@ public class TransactionListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure =
+                                        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                    ServiceType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -2300,6 +2438,27 @@ public class TransactionListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType = Transactions::FuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                                    ServiceType = Transactions::ServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -2460,6 +2619,31 @@ public class TransactionListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure =
+                                        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                    ServiceType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -2986,6 +3170,27 @@ public class TransactionListPageResponseTest : TestBase
                                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                             },
                             CustomerReferenceIdentifier = "51201",
+                            Fleet = new()
+                            {
+                                EmployeeNumber = "employee_number",
+                                FuelQuantity = "-16699",
+                                FuelType = Transactions::FuelType.Regular,
+                                FuelUnitCostAmount = 0,
+                                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                                GrossFuelPriceAmount = 0,
+                                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                GrossNonFuelPriceAmount = 0,
+                                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                NetFuelPriceAmount = 0,
+                                NetFuelPriceCurrency = "net_fuel_price_currency",
+                                NetNonFuelPriceAmount = 0,
+                                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                OdometerReading = 0,
+                                PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                                ServiceType = Transactions::ServiceType.FullService,
+                                TrailerNumber = "trailer_number",
+                            },
                             LocalTaxAmount = null,
                             LocalTaxCurrency = "usd",
                             Lodging = new()
@@ -3142,6 +3347,31 @@ public class TransactionListPageResponseTest : TestBase
                                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                             },
                             CustomerReferenceIdentifier = "51201",
+                            Fleet = new()
+                            {
+                                EmployeeNumber = "employee_number",
+                                FuelQuantity = "-16699",
+                                FuelType =
+                                    Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                FuelUnitCostAmount = 0,
+                                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                FuelUnitOfMeasure =
+                                    Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                GrossFuelPriceAmount = 0,
+                                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                GrossNonFuelPriceAmount = 0,
+                                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                NetFuelPriceAmount = 0,
+                                NetFuelPriceCurrency = "net_fuel_price_currency",
+                                NetNonFuelPriceAmount = 0,
+                                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                OdometerReading = 0,
+                                PurchaseType =
+                                    Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                ServiceType =
+                                    Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                TrailerNumber = "trailer_number",
+                            },
                             LocalTaxAmount = null,
                             LocalTaxCurrency = "usd",
                             Lodging = new()
@@ -3670,6 +3900,27 @@ public class TransactionListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType = Transactions::FuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                                    ServiceType = Transactions::ServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -3830,6 +4081,31 @@ public class TransactionListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure =
+                                        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                    ServiceType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -4358,6 +4634,27 @@ public class TransactionListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType = Transactions::FuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                                    ServiceType = Transactions::ServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -4518,6 +4815,31 @@ public class TransactionListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure =
+                                        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                    ServiceType =
+                                        Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
