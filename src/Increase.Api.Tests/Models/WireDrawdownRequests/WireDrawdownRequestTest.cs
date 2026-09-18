@@ -647,8 +647,8 @@ public class WireDrawdownRequestStatusTest : TestBase
 {
     [Theory]
     [InlineData(WireDrawdownRequests::WireDrawdownRequestStatus.PendingSubmission)]
-    [InlineData(WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled)]
     [InlineData(WireDrawdownRequests::WireDrawdownRequestStatus.PendingResponse)]
+    [InlineData(WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled)]
     [InlineData(WireDrawdownRequests::WireDrawdownRequestStatus.Refused)]
     public void Validation_Works(WireDrawdownRequests::WireDrawdownRequestStatus rawValue)
     {
@@ -670,8 +670,8 @@ public class WireDrawdownRequestStatusTest : TestBase
 
     [Theory]
     [InlineData(WireDrawdownRequests::WireDrawdownRequestStatus.PendingSubmission)]
-    [InlineData(WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled)]
     [InlineData(WireDrawdownRequests::WireDrawdownRequestStatus.PendingResponse)]
+    [InlineData(WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled)]
     [InlineData(WireDrawdownRequests::WireDrawdownRequestStatus.Refused)]
     public void SerializationRoundtrip_Works(
         WireDrawdownRequests::WireDrawdownRequestStatus rawValue
