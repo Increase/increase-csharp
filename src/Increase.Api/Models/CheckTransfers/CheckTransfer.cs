@@ -211,7 +211,8 @@ public sealed record class CheckTransfer : JsonModel
     }
 
     /// <summary>
-    /// If the check has been mailed by Increase, this will contain details of the shipment.
+    /// Once the check has been mailed, this will contain details about the shipment.
+    /// Only available when `fulfillment_method` is equal to `physical_check`.
     /// </summary>
     public required Mailing? Mailing
     {
@@ -306,7 +307,8 @@ public sealed record class CheckTransfer : JsonModel
     }
 
     /// <summary>
-    /// After the transfer is submitted, this will contain supplemental details.
+    /// Once the check has been submitted to our printer, this will contain details
+    /// about the submission. Only available when `fulfillment_method` is equal to `physical_check`.
     /// </summary>
     public required Submission? Submission
     {
@@ -1107,7 +1109,8 @@ sealed class CheckTransferFulfillmentMethodConverter : JsonConverter<CheckTransf
 }
 
 /// <summary>
-/// If the check has been mailed by Increase, this will contain details of the shipment.
+/// Once the check has been mailed, this will contain details about the shipment.
+/// Only available when `fulfillment_method` is equal to `physical_check`.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<Mailing, MailingFromRaw>))]
 public sealed record class Mailing : JsonModel
@@ -2529,7 +2532,8 @@ sealed class TypeConverter : JsonConverter<global::Increase.Api.Models.CheckTran
 }
 
 /// <summary>
-/// After the transfer is submitted, this will contain supplemental details.
+/// Once the check has been submitted to our printer, this will contain details about
+/// the submission. Only available when `fulfillment_method` is equal to `physical_check`.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<Submission, SubmissionFromRaw>))]
 public sealed record class Submission : JsonModel

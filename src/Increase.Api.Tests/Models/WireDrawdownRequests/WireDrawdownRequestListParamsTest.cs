@@ -220,8 +220,8 @@ public class InTest : TestBase
 {
     [Theory]
     [InlineData(In.PendingSubmission)]
-    [InlineData(In.Fulfilled)]
     [InlineData(In.PendingResponse)]
+    [InlineData(In.Fulfilled)]
     [InlineData(In.Refused)]
     public void Validation_Works(In rawValue)
     {
@@ -244,8 +244,8 @@ public class InTest : TestBase
 
     [Theory]
     [InlineData(In.PendingSubmission)]
-    [InlineData(In.Fulfilled)]
     [InlineData(In.PendingResponse)]
+    [InlineData(In.Fulfilled)]
     [InlineData(In.Refused)]
     public void SerializationRoundtrip_Works(In rawValue)
     {
