@@ -669,14 +669,14 @@ public enum WireDrawdownRequestStatus
     PendingSubmission,
 
     /// <summary>
-    /// The drawdown request has been fulfilled by the recipient.
-    /// </summary>
-    Fulfilled,
-
-    /// <summary>
     /// The drawdown request has been sent and the recipient should respond in some way.
     /// </summary>
     PendingResponse,
+
+    /// <summary>
+    /// The drawdown request has been fulfilled by the recipient.
+    /// </summary>
+    Fulfilled,
 
     /// <summary>
     /// The drawdown request has been refused by the recipient.
@@ -695,8 +695,8 @@ sealed class WireDrawdownRequestStatusConverter : JsonConverter<WireDrawdownRequ
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "pending_submission" => WireDrawdownRequestStatus.PendingSubmission,
-            "fulfilled" => WireDrawdownRequestStatus.Fulfilled,
             "pending_response" => WireDrawdownRequestStatus.PendingResponse,
+            "fulfilled" => WireDrawdownRequestStatus.Fulfilled,
             "refused" => WireDrawdownRequestStatus.Refused,
             _ => (WireDrawdownRequestStatus)(-1),
         };
@@ -713,8 +713,8 @@ sealed class WireDrawdownRequestStatusConverter : JsonConverter<WireDrawdownRequ
             value switch
             {
                 WireDrawdownRequestStatus.PendingSubmission => "pending_submission",
-                WireDrawdownRequestStatus.Fulfilled => "fulfilled",
                 WireDrawdownRequestStatus.PendingResponse => "pending_response",
+                WireDrawdownRequestStatus.Fulfilled => "fulfilled",
                 WireDrawdownRequestStatus.Refused => "refused",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
