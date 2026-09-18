@@ -650,6 +650,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -847,6 +868,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -1664,6 +1710,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -1861,6 +1928,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -2678,6 +2770,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -2875,6 +2988,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -3692,6 +3830,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -3889,6 +4048,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -4730,6 +4914,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType = CardPayments::FuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                    ServiceType = CardPayments::ServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -4925,6 +5130,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                    ServiceType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -5733,6 +5963,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType = CardPayments::FuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                    ServiceType = CardPayments::ServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -5928,6 +6179,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                    ServiceType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -6736,6 +7012,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType = CardPayments::FuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                    ServiceType = CardPayments::ServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -6931,6 +7228,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                    ServiceType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -7739,6 +8061,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType = CardPayments::FuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                    ServiceType = CardPayments::ServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -7934,6 +8277,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                    ServiceType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -8788,6 +9156,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -8985,6 +9374,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -9802,6 +10216,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -9999,6 +10434,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -10816,6 +11276,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -11013,6 +11494,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -11830,6 +12336,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -12027,6 +12554,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -12887,6 +13439,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -13084,6 +13657,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -13901,6 +14499,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -14098,6 +14717,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -14915,6 +15559,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -15112,6 +15777,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -15929,6 +16619,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -16126,6 +16837,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -16974,6 +17710,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType = CardPayments::FuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                    ServiceType = CardPayments::ServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -17169,6 +17926,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                    ServiceType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -17977,6 +18759,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType = CardPayments::FuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                    ServiceType = CardPayments::ServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -18172,6 +18975,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                    ServiceType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -18980,6 +19808,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType = CardPayments::FuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                    ServiceType = CardPayments::ServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -19175,6 +20024,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                    ServiceType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -19983,6 +20857,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType = CardPayments::FuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                    ServiceType = CardPayments::ServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -20178,6 +21073,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                 },
                                 CustomerReferenceIdentifier = "51201",
+                                Fleet = new()
+                                {
+                                    EmployeeNumber = "employee_number",
+                                    FuelQuantity = "-16699",
+                                    FuelType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                    FuelUnitCostAmount = 0,
+                                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                    FuelUnitOfMeasure =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                    GrossFuelPriceAmount = 0,
+                                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                    GrossNonFuelPriceAmount = 0,
+                                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                    NetFuelPriceAmount = 0,
+                                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                                    NetNonFuelPriceAmount = 0,
+                                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                    OdometerReading = 0,
+                                    PurchaseType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                    ServiceType =
+                                        CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                    TrailerNumber = "trailer_number",
+                                },
                                 LocalTaxAmount = null,
                                 LocalTaxCurrency = "usd",
                                 Lodging = new()
@@ -21032,6 +21952,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -21229,6 +22170,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -22046,6 +23012,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -22243,6 +23230,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -23060,6 +24072,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -23257,6 +24290,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -24074,6 +25132,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -24271,6 +25350,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -25125,6 +26229,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -25322,6 +26447,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -26139,6 +27289,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -26336,6 +27507,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -27153,6 +28349,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -27350,6 +28567,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -28167,6 +29409,27 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType = CardPayments::FuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure = CardPayments::FuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType = CardPayments::PurchaseType.FuelPurchase,
+                                        ServiceType = CardPayments::ServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()
@@ -28364,6 +29627,31 @@ public class CardPaymentListPageResponseTest : TestBase
                                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                                     },
                                     CustomerReferenceIdentifier = "51201",
+                                    Fleet = new()
+                                    {
+                                        EmployeeNumber = "employee_number",
+                                        FuelQuantity = "-16699",
+                                        FuelType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                                        FuelUnitCostAmount = 0,
+                                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                                        FuelUnitOfMeasure =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                                        GrossFuelPriceAmount = 0,
+                                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                                        GrossNonFuelPriceAmount = 0,
+                                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                                        NetFuelPriceAmount = 0,
+                                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                                        NetNonFuelPriceAmount = 0,
+                                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                                        OdometerReading = 0,
+                                        PurchaseType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                                        ServiceType =
+                                            CardPayments::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                                        TrailerNumber = "trailer_number",
+                                    },
                                     LocalTaxAmount = null,
                                     LocalTaxCurrency = "usd",
                                     Lodging = new()

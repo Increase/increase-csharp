@@ -1205,6 +1205,11 @@ public enum EntityCorporationBeneficialOwnerIndividualIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
+    /// The last four digits of a social security number.
+    /// </summary>
+    SocialSecurityNumberLast4,
+
+    /// <summary>
     /// An individual taxpayer identification number (ITIN).
     /// </summary>
     IndividualTaxpayerIdentificationNumber,
@@ -1238,6 +1243,8 @@ sealed class EntityCorporationBeneficialOwnerIndividualIdentificationMethodConve
         {
             "social_security_number" =>
                 EntityCorporationBeneficialOwnerIndividualIdentificationMethod.SocialSecurityNumber,
+            "social_security_number_last4" =>
+                EntityCorporationBeneficialOwnerIndividualIdentificationMethod.SocialSecurityNumberLast4,
             "individual_taxpayer_identification_number" =>
                 EntityCorporationBeneficialOwnerIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber,
             "passport" => EntityCorporationBeneficialOwnerIndividualIdentificationMethod.Passport,
@@ -1260,6 +1267,8 @@ sealed class EntityCorporationBeneficialOwnerIndividualIdentificationMethodConve
             {
                 EntityCorporationBeneficialOwnerIndividualIdentificationMethod.SocialSecurityNumber =>
                     "social_security_number",
+                EntityCorporationBeneficialOwnerIndividualIdentificationMethod.SocialSecurityNumberLast4 =>
+                    "social_security_number_last4",
                 EntityCorporationBeneficialOwnerIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber =>
                     "individual_taxpayer_identification_number",
                 EntityCorporationBeneficialOwnerIndividualIdentificationMethod.Passport =>
@@ -2416,6 +2425,11 @@ public enum EntityJointIndividualIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
+    /// The last four digits of a social security number.
+    /// </summary>
+    SocialSecurityNumberLast4,
+
+    /// <summary>
     /// An individual taxpayer identification number (ITIN).
     /// </summary>
     IndividualTaxpayerIdentificationNumber,
@@ -2449,6 +2463,8 @@ sealed class EntityJointIndividualIdentificationMethodConverter
         {
             "social_security_number" =>
                 EntityJointIndividualIdentificationMethod.SocialSecurityNumber,
+            "social_security_number_last4" =>
+                EntityJointIndividualIdentificationMethod.SocialSecurityNumberLast4,
             "individual_taxpayer_identification_number" =>
                 EntityJointIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber,
             "passport" => EntityJointIndividualIdentificationMethod.Passport,
@@ -2470,6 +2486,8 @@ sealed class EntityJointIndividualIdentificationMethodConverter
             {
                 EntityJointIndividualIdentificationMethod.SocialSecurityNumber =>
                     "social_security_number",
+                EntityJointIndividualIdentificationMethod.SocialSecurityNumberLast4 =>
+                    "social_security_number_last4",
                 EntityJointIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber =>
                     "individual_taxpayer_identification_number",
                 EntityJointIndividualIdentificationMethod.Passport => "passport",
@@ -2826,6 +2844,11 @@ public enum EntityNaturalPersonIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
+    /// The last four digits of a social security number.
+    /// </summary>
+    SocialSecurityNumberLast4,
+
+    /// <summary>
     /// An individual taxpayer identification number (ITIN).
     /// </summary>
     IndividualTaxpayerIdentificationNumber,
@@ -2859,6 +2882,8 @@ sealed class EntityNaturalPersonIdentificationMethodConverter
         {
             "social_security_number" =>
                 EntityNaturalPersonIdentificationMethod.SocialSecurityNumber,
+            "social_security_number_last4" =>
+                EntityNaturalPersonIdentificationMethod.SocialSecurityNumberLast4,
             "individual_taxpayer_identification_number" =>
                 EntityNaturalPersonIdentificationMethod.IndividualTaxpayerIdentificationNumber,
             "passport" => EntityNaturalPersonIdentificationMethod.Passport,
@@ -2880,6 +2905,8 @@ sealed class EntityNaturalPersonIdentificationMethodConverter
             {
                 EntityNaturalPersonIdentificationMethod.SocialSecurityNumber =>
                     "social_security_number",
+                EntityNaturalPersonIdentificationMethod.SocialSecurityNumberLast4 =>
+                    "social_security_number_last4",
                 EntityNaturalPersonIdentificationMethod.IndividualTaxpayerIdentificationNumber =>
                     "individual_taxpayer_identification_number",
                 EntityNaturalPersonIdentificationMethod.Passport => "passport",
@@ -3695,6 +3722,11 @@ public enum EntitySoleProprietorshipSoleProprietorIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
+    /// The last four digits of a social security number.
+    /// </summary>
+    SocialSecurityNumberLast4,
+
+    /// <summary>
     /// An individual taxpayer identification number (ITIN).
     /// </summary>
     IndividualTaxpayerIdentificationNumber,
@@ -3728,6 +3760,8 @@ sealed class EntitySoleProprietorshipSoleProprietorIdentificationMethodConverter
         {
             "social_security_number" =>
                 EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber,
+            "social_security_number_last4" =>
+                EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumberLast4,
             "individual_taxpayer_identification_number" =>
                 EntitySoleProprietorshipSoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber,
             "passport" => EntitySoleProprietorshipSoleProprietorIdentificationMethod.Passport,
@@ -3750,6 +3784,8 @@ sealed class EntitySoleProprietorshipSoleProprietorIdentificationMethodConverter
             {
                 EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber =>
                     "social_security_number",
+                EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumberLast4 =>
+                    "social_security_number_last4",
                 EntitySoleProprietorshipSoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber =>
                     "individual_taxpayer_identification_number",
                 EntitySoleProprietorshipSoleProprietorIdentificationMethod.Passport => "passport",
@@ -4851,6 +4887,11 @@ public enum EntityTrustGrantorIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
+    /// The last four digits of a social security number.
+    /// </summary>
+    SocialSecurityNumberLast4,
+
+    /// <summary>
     /// An individual taxpayer identification number (ITIN).
     /// </summary>
     IndividualTaxpayerIdentificationNumber,
@@ -4883,6 +4924,8 @@ sealed class EntityTrustGrantorIdentificationMethodConverter
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "social_security_number" => EntityTrustGrantorIdentificationMethod.SocialSecurityNumber,
+            "social_security_number_last4" =>
+                EntityTrustGrantorIdentificationMethod.SocialSecurityNumberLast4,
             "individual_taxpayer_identification_number" =>
                 EntityTrustGrantorIdentificationMethod.IndividualTaxpayerIdentificationNumber,
             "passport" => EntityTrustGrantorIdentificationMethod.Passport,
@@ -4904,6 +4947,8 @@ sealed class EntityTrustGrantorIdentificationMethodConverter
             {
                 EntityTrustGrantorIdentificationMethod.SocialSecurityNumber =>
                     "social_security_number",
+                EntityTrustGrantorIdentificationMethod.SocialSecurityNumberLast4 =>
+                    "social_security_number_last4",
                 EntityTrustGrantorIdentificationMethod.IndividualTaxpayerIdentificationNumber =>
                     "individual_taxpayer_identification_number",
                 EntityTrustGrantorIdentificationMethod.Passport => "passport",
@@ -5347,6 +5392,11 @@ public enum EntityTrustTrusteeIndividualIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
+    /// The last four digits of a social security number.
+    /// </summary>
+    SocialSecurityNumberLast4,
+
+    /// <summary>
     /// An individual taxpayer identification number (ITIN).
     /// </summary>
     IndividualTaxpayerIdentificationNumber,
@@ -5380,6 +5430,8 @@ sealed class EntityTrustTrusteeIndividualIdentificationMethodConverter
         {
             "social_security_number" =>
                 EntityTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber,
+            "social_security_number_last4" =>
+                EntityTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumberLast4,
             "individual_taxpayer_identification_number" =>
                 EntityTrustTrusteeIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber,
             "passport" => EntityTrustTrusteeIndividualIdentificationMethod.Passport,
@@ -5401,6 +5453,8 @@ sealed class EntityTrustTrusteeIndividualIdentificationMethodConverter
             {
                 EntityTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber =>
                     "social_security_number",
+                EntityTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumberLast4 =>
+                    "social_security_number_last4",
                 EntityTrustTrusteeIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber =>
                     "individual_taxpayer_identification_number",
                 EntityTrustTrusteeIndividualIdentificationMethod.Passport => "passport",

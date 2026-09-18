@@ -281,14 +281,14 @@ public enum In
     PendingSubmission,
 
     /// <summary>
-    /// The drawdown request has been fulfilled by the recipient.
-    /// </summary>
-    Fulfilled,
-
-    /// <summary>
     /// The drawdown request has been sent and the recipient should respond in some way.
     /// </summary>
     PendingResponse,
+
+    /// <summary>
+    /// The drawdown request has been fulfilled by the recipient.
+    /// </summary>
+    Fulfilled,
 
     /// <summary>
     /// The drawdown request has been refused by the recipient.
@@ -307,8 +307,8 @@ sealed class InConverter : JsonConverter<In>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "pending_submission" => In.PendingSubmission,
-            "fulfilled" => In.Fulfilled,
             "pending_response" => In.PendingResponse,
+            "fulfilled" => In.Fulfilled,
             "refused" => In.Refused,
             _ => (In)(-1),
         };
@@ -321,8 +321,8 @@ sealed class InConverter : JsonConverter<In>
             value switch
             {
                 In.PendingSubmission => "pending_submission",
-                In.Fulfilled => "fulfilled",
                 In.PendingResponse => "pending_response",
+                In.Fulfilled => "fulfilled",
                 In.Refused => "refused",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
