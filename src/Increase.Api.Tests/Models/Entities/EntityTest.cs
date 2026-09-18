@@ -3418,6 +3418,9 @@ public class EntityCorporationBeneficialOwnerIndividualIdentificationMethodTest 
         Entities::EntityCorporationBeneficialOwnerIndividualIdentificationMethod.SocialSecurityNumber
     )]
     [InlineData(
+        Entities::EntityCorporationBeneficialOwnerIndividualIdentificationMethod.SocialSecurityNumberLast4
+    )]
+    [InlineData(
         Entities::EntityCorporationBeneficialOwnerIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber
     )]
     [InlineData(Entities::EntityCorporationBeneficialOwnerIndividualIdentificationMethod.Passport)]
@@ -3454,6 +3457,9 @@ public class EntityCorporationBeneficialOwnerIndividualIdentificationMethodTest 
     [Theory]
     [InlineData(
         Entities::EntityCorporationBeneficialOwnerIndividualIdentificationMethod.SocialSecurityNumber
+    )]
+    [InlineData(
+        Entities::EntityCorporationBeneficialOwnerIndividualIdentificationMethod.SocialSecurityNumberLast4
     )]
     [InlineData(
         Entities::EntityCorporationBeneficialOwnerIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber
@@ -4907,6 +4913,7 @@ public class EntityJointIndividualIdentificationMethodTest : TestBase
 {
     [Theory]
     [InlineData(Entities::EntityJointIndividualIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(Entities::EntityJointIndividualIdentificationMethod.SocialSecurityNumberLast4)]
     [InlineData(
         Entities::EntityJointIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber
     )]
@@ -4933,6 +4940,7 @@ public class EntityJointIndividualIdentificationMethodTest : TestBase
 
     [Theory]
     [InlineData(Entities::EntityJointIndividualIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(Entities::EntityJointIndividualIdentificationMethod.SocialSecurityNumberLast4)]
     [InlineData(
         Entities::EntityJointIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber
     )]
@@ -5369,6 +5377,7 @@ public class EntityNaturalPersonIdentificationMethodTest : TestBase
 {
     [Theory]
     [InlineData(Entities::EntityNaturalPersonIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(Entities::EntityNaturalPersonIdentificationMethod.SocialSecurityNumberLast4)]
     [InlineData(
         Entities::EntityNaturalPersonIdentificationMethod.IndividualTaxpayerIdentificationNumber
     )]
@@ -5395,6 +5404,7 @@ public class EntityNaturalPersonIdentificationMethodTest : TestBase
 
     [Theory]
     [InlineData(Entities::EntityNaturalPersonIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(Entities::EntityNaturalPersonIdentificationMethod.SocialSecurityNumberLast4)]
     [InlineData(
         Entities::EntityNaturalPersonIdentificationMethod.IndividualTaxpayerIdentificationNumber
     )]
@@ -6446,6 +6456,9 @@ public class EntitySoleProprietorshipSoleProprietorIdentificationMethodTest : Te
         Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber
     )]
     [InlineData(
+        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumberLast4
+    )]
+    [InlineData(
         Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber
     )]
     [InlineData(Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.Passport)]
@@ -6479,6 +6492,9 @@ public class EntitySoleProprietorshipSoleProprietorIdentificationMethodTest : Te
     [Theory]
     [InlineData(
         Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumber
+    )]
+    [InlineData(
+        Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.SocialSecurityNumberLast4
     )]
     [InlineData(
         Entities::EntitySoleProprietorshipSoleProprietorIdentificationMethod.IndividualTaxpayerIdentificationNumber
@@ -7980,6 +7996,7 @@ public class EntityTrustGrantorIdentificationMethodTest : TestBase
 {
     [Theory]
     [InlineData(Entities::EntityTrustGrantorIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(Entities::EntityTrustGrantorIdentificationMethod.SocialSecurityNumberLast4)]
     [InlineData(
         Entities::EntityTrustGrantorIdentificationMethod.IndividualTaxpayerIdentificationNumber
     )]
@@ -8006,6 +8023,7 @@ public class EntityTrustGrantorIdentificationMethodTest : TestBase
 
     [Theory]
     [InlineData(Entities::EntityTrustGrantorIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(Entities::EntityTrustGrantorIdentificationMethod.SocialSecurityNumberLast4)]
     [InlineData(
         Entities::EntityTrustGrantorIdentificationMethod.IndividualTaxpayerIdentificationNumber
     )]
@@ -8680,6 +8698,9 @@ public class EntityTrustTrusteeIndividualIdentificationMethodTest : TestBase
     [Theory]
     [InlineData(Entities::EntityTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber)]
     [InlineData(
+        Entities::EntityTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumberLast4
+    )]
+    [InlineData(
         Entities::EntityTrustTrusteeIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber
     )]
     [InlineData(Entities::EntityTrustTrusteeIndividualIdentificationMethod.Passport)]
@@ -8708,6 +8729,9 @@ public class EntityTrustTrusteeIndividualIdentificationMethodTest : TestBase
 
     [Theory]
     [InlineData(Entities::EntityTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(
+        Entities::EntityTrustTrusteeIndividualIdentificationMethod.SocialSecurityNumberLast4
+    )]
     [InlineData(
         Entities::EntityTrustTrusteeIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber
     )]

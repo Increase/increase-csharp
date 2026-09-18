@@ -745,6 +745,9 @@ public class EntityBeneficialOwnerIndividualIdentificationMethodTest : TestBase
         BeneficialOwners::EntityBeneficialOwnerIndividualIdentificationMethod.SocialSecurityNumber
     )]
     [InlineData(
+        BeneficialOwners::EntityBeneficialOwnerIndividualIdentificationMethod.SocialSecurityNumberLast4
+    )]
+    [InlineData(
         BeneficialOwners::EntityBeneficialOwnerIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber
     )]
     [InlineData(BeneficialOwners::EntityBeneficialOwnerIndividualIdentificationMethod.Passport)]
@@ -778,6 +781,9 @@ public class EntityBeneficialOwnerIndividualIdentificationMethodTest : TestBase
     [Theory]
     [InlineData(
         BeneficialOwners::EntityBeneficialOwnerIndividualIdentificationMethod.SocialSecurityNumber
+    )]
+    [InlineData(
+        BeneficialOwners::EntityBeneficialOwnerIndividualIdentificationMethod.SocialSecurityNumberLast4
     )]
     [InlineData(
         BeneficialOwners::EntityBeneficialOwnerIndividualIdentificationMethod.IndividualTaxpayerIdentificationNumber
