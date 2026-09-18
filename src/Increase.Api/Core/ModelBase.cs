@@ -293,6 +293,10 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, CardPayments::InterchangeCurrency>(),
             new ApiEnumConverter<string, CardPayments::ExtraCharges>(),
             new ApiEnumConverter<string, CardPayments::NoShowIndicator>(),
+            new ApiEnumConverter<string, CardPayments::FuelType>(),
+            new ApiEnumConverter<string, CardPayments::FuelUnitOfMeasure>(),
+            new ApiEnumConverter<string, CardPayments::PurchaseType>(),
+            new ApiEnumConverter<string, CardPayments::ServiceType>(),
             new ApiEnumConverter<string, CardPayments::LodgingExtraCharges>(),
             new ApiEnumConverter<string, CardPayments::LodgingNoShowIndicator>(),
             new ApiEnumConverter<string, CardPayments::PurchaseIdentifierFormat>(),
@@ -322,6 +326,22 @@ public abstract record class ModelBase
             new ApiEnumConverter<
                 string,
                 CardPayments::CardSettlementPurchaseDetailsCarRentalNoShowIndicator
+            >(),
+            new ApiEnumConverter<
+                string,
+                CardPayments::CardSettlementPurchaseDetailsFleetFuelType
+            >(),
+            new ApiEnumConverter<
+                string,
+                CardPayments::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure
+            >(),
+            new ApiEnumConverter<
+                string,
+                CardPayments::CardSettlementPurchaseDetailsFleetPurchaseType
+            >(),
+            new ApiEnumConverter<
+                string,
+                CardPayments::CardSettlementPurchaseDetailsFleetServiceType
             >(),
             new ApiEnumConverter<
                 string,
@@ -966,6 +986,10 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Transactions::InterchangeCurrency>(),
             new ApiEnumConverter<string, Transactions::ExtraCharges>(),
             new ApiEnumConverter<string, Transactions::NoShowIndicator>(),
+            new ApiEnumConverter<string, Transactions::FuelType>(),
+            new ApiEnumConverter<string, Transactions::FuelUnitOfMeasure>(),
+            new ApiEnumConverter<string, Transactions::PurchaseType>(),
+            new ApiEnumConverter<string, Transactions::ServiceType>(),
             new ApiEnumConverter<string, Transactions::LodgingExtraCharges>(),
             new ApiEnumConverter<string, Transactions::LodgingNoShowIndicator>(),
             new ApiEnumConverter<string, Transactions::PurchaseIdentifierFormat>(),
@@ -990,6 +1014,22 @@ public abstract record class ModelBase
             new ApiEnumConverter<
                 string,
                 Transactions::CardSettlementPurchaseDetailsCarRentalNoShowIndicator
+            >(),
+            new ApiEnumConverter<
+                string,
+                Transactions::CardSettlementPurchaseDetailsFleetFuelType
+            >(),
+            new ApiEnumConverter<
+                string,
+                Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure
+            >(),
+            new ApiEnumConverter<
+                string,
+                Transactions::CardSettlementPurchaseDetailsFleetPurchaseType
+            >(),
+            new ApiEnumConverter<
+                string,
+                Transactions::CardSettlementPurchaseDetailsFleetServiceType
             >(),
             new ApiEnumConverter<
                 string,

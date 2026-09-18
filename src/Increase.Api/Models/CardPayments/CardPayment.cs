@@ -22796,6 +22796,19 @@ public sealed record class PurchaseDetails : JsonModel
     }
 
     /// <summary>
+    /// Fields specific to fleet purchases.
+    /// </summary>
+    public required Fleet? Fleet
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<Fleet>("fleet");
+        }
+        init { this._rawData.Set("fleet", value); }
+    }
+
+    /// <summary>
     /// The state or provincial tax amount in minor units.
     /// </summary>
     public required long? LocalTaxAmount
@@ -22908,6 +22921,7 @@ public sealed record class PurchaseDetails : JsonModel
     {
         this.CarRental?.Validate();
         _ = this.CustomerReferenceIdentifier;
+        this.Fleet?.Validate();
         _ = this.LocalTaxAmount;
         _ = this.LocalTaxCurrency;
         this.Lodging?.Validate();
@@ -23360,6 +23374,1291 @@ sealed class NoShowIndicatorConverter : JsonConverter<NoShowIndicator>
             {
                 NoShowIndicator.NotApplicable => "not_applicable",
                 NoShowIndicator.NoShowForSpecializedVehicle => "no_show_for_specialized_vehicle",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Fields specific to fleet purchases.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Fleet, FleetFromRaw>))]
+public sealed record class Fleet : JsonModel
+{
+    /// <summary>
+    /// The fleet employee number.
+    /// </summary>
+    public required string? EmployeeNumber
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("employee_number");
+        }
+        init { this._rawData.Set("employee_number", value); }
+    }
+
+    /// <summary>
+    /// The quantity of fuel purchased, given as a string containing a decimal number
+    /// in the indicated unit of measure.
+    /// </summary>
+    public required string? FuelQuantity
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("fuel_quantity");
+        }
+        init { this._rawData.Set("fuel_quantity", value); }
+    }
+
+    /// <summary>
+    /// The type of fuel purchased.
+    /// </summary>
+    public required ApiEnum<string, FuelType>? FuelType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, FuelType>>("fuel_type");
+        }
+        init { this._rawData.Set("fuel_type", value); }
+    }
+
+    /// <summary>
+    /// The cost per unit of fuel in minor units.
+    /// </summary>
+    public required long? FuelUnitCostAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("fuel_unit_cost_amount");
+        }
+        init { this._rawData.Set("fuel_unit_cost_amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the fuel unit cost.
+    /// </summary>
+    public required string? FuelUnitCostCurrency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("fuel_unit_cost_currency");
+        }
+        init { this._rawData.Set("fuel_unit_cost_currency", value); }
+    }
+
+    /// <summary>
+    /// The unit of measure for the fuel quantity.
+    /// </summary>
+    public required ApiEnum<string, FuelUnitOfMeasure>? FuelUnitOfMeasure
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, FuelUnitOfMeasure>>(
+                "fuel_unit_of_measure"
+            );
+        }
+        init { this._rawData.Set("fuel_unit_of_measure", value); }
+    }
+
+    /// <summary>
+    /// The gross fuel price in minor units.
+    /// </summary>
+    public required long? GrossFuelPriceAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("gross_fuel_price_amount");
+        }
+        init { this._rawData.Set("gross_fuel_price_amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the gross
+    /// fuel price.
+    /// </summary>
+    public required string? GrossFuelPriceCurrency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("gross_fuel_price_currency");
+        }
+        init { this._rawData.Set("gross_fuel_price_currency", value); }
+    }
+
+    /// <summary>
+    /// The gross non-fuel price in minor units.
+    /// </summary>
+    public required long? GrossNonFuelPriceAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("gross_non_fuel_price_amount");
+        }
+        init { this._rawData.Set("gross_non_fuel_price_amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the gross
+    /// non-fuel price.
+    /// </summary>
+    public required string? GrossNonFuelPriceCurrency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("gross_non_fuel_price_currency");
+        }
+        init { this._rawData.Set("gross_non_fuel_price_currency", value); }
+    }
+
+    /// <summary>
+    /// The net fuel price in minor units.
+    /// </summary>
+    public required long? NetFuelPriceAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("net_fuel_price_amount");
+        }
+        init { this._rawData.Set("net_fuel_price_amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the net fuel price.
+    /// </summary>
+    public required string? NetFuelPriceCurrency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("net_fuel_price_currency");
+        }
+        init { this._rawData.Set("net_fuel_price_currency", value); }
+    }
+
+    /// <summary>
+    /// The net non-fuel price in minor units.
+    /// </summary>
+    public required long? NetNonFuelPriceAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("net_non_fuel_price_amount");
+        }
+        init { this._rawData.Set("net_non_fuel_price_amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the net non-fuel price.
+    /// </summary>
+    public required string? NetNonFuelPriceCurrency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("net_non_fuel_price_currency");
+        }
+        init { this._rawData.Set("net_non_fuel_price_currency", value); }
+    }
+
+    /// <summary>
+    /// The odometer reading reported by the merchant.
+    /// </summary>
+    public required long? OdometerReading
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("odometer_reading");
+        }
+        init { this._rawData.Set("odometer_reading", value); }
+    }
+
+    /// <summary>
+    /// The type of fleet purchase.
+    /// </summary>
+    public required ApiEnum<string, PurchaseType>? PurchaseType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, PurchaseType>>("purchase_type");
+        }
+        init { this._rawData.Set("purchase_type", value); }
+    }
+
+    /// <summary>
+    /// The type of service provided.
+    /// </summary>
+    public required ApiEnum<string, ServiceType>? ServiceType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, ServiceType>>("service_type");
+        }
+        init { this._rawData.Set("service_type", value); }
+    }
+
+    /// <summary>
+    /// The fleet trailer number.
+    /// </summary>
+    public required string? TrailerNumber
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("trailer_number");
+        }
+        init { this._rawData.Set("trailer_number", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.EmployeeNumber;
+        _ = this.FuelQuantity;
+        this.FuelType?.Validate();
+        _ = this.FuelUnitCostAmount;
+        _ = this.FuelUnitCostCurrency;
+        this.FuelUnitOfMeasure?.Validate();
+        _ = this.GrossFuelPriceAmount;
+        _ = this.GrossFuelPriceCurrency;
+        _ = this.GrossNonFuelPriceAmount;
+        _ = this.GrossNonFuelPriceCurrency;
+        _ = this.NetFuelPriceAmount;
+        _ = this.NetFuelPriceCurrency;
+        _ = this.NetNonFuelPriceAmount;
+        _ = this.NetNonFuelPriceCurrency;
+        _ = this.OdometerReading;
+        this.PurchaseType?.Validate();
+        this.ServiceType?.Validate();
+        _ = this.TrailerNumber;
+    }
+
+    public Fleet() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Fleet(Fleet fleet)
+        : base(fleet) { }
+#pragma warning restore CS8618
+
+    public Fleet(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Fleet(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="FleetFromRaw.FromRawUnchecked"/>
+    public static Fleet FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class FleetFromRaw : IFromRawJson<Fleet>
+{
+    /// <inheritdoc/>
+    public Fleet FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Fleet.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The type of fuel purchased.
+/// </summary>
+[JsonConverter(typeof(FuelTypeConverter))]
+public enum FuelType
+{
+    /// <summary>
+    /// Regular
+    /// </summary>
+    Regular,
+
+    /// <summary>
+    /// Mid or plus
+    /// </summary>
+    MidOrPlus,
+
+    /// <summary>
+    /// Premium or super
+    /// </summary>
+    PremiumOrSuper,
+
+    /// <summary>
+    /// Mid or plus 2
+    /// </summary>
+    MidOrPlus2,
+
+    /// <summary>
+    /// Premium or super 2
+    /// </summary>
+    PremiumOrSuper2,
+
+    /// <summary>
+    /// Regular ethanol 5% blend outside the United States
+    /// </summary>
+    RegularEthanol5BlendNonUs,
+
+    /// <summary>
+    /// Mid or plus ethanol 5% blend outside the United States
+    /// </summary>
+    MidOrPlusEthanol5BlendNonUs,
+
+    /// <summary>
+    /// Premium or super ethanol 5% blend outside the United States
+    /// </summary>
+    PremiumOrSuperEthanol5BlendNonUs,
+
+    /// <summary>
+    /// Mid or plus 2 ethanol 5% blend outside the United States
+    /// </summary>
+    MidOrPlus2Ethanol5BlendNonUs,
+
+    /// <summary>
+    /// Green gasoline regular
+    /// </summary>
+    GreenGasolineRegular,
+
+    /// <summary>
+    /// Green gasoline mid or plus
+    /// </summary>
+    GreenGasolineMidOrPlus,
+
+    /// <summary>
+    /// Green gasoline premium or super
+    /// </summary>
+    GreenGasolinePremiumOrSuper,
+
+    /// <summary>
+    /// Regular diesel 2
+    /// </summary>
+    RegularDiesel2,
+
+    /// <summary>
+    /// Premium diesel 2
+    /// </summary>
+    PremiumDiesel2,
+
+    /// <summary>
+    /// Regular diesel 1
+    /// </summary>
+    RegularDiesel1,
+
+    /// <summary>
+    /// Compressed natural gas
+    /// </summary>
+    CompressedNaturalGas,
+
+    /// <summary>
+    /// Liquid propane gas
+    /// </summary>
+    LiquidPropaneGas,
+
+    /// <summary>
+    /// Liquid natural gas
+    /// </summary>
+    LiquidNaturalGas,
+
+    /// <summary>
+    /// E85
+    /// </summary>
+    E85,
+
+    /// <summary>
+    /// Regular reformulated
+    /// </summary>
+    RegularReformulated,
+
+    /// <summary>
+    /// Mid or plus reformulated
+    /// </summary>
+    MidOrPlusReformulated,
+
+    /// <summary>
+    /// Premium or super reformulated
+    /// </summary>
+    PremiumOrSuperReformulated,
+
+    /// <summary>
+    /// Mid or plus 2 reformulated
+    /// </summary>
+    MidOrPlus2Reformulated,
+
+    /// <summary>
+    /// Premium or super 2 reformulated
+    /// </summary>
+    PremiumOrSuper2Reformulated,
+
+    /// <summary>
+    /// Diesel off-road 1/2 non-taxable
+    /// </summary>
+    DieselOffRoad1_2NonTaxable,
+
+    /// <summary>
+    /// Diesel off-road non-taxable
+    /// </summary>
+    DieselOffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend off-road non-taxable
+    /// </summary>
+    BiodieselBlendOffRoadNonTaxable,
+
+    /// <summary>
+    /// Racing fuel
+    /// </summary>
+    RacingFuel,
+
+    /// <summary>
+    /// Mid or plus 2 ethanol 10% blend
+    /// </summary>
+    MidOrPlus2Ethanol10Blend,
+
+    /// <summary>
+    /// Premium or super 2 ethanol 10% blend
+    /// </summary>
+    PremiumOrSuper2Ethanol10Blend,
+
+    /// <summary>
+    /// Mid or plus ethanol 2–15% blend
+    /// </summary>
+    MidOrPlusEthanol2_15Blend,
+
+    /// <summary>
+    /// Premium or super ethanol 2–15% blend
+    /// </summary>
+    PremiumOrSuperEthanol2_15Blend,
+
+    /// <summary>
+    /// Premium or super 2 ethanol 5% blend outside the United States
+    /// </summary>
+    PremiumOrSuper2Ethanol5BlendNonUs,
+
+    /// <summary>
+    /// Regular ethanol 10% blend
+    /// </summary>
+    RegularEthanol10Blend,
+
+    /// <summary>
+    /// Mid or plus ethanol 10% blend
+    /// </summary>
+    MidOrPlusEthanol10Blend,
+
+    /// <summary>
+    /// Premium or super ethanol 10% blend
+    /// </summary>
+    PremiumOrSuperEthanol10Blend,
+
+    /// <summary>
+    /// B2 diesel blend 2% biodiesel
+    /// </summary>
+    B2DieselBlend2Biodiesel,
+
+    /// <summary>
+    /// B5 diesel blend 5% biodiesel
+    /// </summary>
+    B5DieselBlend5Biodiesel,
+
+    /// <summary>
+    /// B10 diesel blend 10% biodiesel
+    /// </summary>
+    B10DieselBlend10Biodiesel,
+
+    /// <summary>
+    /// B11 diesel blend 11% biodiesel
+    /// </summary>
+    B11DieselBlend11Biodiesel,
+
+    /// <summary>
+    /// B15 diesel blend 15% biodiesel
+    /// </summary>
+    B15DieselBlend15Biodiesel,
+
+    /// <summary>
+    /// B20 diesel blend 20% biodiesel
+    /// </summary>
+    B20DieselBlend20Biodiesel,
+
+    /// <summary>
+    /// B100 diesel blend 100% biodiesel
+    /// </summary>
+    B100DieselBlend100Biodiesel,
+
+    /// <summary>
+    /// B1 diesel blend 1% biodiesel
+    /// </summary>
+    B1DieselBlend1Biodiesel,
+
+    /// <summary>
+    /// Additized diesel 2
+    /// </summary>
+    AdditizedDiesel2,
+
+    /// <summary>
+    /// Additized diesel 3
+    /// </summary>
+    AdditizedDiesel3,
+
+    /// <summary>
+    /// B7 diesel blend 7% biodiesel outside the United States
+    /// </summary>
+    B7DieselBlend7BiodieselNonUs,
+
+    /// <summary>
+    /// B7 premium diesel blend 7% biodiesel outside the United States
+    /// </summary>
+    B7PremiumDieselBlend7BiodieselNonUs,
+
+    /// <summary>
+    /// Renewable diesel R95 or greater
+    /// </summary>
+    RenewableDieselR95OrGreater,
+
+    /// <summary>
+    /// Renewable diesel biodiesel 6% to 20%
+    /// </summary>
+    RenewableDieselBiodiesel6To20,
+
+    /// <summary>
+    /// Diesel exhaust fluid pump
+    /// </summary>
+    DieselExhaustFluidPump,
+
+    /// <summary>
+    /// Premium diesel 1
+    /// </summary>
+    PremiumDiesel1,
+
+    /// <summary>
+    /// Regular ethanol 15% blend
+    /// </summary>
+    RegularEthanol15Blend,
+
+    /// <summary>
+    /// Mid or plus ethanol 15% blend
+    /// </summary>
+    MidOrPlusEthanol15Blend,
+
+    /// <summary>
+    /// Premium or super ethanol 15% blend
+    /// </summary>
+    PremiumOrSuperEthanol15Blend,
+
+    /// <summary>
+    /// Premium diesel blend less than 20% biodiesel
+    /// </summary>
+    PremiumDieselBlendLessThan20Biodiesel,
+
+    /// <summary>
+    /// Premium diesel blend 20% or more biodiesel
+    /// </summary>
+    PremiumDieselBlend20OrMoreBiodiesel,
+
+    /// <summary>
+    /// B75 diesel blend 75% biodiesel
+    /// </summary>
+    B75DieselBlend75Biodiesel,
+
+    /// <summary>
+    /// B99 diesel blend 99% biodiesel
+    /// </summary>
+    B99DieselBlend99Biodiesel,
+
+    /// <summary>
+    /// Reserved for preauthorization use only
+    /// </summary>
+    ReservedForPreauthorizationUseOnly,
+
+    /// <summary>
+    /// Undefined fuel reserved for proprietary use
+    /// </summary>
+    UndefinedFuelReservedForProprietaryUse,
+
+    /// <summary>
+    /// Miscellaneous fuel
+    /// </summary>
+    MiscellaneousFuel,
+
+    /// <summary>
+    /// Jet fuel
+    /// </summary>
+    JetFuel,
+
+    /// <summary>
+    /// Aviation fuel regular
+    /// </summary>
+    AviationFuelRegular,
+
+    /// <summary>
+    /// Aviation fuel premium
+    /// </summary>
+    AviationFuelPremium,
+
+    /// <summary>
+    /// Aviation fuel JP8
+    /// </summary>
+    AviationFuelJp8,
+
+    /// <summary>
+    /// Aviation fuel 4
+    /// </summary>
+    AviationFuel4,
+
+    /// <summary>
+    /// Aviation fuel 5
+    /// </summary>
+    AviationFuel5,
+
+    /// <summary>
+    /// Biojet diesel
+    /// </summary>
+    BiojetDiesel,
+
+    /// <summary>
+    /// Aviation biofuel gasoline
+    /// </summary>
+    AviationBiofuelGasoline,
+
+    /// <summary>
+    /// Undefined aviation fuel reserved for proprietary use
+    /// </summary>
+    UndefinedAviationFuelReservedForProprietaryUse,
+
+    /// <summary>
+    /// Miscellaneous aviation fuel
+    /// </summary>
+    MiscellaneousAviationFuel,
+
+    /// <summary>
+    /// Marine fuel 1
+    /// </summary>
+    MarineFuel1,
+
+    /// <summary>
+    /// Marine fuel 2
+    /// </summary>
+    MarineFuel2,
+
+    /// <summary>
+    /// Marine fuel 3
+    /// </summary>
+    MarineFuel3,
+
+    /// <summary>
+    /// Marine fuel 4
+    /// </summary>
+    MarineFuel4,
+
+    /// <summary>
+    /// Marine fuel 5
+    /// </summary>
+    MarineFuel5,
+
+    /// <summary>
+    /// Marine other
+    /// </summary>
+    MarineOther,
+
+    /// <summary>
+    /// Marine diesel
+    /// </summary>
+    MarineDiesel,
+
+    /// <summary>
+    /// Miscellaneous marine fuel
+    /// </summary>
+    MiscellaneousMarineFuel,
+
+    /// <summary>
+    /// Kerosene low sulfur
+    /// </summary>
+    KeroseneLowSulfur,
+
+    /// <summary>
+    /// White gas
+    /// </summary>
+    WhiteGas,
+
+    /// <summary>
+    /// Heating oil
+    /// </summary>
+    HeatingOil,
+
+    /// <summary>
+    /// Other fuel non-taxable
+    /// </summary>
+    OtherFuelNonTaxable,
+
+    /// <summary>
+    /// Kerosene ultra low sulfur
+    /// </summary>
+    KeroseneUltraLowSulfur,
+
+    /// <summary>
+    /// Electric vehicle charging level 1 110 volt
+    /// </summary>
+    ElectricVehicleChargingLevel1_110Volt,
+
+    /// <summary>
+    /// Electric vehicle charging level 2 240 volt
+    /// </summary>
+    ElectricVehicleChargingLevel2_240Volt,
+
+    /// <summary>
+    /// Electric vehicle charging level 3 480 volt
+    /// </summary>
+    ElectricVehicleChargingLevel3_480Volt,
+
+    /// <summary>
+    /// Renewable diesel R95 or greater off-road non-taxable
+    /// </summary>
+    RenewableDieselR95OrGreaterOffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 1% off-road non-taxable
+    /// </summary>
+    BiodieselBlend1OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 75% off-road non-taxable
+    /// </summary>
+    BiodieselBlend75OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 99% off-road non-taxable
+    /// </summary>
+    BiodieselBlend99OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 100% off-road non-taxable
+    /// </summary>
+    BiodieselBlend100OffRoadNonTaxable,
+
+    /// <summary>
+    /// Renewable diesel biodiesel 6% to 20% off-road non-taxable
+    /// </summary>
+    RenewableDieselBiodiesel6To20OffRoadNonTaxable,
+
+    /// <summary>
+    /// Electric vehicle charging level 4 800 volt
+    /// </summary>
+    ElectricVehicleChargingLevel4_800Volt,
+
+    /// <summary>
+    /// Electric vehicle charging level 5 megawatt
+    /// </summary>
+    ElectricVehicleChargingLevel5Megawatt,
+
+    /// <summary>
+    /// Hydrotreated vegetable oil 100
+    /// </summary>
+    HydrotreatedVegetableOil100,
+
+    /// <summary>
+    /// Bio compressed natural gas
+    /// </summary>
+    BioCompressedNaturalGas,
+
+    /// <summary>
+    /// Miscellaneous other fuel
+    /// </summary>
+    MiscellaneousOtherFuel,
+}
+
+sealed class FuelTypeConverter : JsonConverter<FuelType>
+{
+    public override FuelType Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "regular" => FuelType.Regular,
+            "mid_or_plus" => FuelType.MidOrPlus,
+            "premium_or_super" => FuelType.PremiumOrSuper,
+            "mid_or_plus_2" => FuelType.MidOrPlus2,
+            "premium_or_super_2" => FuelType.PremiumOrSuper2,
+            "regular_ethanol_5_blend_non_us" => FuelType.RegularEthanol5BlendNonUs,
+            "mid_or_plus_ethanol_5_blend_non_us" => FuelType.MidOrPlusEthanol5BlendNonUs,
+            "premium_or_super_ethanol_5_blend_non_us" => FuelType.PremiumOrSuperEthanol5BlendNonUs,
+            "mid_or_plus_2_ethanol_5_blend_non_us" => FuelType.MidOrPlus2Ethanol5BlendNonUs,
+            "green_gasoline_regular" => FuelType.GreenGasolineRegular,
+            "green_gasoline_mid_or_plus" => FuelType.GreenGasolineMidOrPlus,
+            "green_gasoline_premium_or_super" => FuelType.GreenGasolinePremiumOrSuper,
+            "regular_diesel_2" => FuelType.RegularDiesel2,
+            "premium_diesel_2" => FuelType.PremiumDiesel2,
+            "regular_diesel_1" => FuelType.RegularDiesel1,
+            "compressed_natural_gas" => FuelType.CompressedNaturalGas,
+            "liquid_propane_gas" => FuelType.LiquidPropaneGas,
+            "liquid_natural_gas" => FuelType.LiquidNaturalGas,
+            "e85" => FuelType.E85,
+            "regular_reformulated" => FuelType.RegularReformulated,
+            "mid_or_plus_reformulated" => FuelType.MidOrPlusReformulated,
+            "premium_or_super_reformulated" => FuelType.PremiumOrSuperReformulated,
+            "mid_or_plus_2_reformulated" => FuelType.MidOrPlus2Reformulated,
+            "premium_or_super_2_reformulated" => FuelType.PremiumOrSuper2Reformulated,
+            "diesel_off_road_1_2_non_taxable" => FuelType.DieselOffRoad1_2NonTaxable,
+            "diesel_off_road_non_taxable" => FuelType.DieselOffRoadNonTaxable,
+            "biodiesel_blend_off_road_non_taxable" => FuelType.BiodieselBlendOffRoadNonTaxable,
+            "racing_fuel" => FuelType.RacingFuel,
+            "mid_or_plus_2_ethanol_10_blend" => FuelType.MidOrPlus2Ethanol10Blend,
+            "premium_or_super_2_ethanol_10_blend" => FuelType.PremiumOrSuper2Ethanol10Blend,
+            "mid_or_plus_ethanol_2_15_blend" => FuelType.MidOrPlusEthanol2_15Blend,
+            "premium_or_super_ethanol_2_15_blend" => FuelType.PremiumOrSuperEthanol2_15Blend,
+            "premium_or_super_2_ethanol_5_blend_non_us" =>
+                FuelType.PremiumOrSuper2Ethanol5BlendNonUs,
+            "regular_ethanol_10_blend" => FuelType.RegularEthanol10Blend,
+            "mid_or_plus_ethanol_10_blend" => FuelType.MidOrPlusEthanol10Blend,
+            "premium_or_super_ethanol_10_blend" => FuelType.PremiumOrSuperEthanol10Blend,
+            "b2_diesel_blend_2_biodiesel" => FuelType.B2DieselBlend2Biodiesel,
+            "b5_diesel_blend_5_biodiesel" => FuelType.B5DieselBlend5Biodiesel,
+            "b10_diesel_blend_10_biodiesel" => FuelType.B10DieselBlend10Biodiesel,
+            "b11_diesel_blend_11_biodiesel" => FuelType.B11DieselBlend11Biodiesel,
+            "b15_diesel_blend_15_biodiesel" => FuelType.B15DieselBlend15Biodiesel,
+            "b20_diesel_blend_20_biodiesel" => FuelType.B20DieselBlend20Biodiesel,
+            "b100_diesel_blend_100_biodiesel" => FuelType.B100DieselBlend100Biodiesel,
+            "b1_diesel_blend_1_biodiesel" => FuelType.B1DieselBlend1Biodiesel,
+            "additized_diesel_2" => FuelType.AdditizedDiesel2,
+            "additized_diesel_3" => FuelType.AdditizedDiesel3,
+            "b7_diesel_blend_7_biodiesel_non_us" => FuelType.B7DieselBlend7BiodieselNonUs,
+            "b7_premium_diesel_blend_7_biodiesel_non_us" =>
+                FuelType.B7PremiumDieselBlend7BiodieselNonUs,
+            "renewable_diesel_r95_or_greater" => FuelType.RenewableDieselR95OrGreater,
+            "renewable_diesel_biodiesel_6_to_20" => FuelType.RenewableDieselBiodiesel6To20,
+            "diesel_exhaust_fluid_pump" => FuelType.DieselExhaustFluidPump,
+            "premium_diesel_1" => FuelType.PremiumDiesel1,
+            "regular_ethanol_15_blend" => FuelType.RegularEthanol15Blend,
+            "mid_or_plus_ethanol_15_blend" => FuelType.MidOrPlusEthanol15Blend,
+            "premium_or_super_ethanol_15_blend" => FuelType.PremiumOrSuperEthanol15Blend,
+            "premium_diesel_blend_less_than_20_biodiesel" =>
+                FuelType.PremiumDieselBlendLessThan20Biodiesel,
+            "premium_diesel_blend_20_or_more_biodiesel" =>
+                FuelType.PremiumDieselBlend20OrMoreBiodiesel,
+            "b75_diesel_blend_75_biodiesel" => FuelType.B75DieselBlend75Biodiesel,
+            "b99_diesel_blend_99_biodiesel" => FuelType.B99DieselBlend99Biodiesel,
+            "reserved_for_preauthorization_use_only" => FuelType.ReservedForPreauthorizationUseOnly,
+            "undefined_fuel_reserved_for_proprietary_use" =>
+                FuelType.UndefinedFuelReservedForProprietaryUse,
+            "miscellaneous_fuel" => FuelType.MiscellaneousFuel,
+            "jet_fuel" => FuelType.JetFuel,
+            "aviation_fuel_regular" => FuelType.AviationFuelRegular,
+            "aviation_fuel_premium" => FuelType.AviationFuelPremium,
+            "aviation_fuel_jp8" => FuelType.AviationFuelJp8,
+            "aviation_fuel_4" => FuelType.AviationFuel4,
+            "aviation_fuel_5" => FuelType.AviationFuel5,
+            "biojet_diesel" => FuelType.BiojetDiesel,
+            "aviation_biofuel_gasoline" => FuelType.AviationBiofuelGasoline,
+            "undefined_aviation_fuel_reserved_for_proprietary_use" =>
+                FuelType.UndefinedAviationFuelReservedForProprietaryUse,
+            "miscellaneous_aviation_fuel" => FuelType.MiscellaneousAviationFuel,
+            "marine_fuel_1" => FuelType.MarineFuel1,
+            "marine_fuel_2" => FuelType.MarineFuel2,
+            "marine_fuel_3" => FuelType.MarineFuel3,
+            "marine_fuel_4" => FuelType.MarineFuel4,
+            "marine_fuel_5" => FuelType.MarineFuel5,
+            "marine_other" => FuelType.MarineOther,
+            "marine_diesel" => FuelType.MarineDiesel,
+            "miscellaneous_marine_fuel" => FuelType.MiscellaneousMarineFuel,
+            "kerosene_low_sulfur" => FuelType.KeroseneLowSulfur,
+            "white_gas" => FuelType.WhiteGas,
+            "heating_oil" => FuelType.HeatingOil,
+            "other_fuel_non_taxable" => FuelType.OtherFuelNonTaxable,
+            "kerosene_ultra_low_sulfur" => FuelType.KeroseneUltraLowSulfur,
+            "electric_vehicle_charging_level_1_110_volt" =>
+                FuelType.ElectricVehicleChargingLevel1_110Volt,
+            "electric_vehicle_charging_level_2_240_volt" =>
+                FuelType.ElectricVehicleChargingLevel2_240Volt,
+            "electric_vehicle_charging_level_3_480_volt" =>
+                FuelType.ElectricVehicleChargingLevel3_480Volt,
+            "renewable_diesel_r95_or_greater_off_road_non_taxable" =>
+                FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable,
+            "biodiesel_blend_1_off_road_non_taxable" => FuelType.BiodieselBlend1OffRoadNonTaxable,
+            "biodiesel_blend_75_off_road_non_taxable" => FuelType.BiodieselBlend75OffRoadNonTaxable,
+            "biodiesel_blend_99_off_road_non_taxable" => FuelType.BiodieselBlend99OffRoadNonTaxable,
+            "biodiesel_blend_100_off_road_non_taxable" =>
+                FuelType.BiodieselBlend100OffRoadNonTaxable,
+            "renewable_diesel_biodiesel_6_to_20_off_road_non_taxable" =>
+                FuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable,
+            "electric_vehicle_charging_level_4_800_volt" =>
+                FuelType.ElectricVehicleChargingLevel4_800Volt,
+            "electric_vehicle_charging_level_5_megawatt" =>
+                FuelType.ElectricVehicleChargingLevel5Megawatt,
+            "hydrotreated_vegetable_oil_100" => FuelType.HydrotreatedVegetableOil100,
+            "bio_compressed_natural_gas" => FuelType.BioCompressedNaturalGas,
+            "miscellaneous_other_fuel" => FuelType.MiscellaneousOtherFuel,
+            _ => (FuelType)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, FuelType value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                FuelType.Regular => "regular",
+                FuelType.MidOrPlus => "mid_or_plus",
+                FuelType.PremiumOrSuper => "premium_or_super",
+                FuelType.MidOrPlus2 => "mid_or_plus_2",
+                FuelType.PremiumOrSuper2 => "premium_or_super_2",
+                FuelType.RegularEthanol5BlendNonUs => "regular_ethanol_5_blend_non_us",
+                FuelType.MidOrPlusEthanol5BlendNonUs => "mid_or_plus_ethanol_5_blend_non_us",
+                FuelType.PremiumOrSuperEthanol5BlendNonUs =>
+                    "premium_or_super_ethanol_5_blend_non_us",
+                FuelType.MidOrPlus2Ethanol5BlendNonUs => "mid_or_plus_2_ethanol_5_blend_non_us",
+                FuelType.GreenGasolineRegular => "green_gasoline_regular",
+                FuelType.GreenGasolineMidOrPlus => "green_gasoline_mid_or_plus",
+                FuelType.GreenGasolinePremiumOrSuper => "green_gasoline_premium_or_super",
+                FuelType.RegularDiesel2 => "regular_diesel_2",
+                FuelType.PremiumDiesel2 => "premium_diesel_2",
+                FuelType.RegularDiesel1 => "regular_diesel_1",
+                FuelType.CompressedNaturalGas => "compressed_natural_gas",
+                FuelType.LiquidPropaneGas => "liquid_propane_gas",
+                FuelType.LiquidNaturalGas => "liquid_natural_gas",
+                FuelType.E85 => "e85",
+                FuelType.RegularReformulated => "regular_reformulated",
+                FuelType.MidOrPlusReformulated => "mid_or_plus_reformulated",
+                FuelType.PremiumOrSuperReformulated => "premium_or_super_reformulated",
+                FuelType.MidOrPlus2Reformulated => "mid_or_plus_2_reformulated",
+                FuelType.PremiumOrSuper2Reformulated => "premium_or_super_2_reformulated",
+                FuelType.DieselOffRoad1_2NonTaxable => "diesel_off_road_1_2_non_taxable",
+                FuelType.DieselOffRoadNonTaxable => "diesel_off_road_non_taxable",
+                FuelType.BiodieselBlendOffRoadNonTaxable => "biodiesel_blend_off_road_non_taxable",
+                FuelType.RacingFuel => "racing_fuel",
+                FuelType.MidOrPlus2Ethanol10Blend => "mid_or_plus_2_ethanol_10_blend",
+                FuelType.PremiumOrSuper2Ethanol10Blend => "premium_or_super_2_ethanol_10_blend",
+                FuelType.MidOrPlusEthanol2_15Blend => "mid_or_plus_ethanol_2_15_blend",
+                FuelType.PremiumOrSuperEthanol2_15Blend => "premium_or_super_ethanol_2_15_blend",
+                FuelType.PremiumOrSuper2Ethanol5BlendNonUs =>
+                    "premium_or_super_2_ethanol_5_blend_non_us",
+                FuelType.RegularEthanol10Blend => "regular_ethanol_10_blend",
+                FuelType.MidOrPlusEthanol10Blend => "mid_or_plus_ethanol_10_blend",
+                FuelType.PremiumOrSuperEthanol10Blend => "premium_or_super_ethanol_10_blend",
+                FuelType.B2DieselBlend2Biodiesel => "b2_diesel_blend_2_biodiesel",
+                FuelType.B5DieselBlend5Biodiesel => "b5_diesel_blend_5_biodiesel",
+                FuelType.B10DieselBlend10Biodiesel => "b10_diesel_blend_10_biodiesel",
+                FuelType.B11DieselBlend11Biodiesel => "b11_diesel_blend_11_biodiesel",
+                FuelType.B15DieselBlend15Biodiesel => "b15_diesel_blend_15_biodiesel",
+                FuelType.B20DieselBlend20Biodiesel => "b20_diesel_blend_20_biodiesel",
+                FuelType.B100DieselBlend100Biodiesel => "b100_diesel_blend_100_biodiesel",
+                FuelType.B1DieselBlend1Biodiesel => "b1_diesel_blend_1_biodiesel",
+                FuelType.AdditizedDiesel2 => "additized_diesel_2",
+                FuelType.AdditizedDiesel3 => "additized_diesel_3",
+                FuelType.B7DieselBlend7BiodieselNonUs => "b7_diesel_blend_7_biodiesel_non_us",
+                FuelType.B7PremiumDieselBlend7BiodieselNonUs =>
+                    "b7_premium_diesel_blend_7_biodiesel_non_us",
+                FuelType.RenewableDieselR95OrGreater => "renewable_diesel_r95_or_greater",
+                FuelType.RenewableDieselBiodiesel6To20 => "renewable_diesel_biodiesel_6_to_20",
+                FuelType.DieselExhaustFluidPump => "diesel_exhaust_fluid_pump",
+                FuelType.PremiumDiesel1 => "premium_diesel_1",
+                FuelType.RegularEthanol15Blend => "regular_ethanol_15_blend",
+                FuelType.MidOrPlusEthanol15Blend => "mid_or_plus_ethanol_15_blend",
+                FuelType.PremiumOrSuperEthanol15Blend => "premium_or_super_ethanol_15_blend",
+                FuelType.PremiumDieselBlendLessThan20Biodiesel =>
+                    "premium_diesel_blend_less_than_20_biodiesel",
+                FuelType.PremiumDieselBlend20OrMoreBiodiesel =>
+                    "premium_diesel_blend_20_or_more_biodiesel",
+                FuelType.B75DieselBlend75Biodiesel => "b75_diesel_blend_75_biodiesel",
+                FuelType.B99DieselBlend99Biodiesel => "b99_diesel_blend_99_biodiesel",
+                FuelType.ReservedForPreauthorizationUseOnly =>
+                    "reserved_for_preauthorization_use_only",
+                FuelType.UndefinedFuelReservedForProprietaryUse =>
+                    "undefined_fuel_reserved_for_proprietary_use",
+                FuelType.MiscellaneousFuel => "miscellaneous_fuel",
+                FuelType.JetFuel => "jet_fuel",
+                FuelType.AviationFuelRegular => "aviation_fuel_regular",
+                FuelType.AviationFuelPremium => "aviation_fuel_premium",
+                FuelType.AviationFuelJp8 => "aviation_fuel_jp8",
+                FuelType.AviationFuel4 => "aviation_fuel_4",
+                FuelType.AviationFuel5 => "aviation_fuel_5",
+                FuelType.BiojetDiesel => "biojet_diesel",
+                FuelType.AviationBiofuelGasoline => "aviation_biofuel_gasoline",
+                FuelType.UndefinedAviationFuelReservedForProprietaryUse =>
+                    "undefined_aviation_fuel_reserved_for_proprietary_use",
+                FuelType.MiscellaneousAviationFuel => "miscellaneous_aviation_fuel",
+                FuelType.MarineFuel1 => "marine_fuel_1",
+                FuelType.MarineFuel2 => "marine_fuel_2",
+                FuelType.MarineFuel3 => "marine_fuel_3",
+                FuelType.MarineFuel4 => "marine_fuel_4",
+                FuelType.MarineFuel5 => "marine_fuel_5",
+                FuelType.MarineOther => "marine_other",
+                FuelType.MarineDiesel => "marine_diesel",
+                FuelType.MiscellaneousMarineFuel => "miscellaneous_marine_fuel",
+                FuelType.KeroseneLowSulfur => "kerosene_low_sulfur",
+                FuelType.WhiteGas => "white_gas",
+                FuelType.HeatingOil => "heating_oil",
+                FuelType.OtherFuelNonTaxable => "other_fuel_non_taxable",
+                FuelType.KeroseneUltraLowSulfur => "kerosene_ultra_low_sulfur",
+                FuelType.ElectricVehicleChargingLevel1_110Volt =>
+                    "electric_vehicle_charging_level_1_110_volt",
+                FuelType.ElectricVehicleChargingLevel2_240Volt =>
+                    "electric_vehicle_charging_level_2_240_volt",
+                FuelType.ElectricVehicleChargingLevel3_480Volt =>
+                    "electric_vehicle_charging_level_3_480_volt",
+                FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable =>
+                    "renewable_diesel_r95_or_greater_off_road_non_taxable",
+                FuelType.BiodieselBlend1OffRoadNonTaxable =>
+                    "biodiesel_blend_1_off_road_non_taxable",
+                FuelType.BiodieselBlend75OffRoadNonTaxable =>
+                    "biodiesel_blend_75_off_road_non_taxable",
+                FuelType.BiodieselBlend99OffRoadNonTaxable =>
+                    "biodiesel_blend_99_off_road_non_taxable",
+                FuelType.BiodieselBlend100OffRoadNonTaxable =>
+                    "biodiesel_blend_100_off_road_non_taxable",
+                FuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable =>
+                    "renewable_diesel_biodiesel_6_to_20_off_road_non_taxable",
+                FuelType.ElectricVehicleChargingLevel4_800Volt =>
+                    "electric_vehicle_charging_level_4_800_volt",
+                FuelType.ElectricVehicleChargingLevel5Megawatt =>
+                    "electric_vehicle_charging_level_5_megawatt",
+                FuelType.HydrotreatedVegetableOil100 => "hydrotreated_vegetable_oil_100",
+                FuelType.BioCompressedNaturalGas => "bio_compressed_natural_gas",
+                FuelType.MiscellaneousOtherFuel => "miscellaneous_other_fuel",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The unit of measure for the fuel quantity.
+/// </summary>
+[JsonConverter(typeof(FuelUnitOfMeasureConverter))]
+public enum FuelUnitOfMeasure
+{
+    /// <summary>
+    /// Liter
+    /// </summary>
+    Liter,
+
+    /// <summary>
+    /// US gallon
+    /// </summary>
+    UsGallon,
+
+    /// <summary>
+    /// Imperial gallon
+    /// </summary>
+    ImperialGallon,
+
+    /// <summary>
+    /// Kilogram
+    /// </summary>
+    Kilogram,
+
+    /// <summary>
+    /// Pound
+    /// </summary>
+    Pound,
+
+    /// <summary>
+    /// Charging minutes
+    /// </summary>
+    ChargingMinutes,
+
+    /// <summary>
+    /// Kilowatt hour
+    /// </summary>
+    KilowattHour,
+}
+
+sealed class FuelUnitOfMeasureConverter : JsonConverter<FuelUnitOfMeasure>
+{
+    public override FuelUnitOfMeasure Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "liter" => FuelUnitOfMeasure.Liter,
+            "us_gallon" => FuelUnitOfMeasure.UsGallon,
+            "imperial_gallon" => FuelUnitOfMeasure.ImperialGallon,
+            "kilogram" => FuelUnitOfMeasure.Kilogram,
+            "pound" => FuelUnitOfMeasure.Pound,
+            "charging_minutes" => FuelUnitOfMeasure.ChargingMinutes,
+            "kilowatt_hour" => FuelUnitOfMeasure.KilowattHour,
+            _ => (FuelUnitOfMeasure)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        FuelUnitOfMeasure value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                FuelUnitOfMeasure.Liter => "liter",
+                FuelUnitOfMeasure.UsGallon => "us_gallon",
+                FuelUnitOfMeasure.ImperialGallon => "imperial_gallon",
+                FuelUnitOfMeasure.Kilogram => "kilogram",
+                FuelUnitOfMeasure.Pound => "pound",
+                FuelUnitOfMeasure.ChargingMinutes => "charging_minutes",
+                FuelUnitOfMeasure.KilowattHour => "kilowatt_hour",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The type of fleet purchase.
+/// </summary>
+[JsonConverter(typeof(PurchaseTypeConverter))]
+public enum PurchaseType
+{
+    /// <summary>
+    /// Fuel purchase
+    /// </summary>
+    FuelPurchase,
+
+    /// <summary>
+    /// Non-fuel purchase
+    /// </summary>
+    NonFuelPurchase,
+
+    /// <summary>
+    /// Fuel and non-fuel purchase
+    /// </summary>
+    FuelAndNonFuelPurchase,
+
+    /// <summary>
+    /// Fuel purchase with multiple fuel types
+    /// </summary>
+    FuelPurchaseWithMultipleFuelTypes,
+}
+
+sealed class PurchaseTypeConverter : JsonConverter<PurchaseType>
+{
+    public override PurchaseType Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "fuel_purchase" => PurchaseType.FuelPurchase,
+            "non_fuel_purchase" => PurchaseType.NonFuelPurchase,
+            "fuel_and_non_fuel_purchase" => PurchaseType.FuelAndNonFuelPurchase,
+            "fuel_purchase_with_multiple_fuel_types" =>
+                PurchaseType.FuelPurchaseWithMultipleFuelTypes,
+            _ => (PurchaseType)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        PurchaseType value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                PurchaseType.FuelPurchase => "fuel_purchase",
+                PurchaseType.NonFuelPurchase => "non_fuel_purchase",
+                PurchaseType.FuelAndNonFuelPurchase => "fuel_and_non_fuel_purchase",
+                PurchaseType.FuelPurchaseWithMultipleFuelTypes =>
+                    "fuel_purchase_with_multiple_fuel_types",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The type of service provided.
+/// </summary>
+[JsonConverter(typeof(ServiceTypeConverter))]
+public enum ServiceType
+{
+    /// <summary>
+    /// Full service
+    /// </summary>
+    FullService,
+
+    /// <summary>
+    /// Self service
+    /// </summary>
+    SelfService,
+
+    /// <summary>
+    /// High speed dispense
+    /// </summary>
+    HighSpeedDispense,
+}
+
+sealed class ServiceTypeConverter : JsonConverter<ServiceType>
+{
+    public override ServiceType Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "full_service" => ServiceType.FullService,
+            "self_service" => ServiceType.SelfService,
+            "high_speed_dispense" => ServiceType.HighSpeedDispense,
+            _ => (ServiceType)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        ServiceType value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                ServiceType.FullService => "full_service",
+                ServiceType.SelfService => "self_service",
+                ServiceType.HighSpeedDispense => "high_speed_dispense",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -27679,6 +28978,19 @@ public sealed record class CardSettlementPurchaseDetails : JsonModel
     }
 
     /// <summary>
+    /// Fields specific to fleet purchases.
+    /// </summary>
+    public required CardSettlementPurchaseDetailsFleet? Fleet
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<CardSettlementPurchaseDetailsFleet>("fleet");
+        }
+        init { this._rawData.Set("fleet", value); }
+    }
+
+    /// <summary>
     /// The state or provincial tax amount in minor units.
     /// </summary>
     public required long? LocalTaxAmount
@@ -27794,6 +29106,7 @@ public sealed record class CardSettlementPurchaseDetails : JsonModel
     {
         this.CarRental?.Validate();
         _ = this.CustomerReferenceIdentifier;
+        this.Fleet?.Validate();
         _ = this.LocalTaxAmount;
         _ = this.LocalTaxCurrency;
         this.Lodging?.Validate();
@@ -28280,6 +29593,1431 @@ sealed class CardSettlementPurchaseDetailsCarRentalNoShowIndicatorConverter
                     "not_applicable",
                 CardSettlementPurchaseDetailsCarRentalNoShowIndicator.NoShowForSpecializedVehicle =>
                     "no_show_for_specialized_vehicle",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Fields specific to fleet purchases.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardSettlementPurchaseDetailsFleet,
+        CardSettlementPurchaseDetailsFleetFromRaw
+    >)
+)]
+public sealed record class CardSettlementPurchaseDetailsFleet : JsonModel
+{
+    /// <summary>
+    /// The fleet employee number.
+    /// </summary>
+    public required string? EmployeeNumber
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("employee_number");
+        }
+        init { this._rawData.Set("employee_number", value); }
+    }
+
+    /// <summary>
+    /// The quantity of fuel purchased, given as a string containing a decimal number
+    /// in the indicated unit of measure.
+    /// </summary>
+    public required string? FuelQuantity
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("fuel_quantity");
+        }
+        init { this._rawData.Set("fuel_quantity", value); }
+    }
+
+    /// <summary>
+    /// The type of fuel purchased.
+    /// </summary>
+    public required ApiEnum<string, CardSettlementPurchaseDetailsFleetFuelType>? FuelType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<
+                ApiEnum<string, CardSettlementPurchaseDetailsFleetFuelType>
+            >("fuel_type");
+        }
+        init { this._rawData.Set("fuel_type", value); }
+    }
+
+    /// <summary>
+    /// The cost per unit of fuel in minor units.
+    /// </summary>
+    public required long? FuelUnitCostAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("fuel_unit_cost_amount");
+        }
+        init { this._rawData.Set("fuel_unit_cost_amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the fuel unit cost.
+    /// </summary>
+    public required string? FuelUnitCostCurrency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("fuel_unit_cost_currency");
+        }
+        init { this._rawData.Set("fuel_unit_cost_currency", value); }
+    }
+
+    /// <summary>
+    /// The unit of measure for the fuel quantity.
+    /// </summary>
+    public required ApiEnum<
+        string,
+        CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure
+    >? FuelUnitOfMeasure
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<
+                ApiEnum<string, CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure>
+            >("fuel_unit_of_measure");
+        }
+        init { this._rawData.Set("fuel_unit_of_measure", value); }
+    }
+
+    /// <summary>
+    /// The gross fuel price in minor units.
+    /// </summary>
+    public required long? GrossFuelPriceAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("gross_fuel_price_amount");
+        }
+        init { this._rawData.Set("gross_fuel_price_amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the gross
+    /// fuel price.
+    /// </summary>
+    public required string? GrossFuelPriceCurrency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("gross_fuel_price_currency");
+        }
+        init { this._rawData.Set("gross_fuel_price_currency", value); }
+    }
+
+    /// <summary>
+    /// The gross non-fuel price in minor units.
+    /// </summary>
+    public required long? GrossNonFuelPriceAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("gross_non_fuel_price_amount");
+        }
+        init { this._rawData.Set("gross_non_fuel_price_amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the gross
+    /// non-fuel price.
+    /// </summary>
+    public required string? GrossNonFuelPriceCurrency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("gross_non_fuel_price_currency");
+        }
+        init { this._rawData.Set("gross_non_fuel_price_currency", value); }
+    }
+
+    /// <summary>
+    /// The net fuel price in minor units.
+    /// </summary>
+    public required long? NetFuelPriceAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("net_fuel_price_amount");
+        }
+        init { this._rawData.Set("net_fuel_price_amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the net fuel price.
+    /// </summary>
+    public required string? NetFuelPriceCurrency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("net_fuel_price_currency");
+        }
+        init { this._rawData.Set("net_fuel_price_currency", value); }
+    }
+
+    /// <summary>
+    /// The net non-fuel price in minor units.
+    /// </summary>
+    public required long? NetNonFuelPriceAmount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("net_non_fuel_price_amount");
+        }
+        init { this._rawData.Set("net_non_fuel_price_amount", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the net non-fuel price.
+    /// </summary>
+    public required string? NetNonFuelPriceCurrency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("net_non_fuel_price_currency");
+        }
+        init { this._rawData.Set("net_non_fuel_price_currency", value); }
+    }
+
+    /// <summary>
+    /// The odometer reading reported by the merchant.
+    /// </summary>
+    public required long? OdometerReading
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("odometer_reading");
+        }
+        init { this._rawData.Set("odometer_reading", value); }
+    }
+
+    /// <summary>
+    /// The type of fleet purchase.
+    /// </summary>
+    public required ApiEnum<string, CardSettlementPurchaseDetailsFleetPurchaseType>? PurchaseType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<
+                ApiEnum<string, CardSettlementPurchaseDetailsFleetPurchaseType>
+            >("purchase_type");
+        }
+        init { this._rawData.Set("purchase_type", value); }
+    }
+
+    /// <summary>
+    /// The type of service provided.
+    /// </summary>
+    public required ApiEnum<string, CardSettlementPurchaseDetailsFleetServiceType>? ServiceType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<
+                ApiEnum<string, CardSettlementPurchaseDetailsFleetServiceType>
+            >("service_type");
+        }
+        init { this._rawData.Set("service_type", value); }
+    }
+
+    /// <summary>
+    /// The fleet trailer number.
+    /// </summary>
+    public required string? TrailerNumber
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("trailer_number");
+        }
+        init { this._rawData.Set("trailer_number", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.EmployeeNumber;
+        _ = this.FuelQuantity;
+        this.FuelType?.Validate();
+        _ = this.FuelUnitCostAmount;
+        _ = this.FuelUnitCostCurrency;
+        this.FuelUnitOfMeasure?.Validate();
+        _ = this.GrossFuelPriceAmount;
+        _ = this.GrossFuelPriceCurrency;
+        _ = this.GrossNonFuelPriceAmount;
+        _ = this.GrossNonFuelPriceCurrency;
+        _ = this.NetFuelPriceAmount;
+        _ = this.NetFuelPriceCurrency;
+        _ = this.NetNonFuelPriceAmount;
+        _ = this.NetNonFuelPriceCurrency;
+        _ = this.OdometerReading;
+        this.PurchaseType?.Validate();
+        this.ServiceType?.Validate();
+        _ = this.TrailerNumber;
+    }
+
+    public CardSettlementPurchaseDetailsFleet() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardSettlementPurchaseDetailsFleet(
+        CardSettlementPurchaseDetailsFleet cardSettlementPurchaseDetailsFleet
+    )
+        : base(cardSettlementPurchaseDetailsFleet) { }
+#pragma warning restore CS8618
+
+    public CardSettlementPurchaseDetailsFleet(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardSettlementPurchaseDetailsFleet(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardSettlementPurchaseDetailsFleetFromRaw.FromRawUnchecked"/>
+    public static CardSettlementPurchaseDetailsFleet FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class CardSettlementPurchaseDetailsFleetFromRaw : IFromRawJson<CardSettlementPurchaseDetailsFleet>
+{
+    /// <inheritdoc/>
+    public CardSettlementPurchaseDetailsFleet FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardSettlementPurchaseDetailsFleet.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The type of fuel purchased.
+/// </summary>
+[JsonConverter(typeof(CardSettlementPurchaseDetailsFleetFuelTypeConverter))]
+public enum CardSettlementPurchaseDetailsFleetFuelType
+{
+    /// <summary>
+    /// Regular
+    /// </summary>
+    Regular,
+
+    /// <summary>
+    /// Mid or plus
+    /// </summary>
+    MidOrPlus,
+
+    /// <summary>
+    /// Premium or super
+    /// </summary>
+    PremiumOrSuper,
+
+    /// <summary>
+    /// Mid or plus 2
+    /// </summary>
+    MidOrPlus2,
+
+    /// <summary>
+    /// Premium or super 2
+    /// </summary>
+    PremiumOrSuper2,
+
+    /// <summary>
+    /// Regular ethanol 5% blend outside the United States
+    /// </summary>
+    RegularEthanol5BlendNonUs,
+
+    /// <summary>
+    /// Mid or plus ethanol 5% blend outside the United States
+    /// </summary>
+    MidOrPlusEthanol5BlendNonUs,
+
+    /// <summary>
+    /// Premium or super ethanol 5% blend outside the United States
+    /// </summary>
+    PremiumOrSuperEthanol5BlendNonUs,
+
+    /// <summary>
+    /// Mid or plus 2 ethanol 5% blend outside the United States
+    /// </summary>
+    MidOrPlus2Ethanol5BlendNonUs,
+
+    /// <summary>
+    /// Green gasoline regular
+    /// </summary>
+    GreenGasolineRegular,
+
+    /// <summary>
+    /// Green gasoline mid or plus
+    /// </summary>
+    GreenGasolineMidOrPlus,
+
+    /// <summary>
+    /// Green gasoline premium or super
+    /// </summary>
+    GreenGasolinePremiumOrSuper,
+
+    /// <summary>
+    /// Regular diesel 2
+    /// </summary>
+    RegularDiesel2,
+
+    /// <summary>
+    /// Premium diesel 2
+    /// </summary>
+    PremiumDiesel2,
+
+    /// <summary>
+    /// Regular diesel 1
+    /// </summary>
+    RegularDiesel1,
+
+    /// <summary>
+    /// Compressed natural gas
+    /// </summary>
+    CompressedNaturalGas,
+
+    /// <summary>
+    /// Liquid propane gas
+    /// </summary>
+    LiquidPropaneGas,
+
+    /// <summary>
+    /// Liquid natural gas
+    /// </summary>
+    LiquidNaturalGas,
+
+    /// <summary>
+    /// E85
+    /// </summary>
+    E85,
+
+    /// <summary>
+    /// Regular reformulated
+    /// </summary>
+    RegularReformulated,
+
+    /// <summary>
+    /// Mid or plus reformulated
+    /// </summary>
+    MidOrPlusReformulated,
+
+    /// <summary>
+    /// Premium or super reformulated
+    /// </summary>
+    PremiumOrSuperReformulated,
+
+    /// <summary>
+    /// Mid or plus 2 reformulated
+    /// </summary>
+    MidOrPlus2Reformulated,
+
+    /// <summary>
+    /// Premium or super 2 reformulated
+    /// </summary>
+    PremiumOrSuper2Reformulated,
+
+    /// <summary>
+    /// Diesel off-road 1/2 non-taxable
+    /// </summary>
+    DieselOffRoad1_2NonTaxable,
+
+    /// <summary>
+    /// Diesel off-road non-taxable
+    /// </summary>
+    DieselOffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend off-road non-taxable
+    /// </summary>
+    BiodieselBlendOffRoadNonTaxable,
+
+    /// <summary>
+    /// Racing fuel
+    /// </summary>
+    RacingFuel,
+
+    /// <summary>
+    /// Mid or plus 2 ethanol 10% blend
+    /// </summary>
+    MidOrPlus2Ethanol10Blend,
+
+    /// <summary>
+    /// Premium or super 2 ethanol 10% blend
+    /// </summary>
+    PremiumOrSuper2Ethanol10Blend,
+
+    /// <summary>
+    /// Mid or plus ethanol 2–15% blend
+    /// </summary>
+    MidOrPlusEthanol2_15Blend,
+
+    /// <summary>
+    /// Premium or super ethanol 2–15% blend
+    /// </summary>
+    PremiumOrSuperEthanol2_15Blend,
+
+    /// <summary>
+    /// Premium or super 2 ethanol 5% blend outside the United States
+    /// </summary>
+    PremiumOrSuper2Ethanol5BlendNonUs,
+
+    /// <summary>
+    /// Regular ethanol 10% blend
+    /// </summary>
+    RegularEthanol10Blend,
+
+    /// <summary>
+    /// Mid or plus ethanol 10% blend
+    /// </summary>
+    MidOrPlusEthanol10Blend,
+
+    /// <summary>
+    /// Premium or super ethanol 10% blend
+    /// </summary>
+    PremiumOrSuperEthanol10Blend,
+
+    /// <summary>
+    /// B2 diesel blend 2% biodiesel
+    /// </summary>
+    B2DieselBlend2Biodiesel,
+
+    /// <summary>
+    /// B5 diesel blend 5% biodiesel
+    /// </summary>
+    B5DieselBlend5Biodiesel,
+
+    /// <summary>
+    /// B10 diesel blend 10% biodiesel
+    /// </summary>
+    B10DieselBlend10Biodiesel,
+
+    /// <summary>
+    /// B11 diesel blend 11% biodiesel
+    /// </summary>
+    B11DieselBlend11Biodiesel,
+
+    /// <summary>
+    /// B15 diesel blend 15% biodiesel
+    /// </summary>
+    B15DieselBlend15Biodiesel,
+
+    /// <summary>
+    /// B20 diesel blend 20% biodiesel
+    /// </summary>
+    B20DieselBlend20Biodiesel,
+
+    /// <summary>
+    /// B100 diesel blend 100% biodiesel
+    /// </summary>
+    B100DieselBlend100Biodiesel,
+
+    /// <summary>
+    /// B1 diesel blend 1% biodiesel
+    /// </summary>
+    B1DieselBlend1Biodiesel,
+
+    /// <summary>
+    /// Additized diesel 2
+    /// </summary>
+    AdditizedDiesel2,
+
+    /// <summary>
+    /// Additized diesel 3
+    /// </summary>
+    AdditizedDiesel3,
+
+    /// <summary>
+    /// B7 diesel blend 7% biodiesel outside the United States
+    /// </summary>
+    B7DieselBlend7BiodieselNonUs,
+
+    /// <summary>
+    /// B7 premium diesel blend 7% biodiesel outside the United States
+    /// </summary>
+    B7PremiumDieselBlend7BiodieselNonUs,
+
+    /// <summary>
+    /// Renewable diesel R95 or greater
+    /// </summary>
+    RenewableDieselR95OrGreater,
+
+    /// <summary>
+    /// Renewable diesel biodiesel 6% to 20%
+    /// </summary>
+    RenewableDieselBiodiesel6To20,
+
+    /// <summary>
+    /// Diesel exhaust fluid pump
+    /// </summary>
+    DieselExhaustFluidPump,
+
+    /// <summary>
+    /// Premium diesel 1
+    /// </summary>
+    PremiumDiesel1,
+
+    /// <summary>
+    /// Regular ethanol 15% blend
+    /// </summary>
+    RegularEthanol15Blend,
+
+    /// <summary>
+    /// Mid or plus ethanol 15% blend
+    /// </summary>
+    MidOrPlusEthanol15Blend,
+
+    /// <summary>
+    /// Premium or super ethanol 15% blend
+    /// </summary>
+    PremiumOrSuperEthanol15Blend,
+
+    /// <summary>
+    /// Premium diesel blend less than 20% biodiesel
+    /// </summary>
+    PremiumDieselBlendLessThan20Biodiesel,
+
+    /// <summary>
+    /// Premium diesel blend 20% or more biodiesel
+    /// </summary>
+    PremiumDieselBlend20OrMoreBiodiesel,
+
+    /// <summary>
+    /// B75 diesel blend 75% biodiesel
+    /// </summary>
+    B75DieselBlend75Biodiesel,
+
+    /// <summary>
+    /// B99 diesel blend 99% biodiesel
+    /// </summary>
+    B99DieselBlend99Biodiesel,
+
+    /// <summary>
+    /// Reserved for preauthorization use only
+    /// </summary>
+    ReservedForPreauthorizationUseOnly,
+
+    /// <summary>
+    /// Undefined fuel reserved for proprietary use
+    /// </summary>
+    UndefinedFuelReservedForProprietaryUse,
+
+    /// <summary>
+    /// Miscellaneous fuel
+    /// </summary>
+    MiscellaneousFuel,
+
+    /// <summary>
+    /// Jet fuel
+    /// </summary>
+    JetFuel,
+
+    /// <summary>
+    /// Aviation fuel regular
+    /// </summary>
+    AviationFuelRegular,
+
+    /// <summary>
+    /// Aviation fuel premium
+    /// </summary>
+    AviationFuelPremium,
+
+    /// <summary>
+    /// Aviation fuel JP8
+    /// </summary>
+    AviationFuelJp8,
+
+    /// <summary>
+    /// Aviation fuel 4
+    /// </summary>
+    AviationFuel4,
+
+    /// <summary>
+    /// Aviation fuel 5
+    /// </summary>
+    AviationFuel5,
+
+    /// <summary>
+    /// Biojet diesel
+    /// </summary>
+    BiojetDiesel,
+
+    /// <summary>
+    /// Aviation biofuel gasoline
+    /// </summary>
+    AviationBiofuelGasoline,
+
+    /// <summary>
+    /// Undefined aviation fuel reserved for proprietary use
+    /// </summary>
+    UndefinedAviationFuelReservedForProprietaryUse,
+
+    /// <summary>
+    /// Miscellaneous aviation fuel
+    /// </summary>
+    MiscellaneousAviationFuel,
+
+    /// <summary>
+    /// Marine fuel 1
+    /// </summary>
+    MarineFuel1,
+
+    /// <summary>
+    /// Marine fuel 2
+    /// </summary>
+    MarineFuel2,
+
+    /// <summary>
+    /// Marine fuel 3
+    /// </summary>
+    MarineFuel3,
+
+    /// <summary>
+    /// Marine fuel 4
+    /// </summary>
+    MarineFuel4,
+
+    /// <summary>
+    /// Marine fuel 5
+    /// </summary>
+    MarineFuel5,
+
+    /// <summary>
+    /// Marine other
+    /// </summary>
+    MarineOther,
+
+    /// <summary>
+    /// Marine diesel
+    /// </summary>
+    MarineDiesel,
+
+    /// <summary>
+    /// Miscellaneous marine fuel
+    /// </summary>
+    MiscellaneousMarineFuel,
+
+    /// <summary>
+    /// Kerosene low sulfur
+    /// </summary>
+    KeroseneLowSulfur,
+
+    /// <summary>
+    /// White gas
+    /// </summary>
+    WhiteGas,
+
+    /// <summary>
+    /// Heating oil
+    /// </summary>
+    HeatingOil,
+
+    /// <summary>
+    /// Other fuel non-taxable
+    /// </summary>
+    OtherFuelNonTaxable,
+
+    /// <summary>
+    /// Kerosene ultra low sulfur
+    /// </summary>
+    KeroseneUltraLowSulfur,
+
+    /// <summary>
+    /// Electric vehicle charging level 1 110 volt
+    /// </summary>
+    ElectricVehicleChargingLevel1_110Volt,
+
+    /// <summary>
+    /// Electric vehicle charging level 2 240 volt
+    /// </summary>
+    ElectricVehicleChargingLevel2_240Volt,
+
+    /// <summary>
+    /// Electric vehicle charging level 3 480 volt
+    /// </summary>
+    ElectricVehicleChargingLevel3_480Volt,
+
+    /// <summary>
+    /// Renewable diesel R95 or greater off-road non-taxable
+    /// </summary>
+    RenewableDieselR95OrGreaterOffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 1% off-road non-taxable
+    /// </summary>
+    BiodieselBlend1OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 75% off-road non-taxable
+    /// </summary>
+    BiodieselBlend75OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 99% off-road non-taxable
+    /// </summary>
+    BiodieselBlend99OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 100% off-road non-taxable
+    /// </summary>
+    BiodieselBlend100OffRoadNonTaxable,
+
+    /// <summary>
+    /// Renewable diesel biodiesel 6% to 20% off-road non-taxable
+    /// </summary>
+    RenewableDieselBiodiesel6To20OffRoadNonTaxable,
+
+    /// <summary>
+    /// Electric vehicle charging level 4 800 volt
+    /// </summary>
+    ElectricVehicleChargingLevel4_800Volt,
+
+    /// <summary>
+    /// Electric vehicle charging level 5 megawatt
+    /// </summary>
+    ElectricVehicleChargingLevel5Megawatt,
+
+    /// <summary>
+    /// Hydrotreated vegetable oil 100
+    /// </summary>
+    HydrotreatedVegetableOil100,
+
+    /// <summary>
+    /// Bio compressed natural gas
+    /// </summary>
+    BioCompressedNaturalGas,
+
+    /// <summary>
+    /// Miscellaneous other fuel
+    /// </summary>
+    MiscellaneousOtherFuel,
+}
+
+sealed class CardSettlementPurchaseDetailsFleetFuelTypeConverter
+    : JsonConverter<CardSettlementPurchaseDetailsFleetFuelType>
+{
+    public override CardSettlementPurchaseDetailsFleetFuelType Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "regular" => CardSettlementPurchaseDetailsFleetFuelType.Regular,
+            "mid_or_plus" => CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus,
+            "premium_or_super" => CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper,
+            "mid_or_plus_2" => CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2,
+            "premium_or_super_2" => CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2,
+            "regular_ethanol_5_blend_non_us" =>
+                CardSettlementPurchaseDetailsFleetFuelType.RegularEthanol5BlendNonUs,
+            "mid_or_plus_ethanol_5_blend_non_us" =>
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol5BlendNonUs,
+            "premium_or_super_ethanol_5_blend_non_us" =>
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol5BlendNonUs,
+            "mid_or_plus_2_ethanol_5_blend_non_us" =>
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2Ethanol5BlendNonUs,
+            "green_gasoline_regular" =>
+                CardSettlementPurchaseDetailsFleetFuelType.GreenGasolineRegular,
+            "green_gasoline_mid_or_plus" =>
+                CardSettlementPurchaseDetailsFleetFuelType.GreenGasolineMidOrPlus,
+            "green_gasoline_premium_or_super" =>
+                CardSettlementPurchaseDetailsFleetFuelType.GreenGasolinePremiumOrSuper,
+            "regular_diesel_2" => CardSettlementPurchaseDetailsFleetFuelType.RegularDiesel2,
+            "premium_diesel_2" => CardSettlementPurchaseDetailsFleetFuelType.PremiumDiesel2,
+            "regular_diesel_1" => CardSettlementPurchaseDetailsFleetFuelType.RegularDiesel1,
+            "compressed_natural_gas" =>
+                CardSettlementPurchaseDetailsFleetFuelType.CompressedNaturalGas,
+            "liquid_propane_gas" => CardSettlementPurchaseDetailsFleetFuelType.LiquidPropaneGas,
+            "liquid_natural_gas" => CardSettlementPurchaseDetailsFleetFuelType.LiquidNaturalGas,
+            "e85" => CardSettlementPurchaseDetailsFleetFuelType.E85,
+            "regular_reformulated" =>
+                CardSettlementPurchaseDetailsFleetFuelType.RegularReformulated,
+            "mid_or_plus_reformulated" =>
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusReformulated,
+            "premium_or_super_reformulated" =>
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperReformulated,
+            "mid_or_plus_2_reformulated" =>
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2Reformulated,
+            "premium_or_super_2_reformulated" =>
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2Reformulated,
+            "diesel_off_road_1_2_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.DieselOffRoad1_2NonTaxable,
+            "diesel_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.DieselOffRoadNonTaxable,
+            "biodiesel_blend_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlendOffRoadNonTaxable,
+            "racing_fuel" => CardSettlementPurchaseDetailsFleetFuelType.RacingFuel,
+            "mid_or_plus_2_ethanol_10_blend" =>
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2Ethanol10Blend,
+            "premium_or_super_2_ethanol_10_blend" =>
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2Ethanol10Blend,
+            "mid_or_plus_ethanol_2_15_blend" =>
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol2_15Blend,
+            "premium_or_super_ethanol_2_15_blend" =>
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol2_15Blend,
+            "premium_or_super_2_ethanol_5_blend_non_us" =>
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2Ethanol5BlendNonUs,
+            "regular_ethanol_10_blend" =>
+                CardSettlementPurchaseDetailsFleetFuelType.RegularEthanol10Blend,
+            "mid_or_plus_ethanol_10_blend" =>
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol10Blend,
+            "premium_or_super_ethanol_10_blend" =>
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol10Blend,
+            "b2_diesel_blend_2_biodiesel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.B2DieselBlend2Biodiesel,
+            "b5_diesel_blend_5_biodiesel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.B5DieselBlend5Biodiesel,
+            "b10_diesel_blend_10_biodiesel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.B10DieselBlend10Biodiesel,
+            "b11_diesel_blend_11_biodiesel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.B11DieselBlend11Biodiesel,
+            "b15_diesel_blend_15_biodiesel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.B15DieselBlend15Biodiesel,
+            "b20_diesel_blend_20_biodiesel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.B20DieselBlend20Biodiesel,
+            "b100_diesel_blend_100_biodiesel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.B100DieselBlend100Biodiesel,
+            "b1_diesel_blend_1_biodiesel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.B1DieselBlend1Biodiesel,
+            "additized_diesel_2" => CardSettlementPurchaseDetailsFleetFuelType.AdditizedDiesel2,
+            "additized_diesel_3" => CardSettlementPurchaseDetailsFleetFuelType.AdditizedDiesel3,
+            "b7_diesel_blend_7_biodiesel_non_us" =>
+                CardSettlementPurchaseDetailsFleetFuelType.B7DieselBlend7BiodieselNonUs,
+            "b7_premium_diesel_blend_7_biodiesel_non_us" =>
+                CardSettlementPurchaseDetailsFleetFuelType.B7PremiumDieselBlend7BiodieselNonUs,
+            "renewable_diesel_r95_or_greater" =>
+                CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreater,
+            "renewable_diesel_biodiesel_6_to_20" =>
+                CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselBiodiesel6To20,
+            "diesel_exhaust_fluid_pump" =>
+                CardSettlementPurchaseDetailsFleetFuelType.DieselExhaustFluidPump,
+            "premium_diesel_1" => CardSettlementPurchaseDetailsFleetFuelType.PremiumDiesel1,
+            "regular_ethanol_15_blend" =>
+                CardSettlementPurchaseDetailsFleetFuelType.RegularEthanol15Blend,
+            "mid_or_plus_ethanol_15_blend" =>
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol15Blend,
+            "premium_or_super_ethanol_15_blend" =>
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol15Blend,
+            "premium_diesel_blend_less_than_20_biodiesel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumDieselBlendLessThan20Biodiesel,
+            "premium_diesel_blend_20_or_more_biodiesel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumDieselBlend20OrMoreBiodiesel,
+            "b75_diesel_blend_75_biodiesel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.B75DieselBlend75Biodiesel,
+            "b99_diesel_blend_99_biodiesel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.B99DieselBlend99Biodiesel,
+            "reserved_for_preauthorization_use_only" =>
+                CardSettlementPurchaseDetailsFleetFuelType.ReservedForPreauthorizationUseOnly,
+            "undefined_fuel_reserved_for_proprietary_use" =>
+                CardSettlementPurchaseDetailsFleetFuelType.UndefinedFuelReservedForProprietaryUse,
+            "miscellaneous_fuel" => CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousFuel,
+            "jet_fuel" => CardSettlementPurchaseDetailsFleetFuelType.JetFuel,
+            "aviation_fuel_regular" =>
+                CardSettlementPurchaseDetailsFleetFuelType.AviationFuelRegular,
+            "aviation_fuel_premium" =>
+                CardSettlementPurchaseDetailsFleetFuelType.AviationFuelPremium,
+            "aviation_fuel_jp8" => CardSettlementPurchaseDetailsFleetFuelType.AviationFuelJp8,
+            "aviation_fuel_4" => CardSettlementPurchaseDetailsFleetFuelType.AviationFuel4,
+            "aviation_fuel_5" => CardSettlementPurchaseDetailsFleetFuelType.AviationFuel5,
+            "biojet_diesel" => CardSettlementPurchaseDetailsFleetFuelType.BiojetDiesel,
+            "aviation_biofuel_gasoline" =>
+                CardSettlementPurchaseDetailsFleetFuelType.AviationBiofuelGasoline,
+            "undefined_aviation_fuel_reserved_for_proprietary_use" =>
+                CardSettlementPurchaseDetailsFleetFuelType.UndefinedAviationFuelReservedForProprietaryUse,
+            "miscellaneous_aviation_fuel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousAviationFuel,
+            "marine_fuel_1" => CardSettlementPurchaseDetailsFleetFuelType.MarineFuel1,
+            "marine_fuel_2" => CardSettlementPurchaseDetailsFleetFuelType.MarineFuel2,
+            "marine_fuel_3" => CardSettlementPurchaseDetailsFleetFuelType.MarineFuel3,
+            "marine_fuel_4" => CardSettlementPurchaseDetailsFleetFuelType.MarineFuel4,
+            "marine_fuel_5" => CardSettlementPurchaseDetailsFleetFuelType.MarineFuel5,
+            "marine_other" => CardSettlementPurchaseDetailsFleetFuelType.MarineOther,
+            "marine_diesel" => CardSettlementPurchaseDetailsFleetFuelType.MarineDiesel,
+            "miscellaneous_marine_fuel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousMarineFuel,
+            "kerosene_low_sulfur" => CardSettlementPurchaseDetailsFleetFuelType.KeroseneLowSulfur,
+            "white_gas" => CardSettlementPurchaseDetailsFleetFuelType.WhiteGas,
+            "heating_oil" => CardSettlementPurchaseDetailsFleetFuelType.HeatingOil,
+            "other_fuel_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.OtherFuelNonTaxable,
+            "kerosene_ultra_low_sulfur" =>
+                CardSettlementPurchaseDetailsFleetFuelType.KeroseneUltraLowSulfur,
+            "electric_vehicle_charging_level_1_110_volt" =>
+                CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel1_110Volt,
+            "electric_vehicle_charging_level_2_240_volt" =>
+                CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel2_240Volt,
+            "electric_vehicle_charging_level_3_480_volt" =>
+                CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt,
+            "renewable_diesel_r95_or_greater_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable,
+            "biodiesel_blend_1_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend1OffRoadNonTaxable,
+            "biodiesel_blend_75_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend75OffRoadNonTaxable,
+            "biodiesel_blend_99_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend99OffRoadNonTaxable,
+            "biodiesel_blend_100_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend100OffRoadNonTaxable,
+            "renewable_diesel_biodiesel_6_to_20_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable,
+            "electric_vehicle_charging_level_4_800_volt" =>
+                CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel4_800Volt,
+            "electric_vehicle_charging_level_5_megawatt" =>
+                CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel5Megawatt,
+            "hydrotreated_vegetable_oil_100" =>
+                CardSettlementPurchaseDetailsFleetFuelType.HydrotreatedVegetableOil100,
+            "bio_compressed_natural_gas" =>
+                CardSettlementPurchaseDetailsFleetFuelType.BioCompressedNaturalGas,
+            "miscellaneous_other_fuel" =>
+                CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousOtherFuel,
+            _ => (CardSettlementPurchaseDetailsFleetFuelType)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        CardSettlementPurchaseDetailsFleetFuelType value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                CardSettlementPurchaseDetailsFleetFuelType.Regular => "regular",
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus => "mid_or_plus",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper => "premium_or_super",
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2 => "mid_or_plus_2",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2 => "premium_or_super_2",
+                CardSettlementPurchaseDetailsFleetFuelType.RegularEthanol5BlendNonUs =>
+                    "regular_ethanol_5_blend_non_us",
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol5BlendNonUs =>
+                    "mid_or_plus_ethanol_5_blend_non_us",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol5BlendNonUs =>
+                    "premium_or_super_ethanol_5_blend_non_us",
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2Ethanol5BlendNonUs =>
+                    "mid_or_plus_2_ethanol_5_blend_non_us",
+                CardSettlementPurchaseDetailsFleetFuelType.GreenGasolineRegular =>
+                    "green_gasoline_regular",
+                CardSettlementPurchaseDetailsFleetFuelType.GreenGasolineMidOrPlus =>
+                    "green_gasoline_mid_or_plus",
+                CardSettlementPurchaseDetailsFleetFuelType.GreenGasolinePremiumOrSuper =>
+                    "green_gasoline_premium_or_super",
+                CardSettlementPurchaseDetailsFleetFuelType.RegularDiesel2 => "regular_diesel_2",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumDiesel2 => "premium_diesel_2",
+                CardSettlementPurchaseDetailsFleetFuelType.RegularDiesel1 => "regular_diesel_1",
+                CardSettlementPurchaseDetailsFleetFuelType.CompressedNaturalGas =>
+                    "compressed_natural_gas",
+                CardSettlementPurchaseDetailsFleetFuelType.LiquidPropaneGas => "liquid_propane_gas",
+                CardSettlementPurchaseDetailsFleetFuelType.LiquidNaturalGas => "liquid_natural_gas",
+                CardSettlementPurchaseDetailsFleetFuelType.E85 => "e85",
+                CardSettlementPurchaseDetailsFleetFuelType.RegularReformulated =>
+                    "regular_reformulated",
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusReformulated =>
+                    "mid_or_plus_reformulated",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperReformulated =>
+                    "premium_or_super_reformulated",
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2Reformulated =>
+                    "mid_or_plus_2_reformulated",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2Reformulated =>
+                    "premium_or_super_2_reformulated",
+                CardSettlementPurchaseDetailsFleetFuelType.DieselOffRoad1_2NonTaxable =>
+                    "diesel_off_road_1_2_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.DieselOffRoadNonTaxable =>
+                    "diesel_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlendOffRoadNonTaxable =>
+                    "biodiesel_blend_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.RacingFuel => "racing_fuel",
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2Ethanol10Blend =>
+                    "mid_or_plus_2_ethanol_10_blend",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2Ethanol10Blend =>
+                    "premium_or_super_2_ethanol_10_blend",
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol2_15Blend =>
+                    "mid_or_plus_ethanol_2_15_blend",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol2_15Blend =>
+                    "premium_or_super_ethanol_2_15_blend",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2Ethanol5BlendNonUs =>
+                    "premium_or_super_2_ethanol_5_blend_non_us",
+                CardSettlementPurchaseDetailsFleetFuelType.RegularEthanol10Blend =>
+                    "regular_ethanol_10_blend",
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol10Blend =>
+                    "mid_or_plus_ethanol_10_blend",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol10Blend =>
+                    "premium_or_super_ethanol_10_blend",
+                CardSettlementPurchaseDetailsFleetFuelType.B2DieselBlend2Biodiesel =>
+                    "b2_diesel_blend_2_biodiesel",
+                CardSettlementPurchaseDetailsFleetFuelType.B5DieselBlend5Biodiesel =>
+                    "b5_diesel_blend_5_biodiesel",
+                CardSettlementPurchaseDetailsFleetFuelType.B10DieselBlend10Biodiesel =>
+                    "b10_diesel_blend_10_biodiesel",
+                CardSettlementPurchaseDetailsFleetFuelType.B11DieselBlend11Biodiesel =>
+                    "b11_diesel_blend_11_biodiesel",
+                CardSettlementPurchaseDetailsFleetFuelType.B15DieselBlend15Biodiesel =>
+                    "b15_diesel_blend_15_biodiesel",
+                CardSettlementPurchaseDetailsFleetFuelType.B20DieselBlend20Biodiesel =>
+                    "b20_diesel_blend_20_biodiesel",
+                CardSettlementPurchaseDetailsFleetFuelType.B100DieselBlend100Biodiesel =>
+                    "b100_diesel_blend_100_biodiesel",
+                CardSettlementPurchaseDetailsFleetFuelType.B1DieselBlend1Biodiesel =>
+                    "b1_diesel_blend_1_biodiesel",
+                CardSettlementPurchaseDetailsFleetFuelType.AdditizedDiesel2 => "additized_diesel_2",
+                CardSettlementPurchaseDetailsFleetFuelType.AdditizedDiesel3 => "additized_diesel_3",
+                CardSettlementPurchaseDetailsFleetFuelType.B7DieselBlend7BiodieselNonUs =>
+                    "b7_diesel_blend_7_biodiesel_non_us",
+                CardSettlementPurchaseDetailsFleetFuelType.B7PremiumDieselBlend7BiodieselNonUs =>
+                    "b7_premium_diesel_blend_7_biodiesel_non_us",
+                CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreater =>
+                    "renewable_diesel_r95_or_greater",
+                CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselBiodiesel6To20 =>
+                    "renewable_diesel_biodiesel_6_to_20",
+                CardSettlementPurchaseDetailsFleetFuelType.DieselExhaustFluidPump =>
+                    "diesel_exhaust_fluid_pump",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumDiesel1 => "premium_diesel_1",
+                CardSettlementPurchaseDetailsFleetFuelType.RegularEthanol15Blend =>
+                    "regular_ethanol_15_blend",
+                CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol15Blend =>
+                    "mid_or_plus_ethanol_15_blend",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol15Blend =>
+                    "premium_or_super_ethanol_15_blend",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumDieselBlendLessThan20Biodiesel =>
+                    "premium_diesel_blend_less_than_20_biodiesel",
+                CardSettlementPurchaseDetailsFleetFuelType.PremiumDieselBlend20OrMoreBiodiesel =>
+                    "premium_diesel_blend_20_or_more_biodiesel",
+                CardSettlementPurchaseDetailsFleetFuelType.B75DieselBlend75Biodiesel =>
+                    "b75_diesel_blend_75_biodiesel",
+                CardSettlementPurchaseDetailsFleetFuelType.B99DieselBlend99Biodiesel =>
+                    "b99_diesel_blend_99_biodiesel",
+                CardSettlementPurchaseDetailsFleetFuelType.ReservedForPreauthorizationUseOnly =>
+                    "reserved_for_preauthorization_use_only",
+                CardSettlementPurchaseDetailsFleetFuelType.UndefinedFuelReservedForProprietaryUse =>
+                    "undefined_fuel_reserved_for_proprietary_use",
+                CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousFuel =>
+                    "miscellaneous_fuel",
+                CardSettlementPurchaseDetailsFleetFuelType.JetFuel => "jet_fuel",
+                CardSettlementPurchaseDetailsFleetFuelType.AviationFuelRegular =>
+                    "aviation_fuel_regular",
+                CardSettlementPurchaseDetailsFleetFuelType.AviationFuelPremium =>
+                    "aviation_fuel_premium",
+                CardSettlementPurchaseDetailsFleetFuelType.AviationFuelJp8 => "aviation_fuel_jp8",
+                CardSettlementPurchaseDetailsFleetFuelType.AviationFuel4 => "aviation_fuel_4",
+                CardSettlementPurchaseDetailsFleetFuelType.AviationFuel5 => "aviation_fuel_5",
+                CardSettlementPurchaseDetailsFleetFuelType.BiojetDiesel => "biojet_diesel",
+                CardSettlementPurchaseDetailsFleetFuelType.AviationBiofuelGasoline =>
+                    "aviation_biofuel_gasoline",
+                CardSettlementPurchaseDetailsFleetFuelType.UndefinedAviationFuelReservedForProprietaryUse =>
+                    "undefined_aviation_fuel_reserved_for_proprietary_use",
+                CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousAviationFuel =>
+                    "miscellaneous_aviation_fuel",
+                CardSettlementPurchaseDetailsFleetFuelType.MarineFuel1 => "marine_fuel_1",
+                CardSettlementPurchaseDetailsFleetFuelType.MarineFuel2 => "marine_fuel_2",
+                CardSettlementPurchaseDetailsFleetFuelType.MarineFuel3 => "marine_fuel_3",
+                CardSettlementPurchaseDetailsFleetFuelType.MarineFuel4 => "marine_fuel_4",
+                CardSettlementPurchaseDetailsFleetFuelType.MarineFuel5 => "marine_fuel_5",
+                CardSettlementPurchaseDetailsFleetFuelType.MarineOther => "marine_other",
+                CardSettlementPurchaseDetailsFleetFuelType.MarineDiesel => "marine_diesel",
+                CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousMarineFuel =>
+                    "miscellaneous_marine_fuel",
+                CardSettlementPurchaseDetailsFleetFuelType.KeroseneLowSulfur =>
+                    "kerosene_low_sulfur",
+                CardSettlementPurchaseDetailsFleetFuelType.WhiteGas => "white_gas",
+                CardSettlementPurchaseDetailsFleetFuelType.HeatingOil => "heating_oil",
+                CardSettlementPurchaseDetailsFleetFuelType.OtherFuelNonTaxable =>
+                    "other_fuel_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.KeroseneUltraLowSulfur =>
+                    "kerosene_ultra_low_sulfur",
+                CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel1_110Volt =>
+                    "electric_vehicle_charging_level_1_110_volt",
+                CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel2_240Volt =>
+                    "electric_vehicle_charging_level_2_240_volt",
+                CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt =>
+                    "electric_vehicle_charging_level_3_480_volt",
+                CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable =>
+                    "renewable_diesel_r95_or_greater_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend1OffRoadNonTaxable =>
+                    "biodiesel_blend_1_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend75OffRoadNonTaxable =>
+                    "biodiesel_blend_75_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend99OffRoadNonTaxable =>
+                    "biodiesel_blend_99_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend100OffRoadNonTaxable =>
+                    "biodiesel_blend_100_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable =>
+                    "renewable_diesel_biodiesel_6_to_20_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel4_800Volt =>
+                    "electric_vehicle_charging_level_4_800_volt",
+                CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel5Megawatt =>
+                    "electric_vehicle_charging_level_5_megawatt",
+                CardSettlementPurchaseDetailsFleetFuelType.HydrotreatedVegetableOil100 =>
+                    "hydrotreated_vegetable_oil_100",
+                CardSettlementPurchaseDetailsFleetFuelType.BioCompressedNaturalGas =>
+                    "bio_compressed_natural_gas",
+                CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousOtherFuel =>
+                    "miscellaneous_other_fuel",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The unit of measure for the fuel quantity.
+/// </summary>
+[JsonConverter(typeof(CardSettlementPurchaseDetailsFleetFuelUnitOfMeasureConverter))]
+public enum CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure
+{
+    /// <summary>
+    /// Liter
+    /// </summary>
+    Liter,
+
+    /// <summary>
+    /// US gallon
+    /// </summary>
+    UsGallon,
+
+    /// <summary>
+    /// Imperial gallon
+    /// </summary>
+    ImperialGallon,
+
+    /// <summary>
+    /// Kilogram
+    /// </summary>
+    Kilogram,
+
+    /// <summary>
+    /// Pound
+    /// </summary>
+    Pound,
+
+    /// <summary>
+    /// Charging minutes
+    /// </summary>
+    ChargingMinutes,
+
+    /// <summary>
+    /// Kilowatt hour
+    /// </summary>
+    KilowattHour,
+}
+
+sealed class CardSettlementPurchaseDetailsFleetFuelUnitOfMeasureConverter
+    : JsonConverter<CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure>
+{
+    public override CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "liter" => CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+            "us_gallon" => CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.UsGallon,
+            "imperial_gallon" => CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.ImperialGallon,
+            "kilogram" => CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Kilogram,
+            "pound" => CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Pound,
+            "charging_minutes" =>
+                CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.ChargingMinutes,
+            "kilowatt_hour" => CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.KilowattHour,
+            _ => (CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter => "liter",
+                CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.UsGallon => "us_gallon",
+                CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.ImperialGallon =>
+                    "imperial_gallon",
+                CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Kilogram => "kilogram",
+                CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Pound => "pound",
+                CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.ChargingMinutes =>
+                    "charging_minutes",
+                CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.KilowattHour => "kilowatt_hour",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The type of fleet purchase.
+/// </summary>
+[JsonConverter(typeof(CardSettlementPurchaseDetailsFleetPurchaseTypeConverter))]
+public enum CardSettlementPurchaseDetailsFleetPurchaseType
+{
+    /// <summary>
+    /// Fuel purchase
+    /// </summary>
+    FuelPurchase,
+
+    /// <summary>
+    /// Non-fuel purchase
+    /// </summary>
+    NonFuelPurchase,
+
+    /// <summary>
+    /// Fuel and non-fuel purchase
+    /// </summary>
+    FuelAndNonFuelPurchase,
+
+    /// <summary>
+    /// Fuel purchase with multiple fuel types
+    /// </summary>
+    FuelPurchaseWithMultipleFuelTypes,
+}
+
+sealed class CardSettlementPurchaseDetailsFleetPurchaseTypeConverter
+    : JsonConverter<CardSettlementPurchaseDetailsFleetPurchaseType>
+{
+    public override CardSettlementPurchaseDetailsFleetPurchaseType Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "fuel_purchase" => CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+            "non_fuel_purchase" => CardSettlementPurchaseDetailsFleetPurchaseType.NonFuelPurchase,
+            "fuel_and_non_fuel_purchase" =>
+                CardSettlementPurchaseDetailsFleetPurchaseType.FuelAndNonFuelPurchase,
+            "fuel_purchase_with_multiple_fuel_types" =>
+                CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchaseWithMultipleFuelTypes,
+            _ => (CardSettlementPurchaseDetailsFleetPurchaseType)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        CardSettlementPurchaseDetailsFleetPurchaseType value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase => "fuel_purchase",
+                CardSettlementPurchaseDetailsFleetPurchaseType.NonFuelPurchase =>
+                    "non_fuel_purchase",
+                CardSettlementPurchaseDetailsFleetPurchaseType.FuelAndNonFuelPurchase =>
+                    "fuel_and_non_fuel_purchase",
+                CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchaseWithMultipleFuelTypes =>
+                    "fuel_purchase_with_multiple_fuel_types",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The type of service provided.
+/// </summary>
+[JsonConverter(typeof(CardSettlementPurchaseDetailsFleetServiceTypeConverter))]
+public enum CardSettlementPurchaseDetailsFleetServiceType
+{
+    /// <summary>
+    /// Full service
+    /// </summary>
+    FullService,
+
+    /// <summary>
+    /// Self service
+    /// </summary>
+    SelfService,
+
+    /// <summary>
+    /// High speed dispense
+    /// </summary>
+    HighSpeedDispense,
+}
+
+sealed class CardSettlementPurchaseDetailsFleetServiceTypeConverter
+    : JsonConverter<CardSettlementPurchaseDetailsFleetServiceType>
+{
+    public override CardSettlementPurchaseDetailsFleetServiceType Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "full_service" => CardSettlementPurchaseDetailsFleetServiceType.FullService,
+            "self_service" => CardSettlementPurchaseDetailsFleetServiceType.SelfService,
+            "high_speed_dispense" =>
+                CardSettlementPurchaseDetailsFleetServiceType.HighSpeedDispense,
+            _ => (CardSettlementPurchaseDetailsFleetServiceType)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        CardSettlementPurchaseDetailsFleetServiceType value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                CardSettlementPurchaseDetailsFleetServiceType.FullService => "full_service",
+                CardSettlementPurchaseDetailsFleetServiceType.SelfService => "self_service",
+                CardSettlementPurchaseDetailsFleetServiceType.HighSpeedDispense =>
+                    "high_speed_dispense",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
