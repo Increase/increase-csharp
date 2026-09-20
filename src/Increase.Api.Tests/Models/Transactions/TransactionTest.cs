@@ -238,6 +238,27 @@ public class TransactionTest : TestBase
                             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                         },
                         CustomerReferenceIdentifier = "51201",
+                        Fleet = new()
+                        {
+                            EmployeeNumber = "employee_number",
+                            FuelQuantity = "-16699",
+                            FuelType = Transactions::FuelType.Regular,
+                            FuelUnitCostAmount = 0,
+                            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                            FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                            GrossFuelPriceAmount = 0,
+                            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                            GrossNonFuelPriceAmount = 0,
+                            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                            NetFuelPriceAmount = 0,
+                            NetFuelPriceCurrency = "net_fuel_price_currency",
+                            NetNonFuelPriceAmount = 0,
+                            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                            OdometerReading = 0,
+                            PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                            ServiceType = Transactions::ServiceType.FullService,
+                            TrailerNumber = "trailer_number",
+                        },
                         LocalTaxAmount = null,
                         LocalTaxCurrency = "usd",
                         Lodging = new()
@@ -392,6 +413,31 @@ public class TransactionTest : TestBase
                             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                         },
                         CustomerReferenceIdentifier = "51201",
+                        Fleet = new()
+                        {
+                            EmployeeNumber = "employee_number",
+                            FuelQuantity = "-16699",
+                            FuelType =
+                                Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                            FuelUnitCostAmount = 0,
+                            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                            FuelUnitOfMeasure =
+                                Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                            GrossFuelPriceAmount = 0,
+                            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                            GrossNonFuelPriceAmount = 0,
+                            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                            NetFuelPriceAmount = 0,
+                            NetFuelPriceCurrency = "net_fuel_price_currency",
+                            NetNonFuelPriceAmount = 0,
+                            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                            OdometerReading = 0,
+                            PurchaseType =
+                                Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                            ServiceType =
+                                Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                            TrailerNumber = "trailer_number",
+                        },
                         LocalTaxAmount = null,
                         LocalTaxCurrency = "usd",
                         Lodging = new()
@@ -898,6 +944,27 @@ public class TransactionTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::FuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                        ServiceType = Transactions::ServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -1049,6 +1116,30 @@ public class TransactionTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure =
+                            Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType =
+                            Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                        ServiceType =
+                            Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -1565,6 +1656,27 @@ public class TransactionTest : TestBase
                             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                         },
                         CustomerReferenceIdentifier = "51201",
+                        Fleet = new()
+                        {
+                            EmployeeNumber = "employee_number",
+                            FuelQuantity = "-16699",
+                            FuelType = Transactions::FuelType.Regular,
+                            FuelUnitCostAmount = 0,
+                            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                            FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                            GrossFuelPriceAmount = 0,
+                            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                            GrossNonFuelPriceAmount = 0,
+                            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                            NetFuelPriceAmount = 0,
+                            NetFuelPriceCurrency = "net_fuel_price_currency",
+                            NetNonFuelPriceAmount = 0,
+                            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                            OdometerReading = 0,
+                            PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                            ServiceType = Transactions::ServiceType.FullService,
+                            TrailerNumber = "trailer_number",
+                        },
                         LocalTaxAmount = null,
                         LocalTaxCurrency = "usd",
                         Lodging = new()
@@ -1719,6 +1831,31 @@ public class TransactionTest : TestBase
                             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                         },
                         CustomerReferenceIdentifier = "51201",
+                        Fleet = new()
+                        {
+                            EmployeeNumber = "employee_number",
+                            FuelQuantity = "-16699",
+                            FuelType =
+                                Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                            FuelUnitCostAmount = 0,
+                            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                            FuelUnitOfMeasure =
+                                Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                            GrossFuelPriceAmount = 0,
+                            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                            GrossNonFuelPriceAmount = 0,
+                            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                            NetFuelPriceAmount = 0,
+                            NetFuelPriceCurrency = "net_fuel_price_currency",
+                            NetNonFuelPriceAmount = 0,
+                            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                            OdometerReading = 0,
+                            PurchaseType =
+                                Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                            ServiceType =
+                                Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                            TrailerNumber = "trailer_number",
+                        },
                         LocalTaxAmount = null,
                         LocalTaxCurrency = "usd",
                         Lodging = new()
@@ -2238,6 +2375,27 @@ public class TransactionTest : TestBase
                             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                         },
                         CustomerReferenceIdentifier = "51201",
+                        Fleet = new()
+                        {
+                            EmployeeNumber = "employee_number",
+                            FuelQuantity = "-16699",
+                            FuelType = Transactions::FuelType.Regular,
+                            FuelUnitCostAmount = 0,
+                            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                            FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                            GrossFuelPriceAmount = 0,
+                            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                            GrossNonFuelPriceAmount = 0,
+                            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                            NetFuelPriceAmount = 0,
+                            NetFuelPriceCurrency = "net_fuel_price_currency",
+                            NetNonFuelPriceAmount = 0,
+                            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                            OdometerReading = 0,
+                            PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                            ServiceType = Transactions::ServiceType.FullService,
+                            TrailerNumber = "trailer_number",
+                        },
                         LocalTaxAmount = null,
                         LocalTaxCurrency = "usd",
                         Lodging = new()
@@ -2392,6 +2550,31 @@ public class TransactionTest : TestBase
                             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                         },
                         CustomerReferenceIdentifier = "51201",
+                        Fleet = new()
+                        {
+                            EmployeeNumber = "employee_number",
+                            FuelQuantity = "-16699",
+                            FuelType =
+                                Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                            FuelUnitCostAmount = 0,
+                            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                            FuelUnitOfMeasure =
+                                Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                            GrossFuelPriceAmount = 0,
+                            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                            GrossNonFuelPriceAmount = 0,
+                            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                            NetFuelPriceAmount = 0,
+                            NetFuelPriceCurrency = "net_fuel_price_currency",
+                            NetNonFuelPriceAmount = 0,
+                            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                            OdometerReading = 0,
+                            PurchaseType =
+                                Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                            ServiceType =
+                                Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                            TrailerNumber = "trailer_number",
+                        },
                         LocalTaxAmount = null,
                         LocalTaxCurrency = "usd",
                         Lodging = new()
@@ -2905,6 +3088,27 @@ public class TransactionTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::FuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                        ServiceType = Transactions::ServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -3056,6 +3260,30 @@ public class TransactionTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure =
+                            Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType =
+                            Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                        ServiceType =
+                            Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -3572,6 +3800,27 @@ public class TransactionTest : TestBase
                             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                         },
                         CustomerReferenceIdentifier = "51201",
+                        Fleet = new()
+                        {
+                            EmployeeNumber = "employee_number",
+                            FuelQuantity = "-16699",
+                            FuelType = Transactions::FuelType.Regular,
+                            FuelUnitCostAmount = 0,
+                            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                            FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                            GrossFuelPriceAmount = 0,
+                            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                            GrossNonFuelPriceAmount = 0,
+                            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                            NetFuelPriceAmount = 0,
+                            NetFuelPriceCurrency = "net_fuel_price_currency",
+                            NetNonFuelPriceAmount = 0,
+                            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                            OdometerReading = 0,
+                            PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                            ServiceType = Transactions::ServiceType.FullService,
+                            TrailerNumber = "trailer_number",
+                        },
                         LocalTaxAmount = null,
                         LocalTaxCurrency = "usd",
                         Lodging = new()
@@ -3726,6 +3975,31 @@ public class TransactionTest : TestBase
                             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                         },
                         CustomerReferenceIdentifier = "51201",
+                        Fleet = new()
+                        {
+                            EmployeeNumber = "employee_number",
+                            FuelQuantity = "-16699",
+                            FuelType =
+                                Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                            FuelUnitCostAmount = 0,
+                            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                            FuelUnitOfMeasure =
+                                Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                            GrossFuelPriceAmount = 0,
+                            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                            GrossNonFuelPriceAmount = 0,
+                            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                            NetFuelPriceAmount = 0,
+                            NetFuelPriceCurrency = "net_fuel_price_currency",
+                            NetNonFuelPriceAmount = 0,
+                            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                            OdometerReading = 0,
+                            PurchaseType =
+                                Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                            ServiceType =
+                                Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                            TrailerNumber = "trailer_number",
+                        },
                         LocalTaxAmount = null,
                         LocalTaxCurrency = "usd",
                         Lodging = new()
@@ -4239,6 +4513,27 @@ public class TransactionTest : TestBase
                             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                         },
                         CustomerReferenceIdentifier = "51201",
+                        Fleet = new()
+                        {
+                            EmployeeNumber = "employee_number",
+                            FuelQuantity = "-16699",
+                            FuelType = Transactions::FuelType.Regular,
+                            FuelUnitCostAmount = 0,
+                            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                            FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                            GrossFuelPriceAmount = 0,
+                            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                            GrossNonFuelPriceAmount = 0,
+                            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                            NetFuelPriceAmount = 0,
+                            NetFuelPriceCurrency = "net_fuel_price_currency",
+                            NetNonFuelPriceAmount = 0,
+                            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                            OdometerReading = 0,
+                            PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                            ServiceType = Transactions::ServiceType.FullService,
+                            TrailerNumber = "trailer_number",
+                        },
                         LocalTaxAmount = null,
                         LocalTaxCurrency = "usd",
                         Lodging = new()
@@ -4393,6 +4688,31 @@ public class TransactionTest : TestBase
                             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                         },
                         CustomerReferenceIdentifier = "51201",
+                        Fleet = new()
+                        {
+                            EmployeeNumber = "employee_number",
+                            FuelQuantity = "-16699",
+                            FuelType =
+                                Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                            FuelUnitCostAmount = 0,
+                            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                            FuelUnitOfMeasure =
+                                Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                            GrossFuelPriceAmount = 0,
+                            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                            GrossNonFuelPriceAmount = 0,
+                            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                            NetFuelPriceAmount = 0,
+                            NetFuelPriceCurrency = "net_fuel_price_currency",
+                            NetNonFuelPriceAmount = 0,
+                            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                            OdometerReading = 0,
+                            PurchaseType =
+                                Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                            ServiceType =
+                                Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                            TrailerNumber = "trailer_number",
+                        },
                         LocalTaxAmount = null,
                         LocalTaxCurrency = "usd",
                         Lodging = new()
@@ -5017,6 +5337,27 @@ public class SourceTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::FuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                        ServiceType = Transactions::ServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -5168,6 +5509,30 @@ public class SourceTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure =
+                            Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType =
+                            Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                        ServiceType =
+                            Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -5654,6 +6019,27 @@ public class SourceTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::FuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                    ServiceType = Transactions::ServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -5804,6 +6190,30 @@ public class SourceTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure =
+                        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType =
+                        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                    ServiceType =
+                        Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -6377,6 +6787,27 @@ public class SourceTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::FuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                        ServiceType = Transactions::ServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -6528,6 +6959,30 @@ public class SourceTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure =
+                            Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType =
+                            Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                        ServiceType =
+                            Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -7029,6 +7484,27 @@ public class SourceTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::FuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                        ServiceType = Transactions::ServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -7180,6 +7656,30 @@ public class SourceTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure =
+                            Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType =
+                            Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                        ServiceType =
+                            Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -7673,6 +8173,27 @@ public class SourceTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::FuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                    ServiceType = Transactions::ServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -7823,6 +8344,30 @@ public class SourceTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure =
+                        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType =
+                        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                    ServiceType =
+                        Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -8402,6 +8947,27 @@ public class SourceTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::FuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                        ServiceType = Transactions::ServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -8553,6 +9119,30 @@ public class SourceTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure =
+                            Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType =
+                            Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                        ServiceType =
+                            Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -9338,6 +9928,27 @@ public class SourceTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::FuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                        ServiceType = Transactions::ServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -9489,6 +10100,30 @@ public class SourceTest : TestBase
                         WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                     },
                     CustomerReferenceIdentifier = "51201",
+                    Fleet = new()
+                    {
+                        EmployeeNumber = "employee_number",
+                        FuelQuantity = "-16699",
+                        FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                        FuelUnitCostAmount = 0,
+                        FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                        FuelUnitOfMeasure =
+                            Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                        GrossFuelPriceAmount = 0,
+                        GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                        GrossNonFuelPriceAmount = 0,
+                        GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                        NetFuelPriceAmount = 0,
+                        NetFuelPriceCurrency = "net_fuel_price_currency",
+                        NetNonFuelPriceAmount = 0,
+                        NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                        OdometerReading = 0,
+                        PurchaseType =
+                            Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                        ServiceType =
+                            Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                        TrailerNumber = "trailer_number",
+                    },
                     LocalTaxAmount = null,
                     LocalTaxCurrency = "usd",
                     Lodging = new()
@@ -15021,6 +15656,27 @@ public class CardRefundTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::FuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                    ServiceType = Transactions::ServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -15158,6 +15814,27 @@ public class CardRefundTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::FuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                ServiceType = Transactions::ServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -15320,6 +15997,27 @@ public class CardRefundTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::FuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                    ServiceType = Transactions::ServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -15466,6 +16164,27 @@ public class CardRefundTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::FuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                    ServiceType = Transactions::ServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -15610,6 +16329,27 @@ public class CardRefundTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::FuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                ServiceType = Transactions::ServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -15772,6 +16512,27 @@ public class CardRefundTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::FuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                    ServiceType = Transactions::ServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -15912,6 +16673,27 @@ public class CardRefundTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::FuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                    ServiceType = Transactions::ServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -16487,6 +17269,27 @@ public class PurchaseDetailsTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::FuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                ServiceType = Transactions::ServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -16574,6 +17377,27 @@ public class PurchaseDetailsTest : TestBase
             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
         };
         string expectedCustomerReferenceIdentifier = "51201";
+        Transactions::Fleet expectedFleet = new()
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::FuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType = Transactions::PurchaseType.FuelPurchase,
+            ServiceType = Transactions::ServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
         string expectedLocalTaxCurrency = "usd";
         Transactions::Lodging expectedLodging = new()
         {
@@ -16641,6 +17465,7 @@ public class PurchaseDetailsTest : TestBase
 
         Assert.Equal(expectedCarRental, model.CarRental);
         Assert.Equal(expectedCustomerReferenceIdentifier, model.CustomerReferenceIdentifier);
+        Assert.Equal(expectedFleet, model.Fleet);
         Assert.Null(model.LocalTaxAmount);
         Assert.Equal(expectedLocalTaxCurrency, model.LocalTaxCurrency);
         Assert.Equal(expectedLodging, model.Lodging);
@@ -16676,6 +17501,27 @@ public class PurchaseDetailsTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::FuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                ServiceType = Transactions::ServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -16777,6 +17623,27 @@ public class PurchaseDetailsTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::FuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                ServiceType = Transactions::ServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -16871,6 +17738,27 @@ public class PurchaseDetailsTest : TestBase
             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
         };
         string expectedCustomerReferenceIdentifier = "51201";
+        Transactions::Fleet expectedFleet = new()
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::FuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType = Transactions::PurchaseType.FuelPurchase,
+            ServiceType = Transactions::ServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
         string expectedLocalTaxCurrency = "usd";
         Transactions::Lodging expectedLodging = new()
         {
@@ -16938,6 +17826,7 @@ public class PurchaseDetailsTest : TestBase
 
         Assert.Equal(expectedCarRental, deserialized.CarRental);
         Assert.Equal(expectedCustomerReferenceIdentifier, deserialized.CustomerReferenceIdentifier);
+        Assert.Equal(expectedFleet, deserialized.Fleet);
         Assert.Null(deserialized.LocalTaxAmount);
         Assert.Equal(expectedLocalTaxCurrency, deserialized.LocalTaxCurrency);
         Assert.Equal(expectedLodging, deserialized.Lodging);
@@ -16973,6 +17862,27 @@ public class PurchaseDetailsTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::FuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                ServiceType = Transactions::ServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -17068,6 +17978,27 @@ public class PurchaseDetailsTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::FuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType = Transactions::PurchaseType.FuelPurchase,
+                ServiceType = Transactions::ServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -17477,6 +18408,684 @@ public class NoShowIndicatorTest : TestBase
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, Transactions::NoShowIndicator>
         >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class FleetTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Transactions::Fleet
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::FuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType = Transactions::PurchaseType.FuelPurchase,
+            ServiceType = Transactions::ServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
+
+        string expectedEmployeeNumber = "employee_number";
+        string expectedFuelQuantity = "-16699";
+        ApiEnum<string, Transactions::FuelType> expectedFuelType = Transactions::FuelType.Regular;
+        long expectedFuelUnitCostAmount = 0;
+        string expectedFuelUnitCostCurrency = "fuel_unit_cost_currency";
+        ApiEnum<string, Transactions::FuelUnitOfMeasure> expectedFuelUnitOfMeasure =
+            Transactions::FuelUnitOfMeasure.Liter;
+        long expectedGrossFuelPriceAmount = 0;
+        string expectedGrossFuelPriceCurrency = "gross_fuel_price_currency";
+        long expectedGrossNonFuelPriceAmount = 0;
+        string expectedGrossNonFuelPriceCurrency = "gross_non_fuel_price_currency";
+        long expectedNetFuelPriceAmount = 0;
+        string expectedNetFuelPriceCurrency = "net_fuel_price_currency";
+        long expectedNetNonFuelPriceAmount = 0;
+        string expectedNetNonFuelPriceCurrency = "net_non_fuel_price_currency";
+        long expectedOdometerReading = 0;
+        ApiEnum<string, Transactions::PurchaseType> expectedPurchaseType =
+            Transactions::PurchaseType.FuelPurchase;
+        ApiEnum<string, Transactions::ServiceType> expectedServiceType =
+            Transactions::ServiceType.FullService;
+        string expectedTrailerNumber = "trailer_number";
+
+        Assert.Equal(expectedEmployeeNumber, model.EmployeeNumber);
+        Assert.Equal(expectedFuelQuantity, model.FuelQuantity);
+        Assert.Equal(expectedFuelType, model.FuelType);
+        Assert.Equal(expectedFuelUnitCostAmount, model.FuelUnitCostAmount);
+        Assert.Equal(expectedFuelUnitCostCurrency, model.FuelUnitCostCurrency);
+        Assert.Equal(expectedFuelUnitOfMeasure, model.FuelUnitOfMeasure);
+        Assert.Equal(expectedGrossFuelPriceAmount, model.GrossFuelPriceAmount);
+        Assert.Equal(expectedGrossFuelPriceCurrency, model.GrossFuelPriceCurrency);
+        Assert.Equal(expectedGrossNonFuelPriceAmount, model.GrossNonFuelPriceAmount);
+        Assert.Equal(expectedGrossNonFuelPriceCurrency, model.GrossNonFuelPriceCurrency);
+        Assert.Equal(expectedNetFuelPriceAmount, model.NetFuelPriceAmount);
+        Assert.Equal(expectedNetFuelPriceCurrency, model.NetFuelPriceCurrency);
+        Assert.Equal(expectedNetNonFuelPriceAmount, model.NetNonFuelPriceAmount);
+        Assert.Equal(expectedNetNonFuelPriceCurrency, model.NetNonFuelPriceCurrency);
+        Assert.Equal(expectedOdometerReading, model.OdometerReading);
+        Assert.Equal(expectedPurchaseType, model.PurchaseType);
+        Assert.Equal(expectedServiceType, model.ServiceType);
+        Assert.Equal(expectedTrailerNumber, model.TrailerNumber);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Transactions::Fleet
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::FuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType = Transactions::PurchaseType.FuelPurchase,
+            ServiceType = Transactions::ServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Transactions::Fleet>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Transactions::Fleet
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::FuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType = Transactions::PurchaseType.FuelPurchase,
+            ServiceType = Transactions::ServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Transactions::Fleet>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedEmployeeNumber = "employee_number";
+        string expectedFuelQuantity = "-16699";
+        ApiEnum<string, Transactions::FuelType> expectedFuelType = Transactions::FuelType.Regular;
+        long expectedFuelUnitCostAmount = 0;
+        string expectedFuelUnitCostCurrency = "fuel_unit_cost_currency";
+        ApiEnum<string, Transactions::FuelUnitOfMeasure> expectedFuelUnitOfMeasure =
+            Transactions::FuelUnitOfMeasure.Liter;
+        long expectedGrossFuelPriceAmount = 0;
+        string expectedGrossFuelPriceCurrency = "gross_fuel_price_currency";
+        long expectedGrossNonFuelPriceAmount = 0;
+        string expectedGrossNonFuelPriceCurrency = "gross_non_fuel_price_currency";
+        long expectedNetFuelPriceAmount = 0;
+        string expectedNetFuelPriceCurrency = "net_fuel_price_currency";
+        long expectedNetNonFuelPriceAmount = 0;
+        string expectedNetNonFuelPriceCurrency = "net_non_fuel_price_currency";
+        long expectedOdometerReading = 0;
+        ApiEnum<string, Transactions::PurchaseType> expectedPurchaseType =
+            Transactions::PurchaseType.FuelPurchase;
+        ApiEnum<string, Transactions::ServiceType> expectedServiceType =
+            Transactions::ServiceType.FullService;
+        string expectedTrailerNumber = "trailer_number";
+
+        Assert.Equal(expectedEmployeeNumber, deserialized.EmployeeNumber);
+        Assert.Equal(expectedFuelQuantity, deserialized.FuelQuantity);
+        Assert.Equal(expectedFuelType, deserialized.FuelType);
+        Assert.Equal(expectedFuelUnitCostAmount, deserialized.FuelUnitCostAmount);
+        Assert.Equal(expectedFuelUnitCostCurrency, deserialized.FuelUnitCostCurrency);
+        Assert.Equal(expectedFuelUnitOfMeasure, deserialized.FuelUnitOfMeasure);
+        Assert.Equal(expectedGrossFuelPriceAmount, deserialized.GrossFuelPriceAmount);
+        Assert.Equal(expectedGrossFuelPriceCurrency, deserialized.GrossFuelPriceCurrency);
+        Assert.Equal(expectedGrossNonFuelPriceAmount, deserialized.GrossNonFuelPriceAmount);
+        Assert.Equal(expectedGrossNonFuelPriceCurrency, deserialized.GrossNonFuelPriceCurrency);
+        Assert.Equal(expectedNetFuelPriceAmount, deserialized.NetFuelPriceAmount);
+        Assert.Equal(expectedNetFuelPriceCurrency, deserialized.NetFuelPriceCurrency);
+        Assert.Equal(expectedNetNonFuelPriceAmount, deserialized.NetNonFuelPriceAmount);
+        Assert.Equal(expectedNetNonFuelPriceCurrency, deserialized.NetNonFuelPriceCurrency);
+        Assert.Equal(expectedOdometerReading, deserialized.OdometerReading);
+        Assert.Equal(expectedPurchaseType, deserialized.PurchaseType);
+        Assert.Equal(expectedServiceType, deserialized.ServiceType);
+        Assert.Equal(expectedTrailerNumber, deserialized.TrailerNumber);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Transactions::Fleet
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::FuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType = Transactions::PurchaseType.FuelPurchase,
+            ServiceType = Transactions::ServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Transactions::Fleet
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::FuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure = Transactions::FuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType = Transactions::PurchaseType.FuelPurchase,
+            ServiceType = Transactions::ServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
+
+        Transactions::Fleet copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class FuelTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(Transactions::FuelType.Regular)]
+    [InlineData(Transactions::FuelType.MidOrPlus)]
+    [InlineData(Transactions::FuelType.PremiumOrSuper)]
+    [InlineData(Transactions::FuelType.MidOrPlus2)]
+    [InlineData(Transactions::FuelType.PremiumOrSuper2)]
+    [InlineData(Transactions::FuelType.RegularEthanol5BlendNonUs)]
+    [InlineData(Transactions::FuelType.MidOrPlusEthanol5BlendNonUs)]
+    [InlineData(Transactions::FuelType.PremiumOrSuperEthanol5BlendNonUs)]
+    [InlineData(Transactions::FuelType.Ethanol7_7Blend)]
+    [InlineData(Transactions::FuelType.MidOrPlus2Ethanol5BlendNonUs)]
+    [InlineData(Transactions::FuelType.GreenGasolineRegular)]
+    [InlineData(Transactions::FuelType.GreenGasolineMidOrPlus)]
+    [InlineData(Transactions::FuelType.GreenGasolinePremiumOrSuper)]
+    [InlineData(Transactions::FuelType.RegularDiesel2)]
+    [InlineData(Transactions::FuelType.PremiumDiesel2)]
+    [InlineData(Transactions::FuelType.RegularDiesel1)]
+    [InlineData(Transactions::FuelType.CompressedNaturalGas)]
+    [InlineData(Transactions::FuelType.LiquidPropaneGas)]
+    [InlineData(Transactions::FuelType.LiquidNaturalGas)]
+    [InlineData(Transactions::FuelType.E85)]
+    [InlineData(Transactions::FuelType.RegularReformulated)]
+    [InlineData(Transactions::FuelType.MidOrPlusReformulated)]
+    [InlineData(Transactions::FuelType.PremiumOrSuperReformulated)]
+    [InlineData(Transactions::FuelType.MidOrPlus2Reformulated)]
+    [InlineData(Transactions::FuelType.PremiumOrSuper2Reformulated)]
+    [InlineData(Transactions::FuelType.DieselOffRoad1_2NonTaxable)]
+    [InlineData(Transactions::FuelType.DieselOffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlendOffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.RacingFuel)]
+    [InlineData(Transactions::FuelType.MidOrPlus2Ethanol10Blend)]
+    [InlineData(Transactions::FuelType.PremiumOrSuper2Ethanol10Blend)]
+    [InlineData(Transactions::FuelType.MidOrPlusEthanol2_15Blend)]
+    [InlineData(Transactions::FuelType.PremiumOrSuperEthanol2_15Blend)]
+    [InlineData(Transactions::FuelType.PremiumOrSuper2Ethanol5BlendNonUs)]
+    [InlineData(Transactions::FuelType.RegularEthanol10Blend)]
+    [InlineData(Transactions::FuelType.MidOrPlusEthanol10Blend)]
+    [InlineData(Transactions::FuelType.PremiumOrSuperEthanol10Blend)]
+    [InlineData(Transactions::FuelType.B2DieselBlend2Biodiesel)]
+    [InlineData(Transactions::FuelType.B5DieselBlend5Biodiesel)]
+    [InlineData(Transactions::FuelType.B10DieselBlend10Biodiesel)]
+    [InlineData(Transactions::FuelType.B11DieselBlend11Biodiesel)]
+    [InlineData(Transactions::FuelType.B15DieselBlend15Biodiesel)]
+    [InlineData(Transactions::FuelType.B20DieselBlend20Biodiesel)]
+    [InlineData(Transactions::FuelType.B100DieselBlend100Biodiesel)]
+    [InlineData(Transactions::FuelType.B1DieselBlend1Biodiesel)]
+    [InlineData(Transactions::FuelType.AdditizedDiesel2)]
+    [InlineData(Transactions::FuelType.AdditizedDiesel3)]
+    [InlineData(Transactions::FuelType.B7DieselBlend7BiodieselNonUs)]
+    [InlineData(Transactions::FuelType.B7PremiumDieselBlend7BiodieselNonUs)]
+    [InlineData(Transactions::FuelType.RenewableDieselR95OrGreater)]
+    [InlineData(Transactions::FuelType.RenewableDieselBiodiesel6To20)]
+    [InlineData(Transactions::FuelType.DieselExhaustFluidPump)]
+    [InlineData(Transactions::FuelType.PremiumDiesel1)]
+    [InlineData(Transactions::FuelType.RegularEthanol15Blend)]
+    [InlineData(Transactions::FuelType.MidOrPlusEthanol15Blend)]
+    [InlineData(Transactions::FuelType.PremiumOrSuperEthanol15Blend)]
+    [InlineData(Transactions::FuelType.PremiumDieselBlendLessThan20Biodiesel)]
+    [InlineData(Transactions::FuelType.PremiumDieselBlend20OrMoreBiodiesel)]
+    [InlineData(Transactions::FuelType.B75DieselBlend75Biodiesel)]
+    [InlineData(Transactions::FuelType.B99DieselBlend99Biodiesel)]
+    [InlineData(Transactions::FuelType.ReservedForPreauthorizationUseOnly)]
+    [InlineData(Transactions::FuelType.UndefinedFuelReservedForProprietaryUse)]
+    [InlineData(Transactions::FuelType.MiscellaneousFuel)]
+    [InlineData(Transactions::FuelType.JetFuel)]
+    [InlineData(Transactions::FuelType.AviationFuelRegular)]
+    [InlineData(Transactions::FuelType.AviationFuelPremium)]
+    [InlineData(Transactions::FuelType.AviationFuelJp8)]
+    [InlineData(Transactions::FuelType.AviationFuel4)]
+    [InlineData(Transactions::FuelType.AviationFuel5)]
+    [InlineData(Transactions::FuelType.BiojetDiesel)]
+    [InlineData(Transactions::FuelType.AviationBiofuelGasoline)]
+    [InlineData(Transactions::FuelType.UndefinedAviationFuelReservedForProprietaryUse)]
+    [InlineData(Transactions::FuelType.MiscellaneousAviationFuel)]
+    [InlineData(Transactions::FuelType.MarineFuel1)]
+    [InlineData(Transactions::FuelType.MarineFuel2)]
+    [InlineData(Transactions::FuelType.MarineFuel3)]
+    [InlineData(Transactions::FuelType.MarineFuel4)]
+    [InlineData(Transactions::FuelType.MarineFuel5)]
+    [InlineData(Transactions::FuelType.MarineOther)]
+    [InlineData(Transactions::FuelType.MarineDiesel)]
+    [InlineData(Transactions::FuelType.MiscellaneousMarineFuel)]
+    [InlineData(Transactions::FuelType.KeroseneLowSulfur)]
+    [InlineData(Transactions::FuelType.WhiteGas)]
+    [InlineData(Transactions::FuelType.HeatingOil)]
+    [InlineData(Transactions::FuelType.OtherFuelNonTaxable)]
+    [InlineData(Transactions::FuelType.KeroseneUltraLowSulfur)]
+    [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel1_110Volt)]
+    [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel2_240Volt)]
+    [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel3_480Volt)]
+    [InlineData(Transactions::FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend1OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend75OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend99OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend100OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel4_800Volt)]
+    [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel5Megawatt)]
+    [InlineData(Transactions::FuelType.HydrotreatedVegetableOil100)]
+    [InlineData(Transactions::FuelType.BioCompressedNaturalGas)]
+    [InlineData(Transactions::FuelType.MiscellaneousOtherFuel)]
+    public void Validation_Works(Transactions::FuelType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::FuelType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Transactions::FuelType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Transactions::FuelType.Regular)]
+    [InlineData(Transactions::FuelType.MidOrPlus)]
+    [InlineData(Transactions::FuelType.PremiumOrSuper)]
+    [InlineData(Transactions::FuelType.MidOrPlus2)]
+    [InlineData(Transactions::FuelType.PremiumOrSuper2)]
+    [InlineData(Transactions::FuelType.RegularEthanol5BlendNonUs)]
+    [InlineData(Transactions::FuelType.MidOrPlusEthanol5BlendNonUs)]
+    [InlineData(Transactions::FuelType.PremiumOrSuperEthanol5BlendNonUs)]
+    [InlineData(Transactions::FuelType.Ethanol7_7Blend)]
+    [InlineData(Transactions::FuelType.MidOrPlus2Ethanol5BlendNonUs)]
+    [InlineData(Transactions::FuelType.GreenGasolineRegular)]
+    [InlineData(Transactions::FuelType.GreenGasolineMidOrPlus)]
+    [InlineData(Transactions::FuelType.GreenGasolinePremiumOrSuper)]
+    [InlineData(Transactions::FuelType.RegularDiesel2)]
+    [InlineData(Transactions::FuelType.PremiumDiesel2)]
+    [InlineData(Transactions::FuelType.RegularDiesel1)]
+    [InlineData(Transactions::FuelType.CompressedNaturalGas)]
+    [InlineData(Transactions::FuelType.LiquidPropaneGas)]
+    [InlineData(Transactions::FuelType.LiquidNaturalGas)]
+    [InlineData(Transactions::FuelType.E85)]
+    [InlineData(Transactions::FuelType.RegularReformulated)]
+    [InlineData(Transactions::FuelType.MidOrPlusReformulated)]
+    [InlineData(Transactions::FuelType.PremiumOrSuperReformulated)]
+    [InlineData(Transactions::FuelType.MidOrPlus2Reformulated)]
+    [InlineData(Transactions::FuelType.PremiumOrSuper2Reformulated)]
+    [InlineData(Transactions::FuelType.DieselOffRoad1_2NonTaxable)]
+    [InlineData(Transactions::FuelType.DieselOffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlendOffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.RacingFuel)]
+    [InlineData(Transactions::FuelType.MidOrPlus2Ethanol10Blend)]
+    [InlineData(Transactions::FuelType.PremiumOrSuper2Ethanol10Blend)]
+    [InlineData(Transactions::FuelType.MidOrPlusEthanol2_15Blend)]
+    [InlineData(Transactions::FuelType.PremiumOrSuperEthanol2_15Blend)]
+    [InlineData(Transactions::FuelType.PremiumOrSuper2Ethanol5BlendNonUs)]
+    [InlineData(Transactions::FuelType.RegularEthanol10Blend)]
+    [InlineData(Transactions::FuelType.MidOrPlusEthanol10Blend)]
+    [InlineData(Transactions::FuelType.PremiumOrSuperEthanol10Blend)]
+    [InlineData(Transactions::FuelType.B2DieselBlend2Biodiesel)]
+    [InlineData(Transactions::FuelType.B5DieselBlend5Biodiesel)]
+    [InlineData(Transactions::FuelType.B10DieselBlend10Biodiesel)]
+    [InlineData(Transactions::FuelType.B11DieselBlend11Biodiesel)]
+    [InlineData(Transactions::FuelType.B15DieselBlend15Biodiesel)]
+    [InlineData(Transactions::FuelType.B20DieselBlend20Biodiesel)]
+    [InlineData(Transactions::FuelType.B100DieselBlend100Biodiesel)]
+    [InlineData(Transactions::FuelType.B1DieselBlend1Biodiesel)]
+    [InlineData(Transactions::FuelType.AdditizedDiesel2)]
+    [InlineData(Transactions::FuelType.AdditizedDiesel3)]
+    [InlineData(Transactions::FuelType.B7DieselBlend7BiodieselNonUs)]
+    [InlineData(Transactions::FuelType.B7PremiumDieselBlend7BiodieselNonUs)]
+    [InlineData(Transactions::FuelType.RenewableDieselR95OrGreater)]
+    [InlineData(Transactions::FuelType.RenewableDieselBiodiesel6To20)]
+    [InlineData(Transactions::FuelType.DieselExhaustFluidPump)]
+    [InlineData(Transactions::FuelType.PremiumDiesel1)]
+    [InlineData(Transactions::FuelType.RegularEthanol15Blend)]
+    [InlineData(Transactions::FuelType.MidOrPlusEthanol15Blend)]
+    [InlineData(Transactions::FuelType.PremiumOrSuperEthanol15Blend)]
+    [InlineData(Transactions::FuelType.PremiumDieselBlendLessThan20Biodiesel)]
+    [InlineData(Transactions::FuelType.PremiumDieselBlend20OrMoreBiodiesel)]
+    [InlineData(Transactions::FuelType.B75DieselBlend75Biodiesel)]
+    [InlineData(Transactions::FuelType.B99DieselBlend99Biodiesel)]
+    [InlineData(Transactions::FuelType.ReservedForPreauthorizationUseOnly)]
+    [InlineData(Transactions::FuelType.UndefinedFuelReservedForProprietaryUse)]
+    [InlineData(Transactions::FuelType.MiscellaneousFuel)]
+    [InlineData(Transactions::FuelType.JetFuel)]
+    [InlineData(Transactions::FuelType.AviationFuelRegular)]
+    [InlineData(Transactions::FuelType.AviationFuelPremium)]
+    [InlineData(Transactions::FuelType.AviationFuelJp8)]
+    [InlineData(Transactions::FuelType.AviationFuel4)]
+    [InlineData(Transactions::FuelType.AviationFuel5)]
+    [InlineData(Transactions::FuelType.BiojetDiesel)]
+    [InlineData(Transactions::FuelType.AviationBiofuelGasoline)]
+    [InlineData(Transactions::FuelType.UndefinedAviationFuelReservedForProprietaryUse)]
+    [InlineData(Transactions::FuelType.MiscellaneousAviationFuel)]
+    [InlineData(Transactions::FuelType.MarineFuel1)]
+    [InlineData(Transactions::FuelType.MarineFuel2)]
+    [InlineData(Transactions::FuelType.MarineFuel3)]
+    [InlineData(Transactions::FuelType.MarineFuel4)]
+    [InlineData(Transactions::FuelType.MarineFuel5)]
+    [InlineData(Transactions::FuelType.MarineOther)]
+    [InlineData(Transactions::FuelType.MarineDiesel)]
+    [InlineData(Transactions::FuelType.MiscellaneousMarineFuel)]
+    [InlineData(Transactions::FuelType.KeroseneLowSulfur)]
+    [InlineData(Transactions::FuelType.WhiteGas)]
+    [InlineData(Transactions::FuelType.HeatingOil)]
+    [InlineData(Transactions::FuelType.OtherFuelNonTaxable)]
+    [InlineData(Transactions::FuelType.KeroseneUltraLowSulfur)]
+    [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel1_110Volt)]
+    [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel2_240Volt)]
+    [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel3_480Volt)]
+    [InlineData(Transactions::FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend1OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend75OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend99OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend100OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel4_800Volt)]
+    [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel5Megawatt)]
+    [InlineData(Transactions::FuelType.HydrotreatedVegetableOil100)]
+    [InlineData(Transactions::FuelType.BioCompressedNaturalGas)]
+    [InlineData(Transactions::FuelType.MiscellaneousOtherFuel)]
+    public void SerializationRoundtrip_Works(Transactions::FuelType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::FuelType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Transactions::FuelType>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Transactions::FuelType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Transactions::FuelType>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class FuelUnitOfMeasureTest : TestBase
+{
+    [Theory]
+    [InlineData(Transactions::FuelUnitOfMeasure.Liter)]
+    [InlineData(Transactions::FuelUnitOfMeasure.UsGallon)]
+    [InlineData(Transactions::FuelUnitOfMeasure.ImperialGallon)]
+    [InlineData(Transactions::FuelUnitOfMeasure.Kilogram)]
+    [InlineData(Transactions::FuelUnitOfMeasure.Pound)]
+    [InlineData(Transactions::FuelUnitOfMeasure.ChargingMinutes)]
+    [InlineData(Transactions::FuelUnitOfMeasure.KilowattHour)]
+    public void Validation_Works(Transactions::FuelUnitOfMeasure rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::FuelUnitOfMeasure> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Transactions::FuelUnitOfMeasure>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Transactions::FuelUnitOfMeasure.Liter)]
+    [InlineData(Transactions::FuelUnitOfMeasure.UsGallon)]
+    [InlineData(Transactions::FuelUnitOfMeasure.ImperialGallon)]
+    [InlineData(Transactions::FuelUnitOfMeasure.Kilogram)]
+    [InlineData(Transactions::FuelUnitOfMeasure.Pound)]
+    [InlineData(Transactions::FuelUnitOfMeasure.ChargingMinutes)]
+    [InlineData(Transactions::FuelUnitOfMeasure.KilowattHour)]
+    public void SerializationRoundtrip_Works(Transactions::FuelUnitOfMeasure rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::FuelUnitOfMeasure> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::FuelUnitOfMeasure>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Transactions::FuelUnitOfMeasure>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::FuelUnitOfMeasure>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class PurchaseTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(Transactions::PurchaseType.FuelPurchase)]
+    [InlineData(Transactions::PurchaseType.NonFuelPurchase)]
+    [InlineData(Transactions::PurchaseType.FuelAndNonFuelPurchase)]
+    [InlineData(Transactions::PurchaseType.FuelPurchaseWithMultipleFuelTypes)]
+    public void Validation_Works(Transactions::PurchaseType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::PurchaseType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Transactions::PurchaseType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Transactions::PurchaseType.FuelPurchase)]
+    [InlineData(Transactions::PurchaseType.NonFuelPurchase)]
+    [InlineData(Transactions::PurchaseType.FuelAndNonFuelPurchase)]
+    [InlineData(Transactions::PurchaseType.FuelPurchaseWithMultipleFuelTypes)]
+    public void SerializationRoundtrip_Works(Transactions::PurchaseType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::PurchaseType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Transactions::PurchaseType>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Transactions::PurchaseType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Transactions::PurchaseType>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class ServiceTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(Transactions::ServiceType.FullService)]
+    [InlineData(Transactions::ServiceType.SelfService)]
+    [InlineData(Transactions::ServiceType.HighSpeedDispense)]
+    public void Validation_Works(Transactions::ServiceType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::ServiceType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Transactions::ServiceType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Transactions::ServiceType.FullService)]
+    [InlineData(Transactions::ServiceType.SelfService)]
+    [InlineData(Transactions::ServiceType.HighSpeedDispense)]
+    public void SerializationRoundtrip_Works(Transactions::ServiceType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::ServiceType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Transactions::ServiceType>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Transactions::ServiceType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Transactions::ServiceType>>(
+            json,
+            ModelBase.SerializerOptions
+        );
 
         Assert.Equal(value, deserialized);
     }
@@ -19619,6 +21228,30 @@ public class CardSettlementTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure =
+                        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType =
+                        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                    ServiceType =
+                        Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -19770,6 +21403,30 @@ public class CardSettlementTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure =
+                    Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType =
+                    Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                ServiceType =
+                    Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -19959,6 +21616,30 @@ public class CardSettlementTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure =
+                        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType =
+                        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                    ServiceType =
+                        Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -20124,6 +21805,30 @@ public class CardSettlementTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure =
+                        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType =
+                        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                    ServiceType =
+                        Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -20282,6 +21987,30 @@ public class CardSettlementTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure =
+                    Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType =
+                    Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                ServiceType =
+                    Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -20471,6 +22200,30 @@ public class CardSettlementTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure =
+                        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType =
+                        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                    ServiceType =
+                        Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -20630,6 +22383,30 @@ public class CardSettlementTest : TestBase
                     WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
                 },
                 CustomerReferenceIdentifier = "51201",
+                Fleet = new()
+                {
+                    EmployeeNumber = "employee_number",
+                    FuelQuantity = "-16699",
+                    FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                    FuelUnitCostAmount = 0,
+                    FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                    FuelUnitOfMeasure =
+                        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                    GrossFuelPriceAmount = 0,
+                    GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                    GrossNonFuelPriceAmount = 0,
+                    GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                    NetFuelPriceAmount = 0,
+                    NetFuelPriceCurrency = "net_fuel_price_currency",
+                    NetNonFuelPriceAmount = 0,
+                    NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                    OdometerReading = 0,
+                    PurchaseType =
+                        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                    ServiceType =
+                        Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                    TrailerNumber = "trailer_number",
+                },
                 LocalTaxAmount = null,
                 LocalTaxCurrency = "usd",
                 Lodging = new()
@@ -21269,6 +23046,30 @@ public class CardSettlementPurchaseDetailsTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure =
+                    Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType =
+                    Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                ServiceType =
+                    Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -21367,6 +23168,29 @@ public class CardSettlementPurchaseDetailsTest : TestBase
             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
         };
         string expectedCustomerReferenceIdentifier = "51201";
+        Transactions::CardSettlementPurchaseDetailsFleet expectedFleet = new()
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure =
+                Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType =
+                Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+            ServiceType = Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
         string expectedLocalTaxCurrency = "usd";
         Transactions::CardSettlementPurchaseDetailsLodging expectedLodging = new()
         {
@@ -21445,6 +23269,7 @@ public class CardSettlementPurchaseDetailsTest : TestBase
 
         Assert.Equal(expectedCarRental, model.CarRental);
         Assert.Equal(expectedCustomerReferenceIdentifier, model.CustomerReferenceIdentifier);
+        Assert.Equal(expectedFleet, model.Fleet);
         Assert.Null(model.LocalTaxAmount);
         Assert.Equal(expectedLocalTaxCurrency, model.LocalTaxCurrency);
         Assert.Equal(expectedLodging, model.Lodging);
@@ -21482,6 +23307,30 @@ public class CardSettlementPurchaseDetailsTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure =
+                    Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType =
+                    Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                ServiceType =
+                    Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -21594,6 +23443,30 @@ public class CardSettlementPurchaseDetailsTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure =
+                    Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType =
+                    Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                ServiceType =
+                    Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -21699,6 +23572,29 @@ public class CardSettlementPurchaseDetailsTest : TestBase
             WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
         };
         string expectedCustomerReferenceIdentifier = "51201";
+        Transactions::CardSettlementPurchaseDetailsFleet expectedFleet = new()
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure =
+                Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType =
+                Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+            ServiceType = Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
         string expectedLocalTaxCurrency = "usd";
         Transactions::CardSettlementPurchaseDetailsLodging expectedLodging = new()
         {
@@ -21777,6 +23673,7 @@ public class CardSettlementPurchaseDetailsTest : TestBase
 
         Assert.Equal(expectedCarRental, deserialized.CarRental);
         Assert.Equal(expectedCustomerReferenceIdentifier, deserialized.CustomerReferenceIdentifier);
+        Assert.Equal(expectedFleet, deserialized.Fleet);
         Assert.Null(deserialized.LocalTaxAmount);
         Assert.Equal(expectedLocalTaxCurrency, deserialized.LocalTaxCurrency);
         Assert.Equal(expectedLodging, deserialized.Lodging);
@@ -21814,6 +23711,30 @@ public class CardSettlementPurchaseDetailsTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure =
+                    Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType =
+                    Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                ServiceType =
+                    Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -21920,6 +23841,30 @@ public class CardSettlementPurchaseDetailsTest : TestBase
                 WeeklyRentalRateCurrency = "weekly_rental_rate_currency",
             },
             CustomerReferenceIdentifier = "51201",
+            Fleet = new()
+            {
+                EmployeeNumber = "employee_number",
+                FuelQuantity = "-16699",
+                FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+                FuelUnitCostAmount = 0,
+                FuelUnitCostCurrency = "fuel_unit_cost_currency",
+                FuelUnitOfMeasure =
+                    Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+                GrossFuelPriceAmount = 0,
+                GrossFuelPriceCurrency = "gross_fuel_price_currency",
+                GrossNonFuelPriceAmount = 0,
+                GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+                NetFuelPriceAmount = 0,
+                NetFuelPriceCurrency = "net_fuel_price_currency",
+                NetNonFuelPriceAmount = 0,
+                NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+                OdometerReading = 0,
+                PurchaseType =
+                    Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+                ServiceType =
+                    Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+                TrailerNumber = "trailer_number",
+            },
             LocalTaxAmount = null,
             LocalTaxCurrency = "usd",
             Lodging = new()
@@ -22371,6 +24316,870 @@ public class CardSettlementPurchaseDetailsCarRentalNoShowIndicatorTest : TestBas
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, Transactions::CardSettlementPurchaseDetailsCarRentalNoShowIndicator>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardSettlementPurchaseDetailsFleetTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Transactions::CardSettlementPurchaseDetailsFleet
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure =
+                Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType =
+                Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+            ServiceType = Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
+
+        string expectedEmployeeNumber = "employee_number";
+        string expectedFuelQuantity = "-16699";
+        ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelType> expectedFuelType =
+            Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular;
+        long expectedFuelUnitCostAmount = 0;
+        string expectedFuelUnitCostCurrency = "fuel_unit_cost_currency";
+        ApiEnum<
+            string,
+            Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure
+        > expectedFuelUnitOfMeasure =
+            Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter;
+        long expectedGrossFuelPriceAmount = 0;
+        string expectedGrossFuelPriceCurrency = "gross_fuel_price_currency";
+        long expectedGrossNonFuelPriceAmount = 0;
+        string expectedGrossNonFuelPriceCurrency = "gross_non_fuel_price_currency";
+        long expectedNetFuelPriceAmount = 0;
+        string expectedNetFuelPriceCurrency = "net_fuel_price_currency";
+        long expectedNetNonFuelPriceAmount = 0;
+        string expectedNetNonFuelPriceCurrency = "net_non_fuel_price_currency";
+        long expectedOdometerReading = 0;
+        ApiEnum<
+            string,
+            Transactions::CardSettlementPurchaseDetailsFleetPurchaseType
+        > expectedPurchaseType =
+            Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase;
+        ApiEnum<
+            string,
+            Transactions::CardSettlementPurchaseDetailsFleetServiceType
+        > expectedServiceType =
+            Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService;
+        string expectedTrailerNumber = "trailer_number";
+
+        Assert.Equal(expectedEmployeeNumber, model.EmployeeNumber);
+        Assert.Equal(expectedFuelQuantity, model.FuelQuantity);
+        Assert.Equal(expectedFuelType, model.FuelType);
+        Assert.Equal(expectedFuelUnitCostAmount, model.FuelUnitCostAmount);
+        Assert.Equal(expectedFuelUnitCostCurrency, model.FuelUnitCostCurrency);
+        Assert.Equal(expectedFuelUnitOfMeasure, model.FuelUnitOfMeasure);
+        Assert.Equal(expectedGrossFuelPriceAmount, model.GrossFuelPriceAmount);
+        Assert.Equal(expectedGrossFuelPriceCurrency, model.GrossFuelPriceCurrency);
+        Assert.Equal(expectedGrossNonFuelPriceAmount, model.GrossNonFuelPriceAmount);
+        Assert.Equal(expectedGrossNonFuelPriceCurrency, model.GrossNonFuelPriceCurrency);
+        Assert.Equal(expectedNetFuelPriceAmount, model.NetFuelPriceAmount);
+        Assert.Equal(expectedNetFuelPriceCurrency, model.NetFuelPriceCurrency);
+        Assert.Equal(expectedNetNonFuelPriceAmount, model.NetNonFuelPriceAmount);
+        Assert.Equal(expectedNetNonFuelPriceCurrency, model.NetNonFuelPriceCurrency);
+        Assert.Equal(expectedOdometerReading, model.OdometerReading);
+        Assert.Equal(expectedPurchaseType, model.PurchaseType);
+        Assert.Equal(expectedServiceType, model.ServiceType);
+        Assert.Equal(expectedTrailerNumber, model.TrailerNumber);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Transactions::CardSettlementPurchaseDetailsFleet
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure =
+                Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType =
+                Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+            ServiceType = Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<Transactions::CardSettlementPurchaseDetailsFleet>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Transactions::CardSettlementPurchaseDetailsFleet
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure =
+                Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType =
+                Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+            ServiceType = Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<Transactions::CardSettlementPurchaseDetailsFleet>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedEmployeeNumber = "employee_number";
+        string expectedFuelQuantity = "-16699";
+        ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelType> expectedFuelType =
+            Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular;
+        long expectedFuelUnitCostAmount = 0;
+        string expectedFuelUnitCostCurrency = "fuel_unit_cost_currency";
+        ApiEnum<
+            string,
+            Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure
+        > expectedFuelUnitOfMeasure =
+            Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter;
+        long expectedGrossFuelPriceAmount = 0;
+        string expectedGrossFuelPriceCurrency = "gross_fuel_price_currency";
+        long expectedGrossNonFuelPriceAmount = 0;
+        string expectedGrossNonFuelPriceCurrency = "gross_non_fuel_price_currency";
+        long expectedNetFuelPriceAmount = 0;
+        string expectedNetFuelPriceCurrency = "net_fuel_price_currency";
+        long expectedNetNonFuelPriceAmount = 0;
+        string expectedNetNonFuelPriceCurrency = "net_non_fuel_price_currency";
+        long expectedOdometerReading = 0;
+        ApiEnum<
+            string,
+            Transactions::CardSettlementPurchaseDetailsFleetPurchaseType
+        > expectedPurchaseType =
+            Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase;
+        ApiEnum<
+            string,
+            Transactions::CardSettlementPurchaseDetailsFleetServiceType
+        > expectedServiceType =
+            Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService;
+        string expectedTrailerNumber = "trailer_number";
+
+        Assert.Equal(expectedEmployeeNumber, deserialized.EmployeeNumber);
+        Assert.Equal(expectedFuelQuantity, deserialized.FuelQuantity);
+        Assert.Equal(expectedFuelType, deserialized.FuelType);
+        Assert.Equal(expectedFuelUnitCostAmount, deserialized.FuelUnitCostAmount);
+        Assert.Equal(expectedFuelUnitCostCurrency, deserialized.FuelUnitCostCurrency);
+        Assert.Equal(expectedFuelUnitOfMeasure, deserialized.FuelUnitOfMeasure);
+        Assert.Equal(expectedGrossFuelPriceAmount, deserialized.GrossFuelPriceAmount);
+        Assert.Equal(expectedGrossFuelPriceCurrency, deserialized.GrossFuelPriceCurrency);
+        Assert.Equal(expectedGrossNonFuelPriceAmount, deserialized.GrossNonFuelPriceAmount);
+        Assert.Equal(expectedGrossNonFuelPriceCurrency, deserialized.GrossNonFuelPriceCurrency);
+        Assert.Equal(expectedNetFuelPriceAmount, deserialized.NetFuelPriceAmount);
+        Assert.Equal(expectedNetFuelPriceCurrency, deserialized.NetFuelPriceCurrency);
+        Assert.Equal(expectedNetNonFuelPriceAmount, deserialized.NetNonFuelPriceAmount);
+        Assert.Equal(expectedNetNonFuelPriceCurrency, deserialized.NetNonFuelPriceCurrency);
+        Assert.Equal(expectedOdometerReading, deserialized.OdometerReading);
+        Assert.Equal(expectedPurchaseType, deserialized.PurchaseType);
+        Assert.Equal(expectedServiceType, deserialized.ServiceType);
+        Assert.Equal(expectedTrailerNumber, deserialized.TrailerNumber);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Transactions::CardSettlementPurchaseDetailsFleet
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure =
+                Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType =
+                Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+            ServiceType = Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Transactions::CardSettlementPurchaseDetailsFleet
+        {
+            EmployeeNumber = "employee_number",
+            FuelQuantity = "-16699",
+            FuelType = Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular,
+            FuelUnitCostAmount = 0,
+            FuelUnitCostCurrency = "fuel_unit_cost_currency",
+            FuelUnitOfMeasure =
+                Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter,
+            GrossFuelPriceAmount = 0,
+            GrossFuelPriceCurrency = "gross_fuel_price_currency",
+            GrossNonFuelPriceAmount = 0,
+            GrossNonFuelPriceCurrency = "gross_non_fuel_price_currency",
+            NetFuelPriceAmount = 0,
+            NetFuelPriceCurrency = "net_fuel_price_currency",
+            NetNonFuelPriceAmount = 0,
+            NetNonFuelPriceCurrency = "net_non_fuel_price_currency",
+            OdometerReading = 0,
+            PurchaseType =
+                Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase,
+            ServiceType = Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService,
+            TrailerNumber = "trailer_number",
+        };
+
+        Transactions::CardSettlementPurchaseDetailsFleet copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardSettlementPurchaseDetailsFleetFuelTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RegularEthanol5BlendNonUs)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol5BlendNonUs
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol5BlendNonUs
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.Ethanol7_7Blend)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2Ethanol5BlendNonUs
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.GreenGasolineRegular)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.GreenGasolineMidOrPlus)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.GreenGasolinePremiumOrSuper
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RegularDiesel2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumDiesel2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RegularDiesel1)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.CompressedNaturalGas)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.LiquidPropaneGas)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.LiquidNaturalGas)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.E85)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RegularReformulated)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusReformulated)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperReformulated
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2Reformulated)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2Reformulated
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.DieselOffRoad1_2NonTaxable
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.DieselOffRoadNonTaxable)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlendOffRoadNonTaxable
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RacingFuel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2Ethanol10Blend)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2Ethanol10Blend
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol2_15Blend)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol2_15Blend
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2Ethanol5BlendNonUs
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RegularEthanol10Blend)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol10Blend)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol10Blend
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B2DieselBlend2Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B5DieselBlend5Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B10DieselBlend10Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B11DieselBlend11Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B15DieselBlend15Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B20DieselBlend20Biodiesel)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.B100DieselBlend100Biodiesel
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B1DieselBlend1Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AdditizedDiesel2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AdditizedDiesel3)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.B7DieselBlend7BiodieselNonUs
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.B7PremiumDieselBlend7BiodieselNonUs
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreater
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselBiodiesel6To20
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.DieselExhaustFluidPump)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumDiesel1)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RegularEthanol15Blend)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol15Blend)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol15Blend
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumDieselBlendLessThan20Biodiesel
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumDieselBlend20OrMoreBiodiesel
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B75DieselBlend75Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B99DieselBlend99Biodiesel)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.ReservedForPreauthorizationUseOnly
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.UndefinedFuelReservedForProprietaryUse
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousFuel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.JetFuel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AviationFuelRegular)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AviationFuelPremium)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AviationFuelJp8)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AviationFuel4)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AviationFuel5)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiojetDiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AviationBiofuelGasoline)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.UndefinedAviationFuelReservedForProprietaryUse
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousAviationFuel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineFuel1)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineFuel2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineFuel3)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineFuel4)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineFuel5)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineOther)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineDiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousMarineFuel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.KeroseneLowSulfur)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.WhiteGas)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.HeatingOil)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.OtherFuelNonTaxable)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.KeroseneUltraLowSulfur)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel1_110Volt
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel2_240Volt
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend1OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend75OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend99OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend100OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel4_800Volt
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel5Megawatt
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.HydrotreatedVegetableOil100
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.BioCompressedNaturalGas)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousOtherFuel)]
+    public void Validation_Works(Transactions::CardSettlementPurchaseDetailsFleetFuelType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.Regular)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RegularEthanol5BlendNonUs)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol5BlendNonUs
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol5BlendNonUs
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.Ethanol7_7Blend)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2Ethanol5BlendNonUs
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.GreenGasolineRegular)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.GreenGasolineMidOrPlus)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.GreenGasolinePremiumOrSuper
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RegularDiesel2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumDiesel2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RegularDiesel1)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.CompressedNaturalGas)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.LiquidPropaneGas)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.LiquidNaturalGas)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.E85)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RegularReformulated)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusReformulated)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperReformulated
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2Reformulated)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2Reformulated
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.DieselOffRoad1_2NonTaxable
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.DieselOffRoadNonTaxable)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlendOffRoadNonTaxable
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RacingFuel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlus2Ethanol10Blend)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2Ethanol10Blend
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol2_15Blend)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol2_15Blend
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuper2Ethanol5BlendNonUs
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RegularEthanol10Blend)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol10Blend)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol10Blend
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B2DieselBlend2Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B5DieselBlend5Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B10DieselBlend10Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B11DieselBlend11Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B15DieselBlend15Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B20DieselBlend20Biodiesel)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.B100DieselBlend100Biodiesel
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B1DieselBlend1Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AdditizedDiesel2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AdditizedDiesel3)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.B7DieselBlend7BiodieselNonUs
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.B7PremiumDieselBlend7BiodieselNonUs
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreater
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselBiodiesel6To20
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.DieselExhaustFluidPump)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumDiesel1)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RegularEthanol15Blend)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MidOrPlusEthanol15Blend)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumOrSuperEthanol15Blend
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumDieselBlendLessThan20Biodiesel
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.PremiumDieselBlend20OrMoreBiodiesel
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B75DieselBlend75Biodiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.B99DieselBlend99Biodiesel)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.ReservedForPreauthorizationUseOnly
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.UndefinedFuelReservedForProprietaryUse
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousFuel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.JetFuel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AviationFuelRegular)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AviationFuelPremium)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AviationFuelJp8)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AviationFuel4)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AviationFuel5)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiojetDiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AviationBiofuelGasoline)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.UndefinedAviationFuelReservedForProprietaryUse
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousAviationFuel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineFuel1)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineFuel2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineFuel3)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineFuel4)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineFuel5)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineOther)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MarineDiesel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousMarineFuel)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.KeroseneLowSulfur)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.WhiteGas)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.HeatingOil)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.OtherFuelNonTaxable)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.KeroseneUltraLowSulfur)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel1_110Volt
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel2_240Volt
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend1OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend75OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend99OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend100OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel4_800Volt
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel5Megawatt
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.HydrotreatedVegetableOil100
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.BioCompressedNaturalGas)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.MiscellaneousOtherFuel)]
+    public void SerializationRoundtrip_Works(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardSettlementPurchaseDetailsFleetFuelUnitOfMeasureTest : TestBase
+{
+    [Theory]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.UsGallon)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.ImperialGallon)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Kilogram)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Pound)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.ChargingMinutes)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.KilowattHour)]
+    public void Validation_Works(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure> value =
+            rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Liter)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.UsGallon)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.ImperialGallon)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Kilogram)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.Pound)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.ChargingMinutes)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure.KilowattHour)]
+    public void SerializationRoundtrip_Works(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure> value =
+            rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetFuelUnitOfMeasure>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardSettlementPurchaseDetailsFleetPurchaseTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.NonFuelPurchase)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelAndNonFuelPurchase
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchaseWithMultipleFuelTypes
+    )]
+    public void Validation_Works(
+        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetPurchaseType> value =
+            rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetPurchaseType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchase)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.NonFuelPurchase)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelAndNonFuelPurchase
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType.FuelPurchaseWithMultipleFuelTypes
+    )]
+    public void SerializationRoundtrip_Works(
+        Transactions::CardSettlementPurchaseDetailsFleetPurchaseType rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetPurchaseType> value =
+            rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetPurchaseType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetPurchaseType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetPurchaseType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardSettlementPurchaseDetailsFleetServiceTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetServiceType.SelfService)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetServiceType.HighSpeedDispense)]
+    public void Validation_Works(
+        Transactions::CardSettlementPurchaseDetailsFleetServiceType rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetServiceType> value =
+            rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetServiceType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetServiceType.FullService)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetServiceType.SelfService)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetServiceType.HighSpeedDispense)]
+    public void SerializationRoundtrip_Works(
+        Transactions::CardSettlementPurchaseDetailsFleetServiceType rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetServiceType> value =
+            rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetServiceType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetServiceType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardSettlementPurchaseDetailsFleetServiceType>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);

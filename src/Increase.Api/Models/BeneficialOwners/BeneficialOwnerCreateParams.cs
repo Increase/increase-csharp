@@ -654,6 +654,11 @@ public enum Method
     SocialSecurityNumber,
 
     /// <summary>
+    /// The last four digits of a social security number.
+    /// </summary>
+    SocialSecurityNumberLast4,
+
+    /// <summary>
     /// An individual taxpayer identification number (ITIN).
     /// </summary>
     IndividualTaxpayerIdentificationNumber,
@@ -685,6 +690,7 @@ sealed class MethodConverter : JsonConverter<Method>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "social_security_number" => Method.SocialSecurityNumber,
+            "social_security_number_last4" => Method.SocialSecurityNumberLast4,
             "individual_taxpayer_identification_number" =>
                 Method.IndividualTaxpayerIdentificationNumber,
             "passport" => Method.Passport,
@@ -701,6 +707,7 @@ sealed class MethodConverter : JsonConverter<Method>
             value switch
             {
                 Method.SocialSecurityNumber => "social_security_number",
+                Method.SocialSecurityNumberLast4 => "social_security_number_last4",
                 Method.IndividualTaxpayerIdentificationNumber =>
                     "individual_taxpayer_identification_number",
                 Method.Passport => "passport",

@@ -746,6 +746,7 @@ public class BeneficialOwnerUpdateParamsIdentificationMethodTest : TestBase
 {
     [Theory]
     [InlineData(BeneficialOwnerUpdateParamsIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(BeneficialOwnerUpdateParamsIdentificationMethod.SocialSecurityNumberLast4)]
     [InlineData(
         BeneficialOwnerUpdateParamsIdentificationMethod.IndividualTaxpayerIdentificationNumber
     )]
@@ -772,6 +773,7 @@ public class BeneficialOwnerUpdateParamsIdentificationMethodTest : TestBase
 
     [Theory]
     [InlineData(BeneficialOwnerUpdateParamsIdentificationMethod.SocialSecurityNumber)]
+    [InlineData(BeneficialOwnerUpdateParamsIdentificationMethod.SocialSecurityNumberLast4)]
     [InlineData(
         BeneficialOwnerUpdateParamsIdentificationMethod.IndividualTaxpayerIdentificationNumber
     )]
