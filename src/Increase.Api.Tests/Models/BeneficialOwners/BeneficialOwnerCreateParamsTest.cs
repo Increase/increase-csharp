@@ -1374,6 +1374,7 @@ public class MethodTest : TestBase
 {
     [Theory]
     [InlineData(Method.SocialSecurityNumber)]
+    [InlineData(Method.SocialSecurityNumberLast4)]
     [InlineData(Method.IndividualTaxpayerIdentificationNumber)]
     [InlineData(Method.Passport)]
     [InlineData(Method.DriversLicense)]
@@ -1399,6 +1400,7 @@ public class MethodTest : TestBase
 
     [Theory]
     [InlineData(Method.SocialSecurityNumber)]
+    [InlineData(Method.SocialSecurityNumberLast4)]
     [InlineData(Method.IndividualTaxpayerIdentificationNumber)]
     [InlineData(Method.Passport)]
     [InlineData(Method.DriversLicense)]
