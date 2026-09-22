@@ -37,6 +37,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = "Invoice 29582",
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
             InstructingAgentRoutingNumber = "101050001",
+            InstructionForCreditorAgent = null,
             InstructionIdentification = "202201180000001",
             Purpose = "CASH",
             Reversal = new()
@@ -107,6 +108,7 @@ public class InboundWireTransferTest : TestBase
         Assert.Equal(expectedEndToEndIdentification, model.EndToEndIdentification);
         Assert.Equal(expectedInputMessageAccountabilityData, model.InputMessageAccountabilityData);
         Assert.Equal(expectedInstructingAgentRoutingNumber, model.InstructingAgentRoutingNumber);
+        Assert.Null(model.InstructionForCreditorAgent);
         Assert.Equal(expectedInstructionIdentification, model.InstructionIdentification);
         Assert.Equal(expectedPurpose, model.Purpose);
         Assert.Equal(expectedReversal, model.Reversal);
@@ -152,6 +154,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = "Invoice 29582",
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
             InstructingAgentRoutingNumber = "101050001",
+            InstructionForCreditorAgent = null,
             InstructionIdentification = "202201180000001",
             Purpose = "CASH",
             Reversal = new()
@@ -204,6 +207,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = "Invoice 29582",
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
             InstructingAgentRoutingNumber = "101050001",
+            InstructionForCreditorAgent = null,
             InstructionIdentification = "202201180000001",
             Purpose = "CASH",
             Reversal = new()
@@ -287,6 +291,7 @@ public class InboundWireTransferTest : TestBase
             expectedInstructingAgentRoutingNumber,
             deserialized.InstructingAgentRoutingNumber
         );
+        Assert.Null(deserialized.InstructionForCreditorAgent);
         Assert.Equal(expectedInstructionIdentification, deserialized.InstructionIdentification);
         Assert.Equal(expectedPurpose, deserialized.Purpose);
         Assert.Equal(expectedReversal, deserialized.Reversal);
@@ -332,6 +337,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = "Invoice 29582",
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
             InstructingAgentRoutingNumber = "101050001",
+            InstructionForCreditorAgent = null,
             InstructionIdentification = "202201180000001",
             Purpose = "CASH",
             Reversal = new()
@@ -378,6 +384,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = "Invoice 29582",
             InputMessageAccountabilityData = "20220118MMQFMP0P000001",
             InstructingAgentRoutingNumber = "101050001",
+            InstructionForCreditorAgent = null,
             InstructionIdentification = "202201180000001",
             Purpose = "CASH",
             Reversal = new()

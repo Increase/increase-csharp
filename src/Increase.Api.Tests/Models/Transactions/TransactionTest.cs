@@ -664,6 +664,7 @@ public class TransactionTest : TestBase
                     EndToEndIdentification = null,
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = null,
                     Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -1360,6 +1361,7 @@ public class TransactionTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -2082,6 +2084,7 @@ public class TransactionTest : TestBase
                     EndToEndIdentification = null,
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = null,
                     Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -2801,6 +2804,7 @@ public class TransactionTest : TestBase
                     EndToEndIdentification = null,
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = null,
                     Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -3504,6 +3508,7 @@ public class TransactionTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -4226,6 +4231,7 @@ public class TransactionTest : TestBase
                     EndToEndIdentification = null,
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = null,
                     Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -4939,6 +4945,7 @@ public class TransactionTest : TestBase
                     EndToEndIdentification = null,
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = null,
                     Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -5753,6 +5760,7 @@ public class SourceTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -6440,6 +6448,7 @@ public class SourceTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -7203,6 +7212,7 @@ public class SourceTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -7900,6 +7910,7 @@ public class SourceTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -8594,6 +8605,7 @@ public class SourceTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -9363,6 +9375,7 @@ public class SourceTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -10344,6 +10357,7 @@ public class SourceTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -30083,6 +30097,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -30107,6 +30122,7 @@ public class InboundWireTransferTest : TestBase
         Assert.Null(model.EndToEndIdentification);
         Assert.Null(model.InputMessageAccountabilityData);
         Assert.Null(model.InstructingAgentRoutingNumber);
+        Assert.Null(model.InstructionForCreditorAgent);
         Assert.Null(model.InstructionIdentification);
         Assert.Null(model.Purpose);
         Assert.Equal(expectedTransferID, model.TransferID);
@@ -30132,6 +30148,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -30166,6 +30183,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -30197,6 +30215,7 @@ public class InboundWireTransferTest : TestBase
         Assert.Null(deserialized.EndToEndIdentification);
         Assert.Null(deserialized.InputMessageAccountabilityData);
         Assert.Null(deserialized.InstructingAgentRoutingNumber);
+        Assert.Null(deserialized.InstructionForCreditorAgent);
         Assert.Null(deserialized.InstructionIdentification);
         Assert.Null(deserialized.Purpose);
         Assert.Equal(expectedTransferID, deserialized.TransferID);
@@ -30222,6 +30241,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -30250,6 +30270,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
