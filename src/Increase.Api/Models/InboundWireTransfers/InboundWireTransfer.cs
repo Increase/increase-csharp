@@ -280,6 +280,19 @@ public sealed record class InboundWireTransfer : JsonModel
     }
 
     /// <summary>
+    /// A free-form instruction for the receiving bank set by the sender.
+    /// </summary>
+    public required string? InstructionForCreditorAgent
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("instruction_for_creditor_agent");
+        }
+        init { this._rawData.Set("instruction_for_creditor_agent", value); }
+    }
+
+    /// <summary>
     /// The sending bank's identifier for the wire transfer.
     /// </summary>
     public required string? InstructionIdentification
@@ -414,6 +427,7 @@ public sealed record class InboundWireTransfer : JsonModel
         _ = this.EndToEndIdentification;
         _ = this.InputMessageAccountabilityData;
         _ = this.InstructingAgentRoutingNumber;
+        _ = this.InstructionForCreditorAgent;
         _ = this.InstructionIdentification;
         _ = this.Purpose;
         this.Reversal?.Validate();

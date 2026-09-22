@@ -41,6 +41,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = "202201180000001",
                     Purpose = "CASH",
                     Reversal = new()
@@ -86,6 +87,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                 EndToEndIdentification = "Invoice 29582",
                 InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                 InstructingAgentRoutingNumber = "101050001",
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = "202201180000001",
                 Purpose = "CASH",
                 Reversal = new()
@@ -143,6 +145,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = "202201180000001",
                     Purpose = "CASH",
                     Reversal = new()
@@ -203,6 +206,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = "202201180000001",
                     Purpose = "CASH",
                     Reversal = new()
@@ -256,6 +260,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                 EndToEndIdentification = "Invoice 29582",
                 InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                 InstructingAgentRoutingNumber = "101050001",
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = "202201180000001",
                 Purpose = "CASH",
                 Reversal = new()
@@ -313,6 +318,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = "202201180000001",
                     Purpose = "CASH",
                     Reversal = new()
@@ -366,6 +372,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = "202201180000001",
                     Purpose = "CASH",
                     Reversal = new()
