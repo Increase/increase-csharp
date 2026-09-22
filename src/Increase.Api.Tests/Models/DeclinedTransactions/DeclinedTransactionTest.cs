@@ -5702,6 +5702,9 @@ public class RealTimeDecisionReasonTest : TestBase
     [InlineData(DeclinedTransactions::RealTimeDecisionReason.ExceedsApprovalLimit)]
     [InlineData(DeclinedTransactions::RealTimeDecisionReason.CardTemporarilyDisabled)]
     [InlineData(DeclinedTransactions::RealTimeDecisionReason.SuspectedFraud)]
+    [InlineData(
+        DeclinedTransactions::RealTimeDecisionReason.AdditionalCustomerAuthenticationRequired
+    )]
     [InlineData(DeclinedTransactions::RealTimeDecisionReason.Other)]
     public void Validation_Works(DeclinedTransactions::RealTimeDecisionReason rawValue)
     {
@@ -5727,6 +5730,9 @@ public class RealTimeDecisionReasonTest : TestBase
     [InlineData(DeclinedTransactions::RealTimeDecisionReason.ExceedsApprovalLimit)]
     [InlineData(DeclinedTransactions::RealTimeDecisionReason.CardTemporarilyDisabled)]
     [InlineData(DeclinedTransactions::RealTimeDecisionReason.SuspectedFraud)]
+    [InlineData(
+        DeclinedTransactions::RealTimeDecisionReason.AdditionalCustomerAuthenticationRequired
+    )]
     [InlineData(DeclinedTransactions::RealTimeDecisionReason.Other)]
     public void SerializationRoundtrip_Works(DeclinedTransactions::RealTimeDecisionReason rawValue)
     {
