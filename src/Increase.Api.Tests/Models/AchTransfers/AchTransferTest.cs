@@ -17,7 +17,7 @@ public class AchTransferTest : TestBase
             ID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            Acknowledgement = new("2020-01-31T23:59:59Z"),
+            Acknowledgement = new("2020-01-31T14:15:00Z"),
             Addenda = new()
             {
                 Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -29,7 +29,7 @@ public class AchTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -42,7 +42,7 @@ public class AchTransferTest : TestBase
             CompanyEntryDescription = null,
             CompanyID = "1234987601",
             CompanyName = "National Phonograph Company",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = AchTransfers::CreatedByCategory.User,
@@ -93,26 +93,26 @@ public class AchTransferTest : TestBase
             Return = new()
             {
                 AddendaInformation = null,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
                 RawReturnReasonCode = "R01",
                 ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
                 TraceNumber = "111122223292834",
-                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
                 TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             },
             RoutingNumber = "101050001",
-            Settlement = new(DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")),
+            Settlement = new(DateTimeOffset.Parse("2020-01-31T18:00:00Z")),
             StandardEntryClassCode =
                 AchTransfers::AchTransferStandardEntryClassCode.CorporateCreditOrDebit,
             StatementDescriptor = "Statement descriptor",
             Status = AchTransfers::AchTransferStatus.Returned,
             Submission = new()
             {
-                AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
+                AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-04T11:00:00Z"),
                 EffectiveDate = "2020-01-31",
-                ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-                ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated,
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
+                ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                 TraceNumber = "058349238292834",
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -122,7 +122,7 @@ public class AchTransferTest : TestBase
         string expectedID = "ach_transfer_uoxatyh3lt5evrsdvo7q";
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedAccountNumber = "987654321";
-        AchTransfers::Acknowledgement expectedAcknowledgement = new("2020-01-31T23:59:59Z");
+        AchTransfers::Acknowledgement expectedAcknowledgement = new("2020-01-31T14:15:00Z");
         AchTransfers::AchTransferAddenda expectedAddenda = new()
         {
             Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -134,7 +134,7 @@ public class AchTransferTest : TestBase
         long expectedAmount = 100;
         AchTransfers::Approval expectedApproval = new()
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
             ApprovedBy = null,
         };
         AchTransfers::Cancellation expectedCancellation = new()
@@ -144,7 +144,7 @@ public class AchTransferTest : TestBase
         };
         string expectedCompanyID = "1234987601";
         string expectedCompanyName = "National Phonograph Company";
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z");
         AchTransfers::CreatedBy expectedCreatedBy = new()
         {
             Category = AchTransfers::CreatedByCategory.User,
@@ -197,16 +197,16 @@ public class AchTransferTest : TestBase
         AchTransfers::Return expectedReturn = new()
         {
             AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
             RawReturnReasonCode = "R01",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
             TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
             TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
         };
         string expectedRoutingNumber = "101050001";
         AchTransfers::Settlement expectedSettlement = new(
-            DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")
+            DateTimeOffset.Parse("2020-01-31T18:00:00Z")
         );
         ApiEnum<
             string,
@@ -218,11 +218,11 @@ public class AchTransferTest : TestBase
             AchTransfers::AchTransferStatus.Returned;
         AchTransfers::Submission expectedSubmission = new()
         {
-            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
+            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-04T11:00:00Z"),
             EffectiveDate = "2020-01-31",
-            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated,
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
+            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+            SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             TraceNumber = "058349238292834",
         };
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
@@ -279,7 +279,7 @@ public class AchTransferTest : TestBase
             ID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            Acknowledgement = new("2020-01-31T23:59:59Z"),
+            Acknowledgement = new("2020-01-31T14:15:00Z"),
             Addenda = new()
             {
                 Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -291,7 +291,7 @@ public class AchTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -304,7 +304,7 @@ public class AchTransferTest : TestBase
             CompanyEntryDescription = null,
             CompanyID = "1234987601",
             CompanyName = "National Phonograph Company",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = AchTransfers::CreatedByCategory.User,
@@ -355,26 +355,26 @@ public class AchTransferTest : TestBase
             Return = new()
             {
                 AddendaInformation = null,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
                 RawReturnReasonCode = "R01",
                 ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
                 TraceNumber = "111122223292834",
-                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
                 TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             },
             RoutingNumber = "101050001",
-            Settlement = new(DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")),
+            Settlement = new(DateTimeOffset.Parse("2020-01-31T18:00:00Z")),
             StandardEntryClassCode =
                 AchTransfers::AchTransferStandardEntryClassCode.CorporateCreditOrDebit,
             StatementDescriptor = "Statement descriptor",
             Status = AchTransfers::AchTransferStatus.Returned,
             Submission = new()
             {
-                AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
+                AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-04T11:00:00Z"),
                 EffectiveDate = "2020-01-31",
-                ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-                ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated,
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
+                ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                 TraceNumber = "058349238292834",
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -398,7 +398,7 @@ public class AchTransferTest : TestBase
             ID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            Acknowledgement = new("2020-01-31T23:59:59Z"),
+            Acknowledgement = new("2020-01-31T14:15:00Z"),
             Addenda = new()
             {
                 Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -410,7 +410,7 @@ public class AchTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -423,7 +423,7 @@ public class AchTransferTest : TestBase
             CompanyEntryDescription = null,
             CompanyID = "1234987601",
             CompanyName = "National Phonograph Company",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = AchTransfers::CreatedByCategory.User,
@@ -474,26 +474,26 @@ public class AchTransferTest : TestBase
             Return = new()
             {
                 AddendaInformation = null,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
                 RawReturnReasonCode = "R01",
                 ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
                 TraceNumber = "111122223292834",
-                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
                 TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             },
             RoutingNumber = "101050001",
-            Settlement = new(DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")),
+            Settlement = new(DateTimeOffset.Parse("2020-01-31T18:00:00Z")),
             StandardEntryClassCode =
                 AchTransfers::AchTransferStandardEntryClassCode.CorporateCreditOrDebit,
             StatementDescriptor = "Statement descriptor",
             Status = AchTransfers::AchTransferStatus.Returned,
             Submission = new()
             {
-                AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
+                AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-04T11:00:00Z"),
                 EffectiveDate = "2020-01-31",
-                ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-                ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated,
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
+                ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                 TraceNumber = "058349238292834",
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -510,7 +510,7 @@ public class AchTransferTest : TestBase
         string expectedID = "ach_transfer_uoxatyh3lt5evrsdvo7q";
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedAccountNumber = "987654321";
-        AchTransfers::Acknowledgement expectedAcknowledgement = new("2020-01-31T23:59:59Z");
+        AchTransfers::Acknowledgement expectedAcknowledgement = new("2020-01-31T14:15:00Z");
         AchTransfers::AchTransferAddenda expectedAddenda = new()
         {
             Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -522,7 +522,7 @@ public class AchTransferTest : TestBase
         long expectedAmount = 100;
         AchTransfers::Approval expectedApproval = new()
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
             ApprovedBy = null,
         };
         AchTransfers::Cancellation expectedCancellation = new()
@@ -532,7 +532,7 @@ public class AchTransferTest : TestBase
         };
         string expectedCompanyID = "1234987601";
         string expectedCompanyName = "National Phonograph Company";
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z");
         AchTransfers::CreatedBy expectedCreatedBy = new()
         {
             Category = AchTransfers::CreatedByCategory.User,
@@ -585,16 +585,16 @@ public class AchTransferTest : TestBase
         AchTransfers::Return expectedReturn = new()
         {
             AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
             RawReturnReasonCode = "R01",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
             TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
             TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
         };
         string expectedRoutingNumber = "101050001";
         AchTransfers::Settlement expectedSettlement = new(
-            DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")
+            DateTimeOffset.Parse("2020-01-31T18:00:00Z")
         );
         ApiEnum<
             string,
@@ -606,11 +606,11 @@ public class AchTransferTest : TestBase
             AchTransfers::AchTransferStatus.Returned;
         AchTransfers::Submission expectedSubmission = new()
         {
-            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
+            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-04T11:00:00Z"),
             EffectiveDate = "2020-01-31",
-            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated,
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
+            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+            SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             TraceNumber = "058349238292834",
         };
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
@@ -667,7 +667,7 @@ public class AchTransferTest : TestBase
             ID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            Acknowledgement = new("2020-01-31T23:59:59Z"),
+            Acknowledgement = new("2020-01-31T14:15:00Z"),
             Addenda = new()
             {
                 Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -679,7 +679,7 @@ public class AchTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -692,7 +692,7 @@ public class AchTransferTest : TestBase
             CompanyEntryDescription = null,
             CompanyID = "1234987601",
             CompanyName = "National Phonograph Company",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = AchTransfers::CreatedByCategory.User,
@@ -743,26 +743,26 @@ public class AchTransferTest : TestBase
             Return = new()
             {
                 AddendaInformation = null,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
                 RawReturnReasonCode = "R01",
                 ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
                 TraceNumber = "111122223292834",
-                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
                 TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             },
             RoutingNumber = "101050001",
-            Settlement = new(DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")),
+            Settlement = new(DateTimeOffset.Parse("2020-01-31T18:00:00Z")),
             StandardEntryClassCode =
                 AchTransfers::AchTransferStandardEntryClassCode.CorporateCreditOrDebit,
             StatementDescriptor = "Statement descriptor",
             Status = AchTransfers::AchTransferStatus.Returned,
             Submission = new()
             {
-                AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
+                AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-04T11:00:00Z"),
                 EffectiveDate = "2020-01-31",
-                ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-                ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated,
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
+                ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                 TraceNumber = "058349238292834",
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -780,7 +780,7 @@ public class AchTransferTest : TestBase
             ID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            Acknowledgement = new("2020-01-31T23:59:59Z"),
+            Acknowledgement = new("2020-01-31T14:15:00Z"),
             Addenda = new()
             {
                 Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -792,7 +792,7 @@ public class AchTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -805,7 +805,7 @@ public class AchTransferTest : TestBase
             CompanyEntryDescription = null,
             CompanyID = "1234987601",
             CompanyName = "National Phonograph Company",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = AchTransfers::CreatedByCategory.User,
@@ -856,26 +856,26 @@ public class AchTransferTest : TestBase
             Return = new()
             {
                 AddendaInformation = null,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
                 RawReturnReasonCode = "R01",
                 ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
                 TraceNumber = "111122223292834",
-                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
                 TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
             },
             RoutingNumber = "101050001",
-            Settlement = new(DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")),
+            Settlement = new(DateTimeOffset.Parse("2020-01-31T18:00:00Z")),
             StandardEntryClassCode =
                 AchTransfers::AchTransferStandardEntryClassCode.CorporateCreditOrDebit,
             StatementDescriptor = "Statement descriptor",
             Status = AchTransfers::AchTransferStatus.Returned,
             Submission = new()
             {
-                AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
+                AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-04T11:00:00Z"),
                 EffectiveDate = "2020-01-31",
-                ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-                ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated,
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
+                ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                 TraceNumber = "058349238292834",
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -893,9 +893,9 @@ public class AcknowledgementTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new AchTransfers::Acknowledgement { AcknowledgedAt = "2020-01-31T23:59:59Z" };
+        var model = new AchTransfers::Acknowledgement { AcknowledgedAt = "acknowledged_at" };
 
-        string expectedAcknowledgedAt = "2020-01-31T23:59:59Z";
+        string expectedAcknowledgedAt = "acknowledged_at";
 
         Assert.Equal(expectedAcknowledgedAt, model.AcknowledgedAt);
     }
@@ -903,7 +903,7 @@ public class AcknowledgementTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new AchTransfers::Acknowledgement { AcknowledgedAt = "2020-01-31T23:59:59Z" };
+        var model = new AchTransfers::Acknowledgement { AcknowledgedAt = "acknowledged_at" };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<AchTransfers::Acknowledgement>(
@@ -917,7 +917,7 @@ public class AcknowledgementTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new AchTransfers::Acknowledgement { AcknowledgedAt = "2020-01-31T23:59:59Z" };
+        var model = new AchTransfers::Acknowledgement { AcknowledgedAt = "acknowledged_at" };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<AchTransfers::Acknowledgement>(
@@ -926,7 +926,7 @@ public class AcknowledgementTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        string expectedAcknowledgedAt = "2020-01-31T23:59:59Z";
+        string expectedAcknowledgedAt = "acknowledged_at";
 
         Assert.Equal(expectedAcknowledgedAt, deserialized.AcknowledgedAt);
     }
@@ -934,7 +934,7 @@ public class AcknowledgementTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new AchTransfers::Acknowledgement { AcknowledgedAt = "2020-01-31T23:59:59Z" };
+        var model = new AchTransfers::Acknowledgement { AcknowledgedAt = "acknowledged_at" };
 
         model.Validate();
     }
@@ -942,7 +942,7 @@ public class AcknowledgementTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new AchTransfers::Acknowledgement { AcknowledgedAt = "2020-01-31T23:59:59Z" };
+        var model = new AchTransfers::Acknowledgement { AcknowledgedAt = "acknowledged_at" };
 
         AchTransfers::Acknowledgement copied = new(model);
 
@@ -1532,14 +1532,15 @@ public class ApprovalTest : TestBase
     {
         var model = new AchTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
-        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedApprovedBy = "approved_by";
 
         Assert.Equal(expectedApprovedAt, model.ApprovedAt);
-        Assert.Null(model.ApprovedBy);
+        Assert.Equal(expectedApprovedBy, model.ApprovedBy);
     }
 
     [Fact]
@@ -1547,8 +1548,8 @@ public class ApprovalTest : TestBase
     {
         var model = new AchTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1565,8 +1566,8 @@ public class ApprovalTest : TestBase
     {
         var model = new AchTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1576,10 +1577,11 @@ public class ApprovalTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedApprovedBy = "approved_by";
 
         Assert.Equal(expectedApprovedAt, deserialized.ApprovedAt);
-        Assert.Null(deserialized.ApprovedBy);
+        Assert.Equal(expectedApprovedBy, deserialized.ApprovedBy);
     }
 
     [Fact]
@@ -1587,8 +1589,8 @@ public class ApprovalTest : TestBase
     {
         var model = new AchTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         model.Validate();
@@ -1599,8 +1601,8 @@ public class ApprovalTest : TestBase
     {
         var model = new AchTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         AchTransfers::Approval copied = new(model);
@@ -3109,24 +3111,25 @@ public class ReturnTest : TestBase
     {
         var model = new AchTransfers::Return
         {
-            AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            RawReturnReasonCode = "R01",
+            AddendaInformation = "addenda_information",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RawReturnReasonCode = "raw_return_reason_code",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
-            TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-            TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            TraceNumber = "trace_number",
+            TransactionID = "transaction_id",
+            TransferID = "transfer_id",
         };
 
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        string expectedRawReturnReasonCode = "R01";
+        string expectedAddendaInformation = "addenda_information";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedRawReturnReasonCode = "raw_return_reason_code";
         ApiEnum<string, AchTransfers::ReturnReasonCode> expectedReturnReasonCode =
             AchTransfers::ReturnReasonCode.InsufficientFund;
-        string expectedTraceNumber = "111122223292834";
-        string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
-        string expectedTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q";
+        string expectedTraceNumber = "trace_number";
+        string expectedTransactionID = "transaction_id";
+        string expectedTransferID = "transfer_id";
 
-        Assert.Null(model.AddendaInformation);
+        Assert.Equal(expectedAddendaInformation, model.AddendaInformation);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
         Assert.Equal(expectedRawReturnReasonCode, model.RawReturnReasonCode);
         Assert.Equal(expectedReturnReasonCode, model.ReturnReasonCode);
@@ -3140,13 +3143,13 @@ public class ReturnTest : TestBase
     {
         var model = new AchTransfers::Return
         {
-            AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            RawReturnReasonCode = "R01",
+            AddendaInformation = "addenda_information",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RawReturnReasonCode = "raw_return_reason_code",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
-            TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-            TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            TraceNumber = "trace_number",
+            TransactionID = "transaction_id",
+            TransferID = "transfer_id",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -3163,13 +3166,13 @@ public class ReturnTest : TestBase
     {
         var model = new AchTransfers::Return
         {
-            AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            RawReturnReasonCode = "R01",
+            AddendaInformation = "addenda_information",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RawReturnReasonCode = "raw_return_reason_code",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
-            TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-            TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            TraceNumber = "trace_number",
+            TransactionID = "transaction_id",
+            TransferID = "transfer_id",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -3179,15 +3182,16 @@ public class ReturnTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        string expectedRawReturnReasonCode = "R01";
+        string expectedAddendaInformation = "addenda_information";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedRawReturnReasonCode = "raw_return_reason_code";
         ApiEnum<string, AchTransfers::ReturnReasonCode> expectedReturnReasonCode =
             AchTransfers::ReturnReasonCode.InsufficientFund;
-        string expectedTraceNumber = "111122223292834";
-        string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
-        string expectedTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q";
+        string expectedTraceNumber = "trace_number";
+        string expectedTransactionID = "transaction_id";
+        string expectedTransferID = "transfer_id";
 
-        Assert.Null(deserialized.AddendaInformation);
+        Assert.Equal(expectedAddendaInformation, deserialized.AddendaInformation);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
         Assert.Equal(expectedRawReturnReasonCode, deserialized.RawReturnReasonCode);
         Assert.Equal(expectedReturnReasonCode, deserialized.ReturnReasonCode);
@@ -3201,13 +3205,13 @@ public class ReturnTest : TestBase
     {
         var model = new AchTransfers::Return
         {
-            AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            RawReturnReasonCode = "R01",
+            AddendaInformation = "addenda_information",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RawReturnReasonCode = "raw_return_reason_code",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
-            TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-            TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            TraceNumber = "trace_number",
+            TransactionID = "transaction_id",
+            TransferID = "transfer_id",
         };
 
         model.Validate();
@@ -3218,13 +3222,13 @@ public class ReturnTest : TestBase
     {
         var model = new AchTransfers::Return
         {
-            AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            RawReturnReasonCode = "R01",
+            AddendaInformation = "addenda_information",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RawReturnReasonCode = "raw_return_reason_code",
             ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
-            TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-            TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            TraceNumber = "trace_number",
+            TransactionID = "transaction_id",
+            TransferID = "transfer_id",
         };
 
         AchTransfers::Return copied = new(model);
@@ -3651,27 +3655,27 @@ public class SubmissionTest : TestBase
     {
         var model = new AchTransfers::Submission
         {
-            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
-            EffectiveDate = "2020-01-31",
-            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated,
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            TraceNumber = "058349238292834",
+            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            EffectiveDate = "2019-12-27",
+            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            TraceNumber = "trace_number",
         };
 
         DateTimeOffset expectedAdministrativeReturnsExpectedBy = DateTimeOffset.Parse(
-            "2020-02-05T11:00:00Z"
+            "2019-12-27T18:11:19.117Z"
         );
-        string expectedEffectiveDate = "2020-01-31";
+        string expectedEffectiveDate = "2019-12-27";
         DateTimeOffset expectedExpectedFundsSettlementAt = DateTimeOffset.Parse(
-            "2020-02-03T13:30:00Z"
+            "2019-12-27T18:11:19.117Z"
         );
         ApiEnum<
             string,
             AchTransfers::ExpectedSettlementSchedule
-        > expectedExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated;
-        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        string expectedTraceNumber = "058349238292834";
+        > expectedExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay;
+        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedTraceNumber = "trace_number";
 
         Assert.Equal(
             expectedAdministrativeReturnsExpectedBy,
@@ -3689,12 +3693,12 @@ public class SubmissionTest : TestBase
     {
         var model = new AchTransfers::Submission
         {
-            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
-            EffectiveDate = "2020-01-31",
-            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated,
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            TraceNumber = "058349238292834",
+            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            EffectiveDate = "2019-12-27",
+            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            TraceNumber = "trace_number",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -3711,12 +3715,12 @@ public class SubmissionTest : TestBase
     {
         var model = new AchTransfers::Submission
         {
-            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
-            EffectiveDate = "2020-01-31",
-            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated,
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            TraceNumber = "058349238292834",
+            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            EffectiveDate = "2019-12-27",
+            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            TraceNumber = "trace_number",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -3727,18 +3731,18 @@ public class SubmissionTest : TestBase
         Assert.NotNull(deserialized);
 
         DateTimeOffset expectedAdministrativeReturnsExpectedBy = DateTimeOffset.Parse(
-            "2020-02-05T11:00:00Z"
+            "2019-12-27T18:11:19.117Z"
         );
-        string expectedEffectiveDate = "2020-01-31";
+        string expectedEffectiveDate = "2019-12-27";
         DateTimeOffset expectedExpectedFundsSettlementAt = DateTimeOffset.Parse(
-            "2020-02-03T13:30:00Z"
+            "2019-12-27T18:11:19.117Z"
         );
         ApiEnum<
             string,
             AchTransfers::ExpectedSettlementSchedule
-        > expectedExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated;
-        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        string expectedTraceNumber = "058349238292834";
+        > expectedExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay;
+        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedTraceNumber = "trace_number";
 
         Assert.Equal(
             expectedAdministrativeReturnsExpectedBy,
@@ -3756,12 +3760,12 @@ public class SubmissionTest : TestBase
     {
         var model = new AchTransfers::Submission
         {
-            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
-            EffectiveDate = "2020-01-31",
-            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated,
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            TraceNumber = "058349238292834",
+            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            EffectiveDate = "2019-12-27",
+            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            TraceNumber = "trace_number",
         };
 
         model.Validate();
@@ -3772,12 +3776,12 @@ public class SubmissionTest : TestBase
     {
         var model = new AchTransfers::Submission
         {
-            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
-            EffectiveDate = "2020-01-31",
-            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.FutureDated,
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            TraceNumber = "058349238292834",
+            AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            EffectiveDate = "2019-12-27",
+            ExpectedFundsSettlementAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            TraceNumber = "trace_number",
         };
 
         AchTransfers::Submission copied = new(model);

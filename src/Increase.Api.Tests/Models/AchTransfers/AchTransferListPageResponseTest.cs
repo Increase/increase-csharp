@@ -20,7 +20,7 @@ public class AchTransferListPageResponseTest : TestBase
                     ID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
-                    Acknowledgement = new("2020-01-31T23:59:59Z"),
+                    Acknowledgement = new("2020-01-31T14:15:00Z"),
                     Addenda = new()
                     {
                         Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -32,7 +32,7 @@ public class AchTransferListPageResponseTest : TestBase
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                         ApprovedBy = null,
                     },
                     Cancellation = new()
@@ -45,7 +45,7 @@ public class AchTransferListPageResponseTest : TestBase
                     CompanyEntryDescription = null,
                     CompanyID = "1234987601",
                     CompanyName = "National Phonograph Company",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = AchTransfers::CreatedByCategory.User,
@@ -98,15 +98,15 @@ public class AchTransferListPageResponseTest : TestBase
                     Return = new()
                     {
                         AddendaInformation = null,
-                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
                         RawReturnReasonCode = "R01",
                         ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
                         TraceNumber = "111122223292834",
-                        TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                        TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
                         TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                     },
                     RoutingNumber = "101050001",
-                    Settlement = new(DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")),
+                    Settlement = new(DateTimeOffset.Parse("2020-01-31T18:00:00Z")),
                     StandardEntryClassCode =
                         AchTransfers::AchTransferStandardEntryClassCode.CorporateCreditOrDebit,
                     StatementDescriptor = "Statement descriptor",
@@ -114,13 +114,13 @@ public class AchTransferListPageResponseTest : TestBase
                     Submission = new()
                     {
                         AdministrativeReturnsExpectedBy = DateTimeOffset.Parse(
-                            "2020-02-05T11:00:00Z"
+                            "2020-02-04T11:00:00Z"
                         ),
                         EffectiveDate = "2020-01-31",
-                        ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
+                        ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
                         ExpectedSettlementSchedule =
-                            AchTransfers::ExpectedSettlementSchedule.FutureDated,
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            AchTransfers::ExpectedSettlementSchedule.SameDay,
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TraceNumber = "058349238292834",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -137,7 +137,7 @@ public class AchTransferListPageResponseTest : TestBase
                 ID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                 AccountID = "account_in71c4amph0vgo2qllky",
                 AccountNumber = "987654321",
-                Acknowledgement = new("2020-01-31T23:59:59Z"),
+                Acknowledgement = new("2020-01-31T14:15:00Z"),
                 Addenda = new()
                 {
                     Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -149,7 +149,7 @@ public class AchTransferListPageResponseTest : TestBase
                 Amount = 100,
                 Approval = new()
                 {
-                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                     ApprovedBy = null,
                 },
                 Cancellation = new()
@@ -162,7 +162,7 @@ public class AchTransferListPageResponseTest : TestBase
                 CompanyEntryDescription = null,
                 CompanyID = "1234987601",
                 CompanyName = "National Phonograph Company",
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                 CreatedBy = new()
                 {
                     Category = AchTransfers::CreatedByCategory.User,
@@ -214,27 +214,26 @@ public class AchTransferListPageResponseTest : TestBase
                 Return = new()
                 {
                     AddendaInformation = null,
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
                     RawReturnReasonCode = "R01",
                     ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
                     TraceNumber = "111122223292834",
-                    TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                    TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
                     TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                 },
                 RoutingNumber = "101050001",
-                Settlement = new(DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")),
+                Settlement = new(DateTimeOffset.Parse("2020-01-31T18:00:00Z")),
                 StandardEntryClassCode =
                     AchTransfers::AchTransferStandardEntryClassCode.CorporateCreditOrDebit,
                 StatementDescriptor = "Statement descriptor",
                 Status = AchTransfers::AchTransferStatus.Returned,
                 Submission = new()
                 {
-                    AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
+                    AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-04T11:00:00Z"),
                     EffectiveDate = "2020-01-31",
-                    ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-                    ExpectedSettlementSchedule =
-                        AchTransfers::ExpectedSettlementSchedule.FutureDated,
-                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
+                    ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                     TraceNumber = "058349238292834",
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -263,7 +262,7 @@ public class AchTransferListPageResponseTest : TestBase
                     ID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
-                    Acknowledgement = new("2020-01-31T23:59:59Z"),
+                    Acknowledgement = new("2020-01-31T14:15:00Z"),
                     Addenda = new()
                     {
                         Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -275,7 +274,7 @@ public class AchTransferListPageResponseTest : TestBase
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                         ApprovedBy = null,
                     },
                     Cancellation = new()
@@ -288,7 +287,7 @@ public class AchTransferListPageResponseTest : TestBase
                     CompanyEntryDescription = null,
                     CompanyID = "1234987601",
                     CompanyName = "National Phonograph Company",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = AchTransfers::CreatedByCategory.User,
@@ -341,15 +340,15 @@ public class AchTransferListPageResponseTest : TestBase
                     Return = new()
                     {
                         AddendaInformation = null,
-                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
                         RawReturnReasonCode = "R01",
                         ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
                         TraceNumber = "111122223292834",
-                        TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                        TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
                         TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                     },
                     RoutingNumber = "101050001",
-                    Settlement = new(DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")),
+                    Settlement = new(DateTimeOffset.Parse("2020-01-31T18:00:00Z")),
                     StandardEntryClassCode =
                         AchTransfers::AchTransferStandardEntryClassCode.CorporateCreditOrDebit,
                     StatementDescriptor = "Statement descriptor",
@@ -357,13 +356,13 @@ public class AchTransferListPageResponseTest : TestBase
                     Submission = new()
                     {
                         AdministrativeReturnsExpectedBy = DateTimeOffset.Parse(
-                            "2020-02-05T11:00:00Z"
+                            "2020-02-04T11:00:00Z"
                         ),
                         EffectiveDate = "2020-01-31",
-                        ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
+                        ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
                         ExpectedSettlementSchedule =
-                            AchTransfers::ExpectedSettlementSchedule.FutureDated,
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            AchTransfers::ExpectedSettlementSchedule.SameDay,
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TraceNumber = "058349238292834",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -394,7 +393,7 @@ public class AchTransferListPageResponseTest : TestBase
                     ID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
-                    Acknowledgement = new("2020-01-31T23:59:59Z"),
+                    Acknowledgement = new("2020-01-31T14:15:00Z"),
                     Addenda = new()
                     {
                         Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -406,7 +405,7 @@ public class AchTransferListPageResponseTest : TestBase
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                         ApprovedBy = null,
                     },
                     Cancellation = new()
@@ -419,7 +418,7 @@ public class AchTransferListPageResponseTest : TestBase
                     CompanyEntryDescription = null,
                     CompanyID = "1234987601",
                     CompanyName = "National Phonograph Company",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = AchTransfers::CreatedByCategory.User,
@@ -472,15 +471,15 @@ public class AchTransferListPageResponseTest : TestBase
                     Return = new()
                     {
                         AddendaInformation = null,
-                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
                         RawReturnReasonCode = "R01",
                         ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
                         TraceNumber = "111122223292834",
-                        TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                        TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
                         TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                     },
                     RoutingNumber = "101050001",
-                    Settlement = new(DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")),
+                    Settlement = new(DateTimeOffset.Parse("2020-01-31T18:00:00Z")),
                     StandardEntryClassCode =
                         AchTransfers::AchTransferStandardEntryClassCode.CorporateCreditOrDebit,
                     StatementDescriptor = "Statement descriptor",
@@ -488,13 +487,13 @@ public class AchTransferListPageResponseTest : TestBase
                     Submission = new()
                     {
                         AdministrativeReturnsExpectedBy = DateTimeOffset.Parse(
-                            "2020-02-05T11:00:00Z"
+                            "2020-02-04T11:00:00Z"
                         ),
                         EffectiveDate = "2020-01-31",
-                        ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
+                        ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
                         ExpectedSettlementSchedule =
-                            AchTransfers::ExpectedSettlementSchedule.FutureDated,
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            AchTransfers::ExpectedSettlementSchedule.SameDay,
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TraceNumber = "058349238292834",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -518,7 +517,7 @@ public class AchTransferListPageResponseTest : TestBase
                 ID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                 AccountID = "account_in71c4amph0vgo2qllky",
                 AccountNumber = "987654321",
-                Acknowledgement = new("2020-01-31T23:59:59Z"),
+                Acknowledgement = new("2020-01-31T14:15:00Z"),
                 Addenda = new()
                 {
                     Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -530,7 +529,7 @@ public class AchTransferListPageResponseTest : TestBase
                 Amount = 100,
                 Approval = new()
                 {
-                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                     ApprovedBy = null,
                 },
                 Cancellation = new()
@@ -543,7 +542,7 @@ public class AchTransferListPageResponseTest : TestBase
                 CompanyEntryDescription = null,
                 CompanyID = "1234987601",
                 CompanyName = "National Phonograph Company",
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                 CreatedBy = new()
                 {
                     Category = AchTransfers::CreatedByCategory.User,
@@ -595,27 +594,26 @@ public class AchTransferListPageResponseTest : TestBase
                 Return = new()
                 {
                     AddendaInformation = null,
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
                     RawReturnReasonCode = "R01",
                     ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
                     TraceNumber = "111122223292834",
-                    TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                    TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
                     TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                 },
                 RoutingNumber = "101050001",
-                Settlement = new(DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")),
+                Settlement = new(DateTimeOffset.Parse("2020-01-31T18:00:00Z")),
                 StandardEntryClassCode =
                     AchTransfers::AchTransferStandardEntryClassCode.CorporateCreditOrDebit,
                 StatementDescriptor = "Statement descriptor",
                 Status = AchTransfers::AchTransferStatus.Returned,
                 Submission = new()
                 {
-                    AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-05T11:00:00Z"),
+                    AdministrativeReturnsExpectedBy = DateTimeOffset.Parse("2020-02-04T11:00:00Z"),
                     EffectiveDate = "2020-01-31",
-                    ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
-                    ExpectedSettlementSchedule =
-                        AchTransfers::ExpectedSettlementSchedule.FutureDated,
-                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
+                    ExpectedSettlementSchedule = AchTransfers::ExpectedSettlementSchedule.SameDay,
+                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                     TraceNumber = "058349238292834",
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -644,7 +642,7 @@ public class AchTransferListPageResponseTest : TestBase
                     ID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
-                    Acknowledgement = new("2020-01-31T23:59:59Z"),
+                    Acknowledgement = new("2020-01-31T14:15:00Z"),
                     Addenda = new()
                     {
                         Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -656,7 +654,7 @@ public class AchTransferListPageResponseTest : TestBase
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                         ApprovedBy = null,
                     },
                     Cancellation = new()
@@ -669,7 +667,7 @@ public class AchTransferListPageResponseTest : TestBase
                     CompanyEntryDescription = null,
                     CompanyID = "1234987601",
                     CompanyName = "National Phonograph Company",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = AchTransfers::CreatedByCategory.User,
@@ -722,15 +720,15 @@ public class AchTransferListPageResponseTest : TestBase
                     Return = new()
                     {
                         AddendaInformation = null,
-                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
                         RawReturnReasonCode = "R01",
                         ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
                         TraceNumber = "111122223292834",
-                        TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                        TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
                         TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                     },
                     RoutingNumber = "101050001",
-                    Settlement = new(DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")),
+                    Settlement = new(DateTimeOffset.Parse("2020-01-31T18:00:00Z")),
                     StandardEntryClassCode =
                         AchTransfers::AchTransferStandardEntryClassCode.CorporateCreditOrDebit,
                     StatementDescriptor = "Statement descriptor",
@@ -738,13 +736,13 @@ public class AchTransferListPageResponseTest : TestBase
                     Submission = new()
                     {
                         AdministrativeReturnsExpectedBy = DateTimeOffset.Parse(
-                            "2020-02-05T11:00:00Z"
+                            "2020-02-04T11:00:00Z"
                         ),
                         EffectiveDate = "2020-01-31",
-                        ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
+                        ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
                         ExpectedSettlementSchedule =
-                            AchTransfers::ExpectedSettlementSchedule.FutureDated,
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            AchTransfers::ExpectedSettlementSchedule.SameDay,
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TraceNumber = "058349238292834",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -769,7 +767,7 @@ public class AchTransferListPageResponseTest : TestBase
                     ID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
-                    Acknowledgement = new("2020-01-31T23:59:59Z"),
+                    Acknowledgement = new("2020-01-31T14:15:00Z"),
                     Addenda = new()
                     {
                         Category = AchTransfers::AchTransferAddendaCategory.Freeform,
@@ -781,7 +779,7 @@ public class AchTransferListPageResponseTest : TestBase
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                         ApprovedBy = null,
                     },
                     Cancellation = new()
@@ -794,7 +792,7 @@ public class AchTransferListPageResponseTest : TestBase
                     CompanyEntryDescription = null,
                     CompanyID = "1234987601",
                     CompanyName = "National Phonograph Company",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = AchTransfers::CreatedByCategory.User,
@@ -847,15 +845,15 @@ public class AchTransferListPageResponseTest : TestBase
                     Return = new()
                     {
                         AddendaInformation = null,
-                        CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        CreatedAt = DateTimeOffset.Parse("2020-02-03T11:00:00Z"),
                         RawReturnReasonCode = "R01",
                         ReturnReasonCode = AchTransfers::ReturnReasonCode.InsufficientFund,
                         TraceNumber = "111122223292834",
-                        TransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                        TransactionID = "transaction_a4fhzo4hjxckcn1b49px",
                         TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
                     },
                     RoutingNumber = "101050001",
-                    Settlement = new(DateTimeOffset.Parse("2019-12-27T18:11:19.117Z")),
+                    Settlement = new(DateTimeOffset.Parse("2020-01-31T18:00:00Z")),
                     StandardEntryClassCode =
                         AchTransfers::AchTransferStandardEntryClassCode.CorporateCreditOrDebit,
                     StatementDescriptor = "Statement descriptor",
@@ -863,13 +861,13 @@ public class AchTransferListPageResponseTest : TestBase
                     Submission = new()
                     {
                         AdministrativeReturnsExpectedBy = DateTimeOffset.Parse(
-                            "2020-02-05T11:00:00Z"
+                            "2020-02-04T11:00:00Z"
                         ),
                         EffectiveDate = "2020-01-31",
-                        ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-02-03T13:30:00Z"),
+                        ExpectedFundsSettlementAt = DateTimeOffset.Parse("2020-01-31T18:00:00Z"),
                         ExpectedSettlementSchedule =
-                            AchTransfers::ExpectedSettlementSchedule.FutureDated,
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            AchTransfers::ExpectedSettlementSchedule.SameDay,
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TraceNumber = "058349238292834",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
