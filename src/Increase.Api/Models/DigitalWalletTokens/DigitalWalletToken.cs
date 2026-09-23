@@ -446,6 +446,21 @@ public enum Reason
     /// The tokenization attempt was declined by the token requestor.
     /// </summary>
     DeclinedByTokenRequestor,
+
+    /// <summary>
+    /// The group was locked.
+    /// </summary>
+    GroupLocked,
+
+    /// <summary>
+    /// The account has been closed.
+    /// </summary>
+    AccountClosed,
+
+    /// <summary>
+    /// The account's entity was not active.
+    /// </summary>
+    EntityNotActive,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -464,6 +479,9 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "webhook_declined" => Reason.WebhookDeclined,
             "incorrect_card_verification_code" => Reason.IncorrectCardVerificationCode,
             "declined_by_token_requestor" => Reason.DeclinedByTokenRequestor,
+            "group_locked" => Reason.GroupLocked,
+            "account_closed" => Reason.AccountClosed,
+            "entity_not_active" => Reason.EntityNotActive,
             _ => (Reason)(-1),
         };
     }
@@ -480,6 +498,9 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.WebhookDeclined => "webhook_declined",
                 Reason.IncorrectCardVerificationCode => "incorrect_card_verification_code",
                 Reason.DeclinedByTokenRequestor => "declined_by_token_requestor",
+                Reason.GroupLocked => "group_locked",
+                Reason.AccountClosed => "account_closed",
+                Reason.EntityNotActive => "entity_not_active",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

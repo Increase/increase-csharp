@@ -23,7 +23,7 @@ public class WireTransferListPageResponseTest : TestBase
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                         ApprovedBy = null,
                     },
                     Cancellation = new()
@@ -31,7 +31,7 @@ public class WireTransferListPageResponseTest : TestBase
                         CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         CanceledBy = null,
                     },
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = WireTransfers::CreatedByCategory.User,
@@ -103,7 +103,7 @@ public class WireTransferListPageResponseTest : TestBase
                     Submission = new()
                     {
                         InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
@@ -123,7 +123,7 @@ public class WireTransferListPageResponseTest : TestBase
                 Amount = 100,
                 Approval = new()
                 {
-                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                     ApprovedBy = null,
                 },
                 Cancellation = new()
@@ -131,7 +131,7 @@ public class WireTransferListPageResponseTest : TestBase
                     CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CanceledBy = null,
                 },
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                 CreatedBy = new()
                 {
                     Category = WireTransfers::CreatedByCategory.User,
@@ -203,7 +203,7 @@ public class WireTransferListPageResponseTest : TestBase
                 Submission = new()
                 {
                     InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = WireTransfers::Type.WireTransfer,
@@ -235,7 +235,7 @@ public class WireTransferListPageResponseTest : TestBase
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                         ApprovedBy = null,
                     },
                     Cancellation = new()
@@ -243,7 +243,7 @@ public class WireTransferListPageResponseTest : TestBase
                         CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         CanceledBy = null,
                     },
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = WireTransfers::CreatedByCategory.User,
@@ -315,7 +315,7 @@ public class WireTransferListPageResponseTest : TestBase
                     Submission = new()
                     {
                         InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
@@ -349,7 +349,7 @@ public class WireTransferListPageResponseTest : TestBase
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                         ApprovedBy = null,
                     },
                     Cancellation = new()
@@ -357,7 +357,7 @@ public class WireTransferListPageResponseTest : TestBase
                         CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         CanceledBy = null,
                     },
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = WireTransfers::CreatedByCategory.User,
@@ -429,7 +429,7 @@ public class WireTransferListPageResponseTest : TestBase
                     Submission = new()
                     {
                         InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
@@ -456,7 +456,7 @@ public class WireTransferListPageResponseTest : TestBase
                 Amount = 100,
                 Approval = new()
                 {
-                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                     ApprovedBy = null,
                 },
                 Cancellation = new()
@@ -464,7 +464,7 @@ public class WireTransferListPageResponseTest : TestBase
                     CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CanceledBy = null,
                 },
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                 CreatedBy = new()
                 {
                     Category = WireTransfers::CreatedByCategory.User,
@@ -536,7 +536,7 @@ public class WireTransferListPageResponseTest : TestBase
                 Submission = new()
                 {
                     InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 Type = WireTransfers::Type.WireTransfer,
@@ -568,7 +568,7 @@ public class WireTransferListPageResponseTest : TestBase
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                         ApprovedBy = null,
                     },
                     Cancellation = new()
@@ -576,7 +576,7 @@ public class WireTransferListPageResponseTest : TestBase
                         CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         CanceledBy = null,
                     },
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = WireTransfers::CreatedByCategory.User,
@@ -648,7 +648,7 @@ public class WireTransferListPageResponseTest : TestBase
                     Submission = new()
                     {
                         InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,
@@ -676,7 +676,7 @@ public class WireTransferListPageResponseTest : TestBase
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                         ApprovedBy = null,
                     },
                     Cancellation = new()
@@ -684,7 +684,7 @@ public class WireTransferListPageResponseTest : TestBase
                         CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         CanceledBy = null,
                     },
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = WireTransfers::CreatedByCategory.User,
@@ -756,7 +756,7 @@ public class WireTransferListPageResponseTest : TestBase
                     Submission = new()
                     {
                         InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     Type = WireTransfers::Type.WireTransfer,

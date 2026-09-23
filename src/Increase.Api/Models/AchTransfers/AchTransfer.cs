@@ -614,12 +614,12 @@ public sealed record class Acknowledgement : JsonModel
     /// <summary>
     /// When the Federal Reserve acknowledged the submitted file containing this transfer.
     /// </summary>
-    public required string AcknowledgedAt
+    public required System::DateTimeOffset AcknowledgedAt
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("acknowledged_at");
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("acknowledged_at");
         }
         init { this._rawData.Set("acknowledged_at", value); }
     }
@@ -658,7 +658,7 @@ public sealed record class Acknowledgement : JsonModel
     }
 
     [SetsRequiredMembers]
-    public Acknowledgement(string acknowledgedAt)
+    public Acknowledgement(System::DateTimeOffset acknowledgedAt)
         : this()
     {
         this.AcknowledgedAt = acknowledgedAt;

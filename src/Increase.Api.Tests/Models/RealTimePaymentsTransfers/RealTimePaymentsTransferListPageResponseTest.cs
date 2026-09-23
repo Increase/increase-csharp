@@ -20,19 +20,19 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     ID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
-                    Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                    Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T14:10:02Z")),
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     Cancellation = new()
                     {
                         CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         CanceledBy = null,
                     },
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = RealTimePaymentsTransfers::Category.User,
@@ -59,7 +59,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                     Submission = new()
                     {
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -79,19 +79,19 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                 ID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                 AccountID = "account_in71c4amph0vgo2qllky",
                 AccountNumber = "987654321",
-                Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T14:10:02Z")),
                 Amount = 100,
                 Approval = new()
                 {
-                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    ApprovedBy = null,
+                    ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    ApprovedBy = "approved_by",
                 },
                 Cancellation = new()
                 {
                     CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CanceledBy = null,
                 },
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                 CreatedBy = new()
                 {
                     Category = RealTimePaymentsTransfers::Category.User,
@@ -117,7 +117,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                 Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                 Submission = new()
                 {
-                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                     TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -149,19 +149,19 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     ID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
-                    Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                    Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T14:10:02Z")),
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     Cancellation = new()
                     {
                         CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         CanceledBy = null,
                     },
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = RealTimePaymentsTransfers::Category.User,
@@ -188,7 +188,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                     Submission = new()
                     {
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -223,19 +223,19 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     ID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
-                    Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                    Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T14:10:02Z")),
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     Cancellation = new()
                     {
                         CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         CanceledBy = null,
                     },
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = RealTimePaymentsTransfers::Category.User,
@@ -262,7 +262,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                     Submission = new()
                     {
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -290,19 +290,19 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                 ID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                 AccountID = "account_in71c4amph0vgo2qllky",
                 AccountNumber = "987654321",
-                Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T14:10:02Z")),
                 Amount = 100,
                 Approval = new()
                 {
-                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    ApprovedBy = null,
+                    ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    ApprovedBy = "approved_by",
                 },
                 Cancellation = new()
                 {
                     CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CanceledBy = null,
                 },
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                 CreatedBy = new()
                 {
                     Category = RealTimePaymentsTransfers::Category.User,
@@ -328,7 +328,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                 Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                 Submission = new()
                 {
-                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                     TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -360,19 +360,19 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     ID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
-                    Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                    Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T14:10:02Z")),
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     Cancellation = new()
                     {
                         CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         CanceledBy = null,
                     },
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = RealTimePaymentsTransfers::Category.User,
@@ -399,7 +399,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                     Submission = new()
                     {
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
@@ -427,19 +427,19 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     ID = "real_time_payments_transfer_iyuhl5kdn7ssmup83mvq",
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumber = "987654321",
-                    Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                    Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T14:10:02Z")),
                     Amount = 100,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     Cancellation = new()
                     {
                         CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         CanceledBy = null,
                     },
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = RealTimePaymentsTransfers::Category.User,
@@ -466,7 +466,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                     Submission = new()
                     {
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",

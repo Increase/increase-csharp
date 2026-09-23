@@ -20,13 +20,13 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     ID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     Acceptance = new()
                     {
-                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T14:00:01Z"),
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Amount = 100,
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreditorAddressLine1 = "33 Liberty Street",
                     CreditorAddressLine2 = "New York, NY, 10045",
                     CreditorAddressLine3 = null,
@@ -41,6 +41,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = "202201180000001",
                     Purpose = "CASH",
                     Reversal = new()
@@ -65,13 +66,13 @@ public class InboundWireTransferListPageResponseTest : TestBase
                 ID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                 Acceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T14:00:01Z"),
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 },
                 AccountID = "account_in71c4amph0vgo2qllky",
                 AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                 Amount = 100,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                 CreditorAddressLine1 = "33 Liberty Street",
                 CreditorAddressLine2 = "New York, NY, 10045",
                 CreditorAddressLine3 = null,
@@ -86,6 +87,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                 EndToEndIdentification = "Invoice 29582",
                 InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                 InstructingAgentRoutingNumber = "101050001",
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = "202201180000001",
                 Purpose = "CASH",
                 Reversal = new()
@@ -122,13 +124,13 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     ID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     Acceptance = new()
                     {
-                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T14:00:01Z"),
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Amount = 100,
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreditorAddressLine1 = "33 Liberty Street",
                     CreditorAddressLine2 = "New York, NY, 10045",
                     CreditorAddressLine3 = null,
@@ -143,6 +145,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = "202201180000001",
                     Purpose = "CASH",
                     Reversal = new()
@@ -182,13 +185,13 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     ID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     Acceptance = new()
                     {
-                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T14:00:01Z"),
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Amount = 100,
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreditorAddressLine1 = "33 Liberty Street",
                     CreditorAddressLine2 = "New York, NY, 10045",
                     CreditorAddressLine3 = null,
@@ -203,6 +206,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = "202201180000001",
                     Purpose = "CASH",
                     Reversal = new()
@@ -235,13 +239,13 @@ public class InboundWireTransferListPageResponseTest : TestBase
                 ID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                 Acceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T14:00:01Z"),
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 },
                 AccountID = "account_in71c4amph0vgo2qllky",
                 AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                 Amount = 100,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                 CreditorAddressLine1 = "33 Liberty Street",
                 CreditorAddressLine2 = "New York, NY, 10045",
                 CreditorAddressLine3 = null,
@@ -256,6 +260,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                 EndToEndIdentification = "Invoice 29582",
                 InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                 InstructingAgentRoutingNumber = "101050001",
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = "202201180000001",
                 Purpose = "CASH",
                 Reversal = new()
@@ -292,13 +297,13 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     ID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     Acceptance = new()
                     {
-                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T14:00:01Z"),
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Amount = 100,
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreditorAddressLine1 = "33 Liberty Street",
                     CreditorAddressLine2 = "New York, NY, 10045",
                     CreditorAddressLine3 = null,
@@ -313,6 +318,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = "202201180000001",
                     Purpose = "CASH",
                     Reversal = new()
@@ -345,13 +351,13 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     ID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     Acceptance = new()
                     {
-                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T14:00:01Z"),
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
                     AccountID = "account_in71c4amph0vgo2qllky",
                     AccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
                     Amount = 100,
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreditorAddressLine1 = "33 Liberty Street",
                     CreditorAddressLine2 = "New York, NY, 10045",
                     CreditorAddressLine3 = null,
@@ -366,6 +372,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     InputMessageAccountabilityData = "20220118MMQFMP0P000001",
                     InstructingAgentRoutingNumber = "101050001",
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = "202201180000001",
                     Purpose = "CASH",
                     Reversal = new()

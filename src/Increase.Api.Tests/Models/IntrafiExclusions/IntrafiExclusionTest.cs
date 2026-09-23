@@ -17,11 +17,11 @@ public class IntrafiExclusionTest : TestBase
             BankName = "Example Bank",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             EntityID = "entity_n8y8tnk2p9339ti393yi",
-            ExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59+00:00"),
+            ExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59Z"),
             FdicCertificateNumber = "314159",
             IdempotencyKey = null,
             Status = IntrafiExclusions::Status.Completed,
-            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
             Type = IntrafiExclusions::Type.IntrafiExclusion,
         };
 
@@ -29,11 +29,11 @@ public class IntrafiExclusionTest : TestBase
         string expectedBankName = "Example Bank";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedEntityID = "entity_n8y8tnk2p9339ti393yi";
-        DateTimeOffset expectedExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59+00:00");
+        DateTimeOffset expectedExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59Z");
         string expectedFdicCertificateNumber = "314159";
         ApiEnum<string, IntrafiExclusions::Status> expectedStatus =
             IntrafiExclusions::Status.Completed;
-        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00");
+        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z");
         ApiEnum<string, IntrafiExclusions::Type> expectedType =
             IntrafiExclusions::Type.IntrafiExclusion;
 
@@ -58,11 +58,11 @@ public class IntrafiExclusionTest : TestBase
             BankName = "Example Bank",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             EntityID = "entity_n8y8tnk2p9339ti393yi",
-            ExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59+00:00"),
+            ExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59Z"),
             FdicCertificateNumber = "314159",
             IdempotencyKey = null,
             Status = IntrafiExclusions::Status.Completed,
-            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
             Type = IntrafiExclusions::Type.IntrafiExclusion,
         };
 
@@ -84,11 +84,11 @@ public class IntrafiExclusionTest : TestBase
             BankName = "Example Bank",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             EntityID = "entity_n8y8tnk2p9339ti393yi",
-            ExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59+00:00"),
+            ExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59Z"),
             FdicCertificateNumber = "314159",
             IdempotencyKey = null,
             Status = IntrafiExclusions::Status.Completed,
-            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
             Type = IntrafiExclusions::Type.IntrafiExclusion,
         };
 
@@ -103,11 +103,11 @@ public class IntrafiExclusionTest : TestBase
         string expectedBankName = "Example Bank";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedEntityID = "entity_n8y8tnk2p9339ti393yi";
-        DateTimeOffset expectedExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59+00:00");
+        DateTimeOffset expectedExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59Z");
         string expectedFdicCertificateNumber = "314159";
         ApiEnum<string, IntrafiExclusions::Status> expectedStatus =
             IntrafiExclusions::Status.Completed;
-        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00");
+        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z");
         ApiEnum<string, IntrafiExclusions::Type> expectedType =
             IntrafiExclusions::Type.IntrafiExclusion;
 
@@ -132,11 +132,11 @@ public class IntrafiExclusionTest : TestBase
             BankName = "Example Bank",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             EntityID = "entity_n8y8tnk2p9339ti393yi",
-            ExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59+00:00"),
+            ExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59Z"),
             FdicCertificateNumber = "314159",
             IdempotencyKey = null,
             Status = IntrafiExclusions::Status.Completed,
-            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
             Type = IntrafiExclusions::Type.IntrafiExclusion,
         };
 
@@ -152,11 +152,11 @@ public class IntrafiExclusionTest : TestBase
             BankName = "Example Bank",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             EntityID = "entity_n8y8tnk2p9339ti393yi",
-            ExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59+00:00"),
+            ExcludedAt = DateTimeOffset.Parse("2020-02-01T23:59:59Z"),
             FdicCertificateNumber = "314159",
             IdempotencyKey = null,
             Status = IntrafiExclusions::Status.Completed,
-            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
             Type = IntrafiExclusions::Type.IntrafiExclusion,
         };
 

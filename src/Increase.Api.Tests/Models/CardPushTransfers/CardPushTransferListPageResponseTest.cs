@@ -29,8 +29,8 @@ public class CardPushTransferListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     BusinessApplicationIdentifier =
                         CardPushTransfers::CardPushTransferBusinessApplicationIdentifier.FundsDisbursement,
@@ -110,8 +110,8 @@ public class CardPushTransferListPageResponseTest : TestBase
                 AccountID = "account_in71c4amph0vgo2qllky",
                 Approval = new()
                 {
-                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    ApprovedBy = null,
+                    ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    ApprovedBy = "approved_by",
                 },
                 BusinessApplicationIdentifier =
                     CardPushTransfers::CardPushTransferBusinessApplicationIdentifier.FundsDisbursement,
@@ -203,8 +203,8 @@ public class CardPushTransferListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     BusinessApplicationIdentifier =
                         CardPushTransfers::CardPushTransferBusinessApplicationIdentifier.FundsDisbursement,
@@ -299,8 +299,8 @@ public class CardPushTransferListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     BusinessApplicationIdentifier =
                         CardPushTransfers::CardPushTransferBusinessApplicationIdentifier.FundsDisbursement,
@@ -388,8 +388,8 @@ public class CardPushTransferListPageResponseTest : TestBase
                 AccountID = "account_in71c4amph0vgo2qllky",
                 Approval = new()
                 {
-                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    ApprovedBy = null,
+                    ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    ApprovedBy = "approved_by",
                 },
                 BusinessApplicationIdentifier =
                     CardPushTransfers::CardPushTransferBusinessApplicationIdentifier.FundsDisbursement,
@@ -481,8 +481,8 @@ public class CardPushTransferListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     BusinessApplicationIdentifier =
                         CardPushTransfers::CardPushTransferBusinessApplicationIdentifier.FundsDisbursement,
@@ -570,8 +570,8 @@ public class CardPushTransferListPageResponseTest : TestBase
                     AccountID = "account_in71c4amph0vgo2qllky",
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     BusinessApplicationIdentifier =
                         CardPushTransfers::CardPushTransferBusinessApplicationIdentifier.FundsDisbursement,
