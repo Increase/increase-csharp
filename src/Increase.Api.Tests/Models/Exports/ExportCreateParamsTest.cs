@@ -312,18 +312,18 @@ public class ExportCreateParamsTest : TestBase
 public class CategoryTest : TestBase
 {
     [Theory]
-    [InlineData(Category.AccountStatementOfx)]
     [InlineData(Category.AccountStatementBai2)]
-    [InlineData(Category.TransactionCsv)]
+    [InlineData(Category.AccountStatementOfx)]
+    [InlineData(Category.AccountVerificationLetter)]
     [InlineData(Category.BalanceCsv)]
     [InlineData(Category.BookkeepingAccountBalanceCsv)]
-    [InlineData(Category.EntityCsv)]
-    [InlineData(Category.VendorCsv)]
-    [InlineData(Category.AccountVerificationLetter)]
-    [InlineData(Category.FundingInstructions)]
-    [InlineData(Category.FeeCsv)]
-    [InlineData(Category.VoidedCheck)]
     [InlineData(Category.DailyAccountBalanceCsv)]
+    [InlineData(Category.EntityCsv)]
+    [InlineData(Category.FeeCsv)]
+    [InlineData(Category.FundingInstructions)]
+    [InlineData(Category.TransactionCsv)]
+    [InlineData(Category.VendorCsv)]
+    [InlineData(Category.VoidedCheck)]
     public void Validation_Works(Category rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -344,18 +344,18 @@ public class CategoryTest : TestBase
     }
 
     [Theory]
-    [InlineData(Category.AccountStatementOfx)]
     [InlineData(Category.AccountStatementBai2)]
-    [InlineData(Category.TransactionCsv)]
+    [InlineData(Category.AccountStatementOfx)]
+    [InlineData(Category.AccountVerificationLetter)]
     [InlineData(Category.BalanceCsv)]
     [InlineData(Category.BookkeepingAccountBalanceCsv)]
-    [InlineData(Category.EntityCsv)]
-    [InlineData(Category.VendorCsv)]
-    [InlineData(Category.AccountVerificationLetter)]
-    [InlineData(Category.FundingInstructions)]
-    [InlineData(Category.FeeCsv)]
-    [InlineData(Category.VoidedCheck)]
     [InlineData(Category.DailyAccountBalanceCsv)]
+    [InlineData(Category.EntityCsv)]
+    [InlineData(Category.FeeCsv)]
+    [InlineData(Category.FundingInstructions)]
+    [InlineData(Category.TransactionCsv)]
+    [InlineData(Category.VendorCsv)]
+    [InlineData(Category.VoidedCheck)]
     public void SerializationRoundtrip_Works(Category rawValue)
     {
         // force implicit conversion because Theory can't do that for us

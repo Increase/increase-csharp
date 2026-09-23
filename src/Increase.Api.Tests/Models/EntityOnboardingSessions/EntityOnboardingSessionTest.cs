@@ -16,7 +16,7 @@ public class EntityOnboardingSessionTest : TestBase
             ID = "entity_onboarding_session_wid2ug11fsmvh3k9hymd",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             EntityID = "entity_n8y8tnk2p9339ti393yi",
-            ExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59+00:00"),
+            ExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59Z"),
             IdempotencyKey = null,
             ProgramID = "program_i2v2os4mwza1oetokh9i",
             RedirectUrl = "https://example.com/onboarding/completed",
@@ -29,7 +29,7 @@ public class EntityOnboardingSessionTest : TestBase
         string expectedID = "entity_onboarding_session_wid2ug11fsmvh3k9hymd";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedEntityID = "entity_n8y8tnk2p9339ti393yi";
-        DateTimeOffset expectedExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59+00:00");
+        DateTimeOffset expectedExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59Z");
         string expectedProgramID = "program_i2v2os4mwza1oetokh9i";
         string expectedRedirectUrl = "https://example.com/onboarding/completed";
         string expectedSessionUrl =
@@ -59,7 +59,7 @@ public class EntityOnboardingSessionTest : TestBase
             ID = "entity_onboarding_session_wid2ug11fsmvh3k9hymd",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             EntityID = "entity_n8y8tnk2p9339ti393yi",
-            ExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59+00:00"),
+            ExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59Z"),
             IdempotencyKey = null,
             ProgramID = "program_i2v2os4mwza1oetokh9i",
             RedirectUrl = "https://example.com/onboarding/completed",
@@ -87,7 +87,7 @@ public class EntityOnboardingSessionTest : TestBase
             ID = "entity_onboarding_session_wid2ug11fsmvh3k9hymd",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             EntityID = "entity_n8y8tnk2p9339ti393yi",
-            ExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59+00:00"),
+            ExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59Z"),
             IdempotencyKey = null,
             ProgramID = "program_i2v2os4mwza1oetokh9i",
             RedirectUrl = "https://example.com/onboarding/completed",
@@ -108,7 +108,7 @@ public class EntityOnboardingSessionTest : TestBase
         string expectedID = "entity_onboarding_session_wid2ug11fsmvh3k9hymd";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedEntityID = "entity_n8y8tnk2p9339ti393yi";
-        DateTimeOffset expectedExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59+00:00");
+        DateTimeOffset expectedExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59Z");
         string expectedProgramID = "program_i2v2os4mwza1oetokh9i";
         string expectedRedirectUrl = "https://example.com/onboarding/completed";
         string expectedSessionUrl =
@@ -138,7 +138,7 @@ public class EntityOnboardingSessionTest : TestBase
             ID = "entity_onboarding_session_wid2ug11fsmvh3k9hymd",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             EntityID = "entity_n8y8tnk2p9339ti393yi",
-            ExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59+00:00"),
+            ExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59Z"),
             IdempotencyKey = null,
             ProgramID = "program_i2v2os4mwza1oetokh9i",
             RedirectUrl = "https://example.com/onboarding/completed",
@@ -159,7 +159,7 @@ public class EntityOnboardingSessionTest : TestBase
             ID = "entity_onboarding_session_wid2ug11fsmvh3k9hymd",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             EntityID = "entity_n8y8tnk2p9339ti393yi",
-            ExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59+00:00"),
+            ExpiresAt = DateTimeOffset.Parse("2020-02-01T05:59:59Z"),
             IdempotencyKey = null,
             ProgramID = "program_i2v2os4mwza1oetokh9i",
             RedirectUrl = "https://example.com/onboarding/completed",

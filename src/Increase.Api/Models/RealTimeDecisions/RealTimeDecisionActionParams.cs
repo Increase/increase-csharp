@@ -1230,6 +1230,12 @@ public enum Reason
     SuspectedFraud,
 
     /// <summary>
+    /// Additional customer authentication is required to complete the transaction,
+    /// such as 3DS.
+    /// </summary>
+    AdditionalCustomerAuthenticationRequired,
+
+    /// <summary>
     /// The transaction was declined for another reason. The merchant may attempt
     /// to process the transaction again. This should be used sparingly.
     /// </summary>
@@ -1251,6 +1257,8 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "exceeds_approval_limit" => Reason.ExceedsApprovalLimit,
             "card_temporarily_disabled" => Reason.CardTemporarilyDisabled,
             "suspected_fraud" => Reason.SuspectedFraud,
+            "additional_customer_authentication_required" =>
+                Reason.AdditionalCustomerAuthenticationRequired,
             "other" => Reason.Other,
             _ => (Reason)(-1),
         };
@@ -1267,6 +1275,8 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.ExceedsApprovalLimit => "exceeds_approval_limit",
                 Reason.CardTemporarilyDisabled => "card_temporarily_disabled",
                 Reason.SuspectedFraud => "suspected_fraud",
+                Reason.AdditionalCustomerAuthenticationRequired =>
+                    "additional_customer_authentication_required",
                 Reason.Other => "other",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

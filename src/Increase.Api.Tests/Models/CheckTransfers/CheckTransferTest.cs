@@ -20,8 +20,8 @@ public class CheckTransferTest : TestBase
             Amount = 1000,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                ApprovedBy = null,
+                ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ApprovedBy = "approved_by",
             },
             ApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             BalanceCheck = null,
@@ -31,7 +31,7 @@ public class CheckTransferTest : TestBase
                 CanceledBy = null,
             },
             CheckNumber = "123",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = CheckTransfers::Category.User,
@@ -42,7 +42,7 @@ public class CheckTransferTest : TestBase
             Currency = CheckTransfers::Currency.Usd,
             FulfillmentMethod = CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck,
             IdempotencyKey = null,
-            Mailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+            Mailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z")),
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             PhysicalCheck = new()
             {
@@ -113,7 +113,7 @@ public class CheckTransferTest : TestBase
                     State = "NY",
                     Zip = "10045",
                 },
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                 TrackingNumber = null,
             },
             ThirdParty = new("recipient_name"),
@@ -127,8 +127,8 @@ public class CheckTransferTest : TestBase
         long expectedAmount = 1000;
         CheckTransfers::Approval expectedApproval = new()
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
         string expectedApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra";
         CheckTransfers::Cancellation expectedCancellation = new()
@@ -137,7 +137,7 @@ public class CheckTransferTest : TestBase
             CanceledBy = null,
         };
         string expectedCheckNumber = "123";
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z");
         CheckTransfers::CreatedBy expectedCreatedBy = new()
         {
             Category = CheckTransfers::Category.User,
@@ -148,7 +148,7 @@ public class CheckTransferTest : TestBase
         ApiEnum<string, CheckTransfers::Currency> expectedCurrency = CheckTransfers::Currency.Usd;
         ApiEnum<string, CheckTransfers::CheckTransferFulfillmentMethod> expectedFulfillmentMethod =
             CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck;
-        CheckTransfers::Mailing expectedMailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z"));
+        CheckTransfers::Mailing expectedMailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z"));
         string expectedPendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4";
         CheckTransfers::CheckTransferPhysicalCheck expectedPhysicalCheck = new()
         {
@@ -218,7 +218,7 @@ public class CheckTransferTest : TestBase
                 State = "NY",
                 Zip = "10045",
             },
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             TrackingNumber = null,
         };
         CheckTransfers::CheckTransferThirdParty expectedThirdParty = new("recipient_name");
@@ -263,8 +263,8 @@ public class CheckTransferTest : TestBase
             Amount = 1000,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                ApprovedBy = null,
+                ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ApprovedBy = "approved_by",
             },
             ApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             BalanceCheck = null,
@@ -274,7 +274,7 @@ public class CheckTransferTest : TestBase
                 CanceledBy = null,
             },
             CheckNumber = "123",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = CheckTransfers::Category.User,
@@ -285,7 +285,7 @@ public class CheckTransferTest : TestBase
             Currency = CheckTransfers::Currency.Usd,
             FulfillmentMethod = CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck,
             IdempotencyKey = null,
-            Mailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+            Mailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z")),
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             PhysicalCheck = new()
             {
@@ -356,7 +356,7 @@ public class CheckTransferTest : TestBase
                     State = "NY",
                     Zip = "10045",
                 },
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                 TrackingNumber = null,
             },
             ThirdParty = new("recipient_name"),
@@ -384,8 +384,8 @@ public class CheckTransferTest : TestBase
             Amount = 1000,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                ApprovedBy = null,
+                ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ApprovedBy = "approved_by",
             },
             ApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             BalanceCheck = null,
@@ -395,7 +395,7 @@ public class CheckTransferTest : TestBase
                 CanceledBy = null,
             },
             CheckNumber = "123",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = CheckTransfers::Category.User,
@@ -406,7 +406,7 @@ public class CheckTransferTest : TestBase
             Currency = CheckTransfers::Currency.Usd,
             FulfillmentMethod = CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck,
             IdempotencyKey = null,
-            Mailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+            Mailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z")),
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             PhysicalCheck = new()
             {
@@ -477,7 +477,7 @@ public class CheckTransferTest : TestBase
                     State = "NY",
                     Zip = "10045",
                 },
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                 TrackingNumber = null,
             },
             ThirdParty = new("recipient_name"),
@@ -498,8 +498,8 @@ public class CheckTransferTest : TestBase
         long expectedAmount = 1000;
         CheckTransfers::Approval expectedApproval = new()
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
         string expectedApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra";
         CheckTransfers::Cancellation expectedCancellation = new()
@@ -508,7 +508,7 @@ public class CheckTransferTest : TestBase
             CanceledBy = null,
         };
         string expectedCheckNumber = "123";
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z");
         CheckTransfers::CreatedBy expectedCreatedBy = new()
         {
             Category = CheckTransfers::Category.User,
@@ -519,7 +519,7 @@ public class CheckTransferTest : TestBase
         ApiEnum<string, CheckTransfers::Currency> expectedCurrency = CheckTransfers::Currency.Usd;
         ApiEnum<string, CheckTransfers::CheckTransferFulfillmentMethod> expectedFulfillmentMethod =
             CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck;
-        CheckTransfers::Mailing expectedMailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z"));
+        CheckTransfers::Mailing expectedMailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z"));
         string expectedPendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4";
         CheckTransfers::CheckTransferPhysicalCheck expectedPhysicalCheck = new()
         {
@@ -589,7 +589,7 @@ public class CheckTransferTest : TestBase
                 State = "NY",
                 Zip = "10045",
             },
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             TrackingNumber = null,
         };
         CheckTransfers::CheckTransferThirdParty expectedThirdParty = new("recipient_name");
@@ -637,8 +637,8 @@ public class CheckTransferTest : TestBase
             Amount = 1000,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                ApprovedBy = null,
+                ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ApprovedBy = "approved_by",
             },
             ApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             BalanceCheck = null,
@@ -648,7 +648,7 @@ public class CheckTransferTest : TestBase
                 CanceledBy = null,
             },
             CheckNumber = "123",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = CheckTransfers::Category.User,
@@ -659,7 +659,7 @@ public class CheckTransferTest : TestBase
             Currency = CheckTransfers::Currency.Usd,
             FulfillmentMethod = CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck,
             IdempotencyKey = null,
-            Mailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+            Mailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z")),
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             PhysicalCheck = new()
             {
@@ -730,7 +730,7 @@ public class CheckTransferTest : TestBase
                     State = "NY",
                     Zip = "10045",
                 },
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                 TrackingNumber = null,
             },
             ThirdParty = new("recipient_name"),
@@ -752,8 +752,8 @@ public class CheckTransferTest : TestBase
             Amount = 1000,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                ApprovedBy = null,
+                ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ApprovedBy = "approved_by",
             },
             ApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             BalanceCheck = null,
@@ -763,7 +763,7 @@ public class CheckTransferTest : TestBase
                 CanceledBy = null,
             },
             CheckNumber = "123",
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = CheckTransfers::Category.User,
@@ -774,7 +774,7 @@ public class CheckTransferTest : TestBase
             Currency = CheckTransfers::Currency.Usd,
             FulfillmentMethod = CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck,
             IdempotencyKey = null,
-            Mailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+            Mailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z")),
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
             PhysicalCheck = new()
             {
@@ -845,7 +845,7 @@ public class CheckTransferTest : TestBase
                     State = "NY",
                     Zip = "10045",
                 },
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                 TrackingNumber = null,
             },
             ThirdParty = new("recipient_name"),
@@ -866,14 +866,15 @@ public class ApprovalTest : TestBase
     {
         var model = new CheckTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
-        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedApprovedBy = "approved_by";
 
         Assert.Equal(expectedApprovedAt, model.ApprovedAt);
-        Assert.Null(model.ApprovedBy);
+        Assert.Equal(expectedApprovedBy, model.ApprovedBy);
     }
 
     [Fact]
@@ -881,8 +882,8 @@ public class ApprovalTest : TestBase
     {
         var model = new CheckTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -899,8 +900,8 @@ public class ApprovalTest : TestBase
     {
         var model = new CheckTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -910,10 +911,11 @@ public class ApprovalTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedApprovedBy = "approved_by";
 
         Assert.Equal(expectedApprovedAt, deserialized.ApprovedAt);
-        Assert.Null(deserialized.ApprovedBy);
+        Assert.Equal(expectedApprovedBy, deserialized.ApprovedBy);
     }
 
     [Fact]
@@ -921,8 +923,8 @@ public class ApprovalTest : TestBase
     {
         var model = new CheckTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         model.Validate();
@@ -933,8 +935,8 @@ public class ApprovalTest : TestBase
     {
         var model = new CheckTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         CheckTransfers::Approval copied = new(model);
@@ -3054,35 +3056,37 @@ public class SubmissionTest : TestBase
     {
         var model = new CheckTransfers::Submission
         {
-            PreviewFileID = null,
+            PreviewFileID = "preview_file_id",
             SubmittedAddress = new()
             {
-                City = "NEW YORK",
-                Line1 = "33 LIBERTY STREET",
-                Line2 = null,
-                RecipientName = "IAN CREASE",
-                State = "NY",
-                Zip = "10045",
+                City = "city",
+                Line1 = "line1",
+                Line2 = "line2",
+                RecipientName = "recipient_name",
+                State = "state",
+                Zip = "zip",
             },
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            TrackingNumber = null,
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            TrackingNumber = "tracking_number",
         };
 
+        string expectedPreviewFileID = "preview_file_id";
         CheckTransfers::SubmittedAddress expectedSubmittedAddress = new()
         {
-            City = "NEW YORK",
-            Line1 = "33 LIBERTY STREET",
-            Line2 = null,
-            RecipientName = "IAN CREASE",
-            State = "NY",
-            Zip = "10045",
+            City = "city",
+            Line1 = "line1",
+            Line2 = "line2",
+            RecipientName = "recipient_name",
+            State = "state",
+            Zip = "zip",
         };
-        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedTrackingNumber = "tracking_number";
 
-        Assert.Null(model.PreviewFileID);
+        Assert.Equal(expectedPreviewFileID, model.PreviewFileID);
         Assert.Equal(expectedSubmittedAddress, model.SubmittedAddress);
         Assert.Equal(expectedSubmittedAt, model.SubmittedAt);
-        Assert.Null(model.TrackingNumber);
+        Assert.Equal(expectedTrackingNumber, model.TrackingNumber);
     }
 
     [Fact]
@@ -3090,18 +3094,18 @@ public class SubmissionTest : TestBase
     {
         var model = new CheckTransfers::Submission
         {
-            PreviewFileID = null,
+            PreviewFileID = "preview_file_id",
             SubmittedAddress = new()
             {
-                City = "NEW YORK",
-                Line1 = "33 LIBERTY STREET",
-                Line2 = null,
-                RecipientName = "IAN CREASE",
-                State = "NY",
-                Zip = "10045",
+                City = "city",
+                Line1 = "line1",
+                Line2 = "line2",
+                RecipientName = "recipient_name",
+                State = "state",
+                Zip = "zip",
             },
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            TrackingNumber = null,
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            TrackingNumber = "tracking_number",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -3118,18 +3122,18 @@ public class SubmissionTest : TestBase
     {
         var model = new CheckTransfers::Submission
         {
-            PreviewFileID = null,
+            PreviewFileID = "preview_file_id",
             SubmittedAddress = new()
             {
-                City = "NEW YORK",
-                Line1 = "33 LIBERTY STREET",
-                Line2 = null,
-                RecipientName = "IAN CREASE",
-                State = "NY",
-                Zip = "10045",
+                City = "city",
+                Line1 = "line1",
+                Line2 = "line2",
+                RecipientName = "recipient_name",
+                State = "state",
+                Zip = "zip",
             },
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            TrackingNumber = null,
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            TrackingNumber = "tracking_number",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -3139,21 +3143,23 @@ public class SubmissionTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        string expectedPreviewFileID = "preview_file_id";
         CheckTransfers::SubmittedAddress expectedSubmittedAddress = new()
         {
-            City = "NEW YORK",
-            Line1 = "33 LIBERTY STREET",
-            Line2 = null,
-            RecipientName = "IAN CREASE",
-            State = "NY",
-            Zip = "10045",
+            City = "city",
+            Line1 = "line1",
+            Line2 = "line2",
+            RecipientName = "recipient_name",
+            State = "state",
+            Zip = "zip",
         };
-        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedTrackingNumber = "tracking_number";
 
-        Assert.Null(deserialized.PreviewFileID);
+        Assert.Equal(expectedPreviewFileID, deserialized.PreviewFileID);
         Assert.Equal(expectedSubmittedAddress, deserialized.SubmittedAddress);
         Assert.Equal(expectedSubmittedAt, deserialized.SubmittedAt);
-        Assert.Null(deserialized.TrackingNumber);
+        Assert.Equal(expectedTrackingNumber, deserialized.TrackingNumber);
     }
 
     [Fact]
@@ -3161,18 +3167,18 @@ public class SubmissionTest : TestBase
     {
         var model = new CheckTransfers::Submission
         {
-            PreviewFileID = null,
+            PreviewFileID = "preview_file_id",
             SubmittedAddress = new()
             {
-                City = "NEW YORK",
-                Line1 = "33 LIBERTY STREET",
-                Line2 = null,
-                RecipientName = "IAN CREASE",
-                State = "NY",
-                Zip = "10045",
+                City = "city",
+                Line1 = "line1",
+                Line2 = "line2",
+                RecipientName = "recipient_name",
+                State = "state",
+                Zip = "zip",
             },
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            TrackingNumber = null,
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            TrackingNumber = "tracking_number",
         };
 
         model.Validate();
@@ -3183,18 +3189,18 @@ public class SubmissionTest : TestBase
     {
         var model = new CheckTransfers::Submission
         {
-            PreviewFileID = null,
+            PreviewFileID = "preview_file_id",
             SubmittedAddress = new()
             {
-                City = "NEW YORK",
-                Line1 = "33 LIBERTY STREET",
-                Line2 = null,
-                RecipientName = "IAN CREASE",
-                State = "NY",
-                Zip = "10045",
+                City = "city",
+                Line1 = "line1",
+                Line2 = "line2",
+                RecipientName = "recipient_name",
+                State = "state",
+                Zip = "zip",
             },
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            TrackingNumber = null,
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            TrackingNumber = "tracking_number",
         };
 
         CheckTransfers::Submission copied = new(model);
