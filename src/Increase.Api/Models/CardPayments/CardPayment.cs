@@ -13535,6 +13535,12 @@ public enum RealTimeDecisionReason
     SuspectedFraud,
 
     /// <summary>
+    /// Additional customer authentication is required to complete the transaction,
+    /// such as 3DS.
+    /// </summary>
+    AdditionalCustomerAuthenticationRequired,
+
+    /// <summary>
     /// The transaction was declined for another reason. The merchant may attempt
     /// to process the transaction again. This should be used sparingly.
     /// </summary>
@@ -13556,6 +13562,8 @@ sealed class RealTimeDecisionReasonConverter : JsonConverter<RealTimeDecisionRea
             "exceeds_approval_limit" => RealTimeDecisionReason.ExceedsApprovalLimit,
             "card_temporarily_disabled" => RealTimeDecisionReason.CardTemporarilyDisabled,
             "suspected_fraud" => RealTimeDecisionReason.SuspectedFraud,
+            "additional_customer_authentication_required" =>
+                RealTimeDecisionReason.AdditionalCustomerAuthenticationRequired,
             "other" => RealTimeDecisionReason.Other,
             _ => (RealTimeDecisionReason)(-1),
         };
@@ -13576,6 +13584,8 @@ sealed class RealTimeDecisionReasonConverter : JsonConverter<RealTimeDecisionRea
                 RealTimeDecisionReason.ExceedsApprovalLimit => "exceeds_approval_limit",
                 RealTimeDecisionReason.CardTemporarilyDisabled => "card_temporarily_disabled",
                 RealTimeDecisionReason.SuspectedFraud => "suspected_fraud",
+                RealTimeDecisionReason.AdditionalCustomerAuthenticationRequired =>
+                    "additional_customer_authentication_required",
                 RealTimeDecisionReason.Other => "other",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

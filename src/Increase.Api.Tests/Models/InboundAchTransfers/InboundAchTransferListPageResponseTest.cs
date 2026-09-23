@@ -20,7 +20,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     ID = "inbound_ach_transfer_tdrwqr3fq9gnnq49odev",
                     Acceptance = new()
                     {
-                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
                     AccountID = "account_in71c4amph0vgo2qllky",
@@ -31,8 +31,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         Freeform = new([new("payment_related_information")]),
                     },
                     Amount = 100,
-                    AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-30T22:30:00Z"),
                     Decline = new()
                     {
                         DeclinedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -40,7 +40,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         Reason = InboundAchTransfers::DeclineReason.AchRouteCanceled,
                     },
                     Direction = InboundAchTransfers::Direction.Credit,
-                    EffectiveDate = "2023-04-02",
+                    EffectiveDate = "2020-01-31",
                     InternationalAddenda = new()
                     {
                         DestinationCountryCode = "US",
@@ -88,7 +88,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         UpdatedAccountNumber = "updated_account_number",
                         UpdatedRoutingNumber = "updated_routing_number",
                     },
-                    OriginatorCompanyDescriptiveDate = "230401",
+                    OriginatorCompanyDescriptiveDate = "200131",
                     OriginatorCompanyDiscretionaryData = "WEB AUTOPAY",
                     OriginatorCompanyEntryDescription = "INVOICE 2468",
                     OriginatorCompanyID = "0987654321",
@@ -98,8 +98,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     ReceiverName = "Ian Crease",
                     Settlement = new()
                     {
-                        SettledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        SettlementSchedule = InboundAchTransfers::SettlementSchedule.SameDay,
+                        SettledAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                        SettlementSchedule = InboundAchTransfers::SettlementSchedule.FutureDated,
                     },
                     StandardEntryClassCode =
                         InboundAchTransfers::StandardEntryClassCode.InternetInitiated,
@@ -125,7 +125,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                 ID = "inbound_ach_transfer_tdrwqr3fq9gnnq49odev",
                 Acceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 },
                 AccountID = "account_in71c4amph0vgo2qllky",
@@ -136,8 +136,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     Freeform = new([new("payment_related_information")]),
                 },
                 Amount = 100,
-                AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-01-30T22:30:00Z"),
                 Decline = new()
                 {
                     DeclinedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -145,7 +145,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     Reason = InboundAchTransfers::DeclineReason.AchRouteCanceled,
                 },
                 Direction = InboundAchTransfers::Direction.Credit,
-                EffectiveDate = "2023-04-02",
+                EffectiveDate = "2020-01-31",
                 InternationalAddenda = new()
                 {
                     DestinationCountryCode = "US",
@@ -193,7 +193,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     UpdatedAccountNumber = "updated_account_number",
                     UpdatedRoutingNumber = "updated_routing_number",
                 },
-                OriginatorCompanyDescriptiveDate = "230401",
+                OriginatorCompanyDescriptiveDate = "200131",
                 OriginatorCompanyDiscretionaryData = "WEB AUTOPAY",
                 OriginatorCompanyEntryDescription = "INVOICE 2468",
                 OriginatorCompanyID = "0987654321",
@@ -203,8 +203,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                 ReceiverName = "Ian Crease",
                 Settlement = new()
                 {
-                    SettledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    SettlementSchedule = InboundAchTransfers::SettlementSchedule.SameDay,
+                    SettledAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                    SettlementSchedule = InboundAchTransfers::SettlementSchedule.FutureDated,
                 },
                 StandardEntryClassCode =
                     InboundAchTransfers::StandardEntryClassCode.InternetInitiated,
@@ -242,7 +242,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     ID = "inbound_ach_transfer_tdrwqr3fq9gnnq49odev",
                     Acceptance = new()
                     {
-                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
                     AccountID = "account_in71c4amph0vgo2qllky",
@@ -253,8 +253,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         Freeform = new([new("payment_related_information")]),
                     },
                     Amount = 100,
-                    AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-30T22:30:00Z"),
                     Decline = new()
                     {
                         DeclinedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -262,7 +262,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         Reason = InboundAchTransfers::DeclineReason.AchRouteCanceled,
                     },
                     Direction = InboundAchTransfers::Direction.Credit,
-                    EffectiveDate = "2023-04-02",
+                    EffectiveDate = "2020-01-31",
                     InternationalAddenda = new()
                     {
                         DestinationCountryCode = "US",
@@ -310,7 +310,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         UpdatedAccountNumber = "updated_account_number",
                         UpdatedRoutingNumber = "updated_routing_number",
                     },
-                    OriginatorCompanyDescriptiveDate = "230401",
+                    OriginatorCompanyDescriptiveDate = "200131",
                     OriginatorCompanyDiscretionaryData = "WEB AUTOPAY",
                     OriginatorCompanyEntryDescription = "INVOICE 2468",
                     OriginatorCompanyID = "0987654321",
@@ -320,8 +320,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     ReceiverName = "Ian Crease",
                     Settlement = new()
                     {
-                        SettledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        SettlementSchedule = InboundAchTransfers::SettlementSchedule.SameDay,
+                        SettledAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                        SettlementSchedule = InboundAchTransfers::SettlementSchedule.FutureDated,
                     },
                     StandardEntryClassCode =
                         InboundAchTransfers::StandardEntryClassCode.InternetInitiated,
@@ -362,7 +362,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     ID = "inbound_ach_transfer_tdrwqr3fq9gnnq49odev",
                     Acceptance = new()
                     {
-                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
                     AccountID = "account_in71c4amph0vgo2qllky",
@@ -373,8 +373,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         Freeform = new([new("payment_related_information")]),
                     },
                     Amount = 100,
-                    AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-30T22:30:00Z"),
                     Decline = new()
                     {
                         DeclinedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -382,7 +382,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         Reason = InboundAchTransfers::DeclineReason.AchRouteCanceled,
                     },
                     Direction = InboundAchTransfers::Direction.Credit,
-                    EffectiveDate = "2023-04-02",
+                    EffectiveDate = "2020-01-31",
                     InternationalAddenda = new()
                     {
                         DestinationCountryCode = "US",
@@ -430,7 +430,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         UpdatedAccountNumber = "updated_account_number",
                         UpdatedRoutingNumber = "updated_routing_number",
                     },
-                    OriginatorCompanyDescriptiveDate = "230401",
+                    OriginatorCompanyDescriptiveDate = "200131",
                     OriginatorCompanyDiscretionaryData = "WEB AUTOPAY",
                     OriginatorCompanyEntryDescription = "INVOICE 2468",
                     OriginatorCompanyID = "0987654321",
@@ -440,8 +440,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     ReceiverName = "Ian Crease",
                     Settlement = new()
                     {
-                        SettledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        SettlementSchedule = InboundAchTransfers::SettlementSchedule.SameDay,
+                        SettledAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                        SettlementSchedule = InboundAchTransfers::SettlementSchedule.FutureDated,
                     },
                     StandardEntryClassCode =
                         InboundAchTransfers::StandardEntryClassCode.InternetInitiated,
@@ -475,7 +475,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                 ID = "inbound_ach_transfer_tdrwqr3fq9gnnq49odev",
                 Acceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                 },
                 AccountID = "account_in71c4amph0vgo2qllky",
@@ -486,8 +486,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     Freeform = new([new("payment_related_information")]),
                 },
                 Amount = 100,
-                AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-01-30T22:30:00Z"),
                 Decline = new()
                 {
                     DeclinedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -495,7 +495,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     Reason = InboundAchTransfers::DeclineReason.AchRouteCanceled,
                 },
                 Direction = InboundAchTransfers::Direction.Credit,
-                EffectiveDate = "2023-04-02",
+                EffectiveDate = "2020-01-31",
                 InternationalAddenda = new()
                 {
                     DestinationCountryCode = "US",
@@ -543,7 +543,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     UpdatedAccountNumber = "updated_account_number",
                     UpdatedRoutingNumber = "updated_routing_number",
                 },
-                OriginatorCompanyDescriptiveDate = "230401",
+                OriginatorCompanyDescriptiveDate = "200131",
                 OriginatorCompanyDiscretionaryData = "WEB AUTOPAY",
                 OriginatorCompanyEntryDescription = "INVOICE 2468",
                 OriginatorCompanyID = "0987654321",
@@ -553,8 +553,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                 ReceiverName = "Ian Crease",
                 Settlement = new()
                 {
-                    SettledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    SettlementSchedule = InboundAchTransfers::SettlementSchedule.SameDay,
+                    SettledAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                    SettlementSchedule = InboundAchTransfers::SettlementSchedule.FutureDated,
                 },
                 StandardEntryClassCode =
                     InboundAchTransfers::StandardEntryClassCode.InternetInitiated,
@@ -592,7 +592,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     ID = "inbound_ach_transfer_tdrwqr3fq9gnnq49odev",
                     Acceptance = new()
                     {
-                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
                     AccountID = "account_in71c4amph0vgo2qllky",
@@ -603,8 +603,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         Freeform = new([new("payment_related_information")]),
                     },
                     Amount = 100,
-                    AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-30T22:30:00Z"),
                     Decline = new()
                     {
                         DeclinedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -612,7 +612,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         Reason = InboundAchTransfers::DeclineReason.AchRouteCanceled,
                     },
                     Direction = InboundAchTransfers::Direction.Credit,
-                    EffectiveDate = "2023-04-02",
+                    EffectiveDate = "2020-01-31",
                     InternationalAddenda = new()
                     {
                         DestinationCountryCode = "US",
@@ -660,7 +660,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         UpdatedAccountNumber = "updated_account_number",
                         UpdatedRoutingNumber = "updated_routing_number",
                     },
-                    OriginatorCompanyDescriptiveDate = "230401",
+                    OriginatorCompanyDescriptiveDate = "200131",
                     OriginatorCompanyDiscretionaryData = "WEB AUTOPAY",
                     OriginatorCompanyEntryDescription = "INVOICE 2468",
                     OriginatorCompanyID = "0987654321",
@@ -670,8 +670,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     ReceiverName = "Ian Crease",
                     Settlement = new()
                     {
-                        SettledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        SettlementSchedule = InboundAchTransfers::SettlementSchedule.SameDay,
+                        SettledAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                        SettlementSchedule = InboundAchTransfers::SettlementSchedule.FutureDated,
                     },
                     StandardEntryClassCode =
                         InboundAchTransfers::StandardEntryClassCode.InternetInitiated,
@@ -705,7 +705,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     ID = "inbound_ach_transfer_tdrwqr3fq9gnnq49odev",
                     Acceptance = new()
                     {
-                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        AcceptedAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
                     AccountID = "account_in71c4amph0vgo2qllky",
@@ -716,8 +716,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         Freeform = new([new("payment_related_information")]),
                     },
                     Amount = 100,
-                    AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    AutomaticallyResolvesAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-30T22:30:00Z"),
                     Decline = new()
                     {
                         DeclinedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -725,7 +725,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         Reason = InboundAchTransfers::DeclineReason.AchRouteCanceled,
                     },
                     Direction = InboundAchTransfers::Direction.Credit,
-                    EffectiveDate = "2023-04-02",
+                    EffectiveDate = "2020-01-31",
                     InternationalAddenda = new()
                     {
                         DestinationCountryCode = "US",
@@ -773,7 +773,7 @@ public class InboundAchTransferListPageResponseTest : TestBase
                         UpdatedAccountNumber = "updated_account_number",
                         UpdatedRoutingNumber = "updated_routing_number",
                     },
-                    OriginatorCompanyDescriptiveDate = "230401",
+                    OriginatorCompanyDescriptiveDate = "200131",
                     OriginatorCompanyDiscretionaryData = "WEB AUTOPAY",
                     OriginatorCompanyEntryDescription = "INVOICE 2468",
                     OriginatorCompanyID = "0987654321",
@@ -783,8 +783,8 @@ public class InboundAchTransferListPageResponseTest : TestBase
                     ReceiverName = "Ian Crease",
                     Settlement = new()
                     {
-                        SettledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        SettlementSchedule = InboundAchTransfers::SettlementSchedule.SameDay,
+                        SettledAt = DateTimeOffset.Parse("2020-01-31T13:30:00Z"),
+                        SettlementSchedule = InboundAchTransfers::SettlementSchedule.FutureDated,
                     },
                     StandardEntryClassCode =
                         InboundAchTransfers::StandardEntryClassCode.InternetInitiated,

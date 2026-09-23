@@ -23,8 +23,8 @@ public class CheckTransferListPageResponseTest : TestBase
                     Amount = 1000,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     ApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     BalanceCheck = null,
@@ -34,7 +34,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         CanceledBy = null,
                     },
                     CheckNumber = "123",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = CheckTransfers::Category.User,
@@ -46,7 +46,7 @@ public class CheckTransferListPageResponseTest : TestBase
                     FulfillmentMethod =
                         CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck,
                     IdempotencyKey = null,
-                    Mailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                    Mailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z")),
                     PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                     PhysicalCheck = new()
                     {
@@ -122,7 +122,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             State = "NY",
                             Zip = "10045",
                         },
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TrackingNumber = null,
                     },
                     ThirdParty = new("recipient_name"),
@@ -143,8 +143,8 @@ public class CheckTransferListPageResponseTest : TestBase
                 Amount = 1000,
                 Approval = new()
                 {
-                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    ApprovedBy = null,
+                    ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    ApprovedBy = "approved_by",
                 },
                 ApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 BalanceCheck = null,
@@ -154,7 +154,7 @@ public class CheckTransferListPageResponseTest : TestBase
                     CanceledBy = null,
                 },
                 CheckNumber = "123",
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                 CreatedBy = new()
                 {
                     Category = CheckTransfers::Category.User,
@@ -165,7 +165,7 @@ public class CheckTransferListPageResponseTest : TestBase
                 Currency = CheckTransfers::Currency.Usd,
                 FulfillmentMethod = CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck,
                 IdempotencyKey = null,
-                Mailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                Mailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z")),
                 PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                 PhysicalCheck = new()
                 {
@@ -241,7 +241,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         State = "NY",
                         Zip = "10045",
                     },
-                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                     TrackingNumber = null,
                 },
                 ThirdParty = new("recipient_name"),
@@ -274,8 +274,8 @@ public class CheckTransferListPageResponseTest : TestBase
                     Amount = 1000,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     ApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     BalanceCheck = null,
@@ -285,7 +285,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         CanceledBy = null,
                     },
                     CheckNumber = "123",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = CheckTransfers::Category.User,
@@ -297,7 +297,7 @@ public class CheckTransferListPageResponseTest : TestBase
                     FulfillmentMethod =
                         CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck,
                     IdempotencyKey = null,
-                    Mailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                    Mailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z")),
                     PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                     PhysicalCheck = new()
                     {
@@ -373,7 +373,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             State = "NY",
                             Zip = "10045",
                         },
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TrackingNumber = null,
                     },
                     ThirdParty = new("recipient_name"),
@@ -409,8 +409,8 @@ public class CheckTransferListPageResponseTest : TestBase
                     Amount = 1000,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     ApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     BalanceCheck = null,
@@ -420,7 +420,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         CanceledBy = null,
                     },
                     CheckNumber = "123",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = CheckTransfers::Category.User,
@@ -432,7 +432,7 @@ public class CheckTransferListPageResponseTest : TestBase
                     FulfillmentMethod =
                         CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck,
                     IdempotencyKey = null,
-                    Mailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                    Mailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z")),
                     PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                     PhysicalCheck = new()
                     {
@@ -508,7 +508,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             State = "NY",
                             Zip = "10045",
                         },
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TrackingNumber = null,
                     },
                     ThirdParty = new("recipient_name"),
@@ -537,8 +537,8 @@ public class CheckTransferListPageResponseTest : TestBase
                 Amount = 1000,
                 Approval = new()
                 {
-                    ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    ApprovedBy = null,
+                    ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    ApprovedBy = "approved_by",
                 },
                 ApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 BalanceCheck = null,
@@ -548,7 +548,7 @@ public class CheckTransferListPageResponseTest : TestBase
                     CanceledBy = null,
                 },
                 CheckNumber = "123",
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                 CreatedBy = new()
                 {
                     Category = CheckTransfers::Category.User,
@@ -559,7 +559,7 @@ public class CheckTransferListPageResponseTest : TestBase
                 Currency = CheckTransfers::Currency.Usd,
                 FulfillmentMethod = CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck,
                 IdempotencyKey = null,
-                Mailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                Mailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z")),
                 PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                 PhysicalCheck = new()
                 {
@@ -635,7 +635,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         State = "NY",
                         Zip = "10045",
                     },
-                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                     TrackingNumber = null,
                 },
                 ThirdParty = new("recipient_name"),
@@ -668,8 +668,8 @@ public class CheckTransferListPageResponseTest : TestBase
                     Amount = 1000,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     ApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     BalanceCheck = null,
@@ -679,7 +679,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         CanceledBy = null,
                     },
                     CheckNumber = "123",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = CheckTransfers::Category.User,
@@ -691,7 +691,7 @@ public class CheckTransferListPageResponseTest : TestBase
                     FulfillmentMethod =
                         CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck,
                     IdempotencyKey = null,
-                    Mailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                    Mailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z")),
                     PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                     PhysicalCheck = new()
                     {
@@ -767,7 +767,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             State = "NY",
                             Zip = "10045",
                         },
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TrackingNumber = null,
                     },
                     ThirdParty = new("recipient_name"),
@@ -796,8 +796,8 @@ public class CheckTransferListPageResponseTest : TestBase
                     Amount = 1000,
                     Approval = new()
                     {
-                        ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                        ApprovedBy = null,
+                        ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        ApprovedBy = "approved_by",
                     },
                     ApprovedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     BalanceCheck = null,
@@ -807,7 +807,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         CanceledBy = null,
                     },
                     CheckNumber = "123",
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
                         Category = CheckTransfers::Category.User,
@@ -819,7 +819,7 @@ public class CheckTransferListPageResponseTest : TestBase
                     FulfillmentMethod =
                         CheckTransfers::CheckTransferFulfillmentMethod.PhysicalCheck,
                     IdempotencyKey = null,
-                    Mailing = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+                    Mailing = new(DateTimeOffset.Parse("2020-02-03T20:00:00Z")),
                     PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
                     PhysicalCheck = new()
                     {
@@ -895,7 +895,7 @@ public class CheckTransferListPageResponseTest : TestBase
                             State = "NY",
                             Zip = "10045",
                         },
-                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TrackingNumber = null,
                     },
                     ThirdParty = new("recipient_name"),

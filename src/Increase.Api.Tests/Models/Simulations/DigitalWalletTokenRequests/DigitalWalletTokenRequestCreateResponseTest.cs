@@ -107,6 +107,9 @@ public class DeclineReasonTest : TestBase
     [InlineData(DeclineReason.WebhookDeclined)]
     [InlineData(DeclineReason.IncorrectCardVerificationCode)]
     [InlineData(DeclineReason.DeclinedByTokenRequestor)]
+    [InlineData(DeclineReason.GroupLocked)]
+    [InlineData(DeclineReason.AccountClosed)]
+    [InlineData(DeclineReason.EntityNotActive)]
     public void Validation_Works(DeclineReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -133,6 +136,9 @@ public class DeclineReasonTest : TestBase
     [InlineData(DeclineReason.WebhookDeclined)]
     [InlineData(DeclineReason.IncorrectCardVerificationCode)]
     [InlineData(DeclineReason.DeclinedByTokenRequestor)]
+    [InlineData(DeclineReason.GroupLocked)]
+    [InlineData(DeclineReason.AccountClosed)]
+    [InlineData(DeclineReason.EntityNotActive)]
     public void SerializationRoundtrip_Works(DeclineReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

@@ -474,6 +474,9 @@ public class ReasonTest : TestBase
     [InlineData(DigitalWalletTokens::Reason.WebhookDeclined)]
     [InlineData(DigitalWalletTokens::Reason.IncorrectCardVerificationCode)]
     [InlineData(DigitalWalletTokens::Reason.DeclinedByTokenRequestor)]
+    [InlineData(DigitalWalletTokens::Reason.GroupLocked)]
+    [InlineData(DigitalWalletTokens::Reason.AccountClosed)]
+    [InlineData(DigitalWalletTokens::Reason.EntityNotActive)]
     public void Validation_Works(DigitalWalletTokens::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -500,6 +503,9 @@ public class ReasonTest : TestBase
     [InlineData(DigitalWalletTokens::Reason.WebhookDeclined)]
     [InlineData(DigitalWalletTokens::Reason.IncorrectCardVerificationCode)]
     [InlineData(DigitalWalletTokens::Reason.DeclinedByTokenRequestor)]
+    [InlineData(DigitalWalletTokens::Reason.GroupLocked)]
+    [InlineData(DigitalWalletTokens::Reason.AccountClosed)]
+    [InlineData(DigitalWalletTokens::Reason.EntityNotActive)]
     public void SerializationRoundtrip_Works(DigitalWalletTokens::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

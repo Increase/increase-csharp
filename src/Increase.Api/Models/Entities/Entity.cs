@@ -1205,7 +1205,8 @@ public enum EntityCorporationBeneficialOwnerIndividualIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
-    /// The last four digits of a social security number.
+    /// The last four digits of a social security number. Not all programs can use
+    /// this method.
     /// </summary>
     SocialSecurityNumberLast4,
 
@@ -2425,7 +2426,8 @@ public enum EntityJointIndividualIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
-    /// The last four digits of a social security number.
+    /// The last four digits of a social security number. Not all programs can use
+    /// this method.
     /// </summary>
     SocialSecurityNumberLast4,
 
@@ -2844,7 +2846,8 @@ public enum EntityNaturalPersonIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
-    /// The last four digits of a social security number.
+    /// The last four digits of a social security number. Not all programs can use
+    /// this method.
     /// </summary>
     SocialSecurityNumberLast4,
 
@@ -3722,7 +3725,8 @@ public enum EntitySoleProprietorshipSoleProprietorIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
-    /// The last four digits of a social security number.
+    /// The last four digits of a social security number. Not all programs can use
+    /// this method.
     /// </summary>
     SocialSecurityNumberLast4,
 
@@ -4887,7 +4891,8 @@ public enum EntityTrustGrantorIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
-    /// The last four digits of a social security number.
+    /// The last four digits of a social security number. Not all programs can use
+    /// this method.
     /// </summary>
     SocialSecurityNumberLast4,
 
@@ -5392,7 +5397,8 @@ public enum EntityTrustTrusteeIndividualIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
-    /// The last four digits of a social security number.
+    /// The last four digits of a social security number. Not all programs can use
+    /// this method.
     /// </summary>
     SocialSecurityNumberLast4,
 
@@ -5679,6 +5685,21 @@ public sealed record class Issue : JsonModel
     }
 
     /// <summary>
+    /// Details when the issue is with a beneficial owner's tax identifier.
+    /// </summary>
+    public required BeneficialOwnerTaxIdentifier? BeneficialOwnerTaxIdentifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<BeneficialOwnerTaxIdentifier>(
+                "beneficial_owner_tax_identifier"
+            );
+        }
+        init { this._rawData.Set("beneficial_owner_tax_identifier", value); }
+    }
+
+    /// <summary>
     /// The type of issue. We may add additional possible values for this enum over
     /// time; your application should be able to handle such additions gracefully.
     /// </summary>
@@ -5736,6 +5757,7 @@ public sealed record class Issue : JsonModel
     {
         this.BeneficialOwnerAddress?.Validate();
         this.BeneficialOwnerIdentity?.Validate();
+        this.BeneficialOwnerTaxIdentifier?.Validate();
         this.Category.Validate();
         this.EntityAddress?.Validate();
         this.EntityIdentity?.Validate();
@@ -5968,6 +5990,78 @@ class BeneficialOwnerIdentityFromRaw : IFromRawJson<BeneficialOwnerIdentity>
 }
 
 /// <summary>
+/// Details when the issue is with a beneficial owner's tax identifier.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<BeneficialOwnerTaxIdentifier, BeneficialOwnerTaxIdentifierFromRaw>)
+)]
+public sealed record class BeneficialOwnerTaxIdentifier : JsonModel
+{
+    /// <summary>
+    /// The ID of the beneficial owner.
+    /// </summary>
+    public required string BeneficialOwnerID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("beneficial_owner_id");
+        }
+        init { this._rawData.Set("beneficial_owner_id", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.BeneficialOwnerID;
+    }
+
+    public BeneficialOwnerTaxIdentifier() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public BeneficialOwnerTaxIdentifier(BeneficialOwnerTaxIdentifier beneficialOwnerTaxIdentifier)
+        : base(beneficialOwnerTaxIdentifier) { }
+#pragma warning restore CS8618
+
+    public BeneficialOwnerTaxIdentifier(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    BeneficialOwnerTaxIdentifier(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="BeneficialOwnerTaxIdentifierFromRaw.FromRawUnchecked"/>
+    public static BeneficialOwnerTaxIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public BeneficialOwnerTaxIdentifier(string beneficialOwnerID)
+        : this()
+    {
+        this.BeneficialOwnerID = beneficialOwnerID;
+    }
+}
+
+class BeneficialOwnerTaxIdentifierFromRaw : IFromRawJson<BeneficialOwnerTaxIdentifier>
+{
+    /// <inheritdoc/>
+    public BeneficialOwnerTaxIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => BeneficialOwnerTaxIdentifier.FromRawUnchecked(rawData);
+}
+
+/// <summary>
 /// The type of issue. We may add additional possible values for this enum over time;
 /// your application should be able to handle such additions gracefully.
 /// </summary>
@@ -6003,6 +6097,13 @@ public enum IssueCategory
     /// the [update a beneficial owner API](/documentation/api/beneficial-owners#update-a-beneficial-owner).
     /// </summary>
     BeneficialOwnerAddress,
+
+    /// <summary>
+    /// A beneficial owner's full tax identifier is required. A non-US person can
+    /// submit a passport or driver's license. Make changes via the [update a beneficial
+    /// owner API](/documentation/api/beneficial-owners#update-a-beneficial-owner).
+    /// </summary>
+    BeneficialOwnerTaxIdentifier,
 }
 
 sealed class IssueCategoryConverter : JsonConverter<IssueCategory>
@@ -6020,6 +6121,7 @@ sealed class IssueCategoryConverter : JsonConverter<IssueCategory>
             "entity_identity" => IssueCategory.EntityIdentity,
             "beneficial_owner_identity" => IssueCategory.BeneficialOwnerIdentity,
             "beneficial_owner_address" => IssueCategory.BeneficialOwnerAddress,
+            "beneficial_owner_tax_identifier" => IssueCategory.BeneficialOwnerTaxIdentifier,
             _ => (IssueCategory)(-1),
         };
     }
@@ -6039,6 +6141,7 @@ sealed class IssueCategoryConverter : JsonConverter<IssueCategory>
                 IssueCategory.EntityIdentity => "entity_identity",
                 IssueCategory.BeneficialOwnerIdentity => "beneficial_owner_identity",
                 IssueCategory.BeneficialOwnerAddress => "beneficial_owner_address",
+                IssueCategory.BeneficialOwnerTaxIdentifier => "beneficial_owner_tax_identifier",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

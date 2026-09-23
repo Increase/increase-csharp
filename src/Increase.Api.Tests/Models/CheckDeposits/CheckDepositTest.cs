@@ -61,7 +61,7 @@ public class CheckDepositTest : TestBase
             {
                 BackFileID = "file_frhw4s443nh7noss55kq",
                 FrontFileID = "file_j7ed9mrve741m6yui9ju",
-                SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+                SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
             },
             Description = null,
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
@@ -132,7 +132,7 @@ public class CheckDepositTest : TestBase
         {
             BackFileID = "file_frhw4s443nh7noss55kq",
             FrontFileID = "file_j7ed9mrve741m6yui9ju",
-            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
         };
         string expectedFrontImageFileID = "file_makxrc67oh9l6sg7w9yc";
         CheckDeposits::InboundFundsHold expectedInboundFundsHold = new()
@@ -230,7 +230,7 @@ public class CheckDepositTest : TestBase
             {
                 BackFileID = "file_frhw4s443nh7noss55kq",
                 FrontFileID = "file_j7ed9mrve741m6yui9ju",
-                SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+                SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
             },
             Description = null,
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
@@ -315,7 +315,7 @@ public class CheckDepositTest : TestBase
             {
                 BackFileID = "file_frhw4s443nh7noss55kq",
                 FrontFileID = "file_j7ed9mrve741m6yui9ju",
-                SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+                SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
             },
             Description = null,
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
@@ -393,7 +393,7 @@ public class CheckDepositTest : TestBase
         {
             BackFileID = "file_frhw4s443nh7noss55kq",
             FrontFileID = "file_j7ed9mrve741m6yui9ju",
-            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
         };
         string expectedFrontImageFileID = "file_makxrc67oh9l6sg7w9yc";
         CheckDeposits::InboundFundsHold expectedInboundFundsHold = new()
@@ -491,7 +491,7 @@ public class CheckDepositTest : TestBase
             {
                 BackFileID = "file_frhw4s443nh7noss55kq",
                 FrontFileID = "file_j7ed9mrve741m6yui9ju",
-                SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+                SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
             },
             Description = null,
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
@@ -570,7 +570,7 @@ public class CheckDepositTest : TestBase
             {
                 BackFileID = "file_frhw4s443nh7noss55kq",
                 FrontFileID = "file_j7ed9mrve741m6yui9ju",
-                SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+                SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
             },
             Description = null,
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
@@ -1496,12 +1496,12 @@ public class DepositSubmissionTest : TestBase
         {
             BackFileID = "file_frhw4s443nh7noss55kq",
             FrontFileID = "file_j7ed9mrve741m6yui9ju",
-            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
         };
 
         string expectedBackFileID = "file_frhw4s443nh7noss55kq";
         string expectedFrontFileID = "file_j7ed9mrve741m6yui9ju";
-        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00");
+        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z");
 
         Assert.Equal(expectedBackFileID, model.BackFileID);
         Assert.Equal(expectedFrontFileID, model.FrontFileID);
@@ -1515,7 +1515,7 @@ public class DepositSubmissionTest : TestBase
         {
             BackFileID = "file_frhw4s443nh7noss55kq",
             FrontFileID = "file_j7ed9mrve741m6yui9ju",
-            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1534,7 +1534,7 @@ public class DepositSubmissionTest : TestBase
         {
             BackFileID = "file_frhw4s443nh7noss55kq",
             FrontFileID = "file_j7ed9mrve741m6yui9ju",
-            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1546,7 +1546,7 @@ public class DepositSubmissionTest : TestBase
 
         string expectedBackFileID = "file_frhw4s443nh7noss55kq";
         string expectedFrontFileID = "file_j7ed9mrve741m6yui9ju";
-        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00");
+        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z");
 
         Assert.Equal(expectedBackFileID, deserialized.BackFileID);
         Assert.Equal(expectedFrontFileID, deserialized.FrontFileID);
@@ -1560,7 +1560,7 @@ public class DepositSubmissionTest : TestBase
         {
             BackFileID = "file_frhw4s443nh7noss55kq",
             FrontFileID = "file_j7ed9mrve741m6yui9ju",
-            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
         };
 
         model.Validate();
@@ -1573,7 +1573,7 @@ public class DepositSubmissionTest : TestBase
         {
             BackFileID = "file_frhw4s443nh7noss55kq",
             FrontFileID = "file_j7ed9mrve741m6yui9ju",
-            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+            SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
         };
 
         CheckDeposits::DepositSubmission copied = new(model);
