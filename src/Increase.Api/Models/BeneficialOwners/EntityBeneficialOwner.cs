@@ -550,7 +550,8 @@ public enum EntityBeneficialOwnerIndividualIdentificationMethod
     SocialSecurityNumber,
 
     /// <summary>
-    /// The last four digits of a social security number.
+    /// The last four digits of a social security number. Not all programs can use
+    /// this method.
     /// </summary>
     SocialSecurityNumberLast4,
 

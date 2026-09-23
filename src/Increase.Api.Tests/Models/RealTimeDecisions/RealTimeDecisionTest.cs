@@ -5874,6 +5874,9 @@ public class RealTimeDecisionCardAuthorizationDeclineReasonTest : TestBase
         RealTimeDecisions::RealTimeDecisionCardAuthorizationDeclineReason.CardTemporarilyDisabled
     )]
     [InlineData(RealTimeDecisions::RealTimeDecisionCardAuthorizationDeclineReason.SuspectedFraud)]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionCardAuthorizationDeclineReason.AdditionalCustomerAuthenticationRequired
+    )]
     [InlineData(RealTimeDecisions::RealTimeDecisionCardAuthorizationDeclineReason.Other)]
     public void Validation_Works(
         RealTimeDecisions::RealTimeDecisionCardAuthorizationDeclineReason rawValue
@@ -5910,6 +5913,9 @@ public class RealTimeDecisionCardAuthorizationDeclineReasonTest : TestBase
         RealTimeDecisions::RealTimeDecisionCardAuthorizationDeclineReason.CardTemporarilyDisabled
     )]
     [InlineData(RealTimeDecisions::RealTimeDecisionCardAuthorizationDeclineReason.SuspectedFraud)]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionCardAuthorizationDeclineReason.AdditionalCustomerAuthenticationRequired
+    )]
     [InlineData(RealTimeDecisions::RealTimeDecisionCardAuthorizationDeclineReason.Other)]
     public void SerializationRoundtrip_Works(
         RealTimeDecisions::RealTimeDecisionCardAuthorizationDeclineReason rawValue
