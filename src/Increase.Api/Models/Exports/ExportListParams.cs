@@ -280,20 +280,20 @@ public record class ExportListParams : ParamsBase
 public enum ExportListParamsCategory
 {
     /// <summary>
+    /// Export a BAI2 file of transactions and balances for a given date and optional Account.
+    /// </summary>
+    AccountStatementBai2,
+
+    /// <summary>
     /// Export an Open Financial Exchange (OFX) file of transactions and balances
     /// for a given time range and Account.
     /// </summary>
     AccountStatementOfx,
 
     /// <summary>
-    /// Export a BAI2 file of transactions and balances for a given date and optional Account.
+    /// A PDF of an account verification letter.
     /// </summary>
-    AccountStatementBai2,
-
-    /// <summary>
-    /// Export a CSV of all transactions for a given time range.
-    /// </summary>
-    TransactionCsv,
+    AccountVerificationLetter,
 
     /// <summary>
     /// Export a CSV of account balances for the dates in a given range. (deprecated,
@@ -307,14 +307,10 @@ public enum ExportListParamsCategory
     BookkeepingAccountBalanceCsv,
 
     /// <summary>
-    /// Export a CSV of entities with a given status.
+    /// Export a CSV of daily account balances with starting and ending balances
+    /// for a given date range.
     /// </summary>
-    EntityCsv,
-
-    /// <summary>
-    /// Export a CSV of vendors added to the third-party risk management dashboard.
-    /// </summary>
-    VendorCsv,
+    DailyAccountBalanceCsv,
 
     /// <summary>
     /// Certain dashboard tables are available as CSV exports. This export cannot
@@ -323,14 +319,15 @@ public enum ExportListParamsCategory
     DashboardTableCsv,
 
     /// <summary>
-    /// A PDF of an account verification letter.
+    /// Export a CSV of entities with a given status.
     /// </summary>
-    AccountVerificationLetter,
+    EntityCsv,
 
     /// <summary>
-    /// A PDF of funding instructions.
+    /// Export a CSV of fees. The time range must not include any fees that are part
+    /// of an open fee statement.
     /// </summary>
-    FundingInstructions,
+    FeeCsv,
 
     /// <summary>
     /// A PDF of an Internal Revenue Service Form 1099-INT.
@@ -343,21 +340,24 @@ public enum ExportListParamsCategory
     Form1099Misc,
 
     /// <summary>
-    /// Export a CSV of fees. The time range must not include any fees that are part
-    /// of an open fee statement.
+    /// A PDF of funding instructions.
     /// </summary>
-    FeeCsv,
+    FundingInstructions,
+
+    /// <summary>
+    /// Export a CSV of all transactions for a given time range.
+    /// </summary>
+    TransactionCsv,
+
+    /// <summary>
+    /// Export a CSV of vendors added to the third-party risk management dashboard.
+    /// </summary>
+    VendorCsv,
 
     /// <summary>
     /// A PDF of a voided check.
     /// </summary>
     VoidedCheck,
-
-    /// <summary>
-    /// Export a CSV of daily account balances with starting and ending balances
-    /// for a given date range.
-    /// </summary>
-    DailyAccountBalanceCsv,
 }
 
 sealed class ExportListParamsCategoryConverter : JsonConverter<ExportListParamsCategory>
@@ -370,22 +370,22 @@ sealed class ExportListParamsCategoryConverter : JsonConverter<ExportListParamsC
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "account_statement_ofx" => ExportListParamsCategory.AccountStatementOfx,
             "account_statement_bai2" => ExportListParamsCategory.AccountStatementBai2,
-            "transaction_csv" => ExportListParamsCategory.TransactionCsv,
+            "account_statement_ofx" => ExportListParamsCategory.AccountStatementOfx,
+            "account_verification_letter" => ExportListParamsCategory.AccountVerificationLetter,
             "balance_csv" => ExportListParamsCategory.BalanceCsv,
             "bookkeeping_account_balance_csv" =>
                 ExportListParamsCategory.BookkeepingAccountBalanceCsv,
-            "entity_csv" => ExportListParamsCategory.EntityCsv,
-            "vendor_csv" => ExportListParamsCategory.VendorCsv,
+            "daily_account_balance_csv" => ExportListParamsCategory.DailyAccountBalanceCsv,
             "dashboard_table_csv" => ExportListParamsCategory.DashboardTableCsv,
-            "account_verification_letter" => ExportListParamsCategory.AccountVerificationLetter,
-            "funding_instructions" => ExportListParamsCategory.FundingInstructions,
+            "entity_csv" => ExportListParamsCategory.EntityCsv,
+            "fee_csv" => ExportListParamsCategory.FeeCsv,
             "form_1099_int" => ExportListParamsCategory.Form1099Int,
             "form_1099_misc" => ExportListParamsCategory.Form1099Misc,
-            "fee_csv" => ExportListParamsCategory.FeeCsv,
+            "funding_instructions" => ExportListParamsCategory.FundingInstructions,
+            "transaction_csv" => ExportListParamsCategory.TransactionCsv,
+            "vendor_csv" => ExportListParamsCategory.VendorCsv,
             "voided_check" => ExportListParamsCategory.VoidedCheck,
-            "daily_account_balance_csv" => ExportListParamsCategory.DailyAccountBalanceCsv,
             _ => (ExportListParamsCategory)(-1),
         };
     }
@@ -400,22 +400,22 @@ sealed class ExportListParamsCategoryConverter : JsonConverter<ExportListParamsC
             writer,
             value switch
             {
-                ExportListParamsCategory.AccountStatementOfx => "account_statement_ofx",
                 ExportListParamsCategory.AccountStatementBai2 => "account_statement_bai2",
-                ExportListParamsCategory.TransactionCsv => "transaction_csv",
+                ExportListParamsCategory.AccountStatementOfx => "account_statement_ofx",
+                ExportListParamsCategory.AccountVerificationLetter => "account_verification_letter",
                 ExportListParamsCategory.BalanceCsv => "balance_csv",
                 ExportListParamsCategory.BookkeepingAccountBalanceCsv =>
                     "bookkeeping_account_balance_csv",
-                ExportListParamsCategory.EntityCsv => "entity_csv",
-                ExportListParamsCategory.VendorCsv => "vendor_csv",
+                ExportListParamsCategory.DailyAccountBalanceCsv => "daily_account_balance_csv",
                 ExportListParamsCategory.DashboardTableCsv => "dashboard_table_csv",
-                ExportListParamsCategory.AccountVerificationLetter => "account_verification_letter",
-                ExportListParamsCategory.FundingInstructions => "funding_instructions",
+                ExportListParamsCategory.EntityCsv => "entity_csv",
+                ExportListParamsCategory.FeeCsv => "fee_csv",
                 ExportListParamsCategory.Form1099Int => "form_1099_int",
                 ExportListParamsCategory.Form1099Misc => "form_1099_misc",
-                ExportListParamsCategory.FeeCsv => "fee_csv",
+                ExportListParamsCategory.FundingInstructions => "funding_instructions",
+                ExportListParamsCategory.TransactionCsv => "transaction_csv",
+                ExportListParamsCategory.VendorCsv => "vendor_csv",
                 ExportListParamsCategory.VoidedCheck => "voided_check",
-                ExportListParamsCategory.DailyAccountBalanceCsv => "daily_account_balance_csv",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

@@ -51,13 +51,13 @@ public class TransactionTest : TestBase
                 AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
                 AchTransferReturn = new()
                 {
-                    AddendaInformation = null,
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    RawReturnReasonCode = "R01",
+                    AddendaInformation = "addenda_information",
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    RawReturnReasonCode = "raw_return_reason_code",
                     ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-                    TraceNumber = "111122223292834",
-                    TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                    TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+                    TraceNumber = "trace_number",
+                    TransactionID = "transaction_id",
+                    TransferID = "transfer_id",
                 },
                 BlockchainOfframpTransferSettlement = new()
                 {
@@ -664,6 +664,7 @@ public class TransactionTest : TestBase
                     EndToEndIdentification = null,
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = null,
                     Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -697,15 +698,15 @@ public class TransactionTest : TestBase
                 SampleFunds = new("dashboard"),
                 SepaInstantTransferAcceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    SettlementAmount = 4935,
+                    AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    SettlementAmount = 0,
                 },
                 SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                 SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
                 UkFasterPaymentSystemTransferAcceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    SettlementAmount = 16765,
+                    AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    SettlementAmount = 0,
                 },
                 WireTransferIntention = new()
                 {
@@ -757,13 +758,13 @@ public class TransactionTest : TestBase
             AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
             AchTransferReturn = new()
             {
-                AddendaInformation = null,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                RawReturnReasonCode = "R01",
+                AddendaInformation = "addenda_information",
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RawReturnReasonCode = "raw_return_reason_code",
                 ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-                TraceNumber = "111122223292834",
-                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+                TraceNumber = "trace_number",
+                TransactionID = "transaction_id",
+                TransferID = "transfer_id",
             },
             BlockchainOfframpTransferSettlement = new()
             {
@@ -1360,6 +1361,7 @@ public class TransactionTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -1393,15 +1395,15 @@ public class TransactionTest : TestBase
             SampleFunds = new("dashboard"),
             SepaInstantTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 4935,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
             UkFasterPaymentSystemTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 16765,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             WireTransferIntention = new()
             {
@@ -1469,13 +1471,13 @@ public class TransactionTest : TestBase
                 AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
                 AchTransferReturn = new()
                 {
-                    AddendaInformation = null,
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    RawReturnReasonCode = "R01",
+                    AddendaInformation = "addenda_information",
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    RawReturnReasonCode = "raw_return_reason_code",
                     ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-                    TraceNumber = "111122223292834",
-                    TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                    TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+                    TraceNumber = "trace_number",
+                    TransactionID = "transaction_id",
+                    TransferID = "transfer_id",
                 },
                 BlockchainOfframpTransferSettlement = new()
                 {
@@ -2082,6 +2084,7 @@ public class TransactionTest : TestBase
                     EndToEndIdentification = null,
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = null,
                     Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -2115,15 +2118,15 @@ public class TransactionTest : TestBase
                 SampleFunds = new("dashboard"),
                 SepaInstantTransferAcceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    SettlementAmount = 4935,
+                    AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    SettlementAmount = 0,
                 },
                 SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                 SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
                 UkFasterPaymentSystemTransferAcceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    SettlementAmount = 16765,
+                    AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    SettlementAmount = 0,
                 },
                 WireTransferIntention = new()
                 {
@@ -2188,13 +2191,13 @@ public class TransactionTest : TestBase
                 AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
                 AchTransferReturn = new()
                 {
-                    AddendaInformation = null,
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    RawReturnReasonCode = "R01",
+                    AddendaInformation = "addenda_information",
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    RawReturnReasonCode = "raw_return_reason_code",
                     ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-                    TraceNumber = "111122223292834",
-                    TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                    TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+                    TraceNumber = "trace_number",
+                    TransactionID = "transaction_id",
+                    TransferID = "transfer_id",
                 },
                 BlockchainOfframpTransferSettlement = new()
                 {
@@ -2801,6 +2804,7 @@ public class TransactionTest : TestBase
                     EndToEndIdentification = null,
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = null,
                     Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -2834,15 +2838,15 @@ public class TransactionTest : TestBase
                 SampleFunds = new("dashboard"),
                 SepaInstantTransferAcceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    SettlementAmount = 4935,
+                    AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    SettlementAmount = 0,
                 },
                 SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                 SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
                 UkFasterPaymentSystemTransferAcceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    SettlementAmount = 16765,
+                    AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    SettlementAmount = 0,
                 },
                 WireTransferIntention = new()
                 {
@@ -2901,13 +2905,13 @@ public class TransactionTest : TestBase
             AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
             AchTransferReturn = new()
             {
-                AddendaInformation = null,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                RawReturnReasonCode = "R01",
+                AddendaInformation = "addenda_information",
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RawReturnReasonCode = "raw_return_reason_code",
                 ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-                TraceNumber = "111122223292834",
-                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+                TraceNumber = "trace_number",
+                TransactionID = "transaction_id",
+                TransferID = "transfer_id",
             },
             BlockchainOfframpTransferSettlement = new()
             {
@@ -3504,6 +3508,7 @@ public class TransactionTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -3537,15 +3542,15 @@ public class TransactionTest : TestBase
             SampleFunds = new("dashboard"),
             SepaInstantTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 4935,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
             UkFasterPaymentSystemTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 16765,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             WireTransferIntention = new()
             {
@@ -3613,13 +3618,13 @@ public class TransactionTest : TestBase
                 AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
                 AchTransferReturn = new()
                 {
-                    AddendaInformation = null,
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    RawReturnReasonCode = "R01",
+                    AddendaInformation = "addenda_information",
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    RawReturnReasonCode = "raw_return_reason_code",
                     ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-                    TraceNumber = "111122223292834",
-                    TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                    TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+                    TraceNumber = "trace_number",
+                    TransactionID = "transaction_id",
+                    TransferID = "transfer_id",
                 },
                 BlockchainOfframpTransferSettlement = new()
                 {
@@ -4226,6 +4231,7 @@ public class TransactionTest : TestBase
                     EndToEndIdentification = null,
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = null,
                     Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -4259,15 +4265,15 @@ public class TransactionTest : TestBase
                 SampleFunds = new("dashboard"),
                 SepaInstantTransferAcceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    SettlementAmount = 4935,
+                    AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    SettlementAmount = 0,
                 },
                 SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                 SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
                 UkFasterPaymentSystemTransferAcceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    SettlementAmount = 16765,
+                    AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    SettlementAmount = 0,
                 },
                 WireTransferIntention = new()
                 {
@@ -4326,13 +4332,13 @@ public class TransactionTest : TestBase
                 AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
                 AchTransferReturn = new()
                 {
-                    AddendaInformation = null,
-                    CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    RawReturnReasonCode = "R01",
+                    AddendaInformation = "addenda_information",
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    RawReturnReasonCode = "raw_return_reason_code",
                     ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-                    TraceNumber = "111122223292834",
-                    TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                    TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+                    TraceNumber = "trace_number",
+                    TransactionID = "transaction_id",
+                    TransferID = "transfer_id",
                 },
                 BlockchainOfframpTransferSettlement = new()
                 {
@@ -4939,6 +4945,7 @@ public class TransactionTest : TestBase
                     EndToEndIdentification = null,
                     InputMessageAccountabilityData = null,
                     InstructingAgentRoutingNumber = null,
+                    InstructionForCreditorAgent = null,
                     InstructionIdentification = null,
                     Purpose = null,
                     TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -4972,15 +4979,15 @@ public class TransactionTest : TestBase
                 SampleFunds = new("dashboard"),
                 SepaInstantTransferAcceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    SettlementAmount = 4935,
+                    AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    SettlementAmount = 0,
                 },
                 SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
                 SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
                 UkFasterPaymentSystemTransferAcceptance = new()
                 {
-                    AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                    SettlementAmount = 16765,
+                    AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    SettlementAmount = 0,
                 },
                 WireTransferIntention = new()
                 {
@@ -5150,13 +5157,13 @@ public class SourceTest : TestBase
             AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
             AchTransferReturn = new()
             {
-                AddendaInformation = null,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                RawReturnReasonCode = "R01",
+                AddendaInformation = "addenda_information",
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RawReturnReasonCode = "raw_return_reason_code",
                 ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-                TraceNumber = "111122223292834",
-                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+                TraceNumber = "trace_number",
+                TransactionID = "transaction_id",
+                TransferID = "transfer_id",
             },
             BlockchainOfframpTransferSettlement = new()
             {
@@ -5753,6 +5760,7 @@ public class SourceTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -5786,15 +5794,15 @@ public class SourceTest : TestBase
             SampleFunds = new("dashboard"),
             SepaInstantTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 4935,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
             UkFasterPaymentSystemTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 16765,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             WireTransferIntention = new()
             {
@@ -5836,13 +5844,13 @@ public class SourceTest : TestBase
         );
         Transactions::AchTransferReturn expectedAchTransferReturn = new()
         {
-            AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            RawReturnReasonCode = "R01",
+            AddendaInformation = "addenda_information",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RawReturnReasonCode = "raw_return_reason_code",
             ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-            TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-            TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            TraceNumber = "trace_number",
+            TransactionID = "transaction_id",
+            TransferID = "transfer_id",
         };
         Transactions::BlockchainOfframpTransferSettlement expectedBlockchainOfframpTransferSettlement =
             new()
@@ -6440,6 +6448,7 @@ public class SourceTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -6476,8 +6485,8 @@ public class SourceTest : TestBase
         Transactions::SampleFunds expectedSampleFunds = new("dashboard");
         Transactions::SepaInstantTransferAcceptance expectedSepaInstantTransferAcceptance = new()
         {
-            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            SettlementAmount = 4935,
+            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SettlementAmount = 0,
         };
         Transactions::SwiftTransferIntention expectedSwiftTransferIntention = new(
             "swift_transfer_29h21xkng03788zwd3fh"
@@ -6488,8 +6497,8 @@ public class SourceTest : TestBase
         Transactions::UkFasterPaymentSystemTransferAcceptance expectedUkFasterPaymentSystemTransferAcceptance =
             new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 16765,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             };
         Transactions::WireTransferIntention expectedWireTransferIntention = new()
         {
@@ -6600,13 +6609,13 @@ public class SourceTest : TestBase
             AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
             AchTransferReturn = new()
             {
-                AddendaInformation = null,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                RawReturnReasonCode = "R01",
+                AddendaInformation = "addenda_information",
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RawReturnReasonCode = "raw_return_reason_code",
                 ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-                TraceNumber = "111122223292834",
-                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+                TraceNumber = "trace_number",
+                TransactionID = "transaction_id",
+                TransferID = "transfer_id",
             },
             BlockchainOfframpTransferSettlement = new()
             {
@@ -7203,6 +7212,7 @@ public class SourceTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -7236,15 +7246,15 @@ public class SourceTest : TestBase
             SampleFunds = new("dashboard"),
             SepaInstantTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 4935,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
             UkFasterPaymentSystemTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 16765,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             WireTransferIntention = new()
             {
@@ -7297,13 +7307,13 @@ public class SourceTest : TestBase
             AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
             AchTransferReturn = new()
             {
-                AddendaInformation = null,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                RawReturnReasonCode = "R01",
+                AddendaInformation = "addenda_information",
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RawReturnReasonCode = "raw_return_reason_code",
                 ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-                TraceNumber = "111122223292834",
-                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+                TraceNumber = "trace_number",
+                TransactionID = "transaction_id",
+                TransferID = "transfer_id",
             },
             BlockchainOfframpTransferSettlement = new()
             {
@@ -7900,6 +7910,7 @@ public class SourceTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -7933,15 +7944,15 @@ public class SourceTest : TestBase
             SampleFunds = new("dashboard"),
             SepaInstantTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 4935,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
             UkFasterPaymentSystemTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 16765,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             WireTransferIntention = new()
             {
@@ -7990,13 +8001,13 @@ public class SourceTest : TestBase
         );
         Transactions::AchTransferReturn expectedAchTransferReturn = new()
         {
-            AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            RawReturnReasonCode = "R01",
+            AddendaInformation = "addenda_information",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RawReturnReasonCode = "raw_return_reason_code",
             ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-            TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-            TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            TraceNumber = "trace_number",
+            TransactionID = "transaction_id",
+            TransferID = "transfer_id",
         };
         Transactions::BlockchainOfframpTransferSettlement expectedBlockchainOfframpTransferSettlement =
             new()
@@ -8594,6 +8605,7 @@ public class SourceTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -8630,8 +8642,8 @@ public class SourceTest : TestBase
         Transactions::SampleFunds expectedSampleFunds = new("dashboard");
         Transactions::SepaInstantTransferAcceptance expectedSepaInstantTransferAcceptance = new()
         {
-            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            SettlementAmount = 4935,
+            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SettlementAmount = 0,
         };
         Transactions::SwiftTransferIntention expectedSwiftTransferIntention = new(
             "swift_transfer_29h21xkng03788zwd3fh"
@@ -8642,8 +8654,8 @@ public class SourceTest : TestBase
         Transactions::UkFasterPaymentSystemTransferAcceptance expectedUkFasterPaymentSystemTransferAcceptance =
             new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 16765,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             };
         Transactions::WireTransferIntention expectedWireTransferIntention = new()
         {
@@ -8760,13 +8772,13 @@ public class SourceTest : TestBase
             AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
             AchTransferReturn = new()
             {
-                AddendaInformation = null,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                RawReturnReasonCode = "R01",
+                AddendaInformation = "addenda_information",
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RawReturnReasonCode = "raw_return_reason_code",
                 ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-                TraceNumber = "111122223292834",
-                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+                TraceNumber = "trace_number",
+                TransactionID = "transaction_id",
+                TransferID = "transfer_id",
             },
             BlockchainOfframpTransferSettlement = new()
             {
@@ -9363,6 +9375,7 @@ public class SourceTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -9396,15 +9409,15 @@ public class SourceTest : TestBase
             SampleFunds = new("dashboard"),
             SepaInstantTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 4935,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
             UkFasterPaymentSystemTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 16765,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             WireTransferIntention = new()
             {
@@ -9741,13 +9754,13 @@ public class SourceTest : TestBase
             AchTransferRejection = new("account_transfer_7k9qe1ysdgqztnt63l7n"),
             AchTransferReturn = new()
             {
-                AddendaInformation = null,
-                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                RawReturnReasonCode = "R01",
+                AddendaInformation = "addenda_information",
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RawReturnReasonCode = "raw_return_reason_code",
                 ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-                TraceNumber = "111122223292834",
-                TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+                TraceNumber = "trace_number",
+                TransactionID = "transaction_id",
+                TransferID = "transfer_id",
             },
             BlockchainOfframpTransferSettlement = new()
             {
@@ -10344,6 +10357,7 @@ public class SourceTest : TestBase
                 EndToEndIdentification = null,
                 InputMessageAccountabilityData = null,
                 InstructingAgentRoutingNumber = null,
+                InstructionForCreditorAgent = null,
                 InstructionIdentification = null,
                 Purpose = null,
                 TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -10377,15 +10391,15 @@ public class SourceTest : TestBase
             SampleFunds = new("dashboard"),
             SepaInstantTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 4935,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             SwiftTransferIntention = new("swift_transfer_29h21xkng03788zwd3fh"),
             SwiftTransferReturn = new("swift_transfer_29h21xkng03788zwd3fh"),
             UkFasterPaymentSystemTransferAcceptance = new()
             {
-                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                SettlementAmount = 16765,
+                AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                SettlementAmount = 0,
             },
             WireTransferIntention = new()
             {
@@ -11007,24 +11021,25 @@ public class AchTransferReturnTest : TestBase
     {
         var model = new Transactions::AchTransferReturn
         {
-            AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            RawReturnReasonCode = "R01",
+            AddendaInformation = "addenda_information",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RawReturnReasonCode = "raw_return_reason_code",
             ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-            TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-            TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            TraceNumber = "trace_number",
+            TransactionID = "transaction_id",
+            TransferID = "transfer_id",
         };
 
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        string expectedRawReturnReasonCode = "R01";
+        string expectedAddendaInformation = "addenda_information";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedRawReturnReasonCode = "raw_return_reason_code";
         ApiEnum<string, Transactions::ReturnReasonCode> expectedReturnReasonCode =
             Transactions::ReturnReasonCode.InsufficientFund;
-        string expectedTraceNumber = "111122223292834";
-        string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
-        string expectedTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q";
+        string expectedTraceNumber = "trace_number";
+        string expectedTransactionID = "transaction_id";
+        string expectedTransferID = "transfer_id";
 
-        Assert.Null(model.AddendaInformation);
+        Assert.Equal(expectedAddendaInformation, model.AddendaInformation);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
         Assert.Equal(expectedRawReturnReasonCode, model.RawReturnReasonCode);
         Assert.Equal(expectedReturnReasonCode, model.ReturnReasonCode);
@@ -11038,13 +11053,13 @@ public class AchTransferReturnTest : TestBase
     {
         var model = new Transactions::AchTransferReturn
         {
-            AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            RawReturnReasonCode = "R01",
+            AddendaInformation = "addenda_information",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RawReturnReasonCode = "raw_return_reason_code",
             ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-            TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-            TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            TraceNumber = "trace_number",
+            TransactionID = "transaction_id",
+            TransferID = "transfer_id",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -11061,13 +11076,13 @@ public class AchTransferReturnTest : TestBase
     {
         var model = new Transactions::AchTransferReturn
         {
-            AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            RawReturnReasonCode = "R01",
+            AddendaInformation = "addenda_information",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RawReturnReasonCode = "raw_return_reason_code",
             ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-            TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-            TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            TraceNumber = "trace_number",
+            TransactionID = "transaction_id",
+            TransferID = "transfer_id",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -11077,15 +11092,16 @@ public class AchTransferReturnTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        string expectedRawReturnReasonCode = "R01";
+        string expectedAddendaInformation = "addenda_information";
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedRawReturnReasonCode = "raw_return_reason_code";
         ApiEnum<string, Transactions::ReturnReasonCode> expectedReturnReasonCode =
             Transactions::ReturnReasonCode.InsufficientFund;
-        string expectedTraceNumber = "111122223292834";
-        string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
-        string expectedTransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q";
+        string expectedTraceNumber = "trace_number";
+        string expectedTransactionID = "transaction_id";
+        string expectedTransferID = "transfer_id";
 
-        Assert.Null(deserialized.AddendaInformation);
+        Assert.Equal(expectedAddendaInformation, deserialized.AddendaInformation);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
         Assert.Equal(expectedRawReturnReasonCode, deserialized.RawReturnReasonCode);
         Assert.Equal(expectedReturnReasonCode, deserialized.ReturnReasonCode);
@@ -11099,13 +11115,13 @@ public class AchTransferReturnTest : TestBase
     {
         var model = new Transactions::AchTransferReturn
         {
-            AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            RawReturnReasonCode = "R01",
+            AddendaInformation = "addenda_information",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RawReturnReasonCode = "raw_return_reason_code",
             ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-            TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-            TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            TraceNumber = "trace_number",
+            TransactionID = "transaction_id",
+            TransferID = "transfer_id",
         };
 
         model.Validate();
@@ -11116,13 +11132,13 @@ public class AchTransferReturnTest : TestBase
     {
         var model = new Transactions::AchTransferReturn
         {
-            AddendaInformation = null,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            RawReturnReasonCode = "R01",
+            AddendaInformation = "addenda_information",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RawReturnReasonCode = "raw_return_reason_code",
             ReturnReasonCode = Transactions::ReturnReasonCode.InsufficientFund,
-            TraceNumber = "111122223292834",
-            TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-            TransferID = "ach_transfer_uoxatyh3lt5evrsdvo7q",
+            TraceNumber = "trace_number",
+            TransactionID = "transaction_id",
+            TransferID = "transfer_id",
         };
 
         Transactions::AchTransferReturn copied = new(model);
@@ -30083,6 +30099,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -30107,6 +30124,7 @@ public class InboundWireTransferTest : TestBase
         Assert.Null(model.EndToEndIdentification);
         Assert.Null(model.InputMessageAccountabilityData);
         Assert.Null(model.InstructingAgentRoutingNumber);
+        Assert.Null(model.InstructionForCreditorAgent);
         Assert.Null(model.InstructionIdentification);
         Assert.Null(model.Purpose);
         Assert.Equal(expectedTransferID, model.TransferID);
@@ -30132,6 +30150,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -30166,6 +30185,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -30197,6 +30217,7 @@ public class InboundWireTransferTest : TestBase
         Assert.Null(deserialized.EndToEndIdentification);
         Assert.Null(deserialized.InputMessageAccountabilityData);
         Assert.Null(deserialized.InstructingAgentRoutingNumber);
+        Assert.Null(deserialized.InstructionForCreditorAgent);
         Assert.Null(deserialized.InstructionIdentification);
         Assert.Null(deserialized.Purpose);
         Assert.Equal(expectedTransferID, deserialized.TransferID);
@@ -30222,6 +30243,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -30250,6 +30272,7 @@ public class InboundWireTransferTest : TestBase
             EndToEndIdentification = null,
             InputMessageAccountabilityData = null,
             InstructingAgentRoutingNumber = null,
+            InstructionForCreditorAgent = null,
             InstructionIdentification = null,
             Purpose = null,
             TransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
@@ -30990,12 +31013,12 @@ public class SepaInstantTransferAcceptanceTest : TestBase
     {
         var model = new Transactions::SepaInstantTransferAcceptance
         {
-            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            SettlementAmount = 4935,
+            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SettlementAmount = 0,
         };
 
-        DateTimeOffset expectedAcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        long expectedSettlementAmount = 4935;
+        DateTimeOffset expectedAcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        long expectedSettlementAmount = 0;
 
         Assert.Equal(expectedAcceptedAt, model.AcceptedAt);
         Assert.Equal(expectedSettlementAmount, model.SettlementAmount);
@@ -31006,8 +31029,8 @@ public class SepaInstantTransferAcceptanceTest : TestBase
     {
         var model = new Transactions::SepaInstantTransferAcceptance
         {
-            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            SettlementAmount = 4935,
+            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SettlementAmount = 0,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -31024,8 +31047,8 @@ public class SepaInstantTransferAcceptanceTest : TestBase
     {
         var model = new Transactions::SepaInstantTransferAcceptance
         {
-            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            SettlementAmount = 4935,
+            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SettlementAmount = 0,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -31035,8 +31058,8 @@ public class SepaInstantTransferAcceptanceTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        DateTimeOffset expectedAcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        long expectedSettlementAmount = 4935;
+        DateTimeOffset expectedAcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        long expectedSettlementAmount = 0;
 
         Assert.Equal(expectedAcceptedAt, deserialized.AcceptedAt);
         Assert.Equal(expectedSettlementAmount, deserialized.SettlementAmount);
@@ -31047,8 +31070,8 @@ public class SepaInstantTransferAcceptanceTest : TestBase
     {
         var model = new Transactions::SepaInstantTransferAcceptance
         {
-            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            SettlementAmount = 4935,
+            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SettlementAmount = 0,
         };
 
         model.Validate();
@@ -31059,8 +31082,8 @@ public class SepaInstantTransferAcceptanceTest : TestBase
     {
         var model = new Transactions::SepaInstantTransferAcceptance
         {
-            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            SettlementAmount = 4935,
+            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SettlementAmount = 0,
         };
 
         Transactions::SepaInstantTransferAcceptance copied = new(model);
@@ -31230,12 +31253,12 @@ public class UkFasterPaymentSystemTransferAcceptanceTest : TestBase
     {
         var model = new Transactions::UkFasterPaymentSystemTransferAcceptance
         {
-            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            SettlementAmount = 16765,
+            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SettlementAmount = 0,
         };
 
-        DateTimeOffset expectedAcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        long expectedSettlementAmount = 16765;
+        DateTimeOffset expectedAcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        long expectedSettlementAmount = 0;
 
         Assert.Equal(expectedAcceptedAt, model.AcceptedAt);
         Assert.Equal(expectedSettlementAmount, model.SettlementAmount);
@@ -31246,8 +31269,8 @@ public class UkFasterPaymentSystemTransferAcceptanceTest : TestBase
     {
         var model = new Transactions::UkFasterPaymentSystemTransferAcceptance
         {
-            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            SettlementAmount = 16765,
+            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SettlementAmount = 0,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -31265,8 +31288,8 @@ public class UkFasterPaymentSystemTransferAcceptanceTest : TestBase
     {
         var model = new Transactions::UkFasterPaymentSystemTransferAcceptance
         {
-            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            SettlementAmount = 16765,
+            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SettlementAmount = 0,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -31277,8 +31300,8 @@ public class UkFasterPaymentSystemTransferAcceptanceTest : TestBase
             );
         Assert.NotNull(deserialized);
 
-        DateTimeOffset expectedAcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
-        long expectedSettlementAmount = 16765;
+        DateTimeOffset expectedAcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        long expectedSettlementAmount = 0;
 
         Assert.Equal(expectedAcceptedAt, deserialized.AcceptedAt);
         Assert.Equal(expectedSettlementAmount, deserialized.SettlementAmount);
@@ -31289,8 +31312,8 @@ public class UkFasterPaymentSystemTransferAcceptanceTest : TestBase
     {
         var model = new Transactions::UkFasterPaymentSystemTransferAcceptance
         {
-            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            SettlementAmount = 16765,
+            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SettlementAmount = 0,
         };
 
         model.Validate();
@@ -31301,8 +31324,8 @@ public class UkFasterPaymentSystemTransferAcceptanceTest : TestBase
     {
         var model = new Transactions::UkFasterPaymentSystemTransferAcceptance
         {
-            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            SettlementAmount = 16765,
+            AcceptedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            SettlementAmount = 0,
         };
 
         Transactions::UkFasterPaymentSystemTransferAcceptance copied = new(model);

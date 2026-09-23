@@ -25,8 +25,8 @@ public class CardPushTransferTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                ApprovedBy = null,
+                ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ApprovedBy = "approved_by",
             },
             BusinessApplicationIdentifier =
                 CardPushTransfers::CardPushTransferBusinessApplicationIdentifier.FundsDisbursement,
@@ -99,8 +99,8 @@ public class CardPushTransferTest : TestBase
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         CardPushTransfers::Approval expectedApproval = new()
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
         ApiEnum<
             string,
@@ -212,8 +212,8 @@ public class CardPushTransferTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                ApprovedBy = null,
+                ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ApprovedBy = "approved_by",
             },
             BusinessApplicationIdentifier =
                 CardPushTransfers::CardPushTransferBusinessApplicationIdentifier.FundsDisbursement,
@@ -300,8 +300,8 @@ public class CardPushTransferTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                ApprovedBy = null,
+                ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ApprovedBy = "approved_by",
             },
             BusinessApplicationIdentifier =
                 CardPushTransfers::CardPushTransferBusinessApplicationIdentifier.FundsDisbursement,
@@ -381,8 +381,8 @@ public class CardPushTransferTest : TestBase
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         CardPushTransfers::Approval expectedApproval = new()
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
         ApiEnum<
             string,
@@ -497,8 +497,8 @@ public class CardPushTransferTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                ApprovedBy = null,
+                ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ApprovedBy = "approved_by",
             },
             BusinessApplicationIdentifier =
                 CardPushTransfers::CardPushTransferBusinessApplicationIdentifier.FundsDisbursement,
@@ -579,8 +579,8 @@ public class CardPushTransferTest : TestBase
             AccountID = "account_in71c4amph0vgo2qllky",
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                ApprovedBy = null,
+                ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ApprovedBy = "approved_by",
             },
             BusinessApplicationIdentifier =
                 CardPushTransfers::CardPushTransferBusinessApplicationIdentifier.FundsDisbursement,
@@ -830,14 +830,15 @@ public class ApprovalTest : TestBase
     {
         var model = new CardPushTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
-        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedApprovedBy = "approved_by";
 
         Assert.Equal(expectedApprovedAt, model.ApprovedAt);
-        Assert.Null(model.ApprovedBy);
+        Assert.Equal(expectedApprovedBy, model.ApprovedBy);
     }
 
     [Fact]
@@ -845,8 +846,8 @@ public class ApprovalTest : TestBase
     {
         var model = new CardPushTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -863,8 +864,8 @@ public class ApprovalTest : TestBase
     {
         var model = new CardPushTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -874,10 +875,11 @@ public class ApprovalTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedApprovedBy = "approved_by";
 
         Assert.Equal(expectedApprovedAt, deserialized.ApprovedAt);
-        Assert.Null(deserialized.ApprovedBy);
+        Assert.Equal(expectedApprovedBy, deserialized.ApprovedBy);
     }
 
     [Fact]
@@ -885,8 +887,8 @@ public class ApprovalTest : TestBase
     {
         var model = new CardPushTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         model.Validate();
@@ -897,8 +899,8 @@ public class ApprovalTest : TestBase
     {
         var model = new CardPushTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         CardPushTransfers::Approval copied = new(model);
