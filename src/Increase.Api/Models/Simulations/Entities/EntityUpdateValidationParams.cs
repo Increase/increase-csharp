@@ -272,6 +272,13 @@ public enum Category
     /// the [update a beneficial owner API](/documentation/api/beneficial-owners#update-a-beneficial-owner).
     /// </summary>
     BeneficialOwnerAddress,
+
+    /// <summary>
+    /// A beneficial owner's full tax identifier is required. A non-US person can
+    /// submit a passport or driver's license. Make changes via the [update a beneficial
+    /// owner API](/documentation/api/beneficial-owners#update-a-beneficial-owner).
+    /// </summary>
+    BeneficialOwnerTaxIdentifier,
 }
 
 sealed class CategoryConverter : JsonConverter<Category>
@@ -289,6 +296,7 @@ sealed class CategoryConverter : JsonConverter<Category>
             "entity_identity" => Category.EntityIdentity,
             "beneficial_owner_identity" => Category.BeneficialOwnerIdentity,
             "beneficial_owner_address" => Category.BeneficialOwnerAddress,
+            "beneficial_owner_tax_identifier" => Category.BeneficialOwnerTaxIdentifier,
             _ => (Category)(-1),
         };
     }
@@ -304,6 +312,7 @@ sealed class CategoryConverter : JsonConverter<Category>
                 Category.EntityIdentity => "entity_identity",
                 Category.BeneficialOwnerIdentity => "beneficial_owner_identity",
                 Category.BeneficialOwnerAddress => "beneficial_owner_address",
+                Category.BeneficialOwnerTaxIdentifier => "beneficial_owner_tax_identifier",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

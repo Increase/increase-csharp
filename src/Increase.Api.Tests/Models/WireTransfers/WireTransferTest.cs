@@ -19,7 +19,7 @@ public class WireTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -27,7 +27,7 @@ public class WireTransferTest : TestBase
                 CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CanceledBy = null,
             },
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = WireTransfers::CreatedByCategory.User,
@@ -99,7 +99,7 @@ public class WireTransferTest : TestBase
             Submission = new()
             {
                 InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
@@ -112,7 +112,7 @@ public class WireTransferTest : TestBase
         long expectedAmount = 100;
         WireTransfers::Approval expectedApproval = new()
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
             ApprovedBy = null,
         };
         WireTransfers::Cancellation expectedCancellation = new()
@@ -120,7 +120,7 @@ public class WireTransferTest : TestBase
             CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CanceledBy = null,
         };
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z");
         WireTransfers::CreatedBy expectedCreatedBy = new()
         {
             Category = WireTransfers::CreatedByCategory.User,
@@ -190,7 +190,7 @@ public class WireTransferTest : TestBase
         WireTransfers::Submission expectedSubmission = new()
         {
             InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
         };
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, WireTransfers::Type> expectedType = WireTransfers::Type.WireTransfer;
@@ -237,7 +237,7 @@ public class WireTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -245,7 +245,7 @@ public class WireTransferTest : TestBase
                 CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CanceledBy = null,
             },
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = WireTransfers::CreatedByCategory.User,
@@ -317,7 +317,7 @@ public class WireTransferTest : TestBase
             Submission = new()
             {
                 InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
@@ -344,7 +344,7 @@ public class WireTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -352,7 +352,7 @@ public class WireTransferTest : TestBase
                 CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CanceledBy = null,
             },
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = WireTransfers::CreatedByCategory.User,
@@ -424,7 +424,7 @@ public class WireTransferTest : TestBase
             Submission = new()
             {
                 InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
@@ -444,7 +444,7 @@ public class WireTransferTest : TestBase
         long expectedAmount = 100;
         WireTransfers::Approval expectedApproval = new()
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
             ApprovedBy = null,
         };
         WireTransfers::Cancellation expectedCancellation = new()
@@ -452,7 +452,7 @@ public class WireTransferTest : TestBase
             CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CanceledBy = null,
         };
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z");
         WireTransfers::CreatedBy expectedCreatedBy = new()
         {
             Category = WireTransfers::CreatedByCategory.User,
@@ -522,7 +522,7 @@ public class WireTransferTest : TestBase
         WireTransfers::Submission expectedSubmission = new()
         {
             InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
         };
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, WireTransfers::Type> expectedType = WireTransfers::Type.WireTransfer;
@@ -569,7 +569,7 @@ public class WireTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -577,7 +577,7 @@ public class WireTransferTest : TestBase
                 CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CanceledBy = null,
             },
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = WireTransfers::CreatedByCategory.User,
@@ -649,7 +649,7 @@ public class WireTransferTest : TestBase
             Submission = new()
             {
                 InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
@@ -670,7 +670,7 @@ public class WireTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -678,7 +678,7 @@ public class WireTransferTest : TestBase
                 CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CanceledBy = null,
             },
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = WireTransfers::CreatedByCategory.User,
@@ -750,7 +750,7 @@ public class WireTransferTest : TestBase
             Submission = new()
             {
                 InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = WireTransfers::Type.WireTransfer,
@@ -770,14 +770,15 @@ public class ApprovalTest : TestBase
     {
         var model = new WireTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
-        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedApprovedBy = "approved_by";
 
         Assert.Equal(expectedApprovedAt, model.ApprovedAt);
-        Assert.Null(model.ApprovedBy);
+        Assert.Equal(expectedApprovedBy, model.ApprovedBy);
     }
 
     [Fact]
@@ -785,8 +786,8 @@ public class ApprovalTest : TestBase
     {
         var model = new WireTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -803,8 +804,8 @@ public class ApprovalTest : TestBase
     {
         var model = new WireTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -814,10 +815,11 @@ public class ApprovalTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedApprovedBy = "approved_by";
 
         Assert.Equal(expectedApprovedAt, deserialized.ApprovedAt);
-        Assert.Null(deserialized.ApprovedBy);
+        Assert.Equal(expectedApprovedBy, deserialized.ApprovedBy);
     }
 
     [Fact]
@@ -825,8 +827,8 @@ public class ApprovalTest : TestBase
     {
         var model = new WireTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         model.Validate();
@@ -837,8 +839,8 @@ public class ApprovalTest : TestBase
     {
         var model = new WireTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         WireTransfers::Approval copied = new(model);
@@ -2814,12 +2816,12 @@ public class SubmissionTest : TestBase
     {
         var model = new WireTransfers::Submission
         {
-            InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            InputMessageAccountabilityData = "input_message_accountability_data",
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
-        string expectedInputMessageAccountabilityData = "20220118MMQFMP0P000002";
-        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedInputMessageAccountabilityData = "input_message_accountability_data";
+        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedInputMessageAccountabilityData, model.InputMessageAccountabilityData);
         Assert.Equal(expectedSubmittedAt, model.SubmittedAt);
@@ -2830,8 +2832,8 @@ public class SubmissionTest : TestBase
     {
         var model = new WireTransfers::Submission
         {
-            InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            InputMessageAccountabilityData = "input_message_accountability_data",
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -2848,8 +2850,8 @@ public class SubmissionTest : TestBase
     {
         var model = new WireTransfers::Submission
         {
-            InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            InputMessageAccountabilityData = "input_message_accountability_data",
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -2859,8 +2861,8 @@ public class SubmissionTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        string expectedInputMessageAccountabilityData = "20220118MMQFMP0P000002";
-        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedInputMessageAccountabilityData = "input_message_accountability_data";
+        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(
             expectedInputMessageAccountabilityData,
@@ -2874,8 +2876,8 @@ public class SubmissionTest : TestBase
     {
         var model = new WireTransfers::Submission
         {
-            InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            InputMessageAccountabilityData = "input_message_accountability_data",
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         model.Validate();
@@ -2886,8 +2888,8 @@ public class SubmissionTest : TestBase
     {
         var model = new WireTransfers::Submission
         {
-            InputMessageAccountabilityData = "20220118MMQFMP0P000002",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            InputMessageAccountabilityData = "input_message_accountability_data",
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         WireTransfers::Submission copied = new(model);

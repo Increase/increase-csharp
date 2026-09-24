@@ -64,7 +64,7 @@ public class CheckDepositListPageResponseTest : TestBase
                     {
                         BackFileID = "file_frhw4s443nh7noss55kq",
                         FrontFileID = "file_j7ed9mrve741m6yui9ju",
-                        SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
                     },
                     Description = null,
                     FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
@@ -142,7 +142,7 @@ public class CheckDepositListPageResponseTest : TestBase
                 {
                     BackFileID = "file_frhw4s443nh7noss55kq",
                     FrontFileID = "file_j7ed9mrve741m6yui9ju",
-                    SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+                    SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
                 },
                 Description = null,
                 FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
@@ -232,7 +232,7 @@ public class CheckDepositListPageResponseTest : TestBase
                     {
                         BackFileID = "file_frhw4s443nh7noss55kq",
                         FrontFileID = "file_j7ed9mrve741m6yui9ju",
-                        SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
                     },
                     Description = null,
                     FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
@@ -324,7 +324,7 @@ public class CheckDepositListPageResponseTest : TestBase
                     {
                         BackFileID = "file_frhw4s443nh7noss55kq",
                         FrontFileID = "file_j7ed9mrve741m6yui9ju",
-                        SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
                     },
                     Description = null,
                     FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
@@ -409,7 +409,7 @@ public class CheckDepositListPageResponseTest : TestBase
                 {
                     BackFileID = "file_frhw4s443nh7noss55kq",
                     FrontFileID = "file_j7ed9mrve741m6yui9ju",
-                    SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+                    SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
                 },
                 Description = null,
                 FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
@@ -499,7 +499,7 @@ public class CheckDepositListPageResponseTest : TestBase
                     {
                         BackFileID = "file_frhw4s443nh7noss55kq",
                         FrontFileID = "file_j7ed9mrve741m6yui9ju",
-                        SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
                     },
                     Description = null,
                     FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
@@ -585,7 +585,7 @@ public class CheckDepositListPageResponseTest : TestBase
                     {
                         BackFileID = "file_frhw4s443nh7noss55kq",
                         FrontFileID = "file_j7ed9mrve741m6yui9ju",
-                        SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59+00:00"),
+                        SubmittedAt = DateTimeOffset.Parse("2020-02-01T00:59:59Z"),
                     },
                     Description = null,
                     FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",

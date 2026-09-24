@@ -396,20 +396,20 @@ public record class ExportCreateParams : ParamsBase
 public enum Category
 {
     /// <summary>
+    /// Export a BAI2 file of transactions and balances for a given date and optional Account.
+    /// </summary>
+    AccountStatementBai2,
+
+    /// <summary>
     /// Export an Open Financial Exchange (OFX) file of transactions and balances
     /// for a given time range and Account.
     /// </summary>
     AccountStatementOfx,
 
     /// <summary>
-    /// Export a BAI2 file of transactions and balances for a given date and optional Account.
+    /// A PDF of an account verification letter.
     /// </summary>
-    AccountStatementBai2,
-
-    /// <summary>
-    /// Export a CSV of all transactions for a given time range.
-    /// </summary>
-    TransactionCsv,
+    AccountVerificationLetter,
 
     /// <summary>
     /// Export a CSV of account balances for the dates in a given range. (deprecated,
@@ -423,24 +423,15 @@ public enum Category
     BookkeepingAccountBalanceCsv,
 
     /// <summary>
+    /// Export a CSV of daily account balances with starting and ending balances
+    /// for a given date range.
+    /// </summary>
+    DailyAccountBalanceCsv,
+
+    /// <summary>
     /// Export a CSV of entities with a given status.
     /// </summary>
     EntityCsv,
-
-    /// <summary>
-    /// Export a CSV of vendors added to the third-party risk management dashboard.
-    /// </summary>
-    VendorCsv,
-
-    /// <summary>
-    /// A PDF of an account verification letter.
-    /// </summary>
-    AccountVerificationLetter,
-
-    /// <summary>
-    /// A PDF of funding instructions.
-    /// </summary>
-    FundingInstructions,
 
     /// <summary>
     /// Export a CSV of fees. The time range must not include any fees that are part
@@ -449,15 +440,24 @@ public enum Category
     FeeCsv,
 
     /// <summary>
+    /// A PDF of funding instructions.
+    /// </summary>
+    FundingInstructions,
+
+    /// <summary>
+    /// Export a CSV of all transactions for a given time range.
+    /// </summary>
+    TransactionCsv,
+
+    /// <summary>
+    /// Export a CSV of vendors added to the third-party risk management dashboard.
+    /// </summary>
+    VendorCsv,
+
+    /// <summary>
     /// A PDF of a voided check.
     /// </summary>
     VoidedCheck,
-
-    /// <summary>
-    /// Export a CSV of daily account balances with starting and ending balances
-    /// for a given date range.
-    /// </summary>
-    DailyAccountBalanceCsv,
 }
 
 sealed class CategoryConverter : JsonConverter<Category>
@@ -470,18 +470,18 @@ sealed class CategoryConverter : JsonConverter<Category>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "account_statement_ofx" => Category.AccountStatementOfx,
             "account_statement_bai2" => Category.AccountStatementBai2,
-            "transaction_csv" => Category.TransactionCsv,
+            "account_statement_ofx" => Category.AccountStatementOfx,
+            "account_verification_letter" => Category.AccountVerificationLetter,
             "balance_csv" => Category.BalanceCsv,
             "bookkeeping_account_balance_csv" => Category.BookkeepingAccountBalanceCsv,
-            "entity_csv" => Category.EntityCsv,
-            "vendor_csv" => Category.VendorCsv,
-            "account_verification_letter" => Category.AccountVerificationLetter,
-            "funding_instructions" => Category.FundingInstructions,
-            "fee_csv" => Category.FeeCsv,
-            "voided_check" => Category.VoidedCheck,
             "daily_account_balance_csv" => Category.DailyAccountBalanceCsv,
+            "entity_csv" => Category.EntityCsv,
+            "fee_csv" => Category.FeeCsv,
+            "funding_instructions" => Category.FundingInstructions,
+            "transaction_csv" => Category.TransactionCsv,
+            "vendor_csv" => Category.VendorCsv,
+            "voided_check" => Category.VoidedCheck,
             _ => (Category)(-1),
         };
     }
@@ -492,18 +492,18 @@ sealed class CategoryConverter : JsonConverter<Category>
             writer,
             value switch
             {
-                Category.AccountStatementOfx => "account_statement_ofx",
                 Category.AccountStatementBai2 => "account_statement_bai2",
-                Category.TransactionCsv => "transaction_csv",
+                Category.AccountStatementOfx => "account_statement_ofx",
+                Category.AccountVerificationLetter => "account_verification_letter",
                 Category.BalanceCsv => "balance_csv",
                 Category.BookkeepingAccountBalanceCsv => "bookkeeping_account_balance_csv",
-                Category.EntityCsv => "entity_csv",
-                Category.VendorCsv => "vendor_csv",
-                Category.AccountVerificationLetter => "account_verification_letter",
-                Category.FundingInstructions => "funding_instructions",
-                Category.FeeCsv => "fee_csv",
-                Category.VoidedCheck => "voided_check",
                 Category.DailyAccountBalanceCsv => "daily_account_balance_csv",
+                Category.EntityCsv => "entity_csv",
+                Category.FeeCsv => "fee_csv",
+                Category.FundingInstructions => "funding_instructions",
+                Category.TransactionCsv => "transaction_csv",
+                Category.VendorCsv => "vendor_csv",
+                Category.VoidedCheck => "voided_check",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

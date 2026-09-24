@@ -1338,6 +1338,7 @@ public class ReasonTest : TestBase
     [InlineData(Reason.ExceedsApprovalLimit)]
     [InlineData(Reason.CardTemporarilyDisabled)]
     [InlineData(Reason.SuspectedFraud)]
+    [InlineData(Reason.AdditionalCustomerAuthenticationRequired)]
     [InlineData(Reason.Other)]
     public void Validation_Works(Reason rawValue)
     {
@@ -1364,6 +1365,7 @@ public class ReasonTest : TestBase
     [InlineData(Reason.ExceedsApprovalLimit)]
     [InlineData(Reason.CardTemporarilyDisabled)]
     [InlineData(Reason.SuspectedFraud)]
+    [InlineData(Reason.AdditionalCustomerAuthenticationRequired)]
     [InlineData(Reason.Other)]
     public void SerializationRoundtrip_Works(Reason rawValue)
     {

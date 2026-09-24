@@ -156,6 +156,21 @@ public enum DeclineReason
     /// The tokenization attempt was declined by the token requestor.
     /// </summary>
     DeclinedByTokenRequestor,
+
+    /// <summary>
+    /// The group was locked.
+    /// </summary>
+    GroupLocked,
+
+    /// <summary>
+    /// The account has been closed.
+    /// </summary>
+    AccountClosed,
+
+    /// <summary>
+    /// The account's entity was not active.
+    /// </summary>
+    EntityNotActive,
 }
 
 sealed class DeclineReasonConverter : JsonConverter<DeclineReason>
@@ -174,6 +189,9 @@ sealed class DeclineReasonConverter : JsonConverter<DeclineReason>
             "webhook_declined" => DeclineReason.WebhookDeclined,
             "incorrect_card_verification_code" => DeclineReason.IncorrectCardVerificationCode,
             "declined_by_token_requestor" => DeclineReason.DeclinedByTokenRequestor,
+            "group_locked" => DeclineReason.GroupLocked,
+            "account_closed" => DeclineReason.AccountClosed,
+            "entity_not_active" => DeclineReason.EntityNotActive,
             _ => (DeclineReason)(-1),
         };
     }
@@ -194,6 +212,9 @@ sealed class DeclineReasonConverter : JsonConverter<DeclineReason>
                 DeclineReason.WebhookDeclined => "webhook_declined",
                 DeclineReason.IncorrectCardVerificationCode => "incorrect_card_verification_code",
                 DeclineReason.DeclinedByTokenRequestor => "declined_by_token_requestor",
+                DeclineReason.GroupLocked => "group_locked",
+                DeclineReason.AccountClosed => "account_closed",
+                DeclineReason.EntityNotActive => "entity_not_active",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
