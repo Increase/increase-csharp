@@ -17,9 +17,9 @@ public class FednowTransferTest : TestBase
             ID = "fednow_transfer_4i0mptrdu1mueg1196bg",
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+            Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T14:10:02Z")),
             Amount = 100,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = FednowTransfers::Category.User,
@@ -69,7 +69,7 @@ public class FednowTransferTest : TestBase
             Submission = new()
             {
                 MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = FednowTransfers::Type.FednowTransfer,
@@ -81,10 +81,10 @@ public class FednowTransferTest : TestBase
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedAccountNumber = "987654321";
         FednowTransfers::Acknowledgement expectedAcknowledgement = new(
-            DateTimeOffset.Parse("2020-01-31T23:59:59Z")
+            DateTimeOffset.Parse("2020-01-31T14:10:02Z")
         );
         long expectedAmount = 100;
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z");
         FednowTransfers::CreatedBy expectedCreatedBy = new()
         {
             Category = FednowTransfers::Category.User,
@@ -133,7 +133,7 @@ public class FednowTransferTest : TestBase
         FednowTransfers::Submission expectedSubmission = new()
         {
             MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
         };
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, FednowTransfers::Type> expectedType = FednowTransfers::Type.FednowTransfer;
@@ -185,9 +185,9 @@ public class FednowTransferTest : TestBase
             ID = "fednow_transfer_4i0mptrdu1mueg1196bg",
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+            Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T14:10:02Z")),
             Amount = 100,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = FednowTransfers::Category.User,
@@ -237,7 +237,7 @@ public class FednowTransferTest : TestBase
             Submission = new()
             {
                 MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = FednowTransfers::Type.FednowTransfer,
@@ -262,9 +262,9 @@ public class FednowTransferTest : TestBase
             ID = "fednow_transfer_4i0mptrdu1mueg1196bg",
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+            Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T14:10:02Z")),
             Amount = 100,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = FednowTransfers::Category.User,
@@ -314,7 +314,7 @@ public class FednowTransferTest : TestBase
             Submission = new()
             {
                 MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = FednowTransfers::Type.FednowTransfer,
@@ -333,10 +333,10 @@ public class FednowTransferTest : TestBase
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedAccountNumber = "987654321";
         FednowTransfers::Acknowledgement expectedAcknowledgement = new(
-            DateTimeOffset.Parse("2020-01-31T23:59:59Z")
+            DateTimeOffset.Parse("2020-01-31T14:10:02Z")
         );
         long expectedAmount = 100;
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z");
         FednowTransfers::CreatedBy expectedCreatedBy = new()
         {
             Category = FednowTransfers::Category.User,
@@ -385,7 +385,7 @@ public class FednowTransferTest : TestBase
         FednowTransfers::Submission expectedSubmission = new()
         {
             MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
         };
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
         ApiEnum<string, FednowTransfers::Type> expectedType = FednowTransfers::Type.FednowTransfer;
@@ -437,9 +437,9 @@ public class FednowTransferTest : TestBase
             ID = "fednow_transfer_4i0mptrdu1mueg1196bg",
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+            Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T14:10:02Z")),
             Amount = 100,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = FednowTransfers::Category.User,
@@ -489,7 +489,7 @@ public class FednowTransferTest : TestBase
             Submission = new()
             {
                 MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = FednowTransfers::Type.FednowTransfer,
@@ -508,9 +508,9 @@ public class FednowTransferTest : TestBase
             ID = "fednow_transfer_4i0mptrdu1mueg1196bg",
             AccountID = "account_in71c4amph0vgo2qllky",
             AccountNumber = "987654321",
-            Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T23:59:59Z")),
+            Acknowledgement = new(DateTimeOffset.Parse("2020-01-31T14:10:02Z")),
             Amount = 100,
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = FednowTransfers::Category.User,
@@ -560,7 +560,7 @@ public class FednowTransferTest : TestBase
             Submission = new()
             {
                 MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
-                SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
             },
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             Type = FednowTransfers::Type.FednowTransfer,
@@ -581,10 +581,10 @@ public class AcknowledgementTest : TestBase
     {
         var model = new FednowTransfers::Acknowledgement
         {
-            AcknowledgedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            AcknowledgedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
-        DateTimeOffset expectedAcknowledgedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedAcknowledgedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedAcknowledgedAt, model.AcknowledgedAt);
     }
@@ -594,7 +594,7 @@ public class AcknowledgementTest : TestBase
     {
         var model = new FednowTransfers::Acknowledgement
         {
-            AcknowledgedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            AcknowledgedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -611,7 +611,7 @@ public class AcknowledgementTest : TestBase
     {
         var model = new FednowTransfers::Acknowledgement
         {
-            AcknowledgedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            AcknowledgedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -621,7 +621,7 @@ public class AcknowledgementTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        DateTimeOffset expectedAcknowledgedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedAcknowledgedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedAcknowledgedAt, deserialized.AcknowledgedAt);
     }
@@ -631,7 +631,7 @@ public class AcknowledgementTest : TestBase
     {
         var model = new FednowTransfers::Acknowledgement
         {
-            AcknowledgedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            AcknowledgedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         model.Validate();
@@ -642,7 +642,7 @@ public class AcknowledgementTest : TestBase
     {
         var model = new FednowTransfers::Acknowledgement
         {
-            AcknowledgedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            AcknowledgedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         FednowTransfers::Acknowledgement copied = new(model);
@@ -1765,12 +1765,12 @@ public class SubmissionTest : TestBase
     {
         var model = new FednowTransfers::Submission
         {
-            MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            MessageIdentification = "message_identification",
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
-        string expectedMessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS";
-        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedMessageIdentification = "message_identification";
+        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedMessageIdentification, model.MessageIdentification);
         Assert.Equal(expectedSubmittedAt, model.SubmittedAt);
@@ -1781,8 +1781,8 @@ public class SubmissionTest : TestBase
     {
         var model = new FednowTransfers::Submission
         {
-            MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            MessageIdentification = "message_identification",
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1799,8 +1799,8 @@ public class SubmissionTest : TestBase
     {
         var model = new FednowTransfers::Submission
         {
-            MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            MessageIdentification = "message_identification",
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1810,8 +1810,8 @@ public class SubmissionTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        string expectedMessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS";
-        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedMessageIdentification = "message_identification";
+        DateTimeOffset expectedSubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedMessageIdentification, deserialized.MessageIdentification);
         Assert.Equal(expectedSubmittedAt, deserialized.SubmittedAt);
@@ -1822,8 +1822,8 @@ public class SubmissionTest : TestBase
     {
         var model = new FednowTransfers::Submission
         {
-            MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            MessageIdentification = "message_identification",
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         model.Validate();
@@ -1834,8 +1834,8 @@ public class SubmissionTest : TestBase
     {
         var model = new FednowTransfers::Submission
         {
-            MessageIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
-            SubmittedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            MessageIdentification = "message_identification",
+            SubmittedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         FednowTransfers::Submission copied = new(model);

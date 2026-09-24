@@ -129,6 +129,7 @@ public class CategoryTest : TestBase
     [InlineData(Category.EntityIdentity)]
     [InlineData(Category.BeneficialOwnerIdentity)]
     [InlineData(Category.BeneficialOwnerAddress)]
+    [InlineData(Category.BeneficialOwnerTaxIdentifier)]
     public void Validation_Works(Category rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -154,6 +155,7 @@ public class CategoryTest : TestBase
     [InlineData(Category.EntityIdentity)]
     [InlineData(Category.BeneficialOwnerIdentity)]
     [InlineData(Category.BeneficialOwnerAddress)]
+    [InlineData(Category.BeneficialOwnerTaxIdentifier)]
     public void SerializationRoundtrip_Works(Category rawValue)
     {
         // force implicit conversion because Theory can't do that for us

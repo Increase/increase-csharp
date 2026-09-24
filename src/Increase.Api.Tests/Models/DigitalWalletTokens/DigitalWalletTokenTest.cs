@@ -474,6 +474,9 @@ public class ReasonTest : TestBase
     [InlineData(DigitalWalletTokens::Reason.WebhookDeclined)]
     [InlineData(DigitalWalletTokens::Reason.IncorrectCardVerificationCode)]
     [InlineData(DigitalWalletTokens::Reason.DeclinedByTokenRequestor)]
+    [InlineData(DigitalWalletTokens::Reason.GroupLocked)]
+    [InlineData(DigitalWalletTokens::Reason.AccountClosed)]
+    [InlineData(DigitalWalletTokens::Reason.EntityNotActive)]
     public void Validation_Works(DigitalWalletTokens::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -500,6 +503,9 @@ public class ReasonTest : TestBase
     [InlineData(DigitalWalletTokens::Reason.WebhookDeclined)]
     [InlineData(DigitalWalletTokens::Reason.IncorrectCardVerificationCode)]
     [InlineData(DigitalWalletTokens::Reason.DeclinedByTokenRequestor)]
+    [InlineData(DigitalWalletTokens::Reason.GroupLocked)]
+    [InlineData(DigitalWalletTokens::Reason.AccountClosed)]
+    [InlineData(DigitalWalletTokens::Reason.EntityNotActive)]
     public void SerializationRoundtrip_Works(DigitalWalletTokens::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -803,6 +809,7 @@ public class StatusTest : TestBase
     [InlineData(DigitalWalletTokens::Status.Suspended)]
     [InlineData(DigitalWalletTokens::Status.Deactivated)]
     [InlineData(DigitalWalletTokens::Status.Declined)]
+    [InlineData(DigitalWalletTokens::Status.PendingTransitioning)]
     public void Validation_Works(DigitalWalletTokens::Status rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -828,6 +835,7 @@ public class StatusTest : TestBase
     [InlineData(DigitalWalletTokens::Status.Suspended)]
     [InlineData(DigitalWalletTokens::Status.Deactivated)]
     [InlineData(DigitalWalletTokens::Status.Declined)]
+    [InlineData(DigitalWalletTokens::Status.PendingTransitioning)]
     public void SerializationRoundtrip_Works(DigitalWalletTokens::Status rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1069,6 +1077,7 @@ public class UpdateStatusTest : TestBase
     [InlineData(DigitalWalletTokens::UpdateStatus.Suspended)]
     [InlineData(DigitalWalletTokens::UpdateStatus.Deactivated)]
     [InlineData(DigitalWalletTokens::UpdateStatus.Declined)]
+    [InlineData(DigitalWalletTokens::UpdateStatus.PendingTransitioning)]
     public void Validation_Works(DigitalWalletTokens::UpdateStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1094,6 +1103,7 @@ public class UpdateStatusTest : TestBase
     [InlineData(DigitalWalletTokens::UpdateStatus.Suspended)]
     [InlineData(DigitalWalletTokens::UpdateStatus.Deactivated)]
     [InlineData(DigitalWalletTokens::UpdateStatus.Declined)]
+    [InlineData(DigitalWalletTokens::UpdateStatus.PendingTransitioning)]
     public void SerializationRoundtrip_Works(DigitalWalletTokens::UpdateStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us

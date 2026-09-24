@@ -446,6 +446,21 @@ public enum Reason
     /// The tokenization attempt was declined by the token requestor.
     /// </summary>
     DeclinedByTokenRequestor,
+
+    /// <summary>
+    /// The group was locked.
+    /// </summary>
+    GroupLocked,
+
+    /// <summary>
+    /// The account has been closed.
+    /// </summary>
+    AccountClosed,
+
+    /// <summary>
+    /// The account's entity was not active.
+    /// </summary>
+    EntityNotActive,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -464,6 +479,9 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "webhook_declined" => Reason.WebhookDeclined,
             "incorrect_card_verification_code" => Reason.IncorrectCardVerificationCode,
             "declined_by_token_requestor" => Reason.DeclinedByTokenRequestor,
+            "group_locked" => Reason.GroupLocked,
+            "account_closed" => Reason.AccountClosed,
+            "entity_not_active" => Reason.EntityNotActive,
             _ => (Reason)(-1),
         };
     }
@@ -480,6 +498,9 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.WebhookDeclined => "webhook_declined",
                 Reason.IncorrectCardVerificationCode => "incorrect_card_verification_code",
                 Reason.DeclinedByTokenRequestor => "declined_by_token_requestor",
+                Reason.GroupLocked => "group_locked",
+                Reason.AccountClosed => "account_closed",
+                Reason.EntityNotActive => "entity_not_active",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -804,6 +825,12 @@ public enum Status
     /// The digital wallet token was declined during provisioning.
     /// </summary>
     Declined,
+
+    /// <summary>
+    /// The digital wallet token is transitioning to a new status and is awaiting
+    /// confirmation from the card network.
+    /// </summary>
+    PendingTransitioning,
 }
 
 sealed class StatusConverter : JsonConverter<Status>
@@ -821,6 +848,7 @@ sealed class StatusConverter : JsonConverter<Status>
             "suspended" => Status.Suspended,
             "deactivated" => Status.Deactivated,
             "declined" => Status.Declined,
+            "pending_transitioning" => Status.PendingTransitioning,
             _ => (Status)(-1),
         };
     }
@@ -836,6 +864,7 @@ sealed class StatusConverter : JsonConverter<Status>
                 Status.Suspended => "suspended",
                 Status.Deactivated => "deactivated",
                 Status.Declined => "declined",
+                Status.PendingTransitioning => "pending_transitioning",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1066,6 +1095,12 @@ public enum UpdateStatus
     /// The digital wallet token was declined during provisioning.
     /// </summary>
     Declined,
+
+    /// <summary>
+    /// The digital wallet token is transitioning to a new status and is awaiting
+    /// confirmation from the card network.
+    /// </summary>
+    PendingTransitioning,
 }
 
 sealed class UpdateStatusConverter : JsonConverter<UpdateStatus>
@@ -1083,6 +1118,7 @@ sealed class UpdateStatusConverter : JsonConverter<UpdateStatus>
             "suspended" => UpdateStatus.Suspended,
             "deactivated" => UpdateStatus.Deactivated,
             "declined" => UpdateStatus.Declined,
+            "pending_transitioning" => UpdateStatus.PendingTransitioning,
             _ => (UpdateStatus)(-1),
         };
     }
@@ -1102,6 +1138,7 @@ sealed class UpdateStatusConverter : JsonConverter<UpdateStatus>
                 UpdateStatus.Suspended => "suspended",
                 UpdateStatus.Deactivated => "deactivated",
                 UpdateStatus.Declined => "declined",
+                UpdateStatus.PendingTransitioning => "pending_transitioning",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

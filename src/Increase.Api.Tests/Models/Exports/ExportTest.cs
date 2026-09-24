@@ -1397,21 +1397,21 @@ public class ExportBookkeepingAccountBalanceCsvTest : TestBase
 public class ExportCategoryTest : TestBase
 {
     [Theory]
-    [InlineData(Exports::ExportCategory.AccountStatementOfx)]
     [InlineData(Exports::ExportCategory.AccountStatementBai2)]
-    [InlineData(Exports::ExportCategory.TransactionCsv)]
+    [InlineData(Exports::ExportCategory.AccountStatementOfx)]
+    [InlineData(Exports::ExportCategory.AccountVerificationLetter)]
     [InlineData(Exports::ExportCategory.BalanceCsv)]
     [InlineData(Exports::ExportCategory.BookkeepingAccountBalanceCsv)]
-    [InlineData(Exports::ExportCategory.EntityCsv)]
-    [InlineData(Exports::ExportCategory.VendorCsv)]
+    [InlineData(Exports::ExportCategory.DailyAccountBalanceCsv)]
     [InlineData(Exports::ExportCategory.DashboardTableCsv)]
-    [InlineData(Exports::ExportCategory.AccountVerificationLetter)]
-    [InlineData(Exports::ExportCategory.FundingInstructions)]
+    [InlineData(Exports::ExportCategory.EntityCsv)]
+    [InlineData(Exports::ExportCategory.FeeCsv)]
     [InlineData(Exports::ExportCategory.Form1099Int)]
     [InlineData(Exports::ExportCategory.Form1099Misc)]
-    [InlineData(Exports::ExportCategory.FeeCsv)]
+    [InlineData(Exports::ExportCategory.FundingInstructions)]
+    [InlineData(Exports::ExportCategory.TransactionCsv)]
+    [InlineData(Exports::ExportCategory.VendorCsv)]
     [InlineData(Exports::ExportCategory.VoidedCheck)]
-    [InlineData(Exports::ExportCategory.DailyAccountBalanceCsv)]
     public void Validation_Works(Exports::ExportCategory rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1432,21 +1432,21 @@ public class ExportCategoryTest : TestBase
     }
 
     [Theory]
-    [InlineData(Exports::ExportCategory.AccountStatementOfx)]
     [InlineData(Exports::ExportCategory.AccountStatementBai2)]
-    [InlineData(Exports::ExportCategory.TransactionCsv)]
+    [InlineData(Exports::ExportCategory.AccountStatementOfx)]
+    [InlineData(Exports::ExportCategory.AccountVerificationLetter)]
     [InlineData(Exports::ExportCategory.BalanceCsv)]
     [InlineData(Exports::ExportCategory.BookkeepingAccountBalanceCsv)]
-    [InlineData(Exports::ExportCategory.EntityCsv)]
-    [InlineData(Exports::ExportCategory.VendorCsv)]
+    [InlineData(Exports::ExportCategory.DailyAccountBalanceCsv)]
     [InlineData(Exports::ExportCategory.DashboardTableCsv)]
-    [InlineData(Exports::ExportCategory.AccountVerificationLetter)]
-    [InlineData(Exports::ExportCategory.FundingInstructions)]
+    [InlineData(Exports::ExportCategory.EntityCsv)]
+    [InlineData(Exports::ExportCategory.FeeCsv)]
     [InlineData(Exports::ExportCategory.Form1099Int)]
     [InlineData(Exports::ExportCategory.Form1099Misc)]
-    [InlineData(Exports::ExportCategory.FeeCsv)]
+    [InlineData(Exports::ExportCategory.FundingInstructions)]
+    [InlineData(Exports::ExportCategory.TransactionCsv)]
+    [InlineData(Exports::ExportCategory.VendorCsv)]
     [InlineData(Exports::ExportCategory.VoidedCheck)]
-    [InlineData(Exports::ExportCategory.DailyAccountBalanceCsv)]
     public void SerializationRoundtrip_Works(Exports::ExportCategory rawValue)
     {
         // force implicit conversion because Theory can't do that for us
