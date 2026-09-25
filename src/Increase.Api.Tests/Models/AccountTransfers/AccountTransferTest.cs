@@ -18,7 +18,7 @@ public class AccountTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -26,7 +26,7 @@ public class AccountTransferTest : TestBase
                 CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CanceledBy = null,
             },
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = AccountTransfers::Category.User,
@@ -50,7 +50,7 @@ public class AccountTransferTest : TestBase
         long expectedAmount = 100;
         AccountTransfers::Approval expectedApproval = new()
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
             ApprovedBy = null,
         };
         AccountTransfers::Cancellation expectedCancellation = new()
@@ -58,7 +58,7 @@ public class AccountTransferTest : TestBase
             CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CanceledBy = null,
         };
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z");
         AccountTransfers::CreatedBy expectedCreatedBy = new()
         {
             Category = AccountTransfers::Category.User,
@@ -105,7 +105,7 @@ public class AccountTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -113,7 +113,7 @@ public class AccountTransferTest : TestBase
                 CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CanceledBy = null,
             },
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = AccountTransfers::Category.User,
@@ -151,7 +151,7 @@ public class AccountTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -159,7 +159,7 @@ public class AccountTransferTest : TestBase
                 CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CanceledBy = null,
             },
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = AccountTransfers::Category.User,
@@ -190,7 +190,7 @@ public class AccountTransferTest : TestBase
         long expectedAmount = 100;
         AccountTransfers::Approval expectedApproval = new()
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
             ApprovedBy = null,
         };
         AccountTransfers::Cancellation expectedCancellation = new()
@@ -198,7 +198,7 @@ public class AccountTransferTest : TestBase
             CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CanceledBy = null,
         };
-        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z");
         AccountTransfers::CreatedBy expectedCreatedBy = new()
         {
             Category = AccountTransfers::Category.User,
@@ -245,7 +245,7 @@ public class AccountTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -253,7 +253,7 @@ public class AccountTransferTest : TestBase
                 CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CanceledBy = null,
             },
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = AccountTransfers::Category.User,
@@ -285,7 +285,7 @@ public class AccountTransferTest : TestBase
             Amount = 100,
             Approval = new()
             {
-                ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ApprovedAt = DateTimeOffset.Parse("2020-01-31T14:05:00Z"),
                 ApprovedBy = null,
             },
             Cancellation = new()
@@ -293,7 +293,7 @@ public class AccountTransferTest : TestBase
                 CanceledAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CanceledBy = null,
             },
-            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
             CreatedBy = new()
             {
                 Category = AccountTransfers::Category.User,
@@ -325,14 +325,15 @@ public class ApprovalTest : TestBase
     {
         var model = new AccountTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
-        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedApprovedBy = "approved_by";
 
         Assert.Equal(expectedApprovedAt, model.ApprovedAt);
-        Assert.Null(model.ApprovedBy);
+        Assert.Equal(expectedApprovedBy, model.ApprovedBy);
     }
 
     [Fact]
@@ -340,8 +341,8 @@ public class ApprovalTest : TestBase
     {
         var model = new AccountTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -358,8 +359,8 @@ public class ApprovalTest : TestBase
     {
         var model = new AccountTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -369,10 +370,11 @@ public class ApprovalTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        DateTimeOffset expectedApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedApprovedBy = "approved_by";
 
         Assert.Equal(expectedApprovedAt, deserialized.ApprovedAt);
-        Assert.Null(deserialized.ApprovedBy);
+        Assert.Equal(expectedApprovedBy, deserialized.ApprovedBy);
     }
 
     [Fact]
@@ -380,8 +382,8 @@ public class ApprovalTest : TestBase
     {
         var model = new AccountTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         model.Validate();
@@ -392,8 +394,8 @@ public class ApprovalTest : TestBase
     {
         var model = new AccountTransfers::Approval
         {
-            ApprovedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            ApprovedBy = null,
+            ApprovedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ApprovedBy = "approved_by",
         };
 
         AccountTransfers::Approval copied = new(model);

@@ -14,7 +14,7 @@ public class ExportListParamsTest : TestBase
     {
         var parameters = new ExportListParams
         {
-            Category = ExportListParamsCategory.AccountStatementOfx,
+            Category = ExportListParamsCategory.AccountStatementBai2,
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -31,7 +31,7 @@ public class ExportListParamsTest : TestBase
         };
 
         ApiEnum<string, ExportListParamsCategory> expectedCategory =
-            ExportListParamsCategory.AccountStatementOfx;
+            ExportListParamsCategory.AccountStatementBai2;
         ExportListParamsCreatedAt expectedCreatedAt = new()
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -118,7 +118,7 @@ public class ExportListParamsTest : TestBase
     {
         ExportListParams parameters = new()
         {
-            Category = ExportListParamsCategory.AccountStatementOfx,
+            Category = ExportListParamsCategory.AccountStatementBai2,
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
@@ -139,7 +139,7 @@ public class ExportListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.increase.com/exports?category=account_statement_ofx&created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&form_1099_int.account_id=account_id&form_1099_misc.account_id=account_id&idempotency_key=x&limit=1&status.in=pending"
+                    "https://api.increase.com/exports?category=account_statement_bai2&created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&form_1099_int.account_id=account_id&form_1099_misc.account_id=account_id&idempotency_key=x&limit=1&status.in=pending"
                 ),
                 url
             )
@@ -151,7 +151,7 @@ public class ExportListParamsTest : TestBase
     {
         var parameters = new ExportListParams
         {
-            Category = ExportListParamsCategory.AccountStatementOfx,
+            Category = ExportListParamsCategory.AccountStatementBai2,
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -176,21 +176,21 @@ public class ExportListParamsTest : TestBase
 public class ExportListParamsCategoryTest : TestBase
 {
     [Theory]
-    [InlineData(ExportListParamsCategory.AccountStatementOfx)]
     [InlineData(ExportListParamsCategory.AccountStatementBai2)]
-    [InlineData(ExportListParamsCategory.TransactionCsv)]
+    [InlineData(ExportListParamsCategory.AccountStatementOfx)]
+    [InlineData(ExportListParamsCategory.AccountVerificationLetter)]
     [InlineData(ExportListParamsCategory.BalanceCsv)]
     [InlineData(ExportListParamsCategory.BookkeepingAccountBalanceCsv)]
-    [InlineData(ExportListParamsCategory.EntityCsv)]
-    [InlineData(ExportListParamsCategory.VendorCsv)]
+    [InlineData(ExportListParamsCategory.DailyAccountBalanceCsv)]
     [InlineData(ExportListParamsCategory.DashboardTableCsv)]
-    [InlineData(ExportListParamsCategory.AccountVerificationLetter)]
-    [InlineData(ExportListParamsCategory.FundingInstructions)]
+    [InlineData(ExportListParamsCategory.EntityCsv)]
+    [InlineData(ExportListParamsCategory.FeeCsv)]
     [InlineData(ExportListParamsCategory.Form1099Int)]
     [InlineData(ExportListParamsCategory.Form1099Misc)]
-    [InlineData(ExportListParamsCategory.FeeCsv)]
+    [InlineData(ExportListParamsCategory.FundingInstructions)]
+    [InlineData(ExportListParamsCategory.TransactionCsv)]
+    [InlineData(ExportListParamsCategory.VendorCsv)]
     [InlineData(ExportListParamsCategory.VoidedCheck)]
-    [InlineData(ExportListParamsCategory.DailyAccountBalanceCsv)]
     public void Validation_Works(ExportListParamsCategory rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -211,21 +211,21 @@ public class ExportListParamsCategoryTest : TestBase
     }
 
     [Theory]
-    [InlineData(ExportListParamsCategory.AccountStatementOfx)]
     [InlineData(ExportListParamsCategory.AccountStatementBai2)]
-    [InlineData(ExportListParamsCategory.TransactionCsv)]
+    [InlineData(ExportListParamsCategory.AccountStatementOfx)]
+    [InlineData(ExportListParamsCategory.AccountVerificationLetter)]
     [InlineData(ExportListParamsCategory.BalanceCsv)]
     [InlineData(ExportListParamsCategory.BookkeepingAccountBalanceCsv)]
-    [InlineData(ExportListParamsCategory.EntityCsv)]
-    [InlineData(ExportListParamsCategory.VendorCsv)]
+    [InlineData(ExportListParamsCategory.DailyAccountBalanceCsv)]
     [InlineData(ExportListParamsCategory.DashboardTableCsv)]
-    [InlineData(ExportListParamsCategory.AccountVerificationLetter)]
-    [InlineData(ExportListParamsCategory.FundingInstructions)]
+    [InlineData(ExportListParamsCategory.EntityCsv)]
+    [InlineData(ExportListParamsCategory.FeeCsv)]
     [InlineData(ExportListParamsCategory.Form1099Int)]
     [InlineData(ExportListParamsCategory.Form1099Misc)]
-    [InlineData(ExportListParamsCategory.FeeCsv)]
+    [InlineData(ExportListParamsCategory.FundingInstructions)]
+    [InlineData(ExportListParamsCategory.TransactionCsv)]
+    [InlineData(ExportListParamsCategory.VendorCsv)]
     [InlineData(ExportListParamsCategory.VoidedCheck)]
-    [InlineData(ExportListParamsCategory.DailyAccountBalanceCsv)]
     public void SerializationRoundtrip_Works(ExportListParamsCategory rawValue)
     {
         // force implicit conversion because Theory can't do that for us
