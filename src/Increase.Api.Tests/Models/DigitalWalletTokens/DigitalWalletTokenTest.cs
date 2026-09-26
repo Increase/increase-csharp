@@ -873,6 +873,7 @@ public class TokenRequestorTest : TestBase
     [InlineData(DigitalWalletTokens::TokenRequestor.ApplePay)]
     [InlineData(DigitalWalletTokens::TokenRequestor.GooglePay)]
     [InlineData(DigitalWalletTokens::TokenRequestor.SamsungPay)]
+    [InlineData(DigitalWalletTokens::TokenRequestor.GarminPay)]
     [InlineData(DigitalWalletTokens::TokenRequestor.Unknown)]
     public void Validation_Works(DigitalWalletTokens::TokenRequestor rawValue)
     {
@@ -896,6 +897,7 @@ public class TokenRequestorTest : TestBase
     [InlineData(DigitalWalletTokens::TokenRequestor.ApplePay)]
     [InlineData(DigitalWalletTokens::TokenRequestor.GooglePay)]
     [InlineData(DigitalWalletTokens::TokenRequestor.SamsungPay)]
+    [InlineData(DigitalWalletTokens::TokenRequestor.GarminPay)]
     [InlineData(DigitalWalletTokens::TokenRequestor.Unknown)]
     public void SerializationRoundtrip_Works(DigitalWalletTokens::TokenRequestor rawValue)
     {
