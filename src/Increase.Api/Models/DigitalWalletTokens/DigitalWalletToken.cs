@@ -896,6 +896,11 @@ public enum TokenRequestor
     SamsungPay,
 
     /// <summary>
+    /// Garmin Pay
+    /// </summary>
+    GarminPay,
+
+    /// <summary>
     /// Unknown
     /// </summary>
     Unknown,
@@ -914,6 +919,7 @@ sealed class TokenRequestorConverter : JsonConverter<TokenRequestor>
             "apple_pay" => TokenRequestor.ApplePay,
             "google_pay" => TokenRequestor.GooglePay,
             "samsung_pay" => TokenRequestor.SamsungPay,
+            "garmin_pay" => TokenRequestor.GarminPay,
             "unknown" => TokenRequestor.Unknown,
             _ => (TokenRequestor)(-1),
         };
@@ -932,6 +938,7 @@ sealed class TokenRequestorConverter : JsonConverter<TokenRequestor>
                 TokenRequestor.ApplePay => "apple_pay",
                 TokenRequestor.GooglePay => "google_pay",
                 TokenRequestor.SamsungPay => "samsung_pay",
+                TokenRequestor.GarminPay => "garmin_pay",
                 TokenRequestor.Unknown => "unknown",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
