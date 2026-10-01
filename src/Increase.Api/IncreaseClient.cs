@@ -145,6 +145,12 @@ public sealed class IncreaseClient : IIncreaseClient
         get { return _digitalWalletTokens.Value; }
     }
 
+    readonly Lazy<IDigitalWalletTokenRequestService> _digitalWalletTokenRequests;
+    public IDigitalWalletTokenRequestService DigitalWalletTokenRequests
+    {
+        get { return _digitalWalletTokenRequests.Value; }
+    }
+
     readonly Lazy<ITransactionService> _transactions;
     public ITransactionService Transactions
     {
@@ -227,6 +233,18 @@ public sealed class IncreaseClient : IIncreaseClient
     public IInboundRealTimePaymentsTransferService InboundRealTimePaymentsTransfers
     {
         get { return _inboundRealTimePaymentsTransfers.Value; }
+    }
+
+    readonly Lazy<IRealTimePaymentsRequestsForPaymentService> _realTimePaymentsRequestsForPayment;
+    public IRealTimePaymentsRequestsForPaymentService RealTimePaymentsRequestsForPayment
+    {
+        get { return _realTimePaymentsRequestsForPayment.Value; }
+    }
+
+    readonly Lazy<IInboundRealTimePaymentsRequestsForPaymentService> _inboundRealTimePaymentsRequestsForPayment;
+    public IInboundRealTimePaymentsRequestsForPaymentService InboundRealTimePaymentsRequestsForPayment
+    {
+        get { return _inboundRealTimePaymentsRequestsForPayment.Value; }
     }
 
     readonly Lazy<IFednowTransferService> _fednowTransfers;
@@ -415,6 +433,12 @@ public sealed class IncreaseClient : IIncreaseClient
         get { return _cardValidations.Value; }
     }
 
+    readonly Lazy<IPhysicalCheckBatchService> _physicalCheckBatches;
+    public IPhysicalCheckBatchService PhysicalCheckBatches
+    {
+        get { return _physicalCheckBatches.Value; }
+    }
+
     readonly Lazy<ISimulationService> _simulations;
     public ISimulationService Simulations
     {
@@ -439,6 +463,7 @@ public sealed class IncreaseClient : IIncreaseClient
         _digitalCardProfiles = new(() => new DigitalCardProfileService(this));
         _physicalCardProfiles = new(() => new PhysicalCardProfileService(this));
         _digitalWalletTokens = new(() => new DigitalWalletTokenService(this));
+        _digitalWalletTokenRequests = new(() => new DigitalWalletTokenRequestService(this));
         _transactions = new(() => new TransactionService(this));
         _pendingTransactions = new(() => new PendingTransactionService(this));
         _declinedTransactions = new(() => new DeclinedTransactionService(this));
@@ -454,6 +479,12 @@ public sealed class IncreaseClient : IIncreaseClient
         _realTimePaymentsTransfers = new(() => new RealTimePaymentsTransferService(this));
         _inboundRealTimePaymentsTransfers = new(() =>
             new InboundRealTimePaymentsTransferService(this)
+        );
+        _realTimePaymentsRequestsForPayment = new(() =>
+            new RealTimePaymentsRequestsForPaymentService(this)
+        );
+        _inboundRealTimePaymentsRequestsForPayment = new(() =>
+            new InboundRealTimePaymentsRequestsForPaymentService(this)
         );
         _fednowTransfers = new(() => new FednowTransferService(this));
         _inboundFednowTransfers = new(() => new InboundFednowTransferService(this));
@@ -486,6 +517,7 @@ public sealed class IncreaseClient : IIncreaseClient
         _cardTokens = new(() => new CardTokenService(this));
         _cardPushTransfers = new(() => new CardPushTransferService(this));
         _cardValidations = new(() => new CardValidationService(this));
+        _physicalCheckBatches = new(() => new PhysicalCheckBatchService(this));
         _simulations = new(() => new SimulationService(this));
     }
 
@@ -635,6 +667,12 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
         get { return _digitalWalletTokens.Value; }
     }
 
+    readonly Lazy<IDigitalWalletTokenRequestServiceWithRawResponse> _digitalWalletTokenRequests;
+    public IDigitalWalletTokenRequestServiceWithRawResponse DigitalWalletTokenRequests
+    {
+        get { return _digitalWalletTokenRequests.Value; }
+    }
+
     readonly Lazy<ITransactionServiceWithRawResponse> _transactions;
     public ITransactionServiceWithRawResponse Transactions
     {
@@ -717,6 +755,18 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
     public IInboundRealTimePaymentsTransferServiceWithRawResponse InboundRealTimePaymentsTransfers
     {
         get { return _inboundRealTimePaymentsTransfers.Value; }
+    }
+
+    readonly Lazy<IRealTimePaymentsRequestsForPaymentServiceWithRawResponse> _realTimePaymentsRequestsForPayment;
+    public IRealTimePaymentsRequestsForPaymentServiceWithRawResponse RealTimePaymentsRequestsForPayment
+    {
+        get { return _realTimePaymentsRequestsForPayment.Value; }
+    }
+
+    readonly Lazy<IInboundRealTimePaymentsRequestsForPaymentServiceWithRawResponse> _inboundRealTimePaymentsRequestsForPayment;
+    public IInboundRealTimePaymentsRequestsForPaymentServiceWithRawResponse InboundRealTimePaymentsRequestsForPayment
+    {
+        get { return _inboundRealTimePaymentsRequestsForPayment.Value; }
     }
 
     readonly Lazy<IFednowTransferServiceWithRawResponse> _fednowTransfers;
@@ -903,6 +953,12 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
     public ICardValidationServiceWithRawResponse CardValidations
     {
         get { return _cardValidations.Value; }
+    }
+
+    readonly Lazy<IPhysicalCheckBatchServiceWithRawResponse> _physicalCheckBatches;
+    public IPhysicalCheckBatchServiceWithRawResponse PhysicalCheckBatches
+    {
+        get { return _physicalCheckBatches.Value; }
     }
 
     readonly Lazy<ISimulationServiceWithRawResponse> _simulations;
@@ -1129,6 +1185,9 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
         _digitalCardProfiles = new(() => new DigitalCardProfileServiceWithRawResponse(this));
         _physicalCardProfiles = new(() => new PhysicalCardProfileServiceWithRawResponse(this));
         _digitalWalletTokens = new(() => new DigitalWalletTokenServiceWithRawResponse(this));
+        _digitalWalletTokenRequests = new(() =>
+            new DigitalWalletTokenRequestServiceWithRawResponse(this)
+        );
         _transactions = new(() => new TransactionServiceWithRawResponse(this));
         _pendingTransactions = new(() => new PendingTransactionServiceWithRawResponse(this));
         _declinedTransactions = new(() => new DeclinedTransactionServiceWithRawResponse(this));
@@ -1148,6 +1207,12 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
         );
         _inboundRealTimePaymentsTransfers = new(() =>
             new InboundRealTimePaymentsTransferServiceWithRawResponse(this)
+        );
+        _realTimePaymentsRequestsForPayment = new(() =>
+            new RealTimePaymentsRequestsForPaymentServiceWithRawResponse(this)
+        );
+        _inboundRealTimePaymentsRequestsForPayment = new(() =>
+            new InboundRealTimePaymentsRequestsForPaymentServiceWithRawResponse(this)
         );
         _fednowTransfers = new(() => new FednowTransferServiceWithRawResponse(this));
         _inboundFednowTransfers = new(() => new InboundFednowTransferServiceWithRawResponse(this));
@@ -1184,6 +1249,7 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
         _cardTokens = new(() => new CardTokenServiceWithRawResponse(this));
         _cardPushTransfers = new(() => new CardPushTransferServiceWithRawResponse(this));
         _cardValidations = new(() => new CardValidationServiceWithRawResponse(this));
+        _physicalCheckBatches = new(() => new PhysicalCheckBatchServiceWithRawResponse(this));
         _simulations = new(() => new SimulationServiceWithRawResponse(this));
     }
 

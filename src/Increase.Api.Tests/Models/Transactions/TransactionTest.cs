@@ -207,6 +207,7 @@ public class TransactionTest : TestBase
                     MerchantName = "AMAZON.COM",
                     MerchantPostalCode = "10045",
                     MerchantState = "NY",
+                    Network = Transactions::CardRefundNetwork.Visa,
                     NetworkIdentifiers = new()
                     {
                         AcquirerBusinessID = "69650702",
@@ -914,6 +915,7 @@ public class TransactionTest : TestBase
                 MerchantName = "AMAZON.COM",
                 MerchantPostalCode = "10045",
                 MerchantState = "NY",
+                Network = Transactions::CardRefundNetwork.Visa,
                 NetworkIdentifiers = new()
                 {
                     AcquirerBusinessID = "69650702",
@@ -1627,6 +1629,7 @@ public class TransactionTest : TestBase
                     MerchantName = "AMAZON.COM",
                     MerchantPostalCode = "10045",
                     MerchantState = "NY",
+                    Network = Transactions::CardRefundNetwork.Visa,
                     NetworkIdentifiers = new()
                     {
                         AcquirerBusinessID = "69650702",
@@ -2347,6 +2350,7 @@ public class TransactionTest : TestBase
                     MerchantName = "AMAZON.COM",
                     MerchantPostalCode = "10045",
                     MerchantState = "NY",
+                    Network = Transactions::CardRefundNetwork.Visa,
                     NetworkIdentifiers = new()
                     {
                         AcquirerBusinessID = "69650702",
@@ -3061,6 +3065,7 @@ public class TransactionTest : TestBase
                 MerchantName = "AMAZON.COM",
                 MerchantPostalCode = "10045",
                 MerchantState = "NY",
+                Network = Transactions::CardRefundNetwork.Visa,
                 NetworkIdentifiers = new()
                 {
                     AcquirerBusinessID = "69650702",
@@ -3774,6 +3779,7 @@ public class TransactionTest : TestBase
                     MerchantName = "AMAZON.COM",
                     MerchantPostalCode = "10045",
                     MerchantState = "NY",
+                    Network = Transactions::CardRefundNetwork.Visa,
                     NetworkIdentifiers = new()
                     {
                         AcquirerBusinessID = "69650702",
@@ -4488,6 +4494,7 @@ public class TransactionTest : TestBase
                     MerchantName = "AMAZON.COM",
                     MerchantPostalCode = "10045",
                     MerchantState = "NY",
+                    Network = Transactions::CardRefundNetwork.Visa,
                     NetworkIdentifiers = new()
                     {
                         AcquirerBusinessID = "69650702",
@@ -5313,6 +5320,7 @@ public class SourceTest : TestBase
                 MerchantName = "AMAZON.COM",
                 MerchantPostalCode = "10045",
                 MerchantState = "NY",
+                Network = Transactions::CardRefundNetwork.Visa,
                 NetworkIdentifiers = new()
                 {
                     AcquirerBusinessID = "69650702",
@@ -5996,6 +6004,7 @@ public class SourceTest : TestBase
             MerchantName = "AMAZON.COM",
             MerchantPostalCode = "10045",
             MerchantState = "NY",
+            Network = Transactions::CardRefundNetwork.Visa,
             NetworkIdentifiers = new()
             {
                 AcquirerBusinessID = "69650702",
@@ -6765,6 +6774,7 @@ public class SourceTest : TestBase
                 MerchantName = "AMAZON.COM",
                 MerchantPostalCode = "10045",
                 MerchantState = "NY",
+                Network = Transactions::CardRefundNetwork.Visa,
                 NetworkIdentifiers = new()
                 {
                     AcquirerBusinessID = "69650702",
@@ -7463,6 +7473,7 @@ public class SourceTest : TestBase
                 MerchantName = "AMAZON.COM",
                 MerchantPostalCode = "10045",
                 MerchantState = "NY",
+                Network = Transactions::CardRefundNetwork.Visa,
                 NetworkIdentifiers = new()
                 {
                     AcquirerBusinessID = "69650702",
@@ -8153,6 +8164,7 @@ public class SourceTest : TestBase
             MerchantName = "AMAZON.COM",
             MerchantPostalCode = "10045",
             MerchantState = "NY",
+            Network = Transactions::CardRefundNetwork.Visa,
             NetworkIdentifiers = new()
             {
                 AcquirerBusinessID = "69650702",
@@ -8928,6 +8940,7 @@ public class SourceTest : TestBase
                 MerchantName = "AMAZON.COM",
                 MerchantPostalCode = "10045",
                 MerchantState = "NY",
+                Network = Transactions::CardRefundNetwork.Visa,
                 NetworkIdentifiers = new()
                 {
                     AcquirerBusinessID = "69650702",
@@ -9910,6 +9923,7 @@ public class SourceTest : TestBase
                 MerchantName = "AMAZON.COM",
                 MerchantPostalCode = "10045",
                 MerchantState = "NY",
+                Network = Transactions::CardRefundNetwork.Visa,
                 NetworkIdentifiers = new()
                 {
                     AcquirerBusinessID = "69650702",
@@ -15641,6 +15655,7 @@ public class CardRefundTest : TestBase
             MerchantName = "AMAZON.COM",
             MerchantPostalCode = "10045",
             MerchantState = "NY",
+            Network = Transactions::CardRefundNetwork.Visa,
             NetworkIdentifiers = new()
             {
                 AcquirerBusinessID = "69650702",
@@ -15799,6 +15814,8 @@ public class CardRefundTest : TestBase
         string expectedMerchantName = "AMAZON.COM";
         string expectedMerchantPostalCode = "10045";
         string expectedMerchantState = "NY";
+        ApiEnum<string, Transactions::CardRefundNetwork> expectedNetwork =
+            Transactions::CardRefundNetwork.Visa;
         Transactions::CardRefundNetworkIdentifiers expectedNetworkIdentifiers = new()
         {
             AcquirerBusinessID = "69650702",
@@ -15946,6 +15963,7 @@ public class CardRefundTest : TestBase
         Assert.Equal(expectedMerchantName, model.MerchantName);
         Assert.Equal(expectedMerchantPostalCode, model.MerchantPostalCode);
         Assert.Equal(expectedMerchantState, model.MerchantState);
+        Assert.Equal(expectedNetwork, model.Network);
         Assert.Equal(expectedNetworkIdentifiers, model.NetworkIdentifiers);
         Assert.Equal(expectedPresentmentAmount, model.PresentmentAmount);
         Assert.Equal(expectedPresentmentCurrency, model.PresentmentCurrency);
@@ -15982,6 +16000,7 @@ public class CardRefundTest : TestBase
             MerchantName = "AMAZON.COM",
             MerchantPostalCode = "10045",
             MerchantState = "NY",
+            Network = Transactions::CardRefundNetwork.Visa,
             NetworkIdentifiers = new()
             {
                 AcquirerBusinessID = "69650702",
@@ -16149,6 +16168,7 @@ public class CardRefundTest : TestBase
             MerchantName = "AMAZON.COM",
             MerchantPostalCode = "10045",
             MerchantState = "NY",
+            Network = Transactions::CardRefundNetwork.Visa,
             NetworkIdentifiers = new()
             {
                 AcquirerBusinessID = "69650702",
@@ -16314,6 +16334,8 @@ public class CardRefundTest : TestBase
         string expectedMerchantName = "AMAZON.COM";
         string expectedMerchantPostalCode = "10045";
         string expectedMerchantState = "NY";
+        ApiEnum<string, Transactions::CardRefundNetwork> expectedNetwork =
+            Transactions::CardRefundNetwork.Visa;
         Transactions::CardRefundNetworkIdentifiers expectedNetworkIdentifiers = new()
         {
             AcquirerBusinessID = "69650702",
@@ -16461,6 +16483,7 @@ public class CardRefundTest : TestBase
         Assert.Equal(expectedMerchantName, deserialized.MerchantName);
         Assert.Equal(expectedMerchantPostalCode, deserialized.MerchantPostalCode);
         Assert.Equal(expectedMerchantState, deserialized.MerchantState);
+        Assert.Equal(expectedNetwork, deserialized.Network);
         Assert.Equal(expectedNetworkIdentifiers, deserialized.NetworkIdentifiers);
         Assert.Equal(expectedPresentmentAmount, deserialized.PresentmentAmount);
         Assert.Equal(expectedPresentmentCurrency, deserialized.PresentmentCurrency);
@@ -16497,6 +16520,7 @@ public class CardRefundTest : TestBase
             MerchantName = "AMAZON.COM",
             MerchantPostalCode = "10045",
             MerchantState = "NY",
+            Network = Transactions::CardRefundNetwork.Visa,
             NetworkIdentifiers = new()
             {
                 AcquirerBusinessID = "69650702",
@@ -16658,6 +16682,7 @@ public class CardRefundTest : TestBase
             MerchantName = "AMAZON.COM",
             MerchantPostalCode = "10045",
             MerchantState = "NY",
+            Network = Transactions::CardRefundNetwork.Visa,
             NetworkIdentifiers = new()
             {
                 AcquirerBusinessID = "69650702",
@@ -17140,6 +17165,62 @@ public class InterchangeCurrencyTest : TestBase
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, Transactions::InterchangeCurrency>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class CardRefundNetworkTest : TestBase
+{
+    [Theory]
+    [InlineData(Transactions::CardRefundNetwork.Visa)]
+    [InlineData(Transactions::CardRefundNetwork.Pulse)]
+    public void Validation_Works(Transactions::CardRefundNetwork rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::CardRefundNetwork> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Transactions::CardRefundNetwork>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Transactions::CardRefundNetwork.Visa)]
+    [InlineData(Transactions::CardRefundNetwork.Pulse)]
+    public void SerializationRoundtrip_Works(Transactions::CardRefundNetwork rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Transactions::CardRefundNetwork> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardRefundNetwork>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Transactions::CardRefundNetwork>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Transactions::CardRefundNetwork>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);

@@ -75,6 +75,8 @@ public interface IIncreaseClient : IDisposable
 
     IDigitalWalletTokenService DigitalWalletTokens { get; }
 
+    IDigitalWalletTokenRequestService DigitalWalletTokenRequests { get; }
+
     ITransactionService Transactions { get; }
 
     IPendingTransactionService PendingTransactions { get; }
@@ -102,6 +104,10 @@ public interface IIncreaseClient : IDisposable
     IRealTimePaymentsTransferService RealTimePaymentsTransfers { get; }
 
     IInboundRealTimePaymentsTransferService InboundRealTimePaymentsTransfers { get; }
+
+    IRealTimePaymentsRequestsForPaymentService RealTimePaymentsRequestsForPayment { get; }
+
+    IInboundRealTimePaymentsRequestsForPaymentService InboundRealTimePaymentsRequestsForPayment { get; }
 
     IFednowTransferService FednowTransfers { get; }
 
@@ -165,6 +171,8 @@ public interface IIncreaseClient : IDisposable
 
     ICardValidationService CardValidations { get; }
 
+    IPhysicalCheckBatchService PhysicalCheckBatches { get; }
+
     ISimulationService Simulations { get; }
 }
 
@@ -221,6 +229,8 @@ public interface IIncreaseClientWithRawResponse : IDisposable
 
     IDigitalWalletTokenServiceWithRawResponse DigitalWalletTokens { get; }
 
+    IDigitalWalletTokenRequestServiceWithRawResponse DigitalWalletTokenRequests { get; }
+
     ITransactionServiceWithRawResponse Transactions { get; }
 
     IPendingTransactionServiceWithRawResponse PendingTransactions { get; }
@@ -248,6 +258,10 @@ public interface IIncreaseClientWithRawResponse : IDisposable
     IRealTimePaymentsTransferServiceWithRawResponse RealTimePaymentsTransfers { get; }
 
     IInboundRealTimePaymentsTransferServiceWithRawResponse InboundRealTimePaymentsTransfers { get; }
+
+    IRealTimePaymentsRequestsForPaymentServiceWithRawResponse RealTimePaymentsRequestsForPayment { get; }
+
+    IInboundRealTimePaymentsRequestsForPaymentServiceWithRawResponse InboundRealTimePaymentsRequestsForPayment { get; }
 
     IFednowTransferServiceWithRawResponse FednowTransfers { get; }
 
@@ -310,6 +324,8 @@ public interface IIncreaseClientWithRawResponse : IDisposable
     ICardPushTransferServiceWithRawResponse CardPushTransfers { get; }
 
     ICardValidationServiceWithRawResponse CardValidations { get; }
+
+    IPhysicalCheckBatchServiceWithRawResponse PhysicalCheckBatches { get; }
 
     ISimulationServiceWithRawResponse Simulations { get; }
 

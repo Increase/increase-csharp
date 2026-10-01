@@ -66,6 +66,7 @@ public sealed class SimulationService : ISimulationService
         _inboundRealTimePaymentsTransfers = new(() =>
             new Simulations::InboundRealTimePaymentsTransferService(client)
         );
+        _fednowTransfers = new(() => new Simulations::FednowTransferService(client));
         _inboundFednowTransfers = new(() => new Simulations::InboundFednowTransferService(client));
         _checkDeposits = new(() => new Simulations::CheckDepositService(client));
         _inboundMailItems = new(() => new Simulations::InboundMailItemService(client));
@@ -235,6 +236,12 @@ public sealed class SimulationService : ISimulationService
         get { return _inboundRealTimePaymentsTransfers.Value; }
     }
 
+    readonly Lazy<Simulations::IFednowTransferService> _fednowTransfers;
+    public Simulations::IFednowTransferService FednowTransfers
+    {
+        get { return _fednowTransfers.Value; }
+    }
+
     readonly Lazy<Simulations::IInboundFednowTransferService> _inboundFednowTransfers;
     public Simulations::IInboundFednowTransferService InboundFednowTransfers
     {
@@ -367,6 +374,7 @@ public sealed class SimulationServiceWithRawResponse : ISimulationServiceWithRaw
         _inboundRealTimePaymentsTransfers = new(() =>
             new Simulations::InboundRealTimePaymentsTransferServiceWithRawResponse(client)
         );
+        _fednowTransfers = new(() => new Simulations::FednowTransferServiceWithRawResponse(client));
         _inboundFednowTransfers = new(() =>
             new Simulations::InboundFednowTransferServiceWithRawResponse(client)
         );
@@ -540,6 +548,12 @@ public sealed class SimulationServiceWithRawResponse : ISimulationServiceWithRaw
     public Simulations::IInboundRealTimePaymentsTransferServiceWithRawResponse InboundRealTimePaymentsTransfers
     {
         get { return _inboundRealTimePaymentsTransfers.Value; }
+    }
+
+    readonly Lazy<Simulations::IFednowTransferServiceWithRawResponse> _fednowTransfers;
+    public Simulations::IFednowTransferServiceWithRawResponse FednowTransfers
+    {
+        get { return _fednowTransfers.Value; }
     }
 
     readonly Lazy<Simulations::IInboundFednowTransferServiceWithRawResponse> _inboundFednowTransfers;

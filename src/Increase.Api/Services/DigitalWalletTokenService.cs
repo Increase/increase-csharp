@@ -77,6 +77,34 @@ public sealed class DigitalWalletTokenService : IDigitalWalletTokenService
             .ConfigureAwait(false);
         return await response.Deserialize(cancellationToken).ConfigureAwait(false);
     }
+
+    /// <inheritdoc/>
+    public async Task<DigitalWalletToken> Transition(
+        DigitalWalletTokenTransitionParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        using var response = await this
+            .WithRawResponse.Transition(parameters, cancellationToken)
+            .ConfigureAwait(false);
+        return await response.Deserialize(cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <inheritdoc/>
+    public Task<DigitalWalletToken> Transition(
+        string digitalWalletTokenID,
+        DigitalWalletTokenTransitionParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        return this.Transition(
+            parameters with
+            {
+                DigitalWalletTokenID = digitalWalletTokenID,
+            },
+            cancellationToken
+        );
+    }
 }
 
 /// <inheritdoc/>
@@ -178,6 +206,57 @@ public sealed class DigitalWalletTokenServiceWithRawResponse
                 }
                 return new DigitalWalletTokenListPage(this, parameters, page);
             }
+        );
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponse<DigitalWalletToken>> Transition(
+        DigitalWalletTokenTransitionParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        if (parameters.DigitalWalletTokenID == null)
+        {
+            throw new IncreaseInvalidDataException(
+                "'parameters.DigitalWalletTokenID' cannot be null"
+            );
+        }
+
+        HttpRequest<DigitalWalletTokenTransitionParams> request = new()
+        {
+            Method = HttpMethod.Post,
+            Params = parameters,
+        };
+        var response = await this._client.Execute(request, cancellationToken).ConfigureAwait(false);
+        return new(
+            response,
+            async (token) =>
+            {
+                var digitalWalletToken = await response
+                    .Deserialize<DigitalWalletToken>(token)
+                    .ConfigureAwait(false);
+                if (this._client.ResponseValidation)
+                {
+                    digitalWalletToken.Validate();
+                }
+                return digitalWalletToken;
+            }
+        );
+    }
+
+    /// <inheritdoc/>
+    public Task<HttpResponse<DigitalWalletToken>> Transition(
+        string digitalWalletTokenID,
+        DigitalWalletTokenTransitionParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        return this.Transition(
+            parameters with
+            {
+                DigitalWalletTokenID = digitalWalletTokenID,
+            },
+            cancellationToken
         );
     }
 }

@@ -617,6 +617,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -1677,6 +1678,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -2737,6 +2739,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -3797,6 +3800,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -4882,6 +4886,7 @@ public class CardPaymentListPageResponseTest : TestBase
                             MerchantName = "AMAZON.COM",
                             MerchantPostalCode = "10045",
                             MerchantState = "NY",
+                            Network = CardPayments::CardRefundNetwork.Visa,
                             NetworkIdentifiers = new()
                             {
                                 AcquirerBusinessID = "69650702",
@@ -5931,6 +5936,7 @@ public class CardPaymentListPageResponseTest : TestBase
                             MerchantName = "AMAZON.COM",
                             MerchantPostalCode = "10045",
                             MerchantState = "NY",
+                            Network = CardPayments::CardRefundNetwork.Visa,
                             NetworkIdentifiers = new()
                             {
                                 AcquirerBusinessID = "69650702",
@@ -6980,6 +6986,7 @@ public class CardPaymentListPageResponseTest : TestBase
                             MerchantName = "AMAZON.COM",
                             MerchantPostalCode = "10045",
                             MerchantState = "NY",
+                            Network = CardPayments::CardRefundNetwork.Visa,
                             NetworkIdentifiers = new()
                             {
                                 AcquirerBusinessID = "69650702",
@@ -8029,6 +8036,7 @@ public class CardPaymentListPageResponseTest : TestBase
                             MerchantName = "AMAZON.COM",
                             MerchantPostalCode = "10045",
                             MerchantState = "NY",
+                            Network = CardPayments::CardRefundNetwork.Visa,
                             NetworkIdentifiers = new()
                             {
                                 AcquirerBusinessID = "69650702",
@@ -9123,6 +9131,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -10183,6 +10192,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -11243,6 +11253,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -12303,6 +12314,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -13406,6 +13418,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -14466,6 +14479,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -15526,6 +15540,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -16586,6 +16601,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -17678,6 +17694,7 @@ public class CardPaymentListPageResponseTest : TestBase
                             MerchantName = "AMAZON.COM",
                             MerchantPostalCode = "10045",
                             MerchantState = "NY",
+                            Network = CardPayments::CardRefundNetwork.Visa,
                             NetworkIdentifiers = new()
                             {
                                 AcquirerBusinessID = "69650702",
@@ -18727,6 +18744,7 @@ public class CardPaymentListPageResponseTest : TestBase
                             MerchantName = "AMAZON.COM",
                             MerchantPostalCode = "10045",
                             MerchantState = "NY",
+                            Network = CardPayments::CardRefundNetwork.Visa,
                             NetworkIdentifiers = new()
                             {
                                 AcquirerBusinessID = "69650702",
@@ -19776,6 +19794,7 @@ public class CardPaymentListPageResponseTest : TestBase
                             MerchantName = "AMAZON.COM",
                             MerchantPostalCode = "10045",
                             MerchantState = "NY",
+                            Network = CardPayments::CardRefundNetwork.Visa,
                             NetworkIdentifiers = new()
                             {
                                 AcquirerBusinessID = "69650702",
@@ -20825,6 +20844,7 @@ public class CardPaymentListPageResponseTest : TestBase
                             MerchantName = "AMAZON.COM",
                             MerchantPostalCode = "10045",
                             MerchantState = "NY",
+                            Network = CardPayments::CardRefundNetwork.Visa,
                             NetworkIdentifiers = new()
                             {
                                 AcquirerBusinessID = "69650702",
@@ -21919,6 +21939,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -22979,6 +23000,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -24039,6 +24061,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -25099,6 +25122,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -26196,6 +26220,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -27256,6 +27281,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -28316,6 +28342,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",
@@ -29376,6 +29403,7 @@ public class CardPaymentListPageResponseTest : TestBase
                                 MerchantName = "AMAZON.COM",
                                 MerchantPostalCode = "10045",
                                 MerchantState = "NY",
+                                Network = CardPayments::CardRefundNetwork.Visa,
                                 NetworkIdentifiers = new()
                                 {
                                     AcquirerBusinessID = "69650702",

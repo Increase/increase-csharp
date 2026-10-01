@@ -76,6 +76,8 @@ public interface ISimulationService
 
     Simulations::IInboundRealTimePaymentsTransferService InboundRealTimePaymentsTransfers { get; }
 
+    Simulations::IFednowTransferService FednowTransfers { get; }
+
     Simulations::IInboundFednowTransferService InboundFednowTransfers { get; }
 
     Simulations::ICheckDepositService CheckDeposits { get; }
@@ -159,6 +161,8 @@ public interface ISimulationServiceWithRawResponse
     Simulations::IRealTimePaymentsTransferServiceWithRawResponse RealTimePaymentsTransfers { get; }
 
     Simulations::IInboundRealTimePaymentsTransferServiceWithRawResponse InboundRealTimePaymentsTransfers { get; }
+
+    Simulations::IFednowTransferServiceWithRawResponse FednowTransfers { get; }
 
     Simulations::IInboundFednowTransferServiceWithRawResponse InboundFednowTransfers { get; }
 

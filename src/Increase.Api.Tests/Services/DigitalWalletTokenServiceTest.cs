@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Increase.Api.Models.DigitalWalletTokens;
 
 namespace Increase.Api.Tests.Services;
 
@@ -23,5 +24,16 @@ public class DigitalWalletTokenServiceTest : TestBase
             TestContext.Current.CancellationToken
         );
         page.Validate();
+    }
+
+    [Fact]
+    public async Task Transition_Works()
+    {
+        var digitalWalletToken = await this.client.DigitalWalletTokens.Transition(
+            "digital_wallet_token_izi62go3h51p369jrie0",
+            new() { Status = Status.Suspended },
+            TestContext.Current.CancellationToken
+        );
+        digitalWalletToken.Validate();
     }
 }
