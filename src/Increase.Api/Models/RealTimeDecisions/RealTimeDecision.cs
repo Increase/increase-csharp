@@ -9634,6 +9634,11 @@ public enum DigitalWallet
     SamsungPay,
 
     /// <summary>
+    /// Garmin Pay
+    /// </summary>
+    GarminPay,
+
+    /// <summary>
     /// Unknown
     /// </summary>
     Unknown,
@@ -9652,6 +9657,7 @@ sealed class DigitalWalletConverter : JsonConverter<DigitalWallet>
             "apple_pay" => DigitalWallet.ApplePay,
             "google_pay" => DigitalWallet.GooglePay,
             "samsung_pay" => DigitalWallet.SamsungPay,
+            "garmin_pay" => DigitalWallet.GarminPay,
             "unknown" => DigitalWallet.Unknown,
             _ => (DigitalWallet)(-1),
         };
@@ -9670,6 +9676,7 @@ sealed class DigitalWalletConverter : JsonConverter<DigitalWallet>
                 DigitalWallet.ApplePay => "apple_pay",
                 DigitalWallet.GooglePay => "google_pay",
                 DigitalWallet.SamsungPay => "samsung_pay",
+                DigitalWallet.GarminPay => "garmin_pay",
                 DigitalWallet.Unknown => "unknown",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -9997,6 +10004,11 @@ public enum RealTimeDecisionDigitalWalletTokenDigitalWallet
     SamsungPay,
 
     /// <summary>
+    /// Garmin Pay
+    /// </summary>
+    GarminPay,
+
+    /// <summary>
     /// Unknown
     /// </summary>
     Unknown,
@@ -10016,6 +10028,7 @@ sealed class RealTimeDecisionDigitalWalletTokenDigitalWalletConverter
             "apple_pay" => RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
             "google_pay" => RealTimeDecisionDigitalWalletTokenDigitalWallet.GooglePay,
             "samsung_pay" => RealTimeDecisionDigitalWalletTokenDigitalWallet.SamsungPay,
+            "garmin_pay" => RealTimeDecisionDigitalWalletTokenDigitalWallet.GarminPay,
             "unknown" => RealTimeDecisionDigitalWalletTokenDigitalWallet.Unknown,
             _ => (RealTimeDecisionDigitalWalletTokenDigitalWallet)(-1),
         };
@@ -10034,6 +10047,7 @@ sealed class RealTimeDecisionDigitalWalletTokenDigitalWalletConverter
                 RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay => "apple_pay",
                 RealTimeDecisionDigitalWalletTokenDigitalWallet.GooglePay => "google_pay",
                 RealTimeDecisionDigitalWalletTokenDigitalWallet.SamsungPay => "samsung_pay",
+                RealTimeDecisionDigitalWalletTokenDigitalWallet.GarminPay => "garmin_pay",
                 RealTimeDecisionDigitalWalletTokenDigitalWallet.Unknown => "unknown",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

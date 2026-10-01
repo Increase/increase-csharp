@@ -84,6 +84,24 @@ public interface ICardService
     );
 
     /// <summary>
+    /// Create a short-lived token that authorizes [Card
+    /// Elements](/documentation/card-elements) to render the details of a Card in your
+    /// frontend. Mint the token on your server and pass it to the browser; the token is
+    /// valid for one hour and is scoped to a single Card.
+    /// </summary>
+    Task<CardDetailsToken> CreateDetailsToken(
+        CardCreateDetailsTokenParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="CreateDetailsToken(CardCreateDetailsTokenParams, CancellationToken)"/>
+    Task<CardDetailsToken> CreateDetailsToken(
+        string cardID,
+        CardCreateDetailsTokenParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
     /// Sensitive details for a Card include the primary account number, expiration,
     /// card verification code, and PIN.
     /// </summary>
@@ -191,6 +209,22 @@ public interface ICardServiceWithRawResponse
     Task<HttpResponse<CardIframeUrl>> CreateDetailsIframe(
         string cardID,
         CardCreateDetailsIframeParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>post /cards/{card_id}/create_details_token</c>, but is otherwise the
+    /// same as <see cref="ICardService.CreateDetailsToken(CardCreateDetailsTokenParams, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<CardDetailsToken>> CreateDetailsToken(
+        CardCreateDetailsTokenParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="CreateDetailsToken(CardCreateDetailsTokenParams, CancellationToken)"/>
+    Task<HttpResponse<CardDetailsToken>> CreateDetailsToken(
+        string cardID,
+        CardCreateDetailsTokenParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 

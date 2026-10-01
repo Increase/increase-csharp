@@ -29,7 +29,7 @@ public class DigitalWalletTokenTest : TestBase
             },
             DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
             PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
-            Status = DigitalWalletTokens::Status.Active,
+            Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
             TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
@@ -64,8 +64,8 @@ public class DigitalWalletTokenTest : TestBase
             Last4 = "last4",
         };
         string expectedPrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000";
-        ApiEnum<string, DigitalWalletTokens::Status> expectedStatus =
-            DigitalWalletTokens::Status.Active;
+        ApiEnum<string, DigitalWalletTokens::DigitalWalletTokenStatus> expectedStatus =
+            DigitalWalletTokens::DigitalWalletTokenStatus.Active;
         string expectedTokenReferenceIdentifier = "DNITHE000000000000000000000";
         ApiEnum<string, DigitalWalletTokens::TokenRequestor> expectedTokenRequestor =
             DigitalWalletTokens::TokenRequestor.ApplePay;
@@ -123,7 +123,7 @@ public class DigitalWalletTokenTest : TestBase
             },
             DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
             PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
-            Status = DigitalWalletTokens::Status.Active,
+            Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
             TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
@@ -166,7 +166,7 @@ public class DigitalWalletTokenTest : TestBase
             },
             DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
             PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
-            Status = DigitalWalletTokens::Status.Active,
+            Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
             TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
@@ -208,8 +208,8 @@ public class DigitalWalletTokenTest : TestBase
             Last4 = "last4",
         };
         string expectedPrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000";
-        ApiEnum<string, DigitalWalletTokens::Status> expectedStatus =
-            DigitalWalletTokens::Status.Active;
+        ApiEnum<string, DigitalWalletTokens::DigitalWalletTokenStatus> expectedStatus =
+            DigitalWalletTokens::DigitalWalletTokenStatus.Active;
         string expectedTokenReferenceIdentifier = "DNITHE000000000000000000000";
         ApiEnum<string, DigitalWalletTokens::TokenRequestor> expectedTokenRequestor =
             DigitalWalletTokens::TokenRequestor.ApplePay;
@@ -267,7 +267,7 @@ public class DigitalWalletTokenTest : TestBase
             },
             DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
             PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
-            Status = DigitalWalletTokens::Status.Active,
+            Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
             TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
@@ -304,7 +304,7 @@ public class DigitalWalletTokenTest : TestBase
             },
             DynamicPrimaryAccountNumber = new() { First6 = "first6", Last4 = "last4" },
             PrimaryAccountNumberReferenceIdentifier = "V-0000000000000000000000",
-            Status = DigitalWalletTokens::Status.Active,
+            Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
             TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
@@ -801,51 +801,49 @@ public class DynamicPrimaryAccountNumberTest : TestBase
     }
 }
 
-public class StatusTest : TestBase
+public class DigitalWalletTokenStatusTest : TestBase
 {
     [Theory]
-    [InlineData(DigitalWalletTokens::Status.Active)]
-    [InlineData(DigitalWalletTokens::Status.Inactive)]
-    [InlineData(DigitalWalletTokens::Status.Suspended)]
-    [InlineData(DigitalWalletTokens::Status.Deactivated)]
-    [InlineData(DigitalWalletTokens::Status.Declined)]
-    [InlineData(DigitalWalletTokens::Status.PendingTransitioning)]
-    public void Validation_Works(DigitalWalletTokens::Status rawValue)
+    [InlineData(DigitalWalletTokens::DigitalWalletTokenStatus.Active)]
+    [InlineData(DigitalWalletTokens::DigitalWalletTokenStatus.Inactive)]
+    [InlineData(DigitalWalletTokens::DigitalWalletTokenStatus.Suspended)]
+    [InlineData(DigitalWalletTokens::DigitalWalletTokenStatus.Deactivated)]
+    [InlineData(DigitalWalletTokens::DigitalWalletTokenStatus.Declined)]
+    [InlineData(DigitalWalletTokens::DigitalWalletTokenStatus.PendingTransitioning)]
+    public void Validation_Works(DigitalWalletTokens::DigitalWalletTokenStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, DigitalWalletTokens::Status> value = rawValue;
+        ApiEnum<string, DigitalWalletTokens::DigitalWalletTokenStatus> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, DigitalWalletTokens::Status>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, DigitalWalletTokens::DigitalWalletTokenStatus>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
 
         Assert.NotNull(value);
         Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
     }
 
     [Theory]
-    [InlineData(DigitalWalletTokens::Status.Active)]
-    [InlineData(DigitalWalletTokens::Status.Inactive)]
-    [InlineData(DigitalWalletTokens::Status.Suspended)]
-    [InlineData(DigitalWalletTokens::Status.Deactivated)]
-    [InlineData(DigitalWalletTokens::Status.Declined)]
-    [InlineData(DigitalWalletTokens::Status.PendingTransitioning)]
-    public void SerializationRoundtrip_Works(DigitalWalletTokens::Status rawValue)
+    [InlineData(DigitalWalletTokens::DigitalWalletTokenStatus.Active)]
+    [InlineData(DigitalWalletTokens::DigitalWalletTokenStatus.Inactive)]
+    [InlineData(DigitalWalletTokens::DigitalWalletTokenStatus.Suspended)]
+    [InlineData(DigitalWalletTokens::DigitalWalletTokenStatus.Deactivated)]
+    [InlineData(DigitalWalletTokens::DigitalWalletTokenStatus.Declined)]
+    [InlineData(DigitalWalletTokens::DigitalWalletTokenStatus.PendingTransitioning)]
+    public void SerializationRoundtrip_Works(DigitalWalletTokens::DigitalWalletTokenStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, DigitalWalletTokens::Status> value = rawValue;
+        ApiEnum<string, DigitalWalletTokens::DigitalWalletTokenStatus> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, DigitalWalletTokens::Status>>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, DigitalWalletTokens::DigitalWalletTokenStatus>
+        >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
     }
@@ -853,15 +851,13 @@ public class StatusTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, DigitalWalletTokens::Status>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, DigitalWalletTokens::DigitalWalletTokenStatus>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, DigitalWalletTokens::Status>>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, DigitalWalletTokens::DigitalWalletTokenStatus>
+        >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
     }
@@ -873,6 +869,7 @@ public class TokenRequestorTest : TestBase
     [InlineData(DigitalWalletTokens::TokenRequestor.ApplePay)]
     [InlineData(DigitalWalletTokens::TokenRequestor.GooglePay)]
     [InlineData(DigitalWalletTokens::TokenRequestor.SamsungPay)]
+    [InlineData(DigitalWalletTokens::TokenRequestor.GarminPay)]
     [InlineData(DigitalWalletTokens::TokenRequestor.Unknown)]
     public void Validation_Works(DigitalWalletTokens::TokenRequestor rawValue)
     {
@@ -896,6 +893,7 @@ public class TokenRequestorTest : TestBase
     [InlineData(DigitalWalletTokens::TokenRequestor.ApplePay)]
     [InlineData(DigitalWalletTokens::TokenRequestor.GooglePay)]
     [InlineData(DigitalWalletTokens::TokenRequestor.SamsungPay)]
+    [InlineData(DigitalWalletTokens::TokenRequestor.GarminPay)]
     [InlineData(DigitalWalletTokens::TokenRequestor.Unknown)]
     public void SerializationRoundtrip_Works(DigitalWalletTokens::TokenRequestor rawValue)
     {

@@ -22189,6 +22189,19 @@ public sealed record class CardRefund : JsonModel
     }
 
     /// <summary>
+    /// The card network on which this transaction was processed.
+    /// </summary>
+    public required ApiEnum<string, CardRefundNetwork> Network
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, CardRefundNetwork>>("network");
+        }
+        init { this._rawData.Set("network", value); }
+    }
+
+    /// <summary>
     /// Network-specific identifiers for this refund.
     /// </summary>
     public required CardRefundNetworkIdentifiers NetworkIdentifiers
@@ -22307,6 +22320,7 @@ public sealed record class CardRefund : JsonModel
         _ = this.MerchantName;
         _ = this.MerchantPostalCode;
         _ = this.MerchantState;
+        this.Network.Validate();
         this.NetworkIdentifiers.Validate();
         _ = this.PresentmentAmount;
         _ = this.PresentmentCurrency;
@@ -22654,6 +22668,60 @@ sealed class InterchangeCurrencyConverter : JsonConverter<InterchangeCurrency>
             value switch
             {
                 InterchangeCurrency.Usd => "USD",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The card network on which this transaction was processed.
+/// </summary>
+[JsonConverter(typeof(CardRefundNetworkConverter))]
+public enum CardRefundNetwork
+{
+    /// <summary>
+    /// Visa
+    /// </summary>
+    Visa,
+
+    /// <summary>
+    /// Pulse
+    /// </summary>
+    Pulse,
+}
+
+sealed class CardRefundNetworkConverter : JsonConverter<CardRefundNetwork>
+{
+    public override CardRefundNetwork Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "visa" => CardRefundNetwork.Visa,
+            "pulse" => CardRefundNetwork.Pulse,
+            _ => (CardRefundNetwork)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        CardRefundNetwork value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                CardRefundNetwork.Visa => "visa",
+                CardRefundNetwork.Pulse => "pulse",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

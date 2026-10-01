@@ -20,6 +20,17 @@ public class InboundCheckDepositServiceTest : TestBase
     }
 
     [Fact]
+    public async Task Accept_Works()
+    {
+        var inboundCheckDeposit = await this.client.Simulations.InboundCheckDeposits.Accept(
+            "inbound_check_deposit_zoshvqybq0cjjm31mra",
+            new(),
+            TestContext.Current.CancellationToken
+        );
+        inboundCheckDeposit.Validate();
+    }
+
+    [Fact]
     public async Task Adjustment_Works()
     {
         var inboundCheckDeposit = await this.client.Simulations.InboundCheckDeposits.Adjustment(

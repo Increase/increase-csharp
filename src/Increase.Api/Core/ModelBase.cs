@@ -24,7 +24,7 @@ using CheckDeposits = Increase.Api.Models.CheckDeposits;
 using CheckTransfers = Increase.Api.Models.CheckTransfers;
 using DeclinedTransactions = Increase.Api.Models.DeclinedTransactions;
 using DigitalCardProfiles = Increase.Api.Models.DigitalCardProfiles;
-using DigitalWalletTokenRequests = Increase.Api.Models.Simulations.DigitalWalletTokenRequests;
+using DigitalWalletTokenRequests = Increase.Api.Models.DigitalWalletTokenRequests;
 using DigitalWalletTokens = Increase.Api.Models.DigitalWalletTokens;
 using Entities = Increase.Api.Models.Simulations.Entities;
 using EntityOnboardingSessions = Increase.Api.Models.EntityOnboardingSessions;
@@ -40,6 +40,7 @@ using InboundAchTransfers = Increase.Api.Models.InboundAchTransfers;
 using InboundCheckDeposits = Increase.Api.Models.InboundCheckDeposits;
 using InboundFednowTransfers = Increase.Api.Models.InboundFednowTransfers;
 using InboundMailItems = Increase.Api.Models.InboundMailItems;
+using InboundRealTimePaymentsRequestsForPayment = Increase.Api.Models.InboundRealTimePaymentsRequestsForPayment;
 using InboundRealTimePaymentsTransfers = Increase.Api.Models.InboundRealTimePaymentsTransfers;
 using InboundWireDrawdownRequests = Increase.Api.Models.InboundWireDrawdownRequests;
 using InboundWireTransfers = Increase.Api.Models.InboundWireTransfers;
@@ -55,13 +56,17 @@ using OAuthTokens = Increase.Api.Models.OAuthTokens;
 using PendingTransactions = Increase.Api.Models.PendingTransactions;
 using PhysicalCardProfiles = Increase.Api.Models.PhysicalCardProfiles;
 using PhysicalCards = Increase.Api.Models.PhysicalCards;
+using PhysicalCheckBatches = Increase.Api.Models.PhysicalCheckBatches;
 using Programs = Increase.Api.Models.Programs;
 using RealTimeDecisions = Increase.Api.Models.RealTimeDecisions;
+using RealTimePaymentsRequestsForPayment = Increase.Api.Models.RealTimePaymentsRequestsForPayment;
 using RealTimePaymentsTransfers = Increase.Api.Models.RealTimePaymentsTransfers;
 using RoutingNumbers = Increase.Api.Models.RoutingNumbers;
 using SimulationsCardTokens = Increase.Api.Models.Simulations.CardTokens;
 using SimulationsCheckDeposits = Increase.Api.Models.Simulations.CheckDeposits;
+using SimulationsDigitalWalletTokenRequests = Increase.Api.Models.Simulations.DigitalWalletTokenRequests;
 using SimulationsExports = Increase.Api.Models.Simulations.Exports;
+using SimulationsFednowTransfers = Increase.Api.Models.Simulations.FednowTransfers;
 using SimulationsInboundAchTransfers = Increase.Api.Models.Simulations.InboundAchTransfers;
 using SimulationsInboundCheckDeposits = Increase.Api.Models.Simulations.InboundCheckDeposits;
 using SimulationsPhysicalCards = Increase.Api.Models.Simulations.PhysicalCards;
@@ -134,6 +139,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Cards::CardStatus>(),
             new ApiEnumConverter<string, Cards::Type>(),
             new ApiEnumConverter<string, Cards::CardDetailsType>(),
+            new ApiEnumConverter<string, Cards::CardDetailsTokenType>(),
             new ApiEnumConverter<string, Cards::CardIframeUrlType>(),
             new ApiEnumConverter<string, Cards::Category>(),
             new ApiEnumConverter<string, Cards::Interval>(),
@@ -291,6 +297,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, CardPayments::CashbackCurrency>(),
             new ApiEnumConverter<string, CardPayments::CardRefundCurrency>(),
             new ApiEnumConverter<string, CardPayments::InterchangeCurrency>(),
+            new ApiEnumConverter<string, CardPayments::CardRefundNetwork>(),
             new ApiEnumConverter<string, CardPayments::ExtraCharges>(),
             new ApiEnumConverter<string, CardPayments::NoShowIndicator>(),
             new ApiEnumConverter<string, CardPayments::FuelType>(),
@@ -956,10 +963,16 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, PhysicalCardProfiles::In>(),
             new ApiEnumConverter<string, DigitalWalletTokens::Reason>(),
             new ApiEnumConverter<string, DigitalWalletTokens::DeviceType>(),
-            new ApiEnumConverter<string, DigitalWalletTokens::Status>(),
+            new ApiEnumConverter<string, DigitalWalletTokens::DigitalWalletTokenStatus>(),
             new ApiEnumConverter<string, DigitalWalletTokens::TokenRequestor>(),
             new ApiEnumConverter<string, DigitalWalletTokens::Type>(),
             new ApiEnumConverter<string, DigitalWalletTokens::UpdateStatus>(),
+            new ApiEnumConverter<string, DigitalWalletTokens::Status>(),
+            new ApiEnumConverter<string, DigitalWalletTokenRequests::Reason>(),
+            new ApiEnumConverter<string, DigitalWalletTokenRequests::DeviceType>(),
+            new ApiEnumConverter<string, DigitalWalletTokenRequests::Outcome>(),
+            new ApiEnumConverter<string, DigitalWalletTokenRequests::TokenRequestor>(),
+            new ApiEnumConverter<string, DigitalWalletTokenRequests::Type>(),
             new ApiEnumConverter<string, Transactions::Currency>(),
             new ApiEnumConverter<string, Transactions::RouteType>(),
             new ApiEnumConverter<string, Transactions::SourceCategory>(),
@@ -984,6 +997,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Transactions::CashbackCurrency>(),
             new ApiEnumConverter<string, Transactions::CardRefundCurrency>(),
             new ApiEnumConverter<string, Transactions::InterchangeCurrency>(),
+            new ApiEnumConverter<string, Transactions::CardRefundNetwork>(),
             new ApiEnumConverter<string, Transactions::ExtraCharges>(),
             new ApiEnumConverter<string, Transactions::NoShowIndicator>(),
             new ApiEnumConverter<string, Transactions::FuelType>(),
@@ -1287,6 +1301,15 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, InboundRealTimePaymentsTransfers::Reason>(),
             new ApiEnumConverter<string, InboundRealTimePaymentsTransfers::Status>(),
             new ApiEnumConverter<string, InboundRealTimePaymentsTransfers::Type>(),
+            new ApiEnumConverter<string, RealTimePaymentsRequestsForPayment::CancellationReason>(),
+            new ApiEnumConverter<string, RealTimePaymentsRequestsForPayment::Currency>(),
+            new ApiEnumConverter<string, RealTimePaymentsRequestsForPayment::RefusalReasonCode>(),
+            new ApiEnumConverter<string, RealTimePaymentsRequestsForPayment::RejectReasonCode>(),
+            new ApiEnumConverter<string, RealTimePaymentsRequestsForPayment::Status>(),
+            new ApiEnumConverter<string, RealTimePaymentsRequestsForPayment::Type>(),
+            new ApiEnumConverter<string, RealTimePaymentsRequestsForPayment::Reason>(),
+            new ApiEnumConverter<string, InboundRealTimePaymentsRequestsForPayment::Currency>(),
+            new ApiEnumConverter<string, InboundRealTimePaymentsRequestsForPayment::Type>(),
             new ApiEnumConverter<string, FednowTransfers::Category>(),
             new ApiEnumConverter<string, FednowTransfers::Currency>(),
             new ApiEnumConverter<string, FednowTransfers::RejectReasonCode>(),
@@ -1628,6 +1651,10 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, CardValidations::CardValidationStatus>(),
             new ApiEnumConverter<string, CardValidations::Type>(),
             new ApiEnumConverter<string, CardValidations::In>(),
+            new ApiEnumConverter<string, PhysicalCheckBatches::PhysicalCheckBatchShippingMethod>(),
+            new ApiEnumConverter<string, PhysicalCheckBatches::Status>(),
+            new ApiEnumConverter<string, PhysicalCheckBatches::Type>(),
+            new ApiEnumConverter<string, PhysicalCheckBatches::ShippingMethod>(),
             new ApiEnumConverter<string, CardAuthorizations::Type>(),
             new ApiEnumConverter<string, CardAuthorizations::DeclineReason>(),
             new ApiEnumConverter<string, CardAuthorizations::ElectronicCommerceIndicator>(),
@@ -1643,8 +1670,8 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Action>(),
             new ApiEnumConverter<string, SimulationsPhysicalCards::Category>(),
             new ApiEnumConverter<string, SimulationsPhysicalCards::ShipmentStatus>(),
-            new ApiEnumConverter<string, DigitalWalletTokenRequests::DeclineReason>(),
-            new ApiEnumConverter<string, DigitalWalletTokenRequests::Type>(),
+            new ApiEnumConverter<string, SimulationsDigitalWalletTokenRequests::DeclineReason>(),
+            new ApiEnumConverter<string, SimulationsDigitalWalletTokenRequests::Type>(),
             new ApiEnumConverter<string, CorrectedAccountFunding>(),
             new ApiEnumConverter<string, Reason>(),
             new ApiEnumConverter<string, InboundFundsHoldBehavior>(),
@@ -1653,6 +1680,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, SimulationsInboundCheckDeposits::PayeeNameAnalysis>(),
             new ApiEnumConverter<string, SimulationsInboundCheckDeposits::Reason>(),
             new ApiEnumConverter<string, RejectReasonCode>(),
+            new ApiEnumConverter<string, SimulationsFednowTransfers::RejectReasonCode>(),
             new ApiEnumConverter<string, SimulationsCheckDeposits::Reason>(),
             new ApiEnumConverter<string, Entities::Category>(),
             new ApiEnumConverter<string, SimulationsPrograms::Bank>(),

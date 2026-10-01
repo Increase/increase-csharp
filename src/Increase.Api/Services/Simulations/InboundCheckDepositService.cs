@@ -50,6 +50,36 @@ public sealed class InboundCheckDepositService : IInboundCheckDepositService
     }
 
     /// <inheritdoc/>
+    public async Task<InboundCheckDeposit> Accept(
+        InboundCheckDepositAcceptParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        using var response = await this
+            .WithRawResponse.Accept(parameters, cancellationToken)
+            .ConfigureAwait(false);
+        return await response.Deserialize(cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <inheritdoc/>
+    public Task<InboundCheckDeposit> Accept(
+        string inboundCheckDepositID,
+        InboundCheckDepositAcceptParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.Accept(
+            parameters with
+            {
+                InboundCheckDepositID = inboundCheckDepositID,
+            },
+            cancellationToken
+        );
+    }
+
+    /// <inheritdoc/>
     public async Task<InboundCheckDeposit> Adjustment(
         InboundCheckDepositAdjustmentParams parameters,
         CancellationToken cancellationToken = default
@@ -124,6 +154,59 @@ public sealed class InboundCheckDepositServiceWithRawResponse
                 }
                 return inboundCheckDeposit;
             }
+        );
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponse<InboundCheckDeposit>> Accept(
+        InboundCheckDepositAcceptParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        if (parameters.InboundCheckDepositID == null)
+        {
+            throw new IncreaseInvalidDataException(
+                "'parameters.InboundCheckDepositID' cannot be null"
+            );
+        }
+
+        HttpRequest<InboundCheckDepositAcceptParams> request = new()
+        {
+            Method = HttpMethod.Post,
+            Params = parameters,
+        };
+        var response = await this._client.Execute(request, cancellationToken).ConfigureAwait(false);
+        return new(
+            response,
+            async (token) =>
+            {
+                var inboundCheckDeposit = await response
+                    .Deserialize<InboundCheckDeposit>(token)
+                    .ConfigureAwait(false);
+                if (this._client.ResponseValidation)
+                {
+                    inboundCheckDeposit.Validate();
+                }
+                return inboundCheckDeposit;
+            }
+        );
+    }
+
+    /// <inheritdoc/>
+    public Task<HttpResponse<InboundCheckDeposit>> Accept(
+        string inboundCheckDepositID,
+        InboundCheckDepositAcceptParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.Accept(
+            parameters with
+            {
+                InboundCheckDepositID = inboundCheckDepositID,
+            },
+            cancellationToken
         );
     }
 

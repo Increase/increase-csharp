@@ -11947,6 +11947,7 @@ public class DigitalWalletTest : TestBase
     [InlineData(RealTimeDecisions::DigitalWallet.ApplePay)]
     [InlineData(RealTimeDecisions::DigitalWallet.GooglePay)]
     [InlineData(RealTimeDecisions::DigitalWallet.SamsungPay)]
+    [InlineData(RealTimeDecisions::DigitalWallet.GarminPay)]
     [InlineData(RealTimeDecisions::DigitalWallet.Unknown)]
     public void Validation_Works(RealTimeDecisions::DigitalWallet rawValue)
     {
@@ -11971,6 +11972,7 @@ public class DigitalWalletTest : TestBase
     [InlineData(RealTimeDecisions::DigitalWallet.ApplePay)]
     [InlineData(RealTimeDecisions::DigitalWallet.GooglePay)]
     [InlineData(RealTimeDecisions::DigitalWallet.SamsungPay)]
+    [InlineData(RealTimeDecisions::DigitalWallet.GarminPay)]
     [InlineData(RealTimeDecisions::DigitalWallet.Unknown)]
     public void SerializationRoundtrip_Works(RealTimeDecisions::DigitalWallet rawValue)
     {
@@ -12318,6 +12320,7 @@ public class RealTimeDecisionDigitalWalletTokenDigitalWalletTest : TestBase
     [InlineData(RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay)]
     [InlineData(RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.GooglePay)]
     [InlineData(RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.SamsungPay)]
+    [InlineData(RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.GarminPay)]
     [InlineData(RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.Unknown)]
     public void Validation_Works(
         RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet rawValue
@@ -12344,6 +12347,7 @@ public class RealTimeDecisionDigitalWalletTokenDigitalWalletTest : TestBase
     [InlineData(RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay)]
     [InlineData(RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.GooglePay)]
     [InlineData(RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.SamsungPay)]
+    [InlineData(RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.GarminPay)]
     [InlineData(RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.Unknown)]
     public void SerializationRoundtrip_Works(
         RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet rawValue

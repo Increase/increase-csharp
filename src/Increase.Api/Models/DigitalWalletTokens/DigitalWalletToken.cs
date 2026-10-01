@@ -144,12 +144,14 @@ public sealed record class DigitalWalletToken : JsonModel
     /// <summary>
     /// This indicates if payments can be made with the Digital Wallet Token.
     /// </summary>
-    public required ApiEnum<string, Status> Status
+    public required ApiEnum<string, DigitalWalletTokenStatus> Status
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<ApiEnum<string, Status>>("status");
+            return this._rawData.GetNotNullClass<ApiEnum<string, DigitalWalletTokenStatus>>(
+                "status"
+            );
         }
         init { this._rawData.Set("status", value); }
     }
@@ -797,8 +799,8 @@ class DynamicPrimaryAccountNumberFromRaw : IFromRawJson<DynamicPrimaryAccountNum
 /// <summary>
 /// This indicates if payments can be made with the Digital Wallet Token.
 /// </summary>
-[JsonConverter(typeof(StatusConverter))]
-public enum Status
+[JsonConverter(typeof(DigitalWalletTokenStatusConverter))]
+public enum DigitalWalletTokenStatus
 {
     /// <summary>
     /// The digital wallet token is active.
@@ -833,9 +835,9 @@ public enum Status
     PendingTransitioning,
 }
 
-sealed class StatusConverter : JsonConverter<Status>
+sealed class DigitalWalletTokenStatusConverter : JsonConverter<DigitalWalletTokenStatus>
 {
-    public override Status Read(
+    public override DigitalWalletTokenStatus Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -843,28 +845,32 @@ sealed class StatusConverter : JsonConverter<Status>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "active" => Status.Active,
-            "inactive" => Status.Inactive,
-            "suspended" => Status.Suspended,
-            "deactivated" => Status.Deactivated,
-            "declined" => Status.Declined,
-            "pending_transitioning" => Status.PendingTransitioning,
-            _ => (Status)(-1),
+            "active" => DigitalWalletTokenStatus.Active,
+            "inactive" => DigitalWalletTokenStatus.Inactive,
+            "suspended" => DigitalWalletTokenStatus.Suspended,
+            "deactivated" => DigitalWalletTokenStatus.Deactivated,
+            "declined" => DigitalWalletTokenStatus.Declined,
+            "pending_transitioning" => DigitalWalletTokenStatus.PendingTransitioning,
+            _ => (DigitalWalletTokenStatus)(-1),
         };
     }
 
-    public override void Write(Utf8JsonWriter writer, Status value, JsonSerializerOptions options)
+    public override void Write(
+        Utf8JsonWriter writer,
+        DigitalWalletTokenStatus value,
+        JsonSerializerOptions options
+    )
     {
         JsonSerializer.Serialize(
             writer,
             value switch
             {
-                Status.Active => "active",
-                Status.Inactive => "inactive",
-                Status.Suspended => "suspended",
-                Status.Deactivated => "deactivated",
-                Status.Declined => "declined",
-                Status.PendingTransitioning => "pending_transitioning",
+                DigitalWalletTokenStatus.Active => "active",
+                DigitalWalletTokenStatus.Inactive => "inactive",
+                DigitalWalletTokenStatus.Suspended => "suspended",
+                DigitalWalletTokenStatus.Deactivated => "deactivated",
+                DigitalWalletTokenStatus.Declined => "declined",
+                DigitalWalletTokenStatus.PendingTransitioning => "pending_transitioning",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -896,6 +902,11 @@ public enum TokenRequestor
     SamsungPay,
 
     /// <summary>
+    /// Garmin Pay
+    /// </summary>
+    GarminPay,
+
+    /// <summary>
     /// Unknown
     /// </summary>
     Unknown,
@@ -914,6 +925,7 @@ sealed class TokenRequestorConverter : JsonConverter<TokenRequestor>
             "apple_pay" => TokenRequestor.ApplePay,
             "google_pay" => TokenRequestor.GooglePay,
             "samsung_pay" => TokenRequestor.SamsungPay,
+            "garmin_pay" => TokenRequestor.GarminPay,
             "unknown" => TokenRequestor.Unknown,
             _ => (TokenRequestor)(-1),
         };
@@ -932,6 +944,7 @@ sealed class TokenRequestorConverter : JsonConverter<TokenRequestor>
                 TokenRequestor.ApplePay => "apple_pay",
                 TokenRequestor.GooglePay => "google_pay",
                 TokenRequestor.SamsungPay => "samsung_pay",
+                TokenRequestor.GarminPay => "garmin_pay",
                 TokenRequestor.Unknown => "unknown",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

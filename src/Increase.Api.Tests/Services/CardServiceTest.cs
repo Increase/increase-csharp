@@ -55,6 +55,17 @@ public class CardServiceTest : TestBase
     }
 
     [Fact]
+    public async Task CreateDetailsToken_Works()
+    {
+        var cardDetailsToken = await this.client.Cards.CreateDetailsToken(
+            "card_oubs0hwk5rn6knuecxg2",
+            new(),
+            TestContext.Current.CancellationToken
+        );
+        cardDetailsToken.Validate();
+    }
+
+    [Fact]
     public async Task Details_Works()
     {
         var cardDetails = await this.client.Cards.Details(

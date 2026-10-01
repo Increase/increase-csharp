@@ -42,6 +42,23 @@ public interface IInboundCheckDepositService
     );
 
     /// <summary>
+    /// Simulates the acceptance of an [Inbound Check Deposit](#inbound-check-deposits),
+    /// creating a Transaction as a result. The Inbound Check Deposit must first have a
+    /// `status` of `pending`.
+    /// </summary>
+    Task<InboundCheckDeposit> Accept(
+        InboundCheckDepositAcceptParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="Accept(InboundCheckDepositAcceptParams, CancellationToken)"/>
+    Task<InboundCheckDeposit> Accept(
+        string inboundCheckDepositID,
+        InboundCheckDepositAcceptParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
     /// Simulates an adjustment on an Inbound Check Deposit. The Inbound Check Deposit
     /// must have a `status` of `accepted`.
     /// </summary>
@@ -79,6 +96,22 @@ public interface IInboundCheckDepositServiceWithRawResponse
     /// </summary>
     Task<HttpResponse<InboundCheckDeposit>> Create(
         InboundCheckDepositCreateParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>post /simulations/inbound_check_deposits/{inbound_check_deposit_id}/accept</c>, but is otherwise the
+    /// same as <see cref="IInboundCheckDepositService.Accept(InboundCheckDepositAcceptParams, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<InboundCheckDeposit>> Accept(
+        InboundCheckDepositAcceptParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="Accept(InboundCheckDepositAcceptParams, CancellationToken)"/>
+    Task<HttpResponse<InboundCheckDeposit>> Accept(
+        string inboundCheckDepositID,
+        InboundCheckDepositAcceptParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 

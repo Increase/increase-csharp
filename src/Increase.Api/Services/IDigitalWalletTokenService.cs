@@ -48,6 +48,24 @@ public interface IDigitalWalletTokenService
         DigitalWalletTokenListParams? parameters = null,
         CancellationToken cancellationToken = default
     );
+
+    /// <summary>
+    /// Submit a Digital Wallet Token status transition to the card network. The Digital
+    /// Wallet Token will move to `pending_transitioning` until the card network
+    /// confirms the transition, and a `digital_wallet_token.updated` webhook will be
+    /// sent once the transition has been confirmed.
+    /// </summary>
+    Task<DigitalWalletToken> Transition(
+        DigitalWalletTokenTransitionParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="Transition(DigitalWalletTokenTransitionParams, CancellationToken)"/>
+    Task<DigitalWalletToken> Transition(
+        string digitalWalletTokenID,
+        DigitalWalletTokenTransitionParams parameters,
+        CancellationToken cancellationToken = default
+    );
 }
 
 /// <summary>
@@ -87,6 +105,22 @@ public interface IDigitalWalletTokenServiceWithRawResponse
     /// </summary>
     Task<HttpResponse<DigitalWalletTokenListPage>> List(
         DigitalWalletTokenListParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>post /digital_wallet_tokens/{digital_wallet_token_id}/transition</c>, but is otherwise the
+    /// same as <see cref="IDigitalWalletTokenService.Transition(DigitalWalletTokenTransitionParams, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<DigitalWalletToken>> Transition(
+        DigitalWalletTokenTransitionParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="Transition(DigitalWalletTokenTransitionParams, CancellationToken)"/>
+    Task<HttpResponse<DigitalWalletToken>> Transition(
+        string digitalWalletTokenID,
+        DigitalWalletTokenTransitionParams parameters,
         CancellationToken cancellationToken = default
     );
 }
