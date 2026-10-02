@@ -305,7 +305,8 @@ public enum AccountNumberInboundAchDebitStatus
     Allowed,
 
     /// <summary>
-    /// ACH Debits are blocked.
+    /// ACH Debits are blocked. Received debits will be declined and returned with
+    /// code `R20` (non-transaction account).
     /// </summary>
     Blocked,
 }
