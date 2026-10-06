@@ -496,6 +496,11 @@ public enum In
     DigitalWalletTokenUpdated,
 
     /// <summary>
+    /// Occurs whenever a Digital Wallet Token Request is created.
+    /// </summary>
+    DigitalWalletTokenRequestCreated,
+
+    /// <summary>
     /// Occurs whenever an Entity is created.
     /// </summary>
     EntityCreated,
@@ -992,6 +997,7 @@ sealed class InConverter : JsonConverter<In>
             "digital_card_profile.updated" => In.DigitalCardProfileUpdated,
             "digital_wallet_token.created" => In.DigitalWalletTokenCreated,
             "digital_wallet_token.updated" => In.DigitalWalletTokenUpdated,
+            "digital_wallet_token_request.created" => In.DigitalWalletTokenRequestCreated,
             "entity.created" => In.EntityCreated,
             "entity.updated" => In.EntityUpdated,
             "event_subscription.created" => In.EventSubscriptionCreated,
@@ -1141,6 +1147,7 @@ sealed class InConverter : JsonConverter<In>
                 In.DigitalCardProfileUpdated => "digital_card_profile.updated",
                 In.DigitalWalletTokenCreated => "digital_wallet_token.created",
                 In.DigitalWalletTokenUpdated => "digital_wallet_token.updated",
+                In.DigitalWalletTokenRequestCreated => "digital_wallet_token_request.created",
                 In.EntityCreated => "entity.created",
                 In.EntityUpdated => "entity.updated",
                 In.EventSubscriptionCreated => "event_subscription.created",
