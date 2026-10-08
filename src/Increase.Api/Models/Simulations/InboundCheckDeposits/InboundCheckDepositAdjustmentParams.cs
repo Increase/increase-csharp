@@ -223,6 +223,12 @@ public enum Reason
     /// has reimbursed the funds with a Wrong Payee Credit.
     /// </summary>
     WrongPayeeCredit,
+
+    /// <summary>
+    /// A previous adjustment for the check was applied twice and the duplicate has
+    /// been reversed.
+    /// </summary>
+    DuplicateEntry,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -237,6 +243,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
         {
             "late_return" => Reason.LateReturn,
             "wrong_payee_credit" => Reason.WrongPayeeCredit,
+            "duplicate_entry" => Reason.DuplicateEntry,
             _ => (Reason)(-1),
         };
     }
@@ -249,6 +256,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
             {
                 Reason.LateReturn => "late_return",
                 Reason.WrongPayeeCredit => "wrong_payee_credit",
+                Reason.DuplicateEntry => "duplicate_entry",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
