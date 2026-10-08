@@ -1521,7 +1521,8 @@ public enum VerificationMethod
     Email,
 
     /// <summary>
-    /// The one-time code was not successfully delivered.
+    /// The one-time code could not be delivered because the card has no phone number
+    /// or email on file.
     /// </summary>
     NoneAvailable,
 }
@@ -25207,6 +25208,11 @@ public enum PurchaseIdentifierFormat
     /// Invoice number
     /// </summary>
     InvoiceNumber,
+
+    /// <summary>
+    /// Visa Recurrent reference identifier
+    /// </summary>
+    VisaRecurrentReferenceIdentifier,
 }
 
 sealed class PurchaseIdentifierFormatConverter : JsonConverter<PurchaseIdentifierFormat>
@@ -25224,6 +25230,8 @@ sealed class PurchaseIdentifierFormatConverter : JsonConverter<PurchaseIdentifie
             "rental_agreement_number" => PurchaseIdentifierFormat.RentalAgreementNumber,
             "hotel_folio_number" => PurchaseIdentifierFormat.HotelFolioNumber,
             "invoice_number" => PurchaseIdentifierFormat.InvoiceNumber,
+            "visa_recurrent_reference_identifier" =>
+                PurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier,
             _ => (PurchaseIdentifierFormat)(-1),
         };
     }
@@ -25243,6 +25251,8 @@ sealed class PurchaseIdentifierFormatConverter : JsonConverter<PurchaseIdentifie
                 PurchaseIdentifierFormat.RentalAgreementNumber => "rental_agreement_number",
                 PurchaseIdentifierFormat.HotelFolioNumber => "hotel_folio_number",
                 PurchaseIdentifierFormat.InvoiceNumber => "invoice_number",
+                PurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier =>
+                    "visa_recurrent_reference_identifier",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -31590,6 +31600,11 @@ public enum CardSettlementPurchaseDetailsPurchaseIdentifierFormat
     /// Invoice number
     /// </summary>
     InvoiceNumber,
+
+    /// <summary>
+    /// Visa Recurrent reference identifier
+    /// </summary>
+    VisaRecurrentReferenceIdentifier,
 }
 
 sealed class CardSettlementPurchaseDetailsPurchaseIdentifierFormatConverter
@@ -31610,6 +31625,8 @@ sealed class CardSettlementPurchaseDetailsPurchaseIdentifierFormatConverter
             "hotel_folio_number" =>
                 CardSettlementPurchaseDetailsPurchaseIdentifierFormat.HotelFolioNumber,
             "invoice_number" => CardSettlementPurchaseDetailsPurchaseIdentifierFormat.InvoiceNumber,
+            "visa_recurrent_reference_identifier" =>
+                CardSettlementPurchaseDetailsPurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier,
             _ => (CardSettlementPurchaseDetailsPurchaseIdentifierFormat)(-1),
         };
     }
@@ -31632,6 +31649,8 @@ sealed class CardSettlementPurchaseDetailsPurchaseIdentifierFormatConverter
                     "hotel_folio_number",
                 CardSettlementPurchaseDetailsPurchaseIdentifierFormat.InvoiceNumber =>
                     "invoice_number",
+                CardSettlementPurchaseDetailsPurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier =>
+                    "visa_recurrent_reference_identifier",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
