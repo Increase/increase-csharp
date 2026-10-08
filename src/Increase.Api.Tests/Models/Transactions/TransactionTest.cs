@@ -19532,6 +19532,7 @@ public class PurchaseIdentifierFormatTest : TestBase
     [InlineData(Transactions::PurchaseIdentifierFormat.RentalAgreementNumber)]
     [InlineData(Transactions::PurchaseIdentifierFormat.HotelFolioNumber)]
     [InlineData(Transactions::PurchaseIdentifierFormat.InvoiceNumber)]
+    [InlineData(Transactions::PurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier)]
     public void Validation_Works(Transactions::PurchaseIdentifierFormat rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -19556,6 +19557,7 @@ public class PurchaseIdentifierFormatTest : TestBase
     [InlineData(Transactions::PurchaseIdentifierFormat.RentalAgreementNumber)]
     [InlineData(Transactions::PurchaseIdentifierFormat.HotelFolioNumber)]
     [InlineData(Transactions::PurchaseIdentifierFormat.InvoiceNumber)]
+    [InlineData(Transactions::PurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier)]
     public void SerializationRoundtrip_Works(Transactions::PurchaseIdentifierFormat rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -25665,6 +25667,9 @@ public class CardSettlementPurchaseDetailsPurchaseIdentifierFormatTest : TestBas
         Transactions::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.HotelFolioNumber
     )]
     [InlineData(Transactions::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.InvoiceNumber)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier
+    )]
     public void Validation_Works(
         Transactions::CardSettlementPurchaseDetailsPurchaseIdentifierFormat rawValue
     )
@@ -25696,6 +25701,9 @@ public class CardSettlementPurchaseDetailsPurchaseIdentifierFormatTest : TestBas
         Transactions::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.HotelFolioNumber
     )]
     [InlineData(Transactions::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.InvoiceNumber)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier
+    )]
     public void SerializationRoundtrip_Works(
         Transactions::CardSettlementPurchaseDetailsPurchaseIdentifierFormat rawValue
     )
@@ -29527,6 +29535,7 @@ public class ReasonTest : TestBase
     [InlineData(Transactions::Reason.AdjustedAmount)]
     [InlineData(Transactions::Reason.NonConformingItem)]
     [InlineData(Transactions::Reason.Paid)]
+    [InlineData(Transactions::Reason.DuplicateEntry)]
     public void Validation_Works(Transactions::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -29552,6 +29561,7 @@ public class ReasonTest : TestBase
     [InlineData(Transactions::Reason.AdjustedAmount)]
     [InlineData(Transactions::Reason.NonConformingItem)]
     [InlineData(Transactions::Reason.Paid)]
+    [InlineData(Transactions::Reason.DuplicateEntry)]
     public void SerializationRoundtrip_Works(Transactions::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

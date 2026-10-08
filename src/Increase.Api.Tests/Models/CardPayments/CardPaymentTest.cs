@@ -62057,6 +62057,7 @@ public class PurchaseIdentifierFormatTest : TestBase
     [InlineData(CardPayments::PurchaseIdentifierFormat.RentalAgreementNumber)]
     [InlineData(CardPayments::PurchaseIdentifierFormat.HotelFolioNumber)]
     [InlineData(CardPayments::PurchaseIdentifierFormat.InvoiceNumber)]
+    [InlineData(CardPayments::PurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier)]
     public void Validation_Works(CardPayments::PurchaseIdentifierFormat rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -62081,6 +62082,7 @@ public class PurchaseIdentifierFormatTest : TestBase
     [InlineData(CardPayments::PurchaseIdentifierFormat.RentalAgreementNumber)]
     [InlineData(CardPayments::PurchaseIdentifierFormat.HotelFolioNumber)]
     [InlineData(CardPayments::PurchaseIdentifierFormat.InvoiceNumber)]
+    [InlineData(CardPayments::PurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier)]
     public void SerializationRoundtrip_Works(CardPayments::PurchaseIdentifierFormat rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -69060,6 +69062,9 @@ public class CardSettlementPurchaseDetailsPurchaseIdentifierFormatTest : TestBas
         CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.HotelFolioNumber
     )]
     [InlineData(CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.InvoiceNumber)]
+    [InlineData(
+        CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier
+    )]
     public void Validation_Works(
         CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat rawValue
     )
@@ -69091,6 +69096,9 @@ public class CardSettlementPurchaseDetailsPurchaseIdentifierFormatTest : TestBas
         CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.HotelFolioNumber
     )]
     [InlineData(CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.InvoiceNumber)]
+    [InlineData(
+        CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier
+    )]
     public void SerializationRoundtrip_Works(
         CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat rawValue
     )
