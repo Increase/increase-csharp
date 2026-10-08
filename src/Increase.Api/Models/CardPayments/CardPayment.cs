@@ -1521,7 +1521,8 @@ public enum VerificationMethod
     Email,
 
     /// <summary>
-    /// The one-time code was not successfully delivered.
+    /// The one-time code could not be delivered because the card has no phone number
+    /// or email on file.
     /// </summary>
     NoneAvailable,
 }
