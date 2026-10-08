@@ -29527,6 +29527,7 @@ public class ReasonTest : TestBase
     [InlineData(Transactions::Reason.AdjustedAmount)]
     [InlineData(Transactions::Reason.NonConformingItem)]
     [InlineData(Transactions::Reason.Paid)]
+    [InlineData(Transactions::Reason.DuplicateEntry)]
     public void Validation_Works(Transactions::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -29552,6 +29553,7 @@ public class ReasonTest : TestBase
     [InlineData(Transactions::Reason.AdjustedAmount)]
     [InlineData(Transactions::Reason.NonConformingItem)]
     [InlineData(Transactions::Reason.Paid)]
+    [InlineData(Transactions::Reason.DuplicateEntry)]
     public void SerializationRoundtrip_Works(Transactions::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

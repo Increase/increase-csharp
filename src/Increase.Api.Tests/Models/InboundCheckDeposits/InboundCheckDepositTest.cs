@@ -495,6 +495,7 @@ public class AdjustmentReasonTest : TestBase
     [Theory]
     [InlineData(InboundCheckDeposits::AdjustmentReason.LateReturn)]
     [InlineData(InboundCheckDeposits::AdjustmentReason.WrongPayeeCredit)]
+    [InlineData(InboundCheckDeposits::AdjustmentReason.DuplicateEntry)]
     public void Validation_Works(InboundCheckDeposits::AdjustmentReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -516,6 +517,7 @@ public class AdjustmentReasonTest : TestBase
     [Theory]
     [InlineData(InboundCheckDeposits::AdjustmentReason.LateReturn)]
     [InlineData(InboundCheckDeposits::AdjustmentReason.WrongPayeeCredit)]
+    [InlineData(InboundCheckDeposits::AdjustmentReason.DuplicateEntry)]
     public void SerializationRoundtrip_Works(InboundCheckDeposits::AdjustmentReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
