@@ -4718,6 +4718,12 @@ public enum FeeType
     /// on its network.
     /// </summary>
     PulseSwitchFee,
+
+    /// <summary>
+    /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
+    /// tokenized transactions on its network.
+    /// </summary>
+    PulseTokenizationFee,
 }
 
 sealed class FeeTypeConverter : JsonConverter<FeeType>
@@ -4770,6 +4776,7 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
             "visa_processing_guarantee_commercial_credit" =>
                 FeeType.VisaProcessingGuaranteeCommercialCredit,
             "pulse_switch_fee" => FeeType.PulseSwitchFee,
+            "pulse_tokenization_fee" => FeeType.PulseTokenizationFee,
             _ => (FeeType)(-1),
         };
     }
@@ -4821,6 +4828,7 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
                 FeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
                 FeeType.PulseSwitchFee => "pulse_switch_fee",
+                FeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
