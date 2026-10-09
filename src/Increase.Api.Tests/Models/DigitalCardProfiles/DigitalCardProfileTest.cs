@@ -18,12 +18,12 @@ public class DigitalCardProfileTest : TestBase
             BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
             CardDescription = "Black Card",
             ContactEmail = "user@example.com",
+            ContactName = "National Phonograph Company",
             ContactPhone = "+18882988865",
             ContactWebsite = "https://example.com",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Corporate logo Apple Pay Card",
             IdempotencyKey = null,
-            IssuerName = "National Phonograph Company",
             Status = DigitalCardProfiles::DigitalCardProfileStatus.Active,
             TextColor = new()
             {
@@ -39,11 +39,11 @@ public class DigitalCardProfileTest : TestBase
         string expectedBackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc";
         string expectedCardDescription = "Black Card";
         string expectedContactEmail = "user@example.com";
+        string expectedContactName = "National Phonograph Company";
         string expectedContactPhone = "+18882988865";
         string expectedContactWebsite = "https://example.com";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedDescription = "Corporate logo Apple Pay Card";
-        string expectedIssuerName = "National Phonograph Company";
         ApiEnum<string, DigitalCardProfiles::DigitalCardProfileStatus> expectedStatus =
             DigitalCardProfiles::DigitalCardProfileStatus.Active;
         DigitalCardProfiles::DigitalCardProfileTextColor expectedTextColor = new()
@@ -60,12 +60,12 @@ public class DigitalCardProfileTest : TestBase
         Assert.Equal(expectedBackgroundImageFileID, model.BackgroundImageFileID);
         Assert.Equal(expectedCardDescription, model.CardDescription);
         Assert.Equal(expectedContactEmail, model.ContactEmail);
+        Assert.Equal(expectedContactName, model.ContactName);
         Assert.Equal(expectedContactPhone, model.ContactPhone);
         Assert.Equal(expectedContactWebsite, model.ContactWebsite);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
         Assert.Equal(expectedDescription, model.Description);
         Assert.Null(model.IdempotencyKey);
-        Assert.Equal(expectedIssuerName, model.IssuerName);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedTextColor, model.TextColor);
         Assert.Equal(expectedType, model.Type);
@@ -81,12 +81,12 @@ public class DigitalCardProfileTest : TestBase
             BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
             CardDescription = "Black Card",
             ContactEmail = "user@example.com",
+            ContactName = "National Phonograph Company",
             ContactPhone = "+18882988865",
             ContactWebsite = "https://example.com",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Corporate logo Apple Pay Card",
             IdempotencyKey = null,
-            IssuerName = "National Phonograph Company",
             Status = DigitalCardProfiles::DigitalCardProfileStatus.Active,
             TextColor = new()
             {
@@ -116,12 +116,12 @@ public class DigitalCardProfileTest : TestBase
             BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
             CardDescription = "Black Card",
             ContactEmail = "user@example.com",
+            ContactName = "National Phonograph Company",
             ContactPhone = "+18882988865",
             ContactWebsite = "https://example.com",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Corporate logo Apple Pay Card",
             IdempotencyKey = null,
-            IssuerName = "National Phonograph Company",
             Status = DigitalCardProfiles::DigitalCardProfileStatus.Active,
             TextColor = new()
             {
@@ -144,11 +144,11 @@ public class DigitalCardProfileTest : TestBase
         string expectedBackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc";
         string expectedCardDescription = "Black Card";
         string expectedContactEmail = "user@example.com";
+        string expectedContactName = "National Phonograph Company";
         string expectedContactPhone = "+18882988865";
         string expectedContactWebsite = "https://example.com";
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedDescription = "Corporate logo Apple Pay Card";
-        string expectedIssuerName = "National Phonograph Company";
         ApiEnum<string, DigitalCardProfiles::DigitalCardProfileStatus> expectedStatus =
             DigitalCardProfiles::DigitalCardProfileStatus.Active;
         DigitalCardProfiles::DigitalCardProfileTextColor expectedTextColor = new()
@@ -165,12 +165,12 @@ public class DigitalCardProfileTest : TestBase
         Assert.Equal(expectedBackgroundImageFileID, deserialized.BackgroundImageFileID);
         Assert.Equal(expectedCardDescription, deserialized.CardDescription);
         Assert.Equal(expectedContactEmail, deserialized.ContactEmail);
+        Assert.Equal(expectedContactName, deserialized.ContactName);
         Assert.Equal(expectedContactPhone, deserialized.ContactPhone);
         Assert.Equal(expectedContactWebsite, deserialized.ContactWebsite);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
         Assert.Equal(expectedDescription, deserialized.Description);
         Assert.Null(deserialized.IdempotencyKey);
-        Assert.Equal(expectedIssuerName, deserialized.IssuerName);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedTextColor, deserialized.TextColor);
         Assert.Equal(expectedType, deserialized.Type);
@@ -186,12 +186,12 @@ public class DigitalCardProfileTest : TestBase
             BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
             CardDescription = "Black Card",
             ContactEmail = "user@example.com",
+            ContactName = "National Phonograph Company",
             ContactPhone = "+18882988865",
             ContactWebsite = "https://example.com",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Corporate logo Apple Pay Card",
             IdempotencyKey = null,
-            IssuerName = "National Phonograph Company",
             Status = DigitalCardProfiles::DigitalCardProfileStatus.Active,
             TextColor = new()
             {
@@ -215,12 +215,12 @@ public class DigitalCardProfileTest : TestBase
             BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
             CardDescription = "Black Card",
             ContactEmail = "user@example.com",
+            ContactName = "National Phonograph Company",
             ContactPhone = "+18882988865",
             ContactWebsite = "https://example.com",
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Description = "Corporate logo Apple Pay Card",
             IdempotencyKey = null,
-            IssuerName = "National Phonograph Company",
             Status = DigitalCardProfiles::DigitalCardProfileStatus.Active,
             TextColor = new()
             {
