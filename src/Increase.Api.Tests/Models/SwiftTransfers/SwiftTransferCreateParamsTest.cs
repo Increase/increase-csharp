@@ -40,7 +40,7 @@ public class SwiftTransferCreateParamsTest : TestBase
             InstructedCurrency = InstructedCurrency.Usd,
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             UnstructuredRemittanceInformation = "New Swift transfer",
-            IntermediaryBankIdentificationCode = "SEWBFL97",
+            IntermediaryBankIdentificationCode = "SEWBFL3A",
             RequireApproval = true,
             RoutingNumber = "sq",
         };
@@ -72,7 +72,7 @@ public class SwiftTransferCreateParamsTest : TestBase
         ApiEnum<string, InstructedCurrency> expectedInstructedCurrency = InstructedCurrency.Usd;
         string expectedSourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         string expectedUnstructuredRemittanceInformation = "New Swift transfer";
-        string expectedIntermediaryBankIdentificationCode = "SEWBFL97";
+        string expectedIntermediaryBankIdentificationCode = "SEWBFL3A";
         bool expectedRequireApproval = true;
         string expectedRoutingNumber = "sq";
 
@@ -258,7 +258,7 @@ public class SwiftTransferCreateParamsTest : TestBase
             InstructedCurrency = InstructedCurrency.Usd,
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             UnstructuredRemittanceInformation = "New Swift transfer",
-            IntermediaryBankIdentificationCode = "SEWBFL97",
+            IntermediaryBankIdentificationCode = "SEWBFL3A",
             RequireApproval = true,
             RoutingNumber = "sq",
         };

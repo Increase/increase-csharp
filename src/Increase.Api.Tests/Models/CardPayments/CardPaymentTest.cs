@@ -41890,6 +41890,7 @@ public class FeeTypeTest : TestBase
     [InlineData(CardPayments::FeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(CardPayments::FeeType.VisaProcessingGuaranteeCommercialCredit)]
     [InlineData(CardPayments::FeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::FeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::FeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -41939,6 +41940,7 @@ public class FeeTypeTest : TestBase
     [InlineData(CardPayments::FeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(CardPayments::FeeType.VisaProcessingGuaranteeCommercialCredit)]
     [InlineData(CardPayments::FeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::FeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::FeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -46033,6 +46035,7 @@ public class CardBalanceInquirySchemeFeeFeeTypeTest : TestBase
         CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
     [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardBalanceInquirySchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -46105,6 +46108,7 @@ public class CardBalanceInquirySchemeFeeFeeTypeTest : TestBase
         CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
     [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(
         CardPayments::CardBalanceInquirySchemeFeeFeeType rawValue
     )
@@ -50273,6 +50277,7 @@ public class CardDeclineSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardDeclineSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -50331,6 +50336,7 @@ public class CardDeclineSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardDeclineSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -54304,6 +54310,7 @@ public class CardFinancialSchemeFeeFeeTypeTest : TestBase
         CardPayments::CardFinancialSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
     [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardFinancialSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -54364,6 +54371,7 @@ public class CardFinancialSchemeFeeFeeTypeTest : TestBase
         CardPayments::CardFinancialSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
     [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardFinancialSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -55819,6 +55827,7 @@ public class CardFuelConfirmationSchemeFeeFeeTypeTest : TestBase
         CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
     [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardFuelConfirmationSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -55891,6 +55900,7 @@ public class CardFuelConfirmationSchemeFeeFeeTypeTest : TestBase
         CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
     [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(
         CardPayments::CardFuelConfirmationSchemeFeeFeeType rawValue
     )
@@ -58013,6 +58023,7 @@ public class CardIncrementSchemeFeeFeeTypeTest : TestBase
         CardPayments::CardIncrementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
     [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardIncrementSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -58073,6 +58084,7 @@ public class CardIncrementSchemeFeeFeeTypeTest : TestBase
         CardPayments::CardIncrementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
     [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardIncrementSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -62057,6 +62069,7 @@ public class PurchaseIdentifierFormatTest : TestBase
     [InlineData(CardPayments::PurchaseIdentifierFormat.RentalAgreementNumber)]
     [InlineData(CardPayments::PurchaseIdentifierFormat.HotelFolioNumber)]
     [InlineData(CardPayments::PurchaseIdentifierFormat.InvoiceNumber)]
+    [InlineData(CardPayments::PurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier)]
     public void Validation_Works(CardPayments::PurchaseIdentifierFormat rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -62081,6 +62094,7 @@ public class PurchaseIdentifierFormatTest : TestBase
     [InlineData(CardPayments::PurchaseIdentifierFormat.RentalAgreementNumber)]
     [InlineData(CardPayments::PurchaseIdentifierFormat.HotelFolioNumber)]
     [InlineData(CardPayments::PurchaseIdentifierFormat.InvoiceNumber)]
+    [InlineData(CardPayments::PurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier)]
     public void SerializationRoundtrip_Works(CardPayments::PurchaseIdentifierFormat rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -63480,6 +63494,7 @@ public class CardRefundSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardRefundSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -63536,6 +63551,7 @@ public class CardRefundSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardRefundSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -64515,6 +64531,7 @@ public class CardReversalSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardReversalSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -64573,6 +64590,7 @@ public class CardReversalSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardReversalSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -69060,6 +69078,9 @@ public class CardSettlementPurchaseDetailsPurchaseIdentifierFormatTest : TestBas
         CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.HotelFolioNumber
     )]
     [InlineData(CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.InvoiceNumber)]
+    [InlineData(
+        CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier
+    )]
     public void Validation_Works(
         CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat rawValue
     )
@@ -69091,6 +69112,9 @@ public class CardSettlementPurchaseDetailsPurchaseIdentifierFormatTest : TestBas
         CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.HotelFolioNumber
     )]
     [InlineData(CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.InvoiceNumber)]
+    [InlineData(
+        CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier
+    )]
     public void SerializationRoundtrip_Works(
         CardPayments::CardSettlementPurchaseDetailsPurchaseIdentifierFormat rawValue
     )
@@ -70785,6 +70809,7 @@ public class CardSettlementSchemeFeeFeeTypeTest : TestBase
         CardPayments::CardSettlementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
     [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardSettlementSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -70849,6 +70874,7 @@ public class CardSettlementSchemeFeeFeeTypeTest : TestBase
         CardPayments::CardSettlementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
     [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardSettlementSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -74130,6 +74156,7 @@ public class CardValidationSchemeFeeFeeTypeTest : TestBase
         CardPayments::CardValidationSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
     [InlineData(CardPayments::CardValidationSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardValidationSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -74194,6 +74221,7 @@ public class CardValidationSchemeFeeFeeTypeTest : TestBase
         CardPayments::CardValidationSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
     [InlineData(CardPayments::CardValidationSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardValidationSchemeFeeFeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
