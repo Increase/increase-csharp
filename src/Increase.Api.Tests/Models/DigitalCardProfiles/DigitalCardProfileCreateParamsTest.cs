@@ -14,10 +14,10 @@ public class DigitalCardProfileCreateParamsTest : TestBase
         {
             AppIconFileID = "file_8zxqkwlh43wo144u8yec",
             BackgroundImageFileID = "file_1ai913suu1zfn1pdetru",
-            CardDescription = "MyBank Signature Card",
+            CardDescription = "National Phonograph Card",
             Description = "My Card Profile",
-            IssuerName = "MyBank",
             ContactEmail = "user@example.com",
+            ContactName = "National Phonograph Company",
             ContactPhone = "+18885551212",
             ContactWebsite = "https://example.com",
             TextColor = new()
@@ -30,10 +30,10 @@ public class DigitalCardProfileCreateParamsTest : TestBase
 
         string expectedAppIconFileID = "file_8zxqkwlh43wo144u8yec";
         string expectedBackgroundImageFileID = "file_1ai913suu1zfn1pdetru";
-        string expectedCardDescription = "MyBank Signature Card";
+        string expectedCardDescription = "National Phonograph Card";
         string expectedDescription = "My Card Profile";
-        string expectedIssuerName = "MyBank";
         string expectedContactEmail = "user@example.com";
+        string expectedContactName = "National Phonograph Company";
         string expectedContactPhone = "+18885551212";
         string expectedContactWebsite = "https://example.com";
         TextColor expectedTextColor = new()
@@ -47,8 +47,8 @@ public class DigitalCardProfileCreateParamsTest : TestBase
         Assert.Equal(expectedBackgroundImageFileID, parameters.BackgroundImageFileID);
         Assert.Equal(expectedCardDescription, parameters.CardDescription);
         Assert.Equal(expectedDescription, parameters.Description);
-        Assert.Equal(expectedIssuerName, parameters.IssuerName);
         Assert.Equal(expectedContactEmail, parameters.ContactEmail);
+        Assert.Equal(expectedContactName, parameters.ContactName);
         Assert.Equal(expectedContactPhone, parameters.ContactPhone);
         Assert.Equal(expectedContactWebsite, parameters.ContactWebsite);
         Assert.Equal(expectedTextColor, parameters.TextColor);
@@ -61,13 +61,14 @@ public class DigitalCardProfileCreateParamsTest : TestBase
         {
             AppIconFileID = "file_8zxqkwlh43wo144u8yec",
             BackgroundImageFileID = "file_1ai913suu1zfn1pdetru",
-            CardDescription = "MyBank Signature Card",
+            CardDescription = "National Phonograph Card",
             Description = "My Card Profile",
-            IssuerName = "MyBank",
         };
 
         Assert.Null(parameters.ContactEmail);
         Assert.False(parameters.RawBodyData.ContainsKey("contact_email"));
+        Assert.Null(parameters.ContactName);
+        Assert.False(parameters.RawBodyData.ContainsKey("contact_name"));
         Assert.Null(parameters.ContactPhone);
         Assert.False(parameters.RawBodyData.ContainsKey("contact_phone"));
         Assert.Null(parameters.ContactWebsite);
@@ -83,12 +84,12 @@ public class DigitalCardProfileCreateParamsTest : TestBase
         {
             AppIconFileID = "file_8zxqkwlh43wo144u8yec",
             BackgroundImageFileID = "file_1ai913suu1zfn1pdetru",
-            CardDescription = "MyBank Signature Card",
+            CardDescription = "National Phonograph Card",
             Description = "My Card Profile",
-            IssuerName = "MyBank",
 
             // Null should be interpreted as omitted for these properties
             ContactEmail = null,
+            ContactName = null,
             ContactPhone = null,
             ContactWebsite = null,
             TextColor = null,
@@ -96,6 +97,8 @@ public class DigitalCardProfileCreateParamsTest : TestBase
 
         Assert.Null(parameters.ContactEmail);
         Assert.False(parameters.RawBodyData.ContainsKey("contact_email"));
+        Assert.Null(parameters.ContactName);
+        Assert.False(parameters.RawBodyData.ContainsKey("contact_name"));
         Assert.Null(parameters.ContactPhone);
         Assert.False(parameters.RawBodyData.ContainsKey("contact_phone"));
         Assert.Null(parameters.ContactWebsite);
@@ -111,9 +114,8 @@ public class DigitalCardProfileCreateParamsTest : TestBase
         {
             AppIconFileID = "file_8zxqkwlh43wo144u8yec",
             BackgroundImageFileID = "file_1ai913suu1zfn1pdetru",
-            CardDescription = "MyBank Signature Card",
+            CardDescription = "National Phonograph Card",
             Description = "My Card Profile",
-            IssuerName = "MyBank",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -130,10 +132,10 @@ public class DigitalCardProfileCreateParamsTest : TestBase
         {
             AppIconFileID = "file_8zxqkwlh43wo144u8yec",
             BackgroundImageFileID = "file_1ai913suu1zfn1pdetru",
-            CardDescription = "MyBank Signature Card",
+            CardDescription = "National Phonograph Card",
             Description = "My Card Profile",
-            IssuerName = "MyBank",
             ContactEmail = "user@example.com",
+            ContactName = "National Phonograph Company",
             ContactPhone = "+18885551212",
             ContactWebsite = "https://example.com",
             TextColor = new()
