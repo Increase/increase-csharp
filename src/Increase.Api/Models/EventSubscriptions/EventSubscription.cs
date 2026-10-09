@@ -472,6 +472,11 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     DigitalWalletTokenUpdated,
 
     /// <summary>
+    /// Occurs whenever a Digital Wallet Token Request is created.
+    /// </summary>
+    DigitalWalletTokenRequestCreated,
+
+    /// <summary>
     /// Occurs whenever an Entity is created.
     /// </summary>
     EntityCreated,
@@ -1003,6 +1008,8 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.DigitalWalletTokenCreated,
             "digital_wallet_token.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.DigitalWalletTokenUpdated,
+            "digital_wallet_token_request.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.DigitalWalletTokenRequestCreated,
             "entity.created" => EventSubscriptionSelectedEventCategoryEventCategory.EntityCreated,
             "entity.updated" => EventSubscriptionSelectedEventCategoryEventCategory.EntityUpdated,
             "event_subscription.created" =>
@@ -1258,6 +1265,8 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "digital_wallet_token.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.DigitalWalletTokenUpdated =>
                     "digital_wallet_token.updated",
+                EventSubscriptionSelectedEventCategoryEventCategory.DigitalWalletTokenRequestCreated =>
+                    "digital_wallet_token_request.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.EntityCreated =>
                     "entity.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.EntityUpdated =>
