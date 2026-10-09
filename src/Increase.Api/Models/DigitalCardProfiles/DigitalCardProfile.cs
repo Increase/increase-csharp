@@ -83,6 +83,20 @@ public sealed record class DigitalCardProfile : JsonModel
     }
 
     /// <summary>
+    /// The name of your company or card program, shown to the user as who to contact
+    /// for support with their card.
+    /// </summary>
+    public required string ContactName
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("contact_name");
+        }
+        init { this._rawData.Set("contact_name", value); }
+    }
+
+    /// <summary>
     /// A phone number the user can contact to receive support for their card.
     /// </summary>
     public required string? ContactPhone
@@ -151,19 +165,6 @@ public sealed record class DigitalCardProfile : JsonModel
     }
 
     /// <summary>
-    /// A user-facing description for whoever is issuing the card.
-    /// </summary>
-    public required string IssuerName
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("issuer_name");
-        }
-        init { this._rawData.Set("issuer_name", value); }
-    }
-
-    /// <summary>
     /// The status of the Card Profile.
     /// </summary>
     public required ApiEnum<string, DigitalCardProfileStatus> Status
@@ -215,12 +216,12 @@ public sealed record class DigitalCardProfile : JsonModel
         _ = this.BackgroundImageFileID;
         _ = this.CardDescription;
         _ = this.ContactEmail;
+        _ = this.ContactName;
         _ = this.ContactPhone;
         _ = this.ContactWebsite;
         _ = this.CreatedAt;
         _ = this.Description;
         _ = this.IdempotencyKey;
-        _ = this.IssuerName;
         this.Status.Validate();
         this.TextColor.Validate();
         this.Type.Validate();
