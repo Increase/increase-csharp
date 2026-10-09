@@ -78,19 +78,6 @@ public record class DigitalCardProfileCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// A user-facing description for whoever is issuing the card.
-    /// </summary>
-    public required string IssuerName
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNotNullClass<string>("issuer_name");
-        }
-        init { this._rawBodyData.Set("issuer_name", value); }
-    }
-
-    /// <summary>
     /// An email address the user can contact to receive support for their card.
     /// </summary>
     public string? ContactEmail
@@ -108,6 +95,28 @@ public record class DigitalCardProfileCreateParams : ParamsBase
             }
 
             this._rawBodyData.Set("contact_email", value);
+        }
+    }
+
+    /// <summary>
+    /// The name of your company or card program, shown to the user as who to contact
+    /// for support with their card.
+    /// </summary>
+    public string? ContactName
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("contact_name");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("contact_name", value);
         }
     }
 
