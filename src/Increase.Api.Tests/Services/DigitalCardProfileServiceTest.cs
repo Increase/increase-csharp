@@ -12,9 +12,8 @@ public class DigitalCardProfileServiceTest : TestBase
             {
                 AppIconFileID = "file_8zxqkwlh43wo144u8yec",
                 BackgroundImageFileID = "file_1ai913suu1zfn1pdetru",
-                CardDescription = "MyBank Signature Card",
+                CardDescription = "National Phonograph Card",
                 Description = "My Card Profile",
-                IssuerName = "MyBank",
             },
             TestContext.Current.CancellationToken
         );

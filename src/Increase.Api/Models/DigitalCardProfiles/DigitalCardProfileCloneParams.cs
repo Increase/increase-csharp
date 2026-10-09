@@ -112,6 +112,28 @@ public record class DigitalCardProfileCloneParams : ParamsBase
     }
 
     /// <summary>
+    /// The name of your company or card program, shown to the user as who to contact
+    /// for support with their card.
+    /// </summary>
+    public string? ContactName
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<string>("contact_name");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("contact_name", value);
+        }
+    }
+
+    /// <summary>
     /// A phone number the user can contact to receive support for their card.
     /// </summary>
     public string? ContactPhone
@@ -171,27 +193,6 @@ public record class DigitalCardProfileCloneParams : ParamsBase
             }
 
             this._rawBodyData.Set("description", value);
-        }
-    }
-
-    /// <summary>
-    /// A user-facing description for whoever is issuing the card.
-    /// </summary>
-    public string? IssuerName
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<string>("issuer_name");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawBodyData.Set("issuer_name", value);
         }
     }
 
