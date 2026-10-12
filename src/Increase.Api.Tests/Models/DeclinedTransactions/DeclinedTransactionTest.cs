@@ -6062,6 +6062,7 @@ public class FeeTypeTest : TestBase
     [InlineData(DeclinedTransactions::FeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(DeclinedTransactions::FeeType.VisaProcessingGuaranteeCommercialCredit)]
     [InlineData(DeclinedTransactions::FeeType.PulseSwitchFee)]
+    [InlineData(DeclinedTransactions::FeeType.PulseTokenizationFee)]
     public void Validation_Works(DeclinedTransactions::FeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -6111,6 +6112,7 @@ public class FeeTypeTest : TestBase
     [InlineData(DeclinedTransactions::FeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(DeclinedTransactions::FeeType.VisaProcessingGuaranteeCommercialCredit)]
     [InlineData(DeclinedTransactions::FeeType.PulseSwitchFee)]
+    [InlineData(DeclinedTransactions::FeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(DeclinedTransactions::FeeType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

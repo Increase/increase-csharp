@@ -99,8 +99,8 @@ public record class EventListParams : ParamsBase
     }
 
     /// <summary>
-    /// Limit the size of the list that is returned. The default (and maximum) is
-    /// 100 objects.
+    /// Limit the size of the list that is returned. The default is 100 objects and
+    /// the maximum is 1,000.
     ///
     /// <para>Defaults to `100`.</para>
     /// </summary>
@@ -494,6 +494,11 @@ public enum In
     /// Occurs whenever a Digital Wallet Token is updated.
     /// </summary>
     DigitalWalletTokenUpdated,
+
+    /// <summary>
+    /// Occurs whenever a Digital Wallet Token Request is created.
+    /// </summary>
+    DigitalWalletTokenRequestCreated,
 
     /// <summary>
     /// Occurs whenever an Entity is created.
@@ -992,6 +997,7 @@ sealed class InConverter : JsonConverter<In>
             "digital_card_profile.updated" => In.DigitalCardProfileUpdated,
             "digital_wallet_token.created" => In.DigitalWalletTokenCreated,
             "digital_wallet_token.updated" => In.DigitalWalletTokenUpdated,
+            "digital_wallet_token_request.created" => In.DigitalWalletTokenRequestCreated,
             "entity.created" => In.EntityCreated,
             "entity.updated" => In.EntityUpdated,
             "event_subscription.created" => In.EventSubscriptionCreated,
@@ -1141,6 +1147,7 @@ sealed class InConverter : JsonConverter<In>
                 In.DigitalCardProfileUpdated => "digital_card_profile.updated",
                 In.DigitalWalletTokenCreated => "digital_wallet_token.created",
                 In.DigitalWalletTokenUpdated => "digital_wallet_token.updated",
+                In.DigitalWalletTokenRequestCreated => "digital_wallet_token_request.created",
                 In.EntityCreated => "entity.created",
                 In.EntityUpdated => "entity.updated",
                 In.EventSubscriptionCreated => "event_subscription.created",

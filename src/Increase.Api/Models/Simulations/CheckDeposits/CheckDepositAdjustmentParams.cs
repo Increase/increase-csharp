@@ -231,6 +231,12 @@ public enum Reason
     /// The check has already been deposited elsewhere and so this is a duplicate.
     /// </summary>
     Paid,
+
+    /// <summary>
+    /// A previous adjustment for the check was applied twice and the duplicate has
+    /// been reversed.
+    /// </summary>
+    DuplicateEntry,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -248,6 +254,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "adjusted_amount" => Reason.AdjustedAmount,
             "non_conforming_item" => Reason.NonConformingItem,
             "paid" => Reason.Paid,
+            "duplicate_entry" => Reason.DuplicateEntry,
             _ => (Reason)(-1),
         };
     }
@@ -263,6 +270,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.AdjustedAmount => "adjusted_amount",
                 Reason.NonConformingItem => "non_conforming_item",
                 Reason.Paid => "paid",
+                Reason.DuplicateEntry => "duplicate_entry",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
