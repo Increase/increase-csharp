@@ -31,6 +31,7 @@ public class PhysicalCardTest : TestBase
                     Line2 = "Unit 2",
                     Line3 = null,
                     Name = "Ian Crease",
+                    PhoneNumber = null,
                     PostalCode = "10045",
                     State = "NY",
                 },
@@ -81,6 +82,7 @@ public class PhysicalCardTest : TestBase
                 Line2 = "Unit 2",
                 Line3 = null,
                 Name = "Ian Crease",
+                PhoneNumber = null,
                 PostalCode = "10045",
                 State = "NY",
             },
@@ -145,6 +147,7 @@ public class PhysicalCardTest : TestBase
                     Line2 = "Unit 2",
                     Line3 = null,
                     Name = "Ian Crease",
+                    PhoneNumber = null,
                     PostalCode = "10045",
                     State = "NY",
                 },
@@ -206,6 +209,7 @@ public class PhysicalCardTest : TestBase
                     Line2 = "Unit 2",
                     Line3 = null,
                     Name = "Ian Crease",
+                    PhoneNumber = null,
                     PostalCode = "10045",
                     State = "NY",
                 },
@@ -263,6 +267,7 @@ public class PhysicalCardTest : TestBase
                 Line2 = "Unit 2",
                 Line3 = null,
                 Name = "Ian Crease",
+                PhoneNumber = null,
                 PostalCode = "10045",
                 State = "NY",
             },
@@ -327,6 +332,7 @@ public class PhysicalCardTest : TestBase
                     Line2 = "Unit 2",
                     Line3 = null,
                     Name = "Ian Crease",
+                    PhoneNumber = null,
                     PostalCode = "10045",
                     State = "NY",
                 },
@@ -382,6 +388,7 @@ public class PhysicalCardTest : TestBase
                     Line2 = "Unit 2",
                     Line3 = null,
                     Name = "Ian Crease",
+                    PhoneNumber = null,
                     PostalCode = "10045",
                     State = "NY",
                 },
@@ -519,6 +526,7 @@ public class PhysicalCardShipmentTest : TestBase
                 Line2 = "line2",
                 Line3 = "line3",
                 Name = "name",
+                PhoneNumber = "phone_number",
                 PostalCode = "postal_code",
                 State = "state",
             },
@@ -556,6 +564,7 @@ public class PhysicalCardShipmentTest : TestBase
             Line2 = "line2",
             Line3 = "line3",
             Name = "name",
+            PhoneNumber = "phone_number",
             PostalCode = "postal_code",
             State = "state",
         };
@@ -605,6 +614,7 @@ public class PhysicalCardShipmentTest : TestBase
                 Line2 = "line2",
                 Line3 = "line3",
                 Name = "name",
+                PhoneNumber = "phone_number",
                 PostalCode = "postal_code",
                 State = "state",
             },
@@ -656,6 +666,7 @@ public class PhysicalCardShipmentTest : TestBase
                 Line2 = "line2",
                 Line3 = "line3",
                 Name = "name",
+                PhoneNumber = "phone_number",
                 PostalCode = "postal_code",
                 State = "state",
             },
@@ -700,6 +711,7 @@ public class PhysicalCardShipmentTest : TestBase
             Line2 = "line2",
             Line3 = "line3",
             Name = "name",
+            PhoneNumber = "phone_number",
             PostalCode = "postal_code",
             State = "state",
         };
@@ -749,6 +761,7 @@ public class PhysicalCardShipmentTest : TestBase
                 Line2 = "line2",
                 Line3 = "line3",
                 Name = "name",
+                PhoneNumber = "phone_number",
                 PostalCode = "postal_code",
                 State = "state",
             },
@@ -794,6 +807,7 @@ public class PhysicalCardShipmentTest : TestBase
                 Line2 = "line2",
                 Line3 = "line3",
                 Name = "name",
+                PhoneNumber = "phone_number",
                 PostalCode = "postal_code",
                 State = "state",
             },
@@ -842,6 +856,7 @@ public class PhysicalCardShipmentAddressTest : TestBase
             Line2 = "line2",
             Line3 = "line3",
             Name = "name",
+            PhoneNumber = "phone_number",
             PostalCode = "postal_code",
             State = "state",
         };
@@ -852,6 +867,7 @@ public class PhysicalCardShipmentAddressTest : TestBase
         string expectedLine2 = "line2";
         string expectedLine3 = "line3";
         string expectedName = "name";
+        string expectedPhoneNumber = "phone_number";
         string expectedPostalCode = "postal_code";
         string expectedState = "state";
 
@@ -861,6 +877,7 @@ public class PhysicalCardShipmentAddressTest : TestBase
         Assert.Equal(expectedLine2, model.Line2);
         Assert.Equal(expectedLine3, model.Line3);
         Assert.Equal(expectedName, model.Name);
+        Assert.Equal(expectedPhoneNumber, model.PhoneNumber);
         Assert.Equal(expectedPostalCode, model.PostalCode);
         Assert.Equal(expectedState, model.State);
     }
@@ -876,6 +893,7 @@ public class PhysicalCardShipmentAddressTest : TestBase
             Line2 = "line2",
             Line3 = "line3",
             Name = "name",
+            PhoneNumber = "phone_number",
             PostalCode = "postal_code",
             State = "state",
         };
@@ -900,6 +918,7 @@ public class PhysicalCardShipmentAddressTest : TestBase
             Line2 = "line2",
             Line3 = "line3",
             Name = "name",
+            PhoneNumber = "phone_number",
             PostalCode = "postal_code",
             State = "state",
         };
@@ -917,6 +936,7 @@ public class PhysicalCardShipmentAddressTest : TestBase
         string expectedLine2 = "line2";
         string expectedLine3 = "line3";
         string expectedName = "name";
+        string expectedPhoneNumber = "phone_number";
         string expectedPostalCode = "postal_code";
         string expectedState = "state";
 
@@ -926,6 +946,7 @@ public class PhysicalCardShipmentAddressTest : TestBase
         Assert.Equal(expectedLine2, deserialized.Line2);
         Assert.Equal(expectedLine3, deserialized.Line3);
         Assert.Equal(expectedName, deserialized.Name);
+        Assert.Equal(expectedPhoneNumber, deserialized.PhoneNumber);
         Assert.Equal(expectedPostalCode, deserialized.PostalCode);
         Assert.Equal(expectedState, deserialized.State);
     }
@@ -941,6 +962,7 @@ public class PhysicalCardShipmentAddressTest : TestBase
             Line2 = "line2",
             Line3 = "line3",
             Name = "name",
+            PhoneNumber = "phone_number",
             PostalCode = "postal_code",
             State = "state",
         };
@@ -959,6 +981,7 @@ public class PhysicalCardShipmentAddressTest : TestBase
             Line2 = "line2",
             Line3 = "line3",
             Name = "name",
+            PhoneNumber = "phone_number",
             PostalCode = "postal_code",
             State = "state",
         };

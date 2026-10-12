@@ -22,12 +22,12 @@ public class DigitalCardProfileListPageResponseTest : TestBase
                     BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     CardDescription = "Black Card",
                     ContactEmail = "user@example.com",
+                    ContactName = "National Phonograph Company",
                     ContactPhone = "+18882988865",
                     ContactWebsite = "https://example.com",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Corporate logo Apple Pay Card",
                     IdempotencyKey = null,
-                    IssuerName = "National Phonograph Company",
                     Status = DigitalCardProfiles::DigitalCardProfileStatus.Active,
                     TextColor = new()
                     {
@@ -50,12 +50,12 @@ public class DigitalCardProfileListPageResponseTest : TestBase
                 BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 CardDescription = "Black Card",
                 ContactEmail = "user@example.com",
+                ContactName = "National Phonograph Company",
                 ContactPhone = "+18882988865",
                 ContactWebsite = "https://example.com",
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Description = "Corporate logo Apple Pay Card",
                 IdempotencyKey = null,
-                IssuerName = "National Phonograph Company",
                 Status = DigitalCardProfiles::DigitalCardProfileStatus.Active,
                 TextColor = new()
                 {
@@ -90,12 +90,12 @@ public class DigitalCardProfileListPageResponseTest : TestBase
                     BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     CardDescription = "Black Card",
                     ContactEmail = "user@example.com",
+                    ContactName = "National Phonograph Company",
                     ContactPhone = "+18882988865",
                     ContactWebsite = "https://example.com",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Corporate logo Apple Pay Card",
                     IdempotencyKey = null,
-                    IssuerName = "National Phonograph Company",
                     Status = DigitalCardProfiles::DigitalCardProfileStatus.Active,
                     TextColor = new()
                     {
@@ -133,12 +133,12 @@ public class DigitalCardProfileListPageResponseTest : TestBase
                     BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     CardDescription = "Black Card",
                     ContactEmail = "user@example.com",
+                    ContactName = "National Phonograph Company",
                     ContactPhone = "+18882988865",
                     ContactWebsite = "https://example.com",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Corporate logo Apple Pay Card",
                     IdempotencyKey = null,
-                    IssuerName = "National Phonograph Company",
                     Status = DigitalCardProfiles::DigitalCardProfileStatus.Active,
                     TextColor = new()
                     {
@@ -169,12 +169,12 @@ public class DigitalCardProfileListPageResponseTest : TestBase
                 BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 CardDescription = "Black Card",
                 ContactEmail = "user@example.com",
+                ContactName = "National Phonograph Company",
                 ContactPhone = "+18882988865",
                 ContactWebsite = "https://example.com",
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 Description = "Corporate logo Apple Pay Card",
                 IdempotencyKey = null,
-                IssuerName = "National Phonograph Company",
                 Status = DigitalCardProfiles::DigitalCardProfileStatus.Active,
                 TextColor = new()
                 {
@@ -209,12 +209,12 @@ public class DigitalCardProfileListPageResponseTest : TestBase
                     BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     CardDescription = "Black Card",
                     ContactEmail = "user@example.com",
+                    ContactName = "National Phonograph Company",
                     ContactPhone = "+18882988865",
                     ContactWebsite = "https://example.com",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Corporate logo Apple Pay Card",
                     IdempotencyKey = null,
-                    IssuerName = "National Phonograph Company",
                     Status = DigitalCardProfiles::DigitalCardProfileStatus.Active,
                     TextColor = new()
                     {
@@ -245,12 +245,12 @@ public class DigitalCardProfileListPageResponseTest : TestBase
                     BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     CardDescription = "Black Card",
                     ContactEmail = "user@example.com",
+                    ContactName = "National Phonograph Company",
                     ContactPhone = "+18882988865",
                     ContactWebsite = "https://example.com",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     Description = "Corporate logo Apple Pay Card",
                     IdempotencyKey = null,
-                    IssuerName = "National Phonograph Company",
                     Status = DigitalCardProfiles::DigitalCardProfileStatus.Active,
                     TextColor = new()
                     {

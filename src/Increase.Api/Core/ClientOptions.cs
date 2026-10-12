@@ -75,7 +75,6 @@ public record struct ClientOptions()
     /// <list type="bullet">
     ///   <item>Connection errors (for example, due to a network connectivity problem)</item>
     ///   <item>408 Request Timeout</item>
-    ///   <item>409 Conflict</item>
     ///   <item>429 Rate Limit</item>
     ///   <item>5xx Internal</item>
     /// </list>
