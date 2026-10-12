@@ -497,6 +497,19 @@ public sealed record class PhysicalCardShipmentAddress : JsonModel
     }
 
     /// <summary>
+    /// The phone number of the recipient.
+    /// </summary>
+    public required string? PhoneNumber
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("phone_number");
+        }
+        init { this._rawData.Set("phone_number", value); }
+    }
+
+    /// <summary>
     /// The postal code of the shipping address.
     /// </summary>
     public required string PostalCode
@@ -531,6 +544,7 @@ public sealed record class PhysicalCardShipmentAddress : JsonModel
         _ = this.Line2;
         _ = this.Line3;
         _ = this.Name;
+        _ = this.PhoneNumber;
         _ = this.PostalCode;
         _ = this.State;
     }

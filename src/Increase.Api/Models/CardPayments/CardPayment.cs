@@ -1521,7 +1521,8 @@ public enum VerificationMethod
     Email,
 
     /// <summary>
-    /// The one-time code was not successfully delivered.
+    /// The one-time code could not be delivered because the card has no phone number
+    /// or email on file.
     /// </summary>
     NoneAvailable,
 }
@@ -6057,6 +6058,12 @@ public enum FeeType
     /// on its network.
     /// </summary>
     PulseSwitchFee,
+
+    /// <summary>
+    /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
+    /// tokenized transactions on its network.
+    /// </summary>
+    PulseTokenizationFee,
 }
 
 sealed class FeeTypeConverter : JsonConverter<FeeType>
@@ -6109,6 +6116,7 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
             "visa_processing_guarantee_commercial_credit" =>
                 FeeType.VisaProcessingGuaranteeCommercialCredit,
             "pulse_switch_fee" => FeeType.PulseSwitchFee,
+            "pulse_tokenization_fee" => FeeType.PulseTokenizationFee,
             _ => (FeeType)(-1),
         };
     }
@@ -6160,6 +6168,7 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
                 FeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
                 FeeType.PulseSwitchFee => "pulse_switch_fee",
+                FeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -9913,6 +9922,12 @@ public enum CardBalanceInquirySchemeFeeFeeType
     /// on its network.
     /// </summary>
     PulseSwitchFee,
+
+    /// <summary>
+    /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
+    /// tokenized transactions on its network.
+    /// </summary>
+    PulseTokenizationFee,
 }
 
 sealed class CardBalanceInquirySchemeFeeFeeTypeConverter
@@ -9982,6 +9997,7 @@ sealed class CardBalanceInquirySchemeFeeFeeTypeConverter
             "visa_processing_guarantee_commercial_credit" =>
                 CardBalanceInquirySchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit,
             "pulse_switch_fee" => CardBalanceInquirySchemeFeeFeeType.PulseSwitchFee,
+            "pulse_tokenization_fee" => CardBalanceInquirySchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardBalanceInquirySchemeFeeFeeType)(-1),
         };
     }
@@ -10052,6 +10068,7 @@ sealed class CardBalanceInquirySchemeFeeFeeTypeConverter
                 CardBalanceInquirySchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
                 CardBalanceInquirySchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardBalanceInquirySchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -14154,6 +14171,12 @@ public enum CardDeclineSchemeFeeFeeType
     /// on its network.
     /// </summary>
     PulseSwitchFee,
+
+    /// <summary>
+    /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
+    /// tokenized transactions on its network.
+    /// </summary>
+    PulseTokenizationFee,
 }
 
 sealed class CardDeclineSchemeFeeFeeTypeConverter : JsonConverter<CardDeclineSchemeFeeFeeType>
@@ -14215,6 +14238,7 @@ sealed class CardDeclineSchemeFeeFeeTypeConverter : JsonConverter<CardDeclineSch
             "visa_processing_guarantee_commercial_credit" =>
                 CardDeclineSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit,
             "pulse_switch_fee" => CardDeclineSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_tokenization_fee" => CardDeclineSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardDeclineSchemeFeeFeeType)(-1),
         };
     }
@@ -14281,6 +14305,7 @@ sealed class CardDeclineSchemeFeeFeeTypeConverter : JsonConverter<CardDeclineSch
                 CardDeclineSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
                 CardDeclineSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardDeclineSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -18039,6 +18064,12 @@ public enum CardFinancialSchemeFeeFeeType
     /// on its network.
     /// </summary>
     PulseSwitchFee,
+
+    /// <summary>
+    /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
+    /// tokenized transactions on its network.
+    /// </summary>
+    PulseTokenizationFee,
 }
 
 sealed class CardFinancialSchemeFeeFeeTypeConverter : JsonConverter<CardFinancialSchemeFeeFeeType>
@@ -18102,6 +18133,7 @@ sealed class CardFinancialSchemeFeeFeeTypeConverter : JsonConverter<CardFinancia
             "visa_processing_guarantee_commercial_credit" =>
                 CardFinancialSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit,
             "pulse_switch_fee" => CardFinancialSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_tokenization_fee" => CardFinancialSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardFinancialSchemeFeeFeeType)(-1),
         };
     }
@@ -18171,6 +18203,7 @@ sealed class CardFinancialSchemeFeeFeeTypeConverter : JsonConverter<CardFinancia
                 CardFinancialSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
                 CardFinancialSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardFinancialSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -19583,6 +19616,12 @@ public enum CardFuelConfirmationSchemeFeeFeeType
     /// on its network.
     /// </summary>
     PulseSwitchFee,
+
+    /// <summary>
+    /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
+    /// tokenized transactions on its network.
+    /// </summary>
+    PulseTokenizationFee,
 }
 
 sealed class CardFuelConfirmationSchemeFeeFeeTypeConverter
@@ -19652,6 +19691,7 @@ sealed class CardFuelConfirmationSchemeFeeFeeTypeConverter
             "visa_processing_guarantee_commercial_credit" =>
                 CardFuelConfirmationSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit,
             "pulse_switch_fee" => CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_tokenization_fee" => CardFuelConfirmationSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardFuelConfirmationSchemeFeeFeeType)(-1),
         };
     }
@@ -19723,6 +19763,8 @@ sealed class CardFuelConfirmationSchemeFeeFeeTypeConverter
                 CardFuelConfirmationSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
                 CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardFuelConfirmationSchemeFeeFeeType.PulseTokenizationFee =>
+                    "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -21821,6 +21863,12 @@ public enum CardIncrementSchemeFeeFeeType
     /// on its network.
     /// </summary>
     PulseSwitchFee,
+
+    /// <summary>
+    /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
+    /// tokenized transactions on its network.
+    /// </summary>
+    PulseTokenizationFee,
 }
 
 sealed class CardIncrementSchemeFeeFeeTypeConverter : JsonConverter<CardIncrementSchemeFeeFeeType>
@@ -21884,6 +21932,7 @@ sealed class CardIncrementSchemeFeeFeeTypeConverter : JsonConverter<CardIncremen
             "visa_processing_guarantee_commercial_credit" =>
                 CardIncrementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit,
             "pulse_switch_fee" => CardIncrementSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_tokenization_fee" => CardIncrementSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardIncrementSchemeFeeFeeType)(-1),
         };
     }
@@ -21953,6 +22002,7 @@ sealed class CardIncrementSchemeFeeFeeTypeConverter : JsonConverter<CardIncremen
                 CardIncrementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
                 CardIncrementSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardIncrementSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -25207,6 +25257,11 @@ public enum PurchaseIdentifierFormat
     /// Invoice number
     /// </summary>
     InvoiceNumber,
+
+    /// <summary>
+    /// Visa Recurrent reference identifier
+    /// </summary>
+    VisaRecurrentReferenceIdentifier,
 }
 
 sealed class PurchaseIdentifierFormatConverter : JsonConverter<PurchaseIdentifierFormat>
@@ -25224,6 +25279,8 @@ sealed class PurchaseIdentifierFormatConverter : JsonConverter<PurchaseIdentifie
             "rental_agreement_number" => PurchaseIdentifierFormat.RentalAgreementNumber,
             "hotel_folio_number" => PurchaseIdentifierFormat.HotelFolioNumber,
             "invoice_number" => PurchaseIdentifierFormat.InvoiceNumber,
+            "visa_recurrent_reference_identifier" =>
+                PurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier,
             _ => (PurchaseIdentifierFormat)(-1),
         };
     }
@@ -25243,6 +25300,8 @@ sealed class PurchaseIdentifierFormatConverter : JsonConverter<PurchaseIdentifie
                 PurchaseIdentifierFormat.RentalAgreementNumber => "rental_agreement_number",
                 PurchaseIdentifierFormat.HotelFolioNumber => "hotel_folio_number",
                 PurchaseIdentifierFormat.InvoiceNumber => "invoice_number",
+                PurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier =>
+                    "visa_recurrent_reference_identifier",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -26725,6 +26784,12 @@ public enum CardRefundSchemeFeeFeeType
     /// on its network.
     /// </summary>
     PulseSwitchFee,
+
+    /// <summary>
+    /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
+    /// tokenized transactions on its network.
+    /// </summary>
+    PulseTokenizationFee,
 }
 
 sealed class CardRefundSchemeFeeFeeTypeConverter : JsonConverter<CardRefundSchemeFeeFeeType>
@@ -26786,6 +26851,7 @@ sealed class CardRefundSchemeFeeFeeTypeConverter : JsonConverter<CardRefundSchem
             "visa_processing_guarantee_commercial_credit" =>
                 CardRefundSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit,
             "pulse_switch_fee" => CardRefundSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_tokenization_fee" => CardRefundSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardRefundSchemeFeeFeeType)(-1),
         };
     }
@@ -26851,6 +26917,7 @@ sealed class CardRefundSchemeFeeFeeTypeConverter : JsonConverter<CardRefundSchem
                 CardRefundSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
                 CardRefundSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardRefundSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -27942,6 +28009,12 @@ public enum CardReversalSchemeFeeFeeType
     /// on its network.
     /// </summary>
     PulseSwitchFee,
+
+    /// <summary>
+    /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
+    /// tokenized transactions on its network.
+    /// </summary>
+    PulseTokenizationFee,
 }
 
 sealed class CardReversalSchemeFeeFeeTypeConverter : JsonConverter<CardReversalSchemeFeeFeeType>
@@ -28003,6 +28076,7 @@ sealed class CardReversalSchemeFeeFeeTypeConverter : JsonConverter<CardReversalS
             "visa_processing_guarantee_commercial_credit" =>
                 CardReversalSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit,
             "pulse_switch_fee" => CardReversalSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_tokenization_fee" => CardReversalSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardReversalSchemeFeeFeeType)(-1),
         };
     }
@@ -28070,6 +28144,7 @@ sealed class CardReversalSchemeFeeFeeTypeConverter : JsonConverter<CardReversalS
                 CardReversalSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
                 CardReversalSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardReversalSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -31590,6 +31665,11 @@ public enum CardSettlementPurchaseDetailsPurchaseIdentifierFormat
     /// Invoice number
     /// </summary>
     InvoiceNumber,
+
+    /// <summary>
+    /// Visa Recurrent reference identifier
+    /// </summary>
+    VisaRecurrentReferenceIdentifier,
 }
 
 sealed class CardSettlementPurchaseDetailsPurchaseIdentifierFormatConverter
@@ -31610,6 +31690,8 @@ sealed class CardSettlementPurchaseDetailsPurchaseIdentifierFormatConverter
             "hotel_folio_number" =>
                 CardSettlementPurchaseDetailsPurchaseIdentifierFormat.HotelFolioNumber,
             "invoice_number" => CardSettlementPurchaseDetailsPurchaseIdentifierFormat.InvoiceNumber,
+            "visa_recurrent_reference_identifier" =>
+                CardSettlementPurchaseDetailsPurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier,
             _ => (CardSettlementPurchaseDetailsPurchaseIdentifierFormat)(-1),
         };
     }
@@ -31632,6 +31714,8 @@ sealed class CardSettlementPurchaseDetailsPurchaseIdentifierFormatConverter
                     "hotel_folio_number",
                 CardSettlementPurchaseDetailsPurchaseIdentifierFormat.InvoiceNumber =>
                     "invoice_number",
+                CardSettlementPurchaseDetailsPurchaseIdentifierFormat.VisaRecurrentReferenceIdentifier =>
+                    "visa_recurrent_reference_identifier",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -33233,6 +33317,12 @@ public enum CardSettlementSchemeFeeFeeType
     /// on its network.
     /// </summary>
     PulseSwitchFee,
+
+    /// <summary>
+    /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
+    /// tokenized transactions on its network.
+    /// </summary>
+    PulseTokenizationFee,
 }
 
 sealed class CardSettlementSchemeFeeFeeTypeConverter : JsonConverter<CardSettlementSchemeFeeFeeType>
@@ -33296,6 +33386,7 @@ sealed class CardSettlementSchemeFeeFeeTypeConverter : JsonConverter<CardSettlem
             "visa_processing_guarantee_commercial_credit" =>
                 CardSettlementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit,
             "pulse_switch_fee" => CardSettlementSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_tokenization_fee" => CardSettlementSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardSettlementSchemeFeeFeeType)(-1),
         };
     }
@@ -33366,6 +33457,7 @@ sealed class CardSettlementSchemeFeeFeeTypeConverter : JsonConverter<CardSettlem
                 CardSettlementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
                 CardSettlementSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardSettlementSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -36416,6 +36508,12 @@ public enum CardValidationSchemeFeeFeeType
     /// on its network.
     /// </summary>
     PulseSwitchFee,
+
+    /// <summary>
+    /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
+    /// tokenized transactions on its network.
+    /// </summary>
+    PulseTokenizationFee,
 }
 
 sealed class CardValidationSchemeFeeFeeTypeConverter : JsonConverter<CardValidationSchemeFeeFeeType>
@@ -36479,6 +36577,7 @@ sealed class CardValidationSchemeFeeFeeTypeConverter : JsonConverter<CardValidat
             "visa_processing_guarantee_commercial_credit" =>
                 CardValidationSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit,
             "pulse_switch_fee" => CardValidationSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_tokenization_fee" => CardValidationSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardValidationSchemeFeeFeeType)(-1),
         };
     }
@@ -36549,6 +36648,7 @@ sealed class CardValidationSchemeFeeFeeTypeConverter : JsonConverter<CardValidat
                 CardValidationSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
                 CardValidationSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardValidationSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

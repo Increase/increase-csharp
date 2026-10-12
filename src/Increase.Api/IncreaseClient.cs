@@ -1149,9 +1149,6 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
             // Retry on request timeouts
             408
             or
-            // Retry on lock timeouts
-            409
-            or
             // Retry on rate limits
             429
             or

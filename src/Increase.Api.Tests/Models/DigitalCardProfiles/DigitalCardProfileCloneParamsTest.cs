@@ -17,10 +17,10 @@ public class DigitalCardProfileCloneParamsTest : TestBase
             BackgroundImageFileID = "file_1ai913suu1zfn1pdetru",
             CardDescription = "x",
             ContactEmail = "dev@stainless.com",
+            ContactName = "x",
             ContactPhone = "x",
             ContactWebsite = "contact_website",
             Description = "x",
-            IssuerName = "x",
             TextColor = new()
             {
                 Blue = 0,
@@ -34,10 +34,10 @@ public class DigitalCardProfileCloneParamsTest : TestBase
         string expectedBackgroundImageFileID = "file_1ai913suu1zfn1pdetru";
         string expectedCardDescription = "x";
         string expectedContactEmail = "dev@stainless.com";
+        string expectedContactName = "x";
         string expectedContactPhone = "x";
         string expectedContactWebsite = "contact_website";
         string expectedDescription = "x";
-        string expectedIssuerName = "x";
         DigitalCardProfileCloneParamsTextColor expectedTextColor = new()
         {
             Blue = 0,
@@ -50,10 +50,10 @@ public class DigitalCardProfileCloneParamsTest : TestBase
         Assert.Equal(expectedBackgroundImageFileID, parameters.BackgroundImageFileID);
         Assert.Equal(expectedCardDescription, parameters.CardDescription);
         Assert.Equal(expectedContactEmail, parameters.ContactEmail);
+        Assert.Equal(expectedContactName, parameters.ContactName);
         Assert.Equal(expectedContactPhone, parameters.ContactPhone);
         Assert.Equal(expectedContactWebsite, parameters.ContactWebsite);
         Assert.Equal(expectedDescription, parameters.Description);
-        Assert.Equal(expectedIssuerName, parameters.IssuerName);
         Assert.Equal(expectedTextColor, parameters.TextColor);
     }
 
@@ -73,14 +73,14 @@ public class DigitalCardProfileCloneParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("card_description"));
         Assert.Null(parameters.ContactEmail);
         Assert.False(parameters.RawBodyData.ContainsKey("contact_email"));
+        Assert.Null(parameters.ContactName);
+        Assert.False(parameters.RawBodyData.ContainsKey("contact_name"));
         Assert.Null(parameters.ContactPhone);
         Assert.False(parameters.RawBodyData.ContainsKey("contact_phone"));
         Assert.Null(parameters.ContactWebsite);
         Assert.False(parameters.RawBodyData.ContainsKey("contact_website"));
         Assert.Null(parameters.Description);
         Assert.False(parameters.RawBodyData.ContainsKey("description"));
-        Assert.Null(parameters.IssuerName);
-        Assert.False(parameters.RawBodyData.ContainsKey("issuer_name"));
         Assert.Null(parameters.TextColor);
         Assert.False(parameters.RawBodyData.ContainsKey("text_color"));
     }
@@ -97,10 +97,10 @@ public class DigitalCardProfileCloneParamsTest : TestBase
             BackgroundImageFileID = null,
             CardDescription = null,
             ContactEmail = null,
+            ContactName = null,
             ContactPhone = null,
             ContactWebsite = null,
             Description = null,
-            IssuerName = null,
             TextColor = null,
         };
 
@@ -112,14 +112,14 @@ public class DigitalCardProfileCloneParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("card_description"));
         Assert.Null(parameters.ContactEmail);
         Assert.False(parameters.RawBodyData.ContainsKey("contact_email"));
+        Assert.Null(parameters.ContactName);
+        Assert.False(parameters.RawBodyData.ContainsKey("contact_name"));
         Assert.Null(parameters.ContactPhone);
         Assert.False(parameters.RawBodyData.ContainsKey("contact_phone"));
         Assert.Null(parameters.ContactWebsite);
         Assert.False(parameters.RawBodyData.ContainsKey("contact_website"));
         Assert.Null(parameters.Description);
         Assert.False(parameters.RawBodyData.ContainsKey("description"));
-        Assert.Null(parameters.IssuerName);
-        Assert.False(parameters.RawBodyData.ContainsKey("issuer_name"));
         Assert.Null(parameters.TextColor);
         Assert.False(parameters.RawBodyData.ContainsKey("text_color"));
     }
@@ -154,10 +154,10 @@ public class DigitalCardProfileCloneParamsTest : TestBase
             BackgroundImageFileID = "file_1ai913suu1zfn1pdetru",
             CardDescription = "x",
             ContactEmail = "dev@stainless.com",
+            ContactName = "x",
             ContactPhone = "x",
             ContactWebsite = "contact_website",
             Description = "x",
-            IssuerName = "x",
             TextColor = new()
             {
                 Blue = 0,
