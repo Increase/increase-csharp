@@ -30,6 +30,7 @@ public class InboundFednowTransferTest : TestBase
                 TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
             },
             EndToEndIdentification = "Invoice 29582",
+            MessageIdentification = "20250308MMQFMI01000000000000000001",
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             TransactionIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
@@ -58,6 +59,7 @@ public class InboundFednowTransferTest : TestBase
             TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
         };
         string expectedEndToEndIdentification = "Invoice 29582";
+        string expectedMessageIdentification = "20250308MMQFMI01000000000000000001";
         ApiEnum<string, InboundFednowTransfers::Status> expectedStatus =
             InboundFednowTransfers::Status.Confirmed;
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
@@ -80,6 +82,7 @@ public class InboundFednowTransferTest : TestBase
         Assert.Equal(expectedDebtorRoutingNumber, model.DebtorRoutingNumber);
         Assert.Equal(expectedDecline, model.Decline);
         Assert.Equal(expectedEndToEndIdentification, model.EndToEndIdentification);
+        Assert.Equal(expectedMessageIdentification, model.MessageIdentification);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedTransactionID, model.TransactionID);
         Assert.Equal(expectedTransactionIdentification, model.TransactionIdentification);
@@ -116,6 +119,7 @@ public class InboundFednowTransferTest : TestBase
                 TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
             },
             EndToEndIdentification = "Invoice 29582",
+            MessageIdentification = "20250308MMQFMI01000000000000000001",
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             TransactionIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
@@ -156,6 +160,7 @@ public class InboundFednowTransferTest : TestBase
                 TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
             },
             EndToEndIdentification = "Invoice 29582",
+            MessageIdentification = "20250308MMQFMI01000000000000000001",
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             TransactionIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
@@ -192,6 +197,7 @@ public class InboundFednowTransferTest : TestBase
             TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
         };
         string expectedEndToEndIdentification = "Invoice 29582";
+        string expectedMessageIdentification = "20250308MMQFMI01000000000000000001";
         ApiEnum<string, InboundFednowTransfers::Status> expectedStatus =
             InboundFednowTransfers::Status.Confirmed;
         string expectedTransactionID = "transaction_uyrp7fld2ium70oa7oi";
@@ -214,6 +220,7 @@ public class InboundFednowTransferTest : TestBase
         Assert.Equal(expectedDebtorRoutingNumber, deserialized.DebtorRoutingNumber);
         Assert.Equal(expectedDecline, deserialized.Decline);
         Assert.Equal(expectedEndToEndIdentification, deserialized.EndToEndIdentification);
+        Assert.Equal(expectedMessageIdentification, deserialized.MessageIdentification);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedTransactionID, deserialized.TransactionID);
         Assert.Equal(expectedTransactionIdentification, deserialized.TransactionIdentification);
@@ -250,6 +257,7 @@ public class InboundFednowTransferTest : TestBase
                 TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
             },
             EndToEndIdentification = "Invoice 29582",
+            MessageIdentification = "20250308MMQFMI01000000000000000001",
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             TransactionIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
@@ -283,6 +291,7 @@ public class InboundFednowTransferTest : TestBase
                 TransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
             },
             EndToEndIdentification = "Invoice 29582",
+            MessageIdentification = "20250308MMQFMI01000000000000000001",
             Status = InboundFednowTransfers::Status.Confirmed,
             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
             TransactionIdentification = "20250308723260130GT4LAKENDXBHQCZDWS",
