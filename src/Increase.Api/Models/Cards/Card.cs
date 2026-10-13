@@ -209,6 +209,26 @@ public sealed record class Card : JsonModel
     }
 
     /// <summary>
+    /// Completed renewals of this Card, sorted by `renewed_at` in ascending order.
+    /// Each renewal records the expiration date the Card had before it was renewed.
+    /// </summary>
+    public required IReadOnlyList<Renewal> Renewals
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<Renewal>>("renewals");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<Renewal>>(
+                "renewals",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// This indicates if payments can be made with the card.
     /// </summary>
     public required ApiEnum<string, CardStatus> Status
@@ -254,6 +274,10 @@ public sealed record class Card : JsonModel
         _ = this.ExpirationYear;
         _ = this.IdempotencyKey;
         _ = this.Last4;
+        foreach (var item in this.Renewals)
+        {
+            item.Validate();
+        }
         this.Status.Validate();
         this.Type.Validate();
     }
@@ -2275,6 +2299,93 @@ class CardDigitalWalletFromRaw : IFromRawJson<CardDigitalWallet>
     /// <inheritdoc/>
     public CardDigitalWallet FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         CardDigitalWallet.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(typeof(JsonModelConverter<Renewal, RenewalFromRaw>))]
+public sealed record class Renewal : JsonModel
+{
+    /// <summary>
+    /// The month the Card expired in before this renewal, in M format (e.g., August
+    /// is 8).
+    /// </summary>
+    public required long ExpirationMonth
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("expiration_month");
+        }
+        init { this._rawData.Set("expiration_month", value); }
+    }
+
+    /// <summary>
+    /// The year the Card expired in before this renewal, in YYYY format (e.g., 2025).
+    /// </summary>
+    public required long ExpirationYear
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("expiration_year");
+        }
+        init { this._rawData.Set("expiration_year", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the Card was renewed.
+    /// </summary>
+    public required System::DateTimeOffset RenewedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("renewed_at");
+        }
+        init { this._rawData.Set("renewed_at", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.ExpirationMonth;
+        _ = this.ExpirationYear;
+        _ = this.RenewedAt;
+    }
+
+    public Renewal() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Renewal(Renewal renewal)
+        : base(renewal) { }
+#pragma warning restore CS8618
+
+    public Renewal(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Renewal(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="RenewalFromRaw.FromRawUnchecked"/>
+    public static Renewal FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class RenewalFromRaw : IFromRawJson<Renewal>
+{
+    /// <inheritdoc/>
+    public Renewal FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Renewal.FromRawUnchecked(rawData);
 }
 
 /// <summary>
