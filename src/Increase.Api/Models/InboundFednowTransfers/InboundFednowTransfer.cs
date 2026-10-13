@@ -188,6 +188,19 @@ public sealed record class InboundFednowTransfer : JsonModel
     }
 
     /// <summary>
+    /// The FedNow network identification of the transfer.
+    /// </summary>
+    public required string MessageIdentification
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("message_identification");
+        }
+        init { this._rawData.Set("message_identification", value); }
+    }
+
+    /// <summary>
     /// The lifecycle status of the transfer.
     /// </summary>
     public required ApiEnum<string, Status> Status
@@ -214,7 +227,7 @@ public sealed record class InboundFednowTransfer : JsonModel
     }
 
     /// <summary>
-    /// The FedNow network identification of the transfer.
+    /// An optional identifier for the transfer set by the sending bank.
     /// </summary>
     public required string? TransactionIdentification
     {
@@ -287,6 +300,7 @@ public sealed record class InboundFednowTransfer : JsonModel
         _ = this.DebtorRoutingNumber;
         this.Decline?.Validate();
         _ = this.EndToEndIdentification;
+        _ = this.MessageIdentification;
         this.Status.Validate();
         _ = this.TransactionID;
         _ = this.TransactionIdentification;
