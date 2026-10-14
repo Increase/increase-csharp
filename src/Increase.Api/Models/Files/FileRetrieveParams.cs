@@ -9,7 +9,8 @@ using Increase.Api.Core;
 namespace Increase.Api.Models.Files;
 
 /// <summary>
-/// Retrieve a File
+/// Fetch metadata about a File, like its `purpose` and MIME type. To access the
+/// content, use the [Get File contents](/documentation/api/files#get-file-contents) API.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that

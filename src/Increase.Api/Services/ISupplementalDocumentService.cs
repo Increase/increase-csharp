@@ -27,7 +27,7 @@ public interface ISupplementalDocumentService
     ISupplementalDocumentService WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Create a supplemental document for an Entity
+    /// Create a Supplemental Document
     /// </summary>
     Task<EntitySupplementalDocument> Create(
         SupplementalDocumentCreateParams parameters,
@@ -35,7 +35,7 @@ public interface ISupplementalDocumentService
     );
 
     /// <summary>
-    /// List Entity Supplemental Document Submissions
+    /// List Supplemental Documents
     /// </summary>
     Task<SupplementalDocumentListPage> List(
         SupplementalDocumentListParams parameters,

@@ -10,7 +10,7 @@ using Increase.Api.Core;
 namespace Increase.Api.Models.SupplementalDocuments;
 
 /// <summary>
-/// Create a supplemental document for an Entity
+/// Create a Supplemental Document
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that
