@@ -66,6 +66,7 @@ public class CardCreateParamsTest : TestBase
                 Phone = "x",
             },
             EntityID = "entity_id",
+            ReplacementFor = new() { CardID = "card_id", Reason = Cards::Reason.Expiring },
         };
 
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
@@ -120,6 +121,11 @@ public class CardCreateParamsTest : TestBase
             Phone = "x",
         };
         string expectedEntityID = "entity_id";
+        Cards::ReplacementFor expectedReplacementFor = new()
+        {
+            CardID = "card_id",
+            Reason = Cards::Reason.Expiring,
+        };
 
         Assert.Equal(expectedAccountID, parameters.AccountID);
         Assert.Equal(expectedAuthorizationControls, parameters.AuthorizationControls);
@@ -128,6 +134,7 @@ public class CardCreateParamsTest : TestBase
         Assert.Equal(expectedDescription, parameters.Description);
         Assert.Equal(expectedDigitalWallet, parameters.DigitalWallet);
         Assert.Equal(expectedEntityID, parameters.EntityID);
+        Assert.Equal(expectedReplacementFor, parameters.ReplacementFor);
     }
 
     [Fact]
@@ -147,6 +154,8 @@ public class CardCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("digital_wallet"));
         Assert.Null(parameters.EntityID);
         Assert.False(parameters.RawBodyData.ContainsKey("entity_id"));
+        Assert.Null(parameters.ReplacementFor);
+        Assert.False(parameters.RawBodyData.ContainsKey("replacement_for"));
     }
 
     [Fact]
@@ -163,6 +172,7 @@ public class CardCreateParamsTest : TestBase
             Description = null,
             DigitalWallet = null,
             EntityID = null,
+            ReplacementFor = null,
         };
 
         Assert.Null(parameters.AuthorizationControls);
@@ -177,6 +187,8 @@ public class CardCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("digital_wallet"));
         Assert.Null(parameters.EntityID);
         Assert.False(parameters.RawBodyData.ContainsKey("entity_id"));
+        Assert.Null(parameters.ReplacementFor);
+        Assert.False(parameters.RawBodyData.ContainsKey("replacement_for"));
     }
 
     [Fact]
@@ -246,6 +258,7 @@ public class CardCreateParamsTest : TestBase
                 Phone = "x",
             },
             EntityID = "entity_id",
+            ReplacementFor = new() { CardID = "card_id", Reason = Cards::Reason.Expiring },
         };
 
         Cards::CardCreateParams copied = new(parameters);
@@ -2865,5 +2878,153 @@ public class DigitalWalletTest : TestBase
         Cards::DigitalWallet copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class ReplacementForTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::ReplacementFor
+        {
+            CardID = "card_id",
+            Reason = Cards::Reason.Expiring,
+        };
+
+        string expectedCardID = "card_id";
+        ApiEnum<string, Cards::Reason> expectedReason = Cards::Reason.Expiring;
+
+        Assert.Equal(expectedCardID, model.CardID);
+        Assert.Equal(expectedReason, model.Reason);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::ReplacementFor
+        {
+            CardID = "card_id",
+            Reason = Cards::Reason.Expiring,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::ReplacementFor>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::ReplacementFor
+        {
+            CardID = "card_id",
+            Reason = Cards::Reason.Expiring,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::ReplacementFor>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCardID = "card_id";
+        ApiEnum<string, Cards::Reason> expectedReason = Cards::Reason.Expiring;
+
+        Assert.Equal(expectedCardID, deserialized.CardID);
+        Assert.Equal(expectedReason, deserialized.Reason);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::ReplacementFor
+        {
+            CardID = "card_id",
+            Reason = Cards::Reason.Expiring,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::ReplacementFor
+        {
+            CardID = "card_id",
+            Reason = Cards::Reason.Expiring,
+        };
+
+        Cards::ReplacementFor copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class ReasonTest : TestBase
+{
+    [Theory]
+    [InlineData(Cards::Reason.Expiring)]
+    [InlineData(Cards::Reason.Lost)]
+    [InlineData(Cards::Reason.Stolen)]
+    [InlineData(Cards::Reason.Fraud)]
+    public void Validation_Works(Cards::Reason rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Cards::Reason> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Cards::Reason>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Cards::Reason.Expiring)]
+    [InlineData(Cards::Reason.Lost)]
+    [InlineData(Cards::Reason.Stolen)]
+    [InlineData(Cards::Reason.Fraud)]
+    public void SerializationRoundtrip_Works(Cards::Reason rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Cards::Reason> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Cards::Reason>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Cards::Reason>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Cards::Reason>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }

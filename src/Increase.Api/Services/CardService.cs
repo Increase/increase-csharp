@@ -179,6 +179,30 @@ public sealed class CardService : ICardService
     }
 
     /// <inheritdoc/>
+    public async Task<Card> Renew(
+        CardRenewParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        using var response = await this
+            .WithRawResponse.Renew(parameters, cancellationToken)
+            .ConfigureAwait(false);
+        return await response.Deserialize(cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <inheritdoc/>
+    public Task<Card> Renew(
+        string cardID,
+        CardRenewParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.Renew(parameters with { CardID = cardID }, cancellationToken);
+    }
+
+    /// <inheritdoc/>
     public async Task<CardDetails> UpdatePin(
         CardUpdatePinParams parameters,
         CancellationToken cancellationToken = default
@@ -492,6 +516,49 @@ public sealed class CardServiceWithRawResponse : ICardServiceWithRawResponse
         parameters ??= new();
 
         return this.Details(parameters with { CardID = cardID }, cancellationToken);
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponse<Card>> Renew(
+        CardRenewParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        if (parameters.CardID == null)
+        {
+            throw new IncreaseInvalidDataException("'parameters.CardID' cannot be null");
+        }
+
+        HttpRequest<CardRenewParams> request = new()
+        {
+            Method = HttpMethod.Post,
+            Params = parameters,
+        };
+        var response = await this._client.Execute(request, cancellationToken).ConfigureAwait(false);
+        return new(
+            response,
+            async (token) =>
+            {
+                var card = await response.Deserialize<Card>(token).ConfigureAwait(false);
+                if (this._client.ResponseValidation)
+                {
+                    card.Validate();
+                }
+                return card;
+            }
+        );
+    }
+
+    /// <inheritdoc/>
+    public Task<HttpResponse<Card>> Renew(
+        string cardID,
+        CardRenewParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.Renew(parameters with { CardID = cardID }, cancellationToken);
     }
 
     /// <inheritdoc/>

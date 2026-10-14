@@ -442,7 +442,8 @@ public sealed record class EntityUpdateParamsCorporation : JsonModel
     /// <summary>
     /// The North American Industry Classification System (NAICS) code for the corporation's
     /// primary line of business. This is a number, like `5132` for `Software Publishers`.
-    /// A full list of classification codes is available [here](https://increase.com/documentation/data-dictionary#north-american-industry-classification-system-codes).
+    /// Increase uses the 2022 version of NAICS. A full list of classification codes
+    /// is available [here](https://increase.com/documentation/data-dictionary#north-american-industry-classification-system-codes).
     /// </summary>
     public string? IndustryCode
     {
@@ -2317,7 +2318,8 @@ public sealed record class EntityUpdateParamsSoleProprietorship : JsonModel
     /// <summary>
     /// The North American Industry Classification System (NAICS) code for the sole
     /// proprietorship's primary line of business. This is a number, like `5132`
-    /// for `Software Publishers`. A full list of classification codes is available [here](https://increase.com/documentation/data-dictionary#north-american-industry-classification-system-codes).
+    /// for `Software Publishers`. Increase uses the 2022 version of NAICS. A full
+    /// list of classification codes is available [here](https://increase.com/documentation/data-dictionary#north-american-industry-classification-system-codes).
     /// </summary>
     public string? IndustryCode
     {

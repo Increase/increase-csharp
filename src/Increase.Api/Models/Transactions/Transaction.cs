@@ -3207,6 +3207,12 @@ public enum EventType
     ChargebackSubmitted,
 
     /// <summary>
+    /// The merchant's pre-arbitration submission was accepted by the user or not
+    /// responded to in time.
+    /// </summary>
+    MerchantPrearbitrationAccepted,
+
+    /// <summary>
     /// The user declined the merchant's pre-arbitration submission.
     /// </summary>
     MerchantPrearbitrationDeclineSubmitted,
@@ -3220,6 +3226,12 @@ public enum EventType
     /// The transaction was re-presented by the merchant.
     /// </summary>
     Represented,
+
+    /// <summary>
+    /// The user's pre-arbitration was accepted by the merchant or not responded to
+    /// in time.
+    /// </summary>
+    UserPrearbitrationAccepted,
 
     /// <summary>
     /// The user's pre-arbitration was declined by the merchant.
@@ -3248,10 +3260,12 @@ sealed class EventTypeConverter : JsonConverter<EventType>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "chargeback_submitted" => EventType.ChargebackSubmitted,
+            "merchant_prearbitration_accepted" => EventType.MerchantPrearbitrationAccepted,
             "merchant_prearbitration_decline_submitted" =>
                 EventType.MerchantPrearbitrationDeclineSubmitted,
             "merchant_prearbitration_received" => EventType.MerchantPrearbitrationReceived,
             "represented" => EventType.Represented,
+            "user_prearbitration_accepted" => EventType.UserPrearbitrationAccepted,
             "user_prearbitration_decline_received" => EventType.UserPrearbitrationDeclineReceived,
             "user_prearbitration_submitted" => EventType.UserPrearbitrationSubmitted,
             "user_withdrawal_submitted" => EventType.UserWithdrawalSubmitted,
@@ -3270,10 +3284,12 @@ sealed class EventTypeConverter : JsonConverter<EventType>
             value switch
             {
                 EventType.ChargebackSubmitted => "chargeback_submitted",
+                EventType.MerchantPrearbitrationAccepted => "merchant_prearbitration_accepted",
                 EventType.MerchantPrearbitrationDeclineSubmitted =>
                     "merchant_prearbitration_decline_submitted",
                 EventType.MerchantPrearbitrationReceived => "merchant_prearbitration_received",
                 EventType.Represented => "represented",
+                EventType.UserPrearbitrationAccepted => "user_prearbitration_accepted",
                 EventType.UserPrearbitrationDeclineReceived =>
                     "user_prearbitration_decline_received",
                 EventType.UserPrearbitrationSubmitted => "user_prearbitration_submitted",

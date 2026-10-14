@@ -77,6 +77,17 @@ public class CardServiceTest : TestBase
     }
 
     [Fact]
+    public async Task Renew_Works()
+    {
+        var card = await this.client.Cards.Renew(
+            "card_oubs0hwk5rn6knuecxg2",
+            new(),
+            TestContext.Current.CancellationToken
+        );
+        card.Validate();
+    }
+
+    [Fact]
     public async Task UpdatePin_Works()
     {
         var cardDetails = await this.client.Cards.UpdatePin(

@@ -118,6 +118,22 @@ public interface ICardService
     );
 
     /// <summary>
+    /// Renew a Card in place. The Card keeps its identifier, card number, PIN, and
+    /// Physical Cards, and receives a new expiration date in the current month four
+    /// years from now along with a new verification code, which the Card's details will
+    /// return afterwards. Physical Cards that have already shipped keep working until
+    /// they are canceled.
+    /// </summary>
+    Task<Card> Renew(CardRenewParams parameters, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc cref="Renew(CardRenewParams, CancellationToken)"/>
+    Task<Card> Renew(
+        string cardID,
+        CardRenewParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
     /// Update a Card's PIN
     /// </summary>
     Task<CardDetails> UpdatePin(
@@ -241,6 +257,22 @@ public interface ICardServiceWithRawResponse
     Task<HttpResponse<CardDetails>> Details(
         string cardID,
         CardDetailsParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>post /cards/{card_id}/renew</c>, but is otherwise the
+    /// same as <see cref="ICardService.Renew(CardRenewParams, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<Card>> Renew(
+        CardRenewParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="Renew(CardRenewParams, CancellationToken)"/>
+    Task<HttpResponse<Card>> Renew(
+        string cardID,
+        CardRenewParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 

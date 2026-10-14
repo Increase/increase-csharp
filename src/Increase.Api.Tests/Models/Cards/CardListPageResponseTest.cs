@@ -88,6 +88,20 @@ public class CardListPageResponseTest : TestBase
                     ExpirationYear = 2028,
                     IdempotencyKey = null,
                     Last4 = "4242",
+                    Renewals =
+                    [
+                        new()
+                        {
+                            PreviousExpirationMonth = 11,
+                            PreviousExpirationYear = 2024,
+                            RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        },
+                    ],
+                    ReplacementFor = new()
+                    {
+                        CardID = "card_id",
+                        Reason = Cards::CardReplacementForReason.Expiring,
+                    },
                     Status = Cards::CardStatus.Active,
                     Type = Cards::Type.Card,
                 },
@@ -170,6 +184,20 @@ public class CardListPageResponseTest : TestBase
                 ExpirationYear = 2028,
                 IdempotencyKey = null,
                 Last4 = "4242",
+                Renewals =
+                [
+                    new()
+                    {
+                        PreviousExpirationMonth = 11,
+                        PreviousExpirationYear = 2024,
+                        RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
+                ],
+                ReplacementFor = new()
+                {
+                    CardID = "card_id",
+                    Reason = Cards::CardReplacementForReason.Expiring,
+                },
                 Status = Cards::CardStatus.Active,
                 Type = Cards::Type.Card,
             },
@@ -264,6 +292,20 @@ public class CardListPageResponseTest : TestBase
                     ExpirationYear = 2028,
                     IdempotencyKey = null,
                     Last4 = "4242",
+                    Renewals =
+                    [
+                        new()
+                        {
+                            PreviousExpirationMonth = 11,
+                            PreviousExpirationYear = 2024,
+                            RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        },
+                    ],
+                    ReplacementFor = new()
+                    {
+                        CardID = "card_id",
+                        Reason = Cards::CardReplacementForReason.Expiring,
+                    },
                     Status = Cards::CardStatus.Active,
                     Type = Cards::Type.Card,
                 },
@@ -360,6 +402,20 @@ public class CardListPageResponseTest : TestBase
                     ExpirationYear = 2028,
                     IdempotencyKey = null,
                     Last4 = "4242",
+                    Renewals =
+                    [
+                        new()
+                        {
+                            PreviousExpirationMonth = 11,
+                            PreviousExpirationYear = 2024,
+                            RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        },
+                    ],
+                    ReplacementFor = new()
+                    {
+                        CardID = "card_id",
+                        Reason = Cards::CardReplacementForReason.Expiring,
+                    },
                     Status = Cards::CardStatus.Active,
                     Type = Cards::Type.Card,
                 },
@@ -449,6 +505,20 @@ public class CardListPageResponseTest : TestBase
                 ExpirationYear = 2028,
                 IdempotencyKey = null,
                 Last4 = "4242",
+                Renewals =
+                [
+                    new()
+                    {
+                        PreviousExpirationMonth = 11,
+                        PreviousExpirationYear = 2024,
+                        RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
+                ],
+                ReplacementFor = new()
+                {
+                    CardID = "card_id",
+                    Reason = Cards::CardReplacementForReason.Expiring,
+                },
                 Status = Cards::CardStatus.Active,
                 Type = Cards::Type.Card,
             },
@@ -543,6 +613,20 @@ public class CardListPageResponseTest : TestBase
                     ExpirationYear = 2028,
                     IdempotencyKey = null,
                     Last4 = "4242",
+                    Renewals =
+                    [
+                        new()
+                        {
+                            PreviousExpirationMonth = 11,
+                            PreviousExpirationYear = 2024,
+                            RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        },
+                    ],
+                    ReplacementFor = new()
+                    {
+                        CardID = "card_id",
+                        Reason = Cards::CardReplacementForReason.Expiring,
+                    },
                     Status = Cards::CardStatus.Active,
                     Type = Cards::Type.Card,
                 },
@@ -633,6 +717,20 @@ public class CardListPageResponseTest : TestBase
                     ExpirationYear = 2028,
                     IdempotencyKey = null,
                     Last4 = "4242",
+                    Renewals =
+                    [
+                        new()
+                        {
+                            PreviousExpirationMonth = 11,
+                            PreviousExpirationYear = 2024,
+                            RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        },
+                    ],
+                    ReplacementFor = new()
+                    {
+                        CardID = "card_id",
+                        Reason = Cards::CardReplacementForReason.Expiring,
+                    },
                     Status = Cards::CardStatus.Active,
                     Type = Cards::Type.Card,
                 },

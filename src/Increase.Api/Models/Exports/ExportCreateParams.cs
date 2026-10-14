@@ -542,10 +542,9 @@ public sealed record class AccountStatementBai2 : JsonModel
     }
 
     /// <summary>
-    /// The date to create a BAI2 report for. If not provided, the current date will
-    /// be used. The timezone is UTC. If the current date is used, the report will
-    /// include intraday balances, otherwise it will include end-of-day balances for
-    /// the provided date.
+    /// The UTC date to create a BAI2 report for. If not provided, the current date
+    /// will be used. If the current date is used, the report will include intraday
+    /// balances, otherwise it will include end-of-day balances for the provided date.
     /// </summary>
     public string? EffectiveDate
     {
@@ -836,7 +835,7 @@ public sealed record class AccountVerificationLetter : JsonModel
     }
 
     /// <summary>
-    /// The date of the balance to include in the letter. Defaults to the current date.
+    /// The UTC date of the balance to include in the letter. Defaults to the current date.
     /// </summary>
     public string? BalanceDate
     {
@@ -938,7 +937,7 @@ public sealed record class BookkeepingAccountBalanceCsv : JsonModel
     }
 
     /// <summary>
-    /// Filter exported Balances to those on or after this date.
+    /// Filter exported Balances to those on or after this UTC date.
     /// </summary>
     public string? OnOrAfterDate
     {
@@ -959,7 +958,7 @@ public sealed record class BookkeepingAccountBalanceCsv : JsonModel
     }
 
     /// <summary>
-    /// Filter exported Balances to those on or before this date.
+    /// Filter exported Balances to those on or before this UTC date.
     /// </summary>
     public string? OnOrBeforeDate
     {
@@ -1053,7 +1052,7 @@ public sealed record class DailyAccountBalanceCsv : JsonModel
     }
 
     /// <summary>
-    /// Filter exported Balances to those on or after this date.
+    /// Filter exported Balances to those on or after this UTC date.
     /// </summary>
     public string? OnOrAfterDate
     {
@@ -1074,7 +1073,7 @@ public sealed record class DailyAccountBalanceCsv : JsonModel
     }
 
     /// <summary>
-    /// Filter exported Balances to those on or before this date.
+    /// Filter exported Balances to those on or before this UTC date.
     /// </summary>
     public string? OnOrBeforeDate
     {
