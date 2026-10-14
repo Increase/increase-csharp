@@ -3207,6 +3207,12 @@ public enum EventType
     ChargebackSubmitted,
 
     /// <summary>
+    /// The merchant's pre-arbitration submission was accepted by the user or not
+    /// responded to in time.
+    /// </summary>
+    MerchantPrearbitrationAccepted,
+
+    /// <summary>
     /// The user declined the merchant's pre-arbitration submission.
     /// </summary>
     MerchantPrearbitrationDeclineSubmitted,
@@ -3248,6 +3254,7 @@ sealed class EventTypeConverter : JsonConverter<EventType>
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "chargeback_submitted" => EventType.ChargebackSubmitted,
+            "merchant_prearbitration_accepted" => EventType.MerchantPrearbitrationAccepted,
             "merchant_prearbitration_decline_submitted" =>
                 EventType.MerchantPrearbitrationDeclineSubmitted,
             "merchant_prearbitration_received" => EventType.MerchantPrearbitrationReceived,
@@ -3270,6 +3277,7 @@ sealed class EventTypeConverter : JsonConverter<EventType>
             value switch
             {
                 EventType.ChargebackSubmitted => "chargeback_submitted",
+                EventType.MerchantPrearbitrationAccepted => "merchant_prearbitration_accepted",
                 EventType.MerchantPrearbitrationDeclineSubmitted =>
                     "merchant_prearbitration_decline_submitted",
                 EventType.MerchantPrearbitrationReceived => "merchant_prearbitration_received",

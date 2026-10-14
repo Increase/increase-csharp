@@ -12,7 +12,7 @@ using System = System;
 namespace Increase.Api.Models.DigitalCardProfiles;
 
 /// <summary>
-/// List Card Profiles
+/// List Digital Card Profiles
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that

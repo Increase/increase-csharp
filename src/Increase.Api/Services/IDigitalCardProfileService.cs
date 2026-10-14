@@ -50,7 +50,7 @@ public interface IDigitalCardProfileService
     );
 
     /// <summary>
-    /// List Card Profiles
+    /// List Digital Card Profiles
     /// </summary>
     Task<DigitalCardProfileListPage> List(
         DigitalCardProfileListParams? parameters = null,
@@ -73,7 +73,7 @@ public interface IDigitalCardProfileService
     );
 
     /// <summary>
-    /// Clones a Digital Card Profile
+    /// Clone a Digital Card Profile
     /// </summary>
     Task<DigitalCardProfile> Clone(
         DigitalCardProfileCloneParams parameters,

@@ -34,7 +34,9 @@ public interface IFileService
     Task<File> Create(FileCreateParams parameters, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Retrieve a File
+    /// Fetch metadata about a File, like its `purpose` and MIME type. To access the
+    /// content, use the [Get File contents](/documentation/api/files#get-file-contents)
+    /// API.
     /// </summary>
     Task<File> Retrieve(
         FileRetrieveParams parameters,

@@ -27,7 +27,7 @@ public interface IIntrafiAccountEnrollmentService
     IIntrafiAccountEnrollmentService WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Enroll an account in the IntraFi deposit sweep network
+    /// Enroll an Account in the IntraFi deposit sweep network
     /// </summary>
     Task<IntrafiAccountEnrollment> Create(
         IntrafiAccountEnrollmentCreateParams parameters,
@@ -58,7 +58,7 @@ public interface IIntrafiAccountEnrollmentService
     );
 
     /// <summary>
-    /// Unenroll an account from IntraFi
+    /// Unenroll an Account from IntraFi
     /// </summary>
     Task<IntrafiAccountEnrollment> Unenroll(
         IntrafiAccountEnrollmentUnenrollParams parameters,

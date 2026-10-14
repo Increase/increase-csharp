@@ -19,6 +19,8 @@ public class PhysicalCardTest : TestBase
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ExpirationMonth = 11,
+            ExpirationYear = 2028,
             IdempotencyKey = null,
             PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
             Shipment = new()
@@ -71,6 +73,8 @@ public class PhysicalCardTest : TestBase
             LastName = "Crease",
         };
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        long expectedExpirationMonth = 11;
+        long expectedExpirationYear = 2028;
         string expectedPhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec";
         PhysicalCards::PhysicalCardShipment expectedShipment = new()
         {
@@ -118,6 +122,8 @@ public class PhysicalCardTest : TestBase
         Assert.Equal(expectedCardID, model.CardID);
         Assert.Equal(expectedCardholder, model.Cardholder);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedExpirationMonth, model.ExpirationMonth);
+        Assert.Equal(expectedExpirationYear, model.ExpirationYear);
         Assert.Null(model.IdempotencyKey);
         Assert.Equal(expectedPhysicalCardProfileID, model.PhysicalCardProfileID);
         Assert.Equal(expectedShipment, model.Shipment);
@@ -135,6 +141,8 @@ public class PhysicalCardTest : TestBase
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ExpirationMonth = 11,
+            ExpirationYear = 2028,
             IdempotencyKey = null,
             PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
             Shipment = new()
@@ -197,6 +205,8 @@ public class PhysicalCardTest : TestBase
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ExpirationMonth = 11,
+            ExpirationYear = 2028,
             IdempotencyKey = null,
             PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
             Shipment = new()
@@ -256,6 +266,8 @@ public class PhysicalCardTest : TestBase
             LastName = "Crease",
         };
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        long expectedExpirationMonth = 11;
+        long expectedExpirationYear = 2028;
         string expectedPhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec";
         PhysicalCards::PhysicalCardShipment expectedShipment = new()
         {
@@ -303,6 +315,8 @@ public class PhysicalCardTest : TestBase
         Assert.Equal(expectedCardID, deserialized.CardID);
         Assert.Equal(expectedCardholder, deserialized.Cardholder);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedExpirationMonth, deserialized.ExpirationMonth);
+        Assert.Equal(expectedExpirationYear, deserialized.ExpirationYear);
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Equal(expectedPhysicalCardProfileID, deserialized.PhysicalCardProfileID);
         Assert.Equal(expectedShipment, deserialized.Shipment);
@@ -320,6 +334,8 @@ public class PhysicalCardTest : TestBase
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ExpirationMonth = 11,
+            ExpirationYear = 2028,
             IdempotencyKey = null,
             PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
             Shipment = new()
@@ -376,6 +392,8 @@ public class PhysicalCardTest : TestBase
             CardID = "card_oubs0hwk5rn6knuecxg2",
             Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ExpirationMonth = 11,
+            ExpirationYear = 2028,
             IdempotencyKey = null,
             PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
             Shipment = new()

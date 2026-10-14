@@ -86,6 +86,34 @@ public sealed record class PhysicalCard : JsonModel
     }
 
     /// <summary>
+    /// The month printed on the Physical Card as its expiration, in M format (e.g.,
+    /// August is 8). This stays the same when the Card is renewed.
+    /// </summary>
+    public required long ExpirationMonth
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("expiration_month");
+        }
+        init { this._rawData.Set("expiration_month", value); }
+    }
+
+    /// <summary>
+    /// The year printed on the Physical Card as its expiration, in YYYY format (e.g.,
+    /// 2025). This stays the same when the Card is renewed.
+    /// </summary>
+    public required long ExpirationYear
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("expiration_year");
+        }
+        init { this._rawData.Set("expiration_year", value); }
+    }
+
+    /// <summary>
     /// The idempotency key you chose for this object. This value is unique across
     /// Increase and is used to ensure that a request is only processed once. Learn
     /// more about [idempotency](https://increase.com/documentation/idempotency-keys).
@@ -163,6 +191,8 @@ public sealed record class PhysicalCard : JsonModel
         _ = this.CardID;
         this.Cardholder.Validate();
         _ = this.CreatedAt;
+        _ = this.ExpirationMonth;
+        _ = this.ExpirationYear;
         _ = this.IdempotencyKey;
         _ = this.PhysicalCardProfileID;
         this.Shipment.Validate();
