@@ -209,6 +209,39 @@ public sealed record class Card : JsonModel
     }
 
     /// <summary>
+    /// Completed renewals of this Card, sorted by `renewed_at` in ascending order.
+    /// Each renewal records the expiration date the Card had before it was renewed.
+    /// </summary>
+    public required IReadOnlyList<Renewal> Renewals
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<Renewal>>("renewals");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<Renewal>>(
+                "renewals",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
+    /// Details about the Card this Card replaces, if it was created as a replacement.
+    /// </summary>
+    public required CardReplacementFor? ReplacementFor
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<CardReplacementFor>("replacement_for");
+        }
+        init { this._rawData.Set("replacement_for", value); }
+    }
+
+    /// <summary>
     /// This indicates if payments can be made with the card.
     /// </summary>
     public required ApiEnum<string, CardStatus> Status
@@ -254,6 +287,11 @@ public sealed record class Card : JsonModel
         _ = this.ExpirationYear;
         _ = this.IdempotencyKey;
         _ = this.Last4;
+        foreach (var item in this.Renewals)
+        {
+            item.Validate();
+        }
+        this.ReplacementFor?.Validate();
         this.Status.Validate();
         this.Type.Validate();
     }
@@ -2275,6 +2313,243 @@ class CardDigitalWalletFromRaw : IFromRawJson<CardDigitalWallet>
     /// <inheritdoc/>
     public CardDigitalWallet FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         CardDigitalWallet.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(typeof(JsonModelConverter<Renewal, RenewalFromRaw>))]
+public sealed record class Renewal : JsonModel
+{
+    /// <summary>
+    /// The month the Card expired in before this renewal, in M format (e.g., August
+    /// is 8).
+    /// </summary>
+    public required long PreviousExpirationMonth
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("previous_expiration_month");
+        }
+        init { this._rawData.Set("previous_expiration_month", value); }
+    }
+
+    /// <summary>
+    /// The year the Card expired in before this renewal, in YYYY format (e.g., 2025).
+    /// </summary>
+    public required long PreviousExpirationYear
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("previous_expiration_year");
+        }
+        init { this._rawData.Set("previous_expiration_year", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the Card was renewed.
+    /// </summary>
+    public required System::DateTimeOffset RenewedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("renewed_at");
+        }
+        init { this._rawData.Set("renewed_at", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.PreviousExpirationMonth;
+        _ = this.PreviousExpirationYear;
+        _ = this.RenewedAt;
+    }
+
+    public Renewal() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Renewal(Renewal renewal)
+        : base(renewal) { }
+#pragma warning restore CS8618
+
+    public Renewal(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Renewal(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="RenewalFromRaw.FromRawUnchecked"/>
+    public static Renewal FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class RenewalFromRaw : IFromRawJson<Renewal>
+{
+    /// <inheritdoc/>
+    public Renewal FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Renewal.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Details about the Card this Card replaces, if it was created as a replacement.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<CardReplacementFor, CardReplacementForFromRaw>))]
+public sealed record class CardReplacementFor : JsonModel
+{
+    /// <summary>
+    /// The identifier of the replaced Card.
+    /// </summary>
+    public required string CardID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("card_id");
+        }
+        init { this._rawData.Set("card_id", value); }
+    }
+
+    /// <summary>
+    /// Why the Card was replaced. Only `expiring` notifies merchants that have the
+    /// replaced Card on file of the new Card.
+    /// </summary>
+    public required ApiEnum<string, CardReplacementForReason> Reason
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, CardReplacementForReason>>(
+                "reason"
+            );
+        }
+        init { this._rawData.Set("reason", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.CardID;
+        this.Reason.Validate();
+    }
+
+    public CardReplacementFor() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardReplacementFor(CardReplacementFor cardReplacementFor)
+        : base(cardReplacementFor) { }
+#pragma warning restore CS8618
+
+    public CardReplacementFor(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardReplacementFor(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardReplacementForFromRaw.FromRawUnchecked"/>
+    public static CardReplacementFor FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class CardReplacementForFromRaw : IFromRawJson<CardReplacementFor>
+{
+    /// <inheritdoc/>
+    public CardReplacementFor FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        CardReplacementFor.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Why the Card was replaced. Only `expiring` notifies merchants that have the replaced
+/// Card on file of the new Card.
+/// </summary>
+[JsonConverter(typeof(CardReplacementForReasonConverter))]
+public enum CardReplacementForReason
+{
+    /// <summary>
+    /// The replaced card is expiring. Merchants with the replaced card on file will
+    /// be notified of the new card.
+    /// </summary>
+    Expiring,
+
+    /// <summary>
+    /// The replaced card was lost. Merchants will not be notified of the new card.
+    /// </summary>
+    Lost,
+
+    /// <summary>
+    /// The replaced card was stolen. Merchants will not be notified of the new card.
+    /// </summary>
+    Stolen,
+
+    /// <summary>
+    /// The replaced card was used fraudulently. Merchants will not be notified of
+    /// the new card.
+    /// </summary>
+    Fraud,
+}
+
+sealed class CardReplacementForReasonConverter : JsonConverter<CardReplacementForReason>
+{
+    public override CardReplacementForReason Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "expiring" => CardReplacementForReason.Expiring,
+            "lost" => CardReplacementForReason.Lost,
+            "stolen" => CardReplacementForReason.Stolen,
+            "fraud" => CardReplacementForReason.Fraud,
+            _ => (CardReplacementForReason)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        CardReplacementForReason value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                CardReplacementForReason.Expiring => "expiring",
+                CardReplacementForReason.Lost => "lost",
+                CardReplacementForReason.Stolen => "stolen",
+                CardReplacementForReason.Fraud => "fraud",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>

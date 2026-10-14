@@ -136,6 +136,7 @@ public abstract record class ModelBase
                 string,
                 Cards::CardAuthorizationControlsUsageSingleUseSettlementAmountComparison
             >(),
+            new ApiEnumConverter<string, Cards::CardReplacementForReason>(),
             new ApiEnumConverter<string, Cards::CardStatus>(),
             new ApiEnumConverter<string, Cards::Type>(),
             new ApiEnumConverter<string, Cards::CardDetailsType>(),
@@ -144,6 +145,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Cards::Category>(),
             new ApiEnumConverter<string, Cards::Interval>(),
             new ApiEnumConverter<string, Cards::Comparison>(),
+            new ApiEnumConverter<string, Cards::Reason>(),
             new ApiEnumConverter<
                 string,
                 Cards::CardUpdateParamsAuthorizationControlsUsageCategory

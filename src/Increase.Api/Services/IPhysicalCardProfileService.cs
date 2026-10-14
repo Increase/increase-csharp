@@ -35,7 +35,7 @@ public interface IPhysicalCardProfileService
     );
 
     /// <summary>
-    /// Retrieve a Card Profile
+    /// Retrieve a Physical Card Profile
     /// </summary>
     Task<PhysicalCardProfile> Retrieve(
         PhysicalCardProfileRetrieveParams parameters,

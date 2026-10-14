@@ -424,7 +424,7 @@ public sealed record class ExportAccountStatementBai2 : JsonModel
     }
 
     /// <summary>
-    /// The date for which to retrieve the balance.
+    /// The UTC date for which to retrieve the balance.
     /// </summary>
     public required string? EffectiveDate
     {
@@ -685,7 +685,7 @@ public sealed record class ExportAccountVerificationLetter : JsonModel
     }
 
     /// <summary>
-    /// The date of the balance to include in the letter.
+    /// The UTC date of the balance to include in the letter.
     /// </summary>
     public required string? BalanceDate
     {
@@ -921,7 +921,7 @@ public sealed record class ExportBookkeepingAccountBalanceCsv : JsonModel
     }
 
     /// <summary>
-    /// Filter balances to those on or after this date.
+    /// Filter balances to those on or after this UTC date.
     /// </summary>
     public required string? OnOrAfterDate
     {
@@ -934,7 +934,7 @@ public sealed record class ExportBookkeepingAccountBalanceCsv : JsonModel
     }
 
     /// <summary>
-    /// Filter balances to those on or before this date.
+    /// Filter balances to those on or before this UTC date.
     /// </summary>
     public required string? OnOrBeforeDate
     {
@@ -1168,7 +1168,7 @@ public sealed record class ExportDailyAccountBalanceCsv : JsonModel
     }
 
     /// <summary>
-    /// Filter balances on or after this date.
+    /// Filter balances on or after this UTC date.
     /// </summary>
     public required string? OnOrAfterDate
     {
@@ -1181,7 +1181,7 @@ public sealed record class ExportDailyAccountBalanceCsv : JsonModel
     }
 
     /// <summary>
-    /// Filter balances on or before this date.
+    /// Filter balances on or before this UTC date.
     /// </summary>
     public required string? OnOrBeforeDate
     {

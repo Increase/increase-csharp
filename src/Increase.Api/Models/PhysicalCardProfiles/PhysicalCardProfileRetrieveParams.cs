@@ -9,7 +9,7 @@ using Increase.Api.Core;
 namespace Increase.Api.Models.PhysicalCardProfiles;
 
 /// <summary>
-/// Retrieve a Card Profile
+/// Retrieve a Physical Card Profile
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that

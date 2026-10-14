@@ -22,6 +22,8 @@ public class PhysicalCardListPageResponseTest : TestBase
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    ExpirationMonth = 11,
+                    ExpirationYear = 2028,
                     IdempotencyKey = null,
                     PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
                     Shipment = new()
@@ -77,6 +79,8 @@ public class PhysicalCardListPageResponseTest : TestBase
                 CardID = "card_oubs0hwk5rn6knuecxg2",
                 Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ExpirationMonth = 11,
+                ExpirationYear = 2028,
                 IdempotencyKey = null,
                 PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
                 Shipment = new()
@@ -144,6 +148,8 @@ public class PhysicalCardListPageResponseTest : TestBase
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    ExpirationMonth = 11,
+                    ExpirationYear = 2028,
                     IdempotencyKey = null,
                     PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
                     Shipment = new()
@@ -213,6 +219,8 @@ public class PhysicalCardListPageResponseTest : TestBase
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    ExpirationMonth = 11,
+                    ExpirationYear = 2028,
                     IdempotencyKey = null,
                     PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
                     Shipment = new()
@@ -275,6 +283,8 @@ public class PhysicalCardListPageResponseTest : TestBase
                 CardID = "card_oubs0hwk5rn6knuecxg2",
                 Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ExpirationMonth = 11,
+                ExpirationYear = 2028,
                 IdempotencyKey = null,
                 PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
                 Shipment = new()
@@ -342,6 +352,8 @@ public class PhysicalCardListPageResponseTest : TestBase
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    ExpirationMonth = 11,
+                    ExpirationYear = 2028,
                     IdempotencyKey = null,
                     PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
                     Shipment = new()
@@ -405,6 +417,8 @@ public class PhysicalCardListPageResponseTest : TestBase
                     CardID = "card_oubs0hwk5rn6knuecxg2",
                     Cardholder = new() { FirstName = "Ian", LastName = "Crease" },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    ExpirationMonth = 11,
+                    ExpirationYear = 2028,
                     IdempotencyKey = null,
                     PhysicalCardProfileID = "physical_card_profile_m534d5rn9qyy9ufqxoec",
                     Shipment = new()
