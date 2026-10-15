@@ -77,6 +77,20 @@ public class CardTest : TestBase
             ExpirationYear = 2028,
             IdempotencyKey = null,
             Last4 = "4242",
+            Renewals =
+            [
+                new()
+                {
+                    PreviousExpirationMonth = 11,
+                    PreviousExpirationYear = 2024,
+                    RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
+            ],
+            ReplacementFor = new()
+            {
+                CardID = "card_id",
+                Reason = Cards::CardReplacementForReason.Expiring,
+            },
             Status = Cards::CardStatus.Active,
             Type = Cards::Type.Card,
         };
@@ -142,6 +156,20 @@ public class CardTest : TestBase
         long expectedExpirationMonth = 11;
         long expectedExpirationYear = 2028;
         string expectedLast4 = "4242";
+        List<Cards::Renewal> expectedRenewals =
+        [
+            new()
+            {
+                PreviousExpirationMonth = 11,
+                PreviousExpirationYear = 2024,
+                RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
+        ];
+        Cards::CardReplacementFor expectedReplacementFor = new()
+        {
+            CardID = "card_id",
+            Reason = Cards::CardReplacementForReason.Expiring,
+        };
         ApiEnum<string, Cards::CardStatus> expectedStatus = Cards::CardStatus.Active;
         ApiEnum<string, Cards::Type> expectedType = Cards::Type.Card;
 
@@ -159,6 +187,12 @@ public class CardTest : TestBase
         Assert.Equal(expectedExpirationYear, model.ExpirationYear);
         Assert.Null(model.IdempotencyKey);
         Assert.Equal(expectedLast4, model.Last4);
+        Assert.Equal(expectedRenewals.Count, model.Renewals.Count);
+        for (int i = 0; i < expectedRenewals.Count; i++)
+        {
+            Assert.Equal(expectedRenewals[i], model.Renewals[i]);
+        }
+        Assert.Equal(expectedReplacementFor, model.ReplacementFor);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedType, model.Type);
     }
@@ -231,6 +265,20 @@ public class CardTest : TestBase
             ExpirationYear = 2028,
             IdempotencyKey = null,
             Last4 = "4242",
+            Renewals =
+            [
+                new()
+                {
+                    PreviousExpirationMonth = 11,
+                    PreviousExpirationYear = 2024,
+                    RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
+            ],
+            ReplacementFor = new()
+            {
+                CardID = "card_id",
+                Reason = Cards::CardReplacementForReason.Expiring,
+            },
             Status = Cards::CardStatus.Active,
             Type = Cards::Type.Card,
         };
@@ -312,6 +360,20 @@ public class CardTest : TestBase
             ExpirationYear = 2028,
             IdempotencyKey = null,
             Last4 = "4242",
+            Renewals =
+            [
+                new()
+                {
+                    PreviousExpirationMonth = 11,
+                    PreviousExpirationYear = 2024,
+                    RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
+            ],
+            ReplacementFor = new()
+            {
+                CardID = "card_id",
+                Reason = Cards::CardReplacementForReason.Expiring,
+            },
             Status = Cards::CardStatus.Active,
             Type = Cards::Type.Card,
         };
@@ -384,6 +446,20 @@ public class CardTest : TestBase
         long expectedExpirationMonth = 11;
         long expectedExpirationYear = 2028;
         string expectedLast4 = "4242";
+        List<Cards::Renewal> expectedRenewals =
+        [
+            new()
+            {
+                PreviousExpirationMonth = 11,
+                PreviousExpirationYear = 2024,
+                RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
+        ];
+        Cards::CardReplacementFor expectedReplacementFor = new()
+        {
+            CardID = "card_id",
+            Reason = Cards::CardReplacementForReason.Expiring,
+        };
         ApiEnum<string, Cards::CardStatus> expectedStatus = Cards::CardStatus.Active;
         ApiEnum<string, Cards::Type> expectedType = Cards::Type.Card;
 
@@ -401,6 +477,12 @@ public class CardTest : TestBase
         Assert.Equal(expectedExpirationYear, deserialized.ExpirationYear);
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Equal(expectedLast4, deserialized.Last4);
+        Assert.Equal(expectedRenewals.Count, deserialized.Renewals.Count);
+        for (int i = 0; i < expectedRenewals.Count; i++)
+        {
+            Assert.Equal(expectedRenewals[i], deserialized.Renewals[i]);
+        }
+        Assert.Equal(expectedReplacementFor, deserialized.ReplacementFor);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedType, deserialized.Type);
     }
@@ -473,6 +555,20 @@ public class CardTest : TestBase
             ExpirationYear = 2028,
             IdempotencyKey = null,
             Last4 = "4242",
+            Renewals =
+            [
+                new()
+                {
+                    PreviousExpirationMonth = 11,
+                    PreviousExpirationYear = 2024,
+                    RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
+            ],
+            ReplacementFor = new()
+            {
+                CardID = "card_id",
+                Reason = Cards::CardReplacementForReason.Expiring,
+            },
             Status = Cards::CardStatus.Active,
             Type = Cards::Type.Card,
         };
@@ -548,6 +644,20 @@ public class CardTest : TestBase
             ExpirationYear = 2028,
             IdempotencyKey = null,
             Last4 = "4242",
+            Renewals =
+            [
+                new()
+                {
+                    PreviousExpirationMonth = 11,
+                    PreviousExpirationYear = 2024,
+                    RenewedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
+            ],
+            ReplacementFor = new()
+            {
+                CardID = "card_id",
+                Reason = Cards::CardReplacementForReason.Expiring,
+            },
             Status = Cards::CardStatus.Active,
             Type = Cards::Type.Card,
         };
@@ -2978,6 +3088,249 @@ public class CardDigitalWalletTest : TestBase
         Cards::CardDigitalWallet copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class RenewalTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::Renewal
+        {
+            PreviousExpirationMonth = 0,
+            PreviousExpirationYear = 0,
+            RenewedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        long expectedPreviousExpirationMonth = 0;
+        long expectedPreviousExpirationYear = 0;
+        DateTimeOffset expectedRenewedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+
+        Assert.Equal(expectedPreviousExpirationMonth, model.PreviousExpirationMonth);
+        Assert.Equal(expectedPreviousExpirationYear, model.PreviousExpirationYear);
+        Assert.Equal(expectedRenewedAt, model.RenewedAt);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::Renewal
+        {
+            PreviousExpirationMonth = 0,
+            PreviousExpirationYear = 0,
+            RenewedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::Renewal>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::Renewal
+        {
+            PreviousExpirationMonth = 0,
+            PreviousExpirationYear = 0,
+            RenewedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::Renewal>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        long expectedPreviousExpirationMonth = 0;
+        long expectedPreviousExpirationYear = 0;
+        DateTimeOffset expectedRenewedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+
+        Assert.Equal(expectedPreviousExpirationMonth, deserialized.PreviousExpirationMonth);
+        Assert.Equal(expectedPreviousExpirationYear, deserialized.PreviousExpirationYear);
+        Assert.Equal(expectedRenewedAt, deserialized.RenewedAt);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::Renewal
+        {
+            PreviousExpirationMonth = 0,
+            PreviousExpirationYear = 0,
+            RenewedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::Renewal
+        {
+            PreviousExpirationMonth = 0,
+            PreviousExpirationYear = 0,
+            RenewedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        Cards::Renewal copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardReplacementForTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Cards::CardReplacementFor
+        {
+            CardID = "card_id",
+            Reason = Cards::CardReplacementForReason.Expiring,
+        };
+
+        string expectedCardID = "card_id";
+        ApiEnum<string, Cards::CardReplacementForReason> expectedReason =
+            Cards::CardReplacementForReason.Expiring;
+
+        Assert.Equal(expectedCardID, model.CardID);
+        Assert.Equal(expectedReason, model.Reason);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Cards::CardReplacementFor
+        {
+            CardID = "card_id",
+            Reason = Cards::CardReplacementForReason.Expiring,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::CardReplacementFor>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Cards::CardReplacementFor
+        {
+            CardID = "card_id",
+            Reason = Cards::CardReplacementForReason.Expiring,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Cards::CardReplacementFor>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCardID = "card_id";
+        ApiEnum<string, Cards::CardReplacementForReason> expectedReason =
+            Cards::CardReplacementForReason.Expiring;
+
+        Assert.Equal(expectedCardID, deserialized.CardID);
+        Assert.Equal(expectedReason, deserialized.Reason);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Cards::CardReplacementFor
+        {
+            CardID = "card_id",
+            Reason = Cards::CardReplacementForReason.Expiring,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Cards::CardReplacementFor
+        {
+            CardID = "card_id",
+            Reason = Cards::CardReplacementForReason.Expiring,
+        };
+
+        Cards::CardReplacementFor copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardReplacementForReasonTest : TestBase
+{
+    [Theory]
+    [InlineData(Cards::CardReplacementForReason.Expiring)]
+    [InlineData(Cards::CardReplacementForReason.Lost)]
+    [InlineData(Cards::CardReplacementForReason.Stolen)]
+    [InlineData(Cards::CardReplacementForReason.Fraud)]
+    public void Validation_Works(Cards::CardReplacementForReason rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Cards::CardReplacementForReason> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Cards::CardReplacementForReason>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Cards::CardReplacementForReason.Expiring)]
+    [InlineData(Cards::CardReplacementForReason.Lost)]
+    [InlineData(Cards::CardReplacementForReason.Stolen)]
+    [InlineData(Cards::CardReplacementForReason.Fraud)]
+    public void SerializationRoundtrip_Works(Cards::CardReplacementForReason rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Cards::CardReplacementForReason> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Cards::CardReplacementForReason>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Cards::CardReplacementForReason>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, Cards::CardReplacementForReason>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
     }
 }
 

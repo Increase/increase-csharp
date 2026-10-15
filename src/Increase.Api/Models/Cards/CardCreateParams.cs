@@ -173,6 +173,28 @@ public record class CardCreateParams : ParamsBase
         }
     }
 
+    /// <summary>
+    /// Details about the Card this Card replaces. Supply this when issuing a new
+    /// Card to take over from an existing one. The replaced Card is not canceled.
+    /// </summary>
+    public ReplacementFor? ReplacementFor
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<ReplacementFor>("replacement_for");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("replacement_for", value);
+        }
+    }
+
     public CardCreateParams() { }
 
 #pragma warning disable CS8618
@@ -2174,4 +2196,150 @@ class DigitalWalletFromRaw : IFromRawJson<DigitalWallet>
     /// <inheritdoc/>
     public DigitalWallet FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         DigitalWallet.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Details about the Card this Card replaces. Supply this when issuing a new Card
+/// to take over from an existing one. The replaced Card is not canceled.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<ReplacementFor, ReplacementForFromRaw>))]
+public sealed record class ReplacementFor : JsonModel
+{
+    /// <summary>
+    /// The identifier of the Card being replaced.
+    /// </summary>
+    public required string CardID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("card_id");
+        }
+        init { this._rawData.Set("card_id", value); }
+    }
+
+    /// <summary>
+    /// Why the Card is being replaced. Only `expiring` notifies merchants that have
+    /// the replaced Card on file of the new Card and moves Digital Wallet Tokens
+    /// on the replaced Card that have not been deactivated to the new Card.
+    /// </summary>
+    public required ApiEnum<string, Reason> Reason
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, Reason>>("reason");
+        }
+        init { this._rawData.Set("reason", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.CardID;
+        this.Reason.Validate();
+    }
+
+    public ReplacementFor() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public ReplacementFor(ReplacementFor replacementFor)
+        : base(replacementFor) { }
+#pragma warning restore CS8618
+
+    public ReplacementFor(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    ReplacementFor(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="ReplacementForFromRaw.FromRawUnchecked"/>
+    public static ReplacementFor FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class ReplacementForFromRaw : IFromRawJson<ReplacementFor>
+{
+    /// <inheritdoc/>
+    public ReplacementFor FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        ReplacementFor.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Why the Card is being replaced. Only `expiring` notifies merchants that have
+/// the replaced Card on file of the new Card and moves Digital Wallet Tokens on the
+/// replaced Card that have not been deactivated to the new Card.
+/// </summary>
+[JsonConverter(typeof(ReasonConverter))]
+public enum Reason
+{
+    /// <summary>
+    /// The replaced card is expiring. Merchants with the replaced card on file will
+    /// be notified of the new card, and its digital wallet tokens that have not been
+    /// deactivated will move to the new card.
+    /// </summary>
+    Expiring,
+
+    /// <summary>
+    /// The replaced card was lost. Merchants will not be notified of the new card.
+    /// </summary>
+    Lost,
+
+    /// <summary>
+    /// The replaced card was stolen. Merchants will not be notified of the new card.
+    /// </summary>
+    Stolen,
+
+    /// <summary>
+    /// The replaced card was used fraudulently. Merchants will not be notified of
+    /// the new card.
+    /// </summary>
+    Fraud,
+}
+
+sealed class ReasonConverter : JsonConverter<Reason>
+{
+    public override Reason Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "expiring" => Reason.Expiring,
+            "lost" => Reason.Lost,
+            "stolen" => Reason.Stolen,
+            "fraud" => Reason.Fraud,
+            _ => (Reason)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Reason value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Reason.Expiring => "expiring",
+                Reason.Lost => "lost",
+                Reason.Stolen => "stolen",
+                Reason.Fraud => "fraud",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
