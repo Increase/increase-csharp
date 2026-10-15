@@ -11875,9 +11875,11 @@ public class EventTypeTest : TestBase
 {
     [Theory]
     [InlineData(Transactions::EventType.ChargebackSubmitted)]
+    [InlineData(Transactions::EventType.MerchantPrearbitrationAccepted)]
     [InlineData(Transactions::EventType.MerchantPrearbitrationDeclineSubmitted)]
     [InlineData(Transactions::EventType.MerchantPrearbitrationReceived)]
     [InlineData(Transactions::EventType.Represented)]
+    [InlineData(Transactions::EventType.UserPrearbitrationAccepted)]
     [InlineData(Transactions::EventType.UserPrearbitrationDeclineReceived)]
     [InlineData(Transactions::EventType.UserPrearbitrationSubmitted)]
     [InlineData(Transactions::EventType.UserWithdrawalSubmitted)]
@@ -11902,9 +11904,11 @@ public class EventTypeTest : TestBase
 
     [Theory]
     [InlineData(Transactions::EventType.ChargebackSubmitted)]
+    [InlineData(Transactions::EventType.MerchantPrearbitrationAccepted)]
     [InlineData(Transactions::EventType.MerchantPrearbitrationDeclineSubmitted)]
     [InlineData(Transactions::EventType.MerchantPrearbitrationReceived)]
     [InlineData(Transactions::EventType.Represented)]
+    [InlineData(Transactions::EventType.UserPrearbitrationAccepted)]
     [InlineData(Transactions::EventType.UserPrearbitrationDeclineReceived)]
     [InlineData(Transactions::EventType.UserPrearbitrationSubmitted)]
     [InlineData(Transactions::EventType.UserWithdrawalSubmitted)]
