@@ -770,6 +770,11 @@ public enum Currency
     Aoa,
 
     /// <summary>
+    /// XCD
+    /// </summary>
+    Xcd,
+
+    /// <summary>
     /// ARS
     /// </summary>
     Ars,
@@ -825,6 +830,11 @@ public enum Currency
     Bzd,
 
     /// <summary>
+    /// XOF
+    /// </summary>
+    Xof,
+
+    /// <summary>
     /// BMD
     /// </summary>
     Bmd,
@@ -875,11 +885,6 @@ public enum Currency
     Bnd,
 
     /// <summary>
-    /// BGN
-    /// </summary>
-    Bgn,
-
-    /// <summary>
     /// BIF
     /// </summary>
     Bif,
@@ -893,6 +898,11 @@ public enum Currency
     /// KHR
     /// </summary>
     Khr,
+
+    /// <summary>
+    /// XAF
+    /// </summary>
+    Xaf,
 
     /// <summary>
     /// CAD
@@ -955,6 +965,11 @@ public enum Currency
     Cup,
 
     /// <summary>
+    /// XCG
+    /// </summary>
+    Xcg,
+
+    /// <summary>
     /// CZK
     /// </summary>
     Czk,
@@ -1008,6 +1023,11 @@ public enum Currency
     /// FJD
     /// </summary>
     Fjd,
+
+    /// <summary>
+    /// XPF
+    /// </summary>
+    Xpf,
 
     /// <summary>
     /// GMD
@@ -1538,6 +1558,11 @@ public enum Currency
     /// ZWG
     /// </summary>
     Zwg,
+
+    /// <summary>
+    /// BGN
+    /// </summary>
+    Bgn,
 }
 
 sealed class CurrencyConverter : JsonConverter<Currency>
@@ -1556,6 +1581,7 @@ sealed class CurrencyConverter : JsonConverter<Currency>
             "DZD" => Currency.Dzd,
             "USD" => Currency.Usd,
             "AOA" => Currency.Aoa,
+            "XCD" => Currency.Xcd,
             "ARS" => Currency.Ars,
             "AMD" => Currency.Amd,
             "AWG" => Currency.Awg,
@@ -1567,6 +1593,7 @@ sealed class CurrencyConverter : JsonConverter<Currency>
             "BBD" => Currency.Bbd,
             "BYN" => Currency.Byn,
             "BZD" => Currency.Bzd,
+            "XOF" => Currency.Xof,
             "BMD" => Currency.Bmd,
             "INR" => Currency.Inr,
             "BTN" => Currency.Btn,
@@ -1577,10 +1604,10 @@ sealed class CurrencyConverter : JsonConverter<Currency>
             "NOK" => Currency.Nok,
             "BRL" => Currency.Brl,
             "BND" => Currency.Bnd,
-            "BGN" => Currency.Bgn,
             "BIF" => Currency.Bif,
             "CVE" => Currency.Cve,
             "KHR" => Currency.Khr,
+            "XAF" => Currency.Xaf,
             "CAD" => Currency.Cad,
             "KYD" => Currency.Kyd,
             "CLP" => Currency.Clp,
@@ -1593,6 +1620,7 @@ sealed class CurrencyConverter : JsonConverter<Currency>
             "NZD" => Currency.Nzd,
             "CRC" => Currency.Crc,
             "CUP" => Currency.Cup,
+            "XCG" => Currency.Xcg,
             "CZK" => Currency.Czk,
             "DKK" => Currency.Dkk,
             "DJF" => Currency.Djf,
@@ -1604,6 +1632,7 @@ sealed class CurrencyConverter : JsonConverter<Currency>
             "ETB" => Currency.Etb,
             "FKP" => Currency.Fkp,
             "FJD" => Currency.Fjd,
+            "XPF" => Currency.Xpf,
             "GMD" => Currency.Gmd,
             "GEL" => Currency.Gel,
             "GHS" => Currency.Ghs,
@@ -1710,6 +1739,7 @@ sealed class CurrencyConverter : JsonConverter<Currency>
             "YER" => Currency.Yer,
             "ZMW" => Currency.Zmw,
             "ZWG" => Currency.Zwg,
+            "BGN" => Currency.Bgn,
             _ => (Currency)(-1),
         };
     }
@@ -1726,6 +1756,7 @@ sealed class CurrencyConverter : JsonConverter<Currency>
                 Currency.Dzd => "DZD",
                 Currency.Usd => "USD",
                 Currency.Aoa => "AOA",
+                Currency.Xcd => "XCD",
                 Currency.Ars => "ARS",
                 Currency.Amd => "AMD",
                 Currency.Awg => "AWG",
@@ -1737,6 +1768,7 @@ sealed class CurrencyConverter : JsonConverter<Currency>
                 Currency.Bbd => "BBD",
                 Currency.Byn => "BYN",
                 Currency.Bzd => "BZD",
+                Currency.Xof => "XOF",
                 Currency.Bmd => "BMD",
                 Currency.Inr => "INR",
                 Currency.Btn => "BTN",
@@ -1747,10 +1779,10 @@ sealed class CurrencyConverter : JsonConverter<Currency>
                 Currency.Nok => "NOK",
                 Currency.Brl => "BRL",
                 Currency.Bnd => "BND",
-                Currency.Bgn => "BGN",
                 Currency.Bif => "BIF",
                 Currency.Cve => "CVE",
                 Currency.Khr => "KHR",
+                Currency.Xaf => "XAF",
                 Currency.Cad => "CAD",
                 Currency.Kyd => "KYD",
                 Currency.Clp => "CLP",
@@ -1763,6 +1795,7 @@ sealed class CurrencyConverter : JsonConverter<Currency>
                 Currency.Nzd => "NZD",
                 Currency.Crc => "CRC",
                 Currency.Cup => "CUP",
+                Currency.Xcg => "XCG",
                 Currency.Czk => "CZK",
                 Currency.Dkk => "DKK",
                 Currency.Djf => "DJF",
@@ -1774,6 +1807,7 @@ sealed class CurrencyConverter : JsonConverter<Currency>
                 Currency.Etb => "ETB",
                 Currency.Fkp => "FKP",
                 Currency.Fjd => "FJD",
+                Currency.Xpf => "XPF",
                 Currency.Gmd => "GMD",
                 Currency.Gel => "GEL",
                 Currency.Ghs => "GHS",
@@ -1880,6 +1914,7 @@ sealed class CurrencyConverter : JsonConverter<Currency>
                 Currency.Yer => "YER",
                 Currency.Zmw => "ZMW",
                 Currency.Zwg => "ZWG",
+                Currency.Bgn => "BGN",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

@@ -15,6 +15,7 @@ namespace Increase.Api.Models.Cards;
 /// for online purchases after you create them. All cards work on a good funds model,
 /// and maintain a maximum limit of 100% of the Account’s available balance at the
 /// time of transaction. Funds are deducted from the Account upon transaction settlement.
+/// For more information, see our guide on [managing cards](https://increase.com/documentation/managing-cards).
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<Card, CardFromRaw>))]
 public sealed record class Card : JsonModel
@@ -2258,7 +2259,8 @@ public sealed record class CardDigitalWallet : JsonModel
 
     /// <summary>
     /// A phone number that can be used to verify the cardholder via one-time passcode
-    /// over SMS.
+    /// over SMS. Returned in [E.164](https://en.wikipedia.org/wiki/E.164) format,
+    /// for example `+14155550123`.
     /// </summary>
     public required string? Phone
     {
