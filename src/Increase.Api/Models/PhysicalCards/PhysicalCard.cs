@@ -14,7 +14,8 @@ namespace Increase.Api.Models.PhysicalCards;
 /// Custom physical Visa cards that are shipped to your customers. The artwork is
 /// configurable by a connected [Card Profile](/documentation/api#card-profiles).
 /// The same Card can be used for multiple Physical Cards. Printing cards incurs
-/// a fee. Please contact [support@increase.com](mailto:support@increase.com) for pricing!
+/// a fee. Please contact [support@increase.com](mailto:support@increase.com) for
+/// pricing! For more information, see our guide on [physical card artwork](https://increase.com/documentation/card-art-physical-cards#carrier-image).
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<PhysicalCard, PhysicalCardFromRaw>))]
 public sealed record class PhysicalCard : JsonModel

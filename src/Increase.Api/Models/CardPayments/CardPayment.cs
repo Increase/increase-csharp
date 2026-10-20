@@ -12,7 +12,8 @@ namespace Increase.Api.Models.CardPayments;
 
 /// <summary>
 /// Card Payments group together interactions related to a single card payment, such
-/// as an authorization and its corresponding settlement.
+/// as an authorization and its corresponding settlement. For more information, see
+/// our guide on the [Card Payment lifecycle](https://increase.com/documentation/card-payment-lifecycle).
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<CardPayment, CardPaymentFromRaw>))]
 public sealed record class CardPayment : JsonModel
