@@ -1340,7 +1340,7 @@ public sealed record class ExportFeeCsv : JsonModel
 {
     /// <summary>
     /// Filter fees by their created date. The time range must not include any fees
-    /// that are part of an open fee statement.
+    /// on an open fee statement.
     /// </summary>
     public required ExportFeeCsvCreatedAt? CreatedAt
     {
@@ -1401,8 +1401,8 @@ class ExportFeeCsvFromRaw : IFromRawJson<ExportFeeCsv>
 }
 
 /// <summary>
-/// Filter fees by their created date. The time range must not include any fees that
-/// are part of an open fee statement.
+/// Filter fees by their created date. The time range must not include any fees on
+/// an open fee statement.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<ExportFeeCsvCreatedAt, ExportFeeCsvCreatedAtFromRaw>))]
 public sealed record class ExportFeeCsvCreatedAt : JsonModel
