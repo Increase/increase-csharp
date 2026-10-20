@@ -45,9 +45,9 @@ public class CardDisputeListPageResponseTest : TestBase
                             new()
                             {
                                 AttachmentFiles = [new("file_id")],
-                                Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
-                                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                                DisputeFinancialTransactionID = "dispute_financial_transaction_id",
+                                Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                                 ChargebackAccepted = new(),
                                 ChargebackSubmitted = new(),
                                 ChargebackTimedOut = new(),
@@ -142,7 +142,7 @@ public class CardDisputeListPageResponseTest : TestBase
                         [
                             new()
                             {
-                                AcceptedAt = null,
+                                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                                 Amount = 1000,
                                 AttachmentFiles = [new("file_id")],
                                 Category = CardDisputes::UserSubmissionCategory.Chargeback,
@@ -150,7 +150,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                 Explanation = null,
                                 FurtherInformationRequestedAt = null,
                                 FurtherInformationRequestedReason = null,
-                                Status = CardDisputes::UserSubmissionStatus.PendingReviewing,
+                                Status = CardDisputes::UserSubmissionStatus.Accepted,
                                 UpdatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                                 Chargeback = new()
                                 {
@@ -547,9 +547,9 @@ public class CardDisputeListPageResponseTest : TestBase
                         new()
                         {
                             AttachmentFiles = [new("file_id")],
-                            Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
-                            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                            DisputeFinancialTransactionID = "dispute_financial_transaction_id",
+                            Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                             ChargebackAccepted = new(),
                             ChargebackSubmitted = new(),
                             ChargebackTimedOut = new(),
@@ -643,7 +643,7 @@ public class CardDisputeListPageResponseTest : TestBase
                     [
                         new()
                         {
-                            AcceptedAt = null,
+                            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             Amount = 1000,
                             AttachmentFiles = [new("file_id")],
                             Category = CardDisputes::UserSubmissionCategory.Chargeback,
@@ -651,7 +651,7 @@ public class CardDisputeListPageResponseTest : TestBase
                             Explanation = null,
                             FurtherInformationRequestedAt = null,
                             FurtherInformationRequestedReason = null,
-                            Status = CardDisputes::UserSubmissionStatus.PendingReviewing,
+                            Status = CardDisputes::UserSubmissionStatus.Accepted,
                             UpdatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             Chargeback = new()
                             {
@@ -1053,9 +1053,9 @@ public class CardDisputeListPageResponseTest : TestBase
                             new()
                             {
                                 AttachmentFiles = [new("file_id")],
-                                Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
-                                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                                DisputeFinancialTransactionID = "dispute_financial_transaction_id",
+                                Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                                 ChargebackAccepted = new(),
                                 ChargebackSubmitted = new(),
                                 ChargebackTimedOut = new(),
@@ -1150,7 +1150,7 @@ public class CardDisputeListPageResponseTest : TestBase
                         [
                             new()
                             {
-                                AcceptedAt = null,
+                                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                                 Amount = 1000,
                                 AttachmentFiles = [new("file_id")],
                                 Category = CardDisputes::UserSubmissionCategory.Chargeback,
@@ -1158,7 +1158,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                 Explanation = null,
                                 FurtherInformationRequestedAt = null,
                                 FurtherInformationRequestedReason = null,
-                                Status = CardDisputes::UserSubmissionStatus.PendingReviewing,
+                                Status = CardDisputes::UserSubmissionStatus.Accepted,
                                 UpdatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                                 Chargeback = new()
                                 {
@@ -1569,9 +1569,9 @@ public class CardDisputeListPageResponseTest : TestBase
                             new()
                             {
                                 AttachmentFiles = [new("file_id")],
-                                Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
-                                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                                DisputeFinancialTransactionID = "dispute_financial_transaction_id",
+                                Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                                 ChargebackAccepted = new(),
                                 ChargebackSubmitted = new(),
                                 ChargebackTimedOut = new(),
@@ -1666,7 +1666,7 @@ public class CardDisputeListPageResponseTest : TestBase
                         [
                             new()
                             {
-                                AcceptedAt = null,
+                                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                                 Amount = 1000,
                                 AttachmentFiles = [new("file_id")],
                                 Category = CardDisputes::UserSubmissionCategory.Chargeback,
@@ -1674,7 +1674,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                 Explanation = null,
                                 FurtherInformationRequestedAt = null,
                                 FurtherInformationRequestedReason = null,
-                                Status = CardDisputes::UserSubmissionStatus.PendingReviewing,
+                                Status = CardDisputes::UserSubmissionStatus.Accepted,
                                 UpdatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                                 Chargeback = new()
                                 {
@@ -2078,9 +2078,9 @@ public class CardDisputeListPageResponseTest : TestBase
                         new()
                         {
                             AttachmentFiles = [new("file_id")],
-                            Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
-                            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                            DisputeFinancialTransactionID = "dispute_financial_transaction_id",
+                            Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
+                            CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                             ChargebackAccepted = new(),
                             ChargebackSubmitted = new(),
                             ChargebackTimedOut = new(),
@@ -2174,7 +2174,7 @@ public class CardDisputeListPageResponseTest : TestBase
                     [
                         new()
                         {
-                            AcceptedAt = null,
+                            AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             Amount = 1000,
                             AttachmentFiles = [new("file_id")],
                             Category = CardDisputes::UserSubmissionCategory.Chargeback,
@@ -2182,7 +2182,7 @@ public class CardDisputeListPageResponseTest : TestBase
                             Explanation = null,
                             FurtherInformationRequestedAt = null,
                             FurtherInformationRequestedReason = null,
-                            Status = CardDisputes::UserSubmissionStatus.PendingReviewing,
+                            Status = CardDisputes::UserSubmissionStatus.Accepted,
                             UpdatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             Chargeback = new()
                             {
@@ -2584,9 +2584,9 @@ public class CardDisputeListPageResponseTest : TestBase
                             new()
                             {
                                 AttachmentFiles = [new("file_id")],
-                                Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
-                                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                                DisputeFinancialTransactionID = "dispute_financial_transaction_id",
+                                Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                                 ChargebackAccepted = new(),
                                 ChargebackSubmitted = new(),
                                 ChargebackTimedOut = new(),
@@ -2681,7 +2681,7 @@ public class CardDisputeListPageResponseTest : TestBase
                         [
                             new()
                             {
-                                AcceptedAt = null,
+                                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                                 Amount = 1000,
                                 AttachmentFiles = [new("file_id")],
                                 Category = CardDisputes::UserSubmissionCategory.Chargeback,
@@ -2689,7 +2689,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                 Explanation = null,
                                 FurtherInformationRequestedAt = null,
                                 FurtherInformationRequestedReason = null,
-                                Status = CardDisputes::UserSubmissionStatus.PendingReviewing,
+                                Status = CardDisputes::UserSubmissionStatus.Accepted,
                                 UpdatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                                 Chargeback = new()
                                 {
@@ -3094,9 +3094,9 @@ public class CardDisputeListPageResponseTest : TestBase
                             new()
                             {
                                 AttachmentFiles = [new("file_id")],
-                                Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
-                                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                                DisputeFinancialTransactionID = "dispute_financial_transaction_id",
+                                Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
+                                CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                                 ChargebackAccepted = new(),
                                 ChargebackSubmitted = new(),
                                 ChargebackTimedOut = new(),
@@ -3191,7 +3191,7 @@ public class CardDisputeListPageResponseTest : TestBase
                         [
                             new()
                             {
-                                AcceptedAt = null,
+                                AcceptedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                                 Amount = 1000,
                                 AttachmentFiles = [new("file_id")],
                                 Category = CardDisputes::UserSubmissionCategory.Chargeback,
@@ -3199,7 +3199,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                 Explanation = null,
                                 FurtherInformationRequestedAt = null,
                                 FurtherInformationRequestedReason = null,
-                                Status = CardDisputes::UserSubmissionStatus.PendingReviewing,
+                                Status = CardDisputes::UserSubmissionStatus.Accepted,
                                 UpdatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                                 Chargeback = new()
                                 {
