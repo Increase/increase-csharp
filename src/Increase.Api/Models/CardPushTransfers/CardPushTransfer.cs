@@ -2140,6 +2140,11 @@ public enum CardPushTransferPresentmentAmountCurrency
     Aoa,
 
     /// <summary>
+    /// XCD
+    /// </summary>
+    Xcd,
+
+    /// <summary>
     /// ARS
     /// </summary>
     Ars,
@@ -2195,6 +2200,11 @@ public enum CardPushTransferPresentmentAmountCurrency
     Bzd,
 
     /// <summary>
+    /// XOF
+    /// </summary>
+    Xof,
+
+    /// <summary>
     /// BMD
     /// </summary>
     Bmd,
@@ -2245,11 +2255,6 @@ public enum CardPushTransferPresentmentAmountCurrency
     Bnd,
 
     /// <summary>
-    /// BGN
-    /// </summary>
-    Bgn,
-
-    /// <summary>
     /// BIF
     /// </summary>
     Bif,
@@ -2263,6 +2268,11 @@ public enum CardPushTransferPresentmentAmountCurrency
     /// KHR
     /// </summary>
     Khr,
+
+    /// <summary>
+    /// XAF
+    /// </summary>
+    Xaf,
 
     /// <summary>
     /// CAD
@@ -2325,6 +2335,11 @@ public enum CardPushTransferPresentmentAmountCurrency
     Cup,
 
     /// <summary>
+    /// XCG
+    /// </summary>
+    Xcg,
+
+    /// <summary>
     /// CZK
     /// </summary>
     Czk,
@@ -2378,6 +2393,11 @@ public enum CardPushTransferPresentmentAmountCurrency
     /// FJD
     /// </summary>
     Fjd,
+
+    /// <summary>
+    /// XPF
+    /// </summary>
+    Xpf,
 
     /// <summary>
     /// GMD
@@ -2908,6 +2928,11 @@ public enum CardPushTransferPresentmentAmountCurrency
     /// ZWG
     /// </summary>
     Zwg,
+
+    /// <summary>
+    /// BGN
+    /// </summary>
+    Bgn,
 }
 
 sealed class CardPushTransferPresentmentAmountCurrencyConverter
@@ -2927,6 +2952,7 @@ sealed class CardPushTransferPresentmentAmountCurrencyConverter
             "DZD" => CardPushTransferPresentmentAmountCurrency.Dzd,
             "USD" => CardPushTransferPresentmentAmountCurrency.Usd,
             "AOA" => CardPushTransferPresentmentAmountCurrency.Aoa,
+            "XCD" => CardPushTransferPresentmentAmountCurrency.Xcd,
             "ARS" => CardPushTransferPresentmentAmountCurrency.Ars,
             "AMD" => CardPushTransferPresentmentAmountCurrency.Amd,
             "AWG" => CardPushTransferPresentmentAmountCurrency.Awg,
@@ -2938,6 +2964,7 @@ sealed class CardPushTransferPresentmentAmountCurrencyConverter
             "BBD" => CardPushTransferPresentmentAmountCurrency.Bbd,
             "BYN" => CardPushTransferPresentmentAmountCurrency.Byn,
             "BZD" => CardPushTransferPresentmentAmountCurrency.Bzd,
+            "XOF" => CardPushTransferPresentmentAmountCurrency.Xof,
             "BMD" => CardPushTransferPresentmentAmountCurrency.Bmd,
             "INR" => CardPushTransferPresentmentAmountCurrency.Inr,
             "BTN" => CardPushTransferPresentmentAmountCurrency.Btn,
@@ -2948,10 +2975,10 @@ sealed class CardPushTransferPresentmentAmountCurrencyConverter
             "NOK" => CardPushTransferPresentmentAmountCurrency.Nok,
             "BRL" => CardPushTransferPresentmentAmountCurrency.Brl,
             "BND" => CardPushTransferPresentmentAmountCurrency.Bnd,
-            "BGN" => CardPushTransferPresentmentAmountCurrency.Bgn,
             "BIF" => CardPushTransferPresentmentAmountCurrency.Bif,
             "CVE" => CardPushTransferPresentmentAmountCurrency.Cve,
             "KHR" => CardPushTransferPresentmentAmountCurrency.Khr,
+            "XAF" => CardPushTransferPresentmentAmountCurrency.Xaf,
             "CAD" => CardPushTransferPresentmentAmountCurrency.Cad,
             "KYD" => CardPushTransferPresentmentAmountCurrency.Kyd,
             "CLP" => CardPushTransferPresentmentAmountCurrency.Clp,
@@ -2964,6 +2991,7 @@ sealed class CardPushTransferPresentmentAmountCurrencyConverter
             "NZD" => CardPushTransferPresentmentAmountCurrency.Nzd,
             "CRC" => CardPushTransferPresentmentAmountCurrency.Crc,
             "CUP" => CardPushTransferPresentmentAmountCurrency.Cup,
+            "XCG" => CardPushTransferPresentmentAmountCurrency.Xcg,
             "CZK" => CardPushTransferPresentmentAmountCurrency.Czk,
             "DKK" => CardPushTransferPresentmentAmountCurrency.Dkk,
             "DJF" => CardPushTransferPresentmentAmountCurrency.Djf,
@@ -2975,6 +3003,7 @@ sealed class CardPushTransferPresentmentAmountCurrencyConverter
             "ETB" => CardPushTransferPresentmentAmountCurrency.Etb,
             "FKP" => CardPushTransferPresentmentAmountCurrency.Fkp,
             "FJD" => CardPushTransferPresentmentAmountCurrency.Fjd,
+            "XPF" => CardPushTransferPresentmentAmountCurrency.Xpf,
             "GMD" => CardPushTransferPresentmentAmountCurrency.Gmd,
             "GEL" => CardPushTransferPresentmentAmountCurrency.Gel,
             "GHS" => CardPushTransferPresentmentAmountCurrency.Ghs,
@@ -3081,6 +3110,7 @@ sealed class CardPushTransferPresentmentAmountCurrencyConverter
             "YER" => CardPushTransferPresentmentAmountCurrency.Yer,
             "ZMW" => CardPushTransferPresentmentAmountCurrency.Zmw,
             "ZWG" => CardPushTransferPresentmentAmountCurrency.Zwg,
+            "BGN" => CardPushTransferPresentmentAmountCurrency.Bgn,
             _ => (CardPushTransferPresentmentAmountCurrency)(-1),
         };
     }
@@ -3101,6 +3131,7 @@ sealed class CardPushTransferPresentmentAmountCurrencyConverter
                 CardPushTransferPresentmentAmountCurrency.Dzd => "DZD",
                 CardPushTransferPresentmentAmountCurrency.Usd => "USD",
                 CardPushTransferPresentmentAmountCurrency.Aoa => "AOA",
+                CardPushTransferPresentmentAmountCurrency.Xcd => "XCD",
                 CardPushTransferPresentmentAmountCurrency.Ars => "ARS",
                 CardPushTransferPresentmentAmountCurrency.Amd => "AMD",
                 CardPushTransferPresentmentAmountCurrency.Awg => "AWG",
@@ -3112,6 +3143,7 @@ sealed class CardPushTransferPresentmentAmountCurrencyConverter
                 CardPushTransferPresentmentAmountCurrency.Bbd => "BBD",
                 CardPushTransferPresentmentAmountCurrency.Byn => "BYN",
                 CardPushTransferPresentmentAmountCurrency.Bzd => "BZD",
+                CardPushTransferPresentmentAmountCurrency.Xof => "XOF",
                 CardPushTransferPresentmentAmountCurrency.Bmd => "BMD",
                 CardPushTransferPresentmentAmountCurrency.Inr => "INR",
                 CardPushTransferPresentmentAmountCurrency.Btn => "BTN",
@@ -3122,10 +3154,10 @@ sealed class CardPushTransferPresentmentAmountCurrencyConverter
                 CardPushTransferPresentmentAmountCurrency.Nok => "NOK",
                 CardPushTransferPresentmentAmountCurrency.Brl => "BRL",
                 CardPushTransferPresentmentAmountCurrency.Bnd => "BND",
-                CardPushTransferPresentmentAmountCurrency.Bgn => "BGN",
                 CardPushTransferPresentmentAmountCurrency.Bif => "BIF",
                 CardPushTransferPresentmentAmountCurrency.Cve => "CVE",
                 CardPushTransferPresentmentAmountCurrency.Khr => "KHR",
+                CardPushTransferPresentmentAmountCurrency.Xaf => "XAF",
                 CardPushTransferPresentmentAmountCurrency.Cad => "CAD",
                 CardPushTransferPresentmentAmountCurrency.Kyd => "KYD",
                 CardPushTransferPresentmentAmountCurrency.Clp => "CLP",
@@ -3138,6 +3170,7 @@ sealed class CardPushTransferPresentmentAmountCurrencyConverter
                 CardPushTransferPresentmentAmountCurrency.Nzd => "NZD",
                 CardPushTransferPresentmentAmountCurrency.Crc => "CRC",
                 CardPushTransferPresentmentAmountCurrency.Cup => "CUP",
+                CardPushTransferPresentmentAmountCurrency.Xcg => "XCG",
                 CardPushTransferPresentmentAmountCurrency.Czk => "CZK",
                 CardPushTransferPresentmentAmountCurrency.Dkk => "DKK",
                 CardPushTransferPresentmentAmountCurrency.Djf => "DJF",
@@ -3149,6 +3182,7 @@ sealed class CardPushTransferPresentmentAmountCurrencyConverter
                 CardPushTransferPresentmentAmountCurrency.Etb => "ETB",
                 CardPushTransferPresentmentAmountCurrency.Fkp => "FKP",
                 CardPushTransferPresentmentAmountCurrency.Fjd => "FJD",
+                CardPushTransferPresentmentAmountCurrency.Xpf => "XPF",
                 CardPushTransferPresentmentAmountCurrency.Gmd => "GMD",
                 CardPushTransferPresentmentAmountCurrency.Gel => "GEL",
                 CardPushTransferPresentmentAmountCurrency.Ghs => "GHS",
@@ -3255,6 +3289,7 @@ sealed class CardPushTransferPresentmentAmountCurrencyConverter
                 CardPushTransferPresentmentAmountCurrency.Yer => "YER",
                 CardPushTransferPresentmentAmountCurrency.Zmw => "ZMW",
                 CardPushTransferPresentmentAmountCurrency.Zwg => "ZWG",
+                CardPushTransferPresentmentAmountCurrency.Bgn => "BGN",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
