@@ -19,6 +19,11 @@ public class DigitalCardProfileListPageResponseTest : TestBase
                 {
                     ID = "digital_card_profile_s3puplu90f04xhcwkiga",
                     AppIconFileID = "file_makxrc67oh9l6sg7w9yc",
+                    ApplePay = new()
+                    {
+                        AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+                        AssociatedStoreIdentifiers = [new("1234567890")],
+                    },
                     BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     CardDescription = "Black Card",
                     ContactEmail = "user@example.com",
@@ -47,6 +52,11 @@ public class DigitalCardProfileListPageResponseTest : TestBase
             {
                 ID = "digital_card_profile_s3puplu90f04xhcwkiga",
                 AppIconFileID = "file_makxrc67oh9l6sg7w9yc",
+                ApplePay = new()
+                {
+                    AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+                    AssociatedStoreIdentifiers = [new("1234567890")],
+                },
                 BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 CardDescription = "Black Card",
                 ContactEmail = "user@example.com",
@@ -87,6 +97,11 @@ public class DigitalCardProfileListPageResponseTest : TestBase
                 {
                     ID = "digital_card_profile_s3puplu90f04xhcwkiga",
                     AppIconFileID = "file_makxrc67oh9l6sg7w9yc",
+                    ApplePay = new()
+                    {
+                        AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+                        AssociatedStoreIdentifiers = [new("1234567890")],
+                    },
                     BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     CardDescription = "Black Card",
                     ContactEmail = "user@example.com",
@@ -130,6 +145,11 @@ public class DigitalCardProfileListPageResponseTest : TestBase
                 {
                     ID = "digital_card_profile_s3puplu90f04xhcwkiga",
                     AppIconFileID = "file_makxrc67oh9l6sg7w9yc",
+                    ApplePay = new()
+                    {
+                        AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+                        AssociatedStoreIdentifiers = [new("1234567890")],
+                    },
                     BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     CardDescription = "Black Card",
                     ContactEmail = "user@example.com",
@@ -166,6 +186,11 @@ public class DigitalCardProfileListPageResponseTest : TestBase
             {
                 ID = "digital_card_profile_s3puplu90f04xhcwkiga",
                 AppIconFileID = "file_makxrc67oh9l6sg7w9yc",
+                ApplePay = new()
+                {
+                    AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+                    AssociatedStoreIdentifiers = [new("1234567890")],
+                },
                 BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 CardDescription = "Black Card",
                 ContactEmail = "user@example.com",
@@ -206,6 +231,11 @@ public class DigitalCardProfileListPageResponseTest : TestBase
                 {
                     ID = "digital_card_profile_s3puplu90f04xhcwkiga",
                     AppIconFileID = "file_makxrc67oh9l6sg7w9yc",
+                    ApplePay = new()
+                    {
+                        AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+                        AssociatedStoreIdentifiers = [new("1234567890")],
+                    },
                     BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     CardDescription = "Black Card",
                     ContactEmail = "user@example.com",
@@ -242,6 +272,11 @@ public class DigitalCardProfileListPageResponseTest : TestBase
                 {
                     ID = "digital_card_profile_s3puplu90f04xhcwkiga",
                     AppIconFileID = "file_makxrc67oh9l6sg7w9yc",
+                    ApplePay = new()
+                    {
+                        AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+                        AssociatedStoreIdentifiers = [new("1234567890")],
+                    },
                     BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     CardDescription = "Black Card",
                     ContactEmail = "user@example.com",
