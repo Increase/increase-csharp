@@ -1,5 +1,6 @@
 using System.Collections.Frozen;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -41,6 +42,19 @@ public sealed record class DigitalCardProfile : JsonModel
             return this._rawData.GetNotNullClass<string>("app_icon_file_id");
         }
         init { this._rawData.Set("app_icon_file_id", value); }
+    }
+
+    /// <summary>
+    /// Apple Pay specific settings for the Card Profile.
+    /// </summary>
+    public required DigitalCardProfileApplePay? ApplePay
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<DigitalCardProfileApplePay>("apple_pay");
+        }
+        init { this._rawData.Set("apple_pay", value); }
     }
 
     /// <summary>
@@ -213,6 +227,7 @@ public sealed record class DigitalCardProfile : JsonModel
     {
         _ = this.ID;
         _ = this.AppIconFileID;
+        this.ApplePay?.Validate();
         _ = this.BackgroundImageFileID;
         _ = this.CardDescription;
         _ = this.ContactEmail;
@@ -262,6 +277,266 @@ class DigitalCardProfileFromRaw : IFromRawJson<DigitalCardProfile>
     /// <inheritdoc/>
     public DigitalCardProfile FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         DigitalCardProfile.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Apple Pay specific settings for the Card Profile.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<DigitalCardProfileApplePay, DigitalCardProfileApplePayFromRaw>)
+)]
+public sealed record class DigitalCardProfileApplePay : JsonModel
+{
+    /// <summary>
+    /// The applications associated with cards using this Card Profile.
+    /// </summary>
+    public required IReadOnlyList<DigitalCardProfileApplePayAssociatedApplicationIdentifier> AssociatedApplicationIdentifiers
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<
+                ImmutableArray<DigitalCardProfileApplePayAssociatedApplicationIdentifier>
+            >("associated_application_identifiers");
+        }
+        init
+        {
+            this._rawData.Set<
+                ImmutableArray<DigitalCardProfileApplePayAssociatedApplicationIdentifier>
+            >("associated_application_identifiers", ImmutableArray.ToImmutableArray(value));
+        }
+    }
+
+    /// <summary>
+    /// The App Store listings of the applications associated with cards using this
+    /// Card Profile.
+    /// </summary>
+    public required IReadOnlyList<DigitalCardProfileApplePayAssociatedStoreIdentifier> AssociatedStoreIdentifiers
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<
+                ImmutableArray<DigitalCardProfileApplePayAssociatedStoreIdentifier>
+            >("associated_store_identifiers");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<DigitalCardProfileApplePayAssociatedStoreIdentifier>>(
+                "associated_store_identifiers",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        foreach (var item in this.AssociatedApplicationIdentifiers)
+        {
+            item.Validate();
+        }
+        foreach (var item in this.AssociatedStoreIdentifiers)
+        {
+            item.Validate();
+        }
+    }
+
+    public DigitalCardProfileApplePay() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public DigitalCardProfileApplePay(DigitalCardProfileApplePay digitalCardProfileApplePay)
+        : base(digitalCardProfileApplePay) { }
+#pragma warning restore CS8618
+
+    public DigitalCardProfileApplePay(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    DigitalCardProfileApplePay(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="DigitalCardProfileApplePayFromRaw.FromRawUnchecked"/>
+    public static DigitalCardProfileApplePay FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class DigitalCardProfileApplePayFromRaw : IFromRawJson<DigitalCardProfileApplePay>
+{
+    /// <inheritdoc/>
+    public DigitalCardProfileApplePay FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => DigitalCardProfileApplePay.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        DigitalCardProfileApplePayAssociatedApplicationIdentifier,
+        DigitalCardProfileApplePayAssociatedApplicationIdentifierFromRaw
+    >)
+)]
+public sealed record class DigitalCardProfileApplePayAssociatedApplicationIdentifier : JsonModel
+{
+    /// <summary>
+    /// The application identifier, composed of your Apple Developer Team ID and the
+    /// application's bundle identifier, like `ABCDE12345.com.example.app`.
+    /// </summary>
+    public required string Identifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("identifier");
+        }
+        init { this._rawData.Set("identifier", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Identifier;
+    }
+
+    public DigitalCardProfileApplePayAssociatedApplicationIdentifier() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public DigitalCardProfileApplePayAssociatedApplicationIdentifier(
+        DigitalCardProfileApplePayAssociatedApplicationIdentifier digitalCardProfileApplePayAssociatedApplicationIdentifier
+    )
+        : base(digitalCardProfileApplePayAssociatedApplicationIdentifier) { }
+#pragma warning restore CS8618
+
+    public DigitalCardProfileApplePayAssociatedApplicationIdentifier(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    DigitalCardProfileApplePayAssociatedApplicationIdentifier(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="DigitalCardProfileApplePayAssociatedApplicationIdentifierFromRaw.FromRawUnchecked"/>
+    public static DigitalCardProfileApplePayAssociatedApplicationIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public DigitalCardProfileApplePayAssociatedApplicationIdentifier(string identifier)
+        : this()
+    {
+        this.Identifier = identifier;
+    }
+}
+
+class DigitalCardProfileApplePayAssociatedApplicationIdentifierFromRaw
+    : IFromRawJson<DigitalCardProfileApplePayAssociatedApplicationIdentifier>
+{
+    /// <inheritdoc/>
+    public DigitalCardProfileApplePayAssociatedApplicationIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => DigitalCardProfileApplePayAssociatedApplicationIdentifier.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        DigitalCardProfileApplePayAssociatedStoreIdentifier,
+        DigitalCardProfileApplePayAssociatedStoreIdentifierFromRaw
+    >)
+)]
+public sealed record class DigitalCardProfileApplePayAssociatedStoreIdentifier : JsonModel
+{
+    /// <summary>
+    /// The numeric App Store identifier.
+    /// </summary>
+    public required string Identifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("identifier");
+        }
+        init { this._rawData.Set("identifier", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Identifier;
+    }
+
+    public DigitalCardProfileApplePayAssociatedStoreIdentifier() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public DigitalCardProfileApplePayAssociatedStoreIdentifier(
+        DigitalCardProfileApplePayAssociatedStoreIdentifier digitalCardProfileApplePayAssociatedStoreIdentifier
+    )
+        : base(digitalCardProfileApplePayAssociatedStoreIdentifier) { }
+#pragma warning restore CS8618
+
+    public DigitalCardProfileApplePayAssociatedStoreIdentifier(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    DigitalCardProfileApplePayAssociatedStoreIdentifier(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="DigitalCardProfileApplePayAssociatedStoreIdentifierFromRaw.FromRawUnchecked"/>
+    public static DigitalCardProfileApplePayAssociatedStoreIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public DigitalCardProfileApplePayAssociatedStoreIdentifier(string identifier)
+        : this()
+    {
+        this.Identifier = identifier;
+    }
+}
+
+class DigitalCardProfileApplePayAssociatedStoreIdentifierFromRaw
+    : IFromRawJson<DigitalCardProfileApplePayAssociatedStoreIdentifier>
+{
+    /// <inheritdoc/>
+    public DigitalCardProfileApplePayAssociatedStoreIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => DigitalCardProfileApplePayAssociatedStoreIdentifier.FromRawUnchecked(rawData);
 }
 
 /// <summary>
