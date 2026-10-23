@@ -156,7 +156,7 @@ public sealed record class PhysicalCard : JsonModel
     }
 
     /// <summary>
-    /// The status of the Physical Card.
+    /// The status of the Physical Card. The initial status is `disabled`.
     /// </summary>
     public required ApiEnum<string, PhysicalCardStatus> Status
     {
@@ -1185,7 +1185,7 @@ sealed class CategoryConverter : JsonConverter<Category>
 }
 
 /// <summary>
-/// The status of the Physical Card.
+/// The status of the Physical Card. The initial status is `disabled`.
 /// </summary>
 [JsonConverter(typeof(PhysicalCardStatusConverter))]
 public enum PhysicalCardStatus

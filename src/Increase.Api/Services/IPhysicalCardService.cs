@@ -27,7 +27,8 @@ public interface IPhysicalCardService
     IPhysicalCardService WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Create a Physical Card
+    /// Physical Cards start in the status `disabled`. Activate the card once it arrives
+    /// at the destination and the recipient confirms receipt.
     /// </summary>
     Task<PhysicalCard> Create(
         PhysicalCardCreateParams parameters,

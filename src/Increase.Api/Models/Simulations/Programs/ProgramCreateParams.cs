@@ -42,7 +42,7 @@ public record class ProgramCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The bank for the program's accounts, defaults to First Internet Bank.
+    /// The bank for the program's accounts, defaults to Increase Bank.
     /// </summary>
     public ApiEnum<string, Bank>? Bank
     {
@@ -237,7 +237,7 @@ public record class ProgramCreateParams : ParamsBase
 }
 
 /// <summary>
-/// The bank for the program's accounts, defaults to First Internet Bank.
+/// The bank for the program's accounts, defaults to Increase Bank.
 /// </summary>
 [JsonConverter(typeof(BankConverter))]
 public enum Bank
