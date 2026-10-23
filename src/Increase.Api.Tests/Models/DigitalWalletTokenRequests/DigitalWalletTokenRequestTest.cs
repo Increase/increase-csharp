@@ -313,6 +313,7 @@ public class ReasonTest : TestBase
     [InlineData(DigitalWalletTokenRequests::Reason.GroupLocked)]
     [InlineData(DigitalWalletTokenRequests::Reason.AccountClosed)]
     [InlineData(DigitalWalletTokenRequests::Reason.EntityNotActive)]
+    [InlineData(DigitalWalletTokenRequests::Reason.CardExpirationMismatch)]
     public void Validation_Works(DigitalWalletTokenRequests::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -342,6 +343,7 @@ public class ReasonTest : TestBase
     [InlineData(DigitalWalletTokenRequests::Reason.GroupLocked)]
     [InlineData(DigitalWalletTokenRequests::Reason.AccountClosed)]
     [InlineData(DigitalWalletTokenRequests::Reason.EntityNotActive)]
+    [InlineData(DigitalWalletTokenRequests::Reason.CardExpirationMismatch)]
     public void SerializationRoundtrip_Works(DigitalWalletTokenRequests::Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

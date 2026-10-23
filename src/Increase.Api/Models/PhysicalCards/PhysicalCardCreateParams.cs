@@ -12,7 +12,8 @@ using System = System;
 namespace Increase.Api.Models.PhysicalCards;
 
 /// <summary>
-/// Create a Physical Card
+/// Physical Cards start in the status `disabled`. Activate the card once it arrives
+/// at the destination and the recipient confirms receipt.
 ///
 /// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
 /// breaking changes in non-major versions. We may add new methods in the future that

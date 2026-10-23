@@ -171,6 +171,11 @@ public enum DeclineReason
     /// The account's entity was not active.
     /// </summary>
     EntityNotActive,
+
+    /// <summary>
+    /// The given expiration date did not match the card's value.
+    /// </summary>
+    CardExpirationMismatch,
 }
 
 sealed class DeclineReasonConverter : JsonConverter<DeclineReason>
@@ -192,6 +197,7 @@ sealed class DeclineReasonConverter : JsonConverter<DeclineReason>
             "group_locked" => DeclineReason.GroupLocked,
             "account_closed" => DeclineReason.AccountClosed,
             "entity_not_active" => DeclineReason.EntityNotActive,
+            "card_expiration_mismatch" => DeclineReason.CardExpirationMismatch,
             _ => (DeclineReason)(-1),
         };
     }
@@ -215,6 +221,7 @@ sealed class DeclineReasonConverter : JsonConverter<DeclineReason>
                 DeclineReason.GroupLocked => "group_locked",
                 DeclineReason.AccountClosed => "account_closed",
                 DeclineReason.EntityNotActive => "entity_not_active",
+                DeclineReason.CardExpirationMismatch => "card_expiration_mismatch",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
