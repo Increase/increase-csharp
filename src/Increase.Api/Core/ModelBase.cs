@@ -963,7 +963,6 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, PhysicalCardProfiles::PhysicalCardProfileStatus>(),
             new ApiEnumConverter<string, PhysicalCardProfiles::Type>(),
             new ApiEnumConverter<string, PhysicalCardProfiles::In>(),
-            new ApiEnumConverter<string, DigitalWalletTokens::Reason>(),
             new ApiEnumConverter<string, DigitalWalletTokens::DeviceType>(),
             new ApiEnumConverter<string, DigitalWalletTokens::DigitalWalletTokenStatus>(),
             new ApiEnumConverter<string, DigitalWalletTokens::TokenRequestor>(),

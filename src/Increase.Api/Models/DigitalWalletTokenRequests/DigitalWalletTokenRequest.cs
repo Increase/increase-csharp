@@ -329,6 +329,11 @@ public enum Reason
     /// The account's entity was not active.
     /// </summary>
     EntityNotActive,
+
+    /// <summary>
+    /// The given expiration date did not match the card's value.
+    /// </summary>
+    CardExpirationMismatch,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -350,6 +355,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "group_locked" => Reason.GroupLocked,
             "account_closed" => Reason.AccountClosed,
             "entity_not_active" => Reason.EntityNotActive,
+            "card_expiration_mismatch" => Reason.CardExpirationMismatch,
             _ => (Reason)(-1),
         };
     }
@@ -369,6 +375,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.GroupLocked => "group_locked",
                 Reason.AccountClosed => "account_closed",
                 Reason.EntityNotActive => "entity_not_active",
+                Reason.CardExpirationMismatch => "card_expiration_mismatch",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

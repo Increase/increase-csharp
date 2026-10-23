@@ -110,6 +110,7 @@ public class DeclineReasonTest : TestBase
     [InlineData(DeclineReason.GroupLocked)]
     [InlineData(DeclineReason.AccountClosed)]
     [InlineData(DeclineReason.EntityNotActive)]
+    [InlineData(DeclineReason.CardExpirationMismatch)]
     public void Validation_Works(DeclineReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -139,6 +140,7 @@ public class DeclineReasonTest : TestBase
     [InlineData(DeclineReason.GroupLocked)]
     [InlineData(DeclineReason.AccountClosed)]
     [InlineData(DeclineReason.EntityNotActive)]
+    [InlineData(DeclineReason.CardExpirationMismatch)]
     public void SerializationRoundtrip_Works(DeclineReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
