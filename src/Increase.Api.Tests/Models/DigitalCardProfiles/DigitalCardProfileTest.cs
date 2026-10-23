@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text.Json;
 using Increase.Api.Core;
 using Increase.Api.Exceptions;
@@ -15,6 +16,11 @@ public class DigitalCardProfileTest : TestBase
         {
             ID = "digital_card_profile_s3puplu90f04xhcwkiga",
             AppIconFileID = "file_makxrc67oh9l6sg7w9yc",
+            ApplePay = new()
+            {
+                AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+                AssociatedStoreIdentifiers = [new("1234567890")],
+            },
             BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
             CardDescription = "Black Card",
             ContactEmail = "user@example.com",
@@ -36,6 +42,11 @@ public class DigitalCardProfileTest : TestBase
 
         string expectedID = "digital_card_profile_s3puplu90f04xhcwkiga";
         string expectedAppIconFileID = "file_makxrc67oh9l6sg7w9yc";
+        DigitalCardProfiles::DigitalCardProfileApplePay expectedApplePay = new()
+        {
+            AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+            AssociatedStoreIdentifiers = [new("1234567890")],
+        };
         string expectedBackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc";
         string expectedCardDescription = "Black Card";
         string expectedContactEmail = "user@example.com";
@@ -57,6 +68,7 @@ public class DigitalCardProfileTest : TestBase
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedAppIconFileID, model.AppIconFileID);
+        Assert.Equal(expectedApplePay, model.ApplePay);
         Assert.Equal(expectedBackgroundImageFileID, model.BackgroundImageFileID);
         Assert.Equal(expectedCardDescription, model.CardDescription);
         Assert.Equal(expectedContactEmail, model.ContactEmail);
@@ -78,6 +90,11 @@ public class DigitalCardProfileTest : TestBase
         {
             ID = "digital_card_profile_s3puplu90f04xhcwkiga",
             AppIconFileID = "file_makxrc67oh9l6sg7w9yc",
+            ApplePay = new()
+            {
+                AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+                AssociatedStoreIdentifiers = [new("1234567890")],
+            },
             BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
             CardDescription = "Black Card",
             ContactEmail = "user@example.com",
@@ -113,6 +130,11 @@ public class DigitalCardProfileTest : TestBase
         {
             ID = "digital_card_profile_s3puplu90f04xhcwkiga",
             AppIconFileID = "file_makxrc67oh9l6sg7w9yc",
+            ApplePay = new()
+            {
+                AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+                AssociatedStoreIdentifiers = [new("1234567890")],
+            },
             BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
             CardDescription = "Black Card",
             ContactEmail = "user@example.com",
@@ -141,6 +163,11 @@ public class DigitalCardProfileTest : TestBase
 
         string expectedID = "digital_card_profile_s3puplu90f04xhcwkiga";
         string expectedAppIconFileID = "file_makxrc67oh9l6sg7w9yc";
+        DigitalCardProfiles::DigitalCardProfileApplePay expectedApplePay = new()
+        {
+            AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+            AssociatedStoreIdentifiers = [new("1234567890")],
+        };
         string expectedBackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc";
         string expectedCardDescription = "Black Card";
         string expectedContactEmail = "user@example.com";
@@ -162,6 +189,7 @@ public class DigitalCardProfileTest : TestBase
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedAppIconFileID, deserialized.AppIconFileID);
+        Assert.Equal(expectedApplePay, deserialized.ApplePay);
         Assert.Equal(expectedBackgroundImageFileID, deserialized.BackgroundImageFileID);
         Assert.Equal(expectedCardDescription, deserialized.CardDescription);
         Assert.Equal(expectedContactEmail, deserialized.ContactEmail);
@@ -183,6 +211,11 @@ public class DigitalCardProfileTest : TestBase
         {
             ID = "digital_card_profile_s3puplu90f04xhcwkiga",
             AppIconFileID = "file_makxrc67oh9l6sg7w9yc",
+            ApplePay = new()
+            {
+                AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+                AssociatedStoreIdentifiers = [new("1234567890")],
+            },
             BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
             CardDescription = "Black Card",
             ContactEmail = "user@example.com",
@@ -212,6 +245,11 @@ public class DigitalCardProfileTest : TestBase
         {
             ID = "digital_card_profile_s3puplu90f04xhcwkiga",
             AppIconFileID = "file_makxrc67oh9l6sg7w9yc",
+            ApplePay = new()
+            {
+                AssociatedApplicationIdentifiers = [new("ABCDE12345.com.example.app")],
+                AssociatedStoreIdentifiers = [new("1234567890")],
+            },
             BackgroundImageFileID = "file_makxrc67oh9l6sg7w9yc",
             CardDescription = "Black Card",
             ContactEmail = "user@example.com",
@@ -232,6 +270,313 @@ public class DigitalCardProfileTest : TestBase
         };
 
         DigitalCardProfiles::DigitalCardProfile copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class DigitalCardProfileApplePayTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new DigitalCardProfiles::DigitalCardProfileApplePay
+        {
+            AssociatedApplicationIdentifiers = [new("identifier")],
+            AssociatedStoreIdentifiers = [new("identifier")],
+        };
+
+        List<DigitalCardProfiles::DigitalCardProfileApplePayAssociatedApplicationIdentifier> expectedAssociatedApplicationIdentifiers =
+        [
+            new("identifier"),
+        ];
+        List<DigitalCardProfiles::DigitalCardProfileApplePayAssociatedStoreIdentifier> expectedAssociatedStoreIdentifiers =
+        [
+            new("identifier"),
+        ];
+
+        Assert.Equal(
+            expectedAssociatedApplicationIdentifiers.Count,
+            model.AssociatedApplicationIdentifiers.Count
+        );
+        for (int i = 0; i < expectedAssociatedApplicationIdentifiers.Count; i++)
+        {
+            Assert.Equal(
+                expectedAssociatedApplicationIdentifiers[i],
+                model.AssociatedApplicationIdentifiers[i]
+            );
+        }
+        Assert.Equal(
+            expectedAssociatedStoreIdentifiers.Count,
+            model.AssociatedStoreIdentifiers.Count
+        );
+        for (int i = 0; i < expectedAssociatedStoreIdentifiers.Count; i++)
+        {
+            Assert.Equal(
+                expectedAssociatedStoreIdentifiers[i],
+                model.AssociatedStoreIdentifiers[i]
+            );
+        }
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new DigitalCardProfiles::DigitalCardProfileApplePay
+        {
+            AssociatedApplicationIdentifiers = [new("identifier")],
+            AssociatedStoreIdentifiers = [new("identifier")],
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<DigitalCardProfiles::DigitalCardProfileApplePay>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new DigitalCardProfiles::DigitalCardProfileApplePay
+        {
+            AssociatedApplicationIdentifiers = [new("identifier")],
+            AssociatedStoreIdentifiers = [new("identifier")],
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<DigitalCardProfiles::DigitalCardProfileApplePay>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        List<DigitalCardProfiles::DigitalCardProfileApplePayAssociatedApplicationIdentifier> expectedAssociatedApplicationIdentifiers =
+        [
+            new("identifier"),
+        ];
+        List<DigitalCardProfiles::DigitalCardProfileApplePayAssociatedStoreIdentifier> expectedAssociatedStoreIdentifiers =
+        [
+            new("identifier"),
+        ];
+
+        Assert.Equal(
+            expectedAssociatedApplicationIdentifiers.Count,
+            deserialized.AssociatedApplicationIdentifiers.Count
+        );
+        for (int i = 0; i < expectedAssociatedApplicationIdentifiers.Count; i++)
+        {
+            Assert.Equal(
+                expectedAssociatedApplicationIdentifiers[i],
+                deserialized.AssociatedApplicationIdentifiers[i]
+            );
+        }
+        Assert.Equal(
+            expectedAssociatedStoreIdentifiers.Count,
+            deserialized.AssociatedStoreIdentifiers.Count
+        );
+        for (int i = 0; i < expectedAssociatedStoreIdentifiers.Count; i++)
+        {
+            Assert.Equal(
+                expectedAssociatedStoreIdentifiers[i],
+                deserialized.AssociatedStoreIdentifiers[i]
+            );
+        }
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new DigitalCardProfiles::DigitalCardProfileApplePay
+        {
+            AssociatedApplicationIdentifiers = [new("identifier")],
+            AssociatedStoreIdentifiers = [new("identifier")],
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DigitalCardProfiles::DigitalCardProfileApplePay
+        {
+            AssociatedApplicationIdentifiers = [new("identifier")],
+            AssociatedStoreIdentifiers = [new("identifier")],
+        };
+
+        DigitalCardProfiles::DigitalCardProfileApplePay copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class DigitalCardProfileApplePayAssociatedApplicationIdentifierTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model =
+            new DigitalCardProfiles::DigitalCardProfileApplePayAssociatedApplicationIdentifier
+            {
+                Identifier = "identifier",
+            };
+
+        string expectedIdentifier = "identifier";
+
+        Assert.Equal(expectedIdentifier, model.Identifier);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model =
+            new DigitalCardProfiles::DigitalCardProfileApplePayAssociatedApplicationIdentifier
+            {
+                Identifier = "identifier",
+            };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<DigitalCardProfiles::DigitalCardProfileApplePayAssociatedApplicationIdentifier>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model =
+            new DigitalCardProfiles::DigitalCardProfileApplePayAssociatedApplicationIdentifier
+            {
+                Identifier = "identifier",
+            };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<DigitalCardProfiles::DigitalCardProfileApplePayAssociatedApplicationIdentifier>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedIdentifier = "identifier";
+
+        Assert.Equal(expectedIdentifier, deserialized.Identifier);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model =
+            new DigitalCardProfiles::DigitalCardProfileApplePayAssociatedApplicationIdentifier
+            {
+                Identifier = "identifier",
+            };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model =
+            new DigitalCardProfiles::DigitalCardProfileApplePayAssociatedApplicationIdentifier
+            {
+                Identifier = "identifier",
+            };
+
+        DigitalCardProfiles::DigitalCardProfileApplePayAssociatedApplicationIdentifier copied = new(
+            model
+        );
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class DigitalCardProfileApplePayAssociatedStoreIdentifierTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new DigitalCardProfiles::DigitalCardProfileApplePayAssociatedStoreIdentifier
+        {
+            Identifier = "identifier",
+        };
+
+        string expectedIdentifier = "identifier";
+
+        Assert.Equal(expectedIdentifier, model.Identifier);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new DigitalCardProfiles::DigitalCardProfileApplePayAssociatedStoreIdentifier
+        {
+            Identifier = "identifier",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<DigitalCardProfiles::DigitalCardProfileApplePayAssociatedStoreIdentifier>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new DigitalCardProfiles::DigitalCardProfileApplePayAssociatedStoreIdentifier
+        {
+            Identifier = "identifier",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<DigitalCardProfiles::DigitalCardProfileApplePayAssociatedStoreIdentifier>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedIdentifier = "identifier";
+
+        Assert.Equal(expectedIdentifier, deserialized.Identifier);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new DigitalCardProfiles::DigitalCardProfileApplePayAssociatedStoreIdentifier
+        {
+            Identifier = "identifier",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DigitalCardProfiles::DigitalCardProfileApplePayAssociatedStoreIdentifier
+        {
+            Identifier = "identifier",
+        };
+
+        DigitalCardProfiles::DigitalCardProfileApplePayAssociatedStoreIdentifier copied = new(
+            model
+        );
 
         Assert.Equal(model, copied);
     }
