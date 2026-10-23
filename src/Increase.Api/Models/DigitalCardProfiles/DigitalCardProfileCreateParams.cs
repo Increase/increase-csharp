@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Frozen;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using System.Text;
@@ -75,6 +76,27 @@ public record class DigitalCardProfileCreateParams : ParamsBase
             return this._rawBodyData.GetNotNullClass<string>("description");
         }
         init { this._rawBodyData.Set("description", value); }
+    }
+
+    /// <summary>
+    /// Apple Pay specific settings for the Card Profile.
+    /// </summary>
+    public ApplePay? ApplePay
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<ApplePay>("apple_pay");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("apple_pay", value);
+        }
     }
 
     /// <summary>
@@ -293,6 +315,257 @@ public record class DigitalCardProfileCreateParams : ParamsBase
     {
         return 0;
     }
+}
+
+/// <summary>
+/// Apple Pay specific settings for the Card Profile.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<ApplePay, ApplePayFromRaw>))]
+public sealed record class ApplePay : JsonModel
+{
+    /// <summary>
+    /// The applications to associate with cards using this Card Profile.
+    /// </summary>
+    public IReadOnlyList<AssociatedApplicationIdentifier>? AssociatedApplicationIdentifiers
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<AssociatedApplicationIdentifier>>(
+                "associated_application_identifiers"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set<ImmutableArray<AssociatedApplicationIdentifier>?>(
+                "associated_application_identifiers",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
+    /// The App Store listings of the applications to associate with cards using
+    /// this Card Profile.
+    /// </summary>
+    public IReadOnlyList<AssociatedStoreIdentifier>? AssociatedStoreIdentifiers
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<AssociatedStoreIdentifier>>(
+                "associated_store_identifiers"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set<ImmutableArray<AssociatedStoreIdentifier>?>(
+                "associated_store_identifiers",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        foreach (var item in this.AssociatedApplicationIdentifiers ?? [])
+        {
+            item.Validate();
+        }
+        foreach (var item in this.AssociatedStoreIdentifiers ?? [])
+        {
+            item.Validate();
+        }
+    }
+
+    public ApplePay() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public ApplePay(ApplePay applePay)
+        : base(applePay) { }
+#pragma warning restore CS8618
+
+    public ApplePay(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    ApplePay(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="ApplePayFromRaw.FromRawUnchecked"/>
+    public static ApplePay FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class ApplePayFromRaw : IFromRawJson<ApplePay>
+{
+    /// <inheritdoc/>
+    public ApplePay FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        ApplePay.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        AssociatedApplicationIdentifier,
+        AssociatedApplicationIdentifierFromRaw
+    >)
+)]
+public sealed record class AssociatedApplicationIdentifier : JsonModel
+{
+    /// <summary>
+    /// The application identifier, composed of your Apple Developer Team ID and the
+    /// application's bundle identifier, like `ABCDE12345.com.example.app`.
+    /// </summary>
+    public required string Identifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("identifier");
+        }
+        init { this._rawData.Set("identifier", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Identifier;
+    }
+
+    public AssociatedApplicationIdentifier() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public AssociatedApplicationIdentifier(
+        AssociatedApplicationIdentifier associatedApplicationIdentifier
+    )
+        : base(associatedApplicationIdentifier) { }
+#pragma warning restore CS8618
+
+    public AssociatedApplicationIdentifier(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    AssociatedApplicationIdentifier(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="AssociatedApplicationIdentifierFromRaw.FromRawUnchecked"/>
+    public static AssociatedApplicationIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public AssociatedApplicationIdentifier(string identifier)
+        : this()
+    {
+        this.Identifier = identifier;
+    }
+}
+
+class AssociatedApplicationIdentifierFromRaw : IFromRawJson<AssociatedApplicationIdentifier>
+{
+    /// <inheritdoc/>
+    public AssociatedApplicationIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => AssociatedApplicationIdentifier.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<AssociatedStoreIdentifier, AssociatedStoreIdentifierFromRaw>)
+)]
+public sealed record class AssociatedStoreIdentifier : JsonModel
+{
+    /// <summary>
+    /// The numeric App Store identifier.
+    /// </summary>
+    public required string Identifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("identifier");
+        }
+        init { this._rawData.Set("identifier", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Identifier;
+    }
+
+    public AssociatedStoreIdentifier() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public AssociatedStoreIdentifier(AssociatedStoreIdentifier associatedStoreIdentifier)
+        : base(associatedStoreIdentifier) { }
+#pragma warning restore CS8618
+
+    public AssociatedStoreIdentifier(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    AssociatedStoreIdentifier(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="AssociatedStoreIdentifierFromRaw.FromRawUnchecked"/>
+    public static AssociatedStoreIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public AssociatedStoreIdentifier(string identifier)
+        : this()
+    {
+        this.Identifier = identifier;
+    }
+}
+
+class AssociatedStoreIdentifierFromRaw : IFromRawJson<AssociatedStoreIdentifier>
+{
+    /// <inheritdoc/>
+    public AssociatedStoreIdentifier FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => AssociatedStoreIdentifier.FromRawUnchecked(rawData);
 }
 
 /// <summary>
