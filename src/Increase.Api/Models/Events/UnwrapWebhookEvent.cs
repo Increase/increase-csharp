@@ -566,6 +566,16 @@ public enum UnwrapWebhookEventCategory
     LoanPurchaseCreated,
 
     /// <summary>
+    /// Occurs whenever a Loan Purchase Offer is created.
+    /// </summary>
+    LoanPurchaseOfferCreated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Purchase Offer is updated.
+    /// </summary>
+    LoanPurchaseOfferUpdated,
+
+    /// <summary>
     /// Occurs whenever a Lockbox is created.
     /// </summary>
     LockboxCreated,
@@ -912,6 +922,8 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
             "loan_offer.created" => UnwrapWebhookEventCategory.LoanOfferCreated,
             "loan_offer.updated" => UnwrapWebhookEventCategory.LoanOfferUpdated,
             "loan_purchase.created" => UnwrapWebhookEventCategory.LoanPurchaseCreated,
+            "loan_purchase_offer.created" => UnwrapWebhookEventCategory.LoanPurchaseOfferCreated,
+            "loan_purchase_offer.updated" => UnwrapWebhookEventCategory.LoanPurchaseOfferUpdated,
             "lockbox.created" => UnwrapWebhookEventCategory.LockboxCreated,
             "lockbox.updated" => UnwrapWebhookEventCategory.LockboxUpdated,
             "lockbox_address.created" => UnwrapWebhookEventCategory.LockboxAddressCreated,
@@ -1108,6 +1120,10 @@ sealed class UnwrapWebhookEventCategoryConverter : JsonConverter<UnwrapWebhookEv
                 UnwrapWebhookEventCategory.LoanOfferCreated => "loan_offer.created",
                 UnwrapWebhookEventCategory.LoanOfferUpdated => "loan_offer.updated",
                 UnwrapWebhookEventCategory.LoanPurchaseCreated => "loan_purchase.created",
+                UnwrapWebhookEventCategory.LoanPurchaseOfferCreated =>
+                    "loan_purchase_offer.created",
+                UnwrapWebhookEventCategory.LoanPurchaseOfferUpdated =>
+                    "loan_purchase_offer.updated",
                 UnwrapWebhookEventCategory.LockboxCreated => "lockbox.created",
                 UnwrapWebhookEventCategory.LockboxUpdated => "lockbox.updated",
                 UnwrapWebhookEventCategory.LockboxAddressCreated => "lockbox_address.created",

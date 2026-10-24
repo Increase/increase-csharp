@@ -693,6 +693,16 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     LoanPurchaseCreated,
 
     /// <summary>
+    /// Occurs whenever a Loan Purchase Offer is created.
+    /// </summary>
+    LoanPurchaseOfferCreated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Purchase Offer is updated.
+    /// </summary>
+    LoanPurchaseOfferUpdated,
+
+    /// <summary>
     /// Occurs whenever a Lockbox is created.
     /// </summary>
     LockboxCreated,
@@ -1089,6 +1099,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferUpdated,
             "loan_purchase.created" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseCreated,
+            "loan_purchase_offer.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseOfferCreated,
+            "loan_purchase_offer.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseOfferUpdated,
             "lockbox.created" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated,
             "lockbox.updated" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated,
             "lockbox_address.created" =>
@@ -1351,6 +1365,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "loan_offer.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseCreated =>
                     "loan_purchase.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseOfferCreated =>
+                    "loan_purchase_offer.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseOfferUpdated =>
+                    "loan_purchase_offer.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated =>
                     "lockbox.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated =>
