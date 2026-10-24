@@ -537,7 +537,10 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferUpdated
     )]
     [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseCreated
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseOfferCreated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseOfferUpdated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated
@@ -945,7 +948,10 @@ public class EventSubscriptionSelectedEventCategoryEventCategoryTest : TestBase
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferUpdated
     )]
     [InlineData(
-        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseCreated
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseOfferCreated
+    )]
+    [InlineData(
+        EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseOfferUpdated
     )]
     [InlineData(
         EventSubscriptions::EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated

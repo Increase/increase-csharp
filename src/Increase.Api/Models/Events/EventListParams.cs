@@ -712,9 +712,14 @@ public enum In
     LoanOfferUpdated,
 
     /// <summary>
-    /// Occurs whenever a Loan Purchase is created.
+    /// Occurs whenever a Loan Purchase Offer is created.
     /// </summary>
-    LoanPurchaseCreated,
+    LoanPurchaseOfferCreated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Purchase Offer is updated.
+    /// </summary>
+    LoanPurchaseOfferUpdated,
 
     /// <summary>
     /// Occurs whenever a Lockbox is created.
@@ -1044,7 +1049,8 @@ sealed class InConverter : JsonConverter<In>
             "loan_obligation.created" => In.LoanObligationCreated,
             "loan_offer.created" => In.LoanOfferCreated,
             "loan_offer.updated" => In.LoanOfferUpdated,
-            "loan_purchase.created" => In.LoanPurchaseCreated,
+            "loan_purchase_offer.created" => In.LoanPurchaseOfferCreated,
+            "loan_purchase_offer.updated" => In.LoanPurchaseOfferUpdated,
             "lockbox.created" => In.LockboxCreated,
             "lockbox.updated" => In.LockboxUpdated,
             "lockbox_address.created" => In.LockboxAddressCreated,
@@ -1194,7 +1200,8 @@ sealed class InConverter : JsonConverter<In>
                 In.LoanObligationCreated => "loan_obligation.created",
                 In.LoanOfferCreated => "loan_offer.created",
                 In.LoanOfferUpdated => "loan_offer.updated",
-                In.LoanPurchaseCreated => "loan_purchase.created",
+                In.LoanPurchaseOfferCreated => "loan_purchase_offer.created",
+                In.LoanPurchaseOfferUpdated => "loan_purchase_offer.updated",
                 In.LockboxCreated => "lockbox.created",
                 In.LockboxUpdated => "lockbox.updated",
                 In.LockboxAddressCreated => "lockbox_address.created",
