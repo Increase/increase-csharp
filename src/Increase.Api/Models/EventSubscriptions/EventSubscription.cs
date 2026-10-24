@@ -688,9 +688,14 @@ public enum EventSubscriptionSelectedEventCategoryEventCategory
     LoanOfferUpdated,
 
     /// <summary>
-    /// Occurs whenever a Loan Purchase is created.
+    /// Occurs whenever a Loan Purchase Offer is created.
     /// </summary>
-    LoanPurchaseCreated,
+    LoanPurchaseOfferCreated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Purchase Offer is updated.
+    /// </summary>
+    LoanPurchaseOfferUpdated,
 
     /// <summary>
     /// Occurs whenever a Lockbox is created.
@@ -1087,8 +1092,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferCreated,
             "loan_offer.updated" =>
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferUpdated,
-            "loan_purchase.created" =>
-                EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseCreated,
+            "loan_purchase_offer.created" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseOfferCreated,
+            "loan_purchase_offer.updated" =>
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseOfferUpdated,
             "lockbox.created" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated,
             "lockbox.updated" => EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated,
             "lockbox_address.created" =>
@@ -1349,8 +1356,10 @@ sealed class EventSubscriptionSelectedEventCategoryEventCategoryConverter
                     "loan_offer.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LoanOfferUpdated =>
                     "loan_offer.updated",
-                EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseCreated =>
-                    "loan_purchase.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseOfferCreated =>
+                    "loan_purchase_offer.created",
+                EventSubscriptionSelectedEventCategoryEventCategory.LoanPurchaseOfferUpdated =>
+                    "loan_purchase_offer.updated",
                 EventSubscriptionSelectedEventCategoryEventCategory.LockboxCreated =>
                     "lockbox.created",
                 EventSubscriptionSelectedEventCategoryEventCategory.LockboxUpdated =>
