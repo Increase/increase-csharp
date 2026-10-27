@@ -180,6 +180,19 @@ public sealed record class InboundRealTimePaymentsTransfer : JsonModel
     }
 
     /// <summary>
+    /// A free-form reference string set by the sender, to help identify the transfer.
+    /// </summary>
+    public required string? EndToEndIdentification
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("end_to_end_identification");
+        }
+        init { this._rawData.Set("end_to_end_identification", value); }
+    }
+
+    /// <summary>
     /// The lifecycle status of the transfer.
     /// </summary>
     public required ApiEnum<string, Status> Status
@@ -252,6 +265,7 @@ public sealed record class InboundRealTimePaymentsTransfer : JsonModel
         _ = this.DebtorName;
         _ = this.DebtorRoutingNumber;
         this.Decline?.Validate();
+        _ = this.EndToEndIdentification;
         this.Status.Validate();
         _ = this.TransactionIdentification;
         this.Type.Validate();

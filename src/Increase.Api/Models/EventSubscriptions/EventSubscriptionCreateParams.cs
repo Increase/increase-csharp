@@ -727,9 +727,14 @@ public enum EventCategory
     LoanOfferUpdated,
 
     /// <summary>
-    /// Occurs whenever a Loan Purchase is created.
+    /// Occurs whenever a Loan Purchase Offer is created.
     /// </summary>
-    LoanPurchaseCreated,
+    LoanPurchaseOfferCreated,
+
+    /// <summary>
+    /// Occurs whenever a Loan Purchase Offer is updated.
+    /// </summary>
+    LoanPurchaseOfferUpdated,
 
     /// <summary>
     /// Occurs whenever a Lockbox is created.
@@ -1061,7 +1066,8 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
             "loan_obligation.created" => EventCategory.LoanObligationCreated,
             "loan_offer.created" => EventCategory.LoanOfferCreated,
             "loan_offer.updated" => EventCategory.LoanOfferUpdated,
-            "loan_purchase.created" => EventCategory.LoanPurchaseCreated,
+            "loan_purchase_offer.created" => EventCategory.LoanPurchaseOfferCreated,
+            "loan_purchase_offer.updated" => EventCategory.LoanPurchaseOfferUpdated,
             "lockbox.created" => EventCategory.LockboxCreated,
             "lockbox.updated" => EventCategory.LockboxUpdated,
             "lockbox_address.created" => EventCategory.LockboxAddressCreated,
@@ -1229,7 +1235,8 @@ sealed class EventCategoryConverter : JsonConverter<EventCategory>
                 EventCategory.LoanObligationCreated => "loan_obligation.created",
                 EventCategory.LoanOfferCreated => "loan_offer.created",
                 EventCategory.LoanOfferUpdated => "loan_offer.updated",
-                EventCategory.LoanPurchaseCreated => "loan_purchase.created",
+                EventCategory.LoanPurchaseOfferCreated => "loan_purchase_offer.created",
+                EventCategory.LoanPurchaseOfferUpdated => "loan_purchase_offer.updated",
                 EventCategory.LockboxCreated => "lockbox.created",
                 EventCategory.LockboxUpdated => "lockbox.updated",
                 EventCategory.LockboxAddressCreated => "lockbox_address.created",
