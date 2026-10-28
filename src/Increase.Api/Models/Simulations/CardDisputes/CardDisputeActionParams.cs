@@ -281,6 +281,30 @@ public sealed record class Visa : JsonModel
     }
 
     /// <summary>
+    /// The parameters for accepting the user prearbitration. Required if and only
+    /// if `action` is `accept_user_prearbitration`.
+    /// </summary>
+    public AcceptUserPrearbitration? AcceptUserPrearbitration
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<AcceptUserPrearbitration>(
+                "accept_user_prearbitration"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("accept_user_prearbitration", value);
+        }
+    }
+
+    /// <summary>
     /// The parameters for accepting the user submission. Required if and only if
     /// `action` is `accept_user_submission`.
     /// </summary>
@@ -515,6 +539,7 @@ public sealed record class Visa : JsonModel
     {
         this.Action.Validate();
         this.AcceptChargeback?.Validate();
+        this.AcceptUserPrearbitration?.Validate();
         this.AcceptUserSubmission?.Validate();
         this.DeclineUserPrearbitration?.Validate();
         this.ReceiveMerchantPrearbitration?.Validate();
@@ -583,6 +608,12 @@ public enum Action
     AcceptChargeback,
 
     /// <summary>
+    /// Simulate the merchant accepting the user's pre-arbitration. This will move
+    /// the dispute to a `won` state.
+    /// </summary>
+    AcceptUserPrearbitration,
+
+    /// <summary>
     /// Accept the user's submission and transmit it to the network. This will move
     /// the dispute to a `pending_response` state.
     /// </summary>
@@ -595,8 +626,8 @@ public enum Action
     DeclineUserPrearbitration,
 
     /// <summary>
-    /// Simulate the merchant issuing pre-arbitration. This will move the dispute
-    /// to a `user_submission_required` state.
+    /// Simulate the merchant issuing pre-arbitration. Only available for disputes
+    /// in the fraud or authorization category. This will move the dispute to a `user_submission_required` state.
     /// </summary>
     ReceiveMerchantPrearbitration,
 
@@ -607,8 +638,9 @@ public enum Action
     Reject,
 
     /// <summary>
-    /// Simulate the merchant re-presenting the dispute. This will move the dispute
-    /// to a `user_submission_required` state.
+    /// Simulate the merchant re-presenting the dispute. Only available for disputes
+    /// in a consumer or processing error category. This will move the dispute to
+    /// a `user_submission_required` state.
     /// </summary>
     Represent,
 
@@ -638,7 +670,7 @@ public enum Action
 
     /// <summary>
     /// Simulate the merchant timing out responding to a user pre-arbitration. This
-    /// will move the dispute to a `win` state.
+    /// will move the dispute to a `won` state.
     /// </summary>
     TimeOutUserPrearbitration,
 }
@@ -661,6 +693,13 @@ sealed class ActionConverter
                 .CardDisputes
                 .Action
                 .AcceptChargeback,
+            "accept_user_prearbitration" => global::Increase
+                .Api
+                .Models
+                .Simulations
+                .CardDisputes
+                .Action
+                .AcceptUserPrearbitration,
             "accept_user_submission" => global::Increase
                 .Api
                 .Models
@@ -735,6 +774,13 @@ sealed class ActionConverter
             {
                 global::Increase.Api.Models.Simulations.CardDisputes.Action.AcceptChargeback =>
                     "accept_chargeback",
+                global::Increase
+                    .Api
+                    .Models
+                    .Simulations
+                    .CardDisputes
+                    .Action
+                    .AcceptUserPrearbitration => "accept_user_prearbitration",
                 global::Increase.Api.Models.Simulations.CardDisputes.Action.AcceptUserSubmission =>
                     "accept_user_submission",
                 global::Increase
@@ -833,6 +879,56 @@ class AcceptChargebackFromRaw : IFromRawJson<AcceptChargeback>
     /// <inheritdoc/>
     public AcceptChargeback FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         AcceptChargeback.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The parameters for accepting the user prearbitration. Required if and only if
+/// `action` is `accept_user_prearbitration`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<AcceptUserPrearbitration, AcceptUserPrearbitrationFromRaw>)
+)]
+public sealed record class AcceptUserPrearbitration : JsonModel
+{
+    /// <inheritdoc/>
+    public override void Validate() { }
+
+    public AcceptUserPrearbitration() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public AcceptUserPrearbitration(AcceptUserPrearbitration acceptUserPrearbitration)
+        : base(acceptUserPrearbitration) { }
+#pragma warning restore CS8618
+
+    public AcceptUserPrearbitration(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    AcceptUserPrearbitration(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="AcceptUserPrearbitrationFromRaw.FromRawUnchecked"/>
+    public static AcceptUserPrearbitration FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class AcceptUserPrearbitrationFromRaw : IFromRawJson<AcceptUserPrearbitration>
+{
+    /// <inheritdoc/>
+    public AcceptUserPrearbitration FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => AcceptUserPrearbitration.FromRawUnchecked(rawData);
 }
 
 /// <summary>
