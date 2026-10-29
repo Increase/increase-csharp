@@ -16,7 +16,7 @@ public class AchTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 100,
-            StatementDescriptor = "New ACH transfer",
+            StatementDescriptor = "INVOICE 2468",
             AccountNumber = "987654321",
             Addenda = new()
             {
@@ -29,12 +29,12 @@ public class AchTransferCreateParamsTest : TestBase
             CompanyDescriptiveDate = "J!",
             CompanyDiscretionaryData = "J!",
             CompanyEntryDescription = "J!",
-            CompanyName = "company_name",
+            CompanyName = "Phonographs Inc",
             DestinationAccountHolder = DestinationAccountHolder.Business,
             ExternalAccountID = "external_account_id",
             Funding = Funding.Checking,
             IndividualID = "individual_id",
-            IndividualName = "individual_name",
+            IndividualName = "Ian Crease",
             PreferredEffectiveDate = new()
             {
                 Date = "2019-12-27",
@@ -47,7 +47,7 @@ public class AchTransferCreateParamsTest : TestBase
 
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         long expectedAmount = 100;
-        string expectedStatementDescriptor = "New ACH transfer";
+        string expectedStatementDescriptor = "INVOICE 2468";
         string expectedAccountNumber = "987654321";
         Addenda expectedAddenda = new()
         {
@@ -58,13 +58,13 @@ public class AchTransferCreateParamsTest : TestBase
         string expectedCompanyDescriptiveDate = "J!";
         string expectedCompanyDiscretionaryData = "J!";
         string expectedCompanyEntryDescription = "J!";
-        string expectedCompanyName = "company_name";
+        string expectedCompanyName = "Phonographs Inc";
         ApiEnum<string, DestinationAccountHolder> expectedDestinationAccountHolder =
             DestinationAccountHolder.Business;
         string expectedExternalAccountID = "external_account_id";
         ApiEnum<string, Funding> expectedFunding = Funding.Checking;
         string expectedIndividualID = "individual_id";
-        string expectedIndividualName = "individual_name";
+        string expectedIndividualName = "Ian Crease";
         PreferredEffectiveDate expectedPreferredEffectiveDate = new()
         {
             Date = "2019-12-27",
@@ -102,7 +102,7 @@ public class AchTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 100,
-            StatementDescriptor = "New ACH transfer",
+            StatementDescriptor = "INVOICE 2468",
         };
 
         Assert.Null(parameters.AccountNumber);
@@ -144,7 +144,7 @@ public class AchTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 100,
-            StatementDescriptor = "New ACH transfer",
+            StatementDescriptor = "INVOICE 2468",
 
             // Null should be interpreted as omitted for these properties
             AccountNumber = null,
@@ -203,7 +203,7 @@ public class AchTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 100,
-            StatementDescriptor = "New ACH transfer",
+            StatementDescriptor = "INVOICE 2468",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -218,7 +218,7 @@ public class AchTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 100,
-            StatementDescriptor = "New ACH transfer",
+            StatementDescriptor = "INVOICE 2468",
             AccountNumber = "987654321",
             Addenda = new()
             {
@@ -231,12 +231,12 @@ public class AchTransferCreateParamsTest : TestBase
             CompanyDescriptiveDate = "J!",
             CompanyDiscretionaryData = "J!",
             CompanyEntryDescription = "J!",
-            CompanyName = "company_name",
+            CompanyName = "Phonographs Inc",
             DestinationAccountHolder = DestinationAccountHolder.Business,
             ExternalAccountID = "external_account_id",
             Funding = Funding.Checking,
             IndividualID = "individual_id",
-            IndividualName = "individual_name",
+            IndividualName = "Ian Crease",
             PreferredEffectiveDate = new()
             {
                 Date = "2019-12-27",

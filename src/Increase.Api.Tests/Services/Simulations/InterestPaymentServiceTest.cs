@@ -8,7 +8,7 @@ public class InterestPaymentServiceTest : TestBase
     public async Task Create_Works()
     {
         var transaction = await this.client.Simulations.InterestPayments.Create(
-            new() { AccountID = "account_in71c4amph0vgo2qllky", Amount = 1000 },
+            new() { AccountID = "account_in71c4amph0vgo2qllky", Amount = 100 },
             TestContext.Current.CancellationToken
         );
         transaction.Validate();

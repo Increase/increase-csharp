@@ -240,6 +240,19 @@ public sealed record class WireDrawdownRequest : JsonModel
     }
 
     /// <summary>
+    /// If the debtor refuses the drawdown request, this will contain supplemental details.
+    /// </summary>
+    public required Refusal? Refusal
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<Refusal>("refusal");
+        }
+        init { this._rawData.Set("refusal", value); }
+    }
+
+    /// <summary>
     /// The lifecycle status of the drawdown request.
     /// </summary>
     public required ApiEnum<string, WireDrawdownRequestStatus> Status
@@ -331,6 +344,7 @@ public sealed record class WireDrawdownRequest : JsonModel
         _ = this.EndToEndIdentification;
         _ = this.FulfillmentInboundWireTransferID;
         _ = this.IdempotencyKey;
+        this.Refusal?.Validate();
         this.Status.Validate();
         this.Submission?.Validate();
         this.Type.Validate();
@@ -655,6 +669,185 @@ class WireDrawdownRequestDebtorAddressFromRaw : IFromRawJson<WireDrawdownRequest
     public WireDrawdownRequestDebtorAddress FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => WireDrawdownRequestDebtorAddress.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// If the debtor refuses the drawdown request, this will contain supplemental details.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Refusal, RefusalFromRaw>))]
+public sealed record class Refusal : JsonModel
+{
+    /// <summary>
+    /// Additional information about the refusal provided by the debtor bank. This
+    /// is typically present when the `refusal_reason_code` is `narrative`.
+    /// </summary>
+    public required string? RefusalReasonAdditionalInformation
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("refusal_reason_additional_information");
+        }
+        init { this._rawData.Set("refusal_reason_additional_information", value); }
+    }
+
+    /// <summary>
+    /// The reason the wire drawdown request was refused as provided by the debtor bank.
+    /// </summary>
+    public required ApiEnum<string, RefusalReasonCode> RefusalReasonCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, RefusalReasonCode>>(
+                "refusal_reason_code"
+            );
+        }
+        init { this._rawData.Set("refusal_reason_code", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the wire drawdown request was refused.
+    /// </summary>
+    public required System::DateTimeOffset RefusedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("refused_at");
+        }
+        init { this._rawData.Set("refused_at", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.RefusalReasonAdditionalInformation;
+        this.RefusalReasonCode.Validate();
+        _ = this.RefusedAt;
+    }
+
+    public Refusal() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Refusal(Refusal refusal)
+        : base(refusal) { }
+#pragma warning restore CS8618
+
+    public Refusal(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Refusal(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="RefusalFromRaw.FromRawUnchecked"/>
+    public static Refusal FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class RefusalFromRaw : IFromRawJson<Refusal>
+{
+    /// <inheritdoc/>
+    public Refusal FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Refusal.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The reason the wire drawdown request was refused as provided by the debtor bank.
+/// </summary>
+[JsonConverter(typeof(RefusalReasonCodeConverter))]
+public enum RefusalReasonCode
+{
+    /// <summary>
+    /// The debtor's account number is invalid or missing. Corresponds to the Fedwire
+    /// reason code `AC02`.
+    /// </summary>
+    InvalidDebtorAccountNumber,
+
+    /// <summary>
+    /// The debtor account does not allow drawdown requests. Corresponds to the Fedwire
+    /// reason code `AG01`.
+    /// </summary>
+    TransactionForbidden,
+
+    /// <summary>
+    /// The debtor account cannot be debited for a generic reason. Corresponds to
+    /// the Fedwire reason code `AG07`.
+    /// </summary>
+    UnsuccessfulDirectDebit,
+
+    /// <summary>
+    /// The debtor's identification is inconsistent with the debtor account number.
+    /// Corresponds to the Fedwire reason code `BE01`.
+    /// </summary>
+    InconsistentWithEndCustomer,
+
+    /// <summary>
+    /// The reason is provided as narrative information in the additional information
+    /// field. Corresponds to the Fedwire reason code `NARR`.
+    /// </summary>
+    Narrative,
+
+    /// <summary>
+    /// Some other error or issue has occurred.
+    /// </summary>
+    Other,
+}
+
+sealed class RefusalReasonCodeConverter : JsonConverter<RefusalReasonCode>
+{
+    public override RefusalReasonCode Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "invalid_debtor_account_number" => RefusalReasonCode.InvalidDebtorAccountNumber,
+            "transaction_forbidden" => RefusalReasonCode.TransactionForbidden,
+            "unsuccessful_direct_debit" => RefusalReasonCode.UnsuccessfulDirectDebit,
+            "inconsistent_with_end_customer" => RefusalReasonCode.InconsistentWithEndCustomer,
+            "narrative" => RefusalReasonCode.Narrative,
+            "other" => RefusalReasonCode.Other,
+            _ => (RefusalReasonCode)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        RefusalReasonCode value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                RefusalReasonCode.InvalidDebtorAccountNumber => "invalid_debtor_account_number",
+                RefusalReasonCode.TransactionForbidden => "transaction_forbidden",
+                RefusalReasonCode.UnsuccessfulDirectDebit => "unsuccessful_direct_debit",
+                RefusalReasonCode.InconsistentWithEndCustomer => "inconsistent_with_end_customer",
+                RefusalReasonCode.Narrative => "narrative",
+                RefusalReasonCode.Other => "other",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>

@@ -11,14 +11,14 @@ public class AccountRevenuePaymentCreateParamsTest : TestBase
         var parameters = new AccountRevenuePaymentCreateParams
         {
             AccountID = "account_in71c4amph0vgo2qllky",
-            Amount = 1000,
+            Amount = 100,
             AccruedOnAccountID = "accrued_on_account_id",
             PeriodEnd = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             PeriodStart = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
-        long expectedAmount = 1000;
+        long expectedAmount = 100;
         string expectedAccruedOnAccountID = "accrued_on_account_id";
         DateTimeOffset expectedPeriodEnd = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         DateTimeOffset expectedPeriodStart = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
@@ -36,7 +36,7 @@ public class AccountRevenuePaymentCreateParamsTest : TestBase
         var parameters = new AccountRevenuePaymentCreateParams
         {
             AccountID = "account_in71c4amph0vgo2qllky",
-            Amount = 1000,
+            Amount = 100,
         };
 
         Assert.Null(parameters.AccruedOnAccountID);
@@ -53,7 +53,7 @@ public class AccountRevenuePaymentCreateParamsTest : TestBase
         var parameters = new AccountRevenuePaymentCreateParams
         {
             AccountID = "account_in71c4amph0vgo2qllky",
-            Amount = 1000,
+            Amount = 100,
 
             // Null should be interpreted as omitted for these properties
             AccruedOnAccountID = null,
@@ -75,7 +75,7 @@ public class AccountRevenuePaymentCreateParamsTest : TestBase
         AccountRevenuePaymentCreateParams parameters = new()
         {
             AccountID = "account_in71c4amph0vgo2qllky",
-            Amount = 1000,
+            Amount = 100,
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -94,7 +94,7 @@ public class AccountRevenuePaymentCreateParamsTest : TestBase
         var parameters = new AccountRevenuePaymentCreateParams
         {
             AccountID = "account_in71c4amph0vgo2qllky",
-            Amount = 1000,
+            Amount = 100,
             AccruedOnAccountID = "accrued_on_account_id",
             PeriodEnd = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             PeriodStart = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),

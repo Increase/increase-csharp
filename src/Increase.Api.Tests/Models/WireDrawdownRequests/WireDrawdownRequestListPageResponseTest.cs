@@ -49,6 +49,12 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     FulfillmentInboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     IdempotencyKey = null,
+                    Refusal = new()
+                    {
+                        RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+                        RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+                        RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
                     Status = WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled,
                     Submission = new("20220118MMQFMP0P000003"),
                     Type = WireDrawdownRequests::Type.WireDrawdownRequest,
@@ -95,6 +101,12 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
                 EndToEndIdentification = "Invoice 29582",
                 FulfillmentInboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                 IdempotencyKey = null,
+                Refusal = new()
+                {
+                    RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+                    RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+                    RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
                 Status = WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled,
                 Submission = new("20220118MMQFMP0P000003"),
                 Type = WireDrawdownRequests::Type.WireDrawdownRequest,
@@ -153,6 +165,12 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     FulfillmentInboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     IdempotencyKey = null,
+                    Refusal = new()
+                    {
+                        RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+                        RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+                        RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
                     Status = WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled,
                     Submission = new("20220118MMQFMP0P000003"),
                     Type = WireDrawdownRequests::Type.WireDrawdownRequest,
@@ -214,6 +232,12 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     FulfillmentInboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     IdempotencyKey = null,
+                    Refusal = new()
+                    {
+                        RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+                        RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+                        RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
                     Status = WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled,
                     Submission = new("20220118MMQFMP0P000003"),
                     Type = WireDrawdownRequests::Type.WireDrawdownRequest,
@@ -268,6 +292,12 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
                 EndToEndIdentification = "Invoice 29582",
                 FulfillmentInboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                 IdempotencyKey = null,
+                Refusal = new()
+                {
+                    RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+                    RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+                    RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
                 Status = WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled,
                 Submission = new("20220118MMQFMP0P000003"),
                 Type = WireDrawdownRequests::Type.WireDrawdownRequest,
@@ -326,6 +356,12 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     FulfillmentInboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     IdempotencyKey = null,
+                    Refusal = new()
+                    {
+                        RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+                        RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+                        RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
                     Status = WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled,
                     Submission = new("20220118MMQFMP0P000003"),
                     Type = WireDrawdownRequests::Type.WireDrawdownRequest,
@@ -380,6 +416,12 @@ public class WireDrawdownRequestListPageResponseTest : TestBase
                     EndToEndIdentification = "Invoice 29582",
                     FulfillmentInboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
                     IdempotencyKey = null,
+                    Refusal = new()
+                    {
+                        RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+                        RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+                        RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
                     Status = WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled,
                     Submission = new("20220118MMQFMP0P000003"),
                     Type = WireDrawdownRequests::Type.WireDrawdownRequest,
