@@ -12,7 +12,7 @@ public class AchTransferServiceTest : TestBase
             {
                 AccountID = "account_in71c4amph0vgo2qllky",
                 Amount = 100,
-                StatementDescriptor = "New ACH transfer",
+                StatementDescriptor = "INVOICE 2468",
             },
             TestContext.Current.CancellationToken
         );
