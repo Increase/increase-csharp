@@ -6,6 +6,7 @@ using Increase.Api.Models.Simulations.CardAuthentications;
 using Increase.Api.Models.Simulations.CardBalanceInquiries;
 using Increase.Api.Models.Simulations.CardDisputes;
 using Increase.Api.Models.Simulations.RealTimePaymentsTransfers;
+using Increase.Api.Models.Simulations.WireDrawdownRequests;
 using AccountNumbers = Increase.Api.Models.AccountNumbers;
 using AccountStatements = Increase.Api.Models.AccountStatements;
 using AccountTransfers = Increase.Api.Models.AccountTransfers;
@@ -1259,6 +1260,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, InboundWireTransfers::Type>(),
             new ApiEnumConverter<string, InboundWireTransfers::In>(),
             new ApiEnumConverter<string, InboundWireTransfers::Reason>(),
+            new ApiEnumConverter<string, WireDrawdownRequests::RefusalReasonCode>(),
             new ApiEnumConverter<string, WireDrawdownRequests::WireDrawdownRequestStatus>(),
             new ApiEnumConverter<string, WireDrawdownRequests::Type>(),
             new ApiEnumConverter<string, WireDrawdownRequests::ChargeBearer>(),
@@ -1678,6 +1680,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, InboundFundsHoldBehavior>(),
             new ApiEnumConverter<string, SimulationsInboundAchTransfers::Category>(),
             new ApiEnumConverter<string, SimulationsInboundAchTransfers::StandardEntryClassCode>(),
+            new ApiEnumConverter<string, RefusalReasonCode>(),
             new ApiEnumConverter<string, SimulationsInboundCheckDeposits::PayeeNameAnalysis>(),
             new ApiEnumConverter<string, SimulationsInboundCheckDeposits::Reason>(),
             new ApiEnumConverter<string, RejectReasonCode>(),

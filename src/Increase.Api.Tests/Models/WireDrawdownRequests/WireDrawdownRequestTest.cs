@@ -45,6 +45,12 @@ public class WireDrawdownRequestTest : TestBase
             EndToEndIdentification = "Invoice 29582",
             FulfillmentInboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             IdempotencyKey = null,
+            Refusal = new()
+            {
+                RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+                RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+                RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
             Status = WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled,
             Submission = new("20220118MMQFMP0P000003"),
             Type = WireDrawdownRequests::Type.WireDrawdownRequest,
@@ -83,6 +89,12 @@ public class WireDrawdownRequestTest : TestBase
         string expectedEndToEndIdentification = "Invoice 29582";
         string expectedFulfillmentInboundWireTransferID =
             "inbound_wire_transfer_f228m6bmhtcxjco9pwp0";
+        WireDrawdownRequests::Refusal expectedRefusal = new()
+        {
+            RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+            RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+            RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
         ApiEnum<string, WireDrawdownRequests::WireDrawdownRequestStatus> expectedStatus =
             WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled;
         WireDrawdownRequests::Submission expectedSubmission = new("20220118MMQFMP0P000003");
@@ -110,6 +122,7 @@ public class WireDrawdownRequestTest : TestBase
             model.FulfillmentInboundWireTransferID
         );
         Assert.Null(model.IdempotencyKey);
+        Assert.Equal(expectedRefusal, model.Refusal);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedSubmission, model.Submission);
         Assert.Equal(expectedType, model.Type);
@@ -160,6 +173,12 @@ public class WireDrawdownRequestTest : TestBase
             EndToEndIdentification = "Invoice 29582",
             FulfillmentInboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             IdempotencyKey = null,
+            Refusal = new()
+            {
+                RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+                RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+                RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
             Status = WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled,
             Submission = new("20220118MMQFMP0P000003"),
             Type = WireDrawdownRequests::Type.WireDrawdownRequest,
@@ -213,6 +232,12 @@ public class WireDrawdownRequestTest : TestBase
             EndToEndIdentification = "Invoice 29582",
             FulfillmentInboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             IdempotencyKey = null,
+            Refusal = new()
+            {
+                RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+                RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+                RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
             Status = WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled,
             Submission = new("20220118MMQFMP0P000003"),
             Type = WireDrawdownRequests::Type.WireDrawdownRequest,
@@ -258,6 +283,12 @@ public class WireDrawdownRequestTest : TestBase
         string expectedEndToEndIdentification = "Invoice 29582";
         string expectedFulfillmentInboundWireTransferID =
             "inbound_wire_transfer_f228m6bmhtcxjco9pwp0";
+        WireDrawdownRequests::Refusal expectedRefusal = new()
+        {
+            RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+            RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+            RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
         ApiEnum<string, WireDrawdownRequests::WireDrawdownRequestStatus> expectedStatus =
             WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled;
         WireDrawdownRequests::Submission expectedSubmission = new("20220118MMQFMP0P000003");
@@ -285,6 +316,7 @@ public class WireDrawdownRequestTest : TestBase
             deserialized.FulfillmentInboundWireTransferID
         );
         Assert.Null(deserialized.IdempotencyKey);
+        Assert.Equal(expectedRefusal, deserialized.Refusal);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedSubmission, deserialized.Submission);
         Assert.Equal(expectedType, deserialized.Type);
@@ -335,6 +367,12 @@ public class WireDrawdownRequestTest : TestBase
             EndToEndIdentification = "Invoice 29582",
             FulfillmentInboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             IdempotencyKey = null,
+            Refusal = new()
+            {
+                RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+                RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+                RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
             Status = WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled,
             Submission = new("20220118MMQFMP0P000003"),
             Type = WireDrawdownRequests::Type.WireDrawdownRequest,
@@ -382,6 +420,12 @@ public class WireDrawdownRequestTest : TestBase
             EndToEndIdentification = "Invoice 29582",
             FulfillmentInboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             IdempotencyKey = null,
+            Refusal = new()
+            {
+                RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+                RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+                RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
             Status = WireDrawdownRequests::WireDrawdownRequestStatus.Fulfilled,
             Submission = new("20220118MMQFMP0P000003"),
             Type = WireDrawdownRequests::Type.WireDrawdownRequest,
@@ -640,6 +684,171 @@ public class WireDrawdownRequestDebtorAddressTest : TestBase
         WireDrawdownRequests::WireDrawdownRequestDebtorAddress copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class RefusalTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new WireDrawdownRequests::Refusal
+        {
+            RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+            RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+            RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        string expectedRefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE";
+        ApiEnum<string, WireDrawdownRequests::RefusalReasonCode> expectedRefusalReasonCode =
+            WireDrawdownRequests::RefusalReasonCode.Narrative;
+        DateTimeOffset expectedRefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+
+        Assert.Equal(
+            expectedRefusalReasonAdditionalInformation,
+            model.RefusalReasonAdditionalInformation
+        );
+        Assert.Equal(expectedRefusalReasonCode, model.RefusalReasonCode);
+        Assert.Equal(expectedRefusedAt, model.RefusedAt);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new WireDrawdownRequests::Refusal
+        {
+            RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+            RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+            RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<WireDrawdownRequests::Refusal>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new WireDrawdownRequests::Refusal
+        {
+            RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+            RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+            RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<WireDrawdownRequests::Refusal>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedRefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE";
+        ApiEnum<string, WireDrawdownRequests::RefusalReasonCode> expectedRefusalReasonCode =
+            WireDrawdownRequests::RefusalReasonCode.Narrative;
+        DateTimeOffset expectedRefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+
+        Assert.Equal(
+            expectedRefusalReasonAdditionalInformation,
+            deserialized.RefusalReasonAdditionalInformation
+        );
+        Assert.Equal(expectedRefusalReasonCode, deserialized.RefusalReasonCode);
+        Assert.Equal(expectedRefusedAt, deserialized.RefusedAt);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new WireDrawdownRequests::Refusal
+        {
+            RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+            RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+            RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new WireDrawdownRequests::Refusal
+        {
+            RefusalReasonAdditionalInformation = "NO DEBIT AUTH ON FILE",
+            RefusalReasonCode = WireDrawdownRequests::RefusalReasonCode.Narrative,
+            RefusedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        WireDrawdownRequests::Refusal copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class RefusalReasonCodeTest : TestBase
+{
+    [Theory]
+    [InlineData(WireDrawdownRequests::RefusalReasonCode.InvalidDebtorAccountNumber)]
+    [InlineData(WireDrawdownRequests::RefusalReasonCode.TransactionForbidden)]
+    [InlineData(WireDrawdownRequests::RefusalReasonCode.UnsuccessfulDirectDebit)]
+    [InlineData(WireDrawdownRequests::RefusalReasonCode.InconsistentWithEndCustomer)]
+    [InlineData(WireDrawdownRequests::RefusalReasonCode.Narrative)]
+    [InlineData(WireDrawdownRequests::RefusalReasonCode.Other)]
+    public void Validation_Works(WireDrawdownRequests::RefusalReasonCode rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, WireDrawdownRequests::RefusalReasonCode> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, WireDrawdownRequests::RefusalReasonCode>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(WireDrawdownRequests::RefusalReasonCode.InvalidDebtorAccountNumber)]
+    [InlineData(WireDrawdownRequests::RefusalReasonCode.TransactionForbidden)]
+    [InlineData(WireDrawdownRequests::RefusalReasonCode.UnsuccessfulDirectDebit)]
+    [InlineData(WireDrawdownRequests::RefusalReasonCode.InconsistentWithEndCustomer)]
+    [InlineData(WireDrawdownRequests::RefusalReasonCode.Narrative)]
+    [InlineData(WireDrawdownRequests::RefusalReasonCode.Other)]
+    public void SerializationRoundtrip_Works(WireDrawdownRequests::RefusalReasonCode rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, WireDrawdownRequests::RefusalReasonCode> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, WireDrawdownRequests::RefusalReasonCode>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, WireDrawdownRequests::RefusalReasonCode>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, WireDrawdownRequests::RefusalReasonCode>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
     }
 }
 

@@ -19,6 +19,7 @@ public class CardDisputeActionParamsTest : TestBase
             {
                 Action = CardDisputes::Action.AcceptUserSubmission,
                 AcceptChargeback = new(),
+                AcceptUserPrearbitration = new(),
                 AcceptUserSubmission = new(),
                 DeclineUserPrearbitration = new(),
                 ReceiveMerchantPrearbitration = new(),
@@ -38,6 +39,7 @@ public class CardDisputeActionParamsTest : TestBase
         {
             Action = CardDisputes::Action.AcceptUserSubmission,
             AcceptChargeback = new(),
+            AcceptUserPrearbitration = new(),
             AcceptUserSubmission = new(),
             DeclineUserPrearbitration = new(),
             ReceiveMerchantPrearbitration = new(),
@@ -116,6 +118,7 @@ public class CardDisputeActionParamsTest : TestBase
             {
                 Action = CardDisputes::Action.AcceptUserSubmission,
                 AcceptChargeback = new(),
+                AcceptUserPrearbitration = new(),
                 AcceptUserSubmission = new(),
                 DeclineUserPrearbitration = new(),
                 ReceiveMerchantPrearbitration = new(),
@@ -200,6 +203,7 @@ public class VisaTest : TestBase
         {
             Action = CardDisputes::Action.AcceptChargeback,
             AcceptChargeback = new(),
+            AcceptUserPrearbitration = new(),
             AcceptUserSubmission = new(),
             DeclineUserPrearbitration = new(),
             ReceiveMerchantPrearbitration = new(),
@@ -215,6 +219,7 @@ public class VisaTest : TestBase
         ApiEnum<string, CardDisputes::Action> expectedAction =
             CardDisputes::Action.AcceptChargeback;
         CardDisputes::AcceptChargeback expectedAcceptChargeback = new();
+        CardDisputes::AcceptUserPrearbitration expectedAcceptUserPrearbitration = new();
         CardDisputes::AcceptUserSubmission expectedAcceptUserSubmission = new();
         CardDisputes::DeclineUserPrearbitration expectedDeclineUserPrearbitration = new();
         CardDisputes::ReceiveMerchantPrearbitration expectedReceiveMerchantPrearbitration = new();
@@ -228,6 +233,7 @@ public class VisaTest : TestBase
 
         Assert.Equal(expectedAction, model.Action);
         Assert.Equal(expectedAcceptChargeback, model.AcceptChargeback);
+        Assert.Equal(expectedAcceptUserPrearbitration, model.AcceptUserPrearbitration);
         Assert.Equal(expectedAcceptUserSubmission, model.AcceptUserSubmission);
         Assert.Equal(expectedDeclineUserPrearbitration, model.DeclineUserPrearbitration);
         Assert.Equal(expectedReceiveMerchantPrearbitration, model.ReceiveMerchantPrearbitration);
@@ -247,6 +253,7 @@ public class VisaTest : TestBase
         {
             Action = CardDisputes::Action.AcceptChargeback,
             AcceptChargeback = new(),
+            AcceptUserPrearbitration = new(),
             AcceptUserSubmission = new(),
             DeclineUserPrearbitration = new(),
             ReceiveMerchantPrearbitration = new(),
@@ -275,6 +282,7 @@ public class VisaTest : TestBase
         {
             Action = CardDisputes::Action.AcceptChargeback,
             AcceptChargeback = new(),
+            AcceptUserPrearbitration = new(),
             AcceptUserSubmission = new(),
             DeclineUserPrearbitration = new(),
             ReceiveMerchantPrearbitration = new(),
@@ -297,6 +305,7 @@ public class VisaTest : TestBase
         ApiEnum<string, CardDisputes::Action> expectedAction =
             CardDisputes::Action.AcceptChargeback;
         CardDisputes::AcceptChargeback expectedAcceptChargeback = new();
+        CardDisputes::AcceptUserPrearbitration expectedAcceptUserPrearbitration = new();
         CardDisputes::AcceptUserSubmission expectedAcceptUserSubmission = new();
         CardDisputes::DeclineUserPrearbitration expectedDeclineUserPrearbitration = new();
         CardDisputes::ReceiveMerchantPrearbitration expectedReceiveMerchantPrearbitration = new();
@@ -310,6 +319,7 @@ public class VisaTest : TestBase
 
         Assert.Equal(expectedAction, deserialized.Action);
         Assert.Equal(expectedAcceptChargeback, deserialized.AcceptChargeback);
+        Assert.Equal(expectedAcceptUserPrearbitration, deserialized.AcceptUserPrearbitration);
         Assert.Equal(expectedAcceptUserSubmission, deserialized.AcceptUserSubmission);
         Assert.Equal(expectedDeclineUserPrearbitration, deserialized.DeclineUserPrearbitration);
         Assert.Equal(
@@ -335,6 +345,7 @@ public class VisaTest : TestBase
         {
             Action = CardDisputes::Action.AcceptChargeback,
             AcceptChargeback = new(),
+            AcceptUserPrearbitration = new(),
             AcceptUserSubmission = new(),
             DeclineUserPrearbitration = new(),
             ReceiveMerchantPrearbitration = new(),
@@ -357,6 +368,8 @@ public class VisaTest : TestBase
 
         Assert.Null(model.AcceptChargeback);
         Assert.False(model.RawData.ContainsKey("accept_chargeback"));
+        Assert.Null(model.AcceptUserPrearbitration);
+        Assert.False(model.RawData.ContainsKey("accept_user_prearbitration"));
         Assert.Null(model.AcceptUserSubmission);
         Assert.False(model.RawData.ContainsKey("accept_user_submission"));
         Assert.Null(model.DeclineUserPrearbitration);
@@ -396,6 +409,7 @@ public class VisaTest : TestBase
 
             // Null should be interpreted as omitted for these properties
             AcceptChargeback = null,
+            AcceptUserPrearbitration = null,
             AcceptUserSubmission = null,
             DeclineUserPrearbitration = null,
             ReceiveMerchantPrearbitration = null,
@@ -410,6 +424,8 @@ public class VisaTest : TestBase
 
         Assert.Null(model.AcceptChargeback);
         Assert.False(model.RawData.ContainsKey("accept_chargeback"));
+        Assert.Null(model.AcceptUserPrearbitration);
+        Assert.False(model.RawData.ContainsKey("accept_user_prearbitration"));
         Assert.Null(model.AcceptUserSubmission);
         Assert.False(model.RawData.ContainsKey("accept_user_submission"));
         Assert.Null(model.DeclineUserPrearbitration);
@@ -441,6 +457,7 @@ public class VisaTest : TestBase
 
             // Null should be interpreted as omitted for these properties
             AcceptChargeback = null,
+            AcceptUserPrearbitration = null,
             AcceptUserSubmission = null,
             DeclineUserPrearbitration = null,
             ReceiveMerchantPrearbitration = null,
@@ -463,6 +480,7 @@ public class VisaTest : TestBase
         {
             Action = CardDisputes::Action.AcceptChargeback,
             AcceptChargeback = new(),
+            AcceptUserPrearbitration = new(),
             AcceptUserSubmission = new(),
             DeclineUserPrearbitration = new(),
             ReceiveMerchantPrearbitration = new(),
@@ -485,6 +503,7 @@ public class ActionTest : TestBase
 {
     [Theory]
     [InlineData(CardDisputes::Action.AcceptChargeback)]
+    [InlineData(CardDisputes::Action.AcceptUserPrearbitration)]
     [InlineData(CardDisputes::Action.AcceptUserSubmission)]
     [InlineData(CardDisputes::Action.DeclineUserPrearbitration)]
     [InlineData(CardDisputes::Action.ReceiveMerchantPrearbitration)]
@@ -516,6 +535,7 @@ public class ActionTest : TestBase
 
     [Theory]
     [InlineData(CardDisputes::Action.AcceptChargeback)]
+    [InlineData(CardDisputes::Action.AcceptUserPrearbitration)]
     [InlineData(CardDisputes::Action.AcceptUserSubmission)]
     [InlineData(CardDisputes::Action.DeclineUserPrearbitration)]
     [InlineData(CardDisputes::Action.ReceiveMerchantPrearbitration)]
@@ -606,6 +626,60 @@ public class AcceptChargebackTest : TestBase
         var model = new CardDisputes::AcceptChargeback { };
 
         CardDisputes::AcceptChargeback copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class AcceptUserPrearbitrationTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardDisputes::AcceptUserPrearbitration { };
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardDisputes::AcceptUserPrearbitration { };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardDisputes::AcceptUserPrearbitration>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardDisputes::AcceptUserPrearbitration { };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardDisputes::AcceptUserPrearbitration>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardDisputes::AcceptUserPrearbitration { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardDisputes::AcceptUserPrearbitration { };
+
+        CardDisputes::AcceptUserPrearbitration copied = new(model);
 
         Assert.Equal(model, copied);
     }
