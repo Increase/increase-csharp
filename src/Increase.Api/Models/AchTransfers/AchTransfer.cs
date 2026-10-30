@@ -459,12 +459,12 @@ public sealed record class AchTransfer : JsonModel
     /// <summary>
     /// The descriptor that will show on the recipient's bank statement.
     /// </summary>
-    public required string StatementDescriptor
+    public required string? StatementDescriptor
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("statement_descriptor");
+            return this._rawData.GetNullableClass<string>("statement_descriptor");
         }
         init { this._rawData.Set("statement_descriptor", value); }
     }
