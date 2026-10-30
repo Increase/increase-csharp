@@ -25,4 +25,15 @@ public class InboundRealTimePaymentsTransferServiceTest : TestBase
         );
         page.Validate();
     }
+
+    [Fact]
+    public async Task Return_Works()
+    {
+        var realTimePaymentsTransfer = await this.client.InboundRealTimePaymentsTransfers.Return(
+            "inbound_real_time_payments_transfer_63hlz498vcxg644hcrzr",
+            new(),
+            TestContext.Current.CancellationToken
+        );
+        realTimePaymentsTransfer.Validate();
+    }
 }

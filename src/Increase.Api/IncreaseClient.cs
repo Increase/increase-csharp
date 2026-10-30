@@ -373,30 +373,6 @@ public sealed class IncreaseClient : IIncreaseClient
         get { return _realTimeDecisions.Value; }
     }
 
-    readonly Lazy<IGroupService> _groups;
-    public IGroupService Groups
-    {
-        get { return _groups.Value; }
-    }
-
-    readonly Lazy<IOAuthApplicationService> _oauthApplications;
-    public IOAuthApplicationService OAuthApplications
-    {
-        get { return _oauthApplications.Value; }
-    }
-
-    readonly Lazy<IOAuthConnectionService> _oauthConnections;
-    public IOAuthConnectionService OAuthConnections
-    {
-        get { return _oauthConnections.Value; }
-    }
-
-    readonly Lazy<IOAuthTokenService> _oauthTokens;
-    public IOAuthTokenService OAuthTokens
-    {
-        get { return _oauthTokens.Value; }
-    }
-
     readonly Lazy<IIntrafiAccountEnrollmentService> _intrafiAccountEnrollments;
     public IIntrafiAccountEnrollmentService IntrafiAccountEnrollments
     {
@@ -507,10 +483,6 @@ public sealed class IncreaseClient : IIncreaseClient
         _events = new(() => new EventService(this));
         _eventSubscriptions = new(() => new EventSubscriptionService(this));
         _realTimeDecisions = new(() => new RealTimeDecisionService(this));
-        _groups = new(() => new GroupService(this));
-        _oauthApplications = new(() => new OAuthApplicationService(this));
-        _oauthConnections = new(() => new OAuthConnectionService(this));
-        _oauthTokens = new(() => new OAuthTokenService(this));
         _intrafiAccountEnrollments = new(() => new IntrafiAccountEnrollmentService(this));
         _intrafiBalances = new(() => new IntrafiBalanceService(this));
         _intrafiExclusions = new(() => new IntrafiExclusionService(this));
@@ -895,30 +867,6 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
         get { return _realTimeDecisions.Value; }
     }
 
-    readonly Lazy<IGroupServiceWithRawResponse> _groups;
-    public IGroupServiceWithRawResponse Groups
-    {
-        get { return _groups.Value; }
-    }
-
-    readonly Lazy<IOAuthApplicationServiceWithRawResponse> _oauthApplications;
-    public IOAuthApplicationServiceWithRawResponse OAuthApplications
-    {
-        get { return _oauthApplications.Value; }
-    }
-
-    readonly Lazy<IOAuthConnectionServiceWithRawResponse> _oauthConnections;
-    public IOAuthConnectionServiceWithRawResponse OAuthConnections
-    {
-        get { return _oauthConnections.Value; }
-    }
-
-    readonly Lazy<IOAuthTokenServiceWithRawResponse> _oauthTokens;
-    public IOAuthTokenServiceWithRawResponse OAuthTokens
-    {
-        get { return _oauthTokens.Value; }
-    }
-
     readonly Lazy<IIntrafiAccountEnrollmentServiceWithRawResponse> _intrafiAccountEnrollments;
     public IIntrafiAccountEnrollmentServiceWithRawResponse IntrafiAccountEnrollments
     {
@@ -1234,10 +1182,6 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
         _events = new(() => new EventServiceWithRawResponse(this));
         _eventSubscriptions = new(() => new EventSubscriptionServiceWithRawResponse(this));
         _realTimeDecisions = new(() => new RealTimeDecisionServiceWithRawResponse(this));
-        _groups = new(() => new GroupServiceWithRawResponse(this));
-        _oauthApplications = new(() => new OAuthApplicationServiceWithRawResponse(this));
-        _oauthConnections = new(() => new OAuthConnectionServiceWithRawResponse(this));
-        _oauthTokens = new(() => new OAuthTokenServiceWithRawResponse(this));
         _intrafiAccountEnrollments = new(() =>
             new IntrafiAccountEnrollmentServiceWithRawResponse(this)
         );

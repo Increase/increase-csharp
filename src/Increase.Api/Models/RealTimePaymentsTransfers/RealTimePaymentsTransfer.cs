@@ -255,6 +255,22 @@ public sealed record class RealTimePaymentsTransfer : JsonModel
     }
 
     /// <summary>
+    /// The identifier of the Inbound Real-Time Payments Transfer this transfer returns,
+    /// if any.
+    /// </summary>
+    public required string? ReturnOfInboundRealTimePaymentsTransferID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>(
+                "return_of_inbound_real_time_payments_transfer_id"
+            );
+        }
+        init { this._rawData.Set("return_of_inbound_real_time_payments_transfer_id", value); }
+    }
+
+    /// <summary>
     /// The destination American Bankers' Association (ABA) Routing Transit Number (RTN).
     /// </summary>
     public required string RoutingNumber
@@ -398,6 +414,7 @@ public sealed record class RealTimePaymentsTransfer : JsonModel
         _ = this.InboundRealTimePaymentsRequestForPaymentID;
         _ = this.PendingTransactionID;
         this.Rejection?.Validate();
+        _ = this.ReturnOfInboundRealTimePaymentsTransferID;
         _ = this.RoutingNumber;
         _ = this.SourceAccountNumberID;
         this.Status.Validate();
