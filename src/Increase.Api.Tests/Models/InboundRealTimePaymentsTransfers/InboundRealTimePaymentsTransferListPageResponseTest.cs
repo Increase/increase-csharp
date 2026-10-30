@@ -40,6 +40,7 @@ public class InboundRealTimePaymentsTransferListPageResponseTest : TestBase
                             Reason = InboundRealTimePaymentsTransfers::Reason.AccountNumberCanceled,
                         },
                         EndToEndIdentification = "Invoice 29582",
+                        ReturnOfRealTimePaymentsTransferID = null,
                         Status = InboundRealTimePaymentsTransfers::Status.Confirmed,
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                         Type =
@@ -76,6 +77,7 @@ public class InboundRealTimePaymentsTransferListPageResponseTest : TestBase
                     Reason = InboundRealTimePaymentsTransfers::Reason.AccountNumberCanceled,
                 },
                 EndToEndIdentification = "Invoice 29582",
+                ReturnOfRealTimePaymentsTransferID = null,
                 Status = InboundRealTimePaymentsTransfers::Status.Confirmed,
                 TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                 Type = InboundRealTimePaymentsTransfers::Type.InboundRealTimePaymentsTransfer,
@@ -124,6 +126,7 @@ public class InboundRealTimePaymentsTransferListPageResponseTest : TestBase
                             Reason = InboundRealTimePaymentsTransfers::Reason.AccountNumberCanceled,
                         },
                         EndToEndIdentification = "Invoice 29582",
+                        ReturnOfRealTimePaymentsTransferID = null,
                         Status = InboundRealTimePaymentsTransfers::Status.Confirmed,
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                         Type =
@@ -176,6 +179,7 @@ public class InboundRealTimePaymentsTransferListPageResponseTest : TestBase
                             Reason = InboundRealTimePaymentsTransfers::Reason.AccountNumberCanceled,
                         },
                         EndToEndIdentification = "Invoice 29582",
+                        ReturnOfRealTimePaymentsTransferID = null,
                         Status = InboundRealTimePaymentsTransfers::Status.Confirmed,
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                         Type =
@@ -220,6 +224,7 @@ public class InboundRealTimePaymentsTransferListPageResponseTest : TestBase
                     Reason = InboundRealTimePaymentsTransfers::Reason.AccountNumberCanceled,
                 },
                 EndToEndIdentification = "Invoice 29582",
+                ReturnOfRealTimePaymentsTransferID = null,
                 Status = InboundRealTimePaymentsTransfers::Status.Confirmed,
                 TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                 Type = InboundRealTimePaymentsTransfers::Type.InboundRealTimePaymentsTransfer,
@@ -268,6 +273,7 @@ public class InboundRealTimePaymentsTransferListPageResponseTest : TestBase
                             Reason = InboundRealTimePaymentsTransfers::Reason.AccountNumberCanceled,
                         },
                         EndToEndIdentification = "Invoice 29582",
+                        ReturnOfRealTimePaymentsTransferID = null,
                         Status = InboundRealTimePaymentsTransfers::Status.Confirmed,
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                         Type =
@@ -313,6 +319,7 @@ public class InboundRealTimePaymentsTransferListPageResponseTest : TestBase
                             Reason = InboundRealTimePaymentsTransfers::Reason.AccountNumberCanceled,
                         },
                         EndToEndIdentification = "Invoice 29582",
+                        ReturnOfRealTimePaymentsTransferID = null,
                         Status = InboundRealTimePaymentsTransfers::Status.Confirmed,
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                         Type =

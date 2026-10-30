@@ -193,6 +193,22 @@ public sealed record class InboundRealTimePaymentsTransfer : JsonModel
     }
 
     /// <summary>
+    /// The identifier of the Real-Time Payments Transfer this transfer returns,
+    /// if any.
+    /// </summary>
+    public required string? ReturnOfRealTimePaymentsTransferID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>(
+                "return_of_real_time_payments_transfer_id"
+            );
+        }
+        init { this._rawData.Set("return_of_real_time_payments_transfer_id", value); }
+    }
+
+    /// <summary>
     /// The lifecycle status of the transfer.
     /// </summary>
     public required ApiEnum<string, Status> Status
@@ -266,6 +282,7 @@ public sealed record class InboundRealTimePaymentsTransfer : JsonModel
         _ = this.DebtorRoutingNumber;
         this.Decline?.Validate();
         _ = this.EndToEndIdentification;
+        _ = this.ReturnOfRealTimePaymentsTransferID;
         this.Status.Validate();
         _ = this.TransactionIdentification;
         this.Type.Validate();

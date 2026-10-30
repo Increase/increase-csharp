@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Increase.Api.Core;
 using Increase.Api.Exceptions;
 using Increase.Api.Services;
+using InboundRealTimePaymentsTransfers = Increase.Api.Models.InboundRealTimePaymentsTransfers;
 
 namespace Increase.Api.Models.RealTimePaymentsTransfers;
 
@@ -17,10 +18,10 @@ public sealed class RealTimePaymentsTransferListPage(
     IRealTimePaymentsTransferServiceWithRawResponse service,
     RealTimePaymentsTransferListParams parameters,
     RealTimePaymentsTransferListPageResponse response
-) : IPage<RealTimePaymentsTransfer>
+) : IPage<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>
 {
     /// <inheritdoc/>
-    public IReadOnlyList<RealTimePaymentsTransfer> Items
+    public IReadOnlyList<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Items
     {
         get { return response.Data; }
     }
@@ -41,7 +42,9 @@ public sealed class RealTimePaymentsTransferListPage(
     }
 
     /// <inheritdoc/>
-    async Task<IPage<RealTimePaymentsTransfer>> IPage<RealTimePaymentsTransfer>.Next(
+    async Task<
+        IPage<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>
+    > IPage<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>.Next(
         CancellationToken cancellationToken
     ) => await this.Next(cancellationToken).ConfigureAwait(false);
 

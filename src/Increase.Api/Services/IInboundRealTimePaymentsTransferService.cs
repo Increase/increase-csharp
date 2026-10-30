@@ -50,6 +50,21 @@ public interface IInboundRealTimePaymentsTransferService
         InboundRealTimePaymentsTransferListParams? parameters = null,
         CancellationToken cancellationToken = default
     );
+
+    /// <summary>
+    /// Return an Inbound Real-Time Payments Transfer
+    /// </summary>
+    Task<RealTimePaymentsTransfer> Return(
+        InboundRealTimePaymentsTransferReturnParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="Return(InboundRealTimePaymentsTransferReturnParams, CancellationToken)"/>
+    Task<RealTimePaymentsTransfer> Return(
+        string inboundRealTimePaymentsTransferID,
+        InboundRealTimePaymentsTransferReturnParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
 }
 
 /// <summary>
@@ -89,6 +104,22 @@ public interface IInboundRealTimePaymentsTransferServiceWithRawResponse
     /// </summary>
     Task<HttpResponse<InboundRealTimePaymentsTransferListPage>> List(
         InboundRealTimePaymentsTransferListParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>post /inbound_real_time_payments_transfers/{inbound_real_time_payments_transfer_id}/return</c>, but is otherwise the
+    /// same as <see cref="IInboundRealTimePaymentsTransferService.Return(InboundRealTimePaymentsTransferReturnParams, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<RealTimePaymentsTransfer>> Return(
+        InboundRealTimePaymentsTransferReturnParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="Return(InboundRealTimePaymentsTransferReturnParams, CancellationToken)"/>
+    Task<HttpResponse<RealTimePaymentsTransfer>> Return(
+        string inboundRealTimePaymentsTransferID,
+        InboundRealTimePaymentsTransferReturnParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 }

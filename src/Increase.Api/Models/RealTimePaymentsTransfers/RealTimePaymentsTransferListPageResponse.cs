@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Increase.Api.Core;
+using InboundRealTimePaymentsTransfers = Increase.Api.Models.InboundRealTimePaymentsTransfers;
 
 namespace Increase.Api.Models.RealTimePaymentsTransfers;
 
@@ -22,19 +23,20 @@ public sealed record class RealTimePaymentsTransferListPageResponse : JsonModel
     /// <summary>
     /// The contents of the list.
     /// </summary>
-    public required IReadOnlyList<RealTimePaymentsTransfer> Data
+    public required IReadOnlyList<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Data
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<ImmutableArray<RealTimePaymentsTransfer>>("data");
+            return this._rawData.GetNotNullStruct<
+                ImmutableArray<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>
+            >("data");
         }
         init
         {
-            this._rawData.Set<ImmutableArray<RealTimePaymentsTransfer>>(
-                "data",
-                ImmutableArray.ToImmutableArray(value)
-            );
+            this._rawData.Set<
+                ImmutableArray<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>
+            >("data", ImmutableArray.ToImmutableArray(value));
         }
     }
 
