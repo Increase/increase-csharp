@@ -128,7 +128,9 @@ public sealed record class AchTransfer : JsonModel
     }
 
     /// <summary>
-    /// The description of the date of the transfer.
+    /// A description of the transfer date (typically `YYMMDD`), sent in the company
+    /// batch header. This value is informational and does not affect funds movement,
+    /// settlement timing, or returns.
     /// </summary>
     public required string? CompanyDescriptiveDate
     {
@@ -141,7 +143,9 @@ public sealed record class AchTransfer : JsonModel
     }
 
     /// <summary>
-    /// The data you chose to associate with the transfer.
+    /// Custom data sent in the company batch header, meant as metadata for the originator.
+    /// This value is informational and does not affect funds movement, settlement
+    /// timing, or returns.
     /// </summary>
     public required string? CompanyDiscretionaryData
     {
@@ -154,7 +158,9 @@ public sealed record class AchTransfer : JsonModel
     }
 
     /// <summary>
-    /// The description of the transfer you set to be shown to the recipient.
+    /// A short description sent in the company batch header, meant to provide the
+    /// receiver with a reason for the transfer. Many receivers do not surface this
+    /// data on the receiver's bank statement.
     /// </summary>
     public required string? CompanyEntryDescription
     {
@@ -167,7 +173,10 @@ public sealed record class AchTransfer : JsonModel
     }
 
     /// <summary>
-    /// The company ID associated with the transfer.
+    /// The Company ID sent in the batch header, which identifies the originator
+    /// to the receiving bank. Businesses use this value to allowlist the companies
+    /// permitted to debit their accounts. This value is configured by Increase and
+    /// will be the same for all your transfers.
     /// </summary>
     public required string CompanyID
     {
@@ -382,10 +391,8 @@ public sealed record class AchTransfer : JsonModel
     }
 
     /// <summary>
-    /// Configuration for how the effective date of the transfer will be set. This
-    /// determines same-day vs future-dated settlement timing. If not set, defaults
-    /// to a `settlement_schedule` of `same_day`. If set, exactly one of the child
-    /// attributes must be set.
+    /// Configuration for how the effective date of the transfer was set. This determines
+    /// same-day vs future-dated settlement timing.
     /// </summary>
     public required AchTransferPreferredEffectiveDate PreferredEffectiveDate
     {
@@ -459,12 +466,12 @@ public sealed record class AchTransfer : JsonModel
     /// <summary>
     /// The descriptor that will show on the recipient's bank statement.
     /// </summary>
-    public required string StatementDescriptor
+    public required string? StatementDescriptor
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("statement_descriptor");
+            return this._rawData.GetNullableClass<string>("statement_descriptor");
         }
         init { this._rawData.Set("statement_descriptor", value); }
     }
@@ -2651,9 +2658,8 @@ sealed class CorrectedAccountFundingConverter : JsonConverter<CorrectedAccountFu
 }
 
 /// <summary>
-/// Configuration for how the effective date of the transfer will be set. This determines
-/// same-day vs future-dated settlement timing. If not set, defaults to a `settlement_schedule`
-/// of `same_day`. If set, exactly one of the child attributes must be set.
+/// Configuration for how the effective date of the transfer was set. This determines
+/// same-day vs future-dated settlement timing.
 /// </summary>
 [JsonConverter(
     typeof(JsonModelConverter<
