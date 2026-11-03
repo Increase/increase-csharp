@@ -1300,20 +1300,6 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, InboundRealTimePaymentsTransfers::Reason>(),
             new ApiEnumConverter<string, InboundRealTimePaymentsTransfers::Status>(),
             new ApiEnumConverter<string, InboundRealTimePaymentsTransfers::Type>(),
-            new ApiEnumConverter<string, InboundRealTimePaymentsTransfers::Category>(),
-            new ApiEnumConverter<
-                string,
-                InboundRealTimePaymentsTransfers::RealTimePaymentsTransferCurrency
-            >(),
-            new ApiEnumConverter<string, InboundRealTimePaymentsTransfers::RejectReasonCode>(),
-            new ApiEnumConverter<
-                string,
-                InboundRealTimePaymentsTransfers::RealTimePaymentsTransferStatus
-            >(),
-            new ApiEnumConverter<
-                string,
-                InboundRealTimePaymentsTransfers::RealTimePaymentsTransferType
-            >(),
             new ApiEnumConverter<string, RealTimePaymentsRequestsForPayment::CancellationReason>(),
             new ApiEnumConverter<string, RealTimePaymentsRequestsForPayment::Currency>(),
             new ApiEnumConverter<string, RealTimePaymentsRequestsForPayment::RefusalReasonCode>(),

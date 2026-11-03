@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using Increase.Api.Core;
-using Increase.Api.Models.RealTimePaymentsTransfers;
-using InboundRealTimePaymentsTransfers = Increase.Api.Models.InboundRealTimePaymentsTransfers;
+using RealTimePaymentsTransfers = Increase.Api.Models.RealTimePaymentsTransfers;
 
 namespace Increase.Api.Tests.Models.RealTimePaymentsTransfers;
 
@@ -12,7 +11,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new RealTimePaymentsTransferListPageResponse
+        var model = new RealTimePaymentsTransfers::RealTimePaymentsTransferListPageResponse
         {
             Data =
             [
@@ -36,14 +35,13 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
-                        Category = InboundRealTimePaymentsTransfers::Category.User,
+                        Category = RealTimePaymentsTransfers::Category.User,
                         ApiKey = new("description"),
                         OAuthApplication = new("name"),
                         User = new("user@example.com"),
                     },
                     CreditorName = "Ian Crease",
-                    Currency =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferCurrency.Usd,
+                    Currency = RealTimePaymentsTransfers::Currency.Usd,
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
@@ -53,22 +51,20 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     {
                         RejectReasonAdditionalInformation = null,
                         RejectReasonCode =
-                            InboundRealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
+                            RealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
                         RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
                     ReturnOfInboundRealTimePaymentsTransferID = null,
                     RoutingNumber = "101050001",
                     SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
-                    Status =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
+                    Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                     Submission = new()
                     {
                         SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                    Type =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferType.RealTimePaymentsTransfer,
+                    Type = RealTimePaymentsTransfers::Type.RealTimePaymentsTransfer,
                     UltimateCreditorName = null,
                     UltimateDebtorName = null,
                     UnstructuredRemittanceInformation = "Invoice 29582",
@@ -77,7 +73,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
             NextCursor = "v57w5d",
         };
 
-        List<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> expectedData =
+        List<RealTimePaymentsTransfers::RealTimePaymentsTransfer> expectedData =
         [
             new()
             {
@@ -99,13 +95,13 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                 CreatedBy = new()
                 {
-                    Category = InboundRealTimePaymentsTransfers::Category.User,
+                    Category = RealTimePaymentsTransfers::Category.User,
                     ApiKey = new("description"),
                     OAuthApplication = new("name"),
                     User = new("user@example.com"),
                 },
                 CreditorName = "Ian Crease",
-                Currency = InboundRealTimePaymentsTransfers::RealTimePaymentsTransferCurrency.Usd,
+                Currency = RealTimePaymentsTransfers::Currency.Usd,
                 DebtorName = "National Phonograph Company",
                 ExternalAccountID = null,
                 IdempotencyKey = null,
@@ -114,22 +110,20 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                 Rejection = new()
                 {
                     RejectReasonAdditionalInformation = null,
-                    RejectReasonCode =
-                        InboundRealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
+                    RejectReasonCode = RealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
                     RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
                 ReturnOfInboundRealTimePaymentsTransferID = null,
                 RoutingNumber = "101050001",
                 SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
-                Status = InboundRealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
+                Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                 Submission = new()
                 {
                     SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                     TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                Type =
-                    InboundRealTimePaymentsTransfers::RealTimePaymentsTransferType.RealTimePaymentsTransfer,
+                Type = RealTimePaymentsTransfers::Type.RealTimePaymentsTransfer,
                 UltimateCreditorName = null,
                 UltimateDebtorName = null,
                 UnstructuredRemittanceInformation = "Invoice 29582",
@@ -148,7 +142,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new RealTimePaymentsTransferListPageResponse
+        var model = new RealTimePaymentsTransfers::RealTimePaymentsTransferListPageResponse
         {
             Data =
             [
@@ -172,14 +166,13 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
-                        Category = InboundRealTimePaymentsTransfers::Category.User,
+                        Category = RealTimePaymentsTransfers::Category.User,
                         ApiKey = new("description"),
                         OAuthApplication = new("name"),
                         User = new("user@example.com"),
                     },
                     CreditorName = "Ian Crease",
-                    Currency =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferCurrency.Usd,
+                    Currency = RealTimePaymentsTransfers::Currency.Usd,
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
@@ -189,22 +182,20 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     {
                         RejectReasonAdditionalInformation = null,
                         RejectReasonCode =
-                            InboundRealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
+                            RealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
                         RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
                     ReturnOfInboundRealTimePaymentsTransferID = null,
                     RoutingNumber = "101050001",
                     SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
-                    Status =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
+                    Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                     Submission = new()
                     {
                         SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                    Type =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferType.RealTimePaymentsTransfer,
+                    Type = RealTimePaymentsTransfers::Type.RealTimePaymentsTransfer,
                     UltimateCreditorName = null,
                     UltimateDebtorName = null,
                     UnstructuredRemittanceInformation = "Invoice 29582",
@@ -214,10 +205,11 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<RealTimePaymentsTransferListPageResponse>(
-            json,
-            ModelBase.SerializerOptions
-        );
+        var deserialized =
+            JsonSerializer.Deserialize<RealTimePaymentsTransfers::RealTimePaymentsTransferListPageResponse>(
+                json,
+                ModelBase.SerializerOptions
+            );
 
         Assert.Equal(model, deserialized);
     }
@@ -225,7 +217,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new RealTimePaymentsTransferListPageResponse
+        var model = new RealTimePaymentsTransfers::RealTimePaymentsTransferListPageResponse
         {
             Data =
             [
@@ -249,14 +241,13 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
-                        Category = InboundRealTimePaymentsTransfers::Category.User,
+                        Category = RealTimePaymentsTransfers::Category.User,
                         ApiKey = new("description"),
                         OAuthApplication = new("name"),
                         User = new("user@example.com"),
                     },
                     CreditorName = "Ian Crease",
-                    Currency =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferCurrency.Usd,
+                    Currency = RealTimePaymentsTransfers::Currency.Usd,
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
@@ -266,22 +257,20 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     {
                         RejectReasonAdditionalInformation = null,
                         RejectReasonCode =
-                            InboundRealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
+                            RealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
                         RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
                     ReturnOfInboundRealTimePaymentsTransferID = null,
                     RoutingNumber = "101050001",
                     SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
-                    Status =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
+                    Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                     Submission = new()
                     {
                         SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                    Type =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferType.RealTimePaymentsTransfer,
+                    Type = RealTimePaymentsTransfers::Type.RealTimePaymentsTransfer,
                     UltimateCreditorName = null,
                     UltimateDebtorName = null,
                     UnstructuredRemittanceInformation = "Invoice 29582",
@@ -291,13 +280,14 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<RealTimePaymentsTransferListPageResponse>(
-            element,
-            ModelBase.SerializerOptions
-        );
+        var deserialized =
+            JsonSerializer.Deserialize<RealTimePaymentsTransfers::RealTimePaymentsTransferListPageResponse>(
+                element,
+                ModelBase.SerializerOptions
+            );
         Assert.NotNull(deserialized);
 
-        List<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> expectedData =
+        List<RealTimePaymentsTransfers::RealTimePaymentsTransfer> expectedData =
         [
             new()
             {
@@ -319,13 +309,13 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                 CreatedBy = new()
                 {
-                    Category = InboundRealTimePaymentsTransfers::Category.User,
+                    Category = RealTimePaymentsTransfers::Category.User,
                     ApiKey = new("description"),
                     OAuthApplication = new("name"),
                     User = new("user@example.com"),
                 },
                 CreditorName = "Ian Crease",
-                Currency = InboundRealTimePaymentsTransfers::RealTimePaymentsTransferCurrency.Usd,
+                Currency = RealTimePaymentsTransfers::Currency.Usd,
                 DebtorName = "National Phonograph Company",
                 ExternalAccountID = null,
                 IdempotencyKey = null,
@@ -334,22 +324,20 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                 Rejection = new()
                 {
                     RejectReasonAdditionalInformation = null,
-                    RejectReasonCode =
-                        InboundRealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
+                    RejectReasonCode = RealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
                     RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
                 ReturnOfInboundRealTimePaymentsTransferID = null,
                 RoutingNumber = "101050001",
                 SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
-                Status = InboundRealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
+                Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                 Submission = new()
                 {
                     SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                     TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                 },
                 TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                Type =
-                    InboundRealTimePaymentsTransfers::RealTimePaymentsTransferType.RealTimePaymentsTransfer,
+                Type = RealTimePaymentsTransfers::Type.RealTimePaymentsTransfer,
                 UltimateCreditorName = null,
                 UltimateDebtorName = null,
                 UnstructuredRemittanceInformation = "Invoice 29582",
@@ -368,7 +356,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
     [Fact]
     public void Validation_Works()
     {
-        var model = new RealTimePaymentsTransferListPageResponse
+        var model = new RealTimePaymentsTransfers::RealTimePaymentsTransferListPageResponse
         {
             Data =
             [
@@ -392,14 +380,13 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
-                        Category = InboundRealTimePaymentsTransfers::Category.User,
+                        Category = RealTimePaymentsTransfers::Category.User,
                         ApiKey = new("description"),
                         OAuthApplication = new("name"),
                         User = new("user@example.com"),
                     },
                     CreditorName = "Ian Crease",
-                    Currency =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferCurrency.Usd,
+                    Currency = RealTimePaymentsTransfers::Currency.Usd,
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
@@ -409,22 +396,20 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     {
                         RejectReasonAdditionalInformation = null,
                         RejectReasonCode =
-                            InboundRealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
+                            RealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
                         RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
                     ReturnOfInboundRealTimePaymentsTransferID = null,
                     RoutingNumber = "101050001",
                     SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
-                    Status =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
+                    Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                     Submission = new()
                     {
                         SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                    Type =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferType.RealTimePaymentsTransfer,
+                    Type = RealTimePaymentsTransfers::Type.RealTimePaymentsTransfer,
                     UltimateCreditorName = null,
                     UltimateDebtorName = null,
                     UnstructuredRemittanceInformation = "Invoice 29582",
@@ -439,7 +424,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new RealTimePaymentsTransferListPageResponse
+        var model = new RealTimePaymentsTransfers::RealTimePaymentsTransferListPageResponse
         {
             Data =
             [
@@ -463,14 +448,13 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T14:00:00Z"),
                     CreatedBy = new()
                     {
-                        Category = InboundRealTimePaymentsTransfers::Category.User,
+                        Category = RealTimePaymentsTransfers::Category.User,
                         ApiKey = new("description"),
                         OAuthApplication = new("name"),
                         User = new("user@example.com"),
                     },
                     CreditorName = "Ian Crease",
-                    Currency =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferCurrency.Usd,
+                    Currency = RealTimePaymentsTransfers::Currency.Usd,
                     DebtorName = "National Phonograph Company",
                     ExternalAccountID = null,
                     IdempotencyKey = null,
@@ -480,22 +464,20 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
                     {
                         RejectReasonAdditionalInformation = null,
                         RejectReasonCode =
-                            InboundRealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
+                            RealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
                         RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
                     ReturnOfInboundRealTimePaymentsTransferID = null,
                     RoutingNumber = "101050001",
                     SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
-                    Status =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
+                    Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
                     Submission = new()
                     {
                         SubmittedAt = DateTimeOffset.Parse("2020-01-31T14:10:00Z"),
                         TransactionIdentification = "20220501234567891T1BSLZO01745013025",
                     },
                     TransactionID = "transaction_uyrp7fld2ium70oa7oi",
-                    Type =
-                        InboundRealTimePaymentsTransfers::RealTimePaymentsTransferType.RealTimePaymentsTransfer,
+                    Type = RealTimePaymentsTransfers::Type.RealTimePaymentsTransfer,
                     UltimateCreditorName = null,
                     UltimateDebtorName = null,
                     UnstructuredRemittanceInformation = "Invoice 29582",
@@ -504,7 +486,7 @@ public class RealTimePaymentsTransferListPageResponseTest : TestBase
             NextCursor = "v57w5d",
         };
 
-        RealTimePaymentsTransferListPageResponse copied = new(model);
+        RealTimePaymentsTransfers::RealTimePaymentsTransferListPageResponse copied = new(model);
 
         Assert.Equal(model, copied);
     }
