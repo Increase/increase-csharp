@@ -63,15 +63,17 @@ public class ExportListPageResponseTest : TestBase
                     },
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
-                    FeeCsv = new(
-                        new Exports::ExportFeeCsvCreatedAt()
+                    FeeCsv = new()
+                    {
+                        CreatedAt = new()
                         {
                             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        }
-                    ),
+                        },
+                        FeeStatementPeriodStart = "2019-12-27",
+                    },
                     Form1099Int = new()
                     {
                         AccountID = "account_id",
@@ -160,15 +162,17 @@ public class ExportListPageResponseTest : TestBase
                 },
                 DashboardTableCsv = new(),
                 EntityCsv = new(),
-                FeeCsv = new(
-                    new Exports::ExportFeeCsvCreatedAt()
+                FeeCsv = new()
+                {
+                    CreatedAt = new()
                     {
                         After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    }
-                ),
+                    },
+                    FeeStatementPeriodStart = "2019-12-27",
+                },
                 Form1099Int = new()
                 {
                     AccountID = "account_id",
@@ -269,15 +273,17 @@ public class ExportListPageResponseTest : TestBase
                     },
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
-                    FeeCsv = new(
-                        new Exports::ExportFeeCsvCreatedAt()
+                    FeeCsv = new()
+                    {
+                        CreatedAt = new()
                         {
                             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        }
-                    ),
+                        },
+                        FeeStatementPeriodStart = "2019-12-27",
+                    },
                     Form1099Int = new()
                     {
                         AccountID = "account_id",
@@ -380,15 +386,17 @@ public class ExportListPageResponseTest : TestBase
                     },
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
-                    FeeCsv = new(
-                        new Exports::ExportFeeCsvCreatedAt()
+                    FeeCsv = new()
+                    {
+                        CreatedAt = new()
                         {
                             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        }
-                    ),
+                        },
+                        FeeStatementPeriodStart = "2019-12-27",
+                    },
                     Form1099Int = new()
                     {
                         AccountID = "account_id",
@@ -484,15 +492,17 @@ public class ExportListPageResponseTest : TestBase
                 },
                 DashboardTableCsv = new(),
                 EntityCsv = new(),
-                FeeCsv = new(
-                    new Exports::ExportFeeCsvCreatedAt()
+                FeeCsv = new()
+                {
+                    CreatedAt = new()
                     {
                         After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                         OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    }
-                ),
+                    },
+                    FeeStatementPeriodStart = "2019-12-27",
+                },
                 Form1099Int = new()
                 {
                     AccountID = "account_id",
@@ -593,15 +603,17 @@ public class ExportListPageResponseTest : TestBase
                     },
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
-                    FeeCsv = new(
-                        new Exports::ExportFeeCsvCreatedAt()
+                    FeeCsv = new()
+                    {
+                        CreatedAt = new()
                         {
                             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        }
-                    ),
+                        },
+                        FeeStatementPeriodStart = "2019-12-27",
+                    },
                     Form1099Int = new()
                     {
                         AccountID = "account_id",
@@ -698,15 +710,17 @@ public class ExportListPageResponseTest : TestBase
                     },
                     DashboardTableCsv = new(),
                     EntityCsv = new(),
-                    FeeCsv = new(
-                        new Exports::ExportFeeCsvCreatedAt()
+                    FeeCsv = new()
+                    {
+                        CreatedAt = new()
                         {
                             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                             OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        }
-                    ),
+                        },
+                        FeeStatementPeriodStart = "2019-12-27",
+                    },
                     Form1099Int = new()
                     {
                         AccountID = "account_id",

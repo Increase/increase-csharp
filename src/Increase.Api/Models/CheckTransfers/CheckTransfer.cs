@@ -1254,8 +1254,7 @@ public sealed record class CheckTransferPhysicalCheck : JsonModel
     }
 
     /// <summary>
-    /// The payer of the check. This will be printed on the top-left portion of the
-    /// check and defaults to the return address if unspecified.
+    /// The payer of the check. This will be printed on the top-left portion of the check.
     /// </summary>
     public required IReadOnlyList<CheckTransferPhysicalCheckPayer> Payer
     {

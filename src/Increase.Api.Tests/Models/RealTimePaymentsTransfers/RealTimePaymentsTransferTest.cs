@@ -49,6 +49,7 @@ public class RealTimePaymentsTransferTest : TestBase
                 RejectReasonCode = RealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
                 RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
+            ReturnOfInboundRealTimePaymentsTransferID = null,
             RoutingNumber = "101050001",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
@@ -130,6 +131,7 @@ public class RealTimePaymentsTransferTest : TestBase
         Assert.Null(model.InboundRealTimePaymentsRequestForPaymentID);
         Assert.Null(model.PendingTransactionID);
         Assert.Equal(expectedRejection, model.Rejection);
+        Assert.Null(model.ReturnOfInboundRealTimePaymentsTransferID);
         Assert.Equal(expectedRoutingNumber, model.RoutingNumber);
         Assert.Equal(expectedSourceAccountNumberID, model.SourceAccountNumberID);
         Assert.Equal(expectedStatus, model.Status);
@@ -185,6 +187,7 @@ public class RealTimePaymentsTransferTest : TestBase
                 RejectReasonCode = RealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
                 RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
+            ReturnOfInboundRealTimePaymentsTransferID = null,
             RoutingNumber = "101050001",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
@@ -251,6 +254,7 @@ public class RealTimePaymentsTransferTest : TestBase
                 RejectReasonCode = RealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
                 RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
+            ReturnOfInboundRealTimePaymentsTransferID = null,
             RoutingNumber = "101050001",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
@@ -340,6 +344,7 @@ public class RealTimePaymentsTransferTest : TestBase
         Assert.Null(deserialized.InboundRealTimePaymentsRequestForPaymentID);
         Assert.Null(deserialized.PendingTransactionID);
         Assert.Equal(expectedRejection, deserialized.Rejection);
+        Assert.Null(deserialized.ReturnOfInboundRealTimePaymentsTransferID);
         Assert.Equal(expectedRoutingNumber, deserialized.RoutingNumber);
         Assert.Equal(expectedSourceAccountNumberID, deserialized.SourceAccountNumberID);
         Assert.Equal(expectedStatus, deserialized.Status);
@@ -395,6 +400,7 @@ public class RealTimePaymentsTransferTest : TestBase
                 RejectReasonCode = RealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
                 RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
+            ReturnOfInboundRealTimePaymentsTransferID = null,
             RoutingNumber = "101050001",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
@@ -454,6 +460,7 @@ public class RealTimePaymentsTransferTest : TestBase
                 RejectReasonCode = RealTimePaymentsTransfers::RejectReasonCode.AccountClosed,
                 RejectedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
+            ReturnOfInboundRealTimePaymentsTransferID = null,
             RoutingNumber = "101050001",
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             Status = RealTimePaymentsTransfers::RealTimePaymentsTransferStatus.Complete,
