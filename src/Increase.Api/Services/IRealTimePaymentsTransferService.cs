@@ -3,7 +3,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Increase.Api.Core;
 using Increase.Api.Models.RealTimePaymentsTransfers;
-using InboundRealTimePaymentsTransfers = Increase.Api.Models.InboundRealTimePaymentsTransfers;
 
 namespace Increase.Api.Services;
 
@@ -30,7 +29,7 @@ public interface IRealTimePaymentsTransferService
     /// <summary>
     /// Create a Real-Time Payments Transfer
     /// </summary>
-    Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Create(
+    Task<RealTimePaymentsTransfer> Create(
         RealTimePaymentsTransferCreateParams parameters,
         CancellationToken cancellationToken = default
     );
@@ -38,13 +37,13 @@ public interface IRealTimePaymentsTransferService
     /// <summary>
     /// Retrieve a Real-Time Payments Transfer
     /// </summary>
-    Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Retrieve(
+    Task<RealTimePaymentsTransfer> Retrieve(
         RealTimePaymentsTransferRetrieveParams parameters,
         CancellationToken cancellationToken = default
     );
 
     /// <inheritdoc cref="Retrieve(RealTimePaymentsTransferRetrieveParams, CancellationToken)"/>
-    Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Retrieve(
+    Task<RealTimePaymentsTransfer> Retrieve(
         string realTimePaymentsTransferID,
         RealTimePaymentsTransferRetrieveParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -61,13 +60,13 @@ public interface IRealTimePaymentsTransferService
     /// <summary>
     /// Approves a Real-Time Payments Transfer in a pending_approval state.
     /// </summary>
-    Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Approve(
+    Task<RealTimePaymentsTransfer> Approve(
         RealTimePaymentsTransferApproveParams parameters,
         CancellationToken cancellationToken = default
     );
 
     /// <inheritdoc cref="Approve(RealTimePaymentsTransferApproveParams, CancellationToken)"/>
-    Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Approve(
+    Task<RealTimePaymentsTransfer> Approve(
         string realTimePaymentsTransferID,
         RealTimePaymentsTransferApproveParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -76,13 +75,13 @@ public interface IRealTimePaymentsTransferService
     /// <summary>
     /// Cancels a Real-Time Payments Transfer in a pending_approval state.
     /// </summary>
-    Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Cancel(
+    Task<RealTimePaymentsTransfer> Cancel(
         RealTimePaymentsTransferCancelParams parameters,
         CancellationToken cancellationToken = default
     );
 
     /// <inheritdoc cref="Cancel(RealTimePaymentsTransferCancelParams, CancellationToken)"/>
-    Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Cancel(
+    Task<RealTimePaymentsTransfer> Cancel(
         string realTimePaymentsTransferID,
         RealTimePaymentsTransferCancelParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -108,7 +107,7 @@ public interface IRealTimePaymentsTransferServiceWithRawResponse
     /// Returns a raw HTTP response for <c>post /real_time_payments_transfers</c>, but is otherwise the
     /// same as <see cref="IRealTimePaymentsTransferService.Create(RealTimePaymentsTransferCreateParams, CancellationToken)"/>.
     /// </summary>
-    Task<HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>> Create(
+    Task<HttpResponse<RealTimePaymentsTransfer>> Create(
         RealTimePaymentsTransferCreateParams parameters,
         CancellationToken cancellationToken = default
     );
@@ -117,13 +116,13 @@ public interface IRealTimePaymentsTransferServiceWithRawResponse
     /// Returns a raw HTTP response for <c>get /real_time_payments_transfers/{real_time_payments_transfer_id}</c>, but is otherwise the
     /// same as <see cref="IRealTimePaymentsTransferService.Retrieve(RealTimePaymentsTransferRetrieveParams, CancellationToken)"/>.
     /// </summary>
-    Task<HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>> Retrieve(
+    Task<HttpResponse<RealTimePaymentsTransfer>> Retrieve(
         RealTimePaymentsTransferRetrieveParams parameters,
         CancellationToken cancellationToken = default
     );
 
     /// <inheritdoc cref="Retrieve(RealTimePaymentsTransferRetrieveParams, CancellationToken)"/>
-    Task<HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>> Retrieve(
+    Task<HttpResponse<RealTimePaymentsTransfer>> Retrieve(
         string realTimePaymentsTransferID,
         RealTimePaymentsTransferRetrieveParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -142,13 +141,13 @@ public interface IRealTimePaymentsTransferServiceWithRawResponse
     /// Returns a raw HTTP response for <c>post /real_time_payments_transfers/{real_time_payments_transfer_id}/approve</c>, but is otherwise the
     /// same as <see cref="IRealTimePaymentsTransferService.Approve(RealTimePaymentsTransferApproveParams, CancellationToken)"/>.
     /// </summary>
-    Task<HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>> Approve(
+    Task<HttpResponse<RealTimePaymentsTransfer>> Approve(
         RealTimePaymentsTransferApproveParams parameters,
         CancellationToken cancellationToken = default
     );
 
     /// <inheritdoc cref="Approve(RealTimePaymentsTransferApproveParams, CancellationToken)"/>
-    Task<HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>> Approve(
+    Task<HttpResponse<RealTimePaymentsTransfer>> Approve(
         string realTimePaymentsTransferID,
         RealTimePaymentsTransferApproveParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -158,13 +157,13 @@ public interface IRealTimePaymentsTransferServiceWithRawResponse
     /// Returns a raw HTTP response for <c>post /real_time_payments_transfers/{real_time_payments_transfer_id}/cancel</c>, but is otherwise the
     /// same as <see cref="IRealTimePaymentsTransferService.Cancel(RealTimePaymentsTransferCancelParams, CancellationToken)"/>.
     /// </summary>
-    Task<HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>> Cancel(
+    Task<HttpResponse<RealTimePaymentsTransfer>> Cancel(
         RealTimePaymentsTransferCancelParams parameters,
         CancellationToken cancellationToken = default
     );
 
     /// <inheritdoc cref="Cancel(RealTimePaymentsTransferCancelParams, CancellationToken)"/>
-    Task<HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>> Cancel(
+    Task<HttpResponse<RealTimePaymentsTransfer>> Cancel(
         string realTimePaymentsTransferID,
         RealTimePaymentsTransferCancelParams? parameters = null,
         CancellationToken cancellationToken = default
