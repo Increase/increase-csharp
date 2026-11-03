@@ -1190,7 +1190,10 @@ class EntityCsvFromRaw : IFromRawJson<EntityCsv>
 public sealed record class FeeCsv : JsonModel
 {
     /// <summary>
-    /// Filter results by time range on the `created_at` attribute.
+    /// Filter exported Fees by the time they were created. This suits historical
+    /// exports across many fee statements. To get all of the Fees for a given fee
+    /// statement period, we recommend using `fee_statement_period_start` instead.
+    /// The time range must not include any Fees on an open fee statement.
     /// </summary>
     public FeeCsvCreatedAt? CreatedAt
     {
@@ -1207,6 +1210,29 @@ public sealed record class FeeCsv : JsonModel
             }
 
             this._rawData.Set("created_at", value);
+        }
+    }
+
+    /// <summary>
+    /// Filter exported Fees to the fee statements whose period starts on this UTC
+    /// date, such as `2026-08-01`. Use this filter to export all of the Fees on a
+    /// fee statement. The matching fee statements must be closed.
+    /// </summary>
+    public string? FeeStatementPeriodStart
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("fee_statement_period_start");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("fee_statement_period_start", value);
         }
     }
 
@@ -1235,6 +1261,7 @@ public sealed record class FeeCsv : JsonModel
     public override void Validate()
     {
         this.CreatedAt?.Validate();
+        _ = this.FeeStatementPeriodStart;
         _ = this.ProgramID;
     }
 
@@ -1274,7 +1301,10 @@ class FeeCsvFromRaw : IFromRawJson<FeeCsv>
 }
 
 /// <summary>
-/// Filter results by time range on the `created_at` attribute.
+/// Filter exported Fees by the time they were created. This suits historical exports
+/// across many fee statements. To get all of the Fees for a given fee statement
+/// period, we recommend using `fee_statement_period_start` instead. The time range
+/// must not include any Fees on an open fee statement.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<FeeCsvCreatedAt, FeeCsvCreatedAtFromRaw>))]
 public sealed record class FeeCsvCreatedAt : JsonModel

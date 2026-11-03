@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Increase.Api.Core;
 using Increase.Api.Exceptions;
 using Increase.Api.Models.RealTimePaymentsTransfers;
+using InboundRealTimePaymentsTransfers = Increase.Api.Models.InboundRealTimePaymentsTransfers;
 
 namespace Increase.Api.Services;
 
@@ -37,7 +38,7 @@ public sealed class RealTimePaymentsTransferService : IRealTimePaymentsTransferS
     }
 
     /// <inheritdoc/>
-    public async Task<RealTimePaymentsTransfer> Create(
+    public async Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Create(
         RealTimePaymentsTransferCreateParams parameters,
         CancellationToken cancellationToken = default
     )
@@ -49,7 +50,7 @@ public sealed class RealTimePaymentsTransferService : IRealTimePaymentsTransferS
     }
 
     /// <inheritdoc/>
-    public async Task<RealTimePaymentsTransfer> Retrieve(
+    public async Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Retrieve(
         RealTimePaymentsTransferRetrieveParams parameters,
         CancellationToken cancellationToken = default
     )
@@ -61,7 +62,7 @@ public sealed class RealTimePaymentsTransferService : IRealTimePaymentsTransferS
     }
 
     /// <inheritdoc/>
-    public Task<RealTimePaymentsTransfer> Retrieve(
+    public Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Retrieve(
         string realTimePaymentsTransferID,
         RealTimePaymentsTransferRetrieveParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -91,7 +92,7 @@ public sealed class RealTimePaymentsTransferService : IRealTimePaymentsTransferS
     }
 
     /// <inheritdoc/>
-    public async Task<RealTimePaymentsTransfer> Approve(
+    public async Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Approve(
         RealTimePaymentsTransferApproveParams parameters,
         CancellationToken cancellationToken = default
     )
@@ -103,7 +104,7 @@ public sealed class RealTimePaymentsTransferService : IRealTimePaymentsTransferS
     }
 
     /// <inheritdoc/>
-    public Task<RealTimePaymentsTransfer> Approve(
+    public Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Approve(
         string realTimePaymentsTransferID,
         RealTimePaymentsTransferApproveParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -121,7 +122,7 @@ public sealed class RealTimePaymentsTransferService : IRealTimePaymentsTransferS
     }
 
     /// <inheritdoc/>
-    public async Task<RealTimePaymentsTransfer> Cancel(
+    public async Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Cancel(
         RealTimePaymentsTransferCancelParams parameters,
         CancellationToken cancellationToken = default
     )
@@ -133,7 +134,7 @@ public sealed class RealTimePaymentsTransferService : IRealTimePaymentsTransferS
     }
 
     /// <inheritdoc/>
-    public Task<RealTimePaymentsTransfer> Cancel(
+    public Task<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer> Cancel(
         string realTimePaymentsTransferID,
         RealTimePaymentsTransferCancelParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -173,7 +174,9 @@ public sealed class RealTimePaymentsTransferServiceWithRawResponse
     }
 
     /// <inheritdoc/>
-    public async Task<HttpResponse<RealTimePaymentsTransfer>> Create(
+    public async Task<
+        HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>
+    > Create(
         RealTimePaymentsTransferCreateParams parameters,
         CancellationToken cancellationToken = default
     )
@@ -189,7 +192,7 @@ public sealed class RealTimePaymentsTransferServiceWithRawResponse
             async (token) =>
             {
                 var realTimePaymentsTransfer = await response
-                    .Deserialize<RealTimePaymentsTransfer>(token)
+                    .Deserialize<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>(token)
                     .ConfigureAwait(false);
                 if (this._client.ResponseValidation)
                 {
@@ -201,7 +204,9 @@ public sealed class RealTimePaymentsTransferServiceWithRawResponse
     }
 
     /// <inheritdoc/>
-    public async Task<HttpResponse<RealTimePaymentsTransfer>> Retrieve(
+    public async Task<
+        HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>
+    > Retrieve(
         RealTimePaymentsTransferRetrieveParams parameters,
         CancellationToken cancellationToken = default
     )
@@ -224,7 +229,7 @@ public sealed class RealTimePaymentsTransferServiceWithRawResponse
             async (token) =>
             {
                 var realTimePaymentsTransfer = await response
-                    .Deserialize<RealTimePaymentsTransfer>(token)
+                    .Deserialize<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>(token)
                     .ConfigureAwait(false);
                 if (this._client.ResponseValidation)
                 {
@@ -236,7 +241,7 @@ public sealed class RealTimePaymentsTransferServiceWithRawResponse
     }
 
     /// <inheritdoc/>
-    public Task<HttpResponse<RealTimePaymentsTransfer>> Retrieve(
+    public Task<HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>> Retrieve(
         string realTimePaymentsTransferID,
         RealTimePaymentsTransferRetrieveParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -284,7 +289,9 @@ public sealed class RealTimePaymentsTransferServiceWithRawResponse
     }
 
     /// <inheritdoc/>
-    public async Task<HttpResponse<RealTimePaymentsTransfer>> Approve(
+    public async Task<
+        HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>
+    > Approve(
         RealTimePaymentsTransferApproveParams parameters,
         CancellationToken cancellationToken = default
     )
@@ -307,7 +314,7 @@ public sealed class RealTimePaymentsTransferServiceWithRawResponse
             async (token) =>
             {
                 var realTimePaymentsTransfer = await response
-                    .Deserialize<RealTimePaymentsTransfer>(token)
+                    .Deserialize<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>(token)
                     .ConfigureAwait(false);
                 if (this._client.ResponseValidation)
                 {
@@ -319,7 +326,7 @@ public sealed class RealTimePaymentsTransferServiceWithRawResponse
     }
 
     /// <inheritdoc/>
-    public Task<HttpResponse<RealTimePaymentsTransfer>> Approve(
+    public Task<HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>> Approve(
         string realTimePaymentsTransferID,
         RealTimePaymentsTransferApproveParams? parameters = null,
         CancellationToken cancellationToken = default
@@ -337,7 +344,9 @@ public sealed class RealTimePaymentsTransferServiceWithRawResponse
     }
 
     /// <inheritdoc/>
-    public async Task<HttpResponse<RealTimePaymentsTransfer>> Cancel(
+    public async Task<
+        HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>
+    > Cancel(
         RealTimePaymentsTransferCancelParams parameters,
         CancellationToken cancellationToken = default
     )
@@ -360,7 +369,7 @@ public sealed class RealTimePaymentsTransferServiceWithRawResponse
             async (token) =>
             {
                 var realTimePaymentsTransfer = await response
-                    .Deserialize<RealTimePaymentsTransfer>(token)
+                    .Deserialize<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>(token)
                     .ConfigureAwait(false);
                 if (this._client.ResponseValidation)
                 {
@@ -372,7 +381,7 @@ public sealed class RealTimePaymentsTransferServiceWithRawResponse
     }
 
     /// <inheritdoc/>
-    public Task<HttpResponse<RealTimePaymentsTransfer>> Cancel(
+    public Task<HttpResponse<InboundRealTimePaymentsTransfers::RealTimePaymentsTransfer>> Cancel(
         string realTimePaymentsTransferID,
         RealTimePaymentsTransferCancelParams? parameters = null,
         CancellationToken cancellationToken = default

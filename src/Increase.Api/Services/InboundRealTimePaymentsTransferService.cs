@@ -79,6 +79,36 @@ public sealed class InboundRealTimePaymentsTransferService : IInboundRealTimePay
             .ConfigureAwait(false);
         return await response.Deserialize(cancellationToken).ConfigureAwait(false);
     }
+
+    /// <inheritdoc/>
+    public async Task<RealTimePaymentsTransfer> Return(
+        InboundRealTimePaymentsTransferReturnParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        using var response = await this
+            .WithRawResponse.Return(parameters, cancellationToken)
+            .ConfigureAwait(false);
+        return await response.Deserialize(cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <inheritdoc/>
+    public Task<RealTimePaymentsTransfer> Return(
+        string inboundRealTimePaymentsTransferID,
+        InboundRealTimePaymentsTransferReturnParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.Return(
+            parameters with
+            {
+                InboundRealTimePaymentsTransferID = inboundRealTimePaymentsTransferID,
+            },
+            cancellationToken
+        );
+    }
 }
 
 /// <inheritdoc/>
@@ -184,6 +214,59 @@ public sealed class InboundRealTimePaymentsTransferServiceWithRawResponse
                 }
                 return new InboundRealTimePaymentsTransferListPage(this, parameters, page);
             }
+        );
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponse<RealTimePaymentsTransfer>> Return(
+        InboundRealTimePaymentsTransferReturnParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        if (parameters.InboundRealTimePaymentsTransferID == null)
+        {
+            throw new IncreaseInvalidDataException(
+                "'parameters.InboundRealTimePaymentsTransferID' cannot be null"
+            );
+        }
+
+        HttpRequest<InboundRealTimePaymentsTransferReturnParams> request = new()
+        {
+            Method = HttpMethod.Post,
+            Params = parameters,
+        };
+        var response = await this._client.Execute(request, cancellationToken).ConfigureAwait(false);
+        return new(
+            response,
+            async (token) =>
+            {
+                var realTimePaymentsTransfer = await response
+                    .Deserialize<RealTimePaymentsTransfer>(token)
+                    .ConfigureAwait(false);
+                if (this._client.ResponseValidation)
+                {
+                    realTimePaymentsTransfer.Validate();
+                }
+                return realTimePaymentsTransfer;
+            }
+        );
+    }
+
+    /// <inheritdoc/>
+    public Task<HttpResponse<RealTimePaymentsTransfer>> Return(
+        string inboundRealTimePaymentsTransferID,
+        InboundRealTimePaymentsTransferReturnParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.Return(
+            parameters with
+            {
+                InboundRealTimePaymentsTransferID = inboundRealTimePaymentsTransferID,
+            },
+            cancellationToken
         );
     }
 }

@@ -35,6 +35,7 @@ public class InboundRealTimePaymentsTransferTest : TestBase
                 Reason = InboundRealTimePaymentsTransfers::Reason.AccountNumberCanceled,
             },
             EndToEndIdentification = "Invoice 29582",
+            ReturnOfRealTimePaymentsTransferID = null,
             Status = InboundRealTimePaymentsTransfers::Status.Confirmed,
             TransactionIdentification = "20220501234567891T1BSLZO01745013025",
             Type = InboundRealTimePaymentsTransfers::Type.InboundRealTimePaymentsTransfer,
@@ -84,6 +85,7 @@ public class InboundRealTimePaymentsTransferTest : TestBase
         Assert.Equal(expectedDebtorRoutingNumber, model.DebtorRoutingNumber);
         Assert.Equal(expectedDecline, model.Decline);
         Assert.Equal(expectedEndToEndIdentification, model.EndToEndIdentification);
+        Assert.Null(model.ReturnOfRealTimePaymentsTransferID);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedTransactionIdentification, model.TransactionIdentification);
         Assert.Equal(expectedType, model.Type);
@@ -120,6 +122,7 @@ public class InboundRealTimePaymentsTransferTest : TestBase
                 Reason = InboundRealTimePaymentsTransfers::Reason.AccountNumberCanceled,
             },
             EndToEndIdentification = "Invoice 29582",
+            ReturnOfRealTimePaymentsTransferID = null,
             Status = InboundRealTimePaymentsTransfers::Status.Confirmed,
             TransactionIdentification = "20220501234567891T1BSLZO01745013025",
             Type = InboundRealTimePaymentsTransfers::Type.InboundRealTimePaymentsTransfer,
@@ -163,6 +166,7 @@ public class InboundRealTimePaymentsTransferTest : TestBase
                 Reason = InboundRealTimePaymentsTransfers::Reason.AccountNumberCanceled,
             },
             EndToEndIdentification = "Invoice 29582",
+            ReturnOfRealTimePaymentsTransferID = null,
             Status = InboundRealTimePaymentsTransfers::Status.Confirmed,
             TransactionIdentification = "20220501234567891T1BSLZO01745013025",
             Type = InboundRealTimePaymentsTransfers::Type.InboundRealTimePaymentsTransfer,
@@ -220,6 +224,7 @@ public class InboundRealTimePaymentsTransferTest : TestBase
         Assert.Equal(expectedDebtorRoutingNumber, deserialized.DebtorRoutingNumber);
         Assert.Equal(expectedDecline, deserialized.Decline);
         Assert.Equal(expectedEndToEndIdentification, deserialized.EndToEndIdentification);
+        Assert.Null(deserialized.ReturnOfRealTimePaymentsTransferID);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedTransactionIdentification, deserialized.TransactionIdentification);
         Assert.Equal(expectedType, deserialized.Type);
@@ -256,6 +261,7 @@ public class InboundRealTimePaymentsTransferTest : TestBase
                 Reason = InboundRealTimePaymentsTransfers::Reason.AccountNumberCanceled,
             },
             EndToEndIdentification = "Invoice 29582",
+            ReturnOfRealTimePaymentsTransferID = null,
             Status = InboundRealTimePaymentsTransfers::Status.Confirmed,
             TransactionIdentification = "20220501234567891T1BSLZO01745013025",
             Type = InboundRealTimePaymentsTransfers::Type.InboundRealTimePaymentsTransfer,
@@ -292,6 +298,7 @@ public class InboundRealTimePaymentsTransferTest : TestBase
                 Reason = InboundRealTimePaymentsTransfers::Reason.AccountNumberCanceled,
             },
             EndToEndIdentification = "Invoice 29582",
+            ReturnOfRealTimePaymentsTransferID = null,
             Status = InboundRealTimePaymentsTransfers::Status.Confirmed,
             TransactionIdentification = "20220501234567891T1BSLZO01745013025",
             Type = InboundRealTimePaymentsTransfers::Type.InboundRealTimePaymentsTransfer,
