@@ -60,15 +60,17 @@ public class ExportTest : TestBase
             },
             DashboardTableCsv = new(),
             EntityCsv = new(),
-            FeeCsv = new(
-                new Exports::ExportFeeCsvCreatedAt()
+            FeeCsv = new()
+            {
+                CreatedAt = new()
                 {
                     After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                }
-            ),
+                },
+                FeeStatementPeriodStart = "2019-12-27",
+            },
             Form1099Int = new()
             {
                 AccountID = "account_id",
@@ -147,15 +149,17 @@ public class ExportTest : TestBase
         };
         Exports::DashboardTableCsv expectedDashboardTableCsv = new();
         Exports::ExportEntityCsv expectedEntityCsv = new();
-        Exports::ExportFeeCsv expectedFeeCsv = new(
-            new Exports::ExportFeeCsvCreatedAt()
+        Exports::ExportFeeCsv expectedFeeCsv = new()
+        {
+            CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            }
-        );
+            },
+            FeeStatementPeriodStart = "2019-12-27",
+        };
         Exports::ExportForm1099Int expectedForm1099Int = new()
         {
             AccountID = "account_id",
@@ -264,15 +268,17 @@ public class ExportTest : TestBase
             },
             DashboardTableCsv = new(),
             EntityCsv = new(),
-            FeeCsv = new(
-                new Exports::ExportFeeCsvCreatedAt()
+            FeeCsv = new()
+            {
+                CreatedAt = new()
                 {
                     After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                }
-            ),
+                },
+                FeeStatementPeriodStart = "2019-12-27",
+            },
             Form1099Int = new()
             {
                 AccountID = "account_id",
@@ -364,15 +370,17 @@ public class ExportTest : TestBase
             },
             DashboardTableCsv = new(),
             EntityCsv = new(),
-            FeeCsv = new(
-                new Exports::ExportFeeCsvCreatedAt()
+            FeeCsv = new()
+            {
+                CreatedAt = new()
                 {
                     After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                }
-            ),
+                },
+                FeeStatementPeriodStart = "2019-12-27",
+            },
             Form1099Int = new()
             {
                 AccountID = "account_id",
@@ -458,15 +466,17 @@ public class ExportTest : TestBase
         };
         Exports::DashboardTableCsv expectedDashboardTableCsv = new();
         Exports::ExportEntityCsv expectedEntityCsv = new();
-        Exports::ExportFeeCsv expectedFeeCsv = new(
-            new Exports::ExportFeeCsvCreatedAt()
+        Exports::ExportFeeCsv expectedFeeCsv = new()
+        {
+            CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            }
-        );
+            },
+            FeeStatementPeriodStart = "2019-12-27",
+        };
         Exports::ExportForm1099Int expectedForm1099Int = new()
         {
             AccountID = "account_id",
@@ -578,15 +588,17 @@ public class ExportTest : TestBase
             },
             DashboardTableCsv = new(),
             EntityCsv = new(),
-            FeeCsv = new(
-                new Exports::ExportFeeCsvCreatedAt()
+            FeeCsv = new()
+            {
+                CreatedAt = new()
                 {
                     After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                }
-            ),
+                },
+                FeeStatementPeriodStart = "2019-12-27",
+            },
             Form1099Int = new()
             {
                 AccountID = "account_id",
@@ -672,15 +684,17 @@ public class ExportTest : TestBase
             },
             DashboardTableCsv = new(),
             EntityCsv = new(),
-            FeeCsv = new(
-                new Exports::ExportFeeCsvCreatedAt()
+            FeeCsv = new()
+            {
+                CreatedAt = new()
                 {
                     After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     Before = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                }
-            ),
+                },
+                FeeStatementPeriodStart = "2019-12-27",
+            },
             Form1099Int = new()
             {
                 AccountID = "account_id",
@@ -1695,6 +1709,7 @@ public class ExportFeeCsvTest : TestBase
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
+            FeeStatementPeriodStart = "2019-12-27",
         };
 
         Exports::ExportFeeCsvCreatedAt expectedCreatedAt = new()
@@ -1704,8 +1719,10 @@ public class ExportFeeCsvTest : TestBase
             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
+        string expectedFeeStatementPeriodStart = "2019-12-27";
 
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedFeeStatementPeriodStart, model.FeeStatementPeriodStart);
     }
 
     [Fact]
@@ -1720,6 +1737,7 @@ public class ExportFeeCsvTest : TestBase
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
+            FeeStatementPeriodStart = "2019-12-27",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1743,6 +1761,7 @@ public class ExportFeeCsvTest : TestBase
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
+            FeeStatementPeriodStart = "2019-12-27",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1759,8 +1778,10 @@ public class ExportFeeCsvTest : TestBase
             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
+        string expectedFeeStatementPeriodStart = "2019-12-27";
 
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedFeeStatementPeriodStart, deserialized.FeeStatementPeriodStart);
     }
 
     [Fact]
@@ -1775,6 +1796,7 @@ public class ExportFeeCsvTest : TestBase
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
+            FeeStatementPeriodStart = "2019-12-27",
         };
 
         model.Validate();
@@ -1792,6 +1814,7 @@ public class ExportFeeCsvTest : TestBase
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
+            FeeStatementPeriodStart = "2019-12-27",
         };
 
         Exports::ExportFeeCsv copied = new(model);

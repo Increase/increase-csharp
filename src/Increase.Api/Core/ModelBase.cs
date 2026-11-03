@@ -36,7 +36,6 @@ using ExternalAccounts = Increase.Api.Models.ExternalAccounts;
 using FednowTransfers = Increase.Api.Models.FednowTransfers;
 using FileLinks = Increase.Api.Models.FileLinks;
 using Files = Increase.Api.Models.Files;
-using Groups = Increase.Api.Models.Groups;
 using InboundAchTransfers = Increase.Api.Models.InboundAchTransfers;
 using InboundCheckDeposits = Increase.Api.Models.InboundCheckDeposits;
 using InboundFednowTransfers = Increase.Api.Models.InboundFednowTransfers;
@@ -51,9 +50,6 @@ using IntrafiExclusions = Increase.Api.Models.IntrafiExclusions;
 using LockboxAddresses = Increase.Api.Models.LockboxAddresses;
 using LockboxRecipients = Increase.Api.Models.LockboxRecipients;
 using ModelsEntities = Increase.Api.Models.Entities;
-using OAuthApplications = Increase.Api.Models.OAuthApplications;
-using OAuthConnections = Increase.Api.Models.OAuthConnections;
-using OAuthTokens = Increase.Api.Models.OAuthTokens;
 using PendingTransactions = Increase.Api.Models.PendingTransactions;
 using PhysicalCardProfiles = Increase.Api.Models.PhysicalCardProfiles;
 using PhysicalCards = Increase.Api.Models.PhysicalCards;
@@ -1304,6 +1300,20 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, InboundRealTimePaymentsTransfers::Reason>(),
             new ApiEnumConverter<string, InboundRealTimePaymentsTransfers::Status>(),
             new ApiEnumConverter<string, InboundRealTimePaymentsTransfers::Type>(),
+            new ApiEnumConverter<string, InboundRealTimePaymentsTransfers::Category>(),
+            new ApiEnumConverter<
+                string,
+                InboundRealTimePaymentsTransfers::RealTimePaymentsTransferCurrency
+            >(),
+            new ApiEnumConverter<string, InboundRealTimePaymentsTransfers::RejectReasonCode>(),
+            new ApiEnumConverter<
+                string,
+                InboundRealTimePaymentsTransfers::RealTimePaymentsTransferStatus
+            >(),
+            new ApiEnumConverter<
+                string,
+                InboundRealTimePaymentsTransfers::RealTimePaymentsTransferType
+            >(),
             new ApiEnumConverter<string, RealTimePaymentsRequestsForPayment::CancellationReason>(),
             new ApiEnumConverter<string, RealTimePaymentsRequestsForPayment::Currency>(),
             new ApiEnumConverter<string, RealTimePaymentsRequestsForPayment::RefusalReasonCode>(),
@@ -1599,16 +1609,6 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, RealTimeDecisions::Reason>(),
             new ApiEnumConverter<string, RealTimeDecisions::CardBalanceInquiryDecision>(),
             new ApiEnumConverter<string, RealTimeDecisions::DigitalWalletAuthenticationResult>(),
-            new ApiEnumConverter<string, Groups::Type>(),
-            new ApiEnumConverter<string, OAuthApplications::OAuthApplicationStatus>(),
-            new ApiEnumConverter<string, OAuthApplications::Type>(),
-            new ApiEnumConverter<string, OAuthApplications::In>(),
-            new ApiEnumConverter<string, OAuthConnections::OAuthConnectionStatus>(),
-            new ApiEnumConverter<string, OAuthConnections::Type>(),
-            new ApiEnumConverter<string, OAuthConnections::In>(),
-            new ApiEnumConverter<string, OAuthTokens::TokenType>(),
-            new ApiEnumConverter<string, OAuthTokens::Type>(),
-            new ApiEnumConverter<string, OAuthTokens::GrantType>(),
             new ApiEnumConverter<
                 string,
                 IntrafiAccountEnrollments::IntrafiAccountEnrollmentStatus
