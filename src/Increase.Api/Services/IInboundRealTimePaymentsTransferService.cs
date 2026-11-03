@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Increase.Api.Core;
 using Increase.Api.Models.InboundRealTimePaymentsTransfers;
+using Increase.Api.Models.RealTimePaymentsTransfers;
 
 namespace Increase.Api.Services;
 

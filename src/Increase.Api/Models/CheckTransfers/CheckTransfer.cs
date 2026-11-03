@@ -1493,12 +1493,12 @@ public sealed record class CheckTransferPhysicalCheckMailingAddress : JsonModel
     /// <summary>
     /// The name component of the check's mailing address.
     /// </summary>
-    public required string? Name
+    public required string Name
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("name");
+            return this._rawData.GetNotNullClass<string>("name");
         }
         init { this._rawData.Set("name", value); }
     }
