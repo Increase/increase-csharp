@@ -57,6 +57,7 @@ public class ExportCreateParamsTest : TestBase
                     OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
+                FeeStatementPeriodStart = "2019-12-27",
                 ProgramID = "program_id",
             },
             FundingInstructions = new("account_number_id"),
@@ -118,6 +119,7 @@ public class ExportCreateParamsTest : TestBase
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
+            FeeStatementPeriodStart = "2019-12-27",
             ProgramID = "program_id",
         };
         FundingInstructions expectedFundingInstructions = new("account_number_id");
@@ -285,6 +287,7 @@ public class ExportCreateParamsTest : TestBase
                     OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
+                FeeStatementPeriodStart = "2019-12-27",
                 ProgramID = "program_id",
             },
             FundingInstructions = new("account_number_id"),
@@ -1322,6 +1325,7 @@ public class FeeCsvTest : TestBase
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
+            FeeStatementPeriodStart = "2019-12-27",
             ProgramID = "program_id",
         };
 
@@ -1332,9 +1336,11 @@ public class FeeCsvTest : TestBase
             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
+        string expectedFeeStatementPeriodStart = "2019-12-27";
         string expectedProgramID = "program_id";
 
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedFeeStatementPeriodStart, model.FeeStatementPeriodStart);
         Assert.Equal(expectedProgramID, model.ProgramID);
     }
 
@@ -1350,6 +1356,7 @@ public class FeeCsvTest : TestBase
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
+            FeeStatementPeriodStart = "2019-12-27",
             ProgramID = "program_id",
         };
 
@@ -1371,6 +1378,7 @@ public class FeeCsvTest : TestBase
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
+            FeeStatementPeriodStart = "2019-12-27",
             ProgramID = "program_id",
         };
 
@@ -1385,9 +1393,11 @@ public class FeeCsvTest : TestBase
             OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
+        string expectedFeeStatementPeriodStart = "2019-12-27";
         string expectedProgramID = "program_id";
 
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedFeeStatementPeriodStart, deserialized.FeeStatementPeriodStart);
         Assert.Equal(expectedProgramID, deserialized.ProgramID);
     }
 
@@ -1403,6 +1413,7 @@ public class FeeCsvTest : TestBase
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
+            FeeStatementPeriodStart = "2019-12-27",
             ProgramID = "program_id",
         };
 
@@ -1416,6 +1427,8 @@ public class FeeCsvTest : TestBase
 
         Assert.Null(model.CreatedAt);
         Assert.False(model.RawData.ContainsKey("created_at"));
+        Assert.Null(model.FeeStatementPeriodStart);
+        Assert.False(model.RawData.ContainsKey("fee_statement_period_start"));
         Assert.Null(model.ProgramID);
         Assert.False(model.RawData.ContainsKey("program_id"));
     }
@@ -1435,11 +1448,14 @@ public class FeeCsvTest : TestBase
         {
             // Null should be interpreted as omitted for these properties
             CreatedAt = null,
+            FeeStatementPeriodStart = null,
             ProgramID = null,
         };
 
         Assert.Null(model.CreatedAt);
         Assert.False(model.RawData.ContainsKey("created_at"));
+        Assert.Null(model.FeeStatementPeriodStart);
+        Assert.False(model.RawData.ContainsKey("fee_statement_period_start"));
         Assert.Null(model.ProgramID);
         Assert.False(model.RawData.ContainsKey("program_id"));
     }
@@ -1451,6 +1467,7 @@ public class FeeCsvTest : TestBase
         {
             // Null should be interpreted as omitted for these properties
             CreatedAt = null,
+            FeeStatementPeriodStart = null,
             ProgramID = null,
         };
 
@@ -1469,6 +1486,7 @@ public class FeeCsvTest : TestBase
                 OnOrAfter = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 OnOrBefore = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
+            FeeStatementPeriodStart = "2019-12-27",
             ProgramID = "program_id",
         };
 

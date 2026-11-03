@@ -151,14 +151,6 @@ public interface IIncreaseClient : IDisposable
 
     IRealTimeDecisionService RealTimeDecisions { get; }
 
-    IGroupService Groups { get; }
-
-    IOAuthApplicationService OAuthApplications { get; }
-
-    IOAuthConnectionService OAuthConnections { get; }
-
-    IOAuthTokenService OAuthTokens { get; }
-
     IIntrafiAccountEnrollmentService IntrafiAccountEnrollments { get; }
 
     IIntrafiBalanceService IntrafiBalances { get; }
@@ -304,14 +296,6 @@ public interface IIncreaseClientWithRawResponse : IDisposable
     IEventSubscriptionServiceWithRawResponse EventSubscriptions { get; }
 
     IRealTimeDecisionServiceWithRawResponse RealTimeDecisions { get; }
-
-    IGroupServiceWithRawResponse Groups { get; }
-
-    IOAuthApplicationServiceWithRawResponse OAuthApplications { get; }
-
-    IOAuthConnectionServiceWithRawResponse OAuthConnections { get; }
-
-    IOAuthTokenServiceWithRawResponse OAuthTokens { get; }
 
     IIntrafiAccountEnrollmentServiceWithRawResponse IntrafiAccountEnrollments { get; }
 

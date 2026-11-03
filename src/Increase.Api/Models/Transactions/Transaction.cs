@@ -1787,12 +1787,12 @@ public sealed record class AchTransferIntention : JsonModel
     /// <summary>
     /// A description set when the ACH Transfer was created.
     /// </summary>
-    public required string StatementDescriptor
+    public required string? StatementDescriptor
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("statement_descriptor");
+            return this._rawData.GetNullableClass<string>("statement_descriptor");
         }
         init { this._rawData.Set("statement_descriptor", value); }
     }

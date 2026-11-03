@@ -1352,10 +1352,24 @@ public sealed record class ExportFeeCsv : JsonModel
         init { this._rawData.Set("created_at", value); }
     }
 
+    /// <summary>
+    /// Filter fees by the UTC start date of their fee statement's period, such as `2026-08-01`.
+    /// </summary>
+    public required string? FeeStatementPeriodStart
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("fee_statement_period_start");
+        }
+        init { this._rawData.Set("fee_statement_period_start", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         this.CreatedAt?.Validate();
+        _ = this.FeeStatementPeriodStart;
     }
 
     public ExportFeeCsv() { }
@@ -1383,13 +1397,6 @@ public sealed record class ExportFeeCsv : JsonModel
     public static ExportFeeCsv FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-
-    [SetsRequiredMembers]
-    public ExportFeeCsv(ExportFeeCsvCreatedAt? createdAt)
-        : this()
-    {
-        this.CreatedAt = createdAt;
     }
 }
 

@@ -1254,8 +1254,7 @@ public sealed record class CheckTransferPhysicalCheck : JsonModel
     }
 
     /// <summary>
-    /// The payer of the check. This will be printed on the top-left portion of the
-    /// check and defaults to the return address if unspecified.
+    /// The payer of the check. This will be printed on the top-left portion of the check.
     /// </summary>
     public required IReadOnlyList<CheckTransferPhysicalCheckPayer> Payer
     {
@@ -1304,12 +1303,12 @@ public sealed record class CheckTransferPhysicalCheck : JsonModel
     /// <summary>
     /// The return address to be printed on the check.
     /// </summary>
-    public required CheckTransferPhysicalCheckReturnAddress? ReturnAddress
+    public required CheckTransferPhysicalCheckReturnAddress ReturnAddress
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<CheckTransferPhysicalCheckReturnAddress>(
+            return this._rawData.GetNotNullClass<CheckTransferPhysicalCheckReturnAddress>(
                 "return_address"
             );
         }
@@ -1393,7 +1392,7 @@ public sealed record class CheckTransferPhysicalCheck : JsonModel
         }
         _ = this.PhysicalCheckBatchID;
         _ = this.RecipientName;
-        this.ReturnAddress?.Validate();
+        this.ReturnAddress.Validate();
         _ = this.ReturnAddressName;
         this.ShippingMethod.Validate();
         this.Signature.Validate();
@@ -1455,12 +1454,12 @@ public sealed record class CheckTransferPhysicalCheckMailingAddress : JsonModel
     /// <summary>
     /// The city of the check's destination.
     /// </summary>
-    public required string? City
+    public required string City
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("city");
+            return this._rawData.GetNotNullClass<string>("city");
         }
         init { this._rawData.Set("city", value); }
     }
@@ -1468,12 +1467,12 @@ public sealed record class CheckTransferPhysicalCheckMailingAddress : JsonModel
     /// <summary>
     /// The street address of the check's destination.
     /// </summary>
-    public required string? Line1
+    public required string Line1
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("line1");
+            return this._rawData.GetNotNullClass<string>("line1");
         }
         init { this._rawData.Set("line1", value); }
     }
@@ -1521,12 +1520,12 @@ public sealed record class CheckTransferPhysicalCheckMailingAddress : JsonModel
     /// <summary>
     /// The postal code of the check's destination.
     /// </summary>
-    public required string? PostalCode
+    public required string PostalCode
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("postal_code");
+            return this._rawData.GetNotNullClass<string>("postal_code");
         }
         init { this._rawData.Set("postal_code", value); }
     }
@@ -1534,12 +1533,12 @@ public sealed record class CheckTransferPhysicalCheckMailingAddress : JsonModel
     /// <summary>
     /// The state of the check's destination.
     /// </summary>
-    public required string? State
+    public required string State
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("state");
+            return this._rawData.GetNotNullClass<string>("state");
         }
         init { this._rawData.Set("state", value); }
     }
@@ -1687,12 +1686,12 @@ public sealed record class CheckTransferPhysicalCheckReturnAddress : JsonModel
     /// <summary>
     /// The city of the check's destination.
     /// </summary>
-    public required string? City
+    public required string City
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("city");
+            return this._rawData.GetNotNullClass<string>("city");
         }
         init { this._rawData.Set("city", value); }
     }
@@ -1700,12 +1699,12 @@ public sealed record class CheckTransferPhysicalCheckReturnAddress : JsonModel
     /// <summary>
     /// The street address of the check's destination.
     /// </summary>
-    public required string? Line1
+    public required string Line1
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("line1");
+            return this._rawData.GetNotNullClass<string>("line1");
         }
         init { this._rawData.Set("line1", value); }
     }
@@ -1726,12 +1725,12 @@ public sealed record class CheckTransferPhysicalCheckReturnAddress : JsonModel
     /// <summary>
     /// The name component of the check's return address.
     /// </summary>
-    public required string? Name
+    public required string Name
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("name");
+            return this._rawData.GetNotNullClass<string>("name");
         }
         init { this._rawData.Set("name", value); }
     }
@@ -1753,12 +1752,12 @@ public sealed record class CheckTransferPhysicalCheckReturnAddress : JsonModel
     /// <summary>
     /// The postal code of the check's destination.
     /// </summary>
-    public required string? PostalCode
+    public required string PostalCode
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("postal_code");
+            return this._rawData.GetNotNullClass<string>("postal_code");
         }
         init { this._rawData.Set("postal_code", value); }
     }
@@ -1766,12 +1765,12 @@ public sealed record class CheckTransferPhysicalCheckReturnAddress : JsonModel
     /// <summary>
     /// The state of the check's destination.
     /// </summary>
-    public required string? State
+    public required string State
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("state");
+            return this._rawData.GetNotNullClass<string>("state");
         }
         init { this._rawData.Set("state", value); }
     }

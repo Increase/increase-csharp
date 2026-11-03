@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Increase.Api.Core;
 using Increase.Api.Exceptions;
-using Increase.Api.Models.RealTimePaymentsTransfers;
+using Increase.Api.Models.InboundRealTimePaymentsTransfers;
 using Increase.Api.Models.Simulations.RealTimePaymentsTransfers;
 
 namespace Increase.Api.Services.Simulations;
