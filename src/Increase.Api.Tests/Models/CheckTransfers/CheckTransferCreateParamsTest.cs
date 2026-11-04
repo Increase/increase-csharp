@@ -26,20 +26,20 @@ public class CheckTransferCreateParamsTest : TestBase
                 {
                     City = "New York",
                     Line1 = "33 Liberty Street",
+                    Name = "Ian Crease",
                     PostalCode = "10045",
                     State = "NY",
                     Line2 = "line2",
-                    Name = "Ian Crease",
                     Phone = "+16505046304",
                 },
                 Memo = "Check payment",
+                Payee = [new("Ian Crease")],
                 Payer =
                 [
                     new("National Phonograph Company"),
                     new("33 Liberty Street"),
                     new("New York, NY 10045"),
                 ],
-                RecipientName = "Ian Crease",
                 AttachmentFileID = "attachment_file_id",
                 CheckVoucherImageFileID = "check_voucher_image_file_id",
                 Note = "note",
@@ -76,20 +76,20 @@ public class CheckTransferCreateParamsTest : TestBase
             {
                 City = "New York",
                 Line1 = "33 Liberty Street",
+                Name = "Ian Crease",
                 PostalCode = "10045",
                 State = "NY",
                 Line2 = "line2",
-                Name = "Ian Crease",
                 Phone = "+16505046304",
             },
             Memo = "Check payment",
+            Payee = [new("Ian Crease")],
             Payer =
             [
                 new("National Phonograph Company"),
                 new("33 Liberty Street"),
                 new("New York, NY 10045"),
             ],
-            RecipientName = "Ian Crease",
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
@@ -215,20 +215,20 @@ public class CheckTransferCreateParamsTest : TestBase
                 {
                     City = "New York",
                     Line1 = "33 Liberty Street",
+                    Name = "Ian Crease",
                     PostalCode = "10045",
                     State = "NY",
                     Line2 = "line2",
-                    Name = "Ian Crease",
                     Phone = "+16505046304",
                 },
                 Memo = "Check payment",
+                Payee = [new("Ian Crease")],
                 Payer =
                 [
                     new("National Phonograph Company"),
                     new("33 Liberty Street"),
                     new("New York, NY 10045"),
                 ],
-                RecipientName = "Ian Crease",
                 AttachmentFileID = "attachment_file_id",
                 CheckVoucherImageFileID = "check_voucher_image_file_id",
                 Note = "note",
@@ -385,15 +385,15 @@ public class PhysicalCheckTest : TestBase
             {
                 City = "city",
                 Line1 = "line1",
+                Name = "name",
                 PostalCode = "21029-9469",
                 State = "xx",
                 Line2 = "line2",
-                Name = "name",
                 Phone = "x",
             },
             Memo = "memo",
+            Payee = [new("contents")],
             Payer = [new("contents")],
-            RecipientName = "recipient_name",
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
@@ -417,15 +417,15 @@ public class PhysicalCheckTest : TestBase
         {
             City = "city",
             Line1 = "line1",
+            Name = "name",
             PostalCode = "21029-9469",
             State = "xx",
             Line2 = "line2",
-            Name = "name",
             Phone = "x",
         };
         string expectedMemo = "memo";
+        List<Payee> expectedPayee = [new("contents")];
         List<Payer> expectedPayer = [new("contents")];
-        string expectedRecipientName = "recipient_name";
         string expectedAttachmentFileID = "attachment_file_id";
         string expectedCheckVoucherImageFileID = "check_voucher_image_file_id";
         string expectedNote = "note";
@@ -446,12 +446,16 @@ public class PhysicalCheckTest : TestBase
 
         Assert.Equal(expectedMailingAddress, model.MailingAddress);
         Assert.Equal(expectedMemo, model.Memo);
+        Assert.Equal(expectedPayee.Count, model.Payee.Count);
+        for (int i = 0; i < expectedPayee.Count; i++)
+        {
+            Assert.Equal(expectedPayee[i], model.Payee[i]);
+        }
         Assert.Equal(expectedPayer.Count, model.Payer.Count);
         for (int i = 0; i < expectedPayer.Count; i++)
         {
             Assert.Equal(expectedPayer[i], model.Payer[i]);
         }
-        Assert.Equal(expectedRecipientName, model.RecipientName);
         Assert.Equal(expectedAttachmentFileID, model.AttachmentFileID);
         Assert.Equal(expectedCheckVoucherImageFileID, model.CheckVoucherImageFileID);
         Assert.Equal(expectedNote, model.Note);
@@ -471,15 +475,15 @@ public class PhysicalCheckTest : TestBase
             {
                 City = "city",
                 Line1 = "line1",
+                Name = "name",
                 PostalCode = "21029-9469",
                 State = "xx",
                 Line2 = "line2",
-                Name = "name",
                 Phone = "x",
             },
             Memo = "memo",
+            Payee = [new("contents")],
             Payer = [new("contents")],
-            RecipientName = "recipient_name",
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
@@ -517,15 +521,15 @@ public class PhysicalCheckTest : TestBase
             {
                 City = "city",
                 Line1 = "line1",
+                Name = "name",
                 PostalCode = "21029-9469",
                 State = "xx",
                 Line2 = "line2",
-                Name = "name",
                 Phone = "x",
             },
             Memo = "memo",
+            Payee = [new("contents")],
             Payer = [new("contents")],
-            RecipientName = "recipient_name",
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
@@ -556,15 +560,15 @@ public class PhysicalCheckTest : TestBase
         {
             City = "city",
             Line1 = "line1",
+            Name = "name",
             PostalCode = "21029-9469",
             State = "xx",
             Line2 = "line2",
-            Name = "name",
             Phone = "x",
         };
         string expectedMemo = "memo";
+        List<Payee> expectedPayee = [new("contents")];
         List<Payer> expectedPayer = [new("contents")];
-        string expectedRecipientName = "recipient_name";
         string expectedAttachmentFileID = "attachment_file_id";
         string expectedCheckVoucherImageFileID = "check_voucher_image_file_id";
         string expectedNote = "note";
@@ -585,12 +589,16 @@ public class PhysicalCheckTest : TestBase
 
         Assert.Equal(expectedMailingAddress, deserialized.MailingAddress);
         Assert.Equal(expectedMemo, deserialized.Memo);
+        Assert.Equal(expectedPayee.Count, deserialized.Payee.Count);
+        for (int i = 0; i < expectedPayee.Count; i++)
+        {
+            Assert.Equal(expectedPayee[i], deserialized.Payee[i]);
+        }
         Assert.Equal(expectedPayer.Count, deserialized.Payer.Count);
         for (int i = 0; i < expectedPayer.Count; i++)
         {
             Assert.Equal(expectedPayer[i], deserialized.Payer[i]);
         }
-        Assert.Equal(expectedRecipientName, deserialized.RecipientName);
         Assert.Equal(expectedAttachmentFileID, deserialized.AttachmentFileID);
         Assert.Equal(expectedCheckVoucherImageFileID, deserialized.CheckVoucherImageFileID);
         Assert.Equal(expectedNote, deserialized.Note);
@@ -610,15 +618,15 @@ public class PhysicalCheckTest : TestBase
             {
                 City = "city",
                 Line1 = "line1",
+                Name = "name",
                 PostalCode = "21029-9469",
                 State = "xx",
                 Line2 = "line2",
-                Name = "name",
                 Phone = "x",
             },
             Memo = "memo",
+            Payee = [new("contents")],
             Payer = [new("contents")],
-            RecipientName = "recipient_name",
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
@@ -650,15 +658,15 @@ public class PhysicalCheckTest : TestBase
             {
                 City = "city",
                 Line1 = "line1",
+                Name = "name",
                 PostalCode = "21029-9469",
                 State = "xx",
                 Line2 = "line2",
-                Name = "name",
                 Phone = "x",
             },
             Memo = "memo",
+            Payee = [new("contents")],
             Payer = [new("contents")],
-            RecipientName = "recipient_name",
         };
 
         Assert.Null(model.AttachmentFileID);
@@ -688,15 +696,15 @@ public class PhysicalCheckTest : TestBase
             {
                 City = "city",
                 Line1 = "line1",
+                Name = "name",
                 PostalCode = "21029-9469",
                 State = "xx",
                 Line2 = "line2",
-                Name = "name",
                 Phone = "x",
             },
             Memo = "memo",
+            Payee = [new("contents")],
             Payer = [new("contents")],
-            RecipientName = "recipient_name",
         };
 
         model.Validate();
@@ -711,15 +719,15 @@ public class PhysicalCheckTest : TestBase
             {
                 City = "city",
                 Line1 = "line1",
+                Name = "name",
                 PostalCode = "21029-9469",
                 State = "xx",
                 Line2 = "line2",
-                Name = "name",
                 Phone = "x",
             },
             Memo = "memo",
+            Payee = [new("contents")],
             Payer = [new("contents")],
-            RecipientName = "recipient_name",
 
             // Null should be interpreted as omitted for these properties
             AttachmentFileID = null,
@@ -759,15 +767,15 @@ public class PhysicalCheckTest : TestBase
             {
                 City = "city",
                 Line1 = "line1",
+                Name = "name",
                 PostalCode = "21029-9469",
                 State = "xx",
                 Line2 = "line2",
-                Name = "name",
                 Phone = "x",
             },
             Memo = "memo",
+            Payee = [new("contents")],
             Payer = [new("contents")],
-            RecipientName = "recipient_name",
 
             // Null should be interpreted as omitted for these properties
             AttachmentFileID = null,
@@ -792,15 +800,15 @@ public class PhysicalCheckTest : TestBase
             {
                 City = "city",
                 Line1 = "line1",
+                Name = "name",
                 PostalCode = "21029-9469",
                 State = "xx",
                 Line2 = "line2",
-                Name = "name",
                 Phone = "x",
             },
             Memo = "memo",
+            Payee = [new("contents")],
             Payer = [new("contents")],
-            RecipientName = "recipient_name",
             AttachmentFileID = "attachment_file_id",
             CheckVoucherImageFileID = "check_voucher_image_file_id",
             Note = "note",
@@ -835,27 +843,27 @@ public class MailingAddressTest : TestBase
         {
             City = "city",
             Line1 = "line1",
+            Name = "name",
             PostalCode = "21029-9469",
             State = "xx",
             Line2 = "line2",
-            Name = "name",
             Phone = "x",
         };
 
         string expectedCity = "city";
         string expectedLine1 = "line1";
+        string expectedName = "name";
         string expectedPostalCode = "21029-9469";
         string expectedState = "xx";
         string expectedLine2 = "line2";
-        string expectedName = "name";
         string expectedPhone = "x";
 
         Assert.Equal(expectedCity, model.City);
         Assert.Equal(expectedLine1, model.Line1);
+        Assert.Equal(expectedName, model.Name);
         Assert.Equal(expectedPostalCode, model.PostalCode);
         Assert.Equal(expectedState, model.State);
         Assert.Equal(expectedLine2, model.Line2);
-        Assert.Equal(expectedName, model.Name);
         Assert.Equal(expectedPhone, model.Phone);
     }
 
@@ -866,10 +874,10 @@ public class MailingAddressTest : TestBase
         {
             City = "city",
             Line1 = "line1",
+            Name = "name",
             PostalCode = "21029-9469",
             State = "xx",
             Line2 = "line2",
-            Name = "name",
             Phone = "x",
         };
 
@@ -889,10 +897,10 @@ public class MailingAddressTest : TestBase
         {
             City = "city",
             Line1 = "line1",
+            Name = "name",
             PostalCode = "21029-9469",
             State = "xx",
             Line2 = "line2",
-            Name = "name",
             Phone = "x",
         };
 
@@ -905,18 +913,18 @@ public class MailingAddressTest : TestBase
 
         string expectedCity = "city";
         string expectedLine1 = "line1";
+        string expectedName = "name";
         string expectedPostalCode = "21029-9469";
         string expectedState = "xx";
         string expectedLine2 = "line2";
-        string expectedName = "name";
         string expectedPhone = "x";
 
         Assert.Equal(expectedCity, deserialized.City);
         Assert.Equal(expectedLine1, deserialized.Line1);
+        Assert.Equal(expectedName, deserialized.Name);
         Assert.Equal(expectedPostalCode, deserialized.PostalCode);
         Assert.Equal(expectedState, deserialized.State);
         Assert.Equal(expectedLine2, deserialized.Line2);
-        Assert.Equal(expectedName, deserialized.Name);
         Assert.Equal(expectedPhone, deserialized.Phone);
     }
 
@@ -927,10 +935,10 @@ public class MailingAddressTest : TestBase
         {
             City = "city",
             Line1 = "line1",
+            Name = "name",
             PostalCode = "21029-9469",
             State = "xx",
             Line2 = "line2",
-            Name = "name",
             Phone = "x",
         };
 
@@ -944,14 +952,13 @@ public class MailingAddressTest : TestBase
         {
             City = "city",
             Line1 = "line1",
+            Name = "name",
             PostalCode = "21029-9469",
             State = "xx",
         };
 
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
-        Assert.Null(model.Name);
-        Assert.False(model.RawData.ContainsKey("name"));
         Assert.Null(model.Phone);
         Assert.False(model.RawData.ContainsKey("phone"));
     }
@@ -963,6 +970,7 @@ public class MailingAddressTest : TestBase
         {
             City = "city",
             Line1 = "line1",
+            Name = "name",
             PostalCode = "21029-9469",
             State = "xx",
         };
@@ -977,19 +985,17 @@ public class MailingAddressTest : TestBase
         {
             City = "city",
             Line1 = "line1",
+            Name = "name",
             PostalCode = "21029-9469",
             State = "xx",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
-            Name = null,
             Phone = null,
         };
 
         Assert.Null(model.Line2);
         Assert.False(model.RawData.ContainsKey("line2"));
-        Assert.Null(model.Name);
-        Assert.False(model.RawData.ContainsKey("name"));
         Assert.Null(model.Phone);
         Assert.False(model.RawData.ContainsKey("phone"));
     }
@@ -1001,12 +1007,12 @@ public class MailingAddressTest : TestBase
         {
             City = "city",
             Line1 = "line1",
+            Name = "name",
             PostalCode = "21029-9469",
             State = "xx",
 
             // Null should be interpreted as omitted for these properties
             Line2 = null,
-            Name = null,
             Phone = null,
         };
 
@@ -1020,14 +1026,70 @@ public class MailingAddressTest : TestBase
         {
             City = "city",
             Line1 = "line1",
+            Name = "name",
             PostalCode = "21029-9469",
             State = "xx",
             Line2 = "line2",
-            Name = "name",
             Phone = "x",
         };
 
         MailingAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class PayeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Payee { Contents = "contents" };
+
+        string expectedContents = "contents";
+
+        Assert.Equal(expectedContents, model.Contents);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Payee { Contents = "contents" };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Payee>(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Payee { Contents = "contents" };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Payee>(element, ModelBase.SerializerOptions);
+        Assert.NotNull(deserialized);
+
+        string expectedContents = "contents";
+
+        Assert.Equal(expectedContents, deserialized.Contents);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Payee { Contents = "contents" };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Payee { Contents = "contents" };
+
+        Payee copied = new(model);
 
         Assert.Equal(model, copied);
     }
