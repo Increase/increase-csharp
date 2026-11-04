@@ -39,6 +39,7 @@ public class RealTimePaymentsTransferTest : TestBase
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
             DebtorName = "National Phonograph Company",
+            EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
             IdempotencyKey = null,
             InboundRealTimePaymentsRequestForPaymentID = null,
@@ -94,6 +95,7 @@ public class RealTimePaymentsTransferTest : TestBase
         ApiEnum<string, RealTimePaymentsTransfers::Currency> expectedCurrency =
             RealTimePaymentsTransfers::Currency.Usd;
         string expectedDebtorName = "National Phonograph Company";
+        string expectedEndToEndIdentification = "Invoice 29582";
         RealTimePaymentsTransfers::Rejection expectedRejection = new()
         {
             RejectReasonAdditionalInformation = null,
@@ -126,6 +128,7 @@ public class RealTimePaymentsTransferTest : TestBase
         Assert.Equal(expectedCreditorName, model.CreditorName);
         Assert.Equal(expectedCurrency, model.Currency);
         Assert.Equal(expectedDebtorName, model.DebtorName);
+        Assert.Equal(expectedEndToEndIdentification, model.EndToEndIdentification);
         Assert.Null(model.ExternalAccountID);
         Assert.Null(model.IdempotencyKey);
         Assert.Null(model.InboundRealTimePaymentsRequestForPaymentID);
@@ -177,6 +180,7 @@ public class RealTimePaymentsTransferTest : TestBase
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
             DebtorName = "National Phonograph Company",
+            EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
             IdempotencyKey = null,
             InboundRealTimePaymentsRequestForPaymentID = null,
@@ -244,6 +248,7 @@ public class RealTimePaymentsTransferTest : TestBase
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
             DebtorName = "National Phonograph Company",
+            EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
             IdempotencyKey = null,
             InboundRealTimePaymentsRequestForPaymentID = null,
@@ -307,6 +312,7 @@ public class RealTimePaymentsTransferTest : TestBase
         ApiEnum<string, RealTimePaymentsTransfers::Currency> expectedCurrency =
             RealTimePaymentsTransfers::Currency.Usd;
         string expectedDebtorName = "National Phonograph Company";
+        string expectedEndToEndIdentification = "Invoice 29582";
         RealTimePaymentsTransfers::Rejection expectedRejection = new()
         {
             RejectReasonAdditionalInformation = null,
@@ -339,6 +345,7 @@ public class RealTimePaymentsTransferTest : TestBase
         Assert.Equal(expectedCreditorName, deserialized.CreditorName);
         Assert.Equal(expectedCurrency, deserialized.Currency);
         Assert.Equal(expectedDebtorName, deserialized.DebtorName);
+        Assert.Equal(expectedEndToEndIdentification, deserialized.EndToEndIdentification);
         Assert.Null(deserialized.ExternalAccountID);
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Null(deserialized.InboundRealTimePaymentsRequestForPaymentID);
@@ -390,6 +397,7 @@ public class RealTimePaymentsTransferTest : TestBase
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
             DebtorName = "National Phonograph Company",
+            EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
             IdempotencyKey = null,
             InboundRealTimePaymentsRequestForPaymentID = null,
@@ -450,6 +458,7 @@ public class RealTimePaymentsTransferTest : TestBase
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
             DebtorName = "National Phonograph Company",
+            EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
             IdempotencyKey = null,
             InboundRealTimePaymentsRequestForPaymentID = null,

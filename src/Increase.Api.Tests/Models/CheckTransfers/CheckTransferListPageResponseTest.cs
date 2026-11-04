@@ -64,6 +64,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         },
                         Memo = "Invoice 29582",
                         Note = null,
+                        Payee = [new("Ian Crease")],
                         Payer =
                         [
                             new("Ian Crease"),
@@ -71,7 +72,6 @@ public class CheckTransferListPageResponseTest : TestBase
                             new("New York, NY 10045"),
                         ],
                         PhysicalCheckBatchID = null,
-                        RecipientName = "Ian Crease",
                         ReturnAddress = new()
                         {
                             City = "New York",
@@ -183,6 +183,7 @@ public class CheckTransferListPageResponseTest : TestBase
                     },
                     Memo = "Invoice 29582",
                     Note = null,
+                    Payee = [new("Ian Crease")],
                     Payer =
                     [
                         new("Ian Crease"),
@@ -190,7 +191,6 @@ public class CheckTransferListPageResponseTest : TestBase
                         new("New York, NY 10045"),
                     ],
                     PhysicalCheckBatchID = null,
-                    RecipientName = "Ian Crease",
                     ReturnAddress = new()
                     {
                         City = "New York",
@@ -315,6 +315,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         },
                         Memo = "Invoice 29582",
                         Note = null,
+                        Payee = [new("Ian Crease")],
                         Payer =
                         [
                             new("Ian Crease"),
@@ -322,7 +323,6 @@ public class CheckTransferListPageResponseTest : TestBase
                             new("New York, NY 10045"),
                         ],
                         PhysicalCheckBatchID = null,
-                        RecipientName = "Ian Crease",
                         ReturnAddress = new()
                         {
                             City = "New York",
@@ -450,6 +450,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         },
                         Memo = "Invoice 29582",
                         Note = null,
+                        Payee = [new("Ian Crease")],
                         Payer =
                         [
                             new("Ian Crease"),
@@ -457,7 +458,6 @@ public class CheckTransferListPageResponseTest : TestBase
                             new("New York, NY 10045"),
                         ],
                         PhysicalCheckBatchID = null,
-                        RecipientName = "Ian Crease",
                         ReturnAddress = new()
                         {
                             City = "New York",
@@ -577,6 +577,7 @@ public class CheckTransferListPageResponseTest : TestBase
                     },
                     Memo = "Invoice 29582",
                     Note = null,
+                    Payee = [new("Ian Crease")],
                     Payer =
                     [
                         new("Ian Crease"),
@@ -584,7 +585,6 @@ public class CheckTransferListPageResponseTest : TestBase
                         new("New York, NY 10045"),
                     ],
                     PhysicalCheckBatchID = null,
-                    RecipientName = "Ian Crease",
                     ReturnAddress = new()
                     {
                         City = "New York",
@@ -709,6 +709,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         },
                         Memo = "Invoice 29582",
                         Note = null,
+                        Payee = [new("Ian Crease")],
                         Payer =
                         [
                             new("Ian Crease"),
@@ -716,7 +717,6 @@ public class CheckTransferListPageResponseTest : TestBase
                             new("New York, NY 10045"),
                         ],
                         PhysicalCheckBatchID = null,
-                        RecipientName = "Ian Crease",
                         ReturnAddress = new()
                         {
                             City = "New York",
@@ -837,6 +837,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         },
                         Memo = "Invoice 29582",
                         Note = null,
+                        Payee = [new("Ian Crease")],
                         Payer =
                         [
                             new("Ian Crease"),
@@ -844,7 +845,6 @@ public class CheckTransferListPageResponseTest : TestBase
                             new("New York, NY 10045"),
                         ],
                         PhysicalCheckBatchID = null,
-                        RecipientName = "Ian Crease",
                         ReturnAddress = new()
                         {
                             City = "New York",

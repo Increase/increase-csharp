@@ -60,9 +60,9 @@ public class CheckTransferTest : TestBase
                 },
                 Memo = "Invoice 29582",
                 Note = null,
+                Payee = [new("Ian Crease")],
                 Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
                 PhysicalCheckBatchID = null,
-                RecipientName = "Ian Crease",
                 ReturnAddress = new()
                 {
                     City = "New York",
@@ -166,9 +166,9 @@ public class CheckTransferTest : TestBase
             },
             Memo = "Invoice 29582",
             Note = null,
+            Payee = [new("Ian Crease")],
             Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
             PhysicalCheckBatchID = null,
-            RecipientName = "Ian Crease",
             ReturnAddress = new()
             {
                 City = "New York",
@@ -303,9 +303,9 @@ public class CheckTransferTest : TestBase
                 },
                 Memo = "Invoice 29582",
                 Note = null,
+                Payee = [new("Ian Crease")],
                 Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
                 PhysicalCheckBatchID = null,
-                RecipientName = "Ian Crease",
                 ReturnAddress = new()
                 {
                     City = "New York",
@@ -424,9 +424,9 @@ public class CheckTransferTest : TestBase
                 },
                 Memo = "Invoice 29582",
                 Note = null,
+                Payee = [new("Ian Crease")],
                 Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
                 PhysicalCheckBatchID = null,
-                RecipientName = "Ian Crease",
                 ReturnAddress = new()
                 {
                     City = "New York",
@@ -537,9 +537,9 @@ public class CheckTransferTest : TestBase
             },
             Memo = "Invoice 29582",
             Note = null,
+            Payee = [new("Ian Crease")],
             Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
             PhysicalCheckBatchID = null,
-            RecipientName = "Ian Crease",
             ReturnAddress = new()
             {
                 City = "New York",
@@ -677,9 +677,9 @@ public class CheckTransferTest : TestBase
                 },
                 Memo = "Invoice 29582",
                 Note = null,
+                Payee = [new("Ian Crease")],
                 Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
                 PhysicalCheckBatchID = null,
-                RecipientName = "Ian Crease",
                 ReturnAddress = new()
                 {
                     City = "New York",
@@ -792,9 +792,9 @@ public class CheckTransferTest : TestBase
                 },
                 Memo = "Invoice 29582",
                 Note = null,
+                Payee = [new("Ian Crease")],
                 Payer = [new("Ian Crease"), new("33 Liberty Street"), new("New York, NY 10045")],
                 PhysicalCheckBatchID = null,
-                RecipientName = "Ian Crease",
                 ReturnAddress = new()
                 {
                     City = "New York",
@@ -1699,9 +1699,9 @@ public class CheckTransferPhysicalCheckTest : TestBase
             },
             Memo = "memo",
             Note = "note",
+            Payee = [new("contents")],
             Payer = [new("contents")],
             PhysicalCheckBatchID = "physical_check_batch_id",
-            RecipientName = "recipient_name",
             ReturnAddress = new()
             {
                 City = "city",
@@ -1743,9 +1743,9 @@ public class CheckTransferPhysicalCheckTest : TestBase
         };
         string expectedMemo = "memo";
         string expectedNote = "note";
+        List<CheckTransfers::CheckTransferPhysicalCheckPayee> expectedPayee = [new("contents")];
         List<CheckTransfers::CheckTransferPhysicalCheckPayer> expectedPayer = [new("contents")];
         string expectedPhysicalCheckBatchID = "physical_check_batch_id";
-        string expectedRecipientName = "recipient_name";
         CheckTransfers::CheckTransferPhysicalCheckReturnAddress expectedReturnAddress = new()
         {
             City = "city",
@@ -1784,13 +1784,17 @@ public class CheckTransferPhysicalCheckTest : TestBase
         Assert.Equal(expectedMailingAddress, model.MailingAddress);
         Assert.Equal(expectedMemo, model.Memo);
         Assert.Equal(expectedNote, model.Note);
+        Assert.Equal(expectedPayee.Count, model.Payee.Count);
+        for (int i = 0; i < expectedPayee.Count; i++)
+        {
+            Assert.Equal(expectedPayee[i], model.Payee[i]);
+        }
         Assert.Equal(expectedPayer.Count, model.Payer.Count);
         for (int i = 0; i < expectedPayer.Count; i++)
         {
             Assert.Equal(expectedPayer[i], model.Payer[i]);
         }
         Assert.Equal(expectedPhysicalCheckBatchID, model.PhysicalCheckBatchID);
-        Assert.Equal(expectedRecipientName, model.RecipientName);
         Assert.Equal(expectedReturnAddress, model.ReturnAddress);
         Assert.Equal(expectedReturnAddressName, model.ReturnAddressName);
         Assert.Equal(expectedShippingMethod, model.ShippingMethod);
@@ -1821,9 +1825,9 @@ public class CheckTransferPhysicalCheckTest : TestBase
             },
             Memo = "memo",
             Note = "note",
+            Payee = [new("contents")],
             Payer = [new("contents")],
             PhysicalCheckBatchID = "physical_check_batch_id",
-            RecipientName = "recipient_name",
             ReturnAddress = new()
             {
                 City = "city",
@@ -1879,9 +1883,9 @@ public class CheckTransferPhysicalCheckTest : TestBase
             },
             Memo = "memo",
             Note = "note",
+            Payee = [new("contents")],
             Payer = [new("contents")],
             PhysicalCheckBatchID = "physical_check_batch_id",
-            RecipientName = "recipient_name",
             ReturnAddress = new()
             {
                 City = "city",
@@ -1930,9 +1934,9 @@ public class CheckTransferPhysicalCheckTest : TestBase
         };
         string expectedMemo = "memo";
         string expectedNote = "note";
+        List<CheckTransfers::CheckTransferPhysicalCheckPayee> expectedPayee = [new("contents")];
         List<CheckTransfers::CheckTransferPhysicalCheckPayer> expectedPayer = [new("contents")];
         string expectedPhysicalCheckBatchID = "physical_check_batch_id";
-        string expectedRecipientName = "recipient_name";
         CheckTransfers::CheckTransferPhysicalCheckReturnAddress expectedReturnAddress = new()
         {
             City = "city",
@@ -1971,13 +1975,17 @@ public class CheckTransferPhysicalCheckTest : TestBase
         Assert.Equal(expectedMailingAddress, deserialized.MailingAddress);
         Assert.Equal(expectedMemo, deserialized.Memo);
         Assert.Equal(expectedNote, deserialized.Note);
+        Assert.Equal(expectedPayee.Count, deserialized.Payee.Count);
+        for (int i = 0; i < expectedPayee.Count; i++)
+        {
+            Assert.Equal(expectedPayee[i], deserialized.Payee[i]);
+        }
         Assert.Equal(expectedPayer.Count, deserialized.Payer.Count);
         for (int i = 0; i < expectedPayer.Count; i++)
         {
             Assert.Equal(expectedPayer[i], deserialized.Payer[i]);
         }
         Assert.Equal(expectedPhysicalCheckBatchID, deserialized.PhysicalCheckBatchID);
-        Assert.Equal(expectedRecipientName, deserialized.RecipientName);
         Assert.Equal(expectedReturnAddress, deserialized.ReturnAddress);
         Assert.Equal(expectedReturnAddressName, deserialized.ReturnAddressName);
         Assert.Equal(expectedShippingMethod, deserialized.ShippingMethod);
@@ -2008,9 +2016,9 @@ public class CheckTransferPhysicalCheckTest : TestBase
             },
             Memo = "memo",
             Note = "note",
+            Payee = [new("contents")],
             Payer = [new("contents")],
             PhysicalCheckBatchID = "physical_check_batch_id",
-            RecipientName = "recipient_name",
             ReturnAddress = new()
             {
                 City = "city",
@@ -2060,9 +2068,9 @@ public class CheckTransferPhysicalCheckTest : TestBase
             },
             Memo = "memo",
             Note = "note",
+            Payee = [new("contents")],
             Payer = [new("contents")],
             PhysicalCheckBatchID = "physical_check_batch_id",
-            RecipientName = "recipient_name",
             ReturnAddress = new()
             {
                 City = "city",
@@ -2224,6 +2232,70 @@ public class CheckTransferPhysicalCheckMailingAddressTest : TestBase
         };
 
         CheckTransfers::CheckTransferPhysicalCheckMailingAddress copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CheckTransferPhysicalCheckPayeeTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CheckTransfers::CheckTransferPhysicalCheckPayee { Contents = "contents" };
+
+        string expectedContents = "contents";
+
+        Assert.Equal(expectedContents, model.Contents);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CheckTransfers::CheckTransferPhysicalCheckPayee { Contents = "contents" };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<CheckTransfers::CheckTransferPhysicalCheckPayee>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CheckTransfers::CheckTransferPhysicalCheckPayee { Contents = "contents" };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<CheckTransfers::CheckTransferPhysicalCheckPayee>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedContents = "contents";
+
+        Assert.Equal(expectedContents, deserialized.Contents);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CheckTransfers::CheckTransferPhysicalCheckPayee { Contents = "contents" };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CheckTransfers::CheckTransferPhysicalCheckPayee { Contents = "contents" };
+
+        CheckTransfers::CheckTransferPhysicalCheckPayee copied = new(model);
 
         Assert.Equal(model, copied);
     }
