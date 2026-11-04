@@ -64,6 +64,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         },
                         Memo = "Invoice 29582",
                         Note = null,
+                        Payee = [new("contents")],
                         Payer =
                         [
                             new("Ian Crease"),
@@ -183,6 +184,7 @@ public class CheckTransferListPageResponseTest : TestBase
                     },
                     Memo = "Invoice 29582",
                     Note = null,
+                    Payee = [new("contents")],
                     Payer =
                     [
                         new("Ian Crease"),
@@ -315,6 +317,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         },
                         Memo = "Invoice 29582",
                         Note = null,
+                        Payee = [new("contents")],
                         Payer =
                         [
                             new("Ian Crease"),
@@ -450,6 +453,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         },
                         Memo = "Invoice 29582",
                         Note = null,
+                        Payee = [new("contents")],
                         Payer =
                         [
                             new("Ian Crease"),
@@ -577,6 +581,7 @@ public class CheckTransferListPageResponseTest : TestBase
                     },
                     Memo = "Invoice 29582",
                     Note = null,
+                    Payee = [new("contents")],
                     Payer =
                     [
                         new("Ian Crease"),
@@ -709,6 +714,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         },
                         Memo = "Invoice 29582",
                         Note = null,
+                        Payee = [new("contents")],
                         Payer =
                         [
                             new("Ian Crease"),
@@ -837,6 +843,7 @@ public class CheckTransferListPageResponseTest : TestBase
                         },
                         Memo = "Invoice 29582",
                         Note = null,
+                        Payee = [new("contents")],
                         Payer =
                         [
                             new("Ian Crease"),

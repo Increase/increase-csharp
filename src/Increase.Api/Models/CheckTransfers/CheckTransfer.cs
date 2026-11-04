@@ -1254,6 +1254,28 @@ public sealed record class CheckTransferPhysicalCheck : JsonModel
     }
 
     /// <summary>
+    /// The payee of the check. This will be printed in the Pay to the Order Of portion
+    /// of the check.
+    /// </summary>
+    public required IReadOnlyList<CheckTransferPhysicalCheckPayee>? Payee
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<CheckTransferPhysicalCheckPayee>>(
+                "payee"
+            );
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<CheckTransferPhysicalCheckPayee>?>(
+                "payee",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// The payer of the check. This will be printed on the top-left portion of the check.
     /// </summary>
     public required IReadOnlyList<CheckTransferPhysicalCheckPayer> Payer
@@ -1386,6 +1408,10 @@ public sealed record class CheckTransferPhysicalCheck : JsonModel
         this.MailingAddress.Validate();
         _ = this.Memo;
         _ = this.Note;
+        foreach (var item in this.Payee ?? [])
+        {
+            item.Validate();
+        }
         foreach (var item in this.Payer)
         {
             item.Validate();
@@ -1596,6 +1622,80 @@ class CheckTransferPhysicalCheckMailingAddressFromRaw
     public CheckTransferPhysicalCheckMailingAddress FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => CheckTransferPhysicalCheckMailingAddress.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CheckTransferPhysicalCheckPayee,
+        CheckTransferPhysicalCheckPayeeFromRaw
+    >)
+)]
+public sealed record class CheckTransferPhysicalCheckPayee : JsonModel
+{
+    /// <summary>
+    /// The contents of the line.
+    /// </summary>
+    public required string Contents
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("contents");
+        }
+        init { this._rawData.Set("contents", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Contents;
+    }
+
+    public CheckTransferPhysicalCheckPayee() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CheckTransferPhysicalCheckPayee(
+        CheckTransferPhysicalCheckPayee checkTransferPhysicalCheckPayee
+    )
+        : base(checkTransferPhysicalCheckPayee) { }
+#pragma warning restore CS8618
+
+    public CheckTransferPhysicalCheckPayee(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CheckTransferPhysicalCheckPayee(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CheckTransferPhysicalCheckPayeeFromRaw.FromRawUnchecked"/>
+    public static CheckTransferPhysicalCheckPayee FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public CheckTransferPhysicalCheckPayee(string contents)
+        : this()
+    {
+        this.Contents = contents;
+    }
+}
+
+class CheckTransferPhysicalCheckPayeeFromRaw : IFromRawJson<CheckTransferPhysicalCheckPayee>
+{
+    /// <inheritdoc/>
+    public CheckTransferPhysicalCheckPayee FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CheckTransferPhysicalCheckPayee.FromRawUnchecked(rawData);
 }
 
 [JsonConverter(

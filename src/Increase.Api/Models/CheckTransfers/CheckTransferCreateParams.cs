@@ -480,6 +480,27 @@ public sealed record class PhysicalCheck : JsonModel
     }
 
     /// <summary>
+    /// The payee of the check. This will be printed in the Pay to the Order Of portion
+    /// of the check. This should be an array of up to 4 elements, each of which represents
+    /// a line of the payee.
+    /// </summary>
+    public required IReadOnlyList<Payee> Payee
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<ImmutableArray<Payee>>("payee");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<Payee>>(
+                "payee",
+                ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// The payer of the check. This will be printed on the top-left portion of the
     /// check. This should be an array of up to 4 elements, each of which represents
     /// a line of the payer.
@@ -498,19 +519,6 @@ public sealed record class PhysicalCheck : JsonModel
                 ImmutableArray.ToImmutableArray(value)
             );
         }
-    }
-
-    /// <summary>
-    /// The name that will be printed on the check in the 'To:' field.
-    /// </summary>
-    public required string RecipientName
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("recipient_name");
-        }
-        init { this._rawData.Set("recipient_name", value); }
     }
 
     /// <summary>
@@ -698,11 +706,14 @@ public sealed record class PhysicalCheck : JsonModel
     {
         this.MailingAddress.Validate();
         _ = this.Memo;
+        foreach (var item in this.Payee)
+        {
+            item.Validate();
+        }
         foreach (var item in this.Payer)
         {
             item.Validate();
         }
-        _ = this.RecipientName;
         _ = this.AttachmentFileID;
         _ = this.CheckVoucherImageFileID;
         _ = this.Note;
@@ -782,6 +793,19 @@ public sealed record class MailingAddress : JsonModel
     }
 
     /// <summary>
+    /// The name component of the check's destination address.
+    /// </summary>
+    public required string Name
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("name");
+        }
+        init { this._rawData.Set("name", value); }
+    }
+
+    /// <summary>
     /// The postal code component of the check's destination address.
     /// </summary>
     public required string PostalCode
@@ -829,28 +853,6 @@ public sealed record class MailingAddress : JsonModel
     }
 
     /// <summary>
-    /// The name component of the check's destination address. Defaults to the provided
-    /// `recipient_name` parameter if `name` is not provided.
-    /// </summary>
-    public string? Name
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("name");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set("name", value);
-        }
-    }
-
-    /// <summary>
     /// The phone number to associate with the check's destination address. The phone
     /// number is only used when `shipping_method` is `fedex_overnight` and will
     /// be supplied to FedEx to be used in case of delivery issues.
@@ -878,10 +880,10 @@ public sealed record class MailingAddress : JsonModel
     {
         _ = this.City;
         _ = this.Line1;
+        _ = this.Name;
         _ = this.PostalCode;
         _ = this.State;
         _ = this.Line2;
-        _ = this.Name;
         _ = this.Phone;
     }
 
@@ -918,6 +920,70 @@ class MailingAddressFromRaw : IFromRawJson<MailingAddress>
     /// <inheritdoc/>
     public MailingAddress FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         MailingAddress.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(typeof(JsonModelConverter<Payee, PayeeFromRaw>))]
+public sealed record class Payee : JsonModel
+{
+    /// <summary>
+    /// The contents of the line.
+    /// </summary>
+    public required string Contents
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("contents");
+        }
+        init { this._rawData.Set("contents", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Contents;
+    }
+
+    public Payee() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Payee(Payee payee)
+        : base(payee) { }
+#pragma warning restore CS8618
+
+    public Payee(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Payee(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="PayeeFromRaw.FromRawUnchecked"/>
+    public static Payee FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public Payee(string contents)
+        : this()
+    {
+        this.Contents = contents;
+    }
+}
+
+class PayeeFromRaw : IFromRawJson<Payee>
+{
+    /// <inheritdoc/>
+    public Payee FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Payee.FromRawUnchecked(rawData);
 }
 
 [JsonConverter(typeof(JsonModelConverter<Payer, PayerFromRaw>))]
