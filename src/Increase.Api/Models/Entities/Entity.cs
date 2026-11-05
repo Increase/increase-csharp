@@ -159,20 +159,6 @@ public sealed record class Entity : JsonModel
     }
 
     /// <summary>
-    /// An assessment of the entity’s potential risk of involvement in financial crimes,
-    /// such as money laundering.
-    /// </summary>
-    public required EntityRiskRating? RiskRating
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<EntityRiskRating>("risk_rating");
-        }
-        init { this._rawData.Set("risk_rating", value); }
-    }
-
-    /// <summary>
     /// Details of the sole proprietorship entity. Will be present if `structure`
     /// is equal to `sole_proprietorship`.
     /// </summary>
@@ -329,7 +315,6 @@ public sealed record class Entity : JsonModel
         _ = this.IdempotencyKey;
         this.Joint?.Validate();
         this.NaturalPerson?.Validate();
-        this.RiskRating?.Validate();
         this.SoleProprietorship?.Validate();
         this.Status.Validate();
         this.Structure.Validate();
@@ -2915,145 +2900,6 @@ sealed class EntityNaturalPersonIdentificationMethodConverter
                 EntityNaturalPersonIdentificationMethod.Passport => "passport",
                 EntityNaturalPersonIdentificationMethod.DriversLicense => "drivers_license",
                 EntityNaturalPersonIdentificationMethod.Other => "other",
-                _ => throw new IncreaseInvalidDataException(
-                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
-                ),
-            },
-            options
-        );
-    }
-}
-
-/// <summary>
-/// An assessment of the entity’s potential risk of involvement in financial crimes,
-/// such as money laundering.
-/// </summary>
-[JsonConverter(typeof(JsonModelConverter<EntityRiskRating, EntityRiskRatingFromRaw>))]
-public sealed record class EntityRiskRating : JsonModel
-{
-    /// <summary>
-    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time at which the risk
-    /// rating was performed.
-    /// </summary>
-    public required System::DateTimeOffset RatedAt
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("rated_at");
-        }
-        init { this._rawData.Set("rated_at", value); }
-    }
-
-    /// <summary>
-    /// The rating given to this entity.
-    /// </summary>
-    public required ApiEnum<string, EntityRiskRatingRating> Rating
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<ApiEnum<string, EntityRiskRatingRating>>("rating");
-        }
-        init { this._rawData.Set("rating", value); }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        _ = this.RatedAt;
-        this.Rating.Validate();
-    }
-
-    public EntityRiskRating() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public EntityRiskRating(EntityRiskRating entityRiskRating)
-        : base(entityRiskRating) { }
-#pragma warning restore CS8618
-
-    public EntityRiskRating(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    EntityRiskRating(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="EntityRiskRatingFromRaw.FromRawUnchecked"/>
-    public static EntityRiskRating FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class EntityRiskRatingFromRaw : IFromRawJson<EntityRiskRating>
-{
-    /// <inheritdoc/>
-    public EntityRiskRating FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        EntityRiskRating.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// The rating given to this entity.
-/// </summary>
-[JsonConverter(typeof(EntityRiskRatingRatingConverter))]
-public enum EntityRiskRatingRating
-{
-    /// <summary>
-    /// Minimal risk of involvement in financial crime.
-    /// </summary>
-    Low,
-
-    /// <summary>
-    /// Moderate risk of involvement in financial crime.
-    /// </summary>
-    Medium,
-
-    /// <summary>
-    /// Elevated risk of involvement in financial crime.
-    /// </summary>
-    High,
-}
-
-sealed class EntityRiskRatingRatingConverter : JsonConverter<EntityRiskRatingRating>
-{
-    public override EntityRiskRatingRating Read(
-        ref Utf8JsonReader reader,
-        System::Type typeToConvert,
-        JsonSerializerOptions options
-    )
-    {
-        return JsonSerializer.Deserialize<string>(ref reader, options) switch
-        {
-            "low" => EntityRiskRatingRating.Low,
-            "medium" => EntityRiskRatingRating.Medium,
-            "high" => EntityRiskRatingRating.High,
-            _ => (EntityRiskRatingRating)(-1),
-        };
-    }
-
-    public override void Write(
-        Utf8JsonWriter writer,
-        EntityRiskRatingRating value,
-        JsonSerializerOptions options
-    )
-    {
-        JsonSerializer.Serialize(
-            writer,
-            value switch
-            {
-                EntityRiskRatingRating.Low => "low",
-                EntityRiskRatingRating.Medium => "medium",
-                EntityRiskRatingRating.High => "high",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

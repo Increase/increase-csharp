@@ -2291,7 +2291,8 @@ public sealed record class CardUpdateParamsDigitalWallet : JsonModel
 
     /// <summary>
     /// An email address that can be used to verify the cardholder via one-time passcode
-    /// over email.
+    /// over email. Send `null` to clear the email address. Omit this field to leave
+    /// it unchanged.
     /// </summary>
     public string? Email
     {
@@ -2300,21 +2301,14 @@ public sealed record class CardUpdateParamsDigitalWallet : JsonModel
             this._rawData.Freeze();
             return this._rawData.GetNullableClass<string>("email");
         }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set("email", value);
-        }
+        init { this._rawData.Set("email", value); }
     }
 
     /// <summary>
     /// A phone number that can be used to verify the cardholder via one-time passcode
     /// over SMS. Accepts formats like `+14155550123`, `4155550123`, `415-555-0123`,
-    /// or `(415) 555-0123`.
+    /// or `(415) 555-0123`. Send `null` to clear the phone number. Omit this field
+    /// to leave it unchanged.
     /// </summary>
     public string? Phone
     {
@@ -2323,15 +2317,7 @@ public sealed record class CardUpdateParamsDigitalWallet : JsonModel
             this._rawData.Freeze();
             return this._rawData.GetNullableClass<string>("phone");
         }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set("phone", value);
-        }
+        init { this._rawData.Set("phone", value); }
     }
 
     /// <inheritdoc/>
