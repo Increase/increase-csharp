@@ -148,11 +148,6 @@ public class EntityListPageResponseTest : TestBase
                         },
                         Name = "name",
                     },
-                    RiskRating = new()
-                    {
-                        RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        Rating = Entities::EntityRiskRatingRating.Low,
-                    },
                     SoleProprietorship = new()
                     {
                         Address = new()
@@ -441,11 +436,6 @@ public class EntityListPageResponseTest : TestBase
                         NumberLast4 = "number_last4",
                     },
                     Name = "name",
-                },
-                RiskRating = new()
-                {
-                    RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Rating = Entities::EntityRiskRatingRating.Low,
                 },
                 SoleProprietorship = new()
                 {
@@ -747,11 +737,6 @@ public class EntityListPageResponseTest : TestBase
                             NumberLast4 = "number_last4",
                         },
                         Name = "name",
-                    },
-                    RiskRating = new()
-                    {
-                        RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        Rating = Entities::EntityRiskRatingRating.Low,
                     },
                     SoleProprietorship = new()
                     {
@@ -1056,11 +1041,6 @@ public class EntityListPageResponseTest : TestBase
                         },
                         Name = "name",
                     },
-                    RiskRating = new()
-                    {
-                        RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        Rating = Entities::EntityRiskRatingRating.Low,
-                    },
                     SoleProprietorship = new()
                     {
                         Address = new()
@@ -1356,11 +1336,6 @@ public class EntityListPageResponseTest : TestBase
                         NumberLast4 = "number_last4",
                     },
                     Name = "name",
-                },
-                RiskRating = new()
-                {
-                    RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Rating = Entities::EntityRiskRatingRating.Low,
                 },
                 SoleProprietorship = new()
                 {
@@ -1663,11 +1638,6 @@ public class EntityListPageResponseTest : TestBase
                         },
                         Name = "name",
                     },
-                    RiskRating = new()
-                    {
-                        RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        Rating = Entities::EntityRiskRatingRating.Low,
-                    },
                     SoleProprietorship = new()
                     {
                         Address = new()
@@ -1964,11 +1934,6 @@ public class EntityListPageResponseTest : TestBase
                             NumberLast4 = "number_last4",
                         },
                         Name = "name",
-                    },
-                    RiskRating = new()
-                    {
-                        RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        Rating = Entities::EntityRiskRatingRating.Low,
                     },
                     SoleProprietorship = new()
                     {
