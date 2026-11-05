@@ -3017,20 +3017,16 @@ public class CardUpdateParamsDigitalWalletTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new CardUpdateParamsDigitalWallet { };
+        var model = new CardUpdateParamsDigitalWallet { Email = "dev@stainless.com", Phone = "x" };
 
         Assert.Null(model.DigitalCardProfileID);
         Assert.False(model.RawData.ContainsKey("digital_card_profile_id"));
-        Assert.Null(model.Email);
-        Assert.False(model.RawData.ContainsKey("email"));
-        Assert.Null(model.Phone);
-        Assert.False(model.RawData.ContainsKey("phone"));
     }
 
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new CardUpdateParamsDigitalWallet { };
+        var model = new CardUpdateParamsDigitalWallet { Email = "dev@stainless.com", Phone = "x" };
 
         model.Validate();
     }
@@ -3040,18 +3036,15 @@ public class CardUpdateParamsDigitalWalletTest : TestBase
     {
         var model = new CardUpdateParamsDigitalWallet
         {
+            Email = "dev@stainless.com",
+            Phone = "x",
+
             // Null should be interpreted as omitted for these properties
             DigitalCardProfileID = null,
-            Email = null,
-            Phone = null,
         };
 
         Assert.Null(model.DigitalCardProfileID);
         Assert.False(model.RawData.ContainsKey("digital_card_profile_id"));
-        Assert.Null(model.Email);
-        Assert.False(model.RawData.ContainsKey("email"));
-        Assert.Null(model.Phone);
-        Assert.False(model.RawData.ContainsKey("phone"));
     }
 
     [Fact]
@@ -3059,8 +3052,65 @@ public class CardUpdateParamsDigitalWalletTest : TestBase
     {
         var model = new CardUpdateParamsDigitalWallet
         {
+            Email = "dev@stainless.com",
+            Phone = "x",
+
             // Null should be interpreted as omitted for these properties
             DigitalCardProfileID = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new CardUpdateParamsDigitalWallet
+        {
+            DigitalCardProfileID = "digital_card_profile_id",
+        };
+
+        Assert.Null(model.Email);
+        Assert.False(model.RawData.ContainsKey("email"));
+        Assert.Null(model.Phone);
+        Assert.False(model.RawData.ContainsKey("phone"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new CardUpdateParamsDigitalWallet
+        {
+            DigitalCardProfileID = "digital_card_profile_id",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new CardUpdateParamsDigitalWallet
+        {
+            DigitalCardProfileID = "digital_card_profile_id",
+
+            Email = null,
+            Phone = null,
+        };
+
+        Assert.Null(model.Email);
+        Assert.True(model.RawData.ContainsKey("email"));
+        Assert.Null(model.Phone);
+        Assert.True(model.RawData.ContainsKey("phone"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new CardUpdateParamsDigitalWallet
+        {
+            DigitalCardProfileID = "digital_card_profile_id",
+
             Email = null,
             Phone = null,
         };

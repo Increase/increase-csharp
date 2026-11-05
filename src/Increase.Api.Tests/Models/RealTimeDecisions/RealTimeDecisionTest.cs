@@ -276,7 +276,13 @@ public class RealTimeDecisionTest : TestBase
             {
                 CardID = "card_id",
                 Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
-                Device = new("identifier"),
+                Device = new()
+                {
+                    DeviceType = RealTimeDecisions::DeviceType.Unknown,
+                    Identifier = "identifier",
+                    IPAddress = "ip_address",
+                    Name = "name",
+                },
                 DigitalWallet =
                     RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
             },
@@ -550,7 +556,13 @@ public class RealTimeDecisionTest : TestBase
         {
             CardID = "card_id",
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
-            Device = new("identifier"),
+            Device = new()
+            {
+                DeviceType = RealTimeDecisions::DeviceType.Unknown,
+                Identifier = "identifier",
+                IPAddress = "ip_address",
+                Name = "name",
+            },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
         };
@@ -842,7 +854,13 @@ public class RealTimeDecisionTest : TestBase
             {
                 CardID = "card_id",
                 Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
-                Device = new("identifier"),
+                Device = new()
+                {
+                    DeviceType = RealTimeDecisions::DeviceType.Unknown,
+                    Identifier = "identifier",
+                    IPAddress = "ip_address",
+                    Name = "name",
+                },
                 DigitalWallet =
                     RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
             },
@@ -1128,7 +1146,13 @@ public class RealTimeDecisionTest : TestBase
             {
                 CardID = "card_id",
                 Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
-                Device = new("identifier"),
+                Device = new()
+                {
+                    DeviceType = RealTimeDecisions::DeviceType.Unknown,
+                    Identifier = "identifier",
+                    IPAddress = "ip_address",
+                    Name = "name",
+                },
                 DigitalWallet =
                     RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
             },
@@ -1409,7 +1433,13 @@ public class RealTimeDecisionTest : TestBase
         {
             CardID = "card_id",
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
-            Device = new("identifier"),
+            Device = new()
+            {
+                DeviceType = RealTimeDecisions::DeviceType.Unknown,
+                Identifier = "identifier",
+                IPAddress = "ip_address",
+                Name = "name",
+            },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
         };
@@ -1701,7 +1731,13 @@ public class RealTimeDecisionTest : TestBase
             {
                 CardID = "card_id",
                 Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
-                Device = new("identifier"),
+                Device = new()
+                {
+                    DeviceType = RealTimeDecisions::DeviceType.Unknown,
+                    Identifier = "identifier",
+                    IPAddress = "ip_address",
+                    Name = "name",
+                },
                 DigitalWallet =
                     RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
             },
@@ -1981,7 +2017,13 @@ public class RealTimeDecisionTest : TestBase
             {
                 CardID = "card_id",
                 Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
-                Device = new("identifier"),
+                Device = new()
+                {
+                    DeviceType = RealTimeDecisions::DeviceType.Unknown,
+                    Identifier = "identifier",
+                    IPAddress = "ip_address",
+                    Name = "name",
+                },
                 DigitalWallet =
                     RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
             },
@@ -12076,7 +12118,13 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
         {
             CardID = "card_id",
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
-            Device = new("identifier"),
+            Device = new()
+            {
+                DeviceType = RealTimeDecisions::DeviceType.Unknown,
+                Identifier = "identifier",
+                IPAddress = "ip_address",
+                Name = "name",
+            },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
         };
@@ -12086,7 +12134,13 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
             string,
             RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision
         > expectedDecision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve;
-        RealTimeDecisions::Device expectedDevice = new("identifier");
+        RealTimeDecisions::Device expectedDevice = new()
+        {
+            DeviceType = RealTimeDecisions::DeviceType.Unknown,
+            Identifier = "identifier",
+            IPAddress = "ip_address",
+            Name = "name",
+        };
         ApiEnum<
             string,
             RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet
@@ -12106,7 +12160,13 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
         {
             CardID = "card_id",
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
-            Device = new("identifier"),
+            Device = new()
+            {
+                DeviceType = RealTimeDecisions::DeviceType.Unknown,
+                Identifier = "identifier",
+                IPAddress = "ip_address",
+                Name = "name",
+            },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
         };
@@ -12128,7 +12188,13 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
         {
             CardID = "card_id",
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
-            Device = new("identifier"),
+            Device = new()
+            {
+                DeviceType = RealTimeDecisions::DeviceType.Unknown,
+                Identifier = "identifier",
+                IPAddress = "ip_address",
+                Name = "name",
+            },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
         };
@@ -12146,7 +12212,13 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
             string,
             RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision
         > expectedDecision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve;
-        RealTimeDecisions::Device expectedDevice = new("identifier");
+        RealTimeDecisions::Device expectedDevice = new()
+        {
+            DeviceType = RealTimeDecisions::DeviceType.Unknown,
+            Identifier = "identifier",
+            IPAddress = "ip_address",
+            Name = "name",
+        };
         ApiEnum<
             string,
             RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet
@@ -12166,7 +12238,13 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
         {
             CardID = "card_id",
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
-            Device = new("identifier"),
+            Device = new()
+            {
+                DeviceType = RealTimeDecisions::DeviceType.Unknown,
+                Identifier = "identifier",
+                IPAddress = "ip_address",
+                Name = "name",
+            },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
         };
@@ -12181,7 +12259,13 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
         {
             CardID = "card_id",
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
-            Device = new("identifier"),
+            Device = new()
+            {
+                DeviceType = RealTimeDecisions::DeviceType.Unknown,
+                Identifier = "identifier",
+                IPAddress = "ip_address",
+                Name = "name",
+            },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
         };
@@ -12257,17 +12341,36 @@ public class DeviceTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new RealTimeDecisions::Device { Identifier = "identifier" };
+        var model = new RealTimeDecisions::Device
+        {
+            DeviceType = RealTimeDecisions::DeviceType.Unknown,
+            Identifier = "identifier",
+            IPAddress = "ip_address",
+            Name = "name",
+        };
 
+        ApiEnum<string, RealTimeDecisions::DeviceType> expectedDeviceType =
+            RealTimeDecisions::DeviceType.Unknown;
         string expectedIdentifier = "identifier";
+        string expectedIPAddress = "ip_address";
+        string expectedName = "name";
 
+        Assert.Equal(expectedDeviceType, model.DeviceType);
         Assert.Equal(expectedIdentifier, model.Identifier);
+        Assert.Equal(expectedIPAddress, model.IPAddress);
+        Assert.Equal(expectedName, model.Name);
     }
 
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new RealTimeDecisions::Device { Identifier = "identifier" };
+        var model = new RealTimeDecisions::Device
+        {
+            DeviceType = RealTimeDecisions::DeviceType.Unknown,
+            Identifier = "identifier",
+            IPAddress = "ip_address",
+            Name = "name",
+        };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<RealTimeDecisions::Device>(
@@ -12281,7 +12384,13 @@ public class DeviceTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new RealTimeDecisions::Device { Identifier = "identifier" };
+        var model = new RealTimeDecisions::Device
+        {
+            DeviceType = RealTimeDecisions::DeviceType.Unknown,
+            Identifier = "identifier",
+            IPAddress = "ip_address",
+            Name = "name",
+        };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<RealTimeDecisions::Device>(
@@ -12290,15 +12399,28 @@ public class DeviceTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        ApiEnum<string, RealTimeDecisions::DeviceType> expectedDeviceType =
+            RealTimeDecisions::DeviceType.Unknown;
         string expectedIdentifier = "identifier";
+        string expectedIPAddress = "ip_address";
+        string expectedName = "name";
 
+        Assert.Equal(expectedDeviceType, deserialized.DeviceType);
         Assert.Equal(expectedIdentifier, deserialized.Identifier);
+        Assert.Equal(expectedIPAddress, deserialized.IPAddress);
+        Assert.Equal(expectedName, deserialized.Name);
     }
 
     [Fact]
     public void Validation_Works()
     {
-        var model = new RealTimeDecisions::Device { Identifier = "identifier" };
+        var model = new RealTimeDecisions::Device
+        {
+            DeviceType = RealTimeDecisions::DeviceType.Unknown,
+            Identifier = "identifier",
+            IPAddress = "ip_address",
+            Name = "name",
+        };
 
         model.Validate();
     }
@@ -12306,11 +12428,87 @@ public class DeviceTest : TestBase
     [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new RealTimeDecisions::Device { Identifier = "identifier" };
+        var model = new RealTimeDecisions::Device
+        {
+            DeviceType = RealTimeDecisions::DeviceType.Unknown,
+            Identifier = "identifier",
+            IPAddress = "ip_address",
+            Name = "name",
+        };
 
         RealTimeDecisions::Device copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class DeviceTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(RealTimeDecisions::DeviceType.Unknown)]
+    [InlineData(RealTimeDecisions::DeviceType.MobilePhone)]
+    [InlineData(RealTimeDecisions::DeviceType.Tablet)]
+    [InlineData(RealTimeDecisions::DeviceType.Watch)]
+    [InlineData(RealTimeDecisions::DeviceType.MobilephoneOrTablet)]
+    [InlineData(RealTimeDecisions::DeviceType.Pc)]
+    [InlineData(RealTimeDecisions::DeviceType.HouseholdDevice)]
+    [InlineData(RealTimeDecisions::DeviceType.WearableDevice)]
+    [InlineData(RealTimeDecisions::DeviceType.AutomobileDevice)]
+    public void Validation_Works(RealTimeDecisions::DeviceType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, RealTimeDecisions::DeviceType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, RealTimeDecisions::DeviceType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(RealTimeDecisions::DeviceType.Unknown)]
+    [InlineData(RealTimeDecisions::DeviceType.MobilePhone)]
+    [InlineData(RealTimeDecisions::DeviceType.Tablet)]
+    [InlineData(RealTimeDecisions::DeviceType.Watch)]
+    [InlineData(RealTimeDecisions::DeviceType.MobilephoneOrTablet)]
+    [InlineData(RealTimeDecisions::DeviceType.Pc)]
+    [InlineData(RealTimeDecisions::DeviceType.HouseholdDevice)]
+    [InlineData(RealTimeDecisions::DeviceType.WearableDevice)]
+    [InlineData(RealTimeDecisions::DeviceType.AutomobileDevice)]
+    public void SerializationRoundtrip_Works(RealTimeDecisions::DeviceType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, RealTimeDecisions::DeviceType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, RealTimeDecisions::DeviceType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, RealTimeDecisions::DeviceType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, RealTimeDecisions::DeviceType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
     }
 }
 
