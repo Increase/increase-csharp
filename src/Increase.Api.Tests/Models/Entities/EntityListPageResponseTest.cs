@@ -78,7 +78,6 @@ public class EntityListPageResponseTest : TestBase
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreatingEntityOnboardingSessionID = null,
-                    Description = null,
                     DetailsConfirmedAt = null,
                     GovernmentAuthority = new()
                     {
@@ -147,11 +146,6 @@ public class EntityListPageResponseTest : TestBase
                             NumberLast4 = "number_last4",
                         },
                         Name = "name",
-                    },
-                    RiskRating = new()
-                    {
-                        RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        Rating = Entities::EntityRiskRatingRating.Low,
                     },
                     SoleProprietorship = new()
                     {
@@ -372,7 +366,6 @@ public class EntityListPageResponseTest : TestBase
                 },
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CreatingEntityOnboardingSessionID = null,
-                Description = null,
                 DetailsConfirmedAt = null,
                 GovernmentAuthority = new()
                 {
@@ -441,11 +434,6 @@ public class EntityListPageResponseTest : TestBase
                         NumberLast4 = "number_last4",
                     },
                     Name = "name",
-                },
-                RiskRating = new()
-                {
-                    RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Rating = Entities::EntityRiskRatingRating.Low,
                 },
                 SoleProprietorship = new()
                 {
@@ -678,7 +666,6 @@ public class EntityListPageResponseTest : TestBase
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreatingEntityOnboardingSessionID = null,
-                    Description = null,
                     DetailsConfirmedAt = null,
                     GovernmentAuthority = new()
                     {
@@ -747,11 +734,6 @@ public class EntityListPageResponseTest : TestBase
                             NumberLast4 = "number_last4",
                         },
                         Name = "name",
-                    },
-                    RiskRating = new()
-                    {
-                        RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        Rating = Entities::EntityRiskRatingRating.Low,
                     },
                     SoleProprietorship = new()
                     {
@@ -986,7 +968,6 @@ public class EntityListPageResponseTest : TestBase
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreatingEntityOnboardingSessionID = null,
-                    Description = null,
                     DetailsConfirmedAt = null,
                     GovernmentAuthority = new()
                     {
@@ -1055,11 +1036,6 @@ public class EntityListPageResponseTest : TestBase
                             NumberLast4 = "number_last4",
                         },
                         Name = "name",
-                    },
-                    RiskRating = new()
-                    {
-                        RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        Rating = Entities::EntityRiskRatingRating.Low,
                     },
                     SoleProprietorship = new()
                     {
@@ -1287,7 +1263,6 @@ public class EntityListPageResponseTest : TestBase
                 },
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 CreatingEntityOnboardingSessionID = null,
-                Description = null,
                 DetailsConfirmedAt = null,
                 GovernmentAuthority = new()
                 {
@@ -1356,11 +1331,6 @@ public class EntityListPageResponseTest : TestBase
                         NumberLast4 = "number_last4",
                     },
                     Name = "name",
-                },
-                RiskRating = new()
-                {
-                    RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Rating = Entities::EntityRiskRatingRating.Low,
                 },
                 SoleProprietorship = new()
                 {
@@ -1593,7 +1563,6 @@ public class EntityListPageResponseTest : TestBase
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreatingEntityOnboardingSessionID = null,
-                    Description = null,
                     DetailsConfirmedAt = null,
                     GovernmentAuthority = new()
                     {
@@ -1662,11 +1631,6 @@ public class EntityListPageResponseTest : TestBase
                             NumberLast4 = "number_last4",
                         },
                         Name = "name",
-                    },
-                    RiskRating = new()
-                    {
-                        RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        Rating = Entities::EntityRiskRatingRating.Low,
                     },
                     SoleProprietorship = new()
                     {
@@ -1895,7 +1859,6 @@ public class EntityListPageResponseTest : TestBase
                     },
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     CreatingEntityOnboardingSessionID = null,
-                    Description = null,
                     DetailsConfirmedAt = null,
                     GovernmentAuthority = new()
                     {
@@ -1964,11 +1927,6 @@ public class EntityListPageResponseTest : TestBase
                             NumberLast4 = "number_last4",
                         },
                         Name = "name",
-                    },
-                    RiskRating = new()
-                    {
-                        RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                        Rating = Entities::EntityRiskRatingRating.Low,
                     },
                     SoleProprietorship = new()
                     {

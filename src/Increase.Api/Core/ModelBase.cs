@@ -1392,7 +1392,6 @@ public abstract record class ModelBase
                 ModelsEntities::EntityJointIndividualIdentificationMethod
             >(),
             new ApiEnumConverter<string, ModelsEntities::EntityNaturalPersonIdentificationMethod>(),
-            new ApiEnumConverter<string, ModelsEntities::EntityRiskRatingRating>(),
             new ApiEnumConverter<
                 string,
                 ModelsEntities::EntitySoleProprietorshipSoleProprietorIdentificationMethod
@@ -1420,7 +1419,6 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, ModelsEntities::GovernmentAuthorityCategory>(),
             new ApiEnumConverter<string, ModelsEntities::JointIndividualIdentificationMethod>(),
             new ApiEnumConverter<string, ModelsEntities::NaturalPersonIdentificationMethod>(),
-            new ApiEnumConverter<string, ModelsEntities::Rating>(),
             new ApiEnumConverter<string, ModelsEntities::SoleProprietorIdentificationMethod>(),
             new ApiEnumConverter<string, ModelsEntities::Vendor>(),
             new ApiEnumConverter<string, ModelsEntities::TrustCategory>(),
@@ -1435,7 +1433,6 @@ public abstract record class ModelBase
                 string,
                 ModelsEntities::EntityUpdateParamsNaturalPersonIdentificationMethod
             >(),
-            new ApiEnumConverter<string, ModelsEntities::EntityUpdateParamsRiskRatingRating>(),
             new ApiEnumConverter<
                 string,
                 ModelsEntities::EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod
@@ -1581,6 +1578,7 @@ public abstract record class ModelBase
                 string,
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision
             >(),
+            new ApiEnumConverter<string, RealTimeDecisions::DeviceType>(),
             new ApiEnumConverter<
                 string,
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet

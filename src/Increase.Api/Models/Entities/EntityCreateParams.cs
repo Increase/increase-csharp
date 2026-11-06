@@ -63,27 +63,6 @@ public record class EntityCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The description you choose to give the entity.
-    /// </summary>
-    public string? Description
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<string>("description");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawBodyData.Set("description", value);
-        }
-    }
-
-    /// <summary>
     /// Details of the Government Authority entity to create. Required if `structure`
     /// is equal to `government_authority`.
     /// </summary>
@@ -146,28 +125,6 @@ public record class EntityCreateParams : ParamsBase
             }
 
             this._rawBodyData.Set("natural_person", value);
-        }
-    }
-
-    /// <summary>
-    /// An assessment of the entity's potential risk of involvement in financial crimes,
-    /// such as money laundering.
-    /// </summary>
-    public RiskRating? RiskRating
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<RiskRating>("risk_rating");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawBodyData.Set("risk_rating", value);
         }
     }
 
@@ -4388,139 +4345,6 @@ class NaturalPersonIdentificationPassportFromRaw : IFromRawJson<NaturalPersonIde
     public NaturalPersonIdentificationPassport FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => NaturalPersonIdentificationPassport.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// An assessment of the entity's potential risk of involvement in financial crimes,
-/// such as money laundering.
-/// </summary>
-[JsonConverter(typeof(JsonModelConverter<RiskRating, RiskRatingFromRaw>))]
-public sealed record class RiskRating : JsonModel
-{
-    /// <summary>
-    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time at which the risk
-    /// rating was performed.
-    /// </summary>
-    public required System::DateTimeOffset RatedAt
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("rated_at");
-        }
-        init { this._rawData.Set("rated_at", value); }
-    }
-
-    /// <summary>
-    /// The rating given to this entity.
-    /// </summary>
-    public required ApiEnum<string, Rating> Rating
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<ApiEnum<string, Rating>>("rating");
-        }
-        init { this._rawData.Set("rating", value); }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        _ = this.RatedAt;
-        this.Rating.Validate();
-    }
-
-    public RiskRating() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public RiskRating(RiskRating riskRating)
-        : base(riskRating) { }
-#pragma warning restore CS8618
-
-    public RiskRating(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    RiskRating(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="RiskRatingFromRaw.FromRawUnchecked"/>
-    public static RiskRating FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class RiskRatingFromRaw : IFromRawJson<RiskRating>
-{
-    /// <inheritdoc/>
-    public RiskRating FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        RiskRating.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// The rating given to this entity.
-/// </summary>
-[JsonConverter(typeof(RatingConverter))]
-public enum Rating
-{
-    /// <summary>
-    /// Minimal risk of involvement in financial crime.
-    /// </summary>
-    Low,
-
-    /// <summary>
-    /// Moderate risk of involvement in financial crime.
-    /// </summary>
-    Medium,
-
-    /// <summary>
-    /// Elevated risk of involvement in financial crime.
-    /// </summary>
-    High,
-}
-
-sealed class RatingConverter : JsonConverter<Rating>
-{
-    public override Rating Read(
-        ref Utf8JsonReader reader,
-        System::Type typeToConvert,
-        JsonSerializerOptions options
-    )
-    {
-        return JsonSerializer.Deserialize<string>(ref reader, options) switch
-        {
-            "low" => Rating.Low,
-            "medium" => Rating.Medium,
-            "high" => Rating.High,
-            _ => (Rating)(-1),
-        };
-    }
-
-    public override void Write(Utf8JsonWriter writer, Rating value, JsonSerializerOptions options)
-    {
-        JsonSerializer.Serialize(
-            writer,
-            value switch
-            {
-                Rating.Low => "low",
-                Rating.Medium => "medium",
-                Rating.High => "high",
-                _ => throw new IncreaseInvalidDataException(
-                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
-                ),
-            },
-            options
-        );
-    }
 }
 
 /// <summary>
