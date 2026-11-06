@@ -75,7 +75,6 @@ public class EntityTest : TestBase
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CreatingEntityOnboardingSessionID = null,
-            Description = null,
             DetailsConfirmedAt = null,
             GovernmentAuthority = new()
             {
@@ -143,11 +142,6 @@ public class EntityTest : TestBase
                     NumberLast4 = "number_last4",
                 },
                 Name = "name",
-            },
-            RiskRating = new()
-            {
-                RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Rating = Entities::EntityRiskRatingRating.Low,
             },
             SoleProprietorship = new()
             {
@@ -426,11 +420,6 @@ public class EntityTest : TestBase
             },
             Name = "name",
         };
-        Entities::EntityRiskRating expectedRiskRating = new()
-        {
-            RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Rating = Entities::EntityRiskRatingRating.Low,
-        };
         Entities::EntitySoleProprietorship expectedSoleProprietorship = new()
         {
             Address = new()
@@ -586,13 +575,11 @@ public class EntityTest : TestBase
         Assert.Equal(expectedCorporation, model.Corporation);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
         Assert.Null(model.CreatingEntityOnboardingSessionID);
-        Assert.Null(model.Description);
         Assert.Null(model.DetailsConfirmedAt);
         Assert.Equal(expectedGovernmentAuthority, model.GovernmentAuthority);
         Assert.Null(model.IdempotencyKey);
         Assert.Equal(expectedJoint, model.Joint);
         Assert.Equal(expectedNaturalPerson, model.NaturalPerson);
-        Assert.Equal(expectedRiskRating, model.RiskRating);
         Assert.Equal(expectedSoleProprietorship, model.SoleProprietorship);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedStructure, model.Structure);
@@ -677,7 +664,6 @@ public class EntityTest : TestBase
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CreatingEntityOnboardingSessionID = null,
-            Description = null,
             DetailsConfirmedAt = null,
             GovernmentAuthority = new()
             {
@@ -745,11 +731,6 @@ public class EntityTest : TestBase
                     NumberLast4 = "number_last4",
                 },
                 Name = "name",
-            },
-            RiskRating = new()
-            {
-                RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Rating = Entities::EntityRiskRatingRating.Low,
             },
             SoleProprietorship = new()
             {
@@ -977,7 +958,6 @@ public class EntityTest : TestBase
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CreatingEntityOnboardingSessionID = null,
-            Description = null,
             DetailsConfirmedAt = null,
             GovernmentAuthority = new()
             {
@@ -1045,11 +1025,6 @@ public class EntityTest : TestBase
                     NumberLast4 = "number_last4",
                 },
                 Name = "name",
-            },
-            RiskRating = new()
-            {
-                RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Rating = Entities::EntityRiskRatingRating.Low,
             },
             SoleProprietorship = new()
             {
@@ -1335,11 +1310,6 @@ public class EntityTest : TestBase
             },
             Name = "name",
         };
-        Entities::EntityRiskRating expectedRiskRating = new()
-        {
-            RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Rating = Entities::EntityRiskRatingRating.Low,
-        };
         Entities::EntitySoleProprietorship expectedSoleProprietorship = new()
         {
             Address = new()
@@ -1495,13 +1465,11 @@ public class EntityTest : TestBase
         Assert.Equal(expectedCorporation, deserialized.Corporation);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
         Assert.Null(deserialized.CreatingEntityOnboardingSessionID);
-        Assert.Null(deserialized.Description);
         Assert.Null(deserialized.DetailsConfirmedAt);
         Assert.Equal(expectedGovernmentAuthority, deserialized.GovernmentAuthority);
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Equal(expectedJoint, deserialized.Joint);
         Assert.Equal(expectedNaturalPerson, deserialized.NaturalPerson);
-        Assert.Equal(expectedRiskRating, deserialized.RiskRating);
         Assert.Equal(expectedSoleProprietorship, deserialized.SoleProprietorship);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedStructure, deserialized.Structure);
@@ -1586,7 +1554,6 @@ public class EntityTest : TestBase
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CreatingEntityOnboardingSessionID = null,
-            Description = null,
             DetailsConfirmedAt = null,
             GovernmentAuthority = new()
             {
@@ -1654,11 +1621,6 @@ public class EntityTest : TestBase
                     NumberLast4 = "number_last4",
                 },
                 Name = "name",
-            },
-            RiskRating = new()
-            {
-                RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Rating = Entities::EntityRiskRatingRating.Low,
             },
             SoleProprietorship = new()
             {
@@ -1880,7 +1842,6 @@ public class EntityTest : TestBase
             },
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             CreatingEntityOnboardingSessionID = null,
-            Description = null,
             DetailsConfirmedAt = null,
             GovernmentAuthority = new()
             {
@@ -1948,11 +1909,6 @@ public class EntityTest : TestBase
                     NumberLast4 = "number_last4",
                 },
                 Name = "name",
-            },
-            RiskRating = new()
-            {
-                RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Rating = Entities::EntityRiskRatingRating.Low,
             },
             SoleProprietorship = new()
             {
@@ -5442,152 +5398,6 @@ public class EntityNaturalPersonIdentificationMethodTest : TestBase
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, Entities::EntityNaturalPersonIdentificationMethod>
-        >(json, ModelBase.SerializerOptions);
-
-        Assert.Equal(value, deserialized);
-    }
-}
-
-public class EntityRiskRatingTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new Entities::EntityRiskRating
-        {
-            RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Rating = Entities::EntityRiskRatingRating.Low,
-        };
-
-        DateTimeOffset expectedRatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        ApiEnum<string, Entities::EntityRiskRatingRating> expectedRating =
-            Entities::EntityRiskRatingRating.Low;
-
-        Assert.Equal(expectedRatedAt, model.RatedAt);
-        Assert.Equal(expectedRating, model.Rating);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new Entities::EntityRiskRating
-        {
-            RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Rating = Entities::EntityRiskRatingRating.Low,
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Entities::EntityRiskRating>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new Entities::EntityRiskRating
-        {
-            RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Rating = Entities::EntityRiskRatingRating.Low,
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<Entities::EntityRiskRating>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        DateTimeOffset expectedRatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        ApiEnum<string, Entities::EntityRiskRatingRating> expectedRating =
-            Entities::EntityRiskRatingRating.Low;
-
-        Assert.Equal(expectedRatedAt, deserialized.RatedAt);
-        Assert.Equal(expectedRating, deserialized.Rating);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new Entities::EntityRiskRating
-        {
-            RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Rating = Entities::EntityRiskRatingRating.Low,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new Entities::EntityRiskRating
-        {
-            RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Rating = Entities::EntityRiskRatingRating.Low,
-        };
-
-        Entities::EntityRiskRating copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class EntityRiskRatingRatingTest : TestBase
-{
-    [Theory]
-    [InlineData(Entities::EntityRiskRatingRating.Low)]
-    [InlineData(Entities::EntityRiskRatingRating.Medium)]
-    [InlineData(Entities::EntityRiskRatingRating.High)]
-    public void Validation_Works(Entities::EntityRiskRatingRating rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Entities::EntityRiskRatingRating> value = rawValue;
-        value.Validate();
-    }
-
-    [Fact]
-    public void InvalidEnumValidationThrows_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Entities::EntityRiskRatingRating>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-
-        Assert.NotNull(value);
-        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
-    }
-
-    [Theory]
-    [InlineData(Entities::EntityRiskRatingRating.Low)]
-    [InlineData(Entities::EntityRiskRatingRating.Medium)]
-    [InlineData(Entities::EntityRiskRatingRating.High)]
-    public void SerializationRoundtrip_Works(Entities::EntityRiskRatingRating rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Entities::EntityRiskRatingRating> value = rawValue;
-
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, Entities::EntityRiskRatingRating>
-        >(json, ModelBase.SerializerOptions);
-
-        Assert.Equal(value, deserialized);
-    }
-
-    [Fact]
-    public void InvalidEnumSerializationRoundtrip_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Entities::EntityRiskRatingRating>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, Entities::EntityRiskRatingRating>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);

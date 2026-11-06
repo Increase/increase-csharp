@@ -297,8 +297,8 @@ public sealed record class InboundAchTransfer : JsonModel
     }
 
     /// <summary>
-    /// A subhash containing information about when and how the transfer settled at
-    /// the Federal Reserve.
+    /// A subhash containing information about when the transfer settled (or will
+    /// settle) at the Federal Reserve.
     /// </summary>
     public required Settlement Settlement
     {
@@ -2192,8 +2192,8 @@ class NotificationOfChangeFromRaw : IFromRawJson<NotificationOfChange>
 }
 
 /// <summary>
-/// A subhash containing information about when and how the transfer settled at the
-/// Federal Reserve.
+/// A subhash containing information about when the transfer settled (or will settle)
+/// at the Federal Reserve.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<Settlement, SettlementFromRaw>))]
 public sealed record class Settlement : JsonModel
