@@ -217,6 +217,18 @@ public sealed class IncreaseClient : IIncreaseClient
         get { return _checkTransfers.Value; }
     }
 
+    readonly Lazy<ICheckbookService> _checkbooks;
+    public ICheckbookService Checkbooks
+    {
+        get { return _checkbooks.Value; }
+    }
+
+    readonly Lazy<ICheckbookCheckService> _checkbookChecks;
+    public ICheckbookCheckService CheckbookChecks
+    {
+        get { return _checkbookChecks.Value; }
+    }
+
     readonly Lazy<IInboundCheckDepositService> _inboundCheckDeposits;
     public IInboundCheckDepositService InboundCheckDeposits
     {
@@ -451,6 +463,8 @@ public sealed class IncreaseClient : IIncreaseClient
         _wireDrawdownRequests = new(() => new WireDrawdownRequestService(this));
         _inboundWireDrawdownRequests = new(() => new InboundWireDrawdownRequestService(this));
         _checkTransfers = new(() => new CheckTransferService(this));
+        _checkbooks = new(() => new CheckbookService(this));
+        _checkbookChecks = new(() => new CheckbookCheckService(this));
         _inboundCheckDeposits = new(() => new InboundCheckDepositService(this));
         _realTimePaymentsTransfers = new(() => new RealTimePaymentsTransferService(this));
         _inboundRealTimePaymentsTransfers = new(() =>
@@ -709,6 +723,18 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
     public ICheckTransferServiceWithRawResponse CheckTransfers
     {
         get { return _checkTransfers.Value; }
+    }
+
+    readonly Lazy<ICheckbookServiceWithRawResponse> _checkbooks;
+    public ICheckbookServiceWithRawResponse Checkbooks
+    {
+        get { return _checkbooks.Value; }
+    }
+
+    readonly Lazy<ICheckbookCheckServiceWithRawResponse> _checkbookChecks;
+    public ICheckbookCheckServiceWithRawResponse CheckbookChecks
+    {
+        get { return _checkbookChecks.Value; }
     }
 
     readonly Lazy<IInboundCheckDepositServiceWithRawResponse> _inboundCheckDeposits;
@@ -1146,6 +1172,8 @@ public sealed class IncreaseClientWithRawResponse : IIncreaseClientWithRawRespon
             new InboundWireDrawdownRequestServiceWithRawResponse(this)
         );
         _checkTransfers = new(() => new CheckTransferServiceWithRawResponse(this));
+        _checkbooks = new(() => new CheckbookServiceWithRawResponse(this));
+        _checkbookChecks = new(() => new CheckbookCheckServiceWithRawResponse(this));
         _inboundCheckDeposits = new(() => new InboundCheckDepositServiceWithRawResponse(this));
         _realTimePaymentsTransfers = new(() =>
             new RealTimePaymentsTransferServiceWithRawResponse(this)

@@ -34,6 +34,7 @@ public class InboundCheckDepositTest : TestBase
             BankOfFirstDepositRoutingNumber = "101050001",
             CheckNumber = "123",
             CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+            CheckbookCheckID = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = InboundCheckDeposits::Currency.Usd,
             DeclinedAt = null,
@@ -109,6 +110,7 @@ public class InboundCheckDepositTest : TestBase
         );
         Assert.Equal(expectedCheckNumber, model.CheckNumber);
         Assert.Equal(expectedCheckTransferID, model.CheckTransferID);
+        Assert.Null(model.CheckbookCheckID);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
         Assert.Equal(expectedCurrency, model.Currency);
         Assert.Null(model.DeclinedAt);
@@ -146,6 +148,7 @@ public class InboundCheckDepositTest : TestBase
             BankOfFirstDepositRoutingNumber = "101050001",
             CheckNumber = "123",
             CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+            CheckbookCheckID = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = InboundCheckDeposits::Currency.Usd,
             DeclinedAt = null,
@@ -197,6 +200,7 @@ public class InboundCheckDepositTest : TestBase
             BankOfFirstDepositRoutingNumber = "101050001",
             CheckNumber = "123",
             CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+            CheckbookCheckID = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = InboundCheckDeposits::Currency.Usd,
             DeclinedAt = null,
@@ -279,6 +283,7 @@ public class InboundCheckDepositTest : TestBase
         );
         Assert.Equal(expectedCheckNumber, deserialized.CheckNumber);
         Assert.Equal(expectedCheckTransferID, deserialized.CheckTransferID);
+        Assert.Null(deserialized.CheckbookCheckID);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
         Assert.Equal(expectedCurrency, deserialized.Currency);
         Assert.Null(deserialized.DeclinedAt);
@@ -316,6 +321,7 @@ public class InboundCheckDepositTest : TestBase
             BankOfFirstDepositRoutingNumber = "101050001",
             CheckNumber = "123",
             CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+            CheckbookCheckID = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = InboundCheckDeposits::Currency.Usd,
             DeclinedAt = null,
@@ -361,6 +367,7 @@ public class InboundCheckDepositTest : TestBase
             BankOfFirstDepositRoutingNumber = "101050001",
             CheckNumber = "123",
             CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+            CheckbookCheckID = null,
             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             Currency = InboundCheckDeposits::Currency.Usd,
             DeclinedAt = null,

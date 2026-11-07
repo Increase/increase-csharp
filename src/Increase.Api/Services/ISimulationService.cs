@@ -70,6 +70,8 @@ public interface ISimulationService
 
     Simulations::ICheckTransferService CheckTransfers { get; }
 
+    Simulations::ICheckbookService Checkbooks { get; }
+
     Simulations::IInboundCheckDepositService InboundCheckDeposits { get; }
 
     Simulations::IRealTimePaymentsTransferService RealTimePaymentsTransfers { get; }
@@ -155,6 +157,8 @@ public interface ISimulationServiceWithRawResponse
     Simulations::IInboundWireDrawdownRequestServiceWithRawResponse InboundWireDrawdownRequests { get; }
 
     Simulations::ICheckTransferServiceWithRawResponse CheckTransfers { get; }
+
+    Simulations::ICheckbookServiceWithRawResponse Checkbooks { get; }
 
     Simulations::IInboundCheckDepositServiceWithRawResponse InboundCheckDeposits { get; }
 
