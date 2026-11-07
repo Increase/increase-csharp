@@ -15,19 +15,20 @@ public class AccountNumberCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             Name = "Rent payments",
-            InboundAch = new(DebitStatus.Allowed),
-            InboundChecks = new(Status.Allowed),
+            InboundAchDebits = InboundAchDebits.Allowed,
+            UnregisteredInboundChecks = UnregisteredInboundChecks.Allowed,
         };
 
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         string expectedName = "Rent payments";
-        InboundAch expectedInboundAch = new(DebitStatus.Allowed);
-        InboundChecks expectedInboundChecks = new(Status.Allowed);
+        ApiEnum<string, InboundAchDebits> expectedInboundAchDebits = InboundAchDebits.Allowed;
+        ApiEnum<string, UnregisteredInboundChecks> expectedUnregisteredInboundChecks =
+            UnregisteredInboundChecks.Allowed;
 
         Assert.Equal(expectedAccountID, parameters.AccountID);
         Assert.Equal(expectedName, parameters.Name);
-        Assert.Equal(expectedInboundAch, parameters.InboundAch);
-        Assert.Equal(expectedInboundChecks, parameters.InboundChecks);
+        Assert.Equal(expectedInboundAchDebits, parameters.InboundAchDebits);
+        Assert.Equal(expectedUnregisteredInboundChecks, parameters.UnregisteredInboundChecks);
     }
 
     [Fact]
@@ -39,10 +40,10 @@ public class AccountNumberCreateParamsTest : TestBase
             Name = "Rent payments",
         };
 
-        Assert.Null(parameters.InboundAch);
-        Assert.False(parameters.RawBodyData.ContainsKey("inbound_ach"));
-        Assert.Null(parameters.InboundChecks);
-        Assert.False(parameters.RawBodyData.ContainsKey("inbound_checks"));
+        Assert.Null(parameters.InboundAchDebits);
+        Assert.False(parameters.RawBodyData.ContainsKey("inbound_ach_debits"));
+        Assert.Null(parameters.UnregisteredInboundChecks);
+        Assert.False(parameters.RawBodyData.ContainsKey("unregistered_inbound_checks"));
     }
 
     [Fact]
@@ -54,14 +55,14 @@ public class AccountNumberCreateParamsTest : TestBase
             Name = "Rent payments",
 
             // Null should be interpreted as omitted for these properties
-            InboundAch = null,
-            InboundChecks = null,
+            InboundAchDebits = null,
+            UnregisteredInboundChecks = null,
         };
 
-        Assert.Null(parameters.InboundAch);
-        Assert.False(parameters.RawBodyData.ContainsKey("inbound_ach"));
-        Assert.Null(parameters.InboundChecks);
-        Assert.False(parameters.RawBodyData.ContainsKey("inbound_checks"));
+        Assert.Null(parameters.InboundAchDebits);
+        Assert.False(parameters.RawBodyData.ContainsKey("inbound_ach_debits"));
+        Assert.Null(parameters.UnregisteredInboundChecks);
+        Assert.False(parameters.RawBodyData.ContainsKey("unregistered_inbound_checks"));
     }
 
     [Fact]
@@ -85,8 +86,8 @@ public class AccountNumberCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             Name = "Rent payments",
-            InboundAch = new(DebitStatus.Allowed),
-            InboundChecks = new(Status.Allowed),
+            InboundAchDebits = InboundAchDebits.Allowed,
+            UnregisteredInboundChecks = UnregisteredInboundChecks.Allowed,
         };
 
         AccountNumberCreateParams copied = new(parameters);
@@ -95,84 +96,22 @@ public class AccountNumberCreateParamsTest : TestBase
     }
 }
 
-public class InboundAchTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new InboundAch { DebitStatus = DebitStatus.Allowed };
-
-        ApiEnum<string, DebitStatus> expectedDebitStatus = DebitStatus.Allowed;
-
-        Assert.Equal(expectedDebitStatus, model.DebitStatus);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new InboundAch { DebitStatus = DebitStatus.Allowed };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<InboundAch>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new InboundAch { DebitStatus = DebitStatus.Allowed };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<InboundAch>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        ApiEnum<string, DebitStatus> expectedDebitStatus = DebitStatus.Allowed;
-
-        Assert.Equal(expectedDebitStatus, deserialized.DebitStatus);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new InboundAch { DebitStatus = DebitStatus.Allowed };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new InboundAch { DebitStatus = DebitStatus.Allowed };
-
-        InboundAch copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class DebitStatusTest : TestBase
+public class InboundAchDebitsTest : TestBase
 {
     [Theory]
-    [InlineData(DebitStatus.Allowed)]
-    [InlineData(DebitStatus.Blocked)]
-    public void Validation_Works(DebitStatus rawValue)
+    [InlineData(InboundAchDebits.Allowed)]
+    [InlineData(InboundAchDebits.Blocked)]
+    public void Validation_Works(InboundAchDebits rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, DebitStatus> value = rawValue;
+        ApiEnum<string, InboundAchDebits> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, DebitStatus>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, InboundAchDebits>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
@@ -182,15 +121,15 @@ public class DebitStatusTest : TestBase
     }
 
     [Theory]
-    [InlineData(DebitStatus.Allowed)]
-    [InlineData(DebitStatus.Blocked)]
-    public void SerializationRoundtrip_Works(DebitStatus rawValue)
+    [InlineData(InboundAchDebits.Allowed)]
+    [InlineData(InboundAchDebits.Blocked)]
+    public void SerializationRoundtrip_Works(InboundAchDebits rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, DebitStatus> value = rawValue;
+        ApiEnum<string, InboundAchDebits> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, DebitStatus>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, InboundAchDebits>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -201,12 +140,12 @@ public class DebitStatusTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, DebitStatus>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, InboundAchDebits>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, DebitStatus>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, InboundAchDebits>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -215,84 +154,22 @@ public class DebitStatusTest : TestBase
     }
 }
 
-public class InboundChecksTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new InboundChecks { Status = Status.Allowed };
-
-        ApiEnum<string, Status> expectedStatus = Status.Allowed;
-
-        Assert.Equal(expectedStatus, model.Status);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new InboundChecks { Status = Status.Allowed };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<InboundChecks>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new InboundChecks { Status = Status.Allowed };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<InboundChecks>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        ApiEnum<string, Status> expectedStatus = Status.Allowed;
-
-        Assert.Equal(expectedStatus, deserialized.Status);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new InboundChecks { Status = Status.Allowed };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new InboundChecks { Status = Status.Allowed };
-
-        InboundChecks copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class StatusTest : TestBase
+public class UnregisteredInboundChecksTest : TestBase
 {
     [Theory]
-    [InlineData(Status.Allowed)]
-    [InlineData(Status.CheckTransfersOnly)]
-    public void Validation_Works(Status rawValue)
+    [InlineData(UnregisteredInboundChecks.Allowed)]
+    [InlineData(UnregisteredInboundChecks.Blocked)]
+    public void Validation_Works(UnregisteredInboundChecks rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Status> value = rawValue;
+        ApiEnum<string, UnregisteredInboundChecks> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Status>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, UnregisteredInboundChecks>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
@@ -302,15 +179,15 @@ public class StatusTest : TestBase
     }
 
     [Theory]
-    [InlineData(Status.Allowed)]
-    [InlineData(Status.CheckTransfersOnly)]
-    public void SerializationRoundtrip_Works(Status rawValue)
+    [InlineData(UnregisteredInboundChecks.Allowed)]
+    [InlineData(UnregisteredInboundChecks.Blocked)]
+    public void SerializationRoundtrip_Works(UnregisteredInboundChecks rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Status> value = rawValue;
+        ApiEnum<string, UnregisteredInboundChecks> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Status>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, UnregisteredInboundChecks>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -321,12 +198,12 @@ public class StatusTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Status>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, UnregisteredInboundChecks>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Status>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, UnregisteredInboundChecks>>(
             json,
             ModelBase.SerializerOptions
         );

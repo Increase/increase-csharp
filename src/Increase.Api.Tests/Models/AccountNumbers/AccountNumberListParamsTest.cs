@@ -15,7 +15,6 @@ public class AccountNumberListParamsTest : TestBase
         var parameters = new AccountNumberListParams
         {
             AccountID = "account_id",
-            AchDebitStatus = new() { In = [In.Allowed] },
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -25,12 +24,12 @@ public class AccountNumberListParamsTest : TestBase
             },
             Cursor = "cursor",
             IdempotencyKey = "x",
+            InboundAchDebits = new() { In = [In.Allowed] },
             Limit = 1,
             Status = new() { In = [AccountNumberListParamsStatusIn.Active] },
         };
 
         string expectedAccountID = "account_id";
-        AchDebitStatus expectedAchDebitStatus = new() { In = [In.Allowed] };
         CreatedAt expectedCreatedAt = new()
         {
             After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -40,6 +39,10 @@ public class AccountNumberListParamsTest : TestBase
         };
         string expectedCursor = "cursor";
         string expectedIdempotencyKey = "x";
+        AccountNumberListParamsInboundAchDebits expectedInboundAchDebits = new()
+        {
+            In = [In.Allowed],
+        };
         long expectedLimit = 1;
         AccountNumberListParamsStatus expectedStatus = new()
         {
@@ -47,10 +50,10 @@ public class AccountNumberListParamsTest : TestBase
         };
 
         Assert.Equal(expectedAccountID, parameters.AccountID);
-        Assert.Equal(expectedAchDebitStatus, parameters.AchDebitStatus);
         Assert.Equal(expectedCreatedAt, parameters.CreatedAt);
         Assert.Equal(expectedCursor, parameters.Cursor);
         Assert.Equal(expectedIdempotencyKey, parameters.IdempotencyKey);
+        Assert.Equal(expectedInboundAchDebits, parameters.InboundAchDebits);
         Assert.Equal(expectedLimit, parameters.Limit);
         Assert.Equal(expectedStatus, parameters.Status);
     }
@@ -62,14 +65,14 @@ public class AccountNumberListParamsTest : TestBase
 
         Assert.Null(parameters.AccountID);
         Assert.False(parameters.RawQueryData.ContainsKey("account_id"));
-        Assert.Null(parameters.AchDebitStatus);
-        Assert.False(parameters.RawQueryData.ContainsKey("ach_debit_status"));
         Assert.Null(parameters.CreatedAt);
         Assert.False(parameters.RawQueryData.ContainsKey("created_at"));
         Assert.Null(parameters.Cursor);
         Assert.False(parameters.RawQueryData.ContainsKey("cursor"));
         Assert.Null(parameters.IdempotencyKey);
         Assert.False(parameters.RawQueryData.ContainsKey("idempotency_key"));
+        Assert.Null(parameters.InboundAchDebits);
+        Assert.False(parameters.RawQueryData.ContainsKey("inbound_ach_debits"));
         Assert.Null(parameters.Limit);
         Assert.False(parameters.RawQueryData.ContainsKey("limit"));
         Assert.Null(parameters.Status);
@@ -83,24 +86,24 @@ public class AccountNumberListParamsTest : TestBase
         {
             // Null should be interpreted as omitted for these properties
             AccountID = null,
-            AchDebitStatus = null,
             CreatedAt = null,
             Cursor = null,
             IdempotencyKey = null,
+            InboundAchDebits = null,
             Limit = null,
             Status = null,
         };
 
         Assert.Null(parameters.AccountID);
         Assert.False(parameters.RawQueryData.ContainsKey("account_id"));
-        Assert.Null(parameters.AchDebitStatus);
-        Assert.False(parameters.RawQueryData.ContainsKey("ach_debit_status"));
         Assert.Null(parameters.CreatedAt);
         Assert.False(parameters.RawQueryData.ContainsKey("created_at"));
         Assert.Null(parameters.Cursor);
         Assert.False(parameters.RawQueryData.ContainsKey("cursor"));
         Assert.Null(parameters.IdempotencyKey);
         Assert.False(parameters.RawQueryData.ContainsKey("idempotency_key"));
+        Assert.Null(parameters.InboundAchDebits);
+        Assert.False(parameters.RawQueryData.ContainsKey("inbound_ach_debits"));
         Assert.Null(parameters.Limit);
         Assert.False(parameters.RawQueryData.ContainsKey("limit"));
         Assert.Null(parameters.Status);
@@ -113,7 +116,6 @@ public class AccountNumberListParamsTest : TestBase
         AccountNumberListParams parameters = new()
         {
             AccountID = "account_id",
-            AchDebitStatus = new() { In = [In.Allowed] },
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
@@ -123,6 +125,7 @@ public class AccountNumberListParamsTest : TestBase
             },
             Cursor = "cursor",
             IdempotencyKey = "x",
+            InboundAchDebits = new() { In = [In.Allowed] },
             Limit = 1,
             Status = new() { In = [AccountNumberListParamsStatusIn.Active] },
         };
@@ -132,7 +135,7 @@ public class AccountNumberListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://api.increase.com/account_numbers?account_id=account_id&ach_debit_status.in=allowed&created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&idempotency_key=x&limit=1&status.in=active"
+                    "https://api.increase.com/account_numbers?account_id=account_id&created_at.after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.before=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_after=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_at.on_or_before=2019-12-27T18%3a11%3a19.117%2b00%3a00&cursor=cursor&idempotency_key=x&inbound_ach_debits.in=allowed&limit=1&status.in=active"
                 ),
                 url
             )
@@ -145,7 +148,6 @@ public class AccountNumberListParamsTest : TestBase
         var parameters = new AccountNumberListParams
         {
             AccountID = "account_id",
-            AchDebitStatus = new() { In = [In.Allowed] },
             CreatedAt = new()
             {
                 After = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -155,6 +157,7 @@ public class AccountNumberListParamsTest : TestBase
             },
             Cursor = "cursor",
             IdempotencyKey = "x",
+            InboundAchDebits = new() { In = [In.Allowed] },
             Limit = 1,
             Status = new() { In = [AccountNumberListParamsStatusIn.Active] },
         };
@@ -162,178 +165,6 @@ public class AccountNumberListParamsTest : TestBase
         AccountNumberListParams copied = new(parameters);
 
         Assert.Equal(parameters, copied);
-    }
-}
-
-public class AchDebitStatusTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new AchDebitStatus { In = [In.Allowed] };
-
-        List<ApiEnum<string, In>> expectedIn = [In.Allowed];
-
-        Assert.NotNull(model.In);
-        Assert.Equal(expectedIn.Count, model.In.Count);
-        for (int i = 0; i < expectedIn.Count; i++)
-        {
-            Assert.Equal(expectedIn[i], model.In[i]);
-        }
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new AchDebitStatus { In = [In.Allowed] };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<AchDebitStatus>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new AchDebitStatus { In = [In.Allowed] };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<AchDebitStatus>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        List<ApiEnum<string, In>> expectedIn = [In.Allowed];
-
-        Assert.NotNull(deserialized.In);
-        Assert.Equal(expectedIn.Count, deserialized.In.Count);
-        for (int i = 0; i < expectedIn.Count; i++)
-        {
-            Assert.Equal(expectedIn[i], deserialized.In[i]);
-        }
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new AchDebitStatus { In = [In.Allowed] };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new AchDebitStatus { };
-
-        Assert.Null(model.In);
-        Assert.False(model.RawData.ContainsKey("in"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new AchDebitStatus { };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
-    {
-        var model = new AchDebitStatus
-        {
-            // Null should be interpreted as omitted for these properties
-            In = null,
-        };
-
-        Assert.Null(model.In);
-        Assert.False(model.RawData.ContainsKey("in"));
-    }
-
-    [Fact]
-    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new AchDebitStatus
-        {
-            // Null should be interpreted as omitted for these properties
-            In = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new AchDebitStatus { In = [In.Allowed] };
-
-        AchDebitStatus copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class InTest : TestBase
-{
-    [Theory]
-    [InlineData(In.Allowed)]
-    [InlineData(In.Blocked)]
-    public void Validation_Works(In rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, In> value = rawValue;
-        value.Validate();
-    }
-
-    [Fact]
-    public void InvalidEnumValidationThrows_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, In>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-
-        Assert.NotNull(value);
-        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
-    }
-
-    [Theory]
-    [InlineData(In.Allowed)]
-    [InlineData(In.Blocked)]
-    public void SerializationRoundtrip_Works(In rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, In> value = rawValue;
-
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, In>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-
-    [Fact]
-    public void InvalidEnumSerializationRoundtrip_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, In>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, In>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
     }
 }
 
@@ -495,6 +326,178 @@ public class CreatedAtTest : TestBase
         CreatedAt copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class AccountNumberListParamsInboundAchDebitsTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new AccountNumberListParamsInboundAchDebits { In = [In.Allowed] };
+
+        List<ApiEnum<string, In>> expectedIn = [In.Allowed];
+
+        Assert.NotNull(model.In);
+        Assert.Equal(expectedIn.Count, model.In.Count);
+        for (int i = 0; i < expectedIn.Count; i++)
+        {
+            Assert.Equal(expectedIn[i], model.In[i]);
+        }
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new AccountNumberListParamsInboundAchDebits { In = [In.Allowed] };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<AccountNumberListParamsInboundAchDebits>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new AccountNumberListParamsInboundAchDebits { In = [In.Allowed] };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<AccountNumberListParamsInboundAchDebits>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        List<ApiEnum<string, In>> expectedIn = [In.Allowed];
+
+        Assert.NotNull(deserialized.In);
+        Assert.Equal(expectedIn.Count, deserialized.In.Count);
+        for (int i = 0; i < expectedIn.Count; i++)
+        {
+            Assert.Equal(expectedIn[i], deserialized.In[i]);
+        }
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new AccountNumberListParamsInboundAchDebits { In = [In.Allowed] };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new AccountNumberListParamsInboundAchDebits { };
+
+        Assert.Null(model.In);
+        Assert.False(model.RawData.ContainsKey("in"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new AccountNumberListParamsInboundAchDebits { };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new AccountNumberListParamsInboundAchDebits
+        {
+            // Null should be interpreted as omitted for these properties
+            In = null,
+        };
+
+        Assert.Null(model.In);
+        Assert.False(model.RawData.ContainsKey("in"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new AccountNumberListParamsInboundAchDebits
+        {
+            // Null should be interpreted as omitted for these properties
+            In = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AccountNumberListParamsInboundAchDebits { In = [In.Allowed] };
+
+        AccountNumberListParamsInboundAchDebits copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class InTest : TestBase
+{
+    [Theory]
+    [InlineData(In.Allowed)]
+    [InlineData(In.Blocked)]
+    public void Validation_Works(In rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, In> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, In>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(In.Allowed)]
+    [InlineData(In.Blocked)]
+    public void SerializationRoundtrip_Works(In rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, In> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, In>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, In>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, In>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }
 

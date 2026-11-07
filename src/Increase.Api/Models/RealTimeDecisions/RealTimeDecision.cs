@@ -9922,6 +9922,19 @@ sealed class RealTimeDecisionDigitalWalletTokenDecisionConverter
 public sealed record class Device : JsonModel
 {
     /// <summary>
+    /// Device type.
+    /// </summary>
+    public required ApiEnum<string, DeviceType>? DeviceType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ApiEnum<string, DeviceType>>("device_type");
+        }
+        init { this._rawData.Set("device_type", value); }
+    }
+
+    /// <summary>
     /// ID assigned to the device by the digital wallet provider.
     /// </summary>
     public required string? Identifier
@@ -9934,10 +9947,39 @@ public sealed record class Device : JsonModel
         init { this._rawData.Set("identifier", value); }
     }
 
+    /// <summary>
+    /// IP address of the device.
+    /// </summary>
+    public required string? IPAddress
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("ip_address");
+        }
+        init { this._rawData.Set("ip_address", value); }
+    }
+
+    /// <summary>
+    /// Name of the device, for example "My Work Phone".
+    /// </summary>
+    public required string? Name
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("name");
+        }
+        init { this._rawData.Set("name", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
+        this.DeviceType?.Validate();
         _ = this.Identifier;
+        _ = this.IPAddress;
+        _ = this.Name;
     }
 
     public Device() { }
@@ -9966,13 +10008,6 @@ public sealed record class Device : JsonModel
     {
         return new(FrozenDictionary.ToFrozenDictionary(rawData));
     }
-
-    [SetsRequiredMembers]
-    public Device(string? identifier)
-        : this()
-    {
-        this.Identifier = identifier;
-    }
 }
 
 class DeviceFromRaw : IFromRawJson<Device>
@@ -9980,6 +10015,109 @@ class DeviceFromRaw : IFromRawJson<Device>
     /// <inheritdoc/>
     public Device FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         Device.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Device type.
+/// </summary>
+[JsonConverter(typeof(DeviceTypeConverter))]
+public enum DeviceType
+{
+    /// <summary>
+    /// Unknown
+    /// </summary>
+    Unknown,
+
+    /// <summary>
+    /// Mobile Phone
+    /// </summary>
+    MobilePhone,
+
+    /// <summary>
+    /// Tablet
+    /// </summary>
+    Tablet,
+
+    /// <summary>
+    /// Watch
+    /// </summary>
+    Watch,
+
+    /// <summary>
+    /// Mobile Phone or Tablet
+    /// </summary>
+    MobilephoneOrTablet,
+
+    /// <summary>
+    /// PC
+    /// </summary>
+    Pc,
+
+    /// <summary>
+    /// Household Device
+    /// </summary>
+    HouseholdDevice,
+
+    /// <summary>
+    /// Wearable Device
+    /// </summary>
+    WearableDevice,
+
+    /// <summary>
+    /// Automobile Device
+    /// </summary>
+    AutomobileDevice,
+}
+
+sealed class DeviceTypeConverter : JsonConverter<DeviceType>
+{
+    public override DeviceType Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "unknown" => DeviceType.Unknown,
+            "mobile_phone" => DeviceType.MobilePhone,
+            "tablet" => DeviceType.Tablet,
+            "watch" => DeviceType.Watch,
+            "mobilephone_or_tablet" => DeviceType.MobilephoneOrTablet,
+            "pc" => DeviceType.Pc,
+            "household_device" => DeviceType.HouseholdDevice,
+            "wearable_device" => DeviceType.WearableDevice,
+            "automobile_device" => DeviceType.AutomobileDevice,
+            _ => (DeviceType)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        DeviceType value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                DeviceType.Unknown => "unknown",
+                DeviceType.MobilePhone => "mobile_phone",
+                DeviceType.Tablet => "tablet",
+                DeviceType.Watch => "watch",
+                DeviceType.MobilephoneOrTablet => "mobilephone_or_tablet",
+                DeviceType.Pc => "pc",
+                DeviceType.HouseholdDevice => "household_device",
+                DeviceType.WearableDevice => "wearable_device",
+                DeviceType.AutomobileDevice => "automobile_device",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>
