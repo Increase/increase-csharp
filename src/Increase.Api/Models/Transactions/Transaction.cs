@@ -9309,6 +9309,11 @@ public enum FuelType
     ElectricVehicleChargingLevel3_480Volt,
 
     /// <summary>
+    /// Diesel 1 off-road non-taxable
+    /// </summary>
+    Diesel1OffRoadNonTaxable,
+
+    /// <summary>
     /// Renewable diesel R95 or greater off-road non-taxable
     /// </summary>
     RenewableDieselR95OrGreaterOffRoadNonTaxable,
@@ -9472,6 +9477,7 @@ sealed class FuelTypeConverter : JsonConverter<FuelType>
                 FuelType.ElectricVehicleChargingLevel2_240Volt,
             "electric_vehicle_charging_level_3_480_volt" =>
                 FuelType.ElectricVehicleChargingLevel3_480Volt,
+            "diesel_1_off_road_non_taxable" => FuelType.Diesel1OffRoadNonTaxable,
             "renewable_diesel_r95_or_greater_off_road_non_taxable" =>
                 FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable,
             "biodiesel_blend_1_off_road_non_taxable" => FuelType.BiodieselBlend1OffRoadNonTaxable,
@@ -9598,6 +9604,7 @@ sealed class FuelTypeConverter : JsonConverter<FuelType>
                     "electric_vehicle_charging_level_2_240_volt",
                 FuelType.ElectricVehicleChargingLevel3_480Volt =>
                     "electric_vehicle_charging_level_3_480_volt",
+                FuelType.Diesel1OffRoadNonTaxable => "diesel_1_off_road_non_taxable",
                 FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable =>
                     "renewable_diesel_r95_or_greater_off_road_non_taxable",
                 FuelType.BiodieselBlend1OffRoadNonTaxable =>
@@ -14522,6 +14529,11 @@ public enum CardSettlementPurchaseDetailsFleetFuelType
     ElectricVehicleChargingLevel3_480Volt,
 
     /// <summary>
+    /// Diesel 1 off-road non-taxable
+    /// </summary>
+    Diesel1OffRoadNonTaxable,
+
+    /// <summary>
     /// Renewable diesel R95 or greater off-road non-taxable
     /// </summary>
     RenewableDieselR95OrGreaterOffRoadNonTaxable,
@@ -14734,6 +14746,8 @@ sealed class CardSettlementPurchaseDetailsFleetFuelTypeConverter
                 CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel2_240Volt,
             "electric_vehicle_charging_level_3_480_volt" =>
                 CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt,
+            "diesel_1_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.Diesel1OffRoadNonTaxable,
             "renewable_diesel_r95_or_greater_off_road_non_taxable" =>
                 CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable,
             "biodiesel_blend_1_off_road_non_taxable" =>
@@ -14918,6 +14932,8 @@ sealed class CardSettlementPurchaseDetailsFleetFuelTypeConverter
                     "electric_vehicle_charging_level_2_240_volt",
                 CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt =>
                     "electric_vehicle_charging_level_3_480_volt",
+                CardSettlementPurchaseDetailsFleetFuelType.Diesel1OffRoadNonTaxable =>
+                    "diesel_1_off_road_non_taxable",
                 CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable =>
                     "renewable_diesel_r95_or_greater_off_road_non_taxable",
                 CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend1OffRoadNonTaxable =>
@@ -18400,6 +18416,19 @@ public sealed record class CheckTransferDeposit : JsonModel
     }
 
     /// <summary>
+    /// The identifier of the Checkbook Check object that was deposited.
+    /// </summary>
+    public required string? CheckbookCheckID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("checkbook_check_id");
+        }
+        init { this._rawData.Set("checkbook_check_id", value); }
+    }
+
+    /// <summary>
     /// When the check was deposited.
     /// </summary>
     public required System::DateTimeOffset DepositedAt
@@ -18484,6 +18513,7 @@ public sealed record class CheckTransferDeposit : JsonModel
     {
         _ = this.BackImageFileID;
         _ = this.BankOfFirstDepositRoutingNumber;
+        _ = this.CheckbookCheckID;
         _ = this.DepositedAt;
         _ = this.FrontImageFileID;
         _ = this.InboundCheckDepositID;
@@ -19827,6 +19857,19 @@ sealed class ReasonConverter : JsonConverter<Reason>
 public sealed record class InboundCheckDepositReturnIntention : JsonModel
 {
     /// <summary>
+    /// The identifier of the Checkbook Check object that was deposited.
+    /// </summary>
+    public required string? CheckbookCheckID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("checkbook_check_id");
+        }
+        init { this._rawData.Set("checkbook_check_id", value); }
+    }
+
+    /// <summary>
     /// The ID of the Inbound Check Deposit that is being returned.
     /// </summary>
     public required string InboundCheckDepositID
@@ -19855,6 +19898,7 @@ public sealed record class InboundCheckDepositReturnIntention : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.CheckbookCheckID;
         _ = this.InboundCheckDepositID;
         _ = this.TransferID;
     }

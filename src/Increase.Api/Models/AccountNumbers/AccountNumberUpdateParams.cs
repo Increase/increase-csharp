@@ -29,16 +29,18 @@ public record class AccountNumberUpdateParams : ParamsBase
     public string? AccountNumberID { get; init; }
 
     /// <summary>
-    /// Options related to how this Account Number handles inbound ACH transfers.
+    /// Whether inbound ACH debits are allowed against this Account Number. Note that
+    /// ACH debits will be declined if this is `allowed` but the Account Number is
+    /// not active.
     /// </summary>
-    public AccountNumberUpdateParamsInboundAch? InboundAch
+    public ApiEnum<string, AccountNumberUpdateParamsInboundAchDebits>? InboundAchDebits
     {
         get
         {
             this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<AccountNumberUpdateParamsInboundAch>(
-                "inbound_ach"
-            );
+            return this._rawBodyData.GetNullableClass<
+                ApiEnum<string, AccountNumberUpdateParamsInboundAchDebits>
+            >("inbound_ach_debits");
         }
         init
         {
@@ -47,30 +49,7 @@ public record class AccountNumberUpdateParams : ParamsBase
                 return;
             }
 
-            this._rawBodyData.Set("inbound_ach", value);
-        }
-    }
-
-    /// <summary>
-    /// Options related to how this Account Number should handle inbound check withdrawals.
-    /// </summary>
-    public AccountNumberUpdateParamsInboundChecks? InboundChecks
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<AccountNumberUpdateParamsInboundChecks>(
-                "inbound_checks"
-            );
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawBodyData.Set("inbound_checks", value);
+            this._rawBodyData.Set("inbound_ach_debits", value);
         }
     }
 
@@ -98,14 +77,12 @@ public record class AccountNumberUpdateParams : ParamsBase
     /// <summary>
     /// This indicates if transfers can be made to the Account Number.
     /// </summary>
-    public ApiEnum<string, AccountNumberUpdateParamsStatus>? Status
+    public ApiEnum<string, Status>? Status
     {
         get
         {
             this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<
-                ApiEnum<string, AccountNumberUpdateParamsStatus>
-            >("status");
+            return this._rawBodyData.GetNullableClass<ApiEnum<string, Status>>("status");
         }
         init
         {
@@ -115,6 +92,32 @@ public record class AccountNumberUpdateParams : ParamsBase
             }
 
             this._rawBodyData.Set("status", value);
+        }
+    }
+
+    /// <summary>
+    /// Whether unregistered inbound checks for this Account Number can be deposited.
+    /// </summary>
+    public ApiEnum<
+        string,
+        AccountNumberUpdateParamsUnregisteredInboundChecks
+    >? UnregisteredInboundChecks
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<
+                ApiEnum<string, AccountNumberUpdateParamsUnregisteredInboundChecks>
+            >("unregistered_inbound_checks");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("unregistered_inbound_checks", value);
         }
     }
 
@@ -242,92 +245,11 @@ public record class AccountNumberUpdateParams : ParamsBase
 }
 
 /// <summary>
-/// Options related to how this Account Number handles inbound ACH transfers.
+/// Whether inbound ACH debits are allowed against this Account Number. Note that
+/// ACH debits will be declined if this is `allowed` but the Account Number is not active.
 /// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<
-        AccountNumberUpdateParamsInboundAch,
-        AccountNumberUpdateParamsInboundAchFromRaw
-    >)
-)]
-public sealed record class AccountNumberUpdateParamsInboundAch : JsonModel
-{
-    /// <summary>
-    /// Whether ACH debits are allowed against this Account Number. Note that ACH
-    /// debits will be declined if this is `allowed` but the Account Number is not active.
-    /// </summary>
-    public ApiEnum<string, AccountNumberUpdateParamsInboundAchDebitStatus>? DebitStatus
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<
-                ApiEnum<string, AccountNumberUpdateParamsInboundAchDebitStatus>
-            >("debit_status");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set("debit_status", value);
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        this.DebitStatus?.Validate();
-    }
-
-    public AccountNumberUpdateParamsInboundAch() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public AccountNumberUpdateParamsInboundAch(
-        AccountNumberUpdateParamsInboundAch accountNumberUpdateParamsInboundAch
-    )
-        : base(accountNumberUpdateParamsInboundAch) { }
-#pragma warning restore CS8618
-
-    public AccountNumberUpdateParamsInboundAch(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    AccountNumberUpdateParamsInboundAch(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="AccountNumberUpdateParamsInboundAchFromRaw.FromRawUnchecked"/>
-    public static AccountNumberUpdateParamsInboundAch FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class AccountNumberUpdateParamsInboundAchFromRaw : IFromRawJson<AccountNumberUpdateParamsInboundAch>
-{
-    /// <inheritdoc/>
-    public AccountNumberUpdateParamsInboundAch FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => AccountNumberUpdateParamsInboundAch.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// Whether ACH debits are allowed against this Account Number. Note that ACH debits
-/// will be declined if this is `allowed` but the Account Number is not active.
-/// </summary>
-[JsonConverter(typeof(AccountNumberUpdateParamsInboundAchDebitStatusConverter))]
-public enum AccountNumberUpdateParamsInboundAchDebitStatus
+[JsonConverter(typeof(AccountNumberUpdateParamsInboundAchDebitsConverter))]
+public enum AccountNumberUpdateParamsInboundAchDebits
 {
     /// <summary>
     /// ACH Debits are allowed.
@@ -341,10 +263,10 @@ public enum AccountNumberUpdateParamsInboundAchDebitStatus
     Blocked,
 }
 
-sealed class AccountNumberUpdateParamsInboundAchDebitStatusConverter
-    : JsonConverter<AccountNumberUpdateParamsInboundAchDebitStatus>
+sealed class AccountNumberUpdateParamsInboundAchDebitsConverter
+    : JsonConverter<AccountNumberUpdateParamsInboundAchDebits>
 {
-    public override AccountNumberUpdateParamsInboundAchDebitStatus Read(
+    public override AccountNumberUpdateParamsInboundAchDebits Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -352,15 +274,15 @@ sealed class AccountNumberUpdateParamsInboundAchDebitStatusConverter
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "allowed" => AccountNumberUpdateParamsInboundAchDebitStatus.Allowed,
-            "blocked" => AccountNumberUpdateParamsInboundAchDebitStatus.Blocked,
-            _ => (AccountNumberUpdateParamsInboundAchDebitStatus)(-1),
+            "allowed" => AccountNumberUpdateParamsInboundAchDebits.Allowed,
+            "blocked" => AccountNumberUpdateParamsInboundAchDebits.Blocked,
+            _ => (AccountNumberUpdateParamsInboundAchDebits)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        AccountNumberUpdateParamsInboundAchDebitStatus value,
+        AccountNumberUpdateParamsInboundAchDebits value,
         JsonSerializerOptions options
     )
     {
@@ -368,149 +290,8 @@ sealed class AccountNumberUpdateParamsInboundAchDebitStatusConverter
             writer,
             value switch
             {
-                AccountNumberUpdateParamsInboundAchDebitStatus.Allowed => "allowed",
-                AccountNumberUpdateParamsInboundAchDebitStatus.Blocked => "blocked",
-                _ => throw new IncreaseInvalidDataException(
-                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
-                ),
-            },
-            options
-        );
-    }
-}
-
-/// <summary>
-/// Options related to how this Account Number should handle inbound check withdrawals.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<
-        AccountNumberUpdateParamsInboundChecks,
-        AccountNumberUpdateParamsInboundChecksFromRaw
-    >)
-)]
-public sealed record class AccountNumberUpdateParamsInboundChecks : JsonModel
-{
-    /// <summary>
-    /// How Increase should process checks with this account number printed on them.
-    /// </summary>
-    public required ApiEnum<string, AccountNumberUpdateParamsInboundChecksStatus> Status
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<
-                ApiEnum<string, AccountNumberUpdateParamsInboundChecksStatus>
-            >("status");
-        }
-        init { this._rawData.Set("status", value); }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        this.Status.Validate();
-    }
-
-    public AccountNumberUpdateParamsInboundChecks() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public AccountNumberUpdateParamsInboundChecks(
-        AccountNumberUpdateParamsInboundChecks accountNumberUpdateParamsInboundChecks
-    )
-        : base(accountNumberUpdateParamsInboundChecks) { }
-#pragma warning restore CS8618
-
-    public AccountNumberUpdateParamsInboundChecks(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    AccountNumberUpdateParamsInboundChecks(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="AccountNumberUpdateParamsInboundChecksFromRaw.FromRawUnchecked"/>
-    public static AccountNumberUpdateParamsInboundChecks FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-
-    [SetsRequiredMembers]
-    public AccountNumberUpdateParamsInboundChecks(
-        ApiEnum<string, AccountNumberUpdateParamsInboundChecksStatus> status
-    )
-        : this()
-    {
-        this.Status = status;
-    }
-}
-
-class AccountNumberUpdateParamsInboundChecksFromRaw
-    : IFromRawJson<AccountNumberUpdateParamsInboundChecks>
-{
-    /// <inheritdoc/>
-    public AccountNumberUpdateParamsInboundChecks FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => AccountNumberUpdateParamsInboundChecks.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// How Increase should process checks with this account number printed on them.
-/// </summary>
-[JsonConverter(typeof(AccountNumberUpdateParamsInboundChecksStatusConverter))]
-public enum AccountNumberUpdateParamsInboundChecksStatus
-{
-    /// <summary>
-    /// Checks with this Account Number will be processed even if they are not associated
-    /// with a Check Transfer.
-    /// </summary>
-    Allowed,
-
-    /// <summary>
-    /// Checks with this Account Number will be processed only if they can be matched
-    /// to an existing Check Transfer.
-    /// </summary>
-    CheckTransfersOnly,
-}
-
-sealed class AccountNumberUpdateParamsInboundChecksStatusConverter
-    : JsonConverter<AccountNumberUpdateParamsInboundChecksStatus>
-{
-    public override AccountNumberUpdateParamsInboundChecksStatus Read(
-        ref Utf8JsonReader reader,
-        System::Type typeToConvert,
-        JsonSerializerOptions options
-    )
-    {
-        return JsonSerializer.Deserialize<string>(ref reader, options) switch
-        {
-            "allowed" => AccountNumberUpdateParamsInboundChecksStatus.Allowed,
-            "check_transfers_only" =>
-                AccountNumberUpdateParamsInboundChecksStatus.CheckTransfersOnly,
-            _ => (AccountNumberUpdateParamsInboundChecksStatus)(-1),
-        };
-    }
-
-    public override void Write(
-        Utf8JsonWriter writer,
-        AccountNumberUpdateParamsInboundChecksStatus value,
-        JsonSerializerOptions options
-    )
-    {
-        JsonSerializer.Serialize(
-            writer,
-            value switch
-            {
-                AccountNumberUpdateParamsInboundChecksStatus.Allowed => "allowed",
-                AccountNumberUpdateParamsInboundChecksStatus.CheckTransfersOnly =>
-                    "check_transfers_only",
+                AccountNumberUpdateParamsInboundAchDebits.Allowed => "allowed",
+                AccountNumberUpdateParamsInboundAchDebits.Blocked => "blocked",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -523,8 +304,8 @@ sealed class AccountNumberUpdateParamsInboundChecksStatusConverter
 /// <summary>
 /// This indicates if transfers can be made to the Account Number.
 /// </summary>
-[JsonConverter(typeof(AccountNumberUpdateParamsStatusConverter))]
-public enum AccountNumberUpdateParamsStatus
+[JsonConverter(typeof(StatusConverter))]
+public enum Status
 {
     /// <summary>
     /// The account number is active.
@@ -542,10 +323,9 @@ public enum AccountNumberUpdateParamsStatus
     Canceled,
 }
 
-sealed class AccountNumberUpdateParamsStatusConverter
-    : JsonConverter<AccountNumberUpdateParamsStatus>
+sealed class StatusConverter : JsonConverter<Status>
 {
-    public override AccountNumberUpdateParamsStatus Read(
+    public override Status Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -553,16 +333,70 @@ sealed class AccountNumberUpdateParamsStatusConverter
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "active" => AccountNumberUpdateParamsStatus.Active,
-            "disabled" => AccountNumberUpdateParamsStatus.Disabled,
-            "canceled" => AccountNumberUpdateParamsStatus.Canceled,
-            _ => (AccountNumberUpdateParamsStatus)(-1),
+            "active" => Status.Active,
+            "disabled" => Status.Disabled,
+            "canceled" => Status.Canceled,
+            _ => (Status)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Status value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Status.Active => "active",
+                Status.Disabled => "disabled",
+                Status.Canceled => "canceled",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Whether unregistered inbound checks for this Account Number can be deposited.
+/// </summary>
+[JsonConverter(typeof(AccountNumberUpdateParamsUnregisteredInboundChecksConverter))]
+public enum AccountNumberUpdateParamsUnregisteredInboundChecks
+{
+    /// <summary>
+    /// Accept all Inbound Check Deposits, even if they are not associated with a
+    /// Check Transfer or Checkbook Check.
+    /// </summary>
+    Allowed,
+
+    /// <summary>
+    /// Only accept Inbound Check Deposits if they can be matched to a Check Transfer
+    /// or Checkbook Check.
+    /// </summary>
+    Blocked,
+}
+
+sealed class AccountNumberUpdateParamsUnregisteredInboundChecksConverter
+    : JsonConverter<AccountNumberUpdateParamsUnregisteredInboundChecks>
+{
+    public override AccountNumberUpdateParamsUnregisteredInboundChecks Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "allowed" => AccountNumberUpdateParamsUnregisteredInboundChecks.Allowed,
+            "blocked" => AccountNumberUpdateParamsUnregisteredInboundChecks.Blocked,
+            _ => (AccountNumberUpdateParamsUnregisteredInboundChecks)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        AccountNumberUpdateParamsStatus value,
+        AccountNumberUpdateParamsUnregisteredInboundChecks value,
         JsonSerializerOptions options
     )
     {
@@ -570,9 +404,8 @@ sealed class AccountNumberUpdateParamsStatusConverter
             writer,
             value switch
             {
-                AccountNumberUpdateParamsStatus.Active => "active",
-                AccountNumberUpdateParamsStatus.Disabled => "disabled",
-                AccountNumberUpdateParamsStatus.Canceled => "canceled",
+                AccountNumberUpdateParamsUnregisteredInboundChecks.Allowed => "allowed",
+                AccountNumberUpdateParamsUnregisteredInboundChecks.Blocked => "blocked",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

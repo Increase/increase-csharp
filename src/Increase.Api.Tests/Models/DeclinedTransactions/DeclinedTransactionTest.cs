@@ -140,6 +140,7 @@ public class DeclinedTransactionTest : TestBase
                     AuxiliaryOnUs = "99999",
                     BackImageFileID = null,
                     CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     FrontImageFileID = null,
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -312,6 +313,7 @@ public class DeclinedTransactionTest : TestBase
                 AuxiliaryOnUs = "99999",
                 BackImageFileID = null,
                 CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 FrontImageFileID = null,
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -498,6 +500,7 @@ public class DeclinedTransactionTest : TestBase
                     AuxiliaryOnUs = "99999",
                     BackImageFileID = null,
                     CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     FrontImageFileID = null,
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -682,6 +685,7 @@ public class DeclinedTransactionTest : TestBase
                     AuxiliaryOnUs = "99999",
                     BackImageFileID = null,
                     CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     FrontImageFileID = null,
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -861,6 +865,7 @@ public class DeclinedTransactionTest : TestBase
                 AuxiliaryOnUs = "99999",
                 BackImageFileID = null,
                 CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 FrontImageFileID = null,
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -1047,6 +1052,7 @@ public class DeclinedTransactionTest : TestBase
                     AuxiliaryOnUs = "99999",
                     BackImageFileID = null,
                     CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     FrontImageFileID = null,
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -1225,6 +1231,7 @@ public class DeclinedTransactionTest : TestBase
                     AuxiliaryOnUs = "99999",
                     BackImageFileID = null,
                     CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     FrontImageFileID = null,
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -1510,6 +1517,7 @@ public class SourceTest : TestBase
                 AuxiliaryOnUs = "99999",
                 BackImageFileID = null,
                 CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 FrontImageFileID = null,
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -1667,6 +1675,7 @@ public class SourceTest : TestBase
             AuxiliaryOnUs = "99999",
             BackImageFileID = null,
             CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             FrontImageFileID = null,
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -1844,6 +1853,7 @@ public class SourceTest : TestBase
                 AuxiliaryOnUs = "99999",
                 BackImageFileID = null,
                 CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 FrontImageFileID = null,
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -2015,6 +2025,7 @@ public class SourceTest : TestBase
                 AuxiliaryOnUs = "99999",
                 BackImageFileID = null,
                 CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 FrontImageFileID = null,
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -2179,6 +2190,7 @@ public class SourceTest : TestBase
             AuxiliaryOnUs = "99999",
             BackImageFileID = null,
             CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             FrontImageFileID = null,
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -2359,6 +2371,7 @@ public class SourceTest : TestBase
                 AuxiliaryOnUs = "99999",
                 BackImageFileID = null,
                 CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 FrontImageFileID = null,
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -2616,6 +2629,7 @@ public class SourceTest : TestBase
                 AuxiliaryOnUs = "99999",
                 BackImageFileID = null,
                 CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 FrontImageFileID = null,
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -6745,6 +6759,7 @@ public class CheckDeclineTest : TestBase
             AuxiliaryOnUs = "99999",
             BackImageFileID = null,
             CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             FrontImageFileID = null,
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -6753,6 +6768,7 @@ public class CheckDeclineTest : TestBase
         long expectedAmount = -1000;
         string expectedAuxiliaryOnUs = "99999";
         string expectedCheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5";
+        string expectedCheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb";
         string expectedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra";
         ApiEnum<string, DeclinedTransactions::CheckDeclineReason> expectedReason =
             DeclinedTransactions::CheckDeclineReason.InsufficientFunds;
@@ -6761,6 +6777,7 @@ public class CheckDeclineTest : TestBase
         Assert.Equal(expectedAuxiliaryOnUs, model.AuxiliaryOnUs);
         Assert.Null(model.BackImageFileID);
         Assert.Equal(expectedCheckTransferID, model.CheckTransferID);
+        Assert.Equal(expectedCheckbookCheckID, model.CheckbookCheckID);
         Assert.Null(model.FrontImageFileID);
         Assert.Equal(expectedInboundCheckDepositID, model.InboundCheckDepositID);
         Assert.Equal(expectedReason, model.Reason);
@@ -6775,6 +6792,7 @@ public class CheckDeclineTest : TestBase
             AuxiliaryOnUs = "99999",
             BackImageFileID = null,
             CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             FrontImageFileID = null,
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -6798,6 +6816,7 @@ public class CheckDeclineTest : TestBase
             AuxiliaryOnUs = "99999",
             BackImageFileID = null,
             CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             FrontImageFileID = null,
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -6813,6 +6832,7 @@ public class CheckDeclineTest : TestBase
         long expectedAmount = -1000;
         string expectedAuxiliaryOnUs = "99999";
         string expectedCheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5";
+        string expectedCheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb";
         string expectedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra";
         ApiEnum<string, DeclinedTransactions::CheckDeclineReason> expectedReason =
             DeclinedTransactions::CheckDeclineReason.InsufficientFunds;
@@ -6821,6 +6841,7 @@ public class CheckDeclineTest : TestBase
         Assert.Equal(expectedAuxiliaryOnUs, deserialized.AuxiliaryOnUs);
         Assert.Null(deserialized.BackImageFileID);
         Assert.Equal(expectedCheckTransferID, deserialized.CheckTransferID);
+        Assert.Equal(expectedCheckbookCheckID, deserialized.CheckbookCheckID);
         Assert.Null(deserialized.FrontImageFileID);
         Assert.Equal(expectedInboundCheckDepositID, deserialized.InboundCheckDepositID);
         Assert.Equal(expectedReason, deserialized.Reason);
@@ -6835,6 +6856,7 @@ public class CheckDeclineTest : TestBase
             AuxiliaryOnUs = "99999",
             BackImageFileID = null,
             CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             FrontImageFileID = null,
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,
@@ -6852,6 +6874,7 @@ public class CheckDeclineTest : TestBase
             AuxiliaryOnUs = "99999",
             BackImageFileID = null,
             CheckTransferID = "check_transfer_30b43acfu9vw8fyc4f5",
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             FrontImageFileID = null,
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             Reason = DeclinedTransactions::CheckDeclineReason.InsufficientFunds,

@@ -88,29 +88,20 @@ public sealed record class AccountNumber : JsonModel
     }
 
     /// <summary>
-    /// Properties related to how this Account Number handles inbound ACH transfers.
+    /// Whether inbound ACH debits are allowed against this Account Number. Note that
+    /// they will still be declined if this is `allowed` but the Account Number is
+    /// not active.
     /// </summary>
-    public required AccountNumberInboundAch InboundAch
+    public required ApiEnum<string, AccountNumberInboundAchDebits> InboundAchDebits
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<AccountNumberInboundAch>("inbound_ach");
+            return this._rawData.GetNotNullClass<ApiEnum<string, AccountNumberInboundAchDebits>>(
+                "inbound_ach_debits"
+            );
         }
-        init { this._rawData.Set("inbound_ach", value); }
-    }
-
-    /// <summary>
-    /// Properties related to how this Account Number should handle inbound check withdrawals.
-    /// </summary>
-    public required AccountNumberInboundChecks InboundChecks
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<AccountNumberInboundChecks>("inbound_checks");
-        }
-        init { this._rawData.Set("inbound_checks", value); }
+        init { this._rawData.Set("inbound_ach_debits", value); }
     }
 
     /// <summary>
@@ -168,6 +159,24 @@ public sealed record class AccountNumber : JsonModel
         init { this._rawData.Set("type", value); }
     }
 
+    /// <summary>
+    /// Whether unregistered inbound checks for this Account Number can be deposited.
+    /// </summary>
+    public required ApiEnum<
+        string,
+        AccountNumberUnregisteredInboundChecks
+    > UnregisteredInboundChecks
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, AccountNumberUnregisteredInboundChecks>
+            >("unregistered_inbound_checks");
+        }
+        init { this._rawData.Set("unregistered_inbound_checks", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -176,12 +185,12 @@ public sealed record class AccountNumber : JsonModel
         _ = this.AccountNumberValue;
         _ = this.CreatedAt;
         _ = this.IdempotencyKey;
-        this.InboundAch.Validate();
-        this.InboundChecks.Validate();
+        this.InboundAchDebits.Validate();
         _ = this.Name;
         _ = this.RoutingNumber;
         this.Status.Validate();
         this.Type.Validate();
+        this.UnregisteredInboundChecks.Validate();
     }
 
     public AccountNumber() { }
@@ -220,84 +229,11 @@ class AccountNumberFromRaw : IFromRawJson<AccountNumber>
 }
 
 /// <summary>
-/// Properties related to how this Account Number handles inbound ACH transfers.
+/// Whether inbound ACH debits are allowed against this Account Number. Note that
+/// they will still be declined if this is `allowed` but the Account Number is not active.
 /// </summary>
-[JsonConverter(typeof(JsonModelConverter<AccountNumberInboundAch, AccountNumberInboundAchFromRaw>))]
-public sealed record class AccountNumberInboundAch : JsonModel
-{
-    /// <summary>
-    /// Whether ACH debits are allowed against this Account Number. Note that they
-    /// will still be declined if this is `allowed` but the Account Number is not active.
-    /// </summary>
-    public required ApiEnum<string, AccountNumberInboundAchDebitStatus> DebitStatus
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<
-                ApiEnum<string, AccountNumberInboundAchDebitStatus>
-            >("debit_status");
-        }
-        init { this._rawData.Set("debit_status", value); }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        this.DebitStatus.Validate();
-    }
-
-    public AccountNumberInboundAch() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public AccountNumberInboundAch(AccountNumberInboundAch accountNumberInboundAch)
-        : base(accountNumberInboundAch) { }
-#pragma warning restore CS8618
-
-    public AccountNumberInboundAch(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    AccountNumberInboundAch(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="AccountNumberInboundAchFromRaw.FromRawUnchecked"/>
-    public static AccountNumberInboundAch FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-
-    [SetsRequiredMembers]
-    public AccountNumberInboundAch(ApiEnum<string, AccountNumberInboundAchDebitStatus> debitStatus)
-        : this()
-    {
-        this.DebitStatus = debitStatus;
-    }
-}
-
-class AccountNumberInboundAchFromRaw : IFromRawJson<AccountNumberInboundAch>
-{
-    /// <inheritdoc/>
-    public AccountNumberInboundAch FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => AccountNumberInboundAch.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// Whether ACH debits are allowed against this Account Number. Note that they will
-/// still be declined if this is `allowed` but the Account Number is not active.
-/// </summary>
-[JsonConverter(typeof(AccountNumberInboundAchDebitStatusConverter))]
-public enum AccountNumberInboundAchDebitStatus
+[JsonConverter(typeof(AccountNumberInboundAchDebitsConverter))]
+public enum AccountNumberInboundAchDebits
 {
     /// <summary>
     /// ACH Debits are allowed.
@@ -311,10 +247,9 @@ public enum AccountNumberInboundAchDebitStatus
     Blocked,
 }
 
-sealed class AccountNumberInboundAchDebitStatusConverter
-    : JsonConverter<AccountNumberInboundAchDebitStatus>
+sealed class AccountNumberInboundAchDebitsConverter : JsonConverter<AccountNumberInboundAchDebits>
 {
-    public override AccountNumberInboundAchDebitStatus Read(
+    public override AccountNumberInboundAchDebits Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -322,15 +257,15 @@ sealed class AccountNumberInboundAchDebitStatusConverter
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "allowed" => AccountNumberInboundAchDebitStatus.Allowed,
-            "blocked" => AccountNumberInboundAchDebitStatus.Blocked,
-            _ => (AccountNumberInboundAchDebitStatus)(-1),
+            "allowed" => AccountNumberInboundAchDebits.Allowed,
+            "blocked" => AccountNumberInboundAchDebits.Blocked,
+            _ => (AccountNumberInboundAchDebits)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        AccountNumberInboundAchDebitStatus value,
+        AccountNumberInboundAchDebits value,
         JsonSerializerOptions options
     )
     {
@@ -338,139 +273,8 @@ sealed class AccountNumberInboundAchDebitStatusConverter
             writer,
             value switch
             {
-                AccountNumberInboundAchDebitStatus.Allowed => "allowed",
-                AccountNumberInboundAchDebitStatus.Blocked => "blocked",
-                _ => throw new IncreaseInvalidDataException(
-                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
-                ),
-            },
-            options
-        );
-    }
-}
-
-/// <summary>
-/// Properties related to how this Account Number should handle inbound check withdrawals.
-/// </summary>
-[JsonConverter(
-    typeof(JsonModelConverter<AccountNumberInboundChecks, AccountNumberInboundChecksFromRaw>)
-)]
-public sealed record class AccountNumberInboundChecks : JsonModel
-{
-    /// <summary>
-    /// How Increase should process checks with this account number printed on them.
-    /// </summary>
-    public required ApiEnum<string, AccountNumberInboundChecksStatus> Status
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<ApiEnum<string, AccountNumberInboundChecksStatus>>(
-                "status"
-            );
-        }
-        init { this._rawData.Set("status", value); }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        this.Status.Validate();
-    }
-
-    public AccountNumberInboundChecks() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public AccountNumberInboundChecks(AccountNumberInboundChecks accountNumberInboundChecks)
-        : base(accountNumberInboundChecks) { }
-#pragma warning restore CS8618
-
-    public AccountNumberInboundChecks(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    AccountNumberInboundChecks(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="AccountNumberInboundChecksFromRaw.FromRawUnchecked"/>
-    public static AccountNumberInboundChecks FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    )
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-
-    [SetsRequiredMembers]
-    public AccountNumberInboundChecks(ApiEnum<string, AccountNumberInboundChecksStatus> status)
-        : this()
-    {
-        this.Status = status;
-    }
-}
-
-class AccountNumberInboundChecksFromRaw : IFromRawJson<AccountNumberInboundChecks>
-{
-    /// <inheritdoc/>
-    public AccountNumberInboundChecks FromRawUnchecked(
-        IReadOnlyDictionary<string, JsonElement> rawData
-    ) => AccountNumberInboundChecks.FromRawUnchecked(rawData);
-}
-
-/// <summary>
-/// How Increase should process checks with this account number printed on them.
-/// </summary>
-[JsonConverter(typeof(AccountNumberInboundChecksStatusConverter))]
-public enum AccountNumberInboundChecksStatus
-{
-    /// <summary>
-    /// Checks with this Account Number will be processed even if they are not associated
-    /// with a Check Transfer.
-    /// </summary>
-    Allowed,
-
-    /// <summary>
-    /// Checks with this Account Number will be processed only if they can be matched
-    /// to an existing Check Transfer.
-    /// </summary>
-    CheckTransfersOnly,
-}
-
-sealed class AccountNumberInboundChecksStatusConverter
-    : JsonConverter<AccountNumberInboundChecksStatus>
-{
-    public override AccountNumberInboundChecksStatus Read(
-        ref Utf8JsonReader reader,
-        System::Type typeToConvert,
-        JsonSerializerOptions options
-    )
-    {
-        return JsonSerializer.Deserialize<string>(ref reader, options) switch
-        {
-            "allowed" => AccountNumberInboundChecksStatus.Allowed,
-            "check_transfers_only" => AccountNumberInboundChecksStatus.CheckTransfersOnly,
-            _ => (AccountNumberInboundChecksStatus)(-1),
-        };
-    }
-
-    public override void Write(
-        Utf8JsonWriter writer,
-        AccountNumberInboundChecksStatus value,
-        JsonSerializerOptions options
-    )
-    {
-        JsonSerializer.Serialize(
-            writer,
-            value switch
-            {
-                AccountNumberInboundChecksStatus.Allowed => "allowed",
-                AccountNumberInboundChecksStatus.CheckTransfersOnly => "check_transfers_only",
+                AccountNumberInboundAchDebits.Allowed => "allowed",
+                AccountNumberInboundAchDebits.Blocked => "blocked",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -576,6 +380,63 @@ sealed class TypeConverter : JsonConverter<global::Increase.Api.Models.AccountNu
             value switch
             {
                 global::Increase.Api.Models.AccountNumbers.Type.AccountNumber => "account_number",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Whether unregistered inbound checks for this Account Number can be deposited.
+/// </summary>
+[JsonConverter(typeof(AccountNumberUnregisteredInboundChecksConverter))]
+public enum AccountNumberUnregisteredInboundChecks
+{
+    /// <summary>
+    /// Accept all Inbound Check Deposits, even if they are not associated with a
+    /// Check Transfer or Checkbook Check.
+    /// </summary>
+    Allowed,
+
+    /// <summary>
+    /// Only accept Inbound Check Deposits if they can be matched to a Check Transfer
+    /// or Checkbook Check.
+    /// </summary>
+    Blocked,
+}
+
+sealed class AccountNumberUnregisteredInboundChecksConverter
+    : JsonConverter<AccountNumberUnregisteredInboundChecks>
+{
+    public override AccountNumberUnregisteredInboundChecks Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "allowed" => AccountNumberUnregisteredInboundChecks.Allowed,
+            "blocked" => AccountNumberUnregisteredInboundChecks.Blocked,
+            _ => (AccountNumberUnregisteredInboundChecks)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        AccountNumberUnregisteredInboundChecks value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                AccountNumberUnregisteredInboundChecks.Allowed => "allowed",
+                AccountNumberUnregisteredInboundChecks.Blocked => "blocked",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

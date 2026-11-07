@@ -4986,6 +4986,19 @@ public sealed record class CheckDecline : JsonModel
     }
 
     /// <summary>
+    /// The identifier of the Checkbook Check object associated with this decline.
+    /// </summary>
+    public required string? CheckbookCheckID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("checkbook_check_id");
+        }
+        init { this._rawData.Set("checkbook_check_id", value); }
+    }
+
+    /// <summary>
     /// The identifier of the API File object containing an image of the front of
     /// the declined check.
     /// </summary>
@@ -5032,6 +5045,7 @@ public sealed record class CheckDecline : JsonModel
         _ = this.AuxiliaryOnUs;
         _ = this.BackImageFileID;
         _ = this.CheckTransferID;
+        _ = this.CheckbookCheckID;
         _ = this.FrontImageFileID;
         _ = this.InboundCheckDepositID;
         this.Reason.Validate();

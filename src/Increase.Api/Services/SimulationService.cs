@@ -59,6 +59,7 @@ public sealed class SimulationService : ISimulationService
             new Simulations::InboundWireDrawdownRequestService(client)
         );
         _checkTransfers = new(() => new Simulations::CheckTransferService(client));
+        _checkbooks = new(() => new Simulations::CheckbookService(client));
         _inboundCheckDeposits = new(() => new Simulations::InboundCheckDepositService(client));
         _realTimePaymentsTransfers = new(() =>
             new Simulations::RealTimePaymentsTransferService(client)
@@ -218,6 +219,12 @@ public sealed class SimulationService : ISimulationService
         get { return _checkTransfers.Value; }
     }
 
+    readonly Lazy<Simulations::ICheckbookService> _checkbooks;
+    public Simulations::ICheckbookService Checkbooks
+    {
+        get { return _checkbooks.Value; }
+    }
+
     readonly Lazy<Simulations::IInboundCheckDepositService> _inboundCheckDeposits;
     public Simulations::IInboundCheckDepositService InboundCheckDeposits
     {
@@ -365,6 +372,7 @@ public sealed class SimulationServiceWithRawResponse : ISimulationServiceWithRaw
             new Simulations::InboundWireDrawdownRequestServiceWithRawResponse(client)
         );
         _checkTransfers = new(() => new Simulations::CheckTransferServiceWithRawResponse(client));
+        _checkbooks = new(() => new Simulations::CheckbookServiceWithRawResponse(client));
         _inboundCheckDeposits = new(() =>
             new Simulations::InboundCheckDepositServiceWithRawResponse(client)
         );
@@ -530,6 +538,12 @@ public sealed class SimulationServiceWithRawResponse : ISimulationServiceWithRaw
     public Simulations::ICheckTransferServiceWithRawResponse CheckTransfers
     {
         get { return _checkTransfers.Value; }
+    }
+
+    readonly Lazy<Simulations::ICheckbookServiceWithRawResponse> _checkbooks;
+    public Simulations::ICheckbookServiceWithRawResponse Checkbooks
+    {
+        get { return _checkbooks.Value; }
     }
 
     readonly Lazy<Simulations::IInboundCheckDepositServiceWithRawResponse> _inboundCheckDeposits;

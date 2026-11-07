@@ -562,6 +562,7 @@ public class TransactionTest : TestBase
                 {
                     BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     BankOfFirstDepositRoutingNumber = null,
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -614,6 +615,7 @@ public class TransactionTest : TestBase
                 },
                 InboundCheckDepositReturnIntention = new()
                 {
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                 },
@@ -1266,6 +1268,7 @@ public class TransactionTest : TestBase
             {
                 BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 BankOfFirstDepositRoutingNumber = null,
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -1315,6 +1318,7 @@ public class TransactionTest : TestBase
             },
             InboundCheckDepositReturnIntention = new()
             {
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
@@ -1984,6 +1988,7 @@ public class TransactionTest : TestBase
                 {
                     BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     BankOfFirstDepositRoutingNumber = null,
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -2036,6 +2041,7 @@ public class TransactionTest : TestBase
                 },
                 InboundCheckDepositReturnIntention = new()
                 {
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                 },
@@ -2705,6 +2711,7 @@ public class TransactionTest : TestBase
                 {
                     BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     BankOfFirstDepositRoutingNumber = null,
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -2757,6 +2764,7 @@ public class TransactionTest : TestBase
                 },
                 InboundCheckDepositReturnIntention = new()
                 {
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                 },
@@ -3416,6 +3424,7 @@ public class TransactionTest : TestBase
             {
                 BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 BankOfFirstDepositRoutingNumber = null,
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -3465,6 +3474,7 @@ public class TransactionTest : TestBase
             },
             InboundCheckDepositReturnIntention = new()
             {
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
@@ -4134,6 +4144,7 @@ public class TransactionTest : TestBase
                 {
                     BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     BankOfFirstDepositRoutingNumber = null,
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -4186,6 +4197,7 @@ public class TransactionTest : TestBase
                 },
                 InboundCheckDepositReturnIntention = new()
                 {
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                 },
@@ -4849,6 +4861,7 @@ public class TransactionTest : TestBase
                 {
                     BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     BankOfFirstDepositRoutingNumber = null,
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -4901,6 +4914,7 @@ public class TransactionTest : TestBase
                 },
                 InboundCheckDepositReturnIntention = new()
                 {
+                    CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                     InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                     TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                 },
@@ -5671,6 +5685,7 @@ public class SourceTest : TestBase
             {
                 BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 BankOfFirstDepositRoutingNumber = null,
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -5720,6 +5735,7 @@ public class SourceTest : TestBase
             },
             InboundCheckDepositReturnIntention = new()
             {
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
@@ -6354,6 +6370,7 @@ public class SourceTest : TestBase
         {
             BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
             BankOfFirstDepositRoutingNumber = null,
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -6407,6 +6424,7 @@ public class SourceTest : TestBase
         Transactions::InboundCheckDepositReturnIntention expectedInboundCheckDepositReturnIntention =
             new()
             {
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             };
@@ -7125,6 +7143,7 @@ public class SourceTest : TestBase
             {
                 BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 BankOfFirstDepositRoutingNumber = null,
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -7174,6 +7193,7 @@ public class SourceTest : TestBase
             },
             InboundCheckDepositReturnIntention = new()
             {
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
@@ -7824,6 +7844,7 @@ public class SourceTest : TestBase
             {
                 BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 BankOfFirstDepositRoutingNumber = null,
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -7873,6 +7894,7 @@ public class SourceTest : TestBase
             },
             InboundCheckDepositReturnIntention = new()
             {
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
@@ -8514,6 +8536,7 @@ public class SourceTest : TestBase
         {
             BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
             BankOfFirstDepositRoutingNumber = null,
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -8567,6 +8590,7 @@ public class SourceTest : TestBase
         Transactions::InboundCheckDepositReturnIntention expectedInboundCheckDepositReturnIntention =
             new()
             {
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             };
@@ -9291,6 +9315,7 @@ public class SourceTest : TestBase
             {
                 BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 BankOfFirstDepositRoutingNumber = null,
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -9340,6 +9365,7 @@ public class SourceTest : TestBase
             },
             InboundCheckDepositReturnIntention = new()
             {
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
@@ -10274,6 +10300,7 @@ public class SourceTest : TestBase
             {
                 BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 BankOfFirstDepositRoutingNumber = null,
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -10323,6 +10350,7 @@ public class SourceTest : TestBase
             },
             InboundCheckDepositReturnIntention = new()
             {
+                CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
                 InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
@@ -18844,6 +18872,7 @@ public class FuelTypeTest : TestBase
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel1_110Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel2_240Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel3_480Volt)]
+    [InlineData(Transactions::FuelType.Diesel1OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend1OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend75OffRoadNonTaxable)]
@@ -18964,6 +18993,7 @@ public class FuelTypeTest : TestBase
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel1_110Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel2_240Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel3_480Volt)]
+    [InlineData(Transactions::FuelType.Diesel1OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend1OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend75OffRoadNonTaxable)]
@@ -24841,6 +24871,7 @@ public class CardSettlementPurchaseDetailsFleetFuelTypeTest : TestBase
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt
     )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.Diesel1OffRoadNonTaxable)]
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable
     )]
@@ -25030,6 +25061,7 @@ public class CardSettlementPurchaseDetailsFleetFuelTypeTest : TestBase
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt
     )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.Diesel1OffRoadNonTaxable)]
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable
     )]
@@ -28263,6 +28295,7 @@ public class CheckTransferDepositTest : TestBase
         {
             BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
             BankOfFirstDepositRoutingNumber = null,
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -28272,6 +28305,7 @@ public class CheckTransferDepositTest : TestBase
         };
 
         string expectedBackImageFileID = "file_makxrc67oh9l6sg7w9yc";
+        string expectedCheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb";
         DateTimeOffset expectedDepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedFrontImageFileID = "file_makxrc67oh9l6sg7w9yc";
         string expectedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra";
@@ -28282,6 +28316,7 @@ public class CheckTransferDepositTest : TestBase
 
         Assert.Equal(expectedBackImageFileID, model.BackImageFileID);
         Assert.Null(model.BankOfFirstDepositRoutingNumber);
+        Assert.Equal(expectedCheckbookCheckID, model.CheckbookCheckID);
         Assert.Equal(expectedDepositedAt, model.DepositedAt);
         Assert.Equal(expectedFrontImageFileID, model.FrontImageFileID);
         Assert.Equal(expectedInboundCheckDepositID, model.InboundCheckDepositID);
@@ -28297,6 +28332,7 @@ public class CheckTransferDepositTest : TestBase
         {
             BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
             BankOfFirstDepositRoutingNumber = null,
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -28321,6 +28357,7 @@ public class CheckTransferDepositTest : TestBase
         {
             BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
             BankOfFirstDepositRoutingNumber = null,
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -28337,6 +28374,7 @@ public class CheckTransferDepositTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedBackImageFileID = "file_makxrc67oh9l6sg7w9yc";
+        string expectedCheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb";
         DateTimeOffset expectedDepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
         string expectedFrontImageFileID = "file_makxrc67oh9l6sg7w9yc";
         string expectedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra";
@@ -28347,6 +28385,7 @@ public class CheckTransferDepositTest : TestBase
 
         Assert.Equal(expectedBackImageFileID, deserialized.BackImageFileID);
         Assert.Null(deserialized.BankOfFirstDepositRoutingNumber);
+        Assert.Equal(expectedCheckbookCheckID, deserialized.CheckbookCheckID);
         Assert.Equal(expectedDepositedAt, deserialized.DepositedAt);
         Assert.Equal(expectedFrontImageFileID, deserialized.FrontImageFileID);
         Assert.Equal(expectedInboundCheckDepositID, deserialized.InboundCheckDepositID);
@@ -28362,6 +28401,7 @@ public class CheckTransferDepositTest : TestBase
         {
             BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
             BankOfFirstDepositRoutingNumber = null,
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -28380,6 +28420,7 @@ public class CheckTransferDepositTest : TestBase
         {
             BackImageFileID = "file_makxrc67oh9l6sg7w9yc",
             BankOfFirstDepositRoutingNumber = null,
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             DepositedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             FrontImageFileID = "file_makxrc67oh9l6sg7w9yc",
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
@@ -29610,13 +29651,16 @@ public class InboundCheckDepositReturnIntentionTest : TestBase
     {
         var model = new Transactions::InboundCheckDepositReturnIntention
         {
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
         };
 
+        string expectedCheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb";
         string expectedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra";
         string expectedTransferID = "check_transfer_30b43acfu9vw8fyc4f5";
 
+        Assert.Equal(expectedCheckbookCheckID, model.CheckbookCheckID);
         Assert.Equal(expectedInboundCheckDepositID, model.InboundCheckDepositID);
         Assert.Equal(expectedTransferID, model.TransferID);
     }
@@ -29626,6 +29670,7 @@ public class InboundCheckDepositReturnIntentionTest : TestBase
     {
         var model = new Transactions::InboundCheckDepositReturnIntention
         {
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
         };
@@ -29645,6 +29690,7 @@ public class InboundCheckDepositReturnIntentionTest : TestBase
     {
         var model = new Transactions::InboundCheckDepositReturnIntention
         {
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
         };
@@ -29657,9 +29703,11 @@ public class InboundCheckDepositReturnIntentionTest : TestBase
             );
         Assert.NotNull(deserialized);
 
+        string expectedCheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb";
         string expectedInboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra";
         string expectedTransferID = "check_transfer_30b43acfu9vw8fyc4f5";
 
+        Assert.Equal(expectedCheckbookCheckID, deserialized.CheckbookCheckID);
         Assert.Equal(expectedInboundCheckDepositID, deserialized.InboundCheckDepositID);
         Assert.Equal(expectedTransferID, deserialized.TransferID);
     }
@@ -29669,6 +29717,7 @@ public class InboundCheckDepositReturnIntentionTest : TestBase
     {
         var model = new Transactions::InboundCheckDepositReturnIntention
         {
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
         };
@@ -29681,6 +29730,7 @@ public class InboundCheckDepositReturnIntentionTest : TestBase
     {
         var model = new Transactions::InboundCheckDepositReturnIntention
         {
+            CheckbookCheckID = "checkbook_check_klgh3z50guf6jcnfhibb",
             InboundCheckDepositID = "inbound_check_deposit_zoshvqybq0cjjm31mra",
             TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
         };
