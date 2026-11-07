@@ -103,21 +103,21 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Funding>(),
             new ApiEnumConverter<string, StatementPaymentType>(),
             new ApiEnumConverter<string, In>(),
-            new ApiEnumConverter<string, AccountNumbers::AccountNumberInboundAchDebitStatus>(),
-            new ApiEnumConverter<string, AccountNumbers::AccountNumberInboundChecksStatus>(),
+            new ApiEnumConverter<string, AccountNumbers::AccountNumberInboundAchDebits>(),
             new ApiEnumConverter<string, AccountNumbers::AccountNumberStatus>(),
             new ApiEnumConverter<string, AccountNumbers::Type>(),
-            new ApiEnumConverter<string, AccountNumbers::DebitStatus>(),
+            new ApiEnumConverter<string, AccountNumbers::AccountNumberUnregisteredInboundChecks>(),
+            new ApiEnumConverter<string, AccountNumbers::InboundAchDebits>(),
+            new ApiEnumConverter<string, AccountNumbers::UnregisteredInboundChecks>(),
+            new ApiEnumConverter<
+                string,
+                AccountNumbers::AccountNumberUpdateParamsInboundAchDebits
+            >(),
             new ApiEnumConverter<string, AccountNumbers::Status>(),
             new ApiEnumConverter<
                 string,
-                AccountNumbers::AccountNumberUpdateParamsInboundAchDebitStatus
+                AccountNumbers::AccountNumberUpdateParamsUnregisteredInboundChecks
             >(),
-            new ApiEnumConverter<
-                string,
-                AccountNumbers::AccountNumberUpdateParamsInboundChecksStatus
-            >(),
-            new ApiEnumConverter<string, AccountNumbers::AccountNumberUpdateParamsStatus>(),
             new ApiEnumConverter<string, AccountNumbers::In>(),
             new ApiEnumConverter<string, AccountNumbers::AccountNumberListParamsStatusIn>(),
             new ApiEnumConverter<string, AccountTransfers::Category>(),
@@ -1392,7 +1392,6 @@ public abstract record class ModelBase
                 ModelsEntities::EntityJointIndividualIdentificationMethod
             >(),
             new ApiEnumConverter<string, ModelsEntities::EntityNaturalPersonIdentificationMethod>(),
-            new ApiEnumConverter<string, ModelsEntities::EntityRiskRatingRating>(),
             new ApiEnumConverter<
                 string,
                 ModelsEntities::EntitySoleProprietorshipSoleProprietorIdentificationMethod
@@ -1420,7 +1419,6 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, ModelsEntities::GovernmentAuthorityCategory>(),
             new ApiEnumConverter<string, ModelsEntities::JointIndividualIdentificationMethod>(),
             new ApiEnumConverter<string, ModelsEntities::NaturalPersonIdentificationMethod>(),
-            new ApiEnumConverter<string, ModelsEntities::Rating>(),
             new ApiEnumConverter<string, ModelsEntities::SoleProprietorIdentificationMethod>(),
             new ApiEnumConverter<string, ModelsEntities::Vendor>(),
             new ApiEnumConverter<string, ModelsEntities::TrustCategory>(),
@@ -1435,7 +1433,6 @@ public abstract record class ModelBase
                 string,
                 ModelsEntities::EntityUpdateParamsNaturalPersonIdentificationMethod
             >(),
-            new ApiEnumConverter<string, ModelsEntities::EntityUpdateParamsRiskRatingRating>(),
             new ApiEnumConverter<
                 string,
                 ModelsEntities::EntityUpdateParamsSoleProprietorshipSoleProprietorIdentificationMethod
@@ -1581,6 +1578,7 @@ public abstract record class ModelBase
                 string,
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision
             >(),
+            new ApiEnumConverter<string, RealTimeDecisions::DeviceType>(),
             new ApiEnumConverter<
                 string,
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet

@@ -18844,6 +18844,7 @@ public class FuelTypeTest : TestBase
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel1_110Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel2_240Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel3_480Volt)]
+    [InlineData(Transactions::FuelType.Diesel1OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend1OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend75OffRoadNonTaxable)]
@@ -18964,6 +18965,7 @@ public class FuelTypeTest : TestBase
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel1_110Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel2_240Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel3_480Volt)]
+    [InlineData(Transactions::FuelType.Diesel1OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend1OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend75OffRoadNonTaxable)]
@@ -24841,6 +24843,7 @@ public class CardSettlementPurchaseDetailsFleetFuelTypeTest : TestBase
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt
     )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.Diesel1OffRoadNonTaxable)]
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable
     )]
@@ -25030,6 +25033,7 @@ public class CardSettlementPurchaseDetailsFleetFuelTypeTest : TestBase
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt
     )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.Diesel1OffRoadNonTaxable)]
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable
     )]

@@ -41,24 +41,6 @@ public record class AccountNumberListParams : ParamsBase
         }
     }
 
-    public AchDebitStatus? AchDebitStatus
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableClass<AchDebitStatus>("ach_debit_status");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawQueryData.Set("ach_debit_status", value);
-        }
-    }
-
     public CreatedAt? CreatedAt
     {
         get
@@ -118,6 +100,26 @@ public record class AccountNumberListParams : ParamsBase
             }
 
             this._rawQueryData.Set("idempotency_key", value);
+        }
+    }
+
+    public AccountNumberListParamsInboundAchDebits? InboundAchDebits
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<AccountNumberListParamsInboundAchDebits>(
+                "inbound_ach_debits"
+            );
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("inbound_ach_debits", value);
         }
     }
 
@@ -253,126 +255,6 @@ public record class AccountNumberListParams : ParamsBase
     }
 }
 
-[JsonConverter(typeof(JsonModelConverter<AchDebitStatus, AchDebitStatusFromRaw>))]
-public sealed record class AchDebitStatus : JsonModel
-{
-    /// <summary>
-    /// The ACH Debit status to retrieve Account Numbers for. For GET requests, this
-    /// should be encoded as a comma-delimited string, such as `?in=one,two,three`.
-    /// </summary>
-    public IReadOnlyList<ApiEnum<string, In>>? In
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<ImmutableArray<ApiEnum<string, In>>>("in");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawData.Set<ImmutableArray<ApiEnum<string, In>>?>(
-                "in",
-                value == null ? null : ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        foreach (var item in this.In ?? [])
-        {
-            item.Validate();
-        }
-    }
-
-    public AchDebitStatus() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public AchDebitStatus(AchDebitStatus achDebitStatus)
-        : base(achDebitStatus) { }
-#pragma warning restore CS8618
-
-    public AchDebitStatus(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    AchDebitStatus(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="AchDebitStatusFromRaw.FromRawUnchecked"/>
-    public static AchDebitStatus FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class AchDebitStatusFromRaw : IFromRawJson<AchDebitStatus>
-{
-    /// <inheritdoc/>
-    public AchDebitStatus FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        AchDebitStatus.FromRawUnchecked(rawData);
-}
-
-[JsonConverter(typeof(InConverter))]
-public enum In
-{
-    /// <summary>
-    /// ACH Debits are allowed.
-    /// </summary>
-    Allowed,
-
-    /// <summary>
-    /// ACH Debits are blocked. Received debits will be declined and returned with
-    /// code `R20` (non-transaction account).
-    /// </summary>
-    Blocked,
-}
-
-sealed class InConverter : JsonConverter<In>
-{
-    public override In Read(
-        ref Utf8JsonReader reader,
-        System::Type typeToConvert,
-        JsonSerializerOptions options
-    )
-    {
-        return JsonSerializer.Deserialize<string>(ref reader, options) switch
-        {
-            "allowed" => In.Allowed,
-            "blocked" => In.Blocked,
-            _ => (In)(-1),
-        };
-    }
-
-    public override void Write(Utf8JsonWriter writer, In value, JsonSerializerOptions options)
-    {
-        JsonSerializer.Serialize(
-            writer,
-            value switch
-            {
-                In.Allowed => "allowed",
-                In.Blocked => "blocked",
-                _ => throw new IncreaseInvalidDataException(
-                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
-                ),
-            },
-            options
-        );
-    }
-}
-
 [JsonConverter(typeof(JsonModelConverter<CreatedAt, CreatedAtFromRaw>))]
 public sealed record class CreatedAt : JsonModel
 {
@@ -502,6 +384,137 @@ class CreatedAtFromRaw : IFromRawJson<CreatedAt>
     /// <inheritdoc/>
     public CreatedAt FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         CreatedAt.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        AccountNumberListParamsInboundAchDebits,
+        AccountNumberListParamsInboundAchDebitsFromRaw
+    >)
+)]
+public sealed record class AccountNumberListParamsInboundAchDebits : JsonModel
+{
+    /// <summary>
+    /// The inbound ACH debits status to retrieve Account Numbers for. For GET requests,
+    /// this should be encoded as a comma-delimited string, such as `?in=one,two,three`.
+    /// </summary>
+    public IReadOnlyList<ApiEnum<string, In>>? In
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<ImmutableArray<ApiEnum<string, In>>>("in");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set<ImmutableArray<ApiEnum<string, In>>?>(
+                "in",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        foreach (var item in this.In ?? [])
+        {
+            item.Validate();
+        }
+    }
+
+    public AccountNumberListParamsInboundAchDebits() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public AccountNumberListParamsInboundAchDebits(
+        AccountNumberListParamsInboundAchDebits accountNumberListParamsInboundAchDebits
+    )
+        : base(accountNumberListParamsInboundAchDebits) { }
+#pragma warning restore CS8618
+
+    public AccountNumberListParamsInboundAchDebits(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    AccountNumberListParamsInboundAchDebits(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="AccountNumberListParamsInboundAchDebitsFromRaw.FromRawUnchecked"/>
+    public static AccountNumberListParamsInboundAchDebits FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class AccountNumberListParamsInboundAchDebitsFromRaw
+    : IFromRawJson<AccountNumberListParamsInboundAchDebits>
+{
+    /// <inheritdoc/>
+    public AccountNumberListParamsInboundAchDebits FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => AccountNumberListParamsInboundAchDebits.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(typeof(InConverter))]
+public enum In
+{
+    /// <summary>
+    /// ACH Debits are allowed.
+    /// </summary>
+    Allowed,
+
+    /// <summary>
+    /// ACH Debits are blocked. Received debits will be declined and returned with
+    /// code `R20` (non-transaction account).
+    /// </summary>
+    Blocked,
+}
+
+sealed class InConverter : JsonConverter<In>
+{
+    public override In Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "allowed" => In.Allowed,
+            "blocked" => In.Blocked,
+            _ => (In)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, In value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                In.Allowed => "allowed",
+                In.Blocked => "blocked",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 [JsonConverter(

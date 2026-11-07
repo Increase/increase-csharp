@@ -36,7 +36,7 @@ public class EntityUpdateParamsTest : TestBase
                         EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
                 },
                 Name = "x",
-                Website = "website",
+                Website = "https://company.example.com",
             },
             DetailsConfirmedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             GovernmentAuthority = new()
@@ -91,11 +91,6 @@ public class EntityUpdateParamsTest : TestBase
                     },
                 },
                 Name = "x",
-            },
-            RiskRating = new()
-            {
-                RatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                Rating = EntityUpdateParamsRiskRatingRating.Low,
             },
             SoleProprietorship = new()
             {
@@ -294,7 +289,7 @@ public class EntityUpdateParamsTest : TestBase
                     EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
             },
             Name = "x",
-            Website = "website",
+            Website = "https://company.example.com",
         };
         DateTimeOffset expectedDetailsConfirmedAt = DateTimeOffset.Parse(
             "2019-12-27T18:11:19.117Z"
@@ -350,11 +345,6 @@ public class EntityUpdateParamsTest : TestBase
                 },
             },
             Name = "x",
-        };
-        EntityUpdateParamsRiskRating expectedRiskRating = new()
-        {
-            RatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-            Rating = EntityUpdateParamsRiskRatingRating.Low,
         };
         EntityUpdateParamsSoleProprietorship expectedSoleProprietorship = new()
         {
@@ -535,7 +525,6 @@ public class EntityUpdateParamsTest : TestBase
         Assert.Equal(expectedDetailsConfirmedAt, parameters.DetailsConfirmedAt);
         Assert.Equal(expectedGovernmentAuthority, parameters.GovernmentAuthority);
         Assert.Equal(expectedNaturalPerson, parameters.NaturalPerson);
-        Assert.Equal(expectedRiskRating, parameters.RiskRating);
         Assert.Equal(expectedSoleProprietorship, parameters.SoleProprietorship);
         Assert.NotNull(parameters.TermsAgreements);
         Assert.Equal(expectedTermsAgreements.Count, parameters.TermsAgreements.Count);
@@ -560,8 +549,6 @@ public class EntityUpdateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("government_authority"));
         Assert.Null(parameters.NaturalPerson);
         Assert.False(parameters.RawBodyData.ContainsKey("natural_person"));
-        Assert.Null(parameters.RiskRating);
-        Assert.False(parameters.RawBodyData.ContainsKey("risk_rating"));
         Assert.Null(parameters.SoleProprietorship);
         Assert.False(parameters.RawBodyData.ContainsKey("sole_proprietorship"));
         Assert.Null(parameters.TermsAgreements);
@@ -584,7 +571,6 @@ public class EntityUpdateParamsTest : TestBase
             DetailsConfirmedAt = null,
             GovernmentAuthority = null,
             NaturalPerson = null,
-            RiskRating = null,
             SoleProprietorship = null,
             TermsAgreements = null,
             ThirdPartyVerification = null,
@@ -599,8 +585,6 @@ public class EntityUpdateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("government_authority"));
         Assert.Null(parameters.NaturalPerson);
         Assert.False(parameters.RawBodyData.ContainsKey("natural_person"));
-        Assert.Null(parameters.RiskRating);
-        Assert.False(parameters.RawBodyData.ContainsKey("risk_rating"));
         Assert.Null(parameters.SoleProprietorship);
         Assert.False(parameters.RawBodyData.ContainsKey("sole_proprietorship"));
         Assert.Null(parameters.TermsAgreements);
@@ -653,7 +637,7 @@ public class EntityUpdateParamsTest : TestBase
                         EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
                 },
                 Name = "x",
-                Website = "website",
+                Website = "https://company.example.com",
             },
             DetailsConfirmedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             GovernmentAuthority = new()
@@ -708,11 +692,6 @@ public class EntityUpdateParamsTest : TestBase
                     },
                 },
                 Name = "x",
-            },
-            RiskRating = new()
-            {
-                RatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
-                Rating = EntityUpdateParamsRiskRatingRating.Low,
             },
             SoleProprietorship = new()
             {
@@ -3355,152 +3334,6 @@ public class EntityUpdateParamsNaturalPersonIdentificationPassportTest : TestBas
         EntityUpdateParamsNaturalPersonIdentificationPassport copied = new(model);
 
         Assert.Equal(model, copied);
-    }
-}
-
-public class EntityUpdateParamsRiskRatingTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new EntityUpdateParamsRiskRating
-        {
-            RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Rating = EntityUpdateParamsRiskRatingRating.Low,
-        };
-
-        DateTimeOffset expectedRatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        ApiEnum<string, EntityUpdateParamsRiskRatingRating> expectedRating =
-            EntityUpdateParamsRiskRatingRating.Low;
-
-        Assert.Equal(expectedRatedAt, model.RatedAt);
-        Assert.Equal(expectedRating, model.Rating);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new EntityUpdateParamsRiskRating
-        {
-            RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Rating = EntityUpdateParamsRiskRatingRating.Low,
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsRiskRating>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new EntityUpdateParamsRiskRating
-        {
-            RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Rating = EntityUpdateParamsRiskRatingRating.Low,
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<EntityUpdateParamsRiskRating>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        DateTimeOffset expectedRatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        ApiEnum<string, EntityUpdateParamsRiskRatingRating> expectedRating =
-            EntityUpdateParamsRiskRatingRating.Low;
-
-        Assert.Equal(expectedRatedAt, deserialized.RatedAt);
-        Assert.Equal(expectedRating, deserialized.Rating);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new EntityUpdateParamsRiskRating
-        {
-            RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Rating = EntityUpdateParamsRiskRatingRating.Low,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new EntityUpdateParamsRiskRating
-        {
-            RatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Rating = EntityUpdateParamsRiskRatingRating.Low,
-        };
-
-        EntityUpdateParamsRiskRating copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class EntityUpdateParamsRiskRatingRatingTest : TestBase
-{
-    [Theory]
-    [InlineData(EntityUpdateParamsRiskRatingRating.Low)]
-    [InlineData(EntityUpdateParamsRiskRatingRating.Medium)]
-    [InlineData(EntityUpdateParamsRiskRatingRating.High)]
-    public void Validation_Works(EntityUpdateParamsRiskRatingRating rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, EntityUpdateParamsRiskRatingRating> value = rawValue;
-        value.Validate();
-    }
-
-    [Fact]
-    public void InvalidEnumValidationThrows_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, EntityUpdateParamsRiskRatingRating>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-
-        Assert.NotNull(value);
-        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
-    }
-
-    [Theory]
-    [InlineData(EntityUpdateParamsRiskRatingRating.Low)]
-    [InlineData(EntityUpdateParamsRiskRatingRating.Medium)]
-    [InlineData(EntityUpdateParamsRiskRatingRating.High)]
-    public void SerializationRoundtrip_Works(EntityUpdateParamsRiskRatingRating rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, EntityUpdateParamsRiskRatingRating> value = rawValue;
-
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, EntityUpdateParamsRiskRatingRating>
-        >(json, ModelBase.SerializerOptions);
-
-        Assert.Equal(value, deserialized);
-    }
-
-    [Fact]
-    public void InvalidEnumSerializationRoundtrip_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, EntityUpdateParamsRiskRatingRating>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, EntityUpdateParamsRiskRatingRating>
-        >(json, ModelBase.SerializerOptions);
-
-        Assert.Equal(value, deserialized);
     }
 }
 
