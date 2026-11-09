@@ -176,6 +176,20 @@ public sealed record class InboundCheckDeposit : JsonModel
     }
 
     /// <summary>
+    /// If this deposit is for an existing Checkbook Check, the identifier of that
+    /// Checkbook Check.
+    /// </summary>
+    public required string? CheckbookCheckID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("checkbook_check_id");
+        }
+        init { this._rawData.Set("checkbook_check_id", value); }
+    }
+
+    /// <summary>
     /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
     /// the deposit was attempted.
     /// </summary>
@@ -332,6 +346,7 @@ public sealed record class InboundCheckDeposit : JsonModel
         _ = this.BankOfFirstDepositRoutingNumber;
         _ = this.CheckNumber;
         _ = this.CheckTransferID;
+        _ = this.CheckbookCheckID;
         _ = this.CreatedAt;
         this.Currency.Validate();
         _ = this.DeclinedAt;

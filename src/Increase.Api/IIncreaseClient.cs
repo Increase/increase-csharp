@@ -99,6 +99,10 @@ public interface IIncreaseClient : IDisposable
 
     ICheckTransferService CheckTransfers { get; }
 
+    ICheckbookService Checkbooks { get; }
+
+    ICheckbookCheckService CheckbookChecks { get; }
+
     IInboundCheckDepositService InboundCheckDeposits { get; }
 
     IRealTimePaymentsTransferService RealTimePaymentsTransfers { get; }
@@ -244,6 +248,10 @@ public interface IIncreaseClientWithRawResponse : IDisposable
     IInboundWireDrawdownRequestServiceWithRawResponse InboundWireDrawdownRequests { get; }
 
     ICheckTransferServiceWithRawResponse CheckTransfers { get; }
+
+    ICheckbookServiceWithRawResponse Checkbooks { get; }
+
+    ICheckbookCheckServiceWithRawResponse CheckbookChecks { get; }
 
     IInboundCheckDepositServiceWithRawResponse InboundCheckDeposits { get; }
 

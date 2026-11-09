@@ -22,14 +22,13 @@ public class AccountNumberListPageResponseTest : TestBase
                     AccountNumberValue = "987654321",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     IdempotencyKey = null,
-                    InboundAch = new(AccountNumbers::AccountNumberInboundAchDebitStatus.Blocked),
-                    InboundChecks = new(
-                        AccountNumbers::AccountNumberInboundChecksStatus.CheckTransfersOnly
-                    ),
+                    InboundAchDebits = AccountNumbers::AccountNumberInboundAchDebits.Blocked,
                     Name = "ACH",
                     RoutingNumber = "101050001",
                     Status = AccountNumbers::AccountNumberStatus.Active,
                     Type = AccountNumbers::Type.AccountNumber,
+                    UnregisteredInboundChecks =
+                        AccountNumbers::AccountNumberUnregisteredInboundChecks.Blocked,
                 },
             ],
             NextCursor = "v57w5d",
@@ -44,14 +43,13 @@ public class AccountNumberListPageResponseTest : TestBase
                 AccountNumberValue = "987654321",
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 IdempotencyKey = null,
-                InboundAch = new(AccountNumbers::AccountNumberInboundAchDebitStatus.Blocked),
-                InboundChecks = new(
-                    AccountNumbers::AccountNumberInboundChecksStatus.CheckTransfersOnly
-                ),
+                InboundAchDebits = AccountNumbers::AccountNumberInboundAchDebits.Blocked,
                 Name = "ACH",
                 RoutingNumber = "101050001",
                 Status = AccountNumbers::AccountNumberStatus.Active,
                 Type = AccountNumbers::Type.AccountNumber,
+                UnregisteredInboundChecks =
+                    AccountNumbers::AccountNumberUnregisteredInboundChecks.Blocked,
             },
         ];
         string expectedNextCursor = "v57w5d";
@@ -78,14 +76,13 @@ public class AccountNumberListPageResponseTest : TestBase
                     AccountNumberValue = "987654321",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     IdempotencyKey = null,
-                    InboundAch = new(AccountNumbers::AccountNumberInboundAchDebitStatus.Blocked),
-                    InboundChecks = new(
-                        AccountNumbers::AccountNumberInboundChecksStatus.CheckTransfersOnly
-                    ),
+                    InboundAchDebits = AccountNumbers::AccountNumberInboundAchDebits.Blocked,
                     Name = "ACH",
                     RoutingNumber = "101050001",
                     Status = AccountNumbers::AccountNumberStatus.Active,
                     Type = AccountNumbers::Type.AccountNumber,
+                    UnregisteredInboundChecks =
+                        AccountNumbers::AccountNumberUnregisteredInboundChecks.Blocked,
                 },
             ],
             NextCursor = "v57w5d",
@@ -115,14 +112,13 @@ public class AccountNumberListPageResponseTest : TestBase
                     AccountNumberValue = "987654321",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     IdempotencyKey = null,
-                    InboundAch = new(AccountNumbers::AccountNumberInboundAchDebitStatus.Blocked),
-                    InboundChecks = new(
-                        AccountNumbers::AccountNumberInboundChecksStatus.CheckTransfersOnly
-                    ),
+                    InboundAchDebits = AccountNumbers::AccountNumberInboundAchDebits.Blocked,
                     Name = "ACH",
                     RoutingNumber = "101050001",
                     Status = AccountNumbers::AccountNumberStatus.Active,
                     Type = AccountNumbers::Type.AccountNumber,
+                    UnregisteredInboundChecks =
+                        AccountNumbers::AccountNumberUnregisteredInboundChecks.Blocked,
                 },
             ],
             NextCursor = "v57w5d",
@@ -145,14 +141,13 @@ public class AccountNumberListPageResponseTest : TestBase
                 AccountNumberValue = "987654321",
                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 IdempotencyKey = null,
-                InboundAch = new(AccountNumbers::AccountNumberInboundAchDebitStatus.Blocked),
-                InboundChecks = new(
-                    AccountNumbers::AccountNumberInboundChecksStatus.CheckTransfersOnly
-                ),
+                InboundAchDebits = AccountNumbers::AccountNumberInboundAchDebits.Blocked,
                 Name = "ACH",
                 RoutingNumber = "101050001",
                 Status = AccountNumbers::AccountNumberStatus.Active,
                 Type = AccountNumbers::Type.AccountNumber,
+                UnregisteredInboundChecks =
+                    AccountNumbers::AccountNumberUnregisteredInboundChecks.Blocked,
             },
         ];
         string expectedNextCursor = "v57w5d";
@@ -179,14 +174,13 @@ public class AccountNumberListPageResponseTest : TestBase
                     AccountNumberValue = "987654321",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     IdempotencyKey = null,
-                    InboundAch = new(AccountNumbers::AccountNumberInboundAchDebitStatus.Blocked),
-                    InboundChecks = new(
-                        AccountNumbers::AccountNumberInboundChecksStatus.CheckTransfersOnly
-                    ),
+                    InboundAchDebits = AccountNumbers::AccountNumberInboundAchDebits.Blocked,
                     Name = "ACH",
                     RoutingNumber = "101050001",
                     Status = AccountNumbers::AccountNumberStatus.Active,
                     Type = AccountNumbers::Type.AccountNumber,
+                    UnregisteredInboundChecks =
+                        AccountNumbers::AccountNumberUnregisteredInboundChecks.Blocked,
                 },
             ],
             NextCursor = "v57w5d",
@@ -209,14 +203,13 @@ public class AccountNumberListPageResponseTest : TestBase
                     AccountNumberValue = "987654321",
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     IdempotencyKey = null,
-                    InboundAch = new(AccountNumbers::AccountNumberInboundAchDebitStatus.Blocked),
-                    InboundChecks = new(
-                        AccountNumbers::AccountNumberInboundChecksStatus.CheckTransfersOnly
-                    ),
+                    InboundAchDebits = AccountNumbers::AccountNumberInboundAchDebits.Blocked,
                     Name = "ACH",
                     RoutingNumber = "101050001",
                     Status = AccountNumbers::AccountNumberStatus.Active,
                     Type = AccountNumbers::Type.AccountNumber,
+                    UnregisteredInboundChecks =
+                        AccountNumbers::AccountNumberUnregisteredInboundChecks.Blocked,
                 },
             ],
             NextCursor = "v57w5d",
