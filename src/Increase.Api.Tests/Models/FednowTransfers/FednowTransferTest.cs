@@ -44,6 +44,7 @@ public class FednowTransferTest : TestBase
                 State = "NY",
             },
             DebtorName = "National Phonograph Company",
+            EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
             IdempotencyKey = null,
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
@@ -109,6 +110,7 @@ public class FednowTransferTest : TestBase
             State = "NY",
         };
         string expectedDebtorName = "National Phonograph Company";
+        string expectedEndToEndIdentification = "Invoice 29582";
         string expectedPendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4";
         FednowTransfers::Rejection expectedRejection = new()
         {
@@ -152,6 +154,7 @@ public class FednowTransferTest : TestBase
         Assert.Equal(expectedCurrency, model.Currency);
         Assert.Equal(expectedDebtorAddress, model.DebtorAddress);
         Assert.Equal(expectedDebtorName, model.DebtorName);
+        Assert.Equal(expectedEndToEndIdentification, model.EndToEndIdentification);
         Assert.Null(model.ExternalAccountID);
         Assert.Null(model.IdempotencyKey);
         Assert.Equal(expectedPendingTransactionID, model.PendingTransactionID);
@@ -212,6 +215,7 @@ public class FednowTransferTest : TestBase
                 State = "NY",
             },
             DebtorName = "National Phonograph Company",
+            EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
             IdempotencyKey = null,
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
@@ -289,6 +293,7 @@ public class FednowTransferTest : TestBase
                 State = "NY",
             },
             DebtorName = "National Phonograph Company",
+            EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
             IdempotencyKey = null,
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
@@ -361,6 +366,7 @@ public class FednowTransferTest : TestBase
             State = "NY",
         };
         string expectedDebtorName = "National Phonograph Company";
+        string expectedEndToEndIdentification = "Invoice 29582";
         string expectedPendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4";
         FednowTransfers::Rejection expectedRejection = new()
         {
@@ -404,6 +410,7 @@ public class FednowTransferTest : TestBase
         Assert.Equal(expectedCurrency, deserialized.Currency);
         Assert.Equal(expectedDebtorAddress, deserialized.DebtorAddress);
         Assert.Equal(expectedDebtorName, deserialized.DebtorName);
+        Assert.Equal(expectedEndToEndIdentification, deserialized.EndToEndIdentification);
         Assert.Null(deserialized.ExternalAccountID);
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Equal(expectedPendingTransactionID, deserialized.PendingTransactionID);
@@ -464,6 +471,7 @@ public class FednowTransferTest : TestBase
                 State = "NY",
             },
             DebtorName = "National Phonograph Company",
+            EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
             IdempotencyKey = null,
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",
@@ -535,6 +543,7 @@ public class FednowTransferTest : TestBase
                 State = "NY",
             },
             DebtorName = "National Phonograph Company",
+            EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
             IdempotencyKey = null,
             PendingTransactionID = "pending_transaction_k1sfetcau2qbvjbzgju4",

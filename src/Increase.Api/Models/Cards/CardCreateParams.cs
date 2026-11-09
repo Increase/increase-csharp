@@ -64,7 +64,9 @@ public record class CardCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The card's billing address.
+    /// The card's billing address. This is used in card authorizations to [validate
+    /// the address provided by the acquirer](/documentation/address-verification-system-codes-and-overrides).
+    /// If not provided, the address associated with the account's entity will be used.
     /// </summary>
     public BillingAddress? BillingAddress
     {
@@ -1861,7 +1863,9 @@ sealed class ComparisonConverter : JsonConverter<Comparison>
 }
 
 /// <summary>
-/// The card's billing address.
+/// The card's billing address. This is used in card authorizations to [validate
+/// the address provided by the acquirer](/documentation/address-verification-system-codes-and-overrides).
+/// If not provided, the address associated with the account's entity will be used.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<BillingAddress, BillingAddressFromRaw>))]
 public sealed record class BillingAddress : JsonModel
