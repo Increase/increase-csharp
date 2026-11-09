@@ -181,6 +181,19 @@ public sealed record class FednowTransfer : JsonModel
     }
 
     /// <summary>
+    /// A free-form reference string set by the sender, to help identify the transfer.
+    /// </summary>
+    public required string? EndToEndIdentification
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("end_to_end_identification");
+        }
+        init { this._rawData.Set("end_to_end_identification", value); }
+    }
+
+    /// <summary>
     /// The identifier of the External Account the transfer was made to, if any.
     /// </summary>
     public required string? ExternalAccountID
@@ -379,6 +392,7 @@ public sealed record class FednowTransfer : JsonModel
         this.Currency.Validate();
         this.DebtorAddress?.Validate();
         _ = this.DebtorName;
+        _ = this.EndToEndIdentification;
         _ = this.ExternalAccountID;
         _ = this.IdempotencyKey;
         _ = this.PendingTransactionID;
