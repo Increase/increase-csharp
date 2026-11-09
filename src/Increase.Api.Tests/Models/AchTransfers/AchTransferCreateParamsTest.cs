@@ -16,7 +16,8 @@ public class AchTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 100,
-            StatementDescriptor = "INVOICE 2468",
+            CompanyName = "Phonographs Inc",
+            IndividualName = "Ian Crease",
             AccountNumber = "987654321",
             Addenda = new()
             {
@@ -29,12 +30,10 @@ public class AchTransferCreateParamsTest : TestBase
             CompanyDescriptiveDate = "J!",
             CompanyDiscretionaryData = "J!",
             CompanyEntryDescription = "J!",
-            CompanyName = "Phonographs Inc",
             DestinationAccountHolder = DestinationAccountHolder.Business,
             ExternalAccountID = "external_account_id",
             Funding = Funding.Checking,
             IndividualID = "individual_id",
-            IndividualName = "Ian Crease",
             PreferredEffectiveDate = new()
             {
                 Date = "2019-12-27",
@@ -47,7 +46,8 @@ public class AchTransferCreateParamsTest : TestBase
 
         string expectedAccountID = "account_in71c4amph0vgo2qllky";
         long expectedAmount = 100;
-        string expectedStatementDescriptor = "INVOICE 2468";
+        string expectedCompanyName = "Phonographs Inc";
+        string expectedIndividualName = "Ian Crease";
         string expectedAccountNumber = "987654321";
         Addenda expectedAddenda = new()
         {
@@ -58,13 +58,11 @@ public class AchTransferCreateParamsTest : TestBase
         string expectedCompanyDescriptiveDate = "J!";
         string expectedCompanyDiscretionaryData = "J!";
         string expectedCompanyEntryDescription = "J!";
-        string expectedCompanyName = "Phonographs Inc";
         ApiEnum<string, DestinationAccountHolder> expectedDestinationAccountHolder =
             DestinationAccountHolder.Business;
         string expectedExternalAccountID = "external_account_id";
         ApiEnum<string, Funding> expectedFunding = Funding.Checking;
         string expectedIndividualID = "individual_id";
-        string expectedIndividualName = "Ian Crease";
         PreferredEffectiveDate expectedPreferredEffectiveDate = new()
         {
             Date = "2019-12-27",
@@ -77,18 +75,17 @@ public class AchTransferCreateParamsTest : TestBase
 
         Assert.Equal(expectedAccountID, parameters.AccountID);
         Assert.Equal(expectedAmount, parameters.Amount);
-        Assert.Equal(expectedStatementDescriptor, parameters.StatementDescriptor);
+        Assert.Equal(expectedCompanyName, parameters.CompanyName);
+        Assert.Equal(expectedIndividualName, parameters.IndividualName);
         Assert.Equal(expectedAccountNumber, parameters.AccountNumber);
         Assert.Equal(expectedAddenda, parameters.Addenda);
         Assert.Equal(expectedCompanyDescriptiveDate, parameters.CompanyDescriptiveDate);
         Assert.Equal(expectedCompanyDiscretionaryData, parameters.CompanyDiscretionaryData);
         Assert.Equal(expectedCompanyEntryDescription, parameters.CompanyEntryDescription);
-        Assert.Equal(expectedCompanyName, parameters.CompanyName);
         Assert.Equal(expectedDestinationAccountHolder, parameters.DestinationAccountHolder);
         Assert.Equal(expectedExternalAccountID, parameters.ExternalAccountID);
         Assert.Equal(expectedFunding, parameters.Funding);
         Assert.Equal(expectedIndividualID, parameters.IndividualID);
-        Assert.Equal(expectedIndividualName, parameters.IndividualName);
         Assert.Equal(expectedPreferredEffectiveDate, parameters.PreferredEffectiveDate);
         Assert.Equal(expectedRequireApproval, parameters.RequireApproval);
         Assert.Equal(expectedRoutingNumber, parameters.RoutingNumber);
@@ -102,7 +99,8 @@ public class AchTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 100,
-            StatementDescriptor = "INVOICE 2468",
+            CompanyName = "Phonographs Inc",
+            IndividualName = "Ian Crease",
         };
 
         Assert.Null(parameters.AccountNumber);
@@ -115,8 +113,6 @@ public class AchTransferCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("company_discretionary_data"));
         Assert.Null(parameters.CompanyEntryDescription);
         Assert.False(parameters.RawBodyData.ContainsKey("company_entry_description"));
-        Assert.Null(parameters.CompanyName);
-        Assert.False(parameters.RawBodyData.ContainsKey("company_name"));
         Assert.Null(parameters.DestinationAccountHolder);
         Assert.False(parameters.RawBodyData.ContainsKey("destination_account_holder"));
         Assert.Null(parameters.ExternalAccountID);
@@ -125,8 +121,6 @@ public class AchTransferCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("funding"));
         Assert.Null(parameters.IndividualID);
         Assert.False(parameters.RawBodyData.ContainsKey("individual_id"));
-        Assert.Null(parameters.IndividualName);
-        Assert.False(parameters.RawBodyData.ContainsKey("individual_name"));
         Assert.Null(parameters.PreferredEffectiveDate);
         Assert.False(parameters.RawBodyData.ContainsKey("preferred_effective_date"));
         Assert.Null(parameters.RequireApproval);
@@ -144,7 +138,8 @@ public class AchTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 100,
-            StatementDescriptor = "INVOICE 2468",
+            CompanyName = "Phonographs Inc",
+            IndividualName = "Ian Crease",
 
             // Null should be interpreted as omitted for these properties
             AccountNumber = null,
@@ -152,12 +147,10 @@ public class AchTransferCreateParamsTest : TestBase
             CompanyDescriptiveDate = null,
             CompanyDiscretionaryData = null,
             CompanyEntryDescription = null,
-            CompanyName = null,
             DestinationAccountHolder = null,
             ExternalAccountID = null,
             Funding = null,
             IndividualID = null,
-            IndividualName = null,
             PreferredEffectiveDate = null,
             RequireApproval = null,
             RoutingNumber = null,
@@ -174,8 +167,6 @@ public class AchTransferCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("company_discretionary_data"));
         Assert.Null(parameters.CompanyEntryDescription);
         Assert.False(parameters.RawBodyData.ContainsKey("company_entry_description"));
-        Assert.Null(parameters.CompanyName);
-        Assert.False(parameters.RawBodyData.ContainsKey("company_name"));
         Assert.Null(parameters.DestinationAccountHolder);
         Assert.False(parameters.RawBodyData.ContainsKey("destination_account_holder"));
         Assert.Null(parameters.ExternalAccountID);
@@ -184,8 +175,6 @@ public class AchTransferCreateParamsTest : TestBase
         Assert.False(parameters.RawBodyData.ContainsKey("funding"));
         Assert.Null(parameters.IndividualID);
         Assert.False(parameters.RawBodyData.ContainsKey("individual_id"));
-        Assert.Null(parameters.IndividualName);
-        Assert.False(parameters.RawBodyData.ContainsKey("individual_name"));
         Assert.Null(parameters.PreferredEffectiveDate);
         Assert.False(parameters.RawBodyData.ContainsKey("preferred_effective_date"));
         Assert.Null(parameters.RequireApproval);
@@ -203,7 +192,8 @@ public class AchTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 100,
-            StatementDescriptor = "INVOICE 2468",
+            CompanyName = "Phonographs Inc",
+            IndividualName = "Ian Crease",
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -218,7 +208,8 @@ public class AchTransferCreateParamsTest : TestBase
         {
             AccountID = "account_in71c4amph0vgo2qllky",
             Amount = 100,
-            StatementDescriptor = "INVOICE 2468",
+            CompanyName = "Phonographs Inc",
+            IndividualName = "Ian Crease",
             AccountNumber = "987654321",
             Addenda = new()
             {
@@ -231,12 +222,10 @@ public class AchTransferCreateParamsTest : TestBase
             CompanyDescriptiveDate = "J!",
             CompanyDiscretionaryData = "J!",
             CompanyEntryDescription = "J!",
-            CompanyName = "Phonographs Inc",
             DestinationAccountHolder = DestinationAccountHolder.Business,
             ExternalAccountID = "external_account_id",
             Funding = Funding.Checking,
             IndividualID = "individual_id",
-            IndividualName = "Ian Crease",
             PreferredEffectiveDate = new()
             {
                 Date = "2019-12-27",

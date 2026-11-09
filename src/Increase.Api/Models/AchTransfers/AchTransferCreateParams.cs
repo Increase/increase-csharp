@@ -63,21 +63,37 @@ public record class AchTransferCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// A description you choose to give the transfer. This will be saved with the
-    /// transfer details, displayed in the dashboard, and returned by the API. If
-    /// `individual_name` and `company_name` are not explicitly set by this API,
-    /// the `statement_descriptor` will be sent in those fields to the receiving bank
-    /// to help the customer recognize the transfer. You are highly encouraged to
-    /// pass `individual_name` and `company_name` instead of relying on this fallback.
+    /// The name by which the recipient knows the counterparty of this transaction.
+    /// If you're processing payments on behalf of another party, use their name,
+    /// not your own, so that it's more likely the recipient understands the context
+    /// of the payment. This value is usually displayed to the recipient on their
+    /// bank statement. We recommend setting this on every transfer; if you do not,
+    /// we fall back to the `statement_descriptor`.
     /// </summary>
-    public required string StatementDescriptor
+    public required string CompanyName
     {
         get
         {
             this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNotNullClass<string>("statement_descriptor");
+            return this._rawBodyData.GetNotNullClass<string>("company_name");
         }
-        init { this._rawBodyData.Set("statement_descriptor", value); }
+        init { this._rawBodyData.Set("company_name", value); }
+    }
+
+    /// <summary>
+    /// The name of the transfer recipient. This value is informational and generally
+    /// not verified by the recipient's bank. This value is usually displayed to
+    /// the recipient on their bank statement. We recommend setting this on every
+    /// transfer; if you do not, we fall back to the `statement_descriptor`.
+    /// </summary>
+    public required string IndividualName
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNotNullClass<string>("individual_name");
+        }
+        init { this._rawBodyData.Set("individual_name", value); }
     }
 
     /// <summary>
@@ -203,32 +219,6 @@ public record class AchTransferCreateParams : ParamsBase
     }
 
     /// <summary>
-    /// The name by which the recipient knows the counterparty of this transaction.
-    /// If you're processing payments on behalf of another party, use their name,
-    /// not your own, so that it's more likely the recipient understands the context
-    /// of the payment. This value is usually displayed to the recipient on their
-    /// bank statement. We recommend setting this on every transfer; if you do not,
-    /// we fall back to the `statement_descriptor`.
-    /// </summary>
-    public string? CompanyName
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<string>("company_name");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawBodyData.Set("company_name", value);
-        }
-    }
-
-    /// <summary>
     /// The type of entity that owns the receiver's account.
     /// </summary>
     public ApiEnum<string, DestinationAccountHolder>? DestinationAccountHolder
@@ -317,30 +307,6 @@ public record class AchTransferCreateParams : ParamsBase
             }
 
             this._rawBodyData.Set("individual_id", value);
-        }
-    }
-
-    /// <summary>
-    /// The name of the transfer recipient. This value is informational and generally
-    /// not verified by the recipient's bank. This value is usually displayed to
-    /// the recipient on their bank statement. We recommend setting this on every
-    /// transfer; if you do not, we fall back to the `statement_descriptor`.
-    /// </summary>
-    public string? IndividualName
-    {
-        get
-        {
-            this._rawBodyData.Freeze();
-            return this._rawBodyData.GetNullableClass<string>("individual_name");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawBodyData.Set("individual_name", value);
         }
     }
 
