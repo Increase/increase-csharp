@@ -12,7 +12,8 @@ public class AchTransferServiceTest : TestBase
             {
                 AccountID = "account_in71c4amph0vgo2qllky",
                 Amount = 100,
-                StatementDescriptor = "INVOICE 2468",
+                CompanyName = "Phonographs Inc",
+                IndividualName = "Ian Crease",
             },
             TestContext.Current.CancellationToken
         );

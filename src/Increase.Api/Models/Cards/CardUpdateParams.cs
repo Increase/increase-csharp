@@ -53,7 +53,9 @@ public record class CardUpdateParams : ParamsBase
     }
 
     /// <summary>
-    /// The card's updated billing address.
+    /// The card's billing address. This is used in card authorizations to [validate
+    /// the address provided by the acquirer](/documentation/address-verification-system-codes-and-overrides).
+    /// If not provided, the address associated with the account's entity will be used.
     /// </summary>
     public CardUpdateParamsBillingAddress? BillingAddress
     {
@@ -2126,7 +2128,9 @@ sealed class CardUpdateParamsAuthorizationControlsUsageSingleUseSettlementAmount
 }
 
 /// <summary>
-/// The card's updated billing address.
+/// The card's billing address. This is used in card authorizations to [validate
+/// the address provided by the acquirer](/documentation/address-verification-system-codes-and-overrides).
+/// If not provided, the address associated with the account's entity will be used.
 /// </summary>
 [JsonConverter(
     typeof(JsonModelConverter<
