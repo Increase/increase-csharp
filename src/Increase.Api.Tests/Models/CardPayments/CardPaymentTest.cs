@@ -589,6 +589,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -798,6 +804,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -1622,6 +1634,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -1831,6 +1849,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -2655,6 +2679,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -2864,6 +2894,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -3688,6 +3724,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -3897,6 +3939,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -4739,6 +4787,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardRefundCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::InterchangeCurrency.Usd,
@@ -4946,6 +5000,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardSettlementCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -5765,6 +5825,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardRefundCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::InterchangeCurrency.Usd,
@@ -5972,6 +6038,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardSettlementCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -6791,6 +6863,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardRefundCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::InterchangeCurrency.Usd,
@@ -6998,6 +7076,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardSettlementCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -7817,6 +7901,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardRefundCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::InterchangeCurrency.Usd,
@@ -8024,6 +8114,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardSettlementCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -8887,6 +8983,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -9096,6 +9198,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -9920,6 +10028,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -10129,6 +10243,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -10953,6 +11073,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -11162,6 +11288,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -11986,6 +12118,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -12195,6 +12333,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -13055,6 +13199,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -13264,6 +13414,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -14088,6 +14244,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -14297,6 +14459,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -15121,6 +15289,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -15330,6 +15504,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -16154,6 +16334,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -16363,6 +16549,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -17212,6 +17404,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardRefundCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::InterchangeCurrency.Usd,
@@ -17419,6 +17617,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardSettlementCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -18238,6 +18442,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardRefundCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::InterchangeCurrency.Usd,
@@ -18445,6 +18655,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardSettlementCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -19264,6 +19480,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardRefundCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::InterchangeCurrency.Usd,
@@ -19471,6 +19693,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardSettlementCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -20290,6 +20518,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardRefundCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::InterchangeCurrency.Usd,
@@ -20497,6 +20731,12 @@ public class CardPaymentTest : TestBase
                     Currency = CardPayments::CardSettlementCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -21360,6 +21600,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -21569,6 +21815,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -22393,6 +22645,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -22602,6 +22860,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -23426,6 +23690,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -23635,6 +23905,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -24459,6 +24735,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -24668,6 +24950,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -25522,6 +25810,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -25731,6 +26025,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -26555,6 +26855,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -26764,6 +27070,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -27588,6 +27900,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -27797,6 +28115,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -28621,6 +28945,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -28830,6 +29160,12 @@ public class CardPaymentTest : TestBase
                         Currency = CardPayments::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -29674,6 +30010,12 @@ public class ElementTest : TestBase
                 Currency = CardPayments::CardRefundCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = CardPayments::InterchangeCurrency.Usd,
@@ -29878,6 +30220,12 @@ public class ElementTest : TestBase
                 Currency = CardPayments::CardSettlementCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -30685,6 +31033,12 @@ public class ElementTest : TestBase
             Currency = CardPayments::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::InterchangeCurrency.Usd,
@@ -30887,6 +31241,12 @@ public class ElementTest : TestBase
             Currency = CardPayments::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -31722,6 +32082,12 @@ public class ElementTest : TestBase
                 Currency = CardPayments::CardRefundCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = CardPayments::InterchangeCurrency.Usd,
@@ -31926,6 +32292,12 @@ public class ElementTest : TestBase
                 Currency = CardPayments::CardSettlementCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -32754,6 +33126,12 @@ public class ElementTest : TestBase
                 Currency = CardPayments::CardRefundCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = CardPayments::InterchangeCurrency.Usd,
@@ -32958,6 +33336,12 @@ public class ElementTest : TestBase
                 Currency = CardPayments::CardSettlementCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -33772,6 +34156,12 @@ public class ElementTest : TestBase
             Currency = CardPayments::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::InterchangeCurrency.Usd,
@@ -33974,6 +34364,12 @@ public class ElementTest : TestBase
             Currency = CardPayments::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -34809,6 +35205,12 @@ public class ElementTest : TestBase
                 Currency = CardPayments::CardRefundCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = CardPayments::InterchangeCurrency.Usd,
@@ -35013,6 +35415,12 @@ public class ElementTest : TestBase
                 Currency = CardPayments::CardSettlementCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -35961,6 +36369,12 @@ public class ElementTest : TestBase
                 Currency = CardPayments::CardRefundCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = CardPayments::InterchangeCurrency.Usd,
@@ -36165,6 +36579,12 @@ public class ElementTest : TestBase
                 Currency = CardPayments::CardSettlementCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -58181,6 +58601,12 @@ public class CardRefundTest : TestBase
             Currency = CardPayments::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::InterchangeCurrency.Usd,
@@ -58340,6 +58766,12 @@ public class CardRefundTest : TestBase
             CardPayments::CardRefundCurrency.Usd;
         CardPayments::Interchange expectedInterchange = new()
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -58526,6 +58958,12 @@ public class CardRefundTest : TestBase
             Currency = CardPayments::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::InterchangeCurrency.Usd,
@@ -58694,6 +59132,12 @@ public class CardRefundTest : TestBase
             Currency = CardPayments::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::InterchangeCurrency.Usd,
@@ -58860,6 +59304,12 @@ public class CardRefundTest : TestBase
             CardPayments::CardRefundCurrency.Usd;
         CardPayments::Interchange expectedInterchange = new()
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -59046,6 +59496,12 @@ public class CardRefundTest : TestBase
             Currency = CardPayments::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::InterchangeCurrency.Usd,
@@ -59208,6 +59664,12 @@ public class CardRefundTest : TestBase
             Currency = CardPayments::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::InterchangeCurrency.Usd,
@@ -59564,16 +60026,29 @@ public class InterchangeTest : TestBase
     {
         var model = new CardPayments::Interchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::InterchangeCurrency.Usd,
         };
 
+        CardPayments::Adjustment expectedAdjustment = new()
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
         string expectedAmount = "0.137465";
         string expectedCode = "271";
         ApiEnum<string, CardPayments::InterchangeCurrency> expectedCurrency =
             CardPayments::InterchangeCurrency.Usd;
 
+        Assert.Equal(expectedAdjustment, model.Adjustment);
         Assert.Equal(expectedAmount, model.Amount);
         Assert.Equal(expectedCode, model.Code);
         Assert.Equal(expectedCurrency, model.Currency);
@@ -59584,6 +60059,12 @@ public class InterchangeTest : TestBase
     {
         var model = new CardPayments::Interchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -59603,6 +60084,12 @@ public class InterchangeTest : TestBase
     {
         var model = new CardPayments::Interchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -59615,11 +60102,18 @@ public class InterchangeTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        CardPayments::Adjustment expectedAdjustment = new()
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
         string expectedAmount = "0.137465";
         string expectedCode = "271";
         ApiEnum<string, CardPayments::InterchangeCurrency> expectedCurrency =
             CardPayments::InterchangeCurrency.Usd;
 
+        Assert.Equal(expectedAdjustment, deserialized.Adjustment);
         Assert.Equal(expectedAmount, deserialized.Amount);
         Assert.Equal(expectedCode, deserialized.Code);
         Assert.Equal(expectedCurrency, deserialized.Currency);
@@ -59630,6 +60124,12 @@ public class InterchangeTest : TestBase
     {
         var model = new CardPayments::Interchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::InterchangeCurrency.Usd,
@@ -59643,12 +60143,113 @@ public class InterchangeTest : TestBase
     {
         var model = new CardPayments::Interchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::InterchangeCurrency.Usd,
         };
 
         CardPayments::Interchange copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class AdjustmentTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardPayments::Adjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        DateTimeOffset expectedAdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedAmount = "-16699";
+        string expectedCode = "code";
+
+        Assert.Equal(expectedAdjustedAt, model.AdjustedAt);
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCode, model.Code);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardPayments::Adjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::Adjustment>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardPayments::Adjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardPayments::Adjustment>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        DateTimeOffset expectedAdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedAmount = "-16699";
+        string expectedCode = "code";
+
+        Assert.Equal(expectedAdjustedAt, deserialized.AdjustedAt);
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCode, deserialized.Code);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardPayments::Adjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardPayments::Adjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        CardPayments::Adjustment copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -64694,6 +65295,12 @@ public class CardSettlementTest : TestBase
             Currency = CardPayments::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -64869,6 +65476,12 @@ public class CardSettlementTest : TestBase
             CardPayments::CardSettlementCurrency.Usd;
         CardPayments::CardSettlementInterchange expectedInterchange = new()
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -65082,6 +65695,12 @@ public class CardSettlementTest : TestBase
             Currency = CardPayments::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -65271,6 +65890,12 @@ public class CardSettlementTest : TestBase
             Currency = CardPayments::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -65453,6 +66078,12 @@ public class CardSettlementTest : TestBase
             CardPayments::CardSettlementCurrency.Usd;
         CardPayments::CardSettlementInterchange expectedInterchange = new()
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -65666,6 +66297,12 @@ public class CardSettlementTest : TestBase
             Currency = CardPayments::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -65849,6 +66486,12 @@ public class CardSettlementTest : TestBase
             Currency = CardPayments::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -66217,16 +66860,29 @@ public class CardSettlementInterchangeTest : TestBase
     {
         var model = new CardPayments::CardSettlementInterchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
         };
 
+        CardPayments::CardSettlementInterchangeAdjustment expectedAdjustment = new()
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
         string expectedAmount = "0.137465";
         string expectedCode = "271";
         ApiEnum<string, CardPayments::CardSettlementInterchangeCurrency> expectedCurrency =
             CardPayments::CardSettlementInterchangeCurrency.Usd;
 
+        Assert.Equal(expectedAdjustment, model.Adjustment);
         Assert.Equal(expectedAmount, model.Amount);
         Assert.Equal(expectedCode, model.Code);
         Assert.Equal(expectedCurrency, model.Currency);
@@ -66237,6 +66893,12 @@ public class CardSettlementInterchangeTest : TestBase
     {
         var model = new CardPayments::CardSettlementInterchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -66256,6 +66918,12 @@ public class CardSettlementInterchangeTest : TestBase
     {
         var model = new CardPayments::CardSettlementInterchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -66268,11 +66936,18 @@ public class CardSettlementInterchangeTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        CardPayments::CardSettlementInterchangeAdjustment expectedAdjustment = new()
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
         string expectedAmount = "0.137465";
         string expectedCode = "271";
         ApiEnum<string, CardPayments::CardSettlementInterchangeCurrency> expectedCurrency =
             CardPayments::CardSettlementInterchangeCurrency.Usd;
 
+        Assert.Equal(expectedAdjustment, deserialized.Adjustment);
         Assert.Equal(expectedAmount, deserialized.Amount);
         Assert.Equal(expectedCode, deserialized.Code);
         Assert.Equal(expectedCurrency, deserialized.Currency);
@@ -66283,6 +66958,12 @@ public class CardSettlementInterchangeTest : TestBase
     {
         var model = new CardPayments::CardSettlementInterchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
@@ -66296,12 +66977,115 @@ public class CardSettlementInterchangeTest : TestBase
     {
         var model = new CardPayments::CardSettlementInterchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = CardPayments::CardSettlementInterchangeCurrency.Usd,
         };
 
         CardPayments::CardSettlementInterchange copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardSettlementInterchangeAdjustmentTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardPayments::CardSettlementInterchangeAdjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        DateTimeOffset expectedAdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedAmount = "-16699";
+        string expectedCode = "code";
+
+        Assert.Equal(expectedAdjustedAt, model.AdjustedAt);
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCode, model.Code);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardPayments::CardSettlementInterchangeAdjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<CardPayments::CardSettlementInterchangeAdjustment>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardPayments::CardSettlementInterchangeAdjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<CardPayments::CardSettlementInterchangeAdjustment>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        DateTimeOffset expectedAdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedAmount = "-16699";
+        string expectedCode = "code";
+
+        Assert.Equal(expectedAdjustedAt, deserialized.AdjustedAt);
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCode, deserialized.Code);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardPayments::CardSettlementInterchangeAdjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardPayments::CardSettlementInterchangeAdjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        CardPayments::CardSettlementInterchangeAdjustment copied = new(model);
 
         Assert.Equal(model, copied);
     }
