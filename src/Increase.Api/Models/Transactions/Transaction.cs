@@ -7639,6 +7639,20 @@ sealed class CardRefundCurrencyConverter : JsonConverter<CardRefundCurrency>
 public sealed record class Interchange : JsonModel
 {
     /// <summary>
+    /// An adjustment the card network made to the interchange after this transaction
+    /// cleared, if any.
+    /// </summary>
+    public required Adjustment? Adjustment
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<Adjustment>("adjustment");
+        }
+        init { this._rawData.Set("adjustment", value); }
+    }
+
+    /// <summary>
     /// The interchange amount given as a string containing a decimal number in major
     /// units (so e.g., "3.14" for $3.14). The amount is a positive number if it is
     /// credited to Increase (e.g., settlements) and a negative number if it is debited
@@ -7683,6 +7697,7 @@ public sealed record class Interchange : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        this.Adjustment?.Validate();
         _ = this.Amount;
         _ = this.Code;
         this.Currency.Validate();
@@ -7721,6 +7736,98 @@ class InterchangeFromRaw : IFromRawJson<Interchange>
     /// <inheritdoc/>
     public Interchange FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         Interchange.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// An adjustment the card network made to the interchange after this transaction
+/// cleared, if any.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Adjustment, AdjustmentFromRaw>))]
+public sealed record class Adjustment : JsonModel
+{
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the interchange was adjusted.
+    /// </summary>
+    public required System::DateTimeOffset AdjustedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("adjusted_at");
+        }
+        init { this._rawData.Set("adjusted_at", value); }
+    }
+
+    /// <summary>
+    /// The adjustment amount given as a string containing a decimal number in major
+    /// units (so e.g., "3.14" for $3.14). The amount is a positive number if it is
+    /// credited to Increase and a negative number if it is debited.
+    /// </summary>
+    public required string Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
+    /// The card network specific interchange code that applies after the adjustment.
+    /// </summary>
+    public required string Code
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("code");
+        }
+        init { this._rawData.Set("code", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.AdjustedAt;
+        _ = this.Amount;
+        _ = this.Code;
+    }
+
+    public Adjustment() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Adjustment(Adjustment adjustment)
+        : base(adjustment) { }
+#pragma warning restore CS8618
+
+    public Adjustment(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Adjustment(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="AdjustmentFromRaw.FromRawUnchecked"/>
+    public static Adjustment FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class AdjustmentFromRaw : IFromRawJson<Adjustment>
+{
+    /// <inheritdoc/>
+    public Adjustment FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Adjustment.FromRawUnchecked(rawData);
 }
 
 /// <summary>
@@ -12788,6 +12895,22 @@ sealed class CardSettlementCurrencyConverter : JsonConverter<CardSettlementCurre
 public sealed record class CardSettlementInterchange : JsonModel
 {
     /// <summary>
+    /// An adjustment the card network made to the interchange after this transaction
+    /// cleared, if any.
+    /// </summary>
+    public required CardSettlementInterchangeAdjustment? Adjustment
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<CardSettlementInterchangeAdjustment>(
+                "adjustment"
+            );
+        }
+        init { this._rawData.Set("adjustment", value); }
+    }
+
+    /// <summary>
     /// The interchange amount given as a string containing a decimal number in major
     /// units (so e.g., "3.14" for $3.14). The amount is a positive number if it is
     /// credited to Increase (e.g., settlements) and a negative number if it is debited
@@ -12834,6 +12957,7 @@ public sealed record class CardSettlementInterchange : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        this.Adjustment?.Validate();
         _ = this.Amount;
         _ = this.Code;
         this.Currency.Validate();
@@ -12875,6 +12999,108 @@ class CardSettlementInterchangeFromRaw : IFromRawJson<CardSettlementInterchange>
     public CardSettlementInterchange FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => CardSettlementInterchange.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// An adjustment the card network made to the interchange after this transaction
+/// cleared, if any.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardSettlementInterchangeAdjustment,
+        CardSettlementInterchangeAdjustmentFromRaw
+    >)
+)]
+public sealed record class CardSettlementInterchangeAdjustment : JsonModel
+{
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the interchange was adjusted.
+    /// </summary>
+    public required System::DateTimeOffset AdjustedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("adjusted_at");
+        }
+        init { this._rawData.Set("adjusted_at", value); }
+    }
+
+    /// <summary>
+    /// The adjustment amount given as a string containing a decimal number in major
+    /// units (so e.g., "3.14" for $3.14). The amount is a positive number if it is
+    /// credited to Increase and a negative number if it is debited.
+    /// </summary>
+    public required string Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
+    /// The card network specific interchange code that applies after the adjustment.
+    /// </summary>
+    public required string Code
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("code");
+        }
+        init { this._rawData.Set("code", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.AdjustedAt;
+        _ = this.Amount;
+        _ = this.Code;
+    }
+
+    public CardSettlementInterchangeAdjustment() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardSettlementInterchangeAdjustment(
+        CardSettlementInterchangeAdjustment cardSettlementInterchangeAdjustment
+    )
+        : base(cardSettlementInterchangeAdjustment) { }
+#pragma warning restore CS8618
+
+    public CardSettlementInterchangeAdjustment(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardSettlementInterchangeAdjustment(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardSettlementInterchangeAdjustmentFromRaw.FromRawUnchecked"/>
+    public static CardSettlementInterchangeAdjustment FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class CardSettlementInterchangeAdjustmentFromRaw : IFromRawJson<CardSettlementInterchangeAdjustment>
+{
+    /// <inheritdoc/>
+    public CardSettlementInterchangeAdjustment FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardSettlementInterchangeAdjustment.FromRawUnchecked(rawData);
 }
 
 /// <summary>
