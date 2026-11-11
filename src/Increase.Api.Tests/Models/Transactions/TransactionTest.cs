@@ -196,6 +196,12 @@ public class TransactionTest : TestBase
                     Currency = Transactions::CardRefundCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = Transactions::InterchangeCurrency.Usd,
@@ -368,6 +374,12 @@ public class TransactionTest : TestBase
                     Currency = Transactions::CardSettlementCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -906,6 +918,12 @@ public class TransactionTest : TestBase
                 Currency = Transactions::CardRefundCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::InterchangeCurrency.Usd,
@@ -1075,6 +1093,12 @@ public class TransactionTest : TestBase
                 Currency = Transactions::CardSettlementCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -1622,6 +1646,12 @@ public class TransactionTest : TestBase
                     Currency = Transactions::CardRefundCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = Transactions::InterchangeCurrency.Usd,
@@ -1794,6 +1824,12 @@ public class TransactionTest : TestBase
                     Currency = Transactions::CardSettlementCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -2345,6 +2381,12 @@ public class TransactionTest : TestBase
                     Currency = Transactions::CardRefundCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = Transactions::InterchangeCurrency.Usd,
@@ -2517,6 +2559,12 @@ public class TransactionTest : TestBase
                     Currency = Transactions::CardSettlementCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -3062,6 +3110,12 @@ public class TransactionTest : TestBase
                 Currency = Transactions::CardRefundCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::InterchangeCurrency.Usd,
@@ -3231,6 +3285,12 @@ public class TransactionTest : TestBase
                 Currency = Transactions::CardSettlementCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -3778,6 +3838,12 @@ public class TransactionTest : TestBase
                     Currency = Transactions::CardRefundCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = Transactions::InterchangeCurrency.Usd,
@@ -3950,6 +4016,12 @@ public class TransactionTest : TestBase
                     Currency = Transactions::CardSettlementCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -4495,6 +4567,12 @@ public class TransactionTest : TestBase
                     Currency = Transactions::CardRefundCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = Transactions::InterchangeCurrency.Usd,
@@ -4667,6 +4745,12 @@ public class TransactionTest : TestBase
                     Currency = Transactions::CardSettlementCurrency.Usd,
                     Interchange = new()
                     {
+                        Adjustment = new()
+                        {
+                            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                            Amount = "-16699",
+                            Code = "code",
+                        },
                         Amount = "0.137465",
                         Code = "271",
                         Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -5323,6 +5407,12 @@ public class SourceTest : TestBase
                 Currency = Transactions::CardRefundCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::InterchangeCurrency.Usd,
@@ -5492,6 +5582,12 @@ public class SourceTest : TestBase
                 Currency = Transactions::CardSettlementCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -6009,6 +6105,12 @@ public class SourceTest : TestBase
             Currency = Transactions::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::InterchangeCurrency.Usd,
@@ -6177,6 +6279,12 @@ public class SourceTest : TestBase
             Currency = Transactions::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -6781,6 +6889,12 @@ public class SourceTest : TestBase
                 Currency = Transactions::CardRefundCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::InterchangeCurrency.Usd,
@@ -6950,6 +7064,12 @@ public class SourceTest : TestBase
                 Currency = Transactions::CardSettlementCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -7482,6 +7602,12 @@ public class SourceTest : TestBase
                 Currency = Transactions::CardRefundCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::InterchangeCurrency.Usd,
@@ -7651,6 +7777,12 @@ public class SourceTest : TestBase
                 Currency = Transactions::CardSettlementCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -8175,6 +8307,12 @@ public class SourceTest : TestBase
             Currency = Transactions::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::InterchangeCurrency.Usd,
@@ -8343,6 +8481,12 @@ public class SourceTest : TestBase
             Currency = Transactions::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -8953,6 +9097,12 @@ public class SourceTest : TestBase
                 Currency = Transactions::CardRefundCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::InterchangeCurrency.Usd,
@@ -9122,6 +9272,12 @@ public class SourceTest : TestBase
                 Currency = Transactions::CardSettlementCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -9938,6 +10094,12 @@ public class SourceTest : TestBase
                 Currency = Transactions::CardRefundCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::InterchangeCurrency.Usd,
@@ -10107,6 +10269,12 @@ public class SourceTest : TestBase
                 Currency = Transactions::CardSettlementCurrency.Usd,
                 Interchange = new()
                 {
+                    Adjustment = new()
+                    {
+                        AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Amount = "-16699",
+                        Code = "code",
+                    },
                     Amount = "0.137465",
                     Code = "271",
                     Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -14847,6 +15015,9 @@ public class FeeTypeTest : TestBase
     [InlineData(Transactions::FeeType.VisaAdvertisingServiceCommercialCredit)]
     [InlineData(Transactions::FeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(Transactions::FeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(Transactions::FeeType.VisaAtmCashWithdrawalDomestic)]
+    [InlineData(Transactions::FeeType.VisaAtmCashWithdrawalInternational)]
+    [InlineData(Transactions::FeeType.VisaAtmCashDepositDomestic)]
     [InlineData(Transactions::FeeType.PulseSwitchFee)]
     [InlineData(Transactions::FeeType.PulseTokenizationFee)]
     public void Validation_Works(Transactions::FeeType rawValue)
@@ -14897,6 +15068,9 @@ public class FeeTypeTest : TestBase
     [InlineData(Transactions::FeeType.VisaAdvertisingServiceCommercialCredit)]
     [InlineData(Transactions::FeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(Transactions::FeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(Transactions::FeeType.VisaAtmCashWithdrawalDomestic)]
+    [InlineData(Transactions::FeeType.VisaAtmCashWithdrawalInternational)]
+    [InlineData(Transactions::FeeType.VisaAtmCashDepositDomestic)]
     [InlineData(Transactions::FeeType.PulseSwitchFee)]
     [InlineData(Transactions::FeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(Transactions::FeeType rawValue)
@@ -15678,6 +15852,12 @@ public class CardRefundTest : TestBase
             Currency = Transactions::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::InterchangeCurrency.Usd,
@@ -15837,6 +16017,12 @@ public class CardRefundTest : TestBase
             Transactions::CardRefundCurrency.Usd;
         Transactions::Interchange expectedInterchange = new()
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::InterchangeCurrency.Usd,
@@ -16023,6 +16209,12 @@ public class CardRefundTest : TestBase
             Currency = Transactions::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::InterchangeCurrency.Usd,
@@ -16191,6 +16383,12 @@ public class CardRefundTest : TestBase
             Currency = Transactions::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::InterchangeCurrency.Usd,
@@ -16357,6 +16555,12 @@ public class CardRefundTest : TestBase
             Transactions::CardRefundCurrency.Usd;
         Transactions::Interchange expectedInterchange = new()
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::InterchangeCurrency.Usd,
@@ -16543,6 +16747,12 @@ public class CardRefundTest : TestBase
             Currency = Transactions::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::InterchangeCurrency.Usd,
@@ -16705,6 +16915,12 @@ public class CardRefundTest : TestBase
             Currency = Transactions::CardRefundCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::InterchangeCurrency.Usd,
@@ -17061,16 +17277,29 @@ public class InterchangeTest : TestBase
     {
         var model = new Transactions::Interchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::InterchangeCurrency.Usd,
         };
 
+        Transactions::Adjustment expectedAdjustment = new()
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
         string expectedAmount = "0.137465";
         string expectedCode = "271";
         ApiEnum<string, Transactions::InterchangeCurrency> expectedCurrency =
             Transactions::InterchangeCurrency.Usd;
 
+        Assert.Equal(expectedAdjustment, model.Adjustment);
         Assert.Equal(expectedAmount, model.Amount);
         Assert.Equal(expectedCode, model.Code);
         Assert.Equal(expectedCurrency, model.Currency);
@@ -17081,6 +17310,12 @@ public class InterchangeTest : TestBase
     {
         var model = new Transactions::Interchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::InterchangeCurrency.Usd,
@@ -17100,6 +17335,12 @@ public class InterchangeTest : TestBase
     {
         var model = new Transactions::Interchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::InterchangeCurrency.Usd,
@@ -17112,11 +17353,18 @@ public class InterchangeTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        Transactions::Adjustment expectedAdjustment = new()
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
         string expectedAmount = "0.137465";
         string expectedCode = "271";
         ApiEnum<string, Transactions::InterchangeCurrency> expectedCurrency =
             Transactions::InterchangeCurrency.Usd;
 
+        Assert.Equal(expectedAdjustment, deserialized.Adjustment);
         Assert.Equal(expectedAmount, deserialized.Amount);
         Assert.Equal(expectedCode, deserialized.Code);
         Assert.Equal(expectedCurrency, deserialized.Currency);
@@ -17127,6 +17375,12 @@ public class InterchangeTest : TestBase
     {
         var model = new Transactions::Interchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::InterchangeCurrency.Usd,
@@ -17140,12 +17394,113 @@ public class InterchangeTest : TestBase
     {
         var model = new Transactions::Interchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::InterchangeCurrency.Usd,
         };
 
         Transactions::Interchange copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class AdjustmentTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Transactions::Adjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        DateTimeOffset expectedAdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedAmount = "-16699";
+        string expectedCode = "code";
+
+        Assert.Equal(expectedAdjustedAt, model.AdjustedAt);
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCode, model.Code);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Transactions::Adjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Transactions::Adjustment>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Transactions::Adjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Transactions::Adjustment>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        DateTimeOffset expectedAdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedAmount = "-16699";
+        string expectedCode = "code";
+
+        Assert.Equal(expectedAdjustedAt, deserialized.AdjustedAt);
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCode, deserialized.Code);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Transactions::Adjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Transactions::Adjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        Transactions::Adjustment copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -18869,16 +19224,40 @@ public class FuelTypeTest : TestBase
     [InlineData(Transactions::FuelType.HeatingOil)]
     [InlineData(Transactions::FuelType.OtherFuelNonTaxable)]
     [InlineData(Transactions::FuelType.KeroseneUltraLowSulfur)]
+    [InlineData(Transactions::FuelType.KeroseneLowSulfurNonTaxable)]
+    [InlineData(Transactions::FuelType.KeroseneUltraLowSulfurNonTaxable)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel1_110Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel2_240Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel3_480Volt)]
+    [InlineData(Transactions::FuelType.BiodieselBlend2OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend5OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend10OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend11OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend15OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend20OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.Diesel1OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.Diesel2OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.Diesel1PremiumOffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.Diesel2PremiumOffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.AdditiveDosage)]
+    [InlineData(Transactions::FuelType.EthanolBlendsE16ToE84)]
+    [InlineData(Transactions::FuelType.LowOctaneUnleaded)]
+    [InlineData(Transactions::FuelType.BlendedDiesel1And2)]
+    [InlineData(Transactions::FuelType.OffRoadRegularNonTaxable)]
+    [InlineData(Transactions::FuelType.OffRoadMidOrPlusNonTaxable)]
+    [InlineData(Transactions::FuelType.OffRoadPremiumOrSuperNonTaxable)]
+    [InlineData(Transactions::FuelType.OffRoadMidOrPlus2NonTaxable)]
+    [InlineData(Transactions::FuelType.OffRoadPremiumOrSuper2NonTaxable)]
+    [InlineData(Transactions::FuelType.RecreationalFuel90Octane)]
+    [InlineData(Transactions::FuelType.HydrogenH35)]
+    [InlineData(Transactions::FuelType.HydrogenH70)]
     [InlineData(Transactions::FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend1OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend75OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend99OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend100OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.RenewableDieselR25HydrotreatedVegetableOil25Blend)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel4_800Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel5Megawatt)]
     [InlineData(Transactions::FuelType.HydrotreatedVegetableOil100)]
@@ -18990,16 +19369,40 @@ public class FuelTypeTest : TestBase
     [InlineData(Transactions::FuelType.HeatingOil)]
     [InlineData(Transactions::FuelType.OtherFuelNonTaxable)]
     [InlineData(Transactions::FuelType.KeroseneUltraLowSulfur)]
+    [InlineData(Transactions::FuelType.KeroseneLowSulfurNonTaxable)]
+    [InlineData(Transactions::FuelType.KeroseneUltraLowSulfurNonTaxable)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel1_110Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel2_240Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel3_480Volt)]
+    [InlineData(Transactions::FuelType.BiodieselBlend2OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend5OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend10OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend11OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend15OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.BiodieselBlend20OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.Diesel1OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.Diesel2OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.Diesel1PremiumOffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.Diesel2PremiumOffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.AdditiveDosage)]
+    [InlineData(Transactions::FuelType.EthanolBlendsE16ToE84)]
+    [InlineData(Transactions::FuelType.LowOctaneUnleaded)]
+    [InlineData(Transactions::FuelType.BlendedDiesel1And2)]
+    [InlineData(Transactions::FuelType.OffRoadRegularNonTaxable)]
+    [InlineData(Transactions::FuelType.OffRoadMidOrPlusNonTaxable)]
+    [InlineData(Transactions::FuelType.OffRoadPremiumOrSuperNonTaxable)]
+    [InlineData(Transactions::FuelType.OffRoadMidOrPlus2NonTaxable)]
+    [InlineData(Transactions::FuelType.OffRoadPremiumOrSuper2NonTaxable)]
+    [InlineData(Transactions::FuelType.RecreationalFuel90Octane)]
+    [InlineData(Transactions::FuelType.HydrogenH35)]
+    [InlineData(Transactions::FuelType.HydrogenH70)]
     [InlineData(Transactions::FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend1OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend75OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend99OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.BiodieselBlend100OffRoadNonTaxable)]
     [InlineData(Transactions::FuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable)]
+    [InlineData(Transactions::FuelType.RenewableDieselR25HydrotreatedVegetableOil25Blend)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel4_800Volt)]
     [InlineData(Transactions::FuelType.ElectricVehicleChargingLevel5Megawatt)]
     [InlineData(Transactions::FuelType.HydrotreatedVegetableOil100)]
@@ -20992,6 +21395,9 @@ public class CardRefundSchemeFeeFeeTypeTest : TestBase
     [InlineData(Transactions::CardRefundSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit)]
     [InlineData(Transactions::CardRefundSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(Transactions::CardRefundSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(Transactions::CardRefundSchemeFeeFeeType.VisaAtmCashWithdrawalDomestic)]
+    [InlineData(Transactions::CardRefundSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
+    [InlineData(Transactions::CardRefundSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(Transactions::CardRefundSchemeFeeFeeType.PulseSwitchFee)]
     [InlineData(Transactions::CardRefundSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(Transactions::CardRefundSchemeFeeFeeType rawValue)
@@ -21049,6 +21455,9 @@ public class CardRefundSchemeFeeFeeTypeTest : TestBase
     [InlineData(Transactions::CardRefundSchemeFeeFeeType.VisaAdvertisingServiceCommercialCredit)]
     [InlineData(Transactions::CardRefundSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(Transactions::CardRefundSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(Transactions::CardRefundSchemeFeeFeeType.VisaAtmCashWithdrawalDomestic)]
+    [InlineData(Transactions::CardRefundSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
+    [InlineData(Transactions::CardRefundSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(Transactions::CardRefundSchemeFeeFeeType.PulseSwitchFee)]
     [InlineData(Transactions::CardRefundSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(Transactions::CardRefundSchemeFeeFeeType rawValue)
@@ -21319,6 +21728,12 @@ public class CardSettlementTest : TestBase
             Currency = Transactions::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -21494,6 +21909,12 @@ public class CardSettlementTest : TestBase
             Transactions::CardSettlementCurrency.Usd;
         Transactions::CardSettlementInterchange expectedInterchange = new()
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -21707,6 +22128,12 @@ public class CardSettlementTest : TestBase
             Currency = Transactions::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -21896,6 +22323,12 @@ public class CardSettlementTest : TestBase
             Currency = Transactions::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -22078,6 +22511,12 @@ public class CardSettlementTest : TestBase
             Transactions::CardSettlementCurrency.Usd;
         Transactions::CardSettlementInterchange expectedInterchange = new()
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -22291,6 +22730,12 @@ public class CardSettlementTest : TestBase
             Currency = Transactions::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -22474,6 +22919,12 @@ public class CardSettlementTest : TestBase
             Currency = Transactions::CardSettlementCurrency.Usd,
             Interchange = new()
             {
+                Adjustment = new()
+                {
+                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Amount = "-16699",
+                    Code = "code",
+                },
                 Amount = "0.137465",
                 Code = "271",
                 Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -22842,16 +23293,29 @@ public class CardSettlementInterchangeTest : TestBase
     {
         var model = new Transactions::CardSettlementInterchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
         };
 
+        Transactions::CardSettlementInterchangeAdjustment expectedAdjustment = new()
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
         string expectedAmount = "0.137465";
         string expectedCode = "271";
         ApiEnum<string, Transactions::CardSettlementInterchangeCurrency> expectedCurrency =
             Transactions::CardSettlementInterchangeCurrency.Usd;
 
+        Assert.Equal(expectedAdjustment, model.Adjustment);
         Assert.Equal(expectedAmount, model.Amount);
         Assert.Equal(expectedCode, model.Code);
         Assert.Equal(expectedCurrency, model.Currency);
@@ -22862,6 +23326,12 @@ public class CardSettlementInterchangeTest : TestBase
     {
         var model = new Transactions::CardSettlementInterchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -22881,6 +23351,12 @@ public class CardSettlementInterchangeTest : TestBase
     {
         var model = new Transactions::CardSettlementInterchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -22893,11 +23369,18 @@ public class CardSettlementInterchangeTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        Transactions::CardSettlementInterchangeAdjustment expectedAdjustment = new()
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
         string expectedAmount = "0.137465";
         string expectedCode = "271";
         ApiEnum<string, Transactions::CardSettlementInterchangeCurrency> expectedCurrency =
             Transactions::CardSettlementInterchangeCurrency.Usd;
 
+        Assert.Equal(expectedAdjustment, deserialized.Adjustment);
         Assert.Equal(expectedAmount, deserialized.Amount);
         Assert.Equal(expectedCode, deserialized.Code);
         Assert.Equal(expectedCurrency, deserialized.Currency);
@@ -22908,6 +23391,12 @@ public class CardSettlementInterchangeTest : TestBase
     {
         var model = new Transactions::CardSettlementInterchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -22921,12 +23410,115 @@ public class CardSettlementInterchangeTest : TestBase
     {
         var model = new Transactions::CardSettlementInterchange
         {
+            Adjustment = new()
+            {
+                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Amount = "-16699",
+                Code = "code",
+            },
             Amount = "0.137465",
             Code = "271",
             Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
         };
 
         Transactions::CardSettlementInterchange copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardSettlementInterchangeAdjustmentTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Transactions::CardSettlementInterchangeAdjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        DateTimeOffset expectedAdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedAmount = "-16699";
+        string expectedCode = "code";
+
+        Assert.Equal(expectedAdjustedAt, model.AdjustedAt);
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCode, model.Code);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Transactions::CardSettlementInterchangeAdjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<Transactions::CardSettlementInterchangeAdjustment>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Transactions::CardSettlementInterchangeAdjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<Transactions::CardSettlementInterchangeAdjustment>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        DateTimeOffset expectedAdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedAmount = "-16699";
+        string expectedCode = "code";
+
+        Assert.Equal(expectedAdjustedAt, deserialized.AdjustedAt);
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(expectedCode, deserialized.Code);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Transactions::CardSettlementInterchangeAdjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Transactions::CardSettlementInterchangeAdjustment
+        {
+            AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Amount = "-16699",
+            Code = "code",
+        };
+
+        Transactions::CardSettlementInterchangeAdjustment copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -24863,6 +25455,12 @@ public class CardSettlementPurchaseDetailsFleetFuelTypeTest : TestBase
     [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.OtherFuelNonTaxable)]
     [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.KeroseneUltraLowSulfur)]
     [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.KeroseneLowSulfurNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.KeroseneUltraLowSulfurNonTaxable
+    )]
+    [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel1_110Volt
     )]
     [InlineData(
@@ -24871,7 +25469,52 @@ public class CardSettlementPurchaseDetailsFleetFuelTypeTest : TestBase
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt
     )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend2OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend5OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend10OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend11OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend15OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend20OffRoadNonTaxable
+    )]
     [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.Diesel1OffRoadNonTaxable)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.Diesel2OffRoadNonTaxable)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.Diesel1PremiumOffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.Diesel2PremiumOffRoadNonTaxable
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AdditiveDosage)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.EthanolBlendsE16ToE84)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.LowOctaneUnleaded)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.BlendedDiesel1And2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.OffRoadRegularNonTaxable)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.OffRoadMidOrPlusNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.OffRoadPremiumOrSuperNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.OffRoadMidOrPlus2NonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.OffRoadPremiumOrSuper2NonTaxable
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RecreationalFuel90Octane)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.HydrogenH35)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.HydrogenH70)]
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable
     )]
@@ -24889,6 +25532,9 @@ public class CardSettlementPurchaseDetailsFleetFuelTypeTest : TestBase
     )]
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR25HydrotreatedVegetableOil25Blend
     )]
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel4_800Volt
@@ -25053,6 +25699,12 @@ public class CardSettlementPurchaseDetailsFleetFuelTypeTest : TestBase
     [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.OtherFuelNonTaxable)]
     [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.KeroseneUltraLowSulfur)]
     [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.KeroseneLowSulfurNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.KeroseneUltraLowSulfurNonTaxable
+    )]
+    [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel1_110Volt
     )]
     [InlineData(
@@ -25061,7 +25713,52 @@ public class CardSettlementPurchaseDetailsFleetFuelTypeTest : TestBase
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt
     )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend2OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend5OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend10OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend11OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend15OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend20OffRoadNonTaxable
+    )]
     [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.Diesel1OffRoadNonTaxable)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.Diesel2OffRoadNonTaxable)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.Diesel1PremiumOffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.Diesel2PremiumOffRoadNonTaxable
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.AdditiveDosage)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.EthanolBlendsE16ToE84)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.LowOctaneUnleaded)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.BlendedDiesel1And2)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.OffRoadRegularNonTaxable)]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.OffRoadMidOrPlusNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.OffRoadPremiumOrSuperNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.OffRoadMidOrPlus2NonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.OffRoadPremiumOrSuper2NonTaxable
+    )]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.RecreationalFuel90Octane)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.HydrogenH35)]
+    [InlineData(Transactions::CardSettlementPurchaseDetailsFleetFuelType.HydrogenH70)]
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable
     )]
@@ -25079,6 +25776,9 @@ public class CardSettlementPurchaseDetailsFleetFuelTypeTest : TestBase
     )]
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable
+    )]
+    [InlineData(
+        Transactions::CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR25HydrotreatedVegetableOil25Blend
     )]
     [InlineData(
         Transactions::CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel4_800Volt
@@ -27437,6 +28137,9 @@ public class CardSettlementSchemeFeeFeeTypeTest : TestBase
     [InlineData(
         Transactions::CardSettlementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
+    [InlineData(Transactions::CardSettlementSchemeFeeFeeType.VisaAtmCashWithdrawalDomestic)]
+    [InlineData(Transactions::CardSettlementSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
+    [InlineData(Transactions::CardSettlementSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(Transactions::CardSettlementSchemeFeeFeeType.PulseSwitchFee)]
     [InlineData(Transactions::CardSettlementSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(Transactions::CardSettlementSchemeFeeFeeType rawValue)
@@ -27502,6 +28205,9 @@ public class CardSettlementSchemeFeeFeeTypeTest : TestBase
     [InlineData(
         Transactions::CardSettlementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit
     )]
+    [InlineData(Transactions::CardSettlementSchemeFeeFeeType.VisaAtmCashWithdrawalDomestic)]
+    [InlineData(Transactions::CardSettlementSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
+    [InlineData(Transactions::CardSettlementSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(Transactions::CardSettlementSchemeFeeFeeType.PulseSwitchFee)]
     [InlineData(Transactions::CardSettlementSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(Transactions::CardSettlementSchemeFeeFeeType rawValue)
