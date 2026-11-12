@@ -7070,6 +7070,9 @@ public class FeeTypeTest : TestBase
     [InlineData(PendingTransactions::FeeType.VisaAdvertisingServiceCommercialCredit)]
     [InlineData(PendingTransactions::FeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(PendingTransactions::FeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(PendingTransactions::FeeType.VisaAtmCashWithdrawalDomestic)]
+    [InlineData(PendingTransactions::FeeType.VisaAtmCashWithdrawalInternational)]
+    [InlineData(PendingTransactions::FeeType.VisaAtmCashDepositDomestic)]
     [InlineData(PendingTransactions::FeeType.PulseSwitchFee)]
     [InlineData(PendingTransactions::FeeType.PulseTokenizationFee)]
     public void Validation_Works(PendingTransactions::FeeType rawValue)
@@ -7120,6 +7123,9 @@ public class FeeTypeTest : TestBase
     [InlineData(PendingTransactions::FeeType.VisaAdvertisingServiceCommercialCredit)]
     [InlineData(PendingTransactions::FeeType.VisaCommunityGrowthAccelerationProgram)]
     [InlineData(PendingTransactions::FeeType.VisaProcessingGuaranteeCommercialCredit)]
+    [InlineData(PendingTransactions::FeeType.VisaAtmCashWithdrawalDomestic)]
+    [InlineData(PendingTransactions::FeeType.VisaAtmCashWithdrawalInternational)]
+    [InlineData(PendingTransactions::FeeType.VisaAtmCashDepositDomestic)]
     [InlineData(PendingTransactions::FeeType.PulseSwitchFee)]
     [InlineData(PendingTransactions::FeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(PendingTransactions::FeeType rawValue)
