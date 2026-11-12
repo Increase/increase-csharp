@@ -4597,7 +4597,7 @@ public enum FeeType
     /// Advanced Authorization is a fraud detection tool that monitors and risk evaluates
     /// 100 percent of US VisaNet authorizations in real-time. Activity related to
     /// Purchase (includes Signature Authenticated Visa and PIN Authenticated Visa
-    /// Debit (PAVD) transactions).
+    /// Debit (PAVD) transactions) and ATM transactions.
     /// </summary>
     VisaAdvancedAuthorization,
 
@@ -4714,6 +4714,22 @@ public enum FeeType
     VisaProcessingGuaranteeCommercialCredit,
 
     /// <summary>
+    /// Activity and fees for the processing of an original cash withdrawal at a domestic ATM.
+    /// </summary>
+    VisaAtmCashWithdrawalDomestic,
+
+    /// <summary>
+    /// Activity and fees for the processing of an original cash withdrawal at an
+    /// international ATM.
+    /// </summary>
+    VisaAtmCashWithdrawalInternational,
+
+    /// <summary>
+    /// Activity and fees for the processing of an original deposit at a domestic ATM.
+    /// </summary>
+    VisaAtmCashDepositDomestic,
+
+    /// <summary>
     /// Pulse Switch Fee is a fee charged by the Pulse network for processing transactions
     /// on its network.
     /// </summary>
@@ -4775,6 +4791,9 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
                 FeeType.VisaCommunityGrowthAccelerationProgram,
             "visa_processing_guarantee_commercial_credit" =>
                 FeeType.VisaProcessingGuaranteeCommercialCredit,
+            "visa_atm_cash_withdrawal_domestic" => FeeType.VisaAtmCashWithdrawalDomestic,
+            "visa_atm_cash_withdrawal_international" => FeeType.VisaAtmCashWithdrawalInternational,
+            "visa_atm_cash_deposit_domestic" => FeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => FeeType.PulseSwitchFee,
             "pulse_tokenization_fee" => FeeType.PulseTokenizationFee,
             _ => (FeeType)(-1),
@@ -4827,6 +4846,10 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
                     "visa_community_growth_acceleration_program",
                 FeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
+                FeeType.VisaAtmCashWithdrawalDomestic => "visa_atm_cash_withdrawal_domestic",
+                FeeType.VisaAtmCashWithdrawalInternational =>
+                    "visa_atm_cash_withdrawal_international",
+                FeeType.VisaAtmCashDepositDomestic => "visa_atm_cash_deposit_domestic",
                 FeeType.PulseSwitchFee => "pulse_switch_fee",
                 FeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
