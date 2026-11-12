@@ -90,6 +90,16 @@ public class TransactionListPageResponseTest : TestBase
                             LostAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         },
+                        CardDisputeProvisionalCredit = new()
+                        {
+                            Amount = 1000,
+                            CardDisputeID = "card_dispute_h9sc95nbl1cgltpp7men",
+                            CardholderAccountID = "account_in71c4amph0vgo2qllky",
+                            Currency = Transactions::CardDisputeProvisionalCreditCurrency.Usd,
+                            EventType =
+                                Transactions::CardDisputeProvisionalCreditEventType.Provided,
+                            ProvisionalCreditFundingAccountID = "account_2w2wmv4blnsd1bjhn3zw",
+                        },
                         CardFinancial = new()
                         {
                             ID = "card_financial_di5b98i72ppomo268zfk",
@@ -200,6 +210,12 @@ public class TransactionListPageResponseTest : TestBase
                             Currency = Transactions::CardRefundCurrency.Usd,
                             Interchange = new()
                             {
+                                Adjustment = new()
+                                {
+                                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                    Amount = "-16699",
+                                    Code = "code",
+                                },
                                 Amount = "0.137465",
                                 Code = "271",
                                 Currency = Transactions::InterchangeCurrency.Usd,
@@ -378,6 +394,12 @@ public class TransactionListPageResponseTest : TestBase
                             Currency = Transactions::CardSettlementCurrency.Usd,
                             Interchange = new()
                             {
+                                Adjustment = new()
+                                {
+                                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                    Amount = "-16699",
+                                    Code = "code",
+                                },
                                 Amount = "0.137465",
                                 Code = "271",
                                 Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -820,6 +842,15 @@ public class TransactionListPageResponseTest : TestBase
                         LostAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
+                    CardDisputeProvisionalCredit = new()
+                    {
+                        Amount = 1000,
+                        CardDisputeID = "card_dispute_h9sc95nbl1cgltpp7men",
+                        CardholderAccountID = "account_in71c4amph0vgo2qllky",
+                        Currency = Transactions::CardDisputeProvisionalCreditCurrency.Usd,
+                        EventType = Transactions::CardDisputeProvisionalCreditEventType.Provided,
+                        ProvisionalCreditFundingAccountID = "account_2w2wmv4blnsd1bjhn3zw",
+                    },
                     CardFinancial = new()
                     {
                         ID = "card_financial_di5b98i72ppomo268zfk",
@@ -930,6 +961,12 @@ public class TransactionListPageResponseTest : TestBase
                         Currency = Transactions::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = Transactions::InterchangeCurrency.Usd,
@@ -1104,6 +1141,12 @@ public class TransactionListPageResponseTest : TestBase
                         Currency = Transactions::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -1553,6 +1596,16 @@ public class TransactionListPageResponseTest : TestBase
                             LostAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         },
+                        CardDisputeProvisionalCredit = new()
+                        {
+                            Amount = 1000,
+                            CardDisputeID = "card_dispute_h9sc95nbl1cgltpp7men",
+                            CardholderAccountID = "account_in71c4amph0vgo2qllky",
+                            Currency = Transactions::CardDisputeProvisionalCreditCurrency.Usd,
+                            EventType =
+                                Transactions::CardDisputeProvisionalCreditEventType.Provided,
+                            ProvisionalCreditFundingAccountID = "account_2w2wmv4blnsd1bjhn3zw",
+                        },
                         CardFinancial = new()
                         {
                             ID = "card_financial_di5b98i72ppomo268zfk",
@@ -1663,6 +1716,12 @@ public class TransactionListPageResponseTest : TestBase
                             Currency = Transactions::CardRefundCurrency.Usd,
                             Interchange = new()
                             {
+                                Adjustment = new()
+                                {
+                                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                    Amount = "-16699",
+                                    Code = "code",
+                                },
                                 Amount = "0.137465",
                                 Code = "271",
                                 Currency = Transactions::InterchangeCurrency.Usd,
@@ -1841,6 +1900,12 @@ public class TransactionListPageResponseTest : TestBase
                             Currency = Transactions::CardSettlementCurrency.Usd,
                             Interchange = new()
                             {
+                                Adjustment = new()
+                                {
+                                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                    Amount = "-16699",
+                                    Code = "code",
+                                },
                                 Amount = "0.137465",
                                 Code = "271",
                                 Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -2297,6 +2362,16 @@ public class TransactionListPageResponseTest : TestBase
                             LostAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         },
+                        CardDisputeProvisionalCredit = new()
+                        {
+                            Amount = 1000,
+                            CardDisputeID = "card_dispute_h9sc95nbl1cgltpp7men",
+                            CardholderAccountID = "account_in71c4amph0vgo2qllky",
+                            Currency = Transactions::CardDisputeProvisionalCreditCurrency.Usd,
+                            EventType =
+                                Transactions::CardDisputeProvisionalCreditEventType.Provided,
+                            ProvisionalCreditFundingAccountID = "account_2w2wmv4blnsd1bjhn3zw",
+                        },
                         CardFinancial = new()
                         {
                             ID = "card_financial_di5b98i72ppomo268zfk",
@@ -2407,6 +2482,12 @@ public class TransactionListPageResponseTest : TestBase
                             Currency = Transactions::CardRefundCurrency.Usd,
                             Interchange = new()
                             {
+                                Adjustment = new()
+                                {
+                                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                    Amount = "-16699",
+                                    Code = "code",
+                                },
                                 Amount = "0.137465",
                                 Code = "271",
                                 Currency = Transactions::InterchangeCurrency.Usd,
@@ -2585,6 +2666,12 @@ public class TransactionListPageResponseTest : TestBase
                             Currency = Transactions::CardSettlementCurrency.Usd,
                             Interchange = new()
                             {
+                                Adjustment = new()
+                                {
+                                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                    Amount = "-16699",
+                                    Code = "code",
+                                },
                                 Amount = "0.137465",
                                 Code = "271",
                                 Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -3034,6 +3121,15 @@ public class TransactionListPageResponseTest : TestBase
                         LostAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                     },
+                    CardDisputeProvisionalCredit = new()
+                    {
+                        Amount = 1000,
+                        CardDisputeID = "card_dispute_h9sc95nbl1cgltpp7men",
+                        CardholderAccountID = "account_in71c4amph0vgo2qllky",
+                        Currency = Transactions::CardDisputeProvisionalCreditCurrency.Usd,
+                        EventType = Transactions::CardDisputeProvisionalCreditEventType.Provided,
+                        ProvisionalCreditFundingAccountID = "account_2w2wmv4blnsd1bjhn3zw",
+                    },
                     CardFinancial = new()
                     {
                         ID = "card_financial_di5b98i72ppomo268zfk",
@@ -3144,6 +3240,12 @@ public class TransactionListPageResponseTest : TestBase
                         Currency = Transactions::CardRefundCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = Transactions::InterchangeCurrency.Usd,
@@ -3318,6 +3420,12 @@ public class TransactionListPageResponseTest : TestBase
                         Currency = Transactions::CardSettlementCurrency.Usd,
                         Interchange = new()
                         {
+                            Adjustment = new()
+                            {
+                                AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                Amount = "-16699",
+                                Code = "code",
+                            },
                             Amount = "0.137465",
                             Code = "271",
                             Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -3767,6 +3875,16 @@ public class TransactionListPageResponseTest : TestBase
                             LostAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         },
+                        CardDisputeProvisionalCredit = new()
+                        {
+                            Amount = 1000,
+                            CardDisputeID = "card_dispute_h9sc95nbl1cgltpp7men",
+                            CardholderAccountID = "account_in71c4amph0vgo2qllky",
+                            Currency = Transactions::CardDisputeProvisionalCreditCurrency.Usd,
+                            EventType =
+                                Transactions::CardDisputeProvisionalCreditEventType.Provided,
+                            ProvisionalCreditFundingAccountID = "account_2w2wmv4blnsd1bjhn3zw",
+                        },
                         CardFinancial = new()
                         {
                             ID = "card_financial_di5b98i72ppomo268zfk",
@@ -3877,6 +3995,12 @@ public class TransactionListPageResponseTest : TestBase
                             Currency = Transactions::CardRefundCurrency.Usd,
                             Interchange = new()
                             {
+                                Adjustment = new()
+                                {
+                                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                    Amount = "-16699",
+                                    Code = "code",
+                                },
                                 Amount = "0.137465",
                                 Code = "271",
                                 Currency = Transactions::InterchangeCurrency.Usd,
@@ -4055,6 +4179,12 @@ public class TransactionListPageResponseTest : TestBase
                             Currency = Transactions::CardSettlementCurrency.Usd,
                             Interchange = new()
                             {
+                                Adjustment = new()
+                                {
+                                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                    Amount = "-16699",
+                                    Code = "code",
+                                },
                                 Amount = "0.137465",
                                 Code = "271",
                                 Currency = Transactions::CardSettlementInterchangeCurrency.Usd,
@@ -4505,6 +4635,16 @@ public class TransactionListPageResponseTest : TestBase
                             LostAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                             TransactionID = "transaction_uyrp7fld2ium70oa7oi",
                         },
+                        CardDisputeProvisionalCredit = new()
+                        {
+                            Amount = 1000,
+                            CardDisputeID = "card_dispute_h9sc95nbl1cgltpp7men",
+                            CardholderAccountID = "account_in71c4amph0vgo2qllky",
+                            Currency = Transactions::CardDisputeProvisionalCreditCurrency.Usd,
+                            EventType =
+                                Transactions::CardDisputeProvisionalCreditEventType.Provided,
+                            ProvisionalCreditFundingAccountID = "account_2w2wmv4blnsd1bjhn3zw",
+                        },
                         CardFinancial = new()
                         {
                             ID = "card_financial_di5b98i72ppomo268zfk",
@@ -4615,6 +4755,12 @@ public class TransactionListPageResponseTest : TestBase
                             Currency = Transactions::CardRefundCurrency.Usd,
                             Interchange = new()
                             {
+                                Adjustment = new()
+                                {
+                                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                    Amount = "-16699",
+                                    Code = "code",
+                                },
                                 Amount = "0.137465",
                                 Code = "271",
                                 Currency = Transactions::InterchangeCurrency.Usd,
@@ -4793,6 +4939,12 @@ public class TransactionListPageResponseTest : TestBase
                             Currency = Transactions::CardSettlementCurrency.Usd,
                             Interchange = new()
                             {
+                                Adjustment = new()
+                                {
+                                    AdjustedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                                    Amount = "-16699",
+                                    Code = "code",
+                                },
                                 Amount = "0.137465",
                                 Code = "271",
                                 Currency = Transactions::CardSettlementInterchangeCurrency.Usd,

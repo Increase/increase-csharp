@@ -498,6 +498,25 @@ public sealed record class Source : JsonModel
     }
 
     /// <summary>
+    /// A Card Dispute Provisional Credit object. This field will be present in the
+    /// JSON response if and only if `category` is equal to `card_dispute_provisional_credit`.
+    /// A provisional credit given to the cardholder while a Card Dispute is investigated,
+    /// or its reversal. Two Transactions are created: one on the cardholder's Account,
+    /// and the other on the provisional credit funding Account.
+    /// </summary>
+    public CardDisputeProvisionalCredit? CardDisputeProvisionalCredit
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<CardDisputeProvisionalCredit>(
+                "card_dispute_provisional_credit"
+            );
+        }
+        init { this._rawData.Set("card_dispute_provisional_credit", value); }
+    }
+
+    /// <summary>
     /// A Card Financial object. This field will be present in the JSON response if
     /// and only if `category` is equal to `card_financial`. Card Financials are card
     /// transactions that have cleared and settled. Unlike a Card Settlement, which
@@ -1029,6 +1048,7 @@ public sealed record class Source : JsonModel
         this.CardDisputeAcceptance?.Validate();
         this.CardDisputeFinancial?.Validate();
         this.CardDisputeLoss?.Validate();
+        this.CardDisputeProvisionalCredit?.Validate();
         this.CardFinancial?.Validate();
         this.CardPushTransferAcceptance?.Validate();
         this.CardRefund?.Validate();
@@ -1145,6 +1165,11 @@ public enum SourceCategory
     /// Card Dispute Financial: details will be under the `card_dispute_financial` object.
     /// </summary>
     CardDisputeFinancial,
+
+    /// <summary>
+    /// Card Dispute Provisional Credit: details will be under the `card_dispute_provisional_credit` object.
+    /// </summary>
+    CardDisputeProvisionalCredit,
 
     /// <summary>
     /// Legacy Card Dispute Loss: details will be under the `card_dispute_loss` object.
@@ -1335,6 +1360,7 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
             "cashback_payment" => SourceCategory.CashbackPayment,
             "card_dispute_acceptance" => SourceCategory.CardDisputeAcceptance,
             "card_dispute_financial" => SourceCategory.CardDisputeFinancial,
+            "card_dispute_provisional_credit" => SourceCategory.CardDisputeProvisionalCredit,
             "card_dispute_loss" => SourceCategory.CardDisputeLoss,
             "card_refund" => SourceCategory.CardRefund,
             "card_settlement" => SourceCategory.CardSettlement,
@@ -1398,6 +1424,7 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
                 SourceCategory.CashbackPayment => "cashback_payment",
                 SourceCategory.CardDisputeAcceptance => "card_dispute_acceptance",
                 SourceCategory.CardDisputeFinancial => "card_dispute_financial",
+                SourceCategory.CardDisputeProvisionalCredit => "card_dispute_provisional_credit",
                 SourceCategory.CardDisputeLoss => "card_dispute_loss",
                 SourceCategory.CardRefund => "card_refund",
                 SourceCategory.CardSettlement => "card_settlement",
@@ -3393,6 +3420,258 @@ class CardDisputeLossFromRaw : IFromRawJson<CardDisputeLoss>
     /// <inheritdoc/>
     public CardDisputeLoss FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         CardDisputeLoss.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// A Card Dispute Provisional Credit object. This field will be present in the JSON
+/// response if and only if `category` is equal to `card_dispute_provisional_credit`.
+/// A provisional credit given to the cardholder while a Card Dispute is investigated,
+/// or its reversal. Two Transactions are created: one on the cardholder's Account,
+/// and the other on the provisional credit funding Account.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<CardDisputeProvisionalCredit, CardDisputeProvisionalCreditFromRaw>)
+)]
+public sealed record class CardDisputeProvisionalCredit : JsonModel
+{
+    /// <summary>
+    /// The amount in the minor unit of the transaction's currency. For dollars,
+    /// for example, this is cents.
+    /// </summary>
+    public required long Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the Card Dispute the provisional credit was given for.
+    /// </summary>
+    public required string CardDisputeID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("card_dispute_id");
+        }
+        init { this._rawData.Set("card_dispute_id", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the cardholder's Account. It is credited when the provisional
+    /// credit is provided, and debited when it is reversed.
+    /// </summary>
+    public required string CardholderAccountID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("cardholder_account_id");
+        }
+        init { this._rawData.Set("cardholder_account_id", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the provisional
+    /// credit's currency.
+    /// </summary>
+    public required ApiEnum<string, CardDisputeProvisionalCreditCurrency> Currency
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, CardDisputeProvisionalCreditCurrency>
+            >("currency");
+        }
+        init { this._rawData.Set("currency", value); }
+    }
+
+    /// <summary>
+    /// Whether the provisional credit was provided or reversed.
+    /// </summary>
+    public required ApiEnum<string, CardDisputeProvisionalCreditEventType> EventType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, CardDisputeProvisionalCreditEventType>
+            >("event_type");
+        }
+        init { this._rawData.Set("event_type", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the provisional credit funding Account, the Account that
+    /// funds the provisional credit. It is debited when the provisional credit is
+    /// provided, and credited when it is reversed.
+    /// </summary>
+    public required string ProvisionalCreditFundingAccountID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("provisional_credit_funding_account_id");
+        }
+        init { this._rawData.Set("provisional_credit_funding_account_id", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Amount;
+        _ = this.CardDisputeID;
+        _ = this.CardholderAccountID;
+        this.Currency.Validate();
+        this.EventType.Validate();
+        _ = this.ProvisionalCreditFundingAccountID;
+    }
+
+    public CardDisputeProvisionalCredit() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardDisputeProvisionalCredit(CardDisputeProvisionalCredit cardDisputeProvisionalCredit)
+        : base(cardDisputeProvisionalCredit) { }
+#pragma warning restore CS8618
+
+    public CardDisputeProvisionalCredit(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardDisputeProvisionalCredit(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardDisputeProvisionalCreditFromRaw.FromRawUnchecked"/>
+    public static CardDisputeProvisionalCredit FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class CardDisputeProvisionalCreditFromRaw : IFromRawJson<CardDisputeProvisionalCredit>
+{
+    /// <inheritdoc/>
+    public CardDisputeProvisionalCredit FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardDisputeProvisionalCredit.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the provisional
+/// credit's currency.
+/// </summary>
+[JsonConverter(typeof(CardDisputeProvisionalCreditCurrencyConverter))]
+public enum CardDisputeProvisionalCreditCurrency
+{
+    /// <summary>
+    /// US Dollar (USD)
+    /// </summary>
+    Usd,
+}
+
+sealed class CardDisputeProvisionalCreditCurrencyConverter
+    : JsonConverter<CardDisputeProvisionalCreditCurrency>
+{
+    public override CardDisputeProvisionalCreditCurrency Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "USD" => CardDisputeProvisionalCreditCurrency.Usd,
+            _ => (CardDisputeProvisionalCreditCurrency)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        CardDisputeProvisionalCreditCurrency value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                CardDisputeProvisionalCreditCurrency.Usd => "USD",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Whether the provisional credit was provided or reversed.
+/// </summary>
+[JsonConverter(typeof(CardDisputeProvisionalCreditEventTypeConverter))]
+public enum CardDisputeProvisionalCreditEventType
+{
+    /// <summary>
+    /// The provisional credit was provided to the cardholder.
+    /// </summary>
+    Provided,
+
+    /// <summary>
+    /// The provisional credit was reversed from the cardholder.
+    /// </summary>
+    Reversed,
+}
+
+sealed class CardDisputeProvisionalCreditEventTypeConverter
+    : JsonConverter<CardDisputeProvisionalCreditEventType>
+{
+    public override CardDisputeProvisionalCreditEventType Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "provided" => CardDisputeProvisionalCreditEventType.Provided,
+            "reversed" => CardDisputeProvisionalCreditEventType.Reversed,
+            _ => (CardDisputeProvisionalCreditEventType)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        CardDisputeProvisionalCreditEventType value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                CardDisputeProvisionalCreditEventType.Provided => "provided",
+                CardDisputeProvisionalCreditEventType.Reversed => "reversed",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>
@@ -6217,7 +6496,7 @@ public enum FeeType
     /// Advanced Authorization is a fraud detection tool that monitors and risk evaluates
     /// 100 percent of US VisaNet authorizations in real-time. Activity related to
     /// Purchase (includes Signature Authenticated Visa and PIN Authenticated Visa
-    /// Debit (PAVD) transactions).
+    /// Debit (PAVD) transactions) and ATM transactions.
     /// </summary>
     VisaAdvancedAuthorization,
 
@@ -6334,6 +6613,22 @@ public enum FeeType
     VisaProcessingGuaranteeCommercialCredit,
 
     /// <summary>
+    /// Activity and fees for the processing of an original cash withdrawal at a domestic ATM.
+    /// </summary>
+    VisaAtmCashWithdrawalDomestic,
+
+    /// <summary>
+    /// Activity and fees for the processing of an original cash withdrawal at an
+    /// international ATM.
+    /// </summary>
+    VisaAtmCashWithdrawalInternational,
+
+    /// <summary>
+    /// Activity and fees for the processing of an original deposit at a domestic ATM.
+    /// </summary>
+    VisaAtmCashDepositDomestic,
+
+    /// <summary>
     /// Pulse Switch Fee is a fee charged by the Pulse network for processing transactions
     /// on its network.
     /// </summary>
@@ -6395,6 +6690,9 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
                 FeeType.VisaCommunityGrowthAccelerationProgram,
             "visa_processing_guarantee_commercial_credit" =>
                 FeeType.VisaProcessingGuaranteeCommercialCredit,
+            "visa_atm_cash_withdrawal_domestic" => FeeType.VisaAtmCashWithdrawalDomestic,
+            "visa_atm_cash_withdrawal_international" => FeeType.VisaAtmCashWithdrawalInternational,
+            "visa_atm_cash_deposit_domestic" => FeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => FeeType.PulseSwitchFee,
             "pulse_tokenization_fee" => FeeType.PulseTokenizationFee,
             _ => (FeeType)(-1),
@@ -6447,6 +6745,10 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
                     "visa_community_growth_acceleration_program",
                 FeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
+                FeeType.VisaAtmCashWithdrawalDomestic => "visa_atm_cash_withdrawal_domestic",
+                FeeType.VisaAtmCashWithdrawalInternational =>
+                    "visa_atm_cash_withdrawal_international",
+                FeeType.VisaAtmCashDepositDomestic => "visa_atm_cash_deposit_domestic",
                 FeeType.PulseSwitchFee => "pulse_switch_fee",
                 FeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
@@ -7639,6 +7941,20 @@ sealed class CardRefundCurrencyConverter : JsonConverter<CardRefundCurrency>
 public sealed record class Interchange : JsonModel
 {
     /// <summary>
+    /// An adjustment the card network made to the interchange after this transaction
+    /// cleared, if any.
+    /// </summary>
+    public required Adjustment? Adjustment
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<Adjustment>("adjustment");
+        }
+        init { this._rawData.Set("adjustment", value); }
+    }
+
+    /// <summary>
     /// The interchange amount given as a string containing a decimal number in major
     /// units (so e.g., "3.14" for $3.14). The amount is a positive number if it is
     /// credited to Increase (e.g., settlements) and a negative number if it is debited
@@ -7683,6 +7999,7 @@ public sealed record class Interchange : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        this.Adjustment?.Validate();
         _ = this.Amount;
         _ = this.Code;
         this.Currency.Validate();
@@ -7721,6 +8038,98 @@ class InterchangeFromRaw : IFromRawJson<Interchange>
     /// <inheritdoc/>
     public Interchange FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         Interchange.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// An adjustment the card network made to the interchange after this transaction
+/// cleared, if any.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Adjustment, AdjustmentFromRaw>))]
+public sealed record class Adjustment : JsonModel
+{
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the interchange was adjusted.
+    /// </summary>
+    public required System::DateTimeOffset AdjustedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("adjusted_at");
+        }
+        init { this._rawData.Set("adjusted_at", value); }
+    }
+
+    /// <summary>
+    /// The adjustment amount given as a string containing a decimal number in major
+    /// units (so e.g., "3.14" for $3.14). The amount is a positive number if it is
+    /// credited to Increase and a negative number if it is debited.
+    /// </summary>
+    public required string Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
+    /// The card network specific interchange code that applies after the adjustment.
+    /// </summary>
+    public required string Code
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("code");
+        }
+        init { this._rawData.Set("code", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.AdjustedAt;
+        _ = this.Amount;
+        _ = this.Code;
+    }
+
+    public Adjustment() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Adjustment(Adjustment adjustment)
+        : base(adjustment) { }
+#pragma warning restore CS8618
+
+    public Adjustment(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Adjustment(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="AdjustmentFromRaw.FromRawUnchecked"/>
+    public static Adjustment FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class AdjustmentFromRaw : IFromRawJson<Adjustment>
+{
+    /// <inheritdoc/>
+    public Adjustment FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Adjustment.FromRawUnchecked(rawData);
 }
 
 /// <summary>
@@ -9294,6 +9703,16 @@ public enum FuelType
     KeroseneUltraLowSulfur,
 
     /// <summary>
+    /// Kerosene low sulfur non-taxable
+    /// </summary>
+    KeroseneLowSulfurNonTaxable,
+
+    /// <summary>
+    /// Kerosene ultra low sulfur non-taxable
+    /// </summary>
+    KeroseneUltraLowSulfurNonTaxable,
+
+    /// <summary>
     /// Electric vehicle charging level 1 110 volt
     /// </summary>
     ElectricVehicleChargingLevel1_110Volt,
@@ -9309,9 +9728,114 @@ public enum FuelType
     ElectricVehicleChargingLevel3_480Volt,
 
     /// <summary>
+    /// Biodiesel blend 2% off-road non-taxable
+    /// </summary>
+    BiodieselBlend2OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 5% off-road non-taxable
+    /// </summary>
+    BiodieselBlend5OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 10% off-road non-taxable
+    /// </summary>
+    BiodieselBlend10OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 11% off-road non-taxable
+    /// </summary>
+    BiodieselBlend11OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 15% off-road non-taxable
+    /// </summary>
+    BiodieselBlend15OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 20% off-road non-taxable
+    /// </summary>
+    BiodieselBlend20OffRoadNonTaxable,
+
+    /// <summary>
     /// Diesel 1 off-road non-taxable
     /// </summary>
     Diesel1OffRoadNonTaxable,
+
+    /// <summary>
+    /// Diesel 2 off-road non-taxable
+    /// </summary>
+    Diesel2OffRoadNonTaxable,
+
+    /// <summary>
+    /// Diesel 1 premium off-road non-taxable
+    /// </summary>
+    Diesel1PremiumOffRoadNonTaxable,
+
+    /// <summary>
+    /// Diesel 2 premium off-road non-taxable
+    /// </summary>
+    Diesel2PremiumOffRoadNonTaxable,
+
+    /// <summary>
+    /// Additive dosage
+    /// </summary>
+    AdditiveDosage,
+
+    /// <summary>
+    /// Ethanol blends E16 to E84
+    /// </summary>
+    EthanolBlendsE16ToE84,
+
+    /// <summary>
+    /// Low octane unleaded
+    /// </summary>
+    LowOctaneUnleaded,
+
+    /// <summary>
+    /// Blended diesel 1 and 2
+    /// </summary>
+    BlendedDiesel1And2,
+
+    /// <summary>
+    /// Off-road regular non-taxable
+    /// </summary>
+    OffRoadRegularNonTaxable,
+
+    /// <summary>
+    /// Off-road mid or plus non-taxable
+    /// </summary>
+    OffRoadMidOrPlusNonTaxable,
+
+    /// <summary>
+    /// Off-road premium or super non-taxable
+    /// </summary>
+    OffRoadPremiumOrSuperNonTaxable,
+
+    /// <summary>
+    /// Off-road mid or plus 2 non-taxable
+    /// </summary>
+    OffRoadMidOrPlus2NonTaxable,
+
+    /// <summary>
+    /// Off-road premium or super 2 non-taxable
+    /// </summary>
+    OffRoadPremiumOrSuper2NonTaxable,
+
+    /// <summary>
+    /// Recreational fuel 90 octane
+    /// </summary>
+    RecreationalFuel90Octane,
+
+    /// <summary>
+    /// Hydrogen H35
+    /// </summary>
+    HydrogenH35,
+
+    /// <summary>
+    /// Hydrogen H70
+    /// </summary>
+    HydrogenH70,
 
     /// <summary>
     /// Renewable diesel R95 or greater off-road non-taxable
@@ -9342,6 +9866,11 @@ public enum FuelType
     /// Renewable diesel biodiesel 6% to 20% off-road non-taxable
     /// </summary>
     RenewableDieselBiodiesel6To20OffRoadNonTaxable,
+
+    /// <summary>
+    /// Renewable diesel R25 hydrotreated vegetable oil 25% blend
+    /// </summary>
+    RenewableDieselR25HydrotreatedVegetableOil25Blend,
 
     /// <summary>
     /// Electric vehicle charging level 4 800 volt
@@ -9471,13 +10000,36 @@ sealed class FuelTypeConverter : JsonConverter<FuelType>
             "heating_oil" => FuelType.HeatingOil,
             "other_fuel_non_taxable" => FuelType.OtherFuelNonTaxable,
             "kerosene_ultra_low_sulfur" => FuelType.KeroseneUltraLowSulfur,
+            "kerosene_low_sulfur_non_taxable" => FuelType.KeroseneLowSulfurNonTaxable,
+            "kerosene_ultra_low_sulfur_non_taxable" => FuelType.KeroseneUltraLowSulfurNonTaxable,
             "electric_vehicle_charging_level_1_110_volt" =>
                 FuelType.ElectricVehicleChargingLevel1_110Volt,
             "electric_vehicle_charging_level_2_240_volt" =>
                 FuelType.ElectricVehicleChargingLevel2_240Volt,
             "electric_vehicle_charging_level_3_480_volt" =>
                 FuelType.ElectricVehicleChargingLevel3_480Volt,
+            "biodiesel_blend_2_off_road_non_taxable" => FuelType.BiodieselBlend2OffRoadNonTaxable,
+            "biodiesel_blend_5_off_road_non_taxable" => FuelType.BiodieselBlend5OffRoadNonTaxable,
+            "biodiesel_blend_10_off_road_non_taxable" => FuelType.BiodieselBlend10OffRoadNonTaxable,
+            "biodiesel_blend_11_off_road_non_taxable" => FuelType.BiodieselBlend11OffRoadNonTaxable,
+            "biodiesel_blend_15_off_road_non_taxable" => FuelType.BiodieselBlend15OffRoadNonTaxable,
+            "biodiesel_blend_20_off_road_non_taxable" => FuelType.BiodieselBlend20OffRoadNonTaxable,
             "diesel_1_off_road_non_taxable" => FuelType.Diesel1OffRoadNonTaxable,
+            "diesel_2_off_road_non_taxable" => FuelType.Diesel2OffRoadNonTaxable,
+            "diesel_1_premium_off_road_non_taxable" => FuelType.Diesel1PremiumOffRoadNonTaxable,
+            "diesel_2_premium_off_road_non_taxable" => FuelType.Diesel2PremiumOffRoadNonTaxable,
+            "additive_dosage" => FuelType.AdditiveDosage,
+            "ethanol_blends_e16_to_e84" => FuelType.EthanolBlendsE16ToE84,
+            "low_octane_unleaded" => FuelType.LowOctaneUnleaded,
+            "blended_diesel_1_and_2" => FuelType.BlendedDiesel1And2,
+            "off_road_regular_non_taxable" => FuelType.OffRoadRegularNonTaxable,
+            "off_road_mid_or_plus_non_taxable" => FuelType.OffRoadMidOrPlusNonTaxable,
+            "off_road_premium_or_super_non_taxable" => FuelType.OffRoadPremiumOrSuperNonTaxable,
+            "off_road_mid_or_plus_2_non_taxable" => FuelType.OffRoadMidOrPlus2NonTaxable,
+            "off_road_premium_or_super_2_non_taxable" => FuelType.OffRoadPremiumOrSuper2NonTaxable,
+            "recreational_fuel_90_octane" => FuelType.RecreationalFuel90Octane,
+            "hydrogen_h35" => FuelType.HydrogenH35,
+            "hydrogen_h70" => FuelType.HydrogenH70,
             "renewable_diesel_r95_or_greater_off_road_non_taxable" =>
                 FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable,
             "biodiesel_blend_1_off_road_non_taxable" => FuelType.BiodieselBlend1OffRoadNonTaxable,
@@ -9487,6 +10039,8 @@ sealed class FuelTypeConverter : JsonConverter<FuelType>
                 FuelType.BiodieselBlend100OffRoadNonTaxable,
             "renewable_diesel_biodiesel_6_to_20_off_road_non_taxable" =>
                 FuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable,
+            "renewable_diesel_r25_hydrotreated_vegetable_oil_25_blend" =>
+                FuelType.RenewableDieselR25HydrotreatedVegetableOil25Blend,
             "electric_vehicle_charging_level_4_800_volt" =>
                 FuelType.ElectricVehicleChargingLevel4_800Volt,
             "electric_vehicle_charging_level_5_megawatt" =>
@@ -9598,13 +10152,44 @@ sealed class FuelTypeConverter : JsonConverter<FuelType>
                 FuelType.HeatingOil => "heating_oil",
                 FuelType.OtherFuelNonTaxable => "other_fuel_non_taxable",
                 FuelType.KeroseneUltraLowSulfur => "kerosene_ultra_low_sulfur",
+                FuelType.KeroseneLowSulfurNonTaxable => "kerosene_low_sulfur_non_taxable",
+                FuelType.KeroseneUltraLowSulfurNonTaxable =>
+                    "kerosene_ultra_low_sulfur_non_taxable",
                 FuelType.ElectricVehicleChargingLevel1_110Volt =>
                     "electric_vehicle_charging_level_1_110_volt",
                 FuelType.ElectricVehicleChargingLevel2_240Volt =>
                     "electric_vehicle_charging_level_2_240_volt",
                 FuelType.ElectricVehicleChargingLevel3_480Volt =>
                     "electric_vehicle_charging_level_3_480_volt",
+                FuelType.BiodieselBlend2OffRoadNonTaxable =>
+                    "biodiesel_blend_2_off_road_non_taxable",
+                FuelType.BiodieselBlend5OffRoadNonTaxable =>
+                    "biodiesel_blend_5_off_road_non_taxable",
+                FuelType.BiodieselBlend10OffRoadNonTaxable =>
+                    "biodiesel_blend_10_off_road_non_taxable",
+                FuelType.BiodieselBlend11OffRoadNonTaxable =>
+                    "biodiesel_blend_11_off_road_non_taxable",
+                FuelType.BiodieselBlend15OffRoadNonTaxable =>
+                    "biodiesel_blend_15_off_road_non_taxable",
+                FuelType.BiodieselBlend20OffRoadNonTaxable =>
+                    "biodiesel_blend_20_off_road_non_taxable",
                 FuelType.Diesel1OffRoadNonTaxable => "diesel_1_off_road_non_taxable",
+                FuelType.Diesel2OffRoadNonTaxable => "diesel_2_off_road_non_taxable",
+                FuelType.Diesel1PremiumOffRoadNonTaxable => "diesel_1_premium_off_road_non_taxable",
+                FuelType.Diesel2PremiumOffRoadNonTaxable => "diesel_2_premium_off_road_non_taxable",
+                FuelType.AdditiveDosage => "additive_dosage",
+                FuelType.EthanolBlendsE16ToE84 => "ethanol_blends_e16_to_e84",
+                FuelType.LowOctaneUnleaded => "low_octane_unleaded",
+                FuelType.BlendedDiesel1And2 => "blended_diesel_1_and_2",
+                FuelType.OffRoadRegularNonTaxable => "off_road_regular_non_taxable",
+                FuelType.OffRoadMidOrPlusNonTaxable => "off_road_mid_or_plus_non_taxable",
+                FuelType.OffRoadPremiumOrSuperNonTaxable => "off_road_premium_or_super_non_taxable",
+                FuelType.OffRoadMidOrPlus2NonTaxable => "off_road_mid_or_plus_2_non_taxable",
+                FuelType.OffRoadPremiumOrSuper2NonTaxable =>
+                    "off_road_premium_or_super_2_non_taxable",
+                FuelType.RecreationalFuel90Octane => "recreational_fuel_90_octane",
+                FuelType.HydrogenH35 => "hydrogen_h35",
+                FuelType.HydrogenH70 => "hydrogen_h70",
                 FuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable =>
                     "renewable_diesel_r95_or_greater_off_road_non_taxable",
                 FuelType.BiodieselBlend1OffRoadNonTaxable =>
@@ -9617,6 +10202,8 @@ sealed class FuelTypeConverter : JsonConverter<FuelType>
                     "biodiesel_blend_100_off_road_non_taxable",
                 FuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable =>
                     "renewable_diesel_biodiesel_6_to_20_off_road_non_taxable",
+                FuelType.RenewableDieselR25HydrotreatedVegetableOil25Blend =>
+                    "renewable_diesel_r25_hydrotreated_vegetable_oil_25_blend",
                 FuelType.ElectricVehicleChargingLevel4_800Volt =>
                     "electric_vehicle_charging_level_4_800_volt",
                 FuelType.ElectricVehicleChargingLevel5Megawatt =>
@@ -11713,7 +12300,7 @@ public enum CardRefundSchemeFeeFeeType
     /// Advanced Authorization is a fraud detection tool that monitors and risk evaluates
     /// 100 percent of US VisaNet authorizations in real-time. Activity related to
     /// Purchase (includes Signature Authenticated Visa and PIN Authenticated Visa
-    /// Debit (PAVD) transactions).
+    /// Debit (PAVD) transactions) and ATM transactions.
     /// </summary>
     VisaAdvancedAuthorization,
 
@@ -11830,6 +12417,22 @@ public enum CardRefundSchemeFeeFeeType
     VisaProcessingGuaranteeCommercialCredit,
 
     /// <summary>
+    /// Activity and fees for the processing of an original cash withdrawal at a domestic ATM.
+    /// </summary>
+    VisaAtmCashWithdrawalDomestic,
+
+    /// <summary>
+    /// Activity and fees for the processing of an original cash withdrawal at an
+    /// international ATM.
+    /// </summary>
+    VisaAtmCashWithdrawalInternational,
+
+    /// <summary>
+    /// Activity and fees for the processing of an original deposit at a domestic ATM.
+    /// </summary>
+    VisaAtmCashDepositDomestic,
+
+    /// <summary>
     /// Pulse Switch Fee is a fee charged by the Pulse network for processing transactions
     /// on its network.
     /// </summary>
@@ -11900,6 +12503,12 @@ sealed class CardRefundSchemeFeeFeeTypeConverter : JsonConverter<CardRefundSchem
                 CardRefundSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram,
             "visa_processing_guarantee_commercial_credit" =>
                 CardRefundSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit,
+            "visa_atm_cash_withdrawal_domestic" =>
+                CardRefundSchemeFeeFeeType.VisaAtmCashWithdrawalDomestic,
+            "visa_atm_cash_withdrawal_international" =>
+                CardRefundSchemeFeeFeeType.VisaAtmCashWithdrawalInternational,
+            "visa_atm_cash_deposit_domestic" =>
+                CardRefundSchemeFeeFeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => CardRefundSchemeFeeFeeType.PulseSwitchFee,
             "pulse_tokenization_fee" => CardRefundSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardRefundSchemeFeeFeeType)(-1),
@@ -11966,6 +12575,12 @@ sealed class CardRefundSchemeFeeFeeTypeConverter : JsonConverter<CardRefundSchem
                     "visa_community_growth_acceleration_program",
                 CardRefundSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
+                CardRefundSchemeFeeFeeType.VisaAtmCashWithdrawalDomestic =>
+                    "visa_atm_cash_withdrawal_domestic",
+                CardRefundSchemeFeeFeeType.VisaAtmCashWithdrawalInternational =>
+                    "visa_atm_cash_withdrawal_international",
+                CardRefundSchemeFeeFeeType.VisaAtmCashDepositDomestic =>
+                    "visa_atm_cash_deposit_domestic",
                 CardRefundSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
                 CardRefundSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
@@ -12788,6 +13403,22 @@ sealed class CardSettlementCurrencyConverter : JsonConverter<CardSettlementCurre
 public sealed record class CardSettlementInterchange : JsonModel
 {
     /// <summary>
+    /// An adjustment the card network made to the interchange after this transaction
+    /// cleared, if any.
+    /// </summary>
+    public required CardSettlementInterchangeAdjustment? Adjustment
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<CardSettlementInterchangeAdjustment>(
+                "adjustment"
+            );
+        }
+        init { this._rawData.Set("adjustment", value); }
+    }
+
+    /// <summary>
     /// The interchange amount given as a string containing a decimal number in major
     /// units (so e.g., "3.14" for $3.14). The amount is a positive number if it is
     /// credited to Increase (e.g., settlements) and a negative number if it is debited
@@ -12834,6 +13465,7 @@ public sealed record class CardSettlementInterchange : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        this.Adjustment?.Validate();
         _ = this.Amount;
         _ = this.Code;
         this.Currency.Validate();
@@ -12875,6 +13507,108 @@ class CardSettlementInterchangeFromRaw : IFromRawJson<CardSettlementInterchange>
     public CardSettlementInterchange FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => CardSettlementInterchange.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// An adjustment the card network made to the interchange after this transaction
+/// cleared, if any.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        CardSettlementInterchangeAdjustment,
+        CardSettlementInterchangeAdjustmentFromRaw
+    >)
+)]
+public sealed record class CardSettlementInterchangeAdjustment : JsonModel
+{
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the interchange was adjusted.
+    /// </summary>
+    public required System::DateTimeOffset AdjustedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("adjusted_at");
+        }
+        init { this._rawData.Set("adjusted_at", value); }
+    }
+
+    /// <summary>
+    /// The adjustment amount given as a string containing a decimal number in major
+    /// units (so e.g., "3.14" for $3.14). The amount is a positive number if it is
+    /// credited to Increase and a negative number if it is debited.
+    /// </summary>
+    public required string Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
+    /// The card network specific interchange code that applies after the adjustment.
+    /// </summary>
+    public required string Code
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("code");
+        }
+        init { this._rawData.Set("code", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.AdjustedAt;
+        _ = this.Amount;
+        _ = this.Code;
+    }
+
+    public CardSettlementInterchangeAdjustment() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public CardSettlementInterchangeAdjustment(
+        CardSettlementInterchangeAdjustment cardSettlementInterchangeAdjustment
+    )
+        : base(cardSettlementInterchangeAdjustment) { }
+#pragma warning restore CS8618
+
+    public CardSettlementInterchangeAdjustment(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    CardSettlementInterchangeAdjustment(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardSettlementInterchangeAdjustmentFromRaw.FromRawUnchecked"/>
+    public static CardSettlementInterchangeAdjustment FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class CardSettlementInterchangeAdjustmentFromRaw : IFromRawJson<CardSettlementInterchangeAdjustment>
+{
+    /// <inheritdoc/>
+    public CardSettlementInterchangeAdjustment FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => CardSettlementInterchangeAdjustment.FromRawUnchecked(rawData);
 }
 
 /// <summary>
@@ -14514,6 +15248,16 @@ public enum CardSettlementPurchaseDetailsFleetFuelType
     KeroseneUltraLowSulfur,
 
     /// <summary>
+    /// Kerosene low sulfur non-taxable
+    /// </summary>
+    KeroseneLowSulfurNonTaxable,
+
+    /// <summary>
+    /// Kerosene ultra low sulfur non-taxable
+    /// </summary>
+    KeroseneUltraLowSulfurNonTaxable,
+
+    /// <summary>
     /// Electric vehicle charging level 1 110 volt
     /// </summary>
     ElectricVehicleChargingLevel1_110Volt,
@@ -14529,9 +15273,114 @@ public enum CardSettlementPurchaseDetailsFleetFuelType
     ElectricVehicleChargingLevel3_480Volt,
 
     /// <summary>
+    /// Biodiesel blend 2% off-road non-taxable
+    /// </summary>
+    BiodieselBlend2OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 5% off-road non-taxable
+    /// </summary>
+    BiodieselBlend5OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 10% off-road non-taxable
+    /// </summary>
+    BiodieselBlend10OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 11% off-road non-taxable
+    /// </summary>
+    BiodieselBlend11OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 15% off-road non-taxable
+    /// </summary>
+    BiodieselBlend15OffRoadNonTaxable,
+
+    /// <summary>
+    /// Biodiesel blend 20% off-road non-taxable
+    /// </summary>
+    BiodieselBlend20OffRoadNonTaxable,
+
+    /// <summary>
     /// Diesel 1 off-road non-taxable
     /// </summary>
     Diesel1OffRoadNonTaxable,
+
+    /// <summary>
+    /// Diesel 2 off-road non-taxable
+    /// </summary>
+    Diesel2OffRoadNonTaxable,
+
+    /// <summary>
+    /// Diesel 1 premium off-road non-taxable
+    /// </summary>
+    Diesel1PremiumOffRoadNonTaxable,
+
+    /// <summary>
+    /// Diesel 2 premium off-road non-taxable
+    /// </summary>
+    Diesel2PremiumOffRoadNonTaxable,
+
+    /// <summary>
+    /// Additive dosage
+    /// </summary>
+    AdditiveDosage,
+
+    /// <summary>
+    /// Ethanol blends E16 to E84
+    /// </summary>
+    EthanolBlendsE16ToE84,
+
+    /// <summary>
+    /// Low octane unleaded
+    /// </summary>
+    LowOctaneUnleaded,
+
+    /// <summary>
+    /// Blended diesel 1 and 2
+    /// </summary>
+    BlendedDiesel1And2,
+
+    /// <summary>
+    /// Off-road regular non-taxable
+    /// </summary>
+    OffRoadRegularNonTaxable,
+
+    /// <summary>
+    /// Off-road mid or plus non-taxable
+    /// </summary>
+    OffRoadMidOrPlusNonTaxable,
+
+    /// <summary>
+    /// Off-road premium or super non-taxable
+    /// </summary>
+    OffRoadPremiumOrSuperNonTaxable,
+
+    /// <summary>
+    /// Off-road mid or plus 2 non-taxable
+    /// </summary>
+    OffRoadMidOrPlus2NonTaxable,
+
+    /// <summary>
+    /// Off-road premium or super 2 non-taxable
+    /// </summary>
+    OffRoadPremiumOrSuper2NonTaxable,
+
+    /// <summary>
+    /// Recreational fuel 90 octane
+    /// </summary>
+    RecreationalFuel90Octane,
+
+    /// <summary>
+    /// Hydrogen H35
+    /// </summary>
+    HydrogenH35,
+
+    /// <summary>
+    /// Hydrogen H70
+    /// </summary>
+    HydrogenH70,
 
     /// <summary>
     /// Renewable diesel R95 or greater off-road non-taxable
@@ -14562,6 +15411,11 @@ public enum CardSettlementPurchaseDetailsFleetFuelType
     /// Renewable diesel biodiesel 6% to 20% off-road non-taxable
     /// </summary>
     RenewableDieselBiodiesel6To20OffRoadNonTaxable,
+
+    /// <summary>
+    /// Renewable diesel R25 hydrotreated vegetable oil 25% blend
+    /// </summary>
+    RenewableDieselR25HydrotreatedVegetableOil25Blend,
 
     /// <summary>
     /// Electric vehicle charging level 4 800 volt
@@ -14740,14 +15594,56 @@ sealed class CardSettlementPurchaseDetailsFleetFuelTypeConverter
                 CardSettlementPurchaseDetailsFleetFuelType.OtherFuelNonTaxable,
             "kerosene_ultra_low_sulfur" =>
                 CardSettlementPurchaseDetailsFleetFuelType.KeroseneUltraLowSulfur,
+            "kerosene_low_sulfur_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.KeroseneLowSulfurNonTaxable,
+            "kerosene_ultra_low_sulfur_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.KeroseneUltraLowSulfurNonTaxable,
             "electric_vehicle_charging_level_1_110_volt" =>
                 CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel1_110Volt,
             "electric_vehicle_charging_level_2_240_volt" =>
                 CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel2_240Volt,
             "electric_vehicle_charging_level_3_480_volt" =>
                 CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt,
+            "biodiesel_blend_2_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend2OffRoadNonTaxable,
+            "biodiesel_blend_5_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend5OffRoadNonTaxable,
+            "biodiesel_blend_10_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend10OffRoadNonTaxable,
+            "biodiesel_blend_11_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend11OffRoadNonTaxable,
+            "biodiesel_blend_15_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend15OffRoadNonTaxable,
+            "biodiesel_blend_20_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend20OffRoadNonTaxable,
             "diesel_1_off_road_non_taxable" =>
                 CardSettlementPurchaseDetailsFleetFuelType.Diesel1OffRoadNonTaxable,
+            "diesel_2_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.Diesel2OffRoadNonTaxable,
+            "diesel_1_premium_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.Diesel1PremiumOffRoadNonTaxable,
+            "diesel_2_premium_off_road_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.Diesel2PremiumOffRoadNonTaxable,
+            "additive_dosage" => CardSettlementPurchaseDetailsFleetFuelType.AdditiveDosage,
+            "ethanol_blends_e16_to_e84" =>
+                CardSettlementPurchaseDetailsFleetFuelType.EthanolBlendsE16ToE84,
+            "low_octane_unleaded" => CardSettlementPurchaseDetailsFleetFuelType.LowOctaneUnleaded,
+            "blended_diesel_1_and_2" =>
+                CardSettlementPurchaseDetailsFleetFuelType.BlendedDiesel1And2,
+            "off_road_regular_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.OffRoadRegularNonTaxable,
+            "off_road_mid_or_plus_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.OffRoadMidOrPlusNonTaxable,
+            "off_road_premium_or_super_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.OffRoadPremiumOrSuperNonTaxable,
+            "off_road_mid_or_plus_2_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.OffRoadMidOrPlus2NonTaxable,
+            "off_road_premium_or_super_2_non_taxable" =>
+                CardSettlementPurchaseDetailsFleetFuelType.OffRoadPremiumOrSuper2NonTaxable,
+            "recreational_fuel_90_octane" =>
+                CardSettlementPurchaseDetailsFleetFuelType.RecreationalFuel90Octane,
+            "hydrogen_h35" => CardSettlementPurchaseDetailsFleetFuelType.HydrogenH35,
+            "hydrogen_h70" => CardSettlementPurchaseDetailsFleetFuelType.HydrogenH70,
             "renewable_diesel_r95_or_greater_off_road_non_taxable" =>
                 CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable,
             "biodiesel_blend_1_off_road_non_taxable" =>
@@ -14760,6 +15656,8 @@ sealed class CardSettlementPurchaseDetailsFleetFuelTypeConverter
                 CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend100OffRoadNonTaxable,
             "renewable_diesel_biodiesel_6_to_20_off_road_non_taxable" =>
                 CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable,
+            "renewable_diesel_r25_hydrotreated_vegetable_oil_25_blend" =>
+                CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR25HydrotreatedVegetableOil25Blend,
             "electric_vehicle_charging_level_4_800_volt" =>
                 CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel4_800Volt,
             "electric_vehicle_charging_level_5_megawatt" =>
@@ -14926,14 +15824,57 @@ sealed class CardSettlementPurchaseDetailsFleetFuelTypeConverter
                     "other_fuel_non_taxable",
                 CardSettlementPurchaseDetailsFleetFuelType.KeroseneUltraLowSulfur =>
                     "kerosene_ultra_low_sulfur",
+                CardSettlementPurchaseDetailsFleetFuelType.KeroseneLowSulfurNonTaxable =>
+                    "kerosene_low_sulfur_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.KeroseneUltraLowSulfurNonTaxable =>
+                    "kerosene_ultra_low_sulfur_non_taxable",
                 CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel1_110Volt =>
                     "electric_vehicle_charging_level_1_110_volt",
                 CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel2_240Volt =>
                     "electric_vehicle_charging_level_2_240_volt",
                 CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel3_480Volt =>
                     "electric_vehicle_charging_level_3_480_volt",
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend2OffRoadNonTaxable =>
+                    "biodiesel_blend_2_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend5OffRoadNonTaxable =>
+                    "biodiesel_blend_5_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend10OffRoadNonTaxable =>
+                    "biodiesel_blend_10_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend11OffRoadNonTaxable =>
+                    "biodiesel_blend_11_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend15OffRoadNonTaxable =>
+                    "biodiesel_blend_15_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend20OffRoadNonTaxable =>
+                    "biodiesel_blend_20_off_road_non_taxable",
                 CardSettlementPurchaseDetailsFleetFuelType.Diesel1OffRoadNonTaxable =>
                     "diesel_1_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.Diesel2OffRoadNonTaxable =>
+                    "diesel_2_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.Diesel1PremiumOffRoadNonTaxable =>
+                    "diesel_1_premium_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.Diesel2PremiumOffRoadNonTaxable =>
+                    "diesel_2_premium_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.AdditiveDosage => "additive_dosage",
+                CardSettlementPurchaseDetailsFleetFuelType.EthanolBlendsE16ToE84 =>
+                    "ethanol_blends_e16_to_e84",
+                CardSettlementPurchaseDetailsFleetFuelType.LowOctaneUnleaded =>
+                    "low_octane_unleaded",
+                CardSettlementPurchaseDetailsFleetFuelType.BlendedDiesel1And2 =>
+                    "blended_diesel_1_and_2",
+                CardSettlementPurchaseDetailsFleetFuelType.OffRoadRegularNonTaxable =>
+                    "off_road_regular_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.OffRoadMidOrPlusNonTaxable =>
+                    "off_road_mid_or_plus_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.OffRoadPremiumOrSuperNonTaxable =>
+                    "off_road_premium_or_super_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.OffRoadMidOrPlus2NonTaxable =>
+                    "off_road_mid_or_plus_2_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.OffRoadPremiumOrSuper2NonTaxable =>
+                    "off_road_premium_or_super_2_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.RecreationalFuel90Octane =>
+                    "recreational_fuel_90_octane",
+                CardSettlementPurchaseDetailsFleetFuelType.HydrogenH35 => "hydrogen_h35",
+                CardSettlementPurchaseDetailsFleetFuelType.HydrogenH70 => "hydrogen_h70",
                 CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR95OrGreaterOffRoadNonTaxable =>
                     "renewable_diesel_r95_or_greater_off_road_non_taxable",
                 CardSettlementPurchaseDetailsFleetFuelType.BiodieselBlend1OffRoadNonTaxable =>
@@ -14946,6 +15887,8 @@ sealed class CardSettlementPurchaseDetailsFleetFuelTypeConverter
                     "biodiesel_blend_100_off_road_non_taxable",
                 CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselBiodiesel6To20OffRoadNonTaxable =>
                     "renewable_diesel_biodiesel_6_to_20_off_road_non_taxable",
+                CardSettlementPurchaseDetailsFleetFuelType.RenewableDieselR25HydrotreatedVegetableOil25Blend =>
+                    "renewable_diesel_r25_hydrotreated_vegetable_oil_25_blend",
                 CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel4_800Volt =>
                     "electric_vehicle_charging_level_4_800_volt",
                 CardSettlementPurchaseDetailsFleetFuelType.ElectricVehicleChargingLevel5Megawatt =>
@@ -17198,7 +18141,7 @@ public enum CardSettlementSchemeFeeFeeType
     /// Advanced Authorization is a fraud detection tool that monitors and risk evaluates
     /// 100 percent of US VisaNet authorizations in real-time. Activity related to
     /// Purchase (includes Signature Authenticated Visa and PIN Authenticated Visa
-    /// Debit (PAVD) transactions).
+    /// Debit (PAVD) transactions) and ATM transactions.
     /// </summary>
     VisaAdvancedAuthorization,
 
@@ -17315,6 +18258,22 @@ public enum CardSettlementSchemeFeeFeeType
     VisaProcessingGuaranteeCommercialCredit,
 
     /// <summary>
+    /// Activity and fees for the processing of an original cash withdrawal at a domestic ATM.
+    /// </summary>
+    VisaAtmCashWithdrawalDomestic,
+
+    /// <summary>
+    /// Activity and fees for the processing of an original cash withdrawal at an
+    /// international ATM.
+    /// </summary>
+    VisaAtmCashWithdrawalInternational,
+
+    /// <summary>
+    /// Activity and fees for the processing of an original deposit at a domestic ATM.
+    /// </summary>
+    VisaAtmCashDepositDomestic,
+
+    /// <summary>
     /// Pulse Switch Fee is a fee charged by the Pulse network for processing transactions
     /// on its network.
     /// </summary>
@@ -17387,6 +18346,12 @@ sealed class CardSettlementSchemeFeeFeeTypeConverter : JsonConverter<CardSettlem
                 CardSettlementSchemeFeeFeeType.VisaCommunityGrowthAccelerationProgram,
             "visa_processing_guarantee_commercial_credit" =>
                 CardSettlementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit,
+            "visa_atm_cash_withdrawal_domestic" =>
+                CardSettlementSchemeFeeFeeType.VisaAtmCashWithdrawalDomestic,
+            "visa_atm_cash_withdrawal_international" =>
+                CardSettlementSchemeFeeFeeType.VisaAtmCashWithdrawalInternational,
+            "visa_atm_cash_deposit_domestic" =>
+                CardSettlementSchemeFeeFeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => CardSettlementSchemeFeeFeeType.PulseSwitchFee,
             "pulse_tokenization_fee" => CardSettlementSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardSettlementSchemeFeeFeeType)(-1),
@@ -17458,6 +18423,12 @@ sealed class CardSettlementSchemeFeeFeeTypeConverter : JsonConverter<CardSettlem
                     "visa_community_growth_acceleration_program",
                 CardSettlementSchemeFeeFeeType.VisaProcessingGuaranteeCommercialCredit =>
                     "visa_processing_guarantee_commercial_credit",
+                CardSettlementSchemeFeeFeeType.VisaAtmCashWithdrawalDomestic =>
+                    "visa_atm_cash_withdrawal_domestic",
+                CardSettlementSchemeFeeFeeType.VisaAtmCashWithdrawalInternational =>
+                    "visa_atm_cash_withdrawal_international",
+                CardSettlementSchemeFeeFeeType.VisaAtmCashDepositDomestic =>
+                    "visa_atm_cash_deposit_domestic",
                 CardSettlementSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
                 CardSettlementSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(

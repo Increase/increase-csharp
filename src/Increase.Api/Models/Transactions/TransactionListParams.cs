@@ -345,6 +345,11 @@ public enum In
     CardDisputeFinancial,
 
     /// <summary>
+    /// Card Dispute Provisional Credit: details will be under the `card_dispute_provisional_credit` object.
+    /// </summary>
+    CardDisputeProvisionalCredit,
+
+    /// <summary>
     /// Legacy Card Dispute Loss: details will be under the `card_dispute_loss` object.
     /// </summary>
     CardDisputeLoss,
@@ -533,6 +538,7 @@ sealed class InConverter : JsonConverter<In>
             "cashback_payment" => In.CashbackPayment,
             "card_dispute_acceptance" => In.CardDisputeAcceptance,
             "card_dispute_financial" => In.CardDisputeFinancial,
+            "card_dispute_provisional_credit" => In.CardDisputeProvisionalCredit,
             "card_dispute_loss" => In.CardDisputeLoss,
             "card_refund" => In.CardRefund,
             "card_settlement" => In.CardSettlement,
@@ -587,6 +593,7 @@ sealed class InConverter : JsonConverter<In>
                 In.CashbackPayment => "cashback_payment",
                 In.CardDisputeAcceptance => "card_dispute_acceptance",
                 In.CardDisputeFinancial => "card_dispute_financial",
+                In.CardDisputeProvisionalCredit => "card_dispute_provisional_credit",
                 In.CardDisputeLoss => "card_dispute_loss",
                 In.CardRefund => "card_refund",
                 In.CardSettlement => "card_settlement",

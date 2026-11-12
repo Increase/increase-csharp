@@ -980,6 +980,8 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Transactions::ReturnReasonCode>(),
             new ApiEnumConverter<string, Transactions::Network>(),
             new ApiEnumConverter<string, Transactions::EventType>(),
+            new ApiEnumConverter<string, Transactions::CardDisputeProvisionalCreditCurrency>(),
+            new ApiEnumConverter<string, Transactions::CardDisputeProvisionalCreditEventType>(),
             new ApiEnumConverter<string, Transactions::Actioner>(),
             new ApiEnumConverter<string, Transactions::CardFinancialCurrency>(),
             new ApiEnumConverter<string, Transactions::Direction>(),
