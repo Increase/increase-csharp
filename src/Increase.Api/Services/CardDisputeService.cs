@@ -83,6 +83,66 @@ public sealed class CardDisputeService : ICardDisputeService
     }
 
     /// <inheritdoc/>
+    public async Task<CardDispute> ProvideProvisionalCredit(
+        CardDisputeProvideProvisionalCreditParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        using var response = await this
+            .WithRawResponse.ProvideProvisionalCredit(parameters, cancellationToken)
+            .ConfigureAwait(false);
+        return await response.Deserialize(cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <inheritdoc/>
+    public Task<CardDispute> ProvideProvisionalCredit(
+        string cardDisputeID,
+        CardDisputeProvideProvisionalCreditParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.ProvideProvisionalCredit(
+            parameters with
+            {
+                CardDisputeID = cardDisputeID,
+            },
+            cancellationToken
+        );
+    }
+
+    /// <inheritdoc/>
+    public async Task<CardDispute> ReverseProvisionalCredit(
+        CardDisputeReverseProvisionalCreditParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        using var response = await this
+            .WithRawResponse.ReverseProvisionalCredit(parameters, cancellationToken)
+            .ConfigureAwait(false);
+        return await response.Deserialize(cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <inheritdoc/>
+    public Task<CardDispute> ReverseProvisionalCredit(
+        string cardDisputeID,
+        CardDisputeReverseProvisionalCreditParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.ReverseProvisionalCredit(
+            parameters with
+            {
+                CardDisputeID = cardDisputeID,
+            },
+            cancellationToken
+        );
+    }
+
+    /// <inheritdoc/>
     public async Task<CardDispute> SubmitUserSubmission(
         CardDisputeSubmitUserSubmissionParams parameters,
         CancellationToken cancellationToken = default
@@ -253,6 +313,108 @@ public sealed class CardDisputeServiceWithRawResponse : ICardDisputeServiceWithR
                 }
                 return new CardDisputeListPage(this, parameters, page);
             }
+        );
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponse<CardDispute>> ProvideProvisionalCredit(
+        CardDisputeProvideProvisionalCreditParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        if (parameters.CardDisputeID == null)
+        {
+            throw new IncreaseInvalidDataException("'parameters.CardDisputeID' cannot be null");
+        }
+
+        HttpRequest<CardDisputeProvideProvisionalCreditParams> request = new()
+        {
+            Method = HttpMethod.Post,
+            Params = parameters,
+        };
+        var response = await this._client.Execute(request, cancellationToken).ConfigureAwait(false);
+        return new(
+            response,
+            async (token) =>
+            {
+                var cardDispute = await response
+                    .Deserialize<CardDispute>(token)
+                    .ConfigureAwait(false);
+                if (this._client.ResponseValidation)
+                {
+                    cardDispute.Validate();
+                }
+                return cardDispute;
+            }
+        );
+    }
+
+    /// <inheritdoc/>
+    public Task<HttpResponse<CardDispute>> ProvideProvisionalCredit(
+        string cardDisputeID,
+        CardDisputeProvideProvisionalCreditParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.ProvideProvisionalCredit(
+            parameters with
+            {
+                CardDisputeID = cardDisputeID,
+            },
+            cancellationToken
+        );
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponse<CardDispute>> ReverseProvisionalCredit(
+        CardDisputeReverseProvisionalCreditParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        if (parameters.CardDisputeID == null)
+        {
+            throw new IncreaseInvalidDataException("'parameters.CardDisputeID' cannot be null");
+        }
+
+        HttpRequest<CardDisputeReverseProvisionalCreditParams> request = new()
+        {
+            Method = HttpMethod.Post,
+            Params = parameters,
+        };
+        var response = await this._client.Execute(request, cancellationToken).ConfigureAwait(false);
+        return new(
+            response,
+            async (token) =>
+            {
+                var cardDispute = await response
+                    .Deserialize<CardDispute>(token)
+                    .ConfigureAwait(false);
+                if (this._client.ResponseValidation)
+                {
+                    cardDispute.Validate();
+                }
+                return cardDispute;
+            }
+        );
+    }
+
+    /// <inheritdoc/>
+    public Task<HttpResponse<CardDispute>> ReverseProvisionalCredit(
+        string cardDisputeID,
+        CardDisputeReverseProvisionalCreditParams? parameters = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        parameters ??= new();
+
+        return this.ReverseProvisionalCredit(
+            parameters with
+            {
+                CardDisputeID = cardDisputeID,
+            },
+            cancellationToken
         );
     }
 

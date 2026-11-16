@@ -139,6 +139,20 @@ public sealed record class CardDispute : JsonModel
     }
 
     /// <summary>
+    /// If a provisional credit has been provided for the Card Dispute, this will
+    /// contain details of the provisional credit.
+    /// </summary>
+    public required ProvisionalCredit? ProvisionalCredit
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<ProvisionalCredit>("provisional_credit");
+        }
+        init { this._rawData.Set("provisional_credit", value); }
+    }
+
+    /// <summary>
     /// If the Card Dispute has been rejected, this will contain details of the rejection.
     /// </summary>
     public required Rejection? Rejection
@@ -251,6 +265,7 @@ public sealed record class CardDispute : JsonModel
         _ = this.IdempotencyKey;
         this.Loss?.Validate();
         this.Network.Validate();
+        this.ProvisionalCredit?.Validate();
         this.Rejection?.Validate();
         this.Status.Validate();
         this.Type.Validate();
@@ -476,6 +491,236 @@ sealed class CardDisputeNetworkConverter : JsonConverter<CardDisputeNetwork>
             options
         );
     }
+}
+
+/// <summary>
+/// If a provisional credit has been provided for the Card Dispute, this will contain
+/// details of the provisional credit.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<ProvisionalCredit, ProvisionalCreditFromRaw>))]
+public sealed record class ProvisionalCredit : JsonModel
+{
+    /// <summary>
+    /// The amount of the provisional credit in the minor unit of its currency. For
+    /// dollars, for example, this is cents.
+    /// </summary>
+    public required long Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the Transaction that credited the cardholder's Account.
+    /// </summary>
+    public required string CardholderAccountTransactionID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("cardholder_account_transaction_id");
+        }
+        init { this._rawData.Set("cardholder_account_transaction_id", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the provisional credit was provided.
+    /// </summary>
+    public required System::DateTimeOffset ProvidedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("provided_at");
+        }
+        init { this._rawData.Set("provided_at", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the Transaction that debited the provisional credit funding Account.
+    /// </summary>
+    public required string ProvisionalCreditFundingAccountTransactionID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>(
+                "provisional_credit_funding_account_transaction_id"
+            );
+        }
+        init { this._rawData.Set("provisional_credit_funding_account_transaction_id", value); }
+    }
+
+    /// <summary>
+    /// If the provisional credit has been reversed, this will contain details of
+    /// the reversal.
+    /// </summary>
+    public required Reversal? Reversal
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<Reversal>("reversal");
+        }
+        init { this._rawData.Set("reversal", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Amount;
+        _ = this.CardholderAccountTransactionID;
+        _ = this.ProvidedAt;
+        _ = this.ProvisionalCreditFundingAccountTransactionID;
+        this.Reversal?.Validate();
+    }
+
+    public ProvisionalCredit() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public ProvisionalCredit(ProvisionalCredit provisionalCredit)
+        : base(provisionalCredit) { }
+#pragma warning restore CS8618
+
+    public ProvisionalCredit(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    ProvisionalCredit(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="ProvisionalCreditFromRaw.FromRawUnchecked"/>
+    public static ProvisionalCredit FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class ProvisionalCreditFromRaw : IFromRawJson<ProvisionalCredit>
+{
+    /// <inheritdoc/>
+    public ProvisionalCredit FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        ProvisionalCredit.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// If the provisional credit has been reversed, this will contain details of the reversal.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Reversal, ReversalFromRaw>))]
+public sealed record class Reversal : JsonModel
+{
+    /// <summary>
+    /// The amount of the reversal in the minor unit of its currency. For dollars,
+    /// for example, this is cents.
+    /// </summary>
+    public required long Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the Transaction that debited the cardholder's Account.
+    /// </summary>
+    public required string CardholderAccountTransactionID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("cardholder_account_transaction_id");
+        }
+        init { this._rawData.Set("cardholder_account_transaction_id", value); }
+    }
+
+    /// <summary>
+    /// The identifier of the Transaction that credited the provisional credit funding Account.
+    /// </summary>
+    public required string ProvisionalCreditFundingAccountTransactionID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>(
+                "provisional_credit_funding_account_transaction_id"
+            );
+        }
+        init { this._rawData.Set("provisional_credit_funding_account_transaction_id", value); }
+    }
+
+    /// <summary>
+    /// The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which
+    /// the provisional credit was reversed.
+    /// </summary>
+    public required System::DateTimeOffset ReversedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<System::DateTimeOffset>("reversed_at");
+        }
+        init { this._rawData.Set("reversed_at", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Amount;
+        _ = this.CardholderAccountTransactionID;
+        _ = this.ProvisionalCreditFundingAccountTransactionID;
+        _ = this.ReversedAt;
+    }
+
+    public Reversal() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Reversal(Reversal reversal)
+        : base(reversal) { }
+#pragma warning restore CS8618
+
+    public Reversal(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Reversal(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="ReversalFromRaw.FromRawUnchecked"/>
+    public static Reversal FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class ReversalFromRaw : IFromRawJson<Reversal>
+{
+    /// <inheritdoc/>
+    public Reversal FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Reversal.FromRawUnchecked(rawData);
 }
 
 /// <summary>
@@ -868,6 +1113,19 @@ public sealed record class NetworkEvent : JsonModel
     }
 
     /// <summary>
+    /// The account the dispute financial transaction was posted to, if any.
+    /// </summary>
+    public required string? DisputeFinancialAccountID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("dispute_financial_account_id");
+        }
+        init { this._rawData.Set("dispute_financial_account_id", value); }
+    }
+
+    /// <summary>
     /// The dispute financial transaction that resulted from the network event, if any.
     /// </summary>
     public required string? DisputeFinancialTransactionID
@@ -1127,6 +1385,7 @@ public sealed record class NetworkEvent : JsonModel
         }
         this.Category.Validate();
         _ = this.CreatedAt;
+        _ = this.DisputeFinancialAccountID;
         _ = this.DisputeFinancialTransactionID;
         this.ChargebackAccepted?.Validate();
         this.ChargebackSubmitted?.Validate();

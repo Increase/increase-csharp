@@ -30,6 +30,22 @@ public class CardDisputeListPageResponseTest : TestBase
                         Reason = CardDisputes::LossReason.UserWithdrawn,
                     },
                     Network = CardDisputes::CardDisputeNetwork.Visa,
+                    ProvisionalCredit = new()
+                    {
+                        Amount = 1000,
+                        CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                        ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ProvisionalCreditFundingAccountTransactionID =
+                            "transaction_w1uzqgy1g1nu09n7g328",
+                        Reversal = new()
+                        {
+                            Amount = 1000,
+                            CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                            ProvisionalCreditFundingAccountTransactionID =
+                                "transaction_70yvcpgqpsxcattatmfe",
+                            ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        },
+                    },
                     Rejection = new()
                     {
                         Explanation = "Card Dispute is not allowed per network rules.",
@@ -47,6 +63,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                 AttachmentFiles = [new("file_id")],
                                 Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                DisputeFinancialAccountID = null,
                                 DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                                 ChargebackAccepted = new(),
                                 ChargebackSubmitted = new(),
@@ -532,6 +549,22 @@ public class CardDisputeListPageResponseTest : TestBase
                     Reason = CardDisputes::LossReason.UserWithdrawn,
                 },
                 Network = CardDisputes::CardDisputeNetwork.Visa,
+                ProvisionalCredit = new()
+                {
+                    Amount = 1000,
+                    CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                    ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    ProvisionalCreditFundingAccountTransactionID =
+                        "transaction_w1uzqgy1g1nu09n7g328",
+                    Reversal = new()
+                    {
+                        Amount = 1000,
+                        CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                        ProvisionalCreditFundingAccountTransactionID =
+                            "transaction_70yvcpgqpsxcattatmfe",
+                        ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
+                },
                 Rejection = new()
                 {
                     Explanation = "Card Dispute is not allowed per network rules.",
@@ -549,6 +582,7 @@ public class CardDisputeListPageResponseTest : TestBase
                             AttachmentFiles = [new("file_id")],
                             Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            DisputeFinancialAccountID = null,
                             DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                             ChargebackAccepted = new(),
                             ChargebackSubmitted = new(),
@@ -1038,6 +1072,22 @@ public class CardDisputeListPageResponseTest : TestBase
                         Reason = CardDisputes::LossReason.UserWithdrawn,
                     },
                     Network = CardDisputes::CardDisputeNetwork.Visa,
+                    ProvisionalCredit = new()
+                    {
+                        Amount = 1000,
+                        CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                        ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ProvisionalCreditFundingAccountTransactionID =
+                            "transaction_w1uzqgy1g1nu09n7g328",
+                        Reversal = new()
+                        {
+                            Amount = 1000,
+                            CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                            ProvisionalCreditFundingAccountTransactionID =
+                                "transaction_70yvcpgqpsxcattatmfe",
+                            ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        },
+                    },
                     Rejection = new()
                     {
                         Explanation = "Card Dispute is not allowed per network rules.",
@@ -1055,6 +1105,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                 AttachmentFiles = [new("file_id")],
                                 Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                DisputeFinancialAccountID = null,
                                 DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                                 ChargebackAccepted = new(),
                                 ChargebackSubmitted = new(),
@@ -1554,6 +1605,22 @@ public class CardDisputeListPageResponseTest : TestBase
                         Reason = CardDisputes::LossReason.UserWithdrawn,
                     },
                     Network = CardDisputes::CardDisputeNetwork.Visa,
+                    ProvisionalCredit = new()
+                    {
+                        Amount = 1000,
+                        CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                        ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ProvisionalCreditFundingAccountTransactionID =
+                            "transaction_w1uzqgy1g1nu09n7g328",
+                        Reversal = new()
+                        {
+                            Amount = 1000,
+                            CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                            ProvisionalCreditFundingAccountTransactionID =
+                                "transaction_70yvcpgqpsxcattatmfe",
+                            ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        },
+                    },
                     Rejection = new()
                     {
                         Explanation = "Card Dispute is not allowed per network rules.",
@@ -1571,6 +1638,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                 AttachmentFiles = [new("file_id")],
                                 Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                DisputeFinancialAccountID = null,
                                 DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                                 ChargebackAccepted = new(),
                                 ChargebackSubmitted = new(),
@@ -2063,6 +2131,22 @@ public class CardDisputeListPageResponseTest : TestBase
                     Reason = CardDisputes::LossReason.UserWithdrawn,
                 },
                 Network = CardDisputes::CardDisputeNetwork.Visa,
+                ProvisionalCredit = new()
+                {
+                    Amount = 1000,
+                    CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                    ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    ProvisionalCreditFundingAccountTransactionID =
+                        "transaction_w1uzqgy1g1nu09n7g328",
+                    Reversal = new()
+                    {
+                        Amount = 1000,
+                        CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                        ProvisionalCreditFundingAccountTransactionID =
+                            "transaction_70yvcpgqpsxcattatmfe",
+                        ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    },
+                },
                 Rejection = new()
                 {
                     Explanation = "Card Dispute is not allowed per network rules.",
@@ -2080,6 +2164,7 @@ public class CardDisputeListPageResponseTest : TestBase
                             AttachmentFiles = [new("file_id")],
                             Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                             CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                            DisputeFinancialAccountID = null,
                             DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                             ChargebackAccepted = new(),
                             ChargebackSubmitted = new(),
@@ -2569,6 +2654,22 @@ public class CardDisputeListPageResponseTest : TestBase
                         Reason = CardDisputes::LossReason.UserWithdrawn,
                     },
                     Network = CardDisputes::CardDisputeNetwork.Visa,
+                    ProvisionalCredit = new()
+                    {
+                        Amount = 1000,
+                        CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                        ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ProvisionalCreditFundingAccountTransactionID =
+                            "transaction_w1uzqgy1g1nu09n7g328",
+                        Reversal = new()
+                        {
+                            Amount = 1000,
+                            CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                            ProvisionalCreditFundingAccountTransactionID =
+                                "transaction_70yvcpgqpsxcattatmfe",
+                            ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        },
+                    },
                     Rejection = new()
                     {
                         Explanation = "Card Dispute is not allowed per network rules.",
@@ -2586,6 +2687,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                 AttachmentFiles = [new("file_id")],
                                 Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                DisputeFinancialAccountID = null,
                                 DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                                 ChargebackAccepted = new(),
                                 ChargebackSubmitted = new(),
@@ -3079,6 +3181,22 @@ public class CardDisputeListPageResponseTest : TestBase
                         Reason = CardDisputes::LossReason.UserWithdrawn,
                     },
                     Network = CardDisputes::CardDisputeNetwork.Visa,
+                    ProvisionalCredit = new()
+                    {
+                        Amount = 1000,
+                        CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                        ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        ProvisionalCreditFundingAccountTransactionID =
+                            "transaction_w1uzqgy1g1nu09n7g328",
+                        Reversal = new()
+                        {
+                            Amount = 1000,
+                            CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                            ProvisionalCreditFundingAccountTransactionID =
+                                "transaction_70yvcpgqpsxcattatmfe",
+                            ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        },
+                    },
                     Rejection = new()
                     {
                         Explanation = "Card Dispute is not allowed per network rules.",
@@ -3096,6 +3214,7 @@ public class CardDisputeListPageResponseTest : TestBase
                                 AttachmentFiles = [new("file_id")],
                                 Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                                 CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                                DisputeFinancialAccountID = null,
                                 DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                                 ChargebackAccepted = new(),
                                 ChargebackSubmitted = new(),
