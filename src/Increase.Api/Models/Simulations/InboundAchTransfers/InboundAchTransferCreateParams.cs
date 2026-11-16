@@ -411,6 +411,7 @@ public sealed record class Addenda : JsonModel
 
     /// <summary>
     /// Unstructured `payment_related_information` passed through with the transfer.
+    /// Required if and only if `category` is `freeform`.
     /// </summary>
     public Freeform? Freeform
     {
@@ -523,7 +524,8 @@ sealed class CategoryConverter : JsonConverter<Category>
 }
 
 /// <summary>
-/// Unstructured `payment_related_information` passed through with the transfer.
+/// Unstructured `payment_related_information` passed through with the transfer. Required
+/// if and only if `category` is `freeform`.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<Freeform, FreeformFromRaw>))]
 public sealed record class Freeform : JsonModel
