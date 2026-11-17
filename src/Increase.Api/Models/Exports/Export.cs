@@ -424,16 +424,31 @@ public sealed record class ExportAccountStatementBai2 : JsonModel
     }
 
     /// <summary>
-    /// The UTC date for which to retrieve the balance.
+    /// The first as-of date (UTC) reported in the BAI2 file. If null, the report
+    /// started from the earliest included Account.
     /// </summary>
-    public required string? EffectiveDate
+    public required string? OnOrAfterDate
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("effective_date");
+            return this._rawData.GetNullableClass<string>("on_or_after_date");
         }
-        init { this._rawData.Set("effective_date", value); }
+        init { this._rawData.Set("on_or_after_date", value); }
+    }
+
+    /// <summary>
+    /// The last as-of date (UTC) reported in the BAI2 file. If null, the report
+    /// ran through the date the Export was created.
+    /// </summary>
+    public required string? OnOrBeforeDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("on_or_before_date");
+        }
+        init { this._rawData.Set("on_or_before_date", value); }
     }
 
     /// <summary>
@@ -453,7 +468,8 @@ public sealed record class ExportAccountStatementBai2 : JsonModel
     public override void Validate()
     {
         _ = this.AccountID;
-        _ = this.EffectiveDate;
+        _ = this.OnOrAfterDate;
+        _ = this.OnOrBeforeDate;
         _ = this.ProgramID;
     }
 
