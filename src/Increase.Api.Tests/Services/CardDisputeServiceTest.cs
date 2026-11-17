@@ -41,6 +41,28 @@ public class CardDisputeServiceTest : TestBase
     }
 
     [Fact]
+    public async Task ProvideProvisionalCredit_Works()
+    {
+        var cardDispute = await this.client.CardDisputes.ProvideProvisionalCredit(
+            "card_dispute_h9sc95nbl1cgltpp7men",
+            new(),
+            TestContext.Current.CancellationToken
+        );
+        cardDispute.Validate();
+    }
+
+    [Fact]
+    public async Task ReverseProvisionalCredit_Works()
+    {
+        var cardDispute = await this.client.CardDisputes.ReverseProvisionalCredit(
+            "card_dispute_h9sc95nbl1cgltpp7men",
+            new(),
+            TestContext.Current.CancellationToken
+        );
+        cardDispute.Validate();
+    }
+
+    [Fact]
     public async Task SubmitUserSubmission_Works()
     {
         var cardDispute = await this.client.CardDisputes.SubmitUserSubmission(

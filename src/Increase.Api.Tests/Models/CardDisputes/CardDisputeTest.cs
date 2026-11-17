@@ -27,6 +27,21 @@ public class CardDisputeTest : TestBase
                 Reason = CardDisputes::LossReason.UserWithdrawn,
             },
             Network = CardDisputes::CardDisputeNetwork.Visa,
+            ProvisionalCredit = new()
+            {
+                Amount = 1000,
+                CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ProvisionalCreditFundingAccountTransactionID = "transaction_w1uzqgy1g1nu09n7g328",
+                Reversal = new()
+                {
+                    Amount = 1000,
+                    CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                    ProvisionalCreditFundingAccountTransactionID =
+                        "transaction_70yvcpgqpsxcattatmfe",
+                    ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
+            },
             Rejection = new()
             {
                 Explanation = "Card Dispute is not allowed per network rules.",
@@ -44,6 +59,7 @@ public class CardDisputeTest : TestBase
                         AttachmentFiles = [new("file_id")],
                         Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        DisputeFinancialAccountID = null,
                         DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                         ChargebackAccepted = new(),
                         ChargebackSubmitted = new(),
@@ -510,6 +526,20 @@ public class CardDisputeTest : TestBase
         };
         ApiEnum<string, CardDisputes::CardDisputeNetwork> expectedNetwork =
             CardDisputes::CardDisputeNetwork.Visa;
+        CardDisputes::ProvisionalCredit expectedProvisionalCredit = new()
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ProvisionalCreditFundingAccountTransactionID = "transaction_w1uzqgy1g1nu09n7g328",
+            Reversal = new()
+            {
+                Amount = 1000,
+                CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+                ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
+        };
         CardDisputes::Rejection expectedRejection = new()
         {
             Explanation = "Card Dispute is not allowed per network rules.",
@@ -527,6 +557,7 @@ public class CardDisputeTest : TestBase
                     AttachmentFiles = [new("file_id")],
                     Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    DisputeFinancialAccountID = null,
                     DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                     ChargebackAccepted = new(),
                     ChargebackSubmitted = new(),
@@ -984,6 +1015,7 @@ public class CardDisputeTest : TestBase
         Assert.Null(model.IdempotencyKey);
         Assert.Equal(expectedLoss, model.Loss);
         Assert.Equal(expectedNetwork, model.Network);
+        Assert.Equal(expectedProvisionalCredit, model.ProvisionalCredit);
         Assert.Equal(expectedRejection, model.Rejection);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedType, model.Type);
@@ -1011,6 +1043,21 @@ public class CardDisputeTest : TestBase
                 Reason = CardDisputes::LossReason.UserWithdrawn,
             },
             Network = CardDisputes::CardDisputeNetwork.Visa,
+            ProvisionalCredit = new()
+            {
+                Amount = 1000,
+                CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ProvisionalCreditFundingAccountTransactionID = "transaction_w1uzqgy1g1nu09n7g328",
+                Reversal = new()
+                {
+                    Amount = 1000,
+                    CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                    ProvisionalCreditFundingAccountTransactionID =
+                        "transaction_70yvcpgqpsxcattatmfe",
+                    ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
+            },
             Rejection = new()
             {
                 Explanation = "Card Dispute is not allowed per network rules.",
@@ -1028,6 +1075,7 @@ public class CardDisputeTest : TestBase
                         AttachmentFiles = [new("file_id")],
                         Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        DisputeFinancialAccountID = null,
                         DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                         ChargebackAccepted = new(),
                         ChargebackSubmitted = new(),
@@ -1508,6 +1556,21 @@ public class CardDisputeTest : TestBase
                 Reason = CardDisputes::LossReason.UserWithdrawn,
             },
             Network = CardDisputes::CardDisputeNetwork.Visa,
+            ProvisionalCredit = new()
+            {
+                Amount = 1000,
+                CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ProvisionalCreditFundingAccountTransactionID = "transaction_w1uzqgy1g1nu09n7g328",
+                Reversal = new()
+                {
+                    Amount = 1000,
+                    CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                    ProvisionalCreditFundingAccountTransactionID =
+                        "transaction_70yvcpgqpsxcattatmfe",
+                    ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
+            },
             Rejection = new()
             {
                 Explanation = "Card Dispute is not allowed per network rules.",
@@ -1525,6 +1588,7 @@ public class CardDisputeTest : TestBase
                         AttachmentFiles = [new("file_id")],
                         Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        DisputeFinancialAccountID = null,
                         DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                         ChargebackAccepted = new(),
                         ChargebackSubmitted = new(),
@@ -1998,6 +2062,20 @@ public class CardDisputeTest : TestBase
         };
         ApiEnum<string, CardDisputes::CardDisputeNetwork> expectedNetwork =
             CardDisputes::CardDisputeNetwork.Visa;
+        CardDisputes::ProvisionalCredit expectedProvisionalCredit = new()
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ProvisionalCreditFundingAccountTransactionID = "transaction_w1uzqgy1g1nu09n7g328",
+            Reversal = new()
+            {
+                Amount = 1000,
+                CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+                ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
+        };
         CardDisputes::Rejection expectedRejection = new()
         {
             Explanation = "Card Dispute is not allowed per network rules.",
@@ -2015,6 +2093,7 @@ public class CardDisputeTest : TestBase
                     AttachmentFiles = [new("file_id")],
                     Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                     CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                    DisputeFinancialAccountID = null,
                     DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                     ChargebackAccepted = new(),
                     ChargebackSubmitted = new(),
@@ -2472,6 +2551,7 @@ public class CardDisputeTest : TestBase
         Assert.Null(deserialized.IdempotencyKey);
         Assert.Equal(expectedLoss, deserialized.Loss);
         Assert.Equal(expectedNetwork, deserialized.Network);
+        Assert.Equal(expectedProvisionalCredit, deserialized.ProvisionalCredit);
         Assert.Equal(expectedRejection, deserialized.Rejection);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedType, deserialized.Type);
@@ -2499,6 +2579,21 @@ public class CardDisputeTest : TestBase
                 Reason = CardDisputes::LossReason.UserWithdrawn,
             },
             Network = CardDisputes::CardDisputeNetwork.Visa,
+            ProvisionalCredit = new()
+            {
+                Amount = 1000,
+                CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ProvisionalCreditFundingAccountTransactionID = "transaction_w1uzqgy1g1nu09n7g328",
+                Reversal = new()
+                {
+                    Amount = 1000,
+                    CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                    ProvisionalCreditFundingAccountTransactionID =
+                        "transaction_70yvcpgqpsxcattatmfe",
+                    ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
+            },
             Rejection = new()
             {
                 Explanation = "Card Dispute is not allowed per network rules.",
@@ -2516,6 +2611,7 @@ public class CardDisputeTest : TestBase
                         AttachmentFiles = [new("file_id")],
                         Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        DisputeFinancialAccountID = null,
                         DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                         ChargebackAccepted = new(),
                         ChargebackSubmitted = new(),
@@ -2990,6 +3086,21 @@ public class CardDisputeTest : TestBase
                 Reason = CardDisputes::LossReason.UserWithdrawn,
             },
             Network = CardDisputes::CardDisputeNetwork.Visa,
+            ProvisionalCredit = new()
+            {
+                Amount = 1000,
+                CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+                ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                ProvisionalCreditFundingAccountTransactionID = "transaction_w1uzqgy1g1nu09n7g328",
+                Reversal = new()
+                {
+                    Amount = 1000,
+                    CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                    ProvisionalCreditFundingAccountTransactionID =
+                        "transaction_70yvcpgqpsxcattatmfe",
+                    ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                },
+            },
             Rejection = new()
             {
                 Explanation = "Card Dispute is not allowed per network rules.",
@@ -3007,6 +3118,7 @@ public class CardDisputeTest : TestBase
                         AttachmentFiles = [new("file_id")],
                         Category = CardDisputes::NetworkEventCategory.ChargebackSubmitted,
                         CreatedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+                        DisputeFinancialAccountID = null,
                         DisputeFinancialTransactionID = "transaction_wgk1uqg4mjsn5nurkscv",
                         ChargebackAccepted = new(),
                         ChargebackSubmitted = new(),
@@ -3668,6 +3780,287 @@ public class CardDisputeNetworkTest : TestBase
     }
 }
 
+public class ProvisionalCreditTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardDisputes::ProvisionalCredit
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ProvisionalCreditFundingAccountTransactionID = "transaction_w1uzqgy1g1nu09n7g328",
+            Reversal = new()
+            {
+                Amount = 1000,
+                CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+                ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
+        };
+
+        long expectedAmount = 1000;
+        string expectedCardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi";
+        DateTimeOffset expectedProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedProvisionalCreditFundingAccountTransactionID =
+            "transaction_w1uzqgy1g1nu09n7g328";
+        CardDisputes::Reversal expectedReversal = new()
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+            ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+            ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCardholderAccountTransactionID, model.CardholderAccountTransactionID);
+        Assert.Equal(expectedProvidedAt, model.ProvidedAt);
+        Assert.Equal(
+            expectedProvisionalCreditFundingAccountTransactionID,
+            model.ProvisionalCreditFundingAccountTransactionID
+        );
+        Assert.Equal(expectedReversal, model.Reversal);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardDisputes::ProvisionalCredit
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ProvisionalCreditFundingAccountTransactionID = "transaction_w1uzqgy1g1nu09n7g328",
+            Reversal = new()
+            {
+                Amount = 1000,
+                CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+                ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardDisputes::ProvisionalCredit>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardDisputes::ProvisionalCredit
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ProvisionalCreditFundingAccountTransactionID = "transaction_w1uzqgy1g1nu09n7g328",
+            Reversal = new()
+            {
+                Amount = 1000,
+                CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+                ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardDisputes::ProvisionalCredit>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        long expectedAmount = 1000;
+        string expectedCardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi";
+        DateTimeOffset expectedProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+        string expectedProvisionalCreditFundingAccountTransactionID =
+            "transaction_w1uzqgy1g1nu09n7g328";
+        CardDisputes::Reversal expectedReversal = new()
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+            ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+            ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(
+            expectedCardholderAccountTransactionID,
+            deserialized.CardholderAccountTransactionID
+        );
+        Assert.Equal(expectedProvidedAt, deserialized.ProvidedAt);
+        Assert.Equal(
+            expectedProvisionalCreditFundingAccountTransactionID,
+            deserialized.ProvisionalCreditFundingAccountTransactionID
+        );
+        Assert.Equal(expectedReversal, deserialized.Reversal);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardDisputes::ProvisionalCredit
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ProvisionalCreditFundingAccountTransactionID = "transaction_w1uzqgy1g1nu09n7g328",
+            Reversal = new()
+            {
+                Amount = 1000,
+                CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+                ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardDisputes::ProvisionalCredit
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_uyrp7fld2ium70oa7oi",
+            ProvidedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            ProvisionalCreditFundingAccountTransactionID = "transaction_w1uzqgy1g1nu09n7g328",
+            Reversal = new()
+            {
+                Amount = 1000,
+                CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+                ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+                ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+            },
+        };
+
+        CardDisputes::ProvisionalCredit copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class ReversalTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new CardDisputes::Reversal
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+            ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+            ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        long expectedAmount = 1000;
+        string expectedCardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade";
+        string expectedProvisionalCreditFundingAccountTransactionID =
+            "transaction_70yvcpgqpsxcattatmfe";
+        DateTimeOffset expectedReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+
+        Assert.Equal(expectedAmount, model.Amount);
+        Assert.Equal(expectedCardholderAccountTransactionID, model.CardholderAccountTransactionID);
+        Assert.Equal(
+            expectedProvisionalCreditFundingAccountTransactionID,
+            model.ProvisionalCreditFundingAccountTransactionID
+        );
+        Assert.Equal(expectedReversedAt, model.ReversedAt);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new CardDisputes::Reversal
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+            ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+            ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardDisputes::Reversal>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new CardDisputes::Reversal
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+            ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+            ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<CardDisputes::Reversal>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        long expectedAmount = 1000;
+        string expectedCardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade";
+        string expectedProvisionalCreditFundingAccountTransactionID =
+            "transaction_70yvcpgqpsxcattatmfe";
+        DateTimeOffset expectedReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z");
+
+        Assert.Equal(expectedAmount, deserialized.Amount);
+        Assert.Equal(
+            expectedCardholderAccountTransactionID,
+            deserialized.CardholderAccountTransactionID
+        );
+        Assert.Equal(
+            expectedProvisionalCreditFundingAccountTransactionID,
+            deserialized.ProvisionalCreditFundingAccountTransactionID
+        );
+        Assert.Equal(expectedReversedAt, deserialized.ReversedAt);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new CardDisputes::Reversal
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+            ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+            ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CardDisputes::Reversal
+        {
+            Amount = 1000,
+            CardholderAccountTransactionID = "transaction_mtp8fa3lj5caty57gade",
+            ProvisionalCreditFundingAccountTransactionID = "transaction_70yvcpgqpsxcattatmfe",
+            ReversedAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
+        };
+
+        CardDisputes::Reversal copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
 public class RejectionTest : TestBase
 {
     [Fact]
@@ -3892,6 +4285,7 @@ public class CardDisputeVisaTest : TestBase
                     AttachmentFiles = [new("file_id")],
                     Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    DisputeFinancialAccountID = "dispute_financial_account_id",
                     DisputeFinancialTransactionID = "dispute_financial_transaction_id",
                     ChargebackAccepted = new(),
                     ChargebackSubmitted = new(),
@@ -4346,6 +4740,7 @@ public class CardDisputeVisaTest : TestBase
                 AttachmentFiles = [new("file_id")],
                 Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                DisputeFinancialAccountID = "dispute_financial_account_id",
                 DisputeFinancialTransactionID = "dispute_financial_transaction_id",
                 ChargebackAccepted = new(),
                 ChargebackSubmitted = new(),
@@ -4814,6 +5209,7 @@ public class CardDisputeVisaTest : TestBase
                     AttachmentFiles = [new("file_id")],
                     Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    DisputeFinancialAccountID = "dispute_financial_account_id",
                     DisputeFinancialTransactionID = "dispute_financial_transaction_id",
                     ChargebackAccepted = new(),
                     ChargebackSubmitted = new(),
@@ -5282,6 +5678,7 @@ public class CardDisputeVisaTest : TestBase
                     AttachmentFiles = [new("file_id")],
                     Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    DisputeFinancialAccountID = "dispute_financial_account_id",
                     DisputeFinancialTransactionID = "dispute_financial_transaction_id",
                     ChargebackAccepted = new(),
                     ChargebackSubmitted = new(),
@@ -5743,6 +6140,7 @@ public class CardDisputeVisaTest : TestBase
                 AttachmentFiles = [new("file_id")],
                 Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                DisputeFinancialAccountID = "dispute_financial_account_id",
                 DisputeFinancialTransactionID = "dispute_financial_transaction_id",
                 ChargebackAccepted = new(),
                 ChargebackSubmitted = new(),
@@ -6214,6 +6612,7 @@ public class CardDisputeVisaTest : TestBase
                     AttachmentFiles = [new("file_id")],
                     Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    DisputeFinancialAccountID = "dispute_financial_account_id",
                     DisputeFinancialTransactionID = "dispute_financial_transaction_id",
                     ChargebackAccepted = new(),
                     ChargebackSubmitted = new(),
@@ -6676,6 +7075,7 @@ public class CardDisputeVisaTest : TestBase
                     AttachmentFiles = [new("file_id")],
                     Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    DisputeFinancialAccountID = "dispute_financial_account_id",
                     DisputeFinancialTransactionID = "dispute_financial_transaction_id",
                     ChargebackAccepted = new(),
                     ChargebackSubmitted = new(),
@@ -7139,6 +7539,7 @@ public class NetworkEventTest : TestBase
             AttachmentFiles = [new("file_id")],
             Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            DisputeFinancialAccountID = "dispute_financial_account_id",
             DisputeFinancialTransactionID = "dispute_financial_transaction_id",
             ChargebackAccepted = new(),
             ChargebackSubmitted = new(),
@@ -7221,6 +7622,7 @@ public class NetworkEventTest : TestBase
         ApiEnum<string, CardDisputes::NetworkEventCategory> expectedCategory =
             CardDisputes::NetworkEventCategory.ChargebackAccepted;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedDisputeFinancialAccountID = "dispute_financial_account_id";
         string expectedDisputeFinancialTransactionID = "dispute_financial_transaction_id";
         CardDisputes::ChargebackAccepted expectedChargebackAccepted = new();
         CardDisputes::ChargebackSubmitted expectedChargebackSubmitted = new();
@@ -7305,6 +7707,7 @@ public class NetworkEventTest : TestBase
         }
         Assert.Equal(expectedCategory, model.Category);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
+        Assert.Equal(expectedDisputeFinancialAccountID, model.DisputeFinancialAccountID);
         Assert.Equal(expectedDisputeFinancialTransactionID, model.DisputeFinancialTransactionID);
         Assert.Equal(expectedChargebackAccepted, model.ChargebackAccepted);
         Assert.Equal(expectedChargebackSubmitted, model.ChargebackSubmitted);
@@ -7332,6 +7735,7 @@ public class NetworkEventTest : TestBase
             AttachmentFiles = [new("file_id")],
             Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            DisputeFinancialAccountID = "dispute_financial_account_id",
             DisputeFinancialTransactionID = "dispute_financial_transaction_id",
             ChargebackAccepted = new(),
             ChargebackSubmitted = new(),
@@ -7427,6 +7831,7 @@ public class NetworkEventTest : TestBase
             AttachmentFiles = [new("file_id")],
             Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            DisputeFinancialAccountID = "dispute_financial_account_id",
             DisputeFinancialTransactionID = "dispute_financial_transaction_id",
             ChargebackAccepted = new(),
             ChargebackSubmitted = new(),
@@ -7516,6 +7921,7 @@ public class NetworkEventTest : TestBase
         ApiEnum<string, CardDisputes::NetworkEventCategory> expectedCategory =
             CardDisputes::NetworkEventCategory.ChargebackAccepted;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        string expectedDisputeFinancialAccountID = "dispute_financial_account_id";
         string expectedDisputeFinancialTransactionID = "dispute_financial_transaction_id";
         CardDisputes::ChargebackAccepted expectedChargebackAccepted = new();
         CardDisputes::ChargebackSubmitted expectedChargebackSubmitted = new();
@@ -7600,6 +8006,7 @@ public class NetworkEventTest : TestBase
         }
         Assert.Equal(expectedCategory, deserialized.Category);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
+        Assert.Equal(expectedDisputeFinancialAccountID, deserialized.DisputeFinancialAccountID);
         Assert.Equal(
             expectedDisputeFinancialTransactionID,
             deserialized.DisputeFinancialTransactionID
@@ -7636,6 +8043,7 @@ public class NetworkEventTest : TestBase
             AttachmentFiles = [new("file_id")],
             Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            DisputeFinancialAccountID = "dispute_financial_account_id",
             DisputeFinancialTransactionID = "dispute_financial_transaction_id",
             ChargebackAccepted = new(),
             ChargebackSubmitted = new(),
@@ -7725,6 +8133,7 @@ public class NetworkEventTest : TestBase
             AttachmentFiles = [new("file_id")],
             Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            DisputeFinancialAccountID = "dispute_financial_account_id",
             DisputeFinancialTransactionID = "dispute_financial_transaction_id",
         };
 
@@ -7764,6 +8173,7 @@ public class NetworkEventTest : TestBase
             AttachmentFiles = [new("file_id")],
             Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            DisputeFinancialAccountID = "dispute_financial_account_id",
             DisputeFinancialTransactionID = "dispute_financial_transaction_id",
         };
 
@@ -7778,6 +8188,7 @@ public class NetworkEventTest : TestBase
             AttachmentFiles = [new("file_id")],
             Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            DisputeFinancialAccountID = "dispute_financial_account_id",
             DisputeFinancialTransactionID = "dispute_financial_transaction_id",
 
             ChargebackAccepted = null,
@@ -7831,6 +8242,7 @@ public class NetworkEventTest : TestBase
             AttachmentFiles = [new("file_id")],
             Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            DisputeFinancialAccountID = "dispute_financial_account_id",
             DisputeFinancialTransactionID = "dispute_financial_transaction_id",
 
             ChargebackAccepted = null,
@@ -7859,6 +8271,7 @@ public class NetworkEventTest : TestBase
             AttachmentFiles = [new("file_id")],
             Category = CardDisputes::NetworkEventCategory.ChargebackAccepted,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            DisputeFinancialAccountID = "dispute_financial_account_id",
             DisputeFinancialTransactionID = "dispute_financial_transaction_id",
             ChargebackAccepted = new(),
             ChargebackSubmitted = new(),

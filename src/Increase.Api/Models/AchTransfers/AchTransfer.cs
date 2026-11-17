@@ -191,12 +191,12 @@ public sealed record class AchTransfer : JsonModel
     /// <summary>
     /// The name by which the recipient knows you.
     /// </summary>
-    public required string? CompanyName
+    public required string CompanyName
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("company_name");
+            return this._rawData.GetNotNullClass<string>("company_name");
         }
         init { this._rawData.Set("company_name", value); }
     }
@@ -330,12 +330,12 @@ public sealed record class AchTransfer : JsonModel
     /// The name of the transfer recipient. This value is informational and not verified
     /// by the recipient's bank.
     /// </summary>
-    public required string? IndividualName
+    public required string IndividualName
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("individual_name");
+            return this._rawData.GetNotNullClass<string>("individual_name");
         }
         init { this._rawData.Set("individual_name", value); }
     }

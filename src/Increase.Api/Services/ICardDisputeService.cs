@@ -58,6 +58,38 @@ public interface ICardDisputeService
     );
 
     /// <summary>
+    /// Credits the cardholder's Account for the Card Dispute amount, funded by your
+    /// program's provisional credit Account.
+    /// </summary>
+    Task<CardDispute> ProvideProvisionalCredit(
+        CardDisputeProvideProvisionalCreditParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="ProvideProvisionalCredit(CardDisputeProvideProvisionalCreditParams, CancellationToken)"/>
+    Task<CardDispute> ProvideProvisionalCredit(
+        string cardDisputeID,
+        CardDisputeProvideProvisionalCreditParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Debits the cardholder's Account for the provisional credit and returns it to
+    /// your program's provisional credit Account.
+    /// </summary>
+    Task<CardDispute> ReverseProvisionalCredit(
+        CardDisputeReverseProvisionalCreditParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="ReverseProvisionalCredit(CardDisputeReverseProvisionalCreditParams, CancellationToken)"/>
+    Task<CardDispute> ReverseProvisionalCredit(
+        string cardDisputeID,
+        CardDisputeReverseProvisionalCreditParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
     /// Submit a User Submission for a Card Dispute
     /// </summary>
     Task<CardDispute> SubmitUserSubmission(
@@ -132,6 +164,38 @@ public interface ICardDisputeServiceWithRawResponse
     /// </summary>
     Task<HttpResponse<CardDisputeListPage>> List(
         CardDisputeListParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>post /card_disputes/{card_dispute_id}/provide_provisional_credit</c>, but is otherwise the
+    /// same as <see cref="ICardDisputeService.ProvideProvisionalCredit(CardDisputeProvideProvisionalCreditParams, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<CardDispute>> ProvideProvisionalCredit(
+        CardDisputeProvideProvisionalCreditParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="ProvideProvisionalCredit(CardDisputeProvideProvisionalCreditParams, CancellationToken)"/>
+    Task<HttpResponse<CardDispute>> ProvideProvisionalCredit(
+        string cardDisputeID,
+        CardDisputeProvideProvisionalCreditParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>post /card_disputes/{card_dispute_id}/reverse_provisional_credit</c>, but is otherwise the
+    /// same as <see cref="ICardDisputeService.ReverseProvisionalCredit(CardDisputeReverseProvisionalCreditParams, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<CardDispute>> ReverseProvisionalCredit(
+        CardDisputeReverseProvisionalCreditParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="ReverseProvisionalCredit(CardDisputeReverseProvisionalCreditParams, CancellationToken)"/>
+    Task<HttpResponse<CardDispute>> ReverseProvisionalCredit(
+        string cardDisputeID,
+        CardDisputeReverseProvisionalCreditParams? parameters = null,
         CancellationToken cancellationToken = default
     );
 
