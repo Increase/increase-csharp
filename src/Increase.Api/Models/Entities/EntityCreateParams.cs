@@ -1885,11 +1885,33 @@ public sealed record class LegalIdentifier : JsonModel
         }
     }
 
+    /// <summary>
+    /// The date on which the legal identifier was issued.
+    /// </summary>
+    public string? IssuedOn
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("issued_on");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("issued_on", value);
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         _ = this.Value;
         this.Category?.Validate();
+        _ = this.IssuedOn;
     }
 
     public LegalIdentifier() { }

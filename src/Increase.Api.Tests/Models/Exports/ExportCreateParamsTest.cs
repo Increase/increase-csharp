@@ -18,7 +18,8 @@ public class ExportCreateParamsTest : TestBase
             AccountStatementBai2 = new()
             {
                 AccountID = "account_id",
-                EffectiveDate = "2019-12-27",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
                 ProgramID = "program_id",
             },
             AccountStatementOfx = new()
@@ -80,7 +81,8 @@ public class ExportCreateParamsTest : TestBase
         AccountStatementBai2 expectedAccountStatementBai2 = new()
         {
             AccountID = "account_id",
-            EffectiveDate = "2019-12-27",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
             ProgramID = "program_id",
         };
         AccountStatementOfx expectedAccountStatementOfx = new()
@@ -248,7 +250,8 @@ public class ExportCreateParamsTest : TestBase
             AccountStatementBai2 = new()
             {
                 AccountID = "account_id",
-                EffectiveDate = "2019-12-27",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
                 ProgramID = "program_id",
             },
             AccountStatementOfx = new()
@@ -398,16 +401,19 @@ public class AccountStatementBai2Test : TestBase
         var model = new AccountStatementBai2
         {
             AccountID = "account_id",
-            EffectiveDate = "2019-12-27",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
             ProgramID = "program_id",
         };
 
         string expectedAccountID = "account_id";
-        string expectedEffectiveDate = "2019-12-27";
+        string expectedOnOrAfterDate = "2019-12-27";
+        string expectedOnOrBeforeDate = "2019-12-27";
         string expectedProgramID = "program_id";
 
         Assert.Equal(expectedAccountID, model.AccountID);
-        Assert.Equal(expectedEffectiveDate, model.EffectiveDate);
+        Assert.Equal(expectedOnOrAfterDate, model.OnOrAfterDate);
+        Assert.Equal(expectedOnOrBeforeDate, model.OnOrBeforeDate);
         Assert.Equal(expectedProgramID, model.ProgramID);
     }
 
@@ -417,7 +423,8 @@ public class AccountStatementBai2Test : TestBase
         var model = new AccountStatementBai2
         {
             AccountID = "account_id",
-            EffectiveDate = "2019-12-27",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
             ProgramID = "program_id",
         };
 
@@ -436,7 +443,8 @@ public class AccountStatementBai2Test : TestBase
         var model = new AccountStatementBai2
         {
             AccountID = "account_id",
-            EffectiveDate = "2019-12-27",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
             ProgramID = "program_id",
         };
 
@@ -448,11 +456,13 @@ public class AccountStatementBai2Test : TestBase
         Assert.NotNull(deserialized);
 
         string expectedAccountID = "account_id";
-        string expectedEffectiveDate = "2019-12-27";
+        string expectedOnOrAfterDate = "2019-12-27";
+        string expectedOnOrBeforeDate = "2019-12-27";
         string expectedProgramID = "program_id";
 
         Assert.Equal(expectedAccountID, deserialized.AccountID);
-        Assert.Equal(expectedEffectiveDate, deserialized.EffectiveDate);
+        Assert.Equal(expectedOnOrAfterDate, deserialized.OnOrAfterDate);
+        Assert.Equal(expectedOnOrBeforeDate, deserialized.OnOrBeforeDate);
         Assert.Equal(expectedProgramID, deserialized.ProgramID);
     }
 
@@ -462,7 +472,8 @@ public class AccountStatementBai2Test : TestBase
         var model = new AccountStatementBai2
         {
             AccountID = "account_id",
-            EffectiveDate = "2019-12-27",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
             ProgramID = "program_id",
         };
 
@@ -476,8 +487,10 @@ public class AccountStatementBai2Test : TestBase
 
         Assert.Null(model.AccountID);
         Assert.False(model.RawData.ContainsKey("account_id"));
-        Assert.Null(model.EffectiveDate);
-        Assert.False(model.RawData.ContainsKey("effective_date"));
+        Assert.Null(model.OnOrAfterDate);
+        Assert.False(model.RawData.ContainsKey("on_or_after_date"));
+        Assert.Null(model.OnOrBeforeDate);
+        Assert.False(model.RawData.ContainsKey("on_or_before_date"));
         Assert.Null(model.ProgramID);
         Assert.False(model.RawData.ContainsKey("program_id"));
     }
@@ -497,14 +510,17 @@ public class AccountStatementBai2Test : TestBase
         {
             // Null should be interpreted as omitted for these properties
             AccountID = null,
-            EffectiveDate = null,
+            OnOrAfterDate = null,
+            OnOrBeforeDate = null,
             ProgramID = null,
         };
 
         Assert.Null(model.AccountID);
         Assert.False(model.RawData.ContainsKey("account_id"));
-        Assert.Null(model.EffectiveDate);
-        Assert.False(model.RawData.ContainsKey("effective_date"));
+        Assert.Null(model.OnOrAfterDate);
+        Assert.False(model.RawData.ContainsKey("on_or_after_date"));
+        Assert.Null(model.OnOrBeforeDate);
+        Assert.False(model.RawData.ContainsKey("on_or_before_date"));
         Assert.Null(model.ProgramID);
         Assert.False(model.RawData.ContainsKey("program_id"));
     }
@@ -516,7 +532,8 @@ public class AccountStatementBai2Test : TestBase
         {
             // Null should be interpreted as omitted for these properties
             AccountID = null,
-            EffectiveDate = null,
+            OnOrAfterDate = null,
+            OnOrBeforeDate = null,
             ProgramID = null,
         };
 
@@ -529,7 +546,8 @@ public class AccountStatementBai2Test : TestBase
         var model = new AccountStatementBai2
         {
             AccountID = "account_id",
-            EffectiveDate = "2019-12-27",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
             ProgramID = "program_id",
         };
 
