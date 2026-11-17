@@ -79,6 +79,7 @@ public class EntityCreateParamsTest : TestBase
                 {
                     Value = "602214076",
                     Category = Category.UsEmployerIdentificationNumber,
+                    IssuedOn = "2019-12-27",
                 },
                 Name = "National Phonograph Company",
                 BeneficialOwnershipExemptionReason =
@@ -409,6 +410,7 @@ public class EntityCreateParamsTest : TestBase
             {
                 Value = "602214076",
                 Category = Category.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "National Phonograph Company",
             BeneficialOwnershipExemptionReason =
@@ -843,6 +845,7 @@ public class EntityCreateParamsTest : TestBase
                 {
                     Value = "602214076",
                     Category = Category.UsEmployerIdentificationNumber,
+                    IssuedOn = "2019-12-27",
                 },
                 Name = "National Phonograph Company",
                 BeneficialOwnershipExemptionReason =
@@ -1249,6 +1252,7 @@ public class CorporationTest : TestBase
             {
                 Value = "x",
                 Category = Category.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
             BeneficialOwnershipExemptionReason =
@@ -1321,6 +1325,7 @@ public class CorporationTest : TestBase
         {
             Value = "x",
             Category = Category.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
         string expectedName = "x";
         ApiEnum<
@@ -1418,6 +1423,7 @@ public class CorporationTest : TestBase
             {
                 Value = "x",
                 Category = Category.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
             BeneficialOwnershipExemptionReason =
@@ -1504,6 +1510,7 @@ public class CorporationTest : TestBase
             {
                 Value = "x",
                 Category = Category.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
             BeneficialOwnershipExemptionReason =
@@ -1583,6 +1590,7 @@ public class CorporationTest : TestBase
         {
             Value = "x",
             Category = Category.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
         string expectedName = "x";
         ApiEnum<
@@ -1680,6 +1688,7 @@ public class CorporationTest : TestBase
             {
                 Value = "x",
                 Category = Category.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
             BeneficialOwnershipExemptionReason =
@@ -1760,6 +1769,7 @@ public class CorporationTest : TestBase
             {
                 Value = "x",
                 Category = Category.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
         };
@@ -1843,6 +1853,7 @@ public class CorporationTest : TestBase
             {
                 Value = "x",
                 Category = Category.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
         };
@@ -1917,6 +1928,7 @@ public class CorporationTest : TestBase
             {
                 Value = "x",
                 Category = Category.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
 
@@ -2007,6 +2019,7 @@ public class CorporationTest : TestBase
             {
                 Value = "x",
                 Category = Category.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
 
@@ -2088,6 +2101,7 @@ public class CorporationTest : TestBase
             {
                 Value = "x",
                 Category = Category.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
             BeneficialOwnershipExemptionReason =
@@ -4489,13 +4503,16 @@ public class LegalIdentifierTest : TestBase
         {
             Value = "x",
             Category = Category.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
 
         string expectedValue = "x";
         ApiEnum<string, Category> expectedCategory = Category.UsEmployerIdentificationNumber;
+        string expectedIssuedOn = "2019-12-27";
 
         Assert.Equal(expectedValue, model.Value);
         Assert.Equal(expectedCategory, model.Category);
+        Assert.Equal(expectedIssuedOn, model.IssuedOn);
     }
 
     [Fact]
@@ -4505,6 +4522,7 @@ public class LegalIdentifierTest : TestBase
         {
             Value = "x",
             Category = Category.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -4523,6 +4541,7 @@ public class LegalIdentifierTest : TestBase
         {
             Value = "x",
             Category = Category.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -4534,9 +4553,11 @@ public class LegalIdentifierTest : TestBase
 
         string expectedValue = "x";
         ApiEnum<string, Category> expectedCategory = Category.UsEmployerIdentificationNumber;
+        string expectedIssuedOn = "2019-12-27";
 
         Assert.Equal(expectedValue, deserialized.Value);
         Assert.Equal(expectedCategory, deserialized.Category);
+        Assert.Equal(expectedIssuedOn, deserialized.IssuedOn);
     }
 
     [Fact]
@@ -4546,6 +4567,7 @@ public class LegalIdentifierTest : TestBase
         {
             Value = "x",
             Category = Category.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
 
         model.Validate();
@@ -4558,6 +4580,8 @@ public class LegalIdentifierTest : TestBase
 
         Assert.Null(model.Category);
         Assert.False(model.RawData.ContainsKey("category"));
+        Assert.Null(model.IssuedOn);
+        Assert.False(model.RawData.ContainsKey("issued_on"));
     }
 
     [Fact]
@@ -4577,10 +4601,13 @@ public class LegalIdentifierTest : TestBase
 
             // Null should be interpreted as omitted for these properties
             Category = null,
+            IssuedOn = null,
         };
 
         Assert.Null(model.Category);
         Assert.False(model.RawData.ContainsKey("category"));
+        Assert.Null(model.IssuedOn);
+        Assert.False(model.RawData.ContainsKey("issued_on"));
     }
 
     [Fact]
@@ -4592,6 +4619,7 @@ public class LegalIdentifierTest : TestBase
 
             // Null should be interpreted as omitted for these properties
             Category = null,
+            IssuedOn = null,
         };
 
         model.Validate();
@@ -4604,6 +4632,7 @@ public class LegalIdentifierTest : TestBase
         {
             Value = "x",
             Category = Category.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
 
         LegalIdentifier copied = new(model);

@@ -34,6 +34,7 @@ public class EntityUpdateParamsTest : TestBase
                     Value = "x",
                     Category =
                         EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                    IssuedOn = "2019-12-27",
                 },
                 Name = "x",
                 Website = "https://company.example.com",
@@ -287,6 +288,7 @@ public class EntityUpdateParamsTest : TestBase
                 Value = "x",
                 Category =
                     EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
             Website = "https://company.example.com",
@@ -635,6 +637,7 @@ public class EntityUpdateParamsTest : TestBase
                     Value = "x",
                     Category =
                         EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                    IssuedOn = "2019-12-27",
                 },
                 Name = "x",
                 Website = "https://company.example.com",
@@ -898,6 +901,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
                 Value = "x",
                 Category =
                     EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
             Website = "website",
@@ -920,6 +924,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Value = "x",
             Category =
                 EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
         string expectedName = "x";
         string expectedWebsite = "website";
@@ -955,6 +960,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
                 Value = "x",
                 Category =
                     EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
             Website = "website",
@@ -991,6 +997,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
                 Value = "x",
                 Category =
                     EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
             Website = "website",
@@ -1020,6 +1027,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
             Value = "x",
             Category =
                 EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
         string expectedName = "x";
         string expectedWebsite = "website";
@@ -1055,6 +1063,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
                 Value = "x",
                 Category =
                     EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
             Website = "website",
@@ -1163,6 +1172,7 @@ public class EntityUpdateParamsCorporationTest : TestBase
                 Value = "x",
                 Category =
                     EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+                IssuedOn = "2019-12-27",
             },
             Name = "x",
             Website = "website",
@@ -1378,14 +1388,17 @@ public class EntityUpdateParamsCorporationLegalIdentifierTest : TestBase
             Value = "x",
             Category =
                 EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
 
         string expectedValue = "x";
         ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory> expectedCategory =
             EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber;
+        string expectedIssuedOn = "2019-12-27";
 
         Assert.Equal(expectedValue, model.Value);
         Assert.Equal(expectedCategory, model.Category);
+        Assert.Equal(expectedIssuedOn, model.IssuedOn);
     }
 
     [Fact]
@@ -1396,6 +1409,7 @@ public class EntityUpdateParamsCorporationLegalIdentifierTest : TestBase
             Value = "x",
             Category =
                 EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1415,6 +1429,7 @@ public class EntityUpdateParamsCorporationLegalIdentifierTest : TestBase
             Value = "x",
             Category =
                 EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1427,9 +1442,11 @@ public class EntityUpdateParamsCorporationLegalIdentifierTest : TestBase
         string expectedValue = "x";
         ApiEnum<string, EntityUpdateParamsCorporationLegalIdentifierCategory> expectedCategory =
             EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber;
+        string expectedIssuedOn = "2019-12-27";
 
         Assert.Equal(expectedValue, deserialized.Value);
         Assert.Equal(expectedCategory, deserialized.Category);
+        Assert.Equal(expectedIssuedOn, deserialized.IssuedOn);
     }
 
     [Fact]
@@ -1440,6 +1457,7 @@ public class EntityUpdateParamsCorporationLegalIdentifierTest : TestBase
             Value = "x",
             Category =
                 EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
 
         model.Validate();
@@ -1452,6 +1470,8 @@ public class EntityUpdateParamsCorporationLegalIdentifierTest : TestBase
 
         Assert.Null(model.Category);
         Assert.False(model.RawData.ContainsKey("category"));
+        Assert.Null(model.IssuedOn);
+        Assert.False(model.RawData.ContainsKey("issued_on"));
     }
 
     [Fact]
@@ -1471,10 +1491,13 @@ public class EntityUpdateParamsCorporationLegalIdentifierTest : TestBase
 
             // Null should be interpreted as omitted for these properties
             Category = null,
+            IssuedOn = null,
         };
 
         Assert.Null(model.Category);
         Assert.False(model.RawData.ContainsKey("category"));
+        Assert.Null(model.IssuedOn);
+        Assert.False(model.RawData.ContainsKey("issued_on"));
     }
 
     [Fact]
@@ -1486,6 +1509,7 @@ public class EntityUpdateParamsCorporationLegalIdentifierTest : TestBase
 
             // Null should be interpreted as omitted for these properties
             Category = null,
+            IssuedOn = null,
         };
 
         model.Validate();
@@ -1499,6 +1523,7 @@ public class EntityUpdateParamsCorporationLegalIdentifierTest : TestBase
             Value = "x",
             Category =
                 EntityUpdateParamsCorporationLegalIdentifierCategory.UsEmployerIdentificationNumber,
+            IssuedOn = "2019-12-27",
         };
 
         EntityUpdateParamsCorporationLegalIdentifier copied = new(model);
