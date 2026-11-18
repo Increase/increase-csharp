@@ -1097,6 +1097,10 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Transactions::Reason>(),
             new ApiEnumConverter<
                 string,
+                Transactions::InboundFednowTransferReturnAcknowledgementReason
+            >(),
+            new ApiEnumConverter<
+                string,
                 Transactions::InboundRealTimePaymentsTransferConfirmationCurrency
             >(),
             new ApiEnumConverter<string, Transactions::InterestPaymentCurrency>(),
@@ -1128,6 +1132,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, PendingTransactions::CardholderAddressResult>(),
             new ApiEnumConverter<string, PendingTransactions::CheckDepositInstructionCurrency>(),
             new ApiEnumConverter<string, PendingTransactions::CheckTransferInstructionCurrency>(),
+            new ApiEnumConverter<string, PendingTransactions::Reason>(),
             new ApiEnumConverter<string, PendingTransactions::InboundFundsHoldCurrency>(),
             new ApiEnumConverter<string, PendingTransactions::InboundFundsHoldStatus>(),
             new ApiEnumConverter<string, PendingTransactions::InboundFundsHoldType>(),

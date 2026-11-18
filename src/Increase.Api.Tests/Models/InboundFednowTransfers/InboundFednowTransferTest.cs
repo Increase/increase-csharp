@@ -598,6 +598,7 @@ public class StatusTest : TestBase
     [InlineData(InboundFednowTransfers::Status.TimedOut)]
     [InlineData(InboundFednowTransfers::Status.Confirmed)]
     [InlineData(InboundFednowTransfers::Status.Declined)]
+    [InlineData(InboundFednowTransfers::Status.Returned)]
     [InlineData(InboundFednowTransfers::Status.RequiresAttention)]
     public void Validation_Works(InboundFednowTransfers::Status rawValue)
     {
@@ -623,6 +624,7 @@ public class StatusTest : TestBase
     [InlineData(InboundFednowTransfers::Status.TimedOut)]
     [InlineData(InboundFednowTransfers::Status.Confirmed)]
     [InlineData(InboundFednowTransfers::Status.Declined)]
+    [InlineData(InboundFednowTransfers::Status.Returned)]
     [InlineData(InboundFednowTransfers::Status.RequiresAttention)]
     public void SerializationRoundtrip_Works(InboundFednowTransfers::Status rawValue)
     {

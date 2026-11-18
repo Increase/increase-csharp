@@ -18,7 +18,8 @@ public class ExportTest : TestBase
             AccountStatementBai2 = new()
             {
                 AccountID = "account_id",
-                EffectiveDate = "2019-12-27",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
                 ProgramID = "program_id",
             },
             AccountStatementOfx = new()
@@ -106,7 +107,8 @@ public class ExportTest : TestBase
         Exports::ExportAccountStatementBai2 expectedAccountStatementBai2 = new()
         {
             AccountID = "account_id",
-            EffectiveDate = "2019-12-27",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
             ProgramID = "program_id",
         };
         Exports::ExportAccountStatementOfx expectedAccountStatementOfx = new()
@@ -226,7 +228,8 @@ public class ExportTest : TestBase
             AccountStatementBai2 = new()
             {
                 AccountID = "account_id",
-                EffectiveDate = "2019-12-27",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
                 ProgramID = "program_id",
             },
             AccountStatementOfx = new()
@@ -328,7 +331,8 @@ public class ExportTest : TestBase
             AccountStatementBai2 = new()
             {
                 AccountID = "account_id",
-                EffectiveDate = "2019-12-27",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
                 ProgramID = "program_id",
             },
             AccountStatementOfx = new()
@@ -423,7 +427,8 @@ public class ExportTest : TestBase
         Exports::ExportAccountStatementBai2 expectedAccountStatementBai2 = new()
         {
             AccountID = "account_id",
-            EffectiveDate = "2019-12-27",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
             ProgramID = "program_id",
         };
         Exports::ExportAccountStatementOfx expectedAccountStatementOfx = new()
@@ -546,7 +551,8 @@ public class ExportTest : TestBase
             AccountStatementBai2 = new()
             {
                 AccountID = "account_id",
-                EffectiveDate = "2019-12-27",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
                 ProgramID = "program_id",
             },
             AccountStatementOfx = new()
@@ -642,7 +648,8 @@ public class ExportTest : TestBase
             AccountStatementBai2 = new()
             {
                 AccountID = "account_id",
-                EffectiveDate = "2019-12-27",
+                OnOrAfterDate = "2019-12-27",
+                OnOrBeforeDate = "2019-12-27",
                 ProgramID = "program_id",
             },
             AccountStatementOfx = new()
@@ -740,16 +747,19 @@ public class ExportAccountStatementBai2Test : TestBase
         var model = new Exports::ExportAccountStatementBai2
         {
             AccountID = "account_id",
-            EffectiveDate = "2019-12-27",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
             ProgramID = "program_id",
         };
 
         string expectedAccountID = "account_id";
-        string expectedEffectiveDate = "2019-12-27";
+        string expectedOnOrAfterDate = "2019-12-27";
+        string expectedOnOrBeforeDate = "2019-12-27";
         string expectedProgramID = "program_id";
 
         Assert.Equal(expectedAccountID, model.AccountID);
-        Assert.Equal(expectedEffectiveDate, model.EffectiveDate);
+        Assert.Equal(expectedOnOrAfterDate, model.OnOrAfterDate);
+        Assert.Equal(expectedOnOrBeforeDate, model.OnOrBeforeDate);
         Assert.Equal(expectedProgramID, model.ProgramID);
     }
 
@@ -759,7 +769,8 @@ public class ExportAccountStatementBai2Test : TestBase
         var model = new Exports::ExportAccountStatementBai2
         {
             AccountID = "account_id",
-            EffectiveDate = "2019-12-27",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
             ProgramID = "program_id",
         };
 
@@ -778,7 +789,8 @@ public class ExportAccountStatementBai2Test : TestBase
         var model = new Exports::ExportAccountStatementBai2
         {
             AccountID = "account_id",
-            EffectiveDate = "2019-12-27",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
             ProgramID = "program_id",
         };
 
@@ -790,11 +802,13 @@ public class ExportAccountStatementBai2Test : TestBase
         Assert.NotNull(deserialized);
 
         string expectedAccountID = "account_id";
-        string expectedEffectiveDate = "2019-12-27";
+        string expectedOnOrAfterDate = "2019-12-27";
+        string expectedOnOrBeforeDate = "2019-12-27";
         string expectedProgramID = "program_id";
 
         Assert.Equal(expectedAccountID, deserialized.AccountID);
-        Assert.Equal(expectedEffectiveDate, deserialized.EffectiveDate);
+        Assert.Equal(expectedOnOrAfterDate, deserialized.OnOrAfterDate);
+        Assert.Equal(expectedOnOrBeforeDate, deserialized.OnOrBeforeDate);
         Assert.Equal(expectedProgramID, deserialized.ProgramID);
     }
 
@@ -804,7 +818,8 @@ public class ExportAccountStatementBai2Test : TestBase
         var model = new Exports::ExportAccountStatementBai2
         {
             AccountID = "account_id",
-            EffectiveDate = "2019-12-27",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
             ProgramID = "program_id",
         };
 
@@ -817,7 +832,8 @@ public class ExportAccountStatementBai2Test : TestBase
         var model = new Exports::ExportAccountStatementBai2
         {
             AccountID = "account_id",
-            EffectiveDate = "2019-12-27",
+            OnOrAfterDate = "2019-12-27",
+            OnOrBeforeDate = "2019-12-27",
             ProgramID = "program_id",
         };
 
