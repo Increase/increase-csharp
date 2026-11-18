@@ -42,6 +42,11 @@ public record class ExportCreateParams : ParamsBase
 
     /// <summary>
     /// Options for the created export. Required if `category` is equal to `account_statement_bai2`.
+    /// Each as-of date from `on_or_after_date` through `on_or_before_date` gets
+    /// its own BAI2 group (`02` record) in the file. If a group's as-of date is before
+    /// the UTC date the Export was created, it has end-of-day balances. If it's the
+    /// UTC date the Export was created, it has intraday balances as of the time
+    /// the Export was created.
     /// </summary>
     public AccountStatementBai2? AccountStatementBai2
     {
@@ -515,6 +520,10 @@ sealed class CategoryConverter : JsonConverter<Category>
 
 /// <summary>
 /// Options for the created export. Required if `category` is equal to `account_statement_bai2`.
+/// Each as-of date from `on_or_after_date` through `on_or_before_date` gets its own
+/// BAI2 group (`02` record) in the file. If a group's as-of date is before the UTC
+/// date the Export was created, it has end-of-day balances. If it's the UTC date
+/// the Export was created, it has intraday balances as of the time the Export was created.
 /// </summary>
 [JsonConverter(typeof(JsonModelConverter<AccountStatementBai2, AccountStatementBai2FromRaw>))]
 public sealed record class AccountStatementBai2 : JsonModel
@@ -542,16 +551,15 @@ public sealed record class AccountStatementBai2 : JsonModel
     }
 
     /// <summary>
-    /// The UTC date to create a BAI2 report for. If not provided, the current date
-    /// will be used. If the current date is used, the report will include intraday
-    /// balances, otherwise it will include end-of-day balances for the provided date.
+    /// The first as-of date (UTC) to report. Each as-of date gets its own group
+    /// in the BAI2 file. If not provided, the report starts from the earliest included Account.
     /// </summary>
-    public string? EffectiveDate
+    public string? OnOrAfterDate
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("effective_date");
+            return this._rawData.GetNullableClass<string>("on_or_after_date");
         }
         init
         {
@@ -560,7 +568,29 @@ public sealed record class AccountStatementBai2 : JsonModel
                 return;
             }
 
-            this._rawData.Set("effective_date", value);
+            this._rawData.Set("on_or_after_date", value);
+        }
+    }
+
+    /// <summary>
+    /// The last as-of date (UTC) to report. If not provided, the report runs through
+    /// the current UTC date.
+    /// </summary>
+    public string? OnOrBeforeDate
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("on_or_before_date");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("on_or_before_date", value);
         }
     }
 
@@ -590,7 +620,8 @@ public sealed record class AccountStatementBai2 : JsonModel
     public override void Validate()
     {
         _ = this.AccountID;
-        _ = this.EffectiveDate;
+        _ = this.OnOrAfterDate;
+        _ = this.OnOrBeforeDate;
         _ = this.ProgramID;
     }
 
