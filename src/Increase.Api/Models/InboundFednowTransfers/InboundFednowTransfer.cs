@@ -644,6 +644,11 @@ public enum Status
     Declined,
 
     /// <summary>
+    /// The transfer has been returned, in full or in part, to its sender.
+    /// </summary>
+    Returned,
+
+    /// <summary>
     /// The transfer requires attention from an Increase operator.
     /// </summary>
     RequiresAttention,
@@ -663,6 +668,7 @@ sealed class StatusConverter : JsonConverter<Status>
             "timed_out" => Status.TimedOut,
             "confirmed" => Status.Confirmed,
             "declined" => Status.Declined,
+            "returned" => Status.Returned,
             "requires_attention" => Status.RequiresAttention,
             _ => (Status)(-1),
         };
@@ -678,6 +684,7 @@ sealed class StatusConverter : JsonConverter<Status>
                 Status.TimedOut => "timed_out",
                 Status.Confirmed => "confirmed",
                 Status.Declined => "declined",
+                Status.Returned => "returned",
                 Status.RequiresAttention => "requires_attention",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
