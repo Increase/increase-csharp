@@ -21,7 +21,8 @@ public class ExportListPageResponseTest : TestBase
                     AccountStatementBai2 = new()
                     {
                         AccountID = "account_id",
-                        EffectiveDate = "2019-12-27",
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
                         ProgramID = "program_id",
                     },
                     AccountStatementOfx = new()
@@ -120,7 +121,8 @@ public class ExportListPageResponseTest : TestBase
                 AccountStatementBai2 = new()
                 {
                     AccountID = "account_id",
-                    EffectiveDate = "2019-12-27",
+                    OnOrAfterDate = "2019-12-27",
+                    OnOrBeforeDate = "2019-12-27",
                     ProgramID = "program_id",
                 },
                 AccountStatementOfx = new()
@@ -231,7 +233,8 @@ public class ExportListPageResponseTest : TestBase
                     AccountStatementBai2 = new()
                     {
                         AccountID = "account_id",
-                        EffectiveDate = "2019-12-27",
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
                         ProgramID = "program_id",
                     },
                     AccountStatementOfx = new()
@@ -344,7 +347,8 @@ public class ExportListPageResponseTest : TestBase
                     AccountStatementBai2 = new()
                     {
                         AccountID = "account_id",
-                        EffectiveDate = "2019-12-27",
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
                         ProgramID = "program_id",
                     },
                     AccountStatementOfx = new()
@@ -450,7 +454,8 @@ public class ExportListPageResponseTest : TestBase
                 AccountStatementBai2 = new()
                 {
                     AccountID = "account_id",
-                    EffectiveDate = "2019-12-27",
+                    OnOrAfterDate = "2019-12-27",
+                    OnOrBeforeDate = "2019-12-27",
                     ProgramID = "program_id",
                 },
                 AccountStatementOfx = new()
@@ -561,7 +566,8 @@ public class ExportListPageResponseTest : TestBase
                     AccountStatementBai2 = new()
                     {
                         AccountID = "account_id",
-                        EffectiveDate = "2019-12-27",
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
                         ProgramID = "program_id",
                     },
                     AccountStatementOfx = new()
@@ -668,7 +674,8 @@ public class ExportListPageResponseTest : TestBase
                     AccountStatementBai2 = new()
                     {
                         AccountID = "account_id",
-                        EffectiveDate = "2019-12-27",
+                        OnOrAfterDate = "2019-12-27",
+                        OnOrBeforeDate = "2019-12-27",
                         ProgramID = "program_id",
                     },
                     AccountStatementOfx = new()

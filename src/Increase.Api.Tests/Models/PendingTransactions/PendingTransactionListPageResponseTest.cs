@@ -180,6 +180,12 @@ public class PendingTransactionListPageResponseTest : TestBase
                             TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                         },
                         FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                        InboundFednowTransferReturn = new()
+                        {
+                            InboundFednowTransferID =
+                                "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                            Reason = PendingTransactions::Reason.CreditorRequest,
+                        },
                         InboundFundsHold = new()
                         {
                             Amount = 100,
@@ -399,6 +405,11 @@ public class PendingTransactionListPageResponseTest : TestBase
                         TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                     },
                     FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                    InboundFednowTransferReturn = new()
+                    {
+                        InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                        Reason = PendingTransactions::Reason.CreditorRequest,
+                    },
                     InboundFundsHold = new()
                     {
                         Amount = 100,
@@ -629,6 +640,12 @@ public class PendingTransactionListPageResponseTest : TestBase
                             TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                         },
                         FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                        InboundFednowTransferReturn = new()
+                        {
+                            InboundFednowTransferID =
+                                "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                            Reason = PendingTransactions::Reason.CreditorRequest,
+                        },
                         InboundFundsHold = new()
                         {
                             Amount = 100,
@@ -865,6 +882,12 @@ public class PendingTransactionListPageResponseTest : TestBase
                             TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                         },
                         FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                        InboundFednowTransferReturn = new()
+                        {
+                            InboundFednowTransferID =
+                                "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                            Reason = PendingTransactions::Reason.CreditorRequest,
+                        },
                         InboundFundsHold = new()
                         {
                             Amount = 100,
@@ -1092,6 +1115,11 @@ public class PendingTransactionListPageResponseTest : TestBase
                         TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                     },
                     FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                    InboundFednowTransferReturn = new()
+                    {
+                        InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                        Reason = PendingTransactions::Reason.CreditorRequest,
+                    },
                     InboundFundsHold = new()
                     {
                         Amount = 100,
@@ -1322,6 +1350,12 @@ public class PendingTransactionListPageResponseTest : TestBase
                             TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                         },
                         FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                        InboundFednowTransferReturn = new()
+                        {
+                            InboundFednowTransferID =
+                                "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                            Reason = PendingTransactions::Reason.CreditorRequest,
+                        },
                         InboundFundsHold = new()
                         {
                             Amount = 100,
@@ -1551,6 +1585,12 @@ public class PendingTransactionListPageResponseTest : TestBase
                             TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                         },
                         FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                        InboundFednowTransferReturn = new()
+                        {
+                            InboundFednowTransferID =
+                                "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                            Reason = PendingTransactions::Reason.CreditorRequest,
+                        },
                         InboundFundsHold = new()
                         {
                             Amount = 100,

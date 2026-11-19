@@ -272,7 +272,6 @@ public sealed record class InboundCheckDeposit : JsonModel
 
     /// <summary>
     /// Whether the details on the check match the recipient name of the check transfer.
-    /// This is an optional feature, contact sales to enable.
     /// </summary>
     public required ApiEnum<string, PayeeNameAnalysis> PayeeNameAnalysis
     {
@@ -775,7 +774,6 @@ sealed class DepositReturnReasonConverter : JsonConverter<DepositReturnReason>
 
 /// <summary>
 /// Whether the details on the check match the recipient name of the check transfer.
-/// This is an optional feature, contact sales to enable.
 /// </summary>
 [JsonConverter(typeof(PayeeNameAnalysisConverter))]
 public enum PayeeNameAnalysis

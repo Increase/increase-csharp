@@ -6079,6 +6079,7 @@ public class FeeTypeTest : TestBase
     [InlineData(DeclinedTransactions::FeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(DeclinedTransactions::FeeType.VisaAtmCashDepositDomestic)]
     [InlineData(DeclinedTransactions::FeeType.PulseSwitchFee)]
+    [InlineData(DeclinedTransactions::FeeType.PulseSwitchFeeCredit)]
     [InlineData(DeclinedTransactions::FeeType.PulseTokenizationFee)]
     public void Validation_Works(DeclinedTransactions::FeeType rawValue)
     {
@@ -6132,6 +6133,7 @@ public class FeeTypeTest : TestBase
     [InlineData(DeclinedTransactions::FeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(DeclinedTransactions::FeeType.VisaAtmCashDepositDomestic)]
     [InlineData(DeclinedTransactions::FeeType.PulseSwitchFee)]
+    [InlineData(DeclinedTransactions::FeeType.PulseSwitchFeeCredit)]
     [InlineData(DeclinedTransactions::FeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(DeclinedTransactions::FeeType rawValue)
     {

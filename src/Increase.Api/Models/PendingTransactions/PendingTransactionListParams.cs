@@ -359,6 +359,11 @@ public enum In
     FednowTransferInstruction,
 
     /// <summary>
+    /// Inbound FedNow Transfer Return: details will be under the `inbound_fednow_transfer_return` object.
+    /// </summary>
+    InboundFednowTransferReturn,
+
+    /// <summary>
     /// Inbound Funds Hold: details will be under the `inbound_funds_hold` object.
     /// </summary>
     InboundFundsHold,
@@ -435,6 +440,7 @@ sealed class InConverter : JsonConverter<In>
             "check_deposit_instruction" => In.CheckDepositInstruction,
             "check_transfer_instruction" => In.CheckTransferInstruction,
             "fednow_transfer_instruction" => In.FednowTransferInstruction,
+            "inbound_fednow_transfer_return" => In.InboundFednowTransferReturn,
             "inbound_funds_hold" => In.InboundFundsHold,
             "user_initiated_hold" => In.UserInitiatedHold,
             "real_time_payments_transfer_instruction" => In.RealTimePaymentsTransferInstruction,
@@ -464,6 +470,7 @@ sealed class InConverter : JsonConverter<In>
                 In.CheckDepositInstruction => "check_deposit_instruction",
                 In.CheckTransferInstruction => "check_transfer_instruction",
                 In.FednowTransferInstruction => "fednow_transfer_instruction",
+                In.InboundFednowTransferReturn => "inbound_fednow_transfer_return",
                 In.InboundFundsHold => "inbound_funds_hold",
                 In.UserInitiatedHold => "user_initiated_hold",
                 In.RealTimePaymentsTransferInstruction => "real_time_payments_transfer_instruction",
