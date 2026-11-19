@@ -6077,6 +6077,12 @@ public enum FeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -6136,6 +6142,7 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
             "visa_atm_cash_withdrawal_international" => FeeType.VisaAtmCashWithdrawalInternational,
             "visa_atm_cash_deposit_domestic" => FeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => FeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => FeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => FeeType.PulseTokenizationFee,
             _ => (FeeType)(-1),
         };
@@ -6192,6 +6199,7 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
                     "visa_atm_cash_withdrawal_international",
                 FeeType.VisaAtmCashDepositDomestic => "visa_atm_cash_deposit_domestic",
                 FeeType.PulseSwitchFee => "pulse_switch_fee",
+                FeeType.PulseSwitchFeeCredit => "pulse_switch_fee_credit",
                 FeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -9964,6 +9972,12 @@ public enum CardBalanceInquirySchemeFeeFeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -10043,6 +10057,7 @@ sealed class CardBalanceInquirySchemeFeeFeeTypeConverter
             "visa_atm_cash_deposit_domestic" =>
                 CardBalanceInquirySchemeFeeFeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => CardBalanceInquirySchemeFeeFeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => CardBalanceInquirySchemeFeeFeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => CardBalanceInquirySchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardBalanceInquirySchemeFeeFeeType)(-1),
         };
@@ -10120,6 +10135,8 @@ sealed class CardBalanceInquirySchemeFeeFeeTypeConverter
                 CardBalanceInquirySchemeFeeFeeType.VisaAtmCashDepositDomestic =>
                     "visa_atm_cash_deposit_domestic",
                 CardBalanceInquirySchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardBalanceInquirySchemeFeeFeeType.PulseSwitchFeeCredit =>
+                    "pulse_switch_fee_credit",
                 CardBalanceInquirySchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -14241,6 +14258,12 @@ public enum CardDeclineSchemeFeeFeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -14312,6 +14335,7 @@ sealed class CardDeclineSchemeFeeFeeTypeConverter : JsonConverter<CardDeclineSch
             "visa_atm_cash_deposit_domestic" =>
                 CardDeclineSchemeFeeFeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => CardDeclineSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => CardDeclineSchemeFeeFeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => CardDeclineSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardDeclineSchemeFeeFeeType)(-1),
         };
@@ -14385,6 +14409,7 @@ sealed class CardDeclineSchemeFeeFeeTypeConverter : JsonConverter<CardDeclineSch
                 CardDeclineSchemeFeeFeeType.VisaAtmCashDepositDomestic =>
                     "visa_atm_cash_deposit_domestic",
                 CardDeclineSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardDeclineSchemeFeeFeeType.PulseSwitchFeeCredit => "pulse_switch_fee_credit",
                 CardDeclineSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -18162,6 +18187,12 @@ public enum CardFinancialSchemeFeeFeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -18235,6 +18266,7 @@ sealed class CardFinancialSchemeFeeFeeTypeConverter : JsonConverter<CardFinancia
             "visa_atm_cash_deposit_domestic" =>
                 CardFinancialSchemeFeeFeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => CardFinancialSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => CardFinancialSchemeFeeFeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => CardFinancialSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardFinancialSchemeFeeFeeType)(-1),
         };
@@ -18311,6 +18343,7 @@ sealed class CardFinancialSchemeFeeFeeTypeConverter : JsonConverter<CardFinancia
                 CardFinancialSchemeFeeFeeType.VisaAtmCashDepositDomestic =>
                     "visa_atm_cash_deposit_domestic",
                 CardFinancialSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardFinancialSchemeFeeFeeType.PulseSwitchFeeCredit => "pulse_switch_fee_credit",
                 CardFinancialSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -19742,6 +19775,12 @@ public enum CardFuelConfirmationSchemeFeeFeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -19821,6 +19860,7 @@ sealed class CardFuelConfirmationSchemeFeeFeeTypeConverter
             "visa_atm_cash_deposit_domestic" =>
                 CardFuelConfirmationSchemeFeeFeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => CardFuelConfirmationSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardFuelConfirmationSchemeFeeFeeType)(-1),
         };
@@ -19899,6 +19939,8 @@ sealed class CardFuelConfirmationSchemeFeeFeeTypeConverter
                 CardFuelConfirmationSchemeFeeFeeType.VisaAtmCashDepositDomestic =>
                     "visa_atm_cash_deposit_domestic",
                 CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFeeCredit =>
+                    "pulse_switch_fee_credit",
                 CardFuelConfirmationSchemeFeeFeeType.PulseTokenizationFee =>
                     "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
@@ -22017,6 +22059,12 @@ public enum CardIncrementSchemeFeeFeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -22090,6 +22138,7 @@ sealed class CardIncrementSchemeFeeFeeTypeConverter : JsonConverter<CardIncremen
             "visa_atm_cash_deposit_domestic" =>
                 CardIncrementSchemeFeeFeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => CardIncrementSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => CardIncrementSchemeFeeFeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => CardIncrementSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardIncrementSchemeFeeFeeType)(-1),
         };
@@ -22166,6 +22215,7 @@ sealed class CardIncrementSchemeFeeFeeTypeConverter : JsonConverter<CardIncremen
                 CardIncrementSchemeFeeFeeType.VisaAtmCashDepositDomestic =>
                     "visa_atm_cash_deposit_domestic",
                 CardIncrementSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardIncrementSchemeFeeFeeType.PulseSwitchFeeCredit => "pulse_switch_fee_credit",
                 CardIncrementSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -27258,6 +27308,12 @@ public enum CardRefundSchemeFeeFeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -27329,6 +27385,7 @@ sealed class CardRefundSchemeFeeFeeTypeConverter : JsonConverter<CardRefundSchem
             "visa_atm_cash_deposit_domestic" =>
                 CardRefundSchemeFeeFeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => CardRefundSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => CardRefundSchemeFeeFeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => CardRefundSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardRefundSchemeFeeFeeType)(-1),
         };
@@ -27401,6 +27458,7 @@ sealed class CardRefundSchemeFeeFeeTypeConverter : JsonConverter<CardRefundSchem
                 CardRefundSchemeFeeFeeType.VisaAtmCashDepositDomestic =>
                     "visa_atm_cash_deposit_domestic",
                 CardRefundSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardRefundSchemeFeeFeeType.PulseSwitchFeeCredit => "pulse_switch_fee_credit",
                 CardRefundSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -28511,6 +28569,12 @@ public enum CardReversalSchemeFeeFeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -28582,6 +28646,7 @@ sealed class CardReversalSchemeFeeFeeTypeConverter : JsonConverter<CardReversalS
             "visa_atm_cash_deposit_domestic" =>
                 CardReversalSchemeFeeFeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => CardReversalSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => CardReversalSchemeFeeFeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => CardReversalSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardReversalSchemeFeeFeeType)(-1),
         };
@@ -28656,6 +28721,7 @@ sealed class CardReversalSchemeFeeFeeTypeConverter : JsonConverter<CardReversalS
                 CardReversalSchemeFeeFeeType.VisaAtmCashDepositDomestic =>
                     "visa_atm_cash_deposit_domestic",
                 CardReversalSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardReversalSchemeFeeFeeType.PulseSwitchFeeCredit => "pulse_switch_fee_credit",
                 CardReversalSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -34184,6 +34250,12 @@ public enum CardSettlementSchemeFeeFeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -34257,6 +34329,7 @@ sealed class CardSettlementSchemeFeeFeeTypeConverter : JsonConverter<CardSettlem
             "visa_atm_cash_deposit_domestic" =>
                 CardSettlementSchemeFeeFeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => CardSettlementSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => CardSettlementSchemeFeeFeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => CardSettlementSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardSettlementSchemeFeeFeeType)(-1),
         };
@@ -34334,6 +34407,7 @@ sealed class CardSettlementSchemeFeeFeeTypeConverter : JsonConverter<CardSettlem
                 CardSettlementSchemeFeeFeeType.VisaAtmCashDepositDomestic =>
                     "visa_atm_cash_deposit_domestic",
                 CardSettlementSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardSettlementSchemeFeeFeeType.PulseSwitchFeeCredit => "pulse_switch_fee_credit",
                 CardSettlementSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -37403,6 +37477,12 @@ public enum CardValidationSchemeFeeFeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -37476,6 +37556,7 @@ sealed class CardValidationSchemeFeeFeeTypeConverter : JsonConverter<CardValidat
             "visa_atm_cash_deposit_domestic" =>
                 CardValidationSchemeFeeFeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => CardValidationSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => CardValidationSchemeFeeFeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => CardValidationSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardValidationSchemeFeeFeeType)(-1),
         };
@@ -37553,6 +37634,7 @@ sealed class CardValidationSchemeFeeFeeTypeConverter : JsonConverter<CardValidat
                 CardValidationSchemeFeeFeeType.VisaAtmCashDepositDomestic =>
                     "visa_atm_cash_deposit_domestic",
                 CardValidationSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardValidationSchemeFeeFeeType.PulseSwitchFeeCredit => "pulse_switch_fee_credit",
                 CardValidationSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))

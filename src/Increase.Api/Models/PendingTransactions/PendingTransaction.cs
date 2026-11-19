@@ -533,6 +533,24 @@ public sealed record class Source : JsonModel
     }
 
     /// <summary>
+    /// An Inbound FedNow Transfer Return object. This field will be present in the
+    /// JSON response if and only if `category` is equal to `inbound_fednow_transfer_return`.
+    /// An Inbound FedNow Transfer Return is created when Increase has received a
+    /// FedNow transfer and the User requests that it be returned.
+    /// </summary>
+    public InboundFednowTransferReturn? InboundFednowTransferReturn
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<InboundFednowTransferReturn>(
+                "inbound_fednow_transfer_return"
+            );
+        }
+        init { this._rawData.Set("inbound_fednow_transfer_return", value); }
+    }
+
+    /// <summary>
     /// An Inbound Funds Hold object. This field will be present in the JSON response
     /// if and only if `category` is equal to `inbound_funds_hold`. We hold funds
     /// for certain transaction types to account for return windows where funds might
@@ -696,6 +714,7 @@ public sealed record class Source : JsonModel
         this.CheckDepositInstruction?.Validate();
         this.CheckTransferInstruction?.Validate();
         this.FednowTransferInstruction?.Validate();
+        this.InboundFednowTransferReturn?.Validate();
         this.InboundFundsHold?.Validate();
         this.InboundWireTransferReversal?.Validate();
         this.Other?.Validate();
@@ -787,6 +806,11 @@ public enum SourceCategory
     FednowTransferInstruction,
 
     /// <summary>
+    /// Inbound FedNow Transfer Return: details will be under the `inbound_fednow_transfer_return` object.
+    /// </summary>
+    InboundFednowTransferReturn,
+
+    /// <summary>
     /// Inbound Funds Hold: details will be under the `inbound_funds_hold` object.
     /// </summary>
     InboundFundsHold,
@@ -863,6 +887,7 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
             "check_deposit_instruction" => SourceCategory.CheckDepositInstruction,
             "check_transfer_instruction" => SourceCategory.CheckTransferInstruction,
             "fednow_transfer_instruction" => SourceCategory.FednowTransferInstruction,
+            "inbound_fednow_transfer_return" => SourceCategory.InboundFednowTransferReturn,
             "inbound_funds_hold" => SourceCategory.InboundFundsHold,
             "user_initiated_hold" => SourceCategory.UserInitiatedHold,
             "real_time_payments_transfer_instruction" =>
@@ -898,6 +923,7 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
                 SourceCategory.CheckDepositInstruction => "check_deposit_instruction",
                 SourceCategory.CheckTransferInstruction => "check_transfer_instruction",
                 SourceCategory.FednowTransferInstruction => "fednow_transfer_instruction",
+                SourceCategory.InboundFednowTransferReturn => "inbound_fednow_transfer_return",
                 SourceCategory.InboundFundsHold => "inbound_funds_hold",
                 SourceCategory.UserInitiatedHold => "user_initiated_hold",
                 SourceCategory.RealTimePaymentsTransferInstruction =>
@@ -4736,6 +4762,12 @@ public enum FeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -4795,6 +4827,7 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
             "visa_atm_cash_withdrawal_international" => FeeType.VisaAtmCashWithdrawalInternational,
             "visa_atm_cash_deposit_domestic" => FeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => FeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => FeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => FeeType.PulseTokenizationFee,
             _ => (FeeType)(-1),
         };
@@ -4851,6 +4884,7 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
                     "visa_atm_cash_withdrawal_international",
                 FeeType.VisaAtmCashDepositDomestic => "visa_atm_cash_deposit_domestic",
                 FeeType.PulseSwitchFee => "pulse_switch_fee",
+                FeeType.PulseSwitchFeeCredit => "pulse_switch_fee_credit",
                 FeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -5887,6 +5921,165 @@ class FednowTransferInstructionFromRaw : IFromRawJson<FednowTransferInstruction>
     public FednowTransferInstruction FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => FednowTransferInstruction.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// An Inbound FedNow Transfer Return object. This field will be present in the JSON
+/// response if and only if `category` is equal to `inbound_fednow_transfer_return`.
+/// An Inbound FedNow Transfer Return is created when Increase has received a FedNow
+/// transfer and the User requests that it be returned.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<InboundFednowTransferReturn, InboundFednowTransferReturnFromRaw>)
+)]
+public sealed record class InboundFednowTransferReturn : JsonModel
+{
+    /// <summary>
+    /// The identifier of the Inbound FedNow Transfer that is being returned.
+    /// </summary>
+    public required string InboundFednowTransferID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("inbound_fednow_transfer_id");
+        }
+        init { this._rawData.Set("inbound_fednow_transfer_id", value); }
+    }
+
+    /// <summary>
+    /// The reason for the return.
+    /// </summary>
+    public required ApiEnum<string, Reason> Reason
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, Reason>>("reason");
+        }
+        init { this._rawData.Set("reason", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.InboundFednowTransferID;
+        this.Reason.Validate();
+    }
+
+    public InboundFednowTransferReturn() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public InboundFednowTransferReturn(InboundFednowTransferReturn inboundFednowTransferReturn)
+        : base(inboundFednowTransferReturn) { }
+#pragma warning restore CS8618
+
+    public InboundFednowTransferReturn(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    InboundFednowTransferReturn(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="InboundFednowTransferReturnFromRaw.FromRawUnchecked"/>
+    public static InboundFednowTransferReturn FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class InboundFednowTransferReturnFromRaw : IFromRawJson<InboundFednowTransferReturn>
+{
+    /// <inheritdoc/>
+    public InboundFednowTransferReturn FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => InboundFednowTransferReturn.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The reason for the return.
+/// </summary>
+[JsonConverter(typeof(ReasonConverter))]
+public enum Reason
+{
+    /// <summary>
+    /// The inbound FedNow transfer was a duplicate. Corresponds to the FedNow reason
+    /// code `DUPL`.
+    /// </summary>
+    Duplicate,
+
+    /// <summary>
+    /// The recipient of the inbound FedNow transfer requested the funds be returned
+    /// to the sender. Corresponds to the FedNow reason code `CUST`.
+    /// </summary>
+    CreditorRequest,
+
+    /// <summary>
+    /// The inbound FedNow transfer was for the wrong amount. Corresponds to the
+    /// FedNow reason code `AM09`.
+    /// </summary>
+    WrongAmount,
+
+    /// <summary>
+    /// The recipient of the inbound FedNow transfer was not owed the funds. Corresponds
+    /// to the FedNow reason code `UPAY`.
+    /// </summary>
+    UnduePayment,
+
+    /// <summary>
+    /// The inbound FedNow transfer was determined to be fraudulent. Corresponds
+    /// to the FedNow reason code `FR01`, and reports the fraud to the Federal Reserve
+    /// and the sending bank.
+    /// </summary>
+    Fraud,
+}
+
+sealed class ReasonConverter : JsonConverter<Reason>
+{
+    public override Reason Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "duplicate" => Reason.Duplicate,
+            "creditor_request" => Reason.CreditorRequest,
+            "wrong_amount" => Reason.WrongAmount,
+            "undue_payment" => Reason.UnduePayment,
+            "fraud" => Reason.Fraud,
+            _ => (Reason)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Reason value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Reason.Duplicate => "duplicate",
+                Reason.CreditorRequest => "creditor_request",
+                Reason.WrongAmount => "wrong_amount",
+                Reason.UnduePayment => "undue_payment",
+                Reason.Fraud => "fraud",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>
