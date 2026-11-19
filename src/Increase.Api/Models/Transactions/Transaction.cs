@@ -807,6 +807,24 @@ public sealed record class Source : JsonModel
     }
 
     /// <summary>
+    /// An Inbound FedNow Transfer Return Acknowledgement object. This field will
+    /// be present in the JSON response if and only if `category` is equal to `inbound_fednow_transfer_return_acknowledgement`.
+    /// An Inbound FedNow Transfer Return Acknowledgement is created when a return
+    /// of an Inbound FedNow Transfer has been accepted and settled by the FedNow Service.
+    /// </summary>
+    public InboundFednowTransferReturnAcknowledgement? InboundFednowTransferReturnAcknowledgement
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<InboundFednowTransferReturnAcknowledgement>(
+                "inbound_fednow_transfer_return_acknowledgement"
+            );
+        }
+        init { this._rawData.Set("inbound_fednow_transfer_return_acknowledgement", value); }
+    }
+
+    /// <summary>
     /// An Inbound Real-Time Payments Transfer Confirmation object. This field will
     /// be present in the JSON response if and only if `category` is equal to `inbound_real_time_payments_transfer_confirmation`.
     /// An Inbound Real-Time Payments Transfer Confirmation is created when a Real-Time
@@ -1066,6 +1084,7 @@ public sealed record class Source : JsonModel
         this.InboundCheckAdjustment?.Validate();
         this.InboundCheckDepositReturnIntention?.Validate();
         this.InboundFednowTransferConfirmation?.Validate();
+        this.InboundFednowTransferReturnAcknowledgement?.Validate();
         this.InboundRealTimePaymentsTransferConfirmation?.Validate();
         this.InboundWireReversal?.Validate();
         this.InboundWireTransfer?.Validate();
@@ -1252,6 +1271,12 @@ public enum SourceCategory
     InboundFednowTransferConfirmation,
 
     /// <summary>
+    /// Inbound FedNow Transfer Return Acknowledgement: details will be under the
+    /// `inbound_fednow_transfer_return_acknowledgement` object.
+    /// </summary>
+    InboundFednowTransferReturnAcknowledgement,
+
+    /// <summary>
     /// Inbound Real-Time Payments Transfer Confirmation: details will be under the
     /// `inbound_real_time_payments_transfer_confirmation` object.
     /// </summary>
@@ -1380,6 +1405,8 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
             "inbound_check_adjustment" => SourceCategory.InboundCheckAdjustment,
             "inbound_fednow_transfer_confirmation" =>
                 SourceCategory.InboundFednowTransferConfirmation,
+            "inbound_fednow_transfer_return_acknowledgement" =>
+                SourceCategory.InboundFednowTransferReturnAcknowledgement,
             "inbound_real_time_payments_transfer_confirmation" =>
                 SourceCategory.InboundRealTimePaymentsTransferConfirmation,
             "inbound_wire_reversal" => SourceCategory.InboundWireReversal,
@@ -1444,6 +1471,8 @@ sealed class SourceCategoryConverter : JsonConverter<SourceCategory>
                 SourceCategory.InboundCheckAdjustment => "inbound_check_adjustment",
                 SourceCategory.InboundFednowTransferConfirmation =>
                     "inbound_fednow_transfer_confirmation",
+                SourceCategory.InboundFednowTransferReturnAcknowledgement =>
+                    "inbound_fednow_transfer_return_acknowledgement",
                 SourceCategory.InboundRealTimePaymentsTransferConfirmation =>
                     "inbound_real_time_payments_transfer_confirmation",
                 SourceCategory.InboundWireReversal => "inbound_wire_reversal",
@@ -6635,6 +6664,12 @@ public enum FeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -6694,6 +6729,7 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
             "visa_atm_cash_withdrawal_international" => FeeType.VisaAtmCashWithdrawalInternational,
             "visa_atm_cash_deposit_domestic" => FeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => FeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => FeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => FeeType.PulseTokenizationFee,
             _ => (FeeType)(-1),
         };
@@ -6750,6 +6786,7 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
                     "visa_atm_cash_withdrawal_international",
                 FeeType.VisaAtmCashDepositDomestic => "visa_atm_cash_deposit_domestic",
                 FeeType.PulseSwitchFee => "pulse_switch_fee",
+                FeeType.PulseSwitchFeeCredit => "pulse_switch_fee_credit",
                 FeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -12439,6 +12476,12 @@ public enum CardRefundSchemeFeeFeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -12510,6 +12553,7 @@ sealed class CardRefundSchemeFeeFeeTypeConverter : JsonConverter<CardRefundSchem
             "visa_atm_cash_deposit_domestic" =>
                 CardRefundSchemeFeeFeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => CardRefundSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => CardRefundSchemeFeeFeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => CardRefundSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardRefundSchemeFeeFeeType)(-1),
         };
@@ -12582,6 +12626,7 @@ sealed class CardRefundSchemeFeeFeeTypeConverter : JsonConverter<CardRefundSchem
                 CardRefundSchemeFeeFeeType.VisaAtmCashDepositDomestic =>
                     "visa_atm_cash_deposit_domestic",
                 CardRefundSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardRefundSchemeFeeFeeType.PulseSwitchFeeCredit => "pulse_switch_fee_credit",
                 CardRefundSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -18280,6 +18325,12 @@ public enum CardSettlementSchemeFeeFeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -18353,6 +18404,7 @@ sealed class CardSettlementSchemeFeeFeeTypeConverter : JsonConverter<CardSettlem
             "visa_atm_cash_deposit_domestic" =>
                 CardSettlementSchemeFeeFeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => CardSettlementSchemeFeeFeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => CardSettlementSchemeFeeFeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => CardSettlementSchemeFeeFeeType.PulseTokenizationFee,
             _ => (CardSettlementSchemeFeeFeeType)(-1),
         };
@@ -18430,6 +18482,7 @@ sealed class CardSettlementSchemeFeeFeeTypeConverter : JsonConverter<CardSettlem
                 CardSettlementSchemeFeeFeeType.VisaAtmCashDepositDomestic =>
                     "visa_atm_cash_deposit_domestic",
                 CardSettlementSchemeFeeFeeType.PulseSwitchFee => "pulse_switch_fee",
+                CardSettlementSchemeFeeFeeType.PulseSwitchFeeCredit => "pulse_switch_fee_credit",
                 CardSettlementSchemeFeeFeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
@@ -20992,6 +21045,181 @@ class InboundFednowTransferConfirmationFromRaw : IFromRawJson<InboundFednowTrans
     public InboundFednowTransferConfirmation FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => InboundFednowTransferConfirmation.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// An Inbound FedNow Transfer Return Acknowledgement object. This field will be present
+/// in the JSON response if and only if `category` is equal to `inbound_fednow_transfer_return_acknowledgement`.
+/// An Inbound FedNow Transfer Return Acknowledgement is created when a return of
+/// an Inbound FedNow Transfer has been accepted and settled by the FedNow Service.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        InboundFednowTransferReturnAcknowledgement,
+        InboundFednowTransferReturnAcknowledgementFromRaw
+    >)
+)]
+public sealed record class InboundFednowTransferReturnAcknowledgement : JsonModel
+{
+    /// <summary>
+    /// The identifier of the Inbound FedNow Transfer that was returned.
+    /// </summary>
+    public required string InboundFednowTransferID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("inbound_fednow_transfer_id");
+        }
+        init { this._rawData.Set("inbound_fednow_transfer_id", value); }
+    }
+
+    /// <summary>
+    /// The reason for the return.
+    /// </summary>
+    public required ApiEnum<string, InboundFednowTransferReturnAcknowledgementReason> Reason
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, InboundFednowTransferReturnAcknowledgementReason>
+            >("reason");
+        }
+        init { this._rawData.Set("reason", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.InboundFednowTransferID;
+        this.Reason.Validate();
+    }
+
+    public InboundFednowTransferReturnAcknowledgement() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public InboundFednowTransferReturnAcknowledgement(
+        InboundFednowTransferReturnAcknowledgement inboundFednowTransferReturnAcknowledgement
+    )
+        : base(inboundFednowTransferReturnAcknowledgement) { }
+#pragma warning restore CS8618
+
+    public InboundFednowTransferReturnAcknowledgement(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    InboundFednowTransferReturnAcknowledgement(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="InboundFednowTransferReturnAcknowledgementFromRaw.FromRawUnchecked"/>
+    public static InboundFednowTransferReturnAcknowledgement FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class InboundFednowTransferReturnAcknowledgementFromRaw
+    : IFromRawJson<InboundFednowTransferReturnAcknowledgement>
+{
+    /// <inheritdoc/>
+    public InboundFednowTransferReturnAcknowledgement FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => InboundFednowTransferReturnAcknowledgement.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The reason for the return.
+/// </summary>
+[JsonConverter(typeof(InboundFednowTransferReturnAcknowledgementReasonConverter))]
+public enum InboundFednowTransferReturnAcknowledgementReason
+{
+    /// <summary>
+    /// The inbound FedNow transfer was a duplicate. Corresponds to the FedNow reason
+    /// code `DUPL`.
+    /// </summary>
+    Duplicate,
+
+    /// <summary>
+    /// The recipient of the inbound FedNow transfer requested the funds be returned
+    /// to the sender. Corresponds to the FedNow reason code `CUST`.
+    /// </summary>
+    CreditorRequest,
+
+    /// <summary>
+    /// The inbound FedNow transfer was for the wrong amount. Corresponds to the
+    /// FedNow reason code `AM09`.
+    /// </summary>
+    WrongAmount,
+
+    /// <summary>
+    /// The recipient of the inbound FedNow transfer was not owed the funds. Corresponds
+    /// to the FedNow reason code `UPAY`.
+    /// </summary>
+    UnduePayment,
+
+    /// <summary>
+    /// The inbound FedNow transfer was determined to be fraudulent. Corresponds
+    /// to the FedNow reason code `FR01`, and reports the fraud to the Federal Reserve
+    /// and the sending bank.
+    /// </summary>
+    Fraud,
+}
+
+sealed class InboundFednowTransferReturnAcknowledgementReasonConverter
+    : JsonConverter<InboundFednowTransferReturnAcknowledgementReason>
+{
+    public override InboundFednowTransferReturnAcknowledgementReason Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "duplicate" => InboundFednowTransferReturnAcknowledgementReason.Duplicate,
+            "creditor_request" => InboundFednowTransferReturnAcknowledgementReason.CreditorRequest,
+            "wrong_amount" => InboundFednowTransferReturnAcknowledgementReason.WrongAmount,
+            "undue_payment" => InboundFednowTransferReturnAcknowledgementReason.UnduePayment,
+            "fraud" => InboundFednowTransferReturnAcknowledgementReason.Fraud,
+            _ => (InboundFednowTransferReturnAcknowledgementReason)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        InboundFednowTransferReturnAcknowledgementReason value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                InboundFednowTransferReturnAcknowledgementReason.Duplicate => "duplicate",
+                InboundFednowTransferReturnAcknowledgementReason.CreditorRequest =>
+                    "creditor_request",
+                InboundFednowTransferReturnAcknowledgementReason.WrongAmount => "wrong_amount",
+                InboundFednowTransferReturnAcknowledgementReason.UnduePayment => "undue_payment",
+                InboundFednowTransferReturnAcknowledgementReason.Fraud => "fraud",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }
 
 /// <summary>

@@ -430,6 +430,12 @@ public enum In
     InboundFednowTransferConfirmation,
 
     /// <summary>
+    /// Inbound FedNow Transfer Return Acknowledgement: details will be under the
+    /// `inbound_fednow_transfer_return_acknowledgement` object.
+    /// </summary>
+    InboundFednowTransferReturnAcknowledgement,
+
+    /// <summary>
     /// Inbound Real-Time Payments Transfer Confirmation: details will be under the
     /// `inbound_real_time_payments_transfer_confirmation` object.
     /// </summary>
@@ -555,6 +561,8 @@ sealed class InConverter : JsonConverter<In>
             "inbound_check_deposit_return_intention" => In.InboundCheckDepositReturnIntention,
             "inbound_check_adjustment" => In.InboundCheckAdjustment,
             "inbound_fednow_transfer_confirmation" => In.InboundFednowTransferConfirmation,
+            "inbound_fednow_transfer_return_acknowledgement" =>
+                In.InboundFednowTransferReturnAcknowledgement,
             "inbound_real_time_payments_transfer_confirmation" =>
                 In.InboundRealTimePaymentsTransferConfirmation,
             "inbound_wire_reversal" => In.InboundWireReversal,
@@ -610,6 +618,8 @@ sealed class InConverter : JsonConverter<In>
                 In.InboundCheckDepositReturnIntention => "inbound_check_deposit_return_intention",
                 In.InboundCheckAdjustment => "inbound_check_adjustment",
                 In.InboundFednowTransferConfirmation => "inbound_fednow_transfer_confirmation",
+                In.InboundFednowTransferReturnAcknowledgement =>
+                    "inbound_fednow_transfer_return_acknowledgement",
                 In.InboundRealTimePaymentsTransferConfirmation =>
                     "inbound_real_time_payments_transfer_confirmation",
                 In.InboundWireReversal => "inbound_wire_reversal",

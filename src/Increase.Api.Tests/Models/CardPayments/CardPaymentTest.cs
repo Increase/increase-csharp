@@ -42313,6 +42313,7 @@ public class FeeTypeTest : TestBase
     [InlineData(CardPayments::FeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::FeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::FeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::FeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::FeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::FeeType rawValue)
     {
@@ -42366,6 +42367,7 @@ public class FeeTypeTest : TestBase
     [InlineData(CardPayments::FeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::FeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::FeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::FeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::FeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::FeeType rawValue)
     {
@@ -46466,6 +46468,7 @@ public class CardBalanceInquirySchemeFeeFeeTypeTest : TestBase
     )]
     [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardBalanceInquirySchemeFeeFeeType rawValue)
     {
@@ -46544,6 +46547,7 @@ public class CardBalanceInquirySchemeFeeFeeTypeTest : TestBase
     )]
     [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardBalanceInquirySchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(
         CardPayments::CardBalanceInquirySchemeFeeFeeType rawValue
@@ -50716,6 +50720,7 @@ public class CardDeclineSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardDeclineSchemeFeeFeeType rawValue)
     {
@@ -50778,6 +50783,7 @@ public class CardDeclineSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardDeclineSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardDeclineSchemeFeeFeeType rawValue)
     {
@@ -54755,6 +54761,7 @@ public class CardFinancialSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardFinancialSchemeFeeFeeType rawValue)
     {
@@ -54819,6 +54826,7 @@ public class CardFinancialSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardFinancialSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardFinancialSchemeFeeFeeType rawValue)
     {
@@ -56280,6 +56288,7 @@ public class CardFuelConfirmationSchemeFeeFeeTypeTest : TestBase
     )]
     [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardFuelConfirmationSchemeFeeFeeType rawValue)
     {
@@ -56358,6 +56367,7 @@ public class CardFuelConfirmationSchemeFeeFeeTypeTest : TestBase
     )]
     [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardFuelConfirmationSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(
         CardPayments::CardFuelConfirmationSchemeFeeFeeType rawValue
@@ -58484,6 +58494,7 @@ public class CardIncrementSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardIncrementSchemeFeeFeeType rawValue)
     {
@@ -58548,6 +58559,7 @@ public class CardIncrementSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardIncrementSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardIncrementSchemeFeeFeeType rawValue)
     {
@@ -64192,6 +64204,7 @@ public class CardRefundSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardRefundSchemeFeeFeeType rawValue)
     {
@@ -64252,6 +64265,7 @@ public class CardRefundSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardRefundSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardRefundSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardRefundSchemeFeeFeeType rawValue)
     {
@@ -65235,6 +65249,7 @@ public class CardReversalSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardReversalSchemeFeeFeeType rawValue)
     {
@@ -65297,6 +65312,7 @@ public class CardReversalSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardReversalSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardReversalSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardReversalSchemeFeeFeeType rawValue)
     {
@@ -71812,6 +71828,7 @@ public class CardSettlementSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardSettlementSchemeFeeFeeType rawValue)
     {
@@ -71880,6 +71897,7 @@ public class CardSettlementSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardSettlementSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardSettlementSchemeFeeFeeType rawValue)
     {
@@ -75165,6 +75183,7 @@ public class CardValidationSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardValidationSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardValidationSchemeFeeFeeType.PulseTokenizationFee)]
     public void Validation_Works(CardPayments::CardValidationSchemeFeeFeeType rawValue)
     {
@@ -75233,6 +75252,7 @@ public class CardValidationSchemeFeeFeeTypeTest : TestBase
     [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(CardPayments::CardValidationSchemeFeeFeeType.VisaAtmCashDepositDomestic)]
     [InlineData(CardPayments::CardValidationSchemeFeeFeeType.PulseSwitchFee)]
+    [InlineData(CardPayments::CardValidationSchemeFeeFeeType.PulseSwitchFeeCredit)]
     [InlineData(CardPayments::CardValidationSchemeFeeFeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(CardPayments::CardValidationSchemeFeeFeeType rawValue)
     {

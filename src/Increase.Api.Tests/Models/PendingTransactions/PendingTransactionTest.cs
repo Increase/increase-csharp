@@ -175,6 +175,11 @@ public class PendingTransactionTest : TestBase
                     TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                 },
                 FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                InboundFednowTransferReturn = new()
+                {
+                    InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                    Reason = PendingTransactions::Reason.CreditorRequest,
+                },
                 InboundFundsHold = new()
                 {
                     Amount = 100,
@@ -380,6 +385,11 @@ public class PendingTransactionTest : TestBase
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
             FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            InboundFednowTransferReturn = new()
+            {
+                InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                Reason = PendingTransactions::Reason.CreditorRequest,
+            },
             InboundFundsHold = new()
             {
                 Amount = 100,
@@ -610,6 +620,11 @@ public class PendingTransactionTest : TestBase
                     TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                 },
                 FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                InboundFednowTransferReturn = new()
+                {
+                    InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                    Reason = PendingTransactions::Reason.CreditorRequest,
+                },
                 InboundFundsHold = new()
                 {
                     Amount = 100,
@@ -833,6 +848,11 @@ public class PendingTransactionTest : TestBase
                     TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                 },
                 FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                InboundFednowTransferReturn = new()
+                {
+                    InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                    Reason = PendingTransactions::Reason.CreditorRequest,
+                },
                 InboundFundsHold = new()
                 {
                     Amount = 100,
@@ -1045,6 +1065,11 @@ public class PendingTransactionTest : TestBase
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
             FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            InboundFednowTransferReturn = new()
+            {
+                InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                Reason = PendingTransactions::Reason.CreditorRequest,
+            },
             InboundFundsHold = new()
             {
                 Amount = 100,
@@ -1275,6 +1300,11 @@ public class PendingTransactionTest : TestBase
                     TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                 },
                 FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                InboundFednowTransferReturn = new()
+                {
+                    InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                    Reason = PendingTransactions::Reason.CreditorRequest,
+                },
                 InboundFundsHold = new()
                 {
                     Amount = 100,
@@ -1492,6 +1522,11 @@ public class PendingTransactionTest : TestBase
                     TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
                 },
                 FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+                InboundFednowTransferReturn = new()
+                {
+                    InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                    Reason = PendingTransactions::Reason.CreditorRequest,
+                },
                 InboundFundsHold = new()
                 {
                     Amount = 100,
@@ -1812,6 +1847,11 @@ public class SourceTest : TestBase
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
             FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            InboundFednowTransferReturn = new()
+            {
+                InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                Reason = PendingTransactions::Reason.CreditorRequest,
+            },
             InboundFundsHold = new()
             {
                 Amount = 100,
@@ -2007,6 +2047,11 @@ public class SourceTest : TestBase
         PendingTransactions::FednowTransferInstruction expectedFednowTransferInstruction = new(
             "fednow_transfer_4i0mptrdu1mueg1196bg"
         );
+        PendingTransactions::InboundFednowTransferReturn expectedInboundFednowTransferReturn = new()
+        {
+            InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+            Reason = PendingTransactions::Reason.CreditorRequest,
+        };
         PendingTransactions::InboundFundsHold expectedInboundFundsHold = new()
         {
             Amount = 100,
@@ -2067,6 +2112,7 @@ public class SourceTest : TestBase
         Assert.Equal(expectedCheckDepositInstruction, model.CheckDepositInstruction);
         Assert.Equal(expectedCheckTransferInstruction, model.CheckTransferInstruction);
         Assert.Equal(expectedFednowTransferInstruction, model.FednowTransferInstruction);
+        Assert.Equal(expectedInboundFednowTransferReturn, model.InboundFednowTransferReturn);
         Assert.Equal(expectedInboundFundsHold, model.InboundFundsHold);
         Assert.Equal(expectedInboundWireTransferReversal, model.InboundWireTransferReversal);
         Assert.Equal(expectedOther, model.Other);
@@ -2243,6 +2289,11 @@ public class SourceTest : TestBase
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
             FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            InboundFednowTransferReturn = new()
+            {
+                InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                Reason = PendingTransactions::Reason.CreditorRequest,
+            },
             InboundFundsHold = new()
             {
                 Amount = 100,
@@ -2449,6 +2500,11 @@ public class SourceTest : TestBase
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
             FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            InboundFednowTransferReturn = new()
+            {
+                InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                Reason = PendingTransactions::Reason.CreditorRequest,
+            },
             InboundFundsHold = new()
             {
                 Amount = 100,
@@ -2651,6 +2707,11 @@ public class SourceTest : TestBase
         PendingTransactions::FednowTransferInstruction expectedFednowTransferInstruction = new(
             "fednow_transfer_4i0mptrdu1mueg1196bg"
         );
+        PendingTransactions::InboundFednowTransferReturn expectedInboundFednowTransferReturn = new()
+        {
+            InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+            Reason = PendingTransactions::Reason.CreditorRequest,
+        };
         PendingTransactions::InboundFundsHold expectedInboundFundsHold = new()
         {
             Amount = 100,
@@ -2711,6 +2772,7 @@ public class SourceTest : TestBase
         Assert.Equal(expectedCheckDepositInstruction, deserialized.CheckDepositInstruction);
         Assert.Equal(expectedCheckTransferInstruction, deserialized.CheckTransferInstruction);
         Assert.Equal(expectedFednowTransferInstruction, deserialized.FednowTransferInstruction);
+        Assert.Equal(expectedInboundFednowTransferReturn, deserialized.InboundFednowTransferReturn);
         Assert.Equal(expectedInboundFundsHold, deserialized.InboundFundsHold);
         Assert.Equal(expectedInboundWireTransferReversal, deserialized.InboundWireTransferReversal);
         Assert.Equal(expectedOther, deserialized.Other);
@@ -2890,6 +2952,11 @@ public class SourceTest : TestBase
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
             FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            InboundFednowTransferReturn = new()
+            {
+                InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                Reason = PendingTransactions::Reason.CreditorRequest,
+            },
             InboundFundsHold = new()
             {
                 Amount = 100,
@@ -2964,6 +3031,8 @@ public class SourceTest : TestBase
         Assert.False(model.RawData.ContainsKey("check_transfer_instruction"));
         Assert.Null(model.FednowTransferInstruction);
         Assert.False(model.RawData.ContainsKey("fednow_transfer_instruction"));
+        Assert.Null(model.InboundFednowTransferReturn);
+        Assert.False(model.RawData.ContainsKey("inbound_fednow_transfer_return"));
         Assert.Null(model.InboundFundsHold);
         Assert.False(model.RawData.ContainsKey("inbound_funds_hold"));
         Assert.Null(model.InboundWireTransferReversal);
@@ -3011,6 +3080,7 @@ public class SourceTest : TestBase
             CheckDepositInstruction = null,
             CheckTransferInstruction = null,
             FednowTransferInstruction = null,
+            InboundFednowTransferReturn = null,
             InboundFundsHold = null,
             InboundWireTransferReversal = null,
             Other = null,
@@ -3040,6 +3110,8 @@ public class SourceTest : TestBase
         Assert.True(model.RawData.ContainsKey("check_transfer_instruction"));
         Assert.Null(model.FednowTransferInstruction);
         Assert.True(model.RawData.ContainsKey("fednow_transfer_instruction"));
+        Assert.Null(model.InboundFednowTransferReturn);
+        Assert.True(model.RawData.ContainsKey("inbound_fednow_transfer_return"));
         Assert.Null(model.InboundFundsHold);
         Assert.True(model.RawData.ContainsKey("inbound_funds_hold"));
         Assert.Null(model.InboundWireTransferReversal);
@@ -3076,6 +3148,7 @@ public class SourceTest : TestBase
             CheckDepositInstruction = null,
             CheckTransferInstruction = null,
             FednowTransferInstruction = null,
+            InboundFednowTransferReturn = null,
             InboundFundsHold = null,
             InboundWireTransferReversal = null,
             Other = null,
@@ -3242,6 +3315,11 @@ public class SourceTest : TestBase
                 TransferID = "check_transfer_30b43acfu9vw8fyc4f5",
             },
             FednowTransferInstruction = new("fednow_transfer_4i0mptrdu1mueg1196bg"),
+            InboundFednowTransferReturn = new()
+            {
+                InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                Reason = PendingTransactions::Reason.CreditorRequest,
+            },
             InboundFundsHold = new()
             {
                 Amount = 100,
@@ -3302,6 +3380,7 @@ public class SourceCategoryTest : TestBase
     [InlineData(PendingTransactions::SourceCategory.CheckDepositInstruction)]
     [InlineData(PendingTransactions::SourceCategory.CheckTransferInstruction)]
     [InlineData(PendingTransactions::SourceCategory.FednowTransferInstruction)]
+    [InlineData(PendingTransactions::SourceCategory.InboundFednowTransferReturn)]
     [InlineData(PendingTransactions::SourceCategory.InboundFundsHold)]
     [InlineData(PendingTransactions::SourceCategory.UserInitiatedHold)]
     [InlineData(PendingTransactions::SourceCategory.RealTimePaymentsTransferInstruction)]
@@ -3339,6 +3418,7 @@ public class SourceCategoryTest : TestBase
     [InlineData(PendingTransactions::SourceCategory.CheckDepositInstruction)]
     [InlineData(PendingTransactions::SourceCategory.CheckTransferInstruction)]
     [InlineData(PendingTransactions::SourceCategory.FednowTransferInstruction)]
+    [InlineData(PendingTransactions::SourceCategory.InboundFednowTransferReturn)]
     [InlineData(PendingTransactions::SourceCategory.InboundFundsHold)]
     [InlineData(PendingTransactions::SourceCategory.UserInitiatedHold)]
     [InlineData(PendingTransactions::SourceCategory.RealTimePaymentsTransferInstruction)]
@@ -7074,6 +7154,7 @@ public class FeeTypeTest : TestBase
     [InlineData(PendingTransactions::FeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(PendingTransactions::FeeType.VisaAtmCashDepositDomestic)]
     [InlineData(PendingTransactions::FeeType.PulseSwitchFee)]
+    [InlineData(PendingTransactions::FeeType.PulseSwitchFeeCredit)]
     [InlineData(PendingTransactions::FeeType.PulseTokenizationFee)]
     public void Validation_Works(PendingTransactions::FeeType rawValue)
     {
@@ -7127,6 +7208,7 @@ public class FeeTypeTest : TestBase
     [InlineData(PendingTransactions::FeeType.VisaAtmCashWithdrawalInternational)]
     [InlineData(PendingTransactions::FeeType.VisaAtmCashDepositDomestic)]
     [InlineData(PendingTransactions::FeeType.PulseSwitchFee)]
+    [InlineData(PendingTransactions::FeeType.PulseSwitchFeeCredit)]
     [InlineData(PendingTransactions::FeeType.PulseTokenizationFee)]
     public void SerializationRoundtrip_Works(PendingTransactions::FeeType rawValue)
     {
@@ -8289,6 +8371,160 @@ public class FednowTransferInstructionTest : TestBase
         PendingTransactions::FednowTransferInstruction copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class InboundFednowTransferReturnTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new PendingTransactions::InboundFednowTransferReturn
+        {
+            InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+            Reason = PendingTransactions::Reason.CreditorRequest,
+        };
+
+        string expectedInboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20";
+        ApiEnum<string, PendingTransactions::Reason> expectedReason =
+            PendingTransactions::Reason.CreditorRequest;
+
+        Assert.Equal(expectedInboundFednowTransferID, model.InboundFednowTransferID);
+        Assert.Equal(expectedReason, model.Reason);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new PendingTransactions::InboundFednowTransferReturn
+        {
+            InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+            Reason = PendingTransactions::Reason.CreditorRequest,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<PendingTransactions::InboundFednowTransferReturn>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new PendingTransactions::InboundFednowTransferReturn
+        {
+            InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+            Reason = PendingTransactions::Reason.CreditorRequest,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<PendingTransactions::InboundFednowTransferReturn>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedInboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20";
+        ApiEnum<string, PendingTransactions::Reason> expectedReason =
+            PendingTransactions::Reason.CreditorRequest;
+
+        Assert.Equal(expectedInboundFednowTransferID, deserialized.InboundFednowTransferID);
+        Assert.Equal(expectedReason, deserialized.Reason);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new PendingTransactions::InboundFednowTransferReturn
+        {
+            InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+            Reason = PendingTransactions::Reason.CreditorRequest,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PendingTransactions::InboundFednowTransferReturn
+        {
+            InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+            Reason = PendingTransactions::Reason.CreditorRequest,
+        };
+
+        PendingTransactions::InboundFednowTransferReturn copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class ReasonTest : TestBase
+{
+    [Theory]
+    [InlineData(PendingTransactions::Reason.Duplicate)]
+    [InlineData(PendingTransactions::Reason.CreditorRequest)]
+    [InlineData(PendingTransactions::Reason.WrongAmount)]
+    [InlineData(PendingTransactions::Reason.UnduePayment)]
+    [InlineData(PendingTransactions::Reason.Fraud)]
+    public void Validation_Works(PendingTransactions::Reason rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::Reason> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Reason>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PendingTransactions::Reason.Duplicate)]
+    [InlineData(PendingTransactions::Reason.CreditorRequest)]
+    [InlineData(PendingTransactions::Reason.WrongAmount)]
+    [InlineData(PendingTransactions::Reason.UnduePayment)]
+    [InlineData(PendingTransactions::Reason.Fraud)]
+    public void SerializationRoundtrip_Works(PendingTransactions::Reason rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PendingTransactions::Reason> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Reason>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Reason>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PendingTransactions::Reason>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }
 

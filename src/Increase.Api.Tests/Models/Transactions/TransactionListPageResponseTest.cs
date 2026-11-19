@@ -659,6 +659,13 @@ public class TransactionListPageResponseTest : TestBase
                         InboundFednowTransferConfirmation = new(
                             "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20"
                         ),
+                        InboundFednowTransferReturnAcknowledgement = new()
+                        {
+                            InboundFednowTransferID =
+                                "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                            Reason =
+                                Transactions::InboundFednowTransferReturnAcknowledgementReason.CreditorRequest,
+                        },
                         InboundRealTimePaymentsTransferConfirmation = new()
                         {
                             Amount = 100,
@@ -1403,6 +1410,12 @@ public class TransactionListPageResponseTest : TestBase
                     InboundFednowTransferConfirmation = new(
                         "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20"
                     ),
+                    InboundFednowTransferReturnAcknowledgement = new()
+                    {
+                        InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                        Reason =
+                            Transactions::InboundFednowTransferReturnAcknowledgementReason.CreditorRequest,
+                    },
                     InboundRealTimePaymentsTransferConfirmation = new()
                     {
                         Amount = 100,
@@ -2165,6 +2178,13 @@ public class TransactionListPageResponseTest : TestBase
                         InboundFednowTransferConfirmation = new(
                             "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20"
                         ),
+                        InboundFednowTransferReturnAcknowledgement = new()
+                        {
+                            InboundFednowTransferID =
+                                "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                            Reason =
+                                Transactions::InboundFednowTransferReturnAcknowledgementReason.CreditorRequest,
+                        },
                         InboundRealTimePaymentsTransferConfirmation = new()
                         {
                             Amount = 100,
@@ -2931,6 +2951,13 @@ public class TransactionListPageResponseTest : TestBase
                         InboundFednowTransferConfirmation = new(
                             "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20"
                         ),
+                        InboundFednowTransferReturnAcknowledgement = new()
+                        {
+                            InboundFednowTransferID =
+                                "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                            Reason =
+                                Transactions::InboundFednowTransferReturnAcknowledgementReason.CreditorRequest,
+                        },
                         InboundRealTimePaymentsTransferConfirmation = new()
                         {
                             Amount = 100,
@@ -3682,6 +3709,12 @@ public class TransactionListPageResponseTest : TestBase
                     InboundFednowTransferConfirmation = new(
                         "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20"
                     ),
+                    InboundFednowTransferReturnAcknowledgement = new()
+                    {
+                        InboundFednowTransferID = "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                        Reason =
+                            Transactions::InboundFednowTransferReturnAcknowledgementReason.CreditorRequest,
+                    },
                     InboundRealTimePaymentsTransferConfirmation = new()
                     {
                         Amount = 100,
@@ -4444,6 +4477,13 @@ public class TransactionListPageResponseTest : TestBase
                         InboundFednowTransferConfirmation = new(
                             "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20"
                         ),
+                        InboundFednowTransferReturnAcknowledgement = new()
+                        {
+                            InboundFednowTransferID =
+                                "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                            Reason =
+                                Transactions::InboundFednowTransferReturnAcknowledgementReason.CreditorRequest,
+                        },
                         InboundRealTimePaymentsTransferConfirmation = new()
                         {
                             Amount = 100,
@@ -5204,6 +5244,13 @@ public class TransactionListPageResponseTest : TestBase
                         InboundFednowTransferConfirmation = new(
                             "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20"
                         ),
+                        InboundFednowTransferReturnAcknowledgement = new()
+                        {
+                            InboundFednowTransferID =
+                                "inbound_fednow_transfer_ctxxbc07oh5ke5w1hk20",
+                            Reason =
+                                Transactions::InboundFednowTransferReturnAcknowledgementReason.CreditorRequest,
+                        },
                         InboundRealTimePaymentsTransferConfirmation = new()
                         {
                             Amount = 100,

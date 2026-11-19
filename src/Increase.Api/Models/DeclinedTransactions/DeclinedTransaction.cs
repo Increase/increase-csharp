@@ -4306,6 +4306,12 @@ public enum FeeType
     PulseSwitchFee,
 
     /// <summary>
+    /// Pulse Switch Fee Credit is a credit of the Pulse Switch Fee charged for an
+    /// authorization that was subsequently reversed in full.
+    /// </summary>
+    PulseSwitchFeeCredit,
+
+    /// <summary>
     /// Pulse Tokenization Fee is a fee charged by the Pulse network for processing
     /// tokenized transactions on its network.
     /// </summary>
@@ -4365,6 +4371,7 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
             "visa_atm_cash_withdrawal_international" => FeeType.VisaAtmCashWithdrawalInternational,
             "visa_atm_cash_deposit_domestic" => FeeType.VisaAtmCashDepositDomestic,
             "pulse_switch_fee" => FeeType.PulseSwitchFee,
+            "pulse_switch_fee_credit" => FeeType.PulseSwitchFeeCredit,
             "pulse_tokenization_fee" => FeeType.PulseTokenizationFee,
             _ => (FeeType)(-1),
         };
@@ -4421,6 +4428,7 @@ sealed class FeeTypeConverter : JsonConverter<FeeType>
                     "visa_atm_cash_withdrawal_international",
                 FeeType.VisaAtmCashDepositDomestic => "visa_atm_cash_deposit_domestic",
                 FeeType.PulseSwitchFee => "pulse_switch_fee",
+                FeeType.PulseSwitchFeeCredit => "pulse_switch_fee_credit",
                 FeeType.PulseTokenizationFee => "pulse_tokenization_fee",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
