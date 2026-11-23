@@ -970,9 +970,12 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, DigitalWalletTokens::Status>(),
             new ApiEnumConverter<string, DigitalWalletTokenRequests::Reason>(),
             new ApiEnumConverter<string, DigitalWalletTokenRequests::DeviceType>(),
+            new ApiEnumConverter<string, DigitalWalletTokenRequests::Network>(),
             new ApiEnumConverter<string, DigitalWalletTokenRequests::Outcome>(),
+            new ApiEnumConverter<string, DigitalWalletTokenRequests::PrimaryAccountNumberSource>(),
             new ApiEnumConverter<string, DigitalWalletTokenRequests::TokenRequestor>(),
             new ApiEnumConverter<string, DigitalWalletTokenRequests::Type>(),
+            new ApiEnumConverter<string, DigitalWalletTokenRequests::Result>(),
             new ApiEnumConverter<string, Transactions::Currency>(),
             new ApiEnumConverter<string, Transactions::RouteType>(),
             new ApiEnumConverter<string, Transactions::SourceCategory>(),
@@ -1598,6 +1601,12 @@ public abstract record class ModelBase
             new ApiEnumConverter<
                 string,
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet
+            >(),
+            new ApiEnumConverter<string, RealTimeDecisions::Network>(),
+            new ApiEnumConverter<string, RealTimeDecisions::PrimaryAccountNumberSource>(),
+            new ApiEnumConverter<
+                string,
+                RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult
             >(),
             new ApiEnumConverter<string, RealTimeDecisions::Status>(),
             new ApiEnumConverter<string, RealTimeDecisions::Type>(),

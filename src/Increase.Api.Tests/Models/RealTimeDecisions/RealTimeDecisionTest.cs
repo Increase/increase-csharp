@@ -275,6 +275,7 @@ public class RealTimeDecisionTest : TestBase
             DigitalWalletToken = new()
             {
                 CardID = "card_id",
+                Cardholder = new("name"),
                 Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
                 Device = new()
                 {
@@ -285,6 +286,30 @@ public class RealTimeDecisionTest : TestBase
                 },
                 DigitalWallet =
                     RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
+                Network = RealTimeDecisions::Network.Visa,
+                PrimaryAccountNumberSource =
+                    RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered,
+                TokenRequestorDetails = new() { Identifier = "identifier", Name = "name" },
+                Verification = new(
+                    new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                    {
+                        ActualLine1 = "actual_line1",
+                        ActualPostalCode = "actual_postal_code",
+                        ProvidedLine1 = "provided_line1",
+                        ProvidedPostalCode = "provided_postal_code",
+                        Result =
+                            RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                    }
+                ),
+                Visa = new() { NetworkRiskScore = 0, ProvisioningRiskScore = 0 },
+                Wallet = new()
+                {
+                    AccountEmailAgeDays = 0,
+                    AccountIdentifier = "account_identifier",
+                    AccountScore = 0,
+                    DeviceScore = 0,
+                    EmailHash = "email_hash",
+                },
             },
             Status = RealTimeDecisions::Status.Pending,
             TimeoutAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -555,6 +580,7 @@ public class RealTimeDecisionTest : TestBase
         RealTimeDecisions::RealTimeDecisionDigitalWalletToken expectedDigitalWalletToken = new()
         {
             CardID = "card_id",
+            Cardholder = new("name"),
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
             Device = new()
             {
@@ -565,6 +591,29 @@ public class RealTimeDecisionTest : TestBase
             },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
+            Network = RealTimeDecisions::Network.Visa,
+            PrimaryAccountNumberSource = RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered,
+            TokenRequestorDetails = new() { Identifier = "identifier", Name = "name" },
+            Verification = new(
+                new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                {
+                    ActualLine1 = "actual_line1",
+                    ActualPostalCode = "actual_postal_code",
+                    ProvidedLine1 = "provided_line1",
+                    ProvidedPostalCode = "provided_postal_code",
+                    Result =
+                        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                }
+            ),
+            Visa = new() { NetworkRiskScore = 0, ProvisioningRiskScore = 0 },
+            Wallet = new()
+            {
+                AccountEmailAgeDays = 0,
+                AccountIdentifier = "account_identifier",
+                AccountScore = 0,
+                DeviceScore = 0,
+                EmailHash = "email_hash",
+            },
         };
         ApiEnum<string, RealTimeDecisions::Status> expectedStatus =
             RealTimeDecisions::Status.Pending;
@@ -853,6 +902,7 @@ public class RealTimeDecisionTest : TestBase
             DigitalWalletToken = new()
             {
                 CardID = "card_id",
+                Cardholder = new("name"),
                 Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
                 Device = new()
                 {
@@ -863,6 +913,30 @@ public class RealTimeDecisionTest : TestBase
                 },
                 DigitalWallet =
                     RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
+                Network = RealTimeDecisions::Network.Visa,
+                PrimaryAccountNumberSource =
+                    RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered,
+                TokenRequestorDetails = new() { Identifier = "identifier", Name = "name" },
+                Verification = new(
+                    new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                    {
+                        ActualLine1 = "actual_line1",
+                        ActualPostalCode = "actual_postal_code",
+                        ProvidedLine1 = "provided_line1",
+                        ProvidedPostalCode = "provided_postal_code",
+                        Result =
+                            RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                    }
+                ),
+                Visa = new() { NetworkRiskScore = 0, ProvisioningRiskScore = 0 },
+                Wallet = new()
+                {
+                    AccountEmailAgeDays = 0,
+                    AccountIdentifier = "account_identifier",
+                    AccountScore = 0,
+                    DeviceScore = 0,
+                    EmailHash = "email_hash",
+                },
             },
             Status = RealTimeDecisions::Status.Pending,
             TimeoutAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -1145,6 +1219,7 @@ public class RealTimeDecisionTest : TestBase
             DigitalWalletToken = new()
             {
                 CardID = "card_id",
+                Cardholder = new("name"),
                 Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
                 Device = new()
                 {
@@ -1155,6 +1230,30 @@ public class RealTimeDecisionTest : TestBase
                 },
                 DigitalWallet =
                     RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
+                Network = RealTimeDecisions::Network.Visa,
+                PrimaryAccountNumberSource =
+                    RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered,
+                TokenRequestorDetails = new() { Identifier = "identifier", Name = "name" },
+                Verification = new(
+                    new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                    {
+                        ActualLine1 = "actual_line1",
+                        ActualPostalCode = "actual_postal_code",
+                        ProvidedLine1 = "provided_line1",
+                        ProvidedPostalCode = "provided_postal_code",
+                        Result =
+                            RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                    }
+                ),
+                Visa = new() { NetworkRiskScore = 0, ProvisioningRiskScore = 0 },
+                Wallet = new()
+                {
+                    AccountEmailAgeDays = 0,
+                    AccountIdentifier = "account_identifier",
+                    AccountScore = 0,
+                    DeviceScore = 0,
+                    EmailHash = "email_hash",
+                },
             },
             Status = RealTimeDecisions::Status.Pending,
             TimeoutAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -1432,6 +1531,7 @@ public class RealTimeDecisionTest : TestBase
         RealTimeDecisions::RealTimeDecisionDigitalWalletToken expectedDigitalWalletToken = new()
         {
             CardID = "card_id",
+            Cardholder = new("name"),
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
             Device = new()
             {
@@ -1442,6 +1542,29 @@ public class RealTimeDecisionTest : TestBase
             },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
+            Network = RealTimeDecisions::Network.Visa,
+            PrimaryAccountNumberSource = RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered,
+            TokenRequestorDetails = new() { Identifier = "identifier", Name = "name" },
+            Verification = new(
+                new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                {
+                    ActualLine1 = "actual_line1",
+                    ActualPostalCode = "actual_postal_code",
+                    ProvidedLine1 = "provided_line1",
+                    ProvidedPostalCode = "provided_postal_code",
+                    Result =
+                        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                }
+            ),
+            Visa = new() { NetworkRiskScore = 0, ProvisioningRiskScore = 0 },
+            Wallet = new()
+            {
+                AccountEmailAgeDays = 0,
+                AccountIdentifier = "account_identifier",
+                AccountScore = 0,
+                DeviceScore = 0,
+                EmailHash = "email_hash",
+            },
         };
         ApiEnum<string, RealTimeDecisions::Status> expectedStatus =
             RealTimeDecisions::Status.Pending;
@@ -1730,6 +1853,7 @@ public class RealTimeDecisionTest : TestBase
             DigitalWalletToken = new()
             {
                 CardID = "card_id",
+                Cardholder = new("name"),
                 Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
                 Device = new()
                 {
@@ -1740,6 +1864,30 @@ public class RealTimeDecisionTest : TestBase
                 },
                 DigitalWallet =
                     RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
+                Network = RealTimeDecisions::Network.Visa,
+                PrimaryAccountNumberSource =
+                    RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered,
+                TokenRequestorDetails = new() { Identifier = "identifier", Name = "name" },
+                Verification = new(
+                    new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                    {
+                        ActualLine1 = "actual_line1",
+                        ActualPostalCode = "actual_postal_code",
+                        ProvidedLine1 = "provided_line1",
+                        ProvidedPostalCode = "provided_postal_code",
+                        Result =
+                            RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                    }
+                ),
+                Visa = new() { NetworkRiskScore = 0, ProvisioningRiskScore = 0 },
+                Wallet = new()
+                {
+                    AccountEmailAgeDays = 0,
+                    AccountIdentifier = "account_identifier",
+                    AccountScore = 0,
+                    DeviceScore = 0,
+                    EmailHash = "email_hash",
+                },
             },
             Status = RealTimeDecisions::Status.Pending,
             TimeoutAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -2016,6 +2164,7 @@ public class RealTimeDecisionTest : TestBase
             DigitalWalletToken = new()
             {
                 CardID = "card_id",
+                Cardholder = new("name"),
                 Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
                 Device = new()
                 {
@@ -2026,6 +2175,30 @@ public class RealTimeDecisionTest : TestBase
                 },
                 DigitalWallet =
                     RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
+                Network = RealTimeDecisions::Network.Visa,
+                PrimaryAccountNumberSource =
+                    RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered,
+                TokenRequestorDetails = new() { Identifier = "identifier", Name = "name" },
+                Verification = new(
+                    new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                    {
+                        ActualLine1 = "actual_line1",
+                        ActualPostalCode = "actual_postal_code",
+                        ProvidedLine1 = "provided_line1",
+                        ProvidedPostalCode = "provided_postal_code",
+                        Result =
+                            RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                    }
+                ),
+                Visa = new() { NetworkRiskScore = 0, ProvisioningRiskScore = 0 },
+                Wallet = new()
+                {
+                    AccountEmailAgeDays = 0,
+                    AccountIdentifier = "account_identifier",
+                    AccountScore = 0,
+                    DeviceScore = 0,
+                    EmailHash = "email_hash",
+                },
             },
             Status = RealTimeDecisions::Status.Pending,
             TimeoutAt = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
@@ -12117,6 +12290,7 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
         var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletToken
         {
             CardID = "card_id",
+            Cardholder = new("name"),
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
             Device = new()
             {
@@ -12127,9 +12301,33 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
             },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
+            Network = RealTimeDecisions::Network.Visa,
+            PrimaryAccountNumberSource = RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered,
+            TokenRequestorDetails = new() { Identifier = "identifier", Name = "name" },
+            Verification = new(
+                new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                {
+                    ActualLine1 = "actual_line1",
+                    ActualPostalCode = "actual_postal_code",
+                    ProvidedLine1 = "provided_line1",
+                    ProvidedPostalCode = "provided_postal_code",
+                    Result =
+                        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                }
+            ),
+            Visa = new() { NetworkRiskScore = 0, ProvisioningRiskScore = 0 },
+            Wallet = new()
+            {
+                AccountEmailAgeDays = 0,
+                AccountIdentifier = "account_identifier",
+                AccountScore = 0,
+                DeviceScore = 0,
+                EmailHash = "email_hash",
+            },
         };
 
         string expectedCardID = "card_id";
+        RealTimeDecisions::Cardholder expectedCardholder = new("name");
         ApiEnum<
             string,
             RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision
@@ -12146,11 +12344,55 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
             RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet
         > expectedDigitalWallet =
             RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay;
+        ApiEnum<string, RealTimeDecisions::Network> expectedNetwork =
+            RealTimeDecisions::Network.Visa;
+        ApiEnum<
+            string,
+            RealTimeDecisions::PrimaryAccountNumberSource
+        > expectedPrimaryAccountNumberSource =
+            RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered;
+        RealTimeDecisions::TokenRequestorDetails expectedTokenRequestorDetails = new()
+        {
+            Identifier = "identifier",
+            Name = "name",
+        };
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerification expectedVerification =
+            new(
+                new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                {
+                    ActualLine1 = "actual_line1",
+                    ActualPostalCode = "actual_postal_code",
+                    ProvidedLine1 = "provided_line1",
+                    ProvidedPostalCode = "provided_postal_code",
+                    Result =
+                        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                }
+            );
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVisa expectedVisa = new()
+        {
+            NetworkRiskScore = 0,
+            ProvisioningRiskScore = 0,
+        };
+        RealTimeDecisions::Wallet expectedWallet = new()
+        {
+            AccountEmailAgeDays = 0,
+            AccountIdentifier = "account_identifier",
+            AccountScore = 0,
+            DeviceScore = 0,
+            EmailHash = "email_hash",
+        };
 
         Assert.Equal(expectedCardID, model.CardID);
+        Assert.Equal(expectedCardholder, model.Cardholder);
         Assert.Equal(expectedDecision, model.Decision);
         Assert.Equal(expectedDevice, model.Device);
         Assert.Equal(expectedDigitalWallet, model.DigitalWallet);
+        Assert.Equal(expectedNetwork, model.Network);
+        Assert.Equal(expectedPrimaryAccountNumberSource, model.PrimaryAccountNumberSource);
+        Assert.Equal(expectedTokenRequestorDetails, model.TokenRequestorDetails);
+        Assert.Equal(expectedVerification, model.Verification);
+        Assert.Equal(expectedVisa, model.Visa);
+        Assert.Equal(expectedWallet, model.Wallet);
     }
 
     [Fact]
@@ -12159,6 +12401,7 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
         var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletToken
         {
             CardID = "card_id",
+            Cardholder = new("name"),
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
             Device = new()
             {
@@ -12169,6 +12412,29 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
             },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
+            Network = RealTimeDecisions::Network.Visa,
+            PrimaryAccountNumberSource = RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered,
+            TokenRequestorDetails = new() { Identifier = "identifier", Name = "name" },
+            Verification = new(
+                new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                {
+                    ActualLine1 = "actual_line1",
+                    ActualPostalCode = "actual_postal_code",
+                    ProvidedLine1 = "provided_line1",
+                    ProvidedPostalCode = "provided_postal_code",
+                    Result =
+                        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                }
+            ),
+            Visa = new() { NetworkRiskScore = 0, ProvisioningRiskScore = 0 },
+            Wallet = new()
+            {
+                AccountEmailAgeDays = 0,
+                AccountIdentifier = "account_identifier",
+                AccountScore = 0,
+                DeviceScore = 0,
+                EmailHash = "email_hash",
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -12187,6 +12453,7 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
         var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletToken
         {
             CardID = "card_id",
+            Cardholder = new("name"),
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
             Device = new()
             {
@@ -12197,6 +12464,29 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
             },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
+            Network = RealTimeDecisions::Network.Visa,
+            PrimaryAccountNumberSource = RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered,
+            TokenRequestorDetails = new() { Identifier = "identifier", Name = "name" },
+            Verification = new(
+                new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                {
+                    ActualLine1 = "actual_line1",
+                    ActualPostalCode = "actual_postal_code",
+                    ProvidedLine1 = "provided_line1",
+                    ProvidedPostalCode = "provided_postal_code",
+                    Result =
+                        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                }
+            ),
+            Visa = new() { NetworkRiskScore = 0, ProvisioningRiskScore = 0 },
+            Wallet = new()
+            {
+                AccountEmailAgeDays = 0,
+                AccountIdentifier = "account_identifier",
+                AccountScore = 0,
+                DeviceScore = 0,
+                EmailHash = "email_hash",
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -12208,6 +12498,7 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
         Assert.NotNull(deserialized);
 
         string expectedCardID = "card_id";
+        RealTimeDecisions::Cardholder expectedCardholder = new("name");
         ApiEnum<
             string,
             RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision
@@ -12224,11 +12515,55 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
             RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet
         > expectedDigitalWallet =
             RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay;
+        ApiEnum<string, RealTimeDecisions::Network> expectedNetwork =
+            RealTimeDecisions::Network.Visa;
+        ApiEnum<
+            string,
+            RealTimeDecisions::PrimaryAccountNumberSource
+        > expectedPrimaryAccountNumberSource =
+            RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered;
+        RealTimeDecisions::TokenRequestorDetails expectedTokenRequestorDetails = new()
+        {
+            Identifier = "identifier",
+            Name = "name",
+        };
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerification expectedVerification =
+            new(
+                new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                {
+                    ActualLine1 = "actual_line1",
+                    ActualPostalCode = "actual_postal_code",
+                    ProvidedLine1 = "provided_line1",
+                    ProvidedPostalCode = "provided_postal_code",
+                    Result =
+                        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                }
+            );
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVisa expectedVisa = new()
+        {
+            NetworkRiskScore = 0,
+            ProvisioningRiskScore = 0,
+        };
+        RealTimeDecisions::Wallet expectedWallet = new()
+        {
+            AccountEmailAgeDays = 0,
+            AccountIdentifier = "account_identifier",
+            AccountScore = 0,
+            DeviceScore = 0,
+            EmailHash = "email_hash",
+        };
 
         Assert.Equal(expectedCardID, deserialized.CardID);
+        Assert.Equal(expectedCardholder, deserialized.Cardholder);
         Assert.Equal(expectedDecision, deserialized.Decision);
         Assert.Equal(expectedDevice, deserialized.Device);
         Assert.Equal(expectedDigitalWallet, deserialized.DigitalWallet);
+        Assert.Equal(expectedNetwork, deserialized.Network);
+        Assert.Equal(expectedPrimaryAccountNumberSource, deserialized.PrimaryAccountNumberSource);
+        Assert.Equal(expectedTokenRequestorDetails, deserialized.TokenRequestorDetails);
+        Assert.Equal(expectedVerification, deserialized.Verification);
+        Assert.Equal(expectedVisa, deserialized.Visa);
+        Assert.Equal(expectedWallet, deserialized.Wallet);
     }
 
     [Fact]
@@ -12237,6 +12572,7 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
         var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletToken
         {
             CardID = "card_id",
+            Cardholder = new("name"),
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
             Device = new()
             {
@@ -12247,6 +12583,29 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
             },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
+            Network = RealTimeDecisions::Network.Visa,
+            PrimaryAccountNumberSource = RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered,
+            TokenRequestorDetails = new() { Identifier = "identifier", Name = "name" },
+            Verification = new(
+                new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                {
+                    ActualLine1 = "actual_line1",
+                    ActualPostalCode = "actual_postal_code",
+                    ProvidedLine1 = "provided_line1",
+                    ProvidedPostalCode = "provided_postal_code",
+                    Result =
+                        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                }
+            ),
+            Visa = new() { NetworkRiskScore = 0, ProvisioningRiskScore = 0 },
+            Wallet = new()
+            {
+                AccountEmailAgeDays = 0,
+                AccountIdentifier = "account_identifier",
+                AccountScore = 0,
+                DeviceScore = 0,
+                EmailHash = "email_hash",
+            },
         };
 
         model.Validate();
@@ -12258,6 +12617,7 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
         var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletToken
         {
             CardID = "card_id",
+            Cardholder = new("name"),
             Decision = RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDecision.Approve,
             Device = new()
             {
@@ -12268,9 +12628,94 @@ public class RealTimeDecisionDigitalWalletTokenTest : TestBase
             },
             DigitalWallet =
                 RealTimeDecisions::RealTimeDecisionDigitalWalletTokenDigitalWallet.ApplePay,
+            Network = RealTimeDecisions::Network.Visa,
+            PrimaryAccountNumberSource = RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered,
+            TokenRequestorDetails = new() { Identifier = "identifier", Name = "name" },
+            Verification = new(
+                new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress()
+                {
+                    ActualLine1 = "actual_line1",
+                    ActualPostalCode = "actual_postal_code",
+                    ProvidedLine1 = "provided_line1",
+                    ProvidedPostalCode = "provided_postal_code",
+                    Result =
+                        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+                }
+            ),
+            Visa = new() { NetworkRiskScore = 0, ProvisioningRiskScore = 0 },
+            Wallet = new()
+            {
+                AccountEmailAgeDays = 0,
+                AccountIdentifier = "account_identifier",
+                AccountScore = 0,
+                DeviceScore = 0,
+                EmailHash = "email_hash",
+            },
         };
 
         RealTimeDecisions::RealTimeDecisionDigitalWalletToken copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class CardholderTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new RealTimeDecisions::Cardholder { Name = "name" };
+
+        string expectedName = "name";
+
+        Assert.Equal(expectedName, model.Name);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new RealTimeDecisions::Cardholder { Name = "name" };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<RealTimeDecisions::Cardholder>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new RealTimeDecisions::Cardholder { Name = "name" };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<RealTimeDecisions::Cardholder>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedName = "name";
+
+        Assert.Equal(expectedName, deserialized.Name);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new RealTimeDecisions::Cardholder { Name = "name" };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RealTimeDecisions::Cardholder { Name = "name" };
+
+        RealTimeDecisions::Cardholder copied = new(model);
 
         Assert.Equal(model, copied);
     }
@@ -12575,6 +13020,790 @@ public class RealTimeDecisionDigitalWalletTokenDigitalWalletTest : TestBase
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
+    }
+}
+
+public class NetworkTest : TestBase
+{
+    [Theory]
+    [InlineData(RealTimeDecisions::Network.Visa)]
+    public void Validation_Works(RealTimeDecisions::Network rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, RealTimeDecisions::Network> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, RealTimeDecisions::Network>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(RealTimeDecisions::Network.Visa)]
+    public void SerializationRoundtrip_Works(RealTimeDecisions::Network rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, RealTimeDecisions::Network> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, RealTimeDecisions::Network>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, RealTimeDecisions::Network>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, RealTimeDecisions::Network>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class PrimaryAccountNumberSourceTest : TestBase
+{
+    [Theory]
+    [InlineData(RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered)]
+    [InlineData(RealTimeDecisions::PrimaryAccountNumberSource.OnFile)]
+    [InlineData(RealTimeDecisions::PrimaryAccountNumberSource.MobileApp)]
+    [InlineData(RealTimeDecisions::PrimaryAccountNumberSource.Token)]
+    [InlineData(RealTimeDecisions::PrimaryAccountNumberSource.ChipDip)]
+    [InlineData(RealTimeDecisions::PrimaryAccountNumberSource.ContactlessTap)]
+    public void Validation_Works(RealTimeDecisions::PrimaryAccountNumberSource rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, RealTimeDecisions::PrimaryAccountNumberSource> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, RealTimeDecisions::PrimaryAccountNumberSource>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(RealTimeDecisions::PrimaryAccountNumberSource.KeyEntered)]
+    [InlineData(RealTimeDecisions::PrimaryAccountNumberSource.OnFile)]
+    [InlineData(RealTimeDecisions::PrimaryAccountNumberSource.MobileApp)]
+    [InlineData(RealTimeDecisions::PrimaryAccountNumberSource.Token)]
+    [InlineData(RealTimeDecisions::PrimaryAccountNumberSource.ChipDip)]
+    [InlineData(RealTimeDecisions::PrimaryAccountNumberSource.ContactlessTap)]
+    public void SerializationRoundtrip_Works(RealTimeDecisions::PrimaryAccountNumberSource rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, RealTimeDecisions::PrimaryAccountNumberSource> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, RealTimeDecisions::PrimaryAccountNumberSource>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, RealTimeDecisions::PrimaryAccountNumberSource>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, RealTimeDecisions::PrimaryAccountNumberSource>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class TokenRequestorDetailsTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new RealTimeDecisions::TokenRequestorDetails
+        {
+            Identifier = "identifier",
+            Name = "name",
+        };
+
+        string expectedIdentifier = "identifier";
+        string expectedName = "name";
+
+        Assert.Equal(expectedIdentifier, model.Identifier);
+        Assert.Equal(expectedName, model.Name);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new RealTimeDecisions::TokenRequestorDetails
+        {
+            Identifier = "identifier",
+            Name = "name",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<RealTimeDecisions::TokenRequestorDetails>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new RealTimeDecisions::TokenRequestorDetails
+        {
+            Identifier = "identifier",
+            Name = "name",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<RealTimeDecisions::TokenRequestorDetails>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedIdentifier = "identifier";
+        string expectedName = "name";
+
+        Assert.Equal(expectedIdentifier, deserialized.Identifier);
+        Assert.Equal(expectedName, deserialized.Name);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new RealTimeDecisions::TokenRequestorDetails
+        {
+            Identifier = "identifier",
+            Name = "name",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RealTimeDecisions::TokenRequestorDetails
+        {
+            Identifier = "identifier",
+            Name = "name",
+        };
+
+        RealTimeDecisions::TokenRequestorDetails copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class RealTimeDecisionDigitalWalletTokenVerificationTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerification
+        {
+            CardholderAddress = new()
+            {
+                ActualLine1 = "actual_line1",
+                ActualPostalCode = "actual_postal_code",
+                ProvidedLine1 = "provided_line1",
+                ProvidedPostalCode = "provided_postal_code",
+                Result =
+                    RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+            },
+        };
+
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress expectedCardholderAddress =
+            new()
+            {
+                ActualLine1 = "actual_line1",
+                ActualPostalCode = "actual_postal_code",
+                ProvidedLine1 = "provided_line1",
+                ProvidedPostalCode = "provided_postal_code",
+                Result =
+                    RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+            };
+
+        Assert.Equal(expectedCardholderAddress, model.CardholderAddress);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerification
+        {
+            CardholderAddress = new()
+            {
+                ActualLine1 = "actual_line1",
+                ActualPostalCode = "actual_postal_code",
+                ProvidedLine1 = "provided_line1",
+                ProvidedPostalCode = "provided_postal_code",
+                Result =
+                    RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+            },
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerification>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerification
+        {
+            CardholderAddress = new()
+            {
+                ActualLine1 = "actual_line1",
+                ActualPostalCode = "actual_postal_code",
+                ProvidedLine1 = "provided_line1",
+                ProvidedPostalCode = "provided_postal_code",
+                Result =
+                    RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+            },
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerification>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress expectedCardholderAddress =
+            new()
+            {
+                ActualLine1 = "actual_line1",
+                ActualPostalCode = "actual_postal_code",
+                ProvidedLine1 = "provided_line1",
+                ProvidedPostalCode = "provided_postal_code",
+                Result =
+                    RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+            };
+
+        Assert.Equal(expectedCardholderAddress, deserialized.CardholderAddress);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerification
+        {
+            CardholderAddress = new()
+            {
+                ActualLine1 = "actual_line1",
+                ActualPostalCode = "actual_postal_code",
+                ProvidedLine1 = "provided_line1",
+                ProvidedPostalCode = "provided_postal_code",
+                Result =
+                    RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+            },
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerification
+        {
+            CardholderAddress = new()
+            {
+                ActualLine1 = "actual_line1",
+                ActualPostalCode = "actual_postal_code",
+                ProvidedLine1 = "provided_line1",
+                ProvidedPostalCode = "provided_postal_code",
+                Result =
+                    RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+            },
+        };
+
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerification copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model =
+            new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress
+            {
+                ActualLine1 = "actual_line1",
+                ActualPostalCode = "actual_postal_code",
+                ProvidedLine1 = "provided_line1",
+                ProvidedPostalCode = "provided_postal_code",
+                Result =
+                    RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+            };
+
+        string expectedActualLine1 = "actual_line1";
+        string expectedActualPostalCode = "actual_postal_code";
+        string expectedProvidedLine1 = "provided_line1";
+        string expectedProvidedPostalCode = "provided_postal_code";
+        ApiEnum<
+            string,
+            RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult
+        > expectedResult =
+            RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked;
+
+        Assert.Equal(expectedActualLine1, model.ActualLine1);
+        Assert.Equal(expectedActualPostalCode, model.ActualPostalCode);
+        Assert.Equal(expectedProvidedLine1, model.ProvidedLine1);
+        Assert.Equal(expectedProvidedPostalCode, model.ProvidedPostalCode);
+        Assert.Equal(expectedResult, model.Result);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model =
+            new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress
+            {
+                ActualLine1 = "actual_line1",
+                ActualPostalCode = "actual_postal_code",
+                ProvidedLine1 = "provided_line1",
+                ProvidedPostalCode = "provided_postal_code",
+                Result =
+                    RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+            };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model =
+            new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress
+            {
+                ActualLine1 = "actual_line1",
+                ActualPostalCode = "actual_postal_code",
+                ProvidedLine1 = "provided_line1",
+                ProvidedPostalCode = "provided_postal_code",
+                Result =
+                    RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+            };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedActualLine1 = "actual_line1";
+        string expectedActualPostalCode = "actual_postal_code";
+        string expectedProvidedLine1 = "provided_line1";
+        string expectedProvidedPostalCode = "provided_postal_code";
+        ApiEnum<
+            string,
+            RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult
+        > expectedResult =
+            RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked;
+
+        Assert.Equal(expectedActualLine1, deserialized.ActualLine1);
+        Assert.Equal(expectedActualPostalCode, deserialized.ActualPostalCode);
+        Assert.Equal(expectedProvidedLine1, deserialized.ProvidedLine1);
+        Assert.Equal(expectedProvidedPostalCode, deserialized.ProvidedPostalCode);
+        Assert.Equal(expectedResult, deserialized.Result);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model =
+            new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress
+            {
+                ActualLine1 = "actual_line1",
+                ActualPostalCode = "actual_postal_code",
+                ProvidedLine1 = "provided_line1",
+                ProvidedPostalCode = "provided_postal_code",
+                Result =
+                    RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+            };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model =
+            new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress
+            {
+                ActualLine1 = "actual_line1",
+                ActualPostalCode = "actual_postal_code",
+                ProvidedLine1 = "provided_line1",
+                ProvidedPostalCode = "provided_postal_code",
+                Result =
+                    RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+            };
+
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress copied =
+            new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResultTest : TestBase
+{
+    [Theory]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked
+    )]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.PostalCodeMatchAddressNoMatch
+    )]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.PostalCodeNoMatchAddressMatch
+    )]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.Match
+    )]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NoMatch
+    )]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.PostalCodeMatchAddressNotChecked
+    )]
+    public void Validation_Works(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<
+            string,
+            RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult
+        > value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<
+                string,
+                RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult
+            >
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked
+    )]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.PostalCodeMatchAddressNoMatch
+    )]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.PostalCodeNoMatchAddressMatch
+    )]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.Match
+    )]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NoMatch
+    )]
+    [InlineData(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.PostalCodeMatchAddressNotChecked
+    )]
+    public void SerializationRoundtrip_Works(
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<
+            string,
+            RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult
+        > value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<
+                string,
+                RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult
+            >
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<
+                string,
+                RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult
+            >
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<
+                string,
+                RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult
+            >
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class RealTimeDecisionDigitalWalletTokenVisaTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVisa
+        {
+            NetworkRiskScore = 0,
+            ProvisioningRiskScore = 0,
+        };
+
+        long expectedNetworkRiskScore = 0;
+        long expectedProvisioningRiskScore = 0;
+
+        Assert.Equal(expectedNetworkRiskScore, model.NetworkRiskScore);
+        Assert.Equal(expectedProvisioningRiskScore, model.ProvisioningRiskScore);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVisa
+        {
+            NetworkRiskScore = 0,
+            ProvisioningRiskScore = 0,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVisa>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVisa
+        {
+            NetworkRiskScore = 0,
+            ProvisioningRiskScore = 0,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVisa>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        long expectedNetworkRiskScore = 0;
+        long expectedProvisioningRiskScore = 0;
+
+        Assert.Equal(expectedNetworkRiskScore, deserialized.NetworkRiskScore);
+        Assert.Equal(expectedProvisioningRiskScore, deserialized.ProvisioningRiskScore);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVisa
+        {
+            NetworkRiskScore = 0,
+            ProvisioningRiskScore = 0,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVisa
+        {
+            NetworkRiskScore = 0,
+            ProvisioningRiskScore = 0,
+        };
+
+        RealTimeDecisions::RealTimeDecisionDigitalWalletTokenVisa copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class WalletTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new RealTimeDecisions::Wallet
+        {
+            AccountEmailAgeDays = 0,
+            AccountIdentifier = "account_identifier",
+            AccountScore = 0,
+            DeviceScore = 0,
+            EmailHash = "email_hash",
+        };
+
+        long expectedAccountEmailAgeDays = 0;
+        string expectedAccountIdentifier = "account_identifier";
+        long expectedAccountScore = 0;
+        long expectedDeviceScore = 0;
+        string expectedEmailHash = "email_hash";
+
+        Assert.Equal(expectedAccountEmailAgeDays, model.AccountEmailAgeDays);
+        Assert.Equal(expectedAccountIdentifier, model.AccountIdentifier);
+        Assert.Equal(expectedAccountScore, model.AccountScore);
+        Assert.Equal(expectedDeviceScore, model.DeviceScore);
+        Assert.Equal(expectedEmailHash, model.EmailHash);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new RealTimeDecisions::Wallet
+        {
+            AccountEmailAgeDays = 0,
+            AccountIdentifier = "account_identifier",
+            AccountScore = 0,
+            DeviceScore = 0,
+            EmailHash = "email_hash",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<RealTimeDecisions::Wallet>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new RealTimeDecisions::Wallet
+        {
+            AccountEmailAgeDays = 0,
+            AccountIdentifier = "account_identifier",
+            AccountScore = 0,
+            DeviceScore = 0,
+            EmailHash = "email_hash",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<RealTimeDecisions::Wallet>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        long expectedAccountEmailAgeDays = 0;
+        string expectedAccountIdentifier = "account_identifier";
+        long expectedAccountScore = 0;
+        long expectedDeviceScore = 0;
+        string expectedEmailHash = "email_hash";
+
+        Assert.Equal(expectedAccountEmailAgeDays, deserialized.AccountEmailAgeDays);
+        Assert.Equal(expectedAccountIdentifier, deserialized.AccountIdentifier);
+        Assert.Equal(expectedAccountScore, deserialized.AccountScore);
+        Assert.Equal(expectedDeviceScore, deserialized.DeviceScore);
+        Assert.Equal(expectedEmailHash, deserialized.EmailHash);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new RealTimeDecisions::Wallet
+        {
+            AccountEmailAgeDays = 0,
+            AccountIdentifier = "account_identifier",
+            AccountScore = 0,
+            DeviceScore = 0,
+            EmailHash = "email_hash",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RealTimeDecisions::Wallet
+        {
+            AccountEmailAgeDays = 0,
+            AccountIdentifier = "account_identifier",
+            AccountScore = 0,
+            DeviceScore = 0,
+            EmailHash = "email_hash",
+        };
+
+        RealTimeDecisions::Wallet copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
