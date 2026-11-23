@@ -9767,6 +9767,19 @@ public sealed record class RealTimeDecisionDigitalWalletToken : JsonModel
     }
 
     /// <summary>
+    /// The cardholder adding the card to the digital wallet.
+    /// </summary>
+    public required Cardholder Cardholder
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<Cardholder>("cardholder");
+        }
+        init { this._rawData.Set("cardholder", value); }
+    }
+
+    /// <summary>
     /// Whether or not the provisioning request was approved. This will be null until
     /// the real time decision is responded to.
     /// </summary>
@@ -9810,13 +9823,87 @@ public sealed record class RealTimeDecisionDigitalWalletToken : JsonModel
         init { this._rawData.Set("digital_wallet", value); }
     }
 
+    /// <summary>
+    /// The card network the token is being provisioned on.
+    /// </summary>
+    public required ApiEnum<string, Network> Network
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, Network>>("network");
+        }
+        init { this._rawData.Set("network", value); }
+    }
+
+    /// <summary>
+    /// The digital wallet or merchant that requested the token.
+    /// </summary>
+    public required TokenRequestorDetails TokenRequestorDetails
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<TokenRequestorDetails>("token_requestor_details");
+        }
+        init { this._rawData.Set("token_requestor_details", value); }
+    }
+
+    /// <summary>
+    /// Fields related to verification of cardholder-provided values.
+    /// </summary>
+    public required RealTimeDecisionDigitalWalletTokenVerification Verification
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<RealTimeDecisionDigitalWalletTokenVerification>(
+                "verification"
+            );
+        }
+        init { this._rawData.Set("verification", value); }
+    }
+
+    /// <summary>
+    /// Risk scores provided by Visa for the provisioning request. This field will
+    /// be present in the JSON response if and only if `network` is equal to `visa`.
+    /// </summary>
+    public required RealTimeDecisionDigitalWalletTokenVisa? Visa
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<RealTimeDecisionDigitalWalletTokenVisa>("visa");
+        }
+        init { this._rawData.Set("visa", value); }
+    }
+
+    /// <summary>
+    /// Details about the digital wallet.
+    /// </summary>
+    public required Wallet Wallet
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<Wallet>("wallet");
+        }
+        init { this._rawData.Set("wallet", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
         _ = this.CardID;
+        this.Cardholder.Validate();
         this.Decision?.Validate();
         this.Device.Validate();
         this.DigitalWallet.Validate();
+        this.Network.Validate();
+        this.TokenRequestorDetails.Validate();
+        this.Verification.Validate();
+        this.Visa?.Validate();
+        this.Wallet.Validate();
     }
 
     public RealTimeDecisionDigitalWalletToken() { }
@@ -9857,6 +9944,73 @@ class RealTimeDecisionDigitalWalletTokenFromRaw : IFromRawJson<RealTimeDecisionD
     public RealTimeDecisionDigitalWalletToken FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawData
     ) => RealTimeDecisionDigitalWalletToken.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The cardholder adding the card to the digital wallet.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Cardholder, CardholderFromRaw>))]
+public sealed record class Cardholder : JsonModel
+{
+    /// <summary>
+    /// The cardholder's name, as entered in the digital wallet.
+    /// </summary>
+    public required string? Name
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("name");
+        }
+        init { this._rawData.Set("name", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Name;
+    }
+
+    public Cardholder() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Cardholder(Cardholder cardholder)
+        : base(cardholder) { }
+#pragma warning restore CS8618
+
+    public Cardholder(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Cardholder(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="CardholderFromRaw.FromRawUnchecked"/>
+    public static Cardholder FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public Cardholder(string? name)
+        : this()
+    {
+        this.Name = name;
+    }
+}
+
+class CardholderFromRaw : IFromRawJson<Cardholder>
+{
+    /// <inheritdoc/>
+    public Cardholder FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Cardholder.FromRawUnchecked(rawData);
 }
 
 /// <summary>
@@ -10194,6 +10348,655 @@ sealed class RealTimeDecisionDigitalWalletTokenDigitalWalletConverter
             options
         );
     }
+}
+
+/// <summary>
+/// The card network the token is being provisioned on.
+/// </summary>
+[JsonConverter(typeof(NetworkConverter))]
+public enum Network
+{
+    /// <summary>
+    /// Visa
+    /// </summary>
+    Visa,
+}
+
+sealed class NetworkConverter : JsonConverter<Network>
+{
+    public override Network Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "visa" => Network.Visa,
+            _ => (Network)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Network value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Network.Visa => "visa",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// The digital wallet or merchant that requested the token.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<TokenRequestorDetails, TokenRequestorDetailsFromRaw>))]
+public sealed record class TokenRequestorDetails : JsonModel
+{
+    /// <summary>
+    /// The identifier assigned to the token requestor by the card network.
+    /// </summary>
+    public required string Identifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("identifier");
+        }
+        init { this._rawData.Set("identifier", value); }
+    }
+
+    /// <summary>
+    /// The name of the token requestor, for example "Apple Inc.".
+    /// </summary>
+    public required string? Name
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("name");
+        }
+        init { this._rawData.Set("name", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Identifier;
+        _ = this.Name;
+    }
+
+    public TokenRequestorDetails() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public TokenRequestorDetails(TokenRequestorDetails tokenRequestorDetails)
+        : base(tokenRequestorDetails) { }
+#pragma warning restore CS8618
+
+    public TokenRequestorDetails(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    TokenRequestorDetails(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="TokenRequestorDetailsFromRaw.FromRawUnchecked"/>
+    public static TokenRequestorDetails FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class TokenRequestorDetailsFromRaw : IFromRawJson<TokenRequestorDetails>
+{
+    /// <inheritdoc/>
+    public TokenRequestorDetails FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => TokenRequestorDetails.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Fields related to verification of cardholder-provided values.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        RealTimeDecisionDigitalWalletTokenVerification,
+        RealTimeDecisionDigitalWalletTokenVerificationFromRaw
+    >)
+)]
+public sealed record class RealTimeDecisionDigitalWalletTokenVerification : JsonModel
+{
+    /// <summary>
+    /// Cardholder address provided in the provisioning request and the address on
+    /// file we verified it against.
+    /// </summary>
+    public required RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress CardholderAddress
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress>(
+                "cardholder_address"
+            );
+        }
+        init { this._rawData.Set("cardholder_address", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        this.CardholderAddress.Validate();
+    }
+
+    public RealTimeDecisionDigitalWalletTokenVerification() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public RealTimeDecisionDigitalWalletTokenVerification(
+        RealTimeDecisionDigitalWalletTokenVerification realTimeDecisionDigitalWalletTokenVerification
+    )
+        : base(realTimeDecisionDigitalWalletTokenVerification) { }
+#pragma warning restore CS8618
+
+    public RealTimeDecisionDigitalWalletTokenVerification(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    RealTimeDecisionDigitalWalletTokenVerification(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="RealTimeDecisionDigitalWalletTokenVerificationFromRaw.FromRawUnchecked"/>
+    public static RealTimeDecisionDigitalWalletTokenVerification FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+
+    [SetsRequiredMembers]
+    public RealTimeDecisionDigitalWalletTokenVerification(
+        RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress cardholderAddress
+    )
+        : this()
+    {
+        this.CardholderAddress = cardholderAddress;
+    }
+}
+
+class RealTimeDecisionDigitalWalletTokenVerificationFromRaw
+    : IFromRawJson<RealTimeDecisionDigitalWalletTokenVerification>
+{
+    /// <inheritdoc/>
+    public RealTimeDecisionDigitalWalletTokenVerification FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => RealTimeDecisionDigitalWalletTokenVerification.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Cardholder address provided in the provisioning request and the address on file
+/// we verified it against.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress,
+        RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressFromRaw
+    >)
+)]
+public sealed record class RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress
+    : JsonModel
+{
+    /// <summary>
+    /// Line 1 of the address on file for the cardholder.
+    /// </summary>
+    public required string? ActualLine1
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("actual_line1");
+        }
+        init { this._rawData.Set("actual_line1", value); }
+    }
+
+    /// <summary>
+    /// The postal code of the address on file for the cardholder.
+    /// </summary>
+    public required string? ActualPostalCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("actual_postal_code");
+        }
+        init { this._rawData.Set("actual_postal_code", value); }
+    }
+
+    /// <summary>
+    /// The cardholder address line 1 provided for verification in the provisioning request.
+    /// </summary>
+    public required string? ProvidedLine1
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("provided_line1");
+        }
+        init { this._rawData.Set("provided_line1", value); }
+    }
+
+    /// <summary>
+    /// The postal code provided for verification in the provisioning request.
+    /// </summary>
+    public required string? ProvidedPostalCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("provided_postal_code");
+        }
+        init { this._rawData.Set("provided_postal_code", value); }
+    }
+
+    /// <summary>
+    /// The address verification result.
+    /// </summary>
+    public required ApiEnum<
+        string,
+        RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult
+    > Result
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<
+                    string,
+                    RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult
+                >
+            >("result");
+        }
+        init { this._rawData.Set("result", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.ActualLine1;
+        _ = this.ActualPostalCode;
+        _ = this.ProvidedLine1;
+        _ = this.ProvidedPostalCode;
+        this.Result.Validate();
+    }
+
+    public RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress(
+        RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress realTimeDecisionDigitalWalletTokenVerificationCardholderAddress
+    )
+        : base(realTimeDecisionDigitalWalletTokenVerificationCardholderAddress) { }
+#pragma warning restore CS8618
+
+    public RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress(
+        FrozenDictionary<string, JsonElement> rawData
+    )
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressFromRaw.FromRawUnchecked"/>
+    public static RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressFromRaw
+    : IFromRawJson<RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress>
+{
+    /// <inheritdoc/>
+    public RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => RealTimeDecisionDigitalWalletTokenVerificationCardholderAddress.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The address verification result.
+/// </summary>
+[JsonConverter(
+    typeof(RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResultConverter)
+)]
+public enum RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult
+{
+    /// <summary>
+    /// No address information was provided in the authorization request.
+    /// </summary>
+    NotChecked,
+
+    /// <summary>
+    /// Postal code matches, but the street address does not match or was not provided.
+    /// </summary>
+    PostalCodeMatchAddressNoMatch,
+
+    /// <summary>
+    /// Postal code does not match, but the street address matches or was not provided.
+    /// </summary>
+    PostalCodeNoMatchAddressMatch,
+
+    /// <summary>
+    /// Postal code and street address match.
+    /// </summary>
+    Match,
+
+    /// <summary>
+    /// Postal code and street address do not match.
+    /// </summary>
+    NoMatch,
+
+    /// <summary>
+    /// Postal code matches, but the street address was not verified. (deprecated)
+    /// </summary>
+    PostalCodeMatchAddressNotChecked,
+}
+
+sealed class RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResultConverter
+    : JsonConverter<RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult>
+{
+    public override RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "not_checked" =>
+                RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked,
+            "postal_code_match_address_no_match" =>
+                RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.PostalCodeMatchAddressNoMatch,
+            "postal_code_no_match_address_match" =>
+                RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.PostalCodeNoMatchAddressMatch,
+            "match" => RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.Match,
+            "no_match" =>
+                RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NoMatch,
+            "postal_code_match_address_not_checked" =>
+                RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.PostalCodeMatchAddressNotChecked,
+            _ => (RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NotChecked =>
+                    "not_checked",
+                RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.PostalCodeMatchAddressNoMatch =>
+                    "postal_code_match_address_no_match",
+                RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.PostalCodeNoMatchAddressMatch =>
+                    "postal_code_no_match_address_match",
+                RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.Match =>
+                    "match",
+                RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.NoMatch =>
+                    "no_match",
+                RealTimeDecisionDigitalWalletTokenVerificationCardholderAddressResult.PostalCodeMatchAddressNotChecked =>
+                    "postal_code_match_address_not_checked",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+/// <summary>
+/// Risk scores provided by Visa for the provisioning request. This field will be
+/// present in the JSON response if and only if `network` is equal to `visa`.
+/// </summary>
+[JsonConverter(
+    typeof(JsonModelConverter<
+        RealTimeDecisionDigitalWalletTokenVisa,
+        RealTimeDecisionDigitalWalletTokenVisaFromRaw
+    >)
+)]
+public sealed record class RealTimeDecisionDigitalWalletTokenVisa : JsonModel
+{
+    /// <summary>
+    /// Visa's risk score for the card, based on its transaction history, from 0 to
+    /// 99. A higher score indicates a higher risk.
+    /// </summary>
+    public required long? NetworkRiskScore
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("network_risk_score");
+        }
+        init { this._rawData.Set("network_risk_score", value); }
+    }
+
+    /// <summary>
+    /// Visa's risk score for the provisioning request, from 1 to 99. A higher score
+    /// indicates a higher risk.
+    /// </summary>
+    public required long? ProvisioningRiskScore
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("provisioning_risk_score");
+        }
+        init { this._rawData.Set("provisioning_risk_score", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.NetworkRiskScore;
+        _ = this.ProvisioningRiskScore;
+    }
+
+    public RealTimeDecisionDigitalWalletTokenVisa() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public RealTimeDecisionDigitalWalletTokenVisa(
+        RealTimeDecisionDigitalWalletTokenVisa realTimeDecisionDigitalWalletTokenVisa
+    )
+        : base(realTimeDecisionDigitalWalletTokenVisa) { }
+#pragma warning restore CS8618
+
+    public RealTimeDecisionDigitalWalletTokenVisa(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    RealTimeDecisionDigitalWalletTokenVisa(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="RealTimeDecisionDigitalWalletTokenVisaFromRaw.FromRawUnchecked"/>
+    public static RealTimeDecisionDigitalWalletTokenVisa FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class RealTimeDecisionDigitalWalletTokenVisaFromRaw
+    : IFromRawJson<RealTimeDecisionDigitalWalletTokenVisa>
+{
+    /// <inheritdoc/>
+    public RealTimeDecisionDigitalWalletTokenVisa FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => RealTimeDecisionDigitalWalletTokenVisa.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// Details about the digital wallet.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Wallet, WalletFromRaw>))]
+public sealed record class Wallet : JsonModel
+{
+    /// <summary>
+    /// The number of days since the email address was added to the cardholder's digital
+    /// wallet account, up to 999.
+    /// </summary>
+    public required long? AccountEmailAgeDays
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("account_email_age_days");
+        }
+        init { this._rawData.Set("account_email_age_days", value); }
+    }
+
+    /// <summary>
+    /// An identifier for the cardholder's account with the digital wallet.
+    /// </summary>
+    public required string? AccountIdentifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("account_identifier");
+        }
+        init { this._rawData.Set("account_identifier", value); }
+    }
+
+    /// <summary>
+    /// How much the digital wallet trusts the cardholder's account, from 1 to 5.
+    /// A higher score indicates more trust.
+    /// </summary>
+    public required long? AccountScore
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("account_score");
+        }
+        init { this._rawData.Set("account_score", value); }
+    }
+
+    /// <summary>
+    /// How much the digital wallet trusts the device the card is being added to,
+    /// from 1 to 5. A higher score indicates more trust.
+    /// </summary>
+    public required long? DeviceScore
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<long>("device_score");
+        }
+        init { this._rawData.Set("device_score", value); }
+    }
+
+    /// <summary>
+    /// A hash of the email address on the cardholder's digital wallet account.
+    /// </summary>
+    public required string? EmailHash
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("email_hash");
+        }
+        init { this._rawData.Set("email_hash", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.AccountEmailAgeDays;
+        _ = this.AccountIdentifier;
+        _ = this.AccountScore;
+        _ = this.DeviceScore;
+        _ = this.EmailHash;
+    }
+
+    public Wallet() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Wallet(Wallet wallet)
+        : base(wallet) { }
+#pragma warning restore CS8618
+
+    public Wallet(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Wallet(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="WalletFromRaw.FromRawUnchecked"/>
+    public static Wallet FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class WalletFromRaw : IFromRawJson<Wallet>
+{
+    /// <inheritdoc/>
+    public Wallet FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Wallet.FromRawUnchecked(rawData);
 }
 
 /// <summary>
