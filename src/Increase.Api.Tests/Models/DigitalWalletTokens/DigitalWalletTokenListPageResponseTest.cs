@@ -34,6 +34,11 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                     Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
                     TokenReferenceIdentifier = "DNITHE000000000000000000000",
                     TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
+                    TokenRequestorDetails = new()
+                    {
+                        Identifier = "40010030273",
+                        Name = "Apple Inc.",
+                    },
                     Type = DigitalWalletTokens::Type.DigitalWalletToken,
                     Updates =
                     [
@@ -43,6 +48,12 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                             Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
+                    Wallet = new()
+                    {
+                        AccountIdentifier = "0E51EC2F85C4ABF0",
+                        EmailHash =
+                            "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+                    },
                 },
             ],
             NextCursor = "v57w5d",
@@ -69,6 +80,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                 Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
                 TokenReferenceIdentifier = "DNITHE000000000000000000000",
                 TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
+                TokenRequestorDetails = new() { Identifier = "40010030273", Name = "Apple Inc." },
                 Type = DigitalWalletTokens::Type.DigitalWalletToken,
                 Updates =
                 [
@@ -78,6 +90,11 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                         Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
                 ],
+                Wallet = new()
+                {
+                    AccountIdentifier = "0E51EC2F85C4ABF0",
+                    EmailHash = "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+                },
             },
         ];
         string expectedNextCursor = "v57w5d";
@@ -116,6 +133,11 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                     Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
                     TokenReferenceIdentifier = "DNITHE000000000000000000000",
                     TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
+                    TokenRequestorDetails = new()
+                    {
+                        Identifier = "40010030273",
+                        Name = "Apple Inc.",
+                    },
                     Type = DigitalWalletTokens::Type.DigitalWalletToken,
                     Updates =
                     [
@@ -125,6 +147,12 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                             Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
+                    Wallet = new()
+                    {
+                        AccountIdentifier = "0E51EC2F85C4ABF0",
+                        EmailHash =
+                            "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+                    },
                 },
             ],
             NextCursor = "v57w5d",
@@ -166,6 +194,11 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                     Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
                     TokenReferenceIdentifier = "DNITHE000000000000000000000",
                     TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
+                    TokenRequestorDetails = new()
+                    {
+                        Identifier = "40010030273",
+                        Name = "Apple Inc.",
+                    },
                     Type = DigitalWalletTokens::Type.DigitalWalletToken,
                     Updates =
                     [
@@ -175,6 +208,12 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                             Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
+                    Wallet = new()
+                    {
+                        AccountIdentifier = "0E51EC2F85C4ABF0",
+                        EmailHash =
+                            "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+                    },
                 },
             ],
             NextCursor = "v57w5d",
@@ -209,6 +248,7 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                 Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
                 TokenReferenceIdentifier = "DNITHE000000000000000000000",
                 TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
+                TokenRequestorDetails = new() { Identifier = "40010030273", Name = "Apple Inc." },
                 Type = DigitalWalletTokens::Type.DigitalWalletToken,
                 Updates =
                 [
@@ -218,6 +258,11 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                         Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                     },
                 ],
+                Wallet = new()
+                {
+                    AccountIdentifier = "0E51EC2F85C4ABF0",
+                    EmailHash = "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+                },
             },
         ];
         string expectedNextCursor = "v57w5d";
@@ -256,6 +301,11 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                     Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
                     TokenReferenceIdentifier = "DNITHE000000000000000000000",
                     TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
+                    TokenRequestorDetails = new()
+                    {
+                        Identifier = "40010030273",
+                        Name = "Apple Inc.",
+                    },
                     Type = DigitalWalletTokens::Type.DigitalWalletToken,
                     Updates =
                     [
@@ -265,6 +315,12 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                             Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
+                    Wallet = new()
+                    {
+                        AccountIdentifier = "0E51EC2F85C4ABF0",
+                        EmailHash =
+                            "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+                    },
                 },
             ],
             NextCursor = "v57w5d",
@@ -299,6 +355,11 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                     Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
                     TokenReferenceIdentifier = "DNITHE000000000000000000000",
                     TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
+                    TokenRequestorDetails = new()
+                    {
+                        Identifier = "40010030273",
+                        Name = "Apple Inc.",
+                    },
                     Type = DigitalWalletTokens::Type.DigitalWalletToken,
                     Updates =
                     [
@@ -308,6 +369,12 @@ public class DigitalWalletTokenListPageResponseTest : TestBase
                             Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                         },
                     ],
+                    Wallet = new()
+                    {
+                        AccountIdentifier = "0E51EC2F85C4ABF0",
+                        EmailHash =
+                            "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+                    },
                 },
             ],
             NextCursor = "v57w5d",

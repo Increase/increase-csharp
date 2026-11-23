@@ -171,6 +171,19 @@ public sealed record class DigitalWalletToken : JsonModel
     }
 
     /// <summary>
+    /// The token requestor.
+    /// </summary>
+    public required TokenRequestorDetails TokenRequestorDetails
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<TokenRequestorDetails>("token_requestor_details");
+        }
+        init { this._rawData.Set("token_requestor_details", value); }
+    }
+
+    /// <summary>
     /// A constant representing the object's type. For this resource it will always
     /// be `digital_wallet_token`.
     /// </summary>
@@ -205,6 +218,19 @@ public sealed record class DigitalWalletToken : JsonModel
         }
     }
 
+    /// <summary>
+    /// The digital wallet account.
+    /// </summary>
+    public required Wallet Wallet
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<Wallet>("wallet");
+        }
+        init { this._rawData.Set("wallet", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -219,11 +245,13 @@ public sealed record class DigitalWalletToken : JsonModel
         this.Status.Validate();
         _ = this.TokenReferenceIdentifier;
         this.TokenRequestor.Validate();
+        this.TokenRequestorDetails.Validate();
         this.Type.Validate();
         foreach (var item in this.Updates)
         {
             item.Validate();
         }
+        this.Wallet.Validate();
     }
 
     public DigitalWalletToken() { }
@@ -767,6 +795,83 @@ sealed class TokenRequestorConverter : JsonConverter<TokenRequestor>
 }
 
 /// <summary>
+/// The token requestor.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<TokenRequestorDetails, TokenRequestorDetailsFromRaw>))]
+public sealed record class TokenRequestorDetails : JsonModel
+{
+    /// <summary>
+    /// The token requestor identifier.
+    /// </summary>
+    public required string Identifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("identifier");
+        }
+        init { this._rawData.Set("identifier", value); }
+    }
+
+    /// <summary>
+    /// The token requestor name, for example "Apple Inc.".
+    /// </summary>
+    public required string? Name
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("name");
+        }
+        init { this._rawData.Set("name", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.Identifier;
+        _ = this.Name;
+    }
+
+    public TokenRequestorDetails() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public TokenRequestorDetails(TokenRequestorDetails tokenRequestorDetails)
+        : base(tokenRequestorDetails) { }
+#pragma warning restore CS8618
+
+    public TokenRequestorDetails(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    TokenRequestorDetails(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="TokenRequestorDetailsFromRaw.FromRawUnchecked"/>
+    public static TokenRequestorDetails FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class TokenRequestorDetailsFromRaw : IFromRawJson<TokenRequestorDetails>
+{
+    /// <inheritdoc/>
+    public TokenRequestorDetails FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => TokenRequestorDetails.FromRawUnchecked(rawData);
+}
+
+/// <summary>
 /// A constant representing the object's type. For this resource it will always be `digital_wallet_token`.
 /// </summary>
 [JsonConverter(typeof(TypeConverter))]
@@ -963,4 +1068,78 @@ sealed class UpdateStatusConverter : JsonConverter<UpdateStatus>
             options
         );
     }
+}
+
+/// <summary>
+/// The digital wallet account.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<Wallet, WalletFromRaw>))]
+public sealed record class Wallet : JsonModel
+{
+    /// <summary>
+    /// The wallet account identifier.
+    /// </summary>
+    public required string? AccountIdentifier
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("account_identifier");
+        }
+        init { this._rawData.Set("account_identifier", value); }
+    }
+
+    /// <summary>
+    /// A hash of the wallet account email address.
+    /// </summary>
+    public required string? EmailHash
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("email_hash");
+        }
+        init { this._rawData.Set("email_hash", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.AccountIdentifier;
+        _ = this.EmailHash;
+    }
+
+    public Wallet() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public Wallet(Wallet wallet)
+        : base(wallet) { }
+#pragma warning restore CS8618
+
+    public Wallet(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    Wallet(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="WalletFromRaw.FromRawUnchecked"/>
+    public static Wallet FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class WalletFromRaw : IFromRawJson<Wallet>
+{
+    /// <inheritdoc/>
+    public Wallet FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        Wallet.FromRawUnchecked(rawData);
 }
