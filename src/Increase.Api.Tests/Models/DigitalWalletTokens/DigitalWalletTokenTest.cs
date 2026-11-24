@@ -31,6 +31,7 @@ public class DigitalWalletTokenTest : TestBase
             Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
             TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
+            TokenRequestorDetails = new() { Identifier = "40010030273", Name = "Apple Inc." },
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
             Updates =
             [
@@ -40,6 +41,11 @@ public class DigitalWalletTokenTest : TestBase
                     Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
             ],
+            Wallet = new()
+            {
+                AccountIdentifier = "0E51EC2F85C4ABF0",
+                EmailHash = "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+            },
         };
 
         string expectedID = "digital_wallet_token_izi62go3h51p369jrie0";
@@ -65,6 +71,11 @@ public class DigitalWalletTokenTest : TestBase
         string expectedTokenReferenceIdentifier = "DNITHE000000000000000000000";
         ApiEnum<string, DigitalWalletTokens::TokenRequestor> expectedTokenRequestor =
             DigitalWalletTokens::TokenRequestor.ApplePay;
+        DigitalWalletTokens::TokenRequestorDetails expectedTokenRequestorDetails = new()
+        {
+            Identifier = "40010030273",
+            Name = "Apple Inc.",
+        };
         ApiEnum<string, DigitalWalletTokens::Type> expectedType =
             DigitalWalletTokens::Type.DigitalWalletToken;
         List<DigitalWalletTokens::Update> expectedUpdates =
@@ -75,6 +86,11 @@ public class DigitalWalletTokenTest : TestBase
                 Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
         ];
+        DigitalWalletTokens::Wallet expectedWallet = new()
+        {
+            AccountIdentifier = "0E51EC2F85C4ABF0",
+            EmailHash = "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+        };
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedAccountID, model.AccountID);
@@ -90,12 +106,14 @@ public class DigitalWalletTokenTest : TestBase
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedTokenReferenceIdentifier, model.TokenReferenceIdentifier);
         Assert.Equal(expectedTokenRequestor, model.TokenRequestor);
+        Assert.Equal(expectedTokenRequestorDetails, model.TokenRequestorDetails);
         Assert.Equal(expectedType, model.Type);
         Assert.Equal(expectedUpdates.Count, model.Updates.Count);
         for (int i = 0; i < expectedUpdates.Count; i++)
         {
             Assert.Equal(expectedUpdates[i], model.Updates[i]);
         }
+        Assert.Equal(expectedWallet, model.Wallet);
     }
 
     [Fact]
@@ -120,6 +138,7 @@ public class DigitalWalletTokenTest : TestBase
             Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
             TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
+            TokenRequestorDetails = new() { Identifier = "40010030273", Name = "Apple Inc." },
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
             Updates =
             [
@@ -129,6 +148,11 @@ public class DigitalWalletTokenTest : TestBase
                     Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
             ],
+            Wallet = new()
+            {
+                AccountIdentifier = "0E51EC2F85C4ABF0",
+                EmailHash = "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+            },
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -162,6 +186,7 @@ public class DigitalWalletTokenTest : TestBase
             Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
             TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
+            TokenRequestorDetails = new() { Identifier = "40010030273", Name = "Apple Inc." },
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
             Updates =
             [
@@ -171,6 +196,11 @@ public class DigitalWalletTokenTest : TestBase
                     Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
             ],
+            Wallet = new()
+            {
+                AccountIdentifier = "0E51EC2F85C4ABF0",
+                EmailHash = "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -203,6 +233,11 @@ public class DigitalWalletTokenTest : TestBase
         string expectedTokenReferenceIdentifier = "DNITHE000000000000000000000";
         ApiEnum<string, DigitalWalletTokens::TokenRequestor> expectedTokenRequestor =
             DigitalWalletTokens::TokenRequestor.ApplePay;
+        DigitalWalletTokens::TokenRequestorDetails expectedTokenRequestorDetails = new()
+        {
+            Identifier = "40010030273",
+            Name = "Apple Inc.",
+        };
         ApiEnum<string, DigitalWalletTokens::Type> expectedType =
             DigitalWalletTokens::Type.DigitalWalletToken;
         List<DigitalWalletTokens::Update> expectedUpdates =
@@ -213,6 +248,11 @@ public class DigitalWalletTokenTest : TestBase
                 Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
             },
         ];
+        DigitalWalletTokens::Wallet expectedWallet = new()
+        {
+            AccountIdentifier = "0E51EC2F85C4ABF0",
+            EmailHash = "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+        };
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedAccountID, deserialized.AccountID);
@@ -228,12 +268,14 @@ public class DigitalWalletTokenTest : TestBase
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedTokenReferenceIdentifier, deserialized.TokenReferenceIdentifier);
         Assert.Equal(expectedTokenRequestor, deserialized.TokenRequestor);
+        Assert.Equal(expectedTokenRequestorDetails, deserialized.TokenRequestorDetails);
         Assert.Equal(expectedType, deserialized.Type);
         Assert.Equal(expectedUpdates.Count, deserialized.Updates.Count);
         for (int i = 0; i < expectedUpdates.Count; i++)
         {
             Assert.Equal(expectedUpdates[i], deserialized.Updates[i]);
         }
+        Assert.Equal(expectedWallet, deserialized.Wallet);
     }
 
     [Fact]
@@ -258,6 +300,7 @@ public class DigitalWalletTokenTest : TestBase
             Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
             TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
+            TokenRequestorDetails = new() { Identifier = "40010030273", Name = "Apple Inc." },
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
             Updates =
             [
@@ -267,6 +310,11 @@ public class DigitalWalletTokenTest : TestBase
                     Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
             ],
+            Wallet = new()
+            {
+                AccountIdentifier = "0E51EC2F85C4ABF0",
+                EmailHash = "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+            },
         };
 
         model.Validate();
@@ -294,6 +342,7 @@ public class DigitalWalletTokenTest : TestBase
             Status = DigitalWalletTokens::DigitalWalletTokenStatus.Active,
             TokenReferenceIdentifier = "DNITHE000000000000000000000",
             TokenRequestor = DigitalWalletTokens::TokenRequestor.ApplePay,
+            TokenRequestorDetails = new() { Identifier = "40010030273", Name = "Apple Inc." },
             Type = DigitalWalletTokens::Type.DigitalWalletToken,
             Updates =
             [
@@ -303,6 +352,11 @@ public class DigitalWalletTokenTest : TestBase
                     Timestamp = DateTimeOffset.Parse("2020-01-31T23:59:59Z"),
                 },
             ],
+            Wallet = new()
+            {
+                AccountIdentifier = "0E51EC2F85C4ABF0",
+                EmailHash = "0E51EC2F85C4ABF067DFE4B0D30A5F60899C6ACEFD700D3171E7330D542E0834",
+            },
         };
 
         DigitalWalletTokens::DigitalWalletToken copied = new(model);
@@ -757,6 +811,92 @@ public class TokenRequestorTest : TestBase
     }
 }
 
+public class TokenRequestorDetailsTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new DigitalWalletTokens::TokenRequestorDetails
+        {
+            Identifier = "identifier",
+            Name = "name",
+        };
+
+        string expectedIdentifier = "identifier";
+        string expectedName = "name";
+
+        Assert.Equal(expectedIdentifier, model.Identifier);
+        Assert.Equal(expectedName, model.Name);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new DigitalWalletTokens::TokenRequestorDetails
+        {
+            Identifier = "identifier",
+            Name = "name",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<DigitalWalletTokens::TokenRequestorDetails>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new DigitalWalletTokens::TokenRequestorDetails
+        {
+            Identifier = "identifier",
+            Name = "name",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<DigitalWalletTokens::TokenRequestorDetails>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedIdentifier = "identifier";
+        string expectedName = "name";
+
+        Assert.Equal(expectedIdentifier, deserialized.Identifier);
+        Assert.Equal(expectedName, deserialized.Name);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new DigitalWalletTokens::TokenRequestorDetails
+        {
+            Identifier = "identifier",
+            Name = "name",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DigitalWalletTokens::TokenRequestorDetails
+        {
+            Identifier = "identifier",
+            Name = "name",
+        };
+
+        DigitalWalletTokens::TokenRequestorDetails copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
 public class TypeTest : TestBase
 {
     [Theory]
@@ -960,5 +1100,91 @@ public class UpdateStatusTest : TestBase
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
+    }
+}
+
+public class WalletTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new DigitalWalletTokens::Wallet
+        {
+            AccountIdentifier = "account_identifier",
+            EmailHash = "email_hash",
+        };
+
+        string expectedAccountIdentifier = "account_identifier";
+        string expectedEmailHash = "email_hash";
+
+        Assert.Equal(expectedAccountIdentifier, model.AccountIdentifier);
+        Assert.Equal(expectedEmailHash, model.EmailHash);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new DigitalWalletTokens::Wallet
+        {
+            AccountIdentifier = "account_identifier",
+            EmailHash = "email_hash",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<DigitalWalletTokens::Wallet>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new DigitalWalletTokens::Wallet
+        {
+            AccountIdentifier = "account_identifier",
+            EmailHash = "email_hash",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<DigitalWalletTokens::Wallet>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedAccountIdentifier = "account_identifier";
+        string expectedEmailHash = "email_hash";
+
+        Assert.Equal(expectedAccountIdentifier, deserialized.AccountIdentifier);
+        Assert.Equal(expectedEmailHash, deserialized.EmailHash);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new DigitalWalletTokens::Wallet
+        {
+            AccountIdentifier = "account_identifier",
+            EmailHash = "email_hash",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DigitalWalletTokens::Wallet
+        {
+            AccountIdentifier = "account_identifier",
+            EmailHash = "email_hash",
+        };
+
+        DigitalWalletTokens::Wallet copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
