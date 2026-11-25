@@ -1,4 +1,6 @@
 using System;
+using System.Text.Json;
+using Increase.Api.Core;
 using Increase.Api.Models.RealTimePaymentsTransfers;
 
 namespace Increase.Api.Tests.Models.RealTimePaymentsTransfers;
@@ -15,6 +17,16 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             UnstructuredRemittanceInformation = "Invoice 29582",
             AccountNumber = "987654321",
+            DebtorAddress = new()
+            {
+                City = "city",
+                Country = "x",
+                PostalCode = "postal_code",
+                State = "xx",
+                StreetName = "street_name",
+                AddressLine2 = "address_line2",
+                BuildingNumber = "building_number",
+            },
             DebtorName = "debtor_name",
             ExternalAccountID = "external_account_id",
             InboundRealTimePaymentsRequestForPaymentID =
@@ -30,6 +42,16 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
         string expectedSourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
         string expectedUnstructuredRemittanceInformation = "Invoice 29582";
         string expectedAccountNumber = "987654321";
+        DebtorAddress expectedDebtorAddress = new()
+        {
+            City = "city",
+            Country = "x",
+            PostalCode = "postal_code",
+            State = "xx",
+            StreetName = "street_name",
+            AddressLine2 = "address_line2",
+            BuildingNumber = "building_number",
+        };
         string expectedDebtorName = "debtor_name";
         string expectedExternalAccountID = "external_account_id";
         string expectedInboundRealTimePaymentsRequestForPaymentID =
@@ -47,6 +69,7 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
             parameters.UnstructuredRemittanceInformation
         );
         Assert.Equal(expectedAccountNumber, parameters.AccountNumber);
+        Assert.Equal(expectedDebtorAddress, parameters.DebtorAddress);
         Assert.Equal(expectedDebtorName, parameters.DebtorName);
         Assert.Equal(expectedExternalAccountID, parameters.ExternalAccountID);
         Assert.Equal(
@@ -72,6 +95,8 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
 
         Assert.Null(parameters.AccountNumber);
         Assert.False(parameters.RawBodyData.ContainsKey("account_number"));
+        Assert.Null(parameters.DebtorAddress);
+        Assert.False(parameters.RawBodyData.ContainsKey("debtor_address"));
         Assert.Null(parameters.DebtorName);
         Assert.False(parameters.RawBodyData.ContainsKey("debtor_name"));
         Assert.Null(parameters.ExternalAccountID);
@@ -102,6 +127,7 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
 
             // Null should be interpreted as omitted for these properties
             AccountNumber = null,
+            DebtorAddress = null,
             DebtorName = null,
             ExternalAccountID = null,
             InboundRealTimePaymentsRequestForPaymentID = null,
@@ -113,6 +139,8 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
 
         Assert.Null(parameters.AccountNumber);
         Assert.False(parameters.RawBodyData.ContainsKey("account_number"));
+        Assert.Null(parameters.DebtorAddress);
+        Assert.False(parameters.RawBodyData.ContainsKey("debtor_address"));
         Assert.Null(parameters.DebtorName);
         Assert.False(parameters.RawBodyData.ContainsKey("debtor_name"));
         Assert.Null(parameters.ExternalAccountID);
@@ -162,6 +190,16 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
             SourceAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2",
             UnstructuredRemittanceInformation = "Invoice 29582",
             AccountNumber = "987654321",
+            DebtorAddress = new()
+            {
+                City = "city",
+                Country = "x",
+                PostalCode = "postal_code",
+                State = "xx",
+                StreetName = "street_name",
+                AddressLine2 = "address_line2",
+                BuildingNumber = "building_number",
+            },
             DebtorName = "debtor_name",
             ExternalAccountID = "external_account_id",
             InboundRealTimePaymentsRequestForPaymentID =
@@ -175,5 +213,210 @@ public class RealTimePaymentsTransferCreateParamsTest : TestBase
         RealTimePaymentsTransferCreateParams copied = new(parameters);
 
         Assert.Equal(parameters, copied);
+    }
+}
+
+public class DebtorAddressTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new DebtorAddress
+        {
+            City = "city",
+            Country = "x",
+            PostalCode = "postal_code",
+            State = "xx",
+            StreetName = "street_name",
+            AddressLine2 = "address_line2",
+            BuildingNumber = "building_number",
+        };
+
+        string expectedCity = "city";
+        string expectedCountry = "x";
+        string expectedPostalCode = "postal_code";
+        string expectedState = "xx";
+        string expectedStreetName = "street_name";
+        string expectedAddressLine2 = "address_line2";
+        string expectedBuildingNumber = "building_number";
+
+        Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedPostalCode, model.PostalCode);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedStreetName, model.StreetName);
+        Assert.Equal(expectedAddressLine2, model.AddressLine2);
+        Assert.Equal(expectedBuildingNumber, model.BuildingNumber);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new DebtorAddress
+        {
+            City = "city",
+            Country = "x",
+            PostalCode = "postal_code",
+            State = "xx",
+            StreetName = "street_name",
+            AddressLine2 = "address_line2",
+            BuildingNumber = "building_number",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<DebtorAddress>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new DebtorAddress
+        {
+            City = "city",
+            Country = "x",
+            PostalCode = "postal_code",
+            State = "xx",
+            StreetName = "street_name",
+            AddressLine2 = "address_line2",
+            BuildingNumber = "building_number",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<DebtorAddress>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedCity = "city";
+        string expectedCountry = "x";
+        string expectedPostalCode = "postal_code";
+        string expectedState = "xx";
+        string expectedStreetName = "street_name";
+        string expectedAddressLine2 = "address_line2";
+        string expectedBuildingNumber = "building_number";
+
+        Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedPostalCode, deserialized.PostalCode);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedStreetName, deserialized.StreetName);
+        Assert.Equal(expectedAddressLine2, deserialized.AddressLine2);
+        Assert.Equal(expectedBuildingNumber, deserialized.BuildingNumber);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new DebtorAddress
+        {
+            City = "city",
+            Country = "x",
+            PostalCode = "postal_code",
+            State = "xx",
+            StreetName = "street_name",
+            AddressLine2 = "address_line2",
+            BuildingNumber = "building_number",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new DebtorAddress
+        {
+            City = "city",
+            Country = "x",
+            PostalCode = "postal_code",
+            State = "xx",
+            StreetName = "street_name",
+        };
+
+        Assert.Null(model.AddressLine2);
+        Assert.False(model.RawData.ContainsKey("address_line2"));
+        Assert.Null(model.BuildingNumber);
+        Assert.False(model.RawData.ContainsKey("building_number"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new DebtorAddress
+        {
+            City = "city",
+            Country = "x",
+            PostalCode = "postal_code",
+            State = "xx",
+            StreetName = "street_name",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullAreNotSet_Works()
+    {
+        var model = new DebtorAddress
+        {
+            City = "city",
+            Country = "x",
+            PostalCode = "postal_code",
+            State = "xx",
+            StreetName = "street_name",
+
+            // Null should be interpreted as omitted for these properties
+            AddressLine2 = null,
+            BuildingNumber = null,
+        };
+
+        Assert.Null(model.AddressLine2);
+        Assert.False(model.RawData.ContainsKey("address_line2"));
+        Assert.Null(model.BuildingNumber);
+        Assert.False(model.RawData.ContainsKey("building_number"));
+    }
+
+    [Fact]
+    public void OptionalNonNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new DebtorAddress
+        {
+            City = "city",
+            Country = "x",
+            PostalCode = "postal_code",
+            State = "xx",
+            StreetName = "street_name",
+
+            // Null should be interpreted as omitted for these properties
+            AddressLine2 = null,
+            BuildingNumber = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DebtorAddress
+        {
+            City = "city",
+            Country = "x",
+            PostalCode = "postal_code",
+            State = "xx",
+            StreetName = "street_name",
+            AddressLine2 = "address_line2",
+            BuildingNumber = "building_number",
+        };
+
+        DebtorAddress copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
