@@ -41,6 +41,29 @@ public record class InboundWireTransferReverseParams : ParamsBase
         init { this._rawBodyData.Set("reason", value); }
     }
 
+    /// <summary>
+    /// The amount to return, in USD cents. Defaults to the full amount of the Inbound
+    /// Wire Transfer. A transfer can only be reversed once, so any amount you don't
+    /// return now stays with the recipient.
+    /// </summary>
+    public long? Amount
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableStruct<long>("amount");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("amount", value);
+        }
+    }
+
     public InboundWireTransferReverseParams() { }
 
 #pragma warning disable CS8618
@@ -189,6 +212,11 @@ public enum Reason
     /// The account cannot currently receive inbound wires.
     /// </summary>
     TransactionForbidden,
+
+    /// <summary>
+    /// The inbound wire transfer was fraudulent.
+    /// </summary>
+    Fraud,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -204,6 +232,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "duplicate" => Reason.Duplicate,
             "creditor_request" => Reason.CreditorRequest,
             "transaction_forbidden" => Reason.TransactionForbidden,
+            "fraud" => Reason.Fraud,
             _ => (Reason)(-1),
         };
     }
@@ -217,6 +246,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.Duplicate => "duplicate",
                 Reason.CreditorRequest => "creditor_request",
                 Reason.TransactionForbidden => "transaction_forbidden",
+                Reason.Fraud => "fraud",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
