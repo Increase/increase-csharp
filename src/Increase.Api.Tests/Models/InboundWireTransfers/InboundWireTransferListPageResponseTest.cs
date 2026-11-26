@@ -46,6 +46,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     Purpose = "CASH",
                     Reversal = new()
                     {
+                        Amount = 0,
                         Reason = InboundWireTransfers::ReversalReason.Duplicate,
                         ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     },
@@ -92,6 +93,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                 Purpose = "CASH",
                 Reversal = new()
                 {
+                    Amount = 0,
                     Reason = InboundWireTransfers::ReversalReason.Duplicate,
                     ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
@@ -150,6 +152,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     Purpose = "CASH",
                     Reversal = new()
                     {
+                        Amount = 0,
                         Reason = InboundWireTransfers::ReversalReason.Duplicate,
                         ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     },
@@ -211,6 +214,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     Purpose = "CASH",
                     Reversal = new()
                     {
+                        Amount = 0,
                         Reason = InboundWireTransfers::ReversalReason.Duplicate,
                         ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     },
@@ -265,6 +269,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                 Purpose = "CASH",
                 Reversal = new()
                 {
+                    Amount = 0,
                     Reason = InboundWireTransfers::ReversalReason.Duplicate,
                     ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 },
@@ -323,6 +328,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     Purpose = "CASH",
                     Reversal = new()
                     {
+                        Amount = 0,
                         Reason = InboundWireTransfers::ReversalReason.Duplicate,
                         ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     },
@@ -377,6 +383,7 @@ public class InboundWireTransferListPageResponseTest : TestBase
                     Purpose = "CASH",
                     Reversal = new()
                     {
+                        Amount = 0,
                         Reason = InboundWireTransfers::ReversalReason.Duplicate,
                         ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     },
