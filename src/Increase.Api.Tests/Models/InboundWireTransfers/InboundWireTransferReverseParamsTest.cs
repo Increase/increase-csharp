@@ -15,13 +15,45 @@ public class InboundWireTransferReverseParamsTest : TestBase
         {
             InboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             Reason = Reason.CreditorRequest,
+            Amount = 1,
         };
 
         string expectedInboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0";
         ApiEnum<string, Reason> expectedReason = Reason.CreditorRequest;
+        long expectedAmount = 1;
 
         Assert.Equal(expectedInboundWireTransferID, parameters.InboundWireTransferID);
         Assert.Equal(expectedReason, parameters.Reason);
+        Assert.Equal(expectedAmount, parameters.Amount);
+    }
+
+    [Fact]
+    public void OptionalNonNullableParamsUnsetAreNotSet_Works()
+    {
+        var parameters = new InboundWireTransferReverseParams
+        {
+            InboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
+            Reason = Reason.CreditorRequest,
+        };
+
+        Assert.Null(parameters.Amount);
+        Assert.False(parameters.RawBodyData.ContainsKey("amount"));
+    }
+
+    [Fact]
+    public void OptionalNonNullableParamsSetToNullAreNotSet_Works()
+    {
+        var parameters = new InboundWireTransferReverseParams
+        {
+            InboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
+            Reason = Reason.CreditorRequest,
+
+            // Null should be interpreted as omitted for these properties
+            Amount = null,
+        };
+
+        Assert.Null(parameters.Amount);
+        Assert.False(parameters.RawBodyData.ContainsKey("amount"));
     }
 
     [Fact]
@@ -52,6 +84,7 @@ public class InboundWireTransferReverseParamsTest : TestBase
         {
             InboundWireTransferID = "inbound_wire_transfer_f228m6bmhtcxjco9pwp0",
             Reason = Reason.CreditorRequest,
+            Amount = 1,
         };
 
         InboundWireTransferReverseParams copied = new(parameters);
@@ -66,6 +99,7 @@ public class ReasonTest : TestBase
     [InlineData(Reason.Duplicate)]
     [InlineData(Reason.CreditorRequest)]
     [InlineData(Reason.TransactionForbidden)]
+    [InlineData(Reason.Fraud)]
     public void Validation_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -89,6 +123,7 @@ public class ReasonTest : TestBase
     [InlineData(Reason.Duplicate)]
     [InlineData(Reason.CreditorRequest)]
     [InlineData(Reason.TransactionForbidden)]
+    [InlineData(Reason.Fraud)]
     public void SerializationRoundtrip_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
