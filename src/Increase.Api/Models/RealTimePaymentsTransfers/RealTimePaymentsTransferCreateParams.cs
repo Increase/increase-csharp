@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Increase.Api.Core;
 
 namespace Increase.Api.Models.RealTimePaymentsTransfers;
@@ -94,6 +95,28 @@ public record class RealTimePaymentsTransferCreateParams : ParamsBase
             }
 
             this._rawBodyData.Set("account_number", value);
+        }
+    }
+
+    /// <summary>
+    /// The address of the transfer's sender. If not provided, no debtor address
+    /// is sent with the transfer.
+    /// </summary>
+    public DebtorAddress? DebtorAddress
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNullableClass<DebtorAddress>("debtor_address");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawBodyData.Set("debtor_address", value);
         }
     }
 
@@ -363,4 +386,168 @@ public record class RealTimePaymentsTransferCreateParams : ParamsBase
     {
         return 0;
     }
+}
+
+/// <summary>
+/// The address of the transfer's sender. If not provided, no debtor address is sent
+/// with the transfer.
+/// </summary>
+[JsonConverter(typeof(JsonModelConverter<DebtorAddress, DebtorAddressFromRaw>))]
+public sealed record class DebtorAddress : JsonModel
+{
+    /// <summary>
+    /// The town or city.
+    /// </summary>
+    public required string City
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("city");
+        }
+        init { this._rawData.Set("city", value); }
+    }
+
+    /// <summary>
+    /// The ISO 3166, Alpha-2 country code.
+    ///
+    /// <para>Defaults to `US`.</para>
+    /// </summary>
+    public required string Country
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("country");
+        }
+        init { this._rawData.Set("country", value); }
+    }
+
+    /// <summary>
+    /// The postal code or zip.
+    /// </summary>
+    public required string PostalCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("postal_code");
+        }
+        init { this._rawData.Set("postal_code", value); }
+    }
+
+    /// <summary>
+    /// The US state component of the address.
+    /// </summary>
+    public required string State
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("state");
+        }
+        init { this._rawData.Set("state", value); }
+    }
+
+    /// <summary>
+    /// The street name without the street number.
+    /// </summary>
+    public required string StreetName
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("street_name");
+        }
+        init { this._rawData.Set("street_name", value); }
+    }
+
+    /// <summary>
+    /// A second address line, such as an apartment or suite number. The first address
+    /// line is separated into `building_number` and `street_name`.
+    /// </summary>
+    public string? AddressLine2
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("address_line2");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("address_line2", value);
+        }
+    }
+
+    /// <summary>
+    /// The number identifying the position of the building on the street.
+    /// </summary>
+    public string? BuildingNumber
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("building_number");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawData.Set("building_number", value);
+        }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.City;
+        _ = this.Country;
+        _ = this.PostalCode;
+        _ = this.State;
+        _ = this.StreetName;
+        _ = this.AddressLine2;
+        _ = this.BuildingNumber;
+    }
+
+    public DebtorAddress() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public DebtorAddress(DebtorAddress debtorAddress)
+        : base(debtorAddress) { }
+#pragma warning restore CS8618
+
+    public DebtorAddress(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    DebtorAddress(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="DebtorAddressFromRaw.FromRawUnchecked"/>
+    public static DebtorAddress FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class DebtorAddressFromRaw : IFromRawJson<DebtorAddress>
+{
+    /// <inheritdoc/>
+    public DebtorAddress FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        DebtorAddress.FromRawUnchecked(rawData);
 }

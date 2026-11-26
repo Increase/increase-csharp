@@ -38,6 +38,16 @@ public class RealTimePaymentsTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
+            DebtorAddress = new()
+            {
+                AddressLine2 = "Unit 2",
+                BuildingNumber = "33",
+                City = "New York",
+                Country = "US",
+                PostalCode = "10045",
+                State = "NY",
+                StreetName = "Liberty Street",
+            },
             DebtorName = "National Phonograph Company",
             EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
@@ -94,6 +104,17 @@ public class RealTimePaymentsTransferTest : TestBase
         string expectedCreditorName = "Ian Crease";
         ApiEnum<string, RealTimePaymentsTransfers::Currency> expectedCurrency =
             RealTimePaymentsTransfers::Currency.Usd;
+        RealTimePaymentsTransfers::RealTimePaymentsTransferDebtorAddress expectedDebtorAddress =
+            new()
+            {
+                AddressLine2 = "Unit 2",
+                BuildingNumber = "33",
+                City = "New York",
+                Country = "US",
+                PostalCode = "10045",
+                State = "NY",
+                StreetName = "Liberty Street",
+            };
         string expectedDebtorName = "National Phonograph Company";
         string expectedEndToEndIdentification = "Invoice 29582";
         RealTimePaymentsTransfers::Rejection expectedRejection = new()
@@ -127,6 +148,7 @@ public class RealTimePaymentsTransferTest : TestBase
         Assert.Equal(expectedCreatedBy, model.CreatedBy);
         Assert.Equal(expectedCreditorName, model.CreditorName);
         Assert.Equal(expectedCurrency, model.Currency);
+        Assert.Equal(expectedDebtorAddress, model.DebtorAddress);
         Assert.Equal(expectedDebtorName, model.DebtorName);
         Assert.Equal(expectedEndToEndIdentification, model.EndToEndIdentification);
         Assert.Null(model.ExternalAccountID);
@@ -179,6 +201,16 @@ public class RealTimePaymentsTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
+            DebtorAddress = new()
+            {
+                AddressLine2 = "Unit 2",
+                BuildingNumber = "33",
+                City = "New York",
+                Country = "US",
+                PostalCode = "10045",
+                State = "NY",
+                StreetName = "Liberty Street",
+            },
             DebtorName = "National Phonograph Company",
             EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
@@ -247,6 +279,16 @@ public class RealTimePaymentsTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
+            DebtorAddress = new()
+            {
+                AddressLine2 = "Unit 2",
+                BuildingNumber = "33",
+                City = "New York",
+                Country = "US",
+                PostalCode = "10045",
+                State = "NY",
+                StreetName = "Liberty Street",
+            },
             DebtorName = "National Phonograph Company",
             EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
@@ -311,6 +353,17 @@ public class RealTimePaymentsTransferTest : TestBase
         string expectedCreditorName = "Ian Crease";
         ApiEnum<string, RealTimePaymentsTransfers::Currency> expectedCurrency =
             RealTimePaymentsTransfers::Currency.Usd;
+        RealTimePaymentsTransfers::RealTimePaymentsTransferDebtorAddress expectedDebtorAddress =
+            new()
+            {
+                AddressLine2 = "Unit 2",
+                BuildingNumber = "33",
+                City = "New York",
+                Country = "US",
+                PostalCode = "10045",
+                State = "NY",
+                StreetName = "Liberty Street",
+            };
         string expectedDebtorName = "National Phonograph Company";
         string expectedEndToEndIdentification = "Invoice 29582";
         RealTimePaymentsTransfers::Rejection expectedRejection = new()
@@ -344,6 +397,7 @@ public class RealTimePaymentsTransferTest : TestBase
         Assert.Equal(expectedCreatedBy, deserialized.CreatedBy);
         Assert.Equal(expectedCreditorName, deserialized.CreditorName);
         Assert.Equal(expectedCurrency, deserialized.Currency);
+        Assert.Equal(expectedDebtorAddress, deserialized.DebtorAddress);
         Assert.Equal(expectedDebtorName, deserialized.DebtorName);
         Assert.Equal(expectedEndToEndIdentification, deserialized.EndToEndIdentification);
         Assert.Null(deserialized.ExternalAccountID);
@@ -396,6 +450,16 @@ public class RealTimePaymentsTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
+            DebtorAddress = new()
+            {
+                AddressLine2 = "Unit 2",
+                BuildingNumber = "33",
+                City = "New York",
+                Country = "US",
+                PostalCode = "10045",
+                State = "NY",
+                StreetName = "Liberty Street",
+            },
             DebtorName = "National Phonograph Company",
             EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
@@ -457,6 +521,16 @@ public class RealTimePaymentsTransferTest : TestBase
             },
             CreditorName = "Ian Crease",
             Currency = RealTimePaymentsTransfers::Currency.Usd,
+            DebtorAddress = new()
+            {
+                AddressLine2 = "Unit 2",
+                BuildingNumber = "33",
+                City = "New York",
+                Country = "US",
+                PostalCode = "10045",
+                State = "NY",
+                StreetName = "Liberty Street",
+            },
             DebtorName = "National Phonograph Company",
             EndToEndIdentification = "Invoice 29582",
             ExternalAccountID = null,
@@ -1197,6 +1271,139 @@ public class CurrencyTest : TestBase
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
+    }
+}
+
+public class RealTimePaymentsTransferDebtorAddressTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new RealTimePaymentsTransfers::RealTimePaymentsTransferDebtorAddress
+        {
+            AddressLine2 = "address_line2",
+            BuildingNumber = "building_number",
+            City = "city",
+            Country = "country",
+            PostalCode = "postal_code",
+            State = "state",
+            StreetName = "street_name",
+        };
+
+        string expectedAddressLine2 = "address_line2";
+        string expectedBuildingNumber = "building_number";
+        string expectedCity = "city";
+        string expectedCountry = "country";
+        string expectedPostalCode = "postal_code";
+        string expectedState = "state";
+        string expectedStreetName = "street_name";
+
+        Assert.Equal(expectedAddressLine2, model.AddressLine2);
+        Assert.Equal(expectedBuildingNumber, model.BuildingNumber);
+        Assert.Equal(expectedCity, model.City);
+        Assert.Equal(expectedCountry, model.Country);
+        Assert.Equal(expectedPostalCode, model.PostalCode);
+        Assert.Equal(expectedState, model.State);
+        Assert.Equal(expectedStreetName, model.StreetName);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new RealTimePaymentsTransfers::RealTimePaymentsTransferDebtorAddress
+        {
+            AddressLine2 = "address_line2",
+            BuildingNumber = "building_number",
+            City = "city",
+            Country = "country",
+            PostalCode = "postal_code",
+            State = "state",
+            StreetName = "street_name",
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<RealTimePaymentsTransfers::RealTimePaymentsTransferDebtorAddress>(
+                json,
+                ModelBase.SerializerOptions
+            );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new RealTimePaymentsTransfers::RealTimePaymentsTransferDebtorAddress
+        {
+            AddressLine2 = "address_line2",
+            BuildingNumber = "building_number",
+            City = "city",
+            Country = "country",
+            PostalCode = "postal_code",
+            State = "state",
+            StreetName = "street_name",
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized =
+            JsonSerializer.Deserialize<RealTimePaymentsTransfers::RealTimePaymentsTransferDebtorAddress>(
+                element,
+                ModelBase.SerializerOptions
+            );
+        Assert.NotNull(deserialized);
+
+        string expectedAddressLine2 = "address_line2";
+        string expectedBuildingNumber = "building_number";
+        string expectedCity = "city";
+        string expectedCountry = "country";
+        string expectedPostalCode = "postal_code";
+        string expectedState = "state";
+        string expectedStreetName = "street_name";
+
+        Assert.Equal(expectedAddressLine2, deserialized.AddressLine2);
+        Assert.Equal(expectedBuildingNumber, deserialized.BuildingNumber);
+        Assert.Equal(expectedCity, deserialized.City);
+        Assert.Equal(expectedCountry, deserialized.Country);
+        Assert.Equal(expectedPostalCode, deserialized.PostalCode);
+        Assert.Equal(expectedState, deserialized.State);
+        Assert.Equal(expectedStreetName, deserialized.StreetName);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new RealTimePaymentsTransfers::RealTimePaymentsTransferDebtorAddress
+        {
+            AddressLine2 = "address_line2",
+            BuildingNumber = "building_number",
+            City = "city",
+            Country = "country",
+            PostalCode = "postal_code",
+            State = "state",
+            StreetName = "street_name",
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RealTimePaymentsTransfers::RealTimePaymentsTransferDebtorAddress
+        {
+            AddressLine2 = "address_line2",
+            BuildingNumber = "building_number",
+            City = "city",
+            Country = "country",
+            PostalCode = "postal_code",
+            State = "state",
+            StreetName = "street_name",
+        };
+
+        RealTimePaymentsTransfers::RealTimePaymentsTransferDebtorAddress copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
