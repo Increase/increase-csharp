@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Increase.Api.Models.Checkbooks;
 
 namespace Increase.Api.Tests.Services;
 
@@ -26,6 +27,7 @@ public class CheckbookServiceTest : TestBase
                     new("33 Liberty Street"),
                     new("New York, NY 10045"),
                 ],
+                Style = Style.ThreeRingBinder,
             },
             TestContext.Current.CancellationToken
         );
