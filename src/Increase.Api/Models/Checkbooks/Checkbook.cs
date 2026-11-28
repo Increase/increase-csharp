@@ -132,12 +132,12 @@ public sealed record class Checkbook : JsonModel
     /// <summary>
     /// The physical format of the Checkbook.
     /// </summary>
-    public required ApiEnum<string, Style> Style
+    public required ApiEnum<string, CheckbookStyle> Style
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<ApiEnum<string, Style>>("style");
+            return this._rawData.GetNotNullClass<ApiEnum<string, CheckbookStyle>>("style");
         }
         init { this._rawData.Set("style", value); }
     }
@@ -634,9 +634,14 @@ sealed class CheckbookStatusConverter : JsonConverter<CheckbookStatus>
 /// <summary>
 /// The physical format of the Checkbook.
 /// </summary>
-[JsonConverter(typeof(StyleConverter))]
-public enum Style
+[JsonConverter(typeof(CheckbookStyleConverter))]
+public enum CheckbookStyle
 {
+    /// <summary>
+    /// A 3x6 inch pad of 25 checks, each torn off along a perforation at the top.
+    /// </summary>
+    TopTearPad,
+
     /// <summary>
     /// A half-inch three-ring binder holding 75 pages of checks with 3 checks per page.
     /// </summary>
@@ -648,9 +653,9 @@ public enum Style
     Folder,
 }
 
-sealed class StyleConverter : JsonConverter<Style>
+sealed class CheckbookStyleConverter : JsonConverter<CheckbookStyle>
 {
-    public override Style Read(
+    public override CheckbookStyle Read(
         ref Utf8JsonReader reader,
         System::Type typeToConvert,
         JsonSerializerOptions options
@@ -658,20 +663,26 @@ sealed class StyleConverter : JsonConverter<Style>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "three_ring_binder" => Style.ThreeRingBinder,
-            "folder" => Style.Folder,
-            _ => (Style)(-1),
+            "top_tear_pad" => CheckbookStyle.TopTearPad,
+            "three_ring_binder" => CheckbookStyle.ThreeRingBinder,
+            "folder" => CheckbookStyle.Folder,
+            _ => (CheckbookStyle)(-1),
         };
     }
 
-    public override void Write(Utf8JsonWriter writer, Style value, JsonSerializerOptions options)
+    public override void Write(
+        Utf8JsonWriter writer,
+        CheckbookStyle value,
+        JsonSerializerOptions options
+    )
     {
         JsonSerializer.Serialize(
             writer,
             value switch
             {
-                Style.ThreeRingBinder => "three_ring_binder",
-                Style.Folder => "folder",
+                CheckbookStyle.TopTearPad => "top_tear_pad",
+                CheckbookStyle.ThreeRingBinder => "three_ring_binder",
+                CheckbookStyle.Folder => "folder",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

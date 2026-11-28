@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Frozen;
 using System.Collections.Generic;
 using System.Collections.Immutable;
@@ -8,6 +7,8 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Increase.Api.Core;
+using Increase.Api.Exceptions;
+using System = System;
 
 namespace Increase.Api.Models.Checkbooks;
 
@@ -72,6 +73,19 @@ public record class CheckbookCreateParams : ParamsBase
                 ImmutableArray.ToImmutableArray(value)
             );
         }
+    }
+
+    /// <summary>
+    /// The physical format of the Checkbook.
+    /// </summary>
+    public required ApiEnum<string, Style> Style
+    {
+        get
+        {
+            this._rawBodyData.Freeze();
+            return this._rawBodyData.GetNotNullClass<ApiEnum<string, Style>>("style");
+        }
+        init { this._rawBodyData.Set("style", value); }
     }
 
     public CheckbookCreateParams() { }
@@ -152,9 +166,9 @@ public record class CheckbookCreateParams : ParamsBase
             && this._rawBodyData.Equals(other._rawBodyData);
     }
 
-    public override Uri Url(ClientOptions options)
+    public override System::Uri Url(ClientOptions options)
     {
-        return new UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/checkbooks")
+        return new System::UriBuilder(options.BaseUrl.ToString().TrimEnd('/') + "/checkbooks")
         {
             Query = this.QueryString(options),
         }.Uri;
@@ -384,4 +398,54 @@ class PayerFromRaw : IFromRawJson<Payer>
     /// <inheritdoc/>
     public Payer FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
         Payer.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The physical format of the Checkbook.
+/// </summary>
+[JsonConverter(typeof(StyleConverter))]
+public enum Style
+{
+    /// <summary>
+    /// A 3x6 inch pad of 25 checks, each torn off along a perforation at the top.
+    /// </summary>
+    TopTearPad,
+
+    /// <summary>
+    /// A half-inch three-ring binder holding 75 pages of checks with 3 checks per page.
+    /// </summary>
+    ThreeRingBinder,
+}
+
+sealed class StyleConverter : JsonConverter<Style>
+{
+    public override Style Read(
+        ref Utf8JsonReader reader,
+        System::Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "top_tear_pad" => Style.TopTearPad,
+            "three_ring_binder" => Style.ThreeRingBinder,
+            _ => (Style)(-1),
+        };
+    }
+
+    public override void Write(Utf8JsonWriter writer, Style value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Style.TopTearPad => "top_tear_pad",
+                Style.ThreeRingBinder => "three_ring_binder",
+                _ => throw new IncreaseInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using Increase.Api.Core;
+using Increase.Api.Exceptions;
 using Increase.Api.Models.Checkbooks;
 
 namespace Increase.Api.Tests.Models.Checkbooks;
@@ -29,6 +30,7 @@ public class CheckbookCreateParamsTest : TestBase
                 new("33 Liberty Street"),
                 new("New York, NY 10045"),
             ],
+            Style = Style.ThreeRingBinder,
         };
 
         string expectedAccountNumberID = "account_number_v18nkfqm6afpsrvy82b2";
@@ -47,6 +49,7 @@ public class CheckbookCreateParamsTest : TestBase
             new("33 Liberty Street"),
             new("New York, NY 10045"),
         ];
+        ApiEnum<string, Style> expectedStyle = Style.ThreeRingBinder;
 
         Assert.Equal(expectedAccountNumberID, parameters.AccountNumberID);
         Assert.Equal(expectedMailingAddress, parameters.MailingAddress);
@@ -55,6 +58,7 @@ public class CheckbookCreateParamsTest : TestBase
         {
             Assert.Equal(expectedPayer[i], parameters.Payer[i]);
         }
+        Assert.Equal(expectedStyle, parameters.Style);
     }
 
     [Fact]
@@ -78,6 +82,7 @@ public class CheckbookCreateParamsTest : TestBase
                 new("33 Liberty Street"),
                 new("New York, NY 10045"),
             ],
+            Style = Style.ThreeRingBinder,
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
@@ -106,6 +111,7 @@ public class CheckbookCreateParamsTest : TestBase
                 new("33 Liberty Street"),
                 new("New York, NY 10045"),
             ],
+            Style = Style.ThreeRingBinder,
         };
 
         CheckbookCreateParams copied = new(parameters);
@@ -357,5 +363,63 @@ public class PayerTest : TestBase
         Payer copied = new(model);
 
         Assert.Equal(model, copied);
+    }
+}
+
+public class StyleTest : TestBase
+{
+    [Theory]
+    [InlineData(Style.TopTearPad)]
+    [InlineData(Style.ThreeRingBinder)]
+    public void Validation_Works(Style rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Style> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Style>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<IncreaseInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Style.TopTearPad)]
+    [InlineData(Style.ThreeRingBinder)]
+    public void SerializationRoundtrip_Works(Style rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Style> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Style>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Style>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Style>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
     }
 }

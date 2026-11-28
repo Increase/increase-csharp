@@ -43,7 +43,7 @@ public class CheckbookTest : TestBase
                 State = "CA",
             },
             Status = Checkbooks::CheckbookStatus.Mailed,
-            Style = Checkbooks::Style.ThreeRingBinder,
+            Style = Checkbooks::CheckbookStyle.ThreeRingBinder,
             TrackingUpdates =
             [
                 new()
@@ -93,7 +93,8 @@ public class CheckbookTest : TestBase
         };
         ApiEnum<string, Checkbooks::CheckbookStatus> expectedStatus =
             Checkbooks::CheckbookStatus.Mailed;
-        ApiEnum<string, Checkbooks::Style> expectedStyle = Checkbooks::Style.ThreeRingBinder;
+        ApiEnum<string, Checkbooks::CheckbookStyle> expectedStyle =
+            Checkbooks::CheckbookStyle.ThreeRingBinder;
         List<Checkbooks::TrackingUpdate> expectedTrackingUpdates =
         [
             new()
@@ -168,7 +169,7 @@ public class CheckbookTest : TestBase
                 State = "CA",
             },
             Status = Checkbooks::CheckbookStatus.Mailed,
-            Style = Checkbooks::Style.ThreeRingBinder,
+            Style = Checkbooks::CheckbookStyle.ThreeRingBinder,
             TrackingUpdates =
             [
                 new()
@@ -232,7 +233,7 @@ public class CheckbookTest : TestBase
                 State = "CA",
             },
             Status = Checkbooks::CheckbookStatus.Mailed,
-            Style = Checkbooks::Style.ThreeRingBinder,
+            Style = Checkbooks::CheckbookStyle.ThreeRingBinder,
             TrackingUpdates =
             [
                 new()
@@ -289,7 +290,8 @@ public class CheckbookTest : TestBase
         };
         ApiEnum<string, Checkbooks::CheckbookStatus> expectedStatus =
             Checkbooks::CheckbookStatus.Mailed;
-        ApiEnum<string, Checkbooks::Style> expectedStyle = Checkbooks::Style.ThreeRingBinder;
+        ApiEnum<string, Checkbooks::CheckbookStyle> expectedStyle =
+            Checkbooks::CheckbookStyle.ThreeRingBinder;
         List<Checkbooks::TrackingUpdate> expectedTrackingUpdates =
         [
             new()
@@ -364,7 +366,7 @@ public class CheckbookTest : TestBase
                 State = "CA",
             },
             Status = Checkbooks::CheckbookStatus.Mailed,
-            Style = Checkbooks::Style.ThreeRingBinder,
+            Style = Checkbooks::CheckbookStyle.ThreeRingBinder,
             TrackingUpdates =
             [
                 new()
@@ -422,7 +424,7 @@ public class CheckbookTest : TestBase
                 State = "CA",
             },
             Status = Checkbooks::CheckbookStatus.Mailed,
-            Style = Checkbooks::Style.ThreeRingBinder,
+            Style = Checkbooks::CheckbookStyle.ThreeRingBinder,
             TrackingUpdates =
             [
                 new()
@@ -817,22 +819,23 @@ public class CheckbookStatusTest : TestBase
     }
 }
 
-public class StyleTest : TestBase
+public class CheckbookStyleTest : TestBase
 {
     [Theory]
-    [InlineData(Checkbooks::Style.ThreeRingBinder)]
-    [InlineData(Checkbooks::Style.Folder)]
-    public void Validation_Works(Checkbooks::Style rawValue)
+    [InlineData(Checkbooks::CheckbookStyle.TopTearPad)]
+    [InlineData(Checkbooks::CheckbookStyle.ThreeRingBinder)]
+    [InlineData(Checkbooks::CheckbookStyle.Folder)]
+    public void Validation_Works(Checkbooks::CheckbookStyle rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Checkbooks::Style> value = rawValue;
+        ApiEnum<string, Checkbooks::CheckbookStyle> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Checkbooks::Style>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Checkbooks::CheckbookStyle>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
@@ -842,15 +845,16 @@ public class StyleTest : TestBase
     }
 
     [Theory]
-    [InlineData(Checkbooks::Style.ThreeRingBinder)]
-    [InlineData(Checkbooks::Style.Folder)]
-    public void SerializationRoundtrip_Works(Checkbooks::Style rawValue)
+    [InlineData(Checkbooks::CheckbookStyle.TopTearPad)]
+    [InlineData(Checkbooks::CheckbookStyle.ThreeRingBinder)]
+    [InlineData(Checkbooks::CheckbookStyle.Folder)]
+    public void SerializationRoundtrip_Works(Checkbooks::CheckbookStyle rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Checkbooks::Style> value = rawValue;
+        ApiEnum<string, Checkbooks::CheckbookStyle> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Checkbooks::Style>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Checkbooks::CheckbookStyle>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -861,12 +865,12 @@ public class StyleTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Checkbooks::Style>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Checkbooks::CheckbookStyle>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Checkbooks::Style>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Checkbooks::CheckbookStyle>>(
             json,
             ModelBase.SerializerOptions
         );

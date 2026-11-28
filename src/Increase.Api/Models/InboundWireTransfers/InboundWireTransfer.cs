@@ -557,6 +557,19 @@ class AcceptanceFromRaw : IFromRawJson<Acceptance>
 public sealed record class Reversal : JsonModel
 {
     /// <summary>
+    /// The amount that was reversed in USD cents.
+    /// </summary>
+    public required long Amount
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("amount");
+        }
+        init { this._rawData.Set("amount", value); }
+    }
+
+    /// <summary>
     /// The reason for the reversal.
     /// </summary>
     public required ApiEnum<string, ReversalReason> Reason
@@ -586,6 +599,7 @@ public sealed record class Reversal : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.Amount;
         this.Reason.Validate();
         _ = this.ReversedAt;
     }
@@ -645,6 +659,11 @@ public enum ReversalReason
     /// The account cannot currently receive inbound wires.
     /// </summary>
     TransactionForbidden,
+
+    /// <summary>
+    /// The inbound wire transfer was fraudulent.
+    /// </summary>
+    Fraud,
 }
 
 sealed class ReversalReasonConverter : JsonConverter<ReversalReason>
@@ -660,6 +679,7 @@ sealed class ReversalReasonConverter : JsonConverter<ReversalReason>
             "duplicate" => ReversalReason.Duplicate,
             "creditor_request" => ReversalReason.CreditorRequest,
             "transaction_forbidden" => ReversalReason.TransactionForbidden,
+            "fraud" => ReversalReason.Fraud,
             _ => (ReversalReason)(-1),
         };
     }
@@ -677,6 +697,7 @@ sealed class ReversalReasonConverter : JsonConverter<ReversalReason>
                 ReversalReason.Duplicate => "duplicate",
                 ReversalReason.CreditorRequest => "creditor_request",
                 ReversalReason.TransactionForbidden => "transaction_forbidden",
+                ReversalReason.Fraud => "fraud",
                 _ => throw new IncreaseInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

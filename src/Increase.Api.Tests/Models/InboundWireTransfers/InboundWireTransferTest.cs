@@ -42,6 +42,7 @@ public class InboundWireTransferTest : TestBase
             Purpose = "CASH",
             Reversal = new()
             {
+                Amount = 0,
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
                 ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -78,6 +79,7 @@ public class InboundWireTransferTest : TestBase
         string expectedPurpose = "CASH";
         InboundWireTransfers::Reversal expectedReversal = new()
         {
+            Amount = 0,
             Reason = InboundWireTransfers::ReversalReason.Duplicate,
             ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -159,6 +161,7 @@ public class InboundWireTransferTest : TestBase
             Purpose = "CASH",
             Reversal = new()
             {
+                Amount = 0,
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
                 ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -212,6 +215,7 @@ public class InboundWireTransferTest : TestBase
             Purpose = "CASH",
             Reversal = new()
             {
+                Amount = 0,
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
                 ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -255,6 +259,7 @@ public class InboundWireTransferTest : TestBase
         string expectedPurpose = "CASH";
         InboundWireTransfers::Reversal expectedReversal = new()
         {
+            Amount = 0,
             Reason = InboundWireTransfers::ReversalReason.Duplicate,
             ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -342,6 +347,7 @@ public class InboundWireTransferTest : TestBase
             Purpose = "CASH",
             Reversal = new()
             {
+                Amount = 0,
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
                 ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -389,6 +395,7 @@ public class InboundWireTransferTest : TestBase
             Purpose = "CASH",
             Reversal = new()
             {
+                Amount = 0,
                 Reason = InboundWireTransfers::ReversalReason.Duplicate,
                 ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -498,14 +505,17 @@ public class ReversalTest : TestBase
     {
         var model = new InboundWireTransfers::Reversal
         {
+            Amount = 0,
             Reason = InboundWireTransfers::ReversalReason.Duplicate,
             ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
+        long expectedAmount = 0;
         ApiEnum<string, InboundWireTransfers::ReversalReason> expectedReason =
             InboundWireTransfers::ReversalReason.Duplicate;
         DateTimeOffset expectedReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
+        Assert.Equal(expectedAmount, model.Amount);
         Assert.Equal(expectedReason, model.Reason);
         Assert.Equal(expectedReversedAt, model.ReversedAt);
     }
@@ -515,6 +525,7 @@ public class ReversalTest : TestBase
     {
         var model = new InboundWireTransfers::Reversal
         {
+            Amount = 0,
             Reason = InboundWireTransfers::ReversalReason.Duplicate,
             ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -533,6 +544,7 @@ public class ReversalTest : TestBase
     {
         var model = new InboundWireTransfers::Reversal
         {
+            Amount = 0,
             Reason = InboundWireTransfers::ReversalReason.Duplicate,
             ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -544,10 +556,12 @@ public class ReversalTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        long expectedAmount = 0;
         ApiEnum<string, InboundWireTransfers::ReversalReason> expectedReason =
             InboundWireTransfers::ReversalReason.Duplicate;
         DateTimeOffset expectedReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
+        Assert.Equal(expectedAmount, deserialized.Amount);
         Assert.Equal(expectedReason, deserialized.Reason);
         Assert.Equal(expectedReversedAt, deserialized.ReversedAt);
     }
@@ -557,6 +571,7 @@ public class ReversalTest : TestBase
     {
         var model = new InboundWireTransfers::Reversal
         {
+            Amount = 0,
             Reason = InboundWireTransfers::ReversalReason.Duplicate,
             ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -569,6 +584,7 @@ public class ReversalTest : TestBase
     {
         var model = new InboundWireTransfers::Reversal
         {
+            Amount = 0,
             Reason = InboundWireTransfers::ReversalReason.Duplicate,
             ReversedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -585,6 +601,7 @@ public class ReversalReasonTest : TestBase
     [InlineData(InboundWireTransfers::ReversalReason.Duplicate)]
     [InlineData(InboundWireTransfers::ReversalReason.CreditorRequest)]
     [InlineData(InboundWireTransfers::ReversalReason.TransactionForbidden)]
+    [InlineData(InboundWireTransfers::ReversalReason.Fraud)]
     public void Validation_Works(InboundWireTransfers::ReversalReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -607,6 +624,7 @@ public class ReversalReasonTest : TestBase
     [InlineData(InboundWireTransfers::ReversalReason.Duplicate)]
     [InlineData(InboundWireTransfers::ReversalReason.CreditorRequest)]
     [InlineData(InboundWireTransfers::ReversalReason.TransactionForbidden)]
+    [InlineData(InboundWireTransfers::ReversalReason.Fraud)]
     public void SerializationRoundtrip_Works(InboundWireTransfers::ReversalReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

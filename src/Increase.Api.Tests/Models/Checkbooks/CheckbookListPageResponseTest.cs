@@ -46,7 +46,7 @@ public class CheckbookListPageResponseTest : TestBase
                         State = "CA",
                     },
                     Status = Checkbooks::CheckbookStatus.Mailed,
-                    Style = Checkbooks::Style.ThreeRingBinder,
+                    Style = Checkbooks::CheckbookStyle.ThreeRingBinder,
                     TrackingUpdates =
                     [
                         new()
@@ -103,7 +103,7 @@ public class CheckbookListPageResponseTest : TestBase
                     State = "CA",
                 },
                 Status = Checkbooks::CheckbookStatus.Mailed,
-                Style = Checkbooks::Style.ThreeRingBinder,
+                Style = Checkbooks::CheckbookStyle.ThreeRingBinder,
                 TrackingUpdates =
                 [
                     new()
@@ -172,7 +172,7 @@ public class CheckbookListPageResponseTest : TestBase
                         State = "CA",
                     },
                     Status = Checkbooks::CheckbookStatus.Mailed,
-                    Style = Checkbooks::Style.ThreeRingBinder,
+                    Style = Checkbooks::CheckbookStyle.ThreeRingBinder,
                     TrackingUpdates =
                     [
                         new()
@@ -243,7 +243,7 @@ public class CheckbookListPageResponseTest : TestBase
                         State = "CA",
                     },
                     Status = Checkbooks::CheckbookStatus.Mailed,
-                    Style = Checkbooks::Style.ThreeRingBinder,
+                    Style = Checkbooks::CheckbookStyle.ThreeRingBinder,
                     TrackingUpdates =
                     [
                         new()
@@ -307,7 +307,7 @@ public class CheckbookListPageResponseTest : TestBase
                     State = "CA",
                 },
                 Status = Checkbooks::CheckbookStatus.Mailed,
-                Style = Checkbooks::Style.ThreeRingBinder,
+                Style = Checkbooks::CheckbookStyle.ThreeRingBinder,
                 TrackingUpdates =
                 [
                     new()
@@ -376,7 +376,7 @@ public class CheckbookListPageResponseTest : TestBase
                         State = "CA",
                     },
                     Status = Checkbooks::CheckbookStatus.Mailed,
-                    Style = Checkbooks::Style.ThreeRingBinder,
+                    Style = Checkbooks::CheckbookStyle.ThreeRingBinder,
                     TrackingUpdates =
                     [
                         new()
@@ -441,7 +441,7 @@ public class CheckbookListPageResponseTest : TestBase
                         State = "CA",
                     },
                     Status = Checkbooks::CheckbookStatus.Mailed,
-                    Style = Checkbooks::Style.ThreeRingBinder,
+                    Style = Checkbooks::CheckbookStyle.ThreeRingBinder,
                     TrackingUpdates =
                     [
                         new()
